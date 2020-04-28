@@ -195,7 +195,7 @@ sns.set()
 <span class="hljs-keyword">from</span> sklearn.datasets.samples_generator <span class="hljs-keyword">import</span> make_blobs
 X, y = make_blobs(n_samples=<span class="hljs-number">50</span>, centers=<span class="hljs-number">2</span>, random_state=<span class="hljs-number">0</span>, cluster_std=<span class="hljs-number">0.60</span>)
 plt.scatter(X[:, <span class="hljs-number">0</span>], X[:, <span class="hljs-number">1</span>], c=y, s=<span class="hljs-number">50</span>, cmap=<span class="hljs-string">'autumn'</span>)</code></pre></p>
-<p><img src="/hootingWang.github.io/2020/04/28/%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA/Figure_1.png" srcset="/img/loading.gif" alt="简单分类数据"></p>
+<p><img src="/hootingWang.github.io/2020/04/28/%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA/SVM-Figure_1.png" srcset="/img/loading.gif" alt="简单分类数据"></p>
 <p>简单分割线：<br><pre><code class="hljs Python"><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
 xfit = np.linspace(<span class="hljs-number">-1</span>, <span class="hljs-number">3.5</span>)
 plt.scatter(X[:, <span class="hljs-number">0</span>], X[:, <span class="hljs-number">1</span>], c=y, s=<span class="hljs-number">50</span>, cmap=<span class="hljs-string">'autumn'</span>)
@@ -205,7 +205,7 @@ plt.plot([<span class="hljs-number">0.6</span>], [<span class="hljs-number">2.1<
     plt.plot(xfit, m * xfit + b, <span class="hljs-string">'-k'</span>)  <span class="hljs-comment">##画三条分割直线</span>
 
 plt.xlim(<span class="hljs-number">-1</span>, <span class="hljs-number">3.5</span>)</code></pre></p>
-<p><img src="/hootingWang.github.io/2020/04/28/%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA/Figure_3.png" srcset="/img/loading.gif" alt="三条简单分割直线"><br>上图中的三条简单分割直线（分割器）都能很好地判别这些样本（每条直线都能将圆点数据点正确地分为两类）。但是对于点“X”，不同的分割器将其分配到不同的标签。</p>
+<p><img src="/hootingWang.github.io/2020/04/28/%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA/SVM-Figure_3.png" srcset="/img/loading.gif" alt="三条简单分割直线"><br>上图中的三条简单分割直线（分割器）都能很好地判别这些样本（每条直线都能将圆点数据点正确地分为两类）。但是对于点“X”，不同的分割器将其分配到不同的标签。</p>
 <p>若将分割直线变成具有宽度的、到最近点边界的线条，如下图：<br><pre><code class="hljs Python">xfit = np.linspace(<span class="hljs-number">-1</span>, <span class="hljs-number">3.5</span>)
 plt.scatter(X[:, <span class="hljs-number">0</span>], X[:, <span class="hljs-number">1</span>], c=y, s=<span class="hljs-number">50</span>, cmap=<span class="hljs-string">'autumn'</span>)
 
@@ -215,9 +215,8 @@ plt.scatter(X[:, <span class="hljs-number">0</span>], X[:, <span class="hljs-num
     plt.fill_between(xfit, yfit - d, yfit + d, edgecolor=<span class="hljs-string">'none'</span>, color=<span class="hljs-string">'#AAAAAA'</span>, alpha=<span class="hljs-number">0.4</span>)
 
 plt.xlim(<span class="hljs-number">-1</span>, <span class="hljs-number">3.5</span>)</code></pre></p>
-<p><img src="/hootingWang.github.io/2020/04/28/%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA/Figure_2.png" srcset="/img/loading.gif" alt="带有边界的分割器"></p>
-<img src="/hootingWang.github.io/2020/04/28/%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA/04/28/%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA/Figure_2.png" srcset="/img/loading.gif" class title="带有边界的分割器">
-<p><img src="/hootingWang.github.io/2020/04/28/%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA/Figure_4.jpeg" srcset="/img/loading.gif" alt="带边界线和支持向量的支持向量机分类器"></p>
+<p><img src="/hootingWang.github.io/2020/04/28/%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA/SVM-Figure_2.png" srcset="/img/loading.gif" alt="带有边界的分割器"></p>
+<p><img src="/hootingWang.github.io/2020/04/28/%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA/SVM-Figure_4.jpeg" srcset="/img/loading.gif" alt="带边界线和支持向量的支持向量机分类器"></p>
 <p>正好在边界线上的点，被称为<strong>支持向量</strong>。</p>
 <p>在scikit-learn中，支持向量的坐标存放在分类器的<code>support_vectors_</code>属性中。</p>
 <p>SVM对远离边界的数据点不敏感。</p>
@@ -523,6 +522,22 @@ plt.xlim(<span class="hljs-number">-1</span>, <span class="hljs-number">3.5</spa
 
 
 
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
 </body>
 </html>
