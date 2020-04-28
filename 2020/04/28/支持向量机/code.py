@@ -63,7 +63,7 @@ def plot_svc_decision_function(model, ax=None, plot_support=True):
     P = model.decision_function(xy).reshape(X.shape)
     
     ## 画决策直线和边界
-    ax.contour(X, Y, P, color='k', levels=[-1, 0, 1], alpha=0.5, linestyles=['--', '-', '--'])
+    ax.contour(X, Y, P, colors='k', levels=[-1, 0, 1], alpha=0.5, linestyles=['--', '-', '--'])
     ## 画支持向量
     if plot_support:
         ax.scatter(model.support_vectors_[:, 0],
