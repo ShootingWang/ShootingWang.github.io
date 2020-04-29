@@ -193,60 +193,60 @@
 <table>
 <thead>
 <tr>
-<th style="text-align:left">简写</th>
-<th style="text-align:left">英文名称</th>
-<th style="text-align:left">中文名称</th>
-<th style="text-align:left">换算</th>
+<th style="text-align:center">简写</th>
+<th style="text-align:center">英文名称</th>
+<th style="text-align:center">中文名称</th>
+<th style="text-align:center">换算</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left">B</td>
-<td style="text-align:left">byte</td>
-<td style="text-align:left">字节</td>
-<td style="text-align:left">1B = 8 b</td>
+<td style="text-align:center">B</td>
+<td style="text-align:center">byte</td>
+<td style="text-align:center">字节</td>
+<td style="text-align:center">1B = 8 b</td>
 </tr>
 <tr>
-<td style="text-align:left">KB</td>
-<td style="text-align:left">Kilobyte</td>
-<td style="text-align:left">千字节</td>
-<td style="text-align:left">1KB = 1024 B</td>
+<td style="text-align:center">KB</td>
+<td style="text-align:center">Kilobyte</td>
+<td style="text-align:center">千字节</td>
+<td style="text-align:center">1KB = 1024 B</td>
 </tr>
 <tr>
-<td style="text-align:left">MB</td>
-<td style="text-align:left">Megabyte</td>
-<td style="text-align:left">兆字节/百万字节，简称兆</td>
-<td style="text-align:left">1 MB = 1024 KB</td>
+<td style="text-align:center">MB</td>
+<td style="text-align:center">Megabyte</td>
+<td style="text-align:center">兆字节/百万字节，简称兆</td>
+<td style="text-align:center">1 MB = 1024 KB</td>
 </tr>
 <tr>
-<td style="text-align:left">GB</td>
-<td style="text-align:left">Gigabyte</td>
-<td style="text-align:left">吉字节/十亿字节，简称千兆</td>
-<td style="text-align:left">1 GB = 1024 MB</td>
+<td style="text-align:center">GB</td>
+<td style="text-align:center">Gigabyte</td>
+<td style="text-align:center">吉字节/十亿字节，简称千兆</td>
+<td style="text-align:center">1 GB = 1024 MB</td>
 </tr>
 <tr>
-<td style="text-align:left">TB</td>
-<td style="text-align:left">Terabyte</td>
-<td style="text-align:left">太字节/万亿字节</td>
-<td style="text-align:left">1 TB = 1024 GB</td>
+<td style="text-align:center">TB</td>
+<td style="text-align:center">Terabyte</td>
+<td style="text-align:center">太字节/万亿字节</td>
+<td style="text-align:center">1 TB = 1024 GB</td>
 </tr>
 <tr>
-<td style="text-align:left">PB</td>
-<td style="text-align:left">Petabyte</td>
-<td style="text-align:left">拍字节/千万亿字节</td>
-<td style="text-align:left">1 PB = 1024 TB</td>
+<td style="text-align:center">PB</td>
+<td style="text-align:center">Petabyte</td>
+<td style="text-align:center">拍字节/千万亿字节</td>
+<td style="text-align:center">1 PB = 1024 TB</td>
 </tr>
 <tr>
-<td style="text-align:left">EB</td>
-<td style="text-align:left">Exabyte</td>
-<td style="text-align:left">艾字节/百亿亿字节</td>
-<td style="text-align:left">1 EB = 1024 PB</td>
+<td style="text-align:center">EB</td>
+<td style="text-align:center">Exabyte</td>
+<td style="text-align:center">艾字节/百亿亿字节</td>
+<td style="text-align:center">1 EB = 1024 PB</td>
 </tr>
 <tr>
-<td style="text-align:left">ZB</td>
-<td style="text-align:left">Zettabyte</td>
-<td style="text-align:left">泽字节/十万亿亿字节</td>
-<td style="text-align:left">1 ZB = 1024 EB</td>
+<td style="text-align:center">ZB</td>
+<td style="text-align:center">Zettabyte</td>
+<td style="text-align:center">泽字节/十万亿亿字节</td>
+<td style="text-align:center">1 ZB = 1024 EB</td>
 </tr>
 </tbody>
 </table>
@@ -547,6 +547,22 @@
 
 <script src="/js/prism/clipboard.js"></script>
 <script src="/js/prism/prism.js" async></script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
 </body>
 </html>
