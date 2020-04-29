@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    343 字
+                    468 字
                   </span>
                 
 
@@ -152,7 +152,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    6
+                    8
                      分钟
                   </span>
                 
@@ -203,6 +203,17 @@
                 L_num, R_num = 0, 0
         return ans_count
 </code></pre>
+<h1><span id="1266-minimum-time-visiting-all-points">1266. Minimum Time Visiting All Points</span></h1><p><a href="https://leetcode.com/problems/minimum-time-visiting-all-points/" target="_blank" rel="noopener">题目详情</a></p>
+<pre><code class="lang-Python">class Solution:
+    def minTimeToVisitAllPoints(self, points: List[List[int]]) -&gt; int:
+        steps = 0
+        for i in range(len(points)-1):
+            x1, y1 = points[i][0], points[i][1]
+            x2, y2 = points[i+1][0], points[i+1][1]
+            m, n = abs(x2 - x1), abs(y2 - y1)
+            steps += max(m, n)
+        return steps
+</code></pre>
 <h1><span id="1281-subtract-the-product-and-sum-of-digits-of-an-integer">1281. Subtract the Product and Sum of Digits of an Integer</span></h1><p><a href="https://leetcode.com/problems/subtract-the-product-and-sum-of-digits-of-an-integer/" target="_blank" rel="noopener">题目详情</a></p>
 <pre><code class="lang-Python">class Solution:
     def subtractProductAndSum(self, n: int) -&gt; int:
@@ -214,6 +225,24 @@
             pp *= nn
             ss += nn
         return pp - ss
+</code></pre>
+<h1><span id="1290-convert-binary-number-in-a-linked-list-to-integer">1290. Convert Binary Number in a Linked List to Integer</span></h1><p><a href="https://leetcode.com/problems/convert-binary-number-in-a-linked-list-to-integer/" target="_blank" rel="noopener">题目详情</a></p>
+<pre><code class="lang-Python"># Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution:
+    def getDecimalValue(self, head: ListNode) -&gt; int:
+        str_num = &quot;&quot;
+        while head:
+            str_num += str(head.val)
+            head = head.next
+        return int(str_num, 2)
+</code></pre>
+<p><a href>题目详情</a></p>
+<pre><code class="lang-Python">
+
 </code></pre>
 <h1><span id="1295-find-numbers-with-even-number-of-digits">1295. Find Numbers with Even Number of Digits</span></h1><p><a href="https://leetcode.com/problems/find-numbers-with-even-number-of-digits/" target="_blank" rel="noopener">题目详情</a></p>
 <pre><code class="lang-Python">class Solution:
@@ -289,8 +318,6 @@
                 
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
-                    
-                      <a class="hover-with-bg" href="/tags/%E7%AE%97%E6%B3%95/">算法</a>
                     
                       <a class="hover-with-bg" href="/tags/Leetcode/">Leetcode</a>
                     
