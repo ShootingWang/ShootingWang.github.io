@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    674 字
+                    672 字
                   </span>
                 
 
@@ -202,12 +202,14 @@ c.InteractiveShell.ast_node_interactivity = &quot;all&quot;
                    &#39;pbdZMQ&#39;, &#39;devtools&#39;, &#39;uuid&#39;, &#39;digest&#39;))
 devtools::install_github(&#39;IRkernel/IRkernel&#39;)
 </code></pre>
-<p>在Anaconda Prompt中输入以下命令：<br>第一步：输入R，调用R<br>``Python<br>R</p>
-<pre><code>第二步：安装R kernel，有2种方式（自由选择，个人建议第二种）：
-1. 直接安装在当前用户中：
- ```Python
- IRkernel::installspec()
-</code></pre><ol>
+<p>在Anaconda Prompt中输入以下命令：<br>第一步：输入R，调用R</p>
+<pre><code class="lang-Python">R
+</code></pre>
+<p>第二步：安装R kernel，有2种方式（自由选择，个人建议第二种）：</p>
+<ol>
+<li>直接安装在当前用户中：<pre><code class="lang-Python">IRkernel::installspec()
+</code></pre>
+</li>
 <li>安装在系统中：<pre><code class="lang-Python">IRkernel::installspec(user = FALSE)
 </code></pre>
 </li>
