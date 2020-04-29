@@ -23,8 +23,6 @@
 <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
 
 
-  <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.18.1/styles/vs-2015.min.css" />
-
 
 <!-- 主题依赖的图标库，不要自行修改 -->
 
@@ -44,6 +42,7 @@
 
 <meta name="generator" content="Hexo 4.2.0"></head>
 
+<link rel="stylesheet" href="/js/prism/prism.css">
 
 <body>
   <header style="height: 70vh;">
@@ -190,10 +189,11 @@
 <li>list 是可变的对象</li>
 <li>用方括号封装 [ ]</li>
 </ul>
-<pre><code class="hljs Python">lst.append(a)   <span class="hljs-comment">##在列表lst尾部添加元素a</span>
-lst.insert(num, c)  <span class="hljs-comment">##在列表lst的第num+1个位置（索引为num）插入元素c</span>
-lst.pop()  <span class="hljs-comment">##删除列表lst的最后一个元素，并返回该元素</span>
-lst.pop(i)  <span class="hljs-comment">##删除列表lst的索引为i的元素（i可以是负数；i=-2表示删除倒数第二个元素）</span></code></pre>
+<pre><code class="lang-Python">lst.append(a)   ##在列表lst尾部添加元素a
+lst.insert(num, c)  ##在列表lst的第num+1个位置（索引为num）插入元素c
+lst.pop()  ##删除列表lst的最后一个元素，并返回该元素
+lst.pop(i)  ##删除列表lst的索引为i的元素（i可以是负数；i=-2表示删除倒数第二个元素）
+</code></pre>
 <h2><span id="tuple元组">tuple（元组）</span></h2><ul>
 <li>是一种有序列表，和list非常相似</li>
 <li>一旦初始化就不能修改</li>
@@ -207,11 +207,13 @@ lst.pop(i)  <span class="hljs-comment">##删除列表lst的索引为i的元素�
 <li>成员关系操作符 in 和 not in 也可以直接用在元组上</li>
 <li>用圆括号封装 （）</li>
 </ul>
-<pre><code class="hljs Python">cmp(tuple1, tuple2)  <span class="hljs-comment">##比较两个元组元素</span>
-len(tuple)  <span class="hljs-comment">##计算元组元素个数</span>
-max(tuple)  <span class="hljs-comment">##返回元组中元素最大值</span>
-min(tuple)  <span class="hljs-comment">##返回元组中元素最小值</span>
-tuple(seq)  <span class="hljs-comment">##把列表seq转换为元组</span></code></pre>
+<pre><code class="lang-Python">cmp(tuple1, tuple2)  ##比较两个元组元素
+len(tuple)  ##计算元组元素个数
+max(tuple)  ##返回元组中元素最大值
+min(tuple)  ##返回元组中元素最小值
+tuple(seq)  ##把列表seq转换为元组
+</code></pre>
+
             </article>
             <hr>
             <div>
@@ -376,9 +378,6 @@ tuple(seq)  <span class="hljs-comment">##把列表seq转换为元组</span></cod
 
 
 
-  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
-  <script  src="/js/clipboard-use.js" ></script>
-
 
 
   <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
@@ -508,6 +507,8 @@ tuple(seq)  <span class="hljs-comment">##把列表seq转换为元组</span></cod
 
 
 
+<script src="/js/prism/clipboard.js"></script>
+<script src="/js/prism/prism.js" async></script>
 
 <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
