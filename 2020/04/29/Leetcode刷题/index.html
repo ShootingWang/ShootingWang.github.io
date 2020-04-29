@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    162 字
+                    136 字
                   </span>
                 
 
@@ -152,7 +152,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    3
+                    2
                      分钟
                   </span>
                 
@@ -183,17 +183,11 @@
             <article class="markdown-body">
               <p>Leetcode刷题记录~</p>
 <a id="more"></a>
-<ol>
-<li><p><a href="https://leetcode.com/problems/defanging-an-ip-address/" target="_blank" rel="noopener">Defanging an IP Address</a></p>
-<pre><code class="lang-Python">class Solution:
-def defangIPaddr(self, address: str) -&gt; str:
-  return address.replace(&quot;.&quot;, &quot;[.]&quot;)
+<h1><span id="1108defanging-an-ip-address">1108.</span></h1><pre><code class="lang-Python">class Solution:
+    def defangIPaddr(self, address: str) -&gt; str:
+        return address.replace(&quot;.&quot;, &quot;[.]&quot;)
 </code></pre>
-</li>
-<li><p><a href="https://leetcode.com/problems/subtract-the-product-and-sum-of-digits-of-an-integer/" target="_blank" rel="noopener">Subtract the Product and Sum of Digits of an Integer</a></p>
-</li>
-</ol>
-<pre><code class="lang-Python">class Solution:
+<h1><span id="1281subtract-the-product-and-sum-of-digits-of-an-integer">1281.</span></h1><pre><code class="lang-Python">class Solution:
     def subtractProductAndSum(self, n: int) -&gt; int:
         num = [x for x in str(n)]
         num = list(map(int, num))
@@ -204,8 +198,7 @@ def defangIPaddr(self, address: str) -&gt; str:
             ss += nn
         return pp - ss
 </code></pre>
-<p>1313.<a href="https://leetcode.com/problems/decompress-run-length-encoded-list/" target="_blank" rel="noopener">Decompress Run-Length Encoded List</a></p>
-<pre><code class="lang-Python">class Solution:
+<h1><span id="1313decompress-run-length-encoded-list">1313.</span></h1><pre><code class="lang-Python">class Solution:
     def decompressRLElist(self, nums: List[int]) -&gt; List[int]:
         n = len(nums)
         ans = []
@@ -216,8 +209,7 @@ def defangIPaddr(self, address: str) -&gt; str:
                 ans.append(num)
         return ans
 </code></pre>
-<p>1342.<a href="https://leetcode.com/problems/number-of-steps-to-reduce-a-number-to-zero/" target="_blank" rel="noopener">Number of Steps to Reduce a Number to Zero</a></p>
-<pre><code class="lang-Python">class Solution:
+<h1><span id="1342number-of-steps-to-reduce-a-number-to-zero">1342.</span></h1><pre><code class="lang-Python">class Solution:
     def numberOfSteps (self, num: int) -&gt; int:
         cou = 0
         while num&gt;0:
