@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    559 字
+                    688 字
                   </span>
                 
 
@@ -152,7 +152,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    10
+                    13
                      分钟
                   </span>
                 
@@ -300,6 +300,29 @@ class Solution:
                 num -= 1
             cou += 1
         return cou
+</code></pre>
+<h1><span id="1351-count-negative-numbers-in-a-sorted-matrix">1351. Count Negative Numbers in a Sorted Matrix</span></h1><p><a href="https://leetcode.com/problems/count-negative-numbers-in-a-sorted-matrix/" target="_blank" rel="noopener">题目详情</a></p>
+<pre><code class="lang-Python">class Solution:
+    def countNegatives(self, grid: List[List[int]]) -&gt; int:
+        nums = []
+        for i in range(len(grid)):
+            nums += grid[i]
+        return sum([1 if x&lt;0 else 0 for x in nums])
+</code></pre>
+<h1><span id="1380-lucky-numbers-in-a-matrix">1380. Lucky Numbers in a Matrix</span></h1><p><a href="https://leetcode.com/problems/lucky-numbers-in-a-matrix/" target="_blank" rel="noopener">题目详情</a></p>
+<pre><code class="lang-Python">class Solution:
+    def luckyNumbers (self, matrix: List[List[int]]) -&gt; List[int]:
+        rows = [min(x) for x in matrix]
+        n, m = len(matrix), len(matrix[0])
+        cols, ans = [], []
+        for j in range(m):
+            col = [x[j] for x in matrix]
+            cols.append(max(col))
+        for i in range(n):
+            for j in range(m):
+                if matrix[i][j] == rows[i] and matrix[i][j] == cols[j]:
+                    ans.append(matrix[i][j])
+        return ans
 </code></pre>
 <h1><span id="1389-create-target-array-in-the-given-order">1389. Create Target Array in the Given Order</span></h1><p><a href="https://leetcode.com/problems/create-target-array-in-the-given-order/" target="_blank" rel="noopener">题目详情</a></p>
 <pre><code class="lang-Python">class Solution:
