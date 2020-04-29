@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    647 字
+                    667 字
                   </span>
                 
 
@@ -226,7 +226,12 @@ for _ in range(100):
 </code></pre><p>安装过程需要选择[y/n]，输入y。</p>
 <p>该选项卡下方罗列了大量Jupyter可用的插件；点击某个插件的名称，即可在列表下方显示该插件的说明文档；勾选某个插件前面的方框，则系统会加载启用该插件。</p>
 <h3><span id="jupyter-lab">Jupyter Lab！</span></h3><p>超好用！是Project Jupyter的下一代用户界面，具体安装和使用说明请见《<a href="https://mp.weixin.qq.com/s/T-Afq0vAw0lVB9Bave-aNQ" target="_blank" rel="noopener">Jupyter：超强的下一代Jupyter Notebook</a>》（原文作者Parul Pandey，EarlGrey翻译，<a href="https://towardsdatascience.com/jupyter-lab-evolution-of-the-jupyter-notebook-5297cacde6b?gi=dec00114bf03" target="_blank" rel="noopener">原文网址</a>）。</p>
-<h3><span id="切换code和markdown">切换Code和Markdown</span></h3><p>要快捷地切换Cell的形式（Code或Markdown），可按如下操作：<br>选中Cell（光标在Cell中闪烁），点击“Esc”，进入命令模式（光标不再Cell中闪烁，但Cell左侧仍有蓝色粗线条）；然后键盘按“Y”将Cell切换为Code模式，键盘按“M”则将Cell切换为Markdown模式。</p>
+<h3><span id="切换code和markdown">切换Code和Markdown</span></h3><p>要快捷地切换Cell的形式（Code或Markdown），可按如下操作：<br>选中Cell（光标在Cell中闪烁），点击“Esc”，进入命令模式（光标不再Cell中闪烁，但Cell左侧仍有蓝色粗线条）；然后键盘按“Y”将Cell切换为Code模式，键盘按“M”则将Cell切换为Markdown模式。即</p>
+<ul>
+<li>Esc+Y：code模式</li>
+<li>Esc+M：Markdown模式</li>
+<li>Esc+B：快速添加新的Cell</li>
+</ul>
 <h3><span id="禁止输出警告warnings">禁止输出警告（warnings）</span></h3><p>运行以下代码：</p>
 <pre><code class="lang-Python">import warnings
 warnings.filterwarnings(&quot;ignore&quot;)
