@@ -17,7 +17,7 @@
   <meta name="description" content="统计一只狗，梦想有只猫">
   <meta name="author" content="ShootingWang">
   <meta name="keywords" content="">
-  <title>python-3 - ShootingWang</title>
+  <title>Jupyter Notebook使用技巧 - ShootingWang</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
 <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
@@ -131,8 +131,8 @@
               
                 <div class="mt-3 post-meta">
                   <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-                  <time datetime="2020-04-29 23:22">
-                    星期三, 四月 29日 2020, 11:22 晚上
+                  <time datetime="2020-04-30 00:59">
+                    星期四, 四月 30日 2020, 12:59 凌晨
                   </time>
                 </div>
               
@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    166 字
+                    358 字
                   </span>
                 
 
@@ -152,7 +152,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    2
+                    5
                      分钟
                   </span>
                 
@@ -181,76 +181,49 @@
           <div class="post-content mx-auto" id="post">
             
             <article class="markdown-body">
-              <h2><span id="位">位</span></h2><ul>
-<li>bit，比特位，b</li>
-<li>是<u>计算机内部数据存储的最小单位</u>，表示二进制数（也就是0, 1）</li>
-</ul>
-<h2><span id="字节">字节</span></h2><ul>
-<li>byte，B</li>
-<li>是<u>计算机中数据处理的基本单位</u></li>
-</ul>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th style="text-align:center">简写</th>
-<th style="text-align:center">英文名称</th>
-<th style="text-align:left">中文名称</th>
-<th style="text-align:left">换算</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">B</td>
-<td style="text-align:center">byte</td>
-<td style="text-align:left">字节</td>
-<td style="text-align:left">1B = 8 b</td>
-</tr>
-<tr>
-<td style="text-align:center">KB</td>
-<td style="text-align:center">Kilobyte</td>
-<td style="text-align:left">千字节</td>
-<td style="text-align:left">1KB = 1024 B</td>
-</tr>
-<tr>
-<td style="text-align:center">MB</td>
-<td style="text-align:center">Megabyte</td>
-<td style="text-align:left">兆字节/百万字节，简称兆</td>
-<td style="text-align:left">1 MB = 1024 KB</td>
-</tr>
-<tr>
-<td style="text-align:center">GB</td>
-<td style="text-align:center">Gigabyte</td>
-<td style="text-align:left">吉字节/十亿字节，简称千兆</td>
-<td style="text-align:left">1 GB = 1024 MB</td>
-</tr>
-<tr>
-<td style="text-align:center">TB</td>
-<td style="text-align:center">Terabyte</td>
-<td style="text-align:left">太字节/万亿字节</td>
-<td style="text-align:left">1 TB = 1024 GB</td>
-</tr>
-<tr>
-<td style="text-align:center">PB</td>
-<td style="text-align:center">Petabyte</td>
-<td style="text-align:left">拍字节/千万亿字节</td>
-<td style="text-align:left">1 PB = 1024 TB</td>
-</tr>
-<tr>
-<td style="text-align:center">EB</td>
-<td style="text-align:center">Exabyte</td>
-<td style="text-align:left">艾字节/百亿亿字节</td>
-<td style="text-align:left">1 EB = 1024 PB</td>
-</tr>
-<tr>
-<td style="text-align:center">ZB</td>
-<td style="text-align:center">Zettabyte</td>
-<td style="text-align:left">泽字节/十万亿亿字节</td>
-<td style="text-align:left">1 ZB = 1024 EB</td>
-</tr>
-</tbody>
-</table>
-</div>
+              <p>Jupyter Tips!</p>
+<a id="more"></a>
+<h3><span id="输出结果显示图片">输出结果显示图片</span></h3><pre><code class="lang-Python">%matplotlib inline
+</code></pre>
+<h3><span id="同时输出多个命令的结果">同时输出多个命令的结果</span></h3><ol>
+<li>方法一：在文件开头添加以下命令（仅对当前文件有效）<pre><code class="lang-Python">from IPython.core.interactiveshell import InteractiveShell
+InteractiveShell.ast_node_interactivity = &quot;all&quot;
+</code></pre>
+</li>
+<li>方法二：直接添加配置文件（对所有文件有效）<pre><code class="lang-Python">vi ~/.ipython/profile_default/ipython_config.py
+</code></pre>
+配置文件内容为：<pre><code>c = get_config()
+#Run all nodes interactively
+c.InteractiveShell.ast_node_interactivity = &quot;all&quot;
+</code></pre></li>
+</ol>
+<h3><span id="安装r-kernel">安装R kernel</span></h3><p>先在R中安装以下几个package：</p>
+<pre><code class="lang-R">install.packages(c(&#39;repr&#39;, &#39;IRdisplay&#39;, &#39;evaluate&#39;, &#39;crayon&#39;, 
+                   &#39;pbdZMQ&#39;, &#39;devtools&#39;, &#39;uuid&#39;, &#39;digest&#39;))
+devtools::install_github(&#39;IRkernel/IRkernel&#39;)
+</code></pre>
+<p>在Anaconda Prompt中输入以下命令：<br>第一步：输入R，调用R<br>``Python<br>R</p>
+<pre><code>第二步：安装R kernel，有2种方式（自由选择，个人建议第二种）：
+1. 直接安装在当前用户中：
+ ```Python
+ IRkernel::installspec()
+</code></pre><ol>
+<li>安装在系统中：<pre><code class="lang-Python">IRkernel::installspec(user = FALSE)
+</code></pre>
+</li>
+</ol>
+<h3><span id="运行时间">运行时间</span></h3><p>在cell中添加 <code>%%time</code> ，返回结果中会含有cell单次运行的时间。<br>在cell中添加 <code>%timeit</code> ，会运行该cell 100,000次（默认），然后以运行最快的3次结果的平均值作为结果。</p>
+<pre><code class="lang-Python">import numpy
+%timeit numpy.random.normal(size = 10)
+# 5.91 µs ± 258 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
+%%time
+import time
+for _ in range(100):
+    time.sleep(0.01)
+# Wall time: 1.73 s
+</code></pre>
+<h3><span id="插件管理器">插件管理器</span></h3><p>Nbextensions相当于Jupyter的插件管理器。<br>安装：（在Anaconda Prompt中输入）<br><code>Shell session
+conda install -c conda-forge jupyter_contrib_nbextensions</code><br>安装过程需要选择[y/n]，输入y。</p>
 
             </article>
             <hr>
@@ -260,7 +233,7 @@
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     
-                      <a class="hover-with-bg" href="/categories/%E9%A2%98%E5%BA%93/">题库</a>
+                      <a class="hover-with-bg" href="/categories/%E6%97%A0%E4%BB%8E%E5%B1%9E/">无从属</a>
                     
                   </div>
                 
@@ -268,7 +241,9 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/Python/">Python</a>
+                      <a class="hover-with-bg" href="/tags/Jupyter/">Jupyter</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E8%BD%AF%E4%BB%B6/">软件</a>
                     
                   </div>
                 
@@ -276,6 +251,23 @@
               
                 <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://zh.wikipedia.org/wiki/Wikipedia:CC_BY-SA_3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="nofollow noopener noopener">CC BY-SA 3.0协议</a> 。转载请注明出处！</p>
               
+              
+                <div class="post-prevnext row">
+                  <div class="post-prev col-6">
+                    
+                    
+                  </div>
+                  <div class="post-next col-6">
+                    
+                    
+                      <a href="/2020/04/30/SQL%E9%A2%98%E5%BA%93/">
+                        <span class="hidden-mobile">SQL题库</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </div>
+                </div>
               
             </div>
 
@@ -432,7 +424,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "python-3&nbsp;",
+        "Jupyter Notebook使用技巧&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,
