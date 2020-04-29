@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    192 字
+                    343 字
                   </span>
                 
 
@@ -152,7 +152,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    3
+                    6
                      分钟
                   </span>
                 
@@ -183,12 +183,27 @@
             <article class="markdown-body">
               <p>Leetcode刷题记录~</p>
 <a id="more"></a>
-<h1><span id="1108defanging-an-ip-address">1108.Defanging an IP Address</span></h1><p><a href="https://leetcode.com/problems/defanging-an-ip-address/" target="_blank" rel="noopener">题目详情</a></p>
+<h1><span id="1108-defanging-an-ip-address">1108. Defanging an IP Address</span></h1><p><a href="https://leetcode.com/problems/defanging-an-ip-address/" target="_blank" rel="noopener">题目详情</a></p>
 <pre><code class="lang-Python">class Solution:
     def defangIPaddr(self, address: str) -&gt; str:
         return address.replace(&quot;.&quot;, &quot;[.]&quot;)
 </code></pre>
-<h1><span id="1281subtract-the-product-and-sum-of-digits-of-an-integer">1281.Subtract the Product and Sum of Digits of an Integer</span></h1><p><a href="https://leetcode.com/problems/subtract-the-product-and-sum-of-digits-of-an-integer/" target="_blank" rel="noopener">题目详情</a></p>
+<h1><span id="1221-split-a-string-in-balanced-strings">1221. Split a String in Balanced Strings</span></h1><p><a href="https://leetcode.com/problems/split-a-string-in-balanced-strings/" target="_blank" rel="noopener">题目详情</a></p>
+<pre><code class="lang-Python">class Solution:
+    def balancedStringSplit(self, s: str) -&gt; int:
+        ans_count = 0
+        L_num, R_num = 0, 0
+        for ss in s:
+            if ss==&quot;L&quot;:
+                L_num += 1
+            else:
+                R_num += 1
+            if L_num==R_num:
+                ans_count += 1
+                L_num, R_num = 0, 0
+        return ans_count
+</code></pre>
+<h1><span id="1281-subtract-the-product-and-sum-of-digits-of-an-integer">1281. Subtract the Product and Sum of Digits of an Integer</span></h1><p><a href="https://leetcode.com/problems/subtract-the-product-and-sum-of-digits-of-an-integer/" target="_blank" rel="noopener">题目详情</a></p>
 <pre><code class="lang-Python">class Solution:
     def subtractProductAndSum(self, n: int) -&gt; int:
         num = [x for x in str(n)]
@@ -200,7 +215,20 @@
             ss += nn
         return pp - ss
 </code></pre>
-<h1><span id="1313decompress-run-length-encoded-list">1313.Decompress Run-Length Encoded List</span></h1><p><a href="https://leetcode.com/problems/decompress-run-length-encoded-list/" target="_blank" rel="noopener">题目详情</a></p>
+<h1><span id="1295-find-numbers-with-even-number-of-digits">1295. Find Numbers with Even Number of Digits</span></h1><p><a href="https://leetcode.com/problems/find-numbers-with-even-number-of-digits/" target="_blank" rel="noopener">题目详情</a></p>
+<pre><code class="lang-Python">class Solution:
+    def findNumbers(self, nums: List[int]) -&gt; int:
+        ans_count = 0
+        for num in nums:
+            num_count = 0
+            while num:
+                num_count += 1
+                num //= 10
+            if num_count % 2 == 0:
+                ans_count += 1
+        return ans_count
+</code></pre>
+<h1><span id="1313-decompress-run-length-encoded-list">1313. Decompress Run-Length Encoded List</span></h1><p><a href="https://leetcode.com/problems/decompress-run-length-encoded-list/" target="_blank" rel="noopener">题目详情</a></p>
 <pre><code class="lang-Python">class Solution:
     def decompressRLElist(self, nums: List[int]) -&gt; List[int]:
         n = len(nums)
@@ -212,7 +240,7 @@
                 ans.append(num)
         return ans
 </code></pre>
-<h1><span id="1342number-of-steps-to-reduce-a-number-to-zero">1342.Number of Steps to Reduce a Number to Zero</span></h1><p><a href="https://leetcode.com/problems/number-of-steps-to-reduce-a-number-to-zero/" target="_blank" rel="noopener">题目详情</a></p>
+<h1><span id="1342-number-of-steps-to-reduce-a-number-to-zero">1342. Number of Steps to Reduce a Number to Zero</span></h1><p><a href="https://leetcode.com/problems/number-of-steps-to-reduce-a-number-to-zero/" target="_blank" rel="noopener">题目详情</a></p>
 <pre><code class="lang-Python">class Solution:
     def numberOfSteps (self, num: int) -&gt; int:
         cou = 0
@@ -224,9 +252,18 @@
             cou += 1
         return cou
 </code></pre>
-<p><a href>题目详情</a></p>
-<pre><code class="lang-Python">
-
+<h1><span id="1389-create-target-array-in-the-given-order">1389. Create Target Array in the Given Order</span></h1><p><a href="https://leetcode.com/problems/create-target-array-in-the-given-order/" target="_blank" rel="noopener">题目详情</a></p>
+<pre><code class="lang-Python">class Solution:
+    def createTargetArray(self, nums: List[int], index: List[int]) -&gt; List[int]:
+        ans = []
+        for i in range(len(nums)):
+            num, idx = nums[i], index[i]
+            if idx &gt;= len(ans):
+                ans.append(num)
+            else:
+                a, b = ans[:idx], ans[idx:]
+                ans = a + [num] + b
+        return ans
 </code></pre>
 <p><a href>题目详情</a></p>
 <pre><code class="lang-Python">
