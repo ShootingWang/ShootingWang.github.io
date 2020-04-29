@@ -143,7 +143,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    194 字
+                    297 字
                   </span>
                 
 
@@ -153,7 +153,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    2
+                    4
                      分钟
                   </span>
                 
@@ -214,7 +214,28 @@ print(id(a), id(b))
 
 print(a &#x3D;&#x3D; b, a is b
 True False</code></pre>
+<pre><code class="hljs plain">## 涉及Python的深浅拷贝问题
+##数字、字符串等不可变数据类型
+##value一样，id一样
+a &#x3D; 2
+b &#x3D; 2
 
+print(id(a), id(b))
+140710848664416 140710848664416
+
+print(a &#x3D;&#x3D; b, a is b)
+True True
+
+##对于列表和字典等可变数据类型
+##即使value一样，id也不一样
+a &#x3D; [1, 2, 3]
+b &#x3D; [1, 2, 3]
+
+print(id(a), id(b))
+2348645341512 2348645363144
+
+print(a &#x3D;&#x3D; b, a is b
+True False</code></pre>
             </article>
             <hr>
             <div>
