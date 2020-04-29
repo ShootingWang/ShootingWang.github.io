@@ -4,6 +4,35 @@
   
   
   <entry>
+    <title>Leetcode刷题</title>
+    <link href="/2020/04/29/Leetcode%E5%88%B7%E9%A2%98/"/>
+    <url>/2020/04/29/Leetcode%E5%88%B7%E9%A2%98/</url>
+    
+    <content type="html"><![CDATA[<p>Leetcode刷题记录~</p><a id="more"></a><ol><li><a href="https://leetcode.com/problems/subtract-the-product-and-sum-of-digits-of-an-integer/" target="_blank" rel="noopener">Subtract the Product and Sum of Digits of an Integer</a></li></ol><pre><code class="lang-Python">class Solution:    def subtractProductAndSum(self, n: int) -&gt; int:        num = [x for x in str(n)]        num = list(map(int, num))        pp = 1        ss = 0        for nn in num:            pp *= nn            ss += nn        return pp - ss</code></pre><ol><li><a href="https://leetcode.com/problems/decompress-run-length-encoded-list/" target="_blank" rel="noopener">Decompress Run-Length Encoded List</a></li></ol><pre><code class="lang-Python">class Solution:    def decompressRLElist(self, nums: List[int]) -&gt; List[int]:        n = len(nums)        ans = []        for i in range(int(n/2)):            n = nums[2*i]            num = nums[2*i+1]            for j in range(n):                ans.append(num)        return ans</code></pre>]]></content>
+    
+    
+    <categories>
+      
+      <category>题库</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>算法</tag>
+      
+      <tag>Leetcode</tag>
+      
+      <tag>编程</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Python题库</title>
     <link href="/2020/04/29/Python%E9%A2%98%E5%BA%93/"/>
     <url>/2020/04/29/Python%E9%A2%98%E5%BA%93/</url>
