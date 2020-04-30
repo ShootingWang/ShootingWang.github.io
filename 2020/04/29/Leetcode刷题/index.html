@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    774 字
+                    865 字
                   </span>
                 
 
@@ -152,7 +152,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    14
+                    16
                      分钟
                   </span>
                 
@@ -276,6 +276,28 @@ class Solution:
             if num_count % 2 == 0:  ## num_count除以2的余数等于0
                 ans_count += 1
         return ans_count
+</code></pre>
+<h2><span id="1299-replace-elements-with-greatest-element-on-right-side">1299. Replace Elements with Greatest Element on Right Side</span></h2><p><a href="https://leetcode.com/problems/replace-elements-with-greatest-element-on-right-side/" target="_blank" rel="noopener">题目详情</a></p>
+<pre><code class="lang-Python">## Runtime=4720ms
+class Solution:
+    def replaceElements(self, arr: List[int]) -&gt; List[int]:
+        out = []
+        n = len(arr)
+        for i in range(n-1):
+            out.append(max(arr[(i+1):]))
+        out.append(-1)
+        return out
+## A solution in &#39;Discuss&#39;
+## Runtime=125ms
+class Solution:
+    def replaceElements(self, arr: List[int]) -&gt; List[int]:
+        max_num = -1
+        for i in range(len(arr)-1, -1, -1):
+            hold = arr[i]
+            arr[i] = max_num
+            if hold &gt; max_num:
+                max_num = hold
+        return arr
 </code></pre>
 <h1><span id="1313-decompress-run-length-encoded-list">1313. Decompress Run-Length Encoded List</span></h1><p><a href="https://leetcode.com/problems/decompress-run-length-encoded-list/" target="_blank" rel="noopener">题目详情</a></p>
 <pre><code class="lang-Python">class Solution:
