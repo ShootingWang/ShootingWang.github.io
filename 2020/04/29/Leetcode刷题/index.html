@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    947 字
+                    1k 字
                   </span>
                 
 
@@ -152,7 +152,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    17
+                    19
                      分钟
                   </span>
                 
@@ -360,6 +360,24 @@ class Solution:
         for i in range(len(grid)):
             nums += grid[i]
         return sum([1 if x&lt;0 else 0 for x in nums])
+</code></pre>
+<h1><span id="1370-increasing-decreasing-string">1370. Increasing Decreasing String</span></h1><p><a href="https://leetcode.com/problems/increasing-decreasing-string/" target="_blank" rel="noopener">题目详情</a></p>
+<pre><code class="lang-Python">## 参考了 solution in discuss
+class Solution:
+    def sortString(self, s: str) -&gt; str:
+        result = []
+        s = [x for x in s]  ## 等价于 s = list(s)
+        direct = 1  ## =1表示从小到大；=-1表示从大到小
+        while s:  ## 当s非空时
+            if direct == 1:
+                ss = sorted(set(s))  ## 从小到大
+            else: 
+                ss = sorted(set(s))[::-1]  ## 从大到小
+            result.extend(ss)
+            for x in ss:
+                s.remove(x)
+            direct *= -1  ## 反向
+        return &quot;&quot;.join(result)
 </code></pre>
 <h1><span id="1380-lucky-numbers-in-a-matrix">1380. Lucky Numbers in a Matrix</span></h1><p><a href="https://leetcode.com/problems/lucky-numbers-in-a-matrix/" target="_blank" rel="noopener">题目详情</a></p>
 <pre><code class="lang-Python">class Solution:
