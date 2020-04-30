@@ -131,8 +131,8 @@
               
                 <div class="mt-3 post-meta">
                   <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-                  <time datetime="2020-04-29 20:16">
-                    星期三, 四月 29日 2020, 8:16 晚上
+                  <time datetime="2020-04-29 20:00">
+                    星期三, 四月 29日 2020, 8:00 晚上
                   </time>
                 </div>
               
@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    865 字
+                    947 字
                   </span>
                 
 
@@ -152,7 +152,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    16
+                    17
                      分钟
                   </span>
                 
@@ -183,6 +183,24 @@
             <article class="markdown-body">
               <p>Leetcode刷题记录~</p>
 <a id="more"></a>
+<h1><span id="1021-remove-outermost-parentheses">1021. Remove Outermost Parentheses</span></h1><p><a href="https://leetcode.com/problems/remove-outermost-parentheses/" target="_blank" rel="noopener">题目详情</a></p>
+<pre><code class="lang-Python">## 参考了solutions in discuss
+class Solution:
+    def removeOuterParentheses(self, S: str) -&gt; str:
+        count, result = 0, []
+        for s in S:
+            if s == &quot;)&quot;:  ##  完整配对count=0；增加一个&quot;)&quot;count减一；增加一个&quot;(&quot;count加一
+                count -= 1
+            if count &gt; 0:
+                result.append(s)
+            if s == &quot;(&quot;: 
+                count += 1
+        return &quot;&quot;.join(result)
+</code></pre>
+<p><a href>题目详情</a></p>
+<pre><code class="lang-Python">
+
+</code></pre>
 <h1><span id="1108-defanging-an-ip-address">1108. Defanging an IP Address</span></h1><p><a href="https://leetcode.com/problems/defanging-an-ip-address/" target="_blank" rel="noopener">题目详情</a></p>
 <pre><code class="lang-Python">class Solution:
     def defangIPaddr(self, address: str) -&gt; str:
@@ -277,7 +295,7 @@ class Solution:
                 ans_count += 1
         return ans_count
 </code></pre>
-<h2><span id="1299-replace-elements-with-greatest-element-on-right-side">1299. Replace Elements with Greatest Element on Right Side</span></h2><p><a href="https://leetcode.com/problems/replace-elements-with-greatest-element-on-right-side/" target="_blank" rel="noopener">题目详情</a></p>
+<h1><span id="1299-replace-elements-with-greatest-element-on-right-side">1299. Replace Elements with Greatest Element on Right Side</span></h1><p><a href="https://leetcode.com/problems/replace-elements-with-greatest-element-on-right-side/" target="_blank" rel="noopener">题目详情</a></p>
 <pre><code class="lang-Python">## Runtime=4720ms
 class Solution:
     def replaceElements(self, arr: List[int]) -&gt; List[int]:
@@ -700,22 +718,6 @@ class Solution:
 
 <script src="/js/prism/clipboard.js"></script>
 <script src="/js/prism/prism.js" async></script>
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
 </body>
 </html>
