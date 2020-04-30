@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    688 字
+                    774 字
                   </span>
                 
 
@@ -152,7 +152,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    13
+                    14
                      分钟
                   </span>
                 
@@ -206,7 +206,7 @@
 <h1><span id="1252-cells-with-odd-values-in-a-matrix">1252. Cells with Odd Values in a Matrix</span></h1><p><a href="https://leetcode.com/problems/cells-with-odd-values-in-a-matrix/" target="_blank" rel="noopener">题目详情</a></p>
 <pre><code class="lang-Python">class Solution:
     def oddCells(self, n: int, m: int, indices: List[List[int]]) -&gt; int:
-        nums = [[0]*m]*n
+        nums = [[0]*m]*n  ## 快速创建0矩阵
         rows, cols = [0]*n, [0]*m
         lst = []
         for index in indices:
@@ -238,7 +238,7 @@
 <pre><code class="lang-Python">class Solution:
     def subtractProductAndSum(self, n: int) -&gt; int:
         num = [x for x in str(n)]
-        num = list(map(int, num))
+        num = list(map(int, num))  ## 将int拆开成单个数字列表
         pp = 1
         ss = 0
         for nn in num:
@@ -255,7 +255,7 @@
 class Solution:
     def getDecimalValue(self, head: ListNode) -&gt; int:
         str_num = &quot;&quot;
-        while head:
+        while head:  ## 当head非空
             str_num += str(head.val)
             head = head.next
         return int(str_num, 2)
@@ -272,8 +272,8 @@ class Solution:
             num_count = 0
             while num:
                 num_count += 1
-                num //= 10
-            if num_count % 2 == 0:
+                num //= 10  ## num除以10的商
+            if num_count % 2 == 0:  ## num_count除以2的余数等于0
                 ans_count += 1
         return ans_count
 </code></pre>
@@ -288,6 +288,18 @@ class Solution:
             for j in range(n):
                 ans.append(num)
         return ans
+</code></pre>
+<h1><span id="1323-maximum-69-number">1323. Maximum 69 Number</span></h1><p><a href="https://leetcode.com/problems/maximum-69-number/" target="_blank" rel="noopener">题目详情</a></p>
+<pre><code class="lang-Python">class Solution:
+    def maximum69Number (self, num: int) -&gt; int:
+        i = 0
+        out = [x for x in str(num)]
+        while i&lt;len(out):
+            if out[i] == &#39;6&#39;:
+                out[i] = &#39;9&#39;
+                break
+            i += 1
+        return int(&#39;&#39;.join(out))
 </code></pre>
 <h1><span id="1342-number-of-steps-to-reduce-a-number-to-zero">1342. Number of Steps to Reduce a Number to Zero</span></h1><p><a href="https://leetcode.com/problems/number-of-steps-to-reduce-a-number-to-zero/" target="_blank" rel="noopener">题目详情</a></p>
 <pre><code class="lang-Python">class Solution:
