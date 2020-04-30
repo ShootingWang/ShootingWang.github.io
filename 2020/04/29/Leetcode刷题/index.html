@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    1.2k 字
+                    1.4k 字
                   </span>
                 
 
@@ -152,7 +152,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    21
+                    26
                      分钟
                   </span>
                 
@@ -212,6 +212,34 @@ class Solution:
             else:
                 result.append(num)
         return result
+</code></pre>
+<p><a href>题目详情</a></p>
+<pre><code class="lang-Python">
+
+</code></pre>
+<h1><span id="832-flipping-an-image">832. Flipping an Image</span></h1><p><a href="https://leetcode.com/problems/flipping-an-image/" target="_blank" rel="noopener">题目详情</a></p>
+<pre><code class="lang-Python">## Runtime=56ms, Memory=13.9MB
+class Solution:
+    def flipAndInvertImage(self, A: List[List[int]]) -&gt; List[List[int]]:
+        for i in range(len(A)):
+            A[i].reverse()
+            A[i] = [1-x for x in A[i]]
+        return A
+## Runtime=52ms, Memory=14MB
+class Solution:
+    def flipAndInvertImage(self, A: List[List[int]]) -&gt; List[List[int]]:
+        for i in range(len(A)):
+            A[i] = A[i][::-1]  ## difference
+            A[i] = [1-x for x in A[i]]
+        return A
+## Runtime=48ms, Memory=14MB
+class Solution:
+    def flipAndInvertImage(self, A: List[List[int]]) -&gt; List[List[int]]:
+        for i, row in enumerate(A):  ## differencee
+            A[i] = row[::-1]
+            for j, col in enumerate(A[i]):  ## difference
+                A[i][j] = 1 - col
+        return A
 </code></pre>
 <h1><span id="1021-remove-outermost-parentheses">1021. Remove Outermost Parentheses</span></h1><p><a href="https://leetcode.com/problems/remove-outermost-parentheses/" target="_blank" rel="noopener">题目详情</a></p>
 <pre><code class="lang-Python">## 参考了solutions in discuss
@@ -347,6 +375,27 @@ class Solution:
                 max_num = hold
         return arr
 </code></pre>
+<h1><span id="1309-decrypt-string-from-alphabet-to-integer-mapping">1309. Decrypt String from Alphabet to Integer Mapping</span></h1><p><a href="https://leetcode.com/problems/decrypt-string-from-alphabet-to-integer-mapping/" target="_blank" rel="noopener">题目详情</a></p>
+<pre><code class="lang-Python">class Solution:
+    def freqAlphabets(self, s: str) -&gt; str:
+        result = &quot;&quot;
+        dic = {}
+        for i in range(97,123):
+            if i &lt;= 105:
+                dic[str(i - 96)] = chr(i)
+            else:
+                dic[str(i - 96) + &#39;#&#39;] = chr(i)
+        i = 0
+        while i &lt; len(s):
+            if  i+2 &lt; len(s) and s[i+2] == &#39;#&#39;:
+                key = s[i:i+3]
+                i += 3
+            else:
+                key = s[i]
+                i += 1
+            result += dic[key]
+        return result
+</code></pre>
 <h1><span id="1313-decompress-run-length-encoded-list">1313. Decompress Run-Length Encoded List</span></h1><p><a href="https://leetcode.com/problems/decompress-run-length-encoded-list/" target="_blank" rel="noopener">题目详情</a></p>
 <pre><code class="lang-Python">class Solution:
     def decompressRLElist(self, nums: List[int]) -&gt; List[int]:
@@ -408,6 +457,14 @@ class Solution:
                 s.remove(x)
             direct *= -1  ## 反向
         return &quot;&quot;.join(result)
+</code></pre>
+<h1><span id="1374-generate-a-string-with-characters-that-have-odd-counts">1374. Generate a String With Characters That Have Odd Counts</span></h1><p><a href="https://leetcode.com/problems/generate-a-string-with-characters-that-have-odd-counts/" target="_blank" rel="noopener">题目详情</a></p>
+<pre><code class="lang-Python">class Solution:
+    def generateTheString(self, n: int) -&gt; str:
+        if n%2==0:
+            return &#39;a&#39;*(n-1) + &#39;b&#39;
+        else:
+            return &#39;a&#39;*n
 </code></pre>
 <h1><span id="1380-lucky-numbers-in-a-matrix">1380. Lucky Numbers in a Matrix</span></h1><p><a href="https://leetcode.com/problems/lucky-numbers-in-a-matrix/" target="_blank" rel="noopener">题目详情</a></p>
 <pre><code class="lang-Python">class Solution:
