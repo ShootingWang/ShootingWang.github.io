@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    1k 字
+                    1.2k 字
                   </span>
                 
 
@@ -152,7 +152,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    19
+                    21
                      分钟
                   </span>
                 
@@ -183,6 +183,36 @@
             <article class="markdown-body">
               <p>Leetcode刷题记录~</p>
 <a id="more"></a>
+<h1><span id="728-self-dividing-numbers">728. Self Dividing Numbers</span></h1><p><a href="https://leetcode.com/problems/self-dividing-numbers/" target="_blank" rel="noopener">题目详情</a></p>
+<pre><code class="lang-Python">## Runtime=68ms, Memory=13.9MB
+class Solution:
+    def selfDividingNumbers(self, left: int, right: int) -&gt; List[int]:
+        result = []
+        for num in range(left, right+1):
+            nums = list(map(int, list(str(num))))
+            count = 0
+            if 0 in nums:
+                pass
+            else:
+                for j in nums:
+                    if num%j == 0:
+                        count += 1
+                if count == len(nums):
+                    result.append(num)
+        return result
+## 参考 Solution
+## Rumtime=36ms, Memory=14MB
+class Solution:
+    def selfDividingNumbers(self, left: int, right: int) -&gt; List[int]:
+        result = []
+        for num in range(left, right+1):
+            for x in str(num):
+                if x == &quot;0&quot; or num % int(x) != 0:
+                    break
+            else:
+                result.append(num)
+        return result
+</code></pre>
 <h1><span id="1021-remove-outermost-parentheses">1021. Remove Outermost Parentheses</span></h1><p><a href="https://leetcode.com/problems/remove-outermost-parentheses/" target="_blank" rel="noopener">题目详情</a></p>
 <pre><code class="lang-Python">## 参考了solutions in discuss
 class Solution:
