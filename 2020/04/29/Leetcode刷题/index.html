@@ -152,7 +152,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    29
+                    30
                      分钟
                   </span>
                 
@@ -240,6 +240,21 @@ class Solution:
             for j, col in enumerate(A[i]):  ## difference
                 A[i][j] = 1 - col
         return A
+</code></pre>
+<h1><span id="942-di-string-match">942. DI String Match</span></h1><p><a href="https://leetcode.com/problems/di-string-match/" target="_blank" rel="noopener">题目详情</a></p>
+<pre><code class="lang-Python">## 参考了 Solution
+class Solution:
+    def diStringMatch(self, S: str) -&gt; List[int]:
+        low, high = 0, len(S)
+        result = []
+        for s in S:
+            if s == &#39;I&#39;:
+                result.append(low)
+                low += 1
+            else:
+                result.append(high)
+                high -= 1
+        return result + [low]
 </code></pre>
 <h1><span id="977-squares-of-a-sorted-array">977. Squares of a Sorted Array</span></h1><p><a href="https://leetcode.com/problems/squares-of-a-sorted-array/" target="_blank" rel="noopener">题目详情</a></p>
 <pre><code class="lang-Python">## Runtime=228ms, Memory=15.7MB
