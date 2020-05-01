@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    275 字
+                    481 字
                   </span>
                 
 
@@ -152,7 +152,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    3
+                    5
                      分钟
                   </span>
                 
@@ -184,15 +184,23 @@
               <p>Tree</p>
 <a id="more"></a>
 <p>一对多的数据结构——树</p>
-<h1><span id="树">树</span></h1><p><strong>树</strong>（Tree）是$n$个结点的有限集。</p>
+<h1><span id="树">树</span></h1><h2><span id="树">树</span></h2><p><strong>树</strong>（Tree）是$n$个结点的有限集。</p>
 <ul>
 <li><strong>空树</strong>：$n=0$</li>
-<li><strong>非空树</strong>：<ul>
+<li><p><strong>非空树</strong>：</p>
+<ul>
 <li>$n&gt;0$</li>
 <li>有且仅有一个特定的<strong>根结点</strong>（Root）</li>
 <li>当$n&gt;1$时，其余结点可分为$m(m&gt;0)$个互不相交的有限集$T_1,\cdots,T_m$；其中每一个集合自身是一棵树，称之为根的<strong>子树</strong>（SubTree）</li>
 </ul>
 </li>
+<li><p><strong>有序树</strong><br>如果树中结点的各子树从左至右是有次序的、不能互换左右子树的，则该树为有序树</p>
+</li>
+<li><strong>无序树</strong><br>树中结点可互换左右子树，则该树为无序树</li>
+</ul>
+<h2><span id="森林">森林</span></h2><p><strong>森林</strong>（Forest）：$m$棵互不相交的树的集合</p>
+<ul>
+<li>树中的每个结点的子树的集合就是森林</li>
 </ul>
 <h1><span id="结点">结点</span></h1><p>树的<strong>结点</strong>（Node）包含一个数据元素及若干指向其子树的分支。</p>
 <h2><span id="度">度</span></h2><p>结点拥有的子树的数目称为结点的<strong>度</strong>（Degree）。</p>
@@ -207,7 +215,11 @@
 <li><strong>Parent</strong>：Child的前一个结点称为Child的Parent</li>
 <li><strong>Sibling</strong>：同一个Parent的Child之间互称Sibling（兄弟）</li>
 <li><strong>祖先</strong>：某结点的祖先是从根结点（Root）到该结点所经分支上的所有结点</li>
+<li><strong>子孙</strong>：以某结点为根的所有子树的结点都称为该结点的子孙</li>
+<li><strong>堂兄弟</strong>：双亲在同一层的结点互为堂兄弟</li>
 </ul>
+<h2><span id="层次">层次</span></h2><p>结点的<strong>层次</strong>（Level）：从根开始，根为第一层；根的孩子为第二层；第二层结点的孩子（第二层结点的子树的根）所在的为第三层；依此类推。</p>
+<p>树的<strong>深度</strong>（Depth）或<strong>高度</strong>：树中结点的最大层次</p>
 <h1><span id="参考资料">参考资料</span></h1><p>[1] <a href="https://cn.bing.com/images/search?view=detailV2&amp;ccid=C5Esbt%2bk&amp;id=170146C04E5B565014CAFDAFA4EFC765B59309FE&amp;thid=OIP.C5Esbt-kWgbxO78iCXRcfwAAAA&amp;mediaurl=https%3a%2f%2fsubetter.com%2fimages%2ffigures%2f20180513_01.png&amp;exph=360&amp;expw=430&amp;q=%e4%ba%8c%e5%8f%89%e6%a0%91&amp;simid=608035418833488197&amp;selectedIndex=126" target="_blank" rel="noopener">首页缩略图</a></p>
 
             </article>
@@ -529,8 +541,24 @@
 
 
 <script src="/js/prism/clipboard.js"></script>
-<script src="/js/prism/prism.js" async></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<script src="/js/prism/prism.js" async></script>
 
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </body>
 </html>

@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    1.3k 字
+                    1.6k 字
                   </span>
                 
 
@@ -152,7 +152,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    14
+                    17
                      分钟
                   </span>
                 
@@ -208,7 +208,7 @@
 </ul>
 </li>
 <li><strong>供需端</strong><ul>
-<li></li>
+<li>估算中国K12课外英语辅导的市场</li>
 </ul>
 </li>
 </ul>
@@ -269,7 +269,26 @@
 </li>
 <li>进行粗略估算<br>\begin{aligned}<br>加油站数&amp;=\frac{每天需加油的车辆数}{每个加油站平均每天可加油车辆数}\\<br>&amp;= \frac{\frac{北京人口}{平均每个家庭人口数}\times \frac{平均每个家庭c台车}{每台车平均d天需加油一次}}{\frac{每个加油站平均加油桩个数n\times加油站平均每天工作h小时\times 每小时加油桩利用率r}{每个桩加一次油耗时t小时}}<br>\end{aligned}</li>
 </ol>
-<h1><span id="参考资料">参考资料</span></h1><p>[1] <a href="http://www.woshipm.com/zhichang/631625.html" target="_blank" rel="noopener">新技能Get：面试中常见的费米估算要怎么破</a><br>[2] <a href="https://mp.weixin.qq.com/s/UopcXE3SAZIwi8UXCZ7aDg" target="_blank" rel="noopener">你的城市有多少理发店？费米估算问题套路详解（1）</a><br>[3] <a href="https://zhuanlan.zhihu.com/p/79510656" target="_blank" rel="noopener">费米估算</a><br>[4] <a href="https://blog.csdn.net/weixin_42464525/article/details/81322655" target="_blank" rel="noopener">费米估算类问题-解决方法</a></p>
+<h3><span id="中国k12课外英语辅导的市场">中国K12课外英语辅导的市场</span></h3><p><u>供需端</u></p>
+<p><strong>K12</strong>：Kindergarten through twelfth grade</p>
+<ol>
+<li>需求端分析<script type="math/tex; mode=display">市场=参与英语培训的人数\times 平均每人英语培训年均花费</script><ul>
+<li>在校中小学生人数<ul>
+<li>中国人口（14亿）</li>
+<li>人均寿命（75岁）</li>
+<li>假设人口按照岁数均匀分布</li>
+<li>九年义务教育入学率100%，高中入学率90$\%$<script type="math/tex; mode=display">K12阶段人群数=14亿\times\frac{9+3\times90\%}{75}=2.184亿</script></li>
+</ul>
+</li>
+<li>参与课外培训率（60$\%$）</li>
+<li>参与课外培训学生中参与英语辅导率（60$\%$）</li>
+<li>英语辅导年均培训费用（2000元/人）<script type="math/tex; mode=display">市场规模=2.184亿\times60\%\times60\%\times2000元=1572.48亿元</script></li>
+</ul>
+</li>
+<li>供给端分析</li>
+</ol>
+<p>未完</p>
+<h1><span id="参考资料">参考资料</span></h1><p>[1] <a href="http://www.woshipm.com/zhichang/631625.html" target="_blank" rel="noopener">新技能Get：面试中常见的费米估算要怎么破</a><br>[2] <a href="https://mp.weixin.qq.com/s/UopcXE3SAZIwi8UXCZ7aDg" target="_blank" rel="noopener">你的城市有多少理发店？费米估算问题套路详解（1）</a><br>[3] <a href="https://zhuanlan.zhihu.com/p/79510656" target="_blank" rel="noopener">费米估算</a><br>[4] <a href="https://blog.csdn.net/weixin_42464525/article/details/81322655" target="_blank" rel="noopener">费米估算类问题-解决方法</a><br>[5] <a href="https://cloud.tencent.com/developer/article/1559156" target="_blank" rel="noopener">试估算中国K12课外英语辅导的市场，请至少使用2种不同的方案来估算，以便能够交叉验证</a></p>
 
             </article>
             <hr>
@@ -602,8 +621,24 @@
 
 
 <script src="/js/prism/clipboard.js"></script>
-<script src="/js/prism/prism.js" async></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<script src="/js/prism/prism.js" async></script>
 
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </body>
 </html>
