@@ -352,6 +352,15 @@
   </div>
 </footer>
 
+{% if theme.mermaid.enable %}
+  <script src='https://unpkg.com/mermaid@{{ theme.mermaid.version }}/dist/mermaid.min.js'></script>
+  <script>
+    if (window.mermaid) {
+      mermaid.initialize({{ JSON.stringify(theme.mermaid.options) }});
+    }
+  </script>
+{% endif %}
+
 <!-- SCRIPTS -->
 <script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
 <script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
@@ -524,14 +533,6 @@
 <script src="/js/prism/clipboard.js"></script>
 <script src="/js/prism/prism.js" async></script>
 
-{% if theme.mermaid.enable %}
-  <script src='https://unpkg.com/mermaid@{{ theme.mermaid.version }}/dist/mermaid.min.js'></script>
-  <script>
-    if (window.mermaid) {
-      mermaid.initialize({{ JSON.stringify(theme.mermaid.options) }});
-    }
-  </script>
-{% endif %}
 
 </body>
 </html>
