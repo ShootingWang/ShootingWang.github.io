@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    347 字
+                    409 字
                   </span>
                 
 
@@ -152,7 +152,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    3
+                    4
                      分钟
                   </span>
                 
@@ -217,12 +217,19 @@
 </ul>
 <p>进行费米问题估算时，重要的是——<strong>将难获得的数据拆分为易获得的数据</strong>。</p>
 <p>大致流程：</p>
-<pre class="mermaid">graph;
+<pre class="mermaid">graph TD;
     假设推算模型，并列出需要的数据 --> 确认并预估已知数据;
     确认并预估已知数据 --> 进行毛估算;</pre>
 
-
-<h4><span id="参考资料">参考资料</span></h4><p>[1] <a href="http://www.woshipm.com/zhichang/631625.html" target="_blank" rel="noopener">新技能Get：面试中常见的费米估算要怎么破</a><br>[2] <a href="https://mp.weixin.qq.com/s/UopcXE3SAZIwi8UXCZ7aDg" target="_blank" rel="noopener">你的城市有多少理发店？费米估算问题套路详解（1）</a><br>[3] <a href="https://zhuanlan.zhihu.com/p/79510656" target="_blank" rel="noopener">费米估算</a><br>[4] <a href></a></p>
+<h3><span id="需求端问题">需求端问题</span></h3><ol>
+<li>将</li>
+</ol>
+<h3><span id="供给端问题">供给端问题</span></h3><p>以“芝加哥有多少钢琴调音师”为例</p>
+<ol>
+<li>假设推算模型，列出需要的数据<script type="math/tex; mode=display">调音师数量=钢琴总数÷工作效率</script></li>
+</ol>
+<p>钢琴调音师的<u>工作效率</u>，</p>
+<h1><span id="参考资料">参考资料</span></h1><p>[1] <a href="http://www.woshipm.com/zhichang/631625.html" target="_blank" rel="noopener">新技能Get：面试中常见的费米估算要怎么破</a><br>[2] <a href="https://mp.weixin.qq.com/s/UopcXE3SAZIwi8UXCZ7aDg" target="_blank" rel="noopener">你的城市有多少理发店？费米估算问题套路详解（1）</a><br>[3] <a href="https://zhuanlan.zhihu.com/p/79510656" target="_blank" rel="noopener">费米估算</a><br>[4] <a href></a></p>
 
             </article>
             <hr>
@@ -240,9 +247,11 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BC%8C%E4%B8%9A%E5%8A%A1%E5%90%91/">数据分析，业务向</a>
-                    
                       <a class="hover-with-bg" href="/tags/%E9%9D%A2%E8%AF%95/">面试</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/">数据分析</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E4%B8%9A%E5%8A%A1%E5%90%91/">业务向</a>
                     
                   </div>
                 
@@ -545,6 +554,22 @@
 
 <script src="/js/prism/clipboard.js"></script>
 <script src="/js/prism/prism.js" async></script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
 </body>
 </html>
