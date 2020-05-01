@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    870 字
+                    966 字
                   </span>
                 
 
@@ -152,7 +152,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    9
+                    10
                      分钟
                   </span>
                 
@@ -228,13 +228,18 @@
 <li>一年的天数$n$（365或366）</li>
 <li>每人每天消费的猪肉量（未知）<script type="math/tex; mode=display">每人每天消费的猪肉量=每人每天消耗的肉量\times 猪肉在肉类食材中的占比</script><ul>
 <li>估算:平均每人每天的肉类消耗量为200g</li>
-<li>估算：肉类=猪肉+牛肉+羊肉+鸡鸭+水产+…，假设猪肉在肉类食材中的占比为50%<script type="math/tex; mode=display">每人每天消费的猪肉量=200g\times 50%=100g</script></li>
+<li>估算：肉类=猪肉+牛肉+羊肉+鸡鸭+水产+…，假设猪肉在肉类食材中的占比为50$\%$<script type="math/tex; mode=display">每人每天消费的猪肉量=200g\times 50\%=100g</script></li>
 </ul>
 </li>
 </ul>
 </li>
 <li>数据整合，粗略估计<br>\begin{equation}<br>\begin{aligned}<br>全国一年消费猪肉量&amp;=每人每天消费的猪肉量\times 全国人数\times 一年的天数\\<br>&amp;= 每人每天消耗的肉量\times 猪肉在肉类食材中的占比\times 全国人数\times 一年的天数\\<br>&amp;= 200g \times 50% \times 14亿\times 365天<br>\end{aligned}<br>\end{equation}</li>
 </ol>
+<p>更细致的分析：</p>
+<ul>
+<li>市场调查：采用问卷调查形式，调查人均每日消耗肉量及猪肉的占比，然后选取中位数</li>
+<li>市场细分：前面考虑的是全国，可以按不同区域划分分别估算再进行整合，也可以考虑按消费者的不同年龄划分分别估算再进行整合</li>
+</ul>
 <h3><span id="供给端问题">供给端问题</span></h3><h4><span id="芝加哥有多少钢琴调音师">芝加哥有多少钢琴调音师</span></h4><ol>
 <li><p>假设推算模型，列出需要的数据</p>
 <script type="math/tex; mode=display">调音师数量=钢琴总数÷工作效率</script></li>
@@ -585,6 +590,22 @@
     }
   </script>
 {% endif %}
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
 </body>
 </html>
