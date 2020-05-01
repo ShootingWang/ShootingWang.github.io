@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    305 字
+                    340 字
                   </span>
                 
 
@@ -216,6 +216,7 @@
 <li><strong>小</strong>：某场运营活动的前期市场调研</li>
 </ul>
 <p>进行费米问题估算时，重要的是——<strong>将难获得的数据拆分为易获得的数据</strong>。</p>
+<p>大致流程：<br>graph<br>    假设推算模型，并列出需要的数据 —&gt; 确认并预估已知数据 —&gt; 进行毛估算</p>
 <h4><span id="参考资料">参考资料</span></h4><p>[1] <a href="http://www.woshipm.com/zhichang/631625.html" target="_blank" rel="noopener">新技能Get：面试中常见的费米估算要怎么破</a><br>[2] <a href="https://mp.weixin.qq.com/s/UopcXE3SAZIwi8UXCZ7aDg" target="_blank" rel="noopener">你的城市有多少理发店？费米估算问题套路详解（1）</a><br>[3] <a href="https://zhuanlan.zhihu.com/p/79510656" target="_blank" rel="noopener">费米估算</a><br>[4] <a href></a></p>
 
             </article>
@@ -539,6 +540,22 @@
 
 <script src="/js/prism/clipboard.js"></script>
 <script src="/js/prism/prism.js" async></script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
 </body>
 </html>
