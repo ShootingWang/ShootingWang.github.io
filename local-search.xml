@@ -4,6 +4,25 @@
   
   
   <entry>
+    <title>树</title>
+    <link href="/2020/05/01/%E6%A0%91/"/>
+    <url>/2020/05/01/%E6%A0%91/</url>
+    
+    <content type="html"><![CDATA[<p>Tree</p><a id="more"></a><p>一对多的数据结构——树</p><h1><span id="树">树</span></h1><p>树（Tree）是$n$个结点的有限集。</p><ul><li><strong>空树</strong>：$n=0$</li><li><strong>非空树</strong>：<ul><li>$n&gt;0$</li><li>有且仅有一个特定的<strong>根结点</strong>（Root）</li><li>当$n&gt;1$时，其余结点可分为$m(m&gt;0)$个互不相交的有限集$T_1,\cdots,T_m$；其中每一个集合自身是一棵树，称之为根的<strong>子树</strong>（SubTree）</li></ul></li></ul><h1><span id="结点">结点</span></h1><p>树的<strong>结点</strong>（Node）包含一个数据元素及若干指向其子树的分支。</p><h2><span id="度">度</span></h2><p>结点拥有的子树的数目称为结点的<strong>度</strong>（Degree）。</p><ul><li><strong>叶结点</strong>（Leaf）：度为0的结点</li><li><strong>非终端结点/分支结点</strong>：度不为0的结点</li><li><strong>内部结点</strong>：除根结点外的分支结点</li></ul><p><strong>树的度</strong>是指树内各结点的度的最大值。</p><h2><span id="结点间关系">结点间关系</span></h2><ul><li><strong>Child</strong>：结点的子树的根，称为该结点的Child</li><li><strong>Parent</strong>：</li><li><strong>Sibling</strong></li></ul><h4><span id="参考资料">参考资料</span></h4><p>[1] <a href="https://cn.bing.com/images/search?view=detailV2&amp;ccid=C5Esbt%2bk&amp;id=170146C04E5B565014CAFDAFA4EFC765B59309FE&amp;thid=OIP.C5Esbt-kWgbxO78iCXRcfwAAAA&amp;mediaurl=https%3a%2f%2fsubetter.com%2fimages%2ffigures%2f20180513_01.png&amp;exph=360&amp;expw=430&amp;q=%e4%ba%8c%e5%8f%89%e6%a0%91&amp;simid=608035418833488197&amp;selectedIndex=126" target="_blank" rel="noopener">首页缩略图</a></p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>数据结构</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Data Cleaning Projects</title>
     <link href="/2020/04/30/Data-Cleaning-Projects/"/>
     <url>/2020/04/30/Data-Cleaning-Projects/</url>
