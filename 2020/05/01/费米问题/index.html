@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    409 字
+                    600 字
                   </span>
                 
 
@@ -152,7 +152,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    4
+                    6
                      分钟
                   </span>
                 
@@ -226,7 +226,19 @@
 </ol>
 <h3><span id="供给端问题">供给端问题</span></h3><p>以“芝加哥有多少钢琴调音师”为例</p>
 <ol>
-<li>假设推算模型，列出需要的数据<script type="math/tex; mode=display">调音师数量=钢琴总数÷工作效率</script></li>
+<li><p>假设推算模型，列出需要的数据</p>
+<script type="math/tex; mode=display">调音师数量=钢琴总数÷工作效率</script></li>
+<li><p>确认并预估已知数据<br>即：判断公式中的数据是否已知，若仍有数据未知，则继续拆解。</p>
+<ul>
+<li>在芝加哥生活的人数$N$</li>
+<li>芝加哥平均每个家庭人数$H$</li>
+<li>大约$n_H$个家庭中有一个家庭有定期给钢琴调钢琴的需要</li>
+<li>钢琴定期调音平均每$T$年进行一次</li>
+<li>每个调音师完成一台钢琴的调音工作平均需要花费$t$时</li>
+<li>每个调音师每天工作$h$小时，一周工作$d$天，一年工作$w$周</li>
+</ul>
+</li>
+<li>进行粗略估算<script type="math/tex; mode=display">钢琴数量(架)=\frac{N}{H}\frac{1}{n_H}\frac{1}{T}</script><script type="math/tex; mode=display">工作效率（架/每调音师每年）=\frac{wdh}{t}</script><script type="math/tex; mode=display">调音师数量=\frac{钢琴数量}{工作效率}</script></li>
 </ol>
 <p>钢琴调音师的<u>工作效率</u>，</p>
 <h1><span id="参考资料">参考资料</span></h1><p>[1] <a href="http://www.woshipm.com/zhichang/631625.html" target="_blank" rel="noopener">新技能Get：面试中常见的费米估算要怎么破</a><br>[2] <a href="https://mp.weixin.qq.com/s/UopcXE3SAZIwi8UXCZ7aDg" target="_blank" rel="noopener">你的城市有多少理发店？费米估算问题套路详解（1）</a><br>[3] <a href="https://zhuanlan.zhihu.com/p/79510656" target="_blank" rel="noopener">费米估算</a><br>[4] <a href></a></p>
@@ -554,22 +566,6 @@
 
 <script src="/js/prism/clipboard.js"></script>
 <script src="/js/prism/prism.js" async></script>
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
 </body>
 </html>
