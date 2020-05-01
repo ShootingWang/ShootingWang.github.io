@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    966 字
+                    961 字
                   </span>
                 
 
@@ -233,7 +233,7 @@
 </li>
 </ul>
 </li>
-<li>数据整合，粗略估计<br>\begin{equation}<br>\begin{aligned}<br>全国一年消费猪肉量&amp;=每人每天消费的猪肉量\times 全国人数\times 一年的天数\\<br>&amp;= 每人每天消耗的肉量\times 猪肉在肉类食材中的占比\times 全国人数\times 一年的天数\\<br>&amp;= 200g \times 50% \times 14亿\times 365天<br>\end{aligned}<br>\end{equation}</li>
+<li>数据整合，粗略估计<br>\begin{equation}<br>\begin{aligned}<br>全国一年消费猪肉量&amp;=每人每天消费的猪肉量\times 全国人数\times 一年的天数\\<br>&amp;= 每人每天消耗的肉量\times 猪肉在肉类食材中的占比\times 14亿\times 365天\\<br>&amp;= 200g \times 50\% \times 14亿\times 365天<br>\end{aligned}<br>\end{equation}</li>
 </ol>
 <p>更细致的分析：</p>
 <ul>
@@ -590,22 +590,6 @@
     }
   </script>
 {% endif %}
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
 </body>
 </html>
