@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    1.6k 字
+                    1.5k 字
                   </span>
                 
 
@@ -152,7 +152,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    30
+                    28
                      分钟
                   </span>
                 
@@ -183,365 +183,35 @@
             <article class="markdown-body">
               <p>Leetcode刷题记录~</p>
 <a id="more"></a>
-<h1><span id="728-self-dividing-numbers">728. Self Dividing Numbers</span></h1><p><a href="https://leetcode.com/problems/self-dividing-numbers/" target="_blank" rel="noopener">题目详情</a></p>
-<pre><code class="lang-Python">## Runtime=68ms, Memory=13.9MB
-class Solution:
-    def selfDividingNumbers(self, left: int, right: int) -&gt; List[int]:
-        result = []
-        for num in range(left, right+1):
-            nums = list(map(int, list(str(num))))
-            count = 0
-            if 0 in nums:
-                pass
-            else:
-                for j in nums:
-                    if num%j == 0:
-                        count += 1
-                if count == len(nums):
-                    result.append(num)
-        return result
-## 参考 Solution
-## Rumtime=36ms, Memory=14MB
-class Solution:
-    def selfDividingNumbers(self, left: int, right: int) -&gt; List[int]:
-        result = []
-        for num in range(left, right+1):
-            for x in str(num):
-                if x == &quot;0&quot; or num % int(x) != 0:
-                    break
-            else:
-                result.append(num)
-        return result
-</code></pre>
-<p><a href>题目详情</a></p>
-<pre><code class="lang-Python">
-
-</code></pre>
-<h1><span id="832-flipping-an-image">832. Flipping an Image</span></h1><p><a href="https://leetcode.com/problems/flipping-an-image/" target="_blank" rel="noopener">题目详情</a></p>
-<pre><code class="lang-Python">## Runtime=56ms, Memory=13.9MB
-class Solution:
-    def flipAndInvertImage(self, A: List[List[int]]) -&gt; List[List[int]]:
-        for i in range(len(A)):
-            A[i].reverse()
-            A[i] = [1-x for x in A[i]]
-        return A
-## Runtime=52ms, Memory=14MB
-class Solution:
-    def flipAndInvertImage(self, A: List[List[int]]) -&gt; List[List[int]]:
-        for i in range(len(A)):
-            A[i] = A[i][::-1]  ## difference
-            A[i] = [1-x for x in A[i]]
-        return A
-## Runtime=48ms, Memory=14MB
-class Solution:
-    def flipAndInvertImage(self, A: List[List[int]]) -&gt; List[List[int]]:
-        for i, row in enumerate(A):  ## differencee
-            A[i] = row[::-1]
-            for j, col in enumerate(A[i]):  ## difference
-                A[i][j] = 1 - col
-        return A
-</code></pre>
-<h1><span id="942-di-string-match">942. DI String Match</span></h1><p><a href="https://leetcode.com/problems/di-string-match/" target="_blank" rel="noopener">题目详情</a></p>
-<pre><code class="lang-Python">## 参考了 Solution
-class Solution:
-    def diStringMatch(self, S: str) -&gt; List[int]:
-        low, high = 0, len(S)
-        result = []
-        for s in S:
-            if s == &#39;I&#39;:
-                result.append(low)
-                low += 1
-            else:
-                result.append(high)
-                high -= 1
-        return result + [low]
-</code></pre>
-<h1><span id="977-squares-of-a-sorted-array">977. Squares of a Sorted Array</span></h1><p><a href="https://leetcode.com/problems/squares-of-a-sorted-array/" target="_blank" rel="noopener">题目详情</a></p>
-<pre><code class="lang-Python">## Runtime=228ms, Memory=15.7MB
-class Solution:
-    def sortedSquares(self, A: List[int]) -&gt; List[int]:
-         return sorted([x**2 for x in A])
-## Runtime=216ms, Memory=15.8MB
-class Solution:
-    def sortedSquares(self, A: List[int]) -&gt; List[int]:
-         return sorted([x*x for x in A])
-</code></pre>
-<h1><span id="1021-remove-outermost-parentheses">1021. Remove Outermost Parentheses</span></h1><p><a href="https://leetcode.com/problems/remove-outermost-parentheses/" target="_blank" rel="noopener">题目详情</a></p>
-<pre><code class="lang-Python">## 参考了solutions in discuss
-class Solution:
-    def removeOuterParentheses(self, S: str) -&gt; str:
-        count, result = 0, []
-        for s in S:
-            if s == &quot;)&quot;:  ##  完整配对count=0；增加一个&quot;)&quot;count减一；增加一个&quot;(&quot;count加一
-                count -= 1
-            if count &gt; 0:
-                result.append(s)
-            if s == &quot;(&quot;: 
-                count += 1
-        return &quot;&quot;.join(result)
-</code></pre>
-<p><a href>题目详情</a></p>
-<pre><code class="lang-Python">
-
-</code></pre>
-<h1><span id="1108-defanging-an-ip-address">1108. Defanging an IP Address</span></h1><p><a href="https://leetcode.com/problems/defanging-an-ip-address/" target="_blank" rel="noopener">题目详情</a></p>
-<pre><code class="lang-Python">class Solution:
-    def defangIPaddr(self, address: str) -&gt; str:
-        return address.replace(&quot;.&quot;, &quot;[.]&quot;)
-</code></pre>
-<h1><span id="1221-split-a-string-in-balanced-strings">1221. Split a String in Balanced Strings</span></h1><p><a href="https://leetcode.com/problems/split-a-string-in-balanced-strings/" target="_blank" rel="noopener">题目详情</a></p>
-<pre><code class="lang-Python">class Solution:
-    def balancedStringSplit(self, s: str) -&gt; int:
-        ans_count = 0
-        L_num, R_num = 0, 0
-        for ss in s:
-            if ss==&quot;L&quot;:
-                L_num += 1
-            else:
-                R_num += 1
-            if L_num==R_num:
-                ans_count += 1
-                L_num, R_num = 0, 0
-        return ans_count
-</code></pre>
-<h1><span id="1252-cells-with-odd-values-in-a-matrix">1252. Cells with Odd Values in a Matrix</span></h1><p><a href="https://leetcode.com/problems/cells-with-odd-values-in-a-matrix/" target="_blank" rel="noopener">题目详情</a></p>
-<pre><code class="lang-Python">class Solution:
-    def oddCells(self, n: int, m: int, indices: List[List[int]]) -&gt; int:
-        nums = [[0]*m]*n  ## 快速创建0矩阵
-        rows, cols = [0]*n, [0]*m
-        lst = []
-        for index in indices:
-            ri, ci = index[0], index[1]
-            rows[ri] += 1
-            cols[ci] += 1
-        for i in range(n):
-            for j in range(m):
-                nums[i][j] = rows[i] + cols[j]
-            lst += nums[i]
-        return sum([1 if x%2==1 else 0 for x in lst])
-</code></pre>
-<p><a href>题目详情</a></p>
-<pre><code class="lang-Python">
-
-</code></pre>
-<h1><span id="1266-minimum-time-visiting-all-points">1266. Minimum Time Visiting All Points</span></h1><p><a href="https://leetcode.com/problems/minimum-time-visiting-all-points/" target="_blank" rel="noopener">题目详情</a></p>
-<pre><code class="lang-Python">class Solution:
-    def minTimeToVisitAllPoints(self, points: List[List[int]]) -&gt; int:
-        steps = 0
-        for i in range(len(points)-1):
-            x1, y1 = points[i][0], points[i][1]
-            x2, y2 = points[i+1][0], points[i+1][1]
-            m, n = abs(x2 - x1), abs(y2 - y1)
-            steps += max(m, n)
-        return steps
-</code></pre>
-<h1><span id="1281-subtract-the-product-and-sum-of-digits-of-an-integer">1281. Subtract the Product and Sum of Digits of an Integer</span></h1><p><a href="https://leetcode.com/problems/subtract-the-product-and-sum-of-digits-of-an-integer/" target="_blank" rel="noopener">题目详情</a></p>
-<pre><code class="lang-Python">class Solution:
-    def subtractProductAndSum(self, n: int) -&gt; int:
-        num = [x for x in str(n)]
-        num = list(map(int, num))  ## 将int拆开成单个数字列表
-        pp = 1
-        ss = 0
-        for nn in num:
-            pp *= nn
-            ss += nn
-        return pp - ss
-</code></pre>
-<h1><span id="1290-convert-binary-number-in-a-linked-list-to-integer">1290. Convert Binary Number in a Linked List to Integer</span></h1><p><a href="https://leetcode.com/problems/convert-binary-number-in-a-linked-list-to-integer/" target="_blank" rel="noopener">题目详情</a></p>
-<pre><code class="lang-Python"># Definition for singly-linked list.
-# class ListNode:
-#     def __init__(self, val=0, next=None):
-#         self.val = val
-#         self.next = next
-class Solution:
-    def getDecimalValue(self, head: ListNode) -&gt; int:
-        str_num = &quot;&quot;
-        while head:  ## 当head非空
-            str_num += str(head.val)
-            head = head.next
-        return int(str_num, 2)
-</code></pre>
-<p><a href>题目详情</a></p>
-<pre><code class="lang-Python">
-
-</code></pre>
-<h1><span id="1295-find-numbers-with-even-number-of-digits">1295. Find Numbers with Even Number of Digits</span></h1><p><a href="https://leetcode.com/problems/find-numbers-with-even-number-of-digits/" target="_blank" rel="noopener">题目详情</a></p>
-<pre><code class="lang-Python">class Solution:
-    def findNumbers(self, nums: List[int]) -&gt; int:
-        ans_count = 0
-        for num in nums:
-            num_count = 0
-            while num:
-                num_count += 1
-                num //= 10  ## num除以10的商
-            if num_count % 2 == 0:  ## num_count除以2的余数等于0
-                ans_count += 1
-        return ans_count
-</code></pre>
-<h1><span id="1299-replace-elements-with-greatest-element-on-right-side">1299. Replace Elements with Greatest Element on Right Side</span></h1><p><a href="https://leetcode.com/problems/replace-elements-with-greatest-element-on-right-side/" target="_blank" rel="noopener">题目详情</a></p>
-<pre><code class="lang-Python">## Runtime=4720ms
-class Solution:
-    def replaceElements(self, arr: List[int]) -&gt; List[int]:
-        out = []
-        n = len(arr)
-        for i in range(n-1):
-            out.append(max(arr[(i+1):]))
-        out.append(-1)
-        return out
-## A solution in &#39;Discuss&#39;
-## Runtime=125ms
-class Solution:
-    def replaceElements(self, arr: List[int]) -&gt; List[int]:
-        max_num = -1
-        for i in range(len(arr)-1, -1, -1):
-            hold = arr[i]
-            arr[i] = max_num
-            if hold &gt; max_num:
-                max_num = hold
-        return arr
-</code></pre>
-<h1><span id="1304-find-n-unique-integers-sum-up-to-zero">1304. Find N Unique Integers Sum up to Zero</span></h1><p><a href="https://leetcode.com/problems/find-n-unique-integers-sum-up-to-zero/" target="_blank" rel="noopener">题目详情</a></p>
-<pre><code class="lang-Python">class Solution:
-    def sumZero(self, n: int) -&gt; List[int]:
-        result = []
-        if n % 2 == 0:
-            lst = [x for x in range(n-1)]
-            result.extend(lst)
-            result.append(-sum(lst))
-        else:
-            lst = [x for x in range(1,int((n+1)//2))]
-            result.extend(lst)
-            result.extend([-x for x in lst])
-            result.append(0)
-        return result
-</code></pre>
-<h1><span id="1309-decrypt-string-from-alphabet-to-integer-mapping">1309. Decrypt String from Alphabet to Integer Mapping</span></h1><p><a href="https://leetcode.com/problems/decrypt-string-from-alphabet-to-integer-mapping/" target="_blank" rel="noopener">题目详情</a></p>
-<pre><code class="lang-Python">class Solution:
-    def freqAlphabets(self, s: str) -&gt; str:
-        result = &quot;&quot;
-        dic = {}
-        for i in range(97,123):
-            if i &lt;= 105:
-                dic[str(i - 96)] = chr(i)
-            else:
-                dic[str(i - 96) + &#39;#&#39;] = chr(i)
-        i = 0
-        while i &lt; len(s):
-            if  i+2 &lt; len(s) and s[i+2] == &#39;#&#39;:
-                key = s[i:i+3]
-                i += 3
-            else:
-                key = s[i]
-                i += 1
-            result += dic[key]
-        return result
-</code></pre>
-<h1><span id="1313-decompress-run-length-encoded-list">1313. Decompress Run-Length Encoded List</span></h1><p><a href="https://leetcode.com/problems/decompress-run-length-encoded-list/" target="_blank" rel="noopener">题目详情</a></p>
-<pre><code class="lang-Python">class Solution:
-    def decompressRLElist(self, nums: List[int]) -&gt; List[int]:
-        n = len(nums)
-        ans = []
-        for i in range(int(n/2)):
-            n = nums[2*i]
-            num = nums[2*i+1]
-            for j in range(n):
-                ans.append(num)
-        return ans
-</code></pre>
-<h1><span id="1323-maximum-69-number">1323. Maximum 69 Number</span></h1><p><a href="https://leetcode.com/problems/maximum-69-number/" target="_blank" rel="noopener">题目详情</a></p>
-<pre><code class="lang-Python">class Solution:
-    def maximum69Number (self, num: int) -&gt; int:
-        i = 0
-        out = [x for x in str(num)]
-        while i&lt;len(out):
-            if out[i] == &#39;6&#39;:
-                out[i] = &#39;9&#39;
-                break
-            i += 1
-        return int(&#39;&#39;.join(out))
-</code></pre>
-<h1><span id="1342-number-of-steps-to-reduce-a-number-to-zero">1342. Number of Steps to Reduce a Number to Zero</span></h1><p><a href="https://leetcode.com/problems/number-of-steps-to-reduce-a-number-to-zero/" target="_blank" rel="noopener">题目详情</a></p>
-<pre><code class="lang-Python">class Solution:
-    def numberOfSteps (self, num: int) -&gt; int:
-        cou = 0
-        while num&gt;0:
-            if num % 2 == 0:  ## if even
-                num = int(num / 2)
-            else:  ## if odd
-                num -= 1
-            cou += 1
-        return cou
-</code></pre>
-<h1><span id="1351-count-negative-numbers-in-a-sorted-matrix">1351. Count Negative Numbers in a Sorted Matrix</span></h1><p><a href="https://leetcode.com/problems/count-negative-numbers-in-a-sorted-matrix/" target="_blank" rel="noopener">题目详情</a></p>
-<pre><code class="lang-Python">class Solution:
-    def countNegatives(self, grid: List[List[int]]) -&gt; int:
-        nums = []
-        for i in range(len(grid)):
-            nums += grid[i]
-        return sum([1 if x&lt;0 else 0 for x in nums])
-</code></pre>
-<h1><span id="1370-increasing-decreasing-string">1370. Increasing Decreasing String</span></h1><p><a href="https://leetcode.com/problems/increasing-decreasing-string/" target="_blank" rel="noopener">题目详情</a></p>
-<pre><code class="lang-Python">## 参考了 solution in discuss
-class Solution:
-    def sortString(self, s: str) -&gt; str:
-        result = []
-        s = [x for x in s]  ## 等价于 s = list(s)
-        direct = 1  ## =1表示从小到大；=-1表示从大到小
-        while s:  ## 当s非空时
-            if direct == 1:
-                ss = sorted(set(s))  ## 从小到大
-            else: 
-                ss = sorted(set(s))[::-1]  ## 从大到小
-            result.extend(ss)
-            for x in ss:
-                s.remove(x)
-            direct *= -1  ## 反向
-        return &quot;&quot;.join(result)
-</code></pre>
-<h1><span id="1374-generate-a-string-with-characters-that-have-odd-counts">1374. Generate a String With Characters That Have Odd Counts</span></h1><p><a href="https://leetcode.com/problems/generate-a-string-with-characters-that-have-odd-counts/" target="_blank" rel="noopener">题目详情</a></p>
-<pre><code class="lang-Python">class Solution:
-    def generateTheString(self, n: int) -&gt; str:
-        if n%2==0:
-            return &#39;a&#39;*(n-1) + &#39;b&#39;
-        else:
-            return &#39;a&#39;*n
-</code></pre>
-<h1><span id="1380-lucky-numbers-in-a-matrix">1380. Lucky Numbers in a Matrix</span></h1><p><a href="https://leetcode.com/problems/lucky-numbers-in-a-matrix/" target="_blank" rel="noopener">题目详情</a></p>
-<pre><code class="lang-Python">class Solution:
-    def luckyNumbers (self, matrix: List[List[int]]) -&gt; List[int]:
-        rows = [min(x) for x in matrix]
-        n, m = len(matrix), len(matrix[0])
-        cols, ans = [], []
-        for j in range(m):
-            col = [x[j] for x in matrix]
-            cols.append(max(col))
-        for i in range(n):
-            for j in range(m):
-                if matrix[i][j] == rows[i] and matrix[i][j] == cols[j]:
-                    ans.append(matrix[i][j])
-        return ans
-</code></pre>
-<h1><span id="1389-create-target-array-in-the-given-order">1389. Create Target Array in the Given Order</span></h1><p><a href="https://leetcode.com/problems/create-target-array-in-the-given-order/" target="_blank" rel="noopener">题目详情</a></p>
-<pre><code class="lang-Python">class Solution:
-    def createTargetArray(self, nums: List[int], index: List[int]) -&gt; List[int]:
-        ans = []
-        for i in range(len(nums)):
-            num, idx = nums[i], index[i]
-            if idx &gt;= len(ans):
-                ans.append(num)
-            else:
-                a, b = ans[:idx], ans[idx:]
-                ans = a + [num] + b
-        return ans
-</code></pre>
-<p><a href>题目详情</a></p>
-<pre><code class="lang-Python">
-
-</code></pre>
-<p><a href>题目详情</a></p>
-<pre><code class="lang-Python">
-
-</code></pre>
+<h1><span id="728-self-dividing-numbers">728. Self Dividing Numbers</span></h1><p><a href="https://leetcode.com/problems/self-dividing-numbers/" target="_blank" rel="noopener">题目详情</a><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## Runtime=68ms, Memory=13.9MB</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">selfDividingNumbers</span><span class="params">(self, left: int, right: int)</span> -&gt; List[int]:</span></span><br><span class="line">        result = []</span><br><span class="line">        <span class="keyword">for</span> num <span class="keyword">in</span> range(left, right+<span class="number">1</span>):</span><br><span class="line">            nums = list(map(int, list(str(num))))</span><br><span class="line">            count = <span class="number">0</span></span><br><span class="line">            <span class="keyword">if</span> <span class="number">0</span> <span class="keyword">in</span> nums:</span><br><span class="line">                <span class="keyword">pass</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">for</span> j <span class="keyword">in</span> nums:</span><br><span class="line">                    <span class="keyword">if</span> num%j == <span class="number">0</span>:</span><br><span class="line">                        count += <span class="number">1</span></span><br><span class="line">                <span class="keyword">if</span> count == len(nums):</span><br><span class="line">                    result.append(num)</span><br><span class="line">        <span class="keyword">return</span> result</span><br><span class="line"><span class="comment">## 参考 Solution</span></span><br><span class="line"><span class="comment">## Rumtime=36ms, Memory=14MB</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">selfDividingNumbers</span><span class="params">(self, left: int, right: int)</span> -&gt; List[int]:</span></span><br><span class="line">        result = []</span><br><span class="line">        <span class="keyword">for</span> num <span class="keyword">in</span> range(left, right+<span class="number">1</span>):</span><br><span class="line">            <span class="keyword">for</span> x <span class="keyword">in</span> str(num):</span><br><span class="line">                <span class="keyword">if</span> x == <span class="string">"0"</span> <span class="keyword">or</span> num % int(x) != <span class="number">0</span>:</span><br><span class="line">                    <span class="keyword">break</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                result.append(num)</span><br><span class="line">        <span class="keyword">return</span> result</span><br></pre></td></tr></table></figure></p>
+<p><a href>题目详情</a><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
+<h1><span id="832-flipping-an-image">832. Flipping an Image</span></h1><p><a href="https://leetcode.com/problems/flipping-an-image/" target="_blank" rel="noopener">题目详情</a><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## Runtime=56ms, Memory=13.9MB</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">flipAndInvertImage</span><span class="params">(self, A: List[List[int]])</span> -&gt; List[List[int]]:</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(A)):</span><br><span class="line">            A[i].reverse()</span><br><span class="line">            A[i] = [<span class="number">1</span>-x <span class="keyword">for</span> x <span class="keyword">in</span> A[i]]</span><br><span class="line">        <span class="keyword">return</span> A</span><br><span class="line"><span class="comment">## Runtime=52ms, Memory=14MB</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">flipAndInvertImage</span><span class="params">(self, A: List[List[int]])</span> -&gt; List[List[int]]:</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(A)):</span><br><span class="line">            A[i] = A[i][::<span class="number">-1</span>]  <span class="comment">## difference</span></span><br><span class="line">            A[i] = [<span class="number">1</span>-x <span class="keyword">for</span> x <span class="keyword">in</span> A[i]]</span><br><span class="line">        <span class="keyword">return</span> A</span><br><span class="line"><span class="comment">## Runtime=48ms, Memory=14MB</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">flipAndInvertImage</span><span class="params">(self, A: List[List[int]])</span> -&gt; List[List[int]]:</span></span><br><span class="line">        <span class="keyword">for</span> i, row <span class="keyword">in</span> enumerate(A):  <span class="comment">## differencee</span></span><br><span class="line">            A[i] = row[::<span class="number">-1</span>]</span><br><span class="line">            <span class="keyword">for</span> j, col <span class="keyword">in</span> enumerate(A[i]):  <span class="comment">## difference</span></span><br><span class="line">                A[i][j] = <span class="number">1</span> - col</span><br><span class="line">        <span class="keyword">return</span> A</span><br></pre></td></tr></table></figure></p>
+<h1><span id="942-di-string-match">942. DI String Match</span></h1><p><a href="https://leetcode.com/problems/di-string-match/" target="_blank" rel="noopener">题目详情</a><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 参考了 Solution</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">diStringMatch</span><span class="params">(self, S: str)</span> -&gt; List[int]:</span></span><br><span class="line">        low, high = <span class="number">0</span>, len(S)</span><br><span class="line">        result = []</span><br><span class="line">        <span class="keyword">for</span> s <span class="keyword">in</span> S:</span><br><span class="line">            <span class="keyword">if</span> s == <span class="string">'I'</span>:</span><br><span class="line">                result.append(low)</span><br><span class="line">                low += <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                result.append(high)</span><br><span class="line">                high -= <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> result + [low]</span><br></pre></td></tr></table></figure></p>
+<h1><span id="977-squares-of-a-sorted-array">977. Squares of a Sorted Array</span></h1><p><a href="https://leetcode.com/problems/squares-of-a-sorted-array/" target="_blank" rel="noopener">题目详情</a><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## Runtime=228ms, Memory=15.7MB</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">sortedSquares</span><span class="params">(self, A: List[int])</span> -&gt; List[int]:</span></span><br><span class="line">         <span class="keyword">return</span> sorted([x**<span class="number">2</span> <span class="keyword">for</span> x <span class="keyword">in</span> A])</span><br><span class="line"><span class="comment">## Runtime=216ms, Memory=15.8MB</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">sortedSquares</span><span class="params">(self, A: List[int])</span> -&gt; List[int]:</span></span><br><span class="line">         <span class="keyword">return</span> sorted([x*x <span class="keyword">for</span> x <span class="keyword">in</span> A])</span><br></pre></td></tr></table></figure></p>
+<h1><span id="1021-remove-outermost-parentheses">1021. Remove Outermost Parentheses</span></h1><p><a href="https://leetcode.com/problems/remove-outermost-parentheses/" target="_blank" rel="noopener">题目详情</a><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 参考了solutions in discuss</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">removeOuterParentheses</span><span class="params">(self, S: str)</span> -&gt; str:</span></span><br><span class="line">        count, result = <span class="number">0</span>, []</span><br><span class="line">        <span class="keyword">for</span> s <span class="keyword">in</span> S:</span><br><span class="line">            <span class="keyword">if</span> s == <span class="string">")"</span>:  <span class="comment">##  完整配对count=0；增加一个")"count减一；增加一个"("count加一</span></span><br><span class="line">                count -= <span class="number">1</span></span><br><span class="line">            <span class="keyword">if</span> count &gt; <span class="number">0</span>:</span><br><span class="line">                result.append(s)</span><br><span class="line">            <span class="keyword">if</span> s == <span class="string">"("</span>: </span><br><span class="line">                count += <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">""</span>.join(result)</span><br></pre></td></tr></table></figure></p>
+<p><a href>题目详情</a><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
+<h1><span id="1108-defanging-an-ip-address">1108. Defanging an IP Address</span></h1><p><a href="https://leetcode.com/problems/defanging-an-ip-address/" target="_blank" rel="noopener">题目详情</a><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">defangIPaddr</span><span class="params">(self, address: str)</span> -&gt; str:</span></span><br><span class="line">        <span class="keyword">return</span> address.replace(<span class="string">"."</span>, <span class="string">"[.]"</span>)</span><br></pre></td></tr></table></figure></p>
+<h1><span id="1221-split-a-string-in-balanced-strings">1221. Split a String in Balanced Strings</span></h1><p><a href="https://leetcode.com/problems/split-a-string-in-balanced-strings/" target="_blank" rel="noopener">题目详情</a><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">balancedStringSplit</span><span class="params">(self, s: str)</span> -&gt; int:</span></span><br><span class="line">        ans_count = <span class="number">0</span></span><br><span class="line">        L_num, R_num = <span class="number">0</span>, <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> ss <span class="keyword">in</span> s:</span><br><span class="line">            <span class="keyword">if</span> ss==<span class="string">"L"</span>:</span><br><span class="line">                L_num += <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                R_num += <span class="number">1</span></span><br><span class="line">            <span class="keyword">if</span> L_num==R_num:</span><br><span class="line">                ans_count += <span class="number">1</span></span><br><span class="line">                L_num, R_num = <span class="number">0</span>, <span class="number">0</span></span><br><span class="line">        <span class="keyword">return</span> ans_count</span><br></pre></td></tr></table></figure></p>
+<h1><span id="1252-cells-with-odd-values-in-a-matrix">1252. Cells with Odd Values in a Matrix</span></h1><p><a href="https://leetcode.com/problems/cells-with-odd-values-in-a-matrix/" target="_blank" rel="noopener">题目详情</a><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">oddCells</span><span class="params">(self, n: int, m: int, indices: List[List[int]])</span> -&gt; int:</span></span><br><span class="line">        nums = [[<span class="number">0</span>]*m]*n  <span class="comment">## 快速创建0矩阵</span></span><br><span class="line">        rows, cols = [<span class="number">0</span>]*n, [<span class="number">0</span>]*m</span><br><span class="line">        lst = []</span><br><span class="line">        <span class="keyword">for</span> index <span class="keyword">in</span> indices:</span><br><span class="line">            ri, ci = index[<span class="number">0</span>], index[<span class="number">1</span>]</span><br><span class="line">            rows[ri] += <span class="number">1</span></span><br><span class="line">            cols[ci] += <span class="number">1</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(n):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> range(m):</span><br><span class="line">                nums[i][j] = rows[i] + cols[j]</span><br><span class="line">            lst += nums[i]</span><br><span class="line">        <span class="keyword">return</span> sum([<span class="number">1</span> <span class="keyword">if</span> x%<span class="number">2</span>==<span class="number">1</span> <span class="keyword">else</span> <span class="number">0</span> <span class="keyword">for</span> x <span class="keyword">in</span> lst])</span><br></pre></td></tr></table></figure></p>
+<p><a href>题目详情</a><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
+<h1><span id="1266-minimum-time-visiting-all-points">1266. Minimum Time Visiting All Points</span></h1><p><a href="https://leetcode.com/problems/minimum-time-visiting-all-points/" target="_blank" rel="noopener">题目详情</a><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">minTimeToVisitAllPoints</span><span class="params">(self, points: List[List[int]])</span> -&gt; int:</span></span><br><span class="line">        steps = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(points)<span class="number">-1</span>):</span><br><span class="line">            x1, y1 = points[i][<span class="number">0</span>], points[i][<span class="number">1</span>]</span><br><span class="line">            x2, y2 = points[i+<span class="number">1</span>][<span class="number">0</span>], points[i+<span class="number">1</span>][<span class="number">1</span>]</span><br><span class="line">            m, n = abs(x2 - x1), abs(y2 - y1)</span><br><span class="line">            steps += max(m, n)</span><br><span class="line">        <span class="keyword">return</span> steps</span><br></pre></td></tr></table></figure></p>
+<h1><span id="1281-subtract-the-product-and-sum-of-digits-of-an-integer">1281. Subtract the Product and Sum of Digits of an Integer</span></h1><p><a href="https://leetcode.com/problems/subtract-the-product-and-sum-of-digits-of-an-integer/" target="_blank" rel="noopener">题目详情</a><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">subtractProductAndSum</span><span class="params">(self, n: int)</span> -&gt; int:</span></span><br><span class="line">        num = [x <span class="keyword">for</span> x <span class="keyword">in</span> str(n)]</span><br><span class="line">        num = list(map(int, num))  <span class="comment">## 将int拆开成单个数字列表</span></span><br><span class="line">        pp = <span class="number">1</span></span><br><span class="line">        ss = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> nn <span class="keyword">in</span> num:</span><br><span class="line">            pp *= nn</span><br><span class="line">            ss += nn</span><br><span class="line">        <span class="keyword">return</span> pp - ss</span><br></pre></td></tr></table></figure></p>
+<h1><span id="1290-convert-binary-number-in-a-linked-list-to-integer">1290. Convert Binary Number in a Linked List to Integer</span></h1><p><a href="https://leetcode.com/problems/convert-binary-number-in-a-linked-list-to-integer/" target="_blank" rel="noopener">题目详情</a><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"># class ListNode:</span></span><br><span class="line"><span class="comment">#     def __init__(self, val=0, next=None):</span></span><br><span class="line"><span class="comment">#         self.val = val</span></span><br><span class="line"><span class="comment">#         self.next = next</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">getDecimalValue</span><span class="params">(self, head: ListNode)</span> -&gt; int:</span></span><br><span class="line">        str_num = <span class="string">""</span></span><br><span class="line">        <span class="keyword">while</span> head:  <span class="comment">## 当head非空</span></span><br><span class="line">            str_num += str(head.val)</span><br><span class="line">            head = head.next</span><br><span class="line">        <span class="keyword">return</span> int(str_num, <span class="number">2</span>)</span><br></pre></td></tr></table></figure></p>
+<p><a href>题目详情</a><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
+<h1><span id="1295-find-numbers-with-even-number-of-digits">1295. Find Numbers with Even Number of Digits</span></h1><p><a href="https://leetcode.com/problems/find-numbers-with-even-number-of-digits/" target="_blank" rel="noopener">题目详情</a><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">findNumbers</span><span class="params">(self, nums: List[int])</span> -&gt; int:</span></span><br><span class="line">        ans_count = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> num <span class="keyword">in</span> nums:</span><br><span class="line">            num_count = <span class="number">0</span></span><br><span class="line">            <span class="keyword">while</span> num:</span><br><span class="line">                num_count += <span class="number">1</span></span><br><span class="line">                num //= <span class="number">10</span>  <span class="comment">## num除以10的商</span></span><br><span class="line">            <span class="keyword">if</span> num_count % <span class="number">2</span> == <span class="number">0</span>:  <span class="comment">## num_count除以2的余数等于0</span></span><br><span class="line">                ans_count += <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> ans_count</span><br></pre></td></tr></table></figure></p>
+<h1><span id="1299-replace-elements-with-greatest-element-on-right-side">1299. Replace Elements with Greatest Element on Right Side</span></h1><p><a href="https://leetcode.com/problems/replace-elements-with-greatest-element-on-right-side/" target="_blank" rel="noopener">题目详情</a><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## Runtime=4720ms</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">replaceElements</span><span class="params">(self, arr: List[int])</span> -&gt; List[int]:</span></span><br><span class="line">        out = []</span><br><span class="line">        n = len(arr)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(n<span class="number">-1</span>):</span><br><span class="line">            out.append(max(arr[(i+<span class="number">1</span>):]))</span><br><span class="line">        out.append(<span class="number">-1</span>)</span><br><span class="line">        <span class="keyword">return</span> out</span><br><span class="line"><span class="comment">## A solution in 'Discuss'</span></span><br><span class="line"><span class="comment">## Runtime=125ms</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">replaceElements</span><span class="params">(self, arr: List[int])</span> -&gt; List[int]:</span></span><br><span class="line">        max_num = <span class="number">-1</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(arr)<span class="number">-1</span>, <span class="number">-1</span>, <span class="number">-1</span>):</span><br><span class="line">            hold = arr[i]</span><br><span class="line">            arr[i] = max_num</span><br><span class="line">            <span class="keyword">if</span> hold &gt; max_num:</span><br><span class="line">                max_num = hold</span><br><span class="line">        <span class="keyword">return</span> arr</span><br></pre></td></tr></table></figure></p>
+<h1><span id="1304-find-n-unique-integers-sum-up-to-zero">1304. Find N Unique Integers Sum up to Zero</span></h1><p><a href="https://leetcode.com/problems/find-n-unique-integers-sum-up-to-zero/" target="_blank" rel="noopener">题目详情</a><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">sumZero</span><span class="params">(self, n: int)</span> -&gt; List[int]:</span></span><br><span class="line">        result = []</span><br><span class="line">        <span class="keyword">if</span> n % <span class="number">2</span> == <span class="number">0</span>:</span><br><span class="line">            lst = [x <span class="keyword">for</span> x <span class="keyword">in</span> range(n<span class="number">-1</span>)]</span><br><span class="line">            result.extend(lst)</span><br><span class="line">            result.append(-sum(lst))</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            lst = [x <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">1</span>,int((n+<span class="number">1</span>)//<span class="number">2</span>))]</span><br><span class="line">            result.extend(lst)</span><br><span class="line">            result.extend([-x <span class="keyword">for</span> x <span class="keyword">in</span> lst])</span><br><span class="line">            result.append(<span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> result</span><br></pre></td></tr></table></figure></p>
+<h1><span id="1309-decrypt-string-from-alphabet-to-integer-mapping">1309. Decrypt String from Alphabet to Integer Mapping</span></h1><p><a href="https://leetcode.com/problems/decrypt-string-from-alphabet-to-integer-mapping/" target="_blank" rel="noopener">题目详情</a><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">freqAlphabets</span><span class="params">(self, s: str)</span> -&gt; str:</span></span><br><span class="line">        result = <span class="string">""</span></span><br><span class="line">        dic = &#123;&#125;</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">97</span>,<span class="number">123</span>):</span><br><span class="line">            <span class="keyword">if</span> i &lt;= <span class="number">105</span>:</span><br><span class="line">                dic[str(i - <span class="number">96</span>)] = chr(i)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                dic[str(i - <span class="number">96</span>) + <span class="string">'#'</span>] = chr(i)</span><br><span class="line">        i = <span class="number">0</span></span><br><span class="line">        <span class="keyword">while</span> i &lt; len(s):</span><br><span class="line">            <span class="keyword">if</span>  i+<span class="number">2</span> &lt; len(s) <span class="keyword">and</span> s[i+<span class="number">2</span>] == <span class="string">'#'</span>:</span><br><span class="line">                key = s[i:i+<span class="number">3</span>]</span><br><span class="line">                i += <span class="number">3</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                key = s[i]</span><br><span class="line">                i += <span class="number">1</span></span><br><span class="line">            result += dic[key]</span><br><span class="line">        <span class="keyword">return</span> result</span><br></pre></td></tr></table></figure></p>
+<h1><span id="1313-decompress-run-length-encoded-list">1313. Decompress Run-Length Encoded List</span></h1><p><a href="https://leetcode.com/problems/decompress-run-length-encoded-list/" target="_blank" rel="noopener">题目详情</a><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">decompressRLElist</span><span class="params">(self, nums: List[int])</span> -&gt; List[int]:</span></span><br><span class="line">        n = len(nums)</span><br><span class="line">        ans = []</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(int(n/<span class="number">2</span>)):</span><br><span class="line">            n = nums[<span class="number">2</span>*i]</span><br><span class="line">            num = nums[<span class="number">2</span>*i+<span class="number">1</span>]</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> range(n):</span><br><span class="line">                ans.append(num)</span><br><span class="line">        <span class="keyword">return</span> ans</span><br></pre></td></tr></table></figure></p>
+<h1><span id="1323-maximum-69-number">1323. Maximum 69 Number</span></h1><p><a href="https://leetcode.com/problems/maximum-69-number/" target="_blank" rel="noopener">题目详情</a><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">maximum69Number</span> <span class="params">(self, num: int)</span> -&gt; int:</span></span><br><span class="line">        i = <span class="number">0</span></span><br><span class="line">        out = [x <span class="keyword">for</span> x <span class="keyword">in</span> str(num)]</span><br><span class="line">        <span class="keyword">while</span> i&lt;len(out):</span><br><span class="line">            <span class="keyword">if</span> out[i] == <span class="string">'6'</span>:</span><br><span class="line">                out[i] = <span class="string">'9'</span></span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">            i += <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> int(<span class="string">''</span>.join(out))</span><br></pre></td></tr></table></figure></p>
+<h1><span id="1342-number-of-steps-to-reduce-a-number-to-zero">1342. Number of Steps to Reduce a Number to Zero</span></h1><p><a href="https://leetcode.com/problems/number-of-steps-to-reduce-a-number-to-zero/" target="_blank" rel="noopener">题目详情</a><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">numberOfSteps</span> <span class="params">(self, num: int)</span> -&gt; int:</span></span><br><span class="line">        cou = <span class="number">0</span></span><br><span class="line">        <span class="keyword">while</span> num&gt;<span class="number">0</span>:</span><br><span class="line">            <span class="keyword">if</span> num % <span class="number">2</span> == <span class="number">0</span>:  <span class="comment">## if even</span></span><br><span class="line">                num = int(num / <span class="number">2</span>)</span><br><span class="line">            <span class="keyword">else</span>:  <span class="comment">## if odd</span></span><br><span class="line">                num -= <span class="number">1</span></span><br><span class="line">            cou += <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> cou</span><br></pre></td></tr></table></figure></p>
+<h1><span id="1351-count-negative-numbers-in-a-sorted-matrix">1351. Count Negative Numbers in a Sorted Matrix</span></h1><p><a href="https://leetcode.com/problems/count-negative-numbers-in-a-sorted-matrix/" target="_blank" rel="noopener">题目详情</a><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">countNegatives</span><span class="params">(self, grid: List[List[int]])</span> -&gt; int:</span></span><br><span class="line">        nums = []</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(grid)):</span><br><span class="line">            nums += grid[i]</span><br><span class="line">        <span class="keyword">return</span> sum([<span class="number">1</span> <span class="keyword">if</span> x&lt;<span class="number">0</span> <span class="keyword">else</span> <span class="number">0</span> <span class="keyword">for</span> x <span class="keyword">in</span> nums])</span><br></pre></td></tr></table></figure></p>
+<h1><span id="1370-increasing-decreasing-string">1370. Increasing Decreasing String</span></h1><p><a href="https://leetcode.com/problems/increasing-decreasing-string/" target="_blank" rel="noopener">题目详情</a><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 参考了 solution in discuss</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">sortString</span><span class="params">(self, s: str)</span> -&gt; str:</span></span><br><span class="line">        result = []</span><br><span class="line">        s = [x <span class="keyword">for</span> x <span class="keyword">in</span> s]  <span class="comment">## 等价于 s = list(s)</span></span><br><span class="line">        direct = <span class="number">1</span>  <span class="comment">## =1表示从小到大；=-1表示从大到小</span></span><br><span class="line">        <span class="keyword">while</span> s:  <span class="comment">## 当s非空时</span></span><br><span class="line">            <span class="keyword">if</span> direct == <span class="number">1</span>:</span><br><span class="line">                ss = sorted(set(s))  <span class="comment">## 从小到大</span></span><br><span class="line">            <span class="keyword">else</span>: </span><br><span class="line">                ss = sorted(set(s))[::<span class="number">-1</span>]  <span class="comment">## 从大到小</span></span><br><span class="line">            result.extend(ss)</span><br><span class="line">            <span class="keyword">for</span> x <span class="keyword">in</span> ss:</span><br><span class="line">                s.remove(x)</span><br><span class="line">            direct *= <span class="number">-1</span>  <span class="comment">## 反向</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">""</span>.join(result)</span><br></pre></td></tr></table></figure></p>
+<h1><span id="1374-generate-a-string-with-characters-that-have-odd-counts">1374. Generate a String With Characters That Have Odd Counts</span></h1><p><a href="https://leetcode.com/problems/generate-a-string-with-characters-that-have-odd-counts/" target="_blank" rel="noopener">题目详情</a><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">generateTheString</span><span class="params">(self, n: int)</span> -&gt; str:</span></span><br><span class="line">        <span class="keyword">if</span> n%<span class="number">2</span>==<span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="string">'a'</span>*(n<span class="number">-1</span>) + <span class="string">'b'</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="string">'a'</span>*n</span><br></pre></td></tr></table></figure></p>
+<h1><span id="1380-lucky-numbers-in-a-matrix">1380. Lucky Numbers in a Matrix</span></h1><p><a href="https://leetcode.com/problems/lucky-numbers-in-a-matrix/" target="_blank" rel="noopener">题目详情</a><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">luckyNumbers</span> <span class="params">(self, matrix: List[List[int]])</span> -&gt; List[int]:</span></span><br><span class="line">        rows = [min(x) <span class="keyword">for</span> x <span class="keyword">in</span> matrix]</span><br><span class="line">        n, m = len(matrix), len(matrix[<span class="number">0</span>])</span><br><span class="line">        cols, ans = [], []</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(m):</span><br><span class="line">            col = [x[j] <span class="keyword">for</span> x <span class="keyword">in</span> matrix]</span><br><span class="line">            cols.append(max(col))</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(n):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> range(m):</span><br><span class="line">                <span class="keyword">if</span> matrix[i][j] == rows[i] <span class="keyword">and</span> matrix[i][j] == cols[j]:</span><br><span class="line">                    ans.append(matrix[i][j])</span><br><span class="line">        <span class="keyword">return</span> ans</span><br></pre></td></tr></table></figure></p>
+<h1><span id="1389-create-target-array-in-the-given-order">1389. Create Target Array in the Given Order</span></h1><p><a href="https://leetcode.com/problems/create-target-array-in-the-given-order/" target="_blank" rel="noopener">题目详情</a><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">createTargetArray</span><span class="params">(self, nums: List[int], index: List[int])</span> -&gt; List[int]:</span></span><br><span class="line">        ans = []</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(nums)):</span><br><span class="line">            num, idx = nums[i], index[i]</span><br><span class="line">            <span class="keyword">if</span> idx &gt;= len(ans):</span><br><span class="line">                ans.append(num)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                a, b = ans[:idx], ans[idx:]</span><br><span class="line">                ans = a + [num] + b</span><br><span class="line">        <span class="keyword">return</span> ans</span><br></pre></td></tr></table></figure></p>
+<p><a href>题目详情</a><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
+<p><a href>题目详情</a><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
 
             </article>
             <hr>
