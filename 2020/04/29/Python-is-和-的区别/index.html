@@ -40,7 +40,7 @@
 <!-- 自定义样式保持在最底部 -->
 
 
-<meta name="generator" content="Hexo 4.2.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+<meta name="generator" content="Hexo 4.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
 
 <link rel="stylesheet" href="/js/prism/prism.css">
 
@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    285 字
+                    289 字
                   </span>
                 
 
@@ -191,8 +191,50 @@
 <p>比较变量的 id 地址是否相同，即是否指向同一块内存地址</p>
 <h2><span id>==</span></h2><p>比较运算符</p>
 <p>比较变量的 value 是否相同，即不管是否是同一块内存地址，只要其值相同即可</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">## 涉及Python的深浅拷贝问题</span><br><span class="line">##数字、字符串等不可变数据类型</span><br><span class="line">##value一样，id一样</span><br><span class="line">a &#x3D; 2</span><br><span class="line">b &#x3D; 2</span><br><span class="line"></span><br><span class="line">print(id(a), id(b))</span><br><span class="line">140710848664416 140710848664416</span><br><span class="line"></span><br><span class="line">print(a &#x3D;&#x3D; b, a is b)</span><br><span class="line">True True</span><br><span class="line"></span><br><span class="line">##对于列表和字典等可变数据类型</span><br><span class="line">##即使value一样，id也不一样</span><br><span class="line">a &#x3D; [1, 2, 3]</span><br><span class="line">b &#x3D; [1, 2, 3]</span><br><span class="line"></span><br><span class="line">print(id(a), id(b))</span><br><span class="line">2348645341512 2348645363144</span><br><span class="line"></span><br><span class="line">print(a &#x3D;&#x3D; b, a is b</span><br><span class="line">True False</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><figcaption><span>Python</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">## 涉及Python的深浅拷贝问题</span><br><span class="line">##数字、字符串等不可变数据类型</span><br><span class="line">##value一样，id一样</span><br><span class="line">a &#x3D; 2</span><br><span class="line">b &#x3D; 2</span><br><span class="line"></span><br><span class="line">print(id(a), id(b))</span><br><span class="line">140710848664416 140710848664416</span><br><span class="line"></span><br><span class="line">print(a &#x3D;&#x3D; b, a is b)</span><br><span class="line">True True</span><br><span class="line"></span><br><span class="line">##对于列表和字典等可变数据类型</span><br><span class="line">##即使value一样，id也不一样</span><br><span class="line">a &#x3D; [1, 2, 3]</span><br><span class="line">b &#x3D; [1, 2, 3]</span><br><span class="line"></span><br><span class="line">print(id(a), id(b))</span><br><span class="line">2348645341512 2348645363144</span><br><span class="line"></span><br><span class="line">print(a &#x3D;&#x3D; b, a is b</span><br><span class="line">True False</span><br></pre></td></tr></table></figure>
+<pre><code>## 涉及Python的深浅拷贝问题
+##数字、字符串等不可变数据类型
+##value一样，id一样
+a = 2
+b = 2
+
+print(id(a), id(b))
+140710848664416 140710848664416
+
+print(a == b, a is b)
+True True
+
+##对于列表和字典等可变数据类型
+##即使value一样，id也不一样
+a = [1, 2, 3]
+b = [1, 2, 3]
+
+print(id(a), id(b))
+2348645341512 2348645363144
+
+print(a == b, a is b
+True False
+</code></pre><pre><code>## 涉及Python的深浅拷贝问题
+##数字、字符串等不可变数据类型
+##value一样，id一样
+a &#x3D; 2
+b &#x3D; 2
+
+print(id(a), id(b))
+140710848664416 140710848664416
+
+print(a &#x3D;&#x3D; b, a is b)
+True True
+
+##对于列表和字典等可变数据类型
+##即使value一样，id也不一样
+a &#x3D; [1, 2, 3]
+b &#x3D; [1, 2, 3]
+
+print(id(a), id(b))
+2348645341512 2348645363144
+
+print(a &#x3D;&#x3D; b, a is b
+True False</code></pre>
             </article>
             <hr>
             <div>
@@ -496,24 +538,8 @@
 
 
 <script src="/js/prism/clipboard.js"></script>
-<script src="/js/prism/prism.js" async></script>
+<script src="/js/prism/prism.js" async></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </body>
 </html>

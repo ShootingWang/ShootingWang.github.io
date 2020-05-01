@@ -40,7 +40,7 @@
 <!-- 自定义样式保持在最底部 -->
 
 
-<meta name="generator" content="Hexo 4.2.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+<meta name="generator" content="Hexo 4.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
 
 <link rel="stylesheet" href="/js/prism/prism.css">
 
@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    127 字
+                    130 字
                   </span>
                 
 
@@ -182,11 +182,25 @@
             
             <article class="markdown-body">
               <h1><span id="titanic数据集">Titanic数据集</span></h1><p>数据来源：Kaggle<br><a href="https://www.kaggle.com/c/titanic/data" target="_blank" rel="noopener">点击下载</a></p>
-<h2><span id="数据预览">数据预览</span></h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line">os.chdir(<span class="string">"你的路径"</span>)  <span class="comment">##设置工作路径</span></span><br><span class="line">os.getcwd()  <span class="comment">##读取当前工作路径</span></span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line">train_data = pd.read_csv(<span class="string">"train.csv"</span>)</span><br><span class="line">train_data.head()  <span class="comment">##查看前5行</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">train_data.describe()  <span class="comment">##变量的描述统计</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">train_data.isnull().sum().sort_values(ascending=<span class="literal">False</span>)  <span class="comment">##统计每列的缺失值个数</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">train_data = train_data.drop(columns=[<span class="string">"Cabin"</span>, <span class="string">"Name"</span>, <span class="string">"PassengerId"</span>, <span class="string">"Ticket"</span>])  <span class="comment">##去除缺失值较多的变量Cabin以及其他无用信息</span></span><br><span class="line">train_data.head()</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">train_data = train_data.dropna(axis=<span class="number">0</span>) <span class="comment">##保留没有空值的行</span></span><br><span class="line">train_data.shape</span><br></pre></td></tr></table></figure>
+<h2><span id="数据预览">数据预览</span></h2><pre class=" language-lang-Python"><code class="language-lang-Python">import os
+
+os.chdir("你的路径")  ##设置工作路径
+os.getcwd()  ##读取当前工作路径
+import pandas as pd
+
+train_data = pd.read_csv("train.csv")
+train_data.head()  ##查看前5行
+</code></pre>
+<pre class=" language-lang-Python"><code class="language-lang-Python">train_data.describe()  ##变量的描述统计
+</code></pre>
+<pre class=" language-lang-Python"><code class="language-lang-Python">train_data.isnull().sum().sort_values(ascending=False)  ##统计每列的缺失值个数
+</code></pre>
+<pre class=" language-lang-Python"><code class="language-lang-Python">train_data = train_data.drop(columns=["Cabin", "Name", "PassengerId", "Ticket"])  ##去除缺失值较多的变量Cabin以及其他无用信息
+train_data.head()
+</code></pre>
+<pre class=" language-lang-Python"><code class="language-lang-Python">train_data = train_data.dropna(axis=0) ##保留没有空值的行
+train_data.shape
+</code></pre>
 <p>未完待续</p>
 
             </article>
@@ -487,24 +501,8 @@
 
 
 <script src="/js/prism/clipboard.js"></script>
-<script src="/js/prism/prism.js" async></script>
+<script src="/js/prism/prism.js" async></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </body>
 </html>
