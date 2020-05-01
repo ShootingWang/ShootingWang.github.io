@@ -40,7 +40,7 @@
 <!-- 自定义样式保持在最底部 -->
 
 
-<meta name="generator" content="Hexo 4.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+<meta name="generator" content="Hexo 4.2.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
 
 <link rel="stylesheet" href="/js/prism/prism.css">
 
@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    645 字
+                    667 字
                   </span>
                 
 
@@ -183,14 +183,14 @@
             <article class="markdown-body">
               <p>Jupyter Tips!</p>
 <a id="more"></a>
-<h3><span id="输出结果显示图片">输出结果显示图片</span></h3><pre class=" language-lang-Python"><code class="language-lang-Python">%matplotlib inline
+<h3><span id="输出结果显示图片">输出结果显示图片</span></h3><pre><code class="lang-Python">%matplotlib inline
 </code></pre>
 <h3><span id="同时输出多个命令的结果">同时输出多个命令的结果</span></h3><ol>
-<li>方法一：在文件开头添加以下命令（仅对当前文件有效）<pre class=" language-lang-Python"><code class="language-lang-Python">from IPython.core.interactiveshell import InteractiveShell
-InteractiveShell.ast_node_interactivity = "all"
+<li>方法一：在文件开头添加以下命令（仅对当前文件有效）<pre><code class="lang-Python">from IPython.core.interactiveshell import InteractiveShell
+InteractiveShell.ast_node_interactivity = &quot;all&quot;
 </code></pre>
 </li>
-<li>方法二：直接添加配置文件（对所有文件有效）<pre class=" language-lang-Python"><code class="language-lang-Python">vi ~/.ipython/profile_default/ipython_config.py
+<li>方法二：直接添加配置文件（对所有文件有效）<pre><code class="lang-Python">vi ~/.ipython/profile_default/ipython_config.py
 </code></pre>
 配置文件内容为：<pre><code>c = get_config()
 #Run all nodes interactively
@@ -198,9 +198,9 @@ c.InteractiveShell.ast_node_interactivity = &quot;all&quot;
 </code></pre></li>
 </ol>
 <h3><span id="安装r-kernel">安装R kernel</span></h3><p>先在R中安装以下几个package：</p>
-<pre class=" language-lang-R"><code class="language-lang-R">install.packages(c('repr', 'IRdisplay', 'evaluate', 'crayon', 
-                   'pbdZMQ', 'devtools', 'uuid', 'digest'))
-devtools::install_github('IRkernel/IRkernel')
+<pre><code class="lang-R">install.packages(c(&#39;repr&#39;, &#39;IRdisplay&#39;, &#39;evaluate&#39;, &#39;crayon&#39;, 
+                   &#39;pbdZMQ&#39;, &#39;devtools&#39;, &#39;uuid&#39;, &#39;digest&#39;))
+devtools::install_github(&#39;IRkernel/IRkernel&#39;)
 </code></pre>
 <p>在Anaconda Prompt中输入以下命令：<br>第一步：输入R，调用R</p>
 <pre><code>R
@@ -212,7 +212,7 @@ devtools::install_github('IRkernel/IRkernel')
 </code></pre></li>
 </ol>
 <h3><span id="运行时间">运行时间</span></h3><p>在cell中添加 <code>%%time</code> ，返回结果中会含有cell单次运行的时间。<br>在cell中添加 <code>%timeit</code> ，会运行该cell 100,000次（默认），然后以运行最快的3次结果的平均值作为结果。</p>
-<pre class=" language-lang-Python"><code class="language-lang-Python">import numpy
+<pre><code class="lang-Python">import numpy
 %timeit numpy.random.normal(size = 10)
 # 5.91 µs ± 258 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
 %%time
@@ -233,8 +233,8 @@ for _ in range(100):
 <li>Esc+B：快速添加新的Cell</li>
 </ul>
 <h3><span id="禁止输出警告warnings">禁止输出警告（warnings）</span></h3><p>运行以下代码：</p>
-<pre class=" language-lang-Python"><code class="language-lang-Python">import warnings
-warnings.filterwarnings("ignore")
+<pre><code class="lang-Python">import warnings
+warnings.filterwarnings(&quot;ignore&quot;)
 </code></pre>
 <h4><span id="参考资料">参考资料</span></h4><p>[1] <a href="https://www.google.com/Jupyter" target="_blank" rel="noopener">首页缩略图</a><br>[2] <a href="https://www.cnblogs.com/bella1102/p/11032519.html" target="_blank" rel="noopener">Jupyter Notebook 如何让一个Cell 可以同时输出多个语句的值？</a><br>[3] <a href="https://www.sohu.com/a/219989263_774914" target="_blank" rel="noopener">Jupyter Notebook/Lab中添加R Kernel的详细步骤</a><br>[4] <a href="https://blog.csdn.net/create115721/article/details/79243641" target="_blank" rel="noopener">Jupyter Notebook的27个窍门，技巧和快捷键</a><br>[5] <a href="https://mp.weixin.qq.com/s/5sFkpI4eEodVQuLya3K5rw" target="_blank" rel="noopener">九大神招，让Python里数据分析神器Jupyter，完美升华</a></p>
 
@@ -566,8 +566,24 @@ warnings.filterwarnings("ignore")
 
 
 <script src="/js/prism/clipboard.js"></script>
-<script src="/js/prism/prism.js" async></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<script src="/js/prism/prism.js" async></script>
 
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </body>
 </html>

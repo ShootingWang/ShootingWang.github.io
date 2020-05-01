@@ -40,7 +40,7 @@
 <!-- 自定义样式保持在最底部 -->
 
 
-<meta name="generator" content="Hexo 4.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+<meta name="generator" content="Hexo 4.2.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
 
 <link rel="stylesheet" href="/js/prism/prism.css">
 
@@ -189,7 +189,7 @@
 <li>list 是可变的对象</li>
 <li>用方括号封装 [ ]</li>
 </ul>
-<pre class=" language-lang-Python"><code class="language-lang-Python">lst.append(a)   ##在列表lst尾部添加元素a
+<pre><code class="lang-Python">lst.append(a)   ##在列表lst尾部添加元素a
 lst.insert(num, c)  ##在列表lst的第num+1个位置（索引为num）插入元素c
 lst.pop()  ##删除列表lst的最后一个元素，并返回该元素
 lst.pop(i)  ##删除列表lst的索引为i的元素（i可以是负数；i=-2表示删除倒数第二个元素）
@@ -207,7 +207,7 @@ lst.pop(i)  ##删除列表lst的索引为i的元素（i可以是负数；i=-2表
 <li>成员关系操作符 in 和 not in 也可以直接用在元组上</li>
 <li>用圆括号封装 （）</li>
 </ul>
-<pre class=" language-lang-Python"><code class="language-lang-Python">cmp(tuple1, tuple2)  ##比较两个元组元素
+<pre><code class="lang-Python">cmp(tuple1, tuple2)  ##比较两个元组元素
 len(tuple)  ##计算元组元素个数
 max(tuple)  ##返回元组中元素最大值
 min(tuple)  ##返回元组中元素最小值
@@ -517,8 +517,24 @@ tuple(seq)  ##把列表seq转换为元组
 
 
 <script src="/js/prism/clipboard.js"></script>
-<script src="/js/prism/prism.js" async></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<script src="/js/prism/prism.js" async></script>
 
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </body>
 </html>
