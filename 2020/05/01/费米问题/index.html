@@ -152,7 +152,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    22
+                    23
                      分钟
                   </span>
                 
@@ -293,11 +293,16 @@
 </ol>
 <h3><span id="北京有多少个加油站">北京有多少个加油站</span></h3><p><u>需求端</u></p>
 <ol>
-<li>假设推算模型<script type="math/tex; mode=display">加油站数=\frac{每天需加油的车辆数}{每个加油站平均每天可加油车辆数}</script></li>
+<li>假设推算模型<br>\begin{aligned}<br>加油站数&amp;=需求÷供给\\<br>&amp;=\frac{每天需加油的车辆数}{每个加油站平均每天可加油车辆数}<br>\end{aligned}</li>
 <li>确认并预估已知数据<ul>
 <li>北京每天需加油的车辆数$C$<blockquote>
-<p>北京人口$N$，平均每个家庭4个人，平均每个家庭  $c$台车，每台车平均$d$天需加油一次</p>
-<script type="math/tex; mode=display">北京每天需加油的车辆数C=N÷4\times c÷d</script></blockquote>
+<ul>
+<li>北京人口（2150万人）</li>
+<li>平均每个家庭4个人</li>
+<li>平均每个家庭1台车</li>
+<li>每台车平均5天需加油一次<script type="math/tex; mode=display">北京每天需加油的车辆数=2150万÷4\times1÷5=107.5万台</script></li>
+</ul>
+</blockquote>
 </li>
 <li>每个加油站平均每天可加油车辆数<blockquote>
 <p>每个加油站平均加油桩个数$n$（4个）、加油站平均每天工作$h$小时（14小时）、每小时加油桩利用率$r$、每个桩加一次油耗时$t$小时（5分钟，1/12小时）</p>
@@ -659,8 +664,24 @@
 
 
 <script src="/js/prism/clipboard.js"></script>
-<script src="/js/prism/prism.js" async></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<script src="/js/prism/prism.js" async></script>
 
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </body>
 </html>
