@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    196 字
+                    198 字
                   </span>
                 
 
@@ -196,6 +196,7 @@
 <pre><code class="lang-markdown">&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot; /&gt;
 {% asset_img inorder.png 中序遍历 %}
 </code></pre>
+<p>或<br>``markdown<br><img src="/ShootingWang/ShootingWang.github.io/2020/04/28/Hexo-GitHub-Markdown%E5%B8%B8%E7%94%A8%E7%94%A8%E6%B3%95/name.jpg" srcset="/img/loading.gif" alt="title"><br>```</p>
 <h2><span id="代码">代码</span></h2><h3><span id="高亮">高亮</span></h3><ul>
 <li><a href="https://www.zfl9.com/hexo-code.html" target="_blank" rel="noopener">使用prism.js进行代码高亮</a></li>
 </ul>
@@ -532,8 +533,24 @@
 
 
 <script src="/js/prism/clipboard.js"></script>
-<script src="/js/prism/prism.js" async></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<script src="/js/prism/prism.js" async></script>
 
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </body>
 </html>

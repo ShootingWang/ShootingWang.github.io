@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    23 字
+                    32 字
                   </span>
                 
 
@@ -184,7 +184,8 @@
               <p>Data Analysist<br><a id="more"></a></p>
 <ul>
 <li><a href="/2020/05/01/%E8%B4%B9%E7%B1%B3%E9%97%AE%E9%A2%98/" title="费米问题">费米问题</a></li>
-<li><a href="/2020/05/02/%E6%8C%87%E6%A0%87%E5%BC%82%E5%8A%A8%E7%B1%BB%E9%97%AE%E9%A2%98/" title="指标异动类问题">指标异动类问题</a>
+<li><a href="/2020/05/02/%E6%8C%87%E6%A0%87%E5%BC%82%E5%8A%A8%E7%B1%BB%E9%97%AE%E9%A2%98/" title="指标异动类问题">指标异动类问题</a></li>
+<li><a href="/2020/05/02/VIP%E4%BC%9A%E5%91%98%E5%A5%97%E9%A4%90%E5%AE%9A%E4%BB%B7%E7%AD%96%E7%95%A5/" title="VIP会员套餐定价策略">VIP会员套餐定价策略</a>
 </li>
 </ul>
 <h1><span id="参考资料">参考资料</span></h1><p>[1] <a href="https://cn.bing.com/images/search?view=detailV2&amp;ccid=OeAo7X3d&amp;id=8DE4FFE2C9784F70995A7259FAA0FE7BC2FDC0BD&amp;thid=OIP.OeAo7X3dW94x7RoxwI0P_AHaEU&amp;mediaurl=http%3a%2f%2fwww.appadhoc.com%2fblog%2fwp-content%2fuploads%2f2017%2f02%2fwebanalysis.png&amp;exph=350&amp;expw=600&amp;q=%e6%95%b0%e6%8d%ae%e5%88%86%e6%9e%90&amp;simid=607999727637630187&amp;selectedIndex=42" target="_blank" rel="noopener">首页缩略图</a></p>
@@ -526,8 +527,24 @@
 
 
 <script src="/js/prism/clipboard.js"></script>
-<script src="/js/prism/prism.js" async></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<script src="/js/prism/prism.js" async></script>
 
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </body>
 </html>
