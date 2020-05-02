@@ -119,6 +119,8 @@
     
     <categories>
       
+      <category>藏宝库</category>
+      
       <category>题库</category>
       
     </categories>
@@ -172,6 +174,8 @@
     
     
     <categories>
+      
+      <category>藏宝库</category>
       
       <category>题库</category>
       
@@ -242,9 +246,9 @@
       
       <tag>算法</tag>
       
-      <tag>判别式模型</tag>
-      
       <tag>集成学习</tag>
+      
+      <tag>判别式模型</tag>
       
     </tags>
     
@@ -304,11 +308,11 @@
       
       <tag>分类</tag>
       
-      <tag>回归</tag>
-      
       <tag>有监督学习</tag>
       
       <tag>算法</tag>
+      
+      <tag>回归</tag>
       
       <tag>判别式模型</tag>
       
