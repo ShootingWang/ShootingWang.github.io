@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    1.8k 字
+                    2k 字
                   </span>
                 
 
@@ -152,7 +152,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    19
+                    21
                      分钟
                   </span>
                 
@@ -243,13 +243,19 @@
 <li>需求端</li>
 <li>供给端</li>
 <li>供需端<blockquote>
-<p>\begin{aligned}<br>理发师数量&amp;=需求÷供给\\<br>&amp;=上海市每天需要剪发的人数÷每个理发师每天理发客户量（供给）\\<br>&amp;=\frac{上海人口}{人均剪发周期（天）}÷\frac{理发师每日平均工作时间}{每个客户所需的理发时间}<br>\end{aligned}</p>
+<p>\begin{aligned}<br>理发师数量&amp;=需求÷供给\\<br>&amp;=上海市每天需要剪发的人数÷每个理发师每天理发客户量\\<br>&amp;=\frac{上海人口}{人均剪发周期（天）}÷\frac{理发师每日平均工作时间}{每个客户所需的理发时间}<br>\end{aligned}</p>
 </blockquote>
 </li>
 </ul>
 </li>
-<li>自顶向下 Top-down、bottom-up</li>
-<li>同类推断</li>
+<li>自顶向下 Top-down、bottom-up<blockquote>
+<p>估算深圳市的九年义务教育阶段的学生数量<br>假设人均寿命为75岁<br>\begin{aligned}<br>学生数量&amp;=深圳市人口\times中小学生适龄人口比例\\<br>&amp;= 深圳市人口\times\frac{6~14岁人口}{0~75岁人口}<br>\end{aligned}</p>
+</blockquote>
+</li>
+<li>同类推断<blockquote>
+<p>估算深圳市的九年义务教育阶段的学生数量<br>假设九年义务教育入学率为100%<br>假设高中入学率为90%<br>\begin{aligned}<br>学生数量&amp;=深圳市每年高考人数\times9\\<br>&amp;= \frac{全国每年高考人数}{全国人口}\times深圳市人口\times9<br>\end{aligned}<br>每年的高考学生中，有部分不是应届高考生，更细致的估算时需要考虑剔除</p>
+</blockquote>
+</li>
 </ul>
 <h2><span id="示例">示例</span></h2><h3><span id="全国一年消费多少猪肉">全国一年消费多少猪肉</span></h3><p><u>需求端</u></p>
 <ol>
@@ -655,24 +661,8 @@
 
 
 <script src="/js/prism/clipboard.js"></script>
-<script src="/js/prism/prism.js" async></script>
+<script src="/js/prism/prism.js" async></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </body>
 </html>
