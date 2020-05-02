@@ -980,7 +980,7 @@ h6::before {
 }
 .toc-header,
 .toc-header > i {
-  font-size: 1.25rem;
+  font-size: 1rem;
 }
 #tocbot {
   max-height: 100%;
@@ -990,14 +990,14 @@ h6::before {
 }
 #tocbot ol {
   list-style: none;
-  padding-inline-start: 1rem;
+  padding-inline-start: 0.5rem;
 }
 #tocbot::-webkit-scrollbar {
   display: none;
 }
 .tocbot-list ol {
   list-style: none;
-  padding-left: 1rem;
+  padding-left: 0.5rem;
 }
 .tocbot-list a {
   font-size: 0.95rem;
