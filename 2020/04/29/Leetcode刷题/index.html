@@ -152,7 +152,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    35
+                    36
                      分钟
                   </span>
                 
@@ -183,6 +183,18 @@
             <article class="markdown-body">
               <p>Leetcode刷题记录~</p>
 <a id="more"></a>
+<h1><span id="177-nth-highest-salary">177. Nth Highest Salary</span></h1><p><a href="https://leetcode.com/problems/nth-highest-salary/" target="_blank" rel="noopener">题目详情</a></p>
+<pre><code class="lang-SQL">CREATE FUNCTION getNthHighestSalary(N INT) RETURNS INT
+BEGIN
+DECLARE M INT;
+SET M=N-1;
+  RETURN (
+      # Write your MySQL query statement below.
+      SELECT Salary FROM Employee
+      ORDER BY Salary DESC LIMIT 1 OFFSET M
+  );
+END
+</code></pre>
 <h1><span id="657-robot-return-to-origin">657. Robot Return to Origin</span></h1><p><a href="https://leetcode.com/problems/robot-return-to-origin/" target="_blank" rel="noopener">题目详情</a></p>
 <pre><code class="lang-Python">## Runtime=64ms, Memory=13.8MB
 class Solution:
