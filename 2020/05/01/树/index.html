@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    1.4k 字
+                    1.5k 字
                   </span>
                 
 
@@ -251,14 +251,14 @@
 </ul>
 </li>
 </ul>
-<h2><span id="满二叉树">满二叉树</span></h2><p>所有分支结点都存在左子树和右子树、所有叶子结点都在同一层上的二叉树称为<strong>满二叉树</strong>。</p>
+<h2><span id="满二叉树">满二叉树</span></h2><p>所有分支结点都存在左子树和右子树、所有叶子结点都在同一层上的二叉树称为<strong>满二叉树</strong>(Full Binary Tree)。</p>
 <p>满二叉树的<strong>特点</strong>：</p>
 <ul>
 <li>叶子结点只能出现在最底层</li>
 <li>非叶子结点的度一定为2</li>
 <li>在同样深度的二叉树中，满二叉树的结点个数最多、叶子结点数最多</li>
 </ul>
-<h2><span id="完全二叉树">完全二叉树</span></h2><p>定义（待补充）</p>
+<h2><span id="完全二叉树">完全二叉树</span></h2><p>定义（待补充）(Complete Binary Tree)</p>
 <ul>
 <li>满二叉树一定是一棵完全二叉树</li>
 <li>完全二叉树不一定是满二叉树</li>
@@ -272,8 +272,8 @@
 <li>同样结点数的二叉树，完全二叉树的深度最小</li>
 </ul>
 <h2><span id="二叉树性质">二叉树性质</span></h2><ol>
-<li><u>二叉树的第$i$层上最多有$2^{i-1}$个结点（$i\geq 1$）</u></li>
-<li><u>深度为$k$的二叉树最多有$2^k-1$个结点（$k\geq1$）</u><ul>
+<li>二叉树的第$i$层上最多有$2^{i-1}$个结点（$i\geq 1$）</li>
+<li>深度为$k$的二叉树最多有$2^k-1$个结点（$k\geq1$）<ul>
 <li>$k=1$：最多有$1(2^1-1)$个结点</li>
 <li>$k=1$：最多有$1+2=3(2^2-1)$个结点</li>
 <li>$k=2$：最多有$1+2+2^2=7(2^3-1)$个结点</li>
@@ -281,7 +281,7 @@
 <li>对任意的$k$，最多有$2^0+2^1+\cdots+2^k=2^k-1$个结点</li>
 </ul>
 </li>
-<li><u>对任意一棵二叉树$T$，有$n_0$个叶子结点（度为0）、$n_2$个度为2的结点，则有$n_1=n_2+1$</u><ul>
+<li>对任意一棵二叉树$T$，有$n_0$个叶子结点（度为0）、$n_2$个度为2的结点，则有$n_1=n_2+1$<ul>
 <li>度为0的结点数为$n_0$</li>
 <li>度为1的结点数为$n_1$</li>
 <li>度为2的结点数为$n_2$<ul>
@@ -299,11 +299,27 @@
 <li>具有$n$个结点的完全二叉树的深度为$[\log_2{n}]+1$（$[x]$表示不大于$x$的最大整数）<ul>
 <li>深度为$k$的满二叉树的结点数为$n=2^k-1$</li>
 <li>有$n$个结点的满二叉树的深度为$k=\log_2{(n+1)}$</li>
-<li>完全二叉树的叶子结点只可能出现在最下面两层，则深度为$k$的完全二叉树的结点数$n$一定多于深度为$k-1$的满二叉树、不多于深度为$k$的满二叉树。即<script type="math/tex; mode=display">2^{k-1}-1<n\leq2^k-1</script>  也即<script type="math/tex">2^{k-1}\leq n<2^k</script><script type="math/tex; mode=display">k-1\leq\log_2n<k</script>  所以有<script type="math/tex">k=[\log_2n]+1</script></li>
+<li>完全二叉树的叶子结点只可能出现在最下面两层，则深度为$k$的完全二叉树的结点数$n$一定多于深度为$k-1$的满二叉树、不多于深度为$k$的满二叉树。即<script type="math/tex; mode=display">2^{k-1}-1<n\leq2^k-1</script>  也即<script type="math/tex; mode=display">2^{k-1}\leq n<2^k</script><script type="math/tex; mode=display">k-1\leq\log_2n<k</script>  所以有<script type="math/tex">k=[\log_2n]+1</script></li>
+</ul>
+</li>
+<li>对一棵有$n$个结点的完全二叉树（深度为$[\log_2n]+1$）的结点按层序编号（从第1层到第$[\log_2n]+1$层，每层从左到右），对任一结点$i(1\leq i\leq n)$有：<ul>
+<li>如果$i=1$，则结点$i$为二叉树的根结点，无双亲（Parent）</li>
+<li>如果$i&gt;1$，则结点$i$的双亲是$[\frac{i}{2}]$</li>
+<li>如果$2i&gt;n$，则结点$i$为叶子结点、无左孩子（Left Child）；否则其左孩子是结点$2i$</li>
+<li>如果$2i+1&gt;n$，则结点$i$为叶子结点、无右孩子（Right Child）；否则其右孩子是结点$2i+1$</li>
 </ul>
 </li>
 </ol>
-<h1><span id="参考资料">参考资料</span></h1><p>[1] <a href="https://cn.bing.com/images/search?view=detailV2&amp;ccid=C5Esbt%2bk&amp;id=170146C04E5B565014CAFDAFA4EFC765B59309FE&amp;thid=OIP.C5Esbt-kWgbxO78iCXRcfwAAAA&amp;mediaurl=https%3a%2f%2fsubetter.com%2fimages%2ffigures%2f20180513_01.png&amp;exph=360&amp;expw=430&amp;q=%e4%ba%8c%e5%8f%89%e6%a0%91&amp;simid=608035418833488197&amp;selectedIndex=126" target="_blank" rel="noopener">首页缩略图</a><br>[2] <a href="https://book.douban.com/subject/6424904/" target="_blank" rel="noopener">大话数据结构</a></p>
+<h2><span id="二叉树的存储结构">二叉树的存储结构</span></h2><h3><span id="顺序存储">顺序存储</span></h3><ul>
+<li>用一维数组存储二叉树中的结点，数组的下标是结点的存储位置</li>
+<li>深度为$k$的二叉树的顺序存储有$2^k-1$个存储单元空间</li>
+<li>顺序存储结构一般只用于完全二叉树</li>
+</ul>
+<h3><span id="二叉链表">二叉链表</span></h3><ul>
+<li>一个数据域（存储结点）、两个指针域（分别存储left child和right child）的链式存储结构</li>
+</ul>
+<h2><span id="二叉树的遍历">二叉树的遍历</span></h2><p>遍历二叉树（traversing binary tree）是指从根结点（Root）出发，按照某种次序依次访问二叉树中的所有结点，使得每个结点被访问一次、且只被访问一次。</p>
+<h1><span id="参考资料">参考资料</span></h1><p>[1] <a href="https://cn.bing.com/images/search?view=detailV2&amp;ccid=XefGGltQ&amp;id=E54C3AB5E5AE8818E00FAF3812C8D0BED63054FB&amp;thid=OIP.XefGGltQanM0KYZIyOSEZQHaHV&amp;mediaurl=http%3a%2f%2fupload-images.jianshu.io%2fupload_images%2f1115031-7020c17d7a881499.jpg%3fimageMogr2%2fauto-orient%2fstrip%257CimageView2%2f2%2fw%2f1240&amp;exph=1228&amp;expw=1240&amp;q=%e4%ba%8c%e5%8f%89%e6%a0%91+%e6%89%8b%e7%bb%98&amp;simid=608032377976981561&amp;selectedIndex=0" target="_blank" rel="noopener">首页缩略图</a><br>[2] <a href="https://book.douban.com/subject/6424904/" target="_blank" rel="noopener">大话数据结构</a></p>
 
             </article>
             <hr>
