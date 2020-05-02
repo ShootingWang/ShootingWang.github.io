@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    1.9k 字
+                    2k 字
                   </span>
                 
 
@@ -152,7 +152,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    36
+                    37
                      分钟
                   </span>
                 
@@ -184,16 +184,29 @@
               <p>Leetcode刷题记录~</p>
 <a id="more"></a>
 <h1><span id="177-nth-highest-salary">177. Nth Highest Salary</span></h1><p><a href="https://leetcode.com/problems/nth-highest-salary/" target="_blank" rel="noopener">题目详情</a></p>
-<pre><code class="lang-SQL">CREATE FUNCTION getNthHighestSalary(N INT) RETURNS INT
+<pre><code class="lang-SQL">-- Runtime=553ms
+CREATE FUNCTION getNthHighestSalary(N INT) RETURNS INT
 BEGIN
 DECLARE M INT;
 SET M=N-1;
   RETURN (
       # Write your MySQL query statement below.
-      SELECT Salary FROM Employee
-      ORDER BY Salary DESC LIMIT 1 OFFSET M
+      SELECT Salary FROM 
+            (SELECT DISTINCT Salary FROM Employee ORDER BY Salary DESC) a
+      LIMIT 1 OFFSET M
   );
 END
+-- Runtime=416ms
+CREATE FUNCTION getNthHighestSalary(N INT) RETURNS INT
+BEGIN
+DECLARE M INT;
+SET M=N-1;
+  RETURN (
+      # Write your MySQL query statement below.
+      SELECT DISTINCT Salary FROM Employee
+      ORDER BY Salary DESC
+      LIMIT 1 OFFSET M
+  );
 </code></pre>
 <h1><span id="657-robot-return-to-origin">657. Robot Return to Origin</span></h1><p><a href="https://leetcode.com/problems/robot-return-to-origin/" target="_blank" rel="noopener">题目详情</a></p>
 <pre><code class="lang-Python">## Runtime=64ms, Memory=13.8MB
@@ -620,6 +633,7 @@ class Solution:
 <pre><code class="lang-Python">
 
 </code></pre>
+<h1><span id="推荐资料">推荐资料</span></h1><p>[1] <a href="https://www.ranxiaolang.com/static/leetcode_python.pdf" target="_blank" rel="noopener">Leetcode-Python解题思路</a></p>
 
             </article>
             <hr>
