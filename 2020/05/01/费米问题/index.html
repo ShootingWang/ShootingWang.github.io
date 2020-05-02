@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    1.6k 字
+                    1.9k 字
                   </span>
                 
 
@@ -152,7 +152,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    17
+                    20
                      分钟
                   </span>
                 
@@ -189,6 +189,9 @@
 <li>估算一下北京有多少理发店？</li>
 <li>一辆公交车里能装下多少个煎饼果子？</li>
 <li>你知道厦门一天的燃油税费是多少吗？</li>
+<li>怎样估算北京市餐馆的数量？</li>
+<li>怎样估算深圳市学生的数量？</li>
+<li>怎样估算上海市理发师的数量？</li>
 <li>……</li>
 </ul>
 <p>在产品、运营、数据分析相关的面试中，经常会遇到上述这类问题，这类问题英文称之为<strong>Fermi Problem</strong>，即<strong>费米问题</strong>。</p>
@@ -217,13 +220,47 @@
 <li><strong>大</strong>：资本市场对青睐的公司或行业的潜力预测</li>
 <li><strong>小</strong>：某场运营活动的前期市场调研</li>
 </ul>
+<p>首先，要与面试官/需求方明确<u>统计口径</u>！</p>
+<ul>
+<li>估算北京市餐馆的数量？<ul>
+<li>餐馆的范围是哪些？</li>
+<li>包括无门店的外卖、街边摊大排档吗？</li>
+<li>“北京”是包括所有区划吗？</li>
+<li>……</li>
+</ul>
+</li>
+<li>估算深圳市学生的数量？<ul>
+<li>学生的范围是哪些？</li>
+<li>只算九年制义务教育阶段的在校生吗？</li>
+<li>幼儿园学生、大专、高校生要考虑吗？</li>
+<li>……</li>
+</ul>
+</li>
+<li>估算上海市的理发师数量？<ul>
+<li>“理发师”是指只做洗剪吹的理发师吗？</li>
+<li>包括只做美发、染烫、造型的理发师吗？</li>
+<li>……</li>
+</ul>
+</li>
+</ul>
 <p>进行费米问题估算时，重要的是——<strong>将难获得的数据拆分为易获得的数据</strong>。</p>
 <p>大致流程：</p>
 <pre class="mermaid">graph TD;
     假设推算模型，并列出需要的数据 --> 确认并预估已知数据;
     确认并预估已知数据 --> 进行毛估算;</pre>
 
-<h3><span id="全国一年消费多少猪肉">全国一年消费多少猪肉</span></h3><p><u>需求端</u></p>
+<p>估算分析方法主要有：</p>
+<ul>
+<li>供需角度<ul>
+<li>需求端</li>
+<li>供给端</li>
+<li>供需端<br>eg：<br>\begin{aligned}<br>理发师数量&amp;=上海市每天需要剪发的人数（需求）÷每个理发师每天理发客户量（供给）\\<br>&amp;=\frac{上海人口}{人均剪发周期（天）}÷\frac{理发师每日平均工作时间}{每个客户所需的理发时间}<br>\end{aligned}</li>
+</ul>
+</li>
+<li>自顶向下 Top-down、bottom-up</li>
+<li>同类推断</li>
+</ul>
+<h2><span id="示例">示例</span></h2><h3><span id="全国一年消费多少猪肉">全国一年消费多少猪肉</span></h3><p><u>需求端</u></p>
 <ol>
 <li>确定估算模型<script type="math/tex; mode=display">全国一年消费猪肉量=每人每天消费的猪肉量\times 全国人数\times 一年的天数</script></li>
 <li>估算模型中的数据是否已知？若仍有未知，继续拆解<ul>
@@ -288,7 +325,7 @@
 <li>供给端分析</li>
 </ol>
 <p>未完</p>
-<h1><span id="参考资料">参考资料</span></h1><p>[1] <a href="http://www.woshipm.com/zhichang/631625.html" target="_blank" rel="noopener">新技能Get：面试中常见的费米估算要怎么破</a><br>[2] <a href="https://mp.weixin.qq.com/s/UopcXE3SAZIwi8UXCZ7aDg" target="_blank" rel="noopener">你的城市有多少理发店？费米估算问题套路详解（1）</a><br>[3] <a href="https://zhuanlan.zhihu.com/p/79510656" target="_blank" rel="noopener">费米估算</a><br>[4] <a href="https://blog.csdn.net/weixin_42464525/article/details/81322655" target="_blank" rel="noopener">费米估算类问题-解决方法</a><br>[5] <a href="https://cloud.tencent.com/developer/article/1559156" target="_blank" rel="noopener">试估算中国K12课外英语辅导的市场，请至少使用2种不同的方案来估算，以便能够交叉验证</a></p>
+<h1><span id="参考资料">参考资料</span></h1><p>[1] <a href="http://www.woshipm.com/zhichang/631625.html" target="_blank" rel="noopener">新技能Get：面试中常见的费米估算要怎么破</a><br>[2] <a href="https://mp.weixin.qq.com/s/UopcXE3SAZIwi8UXCZ7aDg" target="_blank" rel="noopener">你的城市有多少理发店？费米估算问题套路详解（1）</a><br>[3] <a href="https://zhuanlan.zhihu.com/p/79510656" target="_blank" rel="noopener">费米估算</a><br>[4] <a href="https://blog.csdn.net/weixin_42464525/article/details/81322655" target="_blank" rel="noopener">费米估算类问题-解决方法</a><br>[5] <a href="https://cloud.tencent.com/developer/article/1559156" target="_blank" rel="noopener">试估算中国K12课外英语辅导的市场，请至少使用2种不同的方案来估算，以便能够交叉验证</a><br>[6] <a href="https://mp.weixin.qq.com/s/gEHs2MWgBFn70StSmJD2tQ" target="_blank" rel="noopener">数量估算类面试题应该如何应对？</a></p>
 
             </article>
             <hr>
