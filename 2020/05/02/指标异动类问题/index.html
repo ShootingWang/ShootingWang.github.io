@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    79 字
+                    81 字
                   </span>
                 
 
@@ -186,6 +186,7 @@
 <li>航班公司觉得自己的某个航线经营状况不好，怎么分析原因</li>
 <li>某个产品的销售量下降了，怎么分析？</li>
 </ul>
+<p>未完</p>
 <h1><span id="参考资料">参考资料</span></h1><p>[1] <a href="https://www.cnblogs.com/bellz/p/11448562.html" target="_blank" rel="noopener">指标异动类问题分析框架 - 数据分析师面试题</a></p>
 
             </article>
@@ -502,8 +503,24 @@
 
 
 <script src="/js/prism/clipboard.js"></script>
-<script src="/js/prism/prism.js" async></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<script src="/js/prism/prism.js" async></script>
 
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </body>
 </html>
