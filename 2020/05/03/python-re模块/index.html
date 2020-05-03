@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    54 字
+                    126 字
                   </span>
                 
 
@@ -182,8 +182,15 @@
             
             <article class="markdown-body">
               <h1><span id="re">re</span></h1><h2><span id="正则表达式">正则表达式</span></h2><h3><span id>()</span></h3><p>包住的数据为要提取的数据，通常与<code>.group()</code>函数连用</p>
-<h3><span id><code>.</code></span></h3><p>匹配单个任意字符</p>
-<h3><span id><code>*</code></span></h3><h3><span id><code>?</code></span></h3><h2><span id="rei">re.I</span></h2><p>使匹配对大小写不敏感</p>
+<h3><span id>.</span></h3><p>匹配单个任意字符</p>
+<h3><span id>*</span></h3><p>匹配前一个字符出现0次或无限次</p>
+<h3><span id>?</span></h3><p>匹配前一个字符出现0次或1次</p>
+<h2><span id="group">.group()</span></h2><ul>
+<li><code>.group(0)</code>：输出的是匹配正则表达式整体结果</li>
+<li><code>.group(1)</code>：列出第一个括号匹配部分</li>
+<li><code>.group(2)</code>：列出第二个括号匹配部分</li>
+</ul>
+<h2><span id="rei">re.I</span></h2><p>使匹配对大小写不敏感</p>
 <h2><span id="rem">re.M</span></h2><p>多行匹配</p>
 <h2><span id> </span></h2><h2><span id="rematch">re.match()</span></h2>
             </article>
@@ -218,6 +225,17 @@
               <div class="comments" id="comments">
                 
                 
+  <script defer src="https://utteranc.es/client.js"
+          repo="ShootingWang/CommentsForBlog"
+          issue-term="pathname"
+  
+          label="utterances"
+    
+          theme="github-light"
+          crossorigin="anonymous"
+  >
+  </script>
+
 
               </div>
             
