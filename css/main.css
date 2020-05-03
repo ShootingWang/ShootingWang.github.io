@@ -997,7 +997,7 @@ h6::before {
 }
 .tocbot-list ol {
   list-style: none;
-  padding-left: 0.5rem;
+  padding-left: 0.6rem;
 }
 .tocbot-list a {
   font-size: 0.95rem;
