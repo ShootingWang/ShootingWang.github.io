@@ -4,6 +4,33 @@
   
   
   <entry>
+    <title>编程题库</title>
+    <link href="/2020/05/04/%E7%BC%96%E7%A8%8B%E9%A2%98%E5%BA%93/"/>
+    <url>/2020/05/04/%E7%BC%96%E7%A8%8B%E9%A2%98%E5%BA%93/</url>
+    
+    <content type="html"><![CDATA[<p>编程刷题记录</p><a id="more"></a><h1><span id="最大乘积">最大乘积</span></h1><p><a href="https://www.nowcoder.com/test/question/5f29c72b1ae14d92b9c3fa03a037ac5f?pid=6161937&amp;tid=33163186" target="_blank" rel="noopener">题目详情</a><br>```Python 牛客OJ系统<br>while True:<br>    try:<br>        n = int(input())<br>        lst = list(map(int, input().split()))<br>        lst.sort()<br>        print(max(lst[0]<em>lst[1]</em>lst[-1], lst[-3]<em>lst[-2]</em>lst[-1]))<br>    except:<br>        break</p><pre><code># [题目详情]()```Python</code></pre><h1><span id> </span></h1><p><a href>题目详情</a></p><pre><code class="lang-Python"></code></pre><h1><span id> </span></h1><p><a href>题目详情</a></p><pre><code class="lang-Python"></code></pre><h1><span id="参考资料">参考资料</span></h1><p>[1] <a href="https://cn.bing.com/images/search?view=detailV2&amp;ccid=8hu8uJ6w&amp;id=03F94B8D85C64E6F1EF23C9F3C91DB4C8F5822D3&amp;thid=OIP.8hu8uJ6wIQFmKueeKunj0wHaE8&amp;mediaurl=https%3a%2f%2fimages.idgesg.net%2fimages%2farticle%2f2019%2f02%2fabstract_binary_code_background_arrows_coding_programming_analytics_data_transfer_by_aleksei_derin_gettyimages-914850304_2400x1600-100788496-large.3x2.jpg&amp;exph=800&amp;expw=1200&amp;q=code&amp;simid=607994049680312069&amp;selectedIndex=6" target="_blank" rel="noopener">首页缩略图</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>藏宝库</category>
+      
+      <category>题库</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Python</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Python</title>
     <link href="/2020/05/03/Python/"/>
     <url>/2020/05/03/Python/</url>
@@ -249,7 +276,7 @@
     <link href="/2020/04/28/Hexo-GitHub-Markdown%E5%B8%B8%E7%94%A8%E7%94%A8%E6%B3%95/"/>
     <url>/2020/04/28/Hexo-GitHub-Markdown%E5%B8%B8%E7%94%A8%E7%94%A8%E6%B3%95/</url>
     
-    <content type="html"><![CDATA[<p>记录一些Hexo+Markdown的常用语法~</p><a id="more"></a><!--toc--><h1><span id="hexo">Hexo</span></h1><h2><span id="部署">部署</span></h2><h3><span id="新建博客">新建博客</span></h3><pre><code class="lang-shell">$ hexo n &#39;博客名称&#39;</code></pre><h3><span id="上传">上传</span></h3><pre><code class="lang-shell">$ hexo g</code></pre><p>即 <code>hexo generate</code></p><h2><span id="正文">正文</span></h2><h3><span id="标题自动编号">标题自动编号</span></h3><p>参考：<a href="http://r12f.com/posts/adding-index-to-your-headings-with-hexo-heading-index/" target="_blank" rel="noopener">为Hexo博客标题自动添加序号：hexo-heading-index</a></p><h2><span id="代码">代码</span></h2><h3><span id="高亮">高亮</span></h3><ul><li><a href="https://www.zfl9.com/hexo-code.html" target="_blank" rel="noopener">使用prism.js进行代码高亮</a></li></ul><h2><span id="主题">主题</span></h2><h3><span id="fluid主题">Fluid主题</span></h3><p>安装可见：<a href="https://hexo.fluid-dev.com/docs/guide/#%E4%B8%BB%E9%A2%98%E7%AE%80%E4%BB%8B" target="_blank" rel="noopener">Hexo-fluid</a></p><p>压缩包<a href="https://github.com/fluid-dev/hexo-theme-fluid/releases/tag/v1.8.0-beta2">下载</a></p><h2><span id="其他区">其他区</span></h2><h3><span id="评论区">评论区</span></h3><p><a href="https://litstronger.github.io/2020/04/03/hexo-fluid%E6%B7%BB%E5%8A%A0utterances%E8%AF%84%E8%AE%BA%E5%8A%9F%E8%83%BD/" target="_blank" rel="noopener">hexo-fluid添加utterances评论功能</a></p><h1><span id="markdown">Markdown</span></h1><h2><span id="font-matter区">Font-matter区</span></h2><p>Font-matter区即 两行<code>---</code>之间的内容</p><h2><span id="正文">正文</span></h2><h3><span id="文章摘要">文章摘要</span></h3><p>若想要在博客首页只展示文章的摘要，在摘要与正文中间插入</p><pre><code class="lang-md">&lt;!--more--&gt;</code></pre><h3><span id="引用站内文章">引用站内文章</span></h3><pre><code class="lang-md">{% post_link 站内文章对应的.md名称（不带后缀.md） %}</code></pre><p>如：引用站内文章《<a href="/2020/04/27/Restart/" title="Restart!">Restart!</a>》，对应的文件名是<code>Restart.md</code></p><pre><code class="lang-md">{% post_link Restart %}</code></pre><h3><span id="插入图片">插入图片</span></h3><p>参考：<a href="https://blog.csdn.net/xjm850552586/article/details/84101345" target="_blank" rel="noopener">hexo引用本地图片无法显示</a></p><p>Markdown语法：</p><pre><code class="lang-md">&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot; /&gt;{% asset_img inorder.png 中序遍历 %}</code></pre><p>或</p><pre><code class="lang-md">![title](name.jpg)</code></pre><h1><span id="参考资料">参考资料</span></h1>]]></content>
+    <content type="html"><![CDATA[<p>记录一些Hexo+Markdown的常用语法~</p><a id="more"></a><!--toc--><h1><span id="hexo">Hexo</span></h1><h2><span id="部署">部署</span></h2><h3><span id="新建博客">新建博客</span></h3><pre><code class="lang-shell">$ hexo n &#39;博客名称&#39;</code></pre><h3><span id="上传">上传</span></h3><pre><code class="lang-shell">$ hexo g</code></pre><p>即 <code>hexo generate</code></p><h2><span id="首页">首页</span></h2><h3><span id="fork-me-on-github">Fork me on GitHub</span></h3><p><a href="https://blog.csdn.net/fly_wt/article/details/86674138" target="_blank" rel="noopener">在右上角实现fork me on github</a></p><h2><span id="正文">正文</span></h2><h3><span id="标题自动编号">标题自动编号</span></h3><p>参考：<a href="http://r12f.com/posts/adding-index-to-your-headings-with-hexo-heading-index/" target="_blank" rel="noopener">为Hexo博客标题自动添加序号：hexo-heading-index</a></p><h2><span id="代码">代码</span></h2><h3><span id="高亮">高亮</span></h3><ul><li><a href="https://www.zfl9.com/hexo-code.html" target="_blank" rel="noopener">使用prism.js进行代码高亮</a></li></ul><h2><span id="主题">主题</span></h2><h3><span id="fluid主题">Fluid主题</span></h3><p>安装可见：<a href="https://hexo.fluid-dev.com/docs/guide/#%E4%B8%BB%E9%A2%98%E7%AE%80%E4%BB%8B" target="_blank" rel="noopener">Hexo-fluid</a></p><p>压缩包<a href="https://github.com/fluid-dev/hexo-theme-fluid/releases/tag/v1.8.0-beta2">下载</a></p><h2><span id="其他区">其他区</span></h2><h3><span id="评论区">评论区</span></h3><p><a href="https://litstronger.github.io/2020/04/03/hexo-fluid%E6%B7%BB%E5%8A%A0utterances%E8%AF%84%E8%AE%BA%E5%8A%9F%E8%83%BD/" target="_blank" rel="noopener">hexo-fluid添加utterances评论功能</a></p><h1><span id="markdown">Markdown</span></h1><h2><span id="font-matter区">Font-matter区</span></h2><p>Font-matter区即 两行<code>---</code>之间的内容</p><h2><span id="正文">正文</span></h2><h3><span id="文章摘要">文章摘要</span></h3><p>若想要在博客首页只展示文章的摘要，在摘要与正文中间插入</p><pre><code class="lang-md">&lt;!--more--&gt;</code></pre><h3><span id="引用站内文章">引用站内文章</span></h3><pre><code class="lang-md">{% post_link 站内文章对应的.md名称（不带后缀.md） %}</code></pre><p>如：引用站内文章《<a href="/2020/04/27/Restart/" title="Restart!">Restart!</a>》，对应的文件名是<code>Restart.md</code></p><pre><code class="lang-md">{% post_link Restart %}</code></pre><h3><span id="插入图片">插入图片</span></h3><p>参考：<a href="https://blog.csdn.net/xjm850552586/article/details/84101345" target="_blank" rel="noopener">hexo引用本地图片无法显示</a></p><p>Markdown语法：</p><pre><code class="lang-md">&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot; /&gt;{% asset_img inorder.png 中序遍历 %}</code></pre><p>或</p><pre><code class="lang-md">![title](name.jpg)</code></pre><h1><span id="参考资料">参考资料</span></h1>]]></content>
     
     
     <categories>
