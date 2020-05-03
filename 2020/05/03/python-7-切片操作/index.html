@@ -17,7 +17,7 @@
   <meta name="description" content="统计一只狗，梦想有只猫">
   <meta name="author" content="ShootingWang">
   <meta name="keywords" content="">
-  <title>is 和 == 的区别 - ShootingWang</title>
+  <title>切片操作 - ShootingWang</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
 <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
@@ -131,8 +131,8 @@
               
                 <div class="mt-3 post-meta">
                   <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-                  <time datetime="2020-04-29 16:29">
-                    星期三, 四月 29日 2020, 4:29 下午
+                  <time datetime="2020-05-03 11:47">
+                    星期日, 五月 3日 2020, 11:47 中午
                   </time>
                 </div>
               
@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    281 字
+                    94 字
                   </span>
                 
 
@@ -152,7 +152,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    3
+                    1
                      分钟
                   </span>
                 
@@ -181,62 +181,25 @@
           <div class="post-content mx-auto" id="post">
             
             <article class="markdown-body">
-              <p>Python中的对象包含三个基本要素：</p>
-<ul>
-<li>id （身份标识）</li>
-<li>type （数据类型）</li>
-<li>vlaue （值）</li>
+              <ul>
+<li>Python的切片操作不会引起下标越界异常</li>
 </ul>
-<h2><span id="is">is</span></h2><p>身份运算符</p>
-<p>比较变量的 id 地址是否相同，即是否指向同一块内存地址</p>
-<h2><span id>==</span></h2><p>比较运算符</p>
-<p>比较变量的 value 是否相同，即不管是否是同一块内存地址，只要其值相同即可</p>
-<pre><code class="lang-Python">## 涉及Python的深浅拷贝问题
-##数字、字符串等不可变数据类型
-##value一样，id一样
-a = 2
-b = 2
-
-print(id(a), id(b))
-140710848664416 140710848664416
-
-print(a == b, a is b)
-True True
-
-##对于列表和字典等可变数据类型
-##即使value一样，id也不一样
-a = [1, 2, 3]
-b = [1, 2, 3]
-
-print(id(a), id(b))
-2348645341512 2348645363144
-
-print(a == b, a is b
-True False
+<pre><code class="lang-Python">lst = [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;]
+print(lst[15:])
+## 输出 []
 </code></pre>
-<pre><code class="lang-Python">## 涉及Python的深浅拷贝问题
-##数字、字符串等不可变数据类型
-##value一样，id一样
-a = 2
-b = 2
-
-print(id(a), id(b))
-140710848664416 140710848664416
-
-print(a == b, a is b)
-True True
-
-##对于列表和字典等可变数据类型
-##即使value一样，id也不一样
-a = [1, 2, 3]
-b = [1, 2, 3]
-
-print(id(a), id(b))
-2348645341512 2348645363144
-
-print(a == b, a is b)
-True False
+<ul>
+<li>索引操作可能会引起下标越界异常<pre><code class="lang-Python">lst = [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;]
+print(lst[15])
+#Traceback (most recent call last):
+#
+#  File &quot;&lt;ipython-input-9-bcb28d671f1f&gt;&quot;, line #2, in &lt;module&gt;
+#    print(lst[15])
+#
+#IndexError: list index out of range
 </code></pre>
+</li>
+</ul>
 
             </article>
             <hr>
@@ -427,7 +390,7 @@ True False
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "is 和 == 的区别&nbsp;",
+        "切片操作&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,
