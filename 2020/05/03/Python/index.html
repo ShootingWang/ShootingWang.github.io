@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    18 字
+                    21 字
                   </span>
                 
 
@@ -190,7 +190,8 @@
 <li><a href="/2020/05/03/python-8-%E6%A8%A1%E5%9D%97/" title="模块">模块</a>
 </li>
 </ul>
-<h1><span id="模块">模块</span></h1><h2><span id="-re">- </span></h2>
+<h1><span id="模块">模块</span></h1><h2><span id="re">re</span></h2><a href="/2020/05/03/python-re%E6%A8%A1%E5%9D%97/" title="re模块">re模块</a>
+
             </article>
             <hr>
             <div>
@@ -511,8 +512,24 @@
 
 
 <script src="/js/prism/clipboard.js"></script>
-<script src="/js/prism/prism.js" async></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<script src="/js/prism/prism.js" async></script>
 
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </body>
 </html>
