@@ -17,7 +17,7 @@
   <meta name="description" content="统计一只狗，梦想有只猫">
   <meta name="author" content="ShootingWang">
   <meta name="keywords" content="">
-  <title>sql-3-数据完整性 - ShootingWang</title>
+  <title>数据完整性 - ShootingWang</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
 <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    364 字
+                    469 字
                   </span>
                 
 
@@ -152,7 +152,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    3
+                    4
                      分钟
                   </span>
                 
@@ -197,6 +197,9 @@
 <blockquote>
 <p>使用主键约束且主键不能为空</p>
 </blockquote>
+<ul>
+<li>在满足实体完整性约束的条件下，一个关系中应该有一个或多个候选关键字</li>
+</ul>
 <h2><span id="域完整性">域完整性</span></h2><p>表中的列必须满足某种特定的数据类型约束</p>
 <blockquote>
 <p>通常指数据的有效性，包括</p>
@@ -214,13 +217,24 @@
 <h2><span id="参照完整性">参照完整性</span></h2><p>两个表的主关键字和外关键字的数据应一致，保证了表之间的数据的一致性，防止了数据丢失或无意义的数据在数据库中扩散</p>
 <blockquote>
 <ul>
-<li>不允许关系引用不存在的元组<ul>
+<li>不允许关系引用不存在的元组</li>
 <li>外键或是实际存在的元组，或是为空</li>
-</ul>
-</li>
 </ul>
 </blockquote>
 <h2><span id="用户定义的完整性">用户定义的完整性</span></h2><p>在具体应用所涉及的数据必须满足的语义要求</p>
+<h1><span id="约束">约束</span></h1><p>约束是表级的强制规定</p>
+<h2><span id="not-null">not null</span></h2><p>not null是列级约束，只能作用在列上</p>
+<h2><span id="unique">unique</span></h2><p>唯一约束</p>
+<ul>
+<li>唯一约束允许多个空值</li>
+</ul>
+<h2><span id="primary-key">primary key</span></h2><p>主键约束</p>
+<ul>
+<li>一个表只能有一个主键</li>
+<li>主键非空</li>
+</ul>
+<h2><span id="foreign-key">foreign key</span></h2><p>外键约束</p>
+<h2><span id="check">check</span></h2><p>检查约束</p>
 <h1><span id="参考资料">参考资料</span></h1><p>[1] <a href="https://www.nowcoder.com/test/question/done?tid=33151629&amp;qid=58021#summary" target="_blank" rel="noopener">牛客网试题</a><br>[2] <a href="https://blog.csdn.net/u013634252/article/details/80696882" target="_blank" rel="noopener">数据库中的数据完整性约束</a></p>
 
             </article>
@@ -231,7 +245,7 @@
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     
-                      <a class="hover-with-bg" href="/categories/%E9%A2%98%E5%BA%93/">题库</a>
+                      <a class="hover-with-bg" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
                     
                   </div>
                 
@@ -414,7 +428,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "sql-3-数据完整性&nbsp;",
+        "数据完整性&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,

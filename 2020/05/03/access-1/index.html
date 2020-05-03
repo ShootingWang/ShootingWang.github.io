@@ -17,7 +17,7 @@
   <meta name="description" content="统计一只狗，梦想有只猫">
   <meta name="author" content="ShootingWang">
   <meta name="keywords" content="">
-  <title>支持向量机 - ShootingWang</title>
+  <title>ACCESS窗体 - ShootingWang</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
 <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
@@ -131,8 +131,8 @@
               
                 <div class="mt-3 post-meta">
                   <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-                  <time datetime="2020-04-28 10:00">
-                    星期二, 四月 28日 2020, 10:00 上午
+                  <time datetime="2020-05-03 11:20">
+                    星期日, 五月 3日 2020, 11:20 上午
                   </time>
                 </div>
               
@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    708 字
+                    36 字
                   </span>
                 
 
@@ -152,7 +152,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    9
+                    1
                      分钟
                   </span>
                 
@@ -181,63 +181,14 @@
           <div class="post-content mx-auto" id="post">
             
             <article class="markdown-body">
-              <p>SVM</p>
-<p>Support Vector Machine</p>
-<a id="more"></a>
-<p>支持向量机是一种<u>有监督学习</u>算法，既可以用于分类，也可以用于回归。</p>
-<p>支持向量机是<u>判别分类方法</u>，用一条分割线（二维空间中的直线或曲线）或流形体（多维空间中的曲线、曲面等概念的推广）将各种类型分割开。</p>
-<p>简单分类数据：</p>
-<pre><code class="lang-Python">import matplotlib.pyplot as plt
-import seaborn as sns
-sns.set()
-
-## 创建类别数为2的分类数据
-from sklearn.datasets.samples_generator import make_blobs
-X, y = make_blobs(n_samples=50, centers=2, random_state=0, cluster_std=0.60)
-plt.scatter(X[:, 0], X[:, 1], c=y, s=50, cmap=&#39;autumn&#39;)
-</code></pre>
-<p><img src="/img/SVM-Figure_1.png" srcset="/img/loading.gif" alt="简单分类数据"></p>
-<p>简单分割线：</p>
-<pre><code class="lang-Python">import numpy as np
-xfit = np.linspace(-1, 3.5)
-plt.scatter(X[:, 0], X[:, 1], c=y, s=50, cmap=&#39;autumn&#39;)
-plt.plot([0.6], [2.1], &#39;x&#39;, color=&#39;red&#39;, markeredgewidth=2, markersize=10)  ##特殊点
-
-for m, b in [(1, 0.65), (0.5, 1.6), (-0.2, 2.9)]:
-    plt.plot(xfit, m * xfit + b, &#39;-k&#39;)  ##画三条分割直线
-
-plt.xlim(-1, 3.5)
-</code></pre>
-<p><img src="/img/SVM-Figure_3.png" srcset="/img/loading.gif" alt="三条简单分割直线"><br>上图中的三条简单分割直线（分割器）都能很好地判别这些样本（每条直线都能将圆点数据点正确地分为两类）。但是对于点“X”，不同的分割器将其分配到不同的标签。</p>
-<p>若将分割直线变成具有宽度的、到最近点边界的线条，如下图：</p>
-<pre><code class="lang-Python">xfit = np.linspace(-1, 3.5)
-plt.scatter(X[:, 0], X[:, 1], c=y, s=50, cmap=&#39;autumn&#39;)
-
-for m, b, d in [(1, 0.65, 0.33), (0.5, 1.6, 0.55), (-0.2, 2.9, 0.2)]:
-    yfit = m * xfit + b
-    plt.plot(xfit, yfit, &#39;-k&#39;)
-    plt.fill_between(xfit, yfit - d, yfit + d, edgecolor=&#39;none&#39;, color=&#39;#AAAAAA&#39;, alpha=0.4)
-
-plt.xlim(-1, 3.5)
-</code></pre>
-<p><img src="/img/SVM-Figure_2.png" srcset="/img/loading.gif" alt="带有边界的分割器"></p>
-<p><img src="/img/SVM-Figure_4.jpeg" srcset="/img/loading.gif" alt="带边界线和支持向量的支持向量机分类器"></p>
-<p>正好在边界线上的点，被称为<strong>支持向量</strong>。</p>
-<p>在scikit-learn中，支持向量的坐标存放在分类器的<code>support_vectors_</code>属性中。</p>
-<p>SVM对远离边界的数据点不敏感。</p>
-<h3><span id="总结">总结</span></h3><p>SVM的优点：</p>
-<ol>
-<li>模型以来的支持向量比较少，消耗内存少</li>
-<li>预测阶段的速度快</li>
-<li>模型只受边界线附近的点的影响，因此对于高维数据的学习效果非常好</li>
-<li>与核函数方法的配合极具通用性，能够适用于不同类型的数据</li>
-</ol>
-<p>SVM的缺点：</p>
-<ol>
-<li>随着样本量$N$的增加，模型的训练复杂度可能会高达$\mathcal{O}(N^3)$，即使经过高效处理后，复杂度也有$\mathcal{O}(N^2)$。即，大样本下模型学习的计算成本会很高。</li>
-<li>训练效果非常依赖于边界软化参数$C$的选择是否合理；需要通过交叉检验进行检索；当数据集较大时，计算量也很大。</li>
-</ol>
-<h3><span id="参考资料">参考资料</span></h3><p>[1] Python数据科学手册：<a href="https://book.douban.com/subject/27667378/" target="_blank" rel="noopener">豆瓣图书</a>；<a href="https://jakevdp.github.io/PythonDataScienceHandbook/" target="_blank" rel="noopener">英文版在线阅读</a><br>[2] <a href="https://mp.weixin.qq.com/s?__biz=MzI3NTkyMjA4NA==&amp;mid=2247493162&amp;idx=1&amp;sn=59c051af70c1b4e0ab40d661df1d1ade&amp;chksm=eb7fcbe1dc0842f7cfc9c7224d4c0e2a3fe52d5abe18fe241b717bdf85b59c15d6c16fc99ee8&amp;scene=126&amp;sessionid=1588039863&amp;key=974eeeca00c2ed2bc09cde22429650400361fd61321edc232f5976aa402ec1f37e927d042d76e7eba2cc584551a40b22a7d2cd6e65fe539e5bd3854b306460a7770a747143ced86385ab3a53ffb7ba92&amp;ascene=1&amp;uin=MjAwNDUzMjgxNw%3D%3D&amp;devicetype=Windows+10&amp;version=62080079&amp;lang=zh_CN&amp;exportkey=AWzG3axKR6jb4RKDg8wBmkw%3D&amp;pass_ticket=581sFN8nM0rkEWD6Hp%2BhUJbN5RHzfuAW3vhCzJ2BWY6u9zDUMhZpRh3fnoocgekU" target="_blank" rel="noopener">中文开源！《Python数据科学》PDF下载</a><br>[3] <a href="https://github.com/jakevdp/PythonDataScienceHandbook">Python Data Science Handbook: full text in Jupyter Notebooks</a><br>[4] <a href="http://vas3k.com/blog/machine_learning/" target="_blank" rel="noopener">封面图片来源</a></p>
+              <h1><span id="视图">视图</span></h1><p>ACCESS窗体的视图有：</p>
+<ul>
+<li>窗体视图</li>
+<li>数据表视图</li>
+<li>设计视图</li>
+<li>数据透视表视图</li>
+<li>数据透视图视图</li>
+</ul>
 
             </article>
             <hr>
@@ -247,7 +198,7 @@ plt.xlim(-1, 3.5)
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     
-                      <a class="hover-with-bg" href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
+                      <a class="hover-with-bg" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
                     
                   </div>
                 
@@ -255,17 +206,9 @@ plt.xlim(-1, 3.5)
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/%E7%AE%97%E6%B3%95/">算法</a>
+                      <a class="hover-with-bg" href="/tags/SQL/">SQL</a>
                     
-                      <a class="hover-with-bg" href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">机器学习</a>
-                    
-                      <a class="hover-with-bg" href="/tags/%E5%9B%9E%E5%BD%92/">回归</a>
-                    
-                      <a class="hover-with-bg" href="/tags/%E5%88%86%E7%B1%BB/">分类</a>
-                    
-                      <a class="hover-with-bg" href="/tags/%E6%9C%89%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0/">有监督学习</a>
-                    
-                      <a class="hover-with-bg" href="/tags/%E5%88%A4%E5%88%AB%E5%BC%8F%E6%A8%A1%E5%9E%8B/">判别式模型</a>
+                      <a class="hover-with-bg" href="/tags/ACCESS/">ACCESS</a>
                     
                   </div>
                 
@@ -273,29 +216,6 @@ plt.xlim(-1, 3.5)
               
                 <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://zh.wikipedia.org/wiki/Wikipedia:CC_BY-SA_3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="nofollow noopener noopener">CC BY-SA 3.0协议</a> 。转载请注明出处！</p>
               
-              
-                <div class="post-prevnext row">
-                  <div class="post-prev col-6">
-                    
-                    
-                      <a href="/2020/04/28/%E5%86%B3%E7%AD%96%E6%A0%91/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">决策树</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
-                  </div>
-                  <div class="post-next col-6">
-                    
-                    
-                      <a href="/2020/04/27/Tableau%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90/">
-                        <span class="hidden-mobile">Tableau学习资源</span>
-                        <span class="visible-mobile">下一篇</span>
-                        <i class="iconfont icon-arrowright"></i>
-                      </a>
-                    
-                  </div>
-                </div>
               
             </div>
 
@@ -461,7 +381,7 @@ plt.xlim(-1, 3.5)
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "支持向量机&nbsp;",
+        "ACCESS窗体&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,
