@@ -8,7 +8,7 @@
     <link href="/2020/05/04/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/"/>
     <url>/2020/05/04/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/</url>
     
-    <content type="html"><![CDATA[<p>Linear Regression</p><a id="more"></a><h1><span id="线性回归">线性回归</span></h1><h1><span id="面试题">面试题</span></h1><ul><li><p>State the assumptions in linear regression model</p></li><li><p>How to avoid overfitting in linear regression?</p></li><li><p>Explain gradient descent with respect to linear regression</p></li><li><p>How to choose the value of the parameter learning rate $\alpha$?</p></li><li><p>How to choose the regularization parameter?</p></li></ul><h1><span id="参考资料">参考资料</span></h1><p>[] <a href></a><br>[] <a href></a><br>[] <a href="https://www.dataapplab.com/linear-regression-5-quiz/" target="_blank" rel="noopener">Linear regression 5道经典必考题自测</a></p>]]></content>
+    <content type="html"><![CDATA[<p>Linear Regression</p><a id="more"></a><h1><span id="线性回归">线性回归</span></h1><h2><span id="基本假设">基本假设</span></h2><h2><span id> </span></h2><h1><span id="面试题">面试题</span></h1><ul><li><p>State the assumptions in linear regression model</p></li><li><p>How to avoid overfitting in linear regression?</p></li><li><p>Explain gradient descent with respect to linear regression</p></li><li><p>How to choose the value of the parameter learning rate $\alpha$?</p></li><li><p>How to choose the regularization parameter?</p></li></ul><h1><span id="参考资料">参考资料</span></h1><p>[1] <a href="https://i.vas3k.ru/7qy.jpg" target="_blank" rel="noopener">首页缩略图</a><br>[] <a href></a><br>[] <a href="https://www.dataapplab.com/linear-regression-5-quiz/">Linear regression 5道经典必考题自测</a></p>]]></content>
     
     
     <categories>
