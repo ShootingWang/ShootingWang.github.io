@@ -254,15 +254,17 @@
 <ol>
 <li>Multiple linear regression<br>||dependent variable|independent variable|<br>|:—:|:—-:|:—-:|<br>|amount|1|2+|<br>|type|interval / ratio|interval / ratio / dichotomous|</li>
 <li>Logistic regression<br>||dependent variable|independent variable|<br>|:—:|:—-:|:—-:|<br>|amount|1|2+|<br>|type|dichotomous|interval / ratio / dichotomous|</li>
-<li><p>Ordinal regression</p>
-<p>||dependent variable|independent variable|<br>|:—:|:—-:|:—-:|<br>|amount|1|1+|<br>|type|ordinal<sup><a href="#fn_2" id="reffn_2">2</a></sup>|nominal<sup><a href="#fn_3" id="reffn_3">3</a></sup> or dichotomous|</p>
-</li>
+<li>Ordinal regression<br>||dependent variable|independent variable|<br>|:—:|:—-:|:—-:|<br>|amount|1|1+|<br>|type|ordinal<sup><a href="#fn_2" id="reffn_2">2</a></sup>|nominal<sup><a href="#fn_3" id="reffn_3">3</a></sup> or dichotomous|</li>
 </ol>
+<blockquote id="fn_2">
+<sup>2</sup>. ordinal：有序，序数<a href="#reffn_2" title="Jump back to footnote [2] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_3">
+<sup>3</sup>. nominal：名义<a href="#reffn_3" title="Jump back to footnote [3] in the text."> &#8617;</a>
+</blockquote>
 <ol>
 <li>Multinominal regression<br>||dependent variable|independent variable|<br>|:—:|:—-:|:—-:|<br>|amount|1|1+|<br>|type|nominal|interval / ratio / dichotomous|</li>
-<li><p>Discriminant analysis<br>判别分析</p>
-<p>||dependent variable|independent variable|<br>|:—:|:—-:|:—-:|<br>|amount|1|1+|<br>|type|nominal|interval / ratio|</p>
-</li>
+<li>Discriminant analysis<br>判别分析<br>||dependent variable|independent variable|<br>|:—:|:—-:|:—-:|<br>|amount|1|1+|<br>|type|nominal|interval / ratio|</li>
 </ol>
 <h2><span id="基本模型">基本模型</span></h2><script type="math/tex; mode=display">y=\beta_0+\beta_1x_1+\beta_2x_2+\cdots+\beta_px_p+\varepsilon</script><ul>
 <li>因变量（regressand）：$y$</li>
@@ -695,8 +697,24 @@
 
 
 <script src="/js/prism/clipboard.js"></script>
-<script src="/js/prism/prism.js" async></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<script src="/js/prism/prism.js" async></script>
 
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </body>
 </html>
