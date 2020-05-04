@@ -200,10 +200,10 @@
 <blockquote>
 <ul>
 <li>二分查找的速度比简单查找快得多</li>
+<li>$O(\log{n})$比$O(n)$快</li>
 </ul>
 </blockquote>
 </li>
-<li>$O(\log{n})$比$O(n)$快</li>
 </ul>
 <h1><span id="通用知识">通用知识</span></h1><h2><span id="运行时间">运行时间</span></h2><ul>
 <li>算法运行时间并不以秒为单位</li>
@@ -395,7 +395,14 @@
   </div>
 </footer>
 
-
+{% if theme.mermaid.enable %}
+  <script src='https://unpkg.com/mermaid@{{ theme.mermaid.version }}/dist/mermaid.min.js'></script>
+  <script>
+    if (window.mermaid) {
+      mermaid.initialize({{ JSON.stringify(theme.mermaid.options) }});
+    }
+  </script>
+{% endif %}
 
 <!-- SCRIPTS -->
 <script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
@@ -576,14 +583,7 @@
 <script src="/js/prism/clipboard.js"></script>
 <script src="/js/prism/prism.js" async></script>
 
-{% if theme.mermaid.enable %}
-  <script src='https://unpkg.com/mermaid@{{ theme.mermaid.version }}/dist/mermaid.min.js'></script>
-  <script>
-    if (window.mermaid) {
-      mermaid.initialize({{ JSON.stringify(theme.mermaid.options) }});
-    }
-  </script>
-{% endif %}
+
 
 <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
