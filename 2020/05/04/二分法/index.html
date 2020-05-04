@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    196 字
+                    360 字
                   </span>
                 
 
@@ -152,7 +152,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    2
+                    5
                      分钟
                   </span>
                 
@@ -206,7 +206,48 @@
     12-->|太大|6;
     12-->|太小|18;
     37-->|太大|31;
-    37-->|太小|43;</pre>
+    37-->|太小|43;
+    6-->|太大|3;
+    6-->|太小|9;
+    3-->|太大|1;
+    3-->|太小|4;
+    4-->|太小|5;
+    1-->|太小|2;
+    18-->|太大|15;
+    18-->|太小|21;
+    9-->|太大|7;
+    9-->|太小|10;
+    10-->|太小|11;
+    7-->|太小|8;
+    15-->|太大|13;
+    15-->|太小|16;
+    13-->|太小|14;
+    16-->|太小|17;
+    21-->|太大|19;
+    21-->|太小|23;
+    19-->|太小|20;
+    23-->|太小|24;
+    31-->|太大|28;
+    31-->|太小|34;
+    28-->|太大|26;
+    28-->|太小|29;
+    26-->|太小|27;
+    29-->|太小|30;
+    34-->|太大|32;
+    34-->|太小|35;
+    32-->|太小|33;
+    35-->|太小|36;
+    43-->|太大|40;
+    43-->|太小|46;
+    40-->|太大|38;
+    40-->|太小|41;
+    38-->|太小|39;
+    41-->|太小|42;
+    46-->|太大|44;
+    46-->|太小|48;
+    44-->|太小|46;
+    48-->|太大|47;
+    48-->|太小|49;</pre>
 
 <ul>
 <li>对于包含$n$个元素的列表，用二分查找最多需要$\log_2{n}步$</li>
@@ -548,7 +589,7 @@ print(binary_search(my_lst, 7))
   <script  src="https://cdn.staticfile.org/mermaid/8.4.8/mermaid.min.js" ></script>
   <script>
     if (window.mermaid) {
-      mermaid.initialize({"theme":"forest"});
+      mermaid.initialize({"theme":"default"});
     }
   </script>
 
@@ -565,7 +606,23 @@ print(binary_search(my_lst, 7))
       mermaid.initialize({{ JSON.stringify(theme.mermaid.options) }});
     }
   </script>
-{% endif %}<!-- hexo-inject:begin --><!-- hexo-inject:end -->
+{% endif %}
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </body>
 </html>
