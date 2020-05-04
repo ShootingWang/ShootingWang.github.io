@@ -485,7 +485,10 @@
 <p><strong>正则化</strong>（Regularization）：<br>原目标函数为</p>
 <script type="math/tex; mode=display">\hat{\beta}=\arg\min_\beta\left\{\sum_{i=1}^n(y_i-\sum_{j=0}^p\beta_jx_{ij})^2\right\}</script><p>在原始目标函数上添加惩罚项（penalty term）</p>
 <script type="math/tex; mode=display">\hat{\beta}=\arg\min_\beta\left\{\sum_{i=1}^n(y_i-\sum_{j=0}^p\beta_jx_{ij})^2+\lambda g(\beta)\right\}</script><h3><span id="岭回归">岭回归</span></h3><p>Ridge regression</p>
-<script type="math/tex; mode=display">\hat{\beta}^{ridge}=\arg\min_\beta\left\{\sum_{i=1}^n(y_i-\sum_{j=0}^p\beta_jx_{ij})^2+\lambda \sum_{j=1}^p\beta_j^2\right\}</script><h3><span id="lasso">Lasso</span></h3><script type="math/tex; mode=display">\hat{\beta}^{lasso}=\arg\min_\beta\left\{\sum_{i=1}^n(y_i-\sum_{j=0}^p\beta_jx_{ij})^2+\lambda \sum_{j=1}^p|\beta_j|\right\}</script><h3><span id="elastic-net">Elastic Net</span></h3><script type="math/tex; mode=display">\hat{\beta}^{lasso}=\arg\min_\beta\left\{\sum_{i=1}^n(y_i-\sum_{j=0}^p\beta_jx_{ij})^2+\lambda_2 \sum_{j=1}^p\beta_j^2+\lambda_1 \sum_{j=1}^p|\beta_j|\right\}</script><h2><span id="残差">残差</span></h2><script type="math/tex; mode=display">e_i=y_i-\hat{y}_i</script><h2><span id="相关检验">相关检验</span></h2><h3><span id="dw检验">DW检验</span></h3><p>用于检验残差是否具有自相关性<br>Durbin-Watson统计量</p>
+<script type="math/tex; mode=display">\hat{\beta}^{ridge}={\arg\min}_\beta\left\{\sum_{i=1}^n(y_i-\sum_{j=0}^p\beta_jx_{ij})^2+\lambda \sum_{j=1}^p\beta_j^2\right\}</script><ul>
+<li>若自变量间存在严重的共线性问题，普通最小二乘法并不适用，可以选用岭回归方法</li>
+</ul>
+<h3><span id="lasso">Lasso</span></h3><script type="math/tex; mode=display">\hat{\beta}^{lasso}=\arg\min_\beta\left\{\sum_{i=1}^n(y_i-\sum_{j=0}^p\beta_jx_{ij})^2+\lambda \sum_{j=1}^p|\beta_j|\right\}</script><h3><span id="elastic-net">Elastic Net</span></h3><script type="math/tex; mode=display">\hat{\beta}^{EN}=\arg\min_\beta\left\{\sum_{i=1}^n(y_i-\sum_{j=0}^p\beta_jx_{ij})^2+\lambda_2 \sum_{j=1}^p\beta_j^2+\lambda_1 \sum_{j=1}^p|\beta_j|\right\}</script><h2><span id="残差">残差</span></h2><script type="math/tex; mode=display">e_i=y_i-\hat{y}_i</script><h2><span id="相关检验">相关检验</span></h2><h3><span id="dw检验">DW检验</span></h3><p>用于检验残差是否具有自相关性<br>Durbin-Watson统计量</p>
 <script type="math/tex; mode=display">DW=\frac{\sum_{i=2}^n(e_i-e_{i-1})^2}{\sum_{i=1}^ne_i^2}</script><h3><span id="残差检验">残差检验</span></h3><h2><span id="平方和">平方和</span></h2><h3><span id="1-总平方和">1. 总平方和</span></h3><ul>
 <li>总平方和</li>
 <li>总离差平方和</li>
@@ -877,8 +880,24 @@
 
 
 <script src="/js/prism/clipboard.js"></script>
-<script src="/js/prism/prism.js" async></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<script src="/js/prism/prism.js" async></script>
 
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </body>
 </html>
