@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    1k 字
+                    1.1k 字
                   </span>
                 
 
@@ -225,6 +225,22 @@
             print(lst[i])
     except:
         break
+</code></pre>
+<h2><span id="求int型正整数在内存中存储时1的个数">求int型正整数在内存中存储时1的个数</span></h2><p><a href="https://www.nowcoder.com/practice/440f16e490a0404786865e99c6ad91c9?tpId=37&amp;tqId=21238&amp;rp=0&amp;ru=/ta/huawei&amp;qru=/ta/huawei/question-ranking" target="_blank" rel="noopener">题目详情</a></p>
+<pre><code class="lang-Python">while True:
+    try:
+        bin_n = bin(int(input()))
+        print(str(bin_n).count(&#39;1&#39;))
+    except:
+        break
+</code></pre>
+<h2><span id> </span></h2><p><a href>题目详情</a></p>
+<pre><code class="lang-Python">
+
+</code></pre>
+<h2><span id> </span></h2><p><a href>题目详情</a></p>
+<pre><code class="lang-Python">
+
 </code></pre>
 <h2><span id> </span></h2><p><a href>题目详情</a></p>
 <pre><code class="lang-Python">
@@ -662,8 +678,24 @@ n = 20
 
 
 <script src="/js/prism/clipboard.js"></script>
-<script src="/js/prism/prism.js" async></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<script src="/js/prism/prism.js" async></script>
 
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </body>
 </html>
