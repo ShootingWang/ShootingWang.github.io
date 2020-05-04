@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    2.2k 字
+                    2.3k 字
                   </span>
                 
 
@@ -152,7 +152,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    36
+                    38
                      分钟
                   </span>
                 
@@ -474,7 +474,7 @@
 <li>需要经过多次试验，选取较优的学习率/步长</li>
 </ul>
 <blockquote>
-<p>learning rate, α, basically controls how big step we take downhill with gradient descent. If α is large, then that corresponds to a very aggressive gradient descent procedure, where we’re trying to take huge steps downhill. And if α is very small, then we’re taking little, little baby steps downhill.——吴恩达-机器学习</p>
+<p>learning rate, $\alpha$, basically controls how big step we take downhill with gradient descent. If $\alpha$ is large, then that corresponds to a very aggressive gradient descent procedure, where we’re trying to take huge steps downhill. And if $\alpha$ is very small, then we’re taking little, little baby steps downhill.——吴恩达-机器学习</p>
 </blockquote>
 <h2><span id="正则化">正则化</span></h2><p>若训练模型过于复杂，容易出现<strong>过拟合</strong>（overfitting）问题。</p>
 <p>解决方法：</p>
@@ -484,7 +484,8 @@
 </ol>
 <p><strong>正则化</strong>（Regularization）：<br>原目标函数为</p>
 <script type="math/tex; mode=display">\hat{\beta}=\arg\min_\beta\left\{\sum_{i=1}^n(y_i-\sum_{j=0}^p\beta_jx_{ij})^2\right\}</script><p>在原始目标函数上添加惩罚项（penalty term）</p>
-<script type="math/tex; mode=display">\hat{\beta}=\arg\min_\beta\left\{\sum_{i=1}^n(y_i-\sum_{j=0}^p\beta_jx_{ij})^2+\lambda g(\beta)\right\}</script><h2><span id="残差">残差</span></h2><script type="math/tex; mode=display">e_i=y_i-\hat{y}_i</script><h2><span id="相关检验">相关检验</span></h2><h3><span id="dw检验">DW检验</span></h3><p>用于检验残差是否具有自相关性<br>Durbin-Watson统计量</p>
+<script type="math/tex; mode=display">\hat{\beta}=\arg\min_\beta\left\{\sum_{i=1}^n(y_i-\sum_{j=0}^p\beta_jx_{ij})^2+\lambda g(\beta)\right\}</script><h3><span id="岭回归">岭回归</span></h3><p>Ridge regression</p>
+<script type="math/tex; mode=display">\hat{\beta}^{ridge}=\arg\min_\beta\left\{\sum_{i=1}^n(y_i-\sum_{j=0}^p\beta_jx_{ij})^2+\lambda \sum_{j=1}^p\beta_j^2\right\}</script><h3><span id="lasso">Lasso</span></h3><script type="math/tex; mode=display">\hat{\beta}^{lasso}=\arg\min_\beta\left\{\sum_{i=1}^n(y_i-\sum_{j=0}^p\beta_jx_{ij})^2+\lambda \sum_{j=1}^p|\beta_j|\right\}</script><h3><span id="elastic-net">Elastic Net</span></h3><script type="math/tex; mode=display">\hat{\beta}^{lasso}=\arg\min_\beta\left\{\sum_{i=1}^n(y_i-\sum_{j=0}^p\beta_jx_{ij})^2+\lambda_2 \sum_{j=1}^p\beta_j^2+\lambda_1 \sum_{j=1}^p|\beta_j|\right\}</script><h2><span id="残差">残差</span></h2><script type="math/tex; mode=display">e_i=y_i-\hat{y}_i</script><h2><span id="相关检验">相关检验</span></h2><h3><span id="dw检验">DW检验</span></h3><p>用于检验残差是否具有自相关性<br>Durbin-Watson统计量</p>
 <script type="math/tex; mode=display">DW=\frac{\sum_{i=2}^n(e_i-e_{i-1})^2}{\sum_{i=1}^ne_i^2}</script><h3><span id="残差检验">残差检验</span></h3><h2><span id="平方和">平方和</span></h2><h3><span id="1-总平方和">1. 总平方和</span></h3><ul>
 <li>总平方和</li>
 <li>总离差平方和</li>
@@ -876,24 +877,8 @@
 
 
 <script src="/js/prism/clipboard.js"></script>
-<script src="/js/prism/prism.js" async></script>
+<script src="/js/prism/prism.js" async></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </body>
 </html>
