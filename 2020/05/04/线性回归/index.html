@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    464 字
+                    634 字
                   </span>
                 
 
@@ -152,7 +152,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    7
+                    9
                      分钟
                   </span>
                 
@@ -396,27 +396,46 @@
 </div>
 <h2><span id="基本模型">基本模型</span></h2><script type="math/tex; mode=display">y=\beta_0+\beta_1x_1+\beta_2x_2+\cdots+\beta_px_p+\varepsilon</script><ul>
 <li>因变量（regressand）：$y$</li>
-<li>自变量（regressor）：$x_1,\cdots,x_p$</li>
+<li>自变量（regressor）：$x_1,\cdots,x_p$<ul>
+<li>是确定性变量，不是随机变量 </li>
+</ul>
+</li>
 <li>随机误差项：$\varepsilon$</li>
 <li>截距项（intercept）：$\beta_0$</li>
 <li>回归系数（regression coefficient）</li>
 </ul>
-<h2><span id="基本假设">基本假设</span></h2><ol>
-<li>$\varepsilon\sim i.i.d. N(0,\sigma^2)$<ul>
-<li>随机误差项服从均值为零、方差为常数的标准正态分布</li>
-<li>随机误差项独立同分布（i.i.d.，independent and identical distribution）<blockquote>
-<ul>
-<li>随机误差项相互独立；若不满足，则模型具有<strong>自相关性</strong>（Autocorrelation）</li>
-<li>随机误差项<strong>同方差</strong>（Homoskedasticity）；若不满足，则存在<strong>异方差性</strong>（Heteroskedasticity）</li>
-</ul>
-</blockquote>
-</li>
-</ul>
-</li>
-<li>自变量间相互独立<ul>
+<p>考虑$p$个自变量$(\bm{X}_1,\bm{X}_2,\cdots, \bm{X}_p)$<br>\begin{equation<em>}<br>\textbf{y}=\textbf{X} \bm{\beta} + \bm{\varepsilon}, \qquad \bm{\varepsilon} \sim \mathcal{N}(\mathbf{0},\sigma^2\mathbf{I})<br>\end{equation</em>}<br>其中</p>
+<script type="math/tex; mode=display">\mathbf{X}=(\mathbf{1},\bm{X}_1,\bm{X}_2,\cdots, \bm{X}_p)=\left(\begin{array}{cccc}
+  1 & X_{11} & \cdots & X_{1p}\\
+  1 & X_{21} & \cdots & X_{2p}\\
+  \vdots & \vdots & \ddots & \vdots \\
+  1 & X_{n1} & \cdots & X_{np}
+\end{array}\right),\qquad \bm{\beta}=\left(\begin{array}{c}
+  \beta_0\\ \beta_1 \\ \vdots \\ \beta_p
+\end{array}\right),
+\qquad \bm{\varepsilon}=
+\left(\begin{array}{c}
+  \varepsilon_1 \\ \varepsilon_2 \\ \vdots \\ \varepsilon_n
+\end{array}\right)</script><h2><span id="基本假设">基本假设</span></h2><ol>
+<li>自变量$x$和因变量$y$线性相关</li>
+<li>自变量之间相互独立<ul>
+<li>解释变量之间不存在（完全的）线性关系</li>
 <li>若不满足，则模型具有<strong>多重共线性</strong>（Multicollinearity）</li>
 </ul>
 </li>
+<li>随机误差项相互独立<ul>
+<li>若不满足，则模型具有<strong>自相关性</strong>（Autocorrelation）</li>
+</ul>
+</li>
+<li>$\varepsilon\sim i.i.d. N(0,\sigma^2)$<ul>
+<li>随机误差项服从均值为零、方差为常数的标准正态分布</li>
+<li>随机误差项独立同分布（i.i.d.，independent and identical distribution）<ul>
+<li>随机误差项<strong>同方差</strong>（Homoskedasticity）；若不满足，则存在<strong>异方差性</strong>（Heteroskedasticity）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>自变量$X$和误差项之间相互独立 </li>
 </ol>
 <h2><span id> </span></h2><h1><span id="面试题">面试题</span></h1><ul>
 <li><p>State the assumptions in linear regression model</p>
