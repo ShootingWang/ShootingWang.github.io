@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    262 字
+                    338 字
                   </span>
                 
 
@@ -152,7 +152,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    2
+                    3
                      分钟
                   </span>
                 
@@ -219,16 +219,26 @@
 </ul>
 <p>常见的<strong>大O运行时间</strong>：</p>
 <ul>
-<li>$O(\log{n})$：对数时间<pre><code>- 二分查找
-</code></pre></li>
-<li>$O(n)$：线性时间<pre><code>- 简单查找
-</code></pre></li>
-<li>$O(n\log{n})$<pre><code>- 快速排序
-</code></pre></li>
-<li>$O(n^2)$<pre><code>- 选择排序
-</code></pre></li>
-<li>$O(n!)$<pre><code>- 旅行商问题
-</code></pre></li>
+<li>$O(\log{n})$：对数时间<ul>
+<li>二分查找</li>
+</ul>
+</li>
+<li>$O(n)$：线性时间<ul>
+<li>简单查找</li>
+</ul>
+</li>
+<li>$O(n\log{n})$<ul>
+<li>快速排序</li>
+</ul>
+</li>
+<li>$O(n^2)$<ul>
+<li>选择排序</li>
+</ul>
+</li>
+<li>$O(n!)$<ul>
+<li>旅行商问题</li>
+</ul>
+</li>
 </ul>
 <p>常见的数组和链表操作的运行时间：</p>
 <div class="table-container">
@@ -243,22 +253,28 @@
 <tbody>
 <tr>
 <td style="text-align:center">读取</td>
-<td style="text-align:center">$O(1)$</td>
-<td style="text-align:center">$O(n)$</td>
+<td style="text-align:center">$O(1)$<sup><a href="#fn_1" id="reffn_1">1</a></sup></td>
+<td style="text-align:center">$O(n)$<sup><a href="#fn_2" id="reffn_2">2</a></sup></td>
 </tr>
 <tr>
 <td style="text-align:center">插入</td>
-<td style="text-align:center">$O(n)$<sup><a href="#fn_1" id="reffn_1">1</a></sup></td>
-<td style="text-align:center">$O(1)$<sup><a href="#fn_2" id="reffn_2">2</a></sup></td>
+<td style="text-align:center">$O(n)$<sup><a href="#fn_3" id="reffn_3">3</a></sup></td>
+<td style="text-align:center">$O(1)$<sup><a href="#fn_4" id="reffn_4">4</a></sup></td>
 </tr>
 </tbody>
 </table>
 </div>
 <blockquote id="fn_1">
-<sup>1</sup>. 在数组的中间插入元素时，必须将后面的元素都向后移<a href="#reffn_1" title="Jump back to footnote [1] in the text."> &#8617;</a>
+<sup>1</sup>. 数组的元素的位置都已知，直接根据索引读取某元素<a href="#reffn_1" title="Jump back to footnote [1] in the text."> &#8617;</a>
 </blockquote>
 <blockquote id="fn_2">
-<sup>2</sup>. 在链表中插入元素，只需修改那个元素指向的位置<a href="#reffn_2" title="Jump back to footnote [2] in the text."> &#8617;</a>
+<sup>2</sup>. 要访问链表的某个元素，必须先访问第一个元素以获得第二个元素的地址，再访问第二个元素以获得第三个元素的地址，……<a href="#reffn_2" title="Jump back to footnote [2] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_3">
+<sup>3</sup>. 在数组中插入元素时，必须将后面的元素都向后移<a href="#reffn_3" title="Jump back to footnote [3] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_4">
+<sup>4</sup>. 在链表中插入元素，只需修改那个元素指向的位置<a href="#reffn_4" title="Jump back to footnote [4] in the text."> &#8617;</a>
 </blockquote>
 
             </article>
