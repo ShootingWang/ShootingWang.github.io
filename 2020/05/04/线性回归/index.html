@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    371 字
+                    318 字
                   </span>
                 
 
@@ -152,7 +152,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    5
+                    4
                      分钟
                   </span>
                 
@@ -196,23 +196,44 @@
               <p>Linear Regression</p>
 <a id="more"></a>
 <h1><span id="线性回归">线性回归</span></h1><p>自变量$x$和因变量$y$之间存在线性相关关系</p>
-<h2><span id="变量别名">变量别名</span></h2><style>
-table {
-    width: 100%; /*表格宽度*/
-    max-width: 65em; /*表格最大宽度，避免表格过宽*/
-    border: 1px solid #dedede; /*表格外边框设置*/
-    margin: 15px auto; /*外边距*/
-    border-collapse: collapse; /*使用单一线条的边框*/
-    empty-cells: show; /*单元格无内容依旧绘制边框*/
-}
-
-table th,
-table td {
-  height: 35px; /*统一每一行的默认高度*/
-  border: 1px solid #dedede; /*内部边框样式*/
-  padding: 0 10px; /*内边距*/
-}
-</style>
+<h2><span id="变量别名">变量别名</span></h2><table>
+  <tr>
+    <th>自变量</th>
+    <th>因变量</th>
+  </tr>
+  <tr>
+    <td>input variable</td>
+    <td>outcome variable</td>
+  </tr>
+  <tr>
+    <td>explanatory variable</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>regressor</td>
+    <td>regressand</td>
+  </tr>
+  <tr>
+    <td>independent variable</td>
+    <td>dependent variable</td>
+  </tr>
+  <tr>
+    <td>feature</td>
+    <td>target</td>
+  </tr>
+  <tr>
+    <td>predictor variable</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>exogenous variable</td>
+    <td>endogenous variable</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>criterion variable</td>
+  </tr>
+</table>
 
 <div class="table-container">
 <table>
@@ -263,7 +284,8 @@ table td {
 <li>预测效应<br>to forecast effects or impact of changes</li>
 <li>预测趋势<br>to predict trends and future values</li>
 </ul>
-<h2><span id="类型">类型</span></h2><h2><span id="基本假设">基本假设</span></h2><p>基本模型：</p>
+<h2><span id="类型">类型</span></h2><p>线性回归的类型有：</p>
+<h3><span id="1-simple-linear-regression">1. Simple linear regression</span></h3><h3><span id="2-multiple-linear-regression">2. Multiple linear regression</span></h3><h3><span id="3-logistic-regression">3. Logistic regression</span></h3><h2><span id="基本假设">基本假设</span></h2><p>基本模型：</p>
 <script type="math/tex; mode=display">y=\beta_0+\beta_1x_1+\beta_2x_2+\cdots+\beta_px_p+\varepsilon</script><ul>
 <li>因变量（regressand）：$y$</li>
 <li>自变量（regressor）：$x_1,\cdots,x_p$</li>
@@ -625,8 +647,24 @@ table td {
 
 
 <script src="/js/prism/clipboard.js"></script>
-<script src="/js/prism/prism.js" async></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<script src="/js/prism/prism.js" async></script>
 
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </body>
 </html>
