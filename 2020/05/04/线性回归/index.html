@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    342 字
+                    396 字
                   </span>
                 
 
@@ -152,7 +152,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    5
+                    6
                      分钟
                   </span>
                 
@@ -318,7 +318,7 @@
 </tbody>
 </table>
 </div>
-<div class="table-container">
+<h3><span id="4-ordinal2-regression">4. Ordinal<sup><a href="#fn_2" id="reffn_2">2</a></sup> regression</span></h3><div class="table-container">
 <table>
 <thead>
 <tr>
@@ -330,16 +330,47 @@
 <tbody>
 <tr>
 <td style="text-align:center">amount</td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1+</td>
 </tr>
 <tr>
 <td style="text-align:center">type</td>
-<td style="text-align:center"></td>
+<td style="text-align:center">ordinal</td>
+<td style="text-align:center">nominal<sup><a href="#fn_3" id="reffn_3">3</a></sup> or dichotomous</td>
 </tr>
 </tbody>
 </table>
 </div>
+<blockquote id="fn_2">
+<sup>2</sup>. ordinal:有序，序数<a href="#reffn_2" title="Jump back to footnote [2] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_3">
+<sup>3</sup>. nominal:名义<a href="#reffn_3" title="Jump back to footnote [3] in the text."> &#8617;</a>
+</blockquote>
+<h3><span id="5-multinominal-regression">5. Multinominal regression</span></h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">dependent variable</th>
+<th style="text-align:center">independent variable</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">amount</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1+</td>
+</tr>
+<tr>
+<td style="text-align:center">type</td>
+<td style="text-align:center">nominal</td>
+<td style="text-align:center">interval / ratio / dichotomous</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3><span id="6-discriminant-analysis">6. Discriminant analysis</span></h3><p>判别分析<br>||dependent variable|independent variable|<br>|:—:|:—-:|:—-:|<br>|amount|1|1+|<br>|type|nominal|interval / ratio|</p>
 <h2><span id="基本假设">基本假设</span></h2><p>基本模型：</p>
 <script type="math/tex; mode=display">y=\beta_0+\beta_1x_1+\beta_2x_2+\cdots+\beta_px_p+\varepsilon</script><ul>
 <li>因变量（regressand）：$y$</li>
