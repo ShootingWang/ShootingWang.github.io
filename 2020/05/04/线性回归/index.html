@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    2.1k 字
+                    2.2k 字
                   </span>
                 
 
@@ -152,7 +152,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    34
+                    36
                      分钟
                   </span>
                 
@@ -476,8 +476,15 @@
 <blockquote>
 <p>learning rate, α, basically controls how big step we take downhill with gradient descent. If α is large, then that corresponds to a very aggressive gradient descent procedure, where we’re trying to take huge steps downhill. And if α is very small, then we’re taking little, little baby steps downhill.——吴恩达-机器学习</p>
 </blockquote>
-<h2><span id="正则化">正则化</span></h2><p><strong>正则化</strong>（Regularization）：</p>
-<h2><span id="残差">残差</span></h2><script type="math/tex; mode=display">e_i=y_i-\hat{y}_i</script><h2><span id="相关检验">相关检验</span></h2><h3><span id="dw检验">DW检验</span></h3><p>用于检验残差是否具有自相关性<br>Durbin-Watson统计量</p>
+<h2><span id="正则化">正则化</span></h2><p>若训练模型过于复杂，容易出现<strong>过拟合</strong>（overfitting）问题。</p>
+<p>解决方法：</p>
+<ol>
+<li>减少特征的数量</li>
+<li>降低特征的权重，即正则化</li>
+</ol>
+<p><strong>正则化</strong>（Regularization）：<br>原目标函数为</p>
+<script type="math/tex; mode=display">\hat{\beta}=\arg\min_\beta\left\{\sum_{i=1}^n(y_i-\sum_{j=0}^p\beta_jx_{ij})^2\right\}</script><p>在原始目标函数上添加惩罚项（penalty term）</p>
+<script type="math/tex; mode=display">\hat{\beta}=\arg\min_\beta\left\{\sum_{i=1}^n(y_i-\sum_{j=0}^p\beta_jx_{ij})^2+\lambda g(\beta)\right\}</script><h2><span id="残差">残差</span></h2><script type="math/tex; mode=display">e_i=y_i-\hat{y}_i</script><h2><span id="相关检验">相关检验</span></h2><h3><span id="dw检验">DW检验</span></h3><p>用于检验残差是否具有自相关性<br>Durbin-Watson统计量</p>
 <script type="math/tex; mode=display">DW=\frac{\sum_{i=2}^n(e_i-e_{i-1})^2}{\sum_{i=1}^ne_i^2}</script><h3><span id="残差检验">残差检验</span></h3><h2><span id="平方和">平方和</span></h2><h3><span id="1-总平方和">1. 总平方和</span></h3><ul>
 <li>总平方和</li>
 <li>总离差平方和</li>
@@ -523,7 +530,10 @@
 </blockquote>
 </li>
 <li>How to avoid <strong>overfitting</strong> in linear regression?<blockquote>
-<p>减少自变量的权重，控制模型的复杂度。即，进行正则化<strong>Regularization</strong></p>
+<ul>
+<li>减少特征的数量</li>
+<li>减少自变量的权重，控制模型的复杂度。即，进行正则化<strong>Regularization</strong></li>
+</ul>
 </blockquote>
 </li>
 <li><p>Explain <strong>gradient descent</strong> with respect to linear regression</p>
