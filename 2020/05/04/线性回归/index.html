@@ -247,10 +247,11 @@
 </ul>
 <h2><span id="类型">类型</span></h2><p>线性回归的类型有：</p>
 <ol>
-<li><p>Simple linear regression</p>
-<p>||dependent variable|independent variable|<br>|:—:|:—-:|:—-:|<br>|amount|1|1|<br>|type|interval / ratio|interval / ratio / dichotomous<sup><a href="#fn_1" id="reffn_1">1</a></sup>|</p>
-</li>
+<li><strong>Simple linear regression</strong><br>||dependent variable|independent variable|<br>|:—:|:—-:|:—-:|<br>|amount|1|1|<br>|type|interval / ratio|interval / ratio / dichotomous<sup><a href="#fn_1" id="reffn_1">1</a></sup>|</li>
 </ol>
+<blockquote id="fn_1">
+<sup>1</sup>. dichotomous：二分类<a href="#reffn_1" title="Jump back to footnote [1] in the text."> &#8617;</a>
+</blockquote>
 <ol>
 <li>Multiple linear regression<br>||dependent variable|independent variable|<br>|:—:|:—-:|:—-:|<br>|amount|1|2+|<br>|type|interval / ratio|interval / ratio / dichotomous|</li>
 <li>Logistic regression<br>||dependent variable|independent variable|<br>|:—:|:—-:|:—-:|<br>|amount|1|2+|<br>|type|dichotomous|interval / ratio / dichotomous|</li>
@@ -697,24 +698,8 @@
 
 
 <script src="/js/prism/clipboard.js"></script>
-<script src="/js/prism/prism.js" async></script>
+<script src="/js/prism/prism.js" async></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </body>
 </html>
