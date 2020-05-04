@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    744 字
+                    811 字
                   </span>
                 
 
@@ -152,7 +152,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    11
+                    12
                      分钟
                   </span>
                 
@@ -421,7 +421,7 @@
 \end{array}\right)</script><h2><span id="基本假设">基本假设</span></h2><ol>
 <li>自变量和因变量线性相关</li>
 <li>自变量之间相互独立<ul>
-<li>解释变量之间不存在（完全的）线性关系<script type="math/tex; mode=display">\mathrm{rand}(X)=p</script></li>
+<li>解释变量之间不存在（完全的）线性关系<script type="math/tex; mode=display">\mathrm{rank}(X)=p</script></li>
 <li>若不满足，则模型具有<strong>多重共线性</strong>（Multicollinearity）</li>
 </ul>
 </li>
@@ -440,11 +440,24 @@
 <li>自变量$X$和误差项之间相互独立</li>
 </ol>
 <h2><span id="平方和">平方和</span></h2><h3><span id="1-总平方和">1. 总平方和</span></h3><ul>
-<li>总离差平方和/总平方和</li>
+<li>总平方和</li>
+<li>总离差平方和</li>
 <li>SST (Sum of Squares Total)</li>
 <li>TSS (Total Sum of Squares)<script type="math/tex; mode=display">\mathbf{\sum_{i=1}^n(y_i-\bar{y})^2}</script></li>
 </ul>
-<h3><span id="2-回归平方和">2. 回归平方和</span></h3><h3><span id="3-残差平方和">3. 残差平方和</span></h3><h1><span id="面试题">面试题</span></h1><ul>
+<h3><span id="2-回归平方和">2. 回归平方和</span></h3><ul>
+<li>回归平方和</li>
+<li>解释平方和</li>
+<li>SSR (Sum of Squares Regression)</li>
+<li>ESS (Explained Sum of Squares)</li>
+</ul>
+<script type="math/tex; mode=display">\mathbf{\sum_{i=1}^n(\hat{y}_i-\bar{y})^2}</script><h3><span id="3-残差平方和">3. 残差平方和</span></h3><ul>
+<li>残差平方和</li>
+<li>SSE (Sum of Squared estimate of Errors/ Sum of Squares Error)</li>
+<li>RSS (Residual Sum of Squares)</li>
+<li>SSR (Sum of Squared Residuals)</li>
+</ul>
+<script type="math/tex; mode=display">\mathbf{\sum_{i=1}^n(y_i-\hat{y}_i)^2}</script><h1><span id="面试题">面试题</span></h1><ul>
 <li>State the assumptions in linear regression model<blockquote>
 <ul>
 <li>自变量和因变量线性相关</li>
