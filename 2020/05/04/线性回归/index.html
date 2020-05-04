@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    633 字
+                    641 字
                   </span>
                 
 
@@ -404,7 +404,9 @@
 <li>截距项（intercept）：$\beta_0$</li>
 <li>回归系数（regression coefficient）</li>
 </ul>
-<p>考虑$p$个自变量$(\mathbf{X}_1,\mathbf{X}_2,\cdots, \mathbf{X}_p)$<br>\begin{equation}<br>\textbf{y}=\textbf{X} \mathbf{\beta} + \mathbf{\varepsilon}, \qquad \mathbf{\varepsilon} \sim \mathcal{N}(\mathbf{0},\sigma^2\mathbf{I})<br>\end{equation}<br>其中</p>
+<p>考虑$n$个样本、$p$个自变量$(\mathbf{X}_1,\mathbf{X}_2,\cdots, \mathbf{X}_p)$</p>
+<p>\begin{equation}<br>\textbf{y}=\textbf{X} \mathbf{\beta} + \mathbf{\varepsilon}, \qquad \mathbf{\varepsilon} \sim \mathcal{N}(\mathbf{0},\sigma^2\mathbf{I})<br>\end{equation}</p>
+<p>其中</p>
 <script type="math/tex; mode=display">\mathbf{X}=(\mathbf{1},\mathbf{X}_1,\mathbf{X}_2,\cdots, \mathbf{X}_p)=\left(\begin{array}{cccc}
   1 & X_{11} & \cdots & X_{1p}\\
   1 & X_{21} & \cdots & X_{2p}\\
@@ -419,7 +421,7 @@
 \end{array}\right)</script><h2><span id="基本假设">基本假设</span></h2><ol>
 <li>自变量$x$和因变量$y$线性相关</li>
 <li>自变量之间相互独立<ul>
-<li>解释变量之间不存在（完全的）线性关系</li>
+<li>解释变量之间不存在（完全的）线性关系<script type="math/tex; mode=display">mathrm{rand}(X)=p</script></li>
 <li>若不满足，则模型具有<strong>多重共线性</strong>（Multicollinearity）</li>
 </ul>
 </li>
@@ -435,7 +437,7 @@
 </li>
 </ul>
 </li>
-<li>自变量$X$和误差项之间相互独立 </li>
+<li>自变量$X$和误差项之间相互独立</li>
 </ol>
 <h2><span id> </span></h2><h1><span id="面试题">面试题</span></h1><ul>
 <li><p>State the assumptions in linear regression model</p>
@@ -782,8 +784,24 @@
 
 
 <script src="/js/prism/clipboard.js"></script>
-<script src="/js/prism/prism.js" async></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<script src="/js/prism/prism.js" async></script>
 
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </body>
 </html>
