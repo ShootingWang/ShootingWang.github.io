@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    1.8k 字
+                    2.1k 字
                   </span>
                 
 
@@ -152,7 +152,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    31
+                    34
                      分钟
                   </span>
                 
@@ -462,6 +462,21 @@
 <script type="math/tex; mode=display">J(\beta)=\frac{1}{2n}\sum_{i=1}^n\left(h_\beta(x^{(i)})-y^{(i)}\right)^2</script><p>Objective function:</p>
 <script type="math/tex; mode=display">\min_\beta J(\beta)</script><h3><span id="batch-gradient-descent">(Batch) Gradient Descent</span></h3><p>（全批量）梯度下降法<br>Linear Regression with <strong>(Batch) Gradient Descent</strong>：<br>repeat until convergence $\{$</p>
 <script type="math/tex; mode=display">\beta_j:=\beta_j-\alpha\frac{1}{n}\sum_{i=1}^n\left(h_\beta(x^{(i)})-y^{(i)}\right)x_j^{(i)}</script><p>for $\forall$ $j=0,1,\cdots,p$.<br>$\}$</p>
+<p>其中<br>$\alpha$为<strong>学习率/学习步长</strong>（learning rate）：</p>
+<ul>
+<li>决定了在每一步梯度下降迭代过程中，<ul>
+<li>每一步沿梯度负方向前进的长度（如果是最小化目标函数）</li>
+<li>每一步沿梯度正方向前进的长度（如果是最大化目标函数）</li>
+</ul>
+</li>
+<li>学习率过小，需要迭代的步数较多，需要花费较多的学习时间</li>
+<li>学习率过大，会导致迭代过快，容易出现点在最优点的左右反复横跳（可能错过最优点）</li>
+<li>需要经过多次试验，选取较优的学习率/步长</li>
+</ul>
+<blockquote>
+<p>learning rate, α, basically controls how big step we take downhill with gradient descent. If α is large, then that corresponds to a very aggressive gradient descent procedure, where we’re trying to take huge steps downhill. And if α is very small, then we’re taking little, little baby steps downhill.——吴恩达-机器学习</p>
+</blockquote>
+<h2><span id="正则化">正则化</span></h2><p><strong>正则化</strong>（Regularization）：</p>
 <h2><span id="残差">残差</span></h2><script type="math/tex; mode=display">e_i=y_i-\hat{y}_i</script><h2><span id="相关检验">相关检验</span></h2><h3><span id="dw检验">DW检验</span></h3><p>用于检验残差是否具有自相关性<br>Durbin-Watson统计量</p>
 <script type="math/tex; mode=display">DW=\frac{\sum_{i=2}^n(e_i-e_{i-1})^2}{\sum_{i=1}^ne_i^2}</script><h3><span id="残差检验">残差检验</span></h3><h2><span id="平方和">平方和</span></h2><h3><span id="1-总平方和">1. 总平方和</span></h3><ul>
 <li>总平方和</li>
@@ -497,7 +512,7 @@
 <p>\begin{equation}<br>  \begin{aligned}<br>    SST&amp;=(\textbf{y}-\bar{\textbf{y}})^\prime(\textbf{y}-\bar{\textbf{y}})\\<br>    SSR&amp;=(\hat{\textbf{y}}-\bar{\textbf{y}})^\prime(\hat{\textbf{y}}-\bar{\textbf{y}})\\<br>    SSE&amp;=(\textbf{y}-\hat{\textbf{y}})^\prime(\textbf{y}-\hat{\textbf{y}})<br>  \end{aligned}<br>\end{equation}<br>定义$\textbf{1}_n=(1,1,\cdots,1)^\prime$为元素全是1的 $n$ 维列向量，则均值算子为$\frac{\textbf{1}_n\textbf{1}_n^\prime}{n}$ （全是$\frac{1}{n}$ 的$n\times n$方阵），$\textbf{1}_n^\prime\textbf{1}_n=n$，且</p>
 <script type="math/tex; mode=display">\left(\textbf{I}-\frac{\textbf{1}_n\textbf{1}_n^\prime}{n}\right)^\prime = \left(\textbf{I}-\frac{\textbf{1}_n\textbf{1}_n^\prime}{n}\right)</script><script type="math/tex; mode=display">\left(\textbf{I}-\frac{\textbf{1}_n\textbf{1}_n^\prime}{n}\right)^\prime\left(\textbf{I}-\frac{\textbf{1}_n\textbf{1}_n^\prime}{n}\right)=\textbf{I}-\frac{\textbf{1}_n\underline{\textbf{1}_n^\prime\textbf{1}_n}\textbf{1}_n^\prime}{n^2}=\left(\textbf{I}-\frac{\textbf{1}_n\textbf{1}_n^\prime}{n}\right)</script><p>即$\left(\textbf{I}-\frac{\textbf{1}_n\textbf{1}_n^\prime}{n}\right)$ 是对称幂等阵。则有<br>\begin{equation}<br>  \begin{aligned}<br>    \textbf{y}-\bar{\textbf{y}}&amp;=\left(\textbf{I}-\frac{\textbf{1}_n\textbf{1}_n^\prime}{n}\right)\textbf{y}\\<br>    \hat{\mathbf{y}}-\bar{\mathbf{y}}&amp;=\left(\mathbf{H}-\frac{\textbf{1}_n\textbf{1}_n^\prime}{n}\right)\mathbf{y}\\<br>    \textbf{y}-\hat{\textbf{y}}&amp;=(\mathbf{I}-\mathbf{H})\mathbf{y}\\<br>    SST&amp;=\textbf{y}^\prime\left(\textbf{I}-\frac{\textbf{1}_n\textbf{1}_n^\prime}{n}\right)^\prime \left(\textbf{I}-\frac{\textbf{1}_n\textbf{1}_n^\prime}{n}\right) \textbf{y}=\textbf{y}^\prime \left(\textbf{I}-\frac{\textbf{1}_n\textbf{1}_n^\prime}{n}\right) \textbf{y}\\<br>    SSR&amp;=\mathbf{y}^\prime\left(\mathbf{H}-\frac{\textbf{1}_n\textbf{1}_n^\prime}{n}\right)^\prime\left(\mathbf{H}-\frac{\textbf{1}_n\textbf{1}_n^\prime}{n}\right)\mathbf{y}=\mathbf{y}^\prime\left(\mathbf{H}-\frac{\textbf{1}_n\textbf{1}_n^\prime}{n}\right)\mathbf{y}\\<br>    SSE&amp;=\mathbf{y}^\prime (\mathbf{I}-\mathbf{H})^\prime (\mathbf{I}-\mathbf{H}) \mathbf{y}=\mathbf{y}^\prime (\mathbf{I}-\mathbf{H}) \mathbf{y}<br>  \end{aligned}<br>\end{equation}<br>所以 <script type="math/tex">SST=SSR+SSE</script></p>
 <h1><span id="面试题">面试题</span></h1><ul>
-<li>State the assumptions in linear regression model<blockquote>
+<li>State the <strong>assumptions</strong> in linear regression model<blockquote>
 <ul>
 <li>自变量和因变量线性相关</li>
 <li>自变量间相互独立</li>
@@ -507,13 +522,15 @@
 </ul>
 </blockquote>
 </li>
-<li><p>How to avoid overfitting in linear regression?</p>
+<li>How to avoid <strong>overfitting</strong> in linear regression?<blockquote>
+<p>减少自变量的权重，控制模型的复杂度。即，进行正则化<strong>Regularization</strong></p>
+</blockquote>
 </li>
-<li><p>Explain gradient descent with respect to linear regression</p>
+<li><p>Explain <strong>gradient descent</strong> with respect to linear regression</p>
 </li>
-<li><p>How to choose the value of the parameter learning rate $\alpha$?</p>
+<li><p>How to choose the value of the parameter <strong>learning rate</strong> $\alpha$?</p>
 </li>
-<li><p>How to choose the regularization parameter?</p>
+<li><p>How to choose the <strong>regularization parameter</strong>?</p>
 </li>
 </ul>
 <h1><span id="参考资料">参考资料</span></h1><p>[1] <a href="https://cn.bing.com/images/search?view=detailV2&amp;ccid=j0Y73Gqu&amp;id=AEF02E292E6BB108E395DACCC888AE85CFE435E2&amp;thid=OIP.j0Y73Gqu8shJ-xwd0dLzogHaD7&amp;mediaurl=https%3a%2f%2fcdn-images-1.medium.com%2fmax%2f2000%2f1*oXPGYqgTeIn0Ey3SWgkbsA.jpeg&amp;exph=865&amp;expw=1629&amp;q=regression&amp;simid=608039305763750244&amp;selectedIndex=4" target="_blank" rel="noopener">首页缩略图</a><br>[2] <a href="https://www.statisticssolutions.com/what-is-linear-regression/" target="_blank" rel="noopener">What is Linear Regression?</a><br>[] <a href="https://www.dataapplab.com/linear-regression-5-quiz/" target="_blank" rel="noopener">Linear regression 5道经典必考题自测</a></p>
@@ -849,8 +866,24 @@
 
 
 <script src="/js/prism/clipboard.js"></script>
-<script src="/js/prism/prism.js" async></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<script src="/js/prism/prism.js" async></script>
 
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </body>
 </html>
