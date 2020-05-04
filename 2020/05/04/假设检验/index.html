@@ -17,7 +17,7 @@
   <meta name="description" content="统计一只狗，梦想有只猫">
   <meta name="author" content="ShootingWang">
   <meta name="keywords" content="">
-  <title>模块 - ShootingWang</title>
+  <title>假设检验 - ShootingWang</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
 <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
@@ -131,8 +131,8 @@
               
                 <div class="mt-3 post-meta">
                   <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-                  <time datetime="2020-05-03 11:57">
-                    星期日, 五月 3日 2020, 11:57 中午
+                  <time datetime="2020-05-04 14:00">
+                    星期一, 五月 4日 2020, 2:00 下午
                   </time>
                 </div>
               
@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    133 字
+                    122 字
                   </span>
                 
 
@@ -193,26 +193,31 @@
           <div class="post-content mx-auto" id="post">
             
             <article class="markdown-body">
-              <h1><span id="模块">模块</span></h1><h2><span id="__name__">__name__</span></h2><p>一个模块中有<code>__name__</code></p>
-<blockquote>
-<ul>
-<li>直接运行，<code>__name__</code>为<code>__main__</code></li>
-<li>调用该模块，<code>__name__</code>为被调用模块的“模块名”(文件名)</li>
+              <p>Hypothesis Testing</p>
+<a id="more"></a>
+<h1><span id="hypothesis">Hypothesis</span></h1><h2><span id="error">Error</span></h2><ul>
+<li><strong>type \uppercase\expandafter{\romannumeral1} Error</strong><br>   $H_0$ is true but reject $H_1$<script type="math/tex; mode=display">\alpha=P(H_1|H_0)</script>   错误拒绝</li>
+<li><strong>type \uppercase\expandafter{\romannumeral2} Error</strong><br>   $H_0$ is not true but accept %H_0$<script type="math/tex; mode=display">P(H_0|H_1)</script>   错误接受</li>
 </ul>
+<h1><span id="检验方法">检验方法</span></h1><h2><span id="参数检验">参数检验</span></h2><ul>
+<li>两均值对比<ul>
+<li>Z检验<blockquote>
+<p>适用于样本量大、总体方差已知的样本</p>
 </blockquote>
-<h2><span id="__new__">__new__</span></h2><ul>
-<li>是<u>静态方法</u></li>
-<li>返回一个创建的实例</li>
-<li>只有在<code>__new__</code>返回一个cls的实例时，后面的<code>__init__</code>才能被调用</li>
-<li>当创建一个新实例时，调用<code>__new__</code></li>
+</li>
+<li><a href="/2020/05/04/t%E6%A3%80%E9%AA%8C/" title="t检验">t检验</a>
+<blockquote>
+<p>适用于样本量小、总体方差未知的样本</p>
+<h2><span id="非参数检验">非参数检验</span></h2></blockquote>
+</li>
 </ul>
-<h2><span id="__init__">__init__</span></h2><ul>
-<li>是<u>实例方法</u></li>
-<li>什么都不返回</li>
-<li>当初始化一个实例时，用<code>__init__</code></li>
-<li>为类的实例提供一些属性或完成一些动作</li>
+</li>
+<li>两均值对比<ul>
+<li>Mann-Whitney U检验</li>
 </ul>
-<h1><span id="参考资料">参考资料</span></h1><p>[1] <a href="https://www.nowcoder.com/test/question/done?tid=33152813&amp;qid=370530#summary" target="_blank" rel="noopener">牛客网试题</a></p>
+</li>
+</ul>
+<h1><span id="参考资料">参考资料</span></h1><p>[1] <a href>首页缩略图</a><br>[2] <a href="https://www.skillsyouneed.com/num/statistics-identifying-patterns.html" target="_blank" rel="noopener">Statistical Analysis: Identifying Patterns</a></p>
 
             </article>
             <hr>
@@ -222,7 +227,7 @@
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     
-                      <a class="hover-with-bg" href="/categories/%E9%A2%98%E5%BA%93/">题库</a>
+                      <a class="hover-with-bg" href="/categories/%E6%A6%82%E7%8E%87%E7%BB%9F%E8%AE%A1/">概率统计</a>
                     
                   </div>
                 
@@ -230,7 +235,9 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/Python/">Python</a>
+                      <a class="hover-with-bg" href="/tags/%E6%A6%82%E7%8E%87%E7%BB%9F%E8%AE%A1%E5%9F%BA%E7%A1%80/">概率统计基础</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E6%A3%80%E9%AA%8C/">检验</a>
                     
                   </div>
                 
@@ -238,6 +245,23 @@
               
                 <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://zh.wikipedia.org/wiki/Wikipedia:CC_BY-SA_3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="nofollow noopener noopener">CC BY-SA 3.0协议</a> 。转载请注明出处！</p>
               
+              
+                <div class="post-prevnext row">
+                  <div class="post-prev col-6">
+                    
+                    
+                  </div>
+                  <div class="post-next col-6">
+                    
+                    
+                      <a href="/2020/05/04/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/">
+                        <span class="hidden-mobile">线性回归</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </div>
+                </div>
               
             </div>
 
@@ -405,7 +429,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "模块&nbsp;",
+        "假设检验&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,
