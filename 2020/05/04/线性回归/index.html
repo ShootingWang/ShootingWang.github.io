@@ -246,9 +246,9 @@
 <li>预测趋势<br>to predict trends and future values</li>
 </ul>
 <h2><span id="类型">类型</span></h2><p>线性回归的类型有：</p>
-<ol>
+<ul>
 <li><strong>Simple linear regression</strong></li>
-</ol>
+</ul>
 <div class="table-container">
 <table>
 <thead>
@@ -275,21 +275,142 @@
 <blockquote id="fn_1">
 <sup>1</sup>. dichotomous：二分类<a href="#reffn_1" title="Jump back to footnote [1] in the text."> &#8617;</a>
 </blockquote>
-<ol>
-<li>Multiple linear regression<br>||dependent variable|independent variable|<br>|:—:|:—-:|:—-:|<br>|amount|1|2+|<br>|type|interval / ratio|interval / ratio / dichotomous|</li>
-<li>Logistic regression<br>||dependent variable|independent variable|<br>|:—:|:—-:|:—-:|<br>|amount|1|2+|<br>|type|dichotomous|interval / ratio / dichotomous|</li>
-<li>Ordinal regression<br>||dependent variable|independent variable|<br>|:—:|:—-:|:—-:|<br>|amount|1|1+|<br>|type|ordinal<sup><a href="#fn_2" id="reffn_2">2</a></sup>|nominal<sup><a href="#fn_3" id="reffn_3">3</a></sup> or dichotomous|</li>
-</ol>
+<ul>
+<li><strong>Multiple linear regression</strong></li>
+</ul>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">dependent variable</th>
+<th style="text-align:center">independent variable</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">amount</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">2+</td>
+</tr>
+<tr>
+<td style="text-align:center">type</td>
+<td style="text-align:center">interval / ratio</td>
+<td style="text-align:center">interval / ratio / dichotomous</td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul>
+<li><strong>Logistic regression</strong></li>
+</ul>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">dependent variable</th>
+<th style="text-align:center">independent variable</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">amount</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">2+</td>
+</tr>
+<tr>
+<td style="text-align:center">type</td>
+<td style="text-align:center">dichotomous</td>
+<td style="text-align:center">interval / ratio / dichotomous</td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul>
+<li><strong>Ordinal regression</strong></li>
+</ul>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">dependent variable</th>
+<th style="text-align:center">independent variable</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">amount</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1+</td>
+</tr>
+<tr>
+<td style="text-align:center">type</td>
+<td style="text-align:center">ordinal<sup><a href="#fn_2" id="reffn_2">2</a></sup></td>
+<td style="text-align:center">nominal<sup><a href="#fn_3" id="reffn_3">3</a></sup> or dichotomous</td>
+</tr>
+</tbody>
+</table>
+</div>
 <blockquote id="fn_2">
 <sup>2</sup>. ordinal：有序，序数<a href="#reffn_2" title="Jump back to footnote [2] in the text."> &#8617;</a>
 </blockquote>
 <blockquote id="fn_3">
 <sup>3</sup>. nominal：名义<a href="#reffn_3" title="Jump back to footnote [3] in the text."> &#8617;</a>
 </blockquote>
-<ol>
-<li>Multinominal regression<br>||dependent variable|independent variable|<br>|:—:|:—-:|:—-:|<br>|amount|1|1+|<br>|type|nominal|interval / ratio / dichotomous|</li>
-<li>Discriminant analysis<br>判别分析<br>||dependent variable|independent variable|<br>|:—:|:—-:|:—-:|<br>|amount|1|1+|<br>|type|nominal|interval / ratio|</li>
-</ol>
+<ul>
+<li><strong>Multinominal regression</strong></li>
+</ul>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">dependent variable</th>
+<th style="text-align:center">independent variable</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">amount</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1+</td>
+</tr>
+<tr>
+<td style="text-align:center">type</td>
+<td style="text-align:center">nominal</td>
+<td style="text-align:center">interval / ratio / dichotomous</td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul>
+<li><strong>Discriminant analysis</strong><br>判别分析</li>
+</ul>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">dependent variable</th>
+<th style="text-align:center">independent variable</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">amount</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1+</td>
+</tr>
+<tr>
+<td style="text-align:center">type</td>
+<td style="text-align:center">nominal</td>
+<td style="text-align:center">interval / ratio</td>
+</tr>
+</tbody>
+</table>
+</div>
 <h2><span id="基本模型">基本模型</span></h2><script type="math/tex; mode=display">y=\beta_0+\beta_1x_1+\beta_2x_2+\cdots+\beta_px_p+\varepsilon</script><ul>
 <li>因变量（regressand）：$y$</li>
 <li>自变量（regressor）：$x_1,\cdots,x_p$<ul>
@@ -335,7 +456,8 @@
 </li>
 <li>自变量$X$和误差项之间相互独立</li>
 </ol>
-<h2><span id="参数估计">参数估计</span></h2><h2><span id="相关检验">相关检验</span></h2><h3><span id="共线性检验">共线性检验</span></h3><h3><span id="残差检验">残差检验</span></h3><h2><span id="平方和">平方和</span></h2><h3><span id="1-总平方和">1. 总平方和</span></h3><ul>
+<h2><span id="参数估计">参数估计</span></h2><h2><span id="相关检验">相关检验</span></h2><h3><span id="dw检验">DW检验</span></h3><p>用于检验残差是否具有自相关性</p>
+<h3><span id="残差检验">残差检验</span></h3><h2><span id="平方和">平方和</span></h2><h3><span id="1-总平方和">1. 总平方和</span></h3><ul>
 <li>总平方和</li>
 <li>总离差平方和</li>
 <li>SST (Sum of Squares Total)</li>
