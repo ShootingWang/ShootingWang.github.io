@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    634 字
+                    633 字
                   </span>
                 
 
@@ -404,16 +404,16 @@
 <li>截距项（intercept）：$\beta_0$</li>
 <li>回归系数（regression coefficient）</li>
 </ul>
-<p>考虑$p$个自变量$(\bm{X}_1,\bm{X}_2,\cdots, \bm{X}_p)$<br>\begin{equation}<br>\textbf{y}=\textbf{X} \bm{\beta} + \bm{\varepsilon}, \qquad \bm{\varepsilon} \sim \mathcal{N}(\mathbf{0},\sigma^2\mathbf{I})<br>\end{equation}<br>其中</p>
-<script type="math/tex; mode=display">\mathbf{X}=(\mathbf{1},\bm{X}_1,\bm{X}_2,\cdots, \bm{X}_p)=\left(\begin{array}{cccc}
+<p>考虑$p$个自变量$(\mathbf{X}_1,\mathbf{X}_2,\cdots, \mathbf{X}_p)$<br>\begin{equation}<br>\textbf{y}=\textbf{X} \mathbf{\beta} + \mathbf{\varepsilon}, \qquad \mathbf{\varepsilon} \sim \mathcal{N}(\mathbf{0},\sigma^2\mathbf{I})<br>\end{equation}<br>其中</p>
+<script type="math/tex; mode=display">\mathbf{X}=(\mathbf{1},\mathbf{X}_1,\mathbf{X}_2,\cdots, \mathbf{X}_p)=\left(\begin{array}{cccc}
   1 & X_{11} & \cdots & X_{1p}\\
   1 & X_{21} & \cdots & X_{2p}\\
   \vdots & \vdots & \ddots & \vdots \\
   1 & X_{n1} & \cdots & X_{np}
-\end{array}\right),\qquad \bm{\beta}=\left(\begin{array}{c}
+\end{array}\right)</script><script type="math/tex; mode=display">\mathbf{\beta}=\left(\begin{array}{c}
   \beta_0\\ \beta_1 \\ \vdots \\ \beta_p
 \end{array}\right),
-\qquad \bm{\varepsilon}=
+\qquad \mathbf{\varepsilon}=
 \left(\begin{array}{c}
   \varepsilon_1 \\ \varepsilon_2 \\ \vdots \\ \varepsilon_n
 \end{array}\right)</script><h2><span id="基本假设">基本假设</span></h2><ol>
@@ -782,24 +782,8 @@
 
 
 <script src="/js/prism/clipboard.js"></script>
-<script src="/js/prism/prism.js" async></script>
+<script src="/js/prism/prism.js" async></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </body>
 </html>
