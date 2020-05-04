@@ -247,8 +247,31 @@
 </ul>
 <h2><span id="类型">类型</span></h2><p>线性回归的类型有：</p>
 <ol>
-<li><strong>Simple linear regression</strong><br>||dependent variable|independent variable|<br>|:—:|:—-:|:—-:|<br>|amount|1|1|<br>|type|interval / ratio|interval / ratio / dichotomous<sup><a href="#fn_1" id="reffn_1">1</a></sup>|</li>
+<li><strong>Simple linear regression</strong></li>
 </ol>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">dependent variable</th>
+<th style="text-align:center">independent variable</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">amount</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">type</td>
+<td style="text-align:center">interval / ratio</td>
+<td style="text-align:center">interval / ratio / dichotomous<sup><a href="#fn_1" id="reffn_1">1</a></sup></td>
+</tr>
+</tbody>
+</table>
+</div>
 <blockquote id="fn_1">
 <sup>1</sup>. dichotomous：二分类<a href="#reffn_1" title="Jump back to footnote [1] in the text."> &#8617;</a>
 </blockquote>
@@ -312,7 +335,7 @@
 </li>
 <li>自变量$X$和误差项之间相互独立</li>
 </ol>
-<h2><span id="平方和">平方和</span></h2><h3><span id="1-总平方和">1. 总平方和</span></h3><ul>
+<h2><span id="参数估计">参数估计</span></h2><h2><span id="相关检验">相关检验</span></h2><h3><span id="共线性检验">共线性检验</span></h3><h3><span id="残差检验">残差检验</span></h3><h2><span id="平方和">平方和</span></h2><h3><span id="1-总平方和">1. 总平方和</span></h3><ul>
 <li>总平方和</li>
 <li>总离差平方和</li>
 <li>SST (Sum of Squares Total)</li>
@@ -698,8 +721,24 @@
 
 
 <script src="/js/prism/clipboard.js"></script>
-<script src="/js/prism/prism.js" async></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<script src="/js/prism/prism.js" async></script>
 
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </body>
 </html>
