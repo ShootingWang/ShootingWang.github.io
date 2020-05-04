@@ -547,7 +547,8 @@
 <li><p>How to choose the <strong>regularization parameter</strong>?</p>
 </li>
 </ul>
-<h1><span id="参考资料">参考资料</span></h1><p>[1] <a href="https://cn.bing.com/images/search?view=detailV2&amp;ccid=j0Y73Gqu&amp;id=AEF02E292E6BB108E395DACCC888AE85CFE435E2&amp;thid=OIP.j0Y73Gqu8shJ-xwd0dLzogHaD7&amp;mediaurl=https%3a%2f%2fcdn-images-1.medium.com%2fmax%2f2000%2f1*oXPGYqgTeIn0Ey3SWgkbsA.jpeg&amp;exph=865&amp;expw=1629&amp;q=regression&amp;simid=608039305763750244&amp;selectedIndex=4" target="_blank" rel="noopener">首页缩略图</a><br>[2] <a href="https://www.statisticssolutions.com/what-is-linear-regression/" target="_blank" rel="noopener">What is Linear Regression?</a><br>[] <a href="https://www.dataapplab.com/linear-regression-5-quiz/" target="_blank" rel="noopener">Linear regression 5道经典必考题自测</a></p>
+<p>未完</p>
+<h1><span id="参考资料">参考资料</span></h1><p>[1] <a href="https://cn.bing.com/images/search?view=detailV2&amp;ccid=j0Y73Gqu&amp;id=AEF02E292E6BB108E395DACCC888AE85CFE435E2&amp;thid=OIP.j0Y73Gqu8shJ-xwd0dLzogHaD7&amp;mediaurl=https%3a%2f%2fcdn-images-1.medium.com%2fmax%2f2000%2f1*oXPGYqgTeIn0Ey3SWgkbsA.jpeg&amp;exph=865&amp;expw=1629&amp;q=regression&amp;simid=608039305763750244&amp;selectedIndex=4" target="_blank" rel="noopener">首页缩略图</a><br>[2] <a href="https://www.statisticssolutions.com/what-is-linear-regression/" target="_blank" rel="noopener">What is Linear Regression?</a><br>[3] <a href="https://www.dataapplab.com/linear-regression-5-quiz/" target="_blank" rel="noopener">Linear regression 5道经典必考题自测</a></p>
 
             </article>
             <hr>
@@ -701,14 +702,7 @@
   </div>
 </footer>
 
-{% if theme.mermaid.enable %}
-  <script src='https://unpkg.com/mermaid@{{ theme.mermaid.version }}/dist/mermaid.min.js'></script>
-  <script>
-    if (window.mermaid) {
-      mermaid.initialize({{ JSON.stringify(theme.mermaid.options) }});
-    }
-  </script>
-{% endif %}
+
 
 <!-- SCRIPTS -->
 <script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
@@ -880,24 +874,8 @@
 
 
 <script src="/js/prism/clipboard.js"></script>
-<script src="/js/prism/prism.js" async></script>
+<script src="/js/prism/prism.js" async></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </body>
 </html>
