@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    641 字
+                    695 字
                   </span>
                 
 
@@ -152,7 +152,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    9
+                    10
                      分钟
                   </span>
                 
@@ -419,7 +419,7 @@
 \left(\begin{array}{c}
   \varepsilon_1 \\ \varepsilon_2 \\ \vdots \\ \varepsilon_n
 \end{array}\right)</script><h2><span id="基本假设">基本假设</span></h2><ol>
-<li>自变量$x$和因变量$y$线性相关</li>
+<li>自变量和因变量线性相关</li>
 <li>自变量之间相互独立<ul>
 <li>解释变量之间不存在（完全的）线性关系<script type="math/tex; mode=display">mathrm{rand}(X)=p</script></li>
 <li>若不满足，则模型具有<strong>多重共线性</strong>（Multicollinearity）</li>
@@ -430,7 +430,7 @@
 </ul>
 </li>
 <li>$\varepsilon\sim i.i.d. N(0,\sigma^2)$<ul>
-<li>随机误差项服从均值为零、方差为常数的标准正态分布</li>
+<li>随机误差项服从均值为零、方差为常数的正态分布</li>
 <li>随机误差项独立同分布（i.i.d.，independent and identical distribution）<ul>
 <li>随机误差项<strong>同方差</strong>（Homoskedasticity）；若不满足，则存在<strong>异方差性</strong>（Heteroskedasticity）</li>
 </ul>
@@ -440,7 +440,17 @@
 <li>自变量$X$和误差项之间相互独立</li>
 </ol>
 <h2><span id> </span></h2><h1><span id="面试题">面试题</span></h1><ul>
-<li><p>State the assumptions in linear regression model</p>
+<li>State the assumptions in linear regression model<blockquote>
+<ul>
+<li>自变量和因变量线性相关<ul>
+<li>自变量间相互独立</li>
+<li>误差项间相互独立</li>
+<li>误差项服从均值为零、方差为常数的比正态分布</li>
+<li>自变量和误差项相互独立</li>
+</ul>
+</li>
+</ul>
+</blockquote>
 </li>
 <li><p>How to avoid overfitting in linear regression?</p>
 </li>
