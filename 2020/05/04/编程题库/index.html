@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    930 字
+                    1k 字
                   </span>
                 
 
@@ -152,7 +152,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    11
+                    13
                      分钟
                   </span>
                 
@@ -195,12 +195,47 @@
             <article class="markdown-body">
               <p>编程刷题记录</p>
 <a id="more"></a>
-<h1><span id="大整数相乘">大整数相乘</span></h1><ul>
-<li>有两个用字符串表示的非常大的大整数,算出他们的乘积，也是用字符串表示。不能用系统自带的大整数类型。</li>
-</ul>
-<blockquote>
+<h1><span id="huawei">HUAWEI</span></h1><h2><span id="字符串反转">字符串反转</span></h2><p><a href="https://www.nowcoder.com/practice/e45e078701ab4e4cb49393ae30f1bb04?tpId=37&amp;tqId=21235&amp;tPage=1&amp;rp=&amp;ru=/ta/huawei&amp;qru=/ta/huawei/question-ranking" target="_blank" rel="noopener">题目详情</a></p>
+<pre><code class="lang-Python">while True:
+    try:
+        s = input()
+        print(s[::-1])
+    except:
+        break
+</code></pre>
+<h2><span id="句子逆序">句子逆序</span></h2><p><a href="https://www.nowcoder.com/practice/48b3cb4e3c694d9da5526e6255bb73c3?tpId=37&amp;tqId=21236&amp;rp=0&amp;ru=/ta/huawei&amp;qru=/ta/huawei/question-ranking" target="_blank" rel="noopener">题目详情</a></p>
+<pre><code class="lang-Python">while True:
+    try:
+        s = input()
+        lst = s.split(&quot; &quot;)
+        lst = lst[::-1]
+        print(&quot; &quot;.join(lst))
+    except:
+        break
+</code></pre>
+<h2><span id="字符的连接最长路径查找">字符的连接最长路径查找</span></h2><p><a href="https://www.nowcoder.com/practice/5af18ba2eb45443aa91a11e848aa6723?tpId=37&amp;tqId=21237&amp;rp=0&amp;ru=/ta/huawei&amp;qru=/ta/huawei/question-ranking" target="_blank" rel="noopener">题目详情</a></p>
+<pre><code class="lang-Python">while True:
+    try:
+        n = int(input())
+        lst = []
+        for i in range(n):
+            lst.append(input())
+        lst.sort()
+        for i in range(n):
+            print(lst[i])
+    except:
+        break
+</code></pre>
+<h2><span id> </span></h2><p><a href>题目详情</a></p>
+<pre><code class="lang-Python">
+
+</code></pre>
+<h1><span id="pinduoduo">PINDUODUO</span></h1><h2><span id="大整数相乘">大整数相乘</span></h2><ul>
+<li>有两个用字符串表示的非常大的大整数,算出他们的乘积，也是用字符串表示。不能用系统自带的大整数类型。<blockquote>
 <p>拼多多2018年校招内推编程题</p>
 </blockquote>
+</li>
+</ul>
 <pre><code class="lang-Python">while True:
     try:
         lst = list(input().split())
@@ -209,24 +244,16 @@
     except:
         break
 </code></pre>
-<h1><span id="字符串反转">字符串反转</span></h1><p><a href="https://www.nowcoder.com/practice/e45e078701ab4e4cb49393ae30f1bb04?tpId=37&amp;tqId=21235&amp;tPage=1&amp;rp=&amp;ru=/ta/huawei&amp;qru=/ta/huawei/question-ranking" target="_blank" rel="noopener">题目详情</a></p>
-<pre><code class="lang-Python">while True:
-    try:
-        s = input()
-        print(s[::-1])
-    except:
-        break
-</code></pre>
-<h1><span id="六一儿童节">六一儿童节</span></h1><ul>
+<h2><span id="六一儿童节">六一儿童节</span></h2><ul>
 <li>六一儿童节，老师带了很多好吃的巧克力到幼儿园。每块巧克力j的重量为w[j]，对于每个小朋友i，当他分到的巧克力大小达到h[i] (即w[j]&gt;=h[i])，他才会上去表演节目。老师的目标是将巧克力分发给孩子们，使得最多的小孩上台表演。可以保证每个w[i]&gt; 0且不能将多块巧克力分给一个孩子或将一块分给多个孩子。</li>
 <li>第一行：n，表示h数组元素个数</li>
 <li>第二行：n个h数组元素</li>
 <li>第三行：m，表示w数组元素个数</li>
-<li>第四行：m个w数组元素</li>
-</ul>
-<blockquote>
+<li>第四行：m个w数组元素<blockquote>
 <p>拼多多2018年校招内推编程题</p>
 </blockquote>
+</li>
+</ul>
 <pre><code class="lang-Python">while True:
     try:
         n = int(input())  ## 小孩个数
@@ -253,18 +280,18 @@
         break
 </code></pre>
 <p><a href="https://blog.csdn.net/qq_28626909/article/details/88246948" target="_blank" rel="noopener">参考</a></p>
-<h1><span id="迷宫寻路">迷宫寻路</span></h1><ul>
+<h2><span id="迷宫寻路">迷宫寻路</span></h2><ul>
 <li>假设一个探险家被困在了地底的迷宫之中，要从当前位置开始找到一条通往迷宫出口的路径。迷宫可以用一个二维矩阵组成，有的部分是墙，有的部分是路。迷宫之中有的路上还有门，每扇门都在迷宫的某个地方有与之匹配的钥匙，只有先拿到钥匙才能打开门。请设计一个算法，帮助探险家找到脱困的最短路径。如前所述，迷宫是通过一个二维矩阵表示的，每个元素的值的含义如下 0-墙，1-路，2-探险家的起始位置，3-迷宫的出口，大写字母-门，小写字母-对应大写字母所代表的门的钥匙</li>
 <li>迷宫的地图，用二维矩阵表示。第一行是表示矩阵的行数和列数M和N</li>
-<li>后面的M行是矩阵的数据，每一行对应与矩阵的一行（中间没有空格）。M和N都不超过100, 门不超过10扇。</li>
-</ul>
-<blockquote>
+<li>后面的M行是矩阵的数据，每一行对应与矩阵的一行（中间没有空格）。M和N都不超过100, 门不超过10扇。<blockquote>
 <p>拼多多2018年校招内推编程题</p>
 </blockquote>
+</li>
+</ul>
 <pre><code class="lang-Python">
 
 </code></pre>
-<h1><span id="质数素数">质数/素数</span></h1><pre><code class="lang-Python">## 列出小于整数n的所有质数
+<h2><span id="质数素数">质数/素数</span></h2><pre><code class="lang-Python">## 列出小于整数n的所有质数
 ## 不导入模块
 n = 20
 [i for i in range(2, n) if 0 not in [i%j for j in range(2, int(i**0.5) + 1)]]
@@ -274,14 +301,14 @@ n = 20
 [i for i in range(2, n) if 0 not in [i%j for j in range(2, int(math.sqrt(i)) + 1)]]
 # [2, 3, 5, 7, 11, 13, 17, 19]
 </code></pre>
-<h1><span id="最大乘积">最大乘积</span></h1><ul>
+<h2><span id="最大乘积">最大乘积</span></h2><ul>
 <li>给定一个无序数组，包含正数、负数和0，要求从中找出3个数的乘积，使得乘积最大，要求时间复杂度：O(n)，空间复杂度：O(1)</li>
 <li>输入共2行，第一行包括一个整数n，表示数组长度</li>
-<li>第二行为n个以空格隔开的整数，分别为A1,A2, … ,An</li>
-</ul>
-<blockquote>
+<li>第二行为n个以空格隔开的整数，分别为A1,A2, … ,An<blockquote>
 <p>拼多多2018年校招内推编程题</p>
 </blockquote>
+</li>
+</ul>
 <pre><code class="lang-Python">while True:
     try:
         n = int(input())
