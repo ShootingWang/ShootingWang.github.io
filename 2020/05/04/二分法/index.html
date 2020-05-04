@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    304 字
+                    337 字
                   </span>
                 
 
@@ -198,7 +198,7 @@
 <li>快速查找有序元素列表中的符合条件的元素</li>
 </ul>
 <p>以二分法猜1~30以内的数：</p>
-<pre class="mermaid">graph TD;
+<p><pre class="mermaid">graph TD;
     15-->|太大|7;
     15-->|太小|22;
     7-->|太大|3;
@@ -225,11 +225,11 @@
     24-->|太大|23;
     24-->|太小|25;
     28-->|太大|27;
-    28-->|太小|29;</pre>
-
+    28-->|太小|29;</pre><br>$2^5=32&gt;30$，最多只需要猜5步就好啦。</p>
 <h2><span id="运行时间">运行时间</span></h2><ul>
 <li>对于包含$n$个元素的列表，用二分查找最多需要$\log_2{n}步$</li>
-<li>二分查找的运行时间为<strong>对数时间</strong>$O(\log{n})$</li>
+<li>二分查找的运行时间为<strong>对数时间</strong> $O(\log{n})$</li>
+<li>而普通查找的运行时间为<strong>线性时间</strong> $O(n)$</li>
 </ul>
 <pre><code class="lang-Python">import math
 
