@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    396 字
+                    464 字
                   </span>
                 
 
@@ -152,7 +152,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    6
+                    7
                      分钟
                   </span>
                 
@@ -394,22 +394,29 @@
 </tbody>
 </table>
 </div>
-<h2><span id="基本假设">基本假设</span></h2><p>基本模型：</p>
-<script type="math/tex; mode=display">y=\beta_0+\beta_1x_1+\beta_2x_2+\cdots+\beta_px_p+\varepsilon</script><ul>
+<h2><span id="基本模型">基本模型</span></h2><script type="math/tex; mode=display">y=\beta_0+\beta_1x_1+\beta_2x_2+\cdots+\beta_px_p+\varepsilon</script><ul>
 <li>因变量（regressand）：$y$</li>
 <li>自变量（regressor）：$x_1,\cdots,x_p$</li>
 <li>随机误差项：$\varepsilon$</li>
 <li>截距项（intercept）：$\beta_0$</li>
 <li>回归系数（regression coefficient）</li>
 </ul>
-<p>基本假设：</p>
-<ol>
+<h2><span id="基本假设">基本假设</span></h2><ol>
 <li>$\varepsilon\sim i.i.d. N(0,\sigma^2)$<ul>
-<li>随机误差项服从均值为零的标准正态分布</li>
-<li>随机误差项独立同分布（i.i.d.，independent and identical distribution）</li>
+<li>随机误差项服从均值为零、方差为常数的标准正态分布</li>
+<li>随机误差项独立同分布（i.i.d.，independent and identical distribution）<blockquote>
+<ul>
+<li>随机误差项相互独立；若不满足，则模型具有<strong>自相关性</strong>（Autocorrelation）</li>
+</ul>
+</blockquote>
+</li>
+<li>随机误差项<strong>同方差</strong>（Homoskedasticity）；若不满足，则存在<strong>异方差性</strong>（Heteroskedasticity）</li>
 </ul>
 </li>
-<li></li>
+<li>自变量间相互独立<ul>
+<li>若不满足，则模型具有<strong>多重共线性</strong>（Multicollinearity）</li>
+</ul>
+</li>
 </ol>
 <h2><span id> </span></h2><h1><span id="面试题">面试题</span></h1><ul>
 <li><p>State the assumptions in linear regression model</p>
