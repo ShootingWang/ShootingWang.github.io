@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    1.9k 字
+                    1.8k 字
                   </span>
                 
 
@@ -152,7 +152,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    32
+                    31
                      分钟
                   </span>
                 
@@ -460,8 +460,8 @@
 <script type="math/tex; mode=display">h_\beta(x)=\sum_{j=0}^p\beta_jx_j</script><p>where $x_0=1$.</p>
 <p>Cost function:</p>
 <script type="math/tex; mode=display">J(\beta)=\frac{1}{2n}\sum_{i=1}^n\left(h_\beta(x^{(i)})-y^{(i)}\right)^2</script><p>Objective function:</p>
-<script type="math/tex; mode=display">\min_\beta J(\beta)</script><h3><span id="batch-gradient-descent">(Batch) Gradient Descent</span></h3><p>（全批量）梯度下降法<br>Linear Regression with \textbf{(Batch) Gradient Descent}：<br>\begin{equation}<br>  \begin{aligned}<br>    \mbox{Linear regression:}\ &amp; h_\beta(x)=\sum_{j=0}^p\beta_jx_j\\<br>    \mbox{cost function:}\ &amp; J_{train}(\beta)=\frac{1}{2n}\sum_{i=1}^n\left(h_\beta(x^{(i)})-y^{(i)}\right)^2<br>  \end{aligned}<br>\end{equation}<br>repeat until convergence $\{$</p>
-<script type="math/tex; mode=display">\beta_j:=\beta_j-\alpha\frac{1}{n}\sum_{i=1}^n\left(h_\beta(x^{(i)})-y^{(i)}\right)x_j^{(i)}</script><p>for $\forall$ $j=0,1,\cdots,p$.\\<br>$\}$</p>
+<script type="math/tex; mode=display">\min_\beta J(\beta)</script><h3><span id="batch-gradient-descent">(Batch) Gradient Descent</span></h3><p>（全批量）梯度下降法<br>Linear Regression with <strong>(Batch) Gradient Descent</strong>：<br>repeat until convergence $\{$</p>
+<script type="math/tex; mode=display">\beta_j:=\beta_j-\alpha\frac{1}{n}\sum_{i=1}^n\left(h_\beta(x^{(i)})-y^{(i)}\right)x_j^{(i)}</script><p>for $\forall$ $j=0,1,\cdots,p$.<br>$\}$</p>
 <h2><span id="残差">残差</span></h2><script type="math/tex; mode=display">e_i=y_i-\hat{y}_i}</script><h2><span id="相关检验">相关检验</span></h2><h3><span id="dw检验">DW检验</span></h3><p>用于检验残差是否具有自相关性<br>Durbin-Watson统计量</p>
 <script type="math/tex; mode=display">DW=\frac{\sum_{i=2}^n(e_i-e_{i-1})^2}{\sum_{i=1}^ne_i^2}</script><h3><span id="残差检验">残差检验</span></h3><h2><span id="平方和">平方和</span></h2><h3><span id="1-总平方和">1. 总平方和</span></h3><ul>
 <li>总平方和</li>
