@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    811 字
+                    1.1k 字
                   </span>
                 
 
@@ -152,7 +152,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    12
+                    18
                      分钟
                   </span>
                 
@@ -457,7 +457,18 @@
 <li>RSS (Residual Sum of Squares)</li>
 <li>SSR (Sum of Squared Residuals)</li>
 </ul>
-<script type="math/tex; mode=display">\mathbf{\sum_{i=1}^n(y_i-\hat{y}_i)^2}</script><h1><span id="面试题">面试题</span></h1><ul>
+<script type="math/tex; mode=display">\mathbf{\sum_{i=1}^n(y_i-\hat{y}_i)^2}</script><h3><span id="sstssrsse">SST=SSR+SSE</span></h3><p>\begin{equation}<br>  \begin{aligned}<br>    SST&amp;=SSR+SSE\\<br>    SST&amp;=\sum_{i=1}^n(y_i-\bar{y})^2\\<br>    &amp;= \sum_{i=1}^n(y_i-\hat{y}_i+\hat{y}_i-\bar{y})^2\\<br>    &amp;= \sum_{i=1}^n(y_i-\hat{y}_i)^2 + 2\sum_{i=1}^n (y_i-\hat{y}_i)(\hat{y}_i-\bar{y})+ \sum_{i=1}^n(\hat{y}_i-\bar{y})^2\\<br>    &amp;= \sum_{i=1}^n(y_i-\hat{y}_i)^2 + \sum_{i=1}^n(\hat{y}_i-\bar{y})^2\\<br>    &amp;= SSR + SSE<br>  \end{aligned}<br>\end{equation}</p>
+<p>下面证明</p>
+<script type="math/tex; mode=display">\sum_{i=1}^n (y_i-\hat{y}_i)(\hat{y}_i-\bar{y})=0</script><ul>
+<li><p>Simple linear regression情况</p>
+<script type="math/tex; mode=display">y_i=\beta_0 +\beta_1 x_i+\varepsilon_i</script><p>在最小二乘法中，最小化$SSE$</p>
+<script type="math/tex; mode=display">(\hat{\beta}_0,\hat{\beta}_1)=\arg \min_{\beta_0,\beta_1}\sum_{i=1}^n(y_i-\beta_0-\beta_1x_i)^2</script><p>$SSE$分别关于$\beta_0,\beta_1$求偏导<br>\begin{equation}<br>\begin{aligned}<br>  \frac{\partial{SSE}}{\partial{\beta_0}}&amp;=\sum_{i=1}^n2(y_i-\beta_0-\beta_1x_i)(-1)=0\\<br>  \frac{\partial{SSE}}{\partial{\beta_1}}&amp;=\sum_{i=1}^n2(y_i-\beta_0-\beta_1x_i)(-x_i)=0<br>\end{aligned}<br>\end{equation}<br>所以有</p>
+<script type="math/tex; mode=display">\sum_{i=1}^n(y_i-\hat{\beta}_0-\hat{\beta}_1x_i)=0</script><script type="math/tex; mode=display">\sum_{i=1}^n(y_i-\hat{\beta}_0-\hat{\beta}_1x_i)x_i=0</script><p>因此<br>\begin{equation}<br>\begin{aligned}<br>  \sum_{i=1}^n (y_i-\hat{y}_i)(\hat{y}_i-\bar{y})&amp;=\sum_{i=1}^n(y-\hat{\beta}_0-\hat{\beta}_1x_i)(\hat{\beta}_0+\hat{\beta}_1x_i-\bar{y})\\<br>  &amp;=(\hat{\beta}_0-\bar{y})\underline{\sum_{i=1}^n(y-\hat{\beta}_0-\hat{\beta}_1x_i)}+\hat{\beta}_1\underline{\sum_{i=1}^n(y-\hat{\beta}_0-\hat{\beta}_1x_i)x_i}\\<br>  &amp;=0<br>\end{aligned}<br>\end{equation}</p>
+</li>
+<li><p>Multiple linear regression情况</p>
+</li>
+</ul>
+<h1><span id="面试题">面试题</span></h1><ul>
 <li>State the assumptions in linear regression model<blockquote>
 <ul>
 <li>自变量和因变量线性相关</li>
@@ -810,8 +821,24 @@
 
 
 <script src="/js/prism/clipboard.js"></script>
-<script src="/js/prism/prism.js" async></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<script src="/js/prism/prism.js" async></script>
 
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </body>
 </html>
