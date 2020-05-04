@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    318 字
+                    313 字
                   </span>
                 
 
@@ -196,96 +196,83 @@
               <p>Linear Regression</p>
 <a id="more"></a>
 <h1><span id="线性回归">线性回归</span></h1><p>自变量$x$和因变量$y$之间存在线性相关关系</p>
-<h2><span id="变量别名">变量别名</span></h2><table>
-  <tr>
-    <th>自变量</th>
-    <th>因变量</th>
-  </tr>
-  <tr>
-    <td>input variable</td>
-    <td>outcome variable</td>
-  </tr>
-  <tr>
-    <td>explanatory variable</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>regressor</td>
-    <td>regressand</td>
-  </tr>
-  <tr>
-    <td>independent variable</td>
-    <td>dependent variable</td>
-  </tr>
-  <tr>
-    <td>feature</td>
-    <td>target</td>
-  </tr>
-  <tr>
-    <td>predictor variable</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>exogenous variable</td>
-    <td>endogenous variable</td>
-  </tr>
-  <tr>
-    <td></td>
-    <td>criterion variable</td>
-  </tr>
-</table>
+<h2><span id="变量别名">变量别名</span></h2><center>
+|**自变量**|**因变量**|
+|:-----:|:-----:|
+|input variable|outcome variable|
+|explanatory variable||
+|regressor|regressand|
+|independent variable|dependent variable|
+|feature|target|
+|predictor variable||
+|exogenous variable|endogenous variable|
+||criterion variable|
+</center>
 
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th style="text-align:center"><strong>自变量</strong></th>
-<th style="text-align:center"><strong>因变量</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">input variable</td>
-<td style="text-align:center">outcome variable</td>
-</tr>
-<tr>
-<td style="text-align:center">explanatory variable</td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td style="text-align:center">regressor</td>
-<td style="text-align:center">regressand</td>
-</tr>
-<tr>
-<td style="text-align:center">independent variable</td>
-<td style="text-align:center">dependent variable</td>
-</tr>
-<tr>
-<td style="text-align:center">feature</td>
-<td style="text-align:center">target</td>
-</tr>
-<tr>
-<td style="text-align:center">predictor variable</td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td style="text-align:center">exogenous variable</td>
-<td style="text-align:center">endogenous variable</td>
-</tr>
-<tr>
-<td style="text-align:center"></td>
-<td style="text-align:center">criterion variable</td>
-</tr>
-</tbody>
-</table>
-</div>
 <h2><span id="用途">用途</span></h2><ul>
 <li>确定自变量对因变量影响的强度<br>to identify the strength of the effect that the independent variable(s) have on a dependent variable</li>
 <li>预测效应<br>to forecast effects or impact of changes</li>
 <li>预测趋势<br>to predict trends and future values</li>
 </ul>
 <h2><span id="类型">类型</span></h2><p>线性回归的类型有：</p>
-<h3><span id="1-simple-linear-regression">1. Simple linear regression</span></h3><h3><span id="2-multiple-linear-regression">2. Multiple linear regression</span></h3><h3><span id="3-logistic-regression">3. Logistic regression</span></h3><h2><span id="基本假设">基本假设</span></h2><p>基本模型：</p>
+<h3><span id="1-simple-linear-regression">1. Simple linear regression</span></h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">dependent variable</th>
+<th style="text-align:center">independent variable</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">amount</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">type</td>
+<td style="text-align:center">interval / ratio</td>
+<td style="text-align:center">interval / ratio / dichotomous</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3><span id="2-multiple-linear-regression">2. Multiple linear regression</span></h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">dependent variable</th>
+<th style="text-align:center">independent variable</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3><span id="3-logistic-regression">3. Logistic regression</span></h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">dependent variable</th>
+<th style="text-align:center">independent variable</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2><span id="基本假设">基本假设</span></h2><p>基本模型：</p>
 <script type="math/tex; mode=display">y=\beta_0+\beta_1x_1+\beta_2x_2+\cdots+\beta_px_p+\varepsilon</script><ul>
 <li>因变量（regressand）：$y$</li>
 <li>自变量（regressor）：$x_1,\cdots,x_p$</li>
@@ -647,24 +634,8 @@
 
 
 <script src="/js/prism/clipboard.js"></script>
-<script src="/js/prism/prism.js" async></script>
+<script src="/js/prism/prism.js" async></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </body>
 </html>
