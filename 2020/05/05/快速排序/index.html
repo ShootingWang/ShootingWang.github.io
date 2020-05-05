@@ -209,7 +209,7 @@
 <li>基线条件：数组为空或只包含一个元素</li>
 </ol>
 <h2><span id="原理">原理</span></h2><ol>
-<li>从数组中选择一个元素（<strong>基准值</strong>pivot）</li>
+<li>从数组中选择一个元素——<strong>基准值</strong>（pivot）</li>
 <li>找出比基准值小的元素以及比基准值大的元素——<strong>分区</strong>（partitioning）<ul>
 <li>一个由小于基准值的数字组成的子数组</li>
 <li>基准值</li>
@@ -578,7 +578,23 @@ print(quick_sort([3, 5, 1, 19, 15, 2]))
       mermaid.initialize({{ JSON.stringify(theme.mermaid.options) }});
     }
   </script>
-{% endif %}<!-- hexo-inject:begin --><!-- hexo-inject:end -->
+{% endif %}
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </body>
 </html>
