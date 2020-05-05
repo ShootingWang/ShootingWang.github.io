@@ -17,7 +17,7 @@
   <meta name="description" content="统计一只狗，梦想有只猫">
   <meta name="author" content="ShootingWang">
   <meta name="keywords" content="">
-  <title>BFS - ShootingWang</title>
+  <title>广度优先搜索 - ShootingWang</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
 <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    0 字
+                    151 字
                   </span>
                 
 
@@ -193,11 +193,29 @@
           <div class="post-content mx-auto" id="post">
             
               <p class="note note-warning">
-                本文最后更新于：星期二, 五月 5日 2020, 11:34 中午
+                本文最后更新于：星期二, 五月 5日 2020, 1:11 下午
               </p>
             
             <article class="markdown-body">
-              
+              <p>BFS<br>Breadth-First Search</p>
+<a id="more"></a>
+<h1><span id="bfs">BFS</span></h1><ul>
+<li>最简便的图的搜索算法之一</li>
+<li>用于解决<strong>最短路径问题</strong>（shortest-path problem）</li>
+</ul>
+<blockquote>
+<ul>
+<li>编写拼写检查器：计算最少编辑多少个地方就可以把所有拼错的单词改成正确的单词</li>
+<li>迷宫问题：从起点最少需要走多少步可以走到出口</li>
+<li>从厦大白城出发到厦门北站，找出换乘最少的公交乘车路线</li>
+<li>……</li>
+</ul>
+</blockquote>
+<h2><span id="原理">原理</span></h2><ul>
+<li>搜索范围从起点开始逐渐向外延伸——先检查一度关系，再检查二度关系</li>
+</ul>
+<h1><span id="参考资料">参考资料</span></h1><p>[1] <a href="https://book.douban.com/subject/26979890/" target="_blank" rel="noopener">图解算法</a></p>
+
             </article>
             <hr>
             <div>
@@ -396,7 +414,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "BFS&nbsp;",
+        "广度优先搜索&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,

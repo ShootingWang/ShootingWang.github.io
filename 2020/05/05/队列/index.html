@@ -17,7 +17,7 @@
   <meta name="description" content="统计一只狗，梦想有只猫">
   <meta name="author" content="ShootingWang">
   <meta name="keywords" content="">
-  <title>Hash表 - ShootingWang</title>
+  <title>队列 - ShootingWang</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
 <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
@@ -131,8 +131,8 @@
               
                 <div class="mt-3 post-meta">
                   <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-                  <time datetime="2020-05-05 10:58">
-                    星期二, 五月 5日 2020, 10:58 上午
+                  <time datetime="2020-05-05 13:12">
+                    星期二, 五月 5日 2020, 1:12 下午
                   </time>
                 </div>
               
@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    278 字
+                    59 字
                   </span>
                 
 
@@ -152,7 +152,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    3
+                    1
                      分钟
                   </span>
                 
@@ -197,75 +197,14 @@
               </p>
             
             <article class="markdown-body">
-              <h1><span id="hash表">Hash表</span></h1><ul>
-<li>使用散列函数来确定元素的存储位置</li>
-<li>对于同样的输入，散列表必须返回同样的输出</li>
-<li>散列表是无序的；散列表的键值对的添加顺序不重要</li>
-</ul>
-<p>不同叫法：</p>
-<ul>
-<li><strong>Hash表</strong></li>
-<li><strong>哈希表</strong></li>
-<li><strong>散列表</strong></li>
-<li>散列映射</li>
-<li>映射</li>
-<li>字典</li>
-<li>关联数组</li>
-</ul>
-<h2><span id="散列函数">散列函数</span></h2><ul>
-<li>结果必须是均匀分布的</li>
-<li>映射的范围必须尽可能大</li>
-<li>最糟糕的散列函数是：将所有输入都映射到散列表的同一个位置</li>
-<li></li>
-</ul>
-<h2><span id="实现">实现</span></h2><p>散列表实现：</p>
-<ul>
-<li>Python提供的散列表实现为<strong>字典</strong></li>
-</ul>
-<h2><span id="用途">用途</span></h2><ul>
-<li>模拟映射关系</li>
-<li>防止重复</li>
-<li>用作缓存<br>缓存的数据存储在散列表中</li>
-</ul>
-<h2><span id="性能">性能</span></h2><div class="table-container">
-<table>
-<thead>
-<tr>
-<th style="text-align:center"></th>
-<th style="text-align:center">散列表-平均情况</th>
-<th style="text-align:center">散列表-最糟情况</th>
-<th style="text-align:center">数组</th>
-<th style="text-align:center">链表</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">查找</td>
-<td style="text-align:center">$O(1)$</td>
-<td style="text-align:center">$O(n)$</td>
-<td style="text-align:center">$O(1)$</td>
-<td style="text-align:center">$O(n)$</td>
-</tr>
-<tr>
-<td style="text-align:center">插入</td>
-<td style="text-align:center">$O(1)$</td>
-<td style="text-align:center">$O(n)$</td>
-<td style="text-align:center">$O(n)$</td>
-<td style="text-align:center">$O(1)$</td>
-</tr>
-<tr>
-<td style="text-align:center">删除</td>
-<td style="text-align:center">$O(1)$</td>
-<td style="text-align:center">$O(n)$</td>
-<td style="text-align:center">$O(n)$</td>
-<td style="text-align:center">$O(1)$</td>
-</tr>
-</tbody>
-</table>
-</div>
-<ul>
-<li>散列表的查找、插入和删除速度都非常快</li>
-<li>一旦填装因子超过0.7，就该调整散列表的长度</li>
+              <h1><span id="队列">队列</span></h1><ul>
+<li>只支持两种操作：<ol>
+<li>入队</li>
+<li>出队</li>
+</ol>
+</li>
+<li>队列是一种<strong>先进先出</strong>（FIFO，First In First Out）的数据结构</li>
+<li>栈是一种<strong>后进先出</strong>（LIFO，Last In First Out）的数据结构</li>
 </ul>
 <h1><span id="参考资料">参考资料</span></h1><p>[1] <a href="https://book.douban.com/subject/26979890/" target="_blank" rel="noopener">图解算法</a></p>
 
@@ -467,7 +406,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "Hash表&nbsp;",
+        "队列&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,

@@ -17,7 +17,7 @@
   <meta name="description" content="统计一只狗，梦想有只猫">
   <meta name="author" content="ShootingWang">
   <meta name="keywords" content="">
-  <title>Hash表 - ShootingWang</title>
+  <title>python-collections模块 - ShootingWang</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
 <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
@@ -131,8 +131,8 @@
               
                 <div class="mt-3 post-meta">
                   <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-                  <time datetime="2020-05-05 10:58">
-                    星期二, 五月 5日 2020, 10:58 上午
+                  <time datetime="2020-05-05 13:36">
+                    星期二, 五月 5日 2020, 1:36 下午
                   </time>
                 </div>
               
@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    278 字
+                    441 字
                   </span>
                 
 
@@ -152,7 +152,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    3
+                    6
                      分钟
                   </span>
                 
@@ -193,81 +193,101 @@
           <div class="post-content mx-auto" id="post">
             
               <p class="note note-warning">
-                本文最后更新于：星期二, 五月 5日 2020, 1:33 下午
+                本文最后更新于：星期二, 五月 5日 2020, 2:07 下午
               </p>
             
             <article class="markdown-body">
-              <h1><span id="hash表">Hash表</span></h1><ul>
-<li>使用散列函数来确定元素的存储位置</li>
-<li>对于同样的输入，散列表必须返回同样的输出</li>
-<li>散列表是无序的；散列表的键值对的添加顺序不重要</li>
-</ul>
-<p>不同叫法：</p>
+              <h1><span id="collections">collections</span></h1><h2><span id="deque">deque</span></h2><p><strong>双边队列</strong>（double-ended queue），具有队列和栈的性质，在列表（list）的基础上增加了移动、旋转和增删等</p>
+<pre><code class="lang-Python">from collections import deque
+
+d = deque()  ## 创建一个队列
+print(d)
+# deque([])
+
+d1 = deque(range(10))
+print(d1)
+# deque([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+</code></pre>
+<p>如果指定了参数<code>maxlen</code>，则会生成固定长度的队列；插入元素时，若队列已满，</p>
 <ul>
-<li><strong>Hash表</strong></li>
-<li><strong>哈希表</strong></li>
-<li><strong>散列表</strong></li>
-<li>散列映射</li>
-<li>映射</li>
-<li>字典</li>
-<li>关联数组</li>
+<li>从右侧插入，会“挤掉”最左侧的元素</li>
+<li>从左侧插入，会“挤掉”最右侧的元素<pre><code class="lang-Python">d = deque(maxlen=3)
+d.append(1)
+d.append(2)
+d.append(3)
+d
+# deque([1, 2, 3])
+d.append(4)
+d
+# deque([2, 3, 4])
+d.appendleft(5)
+d
+# deque([5, 2, 3])
+</code></pre>
+</li>
 </ul>
-<h2><span id="散列函数">散列函数</span></h2><ul>
-<li>结果必须是均匀分布的</li>
-<li>映射的范围必须尽可能大</li>
-<li>最糟糕的散列函数是：将所有输入都映射到散列表的同一个位置</li>
-<li></li>
-</ul>
-<h2><span id="实现">实现</span></h2><p>散列表实现：</p>
+<h3><span id="append">.append()</span></h3><p>在队列右侧添加元素</p>
+<h3><span id="appendleft">.appendleft()</span></h3><p>在队列左侧添加元素</p>
+<pre><code class="lang-Python">
+
+</code></pre>
+<h3><span id="count">.count()</span></h3><p>统计队列中某元素的个数</p>
+<pre><code class="lang-Python">
+
+</code></pre>
+<h3><span id="extend">.extend()</span></h3><p>在队列右边依次添加所有元素</p>
+<pre><code class="lang-Python">
+
+</code></pre>
+<h3><span id="extendleft">.extendleft()</span></h3><p>在队列左侧依次添加所有元素</p>
+<pre><code class="lang-Python">d = deque([&#39;a&#39;, &#39;b&#39;, &#39;c&#39;])
+
+d
+#  deque([&#39;a&#39;, &#39;b&#39;, &#39;c&#39;])
+
+d.extendleft([&#39;d&#39;, &#39;e&#39;, &#39;f&#39;])
+
+d
+# deque([&#39;f&#39;, &#39;e&#39;, &#39;d&#39;, &#39;a&#39;, &#39;b&#39;, &#39;c&#39;])
+</code></pre>
+<h3><span id="pop">.pop()</span></h3><p>从队列的右侧删除（取出）一个元素</p>
+<pre><code class="lang-Python">
+
+</code></pre>
+<h3><span id="popleft">.popleft()</span></h3><p>从队列的左侧删除（取出）一个元素</p>
+<pre><code class="lang-Python">
+
+</code></pre>
+<h3><span id="remove">.remove()</span></h3><p>将队列中的某元素删除</p>
+<pre><code class="lang-Python">
+
+</code></pre>
+<h3><span id="reverse">.reverse()</span></h3><p>将队列倒序</p>
+<pre><code class="lang-Python">
+
+</code></pre>
+<h3><span id="rotate">.rotate()</span></h3><p><code>.rotate(n)</code></p>
 <ul>
-<li>Python提供的散列表实现为<strong>字典</strong></li>
+<li>$n &gt; 0$：将队列最右边的n个数据，移到队列的左边</li>
+<li>$n &lt; 0$：将队列最左边的n个数据，移到队列的右边</li>
 </ul>
-<h2><span id="用途">用途</span></h2><ul>
-<li>模拟映射关系</li>
-<li>防止重复</li>
-<li>用作缓存<br>缓存的数据存储在散列表中</li>
-</ul>
-<h2><span id="性能">性能</span></h2><div class="table-container">
-<table>
-<thead>
-<tr>
-<th style="text-align:center"></th>
-<th style="text-align:center">散列表-平均情况</th>
-<th style="text-align:center">散列表-最糟情况</th>
-<th style="text-align:center">数组</th>
-<th style="text-align:center">链表</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">查找</td>
-<td style="text-align:center">$O(1)$</td>
-<td style="text-align:center">$O(n)$</td>
-<td style="text-align:center">$O(1)$</td>
-<td style="text-align:center">$O(n)$</td>
-</tr>
-<tr>
-<td style="text-align:center">插入</td>
-<td style="text-align:center">$O(1)$</td>
-<td style="text-align:center">$O(n)$</td>
-<td style="text-align:center">$O(n)$</td>
-<td style="text-align:center">$O(1)$</td>
-</tr>
-<tr>
-<td style="text-align:center">删除</td>
-<td style="text-align:center">$O(1)$</td>
-<td style="text-align:center">$O(n)$</td>
-<td style="text-align:center">$O(n)$</td>
-<td style="text-align:center">$O(1)$</td>
-</tr>
-</tbody>
-</table>
-</div>
-<ul>
-<li>散列表的查找、插入和删除速度都非常快</li>
-<li>一旦填装因子超过0.7，就该调整散列表的长度</li>
-</ul>
-<h1><span id="参考资料">参考资料</span></h1><p>[1] <a href="https://book.douban.com/subject/26979890/" target="_blank" rel="noopener">图解算法</a></p>
+<pre><code class="lang-Python">d = deque(range(10))
+d
+# deque([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+
+d.rotate(3)
+d
+#  deque([7, 8, 9, 0, 1, 2, 3, 4, 5, 6])
+
+d = deque(range(10))
+d
+# deque([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+
+d.rotate(-3)
+d
+# deque([3, 4, 5, 6, 7, 8, 9, 0, 1, 2])
+</code></pre>
+<h1><span id="参考资料">参考资料</span></h1><p>[1] <a href="https://blog.csdn.net/happyrocking/article/details/80058623" target="_blank" rel="noopener">collections.deque介绍</a><br>[2] <a href="https://www.cnblogs.com/LouisZJ/p/8118637.html" target="_blank" rel="noopener">deque 双向队列</a><br>[] <a href></a></p>
 
             </article>
             <hr>
@@ -277,11 +297,7 @@
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     
-                      <a class="hover-with-bg" href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
-                    
-                      <a class="hover-with-bg" href="/categories/%E7%AE%97%E6%B3%95/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/">基础算法</a>
-                    
-                      <a class="hover-with-bg" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
+                      <a class="hover-with-bg" href="/categories/%E8%BD%AF%E4%BB%B6/">软件</a>
                     
                   </div>
                 
@@ -289,9 +305,7 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/%E7%AE%97%E6%B3%95/">算法</a>
-                    
-                      <a class="hover-with-bg" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
+                      <a class="hover-with-bg" href="/tags/Python/">Python</a>
                     
                   </div>
                 
@@ -467,7 +481,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "Hash表&nbsp;",
+        "python-collections模块&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,
@@ -576,13 +590,6 @@
 
 
 
-
-  <script  src="https://cdn.staticfile.org/mermaid/8.4.8/mermaid.min.js" ></script>
-  <script>
-    if (window.mermaid) {
-      mermaid.initialize({"theme":"default"});
-    }
-  </script>
 
 
 
