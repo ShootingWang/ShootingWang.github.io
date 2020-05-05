@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    327 字
+                    455 字
                   </span>
                 
 
@@ -152,7 +152,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    4
+                    6
                      分钟
                   </span>
                 
@@ -322,6 +322,33 @@
 <blockquote>
 <p>实际上，第一次需要检查的元素有$n$个，第二次要检查的元素个数有$n-1$个，，随后要检查的元素个数依次为$n-2,\cdots,2,1$，平均每次检查的元素个数为$\frac{1}{2}n$，因此运行时间为$O(\frac{1}{2}n^2)$，即$O(n^2)$</p>
 </blockquote>
+<h2><span id="python实现">Python实现</span></h2><p>使用Python实现选择排序：</p>
+<pre><code class="lang-Python">def find_smallest(arr):
+    &quot;&quot;&quot;
+    找到数组arr中最小元素的索引
+    &quot;&quot;&quot;
+    smallest = arr[0] ## 用于存储最小值
+    smallest_index = 0  ## 用于存储最小值的索引
+    for i in range(1, len(arr)):
+        if arr[i] &lt; smallest:
+            smallest = arr[i]
+            smallest_index = i
+    return smallest_index
+
+def selection_sort(arr):
+    &quot;&quot;&quot;
+    对数组arr进行选择排序
+    从小到大
+    &quot;&quot;&quot;
+    new_arr = []
+    for i in range(len(arr)):
+        smallest = find_smallest(arr)
+        new_arr.append(arr.pop(smallest))
+    return new_arr
+
+print(selection_sort([3, 5, 1, 19, 15, 2]))
+## [1, 2, 3, 5, 15, 19]
+</code></pre>
 <h1><span id="参考资料">参考资料</span></h1><p>[1] <a href="https://book.douban.com/subject/26979890/" target="_blank" rel="noopener">图解算法</a></p>
 
             </article>
@@ -461,14 +488,7 @@
   </div>
 </footer>
 
-{% if theme.mermaid.enable %}
-  <script src='https://unpkg.com/mermaid@{{ theme.mermaid.version }}/dist/mermaid.min.js'></script>
-  <script>
-    if (window.mermaid) {
-      mermaid.initialize({{ JSON.stringify(theme.mermaid.options) }});
-    }
-  </script>
-{% endif %}
+
 
 <!-- SCRIPTS -->
 <script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
@@ -649,7 +669,14 @@
 <script src="/js/prism/clipboard.js"></script>
 <script src="/js/prism/prism.js" async></script>
 
-
+{% if theme.mermaid.enable %}
+  <script src='https://unpkg.com/mermaid@{{ theme.mermaid.version }}/dist/mermaid.min.js'></script>
+  <script>
+    if (window.mermaid) {
+      mermaid.initialize({{ JSON.stringify(theme.mermaid.options) }});
+    }
+  </script>
+{% endif %}
 
 <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
