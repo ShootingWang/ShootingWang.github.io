@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    337 字
+                    444 字
                   </span>
                 
 
@@ -152,7 +152,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    4
+                    6
                      分钟
                   </span>
                 
@@ -193,7 +193,20 @@
           <div class="post-content mx-auto" id="post">
             
             <article class="markdown-body">
-              <h1><span id="二分查找">二分查找</span></h1><ul>
+              <h1><span id="简单查找">简单查找</span></h1><ul>
+<li>查找某个元素是否在数组（长度为$n$）中、或者在数组的哪个位置，挨个把数组的每个元素都找一遍，找到目标元素。最糟的情况下，需要找$n$次，运行时间为$O(n)$</li>
+</ul>
+<p>以简单法猜1~30以内的数：</p>
+<pre class="mermaid">graph TD;
+    1-->|太小|2;
+    2-->|太小|3;
+    3-->|太小|4;
+    4-->|太小|5;
+    5-->|太小|...;
+    ...-->|太小|29;
+    29-->|太小|30;</pre>
+
+<h1><span id="二分查找">二分查找</span></h1><ul>
 <li>一种算法</li>
 <li>快速查找有序元素列表中的符合条件的元素</li>
 </ul>
