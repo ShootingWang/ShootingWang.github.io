@@ -17,7 +17,7 @@
   <meta name="description" content="统计一只狗，梦想有只猫">
   <meta name="author" content="ShootingWang">
   <meta name="keywords" content="">
-  <title>标签 - 数据结构 - ShootingWang</title>
+  <title>ShootingWang</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
 <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
@@ -45,7 +45,7 @@
 <link rel="stylesheet" href="/js/prism/prism.css">
 
 <body>
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><header style="height: 80vh;">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><header style="height: 100vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
@@ -131,6 +131,10 @@
           </div>
 
           
+            <div class="scroll-down-bar">
+              <i class="iconfont icon-arrowdown"></i>
+            </div>
+          
         </div>
 
         <a href="https://github.com/ShootingWang" class="attachment-full size-full" aria-label="Fork me on GitHub">
@@ -152,33 +156,67 @@
     
       <div class="container nopadding-md">
         <div class="py-5" id="board"
-          >
+          style=margin-top:0>
           
           <div class="container">
             <div class="row">
               <div class="col-12 col-md-10 m-auto">
                 
 
-<div class="list-group">
-<!--  <p class="h4">共计 2 篇文章</p>-->
-  <hr>
-  
+
+  <div class="row mx-auto index-card">
     
-      
-      <p class="h5">2020</p>
     
-    <a href="/2020/05/05/Hash%E8%A1%A8/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">Hash表</span>
-      <span style="float: right;">05-05</span>
-    </a>
-  
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2020/04/27/Restart/" target="_self">
+          <img src="/img/bg/MalhamStars.jpg" srcset="/img/loading.gif" alt="Restart!">
+        </a>
+      </div>
     
-    <a href="/2020/05/01/%E6%A0%91/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">树</span>
-      <span style="float: right;">05-01</span>
-    </a>
+    <div class="col-12 col-md-8 mx-auto index-info">
+      <a class="index-header" href="/2020/04/27/Restart/">Restart!</a>
+
+      <a href="/2020/04/27/Restart/" class="index-excerpt">
+        
+        
+          
+        
+        <div>从零开始我的个人博客！</div>
+      </a>
+
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>&nbsp;2020-04-27
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/%E6%97%A0%E4%BB%8E%E5%B1%9E/">无从属</a>
+            
+          </div>
+        
+        
+      </div>
+    </div>
+  </div>
+
+
+
+  <nav aria-label="navigation">
+    <span class="pagination" id="pagination">
+      <a class="extend prev" rel="prev" href="/page/2/"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+    </span>
+  </nav>
   
-</div>
+  <script>
+    for (ele of document.getElementById("pagination").getElementsByTagName("a")) {
+      ele.href += '#board';
+    }
+  </script>
 
 
 
@@ -287,7 +325,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "标签 - 数据结构&nbsp;",
+        "无猫病重症患者&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,
