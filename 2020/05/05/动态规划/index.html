@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    356 字
+                    388 字
                   </span>
                 
 
@@ -152,7 +152,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    3
+                    4
                      分钟
                   </span>
                 
@@ -244,10 +244,10 @@
 <tbody>
 <tr>
 <td style="text-align:center">吉他</td>
-<td style="text-align:center">$$$1500</td>
-<td style="text-align:center">$$$1500</td>
-<td style="text-align:center">$$$1500</td>
-<td style="text-align:center">$$$1500</td>
+<td style="text-align:center">$1500</td>
+<td style="text-align:center">$1500</td>
+<td style="text-align:center">$1500</td>
+<td style="text-align:center">$1500</td>
 </tr>
 <tr>
 <td style="text-align:center">音响</td>
@@ -266,7 +266,8 @@
 </table>
 </div>
 <p>只考虑1磅的吉他，1~4容量的背包最多可容纳1500美元的物品（只能容纳吉他）。</p>
-<h1><span id="参考资料">参考资料</span></h1><p>[1] <a href="https://book.douban.com/subject/26979890/" target="_blank" rel="noopener">图解算法</a></p>
+<p>第$i$行、第$j$列单元格的价值为：</p>
+<script type="math/tex; mode=display">cell[i][j] = \max\{cell[i-1][j], cell[i-1][j-当前商品的重量]\}</script><h1><span id="参考资料">参考资料</span></h1><p>[1] <a href="https://book.douban.com/subject/26979890/" target="_blank" rel="noopener">图解算法</a></p>
 
             </article>
             <hr>
@@ -594,23 +595,7 @@
       mermaid.initialize({{ JSON.stringify(theme.mermaid.options) }});
     }
   </script>
-{% endif %}
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+{% endif %}<!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </body>
 </html>
