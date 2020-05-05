@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    437 字
+                    469 字
                   </span>
                 
 
@@ -220,11 +220,14 @@
 </ol>
 <h2><span id="运行时间">运行时间</span></h2><ul>
 <li>最糟的情况下：$O(n^2)$</li>
-<li>平均情况下：$O(n\log{n})$</li>
+<li>平均情况下：$O(n\log{n})$<blockquote>
+<p>最佳的情况也是平均情况，只要每次都随机地选择一个数组元素作为基准值</p>
+</blockquote>
+</li>
 </ul>
 <p>算法的运行时间通常有个<strong>常量</strong>$c$，表示算法所需的固定时间</p>
 <blockquote>
-<p>如：简单查找的运行时间为10ms$<em>n$，二分查找的运行时间为1s$</em>\log{n}$。其中，10ms和1s都是常量</p>
+<p>如：简单查找的运行时间为10ms$*n$，二分查找的运行时间为1s$*\log{n}$。其中，10ms和1s都是常量</p>
 </blockquote>
 <ul>
 <li>通常情况下，常量几乎没什么影响</li>
@@ -575,23 +578,7 @@ print(quick_sort([3, 5, 1, 19, 15, 2]))
       mermaid.initialize({{ JSON.stringify(theme.mermaid.options) }});
     }
   </script>
-{% endif %}
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+{% endif %}<!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </body>
 </html>
