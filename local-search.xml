@@ -4,37 +4,6 @@
   
   
   <entry>
-    <title>Hash表</title>
-    <link href="/2020/05/05/Hash%E8%A1%A8/"/>
-    <url>/2020/05/05/Hash%E8%A1%A8/</url>
-    
-    <content type="html"><![CDATA[<h1><span id="hash表">Hash表</span></h1><ul><li>使用散列函数来确定元素的存储位置</li><li>对于同样的输入，散列表必须返回同样的输出</li></ul><p>不同叫法：</p><ul><li><strong>Hash表</strong></li><li><strong>哈希表</strong></li><li><strong>散列表</strong></li><li>散列映射</li><li>映射</li><li>字典</li><li>关联数组</li></ul><h2><span id="散列函数">散列函数</span></h2><ul><li>结果必须是均匀分布的</li><li>映射的范围必须尽可能大</li><li>最糟糕的散列函数是：将所有输入都映射到散列表的同一个位置</li><li></li></ul><h2><span id="实现">实现</span></h2><p>散列表实现：</p><ul><li>Python提供的散列表实现为<strong>字典</strong></li></ul><h2><span id="用途">用途</span></h2><ul><li>模拟映射关系</li><li>防止重复</li><li>用作缓存<br>缓存的数据存储在散列表中</li></ul><h2><span id="性能">性能</span></h2><div class="table-container"><table><thead><tr><th style="text-align:center"></th><th style="text-align:center">散列表-平均情况</th><th style="text-align:center">散列表-最糟情况</th><th style="text-align:center">数组</th><th style="text-align:center">链表</th></tr></thead><tbody><tr><td style="text-align:center">查找</td><td style="text-align:center">$O(1)$</td><td style="text-align:center">$O(n)$</td><td style="text-align:center">$O(1)$</td><td style="text-align:center">$O(n)$</td></tr><tr><td style="text-align:center">插入</td><td style="text-align:center">$O(1)$</td><td style="text-align:center">$O(n)$</td><td style="text-align:center">$O(n)$</td><td style="text-align:center">$O(1)$</td></tr><tr><td style="text-align:center">删除</td><td style="text-align:center">$O(1)$</td><td style="text-align:center">$O(n)$</td><td style="text-align:center">$O(n)$</td><td style="text-align:center">$O(1)$</td></tr></tbody></table></div><ul><li>散列表的查找、插入和删除速度都非常快</li><li>一旦填装因子超过0.7，就该调整散列表的长度</li></ul><h1><span id="参考资料">参考资料</span></h1><p>[1] <a href="https://book.douban.com/subject/26979890/" target="_blank" rel="noopener">图解算法</a></p>]]></content>
-    
-    
-    <categories>
-      
-      <category>算法</category>
-      
-      <category>基础算法</category>
-      
-      <category>数据结构</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>算法</tag>
-      
-      <tag>数据结构</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>基础算法</title>
     <link href="/2020/05/04/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/"/>
     <url>/2020/05/04/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/</url>
