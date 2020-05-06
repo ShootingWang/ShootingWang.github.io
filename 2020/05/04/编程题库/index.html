@@ -152,7 +152,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    15
+                    16
                      分钟
                   </span>
                 
@@ -195,7 +195,16 @@
             <article class="markdown-body">
               <p>编程刷题记录</p>
 <a id="more"></a>
-<h1><span id="huawei">HUAWEI</span></h1><h2><span id="进制转换">进制转换</span></h2><p><a href="https://www.nowcoder.com/practice/8f3df50d2b9043208c5eed283d1d4da6?tpId=37&amp;tqId=21228&amp;tPage=1&amp;rp=&amp;ru=/ta/huawei&amp;qru=/ta/huawei/question-ranking" target="_blank" rel="noopener">题目详情</a></p>
+<h1><span id="huawei">HUAWEI</span></h1><h2><span id="计算字符个数">计算字符个数</span></h2><p><a href="https://www.nowcoder.com/practice/a35ce98431874e3a820dbe4b2d0508b1?tpId=37&amp;tqId=21225&amp;tPage=1&amp;rp=&amp;ru=/ta/huawei&amp;qru=/ta/huawei/question-ranking" target="_blank" rel="noopener">题目详情</a></p>
+<pre><code class="lang-Python">while True:
+    try:
+        lst = [s.lower() for s in input()]
+        stri = input()
+        print(lst.count(stri))
+    except:
+        break
+</code></pre>
+<h2><span id="进制转换">进制转换</span></h2><p><a href="https://www.nowcoder.com/practice/8f3df50d2b9043208c5eed283d1d4da6?tpId=37&amp;tqId=21228&amp;tPage=1&amp;rp=&amp;ru=/ta/huawei&amp;qru=/ta/huawei/question-ranking" target="_blank" rel="noopener">题目详情</a></p>
 <pre><code class="lang-Python">while True:
     try:
         n = input()
@@ -727,23 +736,7 @@ n = 20
       mermaid.initialize({{ JSON.stringify(theme.mermaid.options) }});
     }
   </script>
-{% endif %}
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+{% endif %}<!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </body>
 </html>
