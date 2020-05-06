@@ -152,7 +152,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    13
+                    15
                      分钟
                   </span>
                 
@@ -195,11 +195,11 @@
             <article class="markdown-body">
               <p>编程刷题记录</p>
 <a id="more"></a>
-<h1><span id="huawei">HUAWEI</span></h1><h2><span id="字符串反转">字符串反转</span></h2><p><a href="https://www.nowcoder.com/practice/e45e078701ab4e4cb49393ae30f1bb04?tpId=37&amp;tqId=21235&amp;tPage=1&amp;rp=&amp;ru=/ta/huawei&amp;qru=/ta/huawei/question-ranking" target="_blank" rel="noopener">题目详情</a></p>
+<h1><span id="huawei">HUAWEI</span></h1><h2><span id="进制转换">进制转换</span></h2><p><a href="https://www.nowcoder.com/practice/8f3df50d2b9043208c5eed283d1d4da6?tpId=37&amp;tqId=21228&amp;tPage=1&amp;rp=&amp;ru=/ta/huawei&amp;qru=/ta/huawei/question-ranking" target="_blank" rel="noopener">题目详情</a></p>
 <pre><code class="lang-Python">while True:
     try:
-        s = input()
-        print(s[::-1])
+        n = input()
+        print(int(n, 16))
     except:
         break
 </code></pre>
@@ -210,6 +210,49 @@
         lst = s.split(&quot; &quot;)
         lst = lst[::-1]
         print(&quot; &quot;.join(lst))
+    except:
+        break
+</code></pre>
+<h2><span id="求int型正整数在内存中存储时1的个数">求int型正整数在内存中存储时1的个数</span></h2><p><a href="https://www.nowcoder.com/practice/440f16e490a0404786865e99c6ad91c9?tpId=37&amp;tqId=21238&amp;rp=0&amp;ru=/ta/huawei&amp;qru=/ta/huawei/question-ranking" target="_blank" rel="noopener">题目详情</a></p>
+<pre><code class="lang-Python">while True:
+    try:
+        bin_n = bin(int(input()))
+        print(str(bin_n).count(&#39;1&#39;))
+    except:
+        break
+</code></pre>
+<h2><span id="数字颠倒">数字颠倒</span></h2><p><a href="https://www.nowcoder.com/practice/ae809795fca34687a48b172186e3dafe?tpId=37&amp;tqId=21234&amp;tPage=1&amp;rp=&amp;ru=/ta/huawei&amp;qru=/ta/huawei/question-ranking" target="_blank" rel="noopener">题目详情</a></p>
+<pre><code class="lang-Python">while True:
+    try:
+        n = input()[::-1]
+        print(n)
+    except:
+        break
+</code></pre>
+<h2><span id="字符串反转">字符串反转</span></h2><p><a href="https://www.nowcoder.com/practice/e45e078701ab4e4cb49393ae30f1bb04?tpId=37&amp;tqId=21235&amp;tPage=1&amp;rp=&amp;ru=/ta/huawei&amp;qru=/ta/huawei/question-ranking" target="_blank" rel="noopener">题目详情</a></p>
+<pre><code class="lang-Python">while True:
+    try:
+        s = input()
+        print(s[::-1])
+    except:
+        break
+</code></pre>
+<h2><span id="字符串分隔">字符串分隔</span></h2><p><a href="https://www.nowcoder.com/practice/d9162298cb5a437aad722fccccaae8a7?tpId=37&amp;tqId=21227&amp;tPage=1&amp;rp=&amp;ru=/ta/huawei&amp;qru=/ta/huawei/question-ranking" target="_blank" rel="noopener">题目详情</a></p>
+<pre><code class="lang-Python">def decomp(string):
+    if string != &quot;&quot; and len(string) &lt;= 8:
+        print(string + &quot;0&quot; * (8 - len(string)))
+    else:
+        print(string[:8])
+        string = string[8:]
+        decomp(string)
+
+while True:
+    try:
+        i = 0
+        while i &lt; 2:
+            ss = input()
+            decomp(ss)
+            i += 1
     except:
         break
 </code></pre>
@@ -225,22 +268,6 @@
             print(lst[i])
     except:
         break
-</code></pre>
-<h2><span id="求int型正整数在内存中存储时1的个数">求int型正整数在内存中存储时1的个数</span></h2><p><a href="https://www.nowcoder.com/practice/440f16e490a0404786865e99c6ad91c9?tpId=37&amp;tqId=21238&amp;rp=0&amp;ru=/ta/huawei&amp;qru=/ta/huawei/question-ranking" target="_blank" rel="noopener">题目详情</a></p>
-<pre><code class="lang-Python">while True:
-    try:
-        bin_n = bin(int(input()))
-        print(str(bin_n).count(&#39;1&#39;))
-    except:
-        break
-</code></pre>
-<h2><span id> </span></h2><p><a href>题目详情</a></p>
-<pre><code class="lang-Python">
-
-</code></pre>
-<h2><span id> </span></h2><p><a href>题目详情</a></p>
-<pre><code class="lang-Python">
-
 </code></pre>
 <h2><span id> </span></h2><p><a href>题目详情</a></p>
 <pre><code class="lang-Python">

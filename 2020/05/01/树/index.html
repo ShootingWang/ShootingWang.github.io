@@ -283,6 +283,7 @@
 <li>完全二叉树不存在只有右子树的情况</li>
 <li>同样结点数的二叉树，完全二叉树的深度最小</li>
 </ul>
+<h2><span id="平衡二叉树">平衡二叉树</span></h2><p><strong>平衡二叉树</strong>（BT，Balance Tree），又称<strong>AVL树</strong>：是一棵空树，或它的左右子树的高度差的绝对值不超过1，且左右子树都是一棵平衡二叉树</p>
 <h2><span id="二叉树性质">二叉树性质</span></h2><ol>
 <li>二叉树的第$i$层上最多有$2^{i-1}$个结点（$i\geq 1$）</li>
 <li>深度为$k$的二叉树最多有$2^k-1$个结点（$k\geq1$）<ul>
@@ -377,11 +378,12 @@
 </li>
 </ul>
 <p><meta name="referrer" content="no-referrer"><br><img src="/2020/05/01/%E6%A0%91/cneg.png" srcset="/img/loading.gif" class title="层序遍历"></p>
-<script type="math/tex; mode=display">1→2→3→4→5→6→7</script><h1><span id="赫夫曼">赫夫曼</span></h1><h2><span id="赫夫曼树">赫夫曼树</span></h2><h2><span id="赫夫曼编码">赫夫曼编码</span></h2><h1><span id="二叉查找树">二叉查找树</span></h1><p>Binary Search Tree</p>
+<script type="math/tex; mode=display">1→2→3→4→5→6→7</script><h1><span id="赫夫曼">赫夫曼</span></h1><h2><span id="赫夫曼树">赫夫曼树</span></h2><h2><span id="赫夫曼编码">赫夫曼编码</span></h2><h1><span id="二叉查找树">二叉查找树</span></h1><p><strong>二叉搜索树/二叉查找树</strong>（Binary Search Tree）</p>
 <ul>
 <li>是一种数据结构</li>
 <li>不能随机访问</li>
 </ul>
+<p>左子树上所有结点的值均小于根结点的值，而右子树上所有结点的值均大于根结点的值（？？？）</p>
 <h2><span id="运行时间">运行时间</span></h2><ul>
 <li>平均运行时间为$O(\log{n})$</li>
 <li>最糟的运行时间为$O(n)$</li>
@@ -414,9 +416,22 @@
 </tbody>
 </table>
 </div>
+<h1><span id="最小生成树">最小生成树</span></h1><p><strong>最小生成树</strong>（MST，Minimum Spanning Tree）：一个有$n$个结点的连通图的生成树是原图的极小连通子图，且包含原图中的所有$n$个结点，并且有保持图连通的最少的边。</p>
+<ul>
+<li>一个图可以有许多棵不同的生成树</li>
+<li>生成树的定点数与图的定点数相同</li>
+<li>生成树是图的<strong>极小连通子图</strong>，去掉一条边则非连通</li>
+<li>一个有$n$个顶点的连通图的生成树有$n-1$条边</li>
+<li>含$n$个顶点、$n-1$条边的图不一定是生成树</li>
+</ul>
+<h2><span id="实现">实现</span></h2><p>可用</p>
+<ul>
+<li>克鲁斯卡尔算法（Kruskal）</li>
+<li>普里姆算法（Prim）<br>实现</li>
+</ul>
 <p>B树、红黑树、堆、伸展树</p>
 <p>未完</p>
-<h1><span id="参考资料">参考资料</span></h1><p>[1] <a href="https://cn.bing.com/images/search?view=detailV2&amp;ccid=XefGGltQ&amp;id=E54C3AB5E5AE8818E00FAF3812C8D0BED63054FB&amp;thid=OIP.XefGGltQanM0KYZIyOSEZQHaHV&amp;mediaurl=http%3a%2f%2fupload-images.jianshu.io%2fupload_images%2f1115031-7020c17d7a881499.jpg%3fimageMogr2%2fauto-orient%2fstrip%257CimageView2%2f2%2fw%2f1240&amp;exph=1228&amp;expw=1240&amp;q=%e4%ba%8c%e5%8f%89%e6%a0%91+%e6%89%8b%e7%bb%98&amp;simid=608032377976981561&amp;selectedIndex=0" target="_blank" rel="noopener">首页缩略图</a><br>[2] <a href="https://book.douban.com/subject/6424904/" target="_blank" rel="noopener">大话数据结构</a><br>[3] <a href="https://www.cnblogs.com/songwenjie/p/8955856.html" target="_blank" rel="noopener">【图解数据结构】二叉树遍历</a><br>[4] <a href="https://book.douban.com/subject/26979890/" target="_blank" rel="noopener">图解算法</a></p>
+<h1><span id="参考资料">参考资料</span></h1><p>[1] <a href="https://cn.bing.com/images/search?view=detailV2&amp;ccid=XefGGltQ&amp;id=E54C3AB5E5AE8818E00FAF3812C8D0BED63054FB&amp;thid=OIP.XefGGltQanM0KYZIyOSEZQHaHV&amp;mediaurl=http%3a%2f%2fupload-images.jianshu.io%2fupload_images%2f1115031-7020c17d7a881499.jpg%3fimageMogr2%2fauto-orient%2fstrip%257CimageView2%2f2%2fw%2f1240&amp;exph=1228&amp;expw=1240&amp;q=%e4%ba%8c%e5%8f%89%e6%a0%91+%e6%89%8b%e7%bb%98&amp;simid=608032377976981561&amp;selectedIndex=0" target="_blank" rel="noopener">首页缩略图</a><br>[2] <a href="https://book.douban.com/subject/6424904/" target="_blank" rel="noopener">大话数据结构</a><br>[3] <a href="https://www.cnblogs.com/songwenjie/p/8955856.html" target="_blank" rel="noopener">【图解数据结构】二叉树遍历</a><br>[4] <a href="https://book.douban.com/subject/26979890/" target="_blank" rel="noopener">图解算法</a><br>[5] <a href="https://baijiahao.baidu.com/s?id=1646617486319372351&amp;wfr=spider&amp;for=pc" target="_blank" rel="noopener">一文读懂平衡二叉树</a><br>[6] <a href="https://my.oschina.net/u/4365394/blog/3234185/print" target="_blank" rel="noopener">最小生成树</a></p>
 
             </article>
             <hr>

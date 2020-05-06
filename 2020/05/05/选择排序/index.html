@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    455 字
+                    510 字
                   </span>
                 
 
@@ -322,6 +322,11 @@
 <blockquote>
 <p>实际上，第一次需要检查的元素有$n$个，第二次要检查的元素个数有$n-1$个，，随后要检查的元素个数依次为$n-2,\cdots,2,1$，平均每次检查的元素个数为$\frac{1}{2}n$，因此运行时间为$O(\frac{1}{2}n^2)$，即$O(n^2)$</p>
 </blockquote>
+<h2><span id="稳定性">稳定性</span></h2><ul>
+<li>用数组实现的选择排序是不稳定的</li>
+<li>用链表实现的选择排序是稳定的</li>
+</ul>
+<p>通常使用数组实现选择排序，认为选择排序是不稳定的</p>
 <h2><span id="python实现">Python实现</span></h2><p>使用Python实现选择排序：</p>
 <pre><code class="lang-Python">def find_smallest(arr):
     &quot;&quot;&quot;
