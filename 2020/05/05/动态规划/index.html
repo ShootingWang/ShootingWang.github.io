@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    479 字
+                    486 字
                   </span>
                 
 
@@ -267,7 +267,7 @@
 </div>
 <p>只考虑1磅的吉他，1~4容量的背包最多可容纳1500美元的物品（只能容纳吉他）。</p>
 <p>第$i$行、第$j$列单元格的价值为：</p>
-<script type="math/tex; mode=display">cell[i][j] = \max\{cell[i-1][j], cell[i-1][j-当前商品的重量]\}</script><p>即，考虑下面二者中较大的那个：</p>
+<script type="math/tex; mode=display">cell[i][j] = \max\{cell[i-1][j], 当前商品的价值+cell[i-1][j-当前商品的重量]\}</script><p>即，考虑下面二者中较大的那个：</p>
 <ul>
 <li>上一个单元格的值</li>
 <li>当前商品的价值+剩余空间的价值</li>
