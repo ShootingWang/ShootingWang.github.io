@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    1.1k 字
+                    1.2k 字
                   </span>
                 
 
@@ -210,6 +210,18 @@
         lst = s.split(&quot; &quot;)
         lst = lst[::-1]
         print(&quot; &quot;.join(lst))
+    except:
+        break
+</code></pre>
+<h2><span id="明明的随机数">明明的随机数</span></h2><p><a href="https://www.nowcoder.com/practice/3245215fffb84b7b81285493eae92ff0?tpId=37&amp;tqId=21226&amp;tPage=1&amp;rp=&amp;ru=/ta/huawei&amp;qru=/ta/huawei/question-ranking" target="_blank" rel="noopener">题目详情</a></p>
+<pre><code class="lang-Python">while True:
+    try:
+        n = int(input())
+        nums = []
+        for i in range(n):
+            nums.append(int(input()))
+        for j in sorted(set(nums)):
+            print(j)
     except:
         break
 </code></pre>
