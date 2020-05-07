@@ -1,6 +1,6 @@
 html,
 body {
-  font-size: 16px;
+  font-size: 14px;
   font-family: Lato;
 }
 html,
@@ -586,7 +586,7 @@ a.beian-police img {
   overflow: visible;
 }
 .markdown-body pre code {
-  font-size: 85%;
+  font-size: 90%;
   display: block;
   overflow-x: auto;
   padding: 0.5rem 0;
@@ -969,7 +969,7 @@ h6::before {
   position: -webkit-sticky;
   position: sticky;
   top: 2rem;
-  padding: 3rem 0 0 0;
+  padding: 1rem 0 0 0;
   max-height: 80%;
   visibility: hidden;
 }
