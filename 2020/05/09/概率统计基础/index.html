@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    216 字
+                    244 字
                   </span>
                 
 
@@ -152,7 +152,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    3
+                    4
                      分钟
                   </span>
                 
@@ -206,9 +206,19 @@
 <li><strong>概率密度函数</strong>（pdf，probability density function）</li>
 </ul>
 <h3><span id="贝塔分布">贝塔分布</span></h3><p>Beta Distribution<br>$X\sim B(\alpha, \beta)$, 则$X$的概率密度函数为</p>
-<script type="math/tex; mode=display">f_X(x)=\frac{1}{B(\alpha,\beta)}x^{\alpha-1}(1-x)^{\beta-1},\quad 0< y < 1</script><ul>
-<li>$E(X)=\frac{\alpha}{\alpha+\beta}$</li>
-<li>$Var(X)=\frac{\alpha\beta}{(\alpha+\beta)^2(\alpha+\beta+1)}$</li>
+<script type="math/tex; mode=display">f_X(x)=\frac{1}{B(\alpha,\beta)}x^{\alpha-1}(1-x)^{\beta-1},\quad 0< x < 1</script><ul>
+<li><p>$E(X)=\frac{\alpha}{\alpha+\beta}$</p>
+<font face="仿宋">
+\begin{equation}
+\begin{aligned}
+E(X)&=\int_0^1 x\frac{1}{B(\alpha,\beta)}x^{\alpha-1}(1-x)^{\beta-1}\mathrm{d}x\\
+&=
+\end{aligned}
+\end{equation}
+</font>
+</li>
+<li><p>$Var(X)=\frac{\alpha\beta}{(\alpha+\beta)^2(\alpha+\beta+1)}$</p>
+</li>
 </ul>
 <h3><span id="泊松分布">泊松分布</span></h3><ul>
 <li><a href="/2020/04/27/%E6%B3%8A%E6%9D%BE%E5%88%86%E5%B8%83/" title="泊松分布">泊松分布</a>
