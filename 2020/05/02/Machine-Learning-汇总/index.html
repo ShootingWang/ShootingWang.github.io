@@ -248,13 +248,13 @@
 <li>PCA</li>
 <li>LSA</li>
 <li>SVD</li>
-<li>LDA<h3><span id="supervised-learning">Supervised Learning</span></h3><h4><span id="classification">Classification</span></h4><h5><span id="k-nn">K-NN</span></h5></li>
+<li>LDA</li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
-<h5><span id="naive-bayes">Naive Bayes</span></h5><h5><span id="svm">SVM</span></h5><ul>
+<h3><span id="supervised-learning">Supervised Learning</span></h3><h4><span id="classification">Classification</span></h4><h5><span id="k-nn">K-NN</span></h5><h5><span id="naive-bayes">Naive Bayes</span></h5><h5><span id="svm">SVM</span></h5><ul>
 <li><a href="/2020/04/28/%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA/" title="支持向量机">支持向量机</a> Support Vector Machine</li>
 </ul>
 <h5><span id="decision-tree">Decision Tree</span></h5><ul>
@@ -614,23 +614,7 @@
       mermaid.initialize({{ JSON.stringify(theme.mermaid.options) }});
     }
   </script>
-{% endif %}
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+{% endif %}<!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </body>
 </html>
