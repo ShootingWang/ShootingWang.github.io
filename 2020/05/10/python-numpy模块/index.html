@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    248 字
+                    420 字
                   </span>
                 
 
@@ -152,7 +152,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    3
+                    6
                      分钟
                   </span>
                 
@@ -233,6 +233,33 @@ a
 #       [ 8,  9,  2, 11]])
 np.argmin(a, axis=0)  ## 多个最小值，只返回第一个最小值的索引
 # array([0, 0, 0, 0], dtype=int64)
+</code></pre>
+<h2><span id="reshape">.reshape()</span></h2><p>改变矩阵/数组的维数</p>
+<pre><code class="lang-Python">import numpy as np
+
+a = np.arange(12).reshape(3, 4)  ## 3行4列
+a
+#array([[ 0,  1,  2,  3],
+#       [ 4,  5,  6,  7],
+#       [ 8,  9, 10, 11]])
+</code></pre>
+<h3><span id="reshapem-1">.reshape(m,-1)</span></h3><p>将数组形状变为m行（列数相应确定）；元素个数必须是m的整数倍</p>
+<pre><code class="lang-Python">a = np.arange(12).reshape(1, -1)  ## 1行（不指定列数）
+a
+# array([[ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11]])
+
+a = np.arange(12).reshape(3, -1)  ## 3行
+a
+# array([[ 0,  1,  2,  3],
+#       [ 4,  5,  6,  7],
+#       [ 8,  9, 10, 11]])
+</code></pre>
+<h3><span id="reshape-1n">.reshape(-1,n)</span></h3><p>将数组形状变为n列（行数相应确定）；元素个数必须是n的整数倍</p>
+<pre><code class="lang-Python">a = np.arange(12).reshape(-1, 4)  ## 4列
+a
+# array([[ 0,  1,  2,  3],
+#       [ 4,  5,  6,  7],
+#       [ 8,  9, 10, 11]])
 </code></pre>
 <pre><code class="lang-Python">
 
