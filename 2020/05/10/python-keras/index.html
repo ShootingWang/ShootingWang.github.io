@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    683 字
+                    780 字
                   </span>
                 
 
@@ -152,7 +152,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    8
+                    10
                      分钟
                   </span>
                 
@@ -223,7 +223,7 @@ python setup.py install
 
 model = Sequential()
 </code></pre>
-<p>可以使用<code>.add()</code>来堆叠模型：</p>
+<h3><span id="堆叠">堆叠</span></h3><p>可以使用<code>.add()</code>来堆叠模型：</p>
 <pre><code class="lang-Python">from keras.models import Sequential
 from keras.layers import Dense
 
@@ -277,8 +277,33 @@ model.add(Dense(32, input_dim=784))
 <pre><code class="lang-Python">model.compile(loss=&#39;categorical_crossentropy&#39;,
               optimizer=&#39;sgd&#39;,
               metrics=[&#39;accuracy&#39;])
+## 自定义评估标准函数
+import keras.backend as K  ## 加载后端
+
+def mean_pred(y_true, y_pred):
+    return K.mean(y_pred)
+
+model.compile(optimizer=&#39;rmsprop&#39;,
+              loss=&#39;binary_crossentropy&#39;,
+              metrics=[&#39;accuracy&#39;, mean_pred])
 </code></pre>
-<p>然后在训练集数据上进行迭代(<strong>训练</strong>)：</p>
+<ul>
+<li>多分类问题<pre><code class="lang-Python">model.compile(optimizer=&#39;rmsprop&#39;,
+            loss=&#39;categorical_crossentropy&#39;,
+            metrics=[&#39;accuracy&#39;])
+</code></pre>
+</li>
+<li>二分类问题<pre><code class="lang-Python">model.compile(optimizer=&#39;rmsprop&#39;,
+            loss=&#39;binary_crossentropy&#39;,
+            metrics=[&#39;accuracy&#39;])
+</code></pre>
+</li>
+<li>回归问题<pre><code class="lang-Python">model.compile(optimizer=&#39;rmsprop&#39;,
+            loss=&#39;mse&#39;)
+</code></pre>
+</li>
+</ul>
+<h3><span id="训练">训练</span></h3><p>然后在训练集数据上进行迭代(<strong>训练</strong>)：</p>
 <pre><code class="lang-Python">model.fit(x_train, y_train, epochs=5, batch_size=32)
 </code></pre>
 <p><strong>评估</strong>模型性能:</p>
@@ -600,7 +625,23 @@ model.add(Dense(32, input_dim=784))
       mermaid.initialize({{ JSON.stringify(theme.mermaid.options) }});
     }
   </script>
-{% endif %}<!-- hexo-inject:begin --><!-- hexo-inject:end -->
+{% endif %}
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </body>
 </html>
