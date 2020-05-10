@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    196 字
+                    243 字
                   </span>
                 
 
@@ -225,6 +225,14 @@ np.argmin(a, axis=0)  ## 返回每列的最小值的索引
 
 np.argmin(a, axis=1)  ## 返回每行的最小值的索引
 # array([0, 0, 0], dtype=int64)
+
+a[2, 2] = 2
+a
+#array([[ 0,  1,  2,  3],
+#       [ 4,  5,  6,  7],
+#       [ 8,  9,  2, 11]])
+np.argmin(a, axis=0)  ## 多个最小值，只返回第一个最小值的索引
+# array([0, 0, 0, 0], dtype=int64)
 </code></pre>
 <pre><code class="lang-Python">
 
