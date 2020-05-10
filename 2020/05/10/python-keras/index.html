@@ -242,7 +242,8 @@ model.add(Dense(units=10, activation=&#39;softmax&#39;))
 </ul>
 </li>
 <li>某些2D层（如<code>Dense</code>）支持通过参数<code>input_dim</code>指定输入尺寸；某些3D时序层支持<code>input_dim</code>和<code>input_length</code>参数</li>
-<li>如果需要为输入指定一个固定的<code>batch</code>大小，可以传递参数<code>batch_size</code>给一个层<font face="仿宋" color="grey">如：同时将`batch_size=32`和`input_shape=(6,8)`传递给一个层，则每一批输入的尺寸为`(32, 6, 8)`</font>
+<li><p>如果需要为输入指定一个固定的<code>batch</code>大小，可以传递参数<code>batch_size</code>给一个层</p>
+<font face="仿宋" color="grey">如：同时将</font>`batch_size=32`和`input_shape=(6,8)`<font face="仿宋" color="grey">传递给一个层，则每一批输入的尺寸为`(32, 6, 8)`</font>
 
 </li>
 </ul>
@@ -576,23 +577,7 @@ model.add(Dense(units=10, activation=&#39;softmax&#39;))
       mermaid.initialize({{ JSON.stringify(theme.mermaid.options) }});
     }
   </script>
-{% endif %}
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+{% endif %}<!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </body>
 </html>
