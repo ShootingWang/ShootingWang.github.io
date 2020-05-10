@@ -17,7 +17,7 @@
   <meta name="description" content="统计一只狗，梦想有只猫">
   <meta name="author" content="ShootingWang">
   <meta name="keywords" content="">
-  <title>数据结构 - ShootingWang</title>
+  <title>python-keras - ShootingWang</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
 <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
@@ -131,8 +131,8 @@
               
                 <div class="mt-3 post-meta">
                   <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-                  <time datetime="2020-05-06 15:39">
-                    星期三, 五月 6日 2020, 3:39 下午
+                  <time datetime="2020-05-10 10:29">
+                    星期日, 五月 10日 2020, 10:29 上午
                   </time>
                 </div>
               
@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    321 字
+                    398 字
                   </span>
                 
 
@@ -152,7 +152,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    3
+                    5
                      分钟
                   </span>
                 
@@ -193,59 +193,81 @@
           <div class="post-content mx-auto" id="post">
             
             <article class="markdown-body">
-              <h1><span id="数据结构">数据结构</span></h1><p>在数据结构中，</p>
-<ul>
-<li><u>数据元素</u>是数据的基本单位</li>
-<li><u>数据项</u>是构成数据元素的最小单位</li>
+              <h1><span id="keras">keras</span></h1><p>Keras 是一个用 Python 编写的高级神经网络 API，它能够以 TensorFlow, CNTK, 或者 Theano 作为后端运行。</p>
+<h2><span id="安装">安装</span></h2><ul>
+<li>使用PyPI安装<pre><code class="lang-shell">## Anaconda Prompt
+pip install keras
+</code></pre>
+</li>
+<li>使用GitHub源码安装<pre><code class="lang-shell">git clone https://github.com/keras-team/keras.git
+cd keras
+python setup.py install
+</code></pre>
+</li>
 </ul>
-<blockquote>
-<p>Data Structures by definition, the way that the data is organized in a computer’s memory very similar to the way the different kind of milks.<br>from <a href="https://courses.edx.org/courses/course-v1:Microsoft+DEV285x+3T2019/course/" target="_blank" rel="noopener">Algorithms and Data Structures</a> </p>
+<h2><span id="后端">后端</span></h2><ul>
+<li>Keras不处理如张量乘积、卷积等低级操作</li>
+<li>依赖于一个专门的、优化的张量操作库来完成这个操作，它可以作为 Keras 的「后端引擎」</li>
+<li>Keras 有三个后端实现可用: <ul>
+<li>TensorFlow 后端</li>
+<li>Theano 后端</li>
+<li>CNTK 后端</li>
+</ul>
+</li>
+</ul>
+<p><a href="https://keras.io/zh/backend/" target="_blank" rel="noopener">Keras后端配置</a></p>
+<h2><span id="sequential顺序模型">Sequential顺序模型</span></h2><ul>
+<li>由多个网络层线性堆叠</li>
+</ul>
+<pre><code class="lang-Python">from keras.models import Sequential
+
+model = Sequential()
+</code></pre>
+<p>可以使用<code>.add()</code>来堆叠模型：</p>
+<pre><code class="lang-Python">from keras.models import Sequential
+from keras.layers import Dense
+
+model.add(Dense(units=64, activation=&#39;relu&#39;, input_dim=100))
+model.add(Dense(units=10, activation=&#39;softmax&#39;))
+</code></pre>
+<p>模型需要知道它所期望的输入的尺寸——因此，模型的第一层<sup><a href="#fn_1" id="reffn_1">1</a></sup>需要接收关于其输入尺寸的信息。</p>
+<blockquote id="fn_1">
+<sup>1</sup>. 且只有第一层需要，下面的层可以自动地推断尺寸<a href="#reffn_1" title="Jump back to footnote [1] in the text."> &#8617;</a>
 </blockquote>
-<h2><span id="内容">内容</span></h2><p>数据结构研究涉及的内容有：</p>
-<ol>
-<li>数据的<strong>逻辑结构</strong><ul>
-<li>逻辑结构是指数据之间的逻辑关系</li>
-</ul>
-</li>
-<li>数据的<strong>存储结构</strong><ul>
-<li>存储结构是指数据的逻辑结构到计算机存储器的映射</li>
-</ul>
-</li>
-<li>数据的<strong>运算</strong><ul>
-<li>运算是指对数据元素进行加工和处理</li>
-</ul>
-</li>
-</ol>
-<p>三者的关系：</p>
+<p>输入尺寸的方法：</p>
 <ul>
-<li>三者是贯穿数据结构的主线，相辅相成</li>
+<li>传递<code>input_shape</code>参数给第一层</li>
+<li>某些2D层（如<code>Dense</code>）支持通过参数<code>input_dim</code>指定输入尺寸；某些3D时序层支持<code>input_dim</code>和<code>input_length</code>参数</li>
 </ul>
-<h1><span id> </span></h1><ul>
-<li>顺序表、哈希表、单链表表示几种数据结构，既描述<u>逻辑结构</u>，也描述<u>存储结构</u>和<u>数据运算</u>。</li>
-<li><strong>有序表</strong>是指关键字有序的线性表，可以<u>链式存储</u>，也可以<u>顺序存储</u>，仅描述了元素之间的逻辑关系，属于<u>逻辑结构</u>。</li>
-</ul>
-<h2><span id="队列">队列</span></h2><h2><span id="栈">栈</span></h2><ul>
-<li>合法的出栈序列条件：对于每个已出栈数之后的、切小于此数的数都必须按<u>降序</u>排列。</li>
-</ul>
-<h2><span id="顺序表">顺序表</span></h2><h2><span id="哈希表">哈希表</span></h2><h2><span id="单链表">单链表</span></h2><h1><span id="参考资料">参考资料</span></h1><p>[1] <a href="https://m.php.cn/faq/433878.html" target="_blank" rel="noopener">数据结构研究的内容涉及</a></p>
+<p>构建模型之后，可以使用<code>.compile()</code>来配置学习过程：</p>
+<pre><code class="lang-Python">model.compile(loss=&#39;categorical_crossentropy&#39;,
+              optimizer=&#39;sgd&#39;,
+              metrics=[&#39;accuracy&#39;])
+</code></pre>
+<p>然后在训练集数据上进行迭代(<strong>训练</strong>)：</p>
+<pre><code class="lang-Python">model.fit(x_train, y_train, epochs=5, batch_size=32)
+</code></pre>
+<p><strong>评估</strong>模型性能:</p>
+<pre><code class="lang-Python">loss_and_metrics = model.evaluate(x_test, y_test, batch_size=128)
+</code></pre>
+<p>进行<strong>预测</strong>：</p>
+<pre><code class="lang-Python">pred_classes = model.predict(x_test, batch_size=128)
+</code></pre>
+<pre><code class="lang-Python">
+
+</code></pre>
+<h1><span id="参考资料">参考资料</span></h1><p>[1] <a href="https://keras.io/zh/" target="_blank" rel="noopener">Keras中文文档</a></p>
 
             </article>
             <hr>
             <div>
               <div class="post-metas mb-3">
                 
-                  <div class="post-meta mr-3">
-                    <i class="iconfont icon-category"></i>
-                    
-                      <a class="hover-with-bg" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
-                    
-                  </div>
-                
                 
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
+                      <a class="hover-with-bg" href="/tags/Python/">Python</a>
                     
                   </div>
                 
@@ -421,7 +443,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "数据结构&nbsp;",
+        "python-keras&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,
