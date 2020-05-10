@@ -17,7 +17,7 @@
   <meta name="description" content="统计一只狗，梦想有只猫">
   <meta name="author" content="ShootingWang">
   <meta name="keywords" content="">
-  <title>Python | NumPy - ShootingWang</title>
+  <title>Python | 字符串 - ShootingWang</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
 <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
@@ -131,8 +131,8 @@
               
                 <div class="mt-3 post-meta">
                   <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-                  <time datetime="2020-05-10 20:26">
-                    星期日, 五月 10日 2020, 8:26 晚上
+                  <time datetime="2020-05-10 21:03">
+                    星期日, 五月 10日 2020, 9:03 晚上
                   </time>
                 </div>
               
@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    248 字
+                    165 字
                   </span>
                 
 
@@ -152,7 +152,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    3
+                    2
                      分钟
                   </span>
                 
@@ -193,57 +193,27 @@
           <div class="post-content mx-auto" id="post">
             
             <article class="markdown-body">
-              <h1><span id="numpy">NumPy</span></h1><h2><span id="argmax">.argmax()</span></h2><p>返回矩阵/数组的最大值的索引</p>
-<pre><code class="lang-Python">import numpy as np
+              <h1><span id="str">str()</span></h1><h2><span id="endswith">.endswith()</span></h2><p>判断字符串是否以指定字符或子字符串结尾，常用于判断文件类型</p>
+<pre><code class="lang-Python">str1 = &#39;Hello, world&#39;
+str2 = &#39;rld&#39;
+str1.endswith(str2)  ## str1是否以str2结尾
+# True
 
-a = np.arange(12).reshape(3,4)  ## 3行4列
-a
-#array([[ 0,  1,  2,  3],
-#       [ 4,  5,  6,  7],
-#       [ 8,  9, 10, 11]])
+str1.endswith(&#39;wor&#39;, 3)  ## （从左数）从索引为3的字符开始检测是否以&quot;wor&quot;结尾
+# False
 
-np.argmax(a)  ## 返回展平的a的最大值的索引
-# 11
+str1.endswith(&#39;wor&#39;, 3, 10)  
+## （从左数）从索引为3的字符开始、到索引为10(不包括10)检测是否以&quot;wor&quot;结尾
+## str1中逗号后含空格（算一个字符）
+# True
 
-np.argmax(a, axis=0)  ## 返回每列的最大值的索引
-# array([2, 2, 2, 2], dtype=int64)
-
-np.argmax(a, axis=1)  ## 返回每行的最大值的索引
-# array([3, 3, 3], dtype=int64)
-</code></pre>
-<h2><span id="argmin">.argmin()</span></h2><p>返回矩阵/数组的最小值的索引</p>
-<pre><code class="lang-Python">import numpy as np
-
-a = np.arange(12).reshape(3,4)  ## 3行4列
-a
-#array([[ 0,  1,  2,  3],
-#       [ 4,  5,  6,  7],
-#       [ 8,  9, 10, 11]])
-
-np.argmin(a, axis=0)  ## 返回每列的最小值的索引
-# array([0, 0, 0, 0], dtype=int64)
-
-np.argmin(a, axis=1)  ## 返回每行的最小值的索引
-# array([0, 0, 0], dtype=int64)
-
-a[2, 2] = 2
-a
-#array([[ 0,  1,  2,  3],
-#       [ 4,  5,  6,  7],
-#       [ 8,  9,  2, 11]])
-np.argmin(a, axis=0)  ## 多个最小值，只返回第一个最小值的索引
-# array([0, 0, 0, 0], dtype=int64)
+str1.endswith((&#39;a&#39;, &#39;b&#39;, &#39;d&#39;))  ## 匹配元组，只要有一个满足就行
+# True
 </code></pre>
 <pre><code class="lang-Python">
 
 </code></pre>
-<pre><code class="lang-Python">
-
-</code></pre>
-<pre><code class="lang-Python">
-
-</code></pre>
-<h1><span id="参考资料">参考资料</span></h1><p>[] <a href></a><br>[] <a href="https://blog.csdn.net/weixin_41770169/article/details/80714461" target="_blank" rel="noopener">Numpy.argmin的使用</a></p>
+<h1><span id="参考资料">参考资料</span></h1><p>[] <a href></a><br>[] <a href="https://www.cnblogs.com/Allen-rg/p/10501125.html" target="_blank" rel="noopener">Python endswith() 函数</a></p>
 
             </article>
             <hr>
@@ -437,7 +407,7 @@ np.argmin(a, axis=0)  ## 多个最小值，只返回第一个最小值的索引
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "Python | NumPy&nbsp;",
+        "Python | 字符串&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,
