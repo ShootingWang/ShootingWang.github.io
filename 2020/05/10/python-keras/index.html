@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    503 字
+                    683 字
                   </span>
                 
 
@@ -152,7 +152,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    6
+                    8
                      分钟
                   </span>
                 
@@ -215,7 +215,7 @@ python setup.py install
 </ul>
 </li>
 </ul>
-<p><a href="https://keras.io/zh/backend/" target="_blank" rel="noopener">Keras后端配置</a></p>
+<p>配置见：<a href="https://keras.io/zh/backend/" target="_blank" rel="noopener">Keras后端配置</a></p>
 <h2><span id="sequential顺序模型">Sequential顺序模型</span></h2><ul>
 <li>由多个网络层线性堆叠</li>
 </ul>
@@ -243,14 +243,37 @@ model.add(Dense(units=10, activation=&#39;softmax&#39;))
 </li>
 <li>某些2D层（如<code>Dense</code>）支持通过参数<code>input_dim</code>指定输入尺寸；某些3D时序层支持<code>input_dim</code>和<code>input_length</code>参数</li>
 <li><p>如果需要为输入指定一个固定的<code>batch</code>大小，可以传递参数<code>batch_size</code>给一个层</p>
-<font face="仿宋" color="grey">如：同时将</font>`batch_size=32`和`input_shape=(6,8)`<font face="仿宋" color="grey">传递给一个层，则每一批输入的尺寸为`(32, 6, 8)`</font>
-
+<blockquote>
+<p>如：同时将<code>batch_size=32</code>和<code>input_shape=(6,8)</code>传递给一个层，则每一批输入的尺寸为<code>(32, 6, 8)</code></p>
+</blockquote>
 </li>
 </ul>
 <blockquote id="fn_2">
 <sup>2</sup>. 一个由整数或<code>None</code>组成的元组，其中<code>None</code>表示可能为任何正整数。<a href="#reffn_2" title="Jump back to footnote [2] in the text."> &#8617;</a>
 </blockquote>
-<p>构建模型之后，可以使用<code>.compile()</code>来配置学习过程：</p>
+<pre><code class="lang-Python">model = Sequential()
+model.add(Dense(32, input_shape=(784,)))
+## 等价于
+model = Sequential()
+model.add(Dense(32, input_dim=784))
+</code></pre>
+<h3><span id="编译">编译</span></h3><p>构建模型之后，可以使用<code>.compile()</code>来配置学习过程。</p>
+<ul>
+<li>优化器<code>optimizer</code>：可以是现有优化器的字符串标识符，也可以是Optimizer类的实例。<ul>
+<li>现有优化器的字符串标识符：<code>rmsprop</code>、<code>adagrad</code></li>
+<li>Optimizer类的实例：<a href="https://keras.io/api/optimizers/sgd" target="_blank" rel="noopener">SGD</a>、<a href="https://keras.io/api/optimizers/rmsprop" target="_blank" rel="noopener">RMSprop</a>、<a href="https://keras.io/api/optimizers/adam" target="_blank" rel="noopener">Adam</a>、<a href="https://keras.io/api/optimizers/adadelta" target="_blank" rel="noopener">Adadelta</a>、<a href="https://keras.io/api/optimizers/adagrad" target="_blank" rel="noopener">Adagrad</a>、<a href="https://keras.io/api/optimizers/adamax" target="_blank" rel="noopener">Adamax</a>、<a href="https://keras.io/api/optimizers/Nadam" target="_blank" rel="noopener">Nadam</a>、<a href="https://keras.io/api/optimizers/ftrl" target="_blank" rel="noopener">Ftrl</a></li>
+</ul>
+</li>
+<li>损失函数<code>loss</code>：模型试图最小化的目标函数；可以是现有损失函数的字符串标识符，也可以是一个目标函数。<ul>
+<li>现有损失函数的字符串标识符：<code>categorical_crossentropy</code>、<code>mse</code></li>
+<li>目标函数：见<a href="https://keras.io/api/losses/" target="_blank" rel="noopener">losses</a></li>
+</ul>
+</li>
+<li>评估标准<code>metrics</code>：可以是现有的标准的字符串标识符，也可以是自定义的评估标准函数。<ul>
+<li><code>metrics=[&#39;accuracy&#39;]</code></li>
+</ul>
+</li>
+</ul>
 <pre><code class="lang-Python">model.compile(loss=&#39;categorical_crossentropy&#39;,
               optimizer=&#39;sgd&#39;,
               metrics=[&#39;accuracy&#39;])
