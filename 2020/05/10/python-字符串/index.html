@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    165 字
+                    217 字
                   </span>
                 
 
@@ -210,8 +210,13 @@ str1.endswith(&#39;wor&#39;, 3, 10)
 str1.endswith((&#39;a&#39;, &#39;b&#39;, &#39;d&#39;))  ## 匹配元组，只要有一个满足就行
 # True
 </code></pre>
-<pre><code class="lang-Python">
+<h2><span id="r">r</span></h2><p>表示 <code>&#39;&#39;</code>内的字符串默认不转义</p>
+<pre><code class="lang-Python">print(&#39;Hello,\nWorld&#39;)  ## &#39;&#39;内的\n发生了转义（换行）
+#Hello,
+#World
 
+print(r&#39;Hello,\nWorld&#39;)   ## &#39;&#39;内的\n视为字符串
+#Hello,\nWorld
 </code></pre>
 <h1><span id="参考资料">参考资料</span></h1><p>[] <a href></a><br>[] <a href="https://www.cnblogs.com/Allen-rg/p/10501125.html" target="_blank" rel="noopener">Python endswith() 函数</a></p>
 
