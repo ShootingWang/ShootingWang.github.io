@@ -4,6 +4,19 @@
   
   
   <entry>
+    <title>python-命名方式</title>
+    <link href="/2020/05/10/python-%E5%91%BD%E5%90%8D%E6%96%B9%E5%BC%8F-1/"/>
+    <url>/2020/05/10/python-%E5%91%BD%E5%90%8D%E6%96%B9%E5%BC%8F-1/</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>概率统计基础</title>
     <link href="/2020/05/09/%E6%A6%82%E7%8E%87%E7%BB%9F%E8%AE%A1%E5%9F%BA%E7%A1%80/"/>
     <url>/2020/05/09/%E6%A6%82%E7%8E%87%E7%BB%9F%E8%AE%A1%E5%9F%BA%E7%A1%80/</url>
@@ -172,7 +185,7 @@
     <link href="/2020/05/03/Python/"/>
     <url>/2020/05/03/Python/</url>
     
-    <content type="html"><![CDATA[<p>Python使用手册</p><a id="more"></a><h1><span id="基础">基础</span></h1><ul><li><a href="/2020/05/03/python-4-%E8%BF%90%E7%AE%97%E7%AC%A6%E4%BC%98%E5%85%88%E7%BA%A7/" title="运算符">运算符</a></li><li><a href="/2020/05/03/python-5-%E5%87%BD%E6%95%B0/" title="函数">函数</a></li><li><a href="/2020/05/03/python-6-%E5%BE%AA%E7%8E%AF/" title="循环">循环</a></li><li><a href="/2020/05/03/python-8-%E6%A8%A1%E5%9D%97/" title="模块">模块</a></li></ul><h1><span id="数据类型">数据类型</span></h1><ul><li><a href="/2020/05/10/python-%E5%AD%97%E7%AC%A6%E4%B8%B2/" title="字符串">字符串</a></li></ul><h1><span id="模块">模块</span></h1><h2><span id="pip">pip</span></h2><h2><span id="collections">collections</span></h2><a href="/2020/05/05/python-collections%E6%A8%A1%E5%9D%97/" title="collections模块">collections模块</a><h2><span id="keras">keras</span></h2><a href="/2020/05/10/python-keras/" title="keras模块">keras模块</a><h2><span id="numpy">NumPy</span></h2><a href="/2020/05/10/python-numpy%E6%A8%A1%E5%9D%97/" title="NumPy">NumPy</a><h2><span id="pyecharts">pyecharts</span></h2><a href="/2020/05/08/python-pyecharts%E6%A8%A1%E5%9D%97/" title="pyecharts模块">pyecharts模块</a><h2><span id="re">re</span></h2><a href="/2020/05/03/python-re%E6%A8%A1%E5%9D%97/" title="re模块">re模块</a>]]></content>
+    <content type="html"><![CDATA[<p>Python使用手册</p><a id="more"></a><h1><span id="基础">基础</span></h1><ul><li><a href="/2020/05/10/python-%E5%91%BD%E5%90%8D%E6%96%B9%E5%BC%8F/" title="命名方式">命名方式</a></li><li><a href="/2020/05/03/python-4-%E8%BF%90%E7%AE%97%E7%AC%A6%E4%BC%98%E5%85%88%E7%BA%A7/" title="运算符">运算符</a></li><li><a href="/2020/05/03/python-5-%E5%87%BD%E6%95%B0/" title="函数">函数</a></li><li><a href="/2020/05/03/python-6-%E5%BE%AA%E7%8E%AF/" title="循环">循环</a></li><li><a href="/2020/05/03/python-8-%E6%A8%A1%E5%9D%97/" title="模块">模块</a></li></ul><h1><span id="数据类型">数据类型</span></h1><ul><li><a href="/2020/05/10/python-%E5%AD%97%E7%AC%A6%E4%B8%B2/" title="字符串">字符串</a></li></ul><pre><code class="lang-Python">lst1 = [1, 2, 3]  ## 可变对象lst2 = lst1  ## 引用传递lst1.append(5)lst2# [1, 2, 3, 5]## 不可变对象为值传递</code></pre><pre><code class="lang-Python"></code></pre><h1><span id="模块">模块</span></h1><h2><span id="pip">pip</span></h2><a href="/2020/05/09/python-pip/" title="pip">pip</a><h2><span id="collections">collections</span></h2><a href="/2020/05/05/python-collections%E6%A8%A1%E5%9D%97/" title="collections模块">collections模块</a><h2><span id="keras">keras</span></h2><a href="/2020/05/10/python-keras/" title="keras模块">keras模块</a><h2><span id="numpy">NumPy</span></h2><a href="/2020/05/10/python-numpy%E6%A8%A1%E5%9D%97/" title="NumPy">NumPy</a><h2><span id="pyecharts">pyecharts</span></h2><a href="/2020/05/08/python-pyecharts%E6%A8%A1%E5%9D%97/" title="pyecharts模块">pyecharts模块</a><h2><span id="re">re</span></h2><a href="/2020/05/03/python-re%E6%A8%A1%E5%9D%97/" title="re模块">re模块</a>]]></content>
     
     
     <categories>
