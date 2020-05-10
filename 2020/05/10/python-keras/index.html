@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    455 字
+                    503 字
                   </span>
                 
 
@@ -152,7 +152,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    5
+                    6
                      分钟
                   </span>
                 
@@ -236,12 +236,19 @@ model.add(Dense(units=10, activation=&#39;softmax&#39;))
 </blockquote>
 <p>输入尺寸的方法：</p>
 <ul>
-<li>传递<code>input_shape</code>参数给第一层</li>
+<li>传递<code>input_shape</code>参数给第一层<ul>
+<li><code>input_shape</code>是一个表示尺寸的元组<sup><a href="#fn_2" id="reffn_2">2</a></sup></li>
+<li><code>input_shape</code>中不包含数据的batch大小</li>
+</ul>
+</li>
 <li>某些2D层（如<code>Dense</code>）支持通过参数<code>input_dim</code>指定输入尺寸；某些3D时序层支持<code>input_dim</code>和<code>input_length</code>参数</li>
 <li>如果需要为输入指定一个固定的<code>batch</code>大小，可以传递参数<code>batch_size</code>给一个层<font face="仿宋" color="grey">如：同时将`batch_size=32`和`input_shape=(6,8)`传递给一个层，则每一批输入的尺寸为`(32, 6, 8)`</font>
 
 </li>
 </ul>
+<blockquote id="fn_2">
+<sup>2</sup>. 一个由整数或<code>None</code>组成的元组，其中<code>None</code>表示可能为任何正整数。<a href="#reffn_2" title="Jump back to footnote [2] in the text."> &#8617;</a>
+</blockquote>
 <p>构建模型之后，可以使用<code>.compile()</code>来配置学习过程：</p>
 <pre><code class="lang-Python">model.compile(loss=&#39;categorical_crossentropy&#39;,
               optimizer=&#39;sgd&#39;,
