@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    315 字
+                    330 字
                   </span>
                 
 
@@ -152,7 +152,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    3
+                    4
                      分钟
                   </span>
                 
@@ -229,7 +229,7 @@
 </code></pre>
 <h3><span id="字体">字体</span></h3><pre><code class="lang-md">&lt;font face=&quot;字体&quot; size=&quot;字号&quot; color=&quot;颜色&quot;&gt;这里是需要突出显示的内容&lt;/font&gt;
 </code></pre>
-<h3><span id="插入图片">插入图片</span></h3><p>参考：<a href="https://blog.csdn.net/xjm850552586/article/details/84101345" target="_blank" rel="noopener">hexo引用本地图片无法显示</a></p>
+<h3><span id="图片">图片</span></h3><h4><span id="插入图片">插入图片</span></h4><p>参考：<a href="https://blog.csdn.net/xjm850552586/article/details/84101345" target="_blank" rel="noopener">hexo引用本地图片无法显示</a></p>
 <p>Markdown语法：</p>
 <pre><code class="lang-md">&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot; /&gt;
 {% asset_img inorder.png 中序遍历 %}
@@ -237,6 +237,9 @@
 <p>或</p>
 <pre><code class="lang-md">![title](name.jpg)
 </code></pre>
+<h3><span id="表格">表格</span></h3><ul>
+<li><a href="https://www.jianshu.com/p/b6c85800c44e" target="_blank" rel="noopener">Markdown表格中换行、合并单元格</a></li>
+</ul>
 <h1><span id="参考资料">参考资料</span></h1>
             </article>
             <hr>
@@ -580,23 +583,7 @@
       mermaid.initialize({{ JSON.stringify(theme.mermaid.options) }});
     }
   </script>
-{% endif %}
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+{% endif %}<!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </body>
 </html>
