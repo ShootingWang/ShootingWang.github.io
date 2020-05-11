@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    1.7k 字
+                    2.7k 字
                   </span>
                 
 
@@ -152,7 +152,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    24
+                    38
                      分钟
                   </span>
                 
@@ -421,13 +421,89 @@ nmi = normalized_mutual_info_score(labels_true, labels_pred)
 <li>随机聚类的V-measure不会为零</li>
 <li>当样本数较大（&gt;1000） 或 聚类数较小（&lt;10）时，可以忽略“V-measure不为零”的问题；当样本数较小或聚类数较大时，使用AMI或ARI会更可靠</li>
 </ul>
-<pre><code class="lang-Python">
+<h3><span id="同质性">同质性</span></h3><p><strong>同质性</strong>（Homogeneity）：每个簇(cluster)只包含单个类成员</p>
+<ul>
+<li>在一个簇内包含的类别越少，则聚类效果越好</li>
+<li>取值范围为 [0,1]<script type="math/tex; mode=display">h=1-\frac{H(U|V)}{H(U)}</script>其中<script type="math/tex; mode=display">H(U|V)=-\sum_{i=1}^R\sum_{j=1}^C\frac{n_{ij}}{n}\log{\left(\frac{n_{ij}}{n_{.j}}\right)}</script><script type="math/tex; mode=display">H(U)=-\sum_{i=1}^R\frac{n_{i.}}{n}\log{\left(\frac{n_{i.}}{n}\right)}</script></li>
+</ul>
+<h3><span id="完整性">完整性</span></h3><p><strong>完整性</strong>（Completeness）：给定类的所有成员分配给同一簇类</p>
+<script type="math/tex; mode=display">c=1-\frac{H(V|U)}{H(V)}</script><p>其中</p>
+<script type="math/tex; mode=display">H(V|U)=-\sum_{i=1}^R\sum_{j=1}^C\frac{n_{ij}}{n}\log{\left(\frac{n_{ij}}{n_{i.}}\right)}</script><script type="math/tex; mode=display">H(V)=-\sum_{j=1}^C\frac{n_{.j}}{n}\log{\left(\frac{n_{.j}}{n}\right)}</script><h3><span id="v-measure">V-measure</span></h3><p>V-measure是同质性和完整性的调和平均数，公式为</p>
+<script type="math/tex; mode=display">V=\frac{2\cdot h\cdot c}{h+c}</script><pre><code class="lang-Python"># Python实现 V-measure
+from sklearn.metrics.cluster import v_measure_score
 
-</code></pre>
-<pre><code class="lang-Python">
+vs = v_measure_score(labels_true, labels_pred, beta=1.0)
+# labels_true：真实的分类标签
+# label_pred：模型聚类的结果
+# v = (1 + beta) * homogeneity * completenes
+#     / (beta * homogeneity + completeness)
 
+# homogeneity
+from sklearn.metrics.cluster import homogeneity_score
+
+h = homogeneity_score(labels_true, labels_pred)
+
+# completeness
+from sklearn.metrics import completeness_score
+
+c = completeness_score(labels_true, labels_pred)
 </code></pre>
-<h1><span id="参考资料">参考资料</span></h1><p>[1] <a href="https://cn.bing.com/images/search?view=detailV2&amp;ccid=k5LiTi5l&amp;id=95DF77DEC29B1CD7083F9435F1AE55043B0C0081&amp;thid=OIP.k5LiTi5lt_ND02kaBT_SAAHaE7&amp;mediaurl=https%3a%2f%2fwww.smartdatacollective.com%2fwp-content%2fuploads%2f2018%2f11%2fMachine-learning-1024x682.jpg&amp;exph=682&amp;expw=1024&amp;q=machine+learning&amp;simid=608018054240865990&amp;selectedIndex=3" target="_blank" rel="noopener">首页缩略图</a><br>[2] <a href="https://mp.weixin.qq.com/s?__biz=MzU5NzkxODMxOA==&amp;mid=2247486297&amp;idx=1&amp;sn=0a2c549de4e1cfe54694e8364acfceb9&amp;chksm=fe4d5c58c93ad54e7b45b5f644870f011f5e7ffc1d6cb0698f53d15d38e1419bc8cc7c0e1cd7&amp;token=1168016353&amp;lang=zh_CN#rd" target="_blank" rel="noopener">聚类模型评估</a></p>
+<h2><span id="fmi评价法">FMI评价法</span></h2><p><strong>FMI评价法</strong>（Fowlkes-Mallows score FMI）：精确率（Precision）和召回率（Recall）的几何平均值</p>
+<ul>
+<li>需要真实值</li>
+<li>最佳值为1<script type="math/tex; mode=display">\mathrm{FMI}=\sqrt{\mathrm{Precision\cdot Recall}}=\frac{TP}{\sqrt{(TP+FP)(TP+FN)}}</script></li>
+</ul>
+<pre><code class="lang-Python"># Python实现
+from sklearn.metrics import fowlkes_mallows_score
+
+fmi = fowlkes_mallows_score(labels_true, labels_pred)
+</code></pre>
+<h2><span id="轮廓系数">轮廓系数</span></h2><p><strong>轮廓系数</strong>（Silhouette Coefficient）：适用于实际类别信息未知的情况。</p>
+<ul>
+<li>轮廓系数的取值范围为 [-1,1]</li>
+<li>同类别样本距离越相近且不同类别样本距离越远，值越高，表明聚类效果越好</li>
+</ul>
+<p>计算单个样本的轮廓系数：</p>
+<ol>
+<li>计算样本$x_i$到同簇其他样本的平均距离$a_i$（$a_i$ 称为样本$x_i$的<strong>簇内不相似度</strong>）。 $a_i$ 越小，说明样本$x_i$ 越应该被聚类到该簇。</li>
+<li>计算样本$x_i$到其他簇$C_j$的所有样本的平均距离$b_{ij}$，称为样本$x_i$与簇$C_j$的不相似度。定义样本$x_i$的<strong>簇间不相似度</strong>为$b_i=\min\{b_{ij},j\neq i\}$。$b_i$越大，说明样本$x_i$越不属于其他簇。</li>
+<li>根据样本$x_i$的簇内不相似度$a_i$和簇间不相似度$b_i$，定义样本$x_i$的<strong>轮廓系数</strong><script type="math/tex; mode=display">s_i=\frac{b_i-a_i}{\max\{a_i,b_i\}}=\left\{
+\begin{array}{ll}
+1-\frac{a_i}{b_i} & a_i<b_i\\
+0 & a_i=b_i\\
+\frac{b_i}{a_i}-1 & a_i>b_i
+\end{array}
+\right.</script></li>
+<li>判断：<ul>
+<li>$s_i$接近1，说明样本$x_i$聚类合理</li>
+<li>$s_i$接近-1，说明样本$x_i$更应该分类到另外的簇</li>
+<li>若$s_i$约等于0，则说明样本$x_i$在两个簇的边界上</li>
+</ul>
+</li>
+</ol>
+<p>样本集合的轮廓系数是其所有样本轮廓系数的平均值。</p>
+<pre><code class="lang-Python"># Python
+from sklearn.metrics import silhouette_score
+
+ss = silhouette_scor(X, labels, metric=&#39;euclidean&#39;)
+</code></pre>
+<h2><span id="calinski-harabasz指数">Calinski-Harabasz指数</span></h2><p><strong>Calinski-Harabasz Index</strong>（Variance Ratio Criterion）：用簇内的稠密程度和簇间的离散程度来评估聚类的效果。</p>
+<ul>
+<li>主要用于k-均值聚类</li>
+<li>类别内部数据的协方差越小越好，类别之间的协方差越大越好，则Calinski-Harabasz分数会越高，表明聚类效果越好</li>
+</ul>
+<p>\begin{equation}<br>  \begin{aligned}<br>s(k) &amp;= \frac{\mathrm{tr}(B_k)/(k-1)}{\mathrm{tr}(W_k)/(n-k)}= \frac{\mathrm{tr}(B_k)}{\mathrm{tr}(W_k)}\times\frac{n-k}{k-1}\\<br>&amp;= \frac{SS_B/(k-1)}{SS_W/(n-k)}=\frac{SS_B}{SS_W}\times\frac{n-k}{k-1}<br>  \end{aligned}<br>\end{equation}<br>其中</p>
+<ul>
+<li>$B_k$是类别之间的协方差矩阵（$SS_B$ is the overall between-cluster variance）<script type="math/tex; mode=display">SS_B=TSS-SS_W</script>total sum of squares TSS<script type="math/tex; mode=display">TSS=\sum_{i=1}^n(x_i-\bar{x})^2</script></li>
+<li>$W_k$是类别内部数据的协方差矩阵（$SS_W$ is the overall within-cluster variance）</li>
+<li>$\mathrm{tr}$ 是矩阵的迹</li>
+</ul>
+<pre><code class="lang-Python"># Python实现
+from sklearn.metrics import calinski-harabasz_score
+
+ch = calinski_harabasz_score(X, labels)
+</code></pre>
+<h1><span id="参考资料">参考资料</span></h1><p>[1] <a href="https://mp.weixin.qq.com/s?__biz=MzU5NzkxODMxOA==&amp;mid=2247486297&amp;idx=1&amp;sn=0a2c549de4e1cfe54694e8364acfceb9&amp;chksm=fe4d5c58c93ad54e7b45b5f644870f011f5e7ffc1d6cb0698f53d15d38e1419bc8cc7c0e1cd7&amp;token=1168016353&amp;lang=zh_CN#rd" target="_blank" rel="noopener">聚类模型评估</a><br>[2] <a href="https://www.lagou.com/lgeduarticle/109119.html" target="_blank" rel="noopener">机器学习之模型评估详解</a><br>[3] <a href="https://zhaokv.com/machine_learning/2016/03/ml-metric.html" target="_blank" rel="noopener">机器学习评价指标大汇总</a><br>[4] <a href="https://en.wikipedia.org/wiki/Rand_index#Adjusted_Rand_index" target="_blank" rel="noopener"> 维基百科-Rand Index</a><br>[5] <a href="https://en.wikipedia.org/wiki/Adjusted_mutual_information" target="_blank" rel="noopener">维基百科-调整互信息</a><br>[6] <a href="https://blog.csdn.net/sinat_30203515/article/details/82634778" target="_blank" rel="noopener">兰德系数、调整兰德系数</a><br>[7] <a href="https://www.wandouip.com/t5i267906/" target="_blank" rel="noopener">方法名称最优值sklearn函数</a><br>[8] <a href="https://www.jianshu.com/p/b9528df2f57a" target="_blank" rel="noopener">聚类模型评估</a><br>[9] <a href="https://cloud.tencent.com/developer/article/1010857" target="_blank" rel="noopener">聚类︱python实现六大分群质量评估指标（兰德系数、互信息、轮廓系数）</a><br>[10] <a href="https://www.cnblogs.com/pinard/p/6169370.html" target="_blank" rel="noopener">用scikit-learn学习K-Means聚类</a><br>[11] <a href="https://ethen8181.github.io/machine-learning/clustering_old/clustering/clustering.html" target="_blank" rel="noopener">Calinski-Harabasz Index and Bootstrap Evaluation with Clustering Methods</a><br>[12] <a href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.adjusted_mutual_info_score.html" target="_blank" rel="noopener">sklearn.metrics.adjusted_mutual_info_score</a><br>[13] <a href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.adjusted_rand_score.html" target="_blank" rel="noopener">sklearn.metrics.adjusted_rand_score</a><br>[14] <a href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.v_measure_score.html" target="_blank" rel="noopener">sklearn.metrics.v_measure_score</a><br>[15] <a href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.homogeneity_score.html#sklearn.metrics.homogeneity_score" target="_blank" rel="noopener">sklearn.metrics.homogeneity_score</a><br>[16] <a href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.completeness_score.html" target="_blank" rel="noopener">sklearn.metrics.completeness_score</a><br>[17] <a href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.silhouette_score.html" target="_blank" rel="noopener">sklearn.metrics.silhouette_score</a><br>[18] <a href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.calinski_harabasz_score.html" target="_blank" rel="noopener">sklearn.metrics.calinski_harabasz_score</a></p>
 
             </article>
             <hr>
@@ -748,23 +824,7 @@ nmi = normalized_mutual_info_score(labels_true, labels_pred)
       mermaid.initialize({{ JSON.stringify(theme.mermaid.options) }});
     }
   </script>
-{% endif %}
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+{% endif %}<!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </body>
 </html>
