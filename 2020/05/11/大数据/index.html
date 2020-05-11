@@ -17,7 +17,7 @@
   <meta name="description" content="统计一只狗，梦想有只猫">
   <meta name="author" content="ShootingWang">
   <meta name="keywords" content="">
-  <title>指标异动类问题 - ShootingWang</title>
+  <title>大数据 - ShootingWang</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
 <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
@@ -131,8 +131,8 @@
               
                 <div class="mt-3 post-meta">
                   <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-                  <time datetime="2020-05-02 09:20">
-                    星期六, 五月 2日 2020, 9:20 上午
+                  <time datetime="2020-05-11 14:19">
+                    星期一, 五月 11日 2020, 2:19 下午
                   </time>
                 </div>
               
@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    327 字
+                    449 字
                   </span>
                 
 
@@ -152,7 +152,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    3
+                    5
                      分钟
                   </span>
                 
@@ -193,61 +193,65 @@
           <div class="post-content mx-auto" id="post">
             
             <article class="markdown-body">
-              <ul>
-<li>机票的成交转化率下降了，怎么分析？</li>
-<li>航班公司觉得自己的某个航线经营状况不好，怎么分析原因</li>
-<li>某个产品的销售量下降了，怎么分析？</li>
-<li>xxx转化率最近在下降，询盘量有点上升，请分析下是什么情况?</li>
-</ul>
-<h1><span id="分析过程">分析过程</span></h1><p>首先要对数据波动进行界定——<strong>明确定义</strong></p>
-<h2><span id="明确定义">明确定义</span></h2><h2><span id="问题定位">问题定位</span></h2><h2><span id="指标拆解">指标拆解</span></h2><h2><span id="原因分析">原因分析</span></h2><h1><span id="例子">例子</span></h1><h2><span id="转化率与询盘量异常">转化率与询盘量异常</span></h2><blockquote>
-<p>xxx转化率最近在下降，询盘量有点上升，请分析下是什么情况?——来自[2]</p>
+              <p>Big Data<br><a id="more"></a></p>
+<h1><span id="big-data">Big Data</span></h1><ul>
+<li>What is Big Data?</li>
+<li><p>你对大数据的理解是什么？</p>
+</li>
+<li><p>A Definition given by <a href="https://www.oracle.com/big-data/what-is-big-data.html" target="_blank" rel="noopener">Oracle</a>:</p>
+<blockquote>
+<p>Put simply, big data is larger, more complex data sets, especially from new data sources. These data sets are so voluminous that traditional data processing software just can’t manage them. But these massive <strong>volumes</strong> of data can be used to address business problems you wouldn’t have been able to tackle before.</p>
 </blockquote>
-<ol>
-<li>对数据波动进行界定<ul>
-<li>去除周期性、季节性后，判断数据波动是否为异常（对比前后一段时间内的变化情况</li>
-<li>确定异常发生的维度（主要从时间维度来看）</li>
-<li>波动的程度</li>
-<li>是否需要深入分析</li>
-</ul>
 </li>
-<li>拆解指标<ul>
-<li>根据<u>指标计算逻辑</u>来拆<pre class="mermaid">   graph TD;
-   询盘量转化率-->询盘量;
-   询盘量转化率-->会话量;
-   会话量-->弹出会话量;
-   会话量-->非弹出会话量;</pre></li>
-<li>根据<u>相关维度</u>来拆</li>
-</ul>
+<li><p>A Definition given by <a href="https://baike.baidu.com/item/%E5%A4%A7%E6%95%B0%E6%8D%AE/1356941?forcehttps=1%3Ffr%3Dkg_hanyu" target="_blank" rel="noopener">Baidu</a></p>
+<blockquote>
+<p>无法在一定时间范围内用常规软件工具进行捕捉、管理和处理的数据集合，是需要新处理模式才能具有更强的决策力、洞察发现力和流程优化能力的海量、高增长率和多样化的信息资产</p>
+</blockquote>
 </li>
-<li></li>
-</ol>
-<p>未完</p>
-<h1><span id="参考资料">参考资料</span></h1><p>[1] <a href="https://www.cnblogs.com/bellz/p/11448562.html" target="_blank" rel="noopener">指标异动类问题分析框架 - 数据分析师面试题</a><br>[2] <a href="https://mp.weixin.qq.com/s?__biz=MzIxNjA2ODUzNg==&amp;mid=2651440599&amp;idx=1&amp;sn=8faf27a155d144461b540dabe4d31260&amp;chksm=8c73dd00bb045416f137942afb2d35e36a87858c3453644a680a45140b5cb67c336d5d2758b0&amp;mpshare=1&amp;scene=24&amp;srcid=&amp;sharer_sharetime=1589157451953&amp;sharer_shareid=b539221659d6ecf12200314308b58dd3&amp;key=7813388b7074583853a1569b61fe6d4df6117bd6400a8cd3f226306ae46a8c728f41f75fbf88090ef2e59f4f1bf473ff1b5403c46ebed25f7a497fd77299f1d5c5b1b2a7d1160f8a5dda9cc908481d43&amp;ascene=14&amp;uin=MjAwNDUzMjgxNw%3D%3D&amp;devicetype=Windows+10+x64&amp;version=62090070&amp;lang=zh_CN&amp;exportkey=Ad2%2FlcnRfQtiskYNJjaBXFQ%3D&amp;pass_ticket=hGGS7EaUpIDlASL51iQWn3S1qU2l9x%2BRBIBXN3TjHYK2XsRZIXuz61NfsnX%2FuM4F" target="_blank" rel="noopener">数据异常波动，应该如何分析？</a></p>
+<li><p>A Definition given by <a href="https://searchdatamanagement.techtarget.com/definition/big-data" target="_blank" rel="noopener">SearchDataManagement</a></p>
+<blockquote>
+<p>Big data is a combination of structured, semistructured and unstructured data collected by organizations that can be mined for information and used in machine learing projects, predictive modeling and other advanced analytics applications.</p>
+</blockquote>
+</li>
+</ul>
+<h2><span id="5v特征">5V特征</span></h2><ul>
+<li>Volume 大量</li>
+<li>Velocity 高速</li>
+<li>Variety 多样</li>
+<li>Value低价值密度</li>
+<li>Veracity 真实性</li>
+</ul>
+<blockquote>
+<p>Oracle / SAS - 3Vs:</p>
+<ul>
+<li>Volume</li>
+<li>Velocity</li>
+<li>Variety</li>
+</ul>
+</blockquote>
+<h3><span id="volume">Volume</span></h3><p>数据量大，包括采集、存储和计算的量都非常大</p>
+<h3><span id="velocity">Velocity</span></h3><p>数据增长速度快，处理速度也快，时效性要求高</p>
+<h3><span id="variety">Variety</span></h3><p>数据的种类和来源多样化</p>
+<ul>
+<li>包括结构化、半结构化和非结构化数据</li>
+<li>如网络日志、音频、视频、图片、地理位置信息等</li>
+<li>多类型的数据对数据的处理能力提出了更高的要求</li>
+</ul>
+<h3><span id="value">Value</span></h3><p>数据的价值密度相对较低</p>
+<ul>
+<li>如何结合业务逻辑并通过强大的机器学习算法来挖掘数据价值——大数据时代最需要解决的问题</li>
+</ul>
+<blockquote>
+<p>big data must have value. </p>
+</blockquote>
+<h3><span id="veracity">Veracity</span></h3><p>数据的准确性和可信赖度——即数据的质量</p>
+<h1><span id="参考资料">参考资料</span></h1><p>[1] <a href="https://baike.baidu.com/item/%E5%A4%A7%E6%95%B0%E6%8D%AE/1356941?forcehttps=1%3Ffr%3Dkg_hanyu" target="_blank" rel="noopener">百度汉语：大数据</a><br>[2] <a href="https://blog.csdn.net/qq_40402685/article/details/86750861" target="_blank" rel="noopener">浅谈对大数据的理解</a><br>[3] <a href="https://blog.csdn.net/arsaycode/article/details/70847184" target="_blank" rel="noopener">大数据5V特点 —- 5Vs of Big Data</a><br>[] <a href="https://www.ibm.com/blogs/watson-health/the-5-vs-of-big-data/" target="_blank" rel="noopener">IBM-The 5 V’s of big data</a></p>
 
             </article>
             <hr>
             <div>
               <div class="post-metas mb-3">
                 
-                  <div class="post-meta mr-3">
-                    <i class="iconfont icon-category"></i>
-                    
-                      <a class="hover-with-bg" href="/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/">数据分析</a>
-                    
-                  </div>
-                
-                
-                  <div class="post-meta">
-                    <i class="iconfont icon-tags"></i>
-                    
-                      <a class="hover-with-bg" href="/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/">数据分析</a>
-                    
-                      <a class="hover-with-bg" href="/tags/%E4%B8%9A%E5%8A%A1%E5%90%91/">业务向</a>
-                    
-                      <a class="hover-with-bg" href="/tags/%E9%9D%A2%E8%AF%95/">面试</a>
-                    
-                  </div>
                 
                 
               </div>
@@ -421,7 +425,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "指标异动类问题&nbsp;",
+        "大数据&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,
@@ -530,13 +534,6 @@
 
 
 
-
-  <script  src="https://cdn.staticfile.org/mermaid/8.4.8/mermaid.min.js" ></script>
-  <script>
-    if (window.mermaid) {
-      mermaid.initialize({"theme":"default"});
-    }
-  </script>
 
 
 
