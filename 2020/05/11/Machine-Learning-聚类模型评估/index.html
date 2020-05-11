@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    342 字
+                    740 字
                   </span>
                 
 
@@ -152,7 +152,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    3
+                    9
                      分钟
                   </span>
                 
@@ -205,10 +205,11 @@
 <li>Calinski-Harabasz分数</li>
 <li>……</li>
 </ul>
-<h2><span id="ari评价法兰德系数">ARI评价法（兰德系数）</span></h2><p><strong>兰德系数/兰德指数</strong>（RI，Rand Index）：用于聚类模型的性能评估。</p>
+<h2><span id="ari评价法">ARI评价法</span></h2><h3><span id="兰德系数ri">兰德系数RI</span></h3><p><strong>兰德系数/兰德指数</strong>（RI，Rand Index）：用于聚类模型的性能评估。</p>
 <ul>
 <li>需要真实的类别</li>
 <li>最佳值为1</li>
+<li>RI的取值范围为 [0,1]；值越大意味着聚类结果与真实情况越吻合</li>
 </ul>
 <blockquote>
 <ul>
@@ -222,6 +223,94 @@
 <li>$d$：在$U$中不是同一类且在$V$中也是不同类别的数据点对数（即TN）</li>
 </ul>
 </blockquote>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Class\Cluster</th>
+<th style="text-align:center">Same Cluster</th>
+<th style="text-align:center">Different Cluster</th>
+<th style="text-align:center">Sum(U)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Same Class</td>
+<td style="text-align:center">a</td>
+<td style="text-align:center">b</td>
+<td style="text-align:center">a+b</td>
+</tr>
+<tr>
+<td style="text-align:center">Different Class</td>
+<td style="text-align:center">c</td>
+<td style="text-align:center">d</td>
+<td style="text-align:center">c+d</td>
+</tr>
+<tr>
+<td style="text-align:center">Sum(V)</td>
+<td style="text-align:center">a+c</td>
+<td style="text-align:center">b+d</td>
+<td style="text-align:center">a+b+c+d</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>则兰德指数为</p>
+<script type="math/tex; mode=display">\mathrm{RI}=\frac{a+d}{C_n^2}=\frac{TP+TN}{TP+FP+TN+FN}</script><p>其中，</p>
+<script type="math/tex; mode=display">C_n^2=
+\left(\begin{array}{c}
+n\\
+2
+\end{array}\right)=\frac{n(n-1)}{2}</script><p>是样本集中能够组成的元素对数。</p>
+<h3><span id="调整兰德系数ari">调整兰德系数ARI</span></h3><p>对于随机聚类结果，RI并不能保证接近零。为了实现“在聚类结果随机产生的情况下，指标应该接近零”，有人提出了<strong>调整兰德系数</strong>（ARI，Adjusted Rand Index），具有更高的区分度</p>
+<ul>
+<li>ARI的取值范围为 [-1,1] ；值越大意味着聚类结果与真实情况越吻合</li>
+<li>ARI实际是RI去均值归一化</li>
+<li>从广义的角度来看，ARI衡量的是两个数据分布的吻合程度（相似度）</li>
+</ul>
+<script type="math/tex; mode=display">\mathrm{ARI}=\frac{\mathrm{RI}-E(\mathrm{RI})}{\max{(\mathrm{RI})}-E(\mathrm{RI})}</script><p>RI中的$a+d$可表示为</p>
+<script type="math/tex; mode=display">\sum_{i,j}\left(\begin{array}{c}
+n_{ij}\\
+2
+\end{array}\right)</script><p>且</p>
+<script type="math/tex; mode=display">E(\mathrm{RI})=E(\sum_{i,j}\left(\begin{array}{c}
+n_{ij}\\
+2
+\end{array}\right))=\frac{\sum_i\left(\begin{array}{c}
+n_{i.}\\
+2
+\end{array}\right)\sum_j\left(\begin{array}{c}
+n_{.j}\\
+2
+\end{array}\right)
+}{
+\left(\begin{array}{c}
+n\\2
+\end{array}\right)
+}</script><script type="math/tex; mode=display">\max{(\mathrm{RI})}=\frac{1}{2}[\sum_i\left(\begin{array}{c}
+n_{i.}\\
+2
+\end{array}\right)+\sum_j\left(\begin{array}{c}
+n_{.j}\\
+2
+\end{array}\right)]</script><pre><code class="lang-Python"># Python实现
+from sklearn.metrics import adjust_rand_score
+
+ari = adjusted_rand_score(labels_true, labels_pred)
+# labels_true：真实的分类标签
+# label_pred：模型聚类的结果
+# ARI = (RI - Expected_RI) / (max(RI) - Expected_RI)
+# adjusted_rand_score(a, b) == adjusted_rand_score(b, a)
+</code></pre>
+<pre><code class="lang-Python">
+
+</code></pre>
+<pre><code class="lang-Python">
+
+</code></pre>
+<pre><code class="lang-Python">
+
+</code></pre>
 <h1><span id="参考资料">参考资料</span></h1><p>[1] <a href="https://cn.bing.com/images/search?view=detailV2&amp;ccid=k5LiTi5l&amp;id=95DF77DEC29B1CD7083F9435F1AE55043B0C0081&amp;thid=OIP.k5LiTi5lt_ND02kaBT_SAAHaE7&amp;mediaurl=https%3a%2f%2fwww.smartdatacollective.com%2fwp-content%2fuploads%2f2018%2f11%2fMachine-learning-1024x682.jpg&amp;exph=682&amp;expw=1024&amp;q=machine+learning&amp;simid=608018054240865990&amp;selectedIndex=3" target="_blank" rel="noopener">首页缩略图</a><br>[2] <a href="https://mp.weixin.qq.com/s?__biz=MzU5NzkxODMxOA==&amp;mid=2247486297&amp;idx=1&amp;sn=0a2c549de4e1cfe54694e8364acfceb9&amp;chksm=fe4d5c58c93ad54e7b45b5f644870f011f5e7ffc1d6cb0698f53d15d38e1419bc8cc7c0e1cd7&amp;token=1168016353&amp;lang=zh_CN#rd" target="_blank" rel="noopener">聚类模型评估</a></p>
 
             </article>
