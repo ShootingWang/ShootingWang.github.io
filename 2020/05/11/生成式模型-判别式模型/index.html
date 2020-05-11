@@ -17,7 +17,7 @@
   <meta name="description" content="统计一只狗，梦想有只猫">
   <meta name="author" content="ShootingWang">
   <meta name="keywords" content="">
-  <title>随机森林 - ShootingWang</title>
+  <title>生成式模型 &amp; 判别式模型 - ShootingWang</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
 <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
@@ -131,8 +131,8 @@
               
                 <div class="mt-3 post-meta">
                   <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-                  <time datetime="2020-04-28 14:23">
-                    星期二, 四月 28日 2020, 2:23 下午
+                  <time datetime="2020-05-11 13:04">
+                    星期一, 五月 11日 2020, 1:04 下午
                   </time>
                 </div>
               
@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    35 字
+                    350 字
                   </span>
                 
 
@@ -152,7 +152,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    1
+                    4
                      分钟
                   </span>
                 
@@ -193,12 +193,40 @@
           <div class="post-content mx-auto" id="post">
             
             <article class="markdown-body">
-              <p>Random Forest</p>
-<a id="more"></a>
+              <h1><span id="生成式模型">生成式模型</span></h1><p>生成式模型（Generative Model）：生成数据的分布的模型（有多个模型，将测试用例分别放进各个模型，最后比较其结果，选择最优的作为label）</p>
 <ul>
-<li>随机森林是一种<u>判别分类方法</u></li>
-<li>随机森林是建立在<a href="/2020/04/28/%E5%86%B3%E7%AD%96%E6%A0%91/" title="决策树">决策树</a>基础上的集成学习器</li>
+<li>会对$x$和$y$的联合分布$p(x,y)$进行建模，然后通过<a href="/2020/05/11/%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF/" title="贝叶斯公式">贝叶斯公式</a>来求得$p(y|x)$，最后选取使得$p(y|x)$最大的$y_i$，即<br>\begin{equation}<br>\begin{aligned}<br>y^*&amp;=\arg{\max_{y_i}p(y_i|x)}\\<br>&amp;=\arg{\max_{y_i}\frac{p(x|y_i)p(y_i)}{p(x)}}\\<br>&amp;=\arg{\max_{y_i}p(x|y_i)p(y_i)}\\<br>&amp;=\arg{\max_{y_i}p(x,y_i)}<br>\end{aligned}<br>\end{equation}</li>
 </ul>
+<p>生成式模型有：</p>
+<ul>
+<li><a href="/2020/05/11/%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF/" title="朴素贝叶斯">朴素贝叶斯</a></li>
+<li>k邻近（KNN）</li>
+<li>高斯混合模型（GMM）</li>
+<li>隐马尔可夫模型（HMM）</li>
+<li>贝叶斯网络</li>
+<li>Sigmoid Belief Networks</li>
+<li>马尔可夫随机场（Markov Random Fields）</li>
+<li>深度信念网络（DBN）</li>
+<li>迪利克雷分布模型（LDA，Latent Dirichlet Allocation）</li>
+<li>
+</li>
+</ul>
+<h1><span id="判别式模型">判别式模型</span></h1><p>判别式模型（Discriminative Model）：判别数据输出量的模型（只有一个模型，将模型应用到测试用例中，生成label）</p>
+<ul>
+<li>会直接对$p(y|x)$进行建模</li>
+</ul>
+<p>判别式模型有：</p>
+<ul>
+<li><a href="/2020/05/04/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/" title="线性回归（Linear Regression）">线性回归（Linear Regression）</a></li>
+<li>线性判别分析</li>
+<li>逻辑回归（Logistic Regression）</li>
+<li>神经网络（NN）</li>
+<li><a href="/2020/04/28/%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA/" title="支持向量机（SVM）">支持向量机（SVM）</a></li>
+<li>高斯过程（Gaussian Process）</li>
+<li>条件随机场（CRF）</li>
+<li>CART（Classification and Regression Tree）</li>
+</ul>
+<h1><span id="参考资料">参考资料</span></h1><p>[1] <a href="https://blog.csdn.net/u013630349/article/details/47146425" target="_blank" rel="noopener">机器学习 之 生成式模型 VS 判别式模型</a><br>[2] <a href="https://www.cnblogs.com/kemaswill/p/3427422.html" target="_blank" rel="noopener">判别式模型 vs. 生成式模型</a></p>
 
             </article>
             <hr>
@@ -223,10 +251,6 @@
                       <a class="hover-with-bg" href="/tags/%E5%88%86%E7%B1%BB/">分类</a>
                     
                       <a class="hover-with-bg" href="/tags/%E6%9C%89%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0/">有监督学习</a>
-                    
-                      <a class="hover-with-bg" href="/tags/%E5%88%A4%E5%88%AB%E5%BC%8F%E6%A8%A1%E5%9E%8B/">判别式模型</a>
-                    
-                      <a class="hover-with-bg" href="/tags/%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0/">集成学习</a>
                     
                   </div>
                 
@@ -402,7 +426,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "随机森林&nbsp;",
+        "生成式模型 & 判别式模型&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,
@@ -511,6 +535,13 @@
 
 
 
+
+  <script  src="https://cdn.staticfile.org/mermaid/8.4.8/mermaid.min.js" ></script>
+  <script>
+    if (window.mermaid) {
+      mermaid.initialize({"theme":"default"});
+    }
+  </script>
 
 
 
