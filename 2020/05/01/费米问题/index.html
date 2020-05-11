@@ -264,7 +264,7 @@
 </ul>
 </li>
 <li>自顶向下 Top-down、bottom-up<blockquote>
-<p>估算深圳市的九年义务教育阶段的学生数量<br>假设人均寿命为75岁<br>\begin{aligned}<br>学生数量&amp;=深圳市人口\times中小学生适龄人口比例\\<br>&amp;= 深圳市人口\times\frac{6~14岁人口}{0~75岁人口}<br>\end{aligned}</p>
+<p>估算深圳市的九年义务教育阶段的学生数量<br>假设人均寿命为75岁<br>\begin{aligned}<br>学生数量&amp;=深圳市人口\times中小学生适龄人口比例\\<br>&amp;= 深圳市人口\times\frac{6-14岁人口}{0-75岁人口}<br>\end{aligned}</p>
 </blockquote>
 </li>
 <li>同类推断<blockquote>
@@ -730,23 +730,7 @@
       mermaid.initialize({{ JSON.stringify(theme.mermaid.options) }});
     }
   </script>
-{% endif %}
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+{% endif %}<!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </body>
 </html>
