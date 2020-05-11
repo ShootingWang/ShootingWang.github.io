@@ -366,55 +366,6 @@
     
     
       <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/2020/05/04/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/" target="_self">
-          <img src="/img/linearregression.jpg" srcset="/img/loading.gif" alt="线性回归">
-        </a>
-      </div>
-    
-    <div class="col-12 col-md-8 mx-auto index-info">
-      <a class="index-header" href="/2020/05/04/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/">线性回归</a>
-
-      <a href="/2020/05/04/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/" class="index-excerpt">
-        
-        
-          
-        
-        <div>Linear Regression</div>
-      </a>
-
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>&nbsp;2020-05-04
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/%E7%AE%97%E6%B3%95/">算法</a>
-            
-              <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">机器学习</a>
-            
-          </div>
-        
-      </div>
-    </div>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
         <a href="/2020/05/04/%E7%BC%96%E7%A8%8B%E9%A2%98%E5%BA%93/" target="_self">
           <img src="/img/code.jpg" srcset="/img/loading.gif" alt="编程题库">
         </a>
@@ -655,6 +606,59 @@
     </div>
   </div>
 
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2020/04/30/Data-Cleaning-Projects/" target="_self">
+          <img src="/img/data_cleaning.jpg" srcset="/img/loading.gif" alt="Data Cleaning Projects">
+        </a>
+      </div>
+    
+    <div class="col-12 col-md-8 mx-auto index-info">
+      <a class="index-header" href="/2020/04/30/Data-Cleaning-Projects/">Data Cleaning Projects</a>
+
+      <a href="/2020/04/30/Data-Cleaning-Projects/" class="index-excerpt">
+        
+        
+          
+        
+        <div>Data Cleansing Projects 汇总</div>
+      </a>
+
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>&nbsp;2020-04-30
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/Projects/">Projects</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Data-Cleaning/">Data Cleaning</a>
+            
+              <a href="/tags/Python/">Python</a>
+            
+              <a href="/tags/R/">R</a>
+            
+              <a href="/tags/Projects/">Projects</a>
+            
+          </div>
+        
+      </div>
+    </div>
+  </div>
+
 
 
   <nav aria-label="navigation">
@@ -846,7 +850,23 @@
       mermaid.initialize({{ JSON.stringify(theme.mermaid.options) }});
     }
   </script>
-{% endif %}<!-- hexo-inject:begin --><!-- hexo-inject:end -->
+{% endif %}
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </body>
 </html>

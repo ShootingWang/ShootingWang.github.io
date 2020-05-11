@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    188 字
+                    187 字
                   </span>
                 
 
@@ -243,9 +243,9 @@
 </ul>
 <h5><span id="linear-regression">Linear Regression</span></h5><ul>
 <li><a href="/2020/05/04/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/" title="线性回归">线性回归</a>
-<h5><span id="ridgelasso-regression">Ridge/Lasso Regression</span></h5></li>
+</li>
 </ul>
-<h3><span id="unsupervised-learning">Unsupervised Learning</span></h3><h4><span id="clustering">Clustering</span></h4><ul>
+<h5><span id="ridgelasso-regression">Ridge/Lasso Regression</span></h5><h3><span id="unsupervised-learning">Unsupervised Learning</span></h3><h4><span id="clustering">Clustering</span></h4><ul>
 <li>K-Means</li>
 <li>Mean-Shift</li>
 <li>DBSCAN</li>
@@ -653,7 +653,23 @@
       mermaid.initialize({{ JSON.stringify(theme.mermaid.options) }});
     }
   </script>
-{% endif %}<!-- hexo-inject:begin --><!-- hexo-inject:end -->
+{% endif %}
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </body>
 </html>

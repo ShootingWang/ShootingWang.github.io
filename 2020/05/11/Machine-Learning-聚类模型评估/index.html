@@ -421,12 +421,12 @@ nmi = normalized_mutual_info_score(labels_true, labels_pred)
 <li>随机聚类的V-measure不会为零</li>
 <li>当样本数较大（&gt;1000） 或 聚类数较小（&lt;10）时，可以忽略“V-measure不为零”的问题；当样本数较小或聚类数较大时，使用AMI或ARI会更可靠</li>
 </ul>
-<h3><span id="同质性">同质性</span></h3><p><strong>同质性</strong>（Homogeneity）：每个簇(cluster)只包含单个类成员</p>
+<h3><span id="同质性">同质性</span></h3><p>同质性（Homogeneity）：每个簇(cluster)只包含单个类成员</p>
 <ul>
 <li>在一个簇内包含的类别越少，则聚类效果越好</li>
 <li>取值范围为 [0,1]<script type="math/tex; mode=display">h=1-\frac{H(U|V)}{H(U)}</script>其中<script type="math/tex; mode=display">H(U|V)=-\sum_{i=1}^R\sum_{j=1}^C\frac{n_{ij}}{n}\log{\left(\frac{n_{ij}}{n_{.j}}\right)}</script><script type="math/tex; mode=display">H(U)=-\sum_{i=1}^R\frac{n_{i.}}{n}\log{\left(\frac{n_{i.}}{n}\right)}</script></li>
 </ul>
-<h3><span id="完整性">完整性</span></h3><p><strong>完整性</strong>（Completeness）：给定类的所有成员分配给同一簇类</p>
+<h3><span id="完整性">完整性</span></h3><p>完整性（Completeness）：给定类的所有成员分配给同一簇类</p>
 <script type="math/tex; mode=display">c=1-\frac{H(V|U)}{H(V)}</script><p>其中</p>
 <script type="math/tex; mode=display">H(V|U)=-\sum_{i=1}^R\sum_{j=1}^C\frac{n_{ij}}{n}\log{\left(\frac{n_{ij}}{n_{i.}}\right)}</script><script type="math/tex; mode=display">H(V)=-\sum_{j=1}^C\frac{n_{.j}}{n}\log{\left(\frac{n_{.j}}{n}\right)}</script><h3><span id="v-measure">V-measure</span></h3><p>V-measure是同质性和完整性的调和平均数，公式为</p>
 <script type="math/tex; mode=display">V=\frac{2\cdot h\cdot c}{h+c}</script><pre><code class="lang-Python"># Python实现 V-measure
@@ -824,7 +824,23 @@ ch = calinski_harabasz_score(X, labels)
       mermaid.initialize({{ JSON.stringify(theme.mermaid.options) }});
     }
   </script>
-{% endif %}<!-- hexo-inject:begin --><!-- hexo-inject:end -->
+{% endif %}
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </body>
 </html>
