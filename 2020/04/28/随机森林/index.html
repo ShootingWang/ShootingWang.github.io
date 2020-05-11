@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    35 字
+                    481 字
                   </span>
                 
 
@@ -152,7 +152,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    1
+                    5
                      分钟
                   </span>
                 
@@ -195,10 +195,81 @@
             <article class="markdown-body">
               <p>Random Forest</p>
 <a id="more"></a>
-<ul>
+<h1><span id="随机森林">随机森林</span></h1><ul>
 <li>随机森林是一种<u>判别分类方法</u></li>
-<li>随机森林是建立在<a href="/2020/04/28/%E5%86%B3%E7%AD%96%E6%A0%91/" title="决策树">决策树</a>基础上的集成学习器</li>
+<li>随机森林是建立在<a href="/2020/04/28/%E5%86%B3%E7%AD%96%E6%A0%91/" title="决策树">决策树</a>基础上的集成学习器(一个包含多个决策树的分类器；输出结果由各个树的输出结果的众数决定)</li>
+<li>是bagging的一个特殊进阶版</li>
+<li>随机森林=Bagging+随机选择特征<script type="math/tex; mode=display">Random Forest=Bagging+Decision Tree</script></li>
+<li>随机森林的弱学习器都是决策树（CART）</li>
+<li>如何产生不同的决策树（Decision Tree，DT）？<ul>
+<li>每棵决策树使用训练集的Bootstrap随机采样样本</li>
+<li>每个根节点（node）使用不同的特征子集</li>
 </ul>
+</li>
+<li>树的数目通常不少于500棵</li>
+<li>不需要剪枝；在构建决策树时，RF的每棵决策树都最大可能地进行生长而不进行剪枝</li>
+<li>概括RF包括4部分：<ol>
+<li>随机选择样本</li>
+<li>随机选择特征</li>
+<li>构建决策树</li>
+<li>随机森林投票（平均）</li>
+</ol>
+</li>
+<li>每个基学习器只使用了训练集中约63.2%的样本，剩下约36.8%的样本可用作验证集来对其泛化性能进行“包外（Out of Bag）估计”</li>
+</ul>
+<h2><span id="rf-vs-gbdt">RF vs GBDT</span></h2><table>
+  <tr>
+    <td></td>
+    <td>随机森林RF</td>
+    <td>GBDT</td>
+  </tr>
+  <tr>
+    <td>相同点</td>
+    <td colspan="2">1.都是由多棵树组成<br>2.最终的结果都是由多棵树一起决定</td>
+  </tr>
+  <tr>
+    <td rowspan="2">子树</td>
+    <td>可以是分类树或回归树</td>
+    <td>只能是回归树</td>
+  </tr>
+  <tr>
+    <td>并行生成子树</td>
+    <td>串行（序列）生成子树</td>
+  </tr>
+  <tr>
+    <td>集成方法</td>
+    <td>多数投票</td>
+    <td>将所有结果累加 或 加权累加</td>
+  </tr>
+  <tr>
+    <td>异常值</td>
+    <td>不敏感</td>
+    <td>敏感</td>
+  </tr> 
+  <tr>
+    <td></td>
+    <td>对训练集一视同仁</td>
+    <td>基于权值的弱分类器的集成</td>
+  </tr> 
+  <tr>
+    <td></td>
+    <td>减少方差</td>
+    <td>减少偏差</td>
+  </tr> 
+  <tr>
+    <td></td>
+    <td>容易过拟合</td>
+    <td></td>
+  </tr> 
+</table>
+
+
+
+<p>集成方法<br>多数投票<br>将所有结果累加 或 加权累加<br>异常值<br>不敏感<br>敏感</p>
+<p>对训练集一视同仁<br>基于权值的弱分类器的集成</p>
+<p>减少方差<br>减少偏差</p>
+<p>容易过拟合</p>
+<h1><span id="参考资料">参考资料</span></h1><p>[1] <a href></a><br>[] <a href></a></p>
 
             </article>
             <hr>
@@ -525,7 +596,23 @@
       mermaid.initialize({{ JSON.stringify(theme.mermaid.options) }});
     }
   </script>
-{% endif %}<!-- hexo-inject:begin --><!-- hexo-inject:end -->
+{% endif %}
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </body>
 </html>

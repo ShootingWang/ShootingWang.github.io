@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    193 字
+                    1.2k 字
                   </span>
                 
 
@@ -152,7 +152,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    3
+                    15
                      分钟
                   </span>
                 
@@ -275,9 +275,68 @@
 <li>Boosting</li>
 <li>Stacking</li>
 </ul>
-<h4><span id="bagging">Bagging</span></h4><ul>
+<p>集成学习（Ensemble Learning），基于多个学习算法的集成，提升预测结果。</p>
+<ul>
+<li>多个弱学习器通过一定的策略结合成一个强学习器。</li>
+<li>集成学习不是一个算法，是算法的门类。</li>
+</ul>
+<blockquote>
+<p>The process by which multiple models are <u>strategically generated</u> and <u>combined</u> in order to <u>better</u> solve a particular Machine Learning problem.<br>清华大学-数据挖掘：集成学习</p>
+</blockquote>
+<p>如何创建多个、不同的基础分类器/基础学习器/基分类器：</p>
+<ul>
+<li>使用不同的学习算法：DT，SVM，NN，KNN，…</li>
+<li>使用不同的训练过程：<ul>
+<li>不同的参数</li>
+<li>不同的训练集：bootstrap samples（有放回采样）</li>
+<li>不同的特征集</li>
+</ul>
+</li>
+</ul>
+<p>基分类器：</p>
+<ul>
+<li>基分类器不需要很强；强分类器可能会有很多问题</li>
+<li>基分类器需要有较大的差异，差异性过小的分类器被集成没有意义</li>
+<li>基分类器的精度最好略高于0.5（正确分类率）<br>随着集成规模的增加，低于0.5的弱分类器会导致集成分类准确率不断下降，而高于0.5则会提升模型的准确率（趋于1）</li>
+</ul>
+<p>集成学习的集成方法按基分类器连接方式分为两种：</p>
+<ol>
+<li><strong>序列集成</strong>（sequential ensemble）：基分类器按照顺序生成；基分类器之间存在依赖关系；通过对前面训练中错误——Boosting</li>
+<li><strong>并行集成</strong>（parallel ensemble）：基学习器可以并行生成；利用基学习器之间的独立性，通过平均可以显著降低分类错误——Bagging</li>
+</ol>
+<h3><span id="结合策略">结合策略</span></h3><p>怎么将基分类器的结果结合起来？</p>
+<ol>
+<li>平均法</li>
+<li>投票法</li>
+<li>学习法<h4><span id="平均法">平均法</span></h4>平均法（Averaging）：取所有基础学习器（基分类器）的输出结果的平均作为最终决策<script type="math/tex; mode=display">H(x)=\sum_{i=1}^T\omega_ih_i(x)</script>其中</li>
+</ol>
+<ul>
+<li>共$T$个基础学习器（弱学习器）$\{h_1,\cdots,h_T\}$</li>
+<li>对任意一个样本$x$，$h_i(x)$为第$i$个学习器的分类结果</li>
+<li>$\omega_i$为基础学习器$h_i$的权重，$\omega_i\geq0,\ \sum_{i=1}^T\omega_i=1$</li>
+<li>预测类别为$\{c_1,c_2,\cdots,c_K\}$</li>
+</ul>
+<p>最简单的平均是\textbf{算数平均}：</p>
+<script type="math/tex; mode=display">\omega_i=\frac{1}{T}</script><script type="math/tex; mode=display">H(x)=\frac{1}{T}\sum_{i=1}^Th_i(x)</script><h4><span id="投票法">投票法</span></h4><p>投票法（Voting）：使用所有基础学习器（基分类器）结果的凸组合作为最终决策</p>
+<ul>
+<li><strong>相对多数投票法</strong>（Plurality Voting）：少数服从多数；分类问题中，对样本的预测结果中票数最多的那个类别作为最终的分类类别；若获得最高票的类别不止一个，则随机选择其中一个作为最终类别</li>
+<li><strong>绝对多数投票法</strong>（Majority Voting）：票过半数；多个基分类器对某一类别的预测结果大于总投票结果的一半，则预测结果为该类别，否则拒绝预测<blockquote>
+<p>如：<a href="/2020/04/28/%E9%9A%8F%E6%9C%BA%E6%A3%AE%E6%9E%97/" title="随机森林Random Forest">随机森林Random Forest</a></p>
+</blockquote>
+</li>
+<li><strong>加权投票法</strong>（Weighted Majority Voting）：类似加权平均法；给予每个基分类器的预测结果权重，计算各类别的加权票数和，票数最高的那个类别作为最终预测类别<blockquote>
+<p>如：AdaBoost</p>
+</blockquote>
+</li>
+</ul>
+<h4><span id="学习法">学习法</span></h4><ul>
+<li>General Combiner：Stacking</li>
+<li>Piecewise Combiner：RegionBoost</li>
+</ul>
+<h3><span id> </span></h3><h4><span id="bagging">Bagging</span></h4><ul>
 <li>Random Forest</li>
 </ul>
+<p>Bagging（Bootstrap Aggregating）：对样本进行Bootstrap随机采样（Bootstrap sampling），得到k个训练集，对每个训练集训练一个弱学习器（弱分类器），得到k个分类器，通过一定的结合策略，得到一个强学习器。</p>
 <h5><span id="random-forest">Random Forest</span></h5><ul>
 <li><a href="/2020/04/28/%E9%9A%8F%E6%9C%BA%E6%A3%AE%E6%9E%97/" title="随机森林">随机森林</a>
 </li>
@@ -287,8 +346,18 @@
 <li>XGBoost</li>
 <li>LightGBM</li>
 <li>CatBoost</li>
+<li>Boosting Tree（提升树）</li>
 </ul>
-<h5><span id="adaboost">AdaBoost</span></h5><h5><span id="xgboost">XGBoost</span></h5><h5><span id="lightgbm">LightGBM</span></h5><h5><span id="catboost">CatBoost</span></h5><h4><span id="stacking">Stacking</span></h4><h2><span id="reinforcement-learning">Reinforcement Learning</span></h2><ul>
+<p>Boosting算法（提升方法），是一类可以用来减小监督式学习中偏差的机器学习算法；将弱分类器提升为强分类器。</p>
+<h5><span id="adaboost">AdaBoost</span></h5><h5><span id="xgboost">XGBoost</span></h5><h5><span id="lightgbm">LightGBM</span></h5><h5><span id="catboost">CatBoost</span></h5><h4><span id="stacking">Stacking</span></h4><ul>
+<li>是Bagging的升级版</li>
+<li>改进预测</li>
+<li>结合策略是“学习法”</li>
+<li>将训练集弱学习器（基学习器）的学习结果作为输入，将训练集的输出作为输出，重新训练一个学习器来得到最终决策</li>
+<li>这里称弱学习器为初级学习器，最后用于结合的学习器称为次级学习器</li>
+<li>对于测试集，先用初级学习器预测一次，得到次级学习器的输入（Input），再用次级学习器预测一次，得到最终的预测结果</li>
+</ul>
+<h2><span id="reinforcement-learning">Reinforcement Learning</span></h2><ul>
 <li>Genetic Algorithm</li>
 <li>A3C</li>
 <li>SARSA</li>
@@ -657,7 +726,23 @@
       mermaid.initialize({{ JSON.stringify(theme.mermaid.options) }});
     }
   </script>
-{% endif %}<!-- hexo-inject:begin --><!-- hexo-inject:end -->
+{% endif %}
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </body>
 </html>
