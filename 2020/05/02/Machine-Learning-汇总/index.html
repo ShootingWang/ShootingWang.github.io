@@ -271,6 +271,7 @@
 <li>LDA</li>
 </ul>
 <h5><span id="t-sne">t-SNE</span></h5><h5><span id="pca">PCA</span></h5><h5><span id="lsa">LSA</span></h5><h5><span id="svd">SVD</span></h5><h5><span id="lda">LDA</span></h5><h2><span id="ensemble-methods">Ensemble Methods</span></h2><a href="/2020/05/11/%E9%9B%86%E6%88%90%E6%96%B9%E6%B3%95/" title="集成方法">集成方法</a>：
+
 - Bagging
 - Boosting
 - Stacking
@@ -656,7 +657,23 @@
       mermaid.initialize({{ JSON.stringify(theme.mermaid.options) }});
     }
   </script>
-{% endif %}<!-- hexo-inject:begin --><!-- hexo-inject:end -->
+{% endif %}
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </body>
 </html>
