@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    1.8k 字
+                    1.7k 字
                   </span>
                 
 
@@ -152,7 +152,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    26
+                    24
                      分钟
                   </span>
                 
@@ -268,10 +268,62 @@ n\\
 <li>ARI实际是RI去均值归一化</li>
 <li>从广义的角度来看，ARI衡量的是两个数据分布的吻合程度（相似度）</li>
 </ul>
-<script type="math/tex; mode=display">\mathrm{ARI}=\frac{\mathrm{RI}-E(\mathrm{RI})}{\max{(\mathrm{RI})}-E(\mathrm{RI})}</script><p>\begin{table}[ht]<br>\tabcolsep20pt<br>\begin{tabular}{|</p>
-<blockquote>
-<p>{\columncolor[HTML]{EFEFEF}}c |c|c|c|c|<br>{\columncolor[HTML]{ECF4FF}}c |}<br>\hline<br>\cellcolor[HTML]{C0C0C0}Class\textbackslash{}Cluster &amp; \cellcolor[HTML]{EFEFEF}$v_1$    &amp; \cellcolor[HTML]{EFEFEF}$v_2$    &amp; \cellcolor[HTML]{EFEFEF}$\cdots$ &amp; \cellcolor[HTML]{EFEFEF}$v_C$     &amp; \cellcolor[HTML]{EFEFEF}SUM        \\ \hline<br>$u_1$                                                &amp; $n_{11}$                         &amp; $n_{12}$                         &amp; $\cdots$                         &amp; $n_{1C}$                          &amp; $n_{1.}$                           \\ \hline<br>$u_2$                                                &amp; $n_{21}$                         &amp; $n_{22}$                         &amp; $\cdots$                         &amp; $n_{2C}$                          &amp; $n_{2.}$                           \\ \hline<br>$\cdots$                                             &amp; $\cdots$                         &amp; $\cdots$                         &amp; $\cdots$                         &amp; $\cdots$                          &amp; $\cdots$                           \\ \hline<br>$u_R$                                                &amp; $n_{R1}$                         &amp; $n_{R2}$                         &amp; $\cdots$                         &amp; $n_{RC}$                          &amp; $n_{R.}$                           \\ \hline<br>SUM                                                  &amp; \cellcolor[HTML]{ECF4FF}$n_{.1}$ &amp; \cellcolor[HTML]{ECF4FF}$n_{.2}$ &amp; \cellcolor[HTML]{ECF4FF}$\cdots$ &amp; \cellcolor[HTML]{ECF4FF}$n_{. C}$ &amp; \cellcolor[HTML]{DAE8FC}$n_{..}=n$ \\ \hline<br>\end{tabular}<br>\end{table}</p>
-</blockquote>
+<script type="math/tex; mode=display">\mathrm{ARI}=\frac{\mathrm{RI}-E(\mathrm{RI})}{\max{(\mathrm{RI})}-E(\mathrm{RI})}</script><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Class\Cluster</th>
+<th style="text-align:center">$v_1$</th>
+<th style="text-align:center">$v_2$</th>
+<th style="text-align:center">$\cdots$</th>
+<th style="text-align:center">$v_C$</th>
+<th style="text-align:center">SUM</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">$u_1$</td>
+<td style="text-align:center">$n_{11}$</td>
+<td style="text-align:center">$n_{12}$</td>
+<td style="text-align:center">$\cdots$</td>
+<td style="text-align:center">$n_{1C}$</td>
+<td style="text-align:center">$n_{1.}$</td>
+</tr>
+<tr>
+<td style="text-align:center">$u_2$</td>
+<td style="text-align:center">$n_{21}$</td>
+<td style="text-align:center">$n_{22}$</td>
+<td style="text-align:center">$\cdots$</td>
+<td style="text-align:center">$n_{2C}$</td>
+<td style="text-align:center">$n_{2.}$</td>
+</tr>
+<tr>
+<td style="text-align:center">$\cdots$</td>
+<td style="text-align:center">$\cdots$</td>
+<td style="text-align:center">$\cdots$</td>
+<td style="text-align:center">$\cdots$</td>
+<td style="text-align:center">$\cdots$</td>
+<td style="text-align:center">$\cdots$</td>
+</tr>
+<tr>
+<td style="text-align:center">$u_R$</td>
+<td style="text-align:center">$n_{R1}$</td>
+<td style="text-align:center">$n_{R2}$</td>
+<td style="text-align:center">$\cdots$</td>
+<td style="text-align:center">$n_{RC}$</td>
+<td style="text-align:center">$n_{R.}$</td>
+</tr>
+<tr>
+<td style="text-align:center">SUM</td>
+<td style="text-align:center">$n_{.1}$</td>
+<td style="text-align:center">$n_{.2}$</td>
+<td style="text-align:center">$\cdots$</td>
+<td style="text-align:center">$n_{. C}$</td>
+<td style="text-align:center">$n_{..}=n$</td>
+</tr>
+</tbody>
+</table>
+</div>
 <p>RI中的$a+d$可表示为</p>
 <script type="math/tex; mode=display">\sum_{i,j}\left(\begin{array}{c}
 n_{ij}\\
