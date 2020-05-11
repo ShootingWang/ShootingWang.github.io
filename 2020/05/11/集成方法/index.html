@@ -17,7 +17,7 @@
   <meta name="description" content="统计一只狗，梦想有只猫">
   <meta name="author" content="ShootingWang">
   <meta name="keywords" content="">
-  <title>Machine Learning-汇总 - ShootingWang</title>
+  <title>集成方法 - ShootingWang</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
 <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
@@ -131,8 +131,8 @@
               
                 <div class="mt-3 post-meta">
                   <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-                  <time datetime="2020-05-02 10:45">
-                    星期六, 五月 2日 2020, 10:45 上午
+                  <time datetime="2020-05-11 13:40">
+                    星期一, 五月 11日 2020, 1:40 下午
                   </time>
                 </div>
               
@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    202 字
+                    1.1k 字
                   </span>
                 
 
@@ -152,7 +152,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    3
+                    12
                      分钟
                   </span>
                 
@@ -193,128 +193,96 @@
           <div class="post-content mx-auto" id="post">
             
             <article class="markdown-body">
-              <p>Machine Learning 算法汇总</p>
-<a id="more"></a>
-<h1><span id="machine-learning">Machine Learning</span></h1><ul>
-<li>Classical Learning<ul>
-<li>Supervised Learning</li>
-<li>Unsupervised Learning</li>
-</ul>
-</li>
-<li>Ensemble Methods<ul>
+              <h1><span id="集成方法">集成方法</span></h1><ul>
 <li>Bagging</li>
 <li>Boosting</li>
 <li>Stacking</li>
 </ul>
-</li>
-<li>Reinforcement Learning</li>
-<li>Neural Networks and Deep Learning</li>
+<p>集成学习（Ensemble Learning），基于多个学习算法的集成，提升预测结果。</p>
+<ul>
+<li>多个弱学习器通过一定的策略结合成一个强学习器。</li>
+<li>集成学习不是一个算法，是算法的门类。</li>
 </ul>
-<h2><span id="classical-learning">Classical Learning</span></h2><ul>
-<li>Supervised Learning<ul>
-<li>Classification</li>
-<li>Regression</li>
+<blockquote>
+<p>The process by which multiple models are <u>strategically generated</u> and <u>combined</u> in order to <u>better</u> solve a particular Machine Learning problem.<br>清华大学-数据挖掘：集成学习</p>
+</blockquote>
+<p>如何创建多个、不同的基础分类器/基础学习器/基分类器：</p>
+<ul>
+<li>使用不同的学习算法：DT，SVM，NN，KNN，…</li>
+<li>使用不同的训练过程：<ul>
+<li>不同的参数</li>
+<li>不同的训练集：bootstrap samples（有放回采样）</li>
+<li>不同的特征集</li>
 </ul>
-</li>
-<li>Unsupervised Learning<ul>
-<li>Clustering</li>
-<li>Pattern Search</li>
-<li>Dimension Reduction</li>
-</ul>
-</li>
-</ul>
-<h3><span id="supervised-learning">Supervised Learning</span></h3><h4><span id="classification">Classification</span></h4><ul>
-<li>K-NN</li>
-<li>Naive Bayes</li>
-<li>SVM</li>
-<li>Decision Tree</li>
-<li>Logistic Regression</li>
-</ul>
-<h5><span id="k-nn">K-NN</span></h5><h5><span id="naive-bayes">Naive Bayes</span></h5><ul>
-<li><a href="/2020/05/11/%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF/" title="朴素贝叶斯">朴素贝叶斯</a>
 </li>
 </ul>
-<h5><span id="svm">SVM</span></h5><ul>
-<li><a href="/2020/04/28/%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA/" title="支持向量机">支持向量机</a> Support Vector Machine</li>
+<h2><span id="基学习器">基学习器</span></h2><p>基分类器：</p>
+<ul>
+<li>基分类器不需要很强；强分类器可能会有很多问题</li>
+<li>基分类器需要有较大的差异，差异性过小的分类器被集成没有意义</li>
+<li>基分类器的精度最好略高于0.5（正确分类率）<br>随着集成规模的增加，低于0.5的弱分类器会导致集成分类准确率不断下降，而高于0.5则会提升模型的准确率（趋于1）</li>
 </ul>
-<h5><span id="decision-tree">Decision Tree</span></h5><ul>
-<li><a href="/2020/04/28/%E5%86%B3%E7%AD%96%E6%A0%91/" title="决策树">决策树</a>
+<h2><span id="结合策略">结合策略</span></h2><p>怎么将基分类器的结果结合起来？</p>
+<ol>
+<li>平均法</li>
+<li>投票法</li>
+<li>学习法</li>
+</ol>
+<h3><span id="平均法">平均法</span></h3><p>平均法（Averaging）：取所有基础学习器（基分类器）的输出结果的平均作为最终决策</p>
+<script type="math/tex; mode=display">H(x)=\sum_{i=1}^T\omega_ih_i(x)</script><p>其中</p>
+<ul>
+<li>共$T$个基础学习器（弱学习器）$\{h_1,\cdots,h_T\}$</li>
+<li>对任意一个样本$x$，$h_i(x)$为第$i$个学习器的分类结果</li>
+<li>$\omega_i$为基础学习器$h_i$的权重，$\omega_i\geq0,\ \sum_{i=1}^T\omega_i=1$</li>
+<li>预测类别为$\{c_1,c_2,\cdots,c_K\}$</li>
+</ul>
+<p>最简单的平均是\textbf{算数平均}：</p>
+<script type="math/tex; mode=display">\omega_i=\frac{1}{T}</script><script type="math/tex; mode=display">H(x)=\frac{1}{T}\sum_{i=1}^Th_i(x)</script><h3><span id="投票法">投票法</span></h3><p>投票法（Voting）：使用所有基础学习器（基分类器）结果的凸组合作为最终决策</p>
+<ul>
+<li><strong>相对多数投票法</strong>（Plurality Voting）：少数服从多数；分类问题中，对样本的预测结果中票数最多的那个类别作为最终的分类类别；若获得最高票的类别不止一个，则随机选择其中一个作为最终类别</li>
+<li><strong>绝对多数投票法</strong>（Majority Voting）：票过半数；多个基分类器对某一类别的预测结果大于总投票结果的一半，则预测结果为该类别，否则拒绝预测<blockquote>
+<p>如：<a href="/2020/04/28/%E9%9A%8F%E6%9C%BA%E6%A3%AE%E6%9E%97/" title="随机森林Random Forest">随机森林Random Forest</a></p>
+</blockquote>
+</li>
+<li><strong>加权投票法</strong>（Weighted Majority Voting）：类似加权平均法；给予每个基分类器的预测结果权重，计算各类别的加权票数和，票数最高的那个类别作为最终预测类别<blockquote>
+<p>如：AdaBoost</p>
+</blockquote>
 </li>
 </ul>
-<h5><span id="logistic-regression">Logistic Regression</span></h5><h4><span id="regression">Regression</span></h4><ul>
-<li>Linear Regression</li>
-<li>Ridge/Lasso Regression</li>
+<h3><span id="学习法">学习法</span></h3><ul>
+<li>General Combiner：Stacking</li>
+<li>Piecewise Combiner：RegionBoost</li>
 </ul>
-<h5><span id="linear-regression">Linear Regression</span></h5><ul>
-<li><a href="/2020/05/04/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/" title="线性回归">线性回归</a>
+<h2><span id="类别">类别</span></h2><p>集成学习的集成方法按基分类器连接方式分为两种：</p>
+<ol>
+<li><strong>序列集成</strong>（sequential ensemble）：基分类器按照顺序生成；基分类器之间存在依赖关系；通过对前面训练中错误——Boosting</li>
+<li><strong>并行集成</strong>（parallel ensemble）：基学习器可以并行生成；利用基学习器之间的独立性，通过平均可以显著降低分类错误——Bagging</li>
+</ol>
+<h3><span id="bagging">Bagging</span></h3><ul>
+<li><a href="/2020/04/28/%E9%9A%8F%E6%9C%BA%E6%A3%AE%E6%9E%97/" title="随机森林Random Forest">随机森林Random Forest</a>
 </li>
 </ul>
-<h5><span id="ridgelasso-regression">Ridge/Lasso Regression</span></h5><h3><span id="unsupervised-learning">Unsupervised Learning</span></h3><h4><span id="clustering">Clustering</span></h4><ul>
-<li>K-Means</li>
-<li>Mean-Shift</li>
-<li>DBSCAN</li>
-<li>OPTICS</li>
-<li>Agglomerative</li>
-<li>Fuzzy C-Means</li>
+<p>Bagging（Bootstrap Aggregating）：对样本进行Bootstrap随机采样（Bootstrap sampling），得到k个训练集，对每个训练集训练一个弱学习器（弱分类器），得到k个分类器，通过一定的结合策略，得到一个强学习器。</p>
+<h4><span id="random-forest">Random Forest</span></h4><ul>
+<li><a href="/2020/04/28/%E9%9A%8F%E6%9C%BA%E6%A3%AE%E6%9E%97/" title="随机森林">随机森林</a>
+</li>
 </ul>
-<a href="/2020/05/11/Machine-Learning-%E8%81%9A%E7%B1%BB%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0/" title="聚类模型评估">聚类模型评估</a>
-<h5><span id="k-means">K-Means</span></h5><h5><span id="mean-shift">Mean-Shift</span></h5><h5><span id="dbscan">DBSCAN</span></h5><h5><span id="optics">OPTICS</span></h5><h5><span id="agglomerative">Agglomerative</span></h5><h5><span id="fuzzy-c-means">Fuzzy C-Means</span></h5><h4><span id="pattern-search">Pattern Search</span></h4><ul>
-<li>Euclat</li>
-<li>Apriori</li>
-<li>FP-Growth</li>
-</ul>
-<h5><span id="euclat">Euclat</span></h5><h5><span id="apriori">Apriori</span></h5><h5><span id="fp-growth">FP-Growth</span></h5><h4><span id="dimension-reduction">Dimension Reduction</span></h4><ul>
-<li>t-SNE</li>
-<li>PCA</li>
-<li>LSA</li>
-<li>SVD</li>
-<li>LDA</li>
-</ul>
-<h5><span id="t-sne">t-SNE</span></h5><h5><span id="pca">PCA</span></h5><h5><span id="lsa">LSA</span></h5><h5><span id="svd">SVD</span></h5><h5><span id="lda">LDA</span></h5><h2><span id="ensemble-methods">Ensemble Methods</span></h2><a href="/2020/05/11/%E9%9B%86%E6%88%90%E6%96%B9%E6%B3%95/" title="集成方法">集成方法</a>：
-- Bagging
-- Boosting
-- Stacking
-
-#### Bagging
-- Random Forest
-
-##### Random Forest
-- <a href="/2020/04/28/%E9%9A%8F%E6%9C%BA%E6%A3%AE%E6%9E%97/" title="随机森林">随机森林</a>
-<h4><span id="boosting">Boosting</span></h4><ul>
+<h3><span id="boosting">Boosting</span></h3><ul>
 <li>AdaBoost</li>
 <li>XGBoost</li>
 <li>LightGBM</li>
 <li>CatBoost</li>
 <li>Boosting Tree（提升树）</li>
 </ul>
-<h5><span id="adaboost">AdaBoost</span></h5><h5><span id="xgboost">XGBoost</span></h5><h5><span id="lightgbm">LightGBM</span></h5><h5><span id="catboost">CatBoost</span></h5><h4><span id="stacking">Stacking</span></h4><h2><span id="reinforcement-learning">Reinforcement Learning</span></h2><ul>
-<li>Genetic Algorithm</li>
-<li>A3C</li>
-<li>SARSA</li>
-<li>Q-Learning</li>
-<li>DQN</li>
+<p>Boosting算法（提升方法），是一类可以用来减小监督式学习中偏差的机器学习算法；将弱分类器提升为强分类器。</p>
+<h3><span id="stacking">Stacking</span></h3><ul>
+<li>是Bagging的升级版</li>
+<li>改进预测</li>
+<li>结合策略是“学习法”</li>
+<li>将训练集弱学习器（基学习器）的学习结果作为输入，将训练集的输出作为输出，重新训练一个学习器来得到最终决策</li>
+<li>这里称弱学习器为初级学习器，最后用于结合的学习器称为次级学习器</li>
+<li>对于测试集，先用初级学习器预测一次，得到次级学习器的输入（Input），再用次级学习器预测一次，得到最终的预测结果</li>
 </ul>
-<h3><span id="genetic-algorithm">Genetic Algorithm</span></h3><h3><span id="a3c">A3C</span></h3><h3><span id="sarsa">SARSA</span></h3><h3><span id="q-learning">Q-Learning</span></h3><h3><span id="dqn">DQN</span></h3><p>Deep Q-Network</p>
-<h2><span id="neural-nets-and-deep-learning">Neural Nets and Deep Learning</span></h2><ul>
-<li>CNN</li>
-<li>RNN</li>
-<li>GAN</li>
-<li>Autoencoders</li>
-<li>MLP</li>
-</ul>
-<h3><span id="cnn">CNN</span></h3><h3><span id="rnn">RNN</span></h3><ul>
-<li>LSM</li>
-<li>LSTM</li>
-<li>GRU</li>
-</ul>
-<h4><span id="lsm">LSM</span></h4><h4><span id="lstm">LSTM</span></h4><h4><span id="gru">GRU</span></h4><ul>
-<li>GAN</li>
-<li>Autoencoders</li>
-<li>Perceptrons (MLP)</li>
-</ul>
-<h3><span id="gan">GAN</span></h3><p>Generative Adversarial Nerworks</p>
-<h3><span id="autoencoders">Autoencoders</span></h3><p>seq2seq</p>
-<h3><span id="perceptrons-mlp">Perceptrons (MLP)</span></h3><h1><span id="参考资料">参考资料</span></h1><p>[1] <a href="https://cn.bing.com/images/search?view=detailV2&amp;ccid=k5LiTi5l&amp;id=95DF77DEC29B1CD7083F9435F1AE55043B0C0081&amp;thid=OIP.k5LiTi5lt_ND02kaBT_SAAHaE7&amp;mediaurl=https%3a%2f%2fwww.smartdatacollective.com%2fwp-content%2fuploads%2f2018%2f11%2fMachine-learning-1024x682.jpg&amp;exph=682&amp;expw=1024&amp;q=machine+learning&amp;simid=608018054240865990&amp;selectedIndex=3" target="_blank" rel="noopener">首页缩略图</a></p>
 
             </article>
             <hr>
@@ -343,29 +311,6 @@
               
                 <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://zh.wikipedia.org/wiki/Wikipedia:CC_BY-SA_3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="nofollow noopener noopener">CC BY-SA 3.0协议</a> 。转载请注明出处！</p>
               
-              
-                <div class="post-prevnext row">
-                  <div class="post-prev col-6">
-                    
-                    
-                      <a href="/2020/05/03/Python/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Python</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
-                  </div>
-                  <div class="post-next col-6">
-                    
-                    
-                      <a href="/2020/05/02/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E4%B8%9A%E5%8A%A1%E5%90%91-%E9%97%AE%E9%A2%98%E5%92%8C%E6%96%B9%E6%B3%95%E6%B1%87%E6%80%BB/">
-                        <span class="hidden-mobile">数据分析业务向-问题和方法汇总</span>
-                        <span class="visible-mobile">下一篇</span>
-                        <i class="iconfont icon-arrowright"></i>
-                      </a>
-                    
-                  </div>
-                </div>
               
             </div>
 
@@ -533,7 +478,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "Machine Learning-汇总&nbsp;",
+        "集成方法&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,
