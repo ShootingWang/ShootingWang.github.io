@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    740 字
+                    1.7k 字
                   </span>
                 
 
@@ -152,7 +152,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    9
+                    23
                      分钟
                   </span>
                 
@@ -302,9 +302,69 @@ ari = adjusted_rand_score(labels_true, labels_pred)
 # ARI = (RI - Expected_RI) / (max(RI) - Expected_RI)
 # adjusted_rand_score(a, b) == adjusted_rand_score(b, a)
 </code></pre>
-<pre><code class="lang-Python">
+<h2><span id="ami评价法互信息">AMI评价法（互信息）</span></h2><p><strong>互信息</strong>（MI，Mutual Information）：衡量两个数据分布的吻合程度。</p>
+<ul>
+<li>需要真实类别</li>
+<li>最佳值为1</li>
+<li>MI和NMI的取值范围为 [0,1]；AMI的取值范围为 [-1,1]；都是值越大，意味着聚类结果与真实情况越吻合</li>
+</ul>
+<h3><span id="互信息mi">互信息MI</span></h3><p>两个离散随机变量$X$和$Y$的互信息定义为</p>
+<script type="math/tex; mode=display">I(X,Y)=\sum_{y\in Y}\sum_{x\in X}p(x,y)\log{\frac{p(x,y)}{p(x)p(y)}}</script><p>其中，$p(x,y)$是$X$和$Y$的联合概率分布函数，$p(x)$、$p(y)$分别是$X$和$Y$的边缘概率分布函数。<br>两个连续随机变量的互信息定义为</p>
+<script type="math/tex; mode=display">I(X,Y)=\int_Y\int_Xp(x,y)\log{\frac{p(x,y)}{p(x)p(y)}}\mathrm{d}x\mathrm{d}y</script><p>其中，$p(x,y)$是$X$和$Y$的联合概率密度函数，$p(x)$、$p(y)$分别是$X$和$Y$的边缘概率密度函数。</p>
+<ul>
+<li>互信息是互信息量$I(x_i,y_j)$在联合概率空间中的统计平均值</li>
+<li>（平均）互信息克服了互信息量$I(x_i,y_j)$的随机性，是一个确定的量</li>
+<li>互信息是$X$和$Y$的联合分布相对于假定$X$和$Y$独立情况下的联合分布之间的内在依赖性</li>
+<li>$I(X,Y)=0$当且仅当$X$和$Y$独立时成立</li>
+<li>当$X$和$Y$独立时，$p(x,y)=p(x)p(y)$。因此<script type="math/tex; mode=display">\log{\frac{p(x,y)}{p(x)p(y)}}=\log1=0</script></li>
+</ul>
+<p>用互信息来评估聚类效果：</p>
+<blockquote>
+<ul>
+<li>样本个数$n$</li>
+<li>$n$个样本集合$S=\{x_1,\cdots,x_n\}$</li>
+<li>样本集合的真实划分$U=\{u_1,\cdots,u_R\}$</li>
+<li>样本集合的聚类结果$V=\{v_1,\cdots,v_C\}$</li>
+<li>$P(i)$为$u_i$在$U$中的概率（比率）<script type="math/tex; mode=display">P(i)=\frac{||u_i||}{n}=\frac{n_{i.}}{n}</script></li>
+<li>$P^\prime(j)$为$v_j$在$V$中的概率（比率）<script type="math/tex; mode=display">P^\prime(j)=\frac{||v_j||}{n}=\frac{n_{.j}}{n}</script></li>
+<li>$U$的熵为<script type="math/tex; mode=display">H(U)=\sum_{i=1}^RP(i)\log{\left(P(i)\right)}</script></li>
+<li>$V$的熵为<script type="math/tex; mode=display">H(V)=\sum_{j=1}^CP^\prime(j)\log{\left(P^\prime(j)\right)}</script></li>
+</ul>
+</blockquote>
+<p>$U$和$V$之间的<strong>互信息</strong>（MI）为</p>
+<script type="math/tex; mode=display">\mathrm{MI}(U,V)=\sum_{i=1}^R\sum_{j=1}^CP(i,j)\log{\left(\frac{P(i,j)}{P(i)P^\prime(j)}\right)}</script><p>其中$P(i,j)=n_{ij}/n$。</p>
+<h3><span id="标准化的互信息nmi">标准化的互信息NMI</span></h3><p><strong>标准化后的互信息</strong>（NMI，Normalized Mutual Information）为</p>
+<script type="math/tex; mode=display">\mathrm{NMI}(U,V)=\frac{\mathrm{MI}(U,V)}{\sqrt{H(U)H(V)}}</script><h3><span id="调整互信息ami">调整互信息AMI</span></h3><p><strong>调整互信息</strong>（AMI，Adjusted Mutual Information）为</p>
+<script type="math/tex; mode=display">\mathrm{AMI}=\frac{\mathrm{MI}-E[\mathrm{MI}]}{\max{\left(H(U),H(V)\right)}-E[\mathrm{MI}]}</script><p>\begin{equation}<br>  \begin{aligned}<br>E[\mathrm{MI}(U,V)]=&amp;\sum_{i=1}^R\sum_{j=1}^C\sum_{n_{ij}=(n_{i.}+n_{.j}-n)^+}^{\min{(n_{i.},n_{.j})}}\frac{n_{ij}}{n}<br>\log{\left(\frac{n\cdot n_{ij}}{n_{i.}n_{.j}}\right)}\times\\<br>&amp;\frac{n_{i.}!n_{.j}(n-n_{i.})!(n-n_{.j})!}{n!n_{ij}!(n_{i.}-n_{ij})!(n_{.j-n_{ij}})!(n-n_{i.}-n_{.j}+n_{ij})!}<br>  \end{aligned}<br>\end{equation}</p>
+<ul>
+<li>$(n_{i.}+n_{.j}-n)^+=\max{\{1, n_{i.}+n_{.j}-n\}}$</li>
+<li>$n_{i.}=\sum_{j=1}^Cn_{ij}$</li>
+<li>$n_{.j}=\sum_{i=1}^Rn_{ij}$</li>
+</ul>
+<pre><code class="lang-Python"># Python实现
+from sklearn.metrics import adjusted_mutual_info_score
 
+## AMI
+ami = adjusted_mutual_info_score(labels_true, labels_pred)
+# labels_true：真实的分类标签
+# label_pred：模型聚类的结果
+# Python的sklearn中的AMI的公式为
+# AMI(U,V)=[MI(U,V) - E(MI(U,V))] / [avg(H(U),H(V)) - E(MI(U,V))]
+# 其中用的是avg而不是max
+
+## NMI
+from sklearn.metrics import normalized_mutual_info_score
+
+nmi = normalized_mutual_info_score(labels_true, labels_pred)
 </code></pre>
+<h2><span id="v-measure评价法">V-measure评价法</span></h2><p>V-measure评价法：同质性（Homogeneity）和完整性（Completeness）的调和平均值。</p>
+<ul>
+<li>需要真实值</li>
+<li>最佳值为1</li>
+<li>对簇结构不作假设，可以比较两种聚类算法的结果（比如k均值算法和谱聚类算法）</li>
+<li>随机聚类的V-measure不会为零</li>
+<li>当样本数较大（&gt;1000） 或 聚类数较小（&lt;10）时，可以忽略“V-measure不为零”的问题；当样本数较小或聚类数较大时，使用AMI或ARI会更可靠</li>
+</ul>
 <pre><code class="lang-Python">
 
 </code></pre>
