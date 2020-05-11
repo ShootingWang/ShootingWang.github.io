@@ -226,15 +226,19 @@
    会话量-->弹出会话量;
    会话量-->非弹出会话量;
    弹出会话量-----非弹出会话量;</pre></li>
-<li>根据<u>相关维度</u>来拆</li>
+<li>根据<u>相关维度</u>来拆<ul>
 <li>访问渠道：直接访问、自然搜索、付费搜索、…</li>
 <li>着陆页：着陆页1、着陆页2、着陆页3、…</li>
 <li>国家：国家1、国家2、国家3、…</li>
-<li>从产品、运营、技术及用户四个角度来考虑原因</li>
+</ul>
+</li>
+<li>从产品、运营、技术及用户四个角度来考虑原因<ul>
 <li>产品：新版本上线（新功能、功能变更）、替代产品出现、…</li>
 <li>运营：促销活动、价格战减少、…</li>
 <li>技术：服务器瘫痪、系统故障、接口不稳定、…</li>
 <li>用户：用户成长、节假日、淡旺季、…</li>
+</ul>
+</li>
 </ul>
 </li>
 <li>用数据来验证假设</li>
@@ -569,23 +573,7 @@
       mermaid.initialize({{ JSON.stringify(theme.mermaid.options) }});
     }
   </script>
-{% endif %}
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+{% endif %}<!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </body>
 </html>
