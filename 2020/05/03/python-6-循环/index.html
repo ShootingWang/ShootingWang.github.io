@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    133 字
+                    242 字
                   </span>
                 
 
@@ -152,7 +152,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    1
+                    2
                      分钟
                   </span>
                 
@@ -197,7 +197,29 @@
 <li>在<code>if...elif...else</code>的多个语句块中只会执行一个语句块</li>
 <li><code>for</code>和<code>while</code>都可以有<code>else</code>语句</li>
 </ul>
-<h1><span id="while循环">while循环</span></h1><h1><span id="break语句">break语句</span></h1><ul>
+<h2><span id="forelse">for…else…</span></h2><ul>
+<li><code>for</code>循环正常执行完的情况下，执行<code>else</code>输出</li>
+<li>当<code>for</code>循环中执行了跳出循环的语句<sup><a href="#fn_1" id="reffn_1">1</a></sup>，将不执行<code>else</code>代码块的内容</li>
+</ul>
+<blockquote id="fn_1">
+<sup>1</sup>. 如<code>break</code><a href="#reffn_1" title="Jump back to footnote [1] in the text."> &#8617;</a>
+</blockquote>
+<h1><span id="while循环">while循环</span></h1><h2><span id="whileelse">while…else</span></h2><ul>
+<li><code>while</code>循环正常执行完的情况下，执行<code>else</code>输出</li>
+<li>当<code>while</code>循环中执行了跳出循环的语句<sup><a href="#fn_2" id="reffn_2">2</a></sup>，将不执行<code>else</code>代码块的内容</li>
+</ul>
+<blockquote id="fn_2">
+<sup>2</sup>. 如<code>break</code><a href="#reffn_2" title="Jump back to footnote [2] in the text."> &#8617;</a>
+</blockquote>
+<pre><code class="lang-Python">while condition:
+    statement1
+else:
+    statement2
+</code></pre>
+<pre><code class="lang-Python">
+
+</code></pre>
+<h1><span id="break语句">break语句</span></h1><ul>
 <li><code>break</code>语句用于终止当前循环</li>
 <li>通常与<code>if</code>、<code>if...else</code>和<code>if...elif...else</code>语句一起使用</li>
 </ul>
@@ -208,7 +230,7 @@
 <h1><span id="pass语句">pass语句</span></h1><ul>
 <li><code>pass</code>不做任何事情，一般用作<u>占位</u>语句</li>
 </ul>
-<h1><span id="参考资料">参考资料</span></h1><p>[1] <a href="https://www.nowcoder.com/test/question/done?tid=33151324&amp;qid=618873#summary" target="_blank" rel="noopener">牛客Python测试题</a></p>
+<h1><span id="参考资料">参考资料</span></h1><p>[1] <a href="https://www.nowcoder.com/test/question/done?tid=33151324&amp;qid=618873#summary" target="_blank" rel="noopener">牛客Python测试题</a><br>[] <a href="https://blog.csdn.net/weixin_42595012/article/details/91569770" target="_blank" rel="noopener">Python while…else… 和 for…else…</a></p>
 
             </article>
             <hr>
