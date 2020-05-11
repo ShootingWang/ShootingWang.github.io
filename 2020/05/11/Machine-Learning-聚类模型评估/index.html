@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    1.7k 字
+                    1.8k 字
                   </span>
                 
 
@@ -152,7 +152,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    23
+                    26
                      分钟
                   </span>
                 
@@ -268,7 +268,11 @@ n\\
 <li>ARI实际是RI去均值归一化</li>
 <li>从广义的角度来看，ARI衡量的是两个数据分布的吻合程度（相似度）</li>
 </ul>
-<script type="math/tex; mode=display">\mathrm{ARI}=\frac{\mathrm{RI}-E(\mathrm{RI})}{\max{(\mathrm{RI})}-E(\mathrm{RI})}</script><p>RI中的$a+d$可表示为</p>
+<script type="math/tex; mode=display">\mathrm{ARI}=\frac{\mathrm{RI}-E(\mathrm{RI})}{\max{(\mathrm{RI})}-E(\mathrm{RI})}</script><p>\begin{table}[ht]<br>\tabcolsep20pt<br>\begin{tabular}{|</p>
+<blockquote>
+<p>{\columncolor[HTML]{EFEFEF}}c |c|c|c|c|<br>{\columncolor[HTML]{ECF4FF}}c |}<br>\hline<br>\cellcolor[HTML]{C0C0C0}Class\textbackslash{}Cluster &amp; \cellcolor[HTML]{EFEFEF}$v_1$    &amp; \cellcolor[HTML]{EFEFEF}$v_2$    &amp; \cellcolor[HTML]{EFEFEF}$\cdots$ &amp; \cellcolor[HTML]{EFEFEF}$v_C$     &amp; \cellcolor[HTML]{EFEFEF}SUM        \\ \hline<br>$u_1$                                                &amp; $n_{11}$                         &amp; $n_{12}$                         &amp; $\cdots$                         &amp; $n_{1C}$                          &amp; $n_{1.}$                           \\ \hline<br>$u_2$                                                &amp; $n_{21}$                         &amp; $n_{22}$                         &amp; $\cdots$                         &amp; $n_{2C}$                          &amp; $n_{2.}$                           \\ \hline<br>$\cdots$                                             &amp; $\cdots$                         &amp; $\cdots$                         &amp; $\cdots$                         &amp; $\cdots$                          &amp; $\cdots$                           \\ \hline<br>$u_R$                                                &amp; $n_{R1}$                         &amp; $n_{R2}$                         &amp; $\cdots$                         &amp; $n_{RC}$                          &amp; $n_{R.}$                           \\ \hline<br>SUM                                                  &amp; \cellcolor[HTML]{ECF4FF}$n_{.1}$ &amp; \cellcolor[HTML]{ECF4FF}$n_{.2}$ &amp; \cellcolor[HTML]{ECF4FF}$\cdots$ &amp; \cellcolor[HTML]{ECF4FF}$n_{. C}$ &amp; \cellcolor[HTML]{DAE8FC}$n_{..}=n$ \\ \hline<br>\end{tabular}<br>\end{table}</p>
+</blockquote>
+<p>RI中的$a+d$可表示为</p>
 <script type="math/tex; mode=display">\sum_{i,j}\left(\begin{array}{c}
 n_{ij}\\
 2
@@ -302,7 +306,7 @@ ari = adjusted_rand_score(labels_true, labels_pred)
 # ARI = (RI - Expected_RI) / (max(RI) - Expected_RI)
 # adjusted_rand_score(a, b) == adjusted_rand_score(b, a)
 </code></pre>
-<h2><span id="ami评价法互信息">AMI评价法（互信息）</span></h2><p><strong>互信息</strong>（MI，Mutual Information）：衡量两个数据分布的吻合程度。</p>
+<h2><span id="ami评价法">AMI评价法</span></h2><p><strong>互信息</strong>（MI，Mutual Information）：衡量两个数据分布的吻合程度。</p>
 <ul>
 <li>需要真实类别</li>
 <li>最佳值为1</li>
