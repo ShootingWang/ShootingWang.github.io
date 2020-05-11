@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    328 字
+                    836 字
                   </span>
                 
 
@@ -152,7 +152,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    6
+                    15
                      分钟
                   </span>
                 
@@ -242,6 +242,36 @@ merge(x, y, by = &quot;k2&quot;, incomparables = NA) # 2 rows
 #  k2 k1.x data.x k1.y data.y
 #1  4    4      4    4      4
 #2  5    5      5    5      5
+</code></pre>
+<h2><span id="paste">paste</span></h2><p>组合字符串</p>
+<ul>
+<li>可以将任意数量的参数组合在一起<pre><code class="lang-R">paste(..., sep = &quot; &quot;, collapse = NULL)
+</code></pre>
+</li>
+<li><code>...</code>：要组合的任何数量的参数</li>
+<li><code>sep</code>：表示参数之间的分隔符</li>
+<li><code>collapse</code>：用于消除两个字符串之间的空间；但不是在一个字符串的两个词的空间</li>
+</ul>
+<pre><code class="lang-R">(nth &lt;- paste0(1:12, c(&quot;st&quot;, &quot;nd&quot;, &quot;rd&quot;, rep(&quot;th&quot;, 9))))
+# [1] &quot;1st&quot;  &quot;2nd&quot;  &quot;3rd&quot;  &quot;4th&quot;  &quot;5th&quot;  &quot;6th&quot;  &quot;7th&quot;  &quot;8th&quot;  &quot;9th&quot;  &quot;10th&quot; &quot;11th&quot; &quot;12th&quot;
+
+month.abb
+# [1] &quot;Jan&quot; &quot;Feb&quot; &quot;Mar&quot; &quot;Apr&quot; &quot;May&quot; &quot;Jun&quot; &quot;Jul&quot; &quot;Aug&quot; &quot;Sep&quot; &quot;Oct&quot; &quot;Nov&quot; &quot;Dec&quot;
+paste(month.abb, &quot;is the&quot;, nth, &quot;month of the year.&quot;)
+# [1] &quot;Jan is the 1st month of the year.&quot;  &quot;Feb is the 2nd month of the year.&quot; 
+# [3] &quot;Mar is the 3rd month of the year.&quot;  &quot;Apr is the 4th month of the year.&quot; 
+# [5] &quot;May is the 5th month of the year.&quot;  &quot;Jun is the 6th month of the year.&quot; 
+# [7] &quot;Jul is the 7th month of the year.&quot;  &quot;Aug is the 8th month of the year.&quot; 
+# [9] &quot;Sep is the 9th month of the year.&quot;  &quot;Oct is the 10th month of the year.&quot;
+#[11] &quot;Nov is the 11th month of the year.&quot; &quot;Dec is the 12th month of the year.&quot;
+
+letters
+# [1] &quot;a&quot; &quot;b&quot; &quot;c&quot; &quot;d&quot; &quot;e&quot; &quot;f&quot; &quot;g&quot; &quot;h&quot; &quot;i&quot; &quot;j&quot; &quot;k&quot; &quot;l&quot; &quot;m&quot; &quot;n&quot; &quot;o&quot; &quot;p&quot; &quot;q&quot; &quot;r&quot; &quot;s&quot; &quot;t&quot; &quot;u&quot; &quot;v&quot;
+#[23] &quot;w&quot; &quot;x&quot; &quot;y&quot; &quot;z&quot;
+paste(month.abb, letters)
+# [1] &quot;Jan a&quot; &quot;Feb b&quot; &quot;Mar c&quot; &quot;Apr d&quot; &quot;May e&quot; &quot;Jun f&quot; &quot;Jul g&quot; &quot;Aug h&quot; &quot;Sep i&quot; &quot;Oct j&quot; &quot;Nov k&quot;
+#[12] &quot;Dec l&quot; &quot;Jan m&quot; &quot;Feb n&quot; &quot;Mar o&quot; &quot;Apr p&quot; &quot;May q&quot; &quot;Jun r&quot; &quot;Jul s&quot; &quot;Aug t&quot; &quot;Sep u&quot; &quot;Oct v&quot;
+#[23] &quot;Nov w&quot; &quot;Dec x&quot; &quot;Jan y&quot; &quot;Feb z&quot;
 </code></pre>
 <h1><span id="packages">Packages</span></h1><pre><code class="lang-R">
 
