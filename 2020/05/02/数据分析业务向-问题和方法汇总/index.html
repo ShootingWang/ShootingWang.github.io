@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    968 字
+                    1.5k 字
                   </span>
                 
 
@@ -152,7 +152,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    10
+                    16
                      分钟
                   </span>
                 
@@ -230,19 +230,57 @@
 <li>询盘（Enquiry / Inquiry）：买方（或卖方）为了购买（或销售）某项商品，向对方询问有关交易条件的表示。在国际贸易的实际业务中，一般多由买方主动向卖方发出询盘。</li>
 <li>询盘量：有意向购买的卖家发给卖家的询盘的数量</li>
 <li>访问路径（FR，Flow Report）：用户在网站上的访问行为，各个页面的进入率和跳出率</li>
+<li><strong>IP</strong>（Internet Protocol）：访问过该网站的IP总数；以用户的IP地址作为统计依据。<ul>
+<li>同一天00:00-24:00内相同IP地址仅计算一次</li>
+</ul>
+</li>
 <li><strong>用户生命周期价值</strong>（LTV）</li>
 <li>最小可行性产品（MVP）</li>
+<li><strong>客单价</strong>（Per Customer Transaction）：平均交易金额/顾客平均购买商品的金额<script type="math/tex; mode=display">客单价=销售总额/成交总笔数</script>或<script type="math/tex; mode=display">客单价=商品平均单价\times每一个顾客平均购买商品个数</script>或<script type="math/tex; mode=display">客单价=动线长度\times停留率\times注目率\times购买率\times购买个数\times商品单价</script></li>
 <li>PMF（Product/Market Fit）：产品与市场相契合的状态</li>
 <li>点击付费广告（PPC，Pay Per Click）</li>
-<li><strong>页面浏览量</strong>（PV，Page View）：网站在某一段时间内的页面浏览量是多少</li>
+<li><strong>页面浏览量</strong>（PV，Page View）：网站在某一段时间内的页面浏览量是多少<ul>
+<li>用户每一次对网站中的每个网页访问均被记录一个PV</li>
 </ul>
-<ul>
+</li>
 <li>搜索引擎优化（SEO，Search Engine Optimization）</li>
+<li><strong>SKU</strong>（Stock Keeping Unit）库存量单位：也称最小库存单元、最小库存单位、最小存货单位、单品等，<ul>
+<li>对电商而言，SKU是指一款商品；一款商品多色，则有多个SKU</li>
+</ul>
+</li>
+<li><strong>SPU</strong>（Standard Product Unit）标准产品单位：商品信息聚合的最小单位<ul>
+<li>商品的特性可以由多个“属性/属性值对”进行描述；属性/属性值对完全相同的商品，可以抽象为一个SPU<blockquote>
+<p>eg：HUAWEI MATE 50 可以确定一个产品，即为一个SPU</p>
+</blockquote>
+</li>
+</ul>
+</li>
 <li><p>渠道来源（Traffic Sources）：用户流量来源于哪些不同的渠道</p>
 </li>
 <li><p>访客特征（UD，User Demographics）：访问用户具有哪些特征值，可用来做用户分类</p>
 </li>
+<li><strong>UV</strong>（Unique Visitor）：通过互联网访问、浏览该网站的自然人；一台电脑客户端视为一个访客。<ul>
+<li>独立UV以浏览器cookie为依据；只要cookie不清除，同一天00:00-24:00内相同的客户端只被计算一次（2个人用不同的账号登录同一台电脑的同一个浏览器，只记录一个UV）</li>
+<li>一天内同个访客多次访问仅计算一个UV</li>
+<li>月UV等于日UV之和</li>
+</ul>
+</li>
 <li><strong>用户浏览量</strong>（UV，User View）：网站在某一段时间内的用户浏览量是多少</li>
+<li>VV（Visit View）：统计所有访客一天内访问网站的次数<ul>
+<li>访客完成浏览并最终关掉该网站的所有页面即完成一次访问（Visit）</li>
+<li>同一访客一天内可能有多次访问行为</li>
+</ul>
+</li>
+<li>VIP顾客销售额占比（%）：用于判断店铺会员贡献<script type="math/tex; mode=display">VIP顾客销售额占比=\frac{会员顾客消费金额}{总销售额}\times100\%</script></li>
+</ul>
+<p>来源/参考：</p>
+<ul>
+<li><a href="https://baijiahao.baidu.com/s?id=1611777819781232073&amp;wfr=spider&amp;for=pc" target="_blank" rel="noopener">SPU和SKU都是什么意思</a></li>
+<li><a href="https://www.jianshu.com/p/a94d6f102108" target="_blank" rel="noopener">电商业务中大家都说的SKU是啥</a></li>
+<li><a href="https://www.zhihu.com/question/20448467" target="_blank" rel="noopener">如何清楚易懂地解释“UV”和“PV”的定义？</a></li>
+<li><a href></a></li>
+<li><a href></a></li>
+<li><a href></a></li>
 </ul>
 <h1><span id="不同行业">不同行业</span></h1><h2><span id="电商">电商</span></h2><p>电商用户的转化漏斗一般是：</p>
 <p><pre class="mermaid">graph LR;
