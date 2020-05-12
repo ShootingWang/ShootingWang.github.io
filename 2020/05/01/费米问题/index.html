@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    2.4k 字
+                    2.6k 字
                   </span>
                 
 
@@ -152,7 +152,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    25
+                    28
                      分钟
                   </span>
                 
@@ -360,7 +360,7 @@
 </blockquote>
 </li>
 </ol>
-<h3><span id="估算深圳市的丰田汽车数量">估算深圳市的丰田汽车数量</span></h3><p>层级拆解：</p>
+<h3><span id="深圳市的丰田汽车数量">深圳市的丰田汽车数量</span></h3><p>层级拆解：</p>
 <ol>
 <li>深圳市汽车</li>
 <li>丰田汽车</li>
@@ -369,10 +369,36 @@
 <blockquote>
 <ol>
 <li>假设深圳全市共有机动车300万辆</li>
-<li>在深圳市多地采样，记录每100辆车中丰田车的占比，最后取占比的平均值（假设为25%）<script type="math/tex; mode=display">300万辆\times 25\%=80万辆</script></li>
+<li>在深圳市多地采样，记录每100辆车中丰田车的占比，最后取占比的平均值（假设为25%）<script type="math/tex; mode=display">300万辆\times 25\%=75万辆</script></li>
 </ol>
 </blockquote>
-<p>未完</p>
+<p>思路2：Bottom-up</p>
+<blockquote>
+<ol>
+<li>假设已知“深圳全市有特斯拉汽车3万辆”（与丰田横向同层）</li>
+<li>在深圳市多地采样，记录每100辆汽车中，特斯拉汽车的占比为1%、丰田车的占比为25%<script type="math/tex; mode=display">\frac{3万辆}{1%}\times 25%=75万辆</script></li>
+</ol>
+</blockquote>
+<p>不同方法可以灵活运用、相互验证。</p>
+<p>此外：</p>
+<ul>
+<li>对丰田汽车进行采样时，要怎么选择地点呢？<ul>
+<li>选取车流密集区域</li>
+<li>口岸、机场、商场等是否会影响数据的真实性？</li>
+<li>若只取口岸附近的车流密集区域，占比可能会偏高</li>
+<li>应该取多少个采样地点呢？</li>
+</ul>
+</li>
+<li>怎样进行对特斯拉汽车的采样<ul>
+<li>特斯拉可以充电，若选采样地点是“特斯拉充电桩”附近，则会造成数据偏高</li>
+<li>特斯拉在深圳属于什么定位？</li>
+</ul>
+</li>
+</ul>
+<h3><span id="深圳的便利店数量">深圳的便利店数量</span></h3><p>首先需要确定“便利店”的定义：</p>
+<ul>
+<li>包括<br>未完</li>
+</ul>
 <h2><span id="数据">数据</span></h2><ul>
 <li>如果所有数据开放，应该找哪些数据源？</li>
 <li>怎样筛选数据源或找数据源？</li>
