@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    1.8k 字
+                    1.9k 字
                   </span>
                 
 
@@ -152,7 +152,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    23
+                    25
                      分钟
                   </span>
                 
@@ -501,7 +501,8 @@ mysql&gt; SELECT prod_id, prod_price, prod_name
 </li>
 <li>同时使用ORDER BY子句和WHERE子句时，ORDER BY 应位于WHERE子句后面</li>
 </ul>
-<p>WHERE子句操作符</p>
+<center>表：WHERE子句操作符</center>
+
 <div class="table-container">
 <table>
 <thead>
@@ -552,12 +553,38 @@ mysql&gt; SELECT prod_id, prod_price, prod_name
 </blockquote>
 </li>
 </ul>
-<pre><code class="lang-sql">
-
+<h2><span id="between">BETWEEN</span></h2><p><code>BETWEEN</code>匹配范围中的所有值，包括指定的开始值和结束值</p>
+<pre><code class="lang-sql">mysql&gt; ##查找价格在5到10之间的产品
+mysql&gt; SELECT prod_name, prod_price
+    -&gt; FROM Products
+    -&gt; WHERE prod_price BETWEEN 5 AND 10;
++----------------+------------+
+| prod_name      | prod_price |
++----------------+------------+
+| .5 ton anvil   |       5.99 |
+| 1 ton anvil    |       9.99 |
+| Bird seed      |      10.00 |
+| Oil can        |       8.99 |
+| TNT (5 sticks) |      10.00 |
++----------------+------------+
+5 rows in set (0.01 sec)
 </code></pre>
-<pre><code class="lang-sql">
-
+<h2><span id="null">NULL</span></h2><p><strong>NULL</strong>：无值/空值（no value），与字段包含0、空字符串、空格不同</p>
+<ul>
+<li>用<code>IS NULL</code>来检查某个值是否为NULL<pre><code class="lang-sql">mysql&gt; SELECT cust_name
+  -&gt; FROM CUSTOMERS
+  -&gt; WHERE cust_email IS NULL;
++-------------+
+| cust_name   |
++-------------+
+| Mouse House |
+| E Fudd      |
++-------------+
+2 rows in set (0.01 sec)
 </code></pre>
+</li>
+</ul>
+<h2><span id="操作符">操作符</span></h2><p>SQL允许给出多个WHERE子句，使用AND或OR联结</p>
 <h1><span id="参考资料">参考资料</span></h1><p>[1] <a href="https://book.douban.com/subject/24250054/" target="_blank" rel="noopener">SQL必知必会</a><br>[2] <a href="https://forta.com/wp-content/uploads/books/0672327120/mysql_scripts.zip" target="_blank" rel="noopener">本文sql脚本参照</a></p>
 
             </article>
