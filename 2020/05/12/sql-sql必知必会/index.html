@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    3.6k 字
+                    4.3k 字
                   </span>
                 
 
@@ -152,7 +152,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    49
+                    59
                      分钟
                   </span>
                 
@@ -883,8 +883,173 @@ mysql&gt; SELECT SUBSTRING(vend_address, -4, 3)
 <h2><span id="left">LEFT()</span></h2><p>LEFT() ：返回字符串左边的字符</p>
 <h2><span id="right">RIGHT()</span></h2><p>RIGHT() ：返回字符串右边的字符</p>
 <h2><span id="length">LENGTH()</span></h2><p>LENGTH() ：返回字符串的长度；或<code>DATALENGTH()</code> 、<code>LEN()</code></p>
-<pre><code class="lang-sql">
+<h2><span id="soundex">SOUNDEX()</span></h2><p>SOUNDEX() ：返回字符串的SOUNDEX值</p>
+<ul>
+<li>SOUNDEX是一个将任何文本字符串转换为描述其语音表示的字母数字模式的算法</li>
+<li>Microsoft Access、PostgreSQL不支持SOUNDEX()</li>
+</ul>
+<pre><code class="lang-sql">mysql&gt; ## 找出cust_contact中发音与Michael Green类似的记录
+mysql&gt; SELECT cust_name, cust_contact
+    -&gt; FROM Customers
+    -&gt; WHERE SOUNDEX(cust_contact)=SOUNDEX(&#39;Michael Green&#39;);
+</code></pre>
+<h1><span id="日期处理函数">日期处理函数</span></h1><p>DATEPART() ：返回日期的一部分</p>
+<ul>
+<li>Oracle没有<code>DATEPART()</code>函数，可借助 <code>TO_CHAR()</code> 和 <code>TO_NUMBER()</code><ul>
+<li><code>TO_CHAR()</code>用来提取日期的成分</li>
+<li><code>TO_NUMBER()</code>用来将提取出来的成分转换为数值；或用 <code>BETWEEN()</code></li>
+</ul>
+</li>
+</ul>
+<pre><code class="lang-sql">## 检索2012年的所有订单
+## SQL Server
+SELECT order_num FROM Orders
+WHERE DATEPART(yy, order_date) = 2012;
 
+## Access
+SELECT order_num FROM Orders
+WHERE DATEPART(&#39;yyyy&#39;, order_date) = 2012;
+
+## PostgreSQL
+SELECT order_num FROM Orders
+WHERE DATE_PART(&#39;year&#39;, order_date) = 2012;
+
+## Oracle
+SELECT order_num FROM Orders
+WHERE TO_NUMBER(TO_CHAR(order_date, &#39;YYYY&#39;)) = 2012;
+# 或
+SELECT order_num FROM Orders
+WHERE order_date BETWEEN TO_DATE(&#39;01-01-2012&#39;)
+AND TO_DATE(&#39;12-31-2012&#39;);
+
+## MySQL 或 MariaDB
+SELECT order_num FROM Orders
+WHERE YEAR(order_date) = 2012;
+
+## SQLite
+SELECT order_num FROM Orders
+WHERE STRFTIME(&#39;%Y&#39;, order_date) = &#39;2012&#39;;
+</code></pre>
+<h1><span id="数值处理函数">数值处理函数</span></h1><p><u>表 ：常用数值处理函数</u></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">操作符</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">ABS()</td>
+<td style="text-align:center">绝对值</td>
+</tr>
+<tr>
+<td style="text-align:center">COS()</td>
+<td style="text-align:center">余弦值</td>
+</tr>
+<tr>
+<td style="text-align:center">EXP()</td>
+<td style="text-align:center">指数值</td>
+</tr>
+<tr>
+<td style="text-align:center">PI()</td>
+<td style="text-align:center">圆周率Π</td>
+</tr>
+<tr>
+<td style="text-align:center">SIN()</td>
+<td style="text-align:center">正弦值</td>
+</tr>
+<tr>
+<td style="text-align:center">SQRT()</td>
+<td style="text-align:center">平方根</td>
+</tr>
+<tr>
+<td style="text-align:center">TAN()</td>
+<td style="text-align:center">正切</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h1><span id="聚合函数">聚合函数</span></h1><p>聚合函数（aggregate function）：对某些行运行的函数，计算并返回一个值</p>
+<p><u>表 ：SQL聚合函数</u></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">操作符</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">AVG()</td>
+<td style="text-align:center">平均值</td>
+</tr>
+<tr>
+<td style="text-align:center">COUNT()</td>
+<td style="text-align:center">行数</td>
+</tr>
+<tr>
+<td style="text-align:center">MAX()</td>
+<td style="text-align:center">最大值</td>
+</tr>
+<tr>
+<td style="text-align:center">MIN()</td>
+<td style="text-align:center">最小值</td>
+</tr>
+<tr>
+<td style="text-align:center">SUM()</td>
+<td style="text-align:center">求和</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2><span id="avg">AVG()</span></h2><p>AVG() ：平均值</p>
+<ul>
+<li>AVG() 只能用来确定特定数值列的平均值，列名必须作为函数参数给出</li>
+<li>AVG() 函数忽略列值为NULL的行</li>
+</ul>
+<h2><span id="count">COUNT()</span></h2><p>COUNT() ：计数</p>
+<ul>
+<li>COUNT(*) 对表中行的数目进行计数，不管表列中包含的是空值还是非空值</li>
+<li>COUNT(column) 对特定列中的具有值的行进行计数，忽略NULL值</li>
+</ul>
+<h2><span id="max">MAX()</span></h2><p>MAX() ：最大值</p>
+<ul>
+<li>一般用来找出最大的数值或日期值</li>
+<li>大多数DBMS允许它用来返回任意列中的最大值，包括返回文本列中的最大值</li>
+<li>在用于文本数据时，返回按该列排序后的最后一行</li>
+<li>忽略列值为NULL的行</li>
+</ul>
+<h2><span id="min">MIN()</span></h2><p>MIN() ：最小值</p>
+<ul>
+<li>一般用来找出最小的数值或日期值</li>
+<li>大多数DBMS允许它用来返回任意列中的最小值，包括返回文本列中的最小值</li>
+<li>在用于文本数据时，返回按该列排序后的最前面的一行</li>
+<li>略列值为NULL的行</li>
+</ul>
+<h2><span id="sum">SUM()</span></h2><p>SUM() ：求和</p>
+<ul>
+<li>忽略值为NULL的行</li>
+</ul>
+<h2><span id="distinct">DISTINCT</span></h2><p>DISTINCT：</p>
+<ul>
+<li>以上5个聚合函数，默认对所有的行执行计算，指定ALL参数或补指定（ALL是默认行为）</li>
+<li>若只考虑对不同的值的行执行计算，则应指定参数 DISTINCT</li>
+<li>Microsoft Access在聚合函数中不支持DISTINCT</li>
+<li>DISTINCT不能用于 COUNT(*)</li>
+<li>DISTINCT必须使用列名，不能用于计算或表达式</li>
+</ul>
+<pre><code class="lang-sql">mysql&gt; SELECT AVG(DISTINCT prod_price) AS avg_price
+    -&gt; FROM Products
+    -&gt; WHERE vend_id=1003;
++-----------+
+| avg_price |
++-----------+
+| 15.998000 |
++-----------+
+1 row in set (0.01 sec)
 </code></pre>
 <pre><code class="lang-sql">
 
@@ -898,13 +1063,7 @@ mysql&gt; SELECT SUBSTRING(vend_address, -4, 3)
 <pre><code class="lang-sql">
 
 </code></pre>
-<pre><code class="lang-sql">
-
-</code></pre>
-<pre><code class="lang-sql">
-
-</code></pre>
-<h1><span id="参考资料">参考资料</span></h1><p>[1] <a href="https://book.douban.com/subject/24250054/" target="_blank" rel="noopener">SQL必知必会</a><br>[2] <a href="https://forta.com/wp-content/uploads/books/0672327120/mysql_scripts.zip" target="_blank" rel="noopener">本文sql脚本参照</a></p>
+<h1><span id="参考资料">参考资料</span></h1><p>[1] <a href="https://book.douban.com/subject/24250054/" target="_blank" rel="noopener">SQL必知必会</a><br>[2] <a href="https://forta.com/wp-content/uploads/books/0672327120/mysql_scripts.zip" target="_blank" rel="noopener">本文sql脚本参照</a><br>[3] <a href="https://mp.weixin.qq.com/s?__biz=MzU5NzkxODMxOA==&amp;mid=2247486117&amp;idx=1&amp;sn=47aa300d46873749282b368db799afd7&amp;chksm=fe4d5da4c93ad4b2a125503826e381610b79c3905feb0b194907d46bf771dc66b784325ddb30&amp;token=1415910284&amp;lang=zh_CN#rd" target="_blank" rel="noopener">Notes | SQL必知必会 | 01</a></p>
 
             </article>
             <hr>
