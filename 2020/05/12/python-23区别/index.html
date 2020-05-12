@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    74 字
+                    408 字
                   </span>
                 
 
@@ -152,7 +152,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    1
+                    6
                      分钟
                   </span>
                 
@@ -258,6 +258,29 @@
 </thead>
 <tbody>
 <tr>
+<td style="text-align:center">init文件</td>
+<td style="text-align:center">新建的包如果没有init文件，不能被调用</td>
+<td style="text-align:center">新建的包里面的init文件如果被删除，包照样可以被调用</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2><span id="range">range</span></h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">Python 2</th>
+<th style="text-align:center">Python 3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">xrange</td>
+<td style="text-align:center">有</td>
+<td style="text-align:center">无</td>
+</tr>
+<tr>
 <td style="text-align:center"></td>
 <td style="text-align:center"></td>
 </tr>
@@ -275,13 +298,167 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
+<td style="text-align:center"><code>xrange</code></td>
+<td style="text-align:center">有<br>返回一个迭代器<br>在每次循环中生成序列的下一个数字</td>
+<td style="text-align:center">无</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>range</code></td>
+<td style="text-align:center">有<br>返回一个list</td>
+<td style="text-align:center">有<br>相当于Python2中的<code>xrange</code></td>
 </tr>
 </tbody>
 </table>
 </div>
+<h2><span id="print函数">print函数</span></h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">Python 2</th>
+<th style="text-align:center">Python 3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>print</code></td>
+<td style="text-align:center">是statement，不需要加括号</td>
+<td style="text-align:center">是函数，需要加括号</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2><span id="整数相除">整数相除</span></h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">Python 2</th>
+<th style="text-align:center">Python 3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>/</code></td>
+<td style="text-align:center"><code>3/2</code>是<code>int</code></td>
+<td style="text-align:center"><code>3/2</code>是<code>float</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2><span id="异常处理">异常处理</span></h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">Python 2</th>
+<th style="text-align:center">Python 3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>as</code>关键字</td>
+<td style="text-align:center">不用使用</td>
+<td style="text-align:center">必须使用</td>
+</tr>
+</tbody>
+</table>
+</div>
+<pre><code class="lang-Python">## Python 2
+try:
+    1/0
+except ZeroDivisionError, e:
+    print str(e)
+
+## Python 3
+try:
+    1/0
+except ZeroDivisionError as e:
+    print(str(e))
+</code></pre>
+<h2><span id="map函数">map函数</span></h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">Python 2</th>
+<th style="text-align:center">Python 3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>map()</code></td>
+<td style="text-align:center">返回list</td>
+<td style="text-align:center">返回迭代器（iterator）</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2><span id="不等运算符">不等运算符</span></h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">Python 2</th>
+<th style="text-align:center">Python 3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">不等运算符</td>
+<td style="text-align:center"><code>&lt;&gt;</code> 或 <code>!=</code></td>
+<td style="text-align:center">只有<code>!=</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2><span id="数据类型">数据类型</span></h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">Python 2</th>
+<th style="text-align:center">Python 3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">数据类型</td>
+<td style="text-align:center">有 <code>long</code>类型</td>
+<td style="text-align:center">没有<code>long</code>类型，只有<code>int</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2><span id="has_key方法">has_key方法</span></h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">Python 2</th>
+<th style="text-align:center">Python 3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">字典</td>
+<td style="text-align:center">字典支持has_key方法</td>
+<td style="text-align:center">字典不支持has_key方法</td>
+</tr>
+</tbody>
+</table>
+</div>
+<pre><code class="lang-Python">person = {&quot;age&quot;: 35, &quot;name&quot;: &quot;Wang Wu&quot;}
+## Python 2
+print &quot;person has key \&quot;age\&quot;:&quot;, person.has_key(&quot;age&quot;)
+# person has key &quot;age&quot;: True
+print &quot;person has key \&quot;age\&quot;:&quot;, &quot;age&quot; in person
+# person has key &quot;age&quot;: True
+
+## Python 3
+print(&quot;person has key \&quot;age\&quot;:&quot;, &quot;age&quot; in person)
+# person has key &quot;age&quot;: True
+</code></pre>
 
             </article>
             <hr>
@@ -598,7 +775,23 @@
       mermaid.initialize({{ JSON.stringify(theme.mermaid.options) }});
     }
   </script>
-{% endif %}<!-- hexo-inject:begin --><!-- hexo-inject:end -->
+{% endif %}
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </body>
 </html>
