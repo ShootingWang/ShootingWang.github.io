@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    1.7k 字
+                    1.8k 字
                   </span>
                 
 
@@ -197,21 +197,35 @@
 <h1><span id="case表达式">CASE表达式</span></h1><p>CASE表达式：</p>
 <ul>
 <li>简单CASE表达式（simple case expression）</li>
-<li>搜索CASE表达式（searched case expression）<br>```sql<br>— 简单CASE表达式<br>CASE sex<br>  WHEN ‘1’ THEN ‘male’<br>  WHEN ‘2’ THEN ‘female’<br>ELSE ‘其他’ END</li>
+<li>搜索CASE表达式（searched case expression）</li>
 </ul>
-<p>— 搜索CASE表达式<br>CASE WHEN sex = ‘1’ THEN ‘male’<br>     WHEN sex = ‘2’ THEN ‘female’<br>ELSE ‘其他’ END</p>
-<pre><code>- 注意：使用WHEN子句时需要注意条件的排他性
-- 一定要注意CASE表达式里每个分支返回的数据类型是否一致
- - 某个分支返回字符型，而其他分支返回数值型的写法是错误的
-- CASE表达式末尾不要忘记写END
-- ELSE子句是可选的
- - 不写ELSE子句时，CASE表达式的执行结果是NULL
- - 不写ELSE子句可能会造成“语法没有错误，结果却不对”
-- 最好明确地写上ELSE子句
-- CASE表达式是一种表法式而不是语句
+<pre><code class="lang-sql">-- 简单CASE表达式
+CASE sex
+    WHEN &#39;1&#39; THEN &#39;male&#39;
+    WHEN &#39;2&#39; THEN &#39;female&#39;
+ELSE &#39;其他&#39; END
 
-```sql
-+-----------+------------+
+-- 搜索CASE表达式
+CASE WHEN sex = &#39;1&#39; THEN &#39;male&#39;
+     WHEN sex = &#39;2&#39; THEN &#39;female&#39;
+ELSE &#39;其他&#39; END
+</code></pre>
+<ul>
+<li>注意：使用WHEN子句时需要注意条件的排他性</li>
+<li>一定要注意CASE表达式里每个分支返回的数据类型是否一致<ul>
+<li>某个分支返回字符型，而其他分支返回数值型的写法是错误的</li>
+</ul>
+</li>
+<li>CASE表达式末尾不要忘记写END</li>
+<li>ELSE子句是可选的<ul>
+<li>不写ELSE子句时，CASE表达式的执行结果是NULL</li>
+<li>不写ELSE子句可能会造成“语法没有错误，结果却不对”</li>
+</ul>
+</li>
+<li>最好明确地写上ELSE子句</li>
+<li>CASE表达式是一种表法式而不是语句</li>
+</ul>
+<pre><code class="lang-sql">+-----------+------------+
 | pref_name | population |
 +-----------+------------+
 | 东京      |        400 |
@@ -266,7 +280,8 @@ GROUP BY district;
 -- 与上面那种方法相比，这里不需要写两段CASE WHEN；
 -- 而上面的需要写两段CASE WHEN，当CASE内容需要修改时，需要修改两处，容易出错
 -- 但是该写法违反标准SQL的规则，因为GROUP BY子句比SELECT语句先执行
-</code></pre><p>CASE WHEN 聚合之后：</p>
+</code></pre>
+<p>CASE WHEN 聚合之后：</p>
 <pre><code class="lang-sql">+----------+-----------------+
 | district | SUM(population) |
 +----------+-----------------+
