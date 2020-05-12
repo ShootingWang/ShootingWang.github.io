@@ -725,21 +725,49 @@ SELECT ID, name, dept_name
 FROM student
 WHERE name LIKE &#39;[^VT]%&#39;;
 </code></pre>
-<h1><span id="计算字段">计算字段</span></h1>字段（field）：基本上与列（column）的意思相同，经常互换使用；数据库列一般称为列，而字段通常与计算字段一起使用</li>
+</li>
 </ul>
+<h1><span id="计算字段">计算字段</span></h1><p>字段（field）：基本上与列（column）的意思相同，经常互换使用；数据库列一般称为列，而字段通常与计算字段一起使用</p>
 <h2><span id="拼接">拼接</span></h2><p><strong>拼接</strong>（concatenate）：将值联结到一起（将一个值附加到另一个值）构成单个值</p>
 <ul>
 <li>Access、SQL Server使用 <code>+</code> 拼接</li>
 <li>DB2、Oracle、PostgreSQL、SQLite、Open Office Base使用 <code>||</code> 拼接</li>
-<li>MySQL、MariaDB使用特殊函数 <code>CONCAT()</code><br>```sql<br>mysql&gt; SELECT * FROM Vendors;<br>+————-+————————+————————-+——————-+——————+—————+———————+<br>| vend_id | vend_name      | vend_address    | vend_city   | vend_state | vend_zip | vend_country |<br>+————-+————————+————————-+——————-+——————+—————+———————+<br>|    1001 | Anvils R Us    | 123 Main Street | Southfield  | MI         | 48075    | USA          |<br>|    1002 | LT Supplies    | 500 Park Street | Anytown     | OH         | 44333    | USA          |<br>|    1003 | ACME           | 555 High Street | Los Angeles | CA         | 90046    | USA          |<br>|    1004 | Furball Inc.   | 1000 5th Avenue | New York    | NY         | 11111    | USA          |<br>|    1005 | Jet Set        | 42 Galaxy Road  | London      | NULL       | N16 6PS  | England      |<br>|    1006 | Jouets Et Ours | 1 Rue Amusement | Paris       | NULL       | 45678    | France       |<br>+————-+————————+————————-+——————-+——————+—————+———————+<br>6 rows in set (0.00 sec)</li>
+<li>MySQL、MariaDB使用特殊函数 <code>CONCAT()</code></li>
 </ul>
-<p>mysql&gt; SELECT CONCAT(vend_name, ‘(‘, vend_country, ‘)’)<br>    -&gt; FROM Vendors<br>    -&gt; ORDER BY vend_name;<br>+—————————————————————-+<br>| CONCAT(vend_name, ‘(‘, vend_country, ‘)’) |<br>+—————————————————————-+<br>| ACME(USA)                                 |<br>| Anvils R Us(USA)                          |<br>| Furball Inc.(USA)                         |<br>| Jet Set(England)                          |<br>| Jouets Et Ours(France)                    |<br>| LT Supplies(USA)                          |<br>+—————————————————————-+<br>6 rows in set (0.01 sec)</p>
-<pre><code>SQL Server：
-```sql
-SELECT ID + &#39;(&#39; + dept_name + &#39;)&#39;
+<pre><code class="lang-sql">mysql&gt; SELECT * FROM Vendors;
++---------+----------------+-----------------+-------------+------------+----------+--------------+
+| vend_id | vend_name      | vend_address    | vend_city   | vend_state | vend_zip | vend_country |
++---------+----------------+-----------------+-------------+------------+----------+--------------+
+|    1001 | Anvils R Us    | 123 Main Street | Southfield  | MI         | 48075    | USA          |
+|    1002 | LT Supplies    | 500 Park Street | Anytown     | OH         | 44333    | USA          |
+|    1003 | ACME           | 555 High Street | Los Angeles | CA         | 90046    | USA          |
+|    1004 | Furball Inc.   | 1000 5th Avenue | New York    | NY         | 11111    | USA          |
+|    1005 | Jet Set        | 42 Galaxy Road  | London      | NULL       | N16 6PS  | England      |
+|    1006 | Jouets Et Ours | 1 Rue Amusement | Paris       | NULL       | 45678    | France       |
++---------+----------------+-----------------+-------------+------------+----------+--------------+
+6 rows in set (0.00 sec)
+
+mysql&gt; SELECT CONCAT(vend_name, &#39;(&#39;, vend_country, &#39;)&#39;)
+    -&gt; FROM Vendors
+    -&gt; ORDER BY vend_name;
++-------------------------------------------+
+| CONCAT(vend_name, &#39;(&#39;, vend_country, &#39;)&#39;) |
++-------------------------------------------+
+| ACME(USA)                                 |
+| Anvils R Us(USA)                          |
+| Furball Inc.(USA)                         |
+| Jet Set(England)                          |
+| Jouets Et Ours(France)                    |
+| LT Supplies(USA)                          |
++-------------------------------------------+
+6 rows in set (0.01 sec)
+</code></pre>
+<p>SQL Server：</p>
+<pre><code class="lang-sql">SELECT ID + &#39;(&#39; + dept_name + &#39;)&#39;
 FROM student
 ORDER BY ID;
-</code></pre><p>表 ：SQL算术操作符</p>
+</code></pre>
+<p><u>表 ：SQL算术操作符</u></p>
 <div class="table-container">
 <table>
 <thead>
@@ -776,31 +804,89 @@ ORDER BY ID;
 <ul>
 <li>Access：使用 <code>MID()</code></li>
 <li>DB2、Oracle、PostgreSQL、SQLite：使用 <code>SUBSTR()</code></li>
-<li>MySQL、SQL Server：使用 <code>SUBSTRING()</code><br>```sql<br>mysql&gt; SELECT * FROM Vendors;<br>+————-+————————+————————-+——————-+——————+—————+———————+<br>| vend_id | vend_name      | vend_address    | vend_city   | vend_state | vend_zip | vend_country |<br>+————-+————————+————————-+——————-+——————+—————+———————+<br>|    1001 | Anvils R Us    | 123 Main Street | Southfield  | MI         | 48075    | USA          |<br>|    1002 | LT Supplies    | 500 Park Street | Anytown     | OH         | 44333    | USA          |<br>|    1003 | ACME           | 555 High Street | Los Angeles | CA         | 90046    | USA          |<br>|    1004 | Furball Inc.   | 1000 5th Avenue | New York    | NY         | 11111    | USA          |<br>|    1005 | Jet Set        | 42 Galaxy Road  | London      | NULL       | N16 6PS  | England      |<br>|    1006 | Jouets Et Ours | 1 Rue Amusement | Paris       | NULL       | 45678    | France       |<br>+————-+————————+————————-+——————-+——————+—————+———————+<br>6 rows in set (0.00 sec)<br>mysql&gt; ## 截取vend_address的第4个字符（包括空格）开始(包括第4个字符)的所有字符<br>mysql&gt; SELECT SUBSTRING(vend_address, 4)<br>  -&gt; FROM Vendors;<br>+——————————————+<br>| SUBSTRING(vend_address, 4) |<br>+——————————————+<br>|  Main Street               |<br>|  Park Street               |<br>|  High Street               |<br>| 0 5th Avenue               |<br>| Galaxy Road                |<br>| ue Amusement               |<br>+——————————————+<br>6 rows in set (0.00 sec)</li>
+<li>MySQL、SQL Server：使用 <code>SUBSTRING()</code></li>
 </ul>
-<p>mysql&gt; ## 截取vend_address的倒数第4个字符开始的所有字符<br>mysql&gt; SELECT SUBSTRING(vend_address, -4)<br>    -&gt; FROM Vendors;<br>+——————————————-+<br>| SUBSTRING(vend_address, -4) |<br>+——————————————-+<br>| reet                        |<br>| reet                        |<br>| reet                        |<br>| enue                        |<br>| Road                        |<br>| ment                        |<br>+——————————————-+<br>6 rows in set (0.00 sec)<br>mysql&gt; ## 截取vend_address的第4-6个字符<br>mysql&gt; SELECT SUBSTRING(vend_address, 4, 3)<br>    -&gt; FROM Vendors;<br>+———————————————-+<br>| SUBSTRING(vend_address, 4, 3) |<br>+———————————————-+<br>|  Ma                           |<br>|  Pa                           |<br>|  Hi                           |<br>| 0 5                           |<br>| Gal                           |<br>| ue                            |<br>+———————————————-+<br>6 rows in set (0.00 sec)<br>— 第4~6个字符，共有3个字符<br>mysql&gt; ## 截取vend_address的倒数第4个~倒数第2个字符<br>mysql&gt; SELECT SUBSTRING(vend_address, -4, 3)<br>    -&gt; FROM Vendors;<br>+————————————————+<br>| SUBSTRING(vend_address, -4, 3) |<br>+————————————————+<br>| ree                            |<br>| ree                            |<br>| ree                            |<br>| enu                            |<br>| Roa                            |<br>| men                            |<br>+————————————————+<br>6 rows in set (0.00 sec)</p>
-<pre><code>
-## TRIM()
-TRIM() ：去掉字符串左右两边的空格
+<pre><code class="lang-sql">mysql&gt; SELECT * FROM Vendors;
++---------+----------------+-----------------+-------------+------------+----------+--------------+
+| vend_id | vend_name      | vend_address    | vend_city   | vend_state | vend_zip | vend_country |
++---------+----------------+-----------------+-------------+------------+----------+--------------+
+|    1001 | Anvils R Us    | 123 Main Street | Southfield  | MI         | 48075    | USA          |
+|    1002 | LT Supplies    | 500 Park Street | Anytown     | OH         | 44333    | USA          |
+|    1003 | ACME           | 555 High Street | Los Angeles | CA         | 90046    | USA          |
+|    1004 | Furball Inc.   | 1000 5th Avenue | New York    | NY         | 11111    | USA          |
+|    1005 | Jet Set        | 42 Galaxy Road  | London      | NULL       | N16 6PS  | England      |
+|    1006 | Jouets Et Ours | 1 Rue Amusement | Paris       | NULL       | 45678    | France       |
++---------+----------------+-----------------+-------------+------------+----------+--------------+
+6 rows in set (0.00 sec)
+mysql&gt; ## 截取vend_address的第4个字符（包括空格）开始(包括第4个字符)的所有字符
+mysql&gt; SELECT SUBSTRING(vend_address, 4)
+    -&gt; FROM Vendors;
++----------------------------+
+| SUBSTRING(vend_address, 4) |
++----------------------------+
+|  Main Street               |
+|  Park Street               |
+|  High Street               |
+| 0 5th Avenue               |
+| Galaxy Road                |
+| ue Amusement               |
++----------------------------+
+6 rows in set (0.00 sec)
 
+mysql&gt; ## 截取vend_address的倒数第4个字符开始的所有字符
+mysql&gt; SELECT SUBSTRING(vend_address, -4)
+    -&gt; FROM Vendors;
++-----------------------------+
+| SUBSTRING(vend_address, -4) |
++-----------------------------+
+| reet                        |
+| reet                        |
+| reet                        |
+| enue                        |
+| Road                        |
+| ment                        |
++-----------------------------+
+6 rows in set (0.00 sec)
+mysql&gt; ## 截取vend_address的第4-6个字符
+mysql&gt; SELECT SUBSTRING(vend_address, 4, 3)
+    -&gt; FROM Vendors;
++-------------------------------+
+| SUBSTRING(vend_address, 4, 3) |
++-------------------------------+
+|  Ma                           |
+|  Pa                           |
+|  Hi                           |
+| 0 5                           |
+| Gal                           |
+| ue                            |
++-------------------------------+
+6 rows in set (0.00 sec)
+-- 第4~6个字符，共有3个字符
+mysql&gt; ## 截取vend_address的倒数第4个~倒数第2个字符
+mysql&gt; SELECT SUBSTRING(vend_address, -4, 3)
+    -&gt; FROM Vendors;
++--------------------------------+
+| SUBSTRING(vend_address, -4, 3) |
++--------------------------------+
+| ree                            |
+| ree                            |
+| ree                            |
+| enu                            |
+| Roa                            |
+| men                            |
++--------------------------------+
+6 rows in set (0.00 sec)
+</code></pre>
+<h2><span id="trim">TRIM()</span></h2><p>TRIM() ：去掉字符串左右两边的空格</p>
+<h2><span id="rtrim">RTRIM()</span></h2><p>RTRIM() ：去掉字符串右边的所有空格</p>
+<h2><span id="ltrim">LTRIM()</span></h2><p>LTRIM() ：去掉字符串左边的所有空格</p>
+<h2><span id="left">LEFT()</span></h2><p>LEFT() ：返回字符串左边的字符</p>
+<h2><span id="right">RIGHT()</span></h2><p>RIGHT() ：返回字符串右边的字符</p>
+<h2><span id="length">LENGTH()</span></h2><p>LENGTH() ：返回字符串的长度；或<code>DATALENGTH()</code> 、<code>LEN()</code></p>
+<pre><code class="lang-sql">
 
-## RTRIM()
-RTRIM() ：去掉字符串右边的所有空格
-
-## LTRIM()
-LTRIM() ：去掉字符串左边的所有空格
-
-## LEFT()
-LEFT() ：返回字符串左边的字符
-
-## RIGHT()
-RIGHT() ：返回字符串右边的字符
-
-## LENGTH()
-LENGTH() ：返回字符串的长度；或`DATALENGTH()` 、`LEN()`
-
-```sql
-</code></pre><pre><code class="lang-sql">
+</code></pre>
+<pre><code class="lang-sql">
 
 </code></pre>
 <pre><code class="lang-sql">
