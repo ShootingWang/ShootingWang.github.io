@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    54 字
+                    138 字
                   </span>
                 
 
@@ -194,8 +194,24 @@
             
             <article class="markdown-body">
               <h1><span id="二手车交易数据">二手车交易数据</span></h1><p>数据来源：<a href="https://tianchi.aliyun.com/competition/entrance/231784/introduction?spm=5176.12281949.1003.2.493e1b43kcpZud" target="_blank" rel="noopener">天池</a><br><a href="https://tianchi.aliyun.com/competition/entrance/231784/information" target="_blank" rel="noopener">数据详情</a></p>
+<blockquote>
+<p>本篇笔记的代码使用Jupyter Lab实现</p>
+</blockquote>
+<p>载入需要的模块：</p>
 <pre><code class="lang-Python">
 
+</code></pre>
+<p>读入数据：</p>
+<pre><code class="lang-Python">## 读取数据
+train_data = pd.read_csv(&quot;used_car_train_20200313.csv&quot;, sep=&quot; &quot;)
+testB_data = pd.read_csv(&quot;used_car_testB_20200421.csv&quot;, sep=&quot; &quot;)
+
+## 训练集大小
+print(&quot;Train data shape:&quot;, train_data.shape)
+# Train data shape: (150000, 31)
+## 测试集大小
+print(&quot;TestB data shape:&quot;, testB_data.shape)
+# TestB data shape: (50000, 30)
 </code></pre>
 <h2><span id="数据预览">数据预览</span></h2><pre><code class="lang-Python">
 
