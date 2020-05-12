@@ -17,7 +17,7 @@
   <meta name="description" content="统计一只狗，梦想有只猫">
   <meta name="author" content="ShootingWang">
   <meta name="keywords" content="">
-  <title>SQL - ShootingWang</title>
+  <title>SQL | 《SQL进阶教程》 - ShootingWang</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
 <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
@@ -131,8 +131,8 @@
               
                 <div class="mt-3 post-meta">
                   <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-                  <time datetime="2020-04-30 00:58">
-                    星期四, 四月 30日 2020, 12:58 凌晨
+                  <time datetime="2020-05-12 22:52">
+                    星期二, 五月 12日 2020, 10:52 晚上
                   </time>
                 </div>
               
@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    40 字
+                    1.7k 字
                   </span>
                 
 
@@ -152,7 +152,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    1
+                    26
                      分钟
                   </span>
                 
@@ -193,33 +193,330 @@
           <div class="post-content mx-auto" id="post">
             
             <article class="markdown-body">
-              <p>SQL相关知识积累~</p>
-<a id="more"></a>
-<h1><span id="通用">通用</span></h1><ul>
-<li><a href="/2020/05/03/sql-1-%E8%8C%83%E5%BC%8F/" title="范式">范式</a></li>
-<li><a href="/2020/05/03/sql-2-%E6%A8%A1%E5%BC%8F/" title="模式">模式</a></li>
-<li><a href="/2020/05/03/sql-3-%E6%95%B0%E6%8D%AE%E5%AE%8C%E6%95%B4%E6%80%A7/" title="数据完整性">数据完整性</a></li>
-<li>
-</li>
+              <p>《SQL进阶教程》读书笔记</p>
+<h1><span id="case表达式">CASE表达式</span></h1><p>CASE表达式：</p>
+<ul>
+<li>简单CASE表达式（simple case expression）</li>
+<li>搜索CASE表达式（searched case expression）<br>```sql<br>— 简单CASE表达式<br>CASE sex<br>  WHEN ‘1’ THEN ‘male’<br>  WHEN ‘2’ THEN ‘female’<br>ELSE ‘其他’ END</li>
 </ul>
-<h1><span id="mysql">MySQL</span></h1><ul>
-<li>
-</li>
-</ul>
-<h1><span id="ms-sql-server">MS SQL Server</span></h1><ul>
-<li>
-</li>
-</ul>
-<h1><span id="access">ACCESS</span></h1><ul>
-<li><a href="/2020/05/03/access-1/" title="ACCESS窗体">ACCESS窗体</a>
-</li>
-</ul>
-<h1><span id="学习资源">学习资源</span></h1><ul>
-<li><a href="/2020/05/12/sql-sql%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A/" title="《SQL必知必会》">《SQL必知必会》</a> </li>
-<li><a href="/2020/05/12/sql-SQL%E8%BF%9B%E9%98%B6%E6%95%99%E7%A8%8B/" title="《SQL进阶教程》">《SQL进阶教程》</a>
-</li>
-</ul>
+<p>— 搜索CASE表达式<br>CASE WHEN sex = ‘1’ THEN ‘male’<br>     WHEN sex = ‘2’ THEN ‘female’<br>ELSE ‘其他’ END</p>
+<pre><code>- 注意：使用WHEN子句时需要注意条件的排他性
+- 一定要注意CASE表达式里每个分支返回的数据类型是否一致
+ - 某个分支返回字符型，而其他分支返回数值型的写法是错误的
+- CASE表达式末尾不要忘记写END
+- ELSE子句是可选的
+ - 不写ELSE子句时，CASE表达式的执行结果是NULL
+ - 不写ELSE子句可能会造成“语法没有错误，结果却不对”
+- 最好明确地写上ELSE子句
+- CASE表达式是一种表法式而不是语句
 
+```sql
++-----------+------------+
+| pref_name | population |
++-----------+------------+
+| 东京      |        400 |
+| 佐贺      |        100 |
+| 德岛      |        100 |
+| 爱媛      |        150 |
+| 福冈      |        300 |
+| 群马      |         50 |
+| 长崎      |        200 |
+| 香川      |        200 |
+| 高知      |        200 |
++-----------+------------+
+9 rows in set (0.00 sec)
+
+
+-- 根据县人口统计表，统计不同地区的人口数量
+SELECT CASE pref_name
+                WHEN &#39;德岛&#39; THEN &#39;四国&#39;
+                WHEN &#39;香川&#39; THEN &#39;四国&#39;
+                WHEN &#39;爱媛&#39; THEN &#39;四国&#39;
+                WHEN &#39;高知&#39; THEN &#39;四国&#39;
+                WHEN &#39;福冈&#39; THEN &#39;九州&#39;
+                WHEN &#39;长崎&#39; THEN &#39;九州&#39;
+                WHEN &#39;佐贺&#39; THEN &#39;九州&#39;
+        ELSE &#39;其他&#39; END AS district,
+        SUM(population)
+FROM PopTbl
+GROUP BY CASE pref_name
+                WHEN &#39;德岛&#39; THEN &#39;四国&#39;
+                WHEN &#39;香川&#39; THEN &#39;四国&#39;
+                WHEN &#39;爱媛&#39; THEN &#39;四国&#39;
+                WHEN &#39;高知&#39; THEN &#39;四国&#39;
+                WHEN &#39;福冈&#39; THEN &#39;九州&#39;
+                WHEN &#39;长崎&#39; THEN &#39;九州&#39;
+                WHEN &#39;佐贺&#39; THEN &#39;九州&#39;
+         ELSE &#39;其他&#39; END;
+-- 注意是对转换后的列 GROUP
+
+SELECT CASE pref_name
+                WHEN &#39;德岛&#39; THEN &#39;四国&#39;
+                WHEN &#39;香川&#39; THEN &#39;四国&#39;
+                WHEN &#39;爱媛&#39; THEN &#39;四国&#39;
+                WHEN &#39;高知&#39; THEN &#39;四国&#39;
+                WHEN &#39;福冈&#39; THEN &#39;九州&#39;
+                WHEN &#39;长崎&#39; THEN &#39;九州&#39;
+                WHEN &#39;佐贺&#39; THEN &#39;九州&#39;
+        ELSE &#39;其他&#39; END AS district,
+        SUM(population)
+FROM PopTbl
+GROUP BY district;
+-- 这里引用了SELECT子句中定义的别名来 GROUP
+-- 与上面那种方法相比，这里不需要写两段CASE WHEN；
+-- 而上面的需要写两段CASE WHEN，当CASE内容需要修改时，需要修改两处，容易出错
+-- 但是该写法违反标准SQL的规则，因为GROUP BY子句比SELECT语句先执行
+</code></pre><p>CASE WHEN 聚合之后：</p>
+<pre><code class="lang-sql">+----------+-----------------+
+| district | SUM(population) |
++----------+-----------------+
+| 九州     |             600 |
+| 其他     |             450 |
+| 四国     |             650 |
++----------+-----------------+
+</code></pre>
+<p>进行不同条件的统计：</p>
+<pre><code class="lang-sql">+-----------+-----+------------+
+| pref_name | sex | population |
++-----------+-----+------------+
+| 东京      | 1   |        250 |
+| 东京      | 2   |        150 |
+| 佐贺      | 1   |         20 |
+| 佐贺      | 2   |         80 |
+| 德岛      | 1   |         60 |
+| 德岛      | 2   |         40 |
+| 爱媛      | 1   |        100 |
+| 爱媛      | 2   |         50 |
+| 福冈      | 1   |        100 |
+| 福冈      | 2   |        200 |
+| 长崎      | 1   |        125 |
+| 长崎      | 2   |        125 |
+| 香川      | 1   |        100 |
+| 香川      | 2   |        100 |
+| 高知      | 1   |        100 |
+| 高知      | 2   |        100 |
++-----------+-----+------------+
+16 rows in set (0.00 sec)
+-- 如果上表有新列“性别”sex，population列为某县的某个性别人口数
+SELECT pref_name,
+-- 男性人口
+    SUM(CASE WHEN sex=&#39;1&#39; THEN population ELSE 0 END) AS cnt_m,
+-- 女性人口
+    SUM(CASE WHEN sex=&#39;2&#39; THEN population ELSE 0 END) AS cnt_f
+FROM PopTbl2
+GROUP BY pref_name;
++-----------+-------+-------+
+| pref_name | cnt_m | cnt_f |
++-----------+-------+-------+
+| 东京      |   250 |   150 |
+| 佐贺      |    20 |    80 |
+| 德岛      |    60 |    40 |
+| 爱媛      |   100 |    50 |
+| 福冈      |   100 |   200 |
+| 长崎      |   125 |   125 |
+| 香川      |   100 |   100 |
+| 高知      |   100 |   100 |
++-----------+-------+-------+
+8 rows in set (0.00 sec)
+</code></pre>
+<p>使用CHECK约束定义多个列的条件关系：</p>
+<pre><code class="lang-sql">CONSTRAINT check_salary CHECK
+        (CASE WHEN dept=&#39;IT&#39; 
+              THEN CASE WHEN salary&gt;=20000
+                        THEN 1 ELSE 0 END
+              ELSE 1 END = 1)
+-- 如果是IT部门的员工，则工资应大于等于2万；如果不是IT部门的员工，则工资不受该约束限制
+-- 蕴含式（conditional）
+
+-- 如果用逻辑与（logical product）
+CONSTRAINT check_salary CHECK 
+            (dept=&#39;IT&#39; AND salary&gt;=20000)
+-- 表示 salary里的记录只能是&#39;IT&#39;部门的，且工资大于等于2万
+</code></pre>
+<p>在UPDATE语句里进行条件分支：</p>
+<pre><code class="lang-sql">+--------+--------+
+| name   | salary |
++--------+--------+
+| 木村   | 220000 |
+| 相田   | 300000 |
+| 神崎   | 270000 |
+| 齐藤   | 290000 |
++--------+--------+
+4 rows in set (0.01 sec)
+
+UPDATE Salaries 
+   SET salary = CASE WHEN salary&gt;=300000 THEN salary*0.9
+                     WHEN salary&gt;=250000 AND salary&lt;280000 THEN salary*1.2
+                     ELSE salary END;  -- 最后一句很重要
+-- 当前工资为30万元以上的员工，降薪10%；
+-- 当前工资为25万元~28万元（不满28万元）的员工，加薪20%
++--------+--------+
+| name   | salary |
++--------+--------+
+| 木村   | 220000 |
+| 相田   | 270000 |
+| 神崎   | 324000 |
+| 齐藤   | 290000 |
++--------+--------+
+4 rows in set (0.00 sec)
+</code></pre>
+<p>调换主键值：</p>
+<pre><code class="lang-sql">+-------+-------+-------+
+| p_key | col_1 | col_2 |
++-------+-------+-------+
+| a     |     1 | 一    |
+| b     |     2 | 二    |
+| c     |     3 | 三    |
++-------+-------+-------+
+3 rows in set (0.00 sec)
+
+UPDATE SomeTable
+   SET p_key = CASE WHEN p_key=&#39;a&#39; THEN &#39;b&#39;
+                    WHEN p_key=&#39;b&#39; THEN &#39;a&#39;
+                    ELSE p_key END   -- 该句很重要
+WHERE p_key IN (&#39;a&#39;, &#39;b&#39;);
+-- 在PostgreSQL和MySQL中执行该语句，会因为主键重复而报错
+-- 如: ERROR 1062 (23000): Duplicate entry &#39;b&#39; for key &#39;PRIMARY&#39;
+</code></pre>
+<p>在CASE表达式中，可以使用<code>BETWEEN</code>、<code>LIKE</code> 和 <code>&lt;</code>、<code>&gt;</code>等谓词组合，以及能嵌套子查询的 <code>IN</code> 和 <code>EXISTS</code> 谓词</p>
+<pre><code class="lang-sql">mysql&gt; SELECT * FROM CourseMaster;
++-----------+--------------+
+| course_id | course_name  |
++-----------+--------------+
+|         1 | 会计入门     |
+|         2 | 财务知识     |
+|         3 | 簿记考试     |
+|         4 | 税务师       |
++-----------+--------------+
+4 rows in set (0.00 sec)
+
+mysql&gt; SELECT * FROM OpenCourses;
++--------+-----------+
+| month  | course_id |
++--------+-----------+
+| 200706 |         1 |
+| 200706 |         3 |
+| 200706 |         4 |
+| 200707 |         4 |
+| 200708 |         2 |
+| 200708 |         4 |
++--------+-----------+
+6 rows in set (0.00 sec)
+
+-- 如果用 IN 谓词
+SELECT course_name,
+       CASE WHEN course_id IN 
+                     (SELECT course_id FROM OpenCourses 
+                      WHERE month = 200706) THEN &#39;⚪&#39;
+            ELSE &#39;×&#39; END AS &quot;6月&quot;,
+       CASE WHEN course_id IN 
+                     (SELECT course_id FROM OpenCourses
+                      WHERE month = 200707) THEN &#39;⚪&#39;
+            ELSE &#39;×&#39; END AS &quot;7月&quot;,  
+       CASE WHEN course_id IN 
+                     (SELECT course_id FROM OpenCourses
+                      WHERE month = 200708) THEN &#39;⚪&#39;
+            ELSE &#39;×&#39; END AS &quot;8月&quot;
+FROM CourseMaster;   
+
+-- 使用EXISTS谓词
+SELECT CM.course_name,
+       CASE WHEN EXISTS
+                   (SELECT course_id FROM OpenCourses OC
+                    WHERE OC.month=200706 
+                      AND OC.course_id=CM.course_id) THEN &#39;O&#39;
+             ELSE &#39;X&#39; END AS &#39;6月&#39;,
+        CASE WHEN EXISTS
+                    (SELECT course_id FROM OpenCourses OC
+                     WHERE OC.month=200707
+                       AND OC.course_id=CM.course_id) THEN &#39;O&#39;
+             ELSE &#39;X&#39; END AS &#39;7月&#39;,
+         CASE WHEN EXISTS
+                     (SELECT course_id FROM OpenCourses OC
+                     WHERE OC.month=200708
+                       AND OC.course_id=CM.course_id) THEN &#39;O&#39;
+             ELSE &#39;X&#39; END AS &#39;8月&#39;         
+FROM CourseMaster CM;
+</code></pre>
+<p>CASE表达式用在SELECT子句里时，既可以写在聚合函数内部，也可以写在聚合函数外部。</p>
+<pre><code class="lang-sql">## StudentClub
++--------+---------+-----------+---------------+
+| std_id | club_id | club_name | main_club_flg |
++--------+---------+-----------+---------------+
+|    100 |       1 | 棒球      | Y             |
+|    100 |       2 | 管弦乐    | N             |
+|    200 |       2 | 管弦乐    | N             |
+|    200 |       3 | 羽毛球    | Y             |
+|    200 |       4 | 足球      | N             |
+|    300 |       4 | 足球      | N             |
+|    400 |       5 | 游泳      | N             |
+|    500 |       6 | 围棋      | N             |
++--------+---------+-----------+---------------+
+8 rows in set (0.00 sec)
+-- main_club_flg=&#39;Y&#39; 表示加入多个社团的学生的主社团
+
+-- 找出学生的主社团
+SELECT std_id,
+        CASE WHEN COUNT(*) = 1
+              THEN MAX(club_id)
+              ELSE MAX(CASE WHEN main_club_flg = &#39;Y&#39;
+                            THEN club_id
+                            ELSE NULL END)
+              END AS main_club
+FROM StudentClub
+GROUP BY std_id;
+
++--------+-----------+
+| std_id | main_club |
++--------+-----------+
+|    100 |         1 |
+|    200 |         3 |
+|    300 |         4 |
+|    400 |         5 |
+|    500 |         6 |
++--------+-----------+
+5 rows in set (0.00 sec)
+</code></pre>
+<h2><span id="练习">练习</span></h2><p>找最大值</p>
+<pre><code class="lang-sql">-- Greatests
++------+---+---+---+
+| key0 | x | y | z |
++------+---+---+---+
+| A    | 1 | 2 | 3 |
+| B    | 5 | 5 | 2 |
+| C    | 4 | 7 | 1 |
+| D    | 3 | 3 | 8 |
++------+---+---+---+
+4 rows in set (0.00 sec)
+
+-- 找出多列数据中的最大值
+/* 找出x列和y列中的最大值 */
+SELECT key0,
+       CASE WHEN x &lt; y THEN y
+            ELSE x END AS greatest
+FROM Greatests;
+
+-- MySQL自带函数 GREATEST 直接可实现上述过程
+SELECT key0,  GREATEST(x,y) AS greatest
+FROM Greatests;
+
++------+----------+
+| key0 | greatest |
++------+----------+
+| A    |        2 |
+| B    |        5 |
+| C    |        7 |
+| D    |        3 |
++------+----------+
+4 rows in set (0.00 sec)
+</code></pre>
+<pre><code class="lang-sql">
+
+</code></pre>
+<pre><code class="lang-sql">
+
+</code></pre>
+<h1><span id="参考资料">参考资料</span></h1>
             </article>
             <hr>
             <div>
@@ -238,8 +535,6 @@
                     
                       <a class="hover-with-bg" href="/tags/SQL/">SQL</a>
                     
-                      <a class="hover-with-bg" href="/tags/MySQL/">MySQL</a>
-                    
                   </div>
                 
                 
@@ -247,29 +542,6 @@
               
                 <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://zh.wikipedia.org/wiki/Wikipedia:CC_BY-SA_3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="nofollow noopener noopener">CC BY-SA 3.0协议</a> 。转载请注明出处！</p>
               
-              
-                <div class="post-prevnext row">
-                  <div class="post-prev col-6">
-                    
-                    
-                      <a href="/2020/04/30/Jupyter-Notebook%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Jupyter Notebook使用技巧</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
-                  </div>
-                  <div class="post-next col-6">
-                    
-                    
-                      <a href="/2020/04/29/Leetcode%E5%88%B7%E9%A2%98/">
-                        <span class="hidden-mobile">Leetcode刷题</span>
-                        <span class="visible-mobile">下一篇</span>
-                        <i class="iconfont icon-arrowright"></i>
-                      </a>
-                    
-                  </div>
-                </div>
               
             </div>
 
@@ -437,7 +709,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "SQL&nbsp;",
+        "SQL | 《SQL进阶教程》&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,
