@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    1.8k 字
+                    2.1k 字
                   </span>
                 
 
@@ -152,7 +152,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    26
+                    32
                      分钟
                   </span>
                 
@@ -525,13 +525,88 @@ FROM Greatests;
 +------+----------+
 4 rows in set (0.00 sec)
 </code></pre>
+<p>求和：</p>
+<pre><code class="lang-sql">+-----------+-----+------------+
+| pref_name | sex | population |
++-----------+-----+------------+
+| 东京      | 1   |        250 |
+| 东京      | 2   |        150 |
+| 佐贺      | 1   |         20 |
+| 佐贺      | 2   |         80 |
+| 德岛      | 1   |         60 |
+| 德岛      | 2   |         40 |
+| 爱媛      | 1   |        100 |
+| 爱媛      | 2   |         50 |
+| 福冈      | 1   |        100 |
+| 福冈      | 2   |        200 |
+| 长崎      | 1   |        125 |
+| 长崎      | 2   |        125 |
+| 香川      | 1   |        100 |
+| 香川      | 2   |        100 |
+| 高知      | 1   |        100 |
+| 高知      | 2   |        100 |
++-----------+-----+------------+
+16 rows in set (0.00 sec)
+
+SELECT sex AS &#39;性别&#39;,
+       SUM(population) AS &#39;全国&#39;,
+       SUM(CASE WHEN pref_name = &#39;德岛&#39; THEN population ELSE 0 END) AS &quot;德岛&quot;,
+       SUM(CASE WHEN pref_name = &#39;香川&#39; THEN population ELSE 0 END) AS &quot;香川&quot;,
+       SUM(CASE WHEN pref_name = &#39;爱媛&#39; THEN population ELSE 0 END) AS &quot;爱媛&quot;,
+       SUM(CASE WHEN pref_name = &#39;高知&#39; THEN population ELSE 0 END) AS &quot;高知&quot;,
+       SUM(CASE WHEN pref_name IN (&#39;德岛&#39;, &#39;香川&#39;, &#39;爱媛&#39;, &#39;高知&#39;)
+                THEN population ELSE 0 END) AS zaijie
+  FROM PopTbl2
+ GROUP BY sex;
+
++--------+--------+--------+--------+--------+--------+--------+
+| 性别   | 全国   | 德岛   | 香川   | 爱媛   | 高知   | zaijie |
++--------+--------+--------+--------+--------+--------+--------+
+| 1      |    855 |     60 |    100 |    100 |    100 |    360 |
+| 2      |    845 |     40 |    100 |     50 |    100 |    290 |
++--------+--------+--------+--------+--------+--------+--------+
+2 rows in set (0.00 sec)
+</code></pre>
+<p>乱序排序：</p>
+<pre><code class="lang-sql">
+-- 按照 B-A-D-C排序
+SELECT key0,
+       CASE key0
+         WHEN &#39;B&#39; THEN 1
+         WHEN &#39;A&#39; THEN 2
+         WHEN &#39;D&#39; THEN 3
+         WHEN &#39;C&#39; THEN 4
+         ELSE NULL END AS sort_col
+  FROM Greatests
+ ORDER BY sort_col;
+
++------+----------+
+| key0 | sort_col |
++------+----------+
+| B    |        1 |
+| A    |        2 |
+| D    |        3 |
+| C    |        4 |
++------+----------+
+4 rows in set (0.00 sec)
+</code></pre>
+<pre><code class="lang-sql">
+
+</code></pre>
 <pre><code class="lang-sql">
 
 </code></pre>
 <pre><code class="lang-sql">
 
 </code></pre>
-<h1><span id="参考资料">参考资料</span></h1>
+<pre><code class="lang-sql">
+
+</code></pre>
+<pre><code class="lang-sql">
+
+</code></pre>
+<h1><span id="参考资料">参考资料</span></h1><p>[1] <a href="https://mp.weixin.qq.com/s?__biz=MzU5NzkxODMxOA==&amp;mid=2247486368&amp;idx=1&amp;sn=3ef74be0a7b7345cba471da1370f8986&amp;chksm=fe4d5ca1c93ad5b7481d65a8fa0a8b4e585714af57ad69437d599bbac5830910562a9097a12b&amp;token=1415910284&amp;lang=zh_CN#rd" target="_blank" rel="noopener">Notes | SQL进阶教程 | 001</a></p>
+
             </article>
             <hr>
             <div>
