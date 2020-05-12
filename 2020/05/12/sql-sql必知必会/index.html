@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    1.7k 字
+                    1.8k 字
                   </span>
                 
 
@@ -152,7 +152,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    22
+                    23
                      分钟
                   </span>
                 
@@ -261,7 +261,50 @@
 <li>从什么地方选择</li>
 </ol>
 <p>从一个表中检索多列时，列名之间必须以逗号分隔</p>
-<p>SELECT的子句顺序<br>|<strong>子句</strong>|<strong>说明</strong>|<strong>是否必须使用</strong>|<br>|:———:|:——-:|:———————:|<br>|SELECT|要选择的列/表达式|是|<br>|FROM|从中检索数据的表|仅在从表中选择数据时使用|<br>|WHERE|行级过滤|否|<br>|GROUP BY|分组说明|仅在按组计算聚合时使用|<br>|HAVING|组级过滤|否|<br>|ORDER BY|输出排序顺序|否|</p>
+<p>SELECT的子句顺序</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><strong>子句</strong></th>
+<th style="text-align:center"><strong>说明</strong></th>
+<th style="text-align:center"><strong>是否必须使用</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">SELECT</td>
+<td style="text-align:center">要选择的列/表达式</td>
+<td style="text-align:center">是</td>
+</tr>
+<tr>
+<td style="text-align:center">FROM</td>
+<td style="text-align:center">从中检索数据的表</td>
+<td style="text-align:center">仅在从表中选择数据时使用</td>
+</tr>
+<tr>
+<td style="text-align:center">WHERE</td>
+<td style="text-align:center">行级过滤</td>
+<td style="text-align:center">否</td>
+</tr>
+<tr>
+<td style="text-align:center">GROUP BY</td>
+<td style="text-align:center">分组说明</td>
+<td style="text-align:center">仅在按组计算聚合时使用</td>
+</tr>
+<tr>
+<td style="text-align:center">HAVING</td>
+<td style="text-align:center">组级过滤</td>
+<td style="text-align:center">否</td>
+</tr>
+<tr>
+<td style="text-align:center">ORDER BY</td>
+<td style="text-align:center">输出排序顺序</td>
+<td style="text-align:center">否</td>
+</tr>
+</tbody>
+</table>
+</div>
 <h2><span id="distinct关键字">DISTINCT关键字</span></h2><p>DISTINCT关键字：指示数据库只返回不同的值</p>
 <ul>
 <li>作用于所有的列，而不仅仅是跟在它之后的那一列</li>
@@ -458,7 +501,57 @@ mysql&gt; SELECT prod_id, prod_price, prod_name
 </li>
 <li>同时使用ORDER BY子句和WHERE子句时，ORDER BY 应位于WHERE子句后面</li>
 </ul>
-<p>WHERE子句操作符<br>|<strong>操作符</strong>|<strong>说明</strong>|<br>|:—-:|:——:|<br>|=|等于|<br>|&lt;&gt;  或  !=    |不等于|<br>|&lt;|小于|<br>|&lt;=  或  !&gt;|小于等于 或 不大于|<br>|&gt;|大于|<br>|&gt;= 或 !&lt;|大于等于 或 不小于|<br>|BETWEEN|在指定的两个值之间|<br>|IS NULL|为NULL值|</p>
+<p>WHERE子句操作符</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><strong>操作符</strong></th>
+<th style="text-align:center"><strong>说明</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">=</td>
+<td style="text-align:center">等于</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt;&gt;  或  !=</td>
+<td style="text-align:center">不等于</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt;</td>
+<td style="text-align:center">小于</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt;=  或  !&gt;</td>
+<td style="text-align:center">小于等于 或 不大于</td>
+</tr>
+<tr>
+<td style="text-align:center">&gt;</td>
+<td style="text-align:center">大于</td>
+</tr>
+<tr>
+<td style="text-align:center">&gt;= 或 !&lt;</td>
+<td style="text-align:center">大于等于 或 不小于</td>
+</tr>
+<tr>
+<td style="text-align:center">BETWEEN</td>
+<td style="text-align:center">在指定的两个值之间</td>
+</tr>
+<tr>
+<td style="text-align:center">IS NULL</td>
+<td style="text-align:center">为NULL值</td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul>
+<li><code>!=</code> 和 <code>&lt;&gt;</code> 通常是可以互换的。但并非所有DBMS都支持这两种操作<blockquote>
+<p>eg：Microsoft Access支持 <code>&lt;&gt;</code>而不支持 <code>!=</code></p>
+</blockquote>
+</li>
+</ul>
 <pre><code class="lang-sql">
 
 </code></pre>
