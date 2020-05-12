@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    1.9k 字
+                    3.6k 字
                   </span>
                 
 
@@ -152,7 +152,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    25
+                    49
                      分钟
                   </span>
                 
@@ -261,7 +261,7 @@
 <li>从什么地方选择</li>
 </ol>
 <p>从一个表中检索多列时，列名之间必须以逗号分隔</p>
-<p>SELECT的子句顺序</p>
+<p><u>表：SELECT的子句顺序</u></p>
 <div class="table-container">
 <table>
 <thead>
@@ -305,6 +305,13 @@
 </tbody>
 </table>
 </div>
+<h2><span id="as">AS</span></h2><p>AS：使用别名</p>
+<ul>
+<li>可选</li>
+<li>别名可以是一个单词或一个字符串；是字符串的话，需要放在引号中</li>
+<li>别名有时也称为导出列（derived column）</li>
+<li>Oracle不支持AS关键字；直接指定列名的别名即可</li>
+</ul>
 <h2><span id="distinct关键字">DISTINCT关键字</span></h2><p>DISTINCT关键字：指示数据库只返回不同的值</p>
 <ul>
 <li>作用于所有的列，而不仅仅是跟在它之后的那一列</li>
@@ -501,8 +508,7 @@ mysql&gt; SELECT prod_id, prod_price, prod_name
 </li>
 <li>同时使用ORDER BY子句和WHERE子句时，ORDER BY 应位于WHERE子句后面</li>
 </ul>
-<center>表：WHERE子句操作符</center>
-
+<p><u>表：WHERE子句操作符</u></p>
 <div class="table-container">
 <table>
 <thead>
@@ -584,7 +590,234 @@ mysql&gt; SELECT prod_name, prod_price
 </code></pre>
 </li>
 </ul>
-<h2><span id="操作符">操作符</span></h2><p>SQL允许给出多个WHERE子句，使用AND或OR联结</p>
+<h2><span id="操作符">操作符</span></h2><p>操作符（operator）：用来联结或改变WHERE子句中的子句的关键字，也称逻辑操作符（logical operator）</p>
+<ul>
+<li><code>AND</code>、<code>OR</code>、<code>IN</code>、<code>NOT</code></li>
+<li>SQL允许给出多个WHERE子句，使用AND或OR联结</li>
+</ul>
+<h3><span id="and">AND</span></h3><p>AND：用在WHERE子句中的关键字，用来指示检索满足所有给定条件的行</p>
+<pre><code class="lang-sql">mysql&gt; SELECT prod_id, prod_price, prod_name
+    -&gt; FROM Products
+    -&gt; WHERE vend_id=1003 AND prod_price &lt;= 4;
++---------+------------+---------------+
+| prod_id | prod_price | prod_name     |
++---------+------------+---------------+
+| FC      |       2.50 | Carrots       |
+| TNT1    |       2.50 | TNT (1 stick) |
++---------+------------+---------------+
+2 rows in set (0.00 sec)
+</code></pre>
+<h3><span id="or">OR</span></h3><p>OR：用在WHERE子句中的关键字，用来表示检索匹配任一给定条件的行</p>
+<ul>
+<li>AND的优先级高于OR</li>
+<li>同时使用AND和OR时，注意使用圆括号对操作符进行明确分组<pre><code class="lang-sql">mysql&gt; SELECT prod_id, prod_price, prod_name
+  -&gt; FROM Products
+  -&gt; WHERE vend_id=1003 OR vend_id=1002;
++---------+------------+----------------+
+| prod_id | prod_price | prod_name      |
++---------+------------+----------------+
+| DTNTR   |      13.00 | Detonator      |
+| FB      |      10.00 | Bird seed      |
+| FC      |       2.50 | Carrots        |
+| FU1     |       3.42 | Fuses          |
+| OL1     |       8.99 | Oil can        |
+| SAFE    |      50.00 | Safe           |
+| SLING   |       4.49 | Sling          |
+| TNT1    |       2.50 | TNT (1 stick)  |
+| TNT2    |      10.00 | TNT (5 sticks) |
++---------+------------+----------------+
+9 rows in set (0.00 sec)
+</code></pre>
+</li>
+</ul>
+<h3><span id="in">IN</span></h3><p>IN：WHERE子句中用来指定要匹配值的清单的关键字，功能与OR相当</p>
+<ul>
+<li>IN操作符一般比一组OR操作符执行得更快<pre><code class="lang-sql">mysql&gt; SELECT prod_id, prod_price, prod_name
+  -&gt; FROM Products
+  -&gt; WHERE vend_id IN (1002, 1003);
++---------+------------+----------------+
+| prod_id | prod_price | prod_name      |
++---------+------------+----------------+
+| DTNTR   |      13.00 | Detonator      |
+| FB      |      10.00 | Bird seed      |
+| FC      |       2.50 | Carrots        |
+| FU1     |       3.42 | Fuses          |
+| OL1     |       8.99 | Oil can        |
+| SAFE    |      50.00 | Safe           |
+| SLING   |       4.49 | Sling          |
+| TNT1    |       2.50 | TNT (1 stick)  |
+| TNT2    |      10.00 | TNT (5 sticks) |
++---------+------------+----------------+
+9 rows in set (0.00 sec)
+</code></pre>
+</li>
+</ul>
+<h3><span id="not">NOT</span></h3><p>NOT：WHERE子句中用来否定其后条件的关键字</p>
+<ul>
+<li>常与IN联合使用</li>
+<li>大多数DBMS允许使用<code>NOT</code>否定任何条件</li>
+<li>MariaDB支持使用<code>NOT</code>否定IN、BETWEEN、EXISTS子句<pre><code class="lang-sql">mysql&gt; SELECT prod_id, prod_price, prod_name
+  -&gt; FROM Products
+  -&gt; WHERE NOT vend_id=1003
+  -&gt; ORDER BY prod_name;
++---------+------------+--------------+
+| prod_id | prod_price | prod_name    |
++---------+------------+--------------+
+| ANV01   |       5.99 | .5 ton anvil |
+| ANV02   |       9.99 | 1 ton anvil  |
+| ANV03   |      14.99 | 2 ton anvil  |
+| FU1     |       3.42 | Fuses        |
+| JP1000  |      35.00 | JetPack 1000 |
+| JP2000  |      55.00 | JetPack 2000 |
+| OL1     |       8.99 | Oil can      |
++---------+------------+--------------+
+7 rows in set (0.00 sec)
+</code></pre>
+</li>
+</ul>
+<h1><span id="pattern">pattern</span></h1><p>搜索模式（search pattern）：由字面值、通配符或两者组合构成的搜索条件</p>
+<p>谓词（predicate）：操作符作为谓词时不是操作符</p>
+<ul>
+<li>从技术上来说，LIKE是谓词而不是操作符</li>
+</ul>
+<h2><span id="通配符">通配符</span></h2><p>通配符（wildcard）：用来匹配值得一部分的特殊字符</p>
+<ul>
+<li>通配符实质上是WHERE子句中有特殊意义的字符</li>
+<li>要在WHERE子句中使用通配符，必须使用LIKE操作符</li>
+<li>通配符搜索只能用于文本字段（字符串），非文本数据类型的字段不能使用通配符搜索</li>
+<li>不要过度使用通配符</li>
+<li>注意通配符的位置</li>
+</ul>
+<h3><span id>%</span></h3><p><code>%</code> ：百分号通配符，表示任何字符出现任意次数</p>
+<ul>
+<li>Microsoft Access使用的通配符是 <code>*</code> 而不是 <code>%</code></li>
+<li>根据DBMS的不同及其配置，搜索可以是区分大小写的</li>
+<li>通配符可在搜索模式的任意位置使用，并且可以使用多个通配符</li>
+<li><code>%</code> 代表搜索模式中给定位置的0个、1个或多个字符</li>
+<li><code>%</code> 不会匹配NULL<pre><code class="lang-sql">mysql&gt; ##找出prod_name以Jet开头的产品
+mysql&gt; SELECT prod_id, prod_name
+  -&gt; FROM Products
+  -&gt; WHERE prod_name LIKE &#39;Jet%&#39;;
++---------+--------------+
+| prod_id | prod_name    |
++---------+--------------+
+| JP1000  | JetPack 1000 |
+| JP2000  | JetPack 2000 |
++---------+--------------+
+2 rows in set (0.00 sec)
+</code></pre>
+</li>
+</ul>
+<h3><span id="_">_</span></h3><p><code>_</code> ：下划线通配符；用途与 <code>%</code> 一样，但是仅匹配单个字符</p>
+<ul>
+<li>DB2不支持下划线通配符</li>
+<li>Microsoft Access中对应的是 <code>？</code>而不是 <code>_</code></li>
+</ul>
+<h3><span id>[]</span></h3><p><code>[ ]</code> ：方括号通配符，用来指定一个字符集；必须匹配指定位置的一个字符</p>
+<ul>
+<li>只有Microsoft Access和SQL Server支持集合</li>
+<li>使用 <code>^</code> 来表示否定；Microsoft Access是用 <code>！</code>表示否定而不是 <code>^</code><pre><code class="lang-sql">## 找出姓名首字母为V或T的学生信息
+SELECT ID, name, dept_name
+FROM student
+WHERE name LIKE &#39;[VT]%&#39;;
+## 找出姓名首字母不为V且不为T的学生信息
+SELECT ID, name, dept_name
+FROM student
+WHERE name LIKE &#39;[^VT]%&#39;;
+</code></pre>
+<h1><span id="计算字段">计算字段</span></h1>字段（field）：基本上与列（column）的意思相同，经常互换使用；数据库列一般称为列，而字段通常与计算字段一起使用</li>
+</ul>
+<h2><span id="拼接">拼接</span></h2><p><strong>拼接</strong>（concatenate）：将值联结到一起（将一个值附加到另一个值）构成单个值</p>
+<ul>
+<li>Access、SQL Server使用 <code>+</code> 拼接</li>
+<li>DB2、Oracle、PostgreSQL、SQLite、Open Office Base使用 <code>||</code> 拼接</li>
+<li>MySQL、MariaDB使用特殊函数 <code>CONCAT()</code><br>```sql<br>mysql&gt; SELECT * FROM Vendors;<br>+————-+————————+————————-+——————-+——————+—————+———————+<br>| vend_id | vend_name      | vend_address    | vend_city   | vend_state | vend_zip | vend_country |<br>+————-+————————+————————-+——————-+——————+—————+———————+<br>|    1001 | Anvils R Us    | 123 Main Street | Southfield  | MI         | 48075    | USA          |<br>|    1002 | LT Supplies    | 500 Park Street | Anytown     | OH         | 44333    | USA          |<br>|    1003 | ACME           | 555 High Street | Los Angeles | CA         | 90046    | USA          |<br>|    1004 | Furball Inc.   | 1000 5th Avenue | New York    | NY         | 11111    | USA          |<br>|    1005 | Jet Set        | 42 Galaxy Road  | London      | NULL       | N16 6PS  | England      |<br>|    1006 | Jouets Et Ours | 1 Rue Amusement | Paris       | NULL       | 45678    | France       |<br>+————-+————————+————————-+——————-+——————+—————+———————+<br>6 rows in set (0.00 sec)</li>
+</ul>
+<p>mysql&gt; SELECT CONCAT(vend_name, ‘(‘, vend_country, ‘)’)<br>    -&gt; FROM Vendors<br>    -&gt; ORDER BY vend_name;<br>+—————————————————————-+<br>| CONCAT(vend_name, ‘(‘, vend_country, ‘)’) |<br>+—————————————————————-+<br>| ACME(USA)                                 |<br>| Anvils R Us(USA)                          |<br>| Furball Inc.(USA)                         |<br>| Jet Set(England)                          |<br>| Jouets Et Ours(France)                    |<br>| LT Supplies(USA)                          |<br>+—————————————————————-+<br>6 rows in set (0.01 sec)</p>
+<pre><code>SQL Server：
+```sql
+SELECT ID + &#39;(&#39; + dept_name + &#39;)&#39;
+FROM student
+ORDER BY ID;
+</code></pre><p>表 ：SQL算术操作符</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">操作符</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">+</td>
+<td style="text-align:center">加</td>
+</tr>
+<tr>
+<td style="text-align:center">-</td>
+<td style="text-align:center">减</td>
+</tr>
+<tr>
+<td style="text-align:center">*</td>
+<td style="text-align:center">乘</td>
+</tr>
+<tr>
+<td style="text-align:center">/</td>
+<td style="text-align:center">除</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h1><span id="字符串函数">字符串函数</span></h1><p>可移植（portable）：所编写的代码可以在多个系统上运行</p>
+<ul>
+<li>SQL函数不可移植</li>
+</ul>
+<h2><span id="substr">SUBSTR()</span></h2><p>提取字符串的组成部分：</p>
+<ul>
+<li>Access：使用 <code>MID()</code></li>
+<li>DB2、Oracle、PostgreSQL、SQLite：使用 <code>SUBSTR()</code></li>
+<li>MySQL、SQL Server：使用 <code>SUBSTRING()</code><br>```sql<br>mysql&gt; SELECT * FROM Vendors;<br>+————-+————————+————————-+——————-+——————+—————+———————+<br>| vend_id | vend_name      | vend_address    | vend_city   | vend_state | vend_zip | vend_country |<br>+————-+————————+————————-+——————-+——————+—————+———————+<br>|    1001 | Anvils R Us    | 123 Main Street | Southfield  | MI         | 48075    | USA          |<br>|    1002 | LT Supplies    | 500 Park Street | Anytown     | OH         | 44333    | USA          |<br>|    1003 | ACME           | 555 High Street | Los Angeles | CA         | 90046    | USA          |<br>|    1004 | Furball Inc.   | 1000 5th Avenue | New York    | NY         | 11111    | USA          |<br>|    1005 | Jet Set        | 42 Galaxy Road  | London      | NULL       | N16 6PS  | England      |<br>|    1006 | Jouets Et Ours | 1 Rue Amusement | Paris       | NULL       | 45678    | France       |<br>+————-+————————+————————-+——————-+——————+—————+———————+<br>6 rows in set (0.00 sec)<br>mysql&gt; ## 截取vend_address的第4个字符（包括空格）开始(包括第4个字符)的所有字符<br>mysql&gt; SELECT SUBSTRING(vend_address, 4)<br>  -&gt; FROM Vendors;<br>+——————————————+<br>| SUBSTRING(vend_address, 4) |<br>+——————————————+<br>|  Main Street               |<br>|  Park Street               |<br>|  High Street               |<br>| 0 5th Avenue               |<br>| Galaxy Road                |<br>| ue Amusement               |<br>+——————————————+<br>6 rows in set (0.00 sec)</li>
+</ul>
+<p>mysql&gt; ## 截取vend_address的倒数第4个字符开始的所有字符<br>mysql&gt; SELECT SUBSTRING(vend_address, -4)<br>    -&gt; FROM Vendors;<br>+——————————————-+<br>| SUBSTRING(vend_address, -4) |<br>+——————————————-+<br>| reet                        |<br>| reet                        |<br>| reet                        |<br>| enue                        |<br>| Road                        |<br>| ment                        |<br>+——————————————-+<br>6 rows in set (0.00 sec)<br>mysql&gt; ## 截取vend_address的第4-6个字符<br>mysql&gt; SELECT SUBSTRING(vend_address, 4, 3)<br>    -&gt; FROM Vendors;<br>+———————————————-+<br>| SUBSTRING(vend_address, 4, 3) |<br>+———————————————-+<br>|  Ma                           |<br>|  Pa                           |<br>|  Hi                           |<br>| 0 5                           |<br>| Gal                           |<br>| ue                            |<br>+———————————————-+<br>6 rows in set (0.00 sec)<br>— 第4~6个字符，共有3个字符<br>mysql&gt; ## 截取vend_address的倒数第4个~倒数第2个字符<br>mysql&gt; SELECT SUBSTRING(vend_address, -4, 3)<br>    -&gt; FROM Vendors;<br>+————————————————+<br>| SUBSTRING(vend_address, -4, 3) |<br>+————————————————+<br>| ree                            |<br>| ree                            |<br>| ree                            |<br>| enu                            |<br>| Roa                            |<br>| men                            |<br>+————————————————+<br>6 rows in set (0.00 sec)</p>
+<pre><code>
+## TRIM()
+TRIM() ：去掉字符串左右两边的空格
+
+
+## RTRIM()
+RTRIM() ：去掉字符串右边的所有空格
+
+## LTRIM()
+LTRIM() ：去掉字符串左边的所有空格
+
+## LEFT()
+LEFT() ：返回字符串左边的字符
+
+## RIGHT()
+RIGHT() ：返回字符串右边的字符
+
+## LENGTH()
+LENGTH() ：返回字符串的长度；或`DATALENGTH()` 、`LEN()`
+
+```sql
+</code></pre><pre><code class="lang-sql">
+
+</code></pre>
+<pre><code class="lang-sql">
+
+</code></pre>
+<pre><code class="lang-sql">
+
+</code></pre>
+<pre><code class="lang-sql">
+
+</code></pre>
+<pre><code class="lang-sql">
+
+</code></pre>
+<pre><code class="lang-sql">
+
+</code></pre>
 <h1><span id="参考资料">参考资料</span></h1><p>[1] <a href="https://book.douban.com/subject/24250054/" target="_blank" rel="noopener">SQL必知必会</a><br>[2] <a href="https://forta.com/wp-content/uploads/books/0672327120/mysql_scripts.zip" target="_blank" rel="noopener">本文sql脚本参照</a></p>
 
             </article>
