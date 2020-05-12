@@ -17,7 +17,7 @@
   <meta name="description" content="统计一只狗，梦想有只猫">
   <meta name="author" content="ShootingWang">
   <meta name="keywords" content="">
-  <title>SQL - ShootingWang</title>
+  <title>SQL | 《sql必知必会》 - ShootingWang</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
 <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
@@ -131,8 +131,8 @@
               
                 <div class="mt-3 post-meta">
                   <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-                  <time datetime="2020-04-30 00:58">
-                    星期四, 四月 30日 2020, 12:58 凌晨
+                  <time datetime="2020-05-12 21:27">
+                    星期二, 五月 12日 2020, 9:27 晚上
                   </time>
                 </div>
               
@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    35 字
+                    901 字
                   </span>
                 
 
@@ -152,7 +152,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    1
+                    10
                      分钟
                   </span>
                 
@@ -193,30 +193,151 @@
           <div class="post-content mx-auto" id="post">
             
             <article class="markdown-body">
-              <p>SQL相关知识积累~</p>
-<a id="more"></a>
-<h1><span id="通用">通用</span></h1><ul>
-<li><a href="/2020/05/03/sql-1-%E8%8C%83%E5%BC%8F/" title="范式">范式</a></li>
-<li><a href="/2020/05/03/sql-2-%E6%A8%A1%E5%BC%8F/" title="模式">模式</a></li>
-<li><a href="/2020/05/03/sql-3-%E6%95%B0%E6%8D%AE%E5%AE%8C%E6%95%B4%E6%80%A7/" title="数据完整性">数据完整性</a></li>
-<li>
+              <p>《SQL必知必会》读书笔记</p>
+<h1><span id="基本概念">基本概念</span></h1><ul>
+<li><strong>数据库</strong>（database）：保存有组织的数据的容器<ul>
+<li>通常是一个文件或一组文件</li>
+</ul>
+</li>
+<li><strong>数据库管理系统</strong>（DBMS，Database Management System）：数据库软件<ul>
+<li>数据库是通过DBMS创建和操作的容器</li>
+</ul>
+</li>
+<li><strong>表</strong>（table）：某种特定类型数据的结构化清单<ul>
+<li>存储在表中的数据是同一种类型的数据或清单</li>
+<li>在相同数据库中不能两次使用相同的表名，在不同的数据库中可以使用相同的表名</li>
+<li>表由列组成</li>
+</ul>
+</li>
+<li><strong>模式</strong>（schema）：关于数据库和表的布局及特性的信息</li>
+<li><strong>列</strong>（column）：表中的一个字段。所有表都是由一个或多个列组成的<ul>
+<li>数据库中的每个列都有相应的数据类型</li>
+</ul>
+</li>
+<li><strong>行</strong>（row）：表中的一个记录<ul>
+<li>表中的数据按行存储</li>
+</ul>
+</li>
+<li><strong>数据类型</strong>（datatype）：所允许的数据的类型<ul>
+<li>每个表列都有相应的数据类型，限制或允许该列中存储的数据</li>
+<li>数据类型还帮助正确地分类数据，并在优化磁盘使用方面起重要作用</li>
+</ul>
+</li>
+<li><strong>主键</strong>（primary key）：一列（或一组列），其值能够唯一标识表中每一行<ul>
+<li>主键用来表示一个特定的行</li>
+<li>主键应满足：<ul>
+<li>任意两行都不具有相同的主键值</li>
+<li>每一行都必须具有一个主键值（主键列不允许为NULL）</li>
+<li>主键列中的值不允许修改或更新</li>
+<li>主键值不能重复使用（如果某行从表中删除，它的主键不能赋给新行）</li>
+</ul>
 </li>
 </ul>
-<h1><span id="mysql">MySQL</span></h1><ul>
-<li>
+</li>
+<li><strong>子句</strong>（clause）：SQL语句由子句构成；一个子句通常由一个关键字加上所提供的数据组成 </li>
+</ul>
+<p><strong>SQL</strong>（发音为S-Q-L或sequel）：结构化查询语言（Structural Query Language），专门用来与数据库沟通的语言</p>
+<ul>
+<li>SQL语句不区分大小写<ul>
+<li>多数SQL开发人员喜欢对SQL关键字使用大写，而对列名和表名使用小写，使代码更易于阅读和调试</li>
+</ul>
+</li>
+<li>多条SQL语句必须以分号分隔<ul>
+<li>多数DBMS不需要在单条SQL语句后面加分号</li>
+</ul>
+</li>
+<li>在处理SQL语句时，其中所有空格都被忽略<ul>
+<li>多数SQL开发人员认为，将SQL语句分成多行更容易阅读和调试</li>
+</ul>
 </li>
 </ul>
-<h1><span id="ms-sql-server">MS SQL Server</span></h1><ul>
-<li>
+<h1><span id="select语句">SELECT语句</span></h1><p>使用SELECT检索表数据，必须至少给出两条信息：</p>
+<ol>
+<li>想选择什么</li>
+<li>从什么地方选择</li>
+</ol>
+<p>从一个表中检索多列时，列名之间必须以逗号分隔</p>
+<h2><span id="distinct关键字">DISTINCT关键字</span></h2><p>DISTINCT关键字：指示数据库只返回不同的值</p>
+<ul>
+<li>作用于所有的列，而不仅仅是跟在它之后的那一列</li>
+</ul>
+<pre><code class="lang-sql">mysql&gt; SELECT vend_id FROM Products;
++---------+
+| vend_id |
++---------+
+|    1001 |
+|    1001 |
+|    1001 |
+|    1002 |
+|    1002 |
+|    1003 |
+|    1003 |
+|    1003 |
+|    1003 |
+|    1003 |
+|    1003 |
+|    1003 |
+|    1005 |
+|    1005 |
++---------+
+14 rows in set (0.01 sec)
+mysql&gt; SELECT DISTINCT vend_id FROM Products;
++---------+
+| vend_id |
++---------+
+|    1001 |
+|    1002 |
+|    1003 |
+|    1005 |
++---------+
+4 rows in set (0.01 sec)
+</code></pre>
+<h2><span id="限制返回的行数">限制返回的行数</span></h2><ul>
+<li>SQL Server或Acess：<code>TOP</code><pre><code class="lang-sql">-- 返回前5行数据
+SELECT TOP 5 prod_name FROM Products;
+</code></pre>
+</li>
+<li>DB2：<code>FETCH FIRST ... ROWS ONLY</code><pre><code class="lang-sql">SELECT TOP 5 prod_name FROM Products;
+SELECT prod_name FROM Products 
+FETCH FIRST 5 ROWS ONLY;
+</code></pre>
+</li>
+<li>Oracle：行计数器 <code>ROWNUM</code><pre><code class="lang-sql">SELECT prod_name FROM Products
+WHERE ROWNUM&lt;=5;
+</code></pre>
+</li>
+<li>MySQL、MariaDB、PostgreSQL、SQLite：<code>LIMIT</code><pre><code class="lang-sql">mysql&gt; SELECT prod_name FROM Products LIMIT 5;
++--------------+
+| prod_name    |
++--------------+
+| .5 ton anvil |
+| 1 ton anvil  |
+| 2 ton anvil  |
+| Detonator    |
+| Bird seed    |
++--------------+
+5 rows in set (0.00 sec)
+</code></pre>
 </li>
 </ul>
-<h1><span id="access">ACCESS</span></h1><ul>
-<li><a href="/2020/05/03/access-1/" title="ACCESS窗体">ACCESS窗体</a>
-</li>
-</ul>
-<h1><span id="学习资源">学习资源</span></h1><ul>
-<li><a href="/2020/05/12/sql-sql%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A/" title="《SQL必知必会》">《SQL必知必会》</a></li>
-</ul>
+<h2><span id="限制检索的起始位置">限制检索的起始位置</span></h2><p>限制检索的起始位置：<code>OFFSET</code></p>
+<pre><code class="lang-sql"> -- 从第3行起（不包括第3行）返回前5行数据
+ mysql&gt; SELECT prod_name FROM Products LIMIT 5 OFFSET 3;
+ +--------------+
+ | prod_name    |
+ +--------------+
+ | Detonator    |
+ | Bird seed    |
+ | Carrots      |
+ | Fuses        |
+ | JetPack 1000 |
+ +--------------+
+ 5 rows in set (0.00 sec)
+</code></pre>
+<pre><code class="lang-sql">
+
+</code></pre>
+<h1><span id="参考资料">参考资料</span></h1><p>[1] <a href="https://book.douban.com/subject/24250054/" target="_blank" rel="noopener">SQL必知必会</a><br>[2] <a href="https://forta.com/wp-content/uploads/books/0672327120/mysql_scripts.zip" target="_blank" rel="noopener">本文sql脚本参照</a></p>
 
             </article>
             <hr>
@@ -236,8 +357,6 @@
                     
                       <a class="hover-with-bg" href="/tags/SQL/">SQL</a>
                     
-                      <a class="hover-with-bg" href="/tags/MySQL/">MySQL</a>
-                    
                   </div>
                 
                 
@@ -245,29 +364,6 @@
               
                 <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://zh.wikipedia.org/wiki/Wikipedia:CC_BY-SA_3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="nofollow noopener noopener">CC BY-SA 3.0协议</a> 。转载请注明出处！</p>
               
-              
-                <div class="post-prevnext row">
-                  <div class="post-prev col-6">
-                    
-                    
-                      <a href="/2020/04/30/Jupyter-Notebook%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Jupyter Notebook使用技巧</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
-                  </div>
-                  <div class="post-next col-6">
-                    
-                    
-                      <a href="/2020/04/29/Leetcode%E5%88%B7%E9%A2%98/">
-                        <span class="hidden-mobile">Leetcode刷题</span>
-                        <span class="visible-mobile">下一篇</span>
-                        <i class="iconfont icon-arrowright"></i>
-                      </a>
-                    
-                  </div>
-                </div>
               
             </div>
 
@@ -435,7 +531,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "SQL&nbsp;",
+        "SQL | 《sql必知必会》&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,
