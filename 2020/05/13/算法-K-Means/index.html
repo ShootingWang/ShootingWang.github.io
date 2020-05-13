@@ -8,7 +8,7 @@
 <head>
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
   <link rel="apple-touch-icon" sizes="76x76" href="/img/apple-touch-icon.png">
-  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <link rel="icon" type="image/png" href="/img/favicon2.png">
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    0 字
+                    170 字
                   </span>
                 
 
@@ -193,7 +193,54 @@
           <div class="post-content mx-auto" id="post">
             
             <article class="markdown-body">
-              
+              <h1><span id="k-means">K-Means</span></h1><h2><span id="优点">优点</span></h2><ul>
+<li>原理简单</li>
+<li>容易实现</li>
+</ul>
+<h2><span id="缺点">缺点</span></h2><ul>
+<li>收敛速度较慢</li>
+<li>算法的时间复杂度较高$O(nK)$<ul>
+<li>$n$样本点个数</li>
+<li>$K$聚类类别数</li>
+</ul>
+</li>
+<li>不能发现非凸形状的簇</li>
+<li>对噪声和离群点敏感</li>
+<li>结果不一定是全局最优，只能保证局部最优</li>
+</ul>
+<h2><span id="k-means-vs-k-medoids">K-Means vs K-Medoids</span></h2><ul>
+<li>二者的区别主要在于：质心的选择</li>
+</ul>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">K-Means</th>
+<th style="text-align:center">K-Medoids</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">质心的选择</td>
+<td style="text-align:center">样本点均值</td>
+<td style="text-align:center">从样本点中选取</td>
+</tr>
+<tr>
+<td style="text-align:center">计算质心的时间复杂度</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">$O(n^2)$<br>运行速度较慢</td>
+</tr>
+<tr>
+<td style="text-align:center">对噪声</td>
+<td style="text-align:center">敏感</td>
+<td style="text-align:center">相对较不敏感，比较稳健（robust）</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h1><span id="参考资料">参考资料</span></h1><p>[] <a href></a><br>[] <a href></a><br>[] <a href="https://blog.csdn.net/databatman/article/details/50445561" target="_blank" rel="noopener">机器学习：K-means和K-medoids对比</a></p>
+
             </article>
             <hr>
             <div>
@@ -513,7 +560,23 @@
       mermaid.initialize({{ JSON.stringify(theme.mermaid.options) }});
     }
   </script>
-{% endif %}<!-- hexo-inject:begin --><!-- hexo-inject:end -->
+{% endif %}
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </body>
 </html>

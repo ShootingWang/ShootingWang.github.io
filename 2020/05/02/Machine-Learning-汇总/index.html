@@ -8,7 +8,7 @@
 <head>
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
   <link rel="apple-touch-icon" sizes="76x76" href="/img/apple-touch-icon.png">
-  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <link rel="icon" type="image/png" href="/img/favicon2.png">
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    217 字
+                    220 字
                   </span>
                 
 
@@ -256,6 +256,7 @@
 </ul>
 <h5><span id="ridgelasso-regression">Ridge/Lasso Regression</span></h5><h3><span id="unsupervised-learning">Unsupervised Learning</span></h3><h4><span id="clustering">Clustering</span></h4><ul>
 <li>K-Means</li>
+<li>K-Medoids</li>
 <li>Mean-Shift</li>
 <li>DBSCAN</li>
 <li>OPTICS</li>
@@ -267,7 +268,7 @@
 <li>
 </li>
 </ul>
-<h5><span id="mean-shift">Mean-Shift</span></h5><h5><span id="dbscan">DBSCAN</span></h5><h5><span id="optics">OPTICS</span></h5><h5><span id="agglomerative">Agglomerative</span></h5><h5><span id="fuzzy-c-means">Fuzzy C-Means</span></h5><h4><span id="pattern-search">Pattern Search</span></h4><ul>
+<h5><span id="k-medoids">K-Medoids</span></h5><h5><span id="mean-shift">Mean-Shift</span></h5><h5><span id="dbscan">DBSCAN</span></h5><h5><span id="optics">OPTICS</span></h5><h5><span id="agglomerative">Agglomerative</span></h5><h5><span id="fuzzy-c-means">Fuzzy C-Means</span></h5><h4><span id="pattern-search">Pattern Search</span></h4><ul>
 <li>Euclat</li>
 <li>Apriori</li>
 <li>FP-Growth</li>
@@ -668,7 +669,23 @@
       mermaid.initialize({{ JSON.stringify(theme.mermaid.options) }});
     }
   </script>
-{% endif %}<!-- hexo-inject:begin --><!-- hexo-inject:end -->
+{% endif %}
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </body>
 </html>
