@@ -4,19 +4,6 @@
   
   
   <entry>
-    <title>python-sklearn/Sklearn学习</title>
-    <link href="/2020/05/13/python-sklearn/Sklearn%E5%AD%A6%E4%B9%A0/"/>
-    <url>/2020/05/13/python-sklearn/Sklearn%E5%AD%A6%E4%B9%A0/</url>
-    
-    <content type="html"><![CDATA[<pre><code class="lang-python">###导入线性回归模型import numpy as npimport matplotlib.pyplot as pltfrom sklearn.linear_model import LinearRegression%matplotlib inlineX = [[1], [4]]   ###两个点的横坐标y = [3, 5]   ###两个点的纵坐标lr = LinearRegression().fit(X, y)z = np.linspace(0, 5, 20)plt.scatter(X, y, s= 50)   ###参数s设置点的大小plt.plot(z, lr.predict(z.reshape(-1, 1)), c=&#39;green&#39;)plt.title(&quot;Straight Line&quot;)plt.show()</code></pre><p><img src="/ShootingWang/ShootingWang.github.io/2020/05/13/python-sklearn/Sklearn%E5%AD%A6%E4%B9%A0/output_0_0.png" srcset="/img/loading.gif" alt="png"></p><pre><code class="lang-python">print(&quot;y = {:.4f}&quot;.format(lr.coef_[0]),&quot;x&quot;,&quot;+{:.4f}&quot;.format(lr.intercept_))</code></pre><pre><code>y = 0.6667 x +2.3333</code></pre><pre><code class="lang-python">import numpy as npimport matplotlib.pyplot as plt###首先生成数据集from sklearn.datasets import make_regressionX ,y = make_regression(n_samples=100, n_features=1,                       n_informative=1, noise=50, random_state=1)from sklearn.linear_model import LinearRegression###拟合reg = LinearRegression()reg.fit(X, y)z = np.linspace(-3, 3, 200).reshape(-1, 1)plt.scatter(X, y, c=&#39;blue&#39;, s=50)plt.plot(z, reg.predict(z), c=&#39;k&#39;)plt.title(&quot;Linear Regression&quot;)plt.show()</code></pre><p><img src="/ShootingWang/ShootingWang.github.io/2020/05/13/python-sklearn/Sklearn%E5%AD%A6%E4%B9%A0/output_2_0.png" srcset="/img/loading.gif" alt="png"></p><pre><code class="lang-python">###加载糖尿病数据集from sklearn.datasets import load_diabetesX, y = load_diabetes().data, load_diabetes().targetfrom sklearn.model_selection import train_test_splitX_train, X_test, y_train, y_test = train_test_split(X, y, random_state=8)from sklearn.linear_model import LinearRegressionlr = LinearRegression().fit(X_train, y_train)print(&quot;训练数据集得分：{:.3f}&quot;.format(lr.score(X_train, y_train)))print(&quot;测试数据集得分：{:.3f}&quot;.format(lr.score(X_test, y_test)))</code></pre><pre><code>训练数据集得分：0.530测试数据集得分：0.459</code></pre><pre><code class="lang-python">X = [[6], [8], [10], [14], [18]]y = [[7], [9], [13], [17.5], [18]]from sklearn.linear_model import LinearRegressionmodel = LinearRegression()model.fit(X, y)X2 = [[0], [10], [14], [25]]y2 = model.predict(X2)###残差yr = model.predict(X)%matplotlib inlineimport matplotlib.pyplot as pltplt.plot(X, y, &#39;k.&#39;)plt.plot(X2, y2, &#39;g-&#39;)for idx, x in enumerate(X):    plt.plot([x, x], [y[idx], yr[idx]], &#39;r-&#39;)plt.xlabel(&quot;X&quot;)plt.ylabel(&quot;y&quot;)plt.axis([0, 25, 0, 25])plt.grid(True)plt.show()</code></pre><p><img src="/ShootingWang/ShootingWang.github.io/2020/05/13/python-sklearn/Sklearn%E5%AD%A6%E4%B9%A0/output_4_0.png" srcset="/img/loading.gif" alt="png"></p><pre><code class="lang-python"></code></pre>]]></content>
-    
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>R</title>
     <link href="/2020/05/11/R/"/>
     <url>/2020/05/11/R/</url>
