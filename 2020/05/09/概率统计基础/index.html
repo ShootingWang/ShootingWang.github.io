@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    357 字
+                    393 字
                   </span>
                 
 
@@ -204,7 +204,9 @@
 </ul>
 <h2><span id="随机变量">随机变量</span></h2><h3><span id="期望">期望</span></h3><h4><span id="条件期望">条件期望</span></h4><p><strong>条件期望/条件均值</strong>（Conditional Mean）：</p>
 <script type="math/tex; mode=display">E\left(X|Y=y\right)=\int xf_{X|Y}(x|y)\mathrm{d}x</script><h4><span id="重期望">重期望</span></h4><p>LIE(Law of Iterated Expectation)</p>
-<script type="math/tex; mode=display">E(X)=E\left[E\left(X|Y\right) \right]</script><script type="math/tex; mode=display">E\left[Z|X \right]=E\left[E\left(Z|Y,X\right)|X \right]</script><script type="math/tex; mode=display">Var(X)=E\left[Var(X|Y) \right]+Var\left[E\left(X|Y \right)\right]</script><h3><span id="方差">方差</span></h3><h4><span id="条件方差">条件方差</span></h4><script type="math/tex; mode=display">Var\left(X|Y=y\right)=\int \left[x-E\left(X|Y=y \right)\right]^2f_{X|Y}(x|y)\mathrm{d}x</script><h2><span id="分布">分布</span></h2><ul>
+<script type="math/tex; mode=display">E(X)=E\left[E\left(X|Y\right) \right]</script><script type="math/tex; mode=display">E\left[Z|X \right]=E\left[E\left(Z|Y,X\right)|X \right]</script><script type="math/tex; mode=display">Var(X)=E\left[Var(X|Y) \right]+Var\left[E\left(X|Y \right)\right]</script><h3><span id="方差">方差</span></h3><h4><span id="条件方差">条件方差</span></h4><script type="math/tex; mode=display">Var\left(X|Y=y\right)=\int \left[x-E\left(X|Y=y \right)\right]^2f_{X|Y}(x|y)\mathrm{d}x</script><h3><span id="协方差">协方差</span></h3><p>Covariance</p>
+<h4><span id="条件协方差">条件协方差</span></h4><p>Law of Total Conditional Variance：</p>
+<script type="math/tex; mode=display">Cov(Z|X)=Cov\left[E\left(Z|Y,X\right)|X \right]+E\left[Cov\left(Z|Y,X\right)|X \right]</script><h2><span id="分布">分布</span></h2><ul>
 <li><strong>概率密度函数</strong>（pdf，probability density function）</li>
 </ul>
 <h3><span id="贝塔分布">贝塔分布</span></h3><p>Beta Distribution<br>$X\sim B(\alpha, \beta)$, 则$X$的概率密度函数为</p>
