@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    1.5k 字
+                    2.3k 字
                   </span>
                 
 
@@ -152,7 +152,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    21
+                    36
                      分钟
                   </span>
                 
@@ -385,16 +385,152 @@ print(&quot;红酒数据集中的键：\n{}&quot;.format(wine_dataset.keys()))
 <pre><code class="lang-Python">print(&quot;数据概况：{}&quot;.format(wine_dataset[&#39;data&#39;].shape))
 #数据概况：(178, 13)
 </code></pre>
-<pre><code class="lang-Python">
+<p>共有178个样本，每个样本有13个特征变量。</p>
+<p>下面查看该数据集的描述（超长）：</p>
+<pre><code class="lang-Python">print(wine_dataset[&#39;DESCR&#39;])
+</code></pre>
+<pre><code> .. _wine_dataset:
+
+ Wine recognition dataset
+ ------------------------
+
+ **Data Set Characteristics:**
+
+ :Number of Instances: 178 (50 in each of three classes)
+ :Number of Attributes: 13 numeric, predictive attributes and the class
+ :Attribute Information:
+     - Alcohol
+     - Malic acid
+     - Ash
+    - Alcalinity of ash  
+     - Magnesium
+    - Total phenols
+     - Flavanoids
+     - Nonflavanoid phenols
+     - Proanthocyanins
+    - Color intensity
+     - Hue
+     - OD280/OD315 of diluted wines
+     - Proline
+
+ - class:
+        - class_0
+        - class_1
+        - class_2
+
+ :Summary Statistics:
+
+ ============================= ==== ===== ======= =====
+                               Min   Max   Mean     SD
+ ============================= ==== ===== ======= =====
+ Alcohol:                      11.0  14.8    13.0   0.8
+ Malic Acid:                   0.74  5.80    2.34  1.12
+ Ash:                          1.36  3.23    2.36  0.27
+ Alcalinity of Ash:            10.6  30.0    19.5   3.3
+ Magnesium:                    70.0 162.0    99.7  14.3
+ Total Phenols:                0.98  3.88    2.29  0.63
+ Flavanoids:                   0.34  5.08    2.03  1.00
+ Nonflavanoid Phenols:         0.13  0.66    0.36  0.12
+ Proanthocyanins:              0.41  3.58    1.59  0.57
+ Colour Intensity:              1.3  13.0     5.1   2.3
+ Hue:                          0.48  1.71    0.96  0.23
+ OD280/OD315 of diluted wines: 1.27  4.00    2.61  0.71
+ Proline:                       278  1680     746   315
+ ============================= ==== ===== ======= =====
+
+ :Missing Attribute Values: None
+ :Class Distribution: class_0 (59), class_1 (71), class_2 (48)
+ :Creator: R.A. Fisher
+ :Donor: Michael Marshall (MARSHALL%PLU@io.arc.nasa.gov)
+ :Date: July, 1988
+
+ This is a copy of UCI ML Wine recognition datasets.
+ https://archive.ics.uci.edu/ml/machine-learning-databases/wine/wine.data
+
+ The data is the results of a chemical analysis of wines grown in the same
+ region in Italy by three different cultivators. There are thirteen different
+ measurements taken for different constituents found in the three types of
+ wine.
+
+ Original Owners: 
+
+ Forina, M. et al, PARVUS - 
+ An Extendible Package for Data Exploration, Classification and Correlation. 
+ Institute of Pharmaceutical and Food Analysis and Technologies,
+ Via Brigata Salerno, 16147 Genoa, Italy.
+
+ Citation:
+
+ Lichman, M. (2013). UCI Machine Learning Repository
+ [http://archive.ics.uci.edu/ml]. Irvine, CA: University of California,
+ School of Information and Computer Science. 
+
+ .. topic:: References
+
+ (1) S. Aeberhard, D. Coomans and O. de Vel, 
+ Comparison of Classifiers in High Dimensional Settings, 
+ Tech. Rep. no. 92-02, (1992), Dept. of Computer Science and Dept. of  
+ Mathematics and Statistics, James Cook University of North Queensland. 
+ (Also submitted to Technometrics). 
+
+  The data was used with many others for comparing various 
+ classifiers. The classes are separable, though only RDA 
+ has achieved 100% correct classification. 
+ (RDA : 100%, QDA 99.4%, LDA 98.9%, 1NN 96.1% (z-transformed data)) 
+ (All results using the leave-one-out technique) 
+
+ (2) S. Aeberhard, D. Coomans and O. de Vel, 
+ &quot;THE CLASSIFICATION PERFORMANCE OF RDA&quot; 
+ Tech. Rep. no. 92-01, (1992), Dept. of Computer Science and Dept. of 
+ Mathematics and Statistics, James Cook University of North Queensland. 
+ (Also submitted to Journal of Chemometrics).
+</code></pre><p>划分训练集和测试集（使用scikit-learn中的train_test_split函数）：</p>
+<pre><code class="lang-Python">##导入数据拆分工具
+from sklearn.model_selection import train_test_split
+
+X_train, X_test, y_train, y_test = train_test_split(wine_dataset[&#39;data&#39;],
+                                                   wine_dataset[&#39;target&#39;],
+                                                   random_state=0)
+###这里random_state即设置seed，固定seed则能保证每次产生的伪随机数不变；
+###若random_state设置为0或者缺省时，则每次生成的伪随机数不同。
+
+print(&quot;X_train shape:{}&quot;.format(X_train.shape))
+print(&quot;X_test shape:{}&quot;.format(X_test.shape))
+print(&quot;y_train shape:{}&quot;.format(y_train.shape))
+print(&quot;y_test shape:{}&quot;.format(y_test.shape))
+</code></pre>
+<pre><code> X_train shape:(133, 13)
+ X_test shape:(45, 13)
+ y_train shape:(133,)
+ y_test shape:(45,)
+</code></pre><p>训练集样本数为133个，测试集样本数为45个。</p>
+<pre><code class="lang-Python">##导入kNN分类器
+from sklearn.neighbors import KNeighborsClassifier
+
+##指定模型的n_neighbors参数为1
+knn = KNeighborsClassifier(n_neighbors=1)
+
+knn.fit(X_train, y_train)
+print(knn)
+</code></pre>
+<p>score()：计算模型的得分（得分越高，则表示吻合度越高，模型表现越好）：</p>
+<pre><code class="lang-Python">knn.score(X_test, y_test)
+</code></pre>
+<pre><code> 0.7555555555555555
+</code></pre><p>模型对新的样本数据做出正确分类预测的概率为76%。</p>
+<p>对新的红酒分类：</p>
+<pre><code class="lang-Python">import numpy as np
+X_new = np.array([[13.2, 2.77, 2.51, 18.5, 96.6, 1.04,2.55, 0.57, 1.47, 6.2, 1.05, 3.33, 820]])
+
+##对新的数据点进行预测
+prediction = knn.predict(X_new)
+print(&quot;预测新红酒的分类为：{}&quot;.format(wine_dataset[&#39;target_names&#39;][prediction]))
+</code></pre>
+<pre><code> 预测新红酒的分类为：[&#39;class_2&#39;]
+</code></pre><pre><code class="lang-Python">
 
 </code></pre>
-<pre><code class="lang-Python">
-
-</code></pre>
-<pre><code class="lang-Python">
-
-</code></pre>
-<h1><span id="参考资料">参考资料</span></h1><p>[1] <a href>首页缩略图</a><br>[2] <a href="https://book.douban.com/subject/26979890/" target="_blank" rel="noopener">图解算法</a><br>[3] <a href="https://en.wikipedia.org/wiki/Lazy_learning" target="_blank" rel="noopener">维基百科-Lazy Learning</a><br>[4] <a href="https://en.wikipedia.org/wiki/Eager_learning" target="_blank" rel="noopener">维基百科-Eager Learning</a></p>
+<h1><span id="参考资料">参考资料</span></h1><p>[1] <a href>首页缩略图</a><br>[2] <a href="https://book.douban.com/subject/26979890/" target="_blank" rel="noopener">图解算法</a><br>[3] <a href="https://en.wikipedia.org/wiki/Lazy_learning" target="_blank" rel="noopener">维基百科-Lazy Learning</a><br>[4] <a href="https://en.wikipedia.org/wiki/Eager_learning" target="_blank" rel="noopener">维基百科-Eager Learning</a><br>[5] 段小手.<a href="https://baike.baidu.com/item/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BAPython%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/22799668?fr=aladdin" target="_blank" rel="noopener">深入浅出 Python 机器学习</a>[M]. 清华大学出版社, 2018.<br>[6] <a href="https://blog.csdn.net/Dream_angel_Z/article/details/45896449" target="_blank" rel="noopener">机器学习算法-K最近邻从原理到实现（Python）</a><br>[7] <a href="https://www.cnblogs.com/ybjourney/p/4702562.html" target="_blank" rel="noopener">机器学习（一）——K-近邻（KNN）算法</a></p>
 
             </article>
             <hr>
