@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    1.5k 字
+                    1.6k 字
                   </span>
                 
 
@@ -152,7 +152,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    16
+                    18
                      分钟
                   </span>
                 
@@ -322,12 +322,12 @@
     </tr>
     <tr>
       <td>从原始数据集中选出的各轮训练集之间相互独立</td>
-      <td>每轮的训练集中每个样例在分类器中的权重发生变化<br>权值根据上一轮的分类结果进行调整</td>
+      <td>每轮的训练集中每个样例在分类器中的权重发生变化;权值根据上一轮的分类结果进行调整</td>
     </tr>
     <tr>
       <th>样例权重</th>
       <td>每个样例的权重相等</td>
-      <td>根据错误率不断调整样例的权重<br>错误率越大则权重越大</td>
+      <td>根据错误率不断调整样例的权重;<br>错误率越大则权重越大</td>
     </tr>
     <tr>
       <th>基分类器</th>
@@ -348,7 +348,18 @@
 </table>
 </div>
 
-
+<blockquote>
+<p>为什么“Bagging是减少Variance，而Boosting是减少Bias”？</p>
+<ul>
+<li>Bagging对样本重采样（bootstrap），对每一轮采样得到的子样本集训练一个模型，最后对模型的结果取均值。<ul>
+<li>由于子样本集的相似性及基分类器都是同种模型，所以各模型有近似相等的Bias和Variance</li>
+<li>因为$E\left[\frac{\sum_iX_i}{n}\right]=E(X_i)$，所以bagging后的Bias和单个基分类器接近，所以不能“显著降低Bias”</li>
+<li>若各基分类器独立，则有<br><script type="math/tex">Var\large(\frac{\sum_iX_i}{n}\large)=\frac{Var(X_i)}{n}</script>，因此可以“显著降低Variance”</li>
+</ul>
+</li>
+<li></li>
+</ul>
+</blockquote>
 <h1><span id="参考资料">参考资料</span></h1><p>[] <a href="https://blog.csdn.net/u013709270/article/details/72553282" target="_blank" rel="noopener">机器学习中Bagging和Boosting的区别</a><br>[] <a href="https://www.zhihu.com/question/26760839/answer/40337791" target="_blank" rel="noopener">为什么说bagging是减少variance，而boosting是减少bias?</a></p>
 
             </article>
@@ -668,23 +679,7 @@
       mermaid.initialize({{ JSON.stringify(theme.mermaid.options) }});
     }
   </script>
-{% endif %}
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+{% endif %}<!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </body>
 </html>
