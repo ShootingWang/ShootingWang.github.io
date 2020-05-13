@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    841 字
+                    892 字
                   </span>
                 
 
@@ -152,7 +152,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    15
+                    16
                      分钟
                   </span>
                 
@@ -194,7 +194,8 @@
             
             <article class="markdown-body">
               <p>R语言<br><a id="more"></a></p>
-<h1><span id="base">base</span></h1><h2><span id="merge">merge</span></h2><p>合并两个数据框（DataFrame）</p>
+<h1><span id="base">base</span></h1><h2><span id="class">class</span></h2><p>变量的类别</p>
+<h2><span id="merge">merge</span></h2><p>合并两个数据框（DataFrame）</p>
 <pre><code class="lang-R">merge(x, y, by = intersect(names(x), names(y)),
       by.x = by, by.y = by, all = FALSE, all.x = all, all.y = all,
       sort = TRUE, suffixes = c(&quot;.x&quot;,&quot;.y&quot;), no.dups = TRUE,
@@ -243,6 +244,14 @@ merge(x, y, by = &quot;k2&quot;, incomparables = NA) # 2 rows
 #1  4    4      4    4      4
 #2  5    5      5    5      5
 </code></pre>
+<h2><span id="mode">mode</span></h2><p>返回对象在内存中的存储类型</p>
+<ul>
+<li><code>numeric</code>：integer、double</li>
+<li></li>
+</ul>
+<pre><code class="lang-r">mode(NA)
+# [1] &quot;logical&quot;
+</code></pre>
 <h2><span id="paste">paste</span></h2><p>组合字符串</p>
 <ul>
 <li>可以将任意数量的参数组合在一起<pre><code class="lang-R">paste(..., sep = &quot; &quot;, collapse = NULL)
@@ -273,6 +282,7 @@ paste(month.abb, letters)
 #[12] &quot;Dec l&quot; &quot;Jan m&quot; &quot;Feb n&quot; &quot;Mar o&quot; &quot;Apr p&quot; &quot;May q&quot; &quot;Jun r&quot; &quot;Jul s&quot; &quot;Aug t&quot; &quot;Sep u&quot; &quot;Oct v&quot;
 #[23] &quot;Nov w&quot; &quot;Dec x&quot; &quot;Jan y&quot; &quot;Feb z&quot;
 </code></pre>
+<h2><span id="typeof">typeof</span></h2><p>对变量类型的细分</p>
 <h1><span id="packages">Packages</span></h1><pre><code class="lang-R">
 
 </code></pre>
@@ -285,7 +295,7 @@ paste(month.abb, letters)
 <pre><code class="lang-R">
 
 </code></pre>
-<h1><span id="参考资料">参考资料</span></h1><p>[1] <a href="https://cn.bing.com/images/search?view=detailV2&amp;ccid=y7PQyqXC&amp;id=617BD652FC2012861BB5E27035D4C092C9467682&amp;thid=OIP.y7PQyqXC-XCIFzc0BC5JawHaHa&amp;mediaurl=https%3a%2f%2fwww.rstudio.com%2fwp-content%2fuploads%2f2019%2f02%2frstudio-og.png&amp;exph=1200&amp;expw=1200&amp;q=Rstudio&amp;simid=607993942360785821&amp;selectedIndex=18" target="_blank" rel="noopener">首页缩略图</a><br>[] <a href="https://blog.csdn.net/neweastsun/article/details/79435271" target="_blank" rel="noopener">使用R中merge()函数合并数据</a><br>[] <a href="https://www.cnblogs.com/csguo/p/7294057.html" target="_blank" rel="noopener">R语言paste函数</a><br>[] <a href></a><br>[] <a href></a><br>[] <a href></a></p>
+<h1><span id="参考资料">参考资料</span></h1><p>[1] <a href="https://cn.bing.com/images/search?view=detailV2&amp;ccid=y7PQyqXC&amp;id=617BD652FC2012861BB5E27035D4C092C9467682&amp;thid=OIP.y7PQyqXC-XCIFzc0BC5JawHaHa&amp;mediaurl=https%3a%2f%2fwww.rstudio.com%2fwp-content%2fuploads%2f2019%2f02%2frstudio-og.png&amp;exph=1200&amp;expw=1200&amp;q=Rstudio&amp;simid=607993942360785821&amp;selectedIndex=18" target="_blank" rel="noopener">首页缩略图</a><br>[] <a href="https://blog.csdn.net/neweastsun/article/details/79435271" target="_blank" rel="noopener">使用R中merge()函数合并数据</a><br>[] <a href="https://www.cnblogs.com/csguo/p/7294057.html" target="_blank" rel="noopener">R语言paste函数</a><br>[] <a href="https://www.cnblogs.com/xihehe/p/7306449.html" target="_blank" rel="noopener">R语言学习笔记：mode，class，typeof的区别</a><br>[] <a href></a><br>[] <a href></a></p>
 
             </article>
             <hr>
