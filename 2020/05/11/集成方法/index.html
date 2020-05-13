@@ -359,7 +359,7 @@
 <li>Bagging得到的各基分类器具有一定的相关性，但又不完全相同，所以可以“一定程度地降低Variance”</li>
 </ul>
 </li>
-<li>Boosting使用forward-stagewise（贪心法）最小化损失函数$L(y,\sum_ia_if_i(x))$<ul>
+<li><strong>Boosting</strong>使用forward-stagewise（贪心法）最小化损失函数$L(y,\sum_ia_if_i(x))$<ul>
 <li>在第$n$步，求解新的子模型$f(x)$及步长$a$来最小化$L(y, f_{n-1}(x)+af(x))$($f_{n-1}(x)$是前$n-1$步得到地子模型的和)</li>
 <li>Boosting是在“Sequential”地最小化损失函数，其Bias逐步下降</li>
 <li>Boosting的基分类器之间是强相关的，所以并不能“显著降低Variance”</li>
@@ -686,23 +686,7 @@
       mermaid.initialize({{ JSON.stringify(theme.mermaid.options) }});
     }
   </script>
-{% endif %}
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+{% endif %}<!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </body>
 </html>
