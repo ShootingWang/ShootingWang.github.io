@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    1.1k 字
+                    1.5k 字
                   </span>
                 
 
@@ -152,7 +152,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    11
+                    16
                      分钟
                   </span>
                 
@@ -271,6 +271,15 @@
 <li>Boosting Tree（提升树）</li>
 </ul>
 <p>Boosting算法（提升方法），是一类可以用来减小监督式学习中偏差的机器学习算法；将弱分类器提升为强分类器。</p>
+<ul>
+<li>Boosting会减小在上一轮训练正确的样本的权重，增大错误样本的权重</li>
+</ul>
+<h4><span id="adaboost">AdaBoost</span></h4><ul>
+<li>每次使用的是全部样本</li>
+<li>每轮训练改变样本的权重</li>
+<li>下一轮训练的目标是找到一个函数来拟合上一轮训练后的残差</li>
+<li>当残差足够小或达到设置的最大迭代次数时停止训练</li>
+</ul>
 <h3><span id="stacking">Stacking</span></h3><ul>
 <li>是Bagging的升级版</li>
 <li>改进预测</li>
@@ -279,6 +288,68 @@
 <li>这里称弱学习器为初级学习器，最后用于结合的学习器称为次级学习器</li>
 <li>对于测试集，先用初级学习器预测一次，得到次级学习器的输入（Input），再用次级学习器预测一次，得到最终的预测结果</li>
 </ul>
+<h2><span id="bagging-vs-boosting">Bagging vs Boosting</span></h2><h3><span id="相同点">相同点</span></h3><ul>
+<li>都是模型融合的方法</li>
+<li>可以将弱分类器融合形成一个强分类器，融合之后的分类效果比最好的弱分类器效果更好</li>
+</ul>
+<h3><span id="不同点">不同点</span></h3><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Bagging</th>
+      <th>Bagging</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="2">样本选择</th>
+      <td>训练集是在原始数据集中有放回抽取的</td>
+      <td>每一轮的训练集不变</td>
+    </tr>
+    <tr>
+      <td>从原始数据集中选出的各轮训练集之间相互独立</td>
+      <td>每轮的训练集中每个样例在分类器中的权重发生变化<br>权值根据上一轮的分类结果进行调整</td>
+    </tr>
+    <tr>
+      <th>样例权重</th>
+      <td>每个样例的权重相等</td>
+      <td>根据错误率不断调整样例的权重<br>错误率越大则权重越大</td>
+    </tr>
+    <tr>
+      <th>基分类器</th>
+      <td>所有基分类器权重相等</td>
+      <td>分类误差小的基分类器权重更大</td>
+    </tr>
+    <tr>
+      <th>并行计算</th>
+      <td>基分类器可以并行生成</td>
+      <td>基分类器只能序列生成</td>
+    </tr>
+    <tr>
+      <th>bias-variance</th>
+      <td>减少variance</td>
+      <td>减少bias</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+<h1><span id="参考资料">参考资料</span></h1><p>[] <a href="https://blog.csdn.net/u013709270/article/details/72553282" target="_blank" rel="noopener">机器学习中Bagging和Boosting的区别</a><br>[] <a href="https://www.zhihu.com/question/26760839/answer/40337791" target="_blank" rel="noopener">为什么说bagging是减少variance，而boosting是减少bias?</a></p>
 
             </article>
             <hr>
