@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    481 字
+                    420 字
                   </span>
                 
 
@@ -152,7 +152,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    5
+                    4
                      分钟
                   </span>
                 
@@ -265,10 +265,8 @@
 
 
 
-<p>集成方法<br>多数投票<br>将所有结果累加 或 加权累加<br>异常值<br>不敏感<br>敏感</p>
-<p>对训练集一视同仁<br>基于权值的弱分类器的集成</p>
-<p>减少方差<br>减少偏差</p>
-<p>容易过拟合</p>
+
+
 <h1><span id="参考资料">参考资料</span></h1><p>[1] <a href></a><br>[] <a href></a></p>
 
             </article>
@@ -596,7 +594,23 @@
       mermaid.initialize({{ JSON.stringify(theme.mermaid.options) }});
     }
   </script>
-{% endif %}<!-- hexo-inject:begin --><!-- hexo-inject:end -->
+{% endif %}
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </body>
 </html>
