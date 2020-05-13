@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    1.4k 字
+                    1.5k 字
                   </span>
                 
 
@@ -152,7 +152,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    20
+                    21
                      分钟
                   </span>
                 
@@ -378,9 +378,12 @@ wine_dataset = load_wine()
 ###查看该数据集里的键
 print(&quot;红酒数据集中的键：\n{}&quot;.format(wine_dataset.keys()))
 </code></pre>
-<p>  红酒数据集中的键：<br>  dict_keys([‘data’, ‘target’, ‘target_names’, ‘DESCR’, ‘feature_names’])</p>
-<pre><code class="lang-Python">
-
+<pre><code> 红酒数据集中的键：
+ dict_keys([&#39;data&#39;, &#39;target&#39;, &#39;target_names&#39;, &#39;DESCR&#39;, &#39;feature_names&#39;])
+</code></pre><p>数据集中包括数据data、目标分类target、目标分类名称target_names、数据描述DESCR和特征变量的名称features_names。</p>
+<p>下面查看数据的样本量和变量数目：</p>
+<pre><code class="lang-Python">print(&quot;数据概况：{}&quot;.format(wine_dataset[&#39;data&#39;].shape))
+#数据概况：(178, 13)
 </code></pre>
 <pre><code class="lang-Python">
 
