@@ -354,7 +354,7 @@
 <li>Bagging对样本重采样（bootstrap），对每一轮采样得到的子样本集训练一个模型，最后对模型的结果取均值。<ul>
 <li>由于子样本集的相似性及基分类器都是同种模型，所以各模型有近似相等的Bias和Variance</li>
 <li>因为$E\left[\frac{\sum_iX_i}{n}\right]=E(X_i)$，所以bagging后的Bias和单个基分类器接近，所以不能“显著降低Bias”</li>
-<li>若各基分类器独立，则有<br><script type="math/tex">Var\large(\frac{\sum_iX_i}{n}\large)=\frac{Var(X_i)}{n}</script>，因此可以“显著降低Variance”</li>
+<li>若各基分类器独立，则有<script type="math/tex; mode=display">Var\large(\frac{\sum_iX_i}{n}\large)=\frac{Var(X_i)}{n}</script>因此可以“显著降低Variance”</li>
 </ul>
 </li>
 <li></li>
@@ -679,7 +679,23 @@
       mermaid.initialize({{ JSON.stringify(theme.mermaid.options) }});
     }
   </script>
-{% endif %}<!-- hexo-inject:begin --><!-- hexo-inject:end -->
+{% endif %}
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </body>
 </html>
