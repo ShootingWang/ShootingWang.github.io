@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    1.6k 字
+                    1.8k 字
                   </span>
                 
 
@@ -152,7 +152,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    18
+                    20
                      分钟
                   </span>
                 
@@ -351,13 +351,20 @@
 <blockquote>
 <p>为什么“Bagging是减少Variance，而Boosting是减少Bias”？</p>
 <ul>
-<li>Bagging对样本重采样（bootstrap），对每一轮采样得到的子样本集训练一个模型，最后对模型的结果取均值。<ul>
+<li><strong>Bagging</strong>对样本重采样（bootstrap），对每一轮采样得到的子样本集训练一个模型，最后对模型的结果取均值。<ul>
 <li>由于子样本集的相似性及基分类器都是同种模型，所以各模型有近似相等的Bias和Variance</li>
 <li>因为$E\left[\frac{\sum_iX_i}{n}\right]=E(X_i)$，所以bagging后的Bias和单个基分类器接近，所以不能“显著降低Bias”</li>
 <li>若各基分类器独立，则有<script type="math/tex; mode=display">Var\large(\frac{\sum_iX_i}{n}\large)=\frac{Var(X_i)}{n}</script>因此可以“显著降低Variance”</li>
+<li>若各基分类器完全相同，则<script type="math/tex; mode=display">Var\left(\frac{\sum_iX_i}{n}\right)=Var(X_i)</script>此时不会“降低Variance”</li>
+<li>Bagging得到的各基分类器具有一定的相关性，但又不完全相同，所以可以“一定程度地降低Variance”</li>
 </ul>
 </li>
-<li></li>
+<li>Boosting使用forward-stagewise（贪心法）最小化损失函数$L(y,\sum_ia_if_i(x))$<ul>
+<li>在第$n$步，求解新的子模型$f(x)$及步长$a$来最小化$L(y, f_{n-1}(x)+af(x))$($f_{n-1}(x)$是前$n-1$步得到地子模型的和)</li>
+<li>Boosting是在“Sequential”地最小化损失函数，其Bias逐步下降</li>
+<li>Boosting的基分类器之间是强相关的，所以并不能“显著降低Variance”</li>
+</ul>
+</li>
 </ul>
 </blockquote>
 <h1><span id="参考资料">参考资料</span></h1><p>[] <a href="https://blog.csdn.net/u013709270/article/details/72553282" target="_blank" rel="noopener">机器学习中Bagging和Boosting的区别</a><br>[] <a href="https://www.zhihu.com/question/26760839/answer/40337791" target="_blank" rel="noopener">为什么说bagging是减少variance，而boosting是减少bias?</a></p>
