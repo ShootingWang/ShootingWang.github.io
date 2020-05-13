@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    260 字
+                    1.4k 字
                   </span>
                 
 
@@ -152,7 +152,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    3
+                    20
                      分钟
                   </span>
                 
@@ -197,12 +197,28 @@
 <h1><span id="knn">KNN</span></h1><p><strong>k最邻近算法</strong>（kNN, k-Nearest Neighbors Algorithm），是一种<u>lazy learning</u>（消极学习法）</p>
 <ul>
 <li>不需要使用训练集进行训练，训练的时间复杂度为0</li>
-<li>kNN分类的计算复杂度和训练集中的样本数目成正比。</li>
+<li>kNN分类的计算复杂度和训练集中的样本数目成正比</li>
+<li>kNN是一种可用于分类和回归的方法</li>
 </ul>
 <blockquote>
 <p>In machine learning, <strong>lazy learning</strong> is a learning method in which generalization of the training data is, in theory, delayed until a query is made to the system, as opposed to in eager learning, where the system tries to generalize the training data before receiving queries.<br><strong>维基百科：Lazy Learning</strong></p>
 <p>In AI, <strong>eager learning</strong> is a learning method in which the system tries to construct a general, input-independent target function during training of the system, as opposed to lazy learning, where generalization beyond the training data is delayed until a query is made to the system.<br><strong>维基百科：Eager Learning</strong></p>
 </blockquote>
+<h2><span id="原理">原理</span></h2><p>假设有$m$类不同的样本数据，要判断某个待分类点A属于哪个类别，计算这个待分类点A与其他所有已知分类的样本点的距离（一般是计算<u>欧式距离</u>或<u>曼哈顿距离</u>）；距离点A最近的k个样本点中，属于同一类别的样本点数最多的那个类别记为 $i$ ，则待分类点A从属于类别 $i$ 。</p>
+<p>考虑点$(x_i,y_i)$和$(x_j,y_j)$</p>
+<ul>
+<li><strong>欧氏距离</strong><script type="math/tex; mode=display">d=\sqrt{(x_i-x_j)^2+(y_i-y_j)^2}</script></li>
+<li><strong>曼哈顿距离</strong><script type="math/tex; mode=display">d=|x_i-x_j|+|y_i-y_j|</script></li>
+</ul>
+<h3><span id="k">K</span></h3><ul>
+<li>k值的选取非常重要<ul>
+<li>如果k值太小，则该分类器容易受到训练数据的噪声而产生过拟合影响</li>
+<li>如果k值太大，则分类器容易欠拟合；最邻近列表中可能包含远离其近邻的数据点</li>
+</ul>
+</li>
+<li>k值一般选取1，3，5，7等较小的值</li>
+<li>可以通过交叉验证来选取最优的k值</li>
+</ul>
 <h2><span id="用途">用途</span></h2><ul>
 <li>分类</li>
 <li>回归</li>
@@ -216,7 +232,166 @@
 </li>
 <li>创建垃圾邮件（spam）分类器</li>
 </ul>
-<h2><span id> </span></h2><h1><span id="参考资料">参考资料</span></h1><p>[1] <a href>首页缩略图</a><br>[2] <a href="https://book.douban.com/subject/26979890/" target="_blank" rel="noopener">图解算法</a><br>[3] <a href="https://en.wikipedia.org/wiki/Lazy_learning" target="_blank" rel="noopener">维基百科-Lazy Learning</a><br>[4] <a href="https://en.wikipedia.org/wiki/Eager_learning" target="_blank" rel="noopener">维基百科-Eager Learning</a></p>
+<h2><span id="实现">实现</span></h2><h3><span id="python">Python</span></h3><p>使用Python的<code>scikit-learn</code>库。<br>scikit-learn库中有若干个数据集Toy datasets。</p>
+<h4><span id="二分类">二分类</span></h4><pre><code class="lang-Python">##导入数据集生成器
+from sklearn.datasets import make_blobs
+##导入kNN分类器
+from sklearn.neighbors import KNeighborsClassifier
+
+##导入绘图工具
+import matplotlib.pyplot as plt
+###为了在Jupyter Notebook显示图片，加入以下代码行
+%matplotlib inline
+
+##导入数据集拆分工具
+from sklearn.model_selection import train_test_split
+
+##生成样本数n=200，分类为2的数据集
+data = make_blobs(n_samples=200, centers=2, random_state=8)
+X, y = data
+
+##可视化
+plt.scatter(X[:, 0], X[:, 1], c=y, cmap=plt.cm.spring, edgecolors=&#39;k&#39;)
+plt.show()
+</code></pre>
+<p>补充图片</p>
+<pre><code class="lang-Python">## 用kNN进行二分类
+
+import numpy as np
+kclassifier = KNeighborsClassifier()
+kclassifier.fit(X, y)
+%matplotlib inline
+##横纵轴坐标范围
+x_min, x_max = X[:, 0].min() - 1, X[:, 0].max() + 1
+y_min, y_max = X[:, 1].min() - 1, X[:, 1].max() + 1
+xx, yy = np.meshgrid(np.arange(x_min, x_max, .02),
+                    np.arange(y_min, y_max, .02))
+Z = kclassifier.predict(np.c_[xx.ravel(), yy.ravel()])
+Z = Z.reshape(xx.shape)
+plt.pcolormesh(xx, yy, Z, cmap=plt.cm.Pastel1)
+plt.scatter(X[:, 0], X[:, 1], c=y, cmap=plt.cm.spring, edgecolors=&#39;k&#39;)
+plt.xlim(xx.min(), xx.max())
+plt.ylim(yy.min(), yy.max())
+plt.title(&quot;Classifier:kNN&quot;)
+
+plt.show()
+</code></pre>
+<p>补充图片</p>
+<pre><code class="lang-Python">##对新数据点分类进行判断
+print(&quot;新数据点的分类是：&quot;, kclassifier.predict([[6.75, 4.82]]))
+#新数据点的分类是： [1]
+</code></pre>
+<h4><span id="多分类">多分类</span></h4><pre><code class="lang-Python">from sklearn.datasets import make_blobs
+from sklearn.neighbors import KNeighborsClassifier
+import matplotlib.pyplot as plt
+
+##生成样本数为500，分类数为5的数据集
+data2 = make_blobs(n_samples=500, centers=5, random_state=8)
+X2, y2 = data2
+
+%matplotlib inline
+
+plt.scatter(X2[:, 0], X2[:,1], c=y2, cmap=plt.cm.spring, edgecolors=&#39;k&#39;)
+plt.show()
+</code></pre>
+<p>补充图片</p>
+<pre><code class="lang-Python">clf = KNeighborsClassifier()
+clf.fit(X2, y2)
+
+x_min, x_max = X2[:, 0].min() - 1, X2[:, 0].max() + 1
+y_min, y_max = X2[:, 1].min() - 1, X2[:, 1].max() + 1
+
+import numpy as np
+%matplotlib inline
+
+xx, yy = np.meshgrid(np.arange(x_min, x_max, .02),
+                    np.arange(y_min, y_max, .02))
+Z = clf.predict(np.c_[xx.ravel(), yy.ravel()])
+Z = Z.reshape(xx.shape)
+
+plt.pcolormesh(xx, yy, Z, cmap = plt.cm.Pastel1)
+plt.scatter(X2[:, 0], X2[:, 1], c=y2, cmap=plt.cm.spring, edgecolors=&#39;k&#39;)
+plt.xlim(xx.min(), xx.max())
+plt.ylim(yy.min(), yy.max())
+plt.title(&quot;Classifier:kNN&quot;)
+plt.show()
+</code></pre>
+<p>补充图片</p>
+<pre><code class="lang-Python">##模型的评分
+print(&quot;模型正确率：{:.2f}&quot;.format(clf.score(X2, y2)))
+#模型正确率：0.96
+</code></pre>
+<h4><span id="回归">回归</span></h4><p>kNN的n_neighbors默认为5。</p>
+<pre><code class="lang-Python">##导入数据生成器make_regression
+from sklearn.datasets import make_regression
+
+##生成特征数量为1，噪音为50的数据集
+X, y = make_regression(n_features=1, n_informative=1, noise=50, random_state=8)
+
+##可视化
+%matplotlib inline
+plt.scatter(X, y, c=&#39;orange&#39;, edgecolors=&#39;k&#39;)
+plt.show()
+</code></pre>
+<p>补充图片</p>
+<pre><code class="lang-Python">##导入用于回归分析的kNN模型
+from sklearn.neighbors import KNeighborsRegressor
+reg = KNeighborsRegressor()
+
+##用kNN模型拟合数据
+reg.fit(X, y)
+
+##可视化预测结果
+import numpy as np
+z = np.linspace(-3, 3, 200).reshape(-1, 1)
+%matplotlib inline
+plt.scatter(X, y, c=&#39;orange&#39;, edgecolors=&#39;k&#39;)
+plt.plot(z, reg.predict(z), c=&#39;k&#39;, linewidth=3)
+plt.title(&quot;kNN Regressor&quot;)
+plt.show()
+</code></pre>
+<p>补充图片</p>
+<pre><code class="lang-Python">##模型评分
+print(&quot;模型评分：{:.2f}&quot;.format(reg.score(X, y)))
+#模型评分：0.77
+</code></pre>
+<p>修改模型的<code>n_estimators</code>参数</p>
+<pre><code class="lang-Python">reg2 = KNeighborsRegressor(n_neighbors=2)
+reg2.fit(X, y)
+
+%matplotlib inline
+plt.scatter(X, y, c=&#39;orange&#39;, edgecolors=&#39;k&#39;)
+plt.plot(z, reg2.predict(z), c=&#39;k&#39;, linewidth=3)
+plt.title(&quot;kNN Regressor:n_neighbors=2&quot;)
+plt.show()
+</code></pre>
+<p>补充图片</p>
+<pre><code class="lang-Python">print(&quot;模型评分为：{:.2f}&quot;.format(reg2.score(X, y)))
+#模型评分为：0.86
+</code></pre>
+<p>模型评分从0.77提升到0.86，有显著的提升。</p>
+<h2><span id="实例">实例</span></h2><h3><span id="酒的分类">酒的分类</span></h3><pre><code class="lang-Python">##导入数据集
+from sklearn.datasets import load_wine
+wine_dataset = load_wine()
+###使用load_wine()导入的酒数据集，是一种Bunch对象，包括键（keys）和数值（values）
+
+###查看该数据集里的键
+print(&quot;红酒数据集中的键：\n{}&quot;.format(wine_dataset.keys()))
+</code></pre>
+<p>  红酒数据集中的键：<br>  dict_keys([‘data’, ‘target’, ‘target_names’, ‘DESCR’, ‘feature_names’])</p>
+<pre><code class="lang-Python">
+
+</code></pre>
+<pre><code class="lang-Python">
+
+</code></pre>
+<pre><code class="lang-Python">
+
+</code></pre>
+<pre><code class="lang-Python">
+
+</code></pre>
+<h1><span id="参考资料">参考资料</span></h1><p>[1] <a href>首页缩略图</a><br>[2] <a href="https://book.douban.com/subject/26979890/" target="_blank" rel="noopener">图解算法</a><br>[3] <a href="https://en.wikipedia.org/wiki/Lazy_learning" target="_blank" rel="noopener">维基百科-Lazy Learning</a><br>[4] <a href="https://en.wikipedia.org/wiki/Eager_learning" target="_blank" rel="noopener">维基百科-Eager Learning</a></p>
 
             </article>
             <hr>
