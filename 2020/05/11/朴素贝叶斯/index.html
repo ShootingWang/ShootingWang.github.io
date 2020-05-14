@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    446 字
+                    766 字
                   </span>
                 
 
@@ -152,7 +152,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    6
+                    10
                      分钟
                   </span>
                 
@@ -224,6 +224,45 @@
   0 & \mbox{如果}y_i\neq C_k
 \end{array}
 \right.</script><p>为了降低$P(X_1=x_1,\cdots,X_p=x_p|Y=C_k)$的求解难度，朴素贝叶斯方法<u>假设$X$的$p$个维度之间相互独立</u>，则有<br>\begin{equation}<br>  \begin{aligned}<br>&amp;P(X_1=x_1,\cdots,X_p=x_p|Y=C_k)\\<br>=&amp;P(X_1=x_1|Y=C_k)P(X_2=x_2|Y=C_k)\cdots P(X_p=x_p|Y=C_k)<br>  \end{aligned}<br>\end{equation}</p>
+<h3><span id="预测">预测</span></h3><p>对于新的样本$x{0}=(x_1^0,\cdots,x_p^0)^T$，如何预测其所属的类别？</p>
+<blockquote>
+<p>根据<strong>最大后验概率</strong>来判断分类</p>
+</blockquote>
+<ul>
+<li>计算所有$K$个条件概率$P(Y=C_k|X=x^0)$</li>
+<li>$x^0$属于条件概率最大的那个类别</li>
+</ul>
+<h2><span id="优点">优点</span></h2><ul>
+<li>发源于古典数学理论，有稳定的分类效率</li>
+<li>对小规模数据的表现很好</li>
+<li>能够处理过分类问题</li>
+<li>对缺失数据不太敏感</li>
+<li>算法简单</li>
+<li>常用于文本分类</li>
+</ul>
+<h2><span id="缺点">缺点</span></h2><ul>
+<li>朴素贝叶斯模型在给定输出类别的情况下假设各特征之间相互独立，但实际应用中该假设往往不成立<ul>
+<li>特征数量较多或特征之间的相关性较大时，分类效果较差</li>
+<li>特征的相关性较小时，分两类效果较为良好</li>
+</ul>
+</li>
+<li>需要知道先验概率——先验概率一般基于假设<ul>
+<li>可能会因为先验模型假设不当，导致预测效果不佳</li>
+</ul>
+</li>
+<li>对输入数据的表达形式很敏感（？）</li>
+</ul>
+<h2><span id="应用">应用</span></h2><ul>
+<li><a href="https://www.ruanyifeng.com/blog/2013/12/naive_bayes_classifier.html" target="_blank" rel="noopener">朴素贝叶斯分类器的应用</a><ul>
+<li>病人分类</li>
+<li>性别分类</li>
+</ul>
+</li>
+<li><a href="https://www.cnblogs.com/leoo2sk/archive/2010/09/17/1829190.html" target="_blank" rel="noopener">算法杂货铺——分类算法之朴素贝叶斯分类(Naive Bayesian classification)</a><ul>
+<li>检测SNS社区中不真实账号</li>
+</ul>
+</li>
+</ul>
 <h1><span id="参考资料">参考资料</span></h1><p>[1] <a href="https://www.cnblogs.com/pinard/p/6069267.html" target="_blank" rel="noopener">朴素贝叶斯算法原理小结</a><br>[] <a href></a><br>[] <a href></a></p>
 
             </article>
@@ -554,23 +593,7 @@
       mermaid.initialize({{ JSON.stringify(theme.mermaid.options) }});
     }
   </script>
-{% endif %}
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+{% endif %}<!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </body>
 </html>
