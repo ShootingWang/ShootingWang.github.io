@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    1.1k 字
+                    1.2k 字
                   </span>
                 
 
@@ -152,7 +152,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    14
+                    15
                      分钟
                   </span>
                 
@@ -234,8 +234,19 @@
 <h3><span id="连续型特征">连续型特征</span></h3><p>当特征属性是<u>连续型</u>时，通常假设其服从<u>高斯分布</u>（即正态分布）</p>
 <script type="math/tex; mode=display">g(x;\mu,\sigma)=\frac{1}{\sqrt{2\pi\sigma}}exp\{-\frac{(x-\mu)^2}{2\sigma^2}\}</script><p>则有</p>
 <script type="math/tex; mode=display">P(X_j=x_j|y_i)=g(x_j;\mu_{y_i},\sigma_{y_i})</script><h3><span id="laplace校准">Laplace校准</span></h3><p>Laplace校准 / 拉普拉斯平滑（Laplace Smoothing）：<br>可能会存在某个特征项划分没有出现的情况，即$P(x_j|y_i)=0$，这会导致分类器的质量降低——可使用<strong>Laplace校准</strong>改善</p>
-<p>假设随机特征$z$的可能取值有$\{1,\cdots,k\}$，使用$\Phi_i=P(z=i)$参数化其分布。对于$n$个独立样本（观测集合）$\{z^{1},\cdots,z^{(n)}\}$，参数$\Phi_j$的极大似然估计为</p>
-<script type="math/tex; mode=display">\phi_j=\frac{\sum_{i=1}^n\mathbb{1}\{z^{i}=j\}}{n}</script><h3><span id="预测">预测</span></h3><p>对于新的样本$x{0}=(x_1^0,\cdots,x_p^0)^T$，如何预测其所属的类别？</p>
+<p>假设随机特征$z$的可能取值有$\{1,\cdots,k\}$，使用$\Phi_i=P(z=i)$参数化其分布。对于$n$个独立样本（观测集合）$\{z^{(1)},\cdots,z^{(n)}\}$，参数$\Phi_j$的极大似然估计为</p>
+<script type="math/tex; mode=display">\phi_j=\frac{\sum_{i=1}^n\mathbb{1}\{z^{i}=j\}}{n}</script><p>使用Laplace平滑进行修正：</p>
+<script type="math/tex; mode=display">\phi_j=\frac{\sum_{i=1}^n\mathbb{1}\{z^{i}=j\}+1}{n+k}</script><ul>
+<li>分子加1<ul>
+<li>保证了$\Phi_j\neq0$对所有的$\Phi_j$都成立</li>
+</ul>
+</li>
+<li>分母加$k$（随机变量$z$能取到的最大值）<ul>
+<li>保证了$\sum_{j=1}^k\Phi_j=1$仍然成立</li>
+</ul>
+</li>
+</ul>
+<h3><span id="预测">预测</span></h3><p>对于新的样本$x{0}=(x_1^0,\cdots,x_p^0)^T$，如何预测其所属的类别？</p>
 <blockquote>
 <p>根据<strong>最大后验概率</strong>来判断分类</p>
 </blockquote>
@@ -275,6 +286,10 @@
 </li>
 <li><a href="https://zyzypeter.github.io/2017/07/22/machine-learning-ch5-Naive-Bayes/" target="_blank" rel="noopener">机器学习 第五章 朴素贝叶斯算法(Naive Bayes) 拉普拉斯平滑(Laplace smoothing) 文本分类的事件模型</a><ul>
 <li>文本分类问题</li>
+</ul>
+</li>
+<li><a href="https://wizardforcel.gitbooks.io/dm-algo-top10/content/naive-bayes.html" target="_blank" rel="noopener">朴素贝叶斯分类器</a><ul>
+<li>按照某人是否要打网球来划分天气</li>
 </ul>
 </li>
 </ul>
@@ -608,7 +623,23 @@
       mermaid.initialize({{ JSON.stringify(theme.mermaid.options) }});
     }
   </script>
-{% endif %}<!-- hexo-inject:begin --><!-- hexo-inject:end -->
+{% endif %}
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </body>
 </html>
