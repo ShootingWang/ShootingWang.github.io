@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    787 字
+                    966 字
                   </span>
                 
 
@@ -152,7 +152,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    11
+                    13
                      分钟
                   </span>
                 
@@ -218,6 +218,27 @@
 </li>
 <li><strong>相等</strong>：如果事件$A$和事件$B$满足——属于$A$的样本点必属于$B$，且属于$B$的样本点——则称事件$A$与事件$B$相等（$A=B$） <script type="math/tex; mode=display">A\subset B 且 B\subset A</script></li>
 <li><strong>互不相容</strong>：事件$A$和事件$B$没有相同的样本点（事件$A$与事件$B$不可能同时发生）</li>
+</ul>
+<h3><span id="事件间运算">事件间运算</span></h3><ul>
+<li><strong>并</strong>：由事件$A$与$B$中所有的样本点组成的新事件<ul>
+<li>事件$A$与$B$中至少有一个发生<script type="math/tex; mode=display">A\cup B</script></li>
+</ul>
+</li>
+<li><strong>交</strong>：由事件$A$与$B$中公共的样本点组成的新事件<ul>
+<li>事件$A$与$B$同时发生<script type="math/tex; mode=display">A\cap B</script></li>
+</ul>
+</li>
+<li><strong>差</strong>：由在事件$A$中而不在事件$B$中的样本点组成的新事件<ul>
+<li>事件$A$发生而事件$B$不发生<script type="math/tex; mode=display">A-B 或 A\cap B^c</script></li>
+</ul>
+</li>
+<li><strong>对立事件</strong> 或 <strong>补</strong>：事件$A$的对立事件$\bar{A}$——由在$\Omega$中而不在$A$中的样本点组成的新事件<ul>
+<li>$A$不发生<script type="math/tex; mode=display">\bar{A}=A^c=\Omega-A</script></li>
+<li>对立事件是相互的<script type="math/tex; mode=display">\bar{\bar{A}}=A</script></li>
+<li>$\bar{\Omega}=\emptyset$</li>
+<li>$\bar{\emptyset}=\Omega$</li>
+</ul>
+</li>
 </ul>
 <h2><span id="函数">函数</span></h2><h3><span id="beta函数">Beta函数</span></h3><script type="math/tex; mode=display">B(\alpha, \beta)=\int_0^1 x^{\alpha-1}(1-x)^{\beta-1}\mathrm{d}x ,\quad \alpha,\beta>0</script><ul>
 <li>$B(\alpha,\beta)=\frac{\Gamma(\alpha)\Gamma(\beta)}{\Gamma(\alpha+\beta)}$<br>证明：</li>
