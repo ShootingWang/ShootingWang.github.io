@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    302 字
+                    447 字
                   </span>
                 
 
@@ -152,7 +152,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    4
+                    6
                      分钟
                   </span>
                 
@@ -216,6 +216,14 @@
 <p>从样本数据可以学习到朴素贝叶斯的先验分布$(k=1,\cdots,K)$</p>
 <script type="math/tex; mode=display">P(Y=C_k)</script><p>从而学习到条件概率分布</p>
 <script type="math/tex; mode=display">P(X=x|Y=C_k)=P(X_1=x_1,\cdots,X_p=x_p|Y=C_k)</script><p>接着用贝叶斯公式可以得到$X$和$Y$的联合分布$P(X,Y)$<br>\begin{equation}<br>  \begin{aligned}<br>P(X,Y=C_k)&amp;=P(Y=C_k)P(X=x|Y=C_k)\\<br>&amp;= P(Y=C_k)P(X_1=x_1,\cdots,X_p=x_p|Y=C_k)<br>  \end{aligned}<br>\end{equation}</p>
+<p>由极大似然法可得$P(Y=C_k)$为类别$C_k$在训练集样本中出现的频数，即</p>
+<script type="math/tex; mode=display">P(Y=C_k)=\sum_{i=1}^n\frac{1}{n}I\left\{y_i=C_k\right\}</script><p>其中</p>
+<script type="math/tex; mode=display">I\left\{y_i=C_k\right\}=\left\{
+\begin{array}{ll}
+  1 & \mbox{如果}y_i=C_k\\
+  0 & \mbox{如果}y_i\neq C_k
+\end{array}
+\right.</script><p>为了降低$P(X_1=x_1,\cdots,X_p=x_p|Y=C_k)$的求解难度，朴素贝叶斯方法\textbf{假设$X$的$p$个维度之间相互独立}，则有<br>\begin{equation}<br>  \begin{aligned}<br>&amp;P(X_1=x_1,\cdots,X_p=x_p|Y=C_k)\\<br>=&amp;P(X_1=x_1|Y=C_k)P(X_2=x_2|Y=C_k)\cdots P(X_p=x_p|Y=C_k)<br>  \end{aligned}<br>\end{equation}</p>
 <h1><span id="参考资料">参考资料</span></h1><p>[1] <a href="https://www.cnblogs.com/pinard/p/6069267.html" target="_blank" rel="noopener">朴素贝叶斯算法原理小结</a><br>[] <a href></a><br>[] <a href></a></p>
 
             </article>
