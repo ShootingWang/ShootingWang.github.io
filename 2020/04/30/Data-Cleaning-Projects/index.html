@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    105 字
+                    110 字
                   </span>
                 
 
@@ -197,7 +197,8 @@
 <a id="more"></a>
 <h1><span id="projects">Projects</span></h1><ul>
 <li><a href="/2020/04/30/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-Titanic/" title="数据集Titanic">数据集Titanic</a></li>
-<li><a href="/2020/05/12/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-%E5%A4%A9%E6%B1%A0-%E4%BA%8C%E6%89%8B%E8%BD%A6%E4%BA%A4%E6%98%93%E6%95%B0%E6%8D%AE/" title="天池-二手车交易数据">天池-二手车交易数据</a>
+<li><a href="/2020/05/12/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-%E5%A4%A9%E6%B1%A0-%E4%BA%8C%E6%89%8B%E8%BD%A6%E4%BA%A4%E6%98%93%E6%95%B0%E6%8D%AE/" title="天池-二手车交易数据">天池-二手车交易数据</a></li>
+<li><a href="/2020/05/14/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-donot-overfit/" title="Kaggle-Don&#39;t Overfit!">Kaggle-Don&#39;t Overfit!</a>
 </li>
 </ul>
 <h1><span id="基本操作">基本操作</span></h1><h2><span id="缺失值">缺失值</span></h2><h3><span id="可视化缺失值">可视化缺失值</span></h3><ul>
@@ -567,7 +568,23 @@ msno.matrix(train_data.sample(250))
       mermaid.initialize({{ JSON.stringify(theme.mermaid.options) }});
     }
   </script>
-{% endif %}<!-- hexo-inject:begin --><!-- hexo-inject:end -->
+{% endif %}
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </body>
 </html>
