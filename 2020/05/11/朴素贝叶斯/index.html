@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    766 字
+                    834 字
                   </span>
                 
 
@@ -152,7 +152,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    10
+                    11
                      分钟
                   </span>
                 
@@ -195,6 +195,7 @@
             <article class="markdown-body">
               <p>Naive Bayes</p>
 <h1><span id="朴素贝叶斯">朴素贝叶斯</span></h1><ul>
+<li>分类方法</li>
 <li><a href="/2020/05/11/%E7%94%9F%E6%88%90%E5%BC%8F%E6%A8%A1%E5%9E%8B-%E5%88%A4%E5%88%AB%E5%BC%8F%E6%A8%A1%E5%9E%8B/" title="生成式模型">生成式模型</a>
 </li>
 </ul>
@@ -224,7 +225,9 @@
   0 & \mbox{如果}y_i\neq C_k
 \end{array}
 \right.</script><p>为了降低$P(X_1=x_1,\cdots,X_p=x_p|Y=C_k)$的求解难度，朴素贝叶斯方法<u>假设$X$的$p$个维度之间相互独立</u>，则有<br>\begin{equation}<br>  \begin{aligned}<br>&amp;P(X_1=x_1,\cdots,X_p=x_p|Y=C_k)\\<br>=&amp;P(X_1=x_1|Y=C_k)P(X_2=x_2|Y=C_k)\cdots P(X_p=x_p|Y=C_k)<br>  \end{aligned}<br>\end{equation}</p>
-<h3><span id="预测">预测</span></h3><p>对于新的样本$x{0}=(x_1^0,\cdots,x_p^0)^T$，如何预测其所属的类别？</p>
+<h3><span id="连续型特征">连续型特征</span></h3><p>当特征属性是<u>连续型</u>时，通常假设其服从<u>高斯分布</u>（即正态分布）</p>
+<script type="math/tex; mode=display">g(x;\mu,\sigma)=\frac{1}{\sqrt{2\pi\sigma}}exp\{-\frac{(x-\mu)^2}{2\sigma^2}\}</script><p>则有</p>
+<script type="math/tex; mode=display">P(X_j=x_j|y_i)=g(x_j;\mu_{y_i},\sigma_{y_i})</script><h3><span id="laplace校准">Laplace校准</span></h3><h3><span id="预测">预测</span></h3><p>对于新的样本$x{0}=(x_1^0,\cdots,x_p^0)^T$，如何预测其所属的类别？</p>
 <blockquote>
 <p>根据<strong>最大后验概率</strong>来判断分类</p>
 </blockquote>
@@ -593,7 +596,23 @@
       mermaid.initialize({{ JSON.stringify(theme.mermaid.options) }});
     }
   </script>
-{% endif %}<!-- hexo-inject:begin --><!-- hexo-inject:end -->
+{% endif %}
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </body>
 </html>
