@@ -243,9 +243,9 @@
 <h3><span id="事件的运算性质">事件的运算性质</span></h3><ul>
 <li><strong>交换律</strong><script type="math/tex; mode=display">A\cup B=B\cup A</script><script type="math/tex; mode=display">AB=BA</script></li>
 <li><strong>结合律</strong><script type="math/tex; mode=display">(A\cup B)\cup C=A\cup (B\cup C)</script><script type="math/tex; mode=display">(AB)C=A(BC)</script></li>
-<li>分配律<script type="math/tex; mode=display">(A\cup B)\cap C=(A\cap C)\cup(B\cap C)</script><script type="math/tex; mode=display">(A\cap B)\cup C=(A\cup C)\cap(B\cup C)</script></li>
-<li>De Morgan(对偶律)<ul>
-<li>事件并的对立等于对立的交 <script type="math/tex; mode=display">\overline{A\cup B}=\overline{A}\cap \overline{B}</script></li>
+<li><strong>分配律</strong><script type="math/tex; mode=display">(A\cup B)\cap C=(A\cap C)\cup(B\cap C)</script><script type="math/tex; mode=display">(A\cap B)\cup C=(A\cup C)\cap(B\cup C)</script></li>
+<li><strong>De Morgan</strong>(对偶律)<ul>
+<li>事件并的对立等于对立的交 <script type="math/tex; mode=display">\overline{A\cup B}=\overline{A}\cap \overline{B}</script><script type="math/tex; mode=display">\overline{\cup_{i=1}^nA_i}=\cap_{i=1}^n\overline{A_i}</script></li>
 </ul>
 </li>
 </ul>
@@ -635,7 +635,23 @@ E(X)&=\int_0^1 x\frac{1}{B(\alpha,\beta)}x^{\alpha-1}(1-x)^{\beta-1}\mathrm{d}x\
       mermaid.initialize({{ JSON.stringify(theme.mermaid.options) }});
     }
   </script>
-{% endif %}<!-- hexo-inject:begin --><!-- hexo-inject:end -->
+{% endif %}
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </body>
 </html>
