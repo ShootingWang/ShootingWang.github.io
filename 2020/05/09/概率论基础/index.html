@@ -234,9 +234,9 @@
 </li>
 <li><strong>对立事件</strong> 或 <strong>补</strong>：事件$A$的对立事件$\bar{A}$——由在$\Omega$中而不在$A$中的样本点组成的新事件<ul>
 <li>$A$不发生<script type="math/tex; mode=display">\bar{A}=A^c=\Omega-A</script></li>
-<li>对立事件是相互的<script type="math/tex; mode=display">\bar{\bar{A}}=A</script></li>
-<li>$\bar{\Omega}=\emptyset$</li>
-<li>$\bar{\emptyset}=\Omega$</li>
+<li>对立事件是相互的<script type="math/tex; mode=display">\overline{\overline{A}}=A</script></li>
+<li>$\overline{\Omega}=\emptyset$</li>
+<li>$\overline{\emptyset}=\Omega$</li>
 </ul>
 </li>
 </ul>
@@ -245,7 +245,7 @@
 <li><strong>结合律</strong><script type="math/tex; mode=display">(A\cup B)\cup C=A\cup (B\cup C)</script><script type="math/tex; mode=display">(AB)C=A(BC)</script></li>
 <li>分配律<script type="math/tex; mode=display">(A\cup B)\cap C=(A\cap C)\cup(B\cap C)</script><script type="math/tex; mode=display">(A\cap B)\cup C=(A\cup C)\cap(B\cup C)</script></li>
 <li>De Morgan(对偶律)<ul>
-<li>事件并的对立等于对立的交 <script type="math/tex; mode=display">\bar{A\cup B}=\bar{A}\cap \={B}</script></li>
+<li>事件并的对立等于对立的交 <script type="math/tex; mode=display">\overline{A\cup B}=\overline{A}\cap \overline{B}</script></li>
 </ul>
 </li>
 </ul>
@@ -635,23 +635,7 @@ E(X)&=\int_0^1 x\frac{1}{B(\alpha,\beta)}x^{\alpha-1}(1-x)^{\beta-1}\mathrm{d}x\
       mermaid.initialize({{ JSON.stringify(theme.mermaid.options) }});
     }
   </script>
-{% endif %}
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+{% endif %}<!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </body>
 </html>
