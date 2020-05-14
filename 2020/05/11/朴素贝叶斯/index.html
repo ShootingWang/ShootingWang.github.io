@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    143 字
+                    302 字
                   </span>
                 
 
@@ -152,7 +152,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    2
+                    4
                      分钟
                   </span>
                 
@@ -207,6 +207,15 @@
 <li><strong>全概率</strong>公式<script type="math/tex; mode=display">P(X)=\sum_{k}P(X|Y=Y_k)P(Y_k)</script>其中$\sum_{k}P(Y_k)=1$。</li>
 <li><strong>贝叶斯公式</strong><script type="math/tex; mode=display">P(Y_k|X)=\frac{P(X|Y_k)P(Y_k)}{\sum_{k}P(X|Y=Y_k)P(Y_k)}</script></li>
 </ul>
+<h2><span id="模型">模型</span></h2><p>考虑</p>
+<ul>
+<li>$n$个样本，每个样本有$p$个特征<script type="math/tex; mode=display">x_i=(x_{i1},\cdots, x_{ip})^T</script>$i=1,\cdots,n$</li>
+<li>有$K$个类别$C=\{C_1,\cdots,C_K\}$</li>
+<li>每个样本的类别标签为$y_i \in \{C_1,\cdots,C_K\}$</li>
+</ul>
+<p>从样本数据可以学习到朴素贝叶斯的先验分布$(k=1,\cdots,K)$</p>
+<script type="math/tex; mode=display">P(Y=C_k)</script><p>从而学习到条件概率分布</p>
+<script type="math/tex; mode=display">P(X=x|Y=C_k)=P(X_1=x_1,\cdots,X_p=x_p|Y=C_k)</script><p>接着用贝叶斯公式可以得到$X$和$Y$的联合分布$P(X,Y)$<br>\begin{equation}<br>  \begin{aligned}<br>P(X,Y=C_k)&amp;=P(Y=C_k)P(X=x|Y=C_k)\\<br>&amp;= P(Y=C_k)P(X_1=x_1,\cdots,X_p=x_p|Y=C_k)<br>  \end{aligned}<br>\end{equation}</p>
 <h1><span id="参考资料">参考资料</span></h1><p>[1] <a href="https://www.cnblogs.com/pinard/p/6069267.html" target="_blank" rel="noopener">朴素贝叶斯算法原理小结</a><br>[] <a href></a><br>[] <a href></a></p>
 
             </article>
