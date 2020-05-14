@@ -188,6 +188,16 @@
           
         </a>
       
+        
+        
+        
+        <a href="javascript:;" class="qr-trigger">
+          <i class="iconfont icon-wechat2-fill" aria-hidden="true"></i>
+          
+            <img class="qr-img" src="/img/reward.png" srcset="/img/loading.gif" alt="qrcode" />
+          
+        </a>
+      
     </div>
   </div>
 </div>
@@ -301,7 +311,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "关于&nbsp;",
+        "About me&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,
@@ -371,23 +381,7 @@
       mermaid.initialize({{ JSON.stringify(theme.mermaid.options) }});
     }
   </script>
-{% endif %}
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+{% endif %}<!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </body>
 </html>
