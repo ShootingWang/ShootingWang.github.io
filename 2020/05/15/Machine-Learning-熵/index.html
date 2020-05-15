@@ -17,7 +17,7 @@
   <meta name="description" content="统计一只狗，梦想有只猫">
   <meta name="author" content="ShootingWang">
   <meta name="keywords" content="">
-  <title>决策树 - ShootingWang</title>
+  <title>熵 - ShootingWang</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
 <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
@@ -131,8 +131,8 @@
               
                 <div class="mt-3 post-meta">
                   <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-                  <time datetime="2020-04-28 14:23">
-                    星期二, 四月 28日 2020, 2:23 下午
+                  <time datetime="2020-05-15 20:29">
+                    星期五, 五月 15日 2020, 8:29 晚上
                   </time>
                 </div>
               
@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    13 字
+                    765 字
                   </span>
                 
 
@@ -152,7 +152,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    1
+                    10
                      分钟
                   </span>
                 
@@ -193,9 +193,60 @@
           <div class="post-content mx-auto" id="post">
             
             <article class="markdown-body">
-              <p>Decision Tree</p>
-<a id="more"></a>
-<h6><span id="参考资料">参考资料</span></h6><p>[1] <a href="http://vas3k.com/blog/machine_learning/" target="_blank" rel="noopener">封面图片来源</a></p>
+              <h1><span id="信息量">信息量</span></h1><p>信息量是对信息的度量；有时也叫作<strong>自信息</strong>（self-information）。</p>
+<ul>
+<li><p>信息的大小与随机事件发生的概率有关</p>
+<ul>
+<li><p>概率越小的事件发生了，产生的信息量越大</p>
+<blockquote>
+<p>如：处于非地震带的地方发生了地震</p>
+</blockquote>
+</li>
+<li><p>概率越大的事件发生了，产生的信息量越小</p>
+<blockquote>
+<p>如太阳从东边升起</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<p>——因此，事件的信息量随着其发生概率而递减，且不为负</p>
+<p>信息量的公式：</p>
+<script type="math/tex; mode=display">I(x)=-\log{p(x)}</script><p>其中，$p(x)$为随机事件$x$发生的概率；负号保证了信息量一定不为负。</p>
+<ul>
+<li><strong>联合自信息量</strong><script type="math/tex; mode=display">I(x_i,y_j)=-\log{p(x_i,y_j)}</script></li>
+<li><strong>条件自信息量</strong><script type="math/tex; mode=display">I(y_j|x_i)=\log{p(y_j|x_i)}</script></li>
+</ul>
+<h1><span id="信息熵">信息熵</span></h1><ul>
+<li>信息量是度量一个具体事件发生了所带来的信息；而<strong>信息熵</strong>（Entropy）是在事件发生之前对其结果可能产生的信息量求期望</li>
+<li>自信息是对事件不确定性的度量</li>
+<li>信息熵（香农熵）是事件所有可能结果的自信息的期望值</li>
+</ul>
+<p>信息熵的公式如下：</p>
+<script type="math/tex; mode=display">H(X)=-\sum_{i=1}^np(x_i)\log{p(x_i)}</script><p>其中$p(x_i)$表示随机事件$x_i\ (i=1,\cdots,n)$的概率。</p>
+<p>假设一组数据由$D=\{d_1,d_2,\cdots,d_n\}$构成，则这组数据的信息熵为</p>
+<script type="math/tex; mode=display">H(D)=-\sum_{i=1}^n\frac{d_i}{S_D}\log{\frac{d_i}{S_D}}</script><p>其中，$S_D=\sum_{i=1}^nd_i$。</p>
+<h2><span id="对数的底">对数的底</span></h2><p>信息熵公式中的对数的底的选择是任意的</p>
+<ul>
+<li>信息论中，一般选取<strong>2</strong>作为对数的底，则信息的单位为<u>比特（bits）</u></li>
+<li>机器学习中，一般选取<strong>自然常数e</strong>作为对数的底，则单位为<u>奈特（nats）</u></li>
+</ul>
+<h2><span id="性质">性质</span></h2><p>信息熵的一个性质为：</p>
+<script type="math/tex; mode=display">0\leq H(X)\leq\log{n}</script><p>这里$n$表示事件的个数。</p>
+<blockquote>
+<p>即：当随机分布为均匀分布时，熵最大</p>
+</blockquote>
+<p><font face="仿宋"><br>证明：使用拉格朗日乘子法<br>因为$p(x_1)+p(x_2)+\cdots+p(x_n)=1$，所以目标函数为</font></p>
+<script type="math/tex; mode=display">f\left(p(x_1),\cdots,p(x_n)\right)=-\left[p(x_1)\log{p(x_1)}+p(x_2)\log{p(x_2)}+\cdots+p(x_n)\log{p(x_n)}\right]</script><p>约束条件为</p>
+<script type="math/tex; mode=display">g\left(p(x_1),\cdots,p(x_n)\right)=p(x_1)+p(x_2)+\cdots+p(x_n)-1=0</script><p>定义拉格朗日函数：<br>\begin{equation<em>}<br>\begin{aligned}<br>L(p(x_1),\cdots,p(x_n);\lambda)&amp;=-\left[p(x_1)\log{p(x_1)}+p(x_2)\log{p(x_2)}+\cdots+p(x_n)\log{p(x_n)}\right]\\<br>&amp;+\lambda\left[p(x_1)+p(x_2)+\cdots+p(x_n)-1\right]<br>\end{aligned}<br>\end{equation</em>}<br>$L(p(x_1),\cdots,p(x_n);\lambda)$分别对$p(x_1),p(x_2),\cdots,p(x_n),\lambda$求偏导，并令偏导数为0，得到<br>\begin{equation<em>}<br>\left\{<br>\begin{array}{l}<br>\lambda-\log p(x_1)-1=0\\<br>\lambda-\log p(x_2)-1=0\\<br>\cdots\\<br>\lambda-\log p(x_n)-1=0\\<br>p(x_1)+p(x_2)+\cdots+p(x_n)-1=0<br>\end{array}\right.<br>\end{equation</em>}<br>解上述方程组，可得</p>
+<script type="math/tex; mode=display">p(x_1)=p(x_2)=\cdots=p(x_n)=\frac{1}{n}</script><p>所以目标函数的极大值为</p>
+<script type="math/tex; mode=display">f\left(\frac{1}{n},\frac{1}{n},\cdots,\frac{1}{n}\right)=-\left[\frac{1}{n}\log\frac{1}{n}+\frac{1}{n}\log\frac{1}{n}+\cdots+\frac{1}{n}\log\frac{1}{n}\right]=-\log\frac{1}{n}=\log n</script><p>&lt;/font&gt;<br>即：当随机分布为均匀分布时，熵最大。</p>
+<h1><span id="参考资料">参考资料</span></h1><ul>
+<li><a href></a></li>
+<li><a href></a></li>
+<li><a href></a></li>
+<li><a href></a></li>
+</ul>
 
             </article>
             <hr>
@@ -217,9 +268,7 @@
                     
                       <a class="hover-with-bg" href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">机器学习</a>
                     
-                      <a class="hover-with-bg" href="/tags/%E5%88%86%E7%B1%BB/">分类</a>
-                    
-                      <a class="hover-with-bg" href="/tags/%E6%9C%89%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0/">有监督学习</a>
+                      <a class="hover-with-bg" href="/tags/%E5%9F%BA%E7%A1%80/">基础</a>
                     
                   </div>
                 
@@ -395,7 +444,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "决策树&nbsp;",
+        "熵&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,
