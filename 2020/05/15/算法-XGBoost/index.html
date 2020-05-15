@@ -17,7 +17,7 @@
   <meta name="description" content="统计一只狗，梦想有只猫">
   <meta name="author" content="ShootingWang">
   <meta name="keywords" content="">
-  <title>算法-XGBoost - ShootingWang</title>
+  <title>XGBoost - ShootingWang</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
 <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    243 字
+                    220 字
                   </span>
                 
 
@@ -152,7 +152,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    3
+                    2
                      分钟
                   </span>
                 
@@ -194,64 +194,49 @@
             
             <article class="markdown-body">
               <p>e<strong>X</strong>treme <strong>G</strong>radient <strong>Boost</strong>ing</p>
-<h1><span id="xgboost">XGBoost</span></h1><h1><span id="xgboost-vs-gbdt">XGBoost vs GBDT</span></h1><div>
-<style scoped>
-  .dataframe tbody tr th:only-of-type {
-      vertical-align: middle;
-  }
-
-  .dataframe tbody tr th {
-      vertical-align: top;
-  }
-
-  .dataframe thead th {
-      text-align: center;
-  }
-</style>
-<table border="1" class="dataframe">
+<h1><span id="xgboost">XGBoost</span></h1><h1><span id="xgboost-vs-gbdt">XGBoost vs GBDT</span></h1><div class="table-container">
+<table>
 <thead>
-  <tr style="text-align: center;">
-    <th></th>
-    <th>GBDT</th>
-    <th>XGBoost</th>
-  </tr>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">GBDT</th>
+<th style="text-align:center">XGBoost</th>
+</tr>
 </thead>
 <tbody>
-  <tr>
-    <th>基分类器</th>
-    <td>CART</td>
-    <td>还支持线性分类器</td>
-  </tr>
-  <tr>
-    <th>优化</th>
-    <td>梯度下降法[^1]</td>
-    <td>牛顿法[^2]</td>
-  </tr>
-  <tr>
-    <th>正则项[^3]</th>
-    <td>没有</td>
-    <td>有</td>
-  </tr>
-  <tr>
-    <th>Learning rate</th>
-    <td></td>
-    <td>Shrinkage</td>
-  </tr>
-  <tr>
-    <th>列抽样</th>
-    <td></td>
-    <td>支持列抽样[^4]</td>
-  </tr>
-  <tr>
-    <th>缺失值</th>
-    <td></td>
-    <td>可以自动学习出缺失值的分裂方向</td>
-  </tr>
-  <tr>
-</tr></tbody>
+<tr>
+<td style="text-align:center"><strong>基分类器</strong></td>
+<td style="text-align:center">CART</td>
+<td style="text-align:center">还支持线性分类器</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>优化</strong></td>
+<td style="text-align:center">梯度下降法<sup><a href="#fn_1" id="reffn_1">1</a></sup></td>
+<td style="text-align:center">牛顿法<sup><a href="#fn_2" id="reffn_2">2</a></sup></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>正则项</strong><sup><a href="#fn_3" id="reffn_3">3</a></sup></td>
+<td style="text-align:center">没有</td>
+<td style="text-align:center">有</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>Learning rate</strong></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">Shrinkage</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>列抽样</strong></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">支持列抽样<sup><a href="#fn_4" id="reffn_4">4</a></sup></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>缺失值</strong></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">可以自动学习出缺失值的分裂方向</td>
+</tr>
+</tbody>
 </table>
 </div>
-
 <blockquote id="fn_1">
 <sup>1</sup>. 在优化时只用到一阶导数信息<a href="#reffn_1" title="Jump back to footnote [1] in the text."> &#8617;</a>
 </blockquote>
@@ -466,7 +451,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "算法-XGBoost&nbsp;",
+        "XGBoost&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,
