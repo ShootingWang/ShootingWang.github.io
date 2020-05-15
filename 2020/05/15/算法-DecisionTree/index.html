@@ -17,7 +17,7 @@
   <meta name="description" content="统计一只狗，梦想有只猫">
   <meta name="author" content="ShootingWang">
   <meta name="keywords" content="">
-  <title>Decision Tree - ShootingWang</title>
+  <title>决策树 - ShootingWang</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
 <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    45 字
+                    199 字
                   </span>
                 
 
@@ -152,7 +152,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    1
+                    2
                      分钟
                   </span>
                 
@@ -194,18 +194,41 @@
             
             <article class="markdown-body">
               <p>Decision Tree<br>决策树<br><a id="more"></a></p>
-<h1><span id="decision-tree">Decision Tree</span></h1><ul>
-<li>可作分类</li>
-<li>也可作回归</li>
+<h1><span id="decision-tree">Decision Tree</span></h1><ol>
+<li>是一种基本的<strong>分类</strong>与<strong>回归</strong>方法</li>
+<li>决策树由结点和有向边组成<ul>
+<li><u>内部结点</u>表示一个特征/属性</li>
+<li><u>叶子结点</u>表示一个分类</li>
+<li><u>有向边</u>表示一个划分规则</li>
 </ul>
-<h2><span id="id3">ID3</span></h2><ul>
+</li>
+<li>决策树从根结点到子结点的有向边代表了一条路径<ul>
+<li>决策树的路径是互斥的且是完备的</li>
+</ul>
+</li>
+<li>决策树学习通常包括3个步骤：<ol>
+<li>特征选择</li>
+<li>决策树生成</li>
+<li>决策树剪枝</li>
+</ol>
+</li>
+</ol>
+<h2><span id="优点">优点</span></h2><p>决策树的优点：</p>
+<ul>
+<li>可读性强</li>
+<li>分类速度快</li>
+</ul>
+<h2><span id="原理">原理</span></h2><h2><span id="id3">ID3</span></h2><ul>
 <li></li>
 </ul>
-<h1><span id="cart">CART</span></h1><p><strong>C</strong>lassification <strong>a</strong>nd <strong>R</strong>egression <strong>T</strong>ree / Regression Tree<br>分类和回归树</p>
+<h2><span id="cart">CART</span></h2><p><strong>C</strong>lassification <strong>a</strong>nd <strong>R</strong>egression <strong>T</strong>ree / Regression Tree<br>分类和回归树</p>
+<blockquote>
+<p>regression tree is a function that maps the attributes to the score. —— from Tianqi Chen - Introduction to Boosted Tree</p>
+</blockquote>
 <h1><span id="参考资料">参考资料</span></h1><ul>
 <li><a href="http://vas3k.com/blog/machine_learning/" target="_blank" rel="noopener">封面图片来源</a></li>
 <li><a href="https://homes.cs.washington.edu/~tqchen/data/pdf/BoostedTree.pdf" target="_blank" rel="noopener">Tianqi Chen - Introduction to Boosted Trees</a></li>
-<li><a href></a></li>
+<li><a href="http://www.huaxiaozhuan.com/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0/chapters/4_decision_tree.html" target="_blank" rel="noopener">决策树</a></li>
 <li><a href></a></li>
 <li><a href></a></li>
 <li><a href></a></li>
@@ -234,6 +257,8 @@
                       <a class="hover-with-bg" href="/tags/%E5%88%86%E7%B1%BB/">分类</a>
                     
                       <a class="hover-with-bg" href="/tags/%E6%9C%89%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0/">有监督学习</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E5%9B%9E%E5%BD%92/">回归</a>
                     
                   </div>
                 
@@ -409,7 +434,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "Decision Tree&nbsp;",
+        "决策树&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,
