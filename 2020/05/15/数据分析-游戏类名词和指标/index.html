@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    993 字
+                    990 字
                   </span>
                 
 
@@ -315,24 +315,30 @@
 </li>
 </ul>
 </blockquote>
-<h2><span id="mud">MUD</span></h2><p>Multiple User Domain<br>多用户虚拟空间游戏；文字网游的统称；没有图形<br>&gt;</p>
+<h2><span id="mud">MUD</span></h2><p>Multiple User Domain<br>多用户虚拟空间游戏；文字网游的统称；没有图形</p>
+<blockquote>
 <ul>
 <li>风云</li>
 <li>书剑</li>
 <li>英雄坛</li>
 </ul>
-<h2><span id="mug">MUG</span></h2><p>Music Game<br>音乐游戏<br>&gt;</p>
+</blockquote>
+<h2><span id="mug">MUG</span></h2><p>Music Game<br>音乐游戏</p>
+<blockquote>
 <ul>
 <li>节奏大师</li>
 <li>初音未来歌姬</li>
 <li>古树旋律</li>
 </ul>
-<h2><span id="rac">RAC</span></h2><p>Race Game<br>赛车游戏、竞速游戏<br>&gt;</p>
+</blockquote>
+<h2><span id="rac">RAC</span></h2><p>Race Game<br>赛车游戏、竞速游戏</p>
+<blockquote>
 <ul>
 <li>极品飞车</li>
 <li>狂野飙车</li>
 <li>QQ跑跑卡丁车</li>
 </ul>
+</blockquote>
 <h2><span id="rpg">RPG</span></h2><p>Role-Playing Game<br>角色扮演游戏</p>
 <blockquote>
 <ul>
@@ -790,7 +796,23 @@
       mermaid.initialize({{ JSON.stringify(theme.mermaid.options) }});
     }
   </script>
-{% endif %}<!-- hexo-inject:begin --><!-- hexo-inject:end -->
+{% endif %}
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </body>
 </html>
