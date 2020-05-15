@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    2.3k 字
+                    2.5k 字
                   </span>
                 
 
@@ -152,7 +152,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    36
+                    38
                      分钟
                   </span>
                 
@@ -530,6 +530,61 @@ print(&quot;预测新红酒的分类为：{}&quot;.format(wine_dataset[&#39;targ
 </code></pre><pre><code class="lang-Python">
 
 </code></pre>
+<h2><span id="knn-vs-k-means">KNN vs K-Means</span></h2><ul>
+<li><a href="/2020/05/13/%E7%AE%97%E6%B3%95-K-Means/" title="K-Means算法">K-Means算法</a>
+</li>
+</ul>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: center;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: center;">
+      <th></th>
+      <th>K-Means</th>
+      <th>KNN</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>分类</th>
+      <td>聚类算法</td>
+      <td>分类/回归算法</td>
+    </tr>
+    <tr>
+      <th>监督</th>
+      <td>无监督学习</td>
+      <td>有监督学习</td>
+    </tr>
+    <tr>
+      <th>训练集</th>
+      <td>无标签数据</td>
+      <td>有标签数据<br>无序变有序</td>
+    </tr>
+    <tr>
+      <th>相似点</th>
+      <td colspan="2">都包含——给定一个点，在数据集中找离它最近的点——的过程；即，二者都使用了NN（Nearest Neighbor）算法，一般用KD树实现NN</td>
+    </tr>
+    <tr>
+  </tr></tbody>
+</table>
+</div>
+
+
+
+
+
 <h1><span id="参考资料">参考资料</span></h1><p>[1] <a href>首页缩略图</a><br>[2] <a href="https://book.douban.com/subject/26979890/" target="_blank" rel="noopener">图解算法</a><br>[3] <a href="https://en.wikipedia.org/wiki/Lazy_learning" target="_blank" rel="noopener">维基百科-Lazy Learning</a><br>[4] <a href="https://en.wikipedia.org/wiki/Eager_learning" target="_blank" rel="noopener">维基百科-Eager Learning</a><br>[5] 段小手.<a href="https://baike.baidu.com/item/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BAPython%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/22799668?fr=aladdin" target="_blank" rel="noopener">深入浅出 Python 机器学习</a>[M]. 清华大学出版社, 2018.<br>[6] <a href="https://blog.csdn.net/Dream_angel_Z/article/details/45896449" target="_blank" rel="noopener">机器学习算法-K最近邻从原理到实现（Python）</a><br>[7] <a href="https://www.cnblogs.com/ybjourney/p/4702562.html" target="_blank" rel="noopener">机器学习（一）——K-近邻（KNN）算法</a></p>
 
             </article>
