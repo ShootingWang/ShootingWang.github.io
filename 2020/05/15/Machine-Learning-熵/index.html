@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    973 字
+                    1.2k 字
                   </span>
                 
 
@@ -152,7 +152,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    13
+                    17
                      分钟
                   </span>
                 
@@ -264,12 +264,17 @@
 <li>连续情况：随机变量$(X,Y)$的联合密度函数为<script type="math/tex; mode=display">f(x,y)\quad (x\in \Omega_X;\ y\in \Omega_Y)</script></li>
 </ul>
 <p><strong>复合熵/联合熵</strong>为</p>
-<script type="math/tex; mode=display">H(X,Y)=-\sum_{i=1}^n\sum_{j=1}^mp_{ij}\log{p_{ij}}</script><script type="math/tex; mode=display">H(X,Y)=-\int_{\Omega_X}\int_{\Omega_Y}f(x,y)\log{f(x,y)}\mathrm{dx}\mathrm{dy}</script><h1><span id="条件熵">条件熵</span></h1><p>条件熵：代表在某一个条件$X$下，随机变量$Y$的复杂度（不确定度）</p>
+<script type="math/tex; mode=display">H(X,Y)=-\sum_{i=1}^n\sum_{j=1}^mp_{ij}\log{p_{ij}}</script><script type="math/tex; mode=display">H(X,Y)=-\int_{\Omega_X}\int_{\Omega_Y}f(x,y)\log{f(x,y)}\mathrm{dx}\mathrm{dy}</script><h2><span id="性质">性质</span></h2><ul>
+<li>联合熵大于独立熵的和<br>\begin{equation}<br>\begin{aligned}<br>H(X,Y)&amp;\geq\max{\left[H(X),H(Y) \right]}\\<br>H(X_1,\cdots,X_N)&amp;\geq\max{\left[H(X_1),\cdots,H(X_N) \right]}<br>\end{aligned}<br>\end{equation}</li>
+<li>联合熵小于各独立熵的和<br>\begin{equation}<br>\begin{aligned}<br>H(X,Y)&amp;\leq H(X)+H(Y)\\<br>H(X_1,\cdots,X_N)&amp;\leq H(X_1)+\cdots+H(X_N)<br>\end{aligned}<br>\end{equation}</li>
+</ul>
+<h1><span id="条件熵">条件熵</span></h1><p>条件熵：代表在某一个条件$X$下，随机变量$Y$的复杂度（不确定度）</p>
 <blockquote>
 <p>即：在给定条件X下，Y的条件概率分布的熵关于X的数学期望</p>
 </blockquote>
-<p><strong>条件熵</strong>$H(Y|X)$表示在已知随机变量$X$的条件下、随机变量$Y$ 的不确定性。</p>
-<h1><span id="参考资料">参考资料</span></h1><ul>
+<p><strong>条件熵</strong>$H(Y|X)$表示在已知随机变量$X$的条件下、随机变量$Y$ 的不确定性。<br>\begin{equation}<br>\begin{aligned}<br>  H(Y|X) &amp;= \sum_{i=1}^np(x_i)H(Y|X=x_i)\\<br>&amp;= -\sum_{i=1}^np(x_i)\sum_{j=1}^mp(y_j|x_i)\log{p(y_j|x_i)}\\<br>&amp;= -\sum_{i=1}^n\sum_{j=1}^mp(x_i,y_j)\log{p(y_j|x_i)}\\<br>H(Y|X)&amp;= \int_{x\in\Omega_X}f(x)H(Y|X=x)\mathrm{dx}\\<br>&amp;= -\int_{x\in\Omega_X}f(x)\int_{y\in\Omega_Y}f(y|x)\log{f(y|x)}\mathrm{dy}\\<br>&amp;= -\int_{x\in\Omega_X}\int_{y\in\Omega_Y}f(x)f(y|x)\log{f(y|x)}\mathrm{dx}\mathrm{dy}<br>\end{aligned}<br>\end{equation}</p>
+<p>当信息熵和条件熵中的概率由样本数据估计而得时，所对应的信息熵与条件熵称为<strong>经验熵</strong>（empirical entropy）和<strong>经验条件熵</strong>（empirical conditional entropy）。</p>
+<h2><span id="性质">性质</span></h2><h1><span id="参考资料">参考资料</span></h1><ul>
 <li><a href></a></li>
 <li><a href></a></li>
 <li><a href></a></li>
