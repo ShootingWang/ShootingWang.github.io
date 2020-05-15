@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    1.8k 字
+                    2.6k 字
                   </span>
                 
 
@@ -152,7 +152,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    26
+                    36
                      分钟
                   </span>
                 
@@ -289,11 +289,38 @@
 <script type="math/tex; mode=display">D_{KL}(p||q)=\sum_{i=1}^n\left(p(x_i)\log{p(x_i)}-p(x_i)\log{q(x_i)}\right)\geq0</script><p><font face="仿宋"><br>即证</font></p>
 <script type="math/tex; mode=display">\sum_{i=1}^np(x_i)\log{\frac{q(x_i)}{p(x_i)}}\leq0</script><p><font face="仿宋"><br>因为$\ln{x}\leq x-1$当且仅当$x=1$时等号成立，所以</font></p>
 <script type="math/tex; mode=display">\sum_{i=1}^np(x_i)\log{\frac{q(x_i)}{p(x_i)}}\leq\sum_{i=1}^np(x_i)\left(\frac{q(x_i)}{p(x_i)}-1\right)=\sum_{i=1}^n\left(q(x_i)-p(x_i)\right)</script><p><font face="仿宋">当且仅当$p(x_i)=q(x_i)$（对所有的$i,\ i=1,2,\cdots,n$）时有</font></p>
-<script type="math/tex; mode=display">\sum_{i=1}^np(x_i)\log{\frac{q(x_i)}{p(x_i)}}=\sum_{i=1}^n\left[q(x_i)-p(x_i)\right]=0</script><h1><span id="参考资料">参考资料</span></h1><ul>
-<li><a href></a></li>
-<li><a href></a></li>
-<li><a href></a></li>
-<li><a href></a></li>
+<script type="math/tex; mode=display">\sum_{i=1}^np(x_i)\log{\frac{q(x_i)}{p(x_i)}}=\sum_{i=1}^n\left[q(x_i)-p(x_i)\right]=0</script><h1><span id="交叉熵">交叉熵</span></h1><p>交叉熵（Cross entropy）：是一种损失函数/代价函数，用于描述模型预测值与真实值的差距大小。</p>
+<p>真实概率分布$p(x)$和预测概率分布$q(x)$之间的交叉熵为</p>
+<script type="math/tex; mode=display">H(p,q)=-\sum_{i=1}^np(x_i)\log{q(x_i)}</script><p>交叉熵在分类问题中，常常与softmax搭配使用，softmax将输出的结果进行处理，使多个分类类别的预测值的和为1，再使用交叉熵计算损失。</p>
+<p>将KL散度公式拆开：<br>\begin{equation}<br>\begin{aligned}<br>  D_{KL}(p||q)&amp;=\sum_{i=1}^np(x_i)\log{\frac{p(x_i)}{q(x_i)}}\\<br>&amp;= \underline{\sum_{i=1}^np(x_i)\log{p(x_i)}}-\sum_{i=1}^np(x_i)\log{q(x_i)}\\<br>&amp;= \underline{-H\left(p(x)\right)}+\left[-\sum_{i=1}^np(x_i)\log{q(x_i)} \right]<br>\end{aligned}<br>\end{equation}<br>其中，$H\left(p(x)\right)$表示真实分布的信息熵，后者即为交叉熵。</p>
+<script type="math/tex; mode=display">KL散度=交叉熵-信息熵</script><p>KL散度（相对熵）衡量的是真实概率分布与预测概率分布之间的差异；KL散度越小，表明预测的效果越好。在机器学习训练模型时，输入数据（Input）与标签（Label）通常已确定，那么真实概率分布$p$也已确定，信息熵$H\left(p(x)\right)$就是一个常量。因此，最小化KL散度等价于最小化交叉熵。所以，在机器学习中常常使用交叉熵作为损失函数。</p>
+<h1><span id="互信息">互信息</span></h1><p>互信息（Mutual Information）：也是信息论中的一种信息度量，是一个随机变量中包含的关于另一个随机变量的信息量，或者说，是一个随机变量由于已知另一个随机变量而减少的不确定性。</p>
+<ul>
+<li>两个<strong>离散</strong>随机变量$X$和$Y$的互信息定义为<script type="math/tex; mode=display">I(X,Y)=\sum_{y\in Y}\sum_{x\in X}p(x,y)\log{\frac{p(x,y)}{p(x)p(y)}}</script>其中，$p(x,y)$是$X$和$Y$的联合概率分布函数，$p(x)$、$p(y)$分别是$X$和$Y$的边缘概率分布函数。</li>
+<li><p>两个<strong>连续</strong>随机变量的互信息定义为</p>
+<script type="math/tex; mode=display">I(X,Y)=\int_Y\int_Xp(x,y)\log{\frac{p(x,y)}{p(x)p(y)}}\mathrm{d}x\mathrm{d}y</script><p>其中，$p(x,y)$是$X$和$Y$的联合概率密度函数，$p(x)$、$p(y)$分别是$X$和$Y$的边缘概率密度函数。</p>
+</li>
+<li><p>互信息是互信息量$I(x_i,y_j)$在联合概率空间中的统计平均值。</p>
+</li>
+<li>（平均）互信息克服了互信息量$I(x_i,y_j)$的随机性，是一个确定的量。</li>
+<li>互信息是$X$和$Y$的联合分布相对于假定$X$和$Y$独立情况下的联合分布之间的内在依赖性。</li>
+<li>$I(X,Y)=0$当且仅当$X$和$Y$独立时成立。</li>
+<li>当$X$和$Y$独立时，$p(x,y)=p(x)p(y)$。因此<script type="math/tex; mode=display">\log{\frac{p(x,y)}{p(x)p(y)}}=\log1=0</script></li>
+</ul>
+<p><meta name="referrer" content="no-referrer"><br></p>
+<h1><span id="参考资料">参考资料</span></h1><ul>
+<li><a href="https://zhuanlan.zhihu.com/p/26486223" target="_blank" rel="noopener">通俗理解信息熵</a></li>
+<li><a href="http://blog.sina.com.cn/s/blog_6e85bf420100ohma.html" target="_blank" rel="noopener">ID3算法</a></li>
+<li><a href="https://ask.julyedu.com/question/6897" target="_blank" rel="noopener">“熵”的通俗解释</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/26551798" target="_blank" rel="noopener">通俗理解条件熵</a></li>
+<li><a href="https://blog.csdn.net/xierhacker/article/details/53463567" target="_blank" rel="noopener">机器学习笔记十：各种熵总结</a></li>
+<li><a href="https://blog.csdn.net/weixinhum/article/details/85064685" target="_blank" rel="noopener">相对熵（KL散度）</a></li>
+<li><a href="https://blog.csdn.net/BigData_Mining/article/details/81279612" target="_blank" rel="noopener">互信息的深度理解</a></li>
+<li><a href="https://blog.csdn.net/NeilGY/article/details/98216164" target="_blank" rel="noopener">机器学习中各种熵</a></li>
+<li><a href="https://www.cnblogs.com/kyrieng/p/8694705.html" target="_blank" rel="noopener">详解机器学习中的熵、条件熵、相对熵和交叉熵</a></li>
+<li><a href="https://www.jiqizhixin.com/graph/technologies/1786086f-5b63-4eee-b9ed-dad4d64cdc86" target="_blank" rel="noopener">交叉熵</a></li>
+<li><a href="https://blog.csdn.net/b1055077005/article/details/100152102" target="_blank" rel="noopener">交叉熵损失函数原理详解</a></li>
+<li><a href="https://www.zhihu.com/question/65288314/answer/244557337" target="_blank" rel="noopener">为什么交叉熵可以用于计算代价</a></li>
 </ul>
 
             </article>
