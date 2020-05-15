@@ -17,7 +17,7 @@
   <meta name="description" content="统计一只狗，梦想有只猫">
   <meta name="author" content="ShootingWang">
   <meta name="keywords" content="">
-  <title>Machine Learning-汇总 - ShootingWang</title>
+  <title>算法-LogisticRegression - ShootingWang</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
 <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
@@ -131,8 +131,8 @@
               
                 <div class="mt-3 post-meta">
                   <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-                  <time datetime="2020-05-02 10:45">
-                    星期六, 五月 2日 2020, 10:45 上午
+                  <time datetime="2020-05-15 17:24">
+                    星期五, 五月 15日 2020, 5:24 下午
                   </time>
                 </div>
               
@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    444 字
+                    2.1k 字
                   </span>
                 
 
@@ -152,7 +152,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    6
+                    32
                      分钟
                   </span>
                 
@@ -193,256 +193,124 @@
           <div class="post-content mx-auto" id="post">
             
             <article class="markdown-body">
-              <p>Machine Learning 算法汇总</p>
-<a id="more"></a>
+              <h1><span id="logistic-regression">Logistic Regression</span></h1><p>逻辑回归（<strong>LR</strong>，Logistic Regression），是一种<u>对数几率模型</u>（Logit Model），常用于二分类问题（binary classification problems）</p>
 <ul>
-<li><a href="/2020/05/12/Machine-Learning-%E5%88%86%E7%B1%BB%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0/" title="分类模型评估">分类模型评估</a></li>
-<li><a href="/2020/05/11/Machine-Learning-%E8%81%9A%E7%B1%BB%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0/" title="聚类模型评估">聚类模型评估</a></li>
-<li><a href="/2020/05/15/%E7%AE%97%E6%B3%95-%E8%BF%87%E6%8B%9F%E5%90%88/" title="如何防止过拟合？">如何防止过拟合？</a>
-</li>
+<li>逻辑回归和线性回归（Linear Regression）都是一种广义线性模型（GLM，Generalized Linear Model）</li>
+<li>属于<strong>有监督学习</strong>（Supervised Learning）</li>
+<li>是一种分类器（Classifier）</li>
+<li>因变量是分类变量（Qualitative response）</li>
 </ul>
-<h1><span id="machine-learning">Machine Learning</span></h1><ul>
-<li>Classical Learning<ul>
-<li>Supervised Learning</li>
-<li>Unsupervised Learning</li>
-</ul>
-</li>
-<li>Ensemble Methods<ul>
-<li>Bagging</li>
-<li>Boosting</li>
-<li>Stacking</li>
-</ul>
-</li>
-<li>Reinforcement Learning</li>
-<li>Neural Networks and Deep Learning</li>
-</ul>
-<h2><span id="classical-learning">Classical Learning</span></h2><ul>
-<li><a href="/2020/05/15/%E7%AE%97%E6%B3%95-SupervisedLearning/" title="Supervised Learning">Supervised Learning</a>
+<blockquote>
+<p>其他分类器有：</p>
 <ul>
-<li>Classification</li>
-<li>Regression</li>
+<li>判别分析（Discriminant Analysis）</li>
+<li>决策树（Decision Tree）</li>
+<li>随机森林（Random Forest）</li>
+<li>支持向量机（Support Vector Machine）</li>
+<li>神经网络（Neural Network）</li>
+<li>……</li>
 </ul>
-</li>
-<li>Unsupervised Learning<ul>
-<li>Clustering</li>
-<li>Pattern Search</li>
-<li>Dimension Reduction</li>
-</ul>
-</li>
-</ul>
-<h3><span id="supervised-learning">Supervised Learning</span></h3><h4><span id="classification">Classification</span></h4><ul>
-<li>K-NN</li>
-<li>Naive Bayes</li>
-<li>SVM</li>
-<li>Decision Tree</li>
-<li><p>Logistic Regression</p>
-</li>
-<li><a href="/2020/05/12/Machine-Learning-%E5%88%86%E7%B1%BB%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0/" title="分类模型评估">分类模型评估</a>
-</li>
-</ul>
-<h5><span id="k-nn">K-NN</span></h5><ul>
-<li><a href="/2020/05/06/%E7%AE%97%E6%B3%95-KNN/" title="K最邻近算法(KNN)">K最邻近算法(KNN)</a>
-</li>
-</ul>
-<h5><span id="naive-bayes">Naive Bayes</span></h5><ul>
-<li><a href="/2020/05/11/%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF/" title="朴素贝叶斯">朴素贝叶斯</a>
-</li>
-</ul>
-<h5><span id="svm">SVM</span></h5><ul>
-<li><a href="/2020/04/28/%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA/" title="支持向量机">支持向量机</a> Support Vector Machine</li>
-</ul>
-<h5><span id="decision-tree">Decision Tree</span></h5><ul>
-<li><a href="/2020/04/28/%E5%86%B3%E7%AD%96%E6%A0%91/" title="决策树">决策树</a>
-</li>
-</ul>
-<h5><span id="logistic-regression">Logistic Regression</span></h5><ul>
-<li><a href="/2020/05/15/%E7%AE%97%E6%B3%95-LogisticRegression/" title="逻辑回归">逻辑回归</a>
-</li>
-</ul>
-<h4><span id="regression">Regression</span></h4><ul>
-<li>Linear Regression</li>
-<li>Ridge/Lasso Regression</li>
-</ul>
-<h5><span id="linear-regression">Linear Regression</span></h5><ul>
-<li><a href="/2020/05/04/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/" title="线性回归">线性回归</a>
-</li>
-</ul>
-<h5><span id="ridgelasso-regression">Ridge/Lasso Regression</span></h5><h3><span id="unsupervised-learning">Unsupervised Learning</span></h3><h4><span id="clustering">Clustering</span></h4><ul>
-<li>分割聚类算法：<ul>
-<li>K-Means</li>
-<li>K-Medoids</li>
-<li>CLARANS</li>
-</ul>
-</li>
-<li><p>层次聚类算法：</p>
+</blockquote>
+<h2><span id="逻辑分布">逻辑分布</span></h2><p>Logistic分布是一种连续型分布，其分布函数（Cumulative distribution function）为</p>
+<script type="math/tex; mode=display">F(x)=P(X\leq x)=\frac{1}{1+e^{-(x-\mu)/s}}=\frac{1}{2}+\frac{1}{2}\tanh\left(\frac{x-\mu}{2s}\right)</script><p><meta name="referrer" content="no-referrer"><br><img src="/2020/05/15/%E7%AE%97%E6%B3%95-LogisticRegression/LR-CDF.png" srcset="/img/loading.gif" class title="不同取值参数对应的CDF"></p>
+<p>概率密度函数为</p>
+<script type="math/tex; mode=display">f(x)=F^\prime(x)=\frac{e^{-(x-\mu)/s}}{s\left(1+e^{-(x-\mu)/s}\right)^2}=\frac{1}{4s}\mathrm{sech}^2\left(\frac{x-2\mu}{2s}\right),\quad -\infty< x< +\infty</script><p>其中</p>
 <ul>
-<li>DBSCAN</li>
-<li>OPTICS</li>
-<li>BIRCH</li>
-<li>CURE</li>
+<li>$\mu$为位置参数（location parameter）</li>
+<li>$s$为尺度参数（scale parameter）</li>
+<li>期望<script type="math/tex; mode=display">\mathrm{E(X)}=\mu</script></li>
+<li>中位数<script type="math/tex; mode=display">\mathrm{Median(X)}=\mu</script></li>
+<li>方差<script type="math/tex; mode=display">\mathrm{Var}(X)=\frac{s^2\pi^2}{3}</script></li>
 </ul>
-</li>
-<li><p>Mean-Shift</p>
-</li>
-<li>Agglomerative</li>
-<li>Fuzzy C-Means</li>
-</ul>
-<ul>
-<li><a href="/2020/05/11/Machine-Learning-%E8%81%9A%E7%B1%BB%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0/" title="聚类模型评估">聚类模型评估</a>
-</li>
-</ul>
-<h5><span id="k-means">K-Means</span></h5><ul>
-<li><a href="/2020/05/13/%E7%AE%97%E6%B3%95-K-Means/" title="K-均值聚类（K-Means）">K-均值聚类（K-Means）</a>
-</li>
-</ul>
-<h5><span id="k-medoids">K-Medoids</span></h5><h5><span id="mean-shift">Mean-Shift</span></h5><h5><span id="dbscan">DBSCAN</span></h5><h5><span id="optics">OPTICS</span></h5><h5><span id="agglomerative">Agglomerative</span></h5><h5><span id="fuzzy-c-means">Fuzzy C-Means</span></h5><h5><span id="clarans">CLARANS</span></h5><ul>
-<li>
-</li>
-</ul>
-<p><u>表：各种聚类算法对比</u></p>
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: center;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: center;">
-      <th>算法</th>
-      <th>算法效率</th>
-      <th>适合的数据类型</th>
-      <th>能够发现的聚类类型</th>
-      <th>对异常值的敏感性</th>
-      <th>对数据输入顺序的敏感性</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>CLARANS</th>
-      <td>较低</td>
-      <td>数值</td>
-      <td>凸形/球形</td>
-      <td>不敏感</td>
-      <td>非常敏感</td>
-    </tr>
-    <tr>
-      <th>BIRCH</th>
-      <td>高</td>
-      <td>数值</td>
-      <td>凸形/球形</td>
-      <td>不敏感</td>
-      <td>不太敏感</td>
-    </tr>
-    <tr>
-      <th>DBSCAN</th>
-      <td>一般</td>
-      <td>任意形状</td>
-      <td>敏感</td>
-      <td>敏感</td>
-    </tr>
-    <tr>
-      <th>CURE</th>
-      <td>较高</td>
-      <td>数值</td>
-      <td>任意形状</td>
-      <td>不敏感</td>
-      <td>不太敏感</td>
-    </tr>
-    <tr>
-      <th>K-poto</th>
-      <td>一般</td>
-      <td>数值/符号</td>
-      <td>凸形/球形</td>
-      <td>敏感</td>
-      <td>一般</td>
-    </tr>
-    <tr>
-      <th>CUQUE</th>
-      <td>较低</td>
-      <td>数值</td>
-      <td>凸形/球形</td>
-      <td>一般</td>
-      <td>不敏感</td>
-    </tr>
-  </tbody>
+<p><meta name="referrer" content="no-referrer"><br><img src="/2020/05/15/%E7%AE%97%E6%B3%95-LogisticRegression/LR-pdf.png" srcset="/img/loading.gif" class title="不同取值参数对应的pdf"></p>
+<h2><span id="逻辑函数">逻辑函数</span></h2><p>一个简单的Logistic函数：</p>
+<script type="math/tex; mode=display">P(t)=\frac{1}{1+e^{-t}}</script><p><meta name="referrer" content="no-referrer"><br><img src="/2020/05/15/%E7%AE%97%E6%B3%95-LogisticRegression/LR-slog.png" srcset="/img/loading.gif" class title="标准Logistic函数"></p>
+<p>广义Logistic曲线可以模拟一些人口增长的S形曲线：初始阶段大致是指数增长；然后开始变得饱和，增加变慢；最后，达到成熟时增加停止。</p>
+<h2><span id="逻辑回归">逻辑回归</span></h2><p>逻辑回归通常用于二分类问题（因变量是分类变量），用来表示某件事发生的可能性。</p>
+<p>Andrew Ng的CS229中的例子：根据肿瘤的大小（Tumor Size）$X$来判断肿瘤是否是恶性的（Malignant）$Y$。</p>
+<p>考虑构建线性回归模型$h_\theta(x)$，$h_\theta(x)\geq 0.5$ 为恶性肿瘤，$h_\theta(x)&lt;0.5$为良性肿瘤。<br>\begin{equation}<br>  Y=\left\{<br>\begin{array}{ll}<br>1, &amp; \mbox{如果} h_\theta(x)\geq 0.5\\<br>0, &amp; \mbox{如果} h_\theta(x)&lt;0.5<br>\end{array}\right.<br>\end{equation}</p>
+<p>Logistic函数/<strong>Sigmoid函数</strong>可以将任意实数值映射到(0,1)区间（不包括0和1，但可以无限接近）。因此，使用Sigmoid函数来将线性回归的结果按照一定的阈值分为2类（二分类问题）或更多类（多分类问题）。</p>
+<p><meta name="referrer" content="no-referrer"><br><img src="/2020/05/15/%E7%AE%97%E6%B3%95-LogisticRegression/LR-heart.png" srcset="/img/loading.gif" class title="来自：机器之心-从原理到应用-简述Logistic回归算法"></p>
+<p>令</p>
+<script type="math/tex; mode=display">h_\theta(x)=g(\theta^Tx)=\frac{1}{1+e^{-\theta^Tx}}=\frac{e^{\theta^Tx}}{1+e^{\theta^Tx}}</script><p>其中$z=\theta^Tx$（这里$x$包含截距项），Sigmoid函数为</p>
+<script type="math/tex; mode=display">g(z)=\frac{1}{1+e^{-z}}=\frac{e^z}{1+e^z}</script><p>Sigmoid保证$h_\theta(x)$取值在0和1之间（概率取值范围为[0,1]）。</p>
+<p><strong>Log-odds</strong>，也称<strong>Logit</strong>（Logit transformation / Link function）表示为</p>
+<script type="math/tex; mode=display">\log\frac{p}{1-p}=\log\frac{h_\theta(x)}{1-h_\theta(x)}=\theta^Tx</script><p>其中$p=h_\theta(x)$表示概率。</p>
+<p>$h_\theta(x)$表示输入$x$后分类结果为1的概率</p>
+<script type="math/tex; mode=display">P(Y=1|x;\theta)=h_\theta(x)</script><script type="math/tex; mode=display">P(Y=0|x;\theta)=1-h_\theta(x)</script><p>\newpage<br>\noindent 因此，因变量$Y$服从Bernoulli分布</p>
+<script type="math/tex; mode=display">Y|X=x_i\sim \mathrm{Bernoulli}\left(h_\theta(x_i)\right)</script><p>概率函数为</p>
+<script type="math/tex; mode=display">P(y|x;\theta)=\left[h_\theta(x) \right]^y\left[1-h_\theta(x) \right]^{1-y}</script><p>使用训练数据集$x=\{x_1,x_2,\cdots,x_n\}$（特征数据）和$y=\{y_1,y_2\cdots,y_n\}$（分类数据）构建回归模型。</p>
+<p>如何求解逻辑回归方程中的参数？通常使用极大似然法。</p>
+<h2><span id="极大似然法">极大似然法</span></h2><p>$n$个独立样本的似然函数为</p>
+<script type="math/tex; mode=display">L(\theta)=\Pi_{i=1}^nP(y_i|x_i;\theta)=\Pi_{i=1}^nh_\theta(x_i)^{y_i}\left[1-h_\theta(x_i) \right]^{1-y_i}</script><p>对数似然函数为<br>\begin{equation}<br>\begin{aligned}<br>  l(\theta)=\log{L(\theta)}&amp;=\sum_{i=1}^n\left\{y_i\log{h_\theta(x_i)}+(1-y_i)\log{\left[1-h_\theta(x_i) \right]}\right\}\\<br>  &amp;= \sum_{i=1}^n\left\{y_i\theta^Tx_i-\log{\left[1+e^{\theta^Tx_i} \right]}\right\}<br>\end{aligned}<br>\end{equation}<br>其中</p>
+<script type="math/tex; mode=display">\log{h_\theta(x_i)}=\log{\frac{e^{\theta^Tx_i}}{1+e^{\theta^Tx_i}}}=\theta^Tx_i-\log{\left[1+e^{\theta^Tx_i}\right]}</script><script type="math/tex; mode=display">\log{\left[1-h_\theta(x_i)\right]}=\log{\frac{1}{1+e^{\theta^Tx_i}}}=-\log{\left[1+e^{\theta^Tx_i}\right]}</script><script type="math/tex; mode=display">\max{L(\theta)}\Leftrightarrow\max{l(\theta)}\Leftrightarrow\min{\{-l(\theta)\}}</script><p>其中$-l(\theta)=-\log{L(\theta)}$称为<strong>交叉熵误差函数</strong>（cross-entropy error function）。</p>
+<p>考虑$p+1$维的参数$\theta=(\theta_0,\theta_1,\cdots,\theta_p)^T$，其中$\theta_0$ 为线性回归方程$z=\theta^Tx$的截距。<br>\begin{equation}<br>\theta=\left(<br>\begin{array}{c}<br>  \theta_0\\<br>  \theta_1\\<br>  \theta_2\\<br>  \vdots\\<br>  \theta_p<br>\end{array}<br>\right),\quad<br>x_i=\left(<br>\begin{array}{c}<br>  1\\<br>  x_{i1}\\<br>  x_{i2}\\<br>  \vdots\\<br>  x_{ip}<br>\end{array}<br>\right)<br>\end{equation}<br>对数似然函数$l(\theta)$分别对$\theta_j\ (j=0,1,\cdots,p)$求偏导，并令导数为零</p>
+<script type="math/tex; mode=display">\frac{\partial{l(\theta)}}{\partial{\theta_j}}=\sum_{i=1}^n\left\{y_ix_{ij}-\frac{e^{\theta^Tx_i}}{1+e^{\theta^Tx_i}}x_{ij}\right\}=\sum_{i=1}^n\left\{x_{ij}\left[y_i-h_\theta(x_i) \right]\right\}=0</script><p>写成向量形式</p>
+<script type="math/tex; mode=display">\frac{\partial{l(\theta)}}{\partial{\theta}}=\sum_{i=1}^n\left\{x_i\left[y_i-h_\theta(x_i) \right]\right\}=0</script><p>该式也被称为<strong>score equation</strong>。</p>
+<p>这里$x_i$的一个元素为1，因此由上式可得</p>
+<script type="math/tex; mode=display">\sum_{i=1}^ny_i=\sum_{i=1}^nh_\theta(x_i)</script><p>表示$Y$取值为1的样本量（$n$个样本中得恶性肿瘤的人数）等于“事件”（如肿瘤为恶性肿瘤）发生的概率和。</p>
+<p>当$p$较小时，score equation可得到解析解（精确解）；但当$p$较大时，score equation 往往得不到解析解。这时，可以考虑使用Newton-Raphson算法求得数值解（numerical solution）。</p>
+<h2><span id="newton-raphson算法">Newton-Raphson算法</span></h2><p>首先计算二阶偏导（Hessian Matrix）：<br>\begin{equation}<br>\begin{aligned}<br>\frac{\partial^2l(\theta)}{\partial{\theta_k}\partial{\theta_j}}&amp;=\frac{\partial}{\partial{\theta_k}}\sum_{i=1}^n\left\{x_{ij}\left[y_i-h_\theta(x_i)\right]\right\}\\<br>&amp;=\frac{\partial}{\partial{\theta_k}}\sum_{i=1}^n\left\{x_{ij}\left[y_i-\frac{e^{\theta^Tx_i}}{1+e^{\theta^Tx_i}}\right]\right\}\\<br>&amp;=\sum_{i=1}^nx_{ij}\left\{-\frac{e^{\theta^Tx_i}x_{ik}(1+e^{\theta^Tx_i})-e^{\theta^Tx_i}e^{\theta^Tx_i}x_{ik}}{\left(1+e^{\theta^Tx_i}\right)^2}\right\}\\<br>&amp;=-\sum_{i=1}^nx_{ij}x_{ik}\frac{e^{\theta^Tx_i}}{1+e^{\theta^Tx_i}}\left(1-\frac{e^{\theta^Tx_i}}{1+e^{\theta^Tx_i}}\right)\\<br>&amp;=-\sum_{i=1}^nx_{ij}x_{ij}h_\theta(x_i)\left[1-h_\theta(x_i)\right]<br>\end{aligned}<br>\end{equation}<br>其中$j,k=0,1,\cdots,p$。</p>
+<p><strong>Hessian Matrix</strong>为</p>
+<script type="math/tex; mode=display">\frac{\partial^2l(\theta)}{\partial\theta\partial\theta^T}=-\sum_{i=1}^nx_ix_i^Th_\theta(x_i)[1- h_\theta(x_i)]</script><p>由$\theta^{old}$开始，Newton-Raphson的更新步骤（updating step）为</p>
+<script type="math/tex; mode=display">\theta^{new}=\theta^{old}-\left[\frac{\partial^2l(\theta)}{\partial\theta\partial\theta^T}\right]^{-1}\frac{\partial{l(\theta)}}{\partial\theta}</script><p>这里考虑步长为1的pure Newton’s Method。即</p>
+<script type="math/tex; mode=display">\theta^{new}=\theta^{old}-\alpha\left[\frac{\partial^2l(\theta)}{\partial\theta\partial\theta^T}\right]^{-1}\frac{\partial{l(\theta)}}{\partial\theta}\quad \mbox{with}\ \alpha=1</script><p>用矩阵形式表示<br>\begin{equation}<br>\mathbf{y}=\left(<br>\begin{array}{c}<br>  y_1\\<br>  y_2\\<br>  \vdots\\<br>  y_n<br>\end{array}<br>\right),\quad<br>\mathbf{X}=\left(<br>\begin{array}{c}<br>  x_1^T\\<br>  x_2^T\\<br>  \vdots\\<br>  x_n^T<br>\end{array}<br>\right)=<br>\left(<br>\begin{array}{ccccc}<br>  1 &amp; x_{11} &amp; x_{12} &amp; \cdots &amp; x_{1p}\\<br>  1 &amp; x_{21} &amp; x_{22} &amp; \cdots &amp; x_{2p}\\<br>  \vdots &amp; \vdots &amp; \vdots &amp;\ddots &amp; \vdots \\<br>  1 &amp; x_{n1} &amp; x_{n2} &amp; \cdots &amp; x_{np}<br>\end{array}<br>\right)<br>\end{equation}</p>
+<p>\begin{equation}<br>\mathbf{P}=\left(<br>\begin{array}{c}<br>  h_{\theta^{old}}(x_1)\\<br>  h_{\theta^{old}}(x_2)\\<br>  \vdots\\<br>  h_{\theta^{old}}(x_n)<br>\end{array}<br>\right),\quad<br>\mathbf{W}=\mathrm{diag}\left\{<br>  h_{\theta^{old}}(x_i)(1-h_{\theta^{old}}(x_i))<br>\right\}<br>\end{equation}</p>
+<p>则有</p>
+<script type="math/tex; mode=display">\frac{\partial{l(\theta)}}{\partial\theta}=\mathbf{X}^T(\bm{y}-\bm{P})</script><script type="math/tex; mode=display">\frac{\partial^2l(\theta)}{\partial\theta\partial\theta^T}=-\mathbf{X}^T\mathbf{W}\mathbf{X}</script><p>因此<br>\begin{equation}<br>\begin{aligned}<br>\theta^{new}&amp;=\theta^{old}-\left[\frac{\partial^2l(\theta)}{\partial\theta\partial\theta^T} \right]^{-1}\frac{\partial{l(\theta)}}{\partial\theta}\\<br>&amp;= \theta^{old}+\left(\mathbf{X}^T\mathbf{W}\mathbf{X}\right)^{-1}\mathbf{X}^T(\bf{y}-\bf{P})\\<br>&amp;= \left(\mathbf{X}^T\mathbf{W}\mathbf{X}\right)^{-1}\mathbf{X}^T\mathbf{W}\left[\mathbf{X}\theta^{old}+\mathbf{W}^{-1}(\mathbf{y}-\mathbf{P}) \right]\\<br>&amp;= \left(\mathbf{X}^T\mathbf{W}\mathbf{X}\right)^{-1}\mathbf{X}^T\mathbf{W}\mathbf{z}<br>\end{aligned}<br>\end{equation}</p>
+<p>其中$\mathbf{z}=\mathbf{X}\theta^{old}+\mathbf{W}^{-1}(\mathbf{y}-\mathbf{P})$。</p>
+<p>每次迭代中，$\bf{P}$更新，$\bf{W}$和$\bf{z}$也随之更新。</p>
+<p>$\theta^{new}$可以看作是$\bf{z}$关于$\bf{X}$回归的加权最小二乘（weighted least square）。</p>
+<p>式</p>
+<script type="math/tex; mode=display">\theta^{new}=\left(\mathbf{X}^T\mathbf{W}\mathbf{X}\right)^{-1}\mathbf{X}^T\mathbf{W}\mathbf{z}</script><p>这种迭代法也称为迭代重加权最小二乘（iteratively reweighted least squares，IRLS）。</p>
+<h1><span id="逻辑回归-vs-线性回归">逻辑回归 vs 线性回归</span></h1><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center"><strong>逻辑回归</strong></th>
+<th style="text-align:center"><strong>线性回归</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center">分类</td>
+<td style="text-align:center">回归</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>因变量</strong></td>
+<td style="text-align:center">离散的变量</td>
+<td style="text-align:center">连续的变量</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>自变量与因变量</strong></td>
+<td style="text-align:center">可以不符合线性关系</td>
+<td style="text-align:center">符合线性关系</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center">无法直观表达变量关系</td>
+<td style="text-align:center">直观表达变量关系</td>
+</tr>
+</tbody>
 </table>
 </div>
-
-
-<h4><span id="pattern-search">Pattern Search</span></h4><ul>
-<li>Euclat</li>
-<li>Apriori</li>
-<li>FP-Growth</li>
+<h1><span id="参考资料">参考资料</span></h1><ul>
+<li><a href="https://zh.wikipedia.org/wiki/%E9%82%8F%E8%BC%AF%E8%BF%B4%E6%AD%B8" target="_blank" rel="noopener">https://zh.wikipedia.org/wiki/%E9%82%8F%E8%BC%AF%E8%BF%B4%E6%AD%B8</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/28408516" target="_blank" rel="noopener">逻辑回归（Logistic Regression）（一）</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Logistic_distribution" target="_blank" rel="noopener">维基百科-逻辑分布</a></li>
+<li><a href="https://zh.wikipedia.org/wiki/%E9%82%8F%E8%BC%AF%E5%87%BD%E6%95%B8" target="_blank" rel="noopener">维基百科-逻辑函数</a></li>
+<li><a href="https://www.jiqizhixin.com/articles/2018-05-13-3" target="_blank" rel="noopener">从原理到应用-简述Logistic回归算法</a></li>
+<li><a href="https://www.cnblogs.com/sparkwen/p/3441197.html" target="_blank" rel="noopener">逻辑回归模型基础</a></li>
+<li><a href="https://easyai.tech/ai-definition/logistic-regression/" target="_blank" rel="noopener">逻辑回归</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/67842740" target="_blank" rel="noopener">Logistic回归，梯度下降法，牛顿法，IRLS算法</a></li>
+<li><a href="https://blog.csdn.net/u012526120/article/details/48897135" target="_blank" rel="noopener">Logistic和牛顿法</a></li>
+<li><a href="https://www.afenxi.com/56409.html" target="_blank" rel="noopener">如何在R中执行Logistic回归？</a></li>
+<li><a href="https://www.cnblogs.com/nxld/p/6170690.html" target="_blank" rel="noopener">如何在R语言中使用Logistic回归模型</a></li>
+<li><a href="https://blog.csdn.net/zllnau66/article/details/81742798" target="_blank" rel="noopener">Python3常用的数据清洗方法</a></li>
+<li><a href="https://www.cnblogs.com/wuchuanying/p/6243987.html" target="_blank" rel="noopener">Python_Sklearn机器学习库学习笔记（三）</a></li>
 </ul>
-<h5><span id="euclat">Euclat</span></h5><h5><span id="apriori">Apriori</span></h5><h5><span id="fp-growth">FP-Growth</span></h5><h4><span id="dimension-reduction">Dimension Reduction</span></h4><ul>
-<li>t-SNE</li>
-<li>PCA</li>
-<li>LSA</li>
-<li>SVD</li>
-<li>LDA</li>
-</ul>
-<h5><span id="t-sne">t-SNE</span></h5><h5><span id="pca">PCA</span></h5><h5><span id="lsa">LSA</span></h5><h5><span id="svd">SVD</span></h5><h5><span id="lda">LDA</span></h5><h2><span id="ensemble-methods">Ensemble Methods</span></h2><a href="/2020/05/11/%E9%9B%86%E6%88%90%E6%96%B9%E6%B3%95/" title="集成方法">集成方法</a>
-<ul>
-<li>Bagging</li>
-<li>Boosting</li>
-<li>Stacking</li>
-</ul>
-<h4><span id="bagging">Bagging</span></h4><ul>
-<li>Random Forest</li>
-</ul>
-<h5><span id="random-forest">Random Forest</span></h5><ul>
-<li><a href="/2020/04/28/%E9%9A%8F%E6%9C%BA%E6%A3%AE%E6%9E%97/" title="随机森林">随机森林</a>
-</li>
-</ul>
-<h4><span id="boosting">Boosting</span></h4><ul>
-<li>AdaBoost</li>
-<li>XGBoost</li>
-<li>LightGBM</li>
-<li>CatBoost</li>
-<li><a href="/2020/05/15/%E7%AE%97%E6%B3%95-BoostingTree/" title="Boosting Tree（提升树）">Boosting Tree（提升树）</a>
-</li>
-</ul>
-<h5><span id="adaboost">AdaBoost</span></h5><h5><span id="xgboost">XGBoost</span></h5><ul>
-<li><a href="/2020/05/15/%E7%AE%97%E6%B3%95-XGBoost/" title="eXtreme Gradient Boosting">eXtreme Gradient Boosting</a>
-</li>
-</ul>
-<h5><span id="lightgbm">LightGBM</span></h5><h5><span id="catboost">CatBoost</span></h5><h4><span id="stacking">Stacking</span></h4><h2><span id="reinforcement-learning">Reinforcement Learning</span></h2><ul>
-<li>Genetic Algorithm</li>
-<li>A3C</li>
-<li>SARSA</li>
-<li>Q-Learning</li>
-<li>DQN</li>
-</ul>
-<h3><span id="genetic-algorithm">Genetic Algorithm</span></h3><h3><span id="a3c">A3C</span></h3><h3><span id="sarsa">SARSA</span></h3><h3><span id="q-learning">Q-Learning</span></h3><h3><span id="dqn">DQN</span></h3><p>Deep Q-Network</p>
-<h2><span id="neural-nets-and-deep-learning">Neural Nets and Deep Learning</span></h2><ul>
-<li>CNN</li>
-<li>RNN</li>
-<li>GAN</li>
-<li>Autoencoders</li>
-<li>MLP</li>
-</ul>
-<h3><span id="cnn">CNN</span></h3><h3><span id="rnn">RNN</span></h3><ul>
-<li>LSM</li>
-<li>LSTM</li>
-<li>GRU</li>
-</ul>
-<h4><span id="lsm">LSM</span></h4><h4><span id="lstm">LSTM</span></h4><h4><span id="gru">GRU</span></h4><ul>
-<li>GAN</li>
-<li>Autoencoders</li>
-<li>Perceptrons (MLP)</li>
-</ul>
-<h3><span id="gan">GAN</span></h3><p>Generative Adversarial Nerworks</p>
-<h3><span id="autoencoders">Autoencoders</span></h3><p>seq2seq</p>
-<h3><span id="perceptrons-mlp">Perceptrons (MLP)</span></h3><h1><span id="参考资料">参考资料</span></h1><p>[1] <a href="https://cn.bing.com/images/search?view=detailV2&amp;ccid=k5LiTi5l&amp;id=95DF77DEC29B1CD7083F9435F1AE55043B0C0081&amp;thid=OIP.k5LiTi5lt_ND02kaBT_SAAHaE7&amp;mediaurl=https%3a%2f%2fwww.smartdatacollective.com%2fwp-content%2fuploads%2f2018%2f11%2fMachine-learning-1024x682.jpg&amp;exph=682&amp;expw=1024&amp;q=machine+learning&amp;simid=608018054240865990&amp;selectedIndex=3" target="_blank" rel="noopener">首页缩略图</a><br>[] <a href="http://cda.pinggu.org/view/20203.html" target="_blank" rel="noopener">聚类分析中几种算法的比较</a></p>
 
             </article>
             <hr>
@@ -471,29 +339,6 @@
               
                 <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://zh.wikipedia.org/wiki/Wikipedia:CC_BY-SA_3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="nofollow noopener noopener">CC BY-SA 3.0协议</a> 。转载请注明出处！</p>
               
-              
-                <div class="post-prevnext row">
-                  <div class="post-prev col-6">
-                    
-                    
-                      <a href="/2020/05/03/Python/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Python</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
-                  </div>
-                  <div class="post-next col-6">
-                    
-                    
-                      <a href="/2020/05/02/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E4%B8%9A%E5%8A%A1%E5%90%91-%E9%97%AE%E9%A2%98%E5%92%8C%E6%96%B9%E6%B3%95%E6%B1%87%E6%80%BB/">
-                        <span class="hidden-mobile">数据分析业务向-问题和方法汇总</span>
-                        <span class="visible-mobile">下一篇</span>
-                        <i class="iconfont icon-arrowright"></i>
-                      </a>
-                    
-                  </div>
-                </div>
               
             </div>
 
@@ -661,7 +506,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "Machine Learning-汇总&nbsp;",
+        "算法-LogisticRegression&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,

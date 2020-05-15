@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    107 字
+                    109 字
                   </span>
                 
 
@@ -195,17 +195,15 @@
             <article class="markdown-body">
               <p>有监督学习</p>
 <h1><span id="supervised-learning">Supervised Learning</span></h1><h2><span id="model">Model</span></h2><h2><span id="parameters">Parameters</span></h2><h2><span id="objective-function">Objective Function</span></h2><p>目标函数</p>
-<script type="math/tex; mode=display">Obk(\Theta)=L(\Theta)+\Omega(\Theta)</script><ul>
-<li>训练误差<strong>Training Loss</strong>: measures <u>how well model fit on training data</u><script type="math/tex; mode=display">L(\Theta)=\sum_{i=1}^nl(y_i,\hat{y}_i)</script><ul>
+<script type="math/tex; mode=display">Obj(\Theta)=L(\Theta)+\Omega(\Theta)</script><h3><span id="training-loss">Training Loss</span></h3><p>训练误差<strong>Training Loss</strong>: measures <u>how well model fit on training data</u></p>
+<script type="math/tex; mode=display">L(\Theta)=\sum_{i=1}^nl(y_i,\hat{y}_i)</script><ul>
 <li>Square Loss<script type="math/tex; mode=display">l(y_i,\hat{y}_i)=(y_i-\hat{y}_i)^2</script></li>
 <li>Log-Loss<script type="math/tex; mode=display">l(y_i,\hat{y}_i)=y_i\ln{(1+e^{-\hat{y}_i})}+(1-y_i)\ln{(1+e^{\hat{y}_i})}</script></li>
 </ul>
-</li>
-<li>正则化<strong>Regularization</strong>: measures <u>complexity of model</u><script type="math/tex; mode=display">\Omega(\Theta)</script><ul>
+<h3><span id="regularization">Regularization</span></h3><p>正则化<strong>Regularization</strong>: measures <u>complexity of model</u></p>
+<script type="math/tex; mode=display">\Omega(\Theta)</script><ul>
 <li>$l1$-norm <script type="math/tex; mode=display">\Omega(\omega)=\lambda||w||_1</script></li>
 <li>$l2$-norm<script type="math/tex; mode=display">\Omega(\omega)=\lambda||w||^2</script></li>
-</ul>
-</li>
 </ul>
 <h1><span id="参考资料">参考资料</span></h1><ul>
 <li><a href="https://homes.cs.washington.edu/~tqchen/data/pdf/BoostedTree.pdf" target="_blank" rel="noopener">Tianqi Chen - Introduction to Boosted Trees</a></li>
