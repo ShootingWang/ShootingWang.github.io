@@ -237,7 +237,7 @@
 <p><strong>Log-odds</strong>，也称<strong>Logit</strong>（Logit transformation / Link function）表示为</p>
 <script type="math/tex; mode=display">\log\frac{p}{1-p}=\log\frac{h_\theta(x)}{1-h_\theta(x)}=\theta^Tx</script><p>其中$p=h_\theta(x)$表示概率。</p>
 <p>$h_\theta(x)$表示输入$x$后分类结果为1的概率</p>
-<script type="math/tex; mode=display">P(Y=1|x;\theta)=h_\theta(x)</script><script type="math/tex; mode=display">P(Y=0|x;\theta)=1-h_\theta(x)</script><p>\newpage<br>\noindent 因此，因变量$Y$服从Bernoulli分布</p>
+<script type="math/tex; mode=display">P(Y=1|x;\theta)=h_\theta(x)</script><script type="math/tex; mode=display">P(Y=0|x;\theta)=1-h_\theta(x)</script><p>因此，因变量$Y$服从Bernoulli分布</p>
 <script type="math/tex; mode=display">Y|X=x_i\sim \mathrm{Bernoulli}\left(h_\theta(x_i)\right)</script><p>概率函数为</p>
 <script type="math/tex; mode=display">P(y|x;\theta)=\left[h_\theta(x) \right]^y\left[1-h_\theta(x) \right]^{1-y}</script><p>使用训练数据集$x=\{x_1,x_2,\cdots,x_n\}$（特征数据）和$y=\{y_1,y_2\cdots,y_n\}$（分类数据）构建回归模型。</p>
 <p>如何求解逻辑回归方程中的参数？通常使用极大似然法。</p>
