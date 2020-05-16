@@ -297,6 +297,17 @@ E(X)&=\int_0^1 x\frac{1}{B(\alpha,\beta)}x^{\alpha-1}(1-x)^{\beta-1}\mathrm{d}x\
 <li><p>$Var(X)=\frac{\alpha\beta}{(\alpha+\beta)^2(\alpha+\beta+1)}$</p>
 </li>
 </ul>
+<h3><span id="伯努利分布">伯努利分布</span></h3><p>Bernoulli Distribution<br>$X\sim Bernoulli(p)$, $X$的可能取值只有0和1，且相应的概率为</p>
+<script type="math/tex; mode=display">P(X=1)=p,\quad P(X=0)=1-p\quad 0 < p <1</script><p>即</p>
+<script type="math/tex; mode=display">f(x|p)=\left\{
+    \begin{array}
+    p^x(1-p)^{1-x}, & x=0,1\\
+    0, & x\neq0,1
+    \end{array}
+    \right.</script><ul>
+<li>$E(X)=p$<script type="math/tex; mode=display">E(X)=1\cdot p+0\cdot (1-p)=p</script></li>
+<li>$Var(X)=p(1-p)$<script type="math/tex; mode=display">E(X^2)=1^2\cdot p+0^2\cdot (1-p)=p</script><script type="math/tex; mode=display">Var(X)=E(X^2)-[E(X)]^2=p-p^2=p(1-p)</script></li>
+</ul>
 <h3><span id="泊松分布">泊松分布</span></h3><ul>
 <li><a href="/2020/04/27/%E6%B3%8A%E6%9D%BE%E5%88%86%E5%B8%83/" title="泊松分布">泊松分布</a>
 </li>
