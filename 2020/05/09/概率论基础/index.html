@@ -152,7 +152,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    17
+                    18
                      分钟
                   </span>
                 
@@ -299,7 +299,8 @@ E(X)&=\int_0^1 x\frac{1}{B(\alpha,\beta)}x^{\alpha-1}(1-x)^{\beta-1}\mathrm{d}x\
 <li>$E(X)=\frac{\alpha}{\beta}$</li>
 <li>$Var(X)=\frac{\alpha}{\beta^2}$</li>
 </ul>
-<h1><span id="参考资料">参考资料</span></h1><p>[1] <a href="https://book.douban.com/subject/5998092/" target="_blank" rel="noopener">概率论与数理统计教程</a></p>
+<h3><span id="反伽马分布">反伽马分布</span></h3><p>Inverted Gamma Distribution<br>$X\sim \Gamma(\alpha, \beta)$，定义$Y=\frac{1}{X}$，则$Y$服从反伽马分布，概率密度函数为</p>
+<script type="math/tex; mode=display">f_Y(y)=\frac{\beta^{\alpha}}{\Gamma(\alpha)}y^{-(\alpha+1)}e^{-\frac{\beta}{y}},\quad y>0</script><h1><span id="参考资料">参考资料</span></h1><p>[1] <a href="https://book.douban.com/subject/5998092/" target="_blank" rel="noopener">概率论与数理统计教程</a></p>
 
             </article>
             <hr>
@@ -641,23 +642,7 @@ E(X)&=\int_0^1 x\frac{1}{B(\alpha,\beta)}x^{\alpha-1}(1-x)^{\beta-1}\mathrm{d}x\
       mermaid.initialize({{ JSON.stringify(theme.mermaid.options) }});
     }
   </script>
-{% endif %}
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+{% endif %}<!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </body>
 </html>
