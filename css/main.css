@@ -966,8 +966,6 @@ h6::before {
   margin-left: 0.5rem;
 }
 #toc {
-  position: -webkit-sticky;
-  position: sticky;
   top: 2rem;
   padding: 1.2rem 0 0 0;
   max-height: 80%;
@@ -989,14 +987,12 @@ h6::before {
   -ms-overflow-style: none;
 }
 #tocbot ol {
-  list-style: none;
   padding-inline-start: 0.5rem;
 }
 #tocbot::-webkit-scrollbar {
   display: none;
 }
 .tocbot-list ol {
-  list-style: none;
   padding-left: 0.6rem;
 }
 .tocbot-list a {
