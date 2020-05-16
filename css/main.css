@@ -967,13 +967,14 @@ h6::before {
 }
 #toc {
   position: -webkit-sticky;
+  position: sticky;
   top: 2rem;
-  padding: 1.2rem 0 0 0;
+  padding: 0 0 0 0;
   max-height: 80%;
   visibility: hidden;
 }
 .toc-article {
-  margin: 0.5em;
+  margin: 1em;
   border-left: 10px solid color-border;
   padding: 0.5em;
 strong
