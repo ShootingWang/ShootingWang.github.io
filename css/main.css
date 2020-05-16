@@ -971,6 +971,27 @@ h6::before {
   max-height: 80%;
   visibility: hidden;
 }
+.toc-article {
+  margin: 0.5em;
+  border-left: 10px solid color-border;
+  padding: 0.5em;
+strong
+}
+#toc {
+  line-height: 1.2em;
+  font-size: 1em;
+  float: right;
+}
+#toc .toc {
+  padding: 0;
+}
+#toc .toc li {
+  list-style-type: none;
+}
+#toc .toc-child {
+  list-style: none;
+  padding-left: 1em;
+}
 .toc-header {
   margin-bottom: 0.5rem;
   font-weight: 500;
@@ -987,12 +1008,14 @@ h6::before {
   -ms-overflow-style: none;
 }
 #tocbot ol {
+  list-style: none;
   padding-inline-start: 0.5rem;
 }
 #tocbot::-webkit-scrollbar {
   display: none;
 }
 .tocbot-list ol {
+  list-style: none;
   padding-left: 0.6rem;
 }
 .tocbot-list a {
