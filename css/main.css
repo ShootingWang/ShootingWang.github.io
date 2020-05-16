@@ -1005,14 +1005,12 @@ strong
   -ms-overflow-style: none;
 }
 #tocbot ol {
-  list-style: none;
   padding-inline-start: 0.5rem;
 }
 #tocbot::-webkit-scrollbar {
   display: none;
 }
 .tocbot-list ol {
-  list-style: none;
   padding-left: 0.6rem;
 }
 .tocbot-list a {
