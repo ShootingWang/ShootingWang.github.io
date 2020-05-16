@@ -978,17 +978,6 @@ h6::before {
   padding: 0.5em;
 strong
 }
-#toc {
-  line-height: 1.2em;
-  font-size: 1em;
-  float: right;
-}
-#toc .toc {
-  padding: 0;
-}
-#toc .toc-child {
-  padding-left: 1em;
-}
 .toc-header {
   margin-bottom: 0.5rem;
   font-weight: 500;
