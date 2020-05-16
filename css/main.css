@@ -966,6 +966,7 @@ h6::before {
   margin-left: 0.5rem;
 }
 #toc {
+  position: -webkit-sticky;
   top: 2rem;
   padding: 1.2rem 0 0 0;
   max-height: 80%;
@@ -985,11 +986,7 @@ strong
 #toc .toc {
   padding: 0;
 }
-#toc .toc li {
-  list-style-type: none;
-}
 #toc .toc-child {
-  list-style: none;
   padding-left: 1em;
 }
 .toc-header {
