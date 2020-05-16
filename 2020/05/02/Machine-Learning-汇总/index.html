@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    445 字
+                    533 字
                   </span>
                 
 
@@ -152,7 +152,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    6
+                    7
                      分钟
                   </span>
                 
@@ -438,6 +438,22 @@
 <li>Autoencoders</li>
 <li>MLP</li>
 </ul>
+<p>神经网络的激活函数</p>
+<ul>
+<li>sigmoid<ul>
+<li>取值范围：$(0,1)$<script type="math/tex; mode=display">sigmoid(x)=\frac{1}{1+e^{-x}}</script></li>
+</ul>
+</li>
+<li>tanh<ul>
+<li>取值范围：$(-1,1)$<script type="math/tex; mode=display">\tanh(x)=\frac{\sinh{x}}{\cosh{x}}=\frac{e^x-e^{-x}}{e^x+e^{-x}}=\frac{1+e^{-2x}}{1-e^{-2x}}</script></li>
+</ul>
+</li>
+<li>relu<ul>
+<li>线性整流函数（Rectified Linear Unit, <strong>ReLU</strong>）</li>
+<li>取值范围：$(0,+\infty)$<script type="math/tex; mode=display">f(x)=\max{(0,x)}</script>在神经网络中为<script type="math/tex; mode=display">f(x)=\max{(0, w^Tx+b)}</script></li>
+</ul>
+</li>
+</ul>
 <h3><span id="cnn">CNN</span></h3><h3><span id="rnn">RNN</span></h3><ul>
 <li>LSM</li>
 <li>LSTM</li>
@@ -450,7 +466,10 @@
 </ul>
 <h3><span id="gan">GAN</span></h3><p>Generative Adversarial Nerworks</p>
 <h3><span id="autoencoders">Autoencoders</span></h3><p>seq2seq</p>
-<h3><span id="perceptrons-mlp">Perceptrons (MLP)</span></h3><h1><span id="参考资料">参考资料</span></h1><p>[1] <a href="https://cn.bing.com/images/search?view=detailV2&amp;ccid=k5LiTi5l&amp;id=95DF77DEC29B1CD7083F9435F1AE55043B0C0081&amp;thid=OIP.k5LiTi5lt_ND02kaBT_SAAHaE7&amp;mediaurl=https%3a%2f%2fwww.smartdatacollective.com%2fwp-content%2fuploads%2f2018%2f11%2fMachine-learning-1024x682.jpg&amp;exph=682&amp;expw=1024&amp;q=machine+learning&amp;simid=608018054240865990&amp;selectedIndex=3" target="_blank" rel="noopener">首页缩略图</a><br>[] <a href="http://cda.pinggu.org/view/20203.html" target="_blank" rel="noopener">聚类分析中几种算法的比较</a></p>
+<h3><span id="perceptrons-mlp">Perceptrons (MLP)</span></h3><h1><span id="参考资料">参考资料</span></h1><ul>
+<li><a href="https://cn.bing.com/images/search?view=detailV2&amp;ccid=k5LiTi5l&amp;id=95DF77DEC29B1CD7083F9435F1AE55043B0C0081&amp;thid=OIP.k5LiTi5lt_ND02kaBT_SAAHaE7&amp;mediaurl=https%3a%2f%2fwww.smartdatacollective.com%2fwp-content%2fuploads%2f2018%2f11%2fMachine-learning-1024x682.jpg&amp;exph=682&amp;expw=1024&amp;q=machine+learning&amp;simid=608018054240865990&amp;selectedIndex=3" target="_blank" rel="noopener">首页缩略图</a></li>
+<li><a href="http://cda.pinggu.org/view/20203.html" target="_blank" rel="noopener">聚类分析中几种算法的比较</a></li>
+</ul>
 
             </article>
             <hr>
