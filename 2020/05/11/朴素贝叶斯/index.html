@@ -238,6 +238,10 @@
 </ul>
 </li>
 </ul>
+<p>相关问题</p>
+<ul>
+<li><a href="https://www.nowcoder.com/test/question/done?tid=33437220&amp;qid=304794#summary" target="_blank" rel="noopener">如果在模型训练过程中，由于失误操作导致训练数据中两个维度重复表示</a>，则模型效果精度降低</li>
+</ul>
 <h3><span id="连续型特征">连续型特征</span></h3><p>当特征属性是<u>连续型</u>时，通常假设其服从<u>高斯分布</u>（即正态分布）</p>
 <script type="math/tex; mode=display">g(x;\mu,\sigma)=\frac{1}{\sqrt{2\pi\sigma}}exp\{-\frac{(x-\mu)^2}{2\sigma^2}\}</script><p>则有</p>
 <script type="math/tex; mode=display">P(X_j=x_j|y_i)=g(x_j;\mu_{y_i},\sigma_{y_i})</script><h3><span id="laplace校准">Laplace校准</span></h3><p>Laplace校准 / 拉普拉斯平滑（Laplace Smoothing）：<br>可能会存在某个特征项划分没有出现的情况，即$P(x_j|y_i)=0$，这会导致分类器的质量降低——可使用<strong>Laplace校准</strong>改善</p>
@@ -630,7 +634,23 @@
       mermaid.initialize({{ JSON.stringify(theme.mermaid.options) }});
     }
   </script>
-{% endif %}<!-- hexo-inject:begin --><!-- hexo-inject:end -->
+{% endif %}
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </body>
 </html>

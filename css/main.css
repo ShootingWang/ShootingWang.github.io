@@ -974,7 +974,7 @@ h6::before {
   visibility: hidden;
 }
 .toc-article {
-  margin: 1em;
+  margin: 2em;
   border-left: 10px solid color-border;
   padding: 0.5em;
 strong

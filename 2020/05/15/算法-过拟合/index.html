@@ -142,7 +142,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    473 字
+                    501 字
                   </span>
                 
 
@@ -227,11 +227,20 @@
 </ul>
 <h3><span id="正则化">正则化</span></h3><p>在对目标函数/代价函数优化时，在目标函数/代价函数后添加一个正则项（惩罚项）——降低模型的复杂度</p>
 <ul>
-<li>$l1$正则</li>
-<li>$l2$正则</li>
+<li>$l1$正则<ul>
+<li>使用$l1$正则可以得到稀疏的权值</li>
+</ul>
+</li>
+<li>$l2$正则<ul>
+<li>使用$l2$正则可以得到平滑的权值</li>
+</ul>
+</li>
 </ul>
 <h4><span id="l1正则">$l1$正则</span></h4><h4><span id="l2正则">$l2$正则</span></h4><h3><span id="dropout">Dropout</span></h3><p>通过修改ANN（人工神经网络）中隐藏层的神经元个数来防止ANN的过拟合</p>
-<h1><span id="参考资料">参考资料</span></h1><p>[] <a href="https://blog.csdn.net/heyongluoyao8/article/details/49429629" target="_blank" rel="noopener">机器学习中防止过拟合的处理方法</a><br>[] <a href="https://juejin.im/post/5b441583f265da0fb01854c4" target="_blank" rel="noopener">机器学习中用来防止过拟合的方法有哪些？</a></p>
+<h1><span id="参考资料">参考资料</span></h1><ul>
+<li><a href="https://blog.csdn.net/heyongluoyao8/article/details/49429629" target="_blank" rel="noopener">机器学习中防止过拟合的处理方法</a></li>
+<li><a href="https://juejin.im/post/5b441583f265da0fb01854c4" target="_blank" rel="noopener">机器学习中用来防止过拟合的方法有哪些？</a></li>
+</ul>
 
             </article>
             <hr>
@@ -550,7 +559,23 @@
       mermaid.initialize({{ JSON.stringify(theme.mermaid.options) }});
     }
   </script>
-{% endif %}<!-- hexo-inject:begin --><!-- hexo-inject:end -->
+{% endif %}
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </body>
 </html>
