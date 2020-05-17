@@ -944,22 +944,10 @@
       
           <ul>
 <li><p>Python的切片操作不会引起下标越界异常</p>
-<pre><code class="lang-Python">lst = [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;]
-print(lst[15:])
-## 输出 []
-</code></pre>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">lst = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>]</span><br><span class="line">print(lst[<span class="number">15</span>:])</span><br><span class="line"><span class="comment">## 输出 []</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>索引操作可能会引起下标越界异常</p>
-<pre><code class="lang-Python">lst = [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;]
-print(lst[15])
-#Traceback (most recent call last):
-#
-#  File &quot;&lt;ipython-input-9-bcb28d671f1f&gt;&quot;, line #2, in &lt;module&gt;
-#    print(lst[15])
-#
-#IndexError: list index out of range
-</code></pre>
-</li>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">lst = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>]</span><br><span class="line">print(lst[<span class="number">15</span>])</span><br><span class="line"><span class="comment">#Traceback (most recent call last):</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#  File "&lt;ipython-input-9-bcb28d671f1f&gt;", line #2, in &lt;module&gt;</span></span><br><span class="line"><span class="comment">#    print(lst[15])</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#IndexError: list index out of range</span></span><br></pre></td></tr></table></figure></li>
 </ul>
 
       
@@ -1241,6 +1229,8 @@ print(lst[15])
 
 
 
+
+  
 
 
 

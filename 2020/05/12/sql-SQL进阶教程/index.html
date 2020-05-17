@@ -22,12 +22,12 @@
 
 <link rel="stylesheet" href="/js/prism/prism.css">
 
-  <meta name="description" content="《SQL进阶教程》读书笔记 CASE表达式CASE表达式：  简单CASE表达式（simple case expression） 搜索CASE表达式（searched case expression）  -- 简单CASE表达式 CASE sex     WHEN &#39;1&#39; THEN &#39;male&#39;     WHEN &#39;2&#39; THEN &#39;fema">
+  <meta name="description" content="《SQL进阶教程》读书笔记 CASE表达式CASE表达式：  简单CASE表达式（simple case expression） 搜索CASE表达式（searched case expression）  -- 简单CASE表达式CASE sex    WHEN &#39;1&#39; THEN &#39;male&#39;    WHEN &#39;2&#39; THEN &#39;female&#39;ELSE &#39;其他&#39; END-- 搜索CASE表达式CAS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SQL | 《SQL进阶教程》">
 <meta property="og:url" content="https://github.com/ShootingWang/ShootingWang.github.io/2020/05/12/sql-SQL%E8%BF%9B%E9%98%B6%E6%95%99%E7%A8%8B/index.html">
 <meta property="og:site_name" content="ShootingWang">
-<meta property="og:description" content="《SQL进阶教程》读书笔记 CASE表达式CASE表达式：  简单CASE表达式（simple case expression） 搜索CASE表达式（searched case expression）  -- 简单CASE表达式 CASE sex     WHEN &#39;1&#39; THEN &#39;male&#39;     WHEN &#39;2&#39; THEN &#39;fema">
+<meta property="og:description" content="《SQL进阶教程》读书笔记 CASE表达式CASE表达式：  简单CASE表达式（simple case expression） 搜索CASE表达式（searched case expression）  -- 简单CASE表达式CASE sex    WHEN &#39;1&#39; THEN &#39;male&#39;    WHEN &#39;2&#39; THEN &#39;female&#39;ELSE &#39;其他&#39; END-- 搜索CASE表达式CAS">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-05-12T14:52:46.000Z">
 <meta property="article:modified_time" content="2020-05-17T01:01:29.786Z">
@@ -240,17 +240,7 @@
 <li>简单CASE表达式（simple case expression）</li>
 <li>搜索CASE表达式（searched case expression）</li>
 </ul>
-<pre><code class="lang-sql">-- 简单CASE表达式
-CASE sex
-    WHEN &#39;1&#39; THEN &#39;male&#39;
-    WHEN &#39;2&#39; THEN &#39;female&#39;
-ELSE &#39;其他&#39; END
-
--- 搜索CASE表达式
-CASE WHEN sex = &#39;1&#39; THEN &#39;male&#39;
-     WHEN sex = &#39;2&#39; THEN &#39;female&#39;
-ELSE &#39;其他&#39; END
-</code></pre>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 简单CASE表达式</span></span><br><span class="line">CASE sex</span><br><span class="line">    WHEN '1' THEN 'male'</span><br><span class="line">    WHEN '2' THEN 'female'</span><br><span class="line">ELSE '其他' <span class="keyword">END</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 搜索CASE表达式</span></span><br><span class="line"><span class="keyword">CASE</span> <span class="keyword">WHEN</span> sex = <span class="string">'1'</span> <span class="keyword">THEN</span> <span class="string">'male'</span></span><br><span class="line">     <span class="keyword">WHEN</span> sex = <span class="string">'2'</span> <span class="keyword">THEN</span> <span class="string">'female'</span></span><br><span class="line"><span class="keyword">ELSE</span> <span class="string">'其他'</span> <span class="keyword">END</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li>注意：使用WHEN子句时需要注意条件的排他性</li>
 <li>一定要注意CASE表达式里每个分支返回的数据类型是否一致<ul>
@@ -266,386 +256,22 @@ ELSE &#39;其他&#39; END
 <li>最好明确地写上ELSE子句</li>
 <li>CASE表达式是一种表法式而不是语句</li>
 </ul>
-<pre><code class="lang-sql">+-----------+------------+
-| pref_name | population |
-+-----------+------------+
-| 东京      |        400 |
-| 佐贺      |        100 |
-| 德岛      |        100 |
-| 爱媛      |        150 |
-| 福冈      |        300 |
-| 群马      |         50 |
-| 长崎      |        200 |
-| 香川      |        200 |
-| 高知      |        200 |
-+-----------+------------+
-9 rows in set (0.00 sec)
-
-
--- 根据县人口统计表，统计不同地区的人口数量
-SELECT CASE pref_name
-                WHEN &#39;德岛&#39; THEN &#39;四国&#39;
-                WHEN &#39;香川&#39; THEN &#39;四国&#39;
-                WHEN &#39;爱媛&#39; THEN &#39;四国&#39;
-                WHEN &#39;高知&#39; THEN &#39;四国&#39;
-                WHEN &#39;福冈&#39; THEN &#39;九州&#39;
-                WHEN &#39;长崎&#39; THEN &#39;九州&#39;
-                WHEN &#39;佐贺&#39; THEN &#39;九州&#39;
-        ELSE &#39;其他&#39; END AS district,
-        SUM(population)
-FROM PopTbl
-GROUP BY CASE pref_name
-                WHEN &#39;德岛&#39; THEN &#39;四国&#39;
-                WHEN &#39;香川&#39; THEN &#39;四国&#39;
-                WHEN &#39;爱媛&#39; THEN &#39;四国&#39;
-                WHEN &#39;高知&#39; THEN &#39;四国&#39;
-                WHEN &#39;福冈&#39; THEN &#39;九州&#39;
-                WHEN &#39;长崎&#39; THEN &#39;九州&#39;
-                WHEN &#39;佐贺&#39; THEN &#39;九州&#39;
-         ELSE &#39;其他&#39; END;
--- 注意是对转换后的列 GROUP
-
-SELECT CASE pref_name
-                WHEN &#39;德岛&#39; THEN &#39;四国&#39;
-                WHEN &#39;香川&#39; THEN &#39;四国&#39;
-                WHEN &#39;爱媛&#39; THEN &#39;四国&#39;
-                WHEN &#39;高知&#39; THEN &#39;四国&#39;
-                WHEN &#39;福冈&#39; THEN &#39;九州&#39;
-                WHEN &#39;长崎&#39; THEN &#39;九州&#39;
-                WHEN &#39;佐贺&#39; THEN &#39;九州&#39;
-        ELSE &#39;其他&#39; END AS district,
-        SUM(population)
-FROM PopTbl
-GROUP BY district;
--- 这里引用了SELECT子句中定义的别名来 GROUP
--- 与上面那种方法相比，这里不需要写两段CASE WHEN；
--- 而上面的需要写两段CASE WHEN，当CASE内容需要修改时，需要修改两处，容易出错
--- 但是该写法违反标准SQL的规则，因为GROUP BY子句比SELECT语句先执行
-</code></pre>
-<p>CASE WHEN 聚合之后：</p>
-<pre><code class="lang-sql">+----------+-----------------+
-| district | SUM(population) |
-+----------+-----------------+
-| 九州     |             600 |
-| 其他     |             450 |
-| 四国     |             650 |
-+----------+-----------------+
-</code></pre>
-<p>进行不同条件的统计：</p>
-<pre><code class="lang-sql">+-----------+-----+------------+
-| pref_name | sex | population |
-+-----------+-----+------------+
-| 东京      | 1   |        250 |
-| 东京      | 2   |        150 |
-| 佐贺      | 1   |         20 |
-| 佐贺      | 2   |         80 |
-| 德岛      | 1   |         60 |
-| 德岛      | 2   |         40 |
-| 爱媛      | 1   |        100 |
-| 爱媛      | 2   |         50 |
-| 福冈      | 1   |        100 |
-| 福冈      | 2   |        200 |
-| 长崎      | 1   |        125 |
-| 长崎      | 2   |        125 |
-| 香川      | 1   |        100 |
-| 香川      | 2   |        100 |
-| 高知      | 1   |        100 |
-| 高知      | 2   |        100 |
-+-----------+-----+------------+
-16 rows in set (0.00 sec)
--- 如果上表有新列“性别”sex，population列为某县的某个性别人口数
-SELECT pref_name,
--- 男性人口
-    SUM(CASE WHEN sex=&#39;1&#39; THEN population ELSE 0 END) AS cnt_m,
--- 女性人口
-    SUM(CASE WHEN sex=&#39;2&#39; THEN population ELSE 0 END) AS cnt_f
-FROM PopTbl2
-GROUP BY pref_name;
-+-----------+-------+-------+
-| pref_name | cnt_m | cnt_f |
-+-----------+-------+-------+
-| 东京      |   250 |   150 |
-| 佐贺      |    20 |    80 |
-| 德岛      |    60 |    40 |
-| 爱媛      |   100 |    50 |
-| 福冈      |   100 |   200 |
-| 长崎      |   125 |   125 |
-| 香川      |   100 |   100 |
-| 高知      |   100 |   100 |
-+-----------+-------+-------+
-8 rows in set (0.00 sec)
-</code></pre>
-<p>使用CHECK约束定义多个列的条件关系：</p>
-<pre><code class="lang-sql">CONSTRAINT check_salary CHECK
-        (CASE WHEN dept=&#39;IT&#39; 
-              THEN CASE WHEN salary&gt;=20000
-                        THEN 1 ELSE 0 END
-              ELSE 1 END = 1)
--- 如果是IT部门的员工，则工资应大于等于2万；如果不是IT部门的员工，则工资不受该约束限制
--- 蕴含式（conditional）
-
--- 如果用逻辑与（logical product）
-CONSTRAINT check_salary CHECK 
-            (dept=&#39;IT&#39; AND salary&gt;=20000)
--- 表示 salary里的记录只能是&#39;IT&#39;部门的，且工资大于等于2万
-</code></pre>
-<p>在UPDATE语句里进行条件分支：</p>
-<pre><code class="lang-sql">+--------+--------+
-| name   | salary |
-+--------+--------+
-| 木村   | 220000 |
-| 相田   | 300000 |
-| 神崎   | 270000 |
-| 齐藤   | 290000 |
-+--------+--------+
-4 rows in set (0.01 sec)
-
-UPDATE Salaries 
-   SET salary = CASE WHEN salary&gt;=300000 THEN salary*0.9
-                     WHEN salary&gt;=250000 AND salary&lt;280000 THEN salary*1.2
-                     ELSE salary END;  -- 最后一句很重要
--- 当前工资为30万元以上的员工，降薪10%；
--- 当前工资为25万元~28万元（不满28万元）的员工，加薪20%
-+--------+--------+
-| name   | salary |
-+--------+--------+
-| 木村   | 220000 |
-| 相田   | 270000 |
-| 神崎   | 324000 |
-| 齐藤   | 290000 |
-+--------+--------+
-4 rows in set (0.00 sec)
-</code></pre>
-<p>调换主键值：</p>
-<pre><code class="lang-sql">+-------+-------+-------+
-| p_key | col_1 | col_2 |
-+-------+-------+-------+
-| a     |     1 | 一    |
-| b     |     2 | 二    |
-| c     |     3 | 三    |
-+-------+-------+-------+
-3 rows in set (0.00 sec)
-
-UPDATE SomeTable
-   SET p_key = CASE WHEN p_key=&#39;a&#39; THEN &#39;b&#39;
-                    WHEN p_key=&#39;b&#39; THEN &#39;a&#39;
-                    ELSE p_key END   -- 该句很重要
-WHERE p_key IN (&#39;a&#39;, &#39;b&#39;);
--- 在PostgreSQL和MySQL中执行该语句，会因为主键重复而报错
--- 如: ERROR 1062 (23000): Duplicate entry &#39;b&#39; for key &#39;PRIMARY&#39;
-</code></pre>
-<p>在CASE表达式中，可以使用<code>BETWEEN</code>、<code>LIKE</code> 和 <code>&lt;</code>、<code>&gt;</code>等谓词组合，以及能嵌套子查询的 <code>IN</code> 和 <code>EXISTS</code> 谓词</p>
-<pre><code class="lang-sql">mysql&gt; SELECT * FROM CourseMaster;
-+-----------+--------------+
-| course_id | course_name  |
-+-----------+--------------+
-|         1 | 会计入门     |
-|         2 | 财务知识     |
-|         3 | 簿记考试     |
-|         4 | 税务师       |
-+-----------+--------------+
-4 rows in set (0.00 sec)
-
-mysql&gt; SELECT * FROM OpenCourses;
-+--------+-----------+
-| month  | course_id |
-+--------+-----------+
-| 200706 |         1 |
-| 200706 |         3 |
-| 200706 |         4 |
-| 200707 |         4 |
-| 200708 |         2 |
-| 200708 |         4 |
-+--------+-----------+
-6 rows in set (0.00 sec)
-
--- 如果用 IN 谓词
-SELECT course_name,
-       CASE WHEN course_id IN 
-                     (SELECT course_id FROM OpenCourses 
-                      WHERE month = 200706) THEN &#39;⚪&#39;
-            ELSE &#39;×&#39; END AS &quot;6月&quot;,
-       CASE WHEN course_id IN 
-                     (SELECT course_id FROM OpenCourses
-                      WHERE month = 200707) THEN &#39;⚪&#39;
-            ELSE &#39;×&#39; END AS &quot;7月&quot;,  
-       CASE WHEN course_id IN 
-                     (SELECT course_id FROM OpenCourses
-                      WHERE month = 200708) THEN &#39;⚪&#39;
-            ELSE &#39;×&#39; END AS &quot;8月&quot;
-FROM CourseMaster;   
-
--- 使用EXISTS谓词
-SELECT CM.course_name,
-       CASE WHEN EXISTS
-                   (SELECT course_id FROM OpenCourses OC
-                    WHERE OC.month=200706 
-                      AND OC.course_id=CM.course_id) THEN &#39;O&#39;
-             ELSE &#39;X&#39; END AS &#39;6月&#39;,
-        CASE WHEN EXISTS
-                    (SELECT course_id FROM OpenCourses OC
-                     WHERE OC.month=200707
-                       AND OC.course_id=CM.course_id) THEN &#39;O&#39;
-             ELSE &#39;X&#39; END AS &#39;7月&#39;,
-         CASE WHEN EXISTS
-                     (SELECT course_id FROM OpenCourses OC
-                     WHERE OC.month=200708
-                       AND OC.course_id=CM.course_id) THEN &#39;O&#39;
-             ELSE &#39;X&#39; END AS &#39;8月&#39;         
-FROM CourseMaster CM;
-</code></pre>
-<p>CASE表达式用在SELECT子句里时，既可以写在聚合函数内部，也可以写在聚合函数外部。</p>
-<pre><code class="lang-sql">## StudentClub
-+--------+---------+-----------+---------------+
-| std_id | club_id | club_name | main_club_flg |
-+--------+---------+-----------+---------------+
-|    100 |       1 | 棒球      | Y             |
-|    100 |       2 | 管弦乐    | N             |
-|    200 |       2 | 管弦乐    | N             |
-|    200 |       3 | 羽毛球    | Y             |
-|    200 |       4 | 足球      | N             |
-|    300 |       4 | 足球      | N             |
-|    400 |       5 | 游泳      | N             |
-|    500 |       6 | 围棋      | N             |
-+--------+---------+-----------+---------------+
-8 rows in set (0.00 sec)
--- main_club_flg=&#39;Y&#39; 表示加入多个社团的学生的主社团
-
--- 找出学生的主社团
-SELECT std_id,
-        CASE WHEN COUNT(*) = 1
-              THEN MAX(club_id)
-              ELSE MAX(CASE WHEN main_club_flg = &#39;Y&#39;
-                            THEN club_id
-                            ELSE NULL END)
-              END AS main_club
-FROM StudentClub
-GROUP BY std_id;
-
-+--------+-----------+
-| std_id | main_club |
-+--------+-----------+
-|    100 |         1 |
-|    200 |         3 |
-|    300 |         4 |
-|    400 |         5 |
-|    500 |         6 |
-+--------+-----------+
-5 rows in set (0.00 sec)
-</code></pre>
-<h2 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h2><p>找最大值</p>
-<pre><code class="lang-sql">-- Greatests
-+------+---+---+---+
-| key0 | x | y | z |
-+------+---+---+---+
-| A    | 1 | 2 | 3 |
-| B    | 5 | 5 | 2 |
-| C    | 4 | 7 | 1 |
-| D    | 3 | 3 | 8 |
-+------+---+---+---+
-4 rows in set (0.00 sec)
-
--- 找出多列数据中的最大值
-/* 找出x列和y列中的最大值 */
-SELECT key0,
-       CASE WHEN x &lt; y THEN y
-            ELSE x END AS greatest
-FROM Greatests;
-
--- MySQL自带函数 GREATEST 直接可实现上述过程
-SELECT key0,  GREATEST(x,y) AS greatest
-FROM Greatests;
-
-+------+----------+
-| key0 | greatest |
-+------+----------+
-| A    |        2 |
-| B    |        5 |
-| C    |        7 |
-| D    |        3 |
-+------+----------+
-4 rows in set (0.00 sec)
-</code></pre>
-<p>求和：</p>
-<pre><code class="lang-sql">+-----------+-----+------------+
-| pref_name | sex | population |
-+-----------+-----+------------+
-| 东京      | 1   |        250 |
-| 东京      | 2   |        150 |
-| 佐贺      | 1   |         20 |
-| 佐贺      | 2   |         80 |
-| 德岛      | 1   |         60 |
-| 德岛      | 2   |         40 |
-| 爱媛      | 1   |        100 |
-| 爱媛      | 2   |         50 |
-| 福冈      | 1   |        100 |
-| 福冈      | 2   |        200 |
-| 长崎      | 1   |        125 |
-| 长崎      | 2   |        125 |
-| 香川      | 1   |        100 |
-| 香川      | 2   |        100 |
-| 高知      | 1   |        100 |
-| 高知      | 2   |        100 |
-+-----------+-----+------------+
-16 rows in set (0.00 sec)
-
-SELECT sex AS &#39;性别&#39;,
-       SUM(population) AS &#39;全国&#39;,
-       SUM(CASE WHEN pref_name = &#39;德岛&#39; THEN population ELSE 0 END) AS &quot;德岛&quot;,
-       SUM(CASE WHEN pref_name = &#39;香川&#39; THEN population ELSE 0 END) AS &quot;香川&quot;,
-       SUM(CASE WHEN pref_name = &#39;爱媛&#39; THEN population ELSE 0 END) AS &quot;爱媛&quot;,
-       SUM(CASE WHEN pref_name = &#39;高知&#39; THEN population ELSE 0 END) AS &quot;高知&quot;,
-       SUM(CASE WHEN pref_name IN (&#39;德岛&#39;, &#39;香川&#39;, &#39;爱媛&#39;, &#39;高知&#39;)
-                THEN population ELSE 0 END) AS zaijie
-  FROM PopTbl2
- GROUP BY sex;
-
-+--------+--------+--------+--------+--------+--------+--------+
-| 性别   | 全国   | 德岛   | 香川   | 爱媛   | 高知   | zaijie |
-+--------+--------+--------+--------+--------+--------+--------+
-| 1      |    855 |     60 |    100 |    100 |    100 |    360 |
-| 2      |    845 |     40 |    100 |     50 |    100 |    290 |
-+--------+--------+--------+--------+--------+--------+--------+
-2 rows in set (0.00 sec)
-</code></pre>
-<p>乱序排序：</p>
-<pre><code class="lang-sql">
--- 按照 B-A-D-C排序
-SELECT key0,
-       CASE key0
-         WHEN &#39;B&#39; THEN 1
-         WHEN &#39;A&#39; THEN 2
-         WHEN &#39;D&#39; THEN 3
-         WHEN &#39;C&#39; THEN 4
-         ELSE NULL END AS sort_col
-  FROM Greatests
- ORDER BY sort_col;
-
-+------+----------+
-| key0 | sort_col |
-+------+----------+
-| B    |        1 |
-| A    |        2 |
-| D    |        3 |
-| C    |        4 |
-+------+----------+
-4 rows in set (0.00 sec)
-</code></pre>
-<pre><code class="lang-sql">
-
-</code></pre>
-<pre><code class="lang-sql">
-
-</code></pre>
-<pre><code class="lang-sql">
-
-</code></pre>
-<pre><code class="lang-sql">
-
-</code></pre>
-<pre><code class="lang-sql">
-
-</code></pre>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">+<span class="comment">-----------+------------+</span></span><br><span class="line">| pref_name | population |</span><br><span class="line">+<span class="comment">-----------+------------+</span></span><br><span class="line">| 东京      |        400 |</span><br><span class="line">| 佐贺      |        100 |</span><br><span class="line">| 德岛      |        100 |</span><br><span class="line">| 爱媛      |        150 |</span><br><span class="line">| 福冈      |        300 |</span><br><span class="line">| 群马      |         50 |</span><br><span class="line">| 长崎      |        200 |</span><br><span class="line">| 香川      |        200 |</span><br><span class="line">| 高知      |        200 |</span><br><span class="line">+<span class="comment">-----------+------------+</span></span><br><span class="line">9 rows in <span class="keyword">set</span> (<span class="number">0.00</span> sec)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 根据县人口统计表，统计不同地区的人口数量</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">CASE</span> pref_name</span><br><span class="line">                <span class="keyword">WHEN</span> <span class="string">'德岛'</span> <span class="keyword">THEN</span> <span class="string">'四国'</span></span><br><span class="line">                <span class="keyword">WHEN</span> <span class="string">'香川'</span> <span class="keyword">THEN</span> <span class="string">'四国'</span></span><br><span class="line">                <span class="keyword">WHEN</span> <span class="string">'爱媛'</span> <span class="keyword">THEN</span> <span class="string">'四国'</span></span><br><span class="line">                <span class="keyword">WHEN</span> <span class="string">'高知'</span> <span class="keyword">THEN</span> <span class="string">'四国'</span></span><br><span class="line">                <span class="keyword">WHEN</span> <span class="string">'福冈'</span> <span class="keyword">THEN</span> <span class="string">'九州'</span></span><br><span class="line">                <span class="keyword">WHEN</span> <span class="string">'长崎'</span> <span class="keyword">THEN</span> <span class="string">'九州'</span></span><br><span class="line">                <span class="keyword">WHEN</span> <span class="string">'佐贺'</span> <span class="keyword">THEN</span> <span class="string">'九州'</span></span><br><span class="line">        <span class="keyword">ELSE</span> <span class="string">'其他'</span> <span class="keyword">END</span> <span class="keyword">AS</span> district,</span><br><span class="line">        <span class="keyword">SUM</span>(population)</span><br><span class="line"><span class="keyword">FROM</span> PopTbl</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> <span class="keyword">CASE</span> pref_name</span><br><span class="line">                <span class="keyword">WHEN</span> <span class="string">'德岛'</span> <span class="keyword">THEN</span> <span class="string">'四国'</span></span><br><span class="line">                <span class="keyword">WHEN</span> <span class="string">'香川'</span> <span class="keyword">THEN</span> <span class="string">'四国'</span></span><br><span class="line">                <span class="keyword">WHEN</span> <span class="string">'爱媛'</span> <span class="keyword">THEN</span> <span class="string">'四国'</span></span><br><span class="line">                <span class="keyword">WHEN</span> <span class="string">'高知'</span> <span class="keyword">THEN</span> <span class="string">'四国'</span></span><br><span class="line">                <span class="keyword">WHEN</span> <span class="string">'福冈'</span> <span class="keyword">THEN</span> <span class="string">'九州'</span></span><br><span class="line">                <span class="keyword">WHEN</span> <span class="string">'长崎'</span> <span class="keyword">THEN</span> <span class="string">'九州'</span></span><br><span class="line">                <span class="keyword">WHEN</span> <span class="string">'佐贺'</span> <span class="keyword">THEN</span> <span class="string">'九州'</span></span><br><span class="line">         <span class="keyword">ELSE</span> <span class="string">'其他'</span> <span class="keyword">END</span>;</span><br><span class="line"><span class="comment">-- 注意是对转换后的列 GROUP</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">CASE</span> pref_name</span><br><span class="line">                <span class="keyword">WHEN</span> <span class="string">'德岛'</span> <span class="keyword">THEN</span> <span class="string">'四国'</span></span><br><span class="line">                <span class="keyword">WHEN</span> <span class="string">'香川'</span> <span class="keyword">THEN</span> <span class="string">'四国'</span></span><br><span class="line">                <span class="keyword">WHEN</span> <span class="string">'爱媛'</span> <span class="keyword">THEN</span> <span class="string">'四国'</span></span><br><span class="line">                <span class="keyword">WHEN</span> <span class="string">'高知'</span> <span class="keyword">THEN</span> <span class="string">'四国'</span></span><br><span class="line">                <span class="keyword">WHEN</span> <span class="string">'福冈'</span> <span class="keyword">THEN</span> <span class="string">'九州'</span></span><br><span class="line">                <span class="keyword">WHEN</span> <span class="string">'长崎'</span> <span class="keyword">THEN</span> <span class="string">'九州'</span></span><br><span class="line">                <span class="keyword">WHEN</span> <span class="string">'佐贺'</span> <span class="keyword">THEN</span> <span class="string">'九州'</span></span><br><span class="line">        <span class="keyword">ELSE</span> <span class="string">'其他'</span> <span class="keyword">END</span> <span class="keyword">AS</span> district,</span><br><span class="line">        <span class="keyword">SUM</span>(population)</span><br><span class="line"><span class="keyword">FROM</span> PopTbl</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> district;</span><br><span class="line"><span class="comment">-- 这里引用了SELECT子句中定义的别名来 GROUP</span></span><br><span class="line"><span class="comment">-- 与上面那种方法相比，这里不需要写两段CASE WHEN；</span></span><br><span class="line"><span class="comment">-- 而上面的需要写两段CASE WHEN，当CASE内容需要修改时，需要修改两处，容易出错</span></span><br><span class="line"><span class="comment">-- 但是该写法违反标准SQL的规则，因为GROUP BY子句比SELECT语句先执行</span></span><br></pre></td></tr></table></figure>
+<p>CASE WHEN 聚合之后：<br><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">+<span class="comment">----------+-----------------+</span></span><br><span class="line">| district | SUM(population) |</span><br><span class="line">+<span class="comment">----------+-----------------+</span></span><br><span class="line">| 九州     |             600 |</span><br><span class="line">| 其他     |             450 |</span><br><span class="line">| 四国     |             650 |</span><br><span class="line">+<span class="comment">----------+-----------------+</span></span><br></pre></td></tr></table></figure></p>
+<p>进行不同条件的统计：<br><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">+<span class="comment">-----------+-----+------------+</span></span><br><span class="line">| pref_name | sex | population |</span><br><span class="line">+<span class="comment">-----------+-----+------------+</span></span><br><span class="line">| 东京      | 1   |        250 |</span><br><span class="line">| 东京      | 2   |        150 |</span><br><span class="line">| 佐贺      | 1   |         20 |</span><br><span class="line">| 佐贺      | 2   |         80 |</span><br><span class="line">| 德岛      | 1   |         60 |</span><br><span class="line">| 德岛      | 2   |         40 |</span><br><span class="line">| 爱媛      | 1   |        100 |</span><br><span class="line">| 爱媛      | 2   |         50 |</span><br><span class="line">| 福冈      | 1   |        100 |</span><br><span class="line">| 福冈      | 2   |        200 |</span><br><span class="line">| 长崎      | 1   |        125 |</span><br><span class="line">| 长崎      | 2   |        125 |</span><br><span class="line">| 香川      | 1   |        100 |</span><br><span class="line">| 香川      | 2   |        100 |</span><br><span class="line">| 高知      | 1   |        100 |</span><br><span class="line">| 高知      | 2   |        100 |</span><br><span class="line">+<span class="comment">-----------+-----+------------+</span></span><br><span class="line">16 rows in <span class="keyword">set</span> (<span class="number">0.00</span> sec)</span><br><span class="line"><span class="comment">-- 如果上表有新列“性别”sex，population列为某县的某个性别人口数</span></span><br><span class="line"><span class="keyword">SELECT</span> pref_name,</span><br><span class="line"><span class="comment">-- 男性人口</span></span><br><span class="line">    <span class="keyword">SUM</span>(<span class="keyword">CASE</span> <span class="keyword">WHEN</span> sex=<span class="string">'1'</span> <span class="keyword">THEN</span> population <span class="keyword">ELSE</span> <span class="number">0</span> <span class="keyword">END</span>) <span class="keyword">AS</span> cnt_m,</span><br><span class="line"><span class="comment">-- 女性人口</span></span><br><span class="line">    <span class="keyword">SUM</span>(<span class="keyword">CASE</span> <span class="keyword">WHEN</span> sex=<span class="string">'2'</span> <span class="keyword">THEN</span> population <span class="keyword">ELSE</span> <span class="number">0</span> <span class="keyword">END</span>) <span class="keyword">AS</span> cnt_f</span><br><span class="line"><span class="keyword">FROM</span> PopTbl2</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> pref_name;</span><br><span class="line">+<span class="comment">-----------+-------+-------+</span></span><br><span class="line">| pref_name | cnt_m | cnt_f |</span><br><span class="line">+<span class="comment">-----------+-------+-------+</span></span><br><span class="line">| 东京      |   250 |   150 |</span><br><span class="line">| 佐贺      |    20 |    80 |</span><br><span class="line">| 德岛      |    60 |    40 |</span><br><span class="line">| 爱媛      |   100 |    50 |</span><br><span class="line">| 福冈      |   100 |   200 |</span><br><span class="line">| 长崎      |   125 |   125 |</span><br><span class="line">| 香川      |   100 |   100 |</span><br><span class="line">| 高知      |   100 |   100 |</span><br><span class="line">+<span class="comment">-----------+-------+-------+</span></span><br><span class="line">8 rows in <span class="keyword">set</span> (<span class="number">0.00</span> sec)</span><br></pre></td></tr></table></figure></p>
+<p>使用CHECK约束定义多个列的条件关系：<br><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">CONSTRAINT check_salary <span class="keyword">CHECK</span></span><br><span class="line">        (<span class="keyword">CASE</span> <span class="keyword">WHEN</span> dept=<span class="string">'IT'</span> </span><br><span class="line">              <span class="keyword">THEN</span> <span class="keyword">CASE</span> <span class="keyword">WHEN</span> salary&gt;=<span class="number">20000</span></span><br><span class="line">                        <span class="keyword">THEN</span> <span class="number">1</span> <span class="keyword">ELSE</span> <span class="number">0</span> <span class="keyword">END</span></span><br><span class="line">              <span class="keyword">ELSE</span> <span class="number">1</span> <span class="keyword">END</span> = <span class="number">1</span>)</span><br><span class="line"><span class="comment">-- 如果是IT部门的员工，则工资应大于等于2万；如果不是IT部门的员工，则工资不受该约束限制</span></span><br><span class="line"><span class="comment">-- 蕴含式（conditional）</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 如果用逻辑与（logical product）</span></span><br><span class="line"><span class="keyword">CONSTRAINT</span> check_salary <span class="keyword">CHECK</span> </span><br><span class="line">            (dept=<span class="string">'IT'</span> <span class="keyword">AND</span> salary&gt;=<span class="number">20000</span>)</span><br><span class="line"><span class="comment">-- 表示 salary里的记录只能是'IT'部门的，且工资大于等于2万</span></span><br></pre></td></tr></table></figure></p>
+<p>在UPDATE语句里进行条件分支：<br><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">+<span class="comment">--------+--------+</span></span><br><span class="line">| name   | salary |</span><br><span class="line">+<span class="comment">--------+--------+</span></span><br><span class="line">| 木村   | 220000 |</span><br><span class="line">| 相田   | 300000 |</span><br><span class="line">| 神崎   | 270000 |</span><br><span class="line">| 齐藤   | 290000 |</span><br><span class="line">+<span class="comment">--------+--------+</span></span><br><span class="line">4 rows in <span class="keyword">set</span> (<span class="number">0.01</span> sec)</span><br><span class="line"></span><br><span class="line"><span class="keyword">UPDATE</span> Salaries </span><br><span class="line">   <span class="keyword">SET</span> salary = <span class="keyword">CASE</span> <span class="keyword">WHEN</span> salary&gt;=<span class="number">300000</span> <span class="keyword">THEN</span> salary*<span class="number">0.9</span></span><br><span class="line">                     <span class="keyword">WHEN</span> salary&gt;=<span class="number">250000</span> <span class="keyword">AND</span> salary&lt;<span class="number">280000</span> <span class="keyword">THEN</span> salary*<span class="number">1.2</span></span><br><span class="line">                     <span class="keyword">ELSE</span> salary <span class="keyword">END</span>;  <span class="comment">-- 最后一句很重要</span></span><br><span class="line"><span class="comment">-- 当前工资为30万元以上的员工，降薪10%；</span></span><br><span class="line"><span class="comment">-- 当前工资为25万元~28万元（不满28万元）的员工，加薪20%</span></span><br><span class="line">+<span class="comment">--------+--------+</span></span><br><span class="line">| name   | salary |</span><br><span class="line">+<span class="comment">--------+--------+</span></span><br><span class="line">| 木村   | 220000 |</span><br><span class="line">| 相田   | 270000 |</span><br><span class="line">| 神崎   | 324000 |</span><br><span class="line">| 齐藤   | 290000 |</span><br><span class="line">+<span class="comment">--------+--------+</span></span><br><span class="line">4 rows in <span class="keyword">set</span> (<span class="number">0.00</span> sec)</span><br></pre></td></tr></table></figure></p>
+<p>调换主键值：<br><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">+<span class="comment">-------+-------+-------+</span></span><br><span class="line">| p_key | col_1 | col_2 |</span><br><span class="line">+<span class="comment">-------+-------+-------+</span></span><br><span class="line">| a     |     1 | 一    |</span><br><span class="line">| b     |     2 | 二    |</span><br><span class="line">| c     |     3 | 三    |</span><br><span class="line">+<span class="comment">-------+-------+-------+</span></span><br><span class="line">3 rows in <span class="keyword">set</span> (<span class="number">0.00</span> sec)</span><br><span class="line"></span><br><span class="line"><span class="keyword">UPDATE</span> SomeTable</span><br><span class="line">   <span class="keyword">SET</span> p_key = <span class="keyword">CASE</span> <span class="keyword">WHEN</span> p_key=<span class="string">'a'</span> <span class="keyword">THEN</span> <span class="string">'b'</span></span><br><span class="line">                    <span class="keyword">WHEN</span> p_key=<span class="string">'b'</span> <span class="keyword">THEN</span> <span class="string">'a'</span></span><br><span class="line">                    <span class="keyword">ELSE</span> p_key <span class="keyword">END</span>   <span class="comment">-- 该句很重要</span></span><br><span class="line"><span class="keyword">WHERE</span> p_key <span class="keyword">IN</span> (<span class="string">'a'</span>, <span class="string">'b'</span>);</span><br><span class="line"><span class="comment">-- 在PostgreSQL和MySQL中执行该语句，会因为主键重复而报错</span></span><br><span class="line"><span class="comment">-- 如: ERROR 1062 (23000): Duplicate entry 'b' for key 'PRIMARY'</span></span><br></pre></td></tr></table></figure></p>
+<p>在CASE表达式中，可以使用<code>BETWEEN</code>、<code>LIKE</code> 和 <code>&lt;</code>、<code>&gt;</code>等谓词组合，以及能嵌套子查询的 <code>IN</code> 和 <code>EXISTS</code> 谓词<br><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">mysql&gt; SELECT * FROM CourseMaster;</span><br><span class="line">+<span class="comment">-----------+--------------+</span></span><br><span class="line">| course_id | course_name  |</span><br><span class="line">+<span class="comment">-----------+--------------+</span></span><br><span class="line">|         1 | 会计入门     |</span><br><span class="line">|         2 | 财务知识     |</span><br><span class="line">|         3 | 簿记考试     |</span><br><span class="line">|         4 | 税务师       |</span><br><span class="line">+<span class="comment">-----------+--------------+</span></span><br><span class="line">4 rows in <span class="keyword">set</span> (<span class="number">0.00</span> sec)</span><br><span class="line"></span><br><span class="line">mysql&gt; <span class="keyword">SELECT</span> * <span class="keyword">FROM</span> OpenCourses;</span><br><span class="line">+<span class="comment">--------+-----------+</span></span><br><span class="line">| month  | course_id |</span><br><span class="line">+<span class="comment">--------+-----------+</span></span><br><span class="line">| 200706 |         1 |</span><br><span class="line">| 200706 |         3 |</span><br><span class="line">| 200706 |         4 |</span><br><span class="line">| 200707 |         4 |</span><br><span class="line">| 200708 |         2 |</span><br><span class="line">| 200708 |         4 |</span><br><span class="line">+<span class="comment">--------+-----------+</span></span><br><span class="line">6 rows in <span class="keyword">set</span> (<span class="number">0.00</span> sec)</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 如果用 IN 谓词</span></span><br><span class="line"><span class="keyword">SELECT</span> course_name,</span><br><span class="line">       <span class="keyword">CASE</span> <span class="keyword">WHEN</span> course_id <span class="keyword">IN</span> </span><br><span class="line">                     (<span class="keyword">SELECT</span> course_id <span class="keyword">FROM</span> OpenCourses </span><br><span class="line">                      <span class="keyword">WHERE</span> <span class="keyword">month</span> = <span class="number">200706</span>) <span class="keyword">THEN</span> <span class="string">'⚪'</span></span><br><span class="line">            <span class="keyword">ELSE</span> <span class="string">'×'</span> <span class="keyword">END</span> <span class="keyword">AS</span> <span class="string">"6月"</span>,</span><br><span class="line">       <span class="keyword">CASE</span> <span class="keyword">WHEN</span> course_id <span class="keyword">IN</span> </span><br><span class="line">                     (<span class="keyword">SELECT</span> course_id <span class="keyword">FROM</span> OpenCourses</span><br><span class="line">                      <span class="keyword">WHERE</span> <span class="keyword">month</span> = <span class="number">200707</span>) <span class="keyword">THEN</span> <span class="string">'⚪'</span></span><br><span class="line">            <span class="keyword">ELSE</span> <span class="string">'×'</span> <span class="keyword">END</span> <span class="keyword">AS</span> <span class="string">"7月"</span>,  </span><br><span class="line">       <span class="keyword">CASE</span> <span class="keyword">WHEN</span> course_id <span class="keyword">IN</span> </span><br><span class="line">                     (<span class="keyword">SELECT</span> course_id <span class="keyword">FROM</span> OpenCourses</span><br><span class="line">                      <span class="keyword">WHERE</span> <span class="keyword">month</span> = <span class="number">200708</span>) <span class="keyword">THEN</span> <span class="string">'⚪'</span></span><br><span class="line">            <span class="keyword">ELSE</span> <span class="string">'×'</span> <span class="keyword">END</span> <span class="keyword">AS</span> <span class="string">"8月"</span></span><br><span class="line"><span class="keyword">FROM</span> CourseMaster;   </span><br><span class="line"></span><br><span class="line"><span class="comment">-- 使用EXISTS谓词</span></span><br><span class="line"><span class="keyword">SELECT</span> CM.course_name,</span><br><span class="line">       <span class="keyword">CASE</span> <span class="keyword">WHEN</span> <span class="keyword">EXISTS</span></span><br><span class="line">                   (<span class="keyword">SELECT</span> course_id <span class="keyword">FROM</span> OpenCourses OC</span><br><span class="line">                    <span class="keyword">WHERE</span> OC.month=<span class="number">200706</span> </span><br><span class="line">                      <span class="keyword">AND</span> OC.course_id=CM.course_id) <span class="keyword">THEN</span> <span class="string">'O'</span></span><br><span class="line">             <span class="keyword">ELSE</span> <span class="string">'X'</span> <span class="keyword">END</span> <span class="keyword">AS</span> <span class="string">'6月'</span>,</span><br><span class="line">        <span class="keyword">CASE</span> <span class="keyword">WHEN</span> <span class="keyword">EXISTS</span></span><br><span class="line">                    (<span class="keyword">SELECT</span> course_id <span class="keyword">FROM</span> OpenCourses OC</span><br><span class="line">                     <span class="keyword">WHERE</span> OC.month=<span class="number">200707</span></span><br><span class="line">                       <span class="keyword">AND</span> OC.course_id=CM.course_id) <span class="keyword">THEN</span> <span class="string">'O'</span></span><br><span class="line">             <span class="keyword">ELSE</span> <span class="string">'X'</span> <span class="keyword">END</span> <span class="keyword">AS</span> <span class="string">'7月'</span>,</span><br><span class="line">         <span class="keyword">CASE</span> <span class="keyword">WHEN</span> <span class="keyword">EXISTS</span></span><br><span class="line">                     (<span class="keyword">SELECT</span> course_id <span class="keyword">FROM</span> OpenCourses OC</span><br><span class="line">                     <span class="keyword">WHERE</span> OC.month=<span class="number">200708</span></span><br><span class="line">                       <span class="keyword">AND</span> OC.course_id=CM.course_id) <span class="keyword">THEN</span> <span class="string">'O'</span></span><br><span class="line">             <span class="keyword">ELSE</span> <span class="string">'X'</span> <span class="keyword">END</span> <span class="keyword">AS</span> <span class="string">'8月'</span>         </span><br><span class="line"><span class="keyword">FROM</span> CourseMaster CM;</span><br></pre></td></tr></table></figure></p>
+<p>CASE表达式用在SELECT子句里时，既可以写在聚合函数内部，也可以写在聚合函数外部。<br><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">## StudentClub</span></span><br><span class="line">+<span class="comment">--------+---------+-----------+---------------+</span></span><br><span class="line">| std_id | club_id | club_name | main_club_flg |</span><br><span class="line">+<span class="comment">--------+---------+-----------+---------------+</span></span><br><span class="line">|    100 |       1 | 棒球      | Y             |</span><br><span class="line">|    100 |       2 | 管弦乐    | N             |</span><br><span class="line">|    200 |       2 | 管弦乐    | N             |</span><br><span class="line">|    200 |       3 | 羽毛球    | Y             |</span><br><span class="line">|    200 |       4 | 足球      | N             |</span><br><span class="line">|    300 |       4 | 足球      | N             |</span><br><span class="line">|    400 |       5 | 游泳      | N             |</span><br><span class="line">|    500 |       6 | 围棋      | N             |</span><br><span class="line">+<span class="comment">--------+---------+-----------+---------------+</span></span><br><span class="line">8 rows in <span class="keyword">set</span> (<span class="number">0.00</span> sec)</span><br><span class="line"><span class="comment">-- main_club_flg='Y' 表示加入多个社团的学生的主社团</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 找出学生的主社团</span></span><br><span class="line"><span class="keyword">SELECT</span> std_id,</span><br><span class="line">        <span class="keyword">CASE</span> <span class="keyword">WHEN</span> <span class="keyword">COUNT</span>(*) = <span class="number">1</span></span><br><span class="line">              <span class="keyword">THEN</span> <span class="keyword">MAX</span>(club_id)</span><br><span class="line">              <span class="keyword">ELSE</span> <span class="keyword">MAX</span>(<span class="keyword">CASE</span> <span class="keyword">WHEN</span> main_club_flg = <span class="string">'Y'</span></span><br><span class="line">                            <span class="keyword">THEN</span> club_id</span><br><span class="line">                            <span class="keyword">ELSE</span> <span class="literal">NULL</span> <span class="keyword">END</span>)</span><br><span class="line">              <span class="keyword">END</span> <span class="keyword">AS</span> main_club</span><br><span class="line"><span class="keyword">FROM</span> StudentClub</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> std_id;</span><br><span class="line"></span><br><span class="line">+<span class="comment">--------+-----------+</span></span><br><span class="line">| std_id | main_club |</span><br><span class="line">+<span class="comment">--------+-----------+</span></span><br><span class="line">|    100 |         1 |</span><br><span class="line">|    200 |         3 |</span><br><span class="line">|    300 |         4 |</span><br><span class="line">|    400 |         5 |</span><br><span class="line">|    500 |         6 |</span><br><span class="line">+<span class="comment">--------+-----------+</span></span><br><span class="line">5 rows in <span class="keyword">set</span> (<span class="number">0.00</span> sec)</span><br></pre></td></tr></table></figure></p>
+<h2 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h2><p>找最大值<br><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- Greatests</span></span><br><span class="line">+<span class="comment">------+---+---+---+</span></span><br><span class="line">| key0 | x | y | z |</span><br><span class="line">+<span class="comment">------+---+---+---+</span></span><br><span class="line">| A    | 1 | 2 | 3 |</span><br><span class="line">| B    | 5 | 5 | 2 |</span><br><span class="line">| C    | 4 | 7 | 1 |</span><br><span class="line">| D    | 3 | 3 | 8 |</span><br><span class="line">+<span class="comment">------+---+---+---+</span></span><br><span class="line">4 rows in <span class="keyword">set</span> (<span class="number">0.00</span> sec)</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 找出多列数据中的最大值</span></span><br><span class="line"><span class="comment">/* 找出x列和y列中的最大值 */</span></span><br><span class="line"><span class="keyword">SELECT</span> key0,</span><br><span class="line">       <span class="keyword">CASE</span> <span class="keyword">WHEN</span> x &lt; y <span class="keyword">THEN</span> y</span><br><span class="line">            <span class="keyword">ELSE</span> x <span class="keyword">END</span> <span class="keyword">AS</span> <span class="keyword">greatest</span></span><br><span class="line"><span class="keyword">FROM</span> Greatests;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- MySQL自带函数 GREATEST 直接可实现上述过程</span></span><br><span class="line"><span class="keyword">SELECT</span> key0,  <span class="keyword">GREATEST</span>(x,y) <span class="keyword">AS</span> <span class="keyword">greatest</span></span><br><span class="line"><span class="keyword">FROM</span> Greatests;</span><br><span class="line"></span><br><span class="line">+<span class="comment">------+----------+</span></span><br><span class="line">| key0 | greatest |</span><br><span class="line">+<span class="comment">------+----------+</span></span><br><span class="line">| A    |        2 |</span><br><span class="line">| B    |        5 |</span><br><span class="line">| C    |        7 |</span><br><span class="line">| D    |        3 |</span><br><span class="line">+<span class="comment">------+----------+</span></span><br><span class="line">4 rows in <span class="keyword">set</span> (<span class="number">0.00</span> sec)</span><br></pre></td></tr></table></figure></p>
+<p>求和：<br><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">+<span class="comment">-----------+-----+------------+</span></span><br><span class="line">| pref_name | sex | population |</span><br><span class="line">+<span class="comment">-----------+-----+------------+</span></span><br><span class="line">| 东京      | 1   |        250 |</span><br><span class="line">| 东京      | 2   |        150 |</span><br><span class="line">| 佐贺      | 1   |         20 |</span><br><span class="line">| 佐贺      | 2   |         80 |</span><br><span class="line">| 德岛      | 1   |         60 |</span><br><span class="line">| 德岛      | 2   |         40 |</span><br><span class="line">| 爱媛      | 1   |        100 |</span><br><span class="line">| 爱媛      | 2   |         50 |</span><br><span class="line">| 福冈      | 1   |        100 |</span><br><span class="line">| 福冈      | 2   |        200 |</span><br><span class="line">| 长崎      | 1   |        125 |</span><br><span class="line">| 长崎      | 2   |        125 |</span><br><span class="line">| 香川      | 1   |        100 |</span><br><span class="line">| 香川      | 2   |        100 |</span><br><span class="line">| 高知      | 1   |        100 |</span><br><span class="line">| 高知      | 2   |        100 |</span><br><span class="line">+<span class="comment">-----------+-----+------------+</span></span><br><span class="line">16 rows in <span class="keyword">set</span> (<span class="number">0.00</span> sec)</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> sex <span class="keyword">AS</span> <span class="string">'性别'</span>,</span><br><span class="line">       <span class="keyword">SUM</span>(population) <span class="keyword">AS</span> <span class="string">'全国'</span>,</span><br><span class="line">       <span class="keyword">SUM</span>(<span class="keyword">CASE</span> <span class="keyword">WHEN</span> pref_name = <span class="string">'德岛'</span> <span class="keyword">THEN</span> population <span class="keyword">ELSE</span> <span class="number">0</span> <span class="keyword">END</span>) <span class="keyword">AS</span> <span class="string">"德岛"</span>,</span><br><span class="line">       <span class="keyword">SUM</span>(<span class="keyword">CASE</span> <span class="keyword">WHEN</span> pref_name = <span class="string">'香川'</span> <span class="keyword">THEN</span> population <span class="keyword">ELSE</span> <span class="number">0</span> <span class="keyword">END</span>) <span class="keyword">AS</span> <span class="string">"香川"</span>,</span><br><span class="line">       <span class="keyword">SUM</span>(<span class="keyword">CASE</span> <span class="keyword">WHEN</span> pref_name = <span class="string">'爱媛'</span> <span class="keyword">THEN</span> population <span class="keyword">ELSE</span> <span class="number">0</span> <span class="keyword">END</span>) <span class="keyword">AS</span> <span class="string">"爱媛"</span>,</span><br><span class="line">       <span class="keyword">SUM</span>(<span class="keyword">CASE</span> <span class="keyword">WHEN</span> pref_name = <span class="string">'高知'</span> <span class="keyword">THEN</span> population <span class="keyword">ELSE</span> <span class="number">0</span> <span class="keyword">END</span>) <span class="keyword">AS</span> <span class="string">"高知"</span>,</span><br><span class="line">       <span class="keyword">SUM</span>(<span class="keyword">CASE</span> <span class="keyword">WHEN</span> pref_name <span class="keyword">IN</span> (<span class="string">'德岛'</span>, <span class="string">'香川'</span>, <span class="string">'爱媛'</span>, <span class="string">'高知'</span>)</span><br><span class="line">                <span class="keyword">THEN</span> population <span class="keyword">ELSE</span> <span class="number">0</span> <span class="keyword">END</span>) <span class="keyword">AS</span> zaijie</span><br><span class="line">  <span class="keyword">FROM</span> PopTbl2</span><br><span class="line"> <span class="keyword">GROUP</span> <span class="keyword">BY</span> sex;</span><br><span class="line"></span><br><span class="line">+<span class="comment">--------+--------+--------+--------+--------+--------+--------+</span></span><br><span class="line">| 性别   | 全国   | 德岛   | 香川   | 爱媛   | 高知   | zaijie |</span><br><span class="line">+<span class="comment">--------+--------+--------+--------+--------+--------+--------+</span></span><br><span class="line">| 1      |    855 |     60 |    100 |    100 |    100 |    360 |</span><br><span class="line">| 2      |    845 |     40 |    100 |     50 |    100 |    290 |</span><br><span class="line">+<span class="comment">--------+--------+--------+--------+--------+--------+--------+</span></span><br><span class="line">2 rows in <span class="keyword">set</span> (<span class="number">0.00</span> sec)</span><br></pre></td></tr></table></figure></p>
+<p>乱序排序：<br><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">-- 按照 B-A-D-C排序</span></span><br><span class="line"><span class="keyword">SELECT</span> key0,</span><br><span class="line">       <span class="keyword">CASE</span> key0</span><br><span class="line">         <span class="keyword">WHEN</span> <span class="string">'B'</span> <span class="keyword">THEN</span> <span class="number">1</span></span><br><span class="line">         <span class="keyword">WHEN</span> <span class="string">'A'</span> <span class="keyword">THEN</span> <span class="number">2</span></span><br><span class="line">         <span class="keyword">WHEN</span> <span class="string">'D'</span> <span class="keyword">THEN</span> <span class="number">3</span></span><br><span class="line">         <span class="keyword">WHEN</span> <span class="string">'C'</span> <span class="keyword">THEN</span> <span class="number">4</span></span><br><span class="line">         <span class="keyword">ELSE</span> <span class="literal">NULL</span> <span class="keyword">END</span> <span class="keyword">AS</span> sort_col</span><br><span class="line">  <span class="keyword">FROM</span> Greatests</span><br><span class="line"> <span class="keyword">ORDER</span> <span class="keyword">BY</span> sort_col;</span><br><span class="line"></span><br><span class="line">+<span class="comment">------+----------+</span></span><br><span class="line">| key0 | sort_col |</span><br><span class="line">+<span class="comment">------+----------+</span></span><br><span class="line">| B    |        1 |</span><br><span class="line">| A    |        2 |</span><br><span class="line">| D    |        3 |</span><br><span class="line">| C    |        4 |</span><br><span class="line">+<span class="comment">------+----------+</span></span><br><span class="line">4 rows in <span class="keyword">set</span> (<span class="number">0.00</span> sec)</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p>[1] <a href="https://mp.weixin.qq.com/s?__biz=MzU5NzkxODMxOA==&amp;mid=2247486368&amp;idx=1&amp;sn=3ef74be0a7b7345cba471da1370f8986&amp;chksm=fe4d5ca1c93ad5b7481d65a8fa0a8b4e585714af57ad69437d599bbac5830910562a9097a12b&amp;token=1415910284&amp;lang=zh_CN#rd" target="_blank" rel="noopener">Notes | SQL进阶教程 | 001</a></p>
 
     </div>
@@ -892,6 +518,8 @@ SELECT key0,
 
 
 
+
+  
 
 
 

@@ -22,12 +22,12 @@
 
 <link rel="stylesheet" href="/js/prism/prism.css">
 
-  <meta name="description" content="数据说明数据来源：天池 数据详情  本篇笔记的代码使用Jupyter Lab实现  参考资料[1] Baseline方案 [2] 赛题理解 [3] 数据分析 [4] 特征工程 [5] 建模调参 [6] 模型融合 数据处理&amp;分析载入需要的模块## 基础模块 import numpy as np import pandas as pd import warnings import matplo">
+  <meta name="description" content="数据说明数据来源：天池 数据详情  本篇笔记的代码使用Jupyter Lab实现  参考资料[1] Baseline方案 [2] 赛题理解 [3] 数据分析 [4] 特征工程 [5] 建模调参 [6] 模型融合 数据处理&amp;分析载入需要的模块## 基础模块import numpy as npimport pandas as pdimport warningsimport matplotlib">
 <meta property="og:type" content="article">
 <meta property="og:title" content="天池 | 二手车交易数据">
 <meta property="og:url" content="https://github.com/ShootingWang/ShootingWang.github.io/2020/05/12/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-%E5%A4%A9%E6%B1%A0-%E4%BA%8C%E6%89%8B%E8%BD%A6%E4%BA%A4%E6%98%93%E6%95%B0%E6%8D%AE/index.html">
 <meta property="og:site_name" content="ShootingWang">
-<meta property="og:description" content="数据说明数据来源：天池 数据详情  本篇笔记的代码使用Jupyter Lab实现  参考资料[1] Baseline方案 [2] 赛题理解 [3] 数据分析 [4] 特征工程 [5] 建模调参 [6] 模型融合 数据处理&amp;分析载入需要的模块## 基础模块 import numpy as np import pandas as pd import warnings import matplo">
+<meta property="og:description" content="数据说明数据来源：天池 数据详情  本篇笔记的代码使用Jupyter Lab实现  参考资料[1] Baseline方案 [2] 赛题理解 [3] 数据分析 [4] 特征工程 [5] 建模调参 [6] 模型融合 数据处理&amp;分析载入需要的模块## 基础模块import numpy as npimport pandas as pdimport warningsimport matplotlib">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://github.com/2020/05/12/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-%E5%A4%A9%E6%B1%A0-%E4%BA%8C%E6%89%8B%E8%BD%A6%E4%BA%A4%E6%98%93%E6%95%B0%E6%8D%AE/output_23_0.png">
 <meta property="og:image" content="https://github.com/2020/05/12/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-%E5%A4%A9%E6%B1%A0-%E4%BA%8C%E6%89%8B%E8%BD%A6%E4%BA%A4%E6%98%93%E6%95%B0%E6%8D%AE/output_33_0.png">
@@ -239,50 +239,12 @@
 <p>[4] <a href="https://tianchi.aliyun.com/notebook-ai/detail?spm=5176.12281978.0.0.6802593aEHEy7Y&amp;postId=95501" target="_blank" rel="noopener">特征工程</a></p>
 <p>[5] <a href="https://tianchi.aliyun.com/notebook-ai/detail?spm=5176.12281978.0.0.6802593aEHEy7Y&amp;postId=95460" target="_blank" rel="noopener">建模调参</a></p>
 <p>[6] <a href="https://tianchi.aliyun.com/notebook-ai/detail?spm=5176.12281978.0.0.6802593aEHEy7Y&amp;postId=95535" target="_blank" rel="noopener">模型融合</a></p>
-<h1 id="数据处理-amp-分析"><a href="#数据处理-amp-分析" class="headerlink" title="数据处理&amp;分析"></a>数据处理&amp;分析</h1><h2 id="载入需要的模块"><a href="#载入需要的模块" class="headerlink" title="载入需要的模块"></a>载入需要的模块</h2><pre><code class="lang-python">## 基础模块
-import numpy as np
-import pandas as pd
-import warnings
-import matplotlib
-import matplotlib.pyplot as plt
-import seaborn as sns
-from scipy.special import jn
-from IPython.display import display, clear_output
-import time
-
-warnings.filterwarnings(&#39;ignore&#39;)
-%matplotlib inline
-
-## 模型预测
-from sklearn import linear_model
-from sklearn import preprocessing
-from sklearn.svm import SVR
-from sklearn.ensemble import RandomForestRegressor, GradientBoostingRegressor
-import lightgbm as lgb
-import xgboost as xgb
-
-## 降维
-from sklearn.decomposition import PCA, FastICA, FactorAnalysis, SparsePCA
-
-## 网格搜索、模型评估
-from sklearn.model_selection import GridSearchCV, StratifiedKFold
-from sklearn.model_selection import cross_val_score, train_test_split
-from sklearn.metrics import mean_squared_error, mean_absolute_error
-</code></pre>
-<h2 id="载入数据"><a href="#载入数据" class="headerlink" title="载入数据"></a>载入数据</h2><pre><code class="lang-python">## 读取数据
-train_data = pd.read_csv(&quot;used_car_train_20200313.csv&quot;, sep=&quot; &quot;)
-testB_data = pd.read_csv(&quot;used_car_testB_20200421.csv&quot;, sep=&quot; &quot;)
-
-## 训练集大小
-print(&quot;Train data shape:&quot;, train_data.shape)
-</code></pre>
+<h1 id="数据处理-amp-分析"><a href="#数据处理-amp-分析" class="headerlink" title="数据处理&amp;分析"></a>数据处理&amp;分析</h1><h2 id="载入需要的模块"><a href="#载入需要的模块" class="headerlink" title="载入需要的模块"></a>载入需要的模块</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 基础模块</span></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> warnings</span><br><span class="line"><span class="keyword">import</span> matplotlib</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns</span><br><span class="line"><span class="keyword">from</span> scipy.special <span class="keyword">import</span> jn</span><br><span class="line"><span class="keyword">from</span> IPython.display <span class="keyword">import</span> display, clear_output</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line">warnings.filterwarnings(<span class="string">'ignore'</span>)</span><br><span class="line">%matplotlib inline</span><br><span class="line"></span><br><span class="line"><span class="comment">## 模型预测</span></span><br><span class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> linear_model</span><br><span class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> preprocessing</span><br><span class="line"><span class="keyword">from</span> sklearn.svm <span class="keyword">import</span> SVR</span><br><span class="line"><span class="keyword">from</span> sklearn.ensemble <span class="keyword">import</span> RandomForestRegressor, GradientBoostingRegressor</span><br><span class="line"><span class="keyword">import</span> lightgbm <span class="keyword">as</span> lgb</span><br><span class="line"><span class="keyword">import</span> xgboost <span class="keyword">as</span> xgb</span><br><span class="line"></span><br><span class="line"><span class="comment">## 降维</span></span><br><span class="line"><span class="keyword">from</span> sklearn.decomposition <span class="keyword">import</span> PCA, FastICA, FactorAnalysis, SparsePCA</span><br><span class="line"></span><br><span class="line"><span class="comment">## 网格搜索、模型评估</span></span><br><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> GridSearchCV, StratifiedKFold</span><br><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> cross_val_score, train_test_split</span><br><span class="line"><span class="keyword">from</span> sklearn.metrics <span class="keyword">import</span> mean_squared_error, mean_absolute_error</span><br></pre></td></tr></table></figure>
+<h2 id="载入数据"><a href="#载入数据" class="headerlink" title="载入数据"></a>载入数据</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 读取数据</span></span><br><span class="line">train_data = pd.read_csv(<span class="string">"used_car_train_20200313.csv"</span>, sep=<span class="string">" "</span>)</span><br><span class="line">testB_data = pd.read_csv(<span class="string">"used_car_testB_20200421.csv"</span>, sep=<span class="string">" "</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">## 训练集大小</span></span><br><span class="line">print(<span class="string">"Train data shape:"</span>, train_data.shape)</span><br></pre></td></tr></table></figure>
 <pre><code>Train data shape: (150000, 31)
-</code></pre><pre><code class="lang-python">## 测试集大小
-print(&quot;TestB data shape:&quot;, testB_data.shape)
-</code></pre>
+</code></pre><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 测试集大小</span></span><br><span class="line">print(<span class="string">"TestB data shape:"</span>, testB_data.shape)</span><br></pre></td></tr></table></figure>
 <pre><code>TestB data shape: (50000, 30)
-</code></pre><h2 id="数据预览"><a href="#数据预览" class="headerlink" title="数据预览"></a>数据预览</h2><pre><code class="lang-python">train_data.head()  ## 预览前5行
-</code></pre>
+</code></pre><h2 id="数据预览"><a href="#数据预览" class="headerlink" title="数据预览"></a>数据预览</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">train_data.head()  <span class="comment">## 预览前5行</span></span><br></pre></td></tr></table></figure>
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -453,8 +415,7 @@ print(&quot;TestB data shape:&quot;, testB_data.shape)
 
 
 
-<pre><code class="lang-python">train_data.tail()  ## 预览最后5行
-</code></pre>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">train_data.tail()  <span class="comment">## 预览最后5行</span></span><br></pre></td></tr></table></figure>
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -625,11 +586,7 @@ print(&quot;TestB data shape:&quot;, testB_data.shape)
 
 
 
-<pre><code class="lang-python">## .info()简要查看每列对应的数据类型、非缺失样本量
-train_data.info()
-## 总共有150000个样本量
-## 149999表明&#39;model&#39;列有1个缺失值
-</code></pre>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## .info()简要查看每列对应的数据类型、非缺失样本量</span></span><br><span class="line">train_data.info()</span><br><span class="line"><span class="comment">## 总共有150000个样本量</span></span><br><span class="line"><span class="comment">## 149999表明'model'列有1个缺失值</span></span><br></pre></td></tr></table></figure>
 <pre><code>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
 RangeIndex: 150000 entries, 0 to 149999
 Data columns (total 31 columns):
@@ -666,17 +623,14 @@ v_13                 150000 non-null float64
 v_14                 150000 non-null float64
 dtypes: float64(20), int64(10), object(1)
 memory usage: 35.5+ MB
-</code></pre><pre><code class="lang-python">train_data.columns  ## 查看所有列名
-</code></pre>
+</code></pre><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">train_data.columns  <span class="comment">## 查看所有列名</span></span><br></pre></td></tr></table></figure>
 <pre><code>Index([&#39;SaleID&#39;, &#39;name&#39;, &#39;regDate&#39;, &#39;model&#39;, &#39;brand&#39;, &#39;bodyType&#39;, &#39;fuelType&#39;,
        &#39;gearbox&#39;, &#39;power&#39;, &#39;kilometer&#39;, &#39;notRepairedDamage&#39;, &#39;regionCode&#39;,
        &#39;seller&#39;, &#39;offerType&#39;, &#39;creatDate&#39;, &#39;price&#39;, &#39;v_0&#39;, &#39;v_1&#39;, &#39;v_2&#39;, &#39;v_3&#39;,
        &#39;v_4&#39;, &#39;v_5&#39;, &#39;v_6&#39;, &#39;v_7&#39;, &#39;v_8&#39;, &#39;v_9&#39;, &#39;v_10&#39;, &#39;v_11&#39;, &#39;v_12&#39;,
        &#39;v_13&#39;, &#39;v_14&#39;],
       dtype=&#39;object&#39;)
-</code></pre><pre><code class="lang-python">testB_data.info()
-## 测试集有50000个样本
-</code></pre>
+</code></pre><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">testB_data.info()</span><br><span class="line"><span class="comment">## 测试集有50000个样本</span></span><br></pre></td></tr></table></figure>
 <pre><code>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
 RangeIndex: 50000 entries, 0 to 49999
 Data columns (total 30 columns):
@@ -712,11 +666,7 @@ v_13                 50000 non-null float64
 v_14                 50000 non-null float64
 dtypes: float64(20), int64(9), object(1)
 memory usage: 11.4+ MB
-</code></pre><pre><code class="lang-python">## 描述性统计
-train_data.describe()
-## 查看每列的非空样本量、均值mean、标准差std、最小值min、25%分位数、
-## 中位数（即50%分位数）、75%分位数、最大值max
-</code></pre>
+</code></pre><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 描述性统计</span></span><br><span class="line">train_data.describe()</span><br><span class="line"><span class="comment">## 查看每列的非空样本量、均值mean、标准差std、最小值min、25%分位数、</span></span><br><span class="line"><span class="comment">## 中位数（即50%分位数）、75%分位数、最大值max</span></span><br></pre></td></tr></table></figure>
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -959,8 +909,7 @@ train_data.describe()
 
 
 
-<pre><code class="lang-python">testB_data.describe()
-</code></pre>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">testB_data.describe()</span><br></pre></td></tr></table></figure>
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1202,47 +1151,19 @@ train_data.describe()
 
 
 
-<h2 id="数据特征"><a href="#数据特征" class="headerlink" title="数据特征"></a>数据特征</h2><pre><code class="lang-python">## 提取数值型特征列名
-numerical_cols = train_data.select_dtypes(exclude=&#39;object&#39;).columns
-print(numerical_cols)
-</code></pre>
+<h2 id="数据特征"><a href="#数据特征" class="headerlink" title="数据特征"></a>数据特征</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 提取数值型特征列名</span></span><br><span class="line">numerical_cols = train_data.select_dtypes(exclude=<span class="string">'object'</span>).columns</span><br><span class="line">print(numerical_cols)</span><br></pre></td></tr></table></figure>
 <pre><code>Index([&#39;SaleID&#39;, &#39;name&#39;, &#39;regDate&#39;, &#39;model&#39;, &#39;brand&#39;, &#39;bodyType&#39;, &#39;fuelType&#39;,
        &#39;gearbox&#39;, &#39;power&#39;, &#39;kilometer&#39;, &#39;regionCode&#39;, &#39;seller&#39;, &#39;offerType&#39;,
        &#39;creatDate&#39;, &#39;price&#39;, &#39;v_0&#39;, &#39;v_1&#39;, &#39;v_2&#39;, &#39;v_3&#39;, &#39;v_4&#39;, &#39;v_5&#39;, &#39;v_6&#39;,
        &#39;v_7&#39;, &#39;v_8&#39;, &#39;v_9&#39;, &#39;v_10&#39;, &#39;v_11&#39;, &#39;v_12&#39;, &#39;v_13&#39;, &#39;v_14&#39;],
       dtype=&#39;object&#39;)
-</code></pre><pre><code class="lang-python">## 提取非数值型特征列名
-categorical_cols = train_data.select_dtypes(include=&#39;object&#39;).columns
-print(categorical_cols)
-</code></pre>
+</code></pre><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 提取非数值型特征列名</span></span><br><span class="line">categorical_cols = train_data.select_dtypes(include=<span class="string">'object'</span>).columns</span><br><span class="line">print(categorical_cols)</span><br></pre></td></tr></table></figure>
 <pre><code>Index([&#39;notRepairedDamage&#39;], dtype=&#39;object&#39;)
-</code></pre><h2 id="训练集和测试集"><a href="#训练集和测试集" class="headerlink" title="训练集和测试集"></a>训练集和测试集</h2><pre><code class="lang-python">## 选择特征列
-feature_cols = [col for col in numerical_cols if col not in [&#39;SaleID&#39;, &#39;name&#39;, &#39;regDate&#39;,&#39;creatDate&#39;,&#39;price&#39;,&#39;model&#39;,&#39;brand&#39;,&#39;regionCode&#39;,&#39;seller&#39;]]
-feature_cols = [col for col in feature_cols if &#39;Type&#39; not in col]
-</code></pre>
-<pre><code class="lang-python">## 提取特征列、标签列构造训练集和测试集
-X_train = train_data[feature_cols]  ## 训练集特征
-y_train = train_data[&#39;price&#39;]  ## 训练集标签
-
-X_test = testB_data[feature_cols]  ## 测试集标签
-
-print(&#39;X train shape is :&#39;, X_train.shape)
-print(&#39;X test shape is :&#39;, X_test.shape)
-</code></pre>
+</code></pre><h2 id="训练集和测试集"><a href="#训练集和测试集" class="headerlink" title="训练集和测试集"></a>训练集和测试集</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 选择特征列</span></span><br><span class="line">feature_cols = [col <span class="keyword">for</span> col <span class="keyword">in</span> numerical_cols <span class="keyword">if</span> col <span class="keyword">not</span> <span class="keyword">in</span> [<span class="string">'SaleID'</span>, <span class="string">'name'</span>, <span class="string">'regDate'</span>,<span class="string">'creatDate'</span>,<span class="string">'price'</span>,<span class="string">'model'</span>,<span class="string">'brand'</span>,<span class="string">'regionCode'</span>,<span class="string">'seller'</span>]]</span><br><span class="line">feature_cols = [col <span class="keyword">for</span> col <span class="keyword">in</span> feature_cols <span class="keyword">if</span> <span class="string">'Type'</span> <span class="keyword">not</span> <span class="keyword">in</span> col]</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 提取特征列、标签列构造训练集和测试集</span></span><br><span class="line">X_train = train_data[feature_cols]  <span class="comment">## 训练集特征</span></span><br><span class="line">y_train = train_data[<span class="string">'price'</span>]  <span class="comment">## 训练集标签</span></span><br><span class="line"></span><br><span class="line">X_test = testB_data[feature_cols]  <span class="comment">## 测试集标签</span></span><br><span class="line"></span><br><span class="line">print(<span class="string">'X train shape is :'</span>, X_train.shape)</span><br><span class="line">print(<span class="string">'X test shape is :'</span>, X_test.shape)</span><br></pre></td></tr></table></figure>
 <pre><code>X train shape is : (150000, 18)
 X test shape is : (50000, 18)
-</code></pre><pre><code class="lang-python">## 统计标签的基本分布信息
-def stat_info(data):
-    print(&#39;_min&#39;, np.min(data))
-    print(&#39;_max&#39;, np.max(data))
-    print(&#39;_mean&#39;, np.mean(data))
-    print(&#39;_ptp&#39;, np.ptp(data))  ## 最大值与最小值的差
-    print(&#39;_std&#39;, np.std(data))
-    print(&#39;_var&#39;, np.var(data))
-
-print(&#39;Stat of label:&#39;)
-stat_info(y_train)
-</code></pre>
+</code></pre><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 统计标签的基本分布信息</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">stat_info</span><span class="params">(data)</span>:</span></span><br><span class="line">    print(<span class="string">'_min'</span>, np.min(data))</span><br><span class="line">    print(<span class="string">'_max'</span>, np.max(data))</span><br><span class="line">    print(<span class="string">'_mean'</span>, np.mean(data))</span><br><span class="line">    print(<span class="string">'_ptp'</span>, np.ptp(data))  <span class="comment">## 最大值与最小值的差</span></span><br><span class="line">    print(<span class="string">'_std'</span>, np.std(data))</span><br><span class="line">    print(<span class="string">'_var'</span>, np.var(data))</span><br><span class="line"></span><br><span class="line">print(<span class="string">'Stat of label:'</span>)</span><br><span class="line">stat_info(y_train)</span><br></pre></td></tr></table></figure>
 <pre><code>Stat of label:
 _min 11
 _max 99999
@@ -1250,93 +1171,15 @@ _mean 5923.327333333334
 _ptp 99988
 _std 7501.973469876438
 _var 56279605.94272992
-</code></pre><pre><code class="lang-python">## label中可能存在异常大值
-## 绘制标签的直方图，查看标签分布
-plt.hist(y_train)
-plt.show()
-plt.close()
-</code></pre>
+</code></pre><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## label中可能存在异常大值</span></span><br><span class="line"><span class="comment">## 绘制标签的直方图，查看标签分布</span></span><br><span class="line">plt.hist(y_train)</span><br><span class="line">plt.show()</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
 <p><meta name="referrer" content="no-referrer"><br><img data-src="/2020/05/12/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-%E5%A4%A9%E6%B1%A0-%E4%BA%8C%E6%89%8B%E8%BD%A6%E4%BA%A4%E6%98%93%E6%95%B0%E6%8D%AE/output_23_0.png" class title="直方图"></p>
-<pre><code class="lang-python">## 填补缺失值
-X_train = X_train.fillna(-1)  ## 用-1填补
-X_test = X_test.fillna(-1)
-</code></pre>
-<h1 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h1><pre><code class="lang-python">## 利用XGBoost进行5折交叉验证
-xgb_reg = xgb.XGBRegressor(
-    n_estimators=120, 
-    learning_rate=0.1, 
-    gamma=0,
-    subsample=0.8,
-    colsample_bytree=0.9,
-    max_depth=7,
-    objective=&#39;reg:squarederror&#39;
-)
-scores_train = []
-scores = []
-
-## 5折交叉验证
-folds = StratifiedKFold(n_splits=5, shuffle=True, random_state=0)
-for train_idx, val_idx in folds.split(X_train, y_train):
-    train_X = X_train.iloc[train_idx].values
-    train_y = y_train.iloc[train_idx]
-    val_X = X_train.iloc[val_idx].values
-    val_y = y_train.iloc[val_idx]
-
-    xgb_reg.fit(train_X, train_y)
-    pred_train_y_xgb = xgb_reg.predict(train_X)
-    pred_val_y_xgb = xgb_reg.predict(val_X)
-
-    score_train = mean_absolute_error(train_y, pred_train_y_xgb)
-    scores_train.append(score_train)
-    score = mean_absolute_error(val_y, pred_val_y_xgb)
-    scores.append(score)
-
-print(&#39;Train MAE:&#39;, np.mean(score_train))
-print(&#39;Validation MAE:&#39;, np.mean(scores))
-</code></pre>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 填补缺失值</span></span><br><span class="line">X_train = X_train.fillna(<span class="number">-1</span>)  <span class="comment">## 用-1填补</span></span><br><span class="line">X_test = X_test.fillna(<span class="number">-1</span>)</span><br></pre></td></tr></table></figure>
+<h1 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 利用XGBoost进行5折交叉验证</span></span><br><span class="line">xgb_reg = xgb.XGBRegressor(</span><br><span class="line">    n_estimators=<span class="number">120</span>, </span><br><span class="line">    learning_rate=<span class="number">0.1</span>, </span><br><span class="line">    gamma=<span class="number">0</span>,</span><br><span class="line">    subsample=<span class="number">0.8</span>,</span><br><span class="line">    colsample_bytree=<span class="number">0.9</span>,</span><br><span class="line">    max_depth=<span class="number">7</span>,</span><br><span class="line">    objective=<span class="string">'reg:squarederror'</span></span><br><span class="line">)</span><br><span class="line">scores_train = []</span><br><span class="line">scores = []</span><br><span class="line"></span><br><span class="line"><span class="comment">## 5折交叉验证</span></span><br><span class="line">folds = StratifiedKFold(n_splits=<span class="number">5</span>, shuffle=<span class="literal">True</span>, random_state=<span class="number">0</span>)</span><br><span class="line"><span class="keyword">for</span> train_idx, val_idx <span class="keyword">in</span> folds.split(X_train, y_train):</span><br><span class="line">    train_X = X_train.iloc[train_idx].values</span><br><span class="line">    train_y = y_train.iloc[train_idx]</span><br><span class="line">    val_X = X_train.iloc[val_idx].values</span><br><span class="line">    val_y = y_train.iloc[val_idx]</span><br><span class="line">    </span><br><span class="line">    xgb_reg.fit(train_X, train_y)</span><br><span class="line">    pred_train_y_xgb = xgb_reg.predict(train_X)</span><br><span class="line">    pred_val_y_xgb = xgb_reg.predict(val_X)</span><br><span class="line">    </span><br><span class="line">    score_train = mean_absolute_error(train_y, pred_train_y_xgb)</span><br><span class="line">    scores_train.append(score_train)</span><br><span class="line">    score = mean_absolute_error(val_y, pred_val_y_xgb)</span><br><span class="line">    scores.append(score)</span><br><span class="line">    </span><br><span class="line">print(<span class="string">'Train MAE:'</span>, np.mean(score_train))</span><br><span class="line">print(<span class="string">'Validation MAE:'</span>, np.mean(scores))</span><br></pre></td></tr></table></figure>
 <pre><code>Train MAE: 622.8334142499367
 Validation MAE: 713.7602744693083
-</code></pre><pre><code class="lang-python">## 定义xgb和lgb模型函数
-def XGB_model(x_train, y_train):
-    model = xgb.XGBRegressor(
-        n_estimators=150,
-        learning_rate=0.1,
-        gamma=0,
-        subsample=0.8,
-        colsample_bytree=0.9,
-        max_depth=7,
-        objective=&#39;reg:squarederror&#39;
-    )
-    model.fit(x_train, y_train)
-    return model
-
-def LGB_model(x_train, y_train):
-    estimator = lgb.LGBMRegressor(
-        num_leaves=127,
-        n_estimators=150
-    )
-    param_grid = {
-        &#39;learning_rate&#39;: [0.01, 0.05, 0.1, 0.2],
-    }
-    gbm = GridSearchCV(estimator, param_grid)
-    gbm.fit(x_train, y_train)
-    return gbm
-</code></pre>
-<pre><code class="lang-python">## 切分训练集和验证集
-x_train, x_val, yy_train, y_val = train_test_split(X_train, y_train, test_size=0.3)
-</code></pre>
-<pre><code class="lang-python">print(&quot;Training LGB ...&quot;)
-model_lgb = LGB_model(x_train, yy_train)
-val_lgb = model_lgb.predict(x_val)
-MAE_lgb = mean_absolute_error(y_val, val_lgb)
-print(&quot;MAE of val with LGB:&quot;, MAE_lgb)
-
-print(&quot;Predict LGB ...&quot;)
-model_lgb_pred = LGB_model(X_train, y_train)
-subB_lgb = model_lgb_pred.predict(X_test)
-print(&quot;stat of Predict LGB:&quot;)
-stat_info(subB_lgb)
-</code></pre>
+</code></pre><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 定义xgb和lgb模型函数</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">XGB_model</span><span class="params">(x_train, y_train)</span>:</span></span><br><span class="line">    model = xgb.XGBRegressor(</span><br><span class="line">        n_estimators=<span class="number">150</span>,</span><br><span class="line">        learning_rate=<span class="number">0.1</span>,</span><br><span class="line">        gamma=<span class="number">0</span>,</span><br><span class="line">        subsample=<span class="number">0.8</span>,</span><br><span class="line">        colsample_bytree=<span class="number">0.9</span>,</span><br><span class="line">        max_depth=<span class="number">7</span>,</span><br><span class="line">        objective=<span class="string">'reg:squarederror'</span></span><br><span class="line">    )</span><br><span class="line">    model.fit(x_train, y_train)</span><br><span class="line">    <span class="keyword">return</span> model</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">LGB_model</span><span class="params">(x_train, y_train)</span>:</span></span><br><span class="line">    estimator = lgb.LGBMRegressor(</span><br><span class="line">        num_leaves=<span class="number">127</span>,</span><br><span class="line">        n_estimators=<span class="number">150</span></span><br><span class="line">    )</span><br><span class="line">    param_grid = &#123;</span><br><span class="line">        <span class="string">'learning_rate'</span>: [<span class="number">0.01</span>, <span class="number">0.05</span>, <span class="number">0.1</span>, <span class="number">0.2</span>],</span><br><span class="line">    &#125;</span><br><span class="line">    gbm = GridSearchCV(estimator, param_grid)</span><br><span class="line">    gbm.fit(x_train, y_train)</span><br><span class="line">    <span class="keyword">return</span> gbm</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 切分训练集和验证集</span></span><br><span class="line">x_train, x_val, yy_train, y_val = train_test_split(X_train, y_train, test_size=<span class="number">0.3</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">print(<span class="string">"Training LGB ..."</span>)</span><br><span class="line">model_lgb = LGB_model(x_train, yy_train)</span><br><span class="line">val_lgb = model_lgb.predict(x_val)</span><br><span class="line">MAE_lgb = mean_absolute_error(y_val, val_lgb)</span><br><span class="line">print(<span class="string">"MAE of val with LGB:"</span>, MAE_lgb)</span><br><span class="line"></span><br><span class="line">print(<span class="string">"Predict LGB ..."</span>)</span><br><span class="line">model_lgb_pred = LGB_model(X_train, y_train)</span><br><span class="line">subB_lgb = model_lgb_pred.predict(X_test)</span><br><span class="line">print(<span class="string">"stat of Predict LGB:"</span>)</span><br><span class="line">stat_info(subB_lgb)</span><br></pre></td></tr></table></figure>
 <pre><code>Training LGB ...
 MAE of val with LGB: 687.1736052804791
 Predict LGB ...
@@ -1347,18 +1190,7 @@ _mean 5906.935218383807
 _ptp 91350.13999092802
 _std 7344.644970956768
 _var 53943809.749400534
-</code></pre><pre><code class="lang-python">print(&quot;Training XGB ...&quot;)
-model_xgb = XGB_model(x_train, yy_train)
-val_xgb = model_xgb.predict(x_val)
-MAE_xgb = mean_absolute_error(y_val, val_xgb)
-print(&quot;MAE of val with xgb:&quot;, MAE_xgb)
-
-print(&quot;Predict xgb ...&quot;)
-model_xgb_pred = XGB_model(X_train, y_train)
-subB_xgb = model_xgb_pred.predict(X_test)
-print(&quot;Stat of Predict XGB:&quot;)
-stat_info(subB_xgb)
-</code></pre>
+</code></pre><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">print(<span class="string">"Training XGB ..."</span>)</span><br><span class="line">model_xgb = XGB_model(x_train, yy_train)</span><br><span class="line">val_xgb = model_xgb.predict(x_val)</span><br><span class="line">MAE_xgb = mean_absolute_error(y_val, val_xgb)</span><br><span class="line">print(<span class="string">"MAE of val with xgb:"</span>, MAE_xgb)</span><br><span class="line"></span><br><span class="line">print(<span class="string">"Predict xgb ..."</span>)</span><br><span class="line">model_xgb_pred = XGB_model(X_train, y_train)</span><br><span class="line">subB_xgb = model_xgb_pred.predict(X_test)</span><br><span class="line">print(<span class="string">"Stat of Predict XGB:"</span>)</span><br><span class="line">stat_info(subB_xgb)</span><br></pre></td></tr></table></figure>
 <pre><code>Training XGB ...
 MAE of val with xgb: 713.8987584188461
 Predict xgb ...
@@ -1369,27 +1201,13 @@ _mean 5910.76
 _ptp 90458.836
 _std 7345.9653
 _var 53963204.0
-</code></pre><pre><code class="lang-python">## 加权融合两模型的结果
-val_weighted = (1 - MAE_lgb / (MAE_xgb + MAE_lgb)) * val_lgb + (1 - MAE_xgb / (MAE_xgb + MAE_lgb) * val_xgb)
-val_weighted[val_weighted &lt; 0] = 10  ## 修正预测值为负的样本
-print(&quot;MAE of val with weighted ensemble:&quot;, mean_absolute_error(y_val, val_weighted))
-</code></pre>
+</code></pre><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 加权融合两模型的结果</span></span><br><span class="line">val_weighted = (<span class="number">1</span> - MAE_lgb / (MAE_xgb + MAE_lgb)) * val_lgb + (<span class="number">1</span> - MAE_xgb / (MAE_xgb + MAE_lgb) * val_xgb)</span><br><span class="line">val_weighted[val_weighted &lt; <span class="number">0</span>] = <span class="number">10</span>  <span class="comment">## 修正预测值为负的样本</span></span><br><span class="line">print(<span class="string">"MAE of val with weighted ensemble:"</span>, mean_absolute_error(y_val, val_weighted))</span><br></pre></td></tr></table></figure>
 <pre><code>MAE of val with weighted ensemble: 5888.071354671169
-</code></pre><pre><code class="lang-python">sub_weighted = (1 - MAE_lgb / (MAE_xgb + MAE_lgb)) * subB_lgb + (1 - MAE_xgb / (MAE_xgb + MAE_lgb)) * subB_xgb
-</code></pre>
-<pre><code class="lang-python">## 查看预测值的直方图
-plt.hist(sub_weighted)
-plt.show()
-plt.close()
-</code></pre>
+</code></pre><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">sub_weighted = (<span class="number">1</span> - MAE_lgb / (MAE_xgb + MAE_lgb)) * subB_lgb + (<span class="number">1</span> - MAE_xgb / (MAE_xgb + MAE_lgb)) * subB_xgb</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 查看预测值的直方图</span></span><br><span class="line">plt.hist(sub_weighted)</span><br><span class="line">plt.show()</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
 <p><meta name="referrer" content="no-referrer"><br><img data-src="/2020/05/12/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-%E5%A4%A9%E6%B1%A0-%E4%BA%8C%E6%89%8B%E8%BD%A6%E4%BA%A4%E6%98%93%E6%95%B0%E6%8D%AE/output_33_0.png" class title="直方图"></p>
-<h1 id="输出结果"><a href="#输出结果" class="headerlink" title="输出结果"></a>输出结果</h1><pre><code class="lang-python">sub = pd.DataFrame()
-sub[&#39;SaleID&#39;] = testB_data.SaleID
-sub[&#39;price&#39;] = sub_weighted
-sub.to_csv(&quot;./sub_weighted.csv&quot;, index=False)
-</code></pre>
-<pre><code class="lang-python">sub.head()  ## 预览结果
-</code></pre>
+<h1 id="输出结果"><a href="#输出结果" class="headerlink" title="输出结果"></a>输出结果</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">sub = pd.DataFrame()</span><br><span class="line">sub[<span class="string">'SaleID'</span>] = testB_data.SaleID</span><br><span class="line">sub[<span class="string">'price'</span>] = sub_weighted</span><br><span class="line">sub.to_csv(<span class="string">"./sub_weighted.csv"</span>, index=<span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">sub.head()  <span class="comment">## 预览结果</span></span><br></pre></td></tr></table></figure>
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1687,6 +1505,8 @@ sub.to_csv(&quot;./sub_weighted.csv&quot;, index=False)
 
 
 
+
+  
 
 
 

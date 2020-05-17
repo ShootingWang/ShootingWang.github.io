@@ -455,25 +455,11 @@
 
       
           <h1 id="Titanic数据集"><a href="#Titanic数据集" class="headerlink" title="Titanic数据集"></a>Titanic数据集</h1><p>数据来源：Kaggle<br><a href="https://www.kaggle.com/c/titanic/data" target="_blank" rel="noopener">点击下载</a></p>
-<h2 id="数据预览"><a href="#数据预览" class="headerlink" title="数据预览"></a>数据预览</h2><pre><code class="lang-Python">import os
-
-os.chdir(&quot;你的路径&quot;)  ##设置工作路径
-os.getcwd()  ##读取当前工作路径
-import pandas as pd
-
-train_data = pd.read_csv(&quot;train.csv&quot;)
-train_data.head()  ##查看前5行
-</code></pre>
-<pre><code class="lang-Python">train_data.describe()  ##变量的描述统计
-</code></pre>
-<pre><code class="lang-Python">train_data.isnull().sum().sort_values(ascending=False)  ##统计每列的缺失值个数
-</code></pre>
-<pre><code class="lang-Python">train_data = train_data.drop(columns=[&quot;Cabin&quot;, &quot;Name&quot;, &quot;PassengerId&quot;, &quot;Ticket&quot;])  ##去除缺失值较多的变量Cabin以及其他无用信息
-train_data.head()
-</code></pre>
-<pre><code class="lang-Python">train_data = train_data.dropna(axis=0) ##保留没有空值的行
-train_data.shape
-</code></pre>
+<h2 id="数据预览"><a href="#数据预览" class="headerlink" title="数据预览"></a>数据预览</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line">os.chdir(<span class="string">"你的路径"</span>)  <span class="comment">##设置工作路径</span></span><br><span class="line">os.getcwd()  <span class="comment">##读取当前工作路径</span></span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line">train_data = pd.read_csv(<span class="string">"train.csv"</span>)</span><br><span class="line">train_data.head()  <span class="comment">##查看前5行</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">train_data.describe()  <span class="comment">##变量的描述统计</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">train_data.isnull().sum().sort_values(ascending=<span class="literal">False</span>)  <span class="comment">##统计每列的缺失值个数</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">train_data = train_data.drop(columns=[<span class="string">"Cabin"</span>, <span class="string">"Name"</span>, <span class="string">"PassengerId"</span>, <span class="string">"Ticket"</span>])  <span class="comment">##去除缺失值较多的变量Cabin以及其他无用信息</span></span><br><span class="line">train_data.head()</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">train_data = train_data.dropna(axis=<span class="number">0</span>) <span class="comment">##保留没有空值的行</span></span><br><span class="line">train_data.shape</span><br></pre></td></tr></table></figure>
 <p>未完待续</p>
 
       
@@ -1029,11 +1015,7 @@ train_data.shape
 <li>list 是可变的对象</li>
 <li>用方括号封装 [ ]</li>
 </ul>
-<pre><code class="lang-Python">lst.append(a)   ##在列表lst尾部添加元素a
-lst.insert(num, c)  ##在列表lst的第num+1个位置（索引为num）插入元素c
-lst.pop()  ##删除列表lst的最后一个元素，并返回该元素
-lst.pop(i)  ##删除列表lst的索引为i的元素（i可以是负数；i=-2表示删除倒数第二个元素）
-</code></pre>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">lst.append(a)   <span class="comment">##在列表lst尾部添加元素a</span></span><br><span class="line">lst.insert(num, c)  <span class="comment">##在列表lst的第num+1个位置（索引为num）插入元素c</span></span><br><span class="line">lst.pop()  <span class="comment">##删除列表lst的最后一个元素，并返回该元素</span></span><br><span class="line">lst.pop(i)  <span class="comment">##删除列表lst的索引为i的元素（i可以是负数；i=-2表示删除倒数第二个元素）</span></span><br></pre></td></tr></table></figure>
 <h2 id="tuple（元组）"><a href="#tuple（元组）" class="headerlink" title="tuple（元组）"></a>tuple（元组）</h2><ul>
 <li>是一种有序列表，和list非常相似</li>
 <li>一旦初始化就不能修改</li>
@@ -1047,13 +1029,7 @@ lst.pop(i)  ##删除列表lst的索引为i的元素（i可以是负数；i=-2表
 <li>成员关系操作符 in 和 not in 也可以直接用在元组上</li>
 <li>用圆括号封装 （）</li>
 </ul>
-<pre><code class="lang-Python">cmp(tuple1, tuple2)  ##比较两个元组元素
-len(tuple)  ##计算元组元素个数
-max(tuple)  ##返回元组中元素最大值
-min(tuple)  ##返回元组中元素最小值
-tuple(seq)  ##把列表seq转换为元组
-</code></pre>
-
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">cmp(tuple1, tuple2)  <span class="comment">##比较两个元组元素</span></span><br><span class="line">len(tuple)  <span class="comment">##计算元组元素个数</span></span><br><span class="line">max(tuple)  <span class="comment">##返回元组中元素最大值</span></span><br><span class="line">min(tuple)  <span class="comment">##返回元组中元素最小值</span></span><br><span class="line">tuple(seq)  <span class="comment">##把列表seq转换为元组</span></span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -1251,6 +1227,8 @@ tuple(seq)  ##把列表seq转换为元组
 
 
 
+
+  
 
 
 

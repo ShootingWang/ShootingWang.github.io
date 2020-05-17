@@ -22,12 +22,12 @@
 
 <link rel="stylesheet" href="/js/prism/prism.css">
 
-  <meta name="description" content="pyecharts安装：在Anaconda Prompt中输入： pip install pyecharts  安装过程可能会出现多种问题：  缺少相关的库 安装MarkupSafe出错 提示找不到相应版本  解决方法 插入到PPT 使用pyecharts画图并生成html文件 查看html的源代码 把相关的源代码复制到PPT插件中，点击运行即可   需要安装PPT插件Office Apps Fi">
+  <meta name="description" content="pyecharts安装：在Anaconda Prompt中输入：pip install pyecharts 安装过程可能会出现多种问题：  缺少相关的库 安装MarkupSafe出错 提示找不到相应版本  解决方法 插入到PPT 使用pyecharts画图并生成html文件 查看html的源代码 把相关的源代码复制到PPT插件中，点击运行即可   需要安装PPT插件Office Apps Fidd">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python | pyecharts">
 <meta property="og:url" content="https://github.com/ShootingWang/ShootingWang.github.io/2020/05/08/python-pyecharts%E6%A8%A1%E5%9D%97/index.html">
 <meta property="og:site_name" content="ShootingWang">
-<meta property="og:description" content="pyecharts安装：在Anaconda Prompt中输入： pip install pyecharts  安装过程可能会出现多种问题：  缺少相关的库 安装MarkupSafe出错 提示找不到相应版本  解决方法 插入到PPT 使用pyecharts画图并生成html文件 查看html的源代码 把相关的源代码复制到PPT插件中，点击运行即可   需要安装PPT插件Office Apps Fi">
+<meta property="og:description" content="pyecharts安装：在Anaconda Prompt中输入：pip install pyecharts 安装过程可能会出现多种问题：  缺少相关的库 安装MarkupSafe出错 提示找不到相应版本  解决方法 插入到PPT 使用pyecharts画图并生成html文件 查看html的源代码 把相关的源代码复制到PPT插件中，点击运行即可   需要安装PPT插件Office Apps Fidd">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://github.com/2020/05/08/python-pyecharts%E6%A8%A1%E5%9D%97/code1.png">
 <meta property="og:image" content="https://github.com/2020/05/08/python-pyecharts%E6%A8%A1%E5%9D%97/pic2.png">
@@ -240,9 +240,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="pyecharts"><a href="#pyecharts" class="headerlink" title="pyecharts"></a>pyecharts</h1><p><strong>安装</strong>：<br>在Anaconda Prompt中输入：</p>
-<pre><code class="lang-bash">pip install pyecharts
-</code></pre>
+        <h1 id="pyecharts"><a href="#pyecharts" class="headerlink" title="pyecharts"></a>pyecharts</h1><p><strong>安装</strong>：<br>在Anaconda Prompt中输入：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip install pyecharts</span><br></pre></td></tr></table></figure></p>
 <p>安装过程可能会出现多种问题：</p>
 <ol>
 <li>缺少相关的库</li>
@@ -258,39 +256,7 @@
 <blockquote>
 <p>需要安装PPT插件<code>Office Apps Fiddle for PowerPoint</code></p>
 </blockquote>
-<p>参考<a href="http://gallery.pyecharts.org/#/Sankey/sankey_base" target="_blank" rel="noopener">官方源码</a>生成html文件：</p>
-<pre><code class="lang-Python">from pyecharts import options as opts
-from pyecharts.charts import Sankey
-
-nodes = [
-    {&quot;name&quot;: &quot;category1&quot;},
-    {&quot;name&quot;: &quot;category2&quot;},
-    {&quot;name&quot;: &quot;category3&quot;},
-    {&quot;name&quot;: &quot;category4&quot;},
-    {&quot;name&quot;: &quot;category5&quot;},
-    {&quot;name&quot;: &quot;category6&quot;},
-]
-
-links = [
-    {&quot;source&quot;: &quot;category1&quot;, &quot;target&quot;: &quot;category2&quot;, &quot;value&quot;: 10},
-    {&quot;source&quot;: &quot;category2&quot;, &quot;target&quot;: &quot;category3&quot;, &quot;value&quot;: 15},
-    {&quot;source&quot;: &quot;category3&quot;, &quot;target&quot;: &quot;category4&quot;, &quot;value&quot;: 20},
-    {&quot;source&quot;: &quot;category5&quot;, &quot;target&quot;: &quot;category6&quot;, &quot;value&quot;: 25},
-]
-c = (
-    Sankey()
-    .add(
-        &quot;sankey&quot;,
-        nodes,
-        links,
-        linestyle_opt=opts.LineStyleOpts(opacity=0.2, curve=0.5, color=&quot;source&quot;),
-        label_opts=opts.LabelOpts(position=&quot;right&quot;),
-    )
-    .set_global_opts(title_opts=opts.TitleOpts(title=&quot;Sankey-基本示例&quot;))
-    .render(&quot;sankey_base.html&quot;)
-)
-</code></pre>
-<p><strong>查看html源代码</strong>：<br>二选一</p>
+<p>参考<a href="http://gallery.pyecharts.org/#/Sankey/sankey_base" target="_blank" rel="noopener">官方源码</a>生成html文件：<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> pyecharts <span class="keyword">import</span> options <span class="keyword">as</span> opts</span><br><span class="line"><span class="keyword">from</span> pyecharts.charts <span class="keyword">import</span> Sankey</span><br><span class="line"></span><br><span class="line">nodes = [</span><br><span class="line">    &#123;<span class="string">"name"</span>: <span class="string">"category1"</span>&#125;,</span><br><span class="line">    &#123;<span class="string">"name"</span>: <span class="string">"category2"</span>&#125;,</span><br><span class="line">    &#123;<span class="string">"name"</span>: <span class="string">"category3"</span>&#125;,</span><br><span class="line">    &#123;<span class="string">"name"</span>: <span class="string">"category4"</span>&#125;,</span><br><span class="line">    &#123;<span class="string">"name"</span>: <span class="string">"category5"</span>&#125;,</span><br><span class="line">    &#123;<span class="string">"name"</span>: <span class="string">"category6"</span>&#125;,</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">links = [</span><br><span class="line">    &#123;<span class="string">"source"</span>: <span class="string">"category1"</span>, <span class="string">"target"</span>: <span class="string">"category2"</span>, <span class="string">"value"</span>: <span class="number">10</span>&#125;,</span><br><span class="line">    &#123;<span class="string">"source"</span>: <span class="string">"category2"</span>, <span class="string">"target"</span>: <span class="string">"category3"</span>, <span class="string">"value"</span>: <span class="number">15</span>&#125;,</span><br><span class="line">    &#123;<span class="string">"source"</span>: <span class="string">"category3"</span>, <span class="string">"target"</span>: <span class="string">"category4"</span>, <span class="string">"value"</span>: <span class="number">20</span>&#125;,</span><br><span class="line">    &#123;<span class="string">"source"</span>: <span class="string">"category5"</span>, <span class="string">"target"</span>: <span class="string">"category6"</span>, <span class="string">"value"</span>: <span class="number">25</span>&#125;,</span><br><span class="line">]</span><br><span class="line">c = (</span><br><span class="line">    Sankey()</span><br><span class="line">    .add(</span><br><span class="line">        <span class="string">"sankey"</span>,</span><br><span class="line">        nodes,</span><br><span class="line">        links,</span><br><span class="line">        linestyle_opt=opts.LineStyleOpts(opacity=<span class="number">0.2</span>, curve=<span class="number">0.5</span>, color=<span class="string">"source"</span>),</span><br><span class="line">        label_opts=opts.LabelOpts(position=<span class="string">"right"</span>),</span><br><span class="line">    )</span><br><span class="line">    .set_global_opts(title_opts=opts.TitleOpts(title=<span class="string">"Sankey-基本示例"</span>))</span><br><span class="line">    .render(<span class="string">"sankey_base.html"</span>)</span><br><span class="line">)</span><br></pre></td></tr></table></figure><br><strong>查看html源代码</strong>：<br>二选一</p>
 <ol>
 <li>用浏览器打开<code>sankey_base.html</code>，右键选择“查看源代码”或<code>Ctrl+U</code></li>
 <li>用Visual Sudio Code打开<code>sankey_base.html</code><br>查看源代码<br><meta name="referrer" content="no-referrer"><img data-src="/2020/05/08/python-pyecharts%E6%A8%A1%E5%9D%97/code1.png" class title="html源代码">
@@ -549,6 +515,8 @@ c = (
 
 
 
+
+  
 
 
 

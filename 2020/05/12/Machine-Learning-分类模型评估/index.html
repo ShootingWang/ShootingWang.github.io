@@ -279,8 +279,7 @@
 </blockquote>
 <p>计算Precision的加权均值（<strong>AP</strong>，average precision）：</p>
 <script type="math/tex; mode=display">AP=\sum_i(R_i-R_{i-1})P_i</script><p>其中，$R_i$、$P_i$分别是第$i$个阈值对应的Recall和Precision。</p>
-<pre><code class="lang-Python">sklearn.metrics.average_precision_score
-</code></pre>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">sklearn.metrics.average_precision_score</span><br></pre></td></tr></table></figure>
 <h2 id="Recall"><a href="#Recall" class="headerlink" title="Recall"></a>Recall</h2><p><strong>召回率</strong>（Recall）or <strong>查全率</strong>：</p>
 <script type="math/tex; mode=display">Recall=\frac{TP}{TP+FN}</script><script type="math/tex; mode=display">召回率=\frac{提取出的正确信息条数}{样本中相关的信息条数}</script><blockquote>
 <p>如：警察抓小偷，描述有多少比例的小偷被警察抓了的标准即Recall</p>
@@ -323,9 +322,7 @@
 <p><strong>ROC vs F1-score</strong><br>When you have a data imbalance between positive and negative samples, you should always use F1-score because of ROC averages over all possible thresholds.</p>
 </blockquote>
 <p><meta name="referrer" content="no-referrer"><br><img data-src="/2020/05/12/Machine-Learning-%E5%88%86%E7%B1%BB%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0/pic1.png" class title="ROC曲线&amp;TP,TN,FP,FN的关系"></p>
-<pre><code class="lang-Python">## 计算ROC
-sklearn.metrics.roc_curve(y_true, y_score)
-</code></pre>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 计算ROC</span></span><br><span class="line">sklearn.metrics.roc_curve(y_true, y_score)</span><br></pre></td></tr></table></figure>
 <h2 id="AUC"><a href="#AUC" class="headerlink" title="AUC"></a>AUC</h2><p><strong>AUC</strong>（Area Under Curve）：ROC曲线下的面积</p>
 <ul>
 <li>对所有可能的分类阈值的效果进行综合衡量</li>
@@ -355,9 +352,7 @@ sklearn.metrics.roc_curve(y_true, y_score)
 <li>AUC = 0.5，等同于随机猜测；该模型没有预测价值</li>
 <li>AUC  &lt; 0.5，比随机猜测还差</li>
 </ul>
-<pre><code class="lang-Python">## 计算AUC
-sklearn.metrics.roc_auc_score(y_true, y_score)
-</code></pre>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 计算AUC</span></span><br><span class="line">sklearn.metrics.roc_auc_score(y_true, y_score)</span><br></pre></td></tr></table></figure>
 <h2 id="PR"><a href="#PR" class="headerlink" title="PR"></a>PR</h2><p><strong>PR</strong>（Precision-Recall）曲线</p>
 <ul>
 <li>横轴：Recall</li>
@@ -614,6 +609,8 @@ sklearn.metrics.roc_auc_score(y_true, y_score)
 
 
 
+
+  
 
 
 

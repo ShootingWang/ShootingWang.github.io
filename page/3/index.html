@@ -202,7 +202,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-05-17 08:56:53" itemprop="dateModified" datetime="2020-05-17T08:56:53+08:00">2020-05-17</time>
+                <time title="修改时间：2020-05-17 13:45:29" itemprop="dateModified" datetime="2020-05-17T13:45:29+08:00">2020-05-17</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -210,7 +210,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E9%A2%98%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">题库</span></a>
+                  <a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a>
                 </span>
             </span>
 
@@ -374,18 +374,7 @@
 </tbody>
 </table>
 </div>
-<pre><code class="lang-Python">## Python 2
-try:
-    1/0
-except ZeroDivisionError, e:
-    print str(e)
-
-## Python 3
-try:
-    1/0
-except ZeroDivisionError as e:
-    print(str(e))
-</code></pre>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## Python 2</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    <span class="number">1</span>/<span class="number">0</span></span><br><span class="line"><span class="keyword">except</span> ZeroDivisionError, e:</span><br><span class="line">    <span class="keyword">print</span> str(e)</span><br><span class="line"></span><br><span class="line"><span class="comment">## Python 3</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    <span class="number">1</span>/<span class="number">0</span></span><br><span class="line"><span class="keyword">except</span> ZeroDivisionError <span class="keyword">as</span> e:</span><br><span class="line">    print(str(e))</span><br></pre></td></tr></table></figure>
 <h2 id="map函数"><a href="#map函数" class="headerlink" title="map函数"></a>map函数</h2><div class="table-container">
 <table>
 <thead>
@@ -458,18 +447,7 @@ except ZeroDivisionError as e:
 </tbody>
 </table>
 </div>
-<pre><code class="lang-Python">person = {&quot;age&quot;: 35, &quot;name&quot;: &quot;Wang Wu&quot;}
-## Python 2
-print &quot;person has key \&quot;age\&quot;:&quot;, person.has_key(&quot;age&quot;)
-# person has key &quot;age&quot;: True
-print &quot;person has key \&quot;age\&quot;:&quot;, &quot;age&quot; in person
-# person has key &quot;age&quot;: True
-
-## Python 3
-print(&quot;person has key \&quot;age\&quot;:&quot;, &quot;age&quot; in person)
-# person has key &quot;age&quot;: True
-</code></pre>
-
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">person = &#123;<span class="string">"age"</span>: <span class="number">35</span>, <span class="string">"name"</span>: <span class="string">"Wang Wu"</span>&#125;</span><br><span class="line"><span class="comment">## Python 2</span></span><br><span class="line"><span class="keyword">print</span> <span class="string">"person has key \"age\":"</span>, person.has_key(<span class="string">"age"</span>)</span><br><span class="line"><span class="comment"># person has key "age": True</span></span><br><span class="line"><span class="keyword">print</span> <span class="string">"person has key \"age\":"</span>, <span class="string">"age"</span> <span class="keyword">in</span> person</span><br><span class="line"><span class="comment"># person has key "age": True</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## Python 3</span></span><br><span class="line">print(<span class="string">"person has key \"age\":"</span>, <span class="string">"age"</span> <span class="keyword">in</span> person)</span><br><span class="line"><span class="comment"># person has key "age": True</span></span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -580,8 +558,7 @@ print(&quot;person has key \&quot;age\&quot;:&quot;, &quot;age&quot; in person)
 </blockquote>
 <p>计算Precision的加权均值（<strong>AP</strong>，average precision）：</p>
 <script type="math/tex; mode=display">AP=\sum_i(R_i-R_{i-1})P_i</script><p>其中，$R_i$、$P_i$分别是第$i$个阈值对应的Recall和Precision。</p>
-<pre><code class="lang-Python">sklearn.metrics.average_precision_score
-</code></pre>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">sklearn.metrics.average_precision_score</span><br></pre></td></tr></table></figure>
 <h2 id="Recall"><a href="#Recall" class="headerlink" title="Recall"></a>Recall</h2><p><strong>召回率</strong>（Recall）or <strong>查全率</strong>：</p>
 <script type="math/tex; mode=display">Recall=\frac{TP}{TP+FN}</script><script type="math/tex; mode=display">召回率=\frac{提取出的正确信息条数}{样本中相关的信息条数}</script><blockquote>
 <p>如：警察抓小偷，描述有多少比例的小偷被警察抓了的标准即Recall</p>
@@ -624,9 +601,7 @@ print(&quot;person has key \&quot;age\&quot;:&quot;, &quot;age&quot; in person)
 <p><strong>ROC vs F1-score</strong><br>When you have a data imbalance between positive and negative samples, you should always use F1-score because of ROC averages over all possible thresholds.</p>
 </blockquote>
 <p><meta name="referrer" content="no-referrer"><br><img data-src="/2020/05/12/Machine-Learning-%E5%88%86%E7%B1%BB%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0/pic1.png" class title="ROC曲线&amp;TP,TN,FP,FN的关系"></p>
-<pre><code class="lang-Python">## 计算ROC
-sklearn.metrics.roc_curve(y_true, y_score)
-</code></pre>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 计算ROC</span></span><br><span class="line">sklearn.metrics.roc_curve(y_true, y_score)</span><br></pre></td></tr></table></figure>
 <h2 id="AUC"><a href="#AUC" class="headerlink" title="AUC"></a>AUC</h2><p><strong>AUC</strong>（Area Under Curve）：ROC曲线下的面积</p>
 <ul>
 <li>对所有可能的分类阈值的效果进行综合衡量</li>
@@ -656,9 +631,7 @@ sklearn.metrics.roc_curve(y_true, y_score)
 <li>AUC = 0.5，等同于随机猜测；该模型没有预测价值</li>
 <li>AUC  &lt; 0.5，比随机猜测还差</li>
 </ul>
-<pre><code class="lang-Python">## 计算AUC
-sklearn.metrics.roc_auc_score(y_true, y_score)
-</code></pre>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 计算AUC</span></span><br><span class="line">sklearn.metrics.roc_auc_score(y_true, y_score)</span><br></pre></td></tr></table></figure>
 <h2 id="PR"><a href="#PR" class="headerlink" title="PR"></a>PR</h2><p><strong>PR</strong>（Precision-Recall）曲线</p>
 <ul>
 <li>横轴：Recall</li>
@@ -1583,15 +1556,7 @@ n_{i.}\\
 \end{array}\right)+\sum_j\left(\begin{array}{c}
 n_{.j}\\
 2
-\end{array}\right)]</script><pre><code class="lang-Python"># Python实现
-from sklearn.metrics import adjust_rand_score
-
-ari = adjusted_rand_score(labels_true, labels_pred)
-# labels_true：真实的分类标签
-# label_pred：模型聚类的结果
-# ARI = (RI - Expected_RI) / (max(RI) - Expected_RI)
-# adjusted_rand_score(a, b) == adjusted_rand_score(b, a)
-</code></pre>
+\end{array}\right)]</script><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Python实现</span></span><br><span class="line"><span class="keyword">from</span> sklearn.metrics <span class="keyword">import</span> adjust_rand_score</span><br><span class="line"></span><br><span class="line">ari = adjusted_rand_score(labels_true, labels_pred)</span><br><span class="line"><span class="comment"># labels_true：真实的分类标签</span></span><br><span class="line"><span class="comment"># label_pred：模型聚类的结果</span></span><br><span class="line"><span class="comment"># ARI = (RI - Expected_RI) / (max(RI) - Expected_RI)</span></span><br><span class="line"><span class="comment"># adjusted_rand_score(a, b) == adjusted_rand_score(b, a)</span></span><br></pre></td></tr></table></figure>
 <h2 id="AMI评价法"><a href="#AMI评价法" class="headerlink" title="AMI评价法"></a>AMI评价法</h2><p><strong>互信息</strong>（MI，Mutual Information）：衡量两个数据分布的吻合程度。</p>
 <ul>
 <li>需要真实类别</li>
@@ -1631,22 +1596,7 @@ ari = adjusted_rand_score(labels_true, labels_pred)
 <li>$n_{i.}=\sum_{j=1}^Cn_{ij}$</li>
 <li>$n_{.j}=\sum_{i=1}^Rn_{ij}$</li>
 </ul>
-<pre><code class="lang-Python"># Python实现
-from sklearn.metrics import adjusted_mutual_info_score
-
-## AMI
-ami = adjusted_mutual_info_score(labels_true, labels_pred)
-# labels_true：真实的分类标签
-# label_pred：模型聚类的结果
-# Python的sklearn中的AMI的公式为
-# AMI(U,V)=[MI(U,V) - E(MI(U,V))] / [avg(H(U),H(V)) - E(MI(U,V))]
-# 其中用的是avg而不是max
-
-## NMI
-from sklearn.metrics import normalized_mutual_info_score
-
-nmi = normalized_mutual_info_score(labels_true, labels_pred)
-</code></pre>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Python实现</span></span><br><span class="line"><span class="keyword">from</span> sklearn.metrics <span class="keyword">import</span> adjusted_mutual_info_score</span><br><span class="line"></span><br><span class="line"><span class="comment">## AMI</span></span><br><span class="line">ami = adjusted_mutual_info_score(labels_true, labels_pred)</span><br><span class="line"><span class="comment"># labels_true：真实的分类标签</span></span><br><span class="line"><span class="comment"># label_pred：模型聚类的结果</span></span><br><span class="line"><span class="comment"># Python的sklearn中的AMI的公式为</span></span><br><span class="line"><span class="comment"># AMI(U,V)=[MI(U,V) - E(MI(U,V))] / [avg(H(U),H(V)) - E(MI(U,V))]</span></span><br><span class="line"><span class="comment"># 其中用的是avg而不是max</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## NMI</span></span><br><span class="line"><span class="keyword">from</span> sklearn.metrics <span class="keyword">import</span> normalized_mutual_info_score</span><br><span class="line"></span><br><span class="line">nmi = normalized_mutual_info_score(labels_true, labels_pred)</span><br></pre></td></tr></table></figure>
 <h2 id="V-measure评价法"><a href="#V-measure评价法" class="headerlink" title="V-measure评价法"></a>V-measure评价法</h2><p>V-measure评价法：同质性（Homogeneity）和完整性（Completeness）的调和平均值。</p>
 <ul>
 <li>需要真实值</li>
@@ -1663,35 +1613,13 @@ nmi = normalized_mutual_info_score(labels_true, labels_pred)
 <h3 id="完整性"><a href="#完整性" class="headerlink" title="完整性"></a>完整性</h3><p>完整性（Completeness）：给定类的所有成员分配给同一簇类</p>
 <script type="math/tex; mode=display">c=1-\frac{H(V|U)}{H(V)}</script><p>其中</p>
 <script type="math/tex; mode=display">H(V|U)=-\sum_{i=1}^R\sum_{j=1}^C\frac{n_{ij}}{n}\log{\left(\frac{n_{ij}}{n_{i.}}\right)}</script><script type="math/tex; mode=display">H(V)=-\sum_{j=1}^C\frac{n_{.j}}{n}\log{\left(\frac{n_{.j}}{n}\right)}</script><h3 id="V-measure"><a href="#V-measure" class="headerlink" title="V-measure"></a>V-measure</h3><p>V-measure是同质性和完整性的调和平均数，公式为</p>
-<script type="math/tex; mode=display">V=\frac{2\cdot h\cdot c}{h+c}</script><pre><code class="lang-Python"># Python实现 V-measure
-from sklearn.metrics.cluster import v_measure_score
-
-vs = v_measure_score(labels_true, labels_pred, beta=1.0)
-# labels_true：真实的分类标签
-# label_pred：模型聚类的结果
-# v = (1 + beta) * homogeneity * completenes
-#     / (beta * homogeneity + completeness)
-
-# homogeneity
-from sklearn.metrics.cluster import homogeneity_score
-
-h = homogeneity_score(labels_true, labels_pred)
-
-# completeness
-from sklearn.metrics import completeness_score
-
-c = completeness_score(labels_true, labels_pred)
-</code></pre>
+<script type="math/tex; mode=display">V=\frac{2\cdot h\cdot c}{h+c}</script><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Python实现 V-measure</span></span><br><span class="line"><span class="keyword">from</span> sklearn.metrics.cluster <span class="keyword">import</span> v_measure_score</span><br><span class="line"></span><br><span class="line">vs = v_measure_score(labels_true, labels_pred, beta=<span class="number">1.0</span>)</span><br><span class="line"><span class="comment"># labels_true：真实的分类标签</span></span><br><span class="line"><span class="comment"># label_pred：模型聚类的结果</span></span><br><span class="line"><span class="comment"># v = (1 + beta) * homogeneity * completenes</span></span><br><span class="line"><span class="comment">#     / (beta * homogeneity + completeness)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># homogeneity</span></span><br><span class="line"><span class="keyword">from</span> sklearn.metrics.cluster <span class="keyword">import</span> homogeneity_score</span><br><span class="line"></span><br><span class="line">h = homogeneity_score(labels_true, labels_pred)</span><br><span class="line"></span><br><span class="line"><span class="comment"># completeness</span></span><br><span class="line"><span class="keyword">from</span> sklearn.metrics <span class="keyword">import</span> completeness_score</span><br><span class="line"></span><br><span class="line">c = completeness_score(labels_true, labels_pred)</span><br></pre></td></tr></table></figure>
 <h2 id="FMI评价法"><a href="#FMI评价法" class="headerlink" title="FMI评价法"></a>FMI评价法</h2><p><strong>FMI评价法</strong>（Fowlkes-Mallows score FMI）：精确率（Precision）和召回率（Recall）的几何平均值</p>
 <ul>
 <li>需要真实值</li>
 <li>最佳值为1<script type="math/tex; mode=display">\mathrm{FMI}=\sqrt{\mathrm{Precision\cdot Recall}}=\frac{TP}{\sqrt{(TP+FP)(TP+FN)}}</script></li>
 </ul>
-<pre><code class="lang-Python"># Python实现
-from sklearn.metrics import fowlkes_mallows_score
-
-fmi = fowlkes_mallows_score(labels_true, labels_pred)
-</code></pre>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Python实现</span></span><br><span class="line"><span class="keyword">from</span> sklearn.metrics <span class="keyword">import</span> fowlkes_mallows_score</span><br><span class="line"></span><br><span class="line">fmi = fowlkes_mallows_score(labels_true, labels_pred)</span><br></pre></td></tr></table></figure>
 <h2 id="轮廓系数"><a href="#轮廓系数" class="headerlink" title="轮廓系数"></a>轮廓系数</h2><p><strong>轮廓系数</strong>（Silhouette Coefficient）：适用于实际类别信息未知的情况。</p>
 <ul>
 <li>轮廓系数的取值范围为 [-1,1]</li>
@@ -1716,11 +1644,7 @@ fmi = fowlkes_mallows_score(labels_true, labels_pred)
 </li>
 </ol>
 <p>样本集合的轮廓系数是其所有样本轮廓系数的平均值。</p>
-<pre><code class="lang-Python"># Python
-from sklearn.metrics import silhouette_score
-
-ss = silhouette_scor(X, labels, metric=&#39;euclidean&#39;)
-</code></pre>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Python</span></span><br><span class="line"><span class="keyword">from</span> sklearn.metrics <span class="keyword">import</span> silhouette_score</span><br><span class="line"></span><br><span class="line">ss = silhouette_scor(X, labels, metric=<span class="string">'euclidean'</span>)</span><br></pre></td></tr></table></figure>
 <h2 id="Calinski-Harabasz指数"><a href="#Calinski-Harabasz指数" class="headerlink" title="Calinski-Harabasz指数"></a>Calinski-Harabasz指数</h2><p><strong>Calinski-Harabasz Index</strong>（Variance Ratio Criterion）：用簇内的稠密程度和簇间的离散程度来评估聚类的效果。</p>
 <ul>
 <li>主要用于k-均值聚类</li>
@@ -1732,11 +1656,7 @@ ss = silhouette_scor(X, labels, metric=&#39;euclidean&#39;)
 <li>$W_k$是类别内部数据的协方差矩阵（$SS_W$ is the overall within-cluster variance）</li>
 <li>$\mathrm{tr}$ 是矩阵的迹</li>
 </ul>
-<pre><code class="lang-Python"># Python实现
-from sklearn.metrics import calinski-harabasz_score
-
-ch = calinski_harabasz_score(X, labels)
-</code></pre>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Python实现</span></span><br><span class="line"><span class="keyword">from</span> sklearn.metrics <span class="keyword">import</span> calinski-harabasz_score</span><br><span class="line"></span><br><span class="line">ch = calinski_harabasz_score(X, labels)</span><br></pre></td></tr></table></figure>
 <h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p>[1] <a href="https://mp.weixin.qq.com/s?__biz=MzU5NzkxODMxOA==&amp;mid=2247486297&amp;idx=1&amp;sn=0a2c549de4e1cfe54694e8364acfceb9&amp;chksm=fe4d5c58c93ad54e7b45b5f644870f011f5e7ffc1d6cb0698f53d15d38e1419bc8cc7c0e1cd7&amp;token=1168016353&amp;lang=zh_CN#rd" target="_blank" rel="noopener">聚类模型评估</a><br>[2] <a href="https://www.lagou.com/lgeduarticle/109119.html" target="_blank" rel="noopener">机器学习之模型评估详解</a><br>[3] <a href="https://zhaokv.com/machine_learning/2016/03/ml-metric.html" target="_blank" rel="noopener">机器学习评价指标大汇总</a><br>[4] <a href="https://en.wikipedia.org/wiki/Rand_index#Adjusted_Rand_index" target="_blank" rel="noopener"> 维基百科-Rand Index</a><br>[5] <a href="https://en.wikipedia.org/wiki/Adjusted_mutual_information" target="_blank" rel="noopener">维基百科-调整互信息</a><br>[6] <a href="https://blog.csdn.net/sinat_30203515/article/details/82634778" target="_blank" rel="noopener">兰德系数、调整兰德系数</a><br>[7] <a href="https://www.wandouip.com/t5i267906/" target="_blank" rel="noopener">方法名称最优值sklearn函数</a><br>[8] <a href="https://www.jianshu.com/p/b9528df2f57a" target="_blank" rel="noopener">聚类模型评估</a><br>[9] <a href="https://cloud.tencent.com/developer/article/1010857" target="_blank" rel="noopener">聚类︱python实现六大分群质量评估指标（兰德系数、互信息、轮廓系数）</a><br>[10] <a href="https://www.cnblogs.com/pinard/p/6169370.html" target="_blank" rel="noopener">用scikit-learn学习K-Means聚类</a><br>[11] <a href="https://ethen8181.github.io/machine-learning/clustering_old/clustering/clustering.html" target="_blank" rel="noopener">Calinski-Harabasz Index and Bootstrap Evaluation with Clustering Methods</a><br>[12] <a href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.adjusted_mutual_info_score.html" target="_blank" rel="noopener">sklearn.metrics.adjusted_mutual_info_score</a><br>[13] <a href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.adjusted_rand_score.html" target="_blank" rel="noopener">sklearn.metrics.adjusted_rand_score</a><br>[14] <a href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.v_measure_score.html" target="_blank" rel="noopener">sklearn.metrics.v_measure_score</a><br>[15] <a href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.homogeneity_score.html#sklearn.metrics.homogeneity_score" target="_blank" rel="noopener">sklearn.metrics.homogeneity_score</a><br>[16] <a href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.completeness_score.html" target="_blank" rel="noopener">sklearn.metrics.completeness_score</a><br>[17] <a href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.silhouette_score.html" target="_blank" rel="noopener">sklearn.metrics.silhouette_score</a><br>[18] <a href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.calinski_harabasz_score.html" target="_blank" rel="noopener">sklearn.metrics.calinski_harabasz_score</a></p>
 
       
@@ -1831,15 +1751,9 @@ ch = calinski_harabasz_score(X, labels)
 <li>内建方法</li>
 <li>用户避免使用该定义方法</li>
 </ul>
-<pre><code class="lang-Python">
-
-</code></pre>
-<pre><code class="lang-Python">
-
-</code></pre>
-<pre><code class="lang-Python">
-
-</code></pre>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p>[] <a href></a></p>
 
       
@@ -1915,37 +1829,10 @@ ch = calinski_harabasz_score(X, labels)
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="str"><a href="#str" class="headerlink" title="str()"></a>str()</h1><h2 id="endswith"><a href="#endswith" class="headerlink" title=".endswith()"></a>.endswith()</h2><p>判断字符串是否以指定字符或子字符串结尾，常用于判断文件类型</p>
-<pre><code class="lang-Python">str1 = &#39;Hello, world&#39;
-str2 = &#39;rld&#39;
-str1.endswith(str2)  ## str1是否以str2结尾
-# True
-
-str1.endswith(&#39;wor&#39;, 3)  ## （从左数）从索引为3的字符开始检测是否以&quot;wor&quot;结尾
-# False
-
-str1.endswith(&#39;wor&#39;, 3, 10)  
-## （从左数）从索引为3的字符开始、到索引为10(不包括10)检测是否以&quot;wor&quot;结尾
-## str1中逗号后含空格（算一个字符）
-# True
-
-str1.endswith((&#39;a&#39;, &#39;b&#39;, &#39;d&#39;))  ## 匹配元组，只要有一个满足就行
-# True
-</code></pre>
-<h2 id="r"><a href="#r" class="headerlink" title="r"></a>r</h2><p>表示 <code>&#39;&#39;</code>内的字符串默认不转义</p>
-<pre><code class="lang-Python">print(&#39;Hello,\nWorld&#39;)  ## &#39;&#39;内的\n发生了转义（换行）
-#Hello,
-#World
-
-print(r&#39;Hello,\nWorld&#39;)   ## &#39;&#39;内的\n视为字符串（不转义）
-#Hello,\nWorld
-</code></pre>
-<pre><code class="lang-Python">
-
-</code></pre>
-<pre><code class="lang-Python">
-
-</code></pre>
+          <h1 id="str"><a href="#str" class="headerlink" title="str()"></a>str()</h1><h2 id="endswith"><a href="#endswith" class="headerlink" title=".endswith()"></a>.endswith()</h2><p>判断字符串是否以指定字符或子字符串结尾，常用于判断文件类型<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">str1 = <span class="string">'Hello, world'</span></span><br><span class="line">str2 = <span class="string">'rld'</span></span><br><span class="line">str1.endswith(str2)  <span class="comment">## str1是否以str2结尾</span></span><br><span class="line"><span class="comment"># True</span></span><br><span class="line"></span><br><span class="line">str1.endswith(<span class="string">'wor'</span>, <span class="number">3</span>)  <span class="comment">## （从左数）从索引为3的字符开始检测是否以"wor"结尾</span></span><br><span class="line"><span class="comment"># False</span></span><br><span class="line"></span><br><span class="line">str1.endswith(<span class="string">'wor'</span>, <span class="number">3</span>, <span class="number">10</span>)  </span><br><span class="line"><span class="comment">## （从左数）从索引为3的字符开始、到索引为10(不包括10)检测是否以"wor"结尾</span></span><br><span class="line"><span class="comment">## str1中逗号后含空格（算一个字符）</span></span><br><span class="line"><span class="comment"># True</span></span><br><span class="line"></span><br><span class="line">str1.endswith((<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'d'</span>))  <span class="comment">## 匹配元组，只要有一个满足就行</span></span><br><span class="line"><span class="comment"># True</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="r"><a href="#r" class="headerlink" title="r"></a>r</h2><p>表示 <code>&#39;&#39;</code>内的字符串默认不转义<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">print(<span class="string">'Hello,\nWorld'</span>)  <span class="comment">## ''内的\n发生了转义（换行）</span></span><br><span class="line"><span class="comment">#Hello,</span></span><br><span class="line"><span class="comment">#World</span></span><br><span class="line"></span><br><span class="line">print(<span class="string">r'Hello,\nWorld'</span>)   <span class="comment">## ''内的\n视为字符串（不转义）</span></span><br><span class="line"><span class="comment">#Hello,\nWorld</span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p>[] <a href></a><br>[] <a href="https://www.cnblogs.com/Allen-rg/p/10501125.html" target="_blank" rel="noopener">Python endswith() 函数</a></p>
 
       
@@ -2145,6 +2032,8 @@ print(r&#39;Hello,\nWorld&#39;)   ## &#39;&#39;内的\n视为字符串（不转�
 
 
 
+
+  
 
 
 

@@ -247,64 +247,15 @@
 <li><code>.intercept_</code> ：一元线性回归中，截距项的估计值</li>
 <li><code>.score()</code>：看测试集的表现得分</li>
 </ul>
-<pre><code class="lang-python">###导入线性回归模型
-import numpy as np
-import matplotlib.pyplot as plt
-from sklearn.linear_model import LinearRegression
-
-%matplotlib inline
-
-X = [[1], [4]]   ###两个点的横坐标
-y = [3, 5]   ###两个点的纵坐标
-
-lr = LinearRegression().fit(X, y)
-z = np.linspace(0, 5, 20)
-plt.scatter(X, y, s= 50)   ###参数s设置点的大小
-plt.plot(z, lr.predict(z.reshape(-1, 1)), c=&#39;green&#39;)
-plt.title(&quot;Straight Line&quot;)
-plt.show()
-</code></pre>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">###导入线性回归模型</span></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">from</span> sklearn.linear_model <span class="keyword">import</span> LinearRegression</span><br><span class="line"></span><br><span class="line">%matplotlib inline</span><br><span class="line"></span><br><span class="line">X = [[<span class="number">1</span>], [<span class="number">4</span>]]   <span class="comment">###两个点的横坐标</span></span><br><span class="line">y = [<span class="number">3</span>, <span class="number">5</span>]   <span class="comment">###两个点的纵坐标</span></span><br><span class="line"></span><br><span class="line">lr = LinearRegression().fit(X, y)</span><br><span class="line">z = np.linspace(<span class="number">0</span>, <span class="number">5</span>, <span class="number">20</span>)</span><br><span class="line">plt.scatter(X, y, s= <span class="number">50</span>)   <span class="comment">###参数s设置点的大小</span></span><br><span class="line">plt.plot(z, lr.predict(z.reshape(<span class="number">-1</span>, <span class="number">1</span>)), c=<span class="string">'green'</span>)</span><br><span class="line">plt.title(<span class="string">"Straight Line"</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
 <p><meta name="referrer" content="no-referrer"><br><img data-src="/2020/05/13/python-sklearn/output_0_0.png" class></p>
-<pre><code class="lang-python">print(&quot;y = {:.4f}&quot;.format(lr.coef_[0]),&quot;x&quot;,&quot;+{:.4f}&quot;.format(lr.intercept_))
-</code></pre>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">print(<span class="string">"y = &#123;:.4f&#125;"</span>.format(lr.coef_[<span class="number">0</span>]),<span class="string">"x"</span>,<span class="string">"+&#123;:.4f&#125;"</span>.format(lr.intercept_))</span><br></pre></td></tr></table></figure>
 <pre><code>y = 0.6667 x +2.3333
 </code></pre><p>考虑多个数据点的线性回归：</p>
-<pre><code class="lang-python">import numpy as np
-import matplotlib.pyplot as plt
-
-###首先生成数据集
-from sklearn.datasets import make_regression
-
-X ,y = make_regression(n_samples=100, n_features=1, 
-                      n_informative=1, noise=50, random_state=1)
-
-from sklearn.linear_model import LinearRegression
-###拟合
-reg = LinearRegression()
-reg.fit(X, y)
-z = np.linspace(-3, 3, 200).reshape(-1, 1)
-
-plt.scatter(X, y, c=&#39;blue&#39;, s=50)
-plt.plot(z, reg.predict(z), c=&#39;k&#39;)
-plt.title(&quot;Linear Regression&quot;)
-plt.show()
-</code></pre>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line"><span class="comment">###首先生成数据集</span></span><br><span class="line"><span class="keyword">from</span> sklearn.datasets <span class="keyword">import</span> make_regression</span><br><span class="line"></span><br><span class="line">X ,y = make_regression(n_samples=<span class="number">100</span>, n_features=<span class="number">1</span>, </span><br><span class="line">                      n_informative=<span class="number">1</span>, noise=<span class="number">50</span>, random_state=<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> sklearn.linear_model <span class="keyword">import</span> LinearRegression</span><br><span class="line"><span class="comment">###拟合</span></span><br><span class="line">reg = LinearRegression()</span><br><span class="line">reg.fit(X, y)</span><br><span class="line">z = np.linspace(<span class="number">-3</span>, <span class="number">3</span>, <span class="number">200</span>).reshape(<span class="number">-1</span>, <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">plt.scatter(X, y, c=<span class="string">'blue'</span>, s=<span class="number">50</span>)</span><br><span class="line">plt.plot(z, reg.predict(z), c=<span class="string">'k'</span>)</span><br><span class="line">plt.title(<span class="string">"Linear Regression"</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
 <p><meta name="referrer" content="no-referrer"><br><img data-src="/2020/05/13/python-sklearn/output_2_0.png" class></p>
 <p>糖尿病数据，线性回归：</p>
-<pre><code class="lang-python">###加载糖尿病数据集
-from sklearn.datasets import load_diabetes
-
-X, y = load_diabetes().data, load_diabetes().target
-
-from sklearn.model_selection import train_test_split
-X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=8)
-
-from sklearn.linear_model import LinearRegression
-lr = LinearRegression().fit(X_train, y_train)
-
-print(&quot;训练数据集得分：{:.3f}&quot;.format(lr.score(X_train, y_train)))
-print(&quot;测试数据集得分：{:.3f}&quot;.format(lr.score(X_test, y_test)))
-</code></pre>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">###加载糖尿病数据集</span></span><br><span class="line"><span class="keyword">from</span> sklearn.datasets <span class="keyword">import</span> load_diabetes</span><br><span class="line"></span><br><span class="line">X, y = load_diabetes().data, load_diabetes().target</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> train_test_split</span><br><span class="line">X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=<span class="number">8</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> sklearn.linear_model <span class="keyword">import</span> LinearRegression</span><br><span class="line">lr = LinearRegression().fit(X_train, y_train)</span><br><span class="line"></span><br><span class="line">print(<span class="string">"训练数据集得分：&#123;:.3f&#125;"</span>.format(lr.score(X_train, y_train)))</span><br><span class="line">print(<span class="string">"测试数据集得分：&#123;:.3f&#125;"</span>.format(lr.score(X_test, y_test)))</span><br></pre></td></tr></table></figure>
 <pre><code>训练数据集得分：0.530
 测试数据集得分：0.459
 </code></pre><ul>
@@ -313,49 +264,13 @@ print(&quot;测试数据集得分：{:.3f}&quot;.format(lr.score(X_test, y_test)
 <li><strong>预测误差</strong>（prediction errors）/<strong>测试误差</strong>（test errors）：模型预测值与测试集数据的差异。</li>
 </ul>
 <p>考虑带损失函数的模型拟合结果评估（标注残差、计算残差平方和）：</p>
-<pre><code class="lang-python">X = [[6], [8], [10], [14], [18]]
-y = [[7], [9], [13], [17.5], [18]]
-
-from sklearn.linear_model import LinearRegression
-model = LinearRegression()
-model.fit(X, y)
-X2 = [[0], [10], [14], [25]]
-y2 = model.predict(X2)
-
-###残差
-yr = model.predict(X)
-
-
-%matplotlib inline
-import matplotlib.pyplot as plt
-
-plt.plot(X, y, &#39;k.&#39;)
-plt.plot(X2, y2, &#39;g-&#39;)
-for idx, x in enumerate(X):
-    plt.plot([x, x], [y[idx], yr[idx]], &#39;r-&#39;)
-
-plt.xlabel(&quot;X&quot;)
-plt.ylabel(&quot;y&quot;)
-plt.axis([0, 25, 0, 25])
-plt.grid(True)
-plt.show()
-</code></pre>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">X = [[<span class="number">6</span>], [<span class="number">8</span>], [<span class="number">10</span>], [<span class="number">14</span>], [<span class="number">18</span>]]</span><br><span class="line">y = [[<span class="number">7</span>], [<span class="number">9</span>], [<span class="number">13</span>], [<span class="number">17.5</span>], [<span class="number">18</span>]]</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> sklearn.linear_model <span class="keyword">import</span> LinearRegression</span><br><span class="line">model = LinearRegression()</span><br><span class="line">model.fit(X, y)</span><br><span class="line">X2 = [[<span class="number">0</span>], [<span class="number">10</span>], [<span class="number">14</span>], [<span class="number">25</span>]]</span><br><span class="line">y2 = model.predict(X2)</span><br><span class="line"></span><br><span class="line"><span class="comment">###残差</span></span><br><span class="line">yr = model.predict(X)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">%matplotlib inline</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line">plt.plot(X, y, <span class="string">'k.'</span>)</span><br><span class="line">plt.plot(X2, y2, <span class="string">'g-'</span>)</span><br><span class="line"><span class="keyword">for</span> idx, x <span class="keyword">in</span> enumerate(X):</span><br><span class="line">    plt.plot([x, x], [y[idx], yr[idx]], <span class="string">'r-'</span>)</span><br><span class="line"></span><br><span class="line">plt.xlabel(<span class="string">"X"</span>)</span><br><span class="line">plt.ylabel(<span class="string">"y"</span>)</span><br><span class="line">plt.axis([<span class="number">0</span>, <span class="number">25</span>, <span class="number">0</span>, <span class="number">25</span>])</span><br><span class="line">plt.grid(<span class="literal">True</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
 <p><meta name="referrer" content="no-referrer"><br><img data-src="/2020/05/13/python-sklearn/output_4_0.png" class></p>
-<pre><code class="lang-Python">
-
-</code></pre>
-<pre><code class="lang-Python">
-
-</code></pre>
-<pre><code class="lang-Python">
-
-</code></pre>
-<pre><code class="lang-Python">
-
-</code></pre>
-<pre><code class="lang-Python">
-
-</code></pre>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p>[1] <a href="https://mp.weixin.qq.com/s?__biz=MzU5NzkxODMxOA==&amp;mid=2247484190&amp;idx=1&amp;sn=e7484e733ae84785a8940270cdf289b1&amp;chksm=fe4d541fc93add09a7d2730ec0ec9aeb04bc1d1fe38e9c662087e368b20bb20c087611191956&amp;token=1683818096&amp;lang=zh_CN#rd" target="_blank" rel="noopener">Sklearn学习：线性回归、岭回归、Lasso、Elastic Net</a></p>
 
     </div>
@@ -602,6 +517,8 @@ plt.show()
 
 
 
+
+  
 
 
 

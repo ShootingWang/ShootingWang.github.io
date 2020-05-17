@@ -235,53 +235,8 @@
 <p>比较变量的 id 地址是否相同，即是否指向同一块内存地址</p>
 <h2 id><a href="#" class="headerlink" title="=="></a>==</h2><p>比较运算符</p>
 <p>比较变量的 value 是否相同，即不管是否是同一块内存地址，只要其值相同即可</p>
-<pre><code class="lang-Python">## 涉及Python的深浅拷贝问题
-##数字、字符串等不可变数据类型
-##value一样，id一样
-a = 2
-b = 2
-
-print(id(a), id(b))
-140710848664416 140710848664416
-
-print(a == b, a is b)
-True True
-
-##对于列表和字典等可变数据类型
-##即使value一样，id也不一样
-a = [1, 2, 3]
-b = [1, 2, 3]
-
-print(id(a), id(b))
-2348645341512 2348645363144
-
-print(a == b, a is b
-True False
-</code></pre>
-<pre><code class="lang-Python">## 涉及Python的深浅拷贝问题
-##数字、字符串等不可变数据类型
-##value一样，id一样
-a = 2
-b = 2
-
-print(id(a), id(b))
-140710848664416 140710848664416
-
-print(a == b, a is b)
-True True
-
-##对于列表和字典等可变数据类型
-##即使value一样，id也不一样
-a = [1, 2, 3]
-b = [1, 2, 3]
-
-print(id(a), id(b))
-2348645341512 2348645363144
-
-print(a == b, a is b)
-True False
-</code></pre>
-
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 涉及Python的深浅拷贝问题</span></span><br><span class="line"><span class="comment">##数字、字符串等不可变数据类型</span></span><br><span class="line"><span class="comment">##value一样，id一样</span></span><br><span class="line">a = <span class="number">2</span></span><br><span class="line">b = <span class="number">2</span></span><br><span class="line"></span><br><span class="line">print(id(a), id(b))</span><br><span class="line"><span class="number">140710848664416</span> <span class="number">140710848664416</span></span><br><span class="line"></span><br><span class="line">print(a == b, a <span class="keyword">is</span> b)</span><br><span class="line"><span class="literal">True</span> <span class="literal">True</span></span><br><span class="line"></span><br><span class="line"><span class="comment">##对于列表和字典等可变数据类型</span></span><br><span class="line"><span class="comment">##即使value一样，id也不一样</span></span><br><span class="line">a = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line">b = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line"></span><br><span class="line">print(id(a), id(b))</span><br><span class="line"><span class="number">2348645341512</span> <span class="number">2348645363144</span></span><br><span class="line"></span><br><span class="line">print(a == b, a <span class="keyword">is</span> b</span><br><span class="line"><span class="literal">True</span> <span class="literal">False</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 涉及Python的深浅拷贝问题</span></span><br><span class="line"><span class="comment">##数字、字符串等不可变数据类型</span></span><br><span class="line"><span class="comment">##value一样，id一样</span></span><br><span class="line">a = <span class="number">2</span></span><br><span class="line">b = <span class="number">2</span></span><br><span class="line"></span><br><span class="line">print(id(a), id(b))</span><br><span class="line"><span class="number">140710848664416</span> <span class="number">140710848664416</span></span><br><span class="line"></span><br><span class="line">print(a == b, a <span class="keyword">is</span> b)</span><br><span class="line"><span class="literal">True</span> <span class="literal">True</span></span><br><span class="line"></span><br><span class="line"><span class="comment">##对于列表和字典等可变数据类型</span></span><br><span class="line"><span class="comment">##即使value一样，id也不一样</span></span><br><span class="line">a = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line">b = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line"></span><br><span class="line">print(id(a), id(b))</span><br><span class="line"><span class="number">2348645341512</span> <span class="number">2348645363144</span></span><br><span class="line"></span><br><span class="line">print(a == b, a <span class="keyword">is</span> b)</span><br><span class="line"><span class="literal">True</span> <span class="literal">False</span></span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -1054,6 +1009,8 @@ True False
 
 
 
+
+  
 
 
 

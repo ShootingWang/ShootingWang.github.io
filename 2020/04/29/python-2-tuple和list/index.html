@@ -22,12 +22,12 @@
 
 <link rel="stylesheet" href="/js/prism/prism.css">
 
-  <meta name="description" content="list（列表） 是一种有序的集合，可以随时添加和删除其中的元素 元素类型可以不同 list可以嵌套（即list的元素可以是list） 成员关系操作符 in 和 not in 可直接用在列表上 list 是可变的对象 用方括号封装 [ ]  lst.append(a)   ##在列表lst尾部添加元素a lst.insert(num, c)  ##在列表lst的第num+1个位置（索引为num）插">
+  <meta name="description" content="list（列表） 是一种有序的集合，可以随时添加和删除其中的元素 元素类型可以不同 list可以嵌套（即list的元素可以是list） 成员关系操作符 in 和 not in 可直接用在列表上 list 是可变的对象 用方括号封装 [ ]  lst.append(a)   ##在列表lst尾部添加元素alst.insert(num, c)  ##在列表lst的第num+1个位置（索引为num）插入">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python | List和Tuple的区别">
 <meta property="og:url" content="https://github.com/ShootingWang/ShootingWang.github.io/2020/04/29/python-2-tuple%E5%92%8Clist/index.html">
 <meta property="og:site_name" content="ShootingWang">
-<meta property="og:description" content="list（列表） 是一种有序的集合，可以随时添加和删除其中的元素 元素类型可以不同 list可以嵌套（即list的元素可以是list） 成员关系操作符 in 和 not in 可直接用在列表上 list 是可变的对象 用方括号封装 [ ]  lst.append(a)   ##在列表lst尾部添加元素a lst.insert(num, c)  ##在列表lst的第num+1个位置（索引为num）插">
+<meta property="og:description" content="list（列表） 是一种有序的集合，可以随时添加和删除其中的元素 元素类型可以不同 list可以嵌套（即list的元素可以是list） 成员关系操作符 in 和 not in 可直接用在列表上 list 是可变的对象 用方括号封装 [ ]  lst.append(a)   ##在列表lst尾部添加元素alst.insert(num, c)  ##在列表lst的第num+1个位置（索引为num）插入">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-04-29T09:23:27.000Z">
 <meta property="article:modified_time" content="2020-05-17T05:36:51.749Z">
@@ -242,11 +242,7 @@
 <li>list 是可变的对象</li>
 <li>用方括号封装 [ ]</li>
 </ul>
-<pre><code class="lang-Python">lst.append(a)   ##在列表lst尾部添加元素a
-lst.insert(num, c)  ##在列表lst的第num+1个位置（索引为num）插入元素c
-lst.pop()  ##删除列表lst的最后一个元素，并返回该元素
-lst.pop(i)  ##删除列表lst的索引为i的元素（i可以是负数；i=-2表示删除倒数第二个元素）
-</code></pre>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">lst.append(a)   <span class="comment">##在列表lst尾部添加元素a</span></span><br><span class="line">lst.insert(num, c)  <span class="comment">##在列表lst的第num+1个位置（索引为num）插入元素c</span></span><br><span class="line">lst.pop()  <span class="comment">##删除列表lst的最后一个元素，并返回该元素</span></span><br><span class="line">lst.pop(i)  <span class="comment">##删除列表lst的索引为i的元素（i可以是负数；i=-2表示删除倒数第二个元素）</span></span><br></pre></td></tr></table></figure>
 <h2 id="tuple（元组）"><a href="#tuple（元组）" class="headerlink" title="tuple（元组）"></a>tuple（元组）</h2><ul>
 <li>是一种有序列表，和list非常相似</li>
 <li>一旦初始化就不能修改</li>
@@ -260,13 +256,7 @@ lst.pop(i)  ##删除列表lst的索引为i的元素（i可以是负数；i=-2表
 <li>成员关系操作符 in 和 not in 也可以直接用在元组上</li>
 <li>用圆括号封装 （）</li>
 </ul>
-<pre><code class="lang-Python">cmp(tuple1, tuple2)  ##比较两个元组元素
-len(tuple)  ##计算元组元素个数
-max(tuple)  ##返回元组中元素最大值
-min(tuple)  ##返回元组中元素最小值
-tuple(seq)  ##把列表seq转换为元组
-</code></pre>
-
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">cmp(tuple1, tuple2)  <span class="comment">##比较两个元组元素</span></span><br><span class="line">len(tuple)  <span class="comment">##计算元组元素个数</span></span><br><span class="line">max(tuple)  <span class="comment">##返回元组中元素最大值</span></span><br><span class="line">min(tuple)  <span class="comment">##返回元组中元素最小值</span></span><br><span class="line">tuple(seq)  <span class="comment">##把列表seq转换为元组</span></span><br></pre></td></tr></table></figure>
     </div>
 
     
@@ -511,6 +501,8 @@ tuple(seq)  ##把列表seq转换为元组
 
 
 
+
+  
 
 
 
