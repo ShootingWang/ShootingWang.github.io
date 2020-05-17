@@ -1,717 +1,3969 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-
-
-
-
-
 <head>
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/apple-touch-icon.png">
-  <link rel="icon" type="image/png" href="/img/favicon2.png">
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  
-  <meta name="theme-color" content="#2f4154">
-  <meta name="description" content="统计一只狗，梦想有只猫">
-  <meta name="author" content="ShootingWang">
-  <meta name="keywords" content="">
-  <title>ShootingWang</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon2.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon2.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
-  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
-<link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+<link rel="stylesheet" href="/css/main.css">
 
 
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
 
-<!-- 主题依赖的图标库，不要自行修改 -->
-
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_fmb4a04yx8h.css">
-
-
-
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_ijqayz9ro8k.css">
-
-
-
-
-<link  rel="stylesheet" href="/css/main.css" />
-
-<!-- 自定义样式保持在最底部 -->
-
-
-<meta name="generator" content="Hexo 4.2.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
-
-<link rel="stylesheet" href="/js/prism/prism.css">
-
-<body>
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><header style="height: 100vh;">
-    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
-  <div class="container">
-    <a class="navbar-brand"
-       href="/">&nbsp;<strong>ShootingWang</strong>&nbsp;</a>
-
-    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
-            data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <div class="animated-icon"><span></span><span></span><span></span></div>
-    </button>
-
-    <!-- Collapsible content -->
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto text-center">
-        
-          
-          
-          
-          <li class="nav-item">
-            <a class="nav-link" href="/">
-              <i class="iconfont icon-home-fill"></i>
-              首页</a>
-          </li>
-        
-          
-          
-          
-          <li class="nav-item">
-            <a class="nav-link" href="/archives/">
-              <i class="iconfont icon-archive-fill"></i>
-              归档</a>
-          </li>
-        
-          
-          
-          
-          <li class="nav-item">
-            <a class="nav-link" href="/categories/">
-              <i class="iconfont icon-category-fill"></i>
-              分类</a>
-          </li>
-        
-          
-          
-          
-          <li class="nav-item">
-            <a class="nav-link" href="/tags/">
-              <i class="iconfont icon-tags-fill"></i>
-              标签</a>
-          </li>
-        
-          
-          
-          
-          <li class="nav-item">
-            <a class="nav-link" href="/about/">
-              <i class="iconfont icon-user-fill"></i>
-              关于</a>
-          </li>
-        
-        
-          <li class="nav-item" id="search-btn">
-            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;&nbsp;<i
-                class="iconfont icon-search"></i>&nbsp;&nbsp;</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-</nav>
-
-    <div class="view intro-2" id="background" parallax=true
-         style="background: url('/img/bg/MalhamStars.jpg') no-repeat center center;
-           background-size: cover;">
-      <div class="full-bg-img">
-        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
-          <div class="container text-center white-text fadeInUp">
-            <span class="h2" id="subtitle">
-              
-            </span>
-
-            
-          </div>
-
-          
-            <div class="scroll-down-bar">
-              <i class="iconfont icon-arrowdown"></i>
-            </div>
-          
-        </div>
-
-        <a href="https://github.com/ShootingWang" class="attachment-full size-full" aria-label="Fork me on GitHub">
-          <svg width="80" height="80" viewBox="0 0 250 250" style="fill:#fff; color:#151513; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true">
-            <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
-            <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
-            <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path>
-          </svg>
-        </a>
-        <style>
-
-        .github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}
-        </style>
-      </div>
-    </div>
-  </header>
-
-  <main>
-    
-      <div class="container nopadding-md">
-        <div class="py-5" id="board"
-          style=margin-top:0>
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
-
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/2020/04/30/Jupyter-Notebook%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/" target="_self">
-          <img src="/img/jupyter.png" srcset="/img/loading.gif" alt="Jupyter Notebook使用技巧">
-        </a>
-      </div>
-    
-    <div class="col-12 col-md-8 mx-auto index-info">
-      <a class="index-header" href="/2020/04/30/Jupyter-Notebook%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/">Jupyter Notebook使用技巧</a>
-
-      <a href="/2020/04/30/Jupyter-Notebook%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/" class="index-excerpt">
-        
-        
-          
-        
-        <div>Jupyter Tips!</div>
-      </a>
-
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>&nbsp;2020-04-30
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/%E6%97%A0%E4%BB%8E%E5%B1%9E/">无从属</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/Jupyter/">Jupyter</a>
-            
-              <a href="/tags/%E8%BD%AF%E4%BB%B6/">软件</a>
-            
-          </div>
-        
-      </div>
-    </div>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/2020/04/30/SQL%E9%A2%98%E5%BA%93/" target="_self">
-          <img src="/img/SQL.jpg" srcset="/img/loading.gif" alt="SQL">
-        </a>
-      </div>
-    
-    <div class="col-12 col-md-8 mx-auto index-info">
-      <a class="index-header" href="/2020/04/30/SQL%E9%A2%98%E5%BA%93/">SQL</a>
-
-      <a href="/2020/04/30/SQL%E9%A2%98%E5%BA%93/" class="index-excerpt">
-        
-        
-          
-        
-        <div>SQL相关知识积累~</div>
-      </a>
-
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>&nbsp;2020-04-30
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/SQL/">SQL</a>
-            
-              <a href="/tags/MySQL/">MySQL</a>
-            
-          </div>
-        
-      </div>
-    </div>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/2020/04/29/Leetcode%E5%88%B7%E9%A2%98/" target="_self">
-          <img src="/img/leetcode.png" srcset="/img/loading.gif" alt="Leetcode刷题">
-        </a>
-      </div>
-    
-    <div class="col-12 col-md-8 mx-auto index-info">
-      <a class="index-header" href="/2020/04/29/Leetcode%E5%88%B7%E9%A2%98/">Leetcode刷题</a>
-
-      <a href="/2020/04/29/Leetcode%E5%88%B7%E9%A2%98/" class="index-excerpt">
-        
-        
-          
-        
-        <div>Leetcode刷题记录~</div>
-      </a>
-
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>&nbsp;2020-04-29
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/%E8%97%8F%E5%AE%9D%E5%BA%93/">藏宝库</a>
-            
-              <a href="/categories/%E8%97%8F%E5%AE%9D%E5%BA%93/%E9%A2%98%E5%BA%93/">题库</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/%E7%BC%96%E7%A8%8B/">编程</a>
-            
-              <a href="/tags/Leetcode/">Leetcode</a>
-            
-          </div>
-        
-      </div>
-    </div>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/2020/04/29/Python%E9%A2%98%E5%BA%93/" target="_self">
-          <img src="/img/Python.png" srcset="/img/loading.gif" alt="Python题库">
-        </a>
-      </div>
-    
-    <div class="col-12 col-md-8 mx-auto index-info">
-      <a class="index-header" href="/2020/04/29/Python%E9%A2%98%E5%BA%93/">Python题库</a>
-
-      <a href="/2020/04/29/Python%E9%A2%98%E5%BA%93/" class="index-excerpt">
-        
-        
-          
-        
-        <div>Python相关题目积累~</div>
-      </a>
-
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>&nbsp;2020-04-29
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/%E8%97%8F%E5%AE%9D%E5%BA%93/">藏宝库</a>
-            
-              <a href="/categories/%E8%97%8F%E5%AE%9D%E5%BA%93/%E9%A2%98%E5%BA%93/">题库</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/Python/">Python</a>
-            
-          </div>
-        
-      </div>
-    </div>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/2020/04/28/Hexo-GitHub-Markdown%E5%B8%B8%E7%94%A8%E7%94%A8%E6%B3%95/" target="_self">
-          <img src="/img/hexo.png" srcset="/img/loading.gif" alt="Hexo+GitHub+Markdown常用用法">
-        </a>
-      </div>
-    
-    <div class="col-12 col-md-8 mx-auto index-info">
-      <a class="index-header" href="/2020/04/28/Hexo-GitHub-Markdown%E5%B8%B8%E7%94%A8%E7%94%A8%E6%B3%95/">Hexo+GitHub+Markdown常用用法</a>
-
-      <a href="/2020/04/28/Hexo-GitHub-Markdown%E5%B8%B8%E7%94%A8%E7%94%A8%E6%B3%95/" class="index-excerpt">
-        
-        
-          
-        
-        <div>记录一些Hexo+Markdown的常用语法~</div>
-      </a>
-
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>&nbsp;2020-04-28
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/%E6%97%A0%E4%BB%8E%E5%B1%9E/">无从属</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/Hexo/">Hexo</a>
-            
-              <a href="/tags/GitHub/">GitHub</a>
-            
-              <a href="/tags/Markdown/">Markdown</a>
-            
-          </div>
-        
-      </div>
-    </div>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/2020/04/27/Tableau%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90/" target="_self">
-          <img src="/img/tableau.jpg" srcset="/img/loading.gif" alt="Tableau学习资源">
-        </a>
-      </div>
-    
-    <div class="col-12 col-md-8 mx-auto index-info">
-      <a class="index-header" href="/2020/04/27/Tableau%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90/">Tableau学习资源</a>
-
-      <a href="/2020/04/27/Tableau%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90/" class="index-excerpt">
-        
-        
-          
-        
-        <div>汇总Tableau软件的相关学习资料~</div>
-      </a>
-
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>&nbsp;2020-04-27
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/%E8%97%8F%E5%AE%9D%E5%BA%93/">藏宝库</a>
-            
-              <a href="/categories/%E8%97%8F%E5%AE%9D%E5%BA%93/%E8%B5%84%E6%BA%90/">资源</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/Tableau/">Tableau</a>
-            
-              <a href="/tags/%E5%8F%AF%E8%A7%86%E5%8C%96/">可视化</a>
-            
-          </div>
-        
-      </div>
-    </div>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/2020/04/27/Restart/" target="_self">
-          <img src="/img/bg/MalhamStars.jpg" srcset="/img/loading.gif" alt="Restart!">
-        </a>
-      </div>
-    
-    <div class="col-12 col-md-8 mx-auto index-info">
-      <a class="index-header" href="/2020/04/27/Restart/">Restart!</a>
-
-      <a href="/2020/04/27/Restart/" class="index-excerpt">
-        
-        
-          
-        
-        <div>从零开始我的个人博客！</div>
-      </a>
-
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>&nbsp;2020-04-27
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/%E6%97%A0%E4%BB%8E%E5%B1%9E/">无从属</a>
-            
-          </div>
-        
-        
-      </div>
-    </div>
-  </div>
-
-
-
-  <nav aria-label="navigation">
-    <span class="pagination" id="pagination">
-      <a class="extend prev" rel="prev" href="/"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
-    </span>
-  </nav>
-  
-  <script>
-    for (ele of document.getElementById("pagination").getElementsByTagName("a")) {
-      ele.href += '#board';
-    }
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"github.com","root":"/","scheme":"Muse","version":"8.0.0-rc.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"utterances","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
+  <meta name="description" content="统计一只狗，梦想有只猫">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ShootingWang">
+<meta property="og:url" content="https://github.com/ShootingWang/ShootingWang.github.io/page/2/index.html">
+<meta property="og:site_name" content="ShootingWang">
+<meta property="og:description" content="统计一只狗，梦想有只猫">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="ShootingWang">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://github.com/ShootingWang/ShootingWang.github.io/page/2/">
 
 
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    
-  </main>
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : true,
+    isPost : false,
+    lang   : 'zh-CN'
+  };
+</script>
 
+  <title>ShootingWang</title>
   
-    <a id="scroll-top-button" href="#" role="button">
-      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+        <span class="toggle-line toggle-line-first"></span>
+        <span class="toggle-line toggle-line-middle"></span>
+        <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">ShootingWang</h1>
+      <span class="logo-line-after"><i></i></span>
     </a>
-  
+  </div>
 
-  
-    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
-     aria-hidden="true">
-  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
-        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body mx-3">
-        <div class="md-form mb-5">
-          <input type="text" id="local-search-input" class="form-control validate">
-          <label data-error="x" data-success="v"
-                 for="local-search-input">关键词</label>
-        </div>
-        <div class="list-group" id="local-search-result"></div>
-      </div>
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
     </div>
   </div>
 </div>
-  
 
-  
 
-  
 
-  <footer class="mt-5">
-  <div class="text-center py-3">
-    <div>
-      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
-      <i class="iconfont icon-love"></i>
-      <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener">
-        <span>Fluid</span></a>
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+  <a href="https://github.com/ShootingWang" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content index posts-expand">
+            
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://github.com/ShootingWang/ShootingWang.github.io/2020/05/15/%E7%AE%97%E6%B3%95-%E8%BF%87%E6%8B%9F%E5%90%88/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ShootingWang">
+      <meta itemprop="description" content="统计一只狗，梦想有只猫">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ShootingWang">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/05/15/%E7%AE%97%E6%B3%95-%E8%BF%87%E6%8B%9F%E5%90%88/" class="post-title-link" itemprop="url">如何防止过拟合？</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-05-15 09:20:00" itemprop="dateCreated datePublished" datetime="2020-05-15T09:20:00+08:00">2020-05-15</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-05-16 16:57:18" itemprop="dateModified" datetime="2020-05-16T16:57:18+08:00">2020-05-16</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1><span id="过拟合">过拟合</span></h1><p>Overfitting</p>
+<p>随着模型训练的进行，模型的复杂度增加，模型在训练数据集上的训练误差（training error）逐渐减小，但是在模型的复杂度达到一定程度时，模型在验证数据集上的误差反而随着模型的复杂度增加而增大，此时便发生了<strong>过拟合</strong>。</p>
+<h2><span id="防止过拟合">防止过拟合</span></h2><ul>
+<li>early stopping</li>
+<li>Data augmentation</li>
+<li>Regularization</li>
+<li>Dropout</li>
+</ul>
+<h3><span id="early-stopping">Early Stopping</span></h3><p>迭代次数截断，在模型对训练数据集迭代收敛之前停止迭代来防止过拟合。</p>
+<p>具体做法：<br>在每一个Epoch<sup><a href="#fn_1" id="reffn_1">1</a></sup>结束时，计算验证数据集的准确率（accuracy），当准确率不再提高时，就停止训练。</p>
+<blockquote>
+<p>一般的做法：在训练的过程中，记录到目前为止最好的验证集准确率，当连续n次Epoch没有达到最佳准确率时，则可认为准确率不再提高了，此时便可停止迭代。<br>即：</p>
+<script type="math/tex; mode=display">No-improvement-in-n</script><p>$n$是Epoch的次数，根据实际情况选取。</p>
+</blockquote>
+<blockquote id="fn_1">
+<sup>1</sup>. 一个Epoch集：对所有的训练数据的一轮遍历<a href="#reffn_1" title="Jump back to footnote [1] in the text."> &#8617;</a>
+</blockquote>
+<h3><span id="扩增数据集">扩增数据集</span></h3><p>获得更多的符合要求的数据</p>
+<p>获取方法：</p>
+<ul>
+<li>从数据源头采集更多数据</li>
+<li>复制原有数据并加上随机噪声</li>
+<li>重采样（Bootstrap）</li>
+<li>根据当前数据集估计数据分布参数，使用该分布生成更多数据</li>
+</ul>
+<h3><span id="正则化">正则化</span></h3><p>在对目标函数/代价函数优化时，在目标函数/代价函数后添加一个正则项（惩罚项）——降低模型的复杂度</p>
+<ul>
+<li>$l1$正则<ul>
+<li>使用$l1$正则可以得到稀疏的权值</li>
+</ul>
+</li>
+<li>$l2$正则<ul>
+<li>使用$l2$正则可以得到平滑的权值</li>
+</ul>
+</li>
+</ul>
+<h4><span id="l1正则">$l1$正则</span></h4><h4><span id="l2正则">$l2$正则</span></h4><h3><span id="dropout">Dropout</span></h3><p>通过修改ANN（人工神经网络）中隐藏层的神经元个数来防止ANN的过拟合</p>
+<h1><span id="参考资料">参考资料</span></h1><ul>
+<li><a href="https://blog.csdn.net/heyongluoyao8/article/details/49429629" target="_blank" rel="noopener">机器学习中防止过拟合的处理方法</a></li>
+<li><a href="https://juejin.im/post/5b441583f265da0fb01854c4" target="_blank" rel="noopener">机器学习中用来防止过拟合的方法有哪些？</a></li>
+</ul>
+
+      
     </div>
+
     
-  <div>
     
-      <!-- 不蒜子统计PV -->
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
       
-      <span id="busuanzi_container_site_pv" style="display: none">
-      总访问量 <span id="busuanzi_value_site_pv"></span> 次
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://github.com/ShootingWang/ShootingWang.github.io/2020/05/14/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-donot-overfit/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ShootingWang">
+      <meta itemprop="description" content="统计一只狗，梦想有只猫">
     </span>
-    
-    
-      <!-- 不蒜子统计UV -->
-      
-      <span id="busuanzi_container_site_uv" style="display: none">
-      总访客数 <span id="busuanzi_value_site_uv"></span> 人
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ShootingWang">
     </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/05/14/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-donot-overfit/" class="post-title-link" itemprop="url">Kaggle | Don't Overfit!</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-05-14 16:48:12 / 修改时间：23:40:36" itemprop="dateCreated datePublished" datetime="2020-05-14T16:48:12+08:00">2020-05-14</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
     
-  </div>
-
-
     
-
     
-  </div>
-</footer>
+    <div class="post-body" itemprop="articleBody">
 
-
-
-<!-- SCRIPTS -->
-<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
-<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
-<script  src="/js/main.js" ></script>
-
-
-  <script  src="/js/lazyload.js" ></script>
-
-
-
-
-
-
-
-  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
-
-
-
-
-<!-- Plugins -->
-
-
-
-  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
-  <script>
-    var typed = new Typed('#subtitle', {
-      strings: [
-        '  ',
-        "无猫病重症患者&nbsp;",
-      ],
-      cursorChar: "_",
-      typeSpeed: 70,
-      loop: false,
-    });
-    typed.stop();
-    $(document).ready(function () {
-      $(".typed-cursor").addClass("h2");
-      typed.start();
-    });
-  </script>
-
-
-
-  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
-  <script>
-    anchors.options = {
-      placement: "right",
-      visible: "hover",
       
-    };
-    var el = "h1,h2,h3,h4,h5,h6".split(",");
-    var res = [];
-    for (item of el) {
-      res.push(".markdown-body > " + item)
+          
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://github.com/ShootingWang/ShootingWang.github.io/2020/05/14/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-%E6%96%B0%E5%86%A0%E7%97%85%E6%AF%92%E5%8F%AF%E8%A7%86%E5%8C%96/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ShootingWang">
+      <meta itemprop="description" content="统计一只狗，梦想有只猫">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ShootingWang">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/05/14/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-%E6%96%B0%E5%86%A0%E7%97%85%E6%AF%92%E5%8F%AF%E8%A7%86%E5%8C%96/" class="post-title-link" itemprop="url">数据清洗-kaggle-新冠病毒可视化</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-05-14 14:12:25 / 修改时间：23:46:11" itemprop="dateCreated datePublished" datetime="2020-05-14T14:12:25+08:00">2020-05-14</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://github.com/ShootingWang/ShootingWang.github.io/2020/05/14/%E7%AE%97%E6%B3%95-CLARANS/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ShootingWang">
+      <meta itemprop="description" content="统计一只狗，梦想有只猫">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ShootingWang">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/05/14/%E7%AE%97%E6%B3%95-CLARANS/" class="post-title-link" itemprop="url">算法-CLARANS</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-05-14 13:43:39 / 修改时间：15:28:20" itemprop="dateCreated datePublished" datetime="2020-05-14T13:43:39+08:00">2020-05-14</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>CLARANS<br>A Clustering Algorithm based in Randomized Search</p>
+<p>基于随机选择的聚类算法/随机搜索聚类算法</p>
+<h1><span id="clarans">CLARANS</span></h1><ul>
+<li>一种分割聚类算法</li>
+<li>在CLARA算法的基础上提出的</li>
+<li>时间复杂度大约是$O(n^2)$</li>
+<li>计算效率较低</li>
+<li>对数据输入顺序敏感</li>
+<li>只能聚类凸形或球形边界</li>
+</ul>
+<h2><span id="原理">原理</span></h2><ol>
+<li>随机选择一个点作为当前点</li>
+<li>随机检查它周围不超过MaxNeighbor个的邻接点</li>
+</ol>
+<h1><span id="参考资料">参考资料</span></h1><p>[] <a href></a><br>[] <a href="https://zhuanlan.zhihu.com/p/22417979" target="_blank" rel="noopener">聚类分析中几种算法的比较</a><br>[] <a href="https://blog.csdn.net/u011955252/article/details/50805095" target="_blank" rel="noopener">文本挖掘之聚类算法之CLARANS（基于随机选择的聚类算法）</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://github.com/ShootingWang/ShootingWang.github.io/2020/05/13/python-sklearn/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ShootingWang">
+      <meta itemprop="description" content="统计一只狗，梦想有只猫">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ShootingWang">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/05/13/python-sklearn/" class="post-title-link" itemprop="url">python-sklearn</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-05-13 16:33:22 / 修改时间：16:44:45" itemprop="dateCreated datePublished" datetime="2020-05-13T16:33:22+08:00">2020-05-13</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%BD%AF%E4%BB%B6/" itemprop="url" rel="index"><span itemprop="name">软件</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1><span id="scikit-learn">Scikit-learn</span></h1><h2><span id="liner_model">.liner_model</span></h2><h3><span id="linearregression">.LinearRegression()</span></h3><p>LinearRegression()：用于拟合线性回归模型。在sklearn库中的linear_model模块中。</p>
+<ul>
+<li><code>.fit()</code>：拟合模型</li>
+<li><code>.predict()</code>：预测结果</li>
+<li><code>.coef_[0]</code>：一元线性回归中，特征变量的参数估计值</li>
+<li><code>.coef_[:]</code> ：多元线性回归中，特征变量的参数估计值</li>
+<li><code>.intercept_</code> ：一元线性回归中，截距项的估计值</li>
+<li><code>.score()</code>：看测试集的表现得分</li>
+</ul>
+<pre><code class="lang-python">###导入线性回归模型
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.linear_model import LinearRegression
+
+%matplotlib inline
+
+X = [[1], [4]]   ###两个点的横坐标
+y = [3, 5]   ###两个点的纵坐标
+
+lr = LinearRegression().fit(X, y)
+z = np.linspace(0, 5, 20)
+plt.scatter(X, y, s= 50)   ###参数s设置点的大小
+plt.plot(z, lr.predict(z.reshape(-1, 1)), c=&#39;green&#39;)
+plt.title(&quot;Straight Line&quot;)
+plt.show()
+</code></pre>
+<p><meta name="referrer" content="no-referrer"><br><img data-src="/2020/05/13/python-sklearn/output_0_0.png" class></p>
+<pre><code class="lang-python">print(&quot;y = {:.4f}&quot;.format(lr.coef_[0]),&quot;x&quot;,&quot;+{:.4f}&quot;.format(lr.intercept_))
+</code></pre>
+<pre><code>y = 0.6667 x +2.3333
+</code></pre><p>考虑多个数据点的线性回归：</p>
+<pre><code class="lang-python">import numpy as np
+import matplotlib.pyplot as plt
+
+###首先生成数据集
+from sklearn.datasets import make_regression
+
+X ,y = make_regression(n_samples=100, n_features=1, 
+                      n_informative=1, noise=50, random_state=1)
+
+from sklearn.linear_model import LinearRegression
+###拟合
+reg = LinearRegression()
+reg.fit(X, y)
+z = np.linspace(-3, 3, 200).reshape(-1, 1)
+
+plt.scatter(X, y, c=&#39;blue&#39;, s=50)
+plt.plot(z, reg.predict(z), c=&#39;k&#39;)
+plt.title(&quot;Linear Regression&quot;)
+plt.show()
+</code></pre>
+<p><meta name="referrer" content="no-referrer"><br><img data-src="/2020/05/13/python-sklearn/output_2_0.png" class></p>
+<p>糖尿病数据，线性回归：</p>
+<pre><code class="lang-python">###加载糖尿病数据集
+from sklearn.datasets import load_diabetes
+
+X, y = load_diabetes().data, load_diabetes().target
+
+from sklearn.model_selection import train_test_split
+X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=8)
+
+from sklearn.linear_model import LinearRegression
+lr = LinearRegression().fit(X_train, y_train)
+
+print(&quot;训练数据集得分：{:.3f}&quot;.format(lr.score(X_train, y_train)))
+print(&quot;测试数据集得分：{:.3f}&quot;.format(lr.score(X_test, y_test)))
+</code></pre>
+<pre><code>训练数据集得分：0.530
+测试数据集得分：0.459
+</code></pre><ul>
+<li><strong>损失函数</strong>（Loss Function），也称<strong>成本函数</strong>（Cost Function），用于定义模型预测值与观测值的误差。</li>
+<li><strong>残差</strong>（residuals）/<strong>训练误差</strong>（training errors）：模型预测值与训练集数据的差异。</li>
+<li><strong>预测误差</strong>（prediction errors）/<strong>测试误差</strong>（test errors）：模型预测值与测试集数据的差异。</li>
+</ul>
+<p>考虑带损失函数的模型拟合结果评估（标注残差、计算残差平方和）：</p>
+<pre><code class="lang-python">X = [[6], [8], [10], [14], [18]]
+y = [[7], [9], [13], [17.5], [18]]
+
+from sklearn.linear_model import LinearRegression
+model = LinearRegression()
+model.fit(X, y)
+X2 = [[0], [10], [14], [25]]
+y2 = model.predict(X2)
+
+###残差
+yr = model.predict(X)
+
+
+%matplotlib inline
+import matplotlib.pyplot as plt
+
+plt.plot(X, y, &#39;k.&#39;)
+plt.plot(X2, y2, &#39;g-&#39;)
+for idx, x in enumerate(X):
+    plt.plot([x, x], [y[idx], yr[idx]], &#39;r-&#39;)
+
+plt.xlabel(&quot;X&quot;)
+plt.ylabel(&quot;y&quot;)
+plt.axis([0, 25, 0, 25])
+plt.grid(True)
+plt.show()
+</code></pre>
+<p><meta name="referrer" content="no-referrer"><br><img data-src="/2020/05/13/python-sklearn/output_4_0.png" class></p>
+<pre><code class="lang-Python">
+
+</code></pre>
+<pre><code class="lang-Python">
+
+</code></pre>
+<pre><code class="lang-Python">
+
+</code></pre>
+<pre><code class="lang-Python">
+
+</code></pre>
+<pre><code class="lang-Python">
+
+</code></pre>
+<h1><span id="参考资料">参考资料</span></h1><p>[1] <a href="https://mp.weixin.qq.com/s?__biz=MzU5NzkxODMxOA==&amp;mid=2247484190&amp;idx=1&amp;sn=e7484e733ae84785a8940270cdf289b1&amp;chksm=fe4d541fc93add09a7d2730ec0ec9aeb04bc1d1fe38e9c662087e368b20bb20c087611191956&amp;token=1683818096&amp;lang=zh_CN#rd" target="_blank" rel="noopener">Sklearn学习：线性回归、岭回归、Lasso、Elastic Net</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://github.com/ShootingWang/ShootingWang.github.io/2020/05/13/%E7%AE%97%E6%B3%95-K-Means/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ShootingWang">
+      <meta itemprop="description" content="统计一只狗，梦想有只猫">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ShootingWang">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/05/13/%E7%AE%97%E6%B3%95-K-Means/" class="post-title-link" itemprop="url">K-Means</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-05-13 15:15:46" itemprop="dateCreated datePublished" datetime="2020-05-13T15:15:46+08:00">2020-05-13</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-05-16 17:25:01" itemprop="dateModified" datetime="2020-05-16T17:25:01+08:00">2020-05-16</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1><span id="k-means">K-Means</span></h1><ul>
+<li>无监督学习</li>
+<li>$K$值无法自动获取</li>
+<li>初始聚类中心随机选择</li>
+</ul>
+<h2><span id="优点">优点</span></h2><ul>
+<li>原理简单</li>
+<li>容易实现</li>
+<li>对大数据集有较高的学习效率，且具有可伸缩性</li>
+</ul>
+<h2><span id="缺点">缺点</span></h2><ul>
+<li>收敛速度较慢</li>
+<li>算法的时间复杂度较高$O(nKt)$<ul>
+<li>$n$：样本点个数</li>
+<li>$K$：聚类类别数</li>
+<li>$t$：迭代次数</li>
+</ul>
+</li>
+<li>不能发现非凸形状的簇</li>
+<li>对噪声和离群点敏感</li>
+<li>结果不一定是全局最优，只能保证局部最优</li>
+</ul>
+<h2><span id="k-means-vs-k-medoids">K-Means vs K-Medoids</span></h2><ul>
+<li>二者的区别主要在于：质心的选择</li>
+</ul>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">K-Means</th>
+<th style="text-align:center">K-Medoids</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">质心的选择</td>
+<td style="text-align:center">样本点均值</td>
+<td style="text-align:center">从样本点中选取</td>
+</tr>
+<tr>
+<td style="text-align:center">计算质心的时间复杂度</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">$O(n^2)$<br>运行速度较慢</td>
+</tr>
+<tr>
+<td style="text-align:center">对噪声</td>
+<td style="text-align:center">敏感</td>
+<td style="text-align:center">相对较不敏感，比较稳健（robust）</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2><span id="k-means-vs-knn">K-Means vs KNN</span></h2><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
     }
-    anchors.add(res.join(", "))
-  </script>
 
-
-
-  <script  src="/js/local-search.js" ></script>
-  <script>
-    var path = "/local-search.xml";
-    var inputArea = document.querySelector("#local-search-input");
-    inputArea.onclick = function () {
-      getSearchFile(path);
-      this.onclick = null
+    .dataframe tbody tr th {
+        vertical-align: top;
     }
-  </script>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<script src="/js/prism/clipboard.js"></script>
-<script src="/js/prism/prism.js" async></script>
-
-{% if theme.mermaid.enable %}
-  <script src='https://unpkg.com/mermaid@{{ theme.mermaid.version }}/dist/mermaid.min.js'></script>
-  <script>
-    if (window.mermaid) {
-      mermaid.initialize({{ JSON.stringify(theme.mermaid.options) }});
+    .dataframe thead th {
+        text-align: center;
     }
-  </script>
-{% endif %}
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: center;">
+      <th></th>
+      <th>K-Means</th>
+      <th>KNN</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>分类</th>
+      <td>聚类算法</td>
+      <td>分类/回归算法</td>
+    </tr>
+    <tr>
+      <th>监督</th>
+      <td>无监督学习</td>
+      <td>有监督学习</td>
+    </tr>
+    <tr>
+      <th>训练集</th>
+      <td>无标签数据</td>
+      <td>有标签数据<br>无序变有序</td>
+    </tr>
+    <tr>
+      <th>相似点</th>
+      <td colspan="2">都包含——给定一个点，在数据集中找离它最近的点——的过程；即，二者都使用了NN（Nearest Neighbor）算法，一般用KD树实现NN</td>
+    </tr>
+    <tr>
+  </tr></tbody>
+</table>
+</div>
 
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
+
+
+<h1><span id="参考资料">参考资料</span></h1><p>[] <a href></a><br>[] <a href></a><br>[] <a href="https://blog.csdn.net/databatman/article/details/50445561" target="_blank" rel="noopener">机器学习：K-means和K-medoids对比</a><br>[] <a href="https://www.cnblogs.com/nucdy/p/6349172.html" target="_blank" rel="noopener">KNN与K-Means的区别</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://github.com/ShootingWang/ShootingWang.github.io/2020/05/12/sql-SQL%E8%BF%9B%E9%98%B6%E6%95%99%E7%A8%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ShootingWang">
+      <meta itemprop="description" content="统计一只狗，梦想有只猫">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ShootingWang">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/05/12/sql-SQL%E8%BF%9B%E9%98%B6%E6%95%99%E7%A8%8B/" class="post-title-link" itemprop="url">SQL | 《SQL进阶教程》</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-05-12 22:52:46 / 修改时间：23:06:52" itemprop="dateCreated datePublished" datetime="2020-05-12T22:52:46+08:00">2020-05-12</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">数据库</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>《SQL进阶教程》读书笔记</p>
+<h1><span id="case表达式">CASE表达式</span></h1><p>CASE表达式：</p>
+<ul>
+<li>简单CASE表达式（simple case expression）</li>
+<li>搜索CASE表达式（searched case expression）</li>
+</ul>
+<pre><code class="lang-sql">-- 简单CASE表达式
+CASE sex
+    WHEN &#39;1&#39; THEN &#39;male&#39;
+    WHEN &#39;2&#39; THEN &#39;female&#39;
+ELSE &#39;其他&#39; END
+
+-- 搜索CASE表达式
+CASE WHEN sex = &#39;1&#39; THEN &#39;male&#39;
+     WHEN sex = &#39;2&#39; THEN &#39;female&#39;
+ELSE &#39;其他&#39; END
+</code></pre>
+<ul>
+<li>注意：使用WHEN子句时需要注意条件的排他性</li>
+<li>一定要注意CASE表达式里每个分支返回的数据类型是否一致<ul>
+<li>某个分支返回字符型，而其他分支返回数值型的写法是错误的</li>
+</ul>
+</li>
+<li>CASE表达式末尾不要忘记写END</li>
+<li>ELSE子句是可选的<ul>
+<li>不写ELSE子句时，CASE表达式的执行结果是NULL</li>
+<li>不写ELSE子句可能会造成“语法没有错误，结果却不对”</li>
+</ul>
+</li>
+<li>最好明确地写上ELSE子句</li>
+<li>CASE表达式是一种表法式而不是语句</li>
+</ul>
+<pre><code class="lang-sql">+-----------+------------+
+| pref_name | population |
++-----------+------------+
+| 东京      |        400 |
+| 佐贺      |        100 |
+| 德岛      |        100 |
+| 爱媛      |        150 |
+| 福冈      |        300 |
+| 群马      |         50 |
+| 长崎      |        200 |
+| 香川      |        200 |
+| 高知      |        200 |
++-----------+------------+
+9 rows in set (0.00 sec)
+
+
+-- 根据县人口统计表，统计不同地区的人口数量
+SELECT CASE pref_name
+                WHEN &#39;德岛&#39; THEN &#39;四国&#39;
+                WHEN &#39;香川&#39; THEN &#39;四国&#39;
+                WHEN &#39;爱媛&#39; THEN &#39;四国&#39;
+                WHEN &#39;高知&#39; THEN &#39;四国&#39;
+                WHEN &#39;福冈&#39; THEN &#39;九州&#39;
+                WHEN &#39;长崎&#39; THEN &#39;九州&#39;
+                WHEN &#39;佐贺&#39; THEN &#39;九州&#39;
+        ELSE &#39;其他&#39; END AS district,
+        SUM(population)
+FROM PopTbl
+GROUP BY CASE pref_name
+                WHEN &#39;德岛&#39; THEN &#39;四国&#39;
+                WHEN &#39;香川&#39; THEN &#39;四国&#39;
+                WHEN &#39;爱媛&#39; THEN &#39;四国&#39;
+                WHEN &#39;高知&#39; THEN &#39;四国&#39;
+                WHEN &#39;福冈&#39; THEN &#39;九州&#39;
+                WHEN &#39;长崎&#39; THEN &#39;九州&#39;
+                WHEN &#39;佐贺&#39; THEN &#39;九州&#39;
+         ELSE &#39;其他&#39; END;
+-- 注意是对转换后的列 GROUP
+
+SELECT CASE pref_name
+                WHEN &#39;德岛&#39; THEN &#39;四国&#39;
+                WHEN &#39;香川&#39; THEN &#39;四国&#39;
+                WHEN &#39;爱媛&#39; THEN &#39;四国&#39;
+                WHEN &#39;高知&#39; THEN &#39;四国&#39;
+                WHEN &#39;福冈&#39; THEN &#39;九州&#39;
+                WHEN &#39;长崎&#39; THEN &#39;九州&#39;
+                WHEN &#39;佐贺&#39; THEN &#39;九州&#39;
+        ELSE &#39;其他&#39; END AS district,
+        SUM(population)
+FROM PopTbl
+GROUP BY district;
+-- 这里引用了SELECT子句中定义的别名来 GROUP
+-- 与上面那种方法相比，这里不需要写两段CASE WHEN；
+-- 而上面的需要写两段CASE WHEN，当CASE内容需要修改时，需要修改两处，容易出错
+-- 但是该写法违反标准SQL的规则，因为GROUP BY子句比SELECT语句先执行
+</code></pre>
+<p>CASE WHEN 聚合之后：</p>
+<pre><code class="lang-sql">+----------+-----------------+
+| district | SUM(population) |
++----------+-----------------+
+| 九州     |             600 |
+| 其他     |             450 |
+| 四国     |             650 |
++----------+-----------------+
+</code></pre>
+<p>进行不同条件的统计：</p>
+<pre><code class="lang-sql">+-----------+-----+------------+
+| pref_name | sex | population |
++-----------+-----+------------+
+| 东京      | 1   |        250 |
+| 东京      | 2   |        150 |
+| 佐贺      | 1   |         20 |
+| 佐贺      | 2   |         80 |
+| 德岛      | 1   |         60 |
+| 德岛      | 2   |         40 |
+| 爱媛      | 1   |        100 |
+| 爱媛      | 2   |         50 |
+| 福冈      | 1   |        100 |
+| 福冈      | 2   |        200 |
+| 长崎      | 1   |        125 |
+| 长崎      | 2   |        125 |
+| 香川      | 1   |        100 |
+| 香川      | 2   |        100 |
+| 高知      | 1   |        100 |
+| 高知      | 2   |        100 |
++-----------+-----+------------+
+16 rows in set (0.00 sec)
+-- 如果上表有新列“性别”sex，population列为某县的某个性别人口数
+SELECT pref_name,
+-- 男性人口
+    SUM(CASE WHEN sex=&#39;1&#39; THEN population ELSE 0 END) AS cnt_m,
+-- 女性人口
+    SUM(CASE WHEN sex=&#39;2&#39; THEN population ELSE 0 END) AS cnt_f
+FROM PopTbl2
+GROUP BY pref_name;
++-----------+-------+-------+
+| pref_name | cnt_m | cnt_f |
++-----------+-------+-------+
+| 东京      |   250 |   150 |
+| 佐贺      |    20 |    80 |
+| 德岛      |    60 |    40 |
+| 爱媛      |   100 |    50 |
+| 福冈      |   100 |   200 |
+| 长崎      |   125 |   125 |
+| 香川      |   100 |   100 |
+| 高知      |   100 |   100 |
++-----------+-------+-------+
+8 rows in set (0.00 sec)
+</code></pre>
+<p>使用CHECK约束定义多个列的条件关系：</p>
+<pre><code class="lang-sql">CONSTRAINT check_salary CHECK
+        (CASE WHEN dept=&#39;IT&#39; 
+              THEN CASE WHEN salary&gt;=20000
+                        THEN 1 ELSE 0 END
+              ELSE 1 END = 1)
+-- 如果是IT部门的员工，则工资应大于等于2万；如果不是IT部门的员工，则工资不受该约束限制
+-- 蕴含式（conditional）
+
+-- 如果用逻辑与（logical product）
+CONSTRAINT check_salary CHECK 
+            (dept=&#39;IT&#39; AND salary&gt;=20000)
+-- 表示 salary里的记录只能是&#39;IT&#39;部门的，且工资大于等于2万
+</code></pre>
+<p>在UPDATE语句里进行条件分支：</p>
+<pre><code class="lang-sql">+--------+--------+
+| name   | salary |
++--------+--------+
+| 木村   | 220000 |
+| 相田   | 300000 |
+| 神崎   | 270000 |
+| 齐藤   | 290000 |
++--------+--------+
+4 rows in set (0.01 sec)
+
+UPDATE Salaries 
+   SET salary = CASE WHEN salary&gt;=300000 THEN salary*0.9
+                     WHEN salary&gt;=250000 AND salary&lt;280000 THEN salary*1.2
+                     ELSE salary END;  -- 最后一句很重要
+-- 当前工资为30万元以上的员工，降薪10%；
+-- 当前工资为25万元~28万元（不满28万元）的员工，加薪20%
++--------+--------+
+| name   | salary |
++--------+--------+
+| 木村   | 220000 |
+| 相田   | 270000 |
+| 神崎   | 324000 |
+| 齐藤   | 290000 |
++--------+--------+
+4 rows in set (0.00 sec)
+</code></pre>
+<p>调换主键值：</p>
+<pre><code class="lang-sql">+-------+-------+-------+
+| p_key | col_1 | col_2 |
++-------+-------+-------+
+| a     |     1 | 一    |
+| b     |     2 | 二    |
+| c     |     3 | 三    |
++-------+-------+-------+
+3 rows in set (0.00 sec)
+
+UPDATE SomeTable
+   SET p_key = CASE WHEN p_key=&#39;a&#39; THEN &#39;b&#39;
+                    WHEN p_key=&#39;b&#39; THEN &#39;a&#39;
+                    ELSE p_key END   -- 该句很重要
+WHERE p_key IN (&#39;a&#39;, &#39;b&#39;);
+-- 在PostgreSQL和MySQL中执行该语句，会因为主键重复而报错
+-- 如: ERROR 1062 (23000): Duplicate entry &#39;b&#39; for key &#39;PRIMARY&#39;
+</code></pre>
+<p>在CASE表达式中，可以使用<code>BETWEEN</code>、<code>LIKE</code> 和 <code>&lt;</code>、<code>&gt;</code>等谓词组合，以及能嵌套子查询的 <code>IN</code> 和 <code>EXISTS</code> 谓词</p>
+<pre><code class="lang-sql">mysql&gt; SELECT * FROM CourseMaster;
++-----------+--------------+
+| course_id | course_name  |
++-----------+--------------+
+|         1 | 会计入门     |
+|         2 | 财务知识     |
+|         3 | 簿记考试     |
+|         4 | 税务师       |
++-----------+--------------+
+4 rows in set (0.00 sec)
+
+mysql&gt; SELECT * FROM OpenCourses;
++--------+-----------+
+| month  | course_id |
++--------+-----------+
+| 200706 |         1 |
+| 200706 |         3 |
+| 200706 |         4 |
+| 200707 |         4 |
+| 200708 |         2 |
+| 200708 |         4 |
++--------+-----------+
+6 rows in set (0.00 sec)
+
+-- 如果用 IN 谓词
+SELECT course_name,
+       CASE WHEN course_id IN 
+                     (SELECT course_id FROM OpenCourses 
+                      WHERE month = 200706) THEN &#39;⚪&#39;
+            ELSE &#39;×&#39; END AS &quot;6月&quot;,
+       CASE WHEN course_id IN 
+                     (SELECT course_id FROM OpenCourses
+                      WHERE month = 200707) THEN &#39;⚪&#39;
+            ELSE &#39;×&#39; END AS &quot;7月&quot;,  
+       CASE WHEN course_id IN 
+                     (SELECT course_id FROM OpenCourses
+                      WHERE month = 200708) THEN &#39;⚪&#39;
+            ELSE &#39;×&#39; END AS &quot;8月&quot;
+FROM CourseMaster;   
+
+-- 使用EXISTS谓词
+SELECT CM.course_name,
+       CASE WHEN EXISTS
+                   (SELECT course_id FROM OpenCourses OC
+                    WHERE OC.month=200706 
+                      AND OC.course_id=CM.course_id) THEN &#39;O&#39;
+             ELSE &#39;X&#39; END AS &#39;6月&#39;,
+        CASE WHEN EXISTS
+                    (SELECT course_id FROM OpenCourses OC
+                     WHERE OC.month=200707
+                       AND OC.course_id=CM.course_id) THEN &#39;O&#39;
+             ELSE &#39;X&#39; END AS &#39;7月&#39;,
+         CASE WHEN EXISTS
+                     (SELECT course_id FROM OpenCourses OC
+                     WHERE OC.month=200708
+                       AND OC.course_id=CM.course_id) THEN &#39;O&#39;
+             ELSE &#39;X&#39; END AS &#39;8月&#39;         
+FROM CourseMaster CM;
+</code></pre>
+<p>CASE表达式用在SELECT子句里时，既可以写在聚合函数内部，也可以写在聚合函数外部。</p>
+<pre><code class="lang-sql">## StudentClub
++--------+---------+-----------+---------------+
+| std_id | club_id | club_name | main_club_flg |
++--------+---------+-----------+---------------+
+|    100 |       1 | 棒球      | Y             |
+|    100 |       2 | 管弦乐    | N             |
+|    200 |       2 | 管弦乐    | N             |
+|    200 |       3 | 羽毛球    | Y             |
+|    200 |       4 | 足球      | N             |
+|    300 |       4 | 足球      | N             |
+|    400 |       5 | 游泳      | N             |
+|    500 |       6 | 围棋      | N             |
++--------+---------+-----------+---------------+
+8 rows in set (0.00 sec)
+-- main_club_flg=&#39;Y&#39; 表示加入多个社团的学生的主社团
+
+-- 找出学生的主社团
+SELECT std_id,
+        CASE WHEN COUNT(*) = 1
+              THEN MAX(club_id)
+              ELSE MAX(CASE WHEN main_club_flg = &#39;Y&#39;
+                            THEN club_id
+                            ELSE NULL END)
+              END AS main_club
+FROM StudentClub
+GROUP BY std_id;
+
++--------+-----------+
+| std_id | main_club |
++--------+-----------+
+|    100 |         1 |
+|    200 |         3 |
+|    300 |         4 |
+|    400 |         5 |
+|    500 |         6 |
++--------+-----------+
+5 rows in set (0.00 sec)
+</code></pre>
+<h2><span id="练习">练习</span></h2><p>找最大值</p>
+<pre><code class="lang-sql">-- Greatests
++------+---+---+---+
+| key0 | x | y | z |
++------+---+---+---+
+| A    | 1 | 2 | 3 |
+| B    | 5 | 5 | 2 |
+| C    | 4 | 7 | 1 |
+| D    | 3 | 3 | 8 |
++------+---+---+---+
+4 rows in set (0.00 sec)
+
+-- 找出多列数据中的最大值
+/* 找出x列和y列中的最大值 */
+SELECT key0,
+       CASE WHEN x &lt; y THEN y
+            ELSE x END AS greatest
+FROM Greatests;
+
+-- MySQL自带函数 GREATEST 直接可实现上述过程
+SELECT key0,  GREATEST(x,y) AS greatest
+FROM Greatests;
+
++------+----------+
+| key0 | greatest |
++------+----------+
+| A    |        2 |
+| B    |        5 |
+| C    |        7 |
+| D    |        3 |
++------+----------+
+4 rows in set (0.00 sec)
+</code></pre>
+<p>求和：</p>
+<pre><code class="lang-sql">+-----------+-----+------------+
+| pref_name | sex | population |
++-----------+-----+------------+
+| 东京      | 1   |        250 |
+| 东京      | 2   |        150 |
+| 佐贺      | 1   |         20 |
+| 佐贺      | 2   |         80 |
+| 德岛      | 1   |         60 |
+| 德岛      | 2   |         40 |
+| 爱媛      | 1   |        100 |
+| 爱媛      | 2   |         50 |
+| 福冈      | 1   |        100 |
+| 福冈      | 2   |        200 |
+| 长崎      | 1   |        125 |
+| 长崎      | 2   |        125 |
+| 香川      | 1   |        100 |
+| 香川      | 2   |        100 |
+| 高知      | 1   |        100 |
+| 高知      | 2   |        100 |
++-----------+-----+------------+
+16 rows in set (0.00 sec)
+
+SELECT sex AS &#39;性别&#39;,
+       SUM(population) AS &#39;全国&#39;,
+       SUM(CASE WHEN pref_name = &#39;德岛&#39; THEN population ELSE 0 END) AS &quot;德岛&quot;,
+       SUM(CASE WHEN pref_name = &#39;香川&#39; THEN population ELSE 0 END) AS &quot;香川&quot;,
+       SUM(CASE WHEN pref_name = &#39;爱媛&#39; THEN population ELSE 0 END) AS &quot;爱媛&quot;,
+       SUM(CASE WHEN pref_name = &#39;高知&#39; THEN population ELSE 0 END) AS &quot;高知&quot;,
+       SUM(CASE WHEN pref_name IN (&#39;德岛&#39;, &#39;香川&#39;, &#39;爱媛&#39;, &#39;高知&#39;)
+                THEN population ELSE 0 END) AS zaijie
+  FROM PopTbl2
+ GROUP BY sex;
+
++--------+--------+--------+--------+--------+--------+--------+
+| 性别   | 全国   | 德岛   | 香川   | 爱媛   | 高知   | zaijie |
++--------+--------+--------+--------+--------+--------+--------+
+| 1      |    855 |     60 |    100 |    100 |    100 |    360 |
+| 2      |    845 |     40 |    100 |     50 |    100 |    290 |
++--------+--------+--------+--------+--------+--------+--------+
+2 rows in set (0.00 sec)
+</code></pre>
+<p>乱序排序：</p>
+<pre><code class="lang-sql">
+-- 按照 B-A-D-C排序
+SELECT key0,
+       CASE key0
+         WHEN &#39;B&#39; THEN 1
+         WHEN &#39;A&#39; THEN 2
+         WHEN &#39;D&#39; THEN 3
+         WHEN &#39;C&#39; THEN 4
+         ELSE NULL END AS sort_col
+  FROM Greatests
+ ORDER BY sort_col;
+
++------+----------+
+| key0 | sort_col |
++------+----------+
+| B    |        1 |
+| A    |        2 |
+| D    |        3 |
+| C    |        4 |
++------+----------+
+4 rows in set (0.00 sec)
+</code></pre>
+<pre><code class="lang-sql">
+
+</code></pre>
+<pre><code class="lang-sql">
+
+</code></pre>
+<pre><code class="lang-sql">
+
+</code></pre>
+<pre><code class="lang-sql">
+
+</code></pre>
+<pre><code class="lang-sql">
+
+</code></pre>
+<h1><span id="参考资料">参考资料</span></h1><p>[1] <a href="https://mp.weixin.qq.com/s?__biz=MzU5NzkxODMxOA==&amp;mid=2247486368&amp;idx=1&amp;sn=3ef74be0a7b7345cba471da1370f8986&amp;chksm=fe4d5ca1c93ad5b7481d65a8fa0a8b4e585714af57ad69437d599bbac5830910562a9097a12b&amp;token=1415910284&amp;lang=zh_CN#rd" target="_blank" rel="noopener">Notes | SQL进阶教程 | 001</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://github.com/ShootingWang/ShootingWang.github.io/2020/05/12/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-%E5%A4%A9%E6%B1%A0-%E4%BA%8C%E6%89%8B%E8%BD%A6%E4%BA%A4%E6%98%93%E6%95%B0%E6%8D%AE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ShootingWang">
+      <meta itemprop="description" content="统计一只狗，梦想有只猫">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ShootingWang">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/05/12/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-%E5%A4%A9%E6%B1%A0-%E4%BA%8C%E6%89%8B%E8%BD%A6%E4%BA%A4%E6%98%93%E6%95%B0%E6%8D%AE/" class="post-title-link" itemprop="url">数据清洗-天池-二手车交易数据</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-05-12 22:00:00" itemprop="dateCreated datePublished" datetime="2020-05-12T22:00:00+08:00">2020-05-12</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-05-13 11:35:07" itemprop="dateModified" datetime="2020-05-13T11:35:07+08:00">2020-05-13</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1><span id="数据说明">数据说明</span></h1><p>数据来源：<a href="https://tianchi.aliyun.com/notebook-ai/detail?spm=5176.12281978.0.0.68021b43DOhgme&amp;postId=95422" target="_blank" rel="noopener">天池</a></p>
+<p><a href="https://tianchi.aliyun.com/competition/entrance/231784/information" target="_blank" rel="noopener">数据详情</a></p>
+<blockquote>
+<p>本篇笔记的代码使用Jupyter Lab实现</p>
+</blockquote>
+<h2><span id="参考资料"><strong>参考资料</strong></span></h2><p>[1] <a href="https://tianchi.aliyun.com/notebook-ai/detail?spm=5176.12281978.0.0.6802593aEHEy7Y&amp;postId=95422" target="_blank" rel="noopener">Baseline方案</a></p>
+<p>[2] <a href="https://tianchi.aliyun.com/notebook-ai/detail?spm=5176.12281978.0.0.6802593aEHEy7Y&amp;postId=95456" target="_blank" rel="noopener">赛题理解</a></p>
+<p>[3] <a href="https://tianchi.aliyun.com/notebook-ai/detail?spm=5176.12281978.0.0.6802593aEHEy7Y&amp;postId=95457" target="_blank" rel="noopener">数据分析</a></p>
+<p>[4] <a href="https://tianchi.aliyun.com/notebook-ai/detail?spm=5176.12281978.0.0.6802593aEHEy7Y&amp;postId=95501" target="_blank" rel="noopener">特征工程</a></p>
+<p>[5] <a href="https://tianchi.aliyun.com/notebook-ai/detail?spm=5176.12281978.0.0.6802593aEHEy7Y&amp;postId=95460" target="_blank" rel="noopener">建模调参</a></p>
+<p>[6] <a href="https://tianchi.aliyun.com/notebook-ai/detail?spm=5176.12281978.0.0.6802593aEHEy7Y&amp;postId=95535" target="_blank" rel="noopener">模型融合</a></p>
+<h1><span id="数据处理amp分析">数据处理&amp;分析</span></h1><h2><span id="载入需要的模块">载入需要的模块</span></h2><pre><code class="lang-python">## 基础模块
+import numpy as np
+import pandas as pd
+import warnings
+import matplotlib
+import matplotlib.pyplot as plt
+import seaborn as sns
+from scipy.special import jn
+from IPython.display import display, clear_output
+import time
+
+warnings.filterwarnings(&#39;ignore&#39;)
+%matplotlib inline
+
+## 模型预测
+from sklearn import linear_model
+from sklearn import preprocessing
+from sklearn.svm import SVR
+from sklearn.ensemble import RandomForestRegressor, GradientBoostingRegressor
+import lightgbm as lgb
+import xgboost as xgb
+
+## 降维
+from sklearn.decomposition import PCA, FastICA, FactorAnalysis, SparsePCA
+
+## 网格搜索、模型评估
+from sklearn.model_selection import GridSearchCV, StratifiedKFold
+from sklearn.model_selection import cross_val_score, train_test_split
+from sklearn.metrics import mean_squared_error, mean_absolute_error
+</code></pre>
+<h2><span id="载入数据">载入数据</span></h2><pre><code class="lang-python">## 读取数据
+train_data = pd.read_csv(&quot;used_car_train_20200313.csv&quot;, sep=&quot; &quot;)
+testB_data = pd.read_csv(&quot;used_car_testB_20200421.csv&quot;, sep=&quot; &quot;)
+
+## 训练集大小
+print(&quot;Train data shape:&quot;, train_data.shape)
+</code></pre>
+<pre><code>Train data shape: (150000, 31)
+</code></pre><pre><code class="lang-python">## 测试集大小
+print(&quot;TestB data shape:&quot;, testB_data.shape)
+</code></pre>
+<pre><code>TestB data shape: (50000, 30)
+</code></pre><h2><span id="数据预览">数据预览</span></h2><pre><code class="lang-python">train_data.head()  ## 预览前5行
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>SaleID</th>
+      <th>name</th>
+      <th>regDate</th>
+      <th>model</th>
+      <th>brand</th>
+      <th>bodyType</th>
+      <th>fuelType</th>
+      <th>gearbox</th>
+      <th>power</th>
+      <th>kilometer</th>
+      <th>...</th>
+      <th>v_5</th>
+      <th>v_6</th>
+      <th>v_7</th>
+      <th>v_8</th>
+      <th>v_9</th>
+      <th>v_10</th>
+      <th>v_11</th>
+      <th>v_12</th>
+      <th>v_13</th>
+      <th>v_14</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>736</td>
+      <td>20040402</td>
+      <td>30.0</td>
+      <td>6</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>60</td>
+      <td>12.5</td>
+      <td>...</td>
+      <td>0.235676</td>
+      <td>0.101988</td>
+      <td>0.129549</td>
+      <td>0.022816</td>
+      <td>0.097462</td>
+      <td>-2.881803</td>
+      <td>2.804097</td>
+      <td>-2.420821</td>
+      <td>0.795292</td>
+      <td>0.914762</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>2262</td>
+      <td>20030301</td>
+      <td>40.0</td>
+      <td>1</td>
+      <td>2.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>15.0</td>
+      <td>...</td>
+      <td>0.264777</td>
+      <td>0.121004</td>
+      <td>0.135731</td>
+      <td>0.026597</td>
+      <td>0.020582</td>
+      <td>-4.900482</td>
+      <td>2.096338</td>
+      <td>-1.030483</td>
+      <td>-1.722674</td>
+      <td>0.245522</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>14874</td>
+      <td>20040403</td>
+      <td>115.0</td>
+      <td>15</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>163</td>
+      <td>12.5</td>
+      <td>...</td>
+      <td>0.251410</td>
+      <td>0.114912</td>
+      <td>0.165147</td>
+      <td>0.062173</td>
+      <td>0.027075</td>
+      <td>-4.846749</td>
+      <td>1.803559</td>
+      <td>1.565330</td>
+      <td>-0.832687</td>
+      <td>-0.229963</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3</td>
+      <td>71865</td>
+      <td>19960908</td>
+      <td>109.0</td>
+      <td>10</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>193</td>
+      <td>15.0</td>
+      <td>...</td>
+      <td>0.274293</td>
+      <td>0.110300</td>
+      <td>0.121964</td>
+      <td>0.033395</td>
+      <td>0.000000</td>
+      <td>-4.509599</td>
+      <td>1.285940</td>
+      <td>-0.501868</td>
+      <td>-2.438353</td>
+      <td>-0.478699</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4</td>
+      <td>111080</td>
+      <td>20120103</td>
+      <td>110.0</td>
+      <td>5</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>68</td>
+      <td>5.0</td>
+      <td>...</td>
+      <td>0.228036</td>
+      <td>0.073205</td>
+      <td>0.091880</td>
+      <td>0.078819</td>
+      <td>0.121534</td>
+      <td>-1.896240</td>
+      <td>0.910783</td>
+      <td>0.931110</td>
+      <td>2.834518</td>
+      <td>1.923482</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 31 columns</p>
+</div>
+
+
+
+
+<pre><code class="lang-python">train_data.tail()  ## 预览最后5行
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>SaleID</th>
+      <th>name</th>
+      <th>regDate</th>
+      <th>model</th>
+      <th>brand</th>
+      <th>bodyType</th>
+      <th>fuelType</th>
+      <th>gearbox</th>
+      <th>power</th>
+      <th>kilometer</th>
+      <th>...</th>
+      <th>v_5</th>
+      <th>v_6</th>
+      <th>v_7</th>
+      <th>v_8</th>
+      <th>v_9</th>
+      <th>v_10</th>
+      <th>v_11</th>
+      <th>v_12</th>
+      <th>v_13</th>
+      <th>v_14</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>149995</th>
+      <td>149995</td>
+      <td>163978</td>
+      <td>20000607</td>
+      <td>121.0</td>
+      <td>10</td>
+      <td>4.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>163</td>
+      <td>15.0</td>
+      <td>...</td>
+      <td>0.280264</td>
+      <td>0.000310</td>
+      <td>0.048441</td>
+      <td>0.071158</td>
+      <td>0.019174</td>
+      <td>1.988114</td>
+      <td>-2.983973</td>
+      <td>0.589167</td>
+      <td>-1.304370</td>
+      <td>-0.302592</td>
+    </tr>
+    <tr>
+      <th>149996</th>
+      <td>149996</td>
+      <td>184535</td>
+      <td>20091102</td>
+      <td>116.0</td>
+      <td>11</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>125</td>
+      <td>10.0</td>
+      <td>...</td>
+      <td>0.253217</td>
+      <td>0.000777</td>
+      <td>0.084079</td>
+      <td>0.099681</td>
+      <td>0.079371</td>
+      <td>1.839166</td>
+      <td>-2.774615</td>
+      <td>2.553994</td>
+      <td>0.924196</td>
+      <td>-0.272160</td>
+    </tr>
+    <tr>
+      <th>149997</th>
+      <td>149997</td>
+      <td>147587</td>
+      <td>20101003</td>
+      <td>60.0</td>
+      <td>11</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>90</td>
+      <td>6.0</td>
+      <td>...</td>
+      <td>0.233353</td>
+      <td>0.000705</td>
+      <td>0.118872</td>
+      <td>0.100118</td>
+      <td>0.097914</td>
+      <td>2.439812</td>
+      <td>-1.630677</td>
+      <td>2.290197</td>
+      <td>1.891922</td>
+      <td>0.414931</td>
+    </tr>
+    <tr>
+      <th>149998</th>
+      <td>149998</td>
+      <td>45907</td>
+      <td>20060312</td>
+      <td>34.0</td>
+      <td>10</td>
+      <td>3.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>156</td>
+      <td>15.0</td>
+      <td>...</td>
+      <td>0.256369</td>
+      <td>0.000252</td>
+      <td>0.081479</td>
+      <td>0.083558</td>
+      <td>0.081498</td>
+      <td>2.075380</td>
+      <td>-2.633719</td>
+      <td>1.414937</td>
+      <td>0.431981</td>
+      <td>-1.659014</td>
+    </tr>
+    <tr>
+      <th>149999</th>
+      <td>149999</td>
+      <td>177672</td>
+      <td>19990204</td>
+      <td>19.0</td>
+      <td>28</td>
+      <td>6.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>193</td>
+      <td>12.5</td>
+      <td>...</td>
+      <td>0.284475</td>
+      <td>0.000000</td>
+      <td>0.040072</td>
+      <td>0.062543</td>
+      <td>0.025819</td>
+      <td>1.978453</td>
+      <td>-3.179913</td>
+      <td>0.031724</td>
+      <td>-1.483350</td>
+      <td>-0.342674</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 31 columns</p>
+</div>
+
+
+
+
+<pre><code class="lang-python">## .info()简要查看每列对应的数据类型、非缺失样本量
+train_data.info()
+## 总共有150000个样本量
+## 149999表明&#39;model&#39;列有1个缺失值
+</code></pre>
+<pre><code>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 150000 entries, 0 to 149999
+Data columns (total 31 columns):
+SaleID               150000 non-null int64
+name                 150000 non-null int64
+regDate              150000 non-null int64
+model                149999 non-null float64
+brand                150000 non-null int64
+bodyType             145494 non-null float64
+fuelType             141320 non-null float64
+gearbox              144019 non-null float64
+power                150000 non-null int64
+kilometer            150000 non-null float64
+notRepairedDamage    150000 non-null object
+regionCode           150000 non-null int64
+seller               150000 non-null int64
+offerType            150000 non-null int64
+creatDate            150000 non-null int64
+price                150000 non-null int64
+v_0                  150000 non-null float64
+v_1                  150000 non-null float64
+v_2                  150000 non-null float64
+v_3                  150000 non-null float64
+v_4                  150000 non-null float64
+v_5                  150000 non-null float64
+v_6                  150000 non-null float64
+v_7                  150000 non-null float64
+v_8                  150000 non-null float64
+v_9                  150000 non-null float64
+v_10                 150000 non-null float64
+v_11                 150000 non-null float64
+v_12                 150000 non-null float64
+v_13                 150000 non-null float64
+v_14                 150000 non-null float64
+dtypes: float64(20), int64(10), object(1)
+memory usage: 35.5+ MB
+</code></pre><pre><code class="lang-python">train_data.columns  ## 查看所有列名
+</code></pre>
+<pre><code>Index([&#39;SaleID&#39;, &#39;name&#39;, &#39;regDate&#39;, &#39;model&#39;, &#39;brand&#39;, &#39;bodyType&#39;, &#39;fuelType&#39;,
+       &#39;gearbox&#39;, &#39;power&#39;, &#39;kilometer&#39;, &#39;notRepairedDamage&#39;, &#39;regionCode&#39;,
+       &#39;seller&#39;, &#39;offerType&#39;, &#39;creatDate&#39;, &#39;price&#39;, &#39;v_0&#39;, &#39;v_1&#39;, &#39;v_2&#39;, &#39;v_3&#39;,
+       &#39;v_4&#39;, &#39;v_5&#39;, &#39;v_6&#39;, &#39;v_7&#39;, &#39;v_8&#39;, &#39;v_9&#39;, &#39;v_10&#39;, &#39;v_11&#39;, &#39;v_12&#39;,
+       &#39;v_13&#39;, &#39;v_14&#39;],
+      dtype=&#39;object&#39;)
+</code></pre><pre><code class="lang-python">testB_data.info()
+## 测试集有50000个样本
+</code></pre>
+<pre><code>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 50000 entries, 0 to 49999
+Data columns (total 30 columns):
+SaleID               50000 non-null int64
+name                 50000 non-null int64
+regDate              50000 non-null int64
+model                50000 non-null float64
+brand                50000 non-null int64
+bodyType             48496 non-null float64
+fuelType             47076 non-null float64
+gearbox              48032 non-null float64
+power                50000 non-null int64
+kilometer            50000 non-null float64
+notRepairedDamage    50000 non-null object
+regionCode           50000 non-null int64
+seller               50000 non-null int64
+offerType            50000 non-null int64
+creatDate            50000 non-null int64
+v_0                  50000 non-null float64
+v_1                  50000 non-null float64
+v_2                  50000 non-null float64
+v_3                  50000 non-null float64
+v_4                  50000 non-null float64
+v_5                  50000 non-null float64
+v_6                  50000 non-null float64
+v_7                  50000 non-null float64
+v_8                  50000 non-null float64
+v_9                  50000 non-null float64
+v_10                 50000 non-null float64
+v_11                 50000 non-null float64
+v_12                 50000 non-null float64
+v_13                 50000 non-null float64
+v_14                 50000 non-null float64
+dtypes: float64(20), int64(9), object(1)
+memory usage: 11.4+ MB
+</code></pre><pre><code class="lang-python">## 描述性统计
+train_data.describe()
+## 查看每列的非空样本量、均值mean、标准差std、最小值min、25%分位数、
+## 中位数（即50%分位数）、75%分位数、最大值max
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>SaleID</th>
+      <th>name</th>
+      <th>regDate</th>
+      <th>model</th>
+      <th>brand</th>
+      <th>bodyType</th>
+      <th>fuelType</th>
+      <th>gearbox</th>
+      <th>power</th>
+      <th>kilometer</th>
+      <th>...</th>
+      <th>v_5</th>
+      <th>v_6</th>
+      <th>v_7</th>
+      <th>v_8</th>
+      <th>v_9</th>
+      <th>v_10</th>
+      <th>v_11</th>
+      <th>v_12</th>
+      <th>v_13</th>
+      <th>v_14</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>150000.000000</td>
+      <td>150000.000000</td>
+      <td>1.500000e+05</td>
+      <td>149999.000000</td>
+      <td>150000.000000</td>
+      <td>145494.000000</td>
+      <td>141320.000000</td>
+      <td>144019.000000</td>
+      <td>150000.000000</td>
+      <td>150000.000000</td>
+      <td>...</td>
+      <td>150000.000000</td>
+      <td>150000.000000</td>
+      <td>150000.000000</td>
+      <td>150000.000000</td>
+      <td>150000.000000</td>
+      <td>150000.000000</td>
+      <td>150000.000000</td>
+      <td>150000.000000</td>
+      <td>150000.000000</td>
+      <td>150000.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>74999.500000</td>
+      <td>68349.172873</td>
+      <td>2.003417e+07</td>
+      <td>47.129021</td>
+      <td>8.052733</td>
+      <td>1.792369</td>
+      <td>0.375842</td>
+      <td>0.224943</td>
+      <td>119.316547</td>
+      <td>12.597160</td>
+      <td>...</td>
+      <td>0.248204</td>
+      <td>0.044923</td>
+      <td>0.124692</td>
+      <td>0.058144</td>
+      <td>0.061996</td>
+      <td>-0.001000</td>
+      <td>0.009035</td>
+      <td>0.004813</td>
+      <td>0.000313</td>
+      <td>-0.000688</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>43301.414527</td>
+      <td>61103.875095</td>
+      <td>5.364988e+04</td>
+      <td>49.536040</td>
+      <td>7.864956</td>
+      <td>1.760640</td>
+      <td>0.548677</td>
+      <td>0.417546</td>
+      <td>177.168419</td>
+      <td>3.919576</td>
+      <td>...</td>
+      <td>0.045804</td>
+      <td>0.051743</td>
+      <td>0.201410</td>
+      <td>0.029186</td>
+      <td>0.035692</td>
+      <td>3.772386</td>
+      <td>3.286071</td>
+      <td>2.517478</td>
+      <td>1.288988</td>
+      <td>1.038685</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>1.991000e+07</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.500000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>-9.168192</td>
+      <td>-5.558207</td>
+      <td>-9.639552</td>
+      <td>-4.153899</td>
+      <td>-6.546556</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>37499.750000</td>
+      <td>11156.000000</td>
+      <td>1.999091e+07</td>
+      <td>10.000000</td>
+      <td>1.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>75.000000</td>
+      <td>12.500000</td>
+      <td>...</td>
+      <td>0.243615</td>
+      <td>0.000038</td>
+      <td>0.062474</td>
+      <td>0.035334</td>
+      <td>0.033930</td>
+      <td>-3.722303</td>
+      <td>-1.951543</td>
+      <td>-1.871846</td>
+      <td>-1.057789</td>
+      <td>-0.437034</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>74999.500000</td>
+      <td>51638.000000</td>
+      <td>2.003091e+07</td>
+      <td>30.000000</td>
+      <td>6.000000</td>
+      <td>1.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>110.000000</td>
+      <td>15.000000</td>
+      <td>...</td>
+      <td>0.257798</td>
+      <td>0.000812</td>
+      <td>0.095866</td>
+      <td>0.057014</td>
+      <td>0.058484</td>
+      <td>1.624076</td>
+      <td>-0.358053</td>
+      <td>-0.130753</td>
+      <td>-0.036245</td>
+      <td>0.141246</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>112499.250000</td>
+      <td>118841.250000</td>
+      <td>2.007111e+07</td>
+      <td>66.000000</td>
+      <td>13.000000</td>
+      <td>3.000000</td>
+      <td>1.000000</td>
+      <td>0.000000</td>
+      <td>150.000000</td>
+      <td>15.000000</td>
+      <td>...</td>
+      <td>0.265297</td>
+      <td>0.102009</td>
+      <td>0.125243</td>
+      <td>0.079382</td>
+      <td>0.087491</td>
+      <td>2.844357</td>
+      <td>1.255022</td>
+      <td>1.776933</td>
+      <td>0.942813</td>
+      <td>0.680378</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>149999.000000</td>
+      <td>196812.000000</td>
+      <td>2.015121e+07</td>
+      <td>247.000000</td>
+      <td>39.000000</td>
+      <td>7.000000</td>
+      <td>6.000000</td>
+      <td>1.000000</td>
+      <td>19312.000000</td>
+      <td>15.000000</td>
+      <td>...</td>
+      <td>0.291838</td>
+      <td>0.151420</td>
+      <td>1.404936</td>
+      <td>0.160791</td>
+      <td>0.222787</td>
+      <td>12.357011</td>
+      <td>18.819042</td>
+      <td>13.847792</td>
+      <td>11.147669</td>
+      <td>8.658418</td>
+    </tr>
+  </tbody>
+</table>
+<p>8 rows × 30 columns</p>
+</div>
+
+
+
+
+<pre><code class="lang-python">testB_data.describe()
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>SaleID</th>
+      <th>name</th>
+      <th>regDate</th>
+      <th>model</th>
+      <th>brand</th>
+      <th>bodyType</th>
+      <th>fuelType</th>
+      <th>gearbox</th>
+      <th>power</th>
+      <th>kilometer</th>
+      <th>...</th>
+      <th>v_5</th>
+      <th>v_6</th>
+      <th>v_7</th>
+      <th>v_8</th>
+      <th>v_9</th>
+      <th>v_10</th>
+      <th>v_11</th>
+      <th>v_12</th>
+      <th>v_13</th>
+      <th>v_14</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>50000.000000</td>
+      <td>50000.000000</td>
+      <td>5.000000e+04</td>
+      <td>50000.00000</td>
+      <td>50000.000000</td>
+      <td>48496.000000</td>
+      <td>47076.000000</td>
+      <td>48032.000000</td>
+      <td>50000.000000</td>
+      <td>50000.000000</td>
+      <td>...</td>
+      <td>50000.000000</td>
+      <td>50000.000000</td>
+      <td>50000.000000</td>
+      <td>50000.000000</td>
+      <td>50000.000000</td>
+      <td>50000.000000</td>
+      <td>50000.000000</td>
+      <td>50000.000000</td>
+      <td>50000.000000</td>
+      <td>50000.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>224999.500000</td>
+      <td>68505.606100</td>
+      <td>2.003401e+07</td>
+      <td>47.64948</td>
+      <td>8.087140</td>
+      <td>1.793736</td>
+      <td>0.376498</td>
+      <td>0.226953</td>
+      <td>119.766960</td>
+      <td>12.598260</td>
+      <td>...</td>
+      <td>0.248147</td>
+      <td>0.044624</td>
+      <td>0.124693</td>
+      <td>0.058198</td>
+      <td>0.062113</td>
+      <td>0.019633</td>
+      <td>0.002759</td>
+      <td>0.004342</td>
+      <td>0.004570</td>
+      <td>-0.007209</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>14433.901067</td>
+      <td>61032.124271</td>
+      <td>5.351615e+04</td>
+      <td>49.90741</td>
+      <td>7.899648</td>
+      <td>1.764970</td>
+      <td>0.549281</td>
+      <td>0.418866</td>
+      <td>206.313348</td>
+      <td>3.912519</td>
+      <td>...</td>
+      <td>0.045836</td>
+      <td>0.051664</td>
+      <td>0.201440</td>
+      <td>0.029171</td>
+      <td>0.035723</td>
+      <td>3.764095</td>
+      <td>3.289523</td>
+      <td>2.515912</td>
+      <td>1.287194</td>
+      <td>1.044718</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>200000.000000</td>
+      <td>1.000000</td>
+      <td>1.991000e+07</td>
+      <td>0.00000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.500000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>-9.119719</td>
+      <td>-5.662163</td>
+      <td>-8.291868</td>
+      <td>-4.157649</td>
+      <td>-6.098192</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>212499.750000</td>
+      <td>11315.000000</td>
+      <td>1.999100e+07</td>
+      <td>11.00000</td>
+      <td>1.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>75.000000</td>
+      <td>12.500000</td>
+      <td>...</td>
+      <td>0.243436</td>
+      <td>0.000035</td>
+      <td>0.062519</td>
+      <td>0.035413</td>
+      <td>0.033880</td>
+      <td>-3.675196</td>
+      <td>-1.963928</td>
+      <td>-1.865406</td>
+      <td>-1.048722</td>
+      <td>-0.440706</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>224999.500000</td>
+      <td>52215.000000</td>
+      <td>2.003091e+07</td>
+      <td>30.00000</td>
+      <td>6.000000</td>
+      <td>1.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>110.000000</td>
+      <td>15.000000</td>
+      <td>...</td>
+      <td>0.257818</td>
+      <td>0.000801</td>
+      <td>0.095880</td>
+      <td>0.056804</td>
+      <td>0.058749</td>
+      <td>1.632134</td>
+      <td>-0.375537</td>
+      <td>-0.138943</td>
+      <td>-0.036352</td>
+      <td>0.136849</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>237499.250000</td>
+      <td>118710.750000</td>
+      <td>2.007110e+07</td>
+      <td>66.00000</td>
+      <td>13.000000</td>
+      <td>3.000000</td>
+      <td>1.000000</td>
+      <td>0.000000</td>
+      <td>150.000000</td>
+      <td>15.000000</td>
+      <td>...</td>
+      <td>0.265263</td>
+      <td>0.101654</td>
+      <td>0.125470</td>
+      <td>0.079387</td>
+      <td>0.087624</td>
+      <td>2.846205</td>
+      <td>1.263451</td>
+      <td>1.775632</td>
+      <td>0.945239</td>
+      <td>0.685555</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>249999.000000</td>
+      <td>196808.000000</td>
+      <td>2.015121e+07</td>
+      <td>246.00000</td>
+      <td>39.000000</td>
+      <td>7.000000</td>
+      <td>6.000000</td>
+      <td>1.000000</td>
+      <td>19211.000000</td>
+      <td>15.000000</td>
+      <td>...</td>
+      <td>0.291176</td>
+      <td>0.153403</td>
+      <td>1.411559</td>
+      <td>0.157458</td>
+      <td>0.211304</td>
+      <td>12.177864</td>
+      <td>18.789496</td>
+      <td>13.384828</td>
+      <td>5.635374</td>
+      <td>2.649768</td>
+    </tr>
+  </tbody>
+</table>
+<p>8 rows × 29 columns</p>
+</div>
+
+
+
+<h2><span id="数据特征">数据特征</span></h2><pre><code class="lang-python">## 提取数值型特征列名
+numerical_cols = train_data.select_dtypes(exclude=&#39;object&#39;).columns
+print(numerical_cols)
+</code></pre>
+<pre><code>Index([&#39;SaleID&#39;, &#39;name&#39;, &#39;regDate&#39;, &#39;model&#39;, &#39;brand&#39;, &#39;bodyType&#39;, &#39;fuelType&#39;,
+       &#39;gearbox&#39;, &#39;power&#39;, &#39;kilometer&#39;, &#39;regionCode&#39;, &#39;seller&#39;, &#39;offerType&#39;,
+       &#39;creatDate&#39;, &#39;price&#39;, &#39;v_0&#39;, &#39;v_1&#39;, &#39;v_2&#39;, &#39;v_3&#39;, &#39;v_4&#39;, &#39;v_5&#39;, &#39;v_6&#39;,
+       &#39;v_7&#39;, &#39;v_8&#39;, &#39;v_9&#39;, &#39;v_10&#39;, &#39;v_11&#39;, &#39;v_12&#39;, &#39;v_13&#39;, &#39;v_14&#39;],
+      dtype=&#39;object&#39;)
+</code></pre><pre><code class="lang-python">## 提取非数值型特征列名
+categorical_cols = train_data.select_dtypes(include=&#39;object&#39;).columns
+print(categorical_cols)
+</code></pre>
+<pre><code>Index([&#39;notRepairedDamage&#39;], dtype=&#39;object&#39;)
+</code></pre><h2><span id="训练集和测试集">训练集和测试集</span></h2><pre><code class="lang-python">## 选择特征列
+feature_cols = [col for col in numerical_cols if col not in [&#39;SaleID&#39;, &#39;name&#39;, &#39;regDate&#39;,&#39;creatDate&#39;,&#39;price&#39;,&#39;model&#39;,&#39;brand&#39;,&#39;regionCode&#39;,&#39;seller&#39;]]
+feature_cols = [col for col in feature_cols if &#39;Type&#39; not in col]
+</code></pre>
+<pre><code class="lang-python">## 提取特征列、标签列构造训练集和测试集
+X_train = train_data[feature_cols]  ## 训练集特征
+y_train = train_data[&#39;price&#39;]  ## 训练集标签
+
+X_test = testB_data[feature_cols]  ## 测试集标签
+
+print(&#39;X train shape is :&#39;, X_train.shape)
+print(&#39;X test shape is :&#39;, X_test.shape)
+</code></pre>
+<pre><code>X train shape is : (150000, 18)
+X test shape is : (50000, 18)
+</code></pre><pre><code class="lang-python">## 统计标签的基本分布信息
+def stat_info(data):
+    print(&#39;_min&#39;, np.min(data))
+    print(&#39;_max&#39;, np.max(data))
+    print(&#39;_mean&#39;, np.mean(data))
+    print(&#39;_ptp&#39;, np.ptp(data))  ## 最大值与最小值的差
+    print(&#39;_std&#39;, np.std(data))
+    print(&#39;_var&#39;, np.var(data))
+
+print(&#39;Stat of label:&#39;)
+stat_info(y_train)
+</code></pre>
+<pre><code>Stat of label:
+_min 11
+_max 99999
+_mean 5923.327333333334
+_ptp 99988
+_std 7501.973469876438
+_var 56279605.94272992
+</code></pre><pre><code class="lang-python">## label中可能存在异常大值
+## 绘制标签的直方图，查看标签分布
+plt.hist(y_train)
+plt.show()
+plt.close()
+</code></pre>
+<p><meta name="referrer" content="no-referrer"><br><img data-src="/2020/05/12/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-%E5%A4%A9%E6%B1%A0-%E4%BA%8C%E6%89%8B%E8%BD%A6%E4%BA%A4%E6%98%93%E6%95%B0%E6%8D%AE/output_23_0.png" class title="直方图"></p>
+<pre><code class="lang-python">## 填补缺失值
+X_train = X_train.fillna(-1)  ## 用-1填补
+X_test = X_test.fillna(-1)
+</code></pre>
+<h1><span id="模型">模型</span></h1><pre><code class="lang-python">## 利用XGBoost进行5折交叉验证
+xgb_reg = xgb.XGBRegressor(
+    n_estimators=120, 
+    learning_rate=0.1, 
+    gamma=0,
+    subsample=0.8,
+    colsample_bytree=0.9,
+    max_depth=7,
+    objective=&#39;reg:squarederror&#39;
+)
+scores_train = []
+scores = []
+
+## 5折交叉验证
+folds = StratifiedKFold(n_splits=5, shuffle=True, random_state=0)
+for train_idx, val_idx in folds.split(X_train, y_train):
+    train_X = X_train.iloc[train_idx].values
+    train_y = y_train.iloc[train_idx]
+    val_X = X_train.iloc[val_idx].values
+    val_y = y_train.iloc[val_idx]
+
+    xgb_reg.fit(train_X, train_y)
+    pred_train_y_xgb = xgb_reg.predict(train_X)
+    pred_val_y_xgb = xgb_reg.predict(val_X)
+
+    score_train = mean_absolute_error(train_y, pred_train_y_xgb)
+    scores_train.append(score_train)
+    score = mean_absolute_error(val_y, pred_val_y_xgb)
+    scores.append(score)
+
+print(&#39;Train MAE:&#39;, np.mean(score_train))
+print(&#39;Validation MAE:&#39;, np.mean(scores))
+</code></pre>
+<pre><code>Train MAE: 622.8334142499367
+Validation MAE: 713.7602744693083
+</code></pre><pre><code class="lang-python">## 定义xgb和lgb模型函数
+def XGB_model(x_train, y_train):
+    model = xgb.XGBRegressor(
+        n_estimators=150,
+        learning_rate=0.1,
+        gamma=0,
+        subsample=0.8,
+        colsample_bytree=0.9,
+        max_depth=7,
+        objective=&#39;reg:squarederror&#39;
+    )
+    model.fit(x_train, y_train)
+    return model
+
+def LGB_model(x_train, y_train):
+    estimator = lgb.LGBMRegressor(
+        num_leaves=127,
+        n_estimators=150
+    )
+    param_grid = {
+        &#39;learning_rate&#39;: [0.01, 0.05, 0.1, 0.2],
+    }
+    gbm = GridSearchCV(estimator, param_grid)
+    gbm.fit(x_train, y_train)
+    return gbm
+</code></pre>
+<pre><code class="lang-python">## 切分训练集和验证集
+x_train, x_val, yy_train, y_val = train_test_split(X_train, y_train, test_size=0.3)
+</code></pre>
+<pre><code class="lang-python">print(&quot;Training LGB ...&quot;)
+model_lgb = LGB_model(x_train, yy_train)
+val_lgb = model_lgb.predict(x_val)
+MAE_lgb = mean_absolute_error(y_val, val_lgb)
+print(&quot;MAE of val with LGB:&quot;, MAE_lgb)
+
+print(&quot;Predict LGB ...&quot;)
+model_lgb_pred = LGB_model(X_train, y_train)
+subB_lgb = model_lgb_pred.predict(X_test)
+print(&quot;stat of Predict LGB:&quot;)
+stat_info(subB_lgb)
+</code></pre>
+<pre><code>Training LGB ...
+MAE of val with LGB: 687.1736052804791
+Predict LGB ...
+stat of Predict LGB:
+_min -589.8793550785414
+_max 90760.26063584947
+_mean 5906.935218383807
+_ptp 91350.13999092802
+_std 7344.644970956768
+_var 53943809.749400534
+</code></pre><pre><code class="lang-python">print(&quot;Training XGB ...&quot;)
+model_xgb = XGB_model(x_train, yy_train)
+val_xgb = model_xgb.predict(x_val)
+MAE_xgb = mean_absolute_error(y_val, val_xgb)
+print(&quot;MAE of val with xgb:&quot;, MAE_xgb)
+
+print(&quot;Predict xgb ...&quot;)
+model_xgb_pred = XGB_model(X_train, y_train)
+subB_xgb = model_xgb_pred.predict(X_test)
+print(&quot;Stat of Predict XGB:&quot;)
+stat_info(subB_xgb)
+</code></pre>
+<pre><code>Training XGB ...
+MAE of val with xgb: 713.8987584188461
+Predict xgb ...
+Stat of Predict XGB:
+_min -318.2115
+_max 90140.625
+_mean 5910.76
+_ptp 90458.836
+_std 7345.9653
+_var 53963204.0
+</code></pre><pre><code class="lang-python">## 加权融合两模型的结果
+val_weighted = (1 - MAE_lgb / (MAE_xgb + MAE_lgb)) * val_lgb + (1 - MAE_xgb / (MAE_xgb + MAE_lgb) * val_xgb)
+val_weighted[val_weighted &lt; 0] = 10  ## 修正预测值为负的样本
+print(&quot;MAE of val with weighted ensemble:&quot;, mean_absolute_error(y_val, val_weighted))
+</code></pre>
+<pre><code>MAE of val with weighted ensemble: 5888.071354671169
+</code></pre><pre><code class="lang-python">sub_weighted = (1 - MAE_lgb / (MAE_xgb + MAE_lgb)) * subB_lgb + (1 - MAE_xgb / (MAE_xgb + MAE_lgb)) * subB_xgb
+</code></pre>
+<pre><code class="lang-python">## 查看预测值的直方图
+plt.hist(sub_weighted)
+plt.show()
+plt.close()
+</code></pre>
+<p><meta name="referrer" content="no-referrer"><br><img data-src="/2020/05/12/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-%E5%A4%A9%E6%B1%A0-%E4%BA%8C%E6%89%8B%E8%BD%A6%E4%BA%A4%E6%98%93%E6%95%B0%E6%8D%AE/output_33_0.png" class title="直方图"></p>
+<h1><span id="输出结果">输出结果</span></h1><pre><code class="lang-python">sub = pd.DataFrame()
+sub[&#39;SaleID&#39;] = testB_data.SaleID
+sub[&#39;price&#39;] = sub_weighted
+sub.to_csv(&quot;./sub_weighted.csv&quot;, index=False)
+</code></pre>
+<pre><code class="lang-python">sub.head()  ## 预览结果
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>SaleID</th>
+      <th>price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>200000</td>
+      <td>1177.409043</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>200001</td>
+      <td>1806.548102</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>200002</td>
+      <td>8560.376569</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>200003</td>
+      <td>1346.403363</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>200004</td>
+      <td>2074.413901</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://github.com/ShootingWang/ShootingWang.github.io/2020/05/12/sql-sql%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ShootingWang">
+      <meta itemprop="description" content="统计一只狗，梦想有只猫">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ShootingWang">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/05/12/sql-sql%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A/" class="post-title-link" itemprop="url">SQL | 《sql必知必会》</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-05-12 21:27:26 / 修改时间：22:49:29" itemprop="dateCreated datePublished" datetime="2020-05-12T21:27:26+08:00">2020-05-12</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">数据库</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>《SQL必知必会》读书笔记</p>
+<h1><span id="基本">基本</span></h1><ul>
+<li><strong>数据库</strong>（database）：保存有组织的数据的容器<ul>
+<li>通常是一个文件或一组文件</li>
+</ul>
+</li>
+<li><strong>数据库管理系统</strong>（DBMS，Database Management System）：数据库软件<ul>
+<li>数据库是通过DBMS创建和操作的容器</li>
+</ul>
+</li>
+<li><strong>表</strong>（table）：某种特定类型数据的结构化清单<ul>
+<li>存储在表中的数据是同一种类型的数据或清单</li>
+<li>在相同数据库中不能两次使用相同的表名，在不同的数据库中可以使用相同的表名</li>
+<li>表由列组成</li>
+</ul>
+</li>
+<li><strong>模式</strong>（schema）：关于数据库和表的布局及特性的信息</li>
+<li><strong>列</strong>（column）：表中的一个字段。所有表都是由一个或多个列组成的<ul>
+<li>数据库中的每个列都有相应的数据类型</li>
+</ul>
+</li>
+<li><strong>行</strong>（row）：表中的一个记录<ul>
+<li>表中的数据按行存储</li>
+</ul>
+</li>
+<li><strong>数据类型</strong>（datatype）：所允许的数据的类型<ul>
+<li>每个表列都有相应的数据类型，限制或允许该列中存储的数据</li>
+<li>数据类型还帮助正确地分类数据，并在优化磁盘使用方面起重要作用</li>
+</ul>
+</li>
+<li><strong>主键</strong>（primary key）：一列（或一组列），其值能够唯一标识表中每一行<ul>
+<li>主键用来表示一个特定的行</li>
+<li>主键应满足：<ul>
+<li>任意两行都不具有相同的主键值</li>
+<li>每一行都必须具有一个主键值（主键列不允许为NULL）</li>
+<li>主键列中的值不允许修改或更新</li>
+<li>主键值不能重复使用（如果某行从表中删除，它的主键不能赋给新行）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>子句</strong>（clause）：SQL语句由子句构成；一个子句通常由一个关键字加上所提供的数据组成 </li>
+</ul>
+<p><strong>SQL</strong>（发音为S-Q-L或sequel）：结构化查询语言（Structural Query Language），专门用来与数据库沟通的语言</p>
+<ul>
+<li>SQL语句不区分大小写<ul>
+<li>多数SQL开发人员喜欢对SQL关键字使用大写，而对列名和表名使用小写，使代码更易于阅读和调试</li>
+</ul>
+</li>
+<li>多条SQL语句必须以分号分隔<ul>
+<li>多数DBMS不需要在单条SQL语句后面加分号</li>
+</ul>
+</li>
+<li>在处理SQL语句时，其中所有空格都被忽略<ul>
+<li>多数SQL开发人员认为，将SQL语句分成多行更容易阅读和调试</li>
+</ul>
+</li>
+</ul>
+<h2><span id="注释">注释</span></h2><ul>
+<li>行内注释：使用两个连字符（<code>--</code>）或井字符（<code>#</code>）</li>
+<li>多行注释：<code>/*      */</code></li>
+</ul>
+<h1><span id="select语句">SELECT语句</span></h1><p>使用SELECT检索表数据，必须至少给出两条信息：</p>
+<ol>
+<li>想选择什么</li>
+<li>从什么地方选择</li>
+</ol>
+<p>从一个表中检索多列时，列名之间必须以逗号分隔</p>
+<p><u>表：SELECT的子句顺序</u></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><strong>子句</strong></th>
+<th style="text-align:center"><strong>说明</strong></th>
+<th style="text-align:center"><strong>是否必须使用</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">SELECT</td>
+<td style="text-align:center">要选择的列/表达式</td>
+<td style="text-align:center">是</td>
+</tr>
+<tr>
+<td style="text-align:center">FROM</td>
+<td style="text-align:center">从中检索数据的表</td>
+<td style="text-align:center">仅在从表中选择数据时使用</td>
+</tr>
+<tr>
+<td style="text-align:center">WHERE</td>
+<td style="text-align:center">行级过滤</td>
+<td style="text-align:center">否</td>
+</tr>
+<tr>
+<td style="text-align:center">GROUP BY</td>
+<td style="text-align:center">分组说明</td>
+<td style="text-align:center">仅在按组计算聚合时使用</td>
+</tr>
+<tr>
+<td style="text-align:center">HAVING</td>
+<td style="text-align:center">组级过滤</td>
+<td style="text-align:center">否</td>
+</tr>
+<tr>
+<td style="text-align:center">ORDER BY</td>
+<td style="text-align:center">输出排序顺序</td>
+<td style="text-align:center">否</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2><span id="as">AS</span></h2><p>AS：使用别名</p>
+<ul>
+<li>可选</li>
+<li>别名可以是一个单词或一个字符串；是字符串的话，需要放在引号中</li>
+<li>别名有时也称为导出列（derived column）</li>
+<li>Oracle不支持AS关键字；直接指定列名的别名即可</li>
+</ul>
+<h2><span id="distinct关键字">DISTINCT关键字</span></h2><p>DISTINCT关键字：指示数据库只返回不同的值</p>
+<ul>
+<li>作用于所有的列，而不仅仅是跟在它之后的那一列</li>
+</ul>
+<pre><code class="lang-sql">mysql&gt; SELECT vend_id FROM Products;
++---------+
+| vend_id |
++---------+
+|    1001 |
+|    1001 |
+|    1001 |
+|    1002 |
+|    1002 |
+|    1003 |
+|    1003 |
+|    1003 |
+|    1003 |
+|    1003 |
+|    1003 |
+|    1003 |
+|    1005 |
+|    1005 |
++---------+
+14 rows in set (0.01 sec)
+mysql&gt; SELECT DISTINCT vend_id FROM Products;
++---------+
+| vend_id |
++---------+
+|    1001 |
+|    1002 |
+|    1003 |
+|    1005 |
++---------+
+4 rows in set (0.01 sec)
+</code></pre>
+<h2><span id="限制返回的行数">限制返回的行数</span></h2><ul>
+<li>SQL Server或Acess：<code>TOP</code><pre><code class="lang-sql">-- 返回前5行数据
+SELECT TOP 5 prod_name FROM Products;
+</code></pre>
+</li>
+<li>DB2：<code>FETCH FIRST ... ROWS ONLY</code><pre><code class="lang-sql">SELECT TOP 5 prod_name FROM Products;
+SELECT prod_name FROM Products 
+FETCH FIRST 5 ROWS ONLY;
+</code></pre>
+</li>
+<li>Oracle：行计数器 <code>ROWNUM</code><pre><code class="lang-sql">SELECT prod_name FROM Products
+WHERE ROWNUM&lt;=5;
+</code></pre>
+</li>
+<li>MySQL、MariaDB、PostgreSQL、SQLite：<code>LIMIT</code><pre><code class="lang-sql">mysql&gt; SELECT prod_name FROM Products LIMIT 5;
++--------------+
+| prod_name    |
++--------------+
+| .5 ton anvil |
+| 1 ton anvil  |
+| 2 ton anvil  |
+| Detonator    |
+| Bird seed    |
++--------------+
+5 rows in set (0.00 sec)
+</code></pre>
+</li>
+</ul>
+<h2><span id="限制检索的起始位置">限制检索的起始位置</span></h2><p>限制检索的起始位置：<code>OFFSET</code></p>
+<pre><code class="lang-sql"> -- 从第3行起（不包括第3行）返回前5行数据
+ mysql&gt; SELECT prod_name FROM Products LIMIT 5 OFFSET 3;
+ +--------------+
+ | prod_name    |
+ +--------------+
+ | Detonator    |
+ | Bird seed    |
+ | Carrots      |
+ | Fuses        |
+ | JetPack 1000 |
+ +--------------+
+ 5 rows in set (0.00 sec)
+</code></pre>
+<ul>
+<li><p>第一个被检索的行是第0行，而不是第一行</p>
+<blockquote>
+<p><code>LIMIT 3 OFFSET 1</code> 会检索第2行，而不是第1行</p>
+</blockquote>
+</li>
+<li><p>MySQL和MariaDB会支持简化版的LIMIT OFFSET 语句，但是两个数字的顺序改变了</p>
+<blockquote>
+<p><code>LIMIT 5 OFFSET 3</code> 等价于 <code>LIMIT 3, 5</code></p>
+</blockquote>
+</li>
+</ul>
+<pre><code class="lang-sql">mysql&gt; SELECT prod_name FROM Products LIMIT 3, 5;
++--------------+
+| prod_name    |
++--------------+
+| Detonator    |
+| Bird seed    |
+| Carrots      |
+| Fuses        |
+| JetPack 1000 |
++--------------+
+5 rows in set (0.00 sec)
+</code></pre>
+<h1><span id="order-by子句">ORDER BY子句</span></h1><p>排序：ORDER BY 子句</p>
+<ul>
+<li>必须是SELECT语句中的最后一个子句</li>
+<li>默认升序排列（ASC）；如果要降序排列，需指定DESC</li>
+<li>DESC关键字只应用到直接位于其前面的列名</li>
+<li>如果对多个列进行降序排列，则必须对每一列指定DESC关键字</li>
+<li>大多数DBMS认为A与a相同；数据管理员可以改变这种行为</li>
+<li>按多个列排序的话，列名之间用逗号分开；先排序的在前面，后排序的在后面</li>
+<li>Microsoft Access不允许按别名排序<pre><code class="lang-sql">mysql&gt; SELECT prod_id, prod_price, prod_name
+  -&gt; FROM Products;
++---------+------------+----------------+
+| prod_id | prod_price | prod_name      |
++---------+------------+----------------+
+| ANV01   |       5.99 | .5 ton anvil   |
+| ANV02   |       9.99 | 1 ton anvil    |
+| ANV03   |      14.99 | 2 ton anvil    |
+| DTNTR   |      13.00 | Detonator      |
+| FB      |      10.00 | Bird seed      |
+| FC      |       2.50 | Carrots        |
+| FU1     |       3.42 | Fuses          |
+| JP1000  |      35.00 | JetPack 1000   |
+| JP2000  |      55.00 | JetPack 2000   |
+| OL1     |       8.99 | Oil can        |
+| SAFE    |      50.00 | Safe           |
+| SLING   |       4.49 | Sling          |
+| TNT1    |       2.50 | TNT (1 stick)  |
+| TNT2    |      10.00 | TNT (5 sticks) |
++---------+------------+----------------+
+14 rows in set (0.00 sec)
+mysql&gt; SELECT prod_id, prod_price, prod_name
+  -&gt; FROM Products
+  -&gt; ORDER BY prod_price, prod_name;
++---------+------------+----------------+
+| prod_id | prod_price | prod_name      |
++---------+------------+----------------+
+| FC      |       2.50 | Carrots        |
+| TNT1    |       2.50 | TNT (1 stick)  |
+| FU1     |       3.42 | Fuses          |
+| SLING   |       4.49 | Sling          |
+| ANV01   |       5.99 | .5 ton anvil   |
+| OL1     |       8.99 | Oil can        |
+| ANV02   |       9.99 | 1 ton anvil    |
+| FB      |      10.00 | Bird seed      |
+| TNT2    |      10.00 | TNT (5 sticks) |
+| DTNTR   |      13.00 | Detonator      |
+| ANV03   |      14.99 | 2 ton anvil    |
+| JP1000  |      35.00 | JetPack 1000   |
+| SAFE    |      50.00 | Safe           |
+| JP2000  |      55.00 | JetPack 2000   |
++---------+------------+----------------+
+14 rows in set (0.01 sec)
+</code></pre>
+</li>
+<li>还支持按照SELECT清单中的列的相对位置进行排序<pre><code class="lang-sql">mysql&gt; SELECT prod_id, prod_price, prod_name
+  -&gt; FROM Products
+  -&gt; ORDER BY 2, 3;
++---------+------------+----------------+
+| prod_id | prod_price | prod_name      |
++---------+------------+----------------+
+| FC      |       2.50 | Carrots        |
+| TNT1    |       2.50 | TNT (1 stick)  |
+| FU1     |       3.42 | Fuses          |
+| SLING   |       4.49 | Sling          |
+| ANV01   |       5.99 | .5 ton anvil   |
+| OL1     |       8.99 | Oil can        |
+| ANV02   |       9.99 | 1 ton anvil    |
+| FB      |      10.00 | Bird seed      |
+| TNT2    |      10.00 | TNT (5 sticks) |
+| DTNTR   |      13.00 | Detonator      |
+| ANV03   |      14.99 | 2 ton anvil    |
+| JP1000  |      35.00 | JetPack 1000   |
+| SAFE    |      50.00 | Safe           |
+| JP2000  |      55.00 | JetPack 2000   |
++---------+------------+----------------+
+14 rows in set (0.00 sec)
+</code></pre>
+</li>
+</ul>
+<h1><span id="where子句">WHERE子句</span></h1><p><strong>过滤数据</strong>：指定搜索条件（search criteria）/过滤条件（filter condition），只检索所需数据</p>
+<ul>
+<li>在SELECT语句中，数据根据WHERE子句中指定的搜索条件进行过滤</li>
+<li>WHERE子句在表名（FROM子句）之后给出<pre><code class="lang-sql">mysql&gt; SELECT prod_name, prod_price
+  -&gt; FROM Products
+  -&gt; WHERE prod_price=2.5;
++---------------+------------+
+| prod_name     | prod_price |
++---------------+------------+
+| Carrots       |       2.50 |
+| TNT (1 stick) |       2.50 |
++---------------+------------+
+2 rows in set (0.00 sec)
+</code></pre>
+</li>
+<li>同时使用ORDER BY子句和WHERE子句时，ORDER BY 应位于WHERE子句后面</li>
+</ul>
+<p><u>表：WHERE子句操作符</u></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><strong>操作符</strong></th>
+<th style="text-align:center"><strong>说明</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">=</td>
+<td style="text-align:center">等于</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt;&gt;  或  !=</td>
+<td style="text-align:center">不等于</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt;</td>
+<td style="text-align:center">小于</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt;=  或  !&gt;</td>
+<td style="text-align:center">小于等于 或 不大于</td>
+</tr>
+<tr>
+<td style="text-align:center">&gt;</td>
+<td style="text-align:center">大于</td>
+</tr>
+<tr>
+<td style="text-align:center">&gt;= 或 !&lt;</td>
+<td style="text-align:center">大于等于 或 不小于</td>
+</tr>
+<tr>
+<td style="text-align:center">BETWEEN</td>
+<td style="text-align:center">在指定的两个值之间</td>
+</tr>
+<tr>
+<td style="text-align:center">IS NULL</td>
+<td style="text-align:center">为NULL值</td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul>
+<li><code>!=</code> 和 <code>&lt;&gt;</code> 通常是可以互换的。但并非所有DBMS都支持这两种操作<blockquote>
+<p>eg：Microsoft Access支持 <code>&lt;&gt;</code>而不支持 <code>!=</code></p>
+</blockquote>
+</li>
+</ul>
+<h2><span id="between">BETWEEN</span></h2><p><code>BETWEEN</code>匹配范围中的所有值，包括指定的开始值和结束值</p>
+<pre><code class="lang-sql">mysql&gt; ##查找价格在5到10之间的产品
+mysql&gt; SELECT prod_name, prod_price
+    -&gt; FROM Products
+    -&gt; WHERE prod_price BETWEEN 5 AND 10;
++----------------+------------+
+| prod_name      | prod_price |
++----------------+------------+
+| .5 ton anvil   |       5.99 |
+| 1 ton anvil    |       9.99 |
+| Bird seed      |      10.00 |
+| Oil can        |       8.99 |
+| TNT (5 sticks) |      10.00 |
++----------------+------------+
+5 rows in set (0.01 sec)
+</code></pre>
+<h2><span id="null">NULL</span></h2><p><strong>NULL</strong>：无值/空值（no value），与字段包含0、空字符串、空格不同</p>
+<ul>
+<li>用<code>IS NULL</code>来检查某个值是否为NULL<pre><code class="lang-sql">mysql&gt; SELECT cust_name
+  -&gt; FROM CUSTOMERS
+  -&gt; WHERE cust_email IS NULL;
++-------------+
+| cust_name   |
++-------------+
+| Mouse House |
+| E Fudd      |
++-------------+
+2 rows in set (0.01 sec)
+</code></pre>
+</li>
+</ul>
+<h2><span id="操作符">操作符</span></h2><p>操作符（operator）：用来联结或改变WHERE子句中的子句的关键字，也称逻辑操作符（logical operator）</p>
+<ul>
+<li><code>AND</code>、<code>OR</code>、<code>IN</code>、<code>NOT</code></li>
+<li>SQL允许给出多个WHERE子句，使用AND或OR联结</li>
+</ul>
+<h3><span id="and">AND</span></h3><p>AND：用在WHERE子句中的关键字，用来指示检索满足所有给定条件的行</p>
+<pre><code class="lang-sql">mysql&gt; SELECT prod_id, prod_price, prod_name
+    -&gt; FROM Products
+    -&gt; WHERE vend_id=1003 AND prod_price &lt;= 4;
++---------+------------+---------------+
+| prod_id | prod_price | prod_name     |
++---------+------------+---------------+
+| FC      |       2.50 | Carrots       |
+| TNT1    |       2.50 | TNT (1 stick) |
++---------+------------+---------------+
+2 rows in set (0.00 sec)
+</code></pre>
+<h3><span id="or">OR</span></h3><p>OR：用在WHERE子句中的关键字，用来表示检索匹配任一给定条件的行</p>
+<ul>
+<li>AND的优先级高于OR</li>
+<li>同时使用AND和OR时，注意使用圆括号对操作符进行明确分组<pre><code class="lang-sql">mysql&gt; SELECT prod_id, prod_price, prod_name
+  -&gt; FROM Products
+  -&gt; WHERE vend_id=1003 OR vend_id=1002;
++---------+------------+----------------+
+| prod_id | prod_price | prod_name      |
++---------+------------+----------------+
+| DTNTR   |      13.00 | Detonator      |
+| FB      |      10.00 | Bird seed      |
+| FC      |       2.50 | Carrots        |
+| FU1     |       3.42 | Fuses          |
+| OL1     |       8.99 | Oil can        |
+| SAFE    |      50.00 | Safe           |
+| SLING   |       4.49 | Sling          |
+| TNT1    |       2.50 | TNT (1 stick)  |
+| TNT2    |      10.00 | TNT (5 sticks) |
++---------+------------+----------------+
+9 rows in set (0.00 sec)
+</code></pre>
+</li>
+</ul>
+<h3><span id="in">IN</span></h3><p>IN：WHERE子句中用来指定要匹配值的清单的关键字，功能与OR相当</p>
+<ul>
+<li>IN操作符一般比一组OR操作符执行得更快<pre><code class="lang-sql">mysql&gt; SELECT prod_id, prod_price, prod_name
+  -&gt; FROM Products
+  -&gt; WHERE vend_id IN (1002, 1003);
++---------+------------+----------------+
+| prod_id | prod_price | prod_name      |
++---------+------------+----------------+
+| DTNTR   |      13.00 | Detonator      |
+| FB      |      10.00 | Bird seed      |
+| FC      |       2.50 | Carrots        |
+| FU1     |       3.42 | Fuses          |
+| OL1     |       8.99 | Oil can        |
+| SAFE    |      50.00 | Safe           |
+| SLING   |       4.49 | Sling          |
+| TNT1    |       2.50 | TNT (1 stick)  |
+| TNT2    |      10.00 | TNT (5 sticks) |
++---------+------------+----------------+
+9 rows in set (0.00 sec)
+</code></pre>
+</li>
+</ul>
+<h3><span id="not">NOT</span></h3><p>NOT：WHERE子句中用来否定其后条件的关键字</p>
+<ul>
+<li>常与IN联合使用</li>
+<li>大多数DBMS允许使用<code>NOT</code>否定任何条件</li>
+<li>MariaDB支持使用<code>NOT</code>否定IN、BETWEEN、EXISTS子句<pre><code class="lang-sql">mysql&gt; SELECT prod_id, prod_price, prod_name
+  -&gt; FROM Products
+  -&gt; WHERE NOT vend_id=1003
+  -&gt; ORDER BY prod_name;
++---------+------------+--------------+
+| prod_id | prod_price | prod_name    |
++---------+------------+--------------+
+| ANV01   |       5.99 | .5 ton anvil |
+| ANV02   |       9.99 | 1 ton anvil  |
+| ANV03   |      14.99 | 2 ton anvil  |
+| FU1     |       3.42 | Fuses        |
+| JP1000  |      35.00 | JetPack 1000 |
+| JP2000  |      55.00 | JetPack 2000 |
+| OL1     |       8.99 | Oil can      |
++---------+------------+--------------+
+7 rows in set (0.00 sec)
+</code></pre>
+</li>
+</ul>
+<h1><span id="pattern">pattern</span></h1><p>搜索模式（search pattern）：由字面值、通配符或两者组合构成的搜索条件</p>
+<p>谓词（predicate）：操作符作为谓词时不是操作符</p>
+<ul>
+<li>从技术上来说，LIKE是谓词而不是操作符</li>
+</ul>
+<h2><span id="通配符">通配符</span></h2><p>通配符（wildcard）：用来匹配值得一部分的特殊字符</p>
+<ul>
+<li>通配符实质上是WHERE子句中有特殊意义的字符</li>
+<li>要在WHERE子句中使用通配符，必须使用LIKE操作符</li>
+<li>通配符搜索只能用于文本字段（字符串），非文本数据类型的字段不能使用通配符搜索</li>
+<li>不要过度使用通配符</li>
+<li>注意通配符的位置</li>
+</ul>
+<h3><span id>%</span></h3><p><code>%</code> ：百分号通配符，表示任何字符出现任意次数</p>
+<ul>
+<li>Microsoft Access使用的通配符是 <code>*</code> 而不是 <code>%</code></li>
+<li>根据DBMS的不同及其配置，搜索可以是区分大小写的</li>
+<li>通配符可在搜索模式的任意位置使用，并且可以使用多个通配符</li>
+<li><code>%</code> 代表搜索模式中给定位置的0个、1个或多个字符</li>
+<li><code>%</code> 不会匹配NULL<pre><code class="lang-sql">mysql&gt; ##找出prod_name以Jet开头的产品
+mysql&gt; SELECT prod_id, prod_name
+  -&gt; FROM Products
+  -&gt; WHERE prod_name LIKE &#39;Jet%&#39;;
++---------+--------------+
+| prod_id | prod_name    |
++---------+--------------+
+| JP1000  | JetPack 1000 |
+| JP2000  | JetPack 2000 |
++---------+--------------+
+2 rows in set (0.00 sec)
+</code></pre>
+</li>
+</ul>
+<h3><span id="_">_</span></h3><p><code>_</code> ：下划线通配符；用途与 <code>%</code> 一样，但是仅匹配单个字符</p>
+<ul>
+<li>DB2不支持下划线通配符</li>
+<li>Microsoft Access中对应的是 <code>？</code>而不是 <code>_</code></li>
+</ul>
+<h3><span id>[]</span></h3><p><code>[ ]</code> ：方括号通配符，用来指定一个字符集；必须匹配指定位置的一个字符</p>
+<ul>
+<li>只有Microsoft Access和SQL Server支持集合</li>
+<li>使用 <code>^</code> 来表示否定；Microsoft Access是用 <code>！</code>表示否定而不是 <code>^</code><pre><code class="lang-sql">## 找出姓名首字母为V或T的学生信息
+SELECT ID, name, dept_name
+FROM student
+WHERE name LIKE &#39;[VT]%&#39;;
+## 找出姓名首字母不为V且不为T的学生信息
+SELECT ID, name, dept_name
+FROM student
+WHERE name LIKE &#39;[^VT]%&#39;;
+</code></pre>
+</li>
+</ul>
+<h1><span id="计算字段">计算字段</span></h1><p>字段（field）：基本上与列（column）的意思相同，经常互换使用；数据库列一般称为列，而字段通常与计算字段一起使用</p>
+<h2><span id="拼接">拼接</span></h2><p><strong>拼接</strong>（concatenate）：将值联结到一起（将一个值附加到另一个值）构成单个值</p>
+<ul>
+<li>Access、SQL Server使用 <code>+</code> 拼接</li>
+<li>DB2、Oracle、PostgreSQL、SQLite、Open Office Base使用 <code>||</code> 拼接</li>
+<li>MySQL、MariaDB使用特殊函数 <code>CONCAT()</code></li>
+</ul>
+<pre><code class="lang-sql">mysql&gt; SELECT * FROM Vendors;
++---------+----------------+-----------------+-------------+------------+----------+--------------+
+| vend_id | vend_name      | vend_address    | vend_city   | vend_state | vend_zip | vend_country |
++---------+----------------+-----------------+-------------+------------+----------+--------------+
+|    1001 | Anvils R Us    | 123 Main Street | Southfield  | MI         | 48075    | USA          |
+|    1002 | LT Supplies    | 500 Park Street | Anytown     | OH         | 44333    | USA          |
+|    1003 | ACME           | 555 High Street | Los Angeles | CA         | 90046    | USA          |
+|    1004 | Furball Inc.   | 1000 5th Avenue | New York    | NY         | 11111    | USA          |
+|    1005 | Jet Set        | 42 Galaxy Road  | London      | NULL       | N16 6PS  | England      |
+|    1006 | Jouets Et Ours | 1 Rue Amusement | Paris       | NULL       | 45678    | France       |
++---------+----------------+-----------------+-------------+------------+----------+--------------+
+6 rows in set (0.00 sec)
+
+mysql&gt; SELECT CONCAT(vend_name, &#39;(&#39;, vend_country, &#39;)&#39;)
+    -&gt; FROM Vendors
+    -&gt; ORDER BY vend_name;
++-------------------------------------------+
+| CONCAT(vend_name, &#39;(&#39;, vend_country, &#39;)&#39;) |
++-------------------------------------------+
+| ACME(USA)                                 |
+| Anvils R Us(USA)                          |
+| Furball Inc.(USA)                         |
+| Jet Set(England)                          |
+| Jouets Et Ours(France)                    |
+| LT Supplies(USA)                          |
++-------------------------------------------+
+6 rows in set (0.01 sec)
+</code></pre>
+<p>SQL Server：</p>
+<pre><code class="lang-sql">SELECT ID + &#39;(&#39; + dept_name + &#39;)&#39;
+FROM student
+ORDER BY ID;
+</code></pre>
+<p><u>表 ：SQL算术操作符</u></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">操作符</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">+</td>
+<td style="text-align:center">加</td>
+</tr>
+<tr>
+<td style="text-align:center">-</td>
+<td style="text-align:center">减</td>
+</tr>
+<tr>
+<td style="text-align:center">*</td>
+<td style="text-align:center">乘</td>
+</tr>
+<tr>
+<td style="text-align:center">/</td>
+<td style="text-align:center">除</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h1><span id="字符串函数">字符串函数</span></h1><p>可移植（portable）：所编写的代码可以在多个系统上运行</p>
+<ul>
+<li>SQL函数不可移植</li>
+</ul>
+<h2><span id="substr">SUBSTR()</span></h2><p>提取字符串的组成部分：</p>
+<ul>
+<li>Access：使用 <code>MID()</code></li>
+<li>DB2、Oracle、PostgreSQL、SQLite：使用 <code>SUBSTR()</code></li>
+<li>MySQL、SQL Server：使用 <code>SUBSTRING()</code></li>
+</ul>
+<pre><code class="lang-sql">mysql&gt; SELECT * FROM Vendors;
++---------+----------------+-----------------+-------------+------------+----------+--------------+
+| vend_id | vend_name      | vend_address    | vend_city   | vend_state | vend_zip | vend_country |
++---------+----------------+-----------------+-------------+------------+----------+--------------+
+|    1001 | Anvils R Us    | 123 Main Street | Southfield  | MI         | 48075    | USA          |
+|    1002 | LT Supplies    | 500 Park Street | Anytown     | OH         | 44333    | USA          |
+|    1003 | ACME           | 555 High Street | Los Angeles | CA         | 90046    | USA          |
+|    1004 | Furball Inc.   | 1000 5th Avenue | New York    | NY         | 11111    | USA          |
+|    1005 | Jet Set        | 42 Galaxy Road  | London      | NULL       | N16 6PS  | England      |
+|    1006 | Jouets Et Ours | 1 Rue Amusement | Paris       | NULL       | 45678    | France       |
++---------+----------------+-----------------+-------------+------------+----------+--------------+
+6 rows in set (0.00 sec)
+mysql&gt; ## 截取vend_address的第4个字符（包括空格）开始(包括第4个字符)的所有字符
+mysql&gt; SELECT SUBSTRING(vend_address, 4)
+    -&gt; FROM Vendors;
++----------------------------+
+| SUBSTRING(vend_address, 4) |
++----------------------------+
+|  Main Street               |
+|  Park Street               |
+|  High Street               |
+| 0 5th Avenue               |
+| Galaxy Road                |
+| ue Amusement               |
++----------------------------+
+6 rows in set (0.00 sec)
+
+mysql&gt; ## 截取vend_address的倒数第4个字符开始的所有字符
+mysql&gt; SELECT SUBSTRING(vend_address, -4)
+    -&gt; FROM Vendors;
++-----------------------------+
+| SUBSTRING(vend_address, -4) |
++-----------------------------+
+| reet                        |
+| reet                        |
+| reet                        |
+| enue                        |
+| Road                        |
+| ment                        |
++-----------------------------+
+6 rows in set (0.00 sec)
+mysql&gt; ## 截取vend_address的第4-6个字符
+mysql&gt; SELECT SUBSTRING(vend_address, 4, 3)
+    -&gt; FROM Vendors;
++-------------------------------+
+| SUBSTRING(vend_address, 4, 3) |
++-------------------------------+
+|  Ma                           |
+|  Pa                           |
+|  Hi                           |
+| 0 5                           |
+| Gal                           |
+| ue                            |
++-------------------------------+
+6 rows in set (0.00 sec)
+-- 第4~6个字符，共有3个字符
+mysql&gt; ## 截取vend_address的倒数第4个~倒数第2个字符
+mysql&gt; SELECT SUBSTRING(vend_address, -4, 3)
+    -&gt; FROM Vendors;
++--------------------------------+
+| SUBSTRING(vend_address, -4, 3) |
++--------------------------------+
+| ree                            |
+| ree                            |
+| ree                            |
+| enu                            |
+| Roa                            |
+| men                            |
++--------------------------------+
+6 rows in set (0.00 sec)
+</code></pre>
+<h2><span id="trim">TRIM()</span></h2><p>TRIM() ：去掉字符串左右两边的空格</p>
+<h2><span id="rtrim">RTRIM()</span></h2><p>RTRIM() ：去掉字符串右边的所有空格</p>
+<h2><span id="ltrim">LTRIM()</span></h2><p>LTRIM() ：去掉字符串左边的所有空格</p>
+<h2><span id="left">LEFT()</span></h2><p>LEFT() ：返回字符串左边的字符</p>
+<h2><span id="right">RIGHT()</span></h2><p>RIGHT() ：返回字符串右边的字符</p>
+<h2><span id="length">LENGTH()</span></h2><p>LENGTH() ：返回字符串的长度；或<code>DATALENGTH()</code> 、<code>LEN()</code></p>
+<h2><span id="soundex">SOUNDEX()</span></h2><p>SOUNDEX() ：返回字符串的SOUNDEX值</p>
+<ul>
+<li>SOUNDEX是一个将任何文本字符串转换为描述其语音表示的字母数字模式的算法</li>
+<li>Microsoft Access、PostgreSQL不支持SOUNDEX()</li>
+</ul>
+<pre><code class="lang-sql">mysql&gt; ## 找出cust_contact中发音与Michael Green类似的记录
+mysql&gt; SELECT cust_name, cust_contact
+    -&gt; FROM Customers
+    -&gt; WHERE SOUNDEX(cust_contact)=SOUNDEX(&#39;Michael Green&#39;);
+</code></pre>
+<h1><span id="日期处理函数">日期处理函数</span></h1><p>DATEPART() ：返回日期的一部分</p>
+<ul>
+<li>Oracle没有<code>DATEPART()</code>函数，可借助 <code>TO_CHAR()</code> 和 <code>TO_NUMBER()</code><ul>
+<li><code>TO_CHAR()</code>用来提取日期的成分</li>
+<li><code>TO_NUMBER()</code>用来将提取出来的成分转换为数值；或用 <code>BETWEEN()</code></li>
+</ul>
+</li>
+</ul>
+<pre><code class="lang-sql">## 检索2012年的所有订单
+## SQL Server
+SELECT order_num FROM Orders
+WHERE DATEPART(yy, order_date) = 2012;
+
+## Access
+SELECT order_num FROM Orders
+WHERE DATEPART(&#39;yyyy&#39;, order_date) = 2012;
+
+## PostgreSQL
+SELECT order_num FROM Orders
+WHERE DATE_PART(&#39;year&#39;, order_date) = 2012;
+
+## Oracle
+SELECT order_num FROM Orders
+WHERE TO_NUMBER(TO_CHAR(order_date, &#39;YYYY&#39;)) = 2012;
+# 或
+SELECT order_num FROM Orders
+WHERE order_date BETWEEN TO_DATE(&#39;01-01-2012&#39;)
+AND TO_DATE(&#39;12-31-2012&#39;);
+
+## MySQL 或 MariaDB
+SELECT order_num FROM Orders
+WHERE YEAR(order_date) = 2012;
+
+## SQLite
+SELECT order_num FROM Orders
+WHERE STRFTIME(&#39;%Y&#39;, order_date) = &#39;2012&#39;;
+</code></pre>
+<h1><span id="数值处理函数">数值处理函数</span></h1><p><u>表 ：常用数值处理函数</u></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">操作符</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">ABS()</td>
+<td style="text-align:center">绝对值</td>
+</tr>
+<tr>
+<td style="text-align:center">COS()</td>
+<td style="text-align:center">余弦值</td>
+</tr>
+<tr>
+<td style="text-align:center">EXP()</td>
+<td style="text-align:center">指数值</td>
+</tr>
+<tr>
+<td style="text-align:center">PI()</td>
+<td style="text-align:center">圆周率Π</td>
+</tr>
+<tr>
+<td style="text-align:center">SIN()</td>
+<td style="text-align:center">正弦值</td>
+</tr>
+<tr>
+<td style="text-align:center">SQRT()</td>
+<td style="text-align:center">平方根</td>
+</tr>
+<tr>
+<td style="text-align:center">TAN()</td>
+<td style="text-align:center">正切</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h1><span id="聚合函数">聚合函数</span></h1><p>聚合函数（aggregate function）：对某些行运行的函数，计算并返回一个值</p>
+<p><u>表 ：SQL聚合函数</u></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">操作符</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">AVG()</td>
+<td style="text-align:center">平均值</td>
+</tr>
+<tr>
+<td style="text-align:center">COUNT()</td>
+<td style="text-align:center">行数</td>
+</tr>
+<tr>
+<td style="text-align:center">MAX()</td>
+<td style="text-align:center">最大值</td>
+</tr>
+<tr>
+<td style="text-align:center">MIN()</td>
+<td style="text-align:center">最小值</td>
+</tr>
+<tr>
+<td style="text-align:center">SUM()</td>
+<td style="text-align:center">求和</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2><span id="avg">AVG()</span></h2><p>AVG() ：平均值</p>
+<ul>
+<li>AVG() 只能用来确定特定数值列的平均值，列名必须作为函数参数给出</li>
+<li>AVG() 函数忽略列值为NULL的行</li>
+</ul>
+<h2><span id="count">COUNT()</span></h2><p>COUNT() ：计数</p>
+<ul>
+<li>COUNT(*) 对表中行的数目进行计数，不管表列中包含的是空值还是非空值</li>
+<li>COUNT(column) 对特定列中的具有值的行进行计数，忽略NULL值</li>
+</ul>
+<h2><span id="max">MAX()</span></h2><p>MAX() ：最大值</p>
+<ul>
+<li>一般用来找出最大的数值或日期值</li>
+<li>大多数DBMS允许它用来返回任意列中的最大值，包括返回文本列中的最大值</li>
+<li>在用于文本数据时，返回按该列排序后的最后一行</li>
+<li>忽略列值为NULL的行</li>
+</ul>
+<h2><span id="min">MIN()</span></h2><p>MIN() ：最小值</p>
+<ul>
+<li>一般用来找出最小的数值或日期值</li>
+<li>大多数DBMS允许它用来返回任意列中的最小值，包括返回文本列中的最小值</li>
+<li>在用于文本数据时，返回按该列排序后的最前面的一行</li>
+<li>略列值为NULL的行</li>
+</ul>
+<h2><span id="sum">SUM()</span></h2><p>SUM() ：求和</p>
+<ul>
+<li>忽略值为NULL的行</li>
+</ul>
+<h2><span id="distinct">DISTINCT</span></h2><p>DISTINCT：</p>
+<ul>
+<li>以上5个聚合函数，默认对所有的行执行计算，指定ALL参数或补指定（ALL是默认行为）</li>
+<li>若只考虑对不同的值的行执行计算，则应指定参数 DISTINCT</li>
+<li>Microsoft Access在聚合函数中不支持DISTINCT</li>
+<li>DISTINCT不能用于 COUNT(*)</li>
+<li>DISTINCT必须使用列名，不能用于计算或表达式</li>
+</ul>
+<pre><code class="lang-sql">mysql&gt; SELECT AVG(DISTINCT prod_price) AS avg_price
+    -&gt; FROM Products
+    -&gt; WHERE vend_id=1003;
++-----------+
+| avg_price |
++-----------+
+| 15.998000 |
++-----------+
+1 row in set (0.01 sec)
+</code></pre>
+<pre><code class="lang-sql">
+
+</code></pre>
+<pre><code class="lang-sql">
+
+</code></pre>
+<pre><code class="lang-sql">
+
+</code></pre>
+<pre><code class="lang-sql">
+
+</code></pre>
+<h1><span id="参考资料">参考资料</span></h1><p>[1] <a href="https://book.douban.com/subject/24250054/" target="_blank" rel="noopener">SQL必知必会</a><br>[2] <a href="https://forta.com/wp-content/uploads/books/0672327120/mysql_scripts.zip" target="_blank" rel="noopener">本文sql脚本参照</a><br>[3] <a href="https://mp.weixin.qq.com/s?__biz=MzU5NzkxODMxOA==&amp;mid=2247486117&amp;idx=1&amp;sn=47aa300d46873749282b368db799afd7&amp;chksm=fe4d5da4c93ad4b2a125503826e381610b79c3905feb0b194907d46bf771dc66b784325ddb30&amp;token=1415910284&amp;lang=zh_CN#rd" target="_blank" rel="noopener">Notes | SQL必知必会 | 01</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://github.com/ShootingWang/ShootingWang.github.io/2020/05/12/python-pandas%E6%A8%A1%E5%9D%97/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ShootingWang">
+      <meta itemprop="description" content="统计一只狗，梦想有只猫">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ShootingWang">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/05/12/python-pandas%E6%A8%A1%E5%9D%97/" class="post-title-link" itemprop="url">python-pandas模块</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-05-12 20:51:22 / 修改时间：21:24:05" itemprop="dateCreated datePublished" datetime="2020-05-12T20:51:22+08:00">2020-05-12</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%BD%AF%E4%BB%B6/" itemprop="url" rel="index"><span itemprop="name">软件</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1><span id="pandas">Pandas</span></h1><h2><span id="cut">.cut()</span></h2><p>将数组按区间划分</p>
+<pre><code class="lang-Python">cut(数据数组, 面元数组)  # 将数据数组按区间划分
+cut(数据数组, 面元个数, precision=2)  # 将数据数组均分；每个面元的间距一致
+# precision=2表示保留2位小数
+
+import pandas as pd
+
+ages = [23, 45, 21, 15, 24, 54, 36, 48, 57, 86, 61, 45]  # 数据数组
+cat2 = pd.cut(ages, 5)  # 不指定面元划分，只指定面元个数
+cat2
+# [(14.929, 29.2], (43.4, 57.6], (14.929, 29.2], (14.929, 29.2], (14.929, 29.2], ..., (43.4, 57.6], (43.4, 57.6], (71.8, 86.0], (57.6, 71.8], (43.4, 57.6]]
+# Length: 12
+# Categories (5, interval[float64]): [(14.929, 29.2] &lt; (29.2, 43.4] &lt; (43.4, 57.6] &lt; (57.6, 71.8] &lt; (71.8, 86.0]]
+</code></pre>
+<p>指定面元标签：</p>
+<pre><code class="lang-Python">import numpy as np
+import pandas as pd
+
+ages = np.random.randint(18, 89, size = 30)
+ages
+# array([75, 66,  1, 25, 38, 53, 29, 50, 88, 54, 87, 93, 53, 16, 51, 34, 69,
+#        60, 70, 58, 95, 76, 52,  8, 20, 48, 61,  1, 11, 18])
+df = pd.DataFrame()
+df[&#39;age&#39;] = ages
+# 一般来说：0（初生）-6岁为婴幼儿；7-12岁为少儿；
+# 13-17岁为青少年；18-45岁为青年；46-69岁为中年；&gt;69岁为老年。
+bins = [0, 6, 12, 18, 45, 69, 100]
+
+df[&#39;age_bin&#39;] = pd.cut(df[&#39;age&#39;], bins)
+df.head()
+#    age    age_bin
+# 0   75  (69, 100]
+# 1   66   (45, 69]
+# 2    1     (0, 6]
+# 3   25   (18, 45]
+# 4   38   (18, 45]
+
+# 给区间添加标签
+df[&#39;age_category&#39;] = pd.cut(df[&#39;age&#39;], bins, 
+  labels=[&#39;婴幼儿&#39;, &#39;少儿&#39;, &#39;青少年&#39;, &#39;青年&#39;, &#39;中年&#39;, &#39;老年&#39;])
+
+df.head().append(df.tail())  # 查看前5行和最后5行
+#     age    age_bin age_category
+# 0    75  (69, 100]           老年
+# 1    66   (45, 69]           中年
+# 2     1     (0, 6]          婴幼儿
+# 3    25   (18, 45]           青年
+# 4    38   (18, 45]           青年
+# 25   48   (45, 69]           中年
+# 26   61   (45, 69]           中年
+# 27    1     (0, 6]          婴幼儿
+# 28   11    (6, 12]           少儿
+# 29   18   (12, 18]          青少年
+</code></pre>
+<h3><span id="codes">.codes</span></h3><p>查看数据对应的面元编号</p>
+<pre><code class="lang-Python">import pandas as pd
+
+ages = [23, 45, 21, 15, 24, 54, 36, 48, 57, 86, 61, 45]  # 数据数组
+bins = [0,18, 30, 40, 50, 65,100]  # 面元数组
+
+cat = pd.cut(ages, bins)
+cat  # 返回每个数据对应的面元
+# [(18, 30], (40, 50], (18, 30], (0, 18], (18, 30], ..., (40, 50], (50, 65], (65, 100], (50, 65], (40, 50]]
+# Length: 12
+# Categories (6, interval[int64]): [(0, 18] &lt; (18, 30] &lt; (30, 40] &lt; (40, 50] &lt; (50, 65] &lt; (65, 100]]
+</code></pre>
+<h3><span id="value_counts">.value_counts()</span></h3><p>不同面元里含有的数据个数</p>
+<pre><code class="lang-Python">cat.value_counts()  # 不同面元里含有的数据个数
+# (0, 18]      1
+# (18, 30]     3
+# (30, 40]     1
+# (40, 50]     3
+# (50, 65]     3
+# (65, 100]    1
+# dtype: int64
+</code></pre>
+<h2><span id="qcut">.qcut()</span></h2><pre><code class="lang-Python">qcut(数据数组, 面元个数)  # 将数据数组均分；每个面元的数据个数相等
+</code></pre>
+<pre><code class="lang-Python">cat3 = pd.qcut(ages, 5)
+cat3
+# [(14.999, 23.2], (39.6, 46.8], (14.999, 23.2], (14.999, 23.2], (23.2, 39.6], ..., (46.8, 56.4], (56.4, 86.0], (56.4, 86.0], (56.4, 86.0], (39.6, 46.8]]
+# Length: 12
+# Categories (5, interval[float64]): [(14.999, 23.2] &lt; (23.2, 39.6] &lt; (39.6, 46.8] &lt; (46.8, 56.4] &lt; (56.4, 86.0]]
+cat3.value_counts()  # qcut()会尽可能保证每个面元包含的数据个数相等
+# (14.999, 23.2]    3
+# (23.2, 39.6]      2
+# (39.6, 46.8]      2
+# (46.8, 56.4]      2
+# (56.4, 86.0]      3
+# dtype: int64
+
+cat4 = pd.qcut(ages, 3)  # 将ages均分成3份，每个面元有4个数据
+cat4
+# [(14.999, 32.0], (32.0, 50.0], (14.999, 32.0], (14.999, 32.0], (14.999, 32.0], ..., (32.0, 50.0], (50.0, 86.0], (50.0, 86.0], (50.0, 86.0], (32.0, 50.0]]
+# Length: 12
+# Categories (3, interval[float64]): [(14.999, 32.0] &lt; (32.0, 50.0] &lt; (50.0, 86.0]]
+cat4.value_counts()
+# (14.999, 32.0]    4
+# (32.0, 50.0]      4
+# (50.0, 86.0]      4
+# dtype: int64
+</code></pre>
+<pre><code class="lang-Python">
+
+</code></pre>
+<h1><span id="参考资料">参考资料</span></h1><p>[] <a href></a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
     });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
+  }
 </script>
-<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">ShootingWang</p>
+  <div class="site-description" itemprop="description">统计一只狗，梦想有只猫</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">98</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">38</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/ShootingWang" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;ShootingWang"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ShootingWang</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+    
+
+  
 
 </body>
 </html>
