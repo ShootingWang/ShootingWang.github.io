@@ -224,7 +224,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1><span id="生成式模型">生成式模型</span></h1><p>生成式模型（Generative Model）：生成数据的分布的模型（有多个模型，将测试用例分别放进各个模型，最后比较其结果，选择最优的作为label）</p>
+        <h1 id="生成式模型"><a href="#生成式模型" class="headerlink" title="生成式模型"></a>生成式模型</h1><p>生成式模型（Generative Model）：生成数据的分布的模型（有多个模型，将测试用例分别放进各个模型，最后比较其结果，选择最优的作为label）</p>
 <ul>
 <li>会对$x$和$y$的联合分布$p(x,y)$进行建模，然后通过<a href="/2020/05/11/%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF/" title="贝叶斯公式">贝叶斯公式</a>来求得$p(y|x)$，最后选取使得$p(y|x)$最大的$y_i$，即<br>\begin{equation}<br>\begin{aligned}<br>y^*&amp;=\arg{\max_{y_i}p(y_i|x)}\\<br>&amp;=\arg{\max_{y_i}\frac{p(x|y_i)p(y_i)}{p(x)}}\\<br>&amp;=\arg{\max_{y_i}p(x|y_i)p(y_i)}\\<br>&amp;=\arg{\max_{y_i}p(x,y_i)}<br>\end{aligned}<br>\end{equation}</li>
 </ul>
@@ -242,7 +242,7 @@
 <li>
 </li>
 </ul>
-<h1><span id="判别式模型">判别式模型</span></h1><p>判别式模型（Discriminative Model）：判别数据输出量的模型（只有一个模型，将模型应用到测试用例中，生成label）</p>
+<h1 id="判别式模型"><a href="#判别式模型" class="headerlink" title="判别式模型"></a>判别式模型</h1><p>判别式模型（Discriminative Model）：判别数据输出量的模型（只有一个模型，将模型应用到测试用例中，生成label）</p>
 <ul>
 <li>会直接对$p(y|x)$进行建模</li>
 </ul>
@@ -257,7 +257,7 @@
 <li>条件随机场（CRF）</li>
 <li>CART（Classification and Regression Tree）</li>
 </ul>
-<h1><span id="参考资料">参考资料</span></h1><p>[1] <a href="https://blog.csdn.net/u013630349/article/details/47146425" target="_blank" rel="noopener">机器学习 之 生成式模型 VS 判别式模型</a><br>[2] <a href="https://www.cnblogs.com/kemaswill/p/3427422.html" target="_blank" rel="noopener">判别式模型 vs. 生成式模型</a></p>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p>[1] <a href="https://blog.csdn.net/u013630349/article/details/47146425" target="_blank" rel="noopener">机器学习 之 生成式模型 VS 判别式模型</a><br>[2] <a href="https://www.cnblogs.com/kemaswill/p/3427422.html" target="_blank" rel="noopener">判别式模型 vs. 生成式模型</a></p>
 
     </div>
 
@@ -378,7 +378,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#"><span class="nav-number">1.</span> <span class="nav-text">生成式模型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#"><span class="nav-number">2.</span> <span class="nav-text">判别式模型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#"><span class="nav-number">3.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#生成式模型"><span class="nav-number">1.</span> <span class="nav-text">生成式模型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#判别式模型"><span class="nav-number">2.</span> <span class="nav-text">判别式模型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料"><span class="nav-number">3.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

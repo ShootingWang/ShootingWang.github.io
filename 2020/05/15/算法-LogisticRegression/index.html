@@ -227,7 +227,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1><span id="logistic-regression">Logistic Regression</span></h1><p>逻辑回归（<strong>LR</strong>，Logistic Regression），是一种<u>对数几率模型</u>（Logit Model），常用于二分类问题（binary classification problems）</p>
+        <h1 id="Logistic-Regression"><a href="#Logistic-Regression" class="headerlink" title="Logistic Regression"></a>Logistic Regression</h1><p>逻辑回归（<strong>LR</strong>，Logistic Regression），是一种<u>对数几率模型</u>（Logit Model），常用于二分类问题（binary classification problems）</p>
 <ul>
 <li>逻辑回归和线性回归（Linear Regression）都是一种广义线性模型（GLM，Generalized Linear Model）</li>
 <li>属于<strong>有监督学习</strong>（Supervised Learning）</li>
@@ -245,7 +245,7 @@
 <li>……</li>
 </ul>
 </blockquote>
-<h2><span id="逻辑分布">逻辑分布</span></h2><p>Logistic分布是一种连续型分布，其分布函数（Cumulative distribution function）为</p>
+<h2 id="逻辑分布"><a href="#逻辑分布" class="headerlink" title="逻辑分布"></a>逻辑分布</h2><p>Logistic分布是一种连续型分布，其分布函数（Cumulative distribution function）为</p>
 <script type="math/tex; mode=display">F(x)=P(X\leq x)=\frac{1}{1+e^{-(x-\mu)/s}}=\frac{1}{2}+\frac{1}{2}\tanh\left(\frac{x-\mu}{2s}\right)</script><p><meta name="referrer" content="no-referrer"><br><img data-src="/2020/05/15/%E7%AE%97%E6%B3%95-LogisticRegression/LR-CDF.png" class title="不同取值参数对应的CDF"></p>
 <p>概率密度函数为</p>
 <script type="math/tex; mode=display">f(x)=F^\prime(x)=\frac{e^{-(x-\mu)/s}}{s\left(1+e^{-(x-\mu)/s}\right)^2}=\frac{1}{4s}\mathrm{sech}^2\left(\frac{x-2\mu}{2s}\right),\quad -\infty< x< +\infty</script><p>其中</p>
@@ -257,10 +257,10 @@
 <li>方差<script type="math/tex; mode=display">\mathrm{Var}(X)=\frac{s^2\pi^2}{3}</script></li>
 </ul>
 <p><meta name="referrer" content="no-referrer"><br><img data-src="/2020/05/15/%E7%AE%97%E6%B3%95-LogisticRegression/LR-pdf.png" class title="不同取值参数对应的pdf"></p>
-<h2><span id="逻辑函数">逻辑函数</span></h2><p>一个简单的Logistic函数：</p>
+<h2 id="逻辑函数"><a href="#逻辑函数" class="headerlink" title="逻辑函数"></a>逻辑函数</h2><p>一个简单的Logistic函数：</p>
 <script type="math/tex; mode=display">P(t)=\frac{1}{1+e^{-t}}</script><p><meta name="referrer" content="no-referrer"><br><img data-src="/2020/05/15/%E7%AE%97%E6%B3%95-LogisticRegression/LR-slog.png" class title="标准Logistic函数"></p>
 <p>广义Logistic曲线可以模拟一些人口增长的S形曲线：初始阶段大致是指数增长；然后开始变得饱和，增加变慢；最后，达到成熟时增加停止。</p>
-<h2><span id="逻辑回归">逻辑回归</span></h2><p>逻辑回归通常用于二分类问题（因变量是分类变量），用来表示某件事发生的可能性。</p>
+<h2 id="逻辑回归"><a href="#逻辑回归" class="headerlink" title="逻辑回归"></a>逻辑回归</h2><p>逻辑回归通常用于二分类问题（因变量是分类变量），用来表示某件事发生的可能性。</p>
 <p>Andrew Ng的CS229中的例子：根据肿瘤的大小（Tumor Size）$X$来判断肿瘤是否是恶性的（Malignant）$Y$。</p>
 <p>考虑构建线性回归模型$h_\theta(x)$，$h_\theta(x)\geq 0.5$ 为恶性肿瘤，$h_\theta(x)&lt;0.5$为良性肿瘤。<br>\begin{equation}<br>  Y=\left\{<br>\begin{array}{ll}<br>1, &amp; \mbox{如果} h_\theta(x)\geq 0.5\\<br>0, &amp; \mbox{如果} h_\theta(x)&lt;0.5<br>\end{array}\right.<br>\end{equation}</p>
 <p>Logistic函数/<strong>Sigmoid函数</strong>可以将任意实数值映射到(0,1)区间（不包括0和1，但可以无限接近）。因此，使用Sigmoid函数来将线性回归的结果按照一定的阈值分为2类（二分类问题）或更多类（多分类问题）。</p>
@@ -275,7 +275,7 @@
 <script type="math/tex; mode=display">Y|X=x_i\sim \mathrm{Bernoulli}\left(h_\theta(x_i)\right)</script><p>概率函数为</p>
 <script type="math/tex; mode=display">P(y|x;\theta)=\left[h_\theta(x) \right]^y\left[1-h_\theta(x) \right]^{1-y}</script><p>使用训练数据集$x=\{x_1,x_2,\cdots,x_n\}$（特征数据）和$y=\{y_1,y_2\cdots,y_n\}$（分类数据）构建回归模型。</p>
 <p>如何求解逻辑回归方程中的参数？通常使用极大似然法。</p>
-<h3><span id="极大似然法">极大似然法</span></h3><p>$n$个独立样本的似然函数为</p>
+<h3 id="极大似然法"><a href="#极大似然法" class="headerlink" title="极大似然法"></a>极大似然法</h3><p>$n$个独立样本的似然函数为</p>
 <script type="math/tex; mode=display">L(\theta)=\Pi_{i=1}^nP(y_i|x_i;\theta)=\Pi_{i=1}^nh_\theta(x_i)^{y_i}\left[1-h_\theta(x_i) \right]^{1-y_i}</script><p>对数似然函数为<br>\begin{equation}<br>\begin{aligned}<br>  l(\theta)=\log{L(\theta)}&amp;=\sum_{i=1}^n\left\{y_i\log{h_\theta(x_i)}+(1-y_i)\log{\left[1-h_\theta(x_i) \right]}\right\}\\<br>  &amp;= \sum_{i=1}^n\left\{y_i\theta^Tx_i-\log{\left[1+e^{\theta^Tx_i} \right]}\right\}<br>\end{aligned}<br>\end{equation}<br>其中</p>
 <script type="math/tex; mode=display">\log{h_\theta(x_i)}=\log{\frac{e^{\theta^Tx_i}}{1+e^{\theta^Tx_i}}}=\theta^Tx_i-\log{\left[1+e^{\theta^Tx_i}\right]}</script><script type="math/tex; mode=display">\log{\left[1-h_\theta(x_i)\right]}=\log{\frac{1}{1+e^{\theta^Tx_i}}}=-\log{\left[1+e^{\theta^Tx_i}\right]}</script><script type="math/tex; mode=display">\max{L(\theta)}\Leftrightarrow\max{l(\theta)}\Leftrightarrow\min{\{-l(\theta)\}}</script><p>其中$-l(\theta)=-\log{L(\theta)}$称为<strong>交叉熵误差函数</strong>（cross-entropy error function）。</p>
 <p>考虑$p+1$维的参数$\theta=(\theta_0,\theta_1,\cdots,\theta_p)^T$，其中$\theta_0$ 为线性回归方程$z=\theta^Tx$的截距。<br>\begin{equation}<br>\theta=\left(<br>\begin{array}{c}<br>  \theta_0\\<br>  \theta_1\\<br>  \theta_2\\<br>  \vdots\\<br>  \theta_p<br>\end{array}<br>\right),\quad<br>x_i=\left(<br>\begin{array}{c}<br>  1\\<br>  x_{i1}\\<br>  x_{i2}\\<br>  \vdots\\<br>  x_{ip}<br>\end{array}<br>\right)<br>\end{equation}<br>对数似然函数$l(\theta)$分别对$\theta_j\ (j=0,1,\cdots,p)$求偏导，并令导数为零</p>
@@ -284,7 +284,7 @@
 <p>这里$x_i$的第一个元素为1，因此由上式可得</p>
 <script type="math/tex; mode=display">\sum_{i=1}^ny_i=\sum_{i=1}^nh_\theta(x_i)</script><p>表示$Y$取值为1的样本量（$n$个样本中得恶性肿瘤的人数）等于“事件”（如肿瘤为恶性肿瘤）发生的概率和。</p>
 <p>当$p$较小时，score equation可得到解析解（精确解）；但当$p$较大时，score equation 往往得不到解析解。这时，可以考虑使用Newton-Raphson算法求得数值解（numerical solution）。</p>
-<h3><span id="newton-raphson算法">Newton-Raphson算法</span></h3><p>首先计算二阶偏导（Hessian Matrix）：<br>\begin{equation}<br>\begin{aligned}<br>\frac{\partial^2l(\theta)}{\partial{\theta_k}\partial{\theta_j}}&amp;=\frac{\partial}{\partial{\theta_k}}\sum_{i=1}^n\left\{x_{ij}\left[y_i-h_\theta(x_i)\right]\right\}\\<br>&amp;=\frac{\partial}{\partial{\theta_k}}\sum_{i=1}^n\left\{x_{ij}\left[y_i-\frac{e^{\theta^Tx_i}}{1+e^{\theta^Tx_i}}\right]\right\}\\<br>&amp;=\sum_{i=1}^nx_{ij}\left\{-\frac{e^{\theta^Tx_i}x_{ik}(1+e^{\theta^Tx_i})-e^{\theta^Tx_i}e^{\theta^Tx_i}x_{ik}}{\left(1+e^{\theta^Tx_i}\right)^2}\right\}\\<br>&amp;=-\sum_{i=1}^nx_{ij}x_{ik}\frac{e^{\theta^Tx_i}}{1+e^{\theta^Tx_i}}\left(1-\frac{e^{\theta^Tx_i}}{1+e^{\theta^Tx_i}}\right)\\<br>&amp;=-\sum_{i=1}^nx_{ij}x_{ij}h_\theta(x_i)\left[1-h_\theta(x_i)\right]<br>\end{aligned}<br>\end{equation}<br>其中$j,k=0,1,\cdots,p$。</p>
+<h3 id="Newton-Raphson算法"><a href="#Newton-Raphson算法" class="headerlink" title="Newton-Raphson算法"></a>Newton-Raphson算法</h3><p>首先计算二阶偏导（Hessian Matrix）：<br>\begin{equation}<br>\begin{aligned}<br>\frac{\partial^2l(\theta)}{\partial{\theta_k}\partial{\theta_j}}&amp;=\frac{\partial}{\partial{\theta_k}}\sum_{i=1}^n\left\{x_{ij}\left[y_i-h_\theta(x_i)\right]\right\}\\<br>&amp;=\frac{\partial}{\partial{\theta_k}}\sum_{i=1}^n\left\{x_{ij}\left[y_i-\frac{e^{\theta^Tx_i}}{1+e^{\theta^Tx_i}}\right]\right\}\\<br>&amp;=\sum_{i=1}^nx_{ij}\left\{-\frac{e^{\theta^Tx_i}x_{ik}(1+e^{\theta^Tx_i})-e^{\theta^Tx_i}e^{\theta^Tx_i}x_{ik}}{\left(1+e^{\theta^Tx_i}\right)^2}\right\}\\<br>&amp;=-\sum_{i=1}^nx_{ij}x_{ik}\frac{e^{\theta^Tx_i}}{1+e^{\theta^Tx_i}}\left(1-\frac{e^{\theta^Tx_i}}{1+e^{\theta^Tx_i}}\right)\\<br>&amp;=-\sum_{i=1}^nx_{ij}x_{ij}h_\theta(x_i)\left[1-h_\theta(x_i)\right]<br>\end{aligned}<br>\end{equation}<br>其中$j,k=0,1,\cdots,p$。</p>
 <p><strong>Hessian Matrix</strong>为</p>
 <script type="math/tex; mode=display">\frac{\partial^2l(\theta)}{\partial\theta\partial\theta^T}=-\sum_{i=1}^nx_ix_i^Th_\theta(x_i)[1- h_\theta(x_i)]</script><p>由$\theta^{old}$开始，Newton-Raphson的更新步骤（updating step）为</p>
 <script type="math/tex; mode=display">\theta^{new}=\theta^{old}-\left[\frac{\partial^2l(\theta)}{\partial\theta\partial\theta^T}\right]^{-1}\frac{\partial{l(\theta)}}{\partial\theta}</script><p>这里考虑步长为1的pure Newton’s Method。即</p>
@@ -297,7 +297,7 @@
 <p>$\theta^{new}$可以看作是$\bf{z}$关于$\bf{X}$回归的加权最小二乘（weighted least square）。</p>
 <p>式</p>
 <script type="math/tex; mode=display">\theta^{new}=\left(\mathbf{X}^T\mathbf{W}\mathbf{X}\right)^{-1}\mathbf{X}^T\mathbf{W}\mathbf{z}</script><p>这种迭代法也称为<u>迭代重加权最小二乘</u>（iteratively reweighted least squares，IRLS）。</p>
-<h1><span id="逻辑回归-vs-线性回归">逻辑回归 vs 线性回归</span></h1><div class="table-container">
+<h1 id="逻辑回归-vs-线性回归"><a href="#逻辑回归-vs-线性回归" class="headerlink" title="逻辑回归 vs 线性回归"></a>逻辑回归 vs 线性回归</h1><div class="table-container">
 <table>
 <thead>
 <tr>
@@ -330,7 +330,7 @@
 </tbody>
 </table>
 </div>
-<h1><span id="参考资料">参考资料</span></h1><ul>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
 <li><a href="https://zh.wikipedia.org/wiki/%E9%82%8F%E8%BC%AF%E8%BF%B4%E6%AD%B8" target="_blank" rel="noopener">维基百科-逻辑回归</a></li>
 <li><a href="https://zhuanlan.zhihu.com/p/28408516" target="_blank" rel="noopener">逻辑回归（Logistic Regression）（一）</a></li>
 <li><a href="https://en.wikipedia.org/wiki/Logistic_distribution" target="_blank" rel="noopener">维基百科-逻辑分布</a></li>
@@ -463,7 +463,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#"><span class="nav-number">1.</span> <span class="nav-text">Logistic Regression</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">1.1.</span> <span class="nav-text">逻辑分布</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">1.2.</span> <span class="nav-text">逻辑函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">1.3.</span> <span class="nav-text">逻辑回归</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#"><span class="nav-number">1.3.1.</span> <span class="nav-text">极大似然法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#"><span class="nav-number">1.3.2.</span> <span class="nav-text">Newton-Raphson算法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#"><span class="nav-number">2.</span> <span class="nav-text">逻辑回归 vs 线性回归</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#"><span class="nav-number">3.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Logistic-Regression"><span class="nav-number">1.</span> <span class="nav-text">Logistic Regression</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#逻辑分布"><span class="nav-number">1.1.</span> <span class="nav-text">逻辑分布</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#逻辑函数"><span class="nav-number">1.2.</span> <span class="nav-text">逻辑函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#逻辑回归"><span class="nav-number">1.3.</span> <span class="nav-text">逻辑回归</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#极大似然法"><span class="nav-number">1.3.1.</span> <span class="nav-text">极大似然法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Newton-Raphson算法"><span class="nav-number">1.3.2.</span> <span class="nav-text">Newton-Raphson算法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#逻辑回归-vs-线性回归"><span class="nav-number">2.</span> <span class="nav-text">逻辑回归 vs 线性回归</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料"><span class="nav-number">3.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

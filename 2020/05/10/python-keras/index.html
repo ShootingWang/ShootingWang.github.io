@@ -212,8 +212,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1><span id="keras">keras</span></h1><p>Keras 是一个用 Python 编写的高级神经网络 API，它能够以 TensorFlow, CNTK, 或者 Theano 作为后端运行。</p>
-<h2><span id="安装">安装</span></h2><ul>
+        <h1 id="keras"><a href="#keras" class="headerlink" title="keras"></a>keras</h1><p>Keras 是一个用 Python 编写的高级神经网络 API，它能够以 TensorFlow, CNTK, 或者 Theano 作为后端运行。</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><ul>
 <li>使用PyPI安装<pre><code class="lang-shell">## Anaconda Prompt
 pip install keras
 </code></pre>
@@ -224,7 +224,7 @@ python setup.py install
 </code></pre>
 </li>
 </ul>
-<h2><span id="后端">后端</span></h2><ul>
+<h2 id="后端"><a href="#后端" class="headerlink" title="后端"></a>后端</h2><ul>
 <li>Keras不处理如张量乘积、卷积等低级操作</li>
 <li>依赖于一个专门的、优化的张量操作库来完成这个操作，它可以作为 Keras 的「后端引擎」</li>
 <li>Keras 有三个后端实现可用: <ul>
@@ -235,14 +235,14 @@ python setup.py install
 </li>
 </ul>
 <p>配置见：<a href="https://keras.io/zh/backend/" target="_blank" rel="noopener">Keras后端配置</a></p>
-<h2><span id="sequential顺序模型">Sequential顺序模型</span></h2><ul>
+<h2 id="Sequential顺序模型"><a href="#Sequential顺序模型" class="headerlink" title="Sequential顺序模型"></a>Sequential顺序模型</h2><ul>
 <li>由多个网络层线性堆叠</li>
 </ul>
 <pre><code class="lang-Python">from keras.models import Sequential
 
 model = Sequential()
 </code></pre>
-<h3><span id="堆叠">堆叠</span></h3><p>可以使用<code>.add()</code>来堆叠模型：</p>
+<h3 id="堆叠"><a href="#堆叠" class="headerlink" title="堆叠"></a>堆叠</h3><p>可以使用<code>.add()</code>来堆叠模型：</p>
 <pre><code class="lang-Python">from keras.models import Sequential
 from keras.layers import Dense
 
@@ -276,7 +276,7 @@ model.add(Dense(32, input_shape=(784,)))
 model = Sequential()
 model.add(Dense(32, input_dim=784))
 </code></pre>
-<h3><span id="编译">编译</span></h3><p>构建模型之后，可以使用<code>.compile()</code>来配置学习过程。</p>
+<h3 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h3><p>构建模型之后，可以使用<code>.compile()</code>来配置学习过程。</p>
 <ul>
 <li>优化器<code>optimizer</code>：可以是现有优化器的字符串标识符，也可以是Optimizer类的实例。<ul>
 <li>现有优化器的字符串标识符：<code>rmsprop</code>、<code>adagrad</code></li>
@@ -322,7 +322,7 @@ model.compile(optimizer=&#39;rmsprop&#39;,
 </code></pre>
 </li>
 </ul>
-<h3><span id="训练">训练</span></h3><p>然后在训练集数据上进行迭代(<strong>训练</strong>)：</p>
+<h3 id="训练"><a href="#训练" class="headerlink" title="训练"></a>训练</h3><p>然后在训练集数据上进行迭代(<strong>训练</strong>)：</p>
 <pre><code class="lang-Python">model.fit(x_train, y_train, epochs=5, batch_size=32)
 </code></pre>
 <p><strong>评估</strong>模型性能:</p>
@@ -334,7 +334,7 @@ model.compile(optimizer=&#39;rmsprop&#39;,
 <pre><code class="lang-Python">
 
 </code></pre>
-<h1><span id="参考资料">参考资料</span></h1><p>[1] <a href="https://keras.io/zh/" target="_blank" rel="noopener">Keras中文文档</a></p>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p>[1] <a href="https://keras.io/zh/" target="_blank" rel="noopener">Keras中文文档</a></p>
 
     </div>
 
@@ -452,7 +452,7 @@ model.compile(optimizer=&#39;rmsprop&#39;,
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#"><span class="nav-number">1.</span> <span class="nav-text">keras</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">1.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">1.2.</span> <span class="nav-text">后端</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">1.3.</span> <span class="nav-text">Sequential顺序模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#"><span class="nav-number">1.3.1.</span> <span class="nav-text">堆叠</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#"><span class="nav-number">1.3.2.</span> <span class="nav-text">编译</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#"><span class="nav-number">1.3.3.</span> <span class="nav-text">训练</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#"><span class="nav-number">2.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#keras"><span class="nav-number">1.</span> <span class="nav-text">keras</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">1.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#后端"><span class="nav-number">1.2.</span> <span class="nav-text">后端</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sequential顺序模型"><span class="nav-number">1.3.</span> <span class="nav-text">Sequential顺序模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#堆叠"><span class="nav-number">1.3.1.</span> <span class="nav-text">堆叠</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编译"><span class="nav-number">1.3.2.</span> <span class="nav-text">编译</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#训练"><span class="nav-number">1.3.3.</span> <span class="nav-text">训练</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料"><span class="nav-number">2.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

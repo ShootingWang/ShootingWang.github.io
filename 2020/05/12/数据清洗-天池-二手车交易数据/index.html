@@ -221,18 +221,18 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1><span id="数据说明">数据说明</span></h1><p>数据来源：<a href="https://tianchi.aliyun.com/notebook-ai/detail?spm=5176.12281978.0.0.68021b43DOhgme&amp;postId=95422" target="_blank" rel="noopener">天池</a></p>
+        <h1 id="数据说明"><a href="#数据说明" class="headerlink" title="数据说明"></a>数据说明</h1><p>数据来源：<a href="https://tianchi.aliyun.com/notebook-ai/detail?spm=5176.12281978.0.0.68021b43DOhgme&amp;postId=95422" target="_blank" rel="noopener">天池</a></p>
 <p><a href="https://tianchi.aliyun.com/competition/entrance/231784/information" target="_blank" rel="noopener">数据详情</a></p>
 <blockquote>
 <p>本篇笔记的代码使用Jupyter Lab实现</p>
 </blockquote>
-<h2><span id="参考资料"><strong>参考资料</strong></span></h2><p>[1] <a href="https://tianchi.aliyun.com/notebook-ai/detail?spm=5176.12281978.0.0.6802593aEHEy7Y&amp;postId=95422" target="_blank" rel="noopener">Baseline方案</a></p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a><strong>参考资料</strong></h2><p>[1] <a href="https://tianchi.aliyun.com/notebook-ai/detail?spm=5176.12281978.0.0.6802593aEHEy7Y&amp;postId=95422" target="_blank" rel="noopener">Baseline方案</a></p>
 <p>[2] <a href="https://tianchi.aliyun.com/notebook-ai/detail?spm=5176.12281978.0.0.6802593aEHEy7Y&amp;postId=95456" target="_blank" rel="noopener">赛题理解</a></p>
 <p>[3] <a href="https://tianchi.aliyun.com/notebook-ai/detail?spm=5176.12281978.0.0.6802593aEHEy7Y&amp;postId=95457" target="_blank" rel="noopener">数据分析</a></p>
 <p>[4] <a href="https://tianchi.aliyun.com/notebook-ai/detail?spm=5176.12281978.0.0.6802593aEHEy7Y&amp;postId=95501" target="_blank" rel="noopener">特征工程</a></p>
 <p>[5] <a href="https://tianchi.aliyun.com/notebook-ai/detail?spm=5176.12281978.0.0.6802593aEHEy7Y&amp;postId=95460" target="_blank" rel="noopener">建模调参</a></p>
 <p>[6] <a href="https://tianchi.aliyun.com/notebook-ai/detail?spm=5176.12281978.0.0.6802593aEHEy7Y&amp;postId=95535" target="_blank" rel="noopener">模型融合</a></p>
-<h1><span id="数据处理amp分析">数据处理&amp;分析</span></h1><h2><span id="载入需要的模块">载入需要的模块</span></h2><pre><code class="lang-python">## 基础模块
+<h1 id="数据处理-amp-分析"><a href="#数据处理-amp-分析" class="headerlink" title="数据处理&amp;分析"></a>数据处理&amp;分析</h1><h2 id="载入需要的模块"><a href="#载入需要的模块" class="headerlink" title="载入需要的模块"></a>载入需要的模块</h2><pre><code class="lang-python">## 基础模块
 import numpy as np
 import pandas as pd
 import warnings
@@ -262,7 +262,7 @@ from sklearn.model_selection import GridSearchCV, StratifiedKFold
 from sklearn.model_selection import cross_val_score, train_test_split
 from sklearn.metrics import mean_squared_error, mean_absolute_error
 </code></pre>
-<h2><span id="载入数据">载入数据</span></h2><pre><code class="lang-python">## 读取数据
+<h2 id="载入数据"><a href="#载入数据" class="headerlink" title="载入数据"></a>载入数据</h2><pre><code class="lang-python">## 读取数据
 train_data = pd.read_csv(&quot;used_car_train_20200313.csv&quot;, sep=&quot; &quot;)
 testB_data = pd.read_csv(&quot;used_car_testB_20200421.csv&quot;, sep=&quot; &quot;)
 
@@ -274,7 +274,7 @@ print(&quot;Train data shape:&quot;, train_data.shape)
 print(&quot;TestB data shape:&quot;, testB_data.shape)
 </code></pre>
 <pre><code>TestB data shape: (50000, 30)
-</code></pre><h2><span id="数据预览">数据预览</span></h2><pre><code class="lang-python">train_data.head()  ## 预览前5行
+</code></pre><h2 id="数据预览"><a href="#数据预览" class="headerlink" title="数据预览"></a>数据预览</h2><pre><code class="lang-python">train_data.head()  ## 预览前5行
 </code></pre>
 <div>
 <style scoped>
@@ -1195,7 +1195,7 @@ train_data.describe()
 
 
 
-<h2><span id="数据特征">数据特征</span></h2><pre><code class="lang-python">## 提取数值型特征列名
+<h2 id="数据特征"><a href="#数据特征" class="headerlink" title="数据特征"></a>数据特征</h2><pre><code class="lang-python">## 提取数值型特征列名
 numerical_cols = train_data.select_dtypes(exclude=&#39;object&#39;).columns
 print(numerical_cols)
 </code></pre>
@@ -1209,7 +1209,7 @@ categorical_cols = train_data.select_dtypes(include=&#39;object&#39;).columns
 print(categorical_cols)
 </code></pre>
 <pre><code>Index([&#39;notRepairedDamage&#39;], dtype=&#39;object&#39;)
-</code></pre><h2><span id="训练集和测试集">训练集和测试集</span></h2><pre><code class="lang-python">## 选择特征列
+</code></pre><h2 id="训练集和测试集"><a href="#训练集和测试集" class="headerlink" title="训练集和测试集"></a>训练集和测试集</h2><pre><code class="lang-python">## 选择特征列
 feature_cols = [col for col in numerical_cols if col not in [&#39;SaleID&#39;, &#39;name&#39;, &#39;regDate&#39;,&#39;creatDate&#39;,&#39;price&#39;,&#39;model&#39;,&#39;brand&#39;,&#39;regionCode&#39;,&#39;seller&#39;]]
 feature_cols = [col for col in feature_cols if &#39;Type&#39; not in col]
 </code></pre>
@@ -1254,7 +1254,7 @@ plt.close()
 X_train = X_train.fillna(-1)  ## 用-1填补
 X_test = X_test.fillna(-1)
 </code></pre>
-<h1><span id="模型">模型</span></h1><pre><code class="lang-python">## 利用XGBoost进行5折交叉验证
+<h1 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h1><pre><code class="lang-python">## 利用XGBoost进行5折交叉验证
 xgb_reg = xgb.XGBRegressor(
     n_estimators=120, 
     learning_rate=0.1, 
@@ -1376,7 +1376,7 @@ plt.show()
 plt.close()
 </code></pre>
 <p><meta name="referrer" content="no-referrer"><br><img data-src="/2020/05/12/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-%E5%A4%A9%E6%B1%A0-%E4%BA%8C%E6%89%8B%E8%BD%A6%E4%BA%A4%E6%98%93%E6%95%B0%E6%8D%AE/output_33_0.png" class title="直方图"></p>
-<h1><span id="输出结果">输出结果</span></h1><pre><code class="lang-python">sub = pd.DataFrame()
+<h1 id="输出结果"><a href="#输出结果" class="headerlink" title="输出结果"></a>输出结果</h1><pre><code class="lang-python">sub = pd.DataFrame()
 sub[&#39;SaleID&#39;] = testB_data.SaleID
 sub[&#39;price&#39;] = sub_weighted
 sub.to_csv(&quot;./sub_weighted.csv&quot;, index=False)
@@ -1552,7 +1552,7 @@ sub.to_csv(&quot;./sub_weighted.csv&quot;, index=False)
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#"><span class="nav-number">1.</span> <span class="nav-text">数据说明</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">1.1.</span> <span class="nav-text">参考资料</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#"><span class="nav-number">2.</span> <span class="nav-text">数据处理&amp;分析</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">2.1.</span> <span class="nav-text">载入需要的模块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">2.2.</span> <span class="nav-text">载入数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">2.3.</span> <span class="nav-text">数据预览</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">2.4.</span> <span class="nav-text">数据特征</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">2.5.</span> <span class="nav-text">训练集和测试集</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#"><span class="nav-number">3.</span> <span class="nav-text">模型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#"><span class="nav-number">4.</span> <span class="nav-text">输出结果</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#数据说明"><span class="nav-number">1.</span> <span class="nav-text">数据说明</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料"><span class="nav-number">1.1.</span> <span class="nav-text">参考资料</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据处理-amp-分析"><span class="nav-number">2.</span> <span class="nav-text">数据处理&amp;分析</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#载入需要的模块"><span class="nav-number">2.1.</span> <span class="nav-text">载入需要的模块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#载入数据"><span class="nav-number">2.2.</span> <span class="nav-text">载入数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据预览"><span class="nav-number">2.3.</span> <span class="nav-text">数据预览</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据特征"><span class="nav-number">2.4.</span> <span class="nav-text">数据特征</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#训练集和测试集"><span class="nav-number">2.5.</span> <span class="nav-text">训练集和测试集</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#模型"><span class="nav-number">3.</span> <span class="nav-text">模型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#输出结果"><span class="nav-number">4.</span> <span class="nav-text">输出结果</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

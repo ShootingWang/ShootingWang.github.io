@@ -217,15 +217,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1><span id="过拟合">过拟合</span></h1><p>Overfitting</p>
+          <h1 id="过拟合"><a href="#过拟合" class="headerlink" title="过拟合"></a>过拟合</h1><p>Overfitting</p>
 <p>随着模型训练的进行，模型的复杂度增加，模型在训练数据集上的训练误差（training error）逐渐减小，但是在模型的复杂度达到一定程度时，模型在验证数据集上的误差反而随着模型的复杂度增加而增大，此时便发生了<strong>过拟合</strong>。</p>
-<h2><span id="防止过拟合">防止过拟合</span></h2><ul>
+<h2 id="防止过拟合"><a href="#防止过拟合" class="headerlink" title="防止过拟合"></a>防止过拟合</h2><ul>
 <li>early stopping</li>
 <li>Data augmentation</li>
 <li>Regularization</li>
 <li>Dropout</li>
 </ul>
-<h3><span id="early-stopping">Early Stopping</span></h3><p>迭代次数截断，在模型对训练数据集迭代收敛之前停止迭代来防止过拟合。</p>
+<h3 id="Early-Stopping"><a href="#Early-Stopping" class="headerlink" title="Early Stopping"></a>Early Stopping</h3><p>迭代次数截断，在模型对训练数据集迭代收敛之前停止迭代来防止过拟合。</p>
 <p>具体做法：<br>在每一个Epoch<sup><a href="#fn_1" id="reffn_1">1</a></sup>结束时，计算验证数据集的准确率（accuracy），当准确率不再提高时，就停止训练。</p>
 <blockquote>
 <p>一般的做法：在训练的过程中，记录到目前为止最好的验证集准确率，当连续n次Epoch没有达到最佳准确率时，则可认为准确率不再提高了，此时便可停止迭代。<br>即：</p>
@@ -234,7 +234,7 @@
 <blockquote id="fn_1">
 <sup>1</sup>. 一个Epoch集：对所有的训练数据的一轮遍历<a href="#reffn_1" title="Jump back to footnote [1] in the text."> &#8617;</a>
 </blockquote>
-<h3><span id="扩增数据集">扩增数据集</span></h3><p>获得更多的符合要求的数据</p>
+<h3 id="扩增数据集"><a href="#扩增数据集" class="headerlink" title="扩增数据集"></a>扩增数据集</h3><p>获得更多的符合要求的数据</p>
 <p>获取方法：</p>
 <ul>
 <li>从数据源头采集更多数据</li>
@@ -242,7 +242,7 @@
 <li>重采样（Bootstrap）</li>
 <li>根据当前数据集估计数据分布参数，使用该分布生成更多数据</li>
 </ul>
-<h3><span id="正则化">正则化</span></h3><p>在对目标函数/代价函数优化时，在目标函数/代价函数后添加一个正则项（惩罚项）——降低模型的复杂度</p>
+<h3 id="正则化"><a href="#正则化" class="headerlink" title="正则化"></a>正则化</h3><p>在对目标函数/代价函数优化时，在目标函数/代价函数后添加一个正则项（惩罚项）——降低模型的复杂度</p>
 <ul>
 <li>$l1$正则<ul>
 <li>使用$l1$正则可以得到稀疏的权值</li>
@@ -253,8 +253,8 @@
 </ul>
 </li>
 </ul>
-<h4><span id="l1正则">$l1$正则</span></h4><h4><span id="l2正则">$l2$正则</span></h4><h3><span id="dropout">Dropout</span></h3><p>通过修改ANN（人工神经网络）中隐藏层的神经元个数来防止ANN的过拟合</p>
-<h1><span id="参考资料">参考资料</span></h1><ul>
+<h4 id="l1-正则"><a href="#l1-正则" class="headerlink" title="$l1$正则"></a>$l1$正则</h4><h4 id="l2-正则"><a href="#l2-正则" class="headerlink" title="$l2$正则"></a>$l2$正则</h4><h3 id="Dropout"><a href="#Dropout" class="headerlink" title="Dropout"></a>Dropout</h3><p>通过修改ANN（人工神经网络）中隐藏层的神经元个数来防止ANN的过拟合</p>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
 <li><a href="https://blog.csdn.net/heyongluoyao8/article/details/49429629" target="_blank" rel="noopener">机器学习中防止过拟合的处理方法</a></li>
 <li><a href="https://juejin.im/post/5b441583f265da0fb01854c4" target="_blank" rel="noopener">机器学习中用来防止过拟合的方法有哪些？</a></li>
 </ul>
@@ -443,7 +443,7 @@
       
           <p>CLARANS<br>A Clustering Algorithm based in Randomized Search</p>
 <p>基于随机选择的聚类算法/随机搜索聚类算法</p>
-<h1><span id="clarans">CLARANS</span></h1><ul>
+<h1 id="CLARANS"><a href="#CLARANS" class="headerlink" title="CLARANS"></a>CLARANS</h1><ul>
 <li>一种分割聚类算法</li>
 <li>在CLARA算法的基础上提出的</li>
 <li>时间复杂度大约是$O(n^2)$</li>
@@ -451,11 +451,11 @@
 <li>对数据输入顺序敏感</li>
 <li>只能聚类凸形或球形边界</li>
 </ul>
-<h2><span id="原理">原理</span></h2><ol>
+<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><ol>
 <li>随机选择一个点作为当前点</li>
 <li>随机检查它周围不超过MaxNeighbor个的邻接点</li>
 </ol>
-<h1><span id="参考资料">参考资料</span></h1><p>[] <a href></a><br>[] <a href="https://zhuanlan.zhihu.com/p/22417979" target="_blank" rel="noopener">聚类分析中几种算法的比较</a><br>[] <a href="https://blog.csdn.net/u011955252/article/details/50805095" target="_blank" rel="noopener">文本挖掘之聚类算法之CLARANS（基于随机选择的聚类算法）</a></p>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p>[] <a href></a><br>[] <a href="https://zhuanlan.zhihu.com/p/22417979" target="_blank" rel="noopener">聚类分析中几种算法的比较</a><br>[] <a href="https://blog.csdn.net/u011955252/article/details/50805095" target="_blank" rel="noopener">文本挖掘之聚类算法之CLARANS（基于随机选择的聚类算法）</a></p>
 
       
     </div>
@@ -523,7 +523,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1><span id="scikit-learn">Scikit-learn</span></h1><h2><span id="liner_model">.liner_model</span></h2><h3><span id="linearregression">.LinearRegression()</span></h3><p>LinearRegression()：用于拟合线性回归模型。在sklearn库中的linear_model模块中。</p>
+          <h1 id="Scikit-learn"><a href="#Scikit-learn" class="headerlink" title="Scikit-learn"></a>Scikit-learn</h1><h2 id="liner-model"><a href="#liner-model" class="headerlink" title=".liner_model"></a>.liner_model</h2><h3 id="LinearRegression"><a href="#LinearRegression" class="headerlink" title=".LinearRegression()"></a>.LinearRegression()</h3><p>LinearRegression()：用于拟合线性回归模型。在sklearn库中的linear_model模块中。</p>
 <ul>
 <li><code>.fit()</code>：拟合模型</li>
 <li><code>.predict()</code>：预测结果</li>
@@ -641,7 +641,7 @@ plt.show()
 <pre><code class="lang-Python">
 
 </code></pre>
-<h1><span id="参考资料">参考资料</span></h1><p>[1] <a href="https://mp.weixin.qq.com/s?__biz=MzU5NzkxODMxOA==&amp;mid=2247484190&amp;idx=1&amp;sn=e7484e733ae84785a8940270cdf289b1&amp;chksm=fe4d541fc93add09a7d2730ec0ec9aeb04bc1d1fe38e9c662087e368b20bb20c087611191956&amp;token=1683818096&amp;lang=zh_CN#rd" target="_blank" rel="noopener">Sklearn学习：线性回归、岭回归、Lasso、Elastic Net</a></p>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p>[1] <a href="https://mp.weixin.qq.com/s?__biz=MzU5NzkxODMxOA==&amp;mid=2247484190&amp;idx=1&amp;sn=e7484e733ae84785a8940270cdf289b1&amp;chksm=fe4d541fc93add09a7d2730ec0ec9aeb04bc1d1fe38e9c662087e368b20bb20c087611191956&amp;token=1683818096&amp;lang=zh_CN#rd" target="_blank" rel="noopener">Sklearn学习：线性回归、岭回归、Lasso、Elastic Net</a></p>
 
       
     </div>
@@ -715,17 +715,17 @@ plt.show()
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1><span id="k-means">K-Means</span></h1><ul>
+          <h1 id="K-Means"><a href="#K-Means" class="headerlink" title="K-Means"></a>K-Means</h1><ul>
 <li>无监督学习</li>
 <li>$K$值无法自动获取</li>
 <li>初始聚类中心随机选择</li>
 </ul>
-<h2><span id="优点">优点</span></h2><ul>
+<h2 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h2><ul>
 <li>原理简单</li>
 <li>容易实现</li>
 <li>对大数据集有较高的学习效率，且具有可伸缩性</li>
 </ul>
-<h2><span id="缺点">缺点</span></h2><ul>
+<h2 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h2><ul>
 <li>收敛速度较慢</li>
 <li>算法的时间复杂度较高$O(nKt)$<ul>
 <li>$n$：样本点个数</li>
@@ -737,7 +737,7 @@ plt.show()
 <li>对噪声和离群点敏感</li>
 <li>结果不一定是全局最优，只能保证局部最优</li>
 </ul>
-<h2><span id="k-means-vs-k-medoids">K-Means vs K-Medoids</span></h2><ul>
+<h2 id="K-Means-vs-K-Medoids"><a href="#K-Means-vs-K-Medoids" class="headerlink" title="K-Means vs K-Medoids"></a>K-Means vs K-Medoids</h2><ul>
 <li>二者的区别主要在于：质心的选择</li>
 </ul>
 <div class="table-container">
@@ -768,7 +768,7 @@ plt.show()
 </tbody>
 </table>
 </div>
-<h2><span id="k-means-vs-knn">K-Means vs KNN</span></h2><div>
+<h2 id="K-Means-vs-KNN"><a href="#K-Means-vs-KNN" class="headerlink" title="K-Means vs KNN"></a>K-Means vs KNN</h2><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -817,7 +817,7 @@ plt.show()
 
 
 
-<h1><span id="参考资料">参考资料</span></h1><p>[] <a href></a><br>[] <a href></a><br>[] <a href="https://blog.csdn.net/databatman/article/details/50445561" target="_blank" rel="noopener">机器学习：K-means和K-medoids对比</a><br>[] <a href="https://www.cnblogs.com/nucdy/p/6349172.html" target="_blank" rel="noopener">KNN与K-Means的区别</a></p>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p>[] <a href></a><br>[] <a href></a><br>[] <a href="https://blog.csdn.net/databatman/article/details/50445561" target="_blank" rel="noopener">机器学习：K-means和K-medoids对比</a><br>[] <a href="https://www.cnblogs.com/nucdy/p/6349172.html" target="_blank" rel="noopener">KNN与K-Means的区别</a></p>
 
       
     </div>
@@ -886,7 +886,7 @@ plt.show()
 
       
           <p>《SQL进阶教程》读书笔记</p>
-<h1><span id="case表达式">CASE表达式</span></h1><p>CASE表达式：</p>
+<h1 id="CASE表达式"><a href="#CASE表达式" class="headerlink" title="CASE表达式"></a>CASE表达式</h1><p>CASE表达式：</p>
 <ul>
 <li>简单CASE表达式（simple case expression）</li>
 <li>搜索CASE表达式（searched case expression）</li>
@@ -1184,7 +1184,7 @@ GROUP BY std_id;
 +--------+-----------+
 5 rows in set (0.00 sec)
 </code></pre>
-<h2><span id="练习">练习</span></h2><p>找最大值</p>
+<h2 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h2><p>找最大值</p>
 <pre><code class="lang-sql">-- Greatests
 +------+---+---+---+
 | key0 | x | y | z |
@@ -1297,7 +1297,7 @@ SELECT key0,
 <pre><code class="lang-sql">
 
 </code></pre>
-<h1><span id="参考资料">参考资料</span></h1><p>[1] <a href="https://mp.weixin.qq.com/s?__biz=MzU5NzkxODMxOA==&amp;mid=2247486368&amp;idx=1&amp;sn=3ef74be0a7b7345cba471da1370f8986&amp;chksm=fe4d5ca1c93ad5b7481d65a8fa0a8b4e585714af57ad69437d599bbac5830910562a9097a12b&amp;token=1415910284&amp;lang=zh_CN#rd" target="_blank" rel="noopener">Notes | SQL进阶教程 | 001</a></p>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p>[1] <a href="https://mp.weixin.qq.com/s?__biz=MzU5NzkxODMxOA==&amp;mid=2247486368&amp;idx=1&amp;sn=3ef74be0a7b7345cba471da1370f8986&amp;chksm=fe4d5ca1c93ad5b7481d65a8fa0a8b4e585714af57ad69437d599bbac5830910562a9097a12b&amp;token=1415910284&amp;lang=zh_CN#rd" target="_blank" rel="noopener">Notes | SQL进阶教程 | 001</a></p>
 
       
     </div>
@@ -1362,18 +1362,18 @@ SELECT key0,
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1><span id="数据说明">数据说明</span></h1><p>数据来源：<a href="https://tianchi.aliyun.com/notebook-ai/detail?spm=5176.12281978.0.0.68021b43DOhgme&amp;postId=95422" target="_blank" rel="noopener">天池</a></p>
+          <h1 id="数据说明"><a href="#数据说明" class="headerlink" title="数据说明"></a>数据说明</h1><p>数据来源：<a href="https://tianchi.aliyun.com/notebook-ai/detail?spm=5176.12281978.0.0.68021b43DOhgme&amp;postId=95422" target="_blank" rel="noopener">天池</a></p>
 <p><a href="https://tianchi.aliyun.com/competition/entrance/231784/information" target="_blank" rel="noopener">数据详情</a></p>
 <blockquote>
 <p>本篇笔记的代码使用Jupyter Lab实现</p>
 </blockquote>
-<h2><span id="参考资料"><strong>参考资料</strong></span></h2><p>[1] <a href="https://tianchi.aliyun.com/notebook-ai/detail?spm=5176.12281978.0.0.6802593aEHEy7Y&amp;postId=95422" target="_blank" rel="noopener">Baseline方案</a></p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a><strong>参考资料</strong></h2><p>[1] <a href="https://tianchi.aliyun.com/notebook-ai/detail?spm=5176.12281978.0.0.6802593aEHEy7Y&amp;postId=95422" target="_blank" rel="noopener">Baseline方案</a></p>
 <p>[2] <a href="https://tianchi.aliyun.com/notebook-ai/detail?spm=5176.12281978.0.0.6802593aEHEy7Y&amp;postId=95456" target="_blank" rel="noopener">赛题理解</a></p>
 <p>[3] <a href="https://tianchi.aliyun.com/notebook-ai/detail?spm=5176.12281978.0.0.6802593aEHEy7Y&amp;postId=95457" target="_blank" rel="noopener">数据分析</a></p>
 <p>[4] <a href="https://tianchi.aliyun.com/notebook-ai/detail?spm=5176.12281978.0.0.6802593aEHEy7Y&amp;postId=95501" target="_blank" rel="noopener">特征工程</a></p>
 <p>[5] <a href="https://tianchi.aliyun.com/notebook-ai/detail?spm=5176.12281978.0.0.6802593aEHEy7Y&amp;postId=95460" target="_blank" rel="noopener">建模调参</a></p>
 <p>[6] <a href="https://tianchi.aliyun.com/notebook-ai/detail?spm=5176.12281978.0.0.6802593aEHEy7Y&amp;postId=95535" target="_blank" rel="noopener">模型融合</a></p>
-<h1><span id="数据处理amp分析">数据处理&amp;分析</span></h1><h2><span id="载入需要的模块">载入需要的模块</span></h2><pre><code class="lang-python">## 基础模块
+<h1 id="数据处理-amp-分析"><a href="#数据处理-amp-分析" class="headerlink" title="数据处理&amp;分析"></a>数据处理&amp;分析</h1><h2 id="载入需要的模块"><a href="#载入需要的模块" class="headerlink" title="载入需要的模块"></a>载入需要的模块</h2><pre><code class="lang-python">## 基础模块
 import numpy as np
 import pandas as pd
 import warnings
@@ -1403,7 +1403,7 @@ from sklearn.model_selection import GridSearchCV, StratifiedKFold
 from sklearn.model_selection import cross_val_score, train_test_split
 from sklearn.metrics import mean_squared_error, mean_absolute_error
 </code></pre>
-<h2><span id="载入数据">载入数据</span></h2><pre><code class="lang-python">## 读取数据
+<h2 id="载入数据"><a href="#载入数据" class="headerlink" title="载入数据"></a>载入数据</h2><pre><code class="lang-python">## 读取数据
 train_data = pd.read_csv(&quot;used_car_train_20200313.csv&quot;, sep=&quot; &quot;)
 testB_data = pd.read_csv(&quot;used_car_testB_20200421.csv&quot;, sep=&quot; &quot;)
 
@@ -1415,7 +1415,7 @@ print(&quot;Train data shape:&quot;, train_data.shape)
 print(&quot;TestB data shape:&quot;, testB_data.shape)
 </code></pre>
 <pre><code>TestB data shape: (50000, 30)
-</code></pre><h2><span id="数据预览">数据预览</span></h2><pre><code class="lang-python">train_data.head()  ## 预览前5行
+</code></pre><h2 id="数据预览"><a href="#数据预览" class="headerlink" title="数据预览"></a>数据预览</h2><pre><code class="lang-python">train_data.head()  ## 预览前5行
 </code></pre>
 <div>
 <style scoped>
@@ -2336,7 +2336,7 @@ train_data.describe()
 
 
 
-<h2><span id="数据特征">数据特征</span></h2><pre><code class="lang-python">## 提取数值型特征列名
+<h2 id="数据特征"><a href="#数据特征" class="headerlink" title="数据特征"></a>数据特征</h2><pre><code class="lang-python">## 提取数值型特征列名
 numerical_cols = train_data.select_dtypes(exclude=&#39;object&#39;).columns
 print(numerical_cols)
 </code></pre>
@@ -2350,7 +2350,7 @@ categorical_cols = train_data.select_dtypes(include=&#39;object&#39;).columns
 print(categorical_cols)
 </code></pre>
 <pre><code>Index([&#39;notRepairedDamage&#39;], dtype=&#39;object&#39;)
-</code></pre><h2><span id="训练集和测试集">训练集和测试集</span></h2><pre><code class="lang-python">## 选择特征列
+</code></pre><h2 id="训练集和测试集"><a href="#训练集和测试集" class="headerlink" title="训练集和测试集"></a>训练集和测试集</h2><pre><code class="lang-python">## 选择特征列
 feature_cols = [col for col in numerical_cols if col not in [&#39;SaleID&#39;, &#39;name&#39;, &#39;regDate&#39;,&#39;creatDate&#39;,&#39;price&#39;,&#39;model&#39;,&#39;brand&#39;,&#39;regionCode&#39;,&#39;seller&#39;]]
 feature_cols = [col for col in feature_cols if &#39;Type&#39; not in col]
 </code></pre>
@@ -2395,7 +2395,7 @@ plt.close()
 X_train = X_train.fillna(-1)  ## 用-1填补
 X_test = X_test.fillna(-1)
 </code></pre>
-<h1><span id="模型">模型</span></h1><pre><code class="lang-python">## 利用XGBoost进行5折交叉验证
+<h1 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h1><pre><code class="lang-python">## 利用XGBoost进行5折交叉验证
 xgb_reg = xgb.XGBRegressor(
     n_estimators=120, 
     learning_rate=0.1, 
@@ -2517,7 +2517,7 @@ plt.show()
 plt.close()
 </code></pre>
 <p><meta name="referrer" content="no-referrer"><br><img data-src="/2020/05/12/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-%E5%A4%A9%E6%B1%A0-%E4%BA%8C%E6%89%8B%E8%BD%A6%E4%BA%A4%E6%98%93%E6%95%B0%E6%8D%AE/output_33_0.png" class title="直方图"></p>
-<h1><span id="输出结果">输出结果</span></h1><pre><code class="lang-python">sub = pd.DataFrame()
+<h1 id="输出结果"><a href="#输出结果" class="headerlink" title="输出结果"></a>输出结果</h1><pre><code class="lang-python">sub = pd.DataFrame()
 sub[&#39;SaleID&#39;] = testB_data.SaleID
 sub[&#39;price&#39;] = sub_weighted
 sub.to_csv(&quot;./sub_weighted.csv&quot;, index=False)
@@ -2644,7 +2644,7 @@ sub.to_csv(&quot;./sub_weighted.csv&quot;, index=False)
 
       
           <p>《SQL必知必会》读书笔记</p>
-<h1><span id="基本">基本</span></h1><ul>
+<h1 id="基本"><a href="#基本" class="headerlink" title="基本"></a>基本</h1><ul>
 <li><strong>数据库</strong>（database）：保存有组织的数据的容器<ul>
 <li>通常是一个文件或一组文件</li>
 </ul>
@@ -2701,11 +2701,11 @@ sub.to_csv(&quot;./sub_weighted.csv&quot;, index=False)
 </ul>
 </li>
 </ul>
-<h2><span id="注释">注释</span></h2><ul>
+<h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><ul>
 <li>行内注释：使用两个连字符（<code>--</code>）或井字符（<code>#</code>）</li>
 <li>多行注释：<code>/*      */</code></li>
 </ul>
-<h1><span id="select语句">SELECT语句</span></h1><p>使用SELECT检索表数据，必须至少给出两条信息：</p>
+<h1 id="SELECT语句"><a href="#SELECT语句" class="headerlink" title="SELECT语句"></a>SELECT语句</h1><p>使用SELECT检索表数据，必须至少给出两条信息：</p>
 <ol>
 <li>想选择什么</li>
 <li>从什么地方选择</li>
@@ -2755,14 +2755,14 @@ sub.to_csv(&quot;./sub_weighted.csv&quot;, index=False)
 </tbody>
 </table>
 </div>
-<h2><span id="as">AS</span></h2><p>AS：使用别名</p>
+<h2 id="AS"><a href="#AS" class="headerlink" title="AS"></a>AS</h2><p>AS：使用别名</p>
 <ul>
 <li>可选</li>
 <li>别名可以是一个单词或一个字符串；是字符串的话，需要放在引号中</li>
 <li>别名有时也称为导出列（derived column）</li>
 <li>Oracle不支持AS关键字；直接指定列名的别名即可</li>
 </ul>
-<h2><span id="distinct关键字">DISTINCT关键字</span></h2><p>DISTINCT关键字：指示数据库只返回不同的值</p>
+<h2 id="DISTINCT关键字"><a href="#DISTINCT关键字" class="headerlink" title="DISTINCT关键字"></a>DISTINCT关键字</h2><p>DISTINCT关键字：指示数据库只返回不同的值</p>
 <ul>
 <li>作用于所有的列，而不仅仅是跟在它之后的那一列</li>
 </ul>
@@ -2797,7 +2797,7 @@ mysql&gt; SELECT DISTINCT vend_id FROM Products;
 +---------+
 4 rows in set (0.01 sec)
 </code></pre>
-<h2><span id="限制返回的行数">限制返回的行数</span></h2><ul>
+<h2 id="限制返回的行数"><a href="#限制返回的行数" class="headerlink" title="限制返回的行数"></a>限制返回的行数</h2><ul>
 <li>SQL Server或Acess：<code>TOP</code><pre><code class="lang-sql">-- 返回前5行数据
 SELECT TOP 5 prod_name FROM Products;
 </code></pre>
@@ -2825,7 +2825,7 @@ WHERE ROWNUM&lt;=5;
 </code></pre>
 </li>
 </ul>
-<h2><span id="限制检索的起始位置">限制检索的起始位置</span></h2><p>限制检索的起始位置：<code>OFFSET</code></p>
+<h2 id="限制检索的起始位置"><a href="#限制检索的起始位置" class="headerlink" title="限制检索的起始位置"></a>限制检索的起始位置</h2><p>限制检索的起始位置：<code>OFFSET</code></p>
 <pre><code class="lang-sql"> -- 从第3行起（不包括第3行）返回前5行数据
  mysql&gt; SELECT prod_name FROM Products LIMIT 5 OFFSET 3;
  +--------------+
@@ -2863,7 +2863,7 @@ WHERE ROWNUM&lt;=5;
 +--------------+
 5 rows in set (0.00 sec)
 </code></pre>
-<h1><span id="order-by子句">ORDER BY子句</span></h1><p>排序：ORDER BY 子句</p>
+<h1 id="ORDER-BY子句"><a href="#ORDER-BY子句" class="headerlink" title="ORDER BY子句"></a>ORDER BY子句</h1><p>排序：ORDER BY 子句</p>
 <ul>
 <li>必须是SELECT语句中的最后一个子句</li>
 <li>默认升序排列（ASC）；如果要降序排列，需指定DESC</li>
@@ -2941,7 +2941,7 @@ mysql&gt; SELECT prod_id, prod_price, prod_name
 </code></pre>
 </li>
 </ul>
-<h1><span id="where子句">WHERE子句</span></h1><p><strong>过滤数据</strong>：指定搜索条件（search criteria）/过滤条件（filter condition），只检索所需数据</p>
+<h1 id="WHERE子句"><a href="#WHERE子句" class="headerlink" title="WHERE子句"></a>WHERE子句</h1><p><strong>过滤数据</strong>：指定搜索条件（search criteria）/过滤条件（filter condition），只检索所需数据</p>
 <ul>
 <li>在SELECT语句中，数据根据WHERE子句中指定的搜索条件进行过滤</li>
 <li>WHERE子句在表名（FROM子句）之后给出<pre><code class="lang-sql">mysql&gt; SELECT prod_name, prod_price
@@ -3009,7 +3009,7 @@ mysql&gt; SELECT prod_id, prod_price, prod_name
 </blockquote>
 </li>
 </ul>
-<h2><span id="between">BETWEEN</span></h2><p><code>BETWEEN</code>匹配范围中的所有值，包括指定的开始值和结束值</p>
+<h2 id="BETWEEN"><a href="#BETWEEN" class="headerlink" title="BETWEEN"></a>BETWEEN</h2><p><code>BETWEEN</code>匹配范围中的所有值，包括指定的开始值和结束值</p>
 <pre><code class="lang-sql">mysql&gt; ##查找价格在5到10之间的产品
 mysql&gt; SELECT prod_name, prod_price
     -&gt; FROM Products
@@ -3025,7 +3025,7 @@ mysql&gt; SELECT prod_name, prod_price
 +----------------+------------+
 5 rows in set (0.01 sec)
 </code></pre>
-<h2><span id="null">NULL</span></h2><p><strong>NULL</strong>：无值/空值（no value），与字段包含0、空字符串、空格不同</p>
+<h2 id="NULL"><a href="#NULL" class="headerlink" title="NULL"></a>NULL</h2><p><strong>NULL</strong>：无值/空值（no value），与字段包含0、空字符串、空格不同</p>
 <ul>
 <li>用<code>IS NULL</code>来检查某个值是否为NULL<pre><code class="lang-sql">mysql&gt; SELECT cust_name
   -&gt; FROM CUSTOMERS
@@ -3040,12 +3040,12 @@ mysql&gt; SELECT prod_name, prod_price
 </code></pre>
 </li>
 </ul>
-<h2><span id="操作符">操作符</span></h2><p>操作符（operator）：用来联结或改变WHERE子句中的子句的关键字，也称逻辑操作符（logical operator）</p>
+<h2 id="操作符"><a href="#操作符" class="headerlink" title="操作符"></a>操作符</h2><p>操作符（operator）：用来联结或改变WHERE子句中的子句的关键字，也称逻辑操作符（logical operator）</p>
 <ul>
 <li><code>AND</code>、<code>OR</code>、<code>IN</code>、<code>NOT</code></li>
 <li>SQL允许给出多个WHERE子句，使用AND或OR联结</li>
 </ul>
-<h3><span id="and">AND</span></h3><p>AND：用在WHERE子句中的关键字，用来指示检索满足所有给定条件的行</p>
+<h3 id="AND"><a href="#AND" class="headerlink" title="AND"></a>AND</h3><p>AND：用在WHERE子句中的关键字，用来指示检索满足所有给定条件的行</p>
 <pre><code class="lang-sql">mysql&gt; SELECT prod_id, prod_price, prod_name
     -&gt; FROM Products
     -&gt; WHERE vend_id=1003 AND prod_price &lt;= 4;
@@ -3057,7 +3057,7 @@ mysql&gt; SELECT prod_name, prod_price
 +---------+------------+---------------+
 2 rows in set (0.00 sec)
 </code></pre>
-<h3><span id="or">OR</span></h3><p>OR：用在WHERE子句中的关键字，用来表示检索匹配任一给定条件的行</p>
+<h3 id="OR"><a href="#OR" class="headerlink" title="OR"></a>OR</h3><p>OR：用在WHERE子句中的关键字，用来表示检索匹配任一给定条件的行</p>
 <ul>
 <li>AND的优先级高于OR</li>
 <li>同时使用AND和OR时，注意使用圆括号对操作符进行明确分组<pre><code class="lang-sql">mysql&gt; SELECT prod_id, prod_price, prod_name
@@ -3080,7 +3080,7 @@ mysql&gt; SELECT prod_name, prod_price
 </code></pre>
 </li>
 </ul>
-<h3><span id="in">IN</span></h3><p>IN：WHERE子句中用来指定要匹配值的清单的关键字，功能与OR相当</p>
+<h3 id="IN"><a href="#IN" class="headerlink" title="IN"></a>IN</h3><p>IN：WHERE子句中用来指定要匹配值的清单的关键字，功能与OR相当</p>
 <ul>
 <li>IN操作符一般比一组OR操作符执行得更快<pre><code class="lang-sql">mysql&gt; SELECT prod_id, prod_price, prod_name
   -&gt; FROM Products
@@ -3102,7 +3102,7 @@ mysql&gt; SELECT prod_name, prod_price
 </code></pre>
 </li>
 </ul>
-<h3><span id="not">NOT</span></h3><p>NOT：WHERE子句中用来否定其后条件的关键字</p>
+<h3 id="NOT"><a href="#NOT" class="headerlink" title="NOT"></a>NOT</h3><p>NOT：WHERE子句中用来否定其后条件的关键字</p>
 <ul>
 <li>常与IN联合使用</li>
 <li>大多数DBMS允许使用<code>NOT</code>否定任何条件</li>
@@ -3125,12 +3125,12 @@ mysql&gt; SELECT prod_name, prod_price
 </code></pre>
 </li>
 </ul>
-<h1><span id="pattern">pattern</span></h1><p>搜索模式（search pattern）：由字面值、通配符或两者组合构成的搜索条件</p>
+<h1 id="pattern"><a href="#pattern" class="headerlink" title="pattern"></a>pattern</h1><p>搜索模式（search pattern）：由字面值、通配符或两者组合构成的搜索条件</p>
 <p>谓词（predicate）：操作符作为谓词时不是操作符</p>
 <ul>
 <li>从技术上来说，LIKE是谓词而不是操作符</li>
 </ul>
-<h2><span id="通配符">通配符</span></h2><p>通配符（wildcard）：用来匹配值得一部分的特殊字符</p>
+<h2 id="通配符"><a href="#通配符" class="headerlink" title="通配符"></a>通配符</h2><p>通配符（wildcard）：用来匹配值得一部分的特殊字符</p>
 <ul>
 <li>通配符实质上是WHERE子句中有特殊意义的字符</li>
 <li>要在WHERE子句中使用通配符，必须使用LIKE操作符</li>
@@ -3138,7 +3138,7 @@ mysql&gt; SELECT prod_name, prod_price
 <li>不要过度使用通配符</li>
 <li>注意通配符的位置</li>
 </ul>
-<h3><span id>%</span></h3><p><code>%</code> ：百分号通配符，表示任何字符出现任意次数</p>
+<h3 id><a href="#" class="headerlink" title="%"></a>%</h3><p><code>%</code> ：百分号通配符，表示任何字符出现任意次数</p>
 <ul>
 <li>Microsoft Access使用的通配符是 <code>*</code> 而不是 <code>%</code></li>
 <li>根据DBMS的不同及其配置，搜索可以是区分大小写的</li>
@@ -3158,12 +3158,12 @@ mysql&gt; SELECT prod_id, prod_name
 </code></pre>
 </li>
 </ul>
-<h3><span id="_">_</span></h3><p><code>_</code> ：下划线通配符；用途与 <code>%</code> 一样，但是仅匹配单个字符</p>
+<h3 id="-1"><a href="#-1" class="headerlink" title="_"></a>_</h3><p><code>_</code> ：下划线通配符；用途与 <code>%</code> 一样，但是仅匹配单个字符</p>
 <ul>
 <li>DB2不支持下划线通配符</li>
 <li>Microsoft Access中对应的是 <code>？</code>而不是 <code>_</code></li>
 </ul>
-<h3><span id>[]</span></h3><p><code>[ ]</code> ：方括号通配符，用来指定一个字符集；必须匹配指定位置的一个字符</p>
+<h3 id="-2"><a href="#-2" class="headerlink" title="[]"></a>[]</h3><p><code>[ ]</code> ：方括号通配符，用来指定一个字符集；必须匹配指定位置的一个字符</p>
 <ul>
 <li>只有Microsoft Access和SQL Server支持集合</li>
 <li>使用 <code>^</code> 来表示否定；Microsoft Access是用 <code>！</code>表示否定而不是 <code>^</code><pre><code class="lang-sql">## 找出姓名首字母为V或T的学生信息
@@ -3177,8 +3177,8 @@ WHERE name LIKE &#39;[^VT]%&#39;;
 </code></pre>
 </li>
 </ul>
-<h1><span id="计算字段">计算字段</span></h1><p>字段（field）：基本上与列（column）的意思相同，经常互换使用；数据库列一般称为列，而字段通常与计算字段一起使用</p>
-<h2><span id="拼接">拼接</span></h2><p><strong>拼接</strong>（concatenate）：将值联结到一起（将一个值附加到另一个值）构成单个值</p>
+<h1 id="计算字段"><a href="#计算字段" class="headerlink" title="计算字段"></a>计算字段</h1><p>字段（field）：基本上与列（column）的意思相同，经常互换使用；数据库列一般称为列，而字段通常与计算字段一起使用</p>
+<h2 id="拼接"><a href="#拼接" class="headerlink" title="拼接"></a>拼接</h2><p><strong>拼接</strong>（concatenate）：将值联结到一起（将一个值附加到另一个值）构成单个值</p>
 <ul>
 <li>Access、SQL Server使用 <code>+</code> 拼接</li>
 <li>DB2、Oracle、PostgreSQL、SQLite、Open Office Base使用 <code>||</code> 拼接</li>
@@ -3246,11 +3246,11 @@ ORDER BY ID;
 </tbody>
 </table>
 </div>
-<h1><span id="字符串函数">字符串函数</span></h1><p>可移植（portable）：所编写的代码可以在多个系统上运行</p>
+<h1 id="字符串函数"><a href="#字符串函数" class="headerlink" title="字符串函数"></a>字符串函数</h1><p>可移植（portable）：所编写的代码可以在多个系统上运行</p>
 <ul>
 <li>SQL函数不可移植</li>
 </ul>
-<h2><span id="substr">SUBSTR()</span></h2><p>提取字符串的组成部分：</p>
+<h2 id="SUBSTR"><a href="#SUBSTR" class="headerlink" title="SUBSTR()"></a>SUBSTR()</h2><p>提取字符串的组成部分：</p>
 <ul>
 <li>Access：使用 <code>MID()</code></li>
 <li>DB2、Oracle、PostgreSQL、SQLite：使用 <code>SUBSTR()</code></li>
@@ -3327,13 +3327,13 @@ mysql&gt; SELECT SUBSTRING(vend_address, -4, 3)
 +--------------------------------+
 6 rows in set (0.00 sec)
 </code></pre>
-<h2><span id="trim">TRIM()</span></h2><p>TRIM() ：去掉字符串左右两边的空格</p>
-<h2><span id="rtrim">RTRIM()</span></h2><p>RTRIM() ：去掉字符串右边的所有空格</p>
-<h2><span id="ltrim">LTRIM()</span></h2><p>LTRIM() ：去掉字符串左边的所有空格</p>
-<h2><span id="left">LEFT()</span></h2><p>LEFT() ：返回字符串左边的字符</p>
-<h2><span id="right">RIGHT()</span></h2><p>RIGHT() ：返回字符串右边的字符</p>
-<h2><span id="length">LENGTH()</span></h2><p>LENGTH() ：返回字符串的长度；或<code>DATALENGTH()</code> 、<code>LEN()</code></p>
-<h2><span id="soundex">SOUNDEX()</span></h2><p>SOUNDEX() ：返回字符串的SOUNDEX值</p>
+<h2 id="TRIM"><a href="#TRIM" class="headerlink" title="TRIM()"></a>TRIM()</h2><p>TRIM() ：去掉字符串左右两边的空格</p>
+<h2 id="RTRIM"><a href="#RTRIM" class="headerlink" title="RTRIM()"></a>RTRIM()</h2><p>RTRIM() ：去掉字符串右边的所有空格</p>
+<h2 id="LTRIM"><a href="#LTRIM" class="headerlink" title="LTRIM()"></a>LTRIM()</h2><p>LTRIM() ：去掉字符串左边的所有空格</p>
+<h2 id="LEFT"><a href="#LEFT" class="headerlink" title="LEFT()"></a>LEFT()</h2><p>LEFT() ：返回字符串左边的字符</p>
+<h2 id="RIGHT"><a href="#RIGHT" class="headerlink" title="RIGHT()"></a>RIGHT()</h2><p>RIGHT() ：返回字符串右边的字符</p>
+<h2 id="LENGTH"><a href="#LENGTH" class="headerlink" title="LENGTH()"></a>LENGTH()</h2><p>LENGTH() ：返回字符串的长度；或<code>DATALENGTH()</code> 、<code>LEN()</code></p>
+<h2 id="SOUNDEX"><a href="#SOUNDEX" class="headerlink" title="SOUNDEX()"></a>SOUNDEX()</h2><p>SOUNDEX() ：返回字符串的SOUNDEX值</p>
 <ul>
 <li>SOUNDEX是一个将任何文本字符串转换为描述其语音表示的字母数字模式的算法</li>
 <li>Microsoft Access、PostgreSQL不支持SOUNDEX()</li>
@@ -3343,7 +3343,7 @@ mysql&gt; SELECT cust_name, cust_contact
     -&gt; FROM Customers
     -&gt; WHERE SOUNDEX(cust_contact)=SOUNDEX(&#39;Michael Green&#39;);
 </code></pre>
-<h1><span id="日期处理函数">日期处理函数</span></h1><p>DATEPART() ：返回日期的一部分</p>
+<h1 id="日期处理函数"><a href="#日期处理函数" class="headerlink" title="日期处理函数"></a>日期处理函数</h1><p>DATEPART() ：返回日期的一部分</p>
 <ul>
 <li>Oracle没有<code>DATEPART()</code>函数，可借助 <code>TO_CHAR()</code> 和 <code>TO_NUMBER()</code><ul>
 <li><code>TO_CHAR()</code>用来提取日期的成分</li>
@@ -3380,7 +3380,7 @@ WHERE YEAR(order_date) = 2012;
 SELECT order_num FROM Orders
 WHERE STRFTIME(&#39;%Y&#39;, order_date) = &#39;2012&#39;;
 </code></pre>
-<h1><span id="数值处理函数">数值处理函数</span></h1><p><u>表 ：常用数值处理函数</u></p>
+<h1 id="数值处理函数"><a href="#数值处理函数" class="headerlink" title="数值处理函数"></a>数值处理函数</h1><p><u>表 ：常用数值处理函数</u></p>
 <div class="table-container">
 <table>
 <thead>
@@ -3421,7 +3421,7 @@ WHERE STRFTIME(&#39;%Y&#39;, order_date) = &#39;2012&#39;;
 </tbody>
 </table>
 </div>
-<h1><span id="聚合函数">聚合函数</span></h1><p>聚合函数（aggregate function）：对某些行运行的函数，计算并返回一个值</p>
+<h1 id="聚合函数"><a href="#聚合函数" class="headerlink" title="聚合函数"></a>聚合函数</h1><p>聚合函数（aggregate function）：对某些行运行的函数，计算并返回一个值</p>
 <p><u>表 ：SQL聚合函数</u></p>
 <div class="table-container">
 <table>
@@ -3455,35 +3455,35 @@ WHERE STRFTIME(&#39;%Y&#39;, order_date) = &#39;2012&#39;;
 </tbody>
 </table>
 </div>
-<h2><span id="avg">AVG()</span></h2><p>AVG() ：平均值</p>
+<h2 id="AVG"><a href="#AVG" class="headerlink" title="AVG()"></a>AVG()</h2><p>AVG() ：平均值</p>
 <ul>
 <li>AVG() 只能用来确定特定数值列的平均值，列名必须作为函数参数给出</li>
 <li>AVG() 函数忽略列值为NULL的行</li>
 </ul>
-<h2><span id="count">COUNT()</span></h2><p>COUNT() ：计数</p>
+<h2 id="COUNT"><a href="#COUNT" class="headerlink" title="COUNT()"></a>COUNT()</h2><p>COUNT() ：计数</p>
 <ul>
 <li>COUNT(*) 对表中行的数目进行计数，不管表列中包含的是空值还是非空值</li>
 <li>COUNT(column) 对特定列中的具有值的行进行计数，忽略NULL值</li>
 </ul>
-<h2><span id="max">MAX()</span></h2><p>MAX() ：最大值</p>
+<h2 id="MAX"><a href="#MAX" class="headerlink" title="MAX()"></a>MAX()</h2><p>MAX() ：最大值</p>
 <ul>
 <li>一般用来找出最大的数值或日期值</li>
 <li>大多数DBMS允许它用来返回任意列中的最大值，包括返回文本列中的最大值</li>
 <li>在用于文本数据时，返回按该列排序后的最后一行</li>
 <li>忽略列值为NULL的行</li>
 </ul>
-<h2><span id="min">MIN()</span></h2><p>MIN() ：最小值</p>
+<h2 id="MIN"><a href="#MIN" class="headerlink" title="MIN()"></a>MIN()</h2><p>MIN() ：最小值</p>
 <ul>
 <li>一般用来找出最小的数值或日期值</li>
 <li>大多数DBMS允许它用来返回任意列中的最小值，包括返回文本列中的最小值</li>
 <li>在用于文本数据时，返回按该列排序后的最前面的一行</li>
 <li>略列值为NULL的行</li>
 </ul>
-<h2><span id="sum">SUM()</span></h2><p>SUM() ：求和</p>
+<h2 id="SUM"><a href="#SUM" class="headerlink" title="SUM()"></a>SUM()</h2><p>SUM() ：求和</p>
 <ul>
 <li>忽略值为NULL的行</li>
 </ul>
-<h2><span id="distinct">DISTINCT</span></h2><p>DISTINCT：</p>
+<h2 id="DISTINCT"><a href="#DISTINCT" class="headerlink" title="DISTINCT"></a>DISTINCT</h2><p>DISTINCT：</p>
 <ul>
 <li>以上5个聚合函数，默认对所有的行执行计算，指定ALL参数或补指定（ALL是默认行为）</li>
 <li>若只考虑对不同的值的行执行计算，则应指定参数 DISTINCT</li>
@@ -3513,7 +3513,7 @@ WHERE STRFTIME(&#39;%Y&#39;, order_date) = &#39;2012&#39;;
 <pre><code class="lang-sql">
 
 </code></pre>
-<h1><span id="参考资料">参考资料</span></h1><p>[1] <a href="https://book.douban.com/subject/24250054/" target="_blank" rel="noopener">SQL必知必会</a><br>[2] <a href="https://forta.com/wp-content/uploads/books/0672327120/mysql_scripts.zip" target="_blank" rel="noopener">本文sql脚本参照</a><br>[3] <a href="https://mp.weixin.qq.com/s?__biz=MzU5NzkxODMxOA==&amp;mid=2247486117&amp;idx=1&amp;sn=47aa300d46873749282b368db799afd7&amp;chksm=fe4d5da4c93ad4b2a125503826e381610b79c3905feb0b194907d46bf771dc66b784325ddb30&amp;token=1415910284&amp;lang=zh_CN#rd" target="_blank" rel="noopener">Notes | SQL必知必会 | 01</a></p>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p>[1] <a href="https://book.douban.com/subject/24250054/" target="_blank" rel="noopener">SQL必知必会</a><br>[2] <a href="https://forta.com/wp-content/uploads/books/0672327120/mysql_scripts.zip" target="_blank" rel="noopener">本文sql脚本参照</a><br>[3] <a href="https://mp.weixin.qq.com/s?__biz=MzU5NzkxODMxOA==&amp;mid=2247486117&amp;idx=1&amp;sn=47aa300d46873749282b368db799afd7&amp;chksm=fe4d5da4c93ad4b2a125503826e381610b79c3905feb0b194907d46bf771dc66b784325ddb30&amp;token=1415910284&amp;lang=zh_CN#rd" target="_blank" rel="noopener">Notes | SQL必知必会 | 01</a></p>
 
       
     </div>
@@ -3581,7 +3581,7 @@ WHERE STRFTIME(&#39;%Y&#39;, order_date) = &#39;2012&#39;;
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1><span id="pandas">Pandas</span></h1><h2><span id="cut">.cut()</span></h2><p>将数组按区间划分</p>
+          <h1 id="Pandas"><a href="#Pandas" class="headerlink" title="Pandas"></a>Pandas</h1><h2 id="cut"><a href="#cut" class="headerlink" title=".cut()"></a>.cut()</h2><p>将数组按区间划分</p>
 <pre><code class="lang-Python">cut(数据数组, 面元数组)  # 将数据数组按区间划分
 cut(数据数组, 面元个数, precision=2)  # 将数据数组均分；每个面元的间距一致
 # precision=2表示保留2位小数
@@ -3635,7 +3635,7 @@ df.head().append(df.tail())  # 查看前5行和最后5行
 # 28   11    (6, 12]           少儿
 # 29   18   (12, 18]          青少年
 </code></pre>
-<h3><span id="codes">.codes</span></h3><p>查看数据对应的面元编号</p>
+<h3 id="codes"><a href="#codes" class="headerlink" title=".codes"></a>.codes</h3><p>查看数据对应的面元编号</p>
 <pre><code class="lang-Python">import pandas as pd
 
 ages = [23, 45, 21, 15, 24, 54, 36, 48, 57, 86, 61, 45]  # 数据数组
@@ -3647,7 +3647,7 @@ cat  # 返回每个数据对应的面元
 # Length: 12
 # Categories (6, interval[int64]): [(0, 18] &lt; (18, 30] &lt; (30, 40] &lt; (40, 50] &lt; (50, 65] &lt; (65, 100]]
 </code></pre>
-<h3><span id="value_counts">.value_counts()</span></h3><p>不同面元里含有的数据个数</p>
+<h3 id="value-counts"><a href="#value-counts" class="headerlink" title=".value_counts()"></a>.value_counts()</h3><p>不同面元里含有的数据个数</p>
 <pre><code class="lang-Python">cat.value_counts()  # 不同面元里含有的数据个数
 # (0, 18]      1
 # (18, 30]     3
@@ -3657,7 +3657,7 @@ cat  # 返回每个数据对应的面元
 # (65, 100]    1
 # dtype: int64
 </code></pre>
-<h2><span id="qcut">.qcut()</span></h2><pre><code class="lang-Python">qcut(数据数组, 面元个数)  # 将数据数组均分；每个面元的数据个数相等
+<h2 id="qcut"><a href="#qcut" class="headerlink" title=".qcut()"></a>.qcut()</h2><pre><code class="lang-Python">qcut(数据数组, 面元个数)  # 将数据数组均分；每个面元的数据个数相等
 </code></pre>
 <pre><code class="lang-Python">cat3 = pd.qcut(ages, 5)
 cat3
@@ -3686,7 +3686,7 @@ cat4.value_counts()
 <pre><code class="lang-Python">
 
 </code></pre>
-<h1><span id="参考资料">参考资料</span></h1><p>[] <a href></a></p>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p>[] <a href></a></p>
 
       
     </div>

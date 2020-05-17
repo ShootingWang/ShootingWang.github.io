@@ -211,7 +211,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1><span id="欠拟合">欠拟合</span></h1><h2><span id="如何改善欠拟合">如何改善欠拟合</span></h2><ul>
+          <h1 id="欠拟合"><a href="#欠拟合" class="headerlink" title="欠拟合"></a>欠拟合</h1><h2 id="如何改善欠拟合"><a href="#如何改善欠拟合" class="headerlink" title="如何改善欠拟合"></a>如何改善欠拟合</h2><ul>
 <li>尝试减小正则项参数$\lambda$</li>
 <li>尝试增加交叉特征</li>
 <li>增加模型的复杂度<ul>
@@ -220,7 +220,7 @@
 </ul>
 </li>
 </ul>
-<h1><span id="参考资料">参考资料</span></h1><ul>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
 <li><a href></a></li>
 </ul>
 
@@ -354,7 +354,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1><span id="信息量">信息量</span></h1><p>信息量是对信息的度量；有时也叫作<strong>自信息</strong>（self-information）。</p>
+          <h1 id="信息量"><a href="#信息量" class="headerlink" title="信息量"></a>信息量</h1><p>信息量是对信息的度量；有时也叫作<strong>自信息</strong>（self-information）。</p>
 <ul>
 <li><p>信息的大小与随机事件发生的概率有关</p>
 <ul>
@@ -378,7 +378,7 @@
 <li><strong>联合自信息量</strong><script type="math/tex; mode=display">I(x_i,y_j)=-\log{p(x_i,y_j)}</script></li>
 <li><strong>条件自信息量</strong><script type="math/tex; mode=display">I(y_j|x_i)=-\log{p(y_j|x_i)}</script></li>
 </ul>
-<h1><span id="信息熵香农熵">信息熵/香农熵</span></h1><p>Entropy</p>
+<h1 id="信息熵-香农熵"><a href="#信息熵-香农熵" class="headerlink" title="信息熵/香农熵"></a>信息熵/香农熵</h1><p>Entropy</p>
 <div class="table-container">
 <table>
 <thead>
@@ -403,12 +403,12 @@
 <script type="math/tex; mode=display">H(X)=-\sum_{i=1}^np(x_i)\log{p(x_i)}</script><p>其中$p(x_i)$表示随机事件$x_i\ (i=1,\cdots,n)$的概率。</p>
 <p>假设一组数据由$D=\{d_1,d_2,\cdots,d_n\}$构成，则这组数据的信息熵为</p>
 <script type="math/tex; mode=display">H(D)=-\sum_{i=1}^n\frac{d_i}{S_D}\log{\frac{d_i}{S_D}}</script><p>其中，$S_D=\sum_{i=1}^nd_i$。</p>
-<h3><span id="对数的底">对数的底</span></h3><p>信息熵公式中的对数的底的选择是任意的</p>
+<h3 id="对数的底"><a href="#对数的底" class="headerlink" title="对数的底"></a>对数的底</h3><p>信息熵公式中的对数的底的选择是任意的</p>
 <ul>
 <li>信息论中，一般选取<strong>2</strong>作为对数的底，则信息的单位为<u>比特（bits）</u></li>
 <li>机器学习中，一般选取<strong>自然常数e</strong>作为对数的底，则单位为<u>奈特（nats）</u></li>
 </ul>
-<h3><span id="性质">性质</span></h3><p>信息熵的一个性质为：</p>
+<h3 id="性质"><a href="#性质" class="headerlink" title="性质"></a>性质</h3><p>信息熵的一个性质为：</p>
 <script type="math/tex; mode=display">0\leq H(X)\leq\log{n}</script><p>这里$n$表示事件的个数。</p>
 <blockquote>
 <p>即：当随机分布为均匀分布时，熵最大</p>
@@ -419,43 +419,43 @@
 <script type="math/tex; mode=display">p(x_1)=p(x_2)=\cdots=p(x_n)=\frac{1}{n}</script><p>&lt;/font&gt;</p>
 <p><font face="仿宋">所以目标函数的极大值为</font></p>
 <script type="math/tex; mode=display">f\left(\frac{1}{n},\frac{1}{n},\cdots,\frac{1}{n}\right)=-\left[\frac{1}{n}\log\frac{1}{n}+\frac{1}{n}\log\frac{1}{n}+\cdots+\frac{1}{n}\log\frac{1}{n}\right]=-\log\frac{1}{n}=\log n</script><p>&lt;/font&gt;<br>即：当随机分布为均匀分布时，熵最大。</p>
-<h1><span id="联合熵复合熵">联合熵/复合熵</span></h1><p>联合熵/复合熵：度量两个随机变量$X$和$Y$在一起时的不确定性</p>
+<h1 id="联合熵-复合熵"><a href="#联合熵-复合熵" class="headerlink" title="联合熵/复合熵"></a>联合熵/复合熵</h1><p>联合熵/复合熵：度量两个随机变量$X$和$Y$在一起时的不确定性</p>
 <p>假设</p>
 <ul>
 <li>离散情况：随机变量$(X,Y)$的联合概率分布为<script type="math/tex; mode=display">P(X=x_i,Y=y_j)=p_{ij},\ i=1,\cdots,n;\ j=1,\cdots,m</script></li>
 <li>连续情况：随机变量$(X,Y)$的联合密度函数为<script type="math/tex; mode=display">f(x,y)\quad (x\in \Omega_X;\ y\in \Omega_Y)</script></li>
 </ul>
 <p><strong>复合熵/联合熵</strong>为</p>
-<script type="math/tex; mode=display">H(X,Y)=-\sum_{i=1}^n\sum_{j=1}^mp_{ij}\log{p_{ij}}</script><script type="math/tex; mode=display">H(X,Y)=-\int_{\Omega_X}\int_{\Omega_Y}f(x,y)\log{f(x,y)}\mathrm{dx}\mathrm{dy}</script><h3><span id="性质">性质</span></h3><ul>
+<script type="math/tex; mode=display">H(X,Y)=-\sum_{i=1}^n\sum_{j=1}^mp_{ij}\log{p_{ij}}</script><script type="math/tex; mode=display">H(X,Y)=-\int_{\Omega_X}\int_{\Omega_Y}f(x,y)\log{f(x,y)}\mathrm{dx}\mathrm{dy}</script><h3 id="性质-1"><a href="#性质-1" class="headerlink" title="性质"></a>性质</h3><ul>
 <li>联合熵大于独立熵的和<br>\begin{equation}<br>\begin{aligned}<br>H(X,Y)&amp;\geq\max{\left[H(X),H(Y) \right]}\\<br>H(X_1,\cdots,X_N)&amp;\geq\max{\left[H(X_1),\cdots,H(X_N) \right]}<br>\end{aligned}<br>\end{equation}</li>
 <li>联合熵小于各独立熵的和<br>\begin{equation}<br>\begin{aligned}<br>H(X,Y)&amp;\leq H(X)+H(Y)\\<br>H(X_1,\cdots,X_N)&amp;\leq H(X_1)+\cdots+H(X_N)<br>\end{aligned}<br>\end{equation}</li>
 </ul>
-<h1><span id="条件熵">条件熵</span></h1><p>条件熵：代表在某一个条件$X$下，随机变量$Y$的复杂度（不确定度）</p>
+<h1 id="条件熵"><a href="#条件熵" class="headerlink" title="条件熵"></a>条件熵</h1><p>条件熵：代表在某一个条件$X$下，随机变量$Y$的复杂度（不确定度）</p>
 <blockquote>
 <p>即：在给定条件X下，Y的条件概率分布的熵关于X的数学期望</p>
 </blockquote>
 <p><strong>条件熵</strong>$H(Y|X)$表示在已知随机变量$X$的条件下、随机变量$Y$ 的不确定性。<br>\begin{equation}<br>\begin{aligned}<br>  H(Y|X) &amp;= \sum_{i=1}^np(x_i)H(Y|X=x_i)\\<br>&amp;= -\sum_{i=1}^np(x_i)\sum_{j=1}^mp(y_j|x_i)\log{p(y_j|x_i)}\\<br>&amp;= -\sum_{i=1}^n\sum_{j=1}^mp(x_i,y_j)\log{p(y_j|x_i)}\\<br>H(Y|X)&amp;= \int_{x\in\Omega_X}f(x)H(Y|X=x)\mathrm{dx}\\<br>&amp;= -\int_{x\in\Omega_X}f(x)\int_{y\in\Omega_Y}f(y|x)\log{f(y|x)}\mathrm{dy}\\<br>&amp;= -\int_{x\in\Omega_X}\int_{y\in\Omega_Y}f(x)f(y|x)\log{f(y|x)}\mathrm{dx}\mathrm{dy}<br>\end{aligned}<br>\end{equation}</p>
 <p>当信息熵和条件熵中的概率由样本数据估计而得时，所对应的信息熵与条件熵称为<strong>经验熵</strong>（empirical entropy）和<strong>经验条件熵</strong>（empirical conditional entropy）。</p>
-<h3><span id="性质">性质</span></h3><script type="math/tex; mode=display">H(Y|X)=H(X,Y)-H(X)</script><p><font face="仿宋"><br>证明：（仅证明离散情况）<br>\begin{equation}<br>\begin{aligned}<br>H(Y|X)&amp;= -\sum_{i=1}^n\sum_{j=1}^mp(x_i,y_j)\log{p(y_j|x_i)}\\<br>&amp;= -\sum_{i=1}^n\sum_{j=1}^mp(x_i,y_j)\log{\frac{p(x_i,y_j)}{p(x_i)}}\\<br>&amp;= -\sum_{i=1}^n\sum_{j=1}^mp(x_i,y_j)\left(\log{p(x_i,y_j)}-\log{p(x_i)}\right)\\<br>&amp;= -\sum_{i=1}^n\sum_{j=1}^m\left(p(x_i,y_j)\log{p(x_i,y_j)}-p(x_i,y_j)\log{p(x_i)}\right)\\<br>&amp;= -\sum_{i=1}^n\sum_{j=1}^mp(x_i,y_j)\log{p(x_i,y_j)}-\left(-\sum_{i=1}^n\sum_{j=1}^mp(x_i,y_j)\log{p(x_i)}\right)\\<br>&amp;= H(X,Y)-H(X)<br>\end{aligned}<br>\end{equation}
+<h3 id="性质-2"><a href="#性质-2" class="headerlink" title="性质"></a>性质</h3><script type="math/tex; mode=display">H(Y|X)=H(X,Y)-H(X)</script><p><font face="仿宋"><br>证明：（仅证明离散情况）<br>\begin{equation}<br>\begin{aligned}<br>H(Y|X)&amp;= -\sum_{i=1}^n\sum_{j=1}^mp(x_i,y_j)\log{p(y_j|x_i)}\\<br>&amp;= -\sum_{i=1}^n\sum_{j=1}^mp(x_i,y_j)\log{\frac{p(x_i,y_j)}{p(x_i)}}\\<br>&amp;= -\sum_{i=1}^n\sum_{j=1}^mp(x_i,y_j)\left(\log{p(x_i,y_j)}-\log{p(x_i)}\right)\\<br>&amp;= -\sum_{i=1}^n\sum_{j=1}^m\left(p(x_i,y_j)\log{p(x_i,y_j)}-p(x_i,y_j)\log{p(x_i)}\right)\\<br>&amp;= -\sum_{i=1}^n\sum_{j=1}^mp(x_i,y_j)\log{p(x_i,y_j)}-\left(-\sum_{i=1}^n\sum_{j=1}^mp(x_i,y_j)\log{p(x_i)}\right)\\<br>&amp;= H(X,Y)-H(X)<br>\end{aligned}<br>\end{equation}
 </font></p>
 <p><font face="仿宋"><br>同理可得</font></p>
 <script type="math/tex; mode=display">H(X|Y)=H(X,Y)-H(Y)</script><p><font face="仿宋">合并上述两个公式可得</font></p>
 <script type="math/tex; mode=display">H(Y|X)+H(X)=H(X,Y)=H(X|Y)+H(Y)</script><p>体现了熵的对称性。</p>
-<h1><span id="相对熵kl散度">相对熵/KL散度</span></h1><p><strong>相对熵</strong>，又称互熵、鉴别信息、Kullback熵、<strong>Kullback-Leible散度</strong>（KL散度），是两个概率分布间差异的非对称性度量；常常用来度量两个随机变量的“距离”。在信息论中，相对熵等价于两个概率分布的信息熵的差值。如果其中一个概率分布为真实分布，另一个为理论分布/拟合分布，则相对熵等于交叉熵与真实分布的信息熵之差，表示使用理论分布拟合真实分布时的信息损耗。</p>
+<h1 id="相对熵-KL散度"><a href="#相对熵-KL散度" class="headerlink" title="相对熵/KL散度"></a>相对熵/KL散度</h1><p><strong>相对熵</strong>，又称互熵、鉴别信息、Kullback熵、<strong>Kullback-Leible散度</strong>（KL散度），是两个概率分布间差异的非对称性度量；常常用来度量两个随机变量的“距离”。在信息论中，相对熵等价于两个概率分布的信息熵的差值。如果其中一个概率分布为真实分布，另一个为理论分布/拟合分布，则相对熵等于交叉熵与真实分布的信息熵之差，表示使用理论分布拟合真实分布时的信息损耗。</p>
 <p>设$p(x)$和$q(x)$是两个概率分布，则$p$对$q$的相对熵为</p>
 <script type="math/tex; mode=display">D_{KL}(p||q)=E_{p(x)}\left(\log{\frac{p(x)}{q(x)}}\right)=\sum_{i=1}^np(x_i)\log{\frac{p(x_i)}{q(x_i)}}</script><p>相对熵不具有对称性：</p>
-<script type="math/tex; mode=display">D(p||q)\neq D(q||p)</script><h3><span id="性质">性质</span></h3><p>相对熵不为负：</p>
+<script type="math/tex; mode=display">D(p||q)\neq D(q||p)</script><h3 id="性质-3"><a href="#性质-3" class="headerlink" title="性质"></a>性质</h3><p>相对熵不为负：</p>
 <script type="math/tex; mode=display">D(p||q)\geq0,\ D(q||p)\geq0</script><p>且相对熵公式只有在$p(x_i)$等于$q(x_i)$时等于0。</p>
 <p><font face="仿宋"><br>证明：要证明</font></p>
 <script type="math/tex; mode=display">D_{KL}(p||q)=\sum_{i=1}^n\left(p(x_i)\log{p(x_i)}-p(x_i)\log{q(x_i)}\right)\geq0</script><p><font face="仿宋"><br>即证</font></p>
 <script type="math/tex; mode=display">\sum_{i=1}^np(x_i)\log{\frac{q(x_i)}{p(x_i)}}\leq0</script><p><font face="仿宋"><br>因为$\ln{x}\leq x-1$当且仅当$x=1$时等号成立，所以</font></p>
 <script type="math/tex; mode=display">\sum_{i=1}^np(x_i)\log{\frac{q(x_i)}{p(x_i)}}\leq\sum_{i=1}^np(x_i)\left(\frac{q(x_i)}{p(x_i)}-1\right)=\sum_{i=1}^n\left(q(x_i)-p(x_i)\right)</script><p><font face="仿宋">当且仅当$p(x_i)=q(x_i)$（对所有的$i,\ i=1,2,\cdots,n$）时有</font></p>
-<script type="math/tex; mode=display">\sum_{i=1}^np(x_i)\log{\frac{q(x_i)}{p(x_i)}}=\sum_{i=1}^n\left[q(x_i)-p(x_i)\right]=0</script><h1><span id="交叉熵">交叉熵</span></h1><p>交叉熵（Cross entropy）：是一种损失函数/代价函数，用于描述模型预测值与真实值的差距大小。</p>
+<script type="math/tex; mode=display">\sum_{i=1}^np(x_i)\log{\frac{q(x_i)}{p(x_i)}}=\sum_{i=1}^n\left[q(x_i)-p(x_i)\right]=0</script><h1 id="交叉熵"><a href="#交叉熵" class="headerlink" title="交叉熵"></a>交叉熵</h1><p>交叉熵（Cross entropy）：是一种损失函数/代价函数，用于描述模型预测值与真实值的差距大小。</p>
 <p>真实概率分布$p(x)$和预测概率分布$q(x)$之间的交叉熵为</p>
 <script type="math/tex; mode=display">H(p,q)=-\sum_{i=1}^np(x_i)\log{q(x_i)}</script><p>交叉熵在分类问题中，常常与softmax搭配使用，softmax将输出的结果进行处理，使多个分类类别的预测值的和为1，再使用交叉熵计算损失。</p>
 <p>将KL散度公式拆开：<br>\begin{equation}<br>\begin{aligned}<br>  D_{KL}(p||q)&amp;=\sum_{i=1}^np(x_i)\log{\frac{p(x_i)}{q(x_i)}}\\<br>&amp;= \underline{\sum_{i=1}^np(x_i)\log{p(x_i)}}-\sum_{i=1}^np(x_i)\log{q(x_i)}\\<br>&amp;= \underline{-H\left(p(x)\right)}+\left[-\sum_{i=1}^np(x_i)\log{q(x_i)} \right]<br>\end{aligned}<br>\end{equation}<br>其中，$H\left(p(x)\right)$表示真实分布的信息熵，后者即为交叉熵。</p>
 <script type="math/tex; mode=display">KL散度=交叉熵-信息熵</script><p>KL散度（相对熵）衡量的是真实概率分布与预测概率分布之间的差异；KL散度越小，表明预测的效果越好。在机器学习训练模型时，输入数据（Input）与标签（Label）通常已确定，那么真实概率分布$p$也已确定，信息熵$H\left(p(x)\right)$就是一个常量。因此，最小化KL散度等价于最小化交叉熵。所以，在机器学习中常常使用交叉熵作为损失函数。</p>
-<h1><span id="互信息">互信息</span></h1><p>互信息（Mutual Information）：也是信息论中的一种信息度量，是一个随机变量中包含的关于另一个随机变量的信息量，或者说，是一个随机变量由于已知另一个随机变量而减少的不确定性。</p>
+<h1 id="互信息"><a href="#互信息" class="headerlink" title="互信息"></a>互信息</h1><p>互信息（Mutual Information）：也是信息论中的一种信息度量，是一个随机变量中包含的关于另一个随机变量的信息量，或者说，是一个随机变量由于已知另一个随机变量而减少的不确定性。</p>
 <ul>
 <li>两个<strong>离散</strong>随机变量$X$和$Y$的互信息定义为<script type="math/tex; mode=display">I(X,Y)=\sum_{y\in Y}\sum_{x\in X}p(x,y)\log{\frac{p(x,y)}{p(x)p(y)}}</script>其中，$p(x,y)$是$X$和$Y$的联合概率分布函数，$p(x)$、$p(y)$分别是$X$和$Y$的边缘概率分布函数。</li>
 <li><p>两个<strong>连续</strong>随机变量的互信息定义为</p>
@@ -469,7 +469,7 @@
 <li>当$X$和$Y$独立时，$p(x,y)=p(x)p(y)$。因此<script type="math/tex; mode=display">\log{\frac{p(x,y)}{p(x)p(y)}}=\log1=0</script></li>
 </ul>
 <p><meta name="referrer" content="no-referrer"><br></p>
-<h1><span id="参考资料">参考资料</span></h1><ul>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
 <li><a href="https://zhuanlan.zhihu.com/p/26486223" target="_blank" rel="noopener">通俗理解信息熵</a></li>
 <li><a href="http://blog.sina.com.cn/s/blog_6e85bf420100ohma.html" target="_blank" rel="noopener">ID3算法</a></li>
 <li><a href="https://ask.julyedu.com/question/6897" target="_blank" rel="noopener">“熵”的通俗解释</a></li>
@@ -631,7 +631,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1><span id="logistic-regression">Logistic Regression</span></h1><p>逻辑回归（<strong>LR</strong>，Logistic Regression），是一种<u>对数几率模型</u>（Logit Model），常用于二分类问题（binary classification problems）</p>
+          <h1 id="Logistic-Regression"><a href="#Logistic-Regression" class="headerlink" title="Logistic Regression"></a>Logistic Regression</h1><p>逻辑回归（<strong>LR</strong>，Logistic Regression），是一种<u>对数几率模型</u>（Logit Model），常用于二分类问题（binary classification problems）</p>
 <ul>
 <li>逻辑回归和线性回归（Linear Regression）都是一种广义线性模型（GLM，Generalized Linear Model）</li>
 <li>属于<strong>有监督学习</strong>（Supervised Learning）</li>
@@ -649,7 +649,7 @@
 <li>……</li>
 </ul>
 </blockquote>
-<h2><span id="逻辑分布">逻辑分布</span></h2><p>Logistic分布是一种连续型分布，其分布函数（Cumulative distribution function）为</p>
+<h2 id="逻辑分布"><a href="#逻辑分布" class="headerlink" title="逻辑分布"></a>逻辑分布</h2><p>Logistic分布是一种连续型分布，其分布函数（Cumulative distribution function）为</p>
 <script type="math/tex; mode=display">F(x)=P(X\leq x)=\frac{1}{1+e^{-(x-\mu)/s}}=\frac{1}{2}+\frac{1}{2}\tanh\left(\frac{x-\mu}{2s}\right)</script><p><meta name="referrer" content="no-referrer"><br><img data-src="/2020/05/15/%E7%AE%97%E6%B3%95-LogisticRegression/LR-CDF.png" class title="不同取值参数对应的CDF"></p>
 <p>概率密度函数为</p>
 <script type="math/tex; mode=display">f(x)=F^\prime(x)=\frac{e^{-(x-\mu)/s}}{s\left(1+e^{-(x-\mu)/s}\right)^2}=\frac{1}{4s}\mathrm{sech}^2\left(\frac{x-2\mu}{2s}\right),\quad -\infty< x< +\infty</script><p>其中</p>
@@ -661,10 +661,10 @@
 <li>方差<script type="math/tex; mode=display">\mathrm{Var}(X)=\frac{s^2\pi^2}{3}</script></li>
 </ul>
 <p><meta name="referrer" content="no-referrer"><br><img data-src="/2020/05/15/%E7%AE%97%E6%B3%95-LogisticRegression/LR-pdf.png" class title="不同取值参数对应的pdf"></p>
-<h2><span id="逻辑函数">逻辑函数</span></h2><p>一个简单的Logistic函数：</p>
+<h2 id="逻辑函数"><a href="#逻辑函数" class="headerlink" title="逻辑函数"></a>逻辑函数</h2><p>一个简单的Logistic函数：</p>
 <script type="math/tex; mode=display">P(t)=\frac{1}{1+e^{-t}}</script><p><meta name="referrer" content="no-referrer"><br><img data-src="/2020/05/15/%E7%AE%97%E6%B3%95-LogisticRegression/LR-slog.png" class title="标准Logistic函数"></p>
 <p>广义Logistic曲线可以模拟一些人口增长的S形曲线：初始阶段大致是指数增长；然后开始变得饱和，增加变慢；最后，达到成熟时增加停止。</p>
-<h2><span id="逻辑回归">逻辑回归</span></h2><p>逻辑回归通常用于二分类问题（因变量是分类变量），用来表示某件事发生的可能性。</p>
+<h2 id="逻辑回归"><a href="#逻辑回归" class="headerlink" title="逻辑回归"></a>逻辑回归</h2><p>逻辑回归通常用于二分类问题（因变量是分类变量），用来表示某件事发生的可能性。</p>
 <p>Andrew Ng的CS229中的例子：根据肿瘤的大小（Tumor Size）$X$来判断肿瘤是否是恶性的（Malignant）$Y$。</p>
 <p>考虑构建线性回归模型$h_\theta(x)$，$h_\theta(x)\geq 0.5$ 为恶性肿瘤，$h_\theta(x)&lt;0.5$为良性肿瘤。<br>\begin{equation}<br>  Y=\left\{<br>\begin{array}{ll}<br>1, &amp; \mbox{如果} h_\theta(x)\geq 0.5\\<br>0, &amp; \mbox{如果} h_\theta(x)&lt;0.5<br>\end{array}\right.<br>\end{equation}</p>
 <p>Logistic函数/<strong>Sigmoid函数</strong>可以将任意实数值映射到(0,1)区间（不包括0和1，但可以无限接近）。因此，使用Sigmoid函数来将线性回归的结果按照一定的阈值分为2类（二分类问题）或更多类（多分类问题）。</p>
@@ -679,7 +679,7 @@
 <script type="math/tex; mode=display">Y|X=x_i\sim \mathrm{Bernoulli}\left(h_\theta(x_i)\right)</script><p>概率函数为</p>
 <script type="math/tex; mode=display">P(y|x;\theta)=\left[h_\theta(x) \right]^y\left[1-h_\theta(x) \right]^{1-y}</script><p>使用训练数据集$x=\{x_1,x_2,\cdots,x_n\}$（特征数据）和$y=\{y_1,y_2\cdots,y_n\}$（分类数据）构建回归模型。</p>
 <p>如何求解逻辑回归方程中的参数？通常使用极大似然法。</p>
-<h3><span id="极大似然法">极大似然法</span></h3><p>$n$个独立样本的似然函数为</p>
+<h3 id="极大似然法"><a href="#极大似然法" class="headerlink" title="极大似然法"></a>极大似然法</h3><p>$n$个独立样本的似然函数为</p>
 <script type="math/tex; mode=display">L(\theta)=\Pi_{i=1}^nP(y_i|x_i;\theta)=\Pi_{i=1}^nh_\theta(x_i)^{y_i}\left[1-h_\theta(x_i) \right]^{1-y_i}</script><p>对数似然函数为<br>\begin{equation}<br>\begin{aligned}<br>  l(\theta)=\log{L(\theta)}&amp;=\sum_{i=1}^n\left\{y_i\log{h_\theta(x_i)}+(1-y_i)\log{\left[1-h_\theta(x_i) \right]}\right\}\\<br>  &amp;= \sum_{i=1}^n\left\{y_i\theta^Tx_i-\log{\left[1+e^{\theta^Tx_i} \right]}\right\}<br>\end{aligned}<br>\end{equation}<br>其中</p>
 <script type="math/tex; mode=display">\log{h_\theta(x_i)}=\log{\frac{e^{\theta^Tx_i}}{1+e^{\theta^Tx_i}}}=\theta^Tx_i-\log{\left[1+e^{\theta^Tx_i}\right]}</script><script type="math/tex; mode=display">\log{\left[1-h_\theta(x_i)\right]}=\log{\frac{1}{1+e^{\theta^Tx_i}}}=-\log{\left[1+e^{\theta^Tx_i}\right]}</script><script type="math/tex; mode=display">\max{L(\theta)}\Leftrightarrow\max{l(\theta)}\Leftrightarrow\min{\{-l(\theta)\}}</script><p>其中$-l(\theta)=-\log{L(\theta)}$称为<strong>交叉熵误差函数</strong>（cross-entropy error function）。</p>
 <p>考虑$p+1$维的参数$\theta=(\theta_0,\theta_1,\cdots,\theta_p)^T$，其中$\theta_0$ 为线性回归方程$z=\theta^Tx$的截距。<br>\begin{equation}<br>\theta=\left(<br>\begin{array}{c}<br>  \theta_0\\<br>  \theta_1\\<br>  \theta_2\\<br>  \vdots\\<br>  \theta_p<br>\end{array}<br>\right),\quad<br>x_i=\left(<br>\begin{array}{c}<br>  1\\<br>  x_{i1}\\<br>  x_{i2}\\<br>  \vdots\\<br>  x_{ip}<br>\end{array}<br>\right)<br>\end{equation}<br>对数似然函数$l(\theta)$分别对$\theta_j\ (j=0,1,\cdots,p)$求偏导，并令导数为零</p>
@@ -688,7 +688,7 @@
 <p>这里$x_i$的第一个元素为1，因此由上式可得</p>
 <script type="math/tex; mode=display">\sum_{i=1}^ny_i=\sum_{i=1}^nh_\theta(x_i)</script><p>表示$Y$取值为1的样本量（$n$个样本中得恶性肿瘤的人数）等于“事件”（如肿瘤为恶性肿瘤）发生的概率和。</p>
 <p>当$p$较小时，score equation可得到解析解（精确解）；但当$p$较大时，score equation 往往得不到解析解。这时，可以考虑使用Newton-Raphson算法求得数值解（numerical solution）。</p>
-<h3><span id="newton-raphson算法">Newton-Raphson算法</span></h3><p>首先计算二阶偏导（Hessian Matrix）：<br>\begin{equation}<br>\begin{aligned}<br>\frac{\partial^2l(\theta)}{\partial{\theta_k}\partial{\theta_j}}&amp;=\frac{\partial}{\partial{\theta_k}}\sum_{i=1}^n\left\{x_{ij}\left[y_i-h_\theta(x_i)\right]\right\}\\<br>&amp;=\frac{\partial}{\partial{\theta_k}}\sum_{i=1}^n\left\{x_{ij}\left[y_i-\frac{e^{\theta^Tx_i}}{1+e^{\theta^Tx_i}}\right]\right\}\\<br>&amp;=\sum_{i=1}^nx_{ij}\left\{-\frac{e^{\theta^Tx_i}x_{ik}(1+e^{\theta^Tx_i})-e^{\theta^Tx_i}e^{\theta^Tx_i}x_{ik}}{\left(1+e^{\theta^Tx_i}\right)^2}\right\}\\<br>&amp;=-\sum_{i=1}^nx_{ij}x_{ik}\frac{e^{\theta^Tx_i}}{1+e^{\theta^Tx_i}}\left(1-\frac{e^{\theta^Tx_i}}{1+e^{\theta^Tx_i}}\right)\\<br>&amp;=-\sum_{i=1}^nx_{ij}x_{ij}h_\theta(x_i)\left[1-h_\theta(x_i)\right]<br>\end{aligned}<br>\end{equation}<br>其中$j,k=0,1,\cdots,p$。</p>
+<h3 id="Newton-Raphson算法"><a href="#Newton-Raphson算法" class="headerlink" title="Newton-Raphson算法"></a>Newton-Raphson算法</h3><p>首先计算二阶偏导（Hessian Matrix）：<br>\begin{equation}<br>\begin{aligned}<br>\frac{\partial^2l(\theta)}{\partial{\theta_k}\partial{\theta_j}}&amp;=\frac{\partial}{\partial{\theta_k}}\sum_{i=1}^n\left\{x_{ij}\left[y_i-h_\theta(x_i)\right]\right\}\\<br>&amp;=\frac{\partial}{\partial{\theta_k}}\sum_{i=1}^n\left\{x_{ij}\left[y_i-\frac{e^{\theta^Tx_i}}{1+e^{\theta^Tx_i}}\right]\right\}\\<br>&amp;=\sum_{i=1}^nx_{ij}\left\{-\frac{e^{\theta^Tx_i}x_{ik}(1+e^{\theta^Tx_i})-e^{\theta^Tx_i}e^{\theta^Tx_i}x_{ik}}{\left(1+e^{\theta^Tx_i}\right)^2}\right\}\\<br>&amp;=-\sum_{i=1}^nx_{ij}x_{ik}\frac{e^{\theta^Tx_i}}{1+e^{\theta^Tx_i}}\left(1-\frac{e^{\theta^Tx_i}}{1+e^{\theta^Tx_i}}\right)\\<br>&amp;=-\sum_{i=1}^nx_{ij}x_{ij}h_\theta(x_i)\left[1-h_\theta(x_i)\right]<br>\end{aligned}<br>\end{equation}<br>其中$j,k=0,1,\cdots,p$。</p>
 <p><strong>Hessian Matrix</strong>为</p>
 <script type="math/tex; mode=display">\frac{\partial^2l(\theta)}{\partial\theta\partial\theta^T}=-\sum_{i=1}^nx_ix_i^Th_\theta(x_i)[1- h_\theta(x_i)]</script><p>由$\theta^{old}$开始，Newton-Raphson的更新步骤（updating step）为</p>
 <script type="math/tex; mode=display">\theta^{new}=\theta^{old}-\left[\frac{\partial^2l(\theta)}{\partial\theta\partial\theta^T}\right]^{-1}\frac{\partial{l(\theta)}}{\partial\theta}</script><p>这里考虑步长为1的pure Newton’s Method。即</p>
@@ -701,7 +701,7 @@
 <p>$\theta^{new}$可以看作是$\bf{z}$关于$\bf{X}$回归的加权最小二乘（weighted least square）。</p>
 <p>式</p>
 <script type="math/tex; mode=display">\theta^{new}=\left(\mathbf{X}^T\mathbf{W}\mathbf{X}\right)^{-1}\mathbf{X}^T\mathbf{W}\mathbf{z}</script><p>这种迭代法也称为<u>迭代重加权最小二乘</u>（iteratively reweighted least squares，IRLS）。</p>
-<h1><span id="逻辑回归-vs-线性回归">逻辑回归 vs 线性回归</span></h1><div class="table-container">
+<h1 id="逻辑回归-vs-线性回归"><a href="#逻辑回归-vs-线性回归" class="headerlink" title="逻辑回归 vs 线性回归"></a>逻辑回归 vs 线性回归</h1><div class="table-container">
 <table>
 <thead>
 <tr>
@@ -734,7 +734,7 @@
 </tbody>
 </table>
 </div>
-<h1><span id="参考资料">参考资料</span></h1><ul>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
 <li><a href="https://zh.wikipedia.org/wiki/%E9%82%8F%E8%BC%AF%E8%BF%B4%E6%AD%B8" target="_blank" rel="noopener">维基百科-逻辑回归</a></li>
 <li><a href="https://zhuanlan.zhihu.com/p/28408516" target="_blank" rel="noopener">逻辑回归（Logistic Regression）（一）</a></li>
 <li><a href="https://en.wikipedia.org/wiki/Logistic_distribution" target="_blank" rel="noopener">维基百科-逻辑分布</a></li>
@@ -817,7 +817,7 @@
 
       
           <p>有监督学习</p>
-<h1><span id="supervised-learning">Supervised Learning</span></h1><h2><span id="model">Model</span></h2><h2><span id="parameters">Parameters</span></h2><h2><span id="objective-function">Objective Function</span></h2><p>目标函数</p>
+<h1 id="Supervised-Learning"><a href="#Supervised-Learning" class="headerlink" title="Supervised Learning"></a>Supervised Learning</h1><h2 id="Model"><a href="#Model" class="headerlink" title="Model"></a>Model</h2><h2 id="Parameters"><a href="#Parameters" class="headerlink" title="Parameters"></a>Parameters</h2><h2 id="Objective-Function"><a href="#Objective-Function" class="headerlink" title="Objective Function"></a>Objective Function</h2><p>目标函数</p>
 <script type="math/tex; mode=display">Obj(\Theta)=L(\Theta)+\Omega(\Theta)</script><script type="math/tex; mode=display">Training Loss + Regularization</script><div class="table-container">
 <table>
 <thead>
@@ -847,17 +847,17 @@
 <blockquote id="fn_2">
 <sup>2</sup>. Simpler models tends to have smaller variance in future predictions, making prediction stable. ——from <a href="https://homes.cs.washington.edu/~tqchen/data/pdf/BoostedTree.pdf" target="_blank" rel="noopener">Tianqi Chen - Introduction to Boosted Trees</a><a href="#reffn_2" title="Jump back to footnote [2] in the text."> &#8617;</a>
 </blockquote>
-<h3><span id="training-loss">Training Loss</span></h3><p>训练误差<strong>Training Loss</strong>: measures <u>how well model fit on training data</u></p>
+<h3 id="Training-Loss"><a href="#Training-Loss" class="headerlink" title="Training Loss"></a>Training Loss</h3><p>训练误差<strong>Training Loss</strong>: measures <u>how well model fit on training data</u></p>
 <script type="math/tex; mode=display">L(\Theta)=\sum_{i=1}^nl(y_i,\hat{y}_i)</script><ul>
 <li>Square Loss<script type="math/tex; mode=display">l(y_i,\hat{y}_i)=(y_i-\hat{y}_i)^2</script></li>
 <li>Log-Loss<script type="math/tex; mode=display">l(y_i,\hat{y}_i)=y_i\ln{(1+e^{-\hat{y}_i})}+(1-y_i)\ln{(1+e^{\hat{y}_i})}</script></li>
 </ul>
-<h3><span id="regularization">Regularization</span></h3><p>正则化<strong>Regularization</strong>: measures <u>complexity of model</u></p>
+<h3 id="Regularization"><a href="#Regularization" class="headerlink" title="Regularization"></a>Regularization</h3><p>正则化<strong>Regularization</strong>: measures <u>complexity of model</u></p>
 <script type="math/tex; mode=display">\Omega(\Theta)</script><ul>
 <li>$l1$-norm <script type="math/tex; mode=display">\Omega(\omega)=\lambda||w||_1</script></li>
 <li>$l2$-norm<script type="math/tex; mode=display">\Omega(\omega)=\lambda||w||^2</script></li>
 </ul>
-<h1><span id="参考资料">参考资料</span></h1><ul>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
 <li><a href="https://homes.cs.washington.edu/~tqchen/data/pdf/BoostedTree.pdf" target="_blank" rel="noopener">Tianqi Chen - Introduction to Boosted Trees</a></li>
 <li><a href></a></li>
 <li><a href></a></li>
@@ -929,13 +929,13 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1><span id="tree-ensemble-methods">Tree Ensemble methods</span></h1><ul>
+          <h1 id="Tree-Ensemble-methods"><a href="#Tree-Ensemble-methods" class="headerlink" title="Tree Ensemble methods"></a>Tree Ensemble methods</h1><ul>
 <li>不需要归一化（normalization)</li>
 <li>能够学习到特征之间的高阶交互</li>
 <li>可用于分类、回归、排序、……</li>
 </ul>
 <p>假设模型有$K$棵树</p>
-<script type="math/tex; mode=display">\hat{y}_i=\sum_{k=1}^K f_k(x_i),\quad f_k\in\mathbb{F}</script><h2><span id="objective">Objective</span></h2><script type="math/tex; mode=display">Obj=\sum_{i=1}^nl(y_i,\hat{y}_i)+\sum_{k=1}^K\Omega(f_k)</script><ul>
+<script type="math/tex; mode=display">\hat{y}_i=\sum_{k=1}^K f_k(x_i),\quad f_k\in\mathbb{F}</script><h2 id="Objective"><a href="#Objective" class="headerlink" title="Objective"></a>Objective</h2><script type="math/tex; mode=display">Obj=\sum_{i=1}^nl(y_i,\hat{y}_i)+\sum_{k=1}^K\Omega(f_k)</script><ul>
 <li><p>如何定义树的复杂度$\Omega(f_k)$？</p>
 <ul>
 <li>树的结点数、树的深度</li>
@@ -949,19 +949,19 @@
 <li>最大深度max depth → 函数空间的约束</li>
 <li>smoothing leaf values → 叶子权重的$l2$正则</li>
 </ul>
-<h2><span id="类别">类别</span></h2><ul>
+<h2 id="类别"><a href="#类别" class="headerlink" title="类别"></a>类别</h2><ul>
 <li><strong>Gradient Boosted Machine</strong>：使用平方损失$l(y_i,\hat{y}_i)=(y_i-\hat{y}_i)^2$</li>
 <li><strong>LogitBoost</strong>：使用Logistic损失<script type="math/tex; mode=display">l(y_i,\hat{y}_i)=y_i\ln{(1+e^{-\hat{y}_i})}+(1-y_i)\ln{(1+e^{\hat{y}_i})}</script></li>
 </ul>
-<h2><span id="pre-stopping">Pre-stopping</span></h2><ul>
+<h2 id="Pre-stopping"><a href="#Pre-stopping" class="headerlink" title="Pre-stopping"></a>Pre-stopping</h2><ul>
 <li>stop split if the best split have negative gain</li>
 <li>but maybe a split can benefit future splits</li>
 </ul>
-<h2><span id="post-prunning">Post-Prunning</span></h2><p>事后剪枝</p>
+<h2 id="Post-Prunning"><a href="#Post-Prunning" class="headerlink" title="Post-Prunning"></a>Post-Prunning</h2><p>事后剪枝</p>
 <ul>
 <li>grow a tree to maximum depth, recursively prune all the leaf splits with negative gain</li>
 </ul>
-<h1><span id="参考资料">参考资料</span></h1><ul>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
 <li><a href="https://homes.cs.washington.edu/~tqchen/data/pdf/BoostedTree.pdf" target="_blank" rel="noopener">Tianqi Chen - Introduction to Boosted Trees</a></li>
 <li><a href></a></li>
 </ul>
@@ -1033,16 +1033,16 @@
 
       
           <p>e<strong>X</strong>treme <strong>G</strong>radient <strong>Boost</strong>ing</p>
-<h1><span id="xgboost">XGBoost</span></h1><blockquote>
+<h1 id="XGBoost"><a href="#XGBoost" class="headerlink" title="XGBoost"></a>XGBoost</h1><blockquote>
 <p>作者：陈天奇<br>论文：<a href="http://dmlc.cs.washington.edu/data/pdf/XGBoostArxiv.pdf" target="_blank" rel="noopener">XGBoost: A Scalable Tree Boosting System</a></p>
 <ul>
 <li>是梯度提升树框架下的一种机器学习算法</li>
 </ul>
 </blockquote>
-<h2><span id="实例">实例</span></h2><ul>
+<h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><ul>
 <li><a href="https://github.com/dmlc/xgboost/blob/master/demo/README.md">Awesome XGBoost</a></li>
 </ul>
-<h1><span id="xgboost-vs-gbdt">XGBoost vs GBDT</span></h1><div class="table-container">
+<h1 id="XGBoost-vs-GBDT"><a href="#XGBoost-vs-GBDT" class="headerlink" title="XGBoost vs GBDT"></a>XGBoost vs GBDT</h1><div class="table-container">
 <table>
 <thead>
 <tr>
@@ -1097,7 +1097,7 @@
 <blockquote id="fn_4">
 <sup>4</sup>. XGBoost借鉴了随机森林的做法，支持列抽样（column sampling），既能降低过拟合，还能减少计算<a href="#reffn_4" title="Jump back to footnote [4] in the text."> &#8617;</a>
 </blockquote>
-<h1><span id="参考资料">参考资料</span></h1><ul>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
 <li><a href="https://homes.cs.washington.edu/~tqchen/2016/03/10/story-and-lessons-behind-the-evolution-of-xgboost.html" target="_blank" rel="noopener">Story and Lessons Behind the Evolution of XGBoost</a></li>
 <li><a href="https://www.zhihu.com/question/41354392" target="_blank" rel="noopener">机器学习算法中 GBDT 和 XGBOOST 的区别有哪些？</a></li>
 <li><a href></a></li>
@@ -1169,20 +1169,20 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1><span id="游戏数据名词">游戏数据名词</span></h1><h2><span id="acu">ACU</span></h2><p>Average Concurrent Users<br>平均同时在线用户数</p>
-<h2><span id="pcu">PCU</span></h2><p>Peak Concurrent Users<br>最高同时在线玩家人数</p>
-<h1><span id="游戏类型">游戏类型</span></h1><h2><span id="aba">ABA</span></h2><p>Asymmetrical Battle Arena<br>非对称性对抗竞技类</p>
+          <h1 id="游戏数据名词"><a href="#游戏数据名词" class="headerlink" title="游戏数据名词"></a>游戏数据名词</h1><h2 id="ACU"><a href="#ACU" class="headerlink" title="ACU"></a>ACU</h2><p>Average Concurrent Users<br>平均同时在线用户数</p>
+<h2 id="PCU"><a href="#PCU" class="headerlink" title="PCU"></a>PCU</h2><p>Peak Concurrent Users<br>最高同时在线玩家人数</p>
+<h1 id="游戏类型"><a href="#游戏类型" class="headerlink" title="游戏类型"></a>游戏类型</h1><h2 id="ABA"><a href="#ABA" class="headerlink" title="ABA"></a>ABA</h2><p>Asymmetrical Battle Arena<br>非对称性对抗竞技类</p>
 <blockquote>
 <p>第五人格（网易）</p>
 </blockquote>
-<h2><span id="act">ACT</span></h2><p>Action Game<br>动作游戏</p>
+<h2 id="ACT"><a href="#ACT" class="headerlink" title="ACT"></a>ACT</h2><p>Action Game<br>动作游戏</p>
 <blockquote>
 <ul>
 <li>战神</li>
 <li>鬼泣</li>
 </ul>
 </blockquote>
-<h2><span id="a-rpg">A-RPG</span></h2><p>Action Role Playing Game<br>动作角色扮演游戏</p>
+<h2 id="A-RPG"><a href="#A-RPG" class="headerlink" title="A-RPG"></a>A-RPG</h2><p>Action Role Playing Game<br>动作角色扮演游戏</p>
 <blockquote>
 <ul>
 <li>真三国无双</li>
@@ -1190,7 +1190,7 @@
 <li>贪玩蓝月</li>
 </ul>
 </blockquote>
-<h2><span id="avg">AVG</span></h2><p>Adventure Game<br>冒险游戏、解谜游戏</p>
+<h2 id="AVG"><a href="#AVG" class="headerlink" title="AVG"></a>AVG</h2><p>Adventure Game<br>冒险游戏、解谜游戏</p>
 <blockquote>
 <ul>
 <li>纪念碑谷</li>
@@ -1199,14 +1199,14 @@
 <li>热血无赖</li>
 </ul>
 </blockquote>
-<h2><span id="a-avg">A-AVG</span></h2><p>Action Adventure Game<br>动作冒险游戏</p>
+<h2 id="A-AVG"><a href="#A-AVG" class="headerlink" title="A-AVG"></a>A-AVG</h2><p>Action Adventure Game<br>动作冒险游戏</p>
 <blockquote>
 <ul>
 <li>古墓丽影</li>
 <li>生化危机</li>
 </ul>
 </blockquote>
-<h2><span id="edu">EDU</span></h2><p>Education<br>养成类游戏</p>
+<h2 id="EDU"><a href="#EDU" class="headerlink" title="EDU"></a>EDU</h2><p>Education<br>养成类游戏</p>
 <blockquote>
 <ul>
 <li>美少女梦工厂</li>
@@ -1214,21 +1214,21 @@
 <li>奇迹暖暖</li>
 </ul>
 </blockquote>
-<h2><span id="etc">ETC</span></h2><p>Et Cetra<br>其他类型游戏；无法归入类型的游戏、玩家互动内容较少的游戏、作品类型不明了的游戏</p>
+<h2 id="ETC"><a href="#ETC" class="headerlink" title="ETC"></a>ETC</h2><p>Et Cetra<br>其他类型游戏；无法归入类型的游戏、玩家互动内容较少的游戏、作品类型不明了的游戏</p>
 <blockquote>
 <ul>
 <li>恐怖惊魂夜</li>
 <li>潘多拉魔盒</li>
 </ul>
 </blockquote>
-<h2><span id="fly">FLY</span></h2><p>模拟飞行</p>
+<h2 id="FLY"><a href="#FLY" class="headerlink" title="FLY"></a>FLY</h2><p>模拟飞行</p>
 <blockquote>
 <ul>
 <li>微软模拟飞行</li>
 <li>飞行俱乐部</li>
 </ul>
 </blockquote>
-<h2><span id="fps">FPS</span></h2><p>First-person Shooter<br>第一人称视角射击游戏</p>
+<h2 id="FPS"><a href="#FPS" class="headerlink" title="FPS"></a>FPS</h2><p>First-person Shooter<br>第一人称视角射击游戏</p>
 <blockquote>
 <ul>
 <li>CS</li>
@@ -1238,7 +1238,7 @@
 <li>荒野行动（网易研发；射击求生手游）</li>
 </ul>
 </blockquote>
-<h2><span id="ftg">FTG</span></h2><p>Fighting Game<br>格斗游戏</p>
+<h2 id="FTG"><a href="#FTG" class="headerlink" title="FTG"></a>FTG</h2><p>Fighting Game<br>格斗游戏</p>
 <blockquote>
 <ul>
 <li>拳皇</li>
@@ -1246,13 +1246,13 @@
 <li>双截龙</li>
 </ul>
 </blockquote>
-<h2><span id="lvg">LVG</span></h2><p>Love Game<br>恋爱游戏</p>
+<h2 id="LVG"><a href="#LVG" class="headerlink" title="LVG"></a>LVG</h2><p>Love Game<br>恋爱游戏</p>
 <blockquote>
 <ul>
 <li>恋与制作人</li>
 </ul>
 </blockquote>
-<h2><span id="mmorpg">MMORPG</span></h2><p>Massive Multiplayer Online Role-playing Game<br>大型多人在线角色扮演游戏</p>
+<h2 id="MMORPG"><a href="#MMORPG" class="headerlink" title="MMORPG"></a>MMORPG</h2><p>Massive Multiplayer Online Role-playing Game<br>大型多人在线角色扮演游戏</p>
 <blockquote>
 <ul>
 <li>魔兽世界（网易独家代理）</li>
@@ -1263,8 +1263,8 @@
 <li>梦幻西游（网易自行开发并营运）</li>
 </ul>
 </blockquote>
-<h2><span id="mmoarpg">MMOARPG</span></h2><p>大型多人在线动作角色扮演游戏</p>
-<h2><span id="moba">MOBA</span></h2><p>Multiplayer Online Battle Arena<br>多人联机在线竞技游戏；也可叫ARTS或类dota游戏</p>
+<h2 id="MMOARPG"><a href="#MMOARPG" class="headerlink" title="MMOARPG"></a>MMOARPG</h2><p>大型多人在线动作角色扮演游戏</p>
+<h2 id="MOBA"><a href="#MOBA" class="headerlink" title="MOBA"></a>MOBA</h2><p>Multiplayer Online Battle Arena<br>多人联机在线竞技游戏；也可叫ARTS或类dota游戏</p>
 <blockquote>
 <ul>
 <li><a href="http://dz.blizzard.cn/" target="_blank" rel="noopener">魔兽争霸</a><ul>
@@ -1291,7 +1291,7 @@
 </li>
 </ul>
 </blockquote>
-<h2><span id="mud">MUD</span></h2><p>Multiple User Domain<br>多用户虚拟空间游戏；文字网游的统称；没有图形</p>
+<h2 id="MUD"><a href="#MUD" class="headerlink" title="MUD"></a>MUD</h2><p>Multiple User Domain<br>多用户虚拟空间游戏；文字网游的统称；没有图形</p>
 <blockquote>
 <ul>
 <li>风云</li>
@@ -1299,7 +1299,7 @@
 <li>英雄坛</li>
 </ul>
 </blockquote>
-<h2><span id="mug">MUG</span></h2><p>Music Game<br>音乐游戏</p>
+<h2 id="MUG"><a href="#MUG" class="headerlink" title="MUG"></a>MUG</h2><p>Music Game<br>音乐游戏</p>
 <blockquote>
 <ul>
 <li>节奏大师</li>
@@ -1307,7 +1307,7 @@
 <li>古树旋律</li>
 </ul>
 </blockquote>
-<h2><span id="rac">RAC</span></h2><p>Race Game<br>赛车游戏、竞速游戏</p>
+<h2 id="RAC"><a href="#RAC" class="headerlink" title="RAC"></a>RAC</h2><p>Race Game<br>赛车游戏、竞速游戏</p>
 <blockquote>
 <ul>
 <li>极品飞车</li>
@@ -1315,7 +1315,7 @@
 <li>QQ跑跑卡丁车</li>
 </ul>
 </blockquote>
-<h2><span id="rpg">RPG</span></h2><p>Role-Playing Game<br>角色扮演游戏</p>
+<h2 id="RPG"><a href="#RPG" class="headerlink" title="RPG"></a>RPG</h2><p>Role-Playing Game<br>角色扮演游戏</p>
 <blockquote>
 <ul>
 <li>天下3</li>
@@ -1330,7 +1330,7 @@
 </li>
 </ul>
 </blockquote>
-<h2><span id="rts">RTS</span></h2><p>Real-Time Strategy Game<br>即时战略游戏；难度高，注意力集中</p>
+<h2 id="RTS"><a href="#RTS" class="headerlink" title="RTS"></a>RTS</h2><p>Real-Time Strategy Game<br>即时战略游戏；难度高，注意力集中</p>
 <blockquote>
 <ul>
 <li>红色警戒</li>
@@ -1340,21 +1340,21 @@
 <li>红警</li>
 </ul>
 </blockquote>
-<h2><span id="puz">PUZ</span></h2><p>Puzzle Game<br>益智类游戏</p>
+<h2 id="PUZ"><a href="#PUZ" class="headerlink" title="PUZ"></a>PUZ</h2><p>Puzzle Game<br>益智类游戏</p>
 <blockquote>
 <ul>
 <li>俄罗斯方块</li>
 <li>天天爱消除</li>
 </ul>
 </blockquote>
-<h2><span id="sim">SIM</span></h2><p>Simulation Game<br>模拟经营</p>
+<h2 id="SIM"><a href="#SIM" class="headerlink" title="SIM"></a>SIM</h2><p>Simulation Game<br>模拟经营</p>
 <blockquote>
 <ul>
 <li>模拟人生</li>
 <li>模拟城市</li>
 </ul>
 </blockquote>
-<h2><span id="slg">SLG</span></h2><p>Strategy Game<br>策略游戏</p>
+<h2 id="SLG"><a href="#SLG" class="headerlink" title="SLG"></a>SLG</h2><p>Strategy Game<br>策略游戏</p>
 <blockquote>
 <ul>
 <li>汉王纷争</li>
@@ -1364,7 +1364,7 @@
 <li>保卫萝卜</li>
 </ul>
 </blockquote>
-<h2><span id="spg">SPG</span></h2><p>Sports Game<br>体育运动类游戏；也叫做SPT</p>
+<h2 id="SPG"><a href="#SPG" class="headerlink" title="SPG"></a>SPG</h2><p>Sports Game<br>体育运动类游戏；也叫做SPT</p>
 <blockquote>
 <ul>
 <li>热血篮球</li>
@@ -1372,14 +1372,14 @@
 <li>实况足球</li>
 </ul>
 </blockquote>
-<h2><span id="stg">STG</span></h2><p>Shooting Game<br>射击游戏</p>
+<h2 id="STG"><a href="#STG" class="headerlink" title="STG"></a>STG</h2><p>Shooting Game<br>射击游戏</p>
 <blockquote>
 <ul>
 <li>求生之路</li>
 <li>狙击英雄</li>
 </ul>
 </blockquote>
-<h2><span id="tab">TAB</span></h2><p>Table Game<br>桌面游戏、卡牌游戏</p>
+<h2 id="TAB"><a href="#TAB" class="headerlink" title="TAB"></a>TAB</h2><p>Table Game<br>桌面游戏、卡牌游戏</p>
 <blockquote>
 <ul>
 <li>三国杀</li>
@@ -1390,7 +1390,7 @@
 <li>飞行棋</li>
 </ul>
 </blockquote>
-<h2><span id="tcg">TCG</span></h2><p>Trading Card Game<br>集换式卡牌游戏</p>
+<h2 id="TCG"><a href="#TCG" class="headerlink" title="TCG"></a>TCG</h2><p>Trading Card Game<br>集换式卡牌游戏</p>
 <blockquote>
 <ul>
 <li>万智牌</li>
@@ -1400,14 +1400,14 @@
 </li>
 </ul>
 </blockquote>
-<h2><span id="td">TD</span></h2><p>Tower Defence<br>塔防游戏</p>
+<h2 id="TD"><a href="#TD" class="headerlink" title="TD"></a>TD</h2><p>Tower Defence<br>塔防游戏</p>
 <blockquote>
 <ul>
 <li>梦塔防</li>
 <li>植物大战僵尸</li>
 </ul>
 </blockquote>
-<h2><span id="tps">TPS</span></h2><p>Third-person Shooter<br>第三人称射击游戏</p>
+<h2 id="TPS"><a href="#TPS" class="headerlink" title="TPS"></a>TPS</h2><p>Third-person Shooter<br>第三人称射击游戏</p>
 <blockquote>
 <ul>
 <li>绝地求生<ul>
@@ -1419,19 +1419,19 @@
 <li>全球使命</li>
 </ul>
 </blockquote>
-<h2><span id="回合制">回合制</span></h2><p>以回合算，轮流出招</p>
+<h2 id="回合制"><a href="#回合制" class="headerlink" title="回合制"></a>回合制</h2><p>以回合算，轮流出招</p>
 <blockquote>
 <ul>
 <li>梦幻西游</li>
 <li>阴阳师</li>
 </ul>
 </blockquote>
-<h2><span id="挂机游戏-放置类游戏">挂机游戏、放置类游戏</span></h2><blockquote>
+<h2 id="挂机游戏、放置类游戏"><a href="#挂机游戏、放置类游戏" class="headerlink" title="挂机游戏、放置类游戏"></a>挂机游戏、放置类游戏</h2><blockquote>
 <ul>
 <li>旅行青蛙</li>
 </ul>
 </blockquote>
-<h2><span id="沙盒游戏">沙盒游戏</span></h2><p>自由度高、随机时间多、创造性强</p>
+<h2 id="沙盒游戏"><a href="#沙盒游戏" class="headerlink" title="沙盒游戏"></a>沙盒游戏</h2><p>自由度高、随机时间多、创造性强</p>
 <blockquote>
 <ul>
 <li>我的世界<ul>
@@ -1440,7 +1440,7 @@
 </li>
 </ul>
 </blockquote>
-<h1><span id="参考资料">参考资料</span></h1><ul>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
 <li><a href="https://www.nowcoder.com/questionTerminal/c2922a68c6814e908a5a9a6c6c2c2e39" target="_blank" rel="noopener">对游戏数据名词“ACU”的正确解释</a></li>
 <li><a href="https://www.cnblogs.com/batsing/p/8945299.html" target="_blank" rel="noopener">游戏类型术语</a></li>
 <li><a href="https://baijiahao.baidu.com/s?id=1590728706876159827&amp;wfr=spider&amp;for=pc" target="_blank" rel="noopener">涨知识！游戏分类简称大全，你能说出几个？</a></li>
@@ -1515,33 +1515,33 @@
           <blockquote>
 <p>优先按照英文排序；若无英文，则按中文排序</p>
 </blockquote>
-<h2><span id="cac">CAC</span></h2><ul>
+<h2 id="CAC"><a href="#CAC" class="headerlink" title="CAC"></a>CAC</h2><ul>
 <li><strong>获客成本</strong>（CAC，）</li>
 </ul>
-<h2><span id="enquiry">Enquiry</span></h2><ul>
+<h2 id="Enquiry"><a href="#Enquiry" class="headerlink" title="Enquiry"></a>Enquiry</h2><ul>
 <li>询盘（Enquiry / Inquiry）：买方（或卖方）为了购买（或销售）某项商品，向对方询问有关交易条件的表示。在国际贸易的实际业务中，一般多由买方主动向卖方发出询盘。</li>
 <li>询盘量：有意向购买的卖家发给卖家的询盘的数量</li>
 </ul>
-<h2><span id="fr">FR</span></h2><p>访问路径（FR，Flow Report）：用户在网站上的访问行为，各个页面的进入率和跳出率</p>
-<h2><span id="ip">IP</span></h2><p><strong>IP</strong>（Internet Protocol）：访问过该网站的IP总数；以用户的IP地址作为统计依据。</p>
+<h2 id="FR"><a href="#FR" class="headerlink" title="FR"></a>FR</h2><p>访问路径（FR，Flow Report）：用户在网站上的访问行为，各个页面的进入率和跳出率</p>
+<h2 id="IP"><a href="#IP" class="headerlink" title="IP"></a>IP</h2><p><strong>IP</strong>（Internet Protocol）：访问过该网站的IP总数；以用户的IP地址作为统计依据。</p>
 <ul>
 <li>同一天00:00-24:00内相同IP地址仅计算一次</li>
 </ul>
-<h2><span id="ltv">LTV</span></h2><p><strong>用户生命周期价值</strong>（LTV）</p>
-<h2><span id="mvp">MVP</span></h2><p>最小可行性产品（MVP）</p>
-<h2><span id="pct">PCT</span></h2><p><strong>客单价</strong>（Per Customer Transaction）：平均交易金额/顾客平均购买商品的金额</p>
+<h2 id="LTV"><a href="#LTV" class="headerlink" title="LTV"></a>LTV</h2><p><strong>用户生命周期价值</strong>（LTV）</p>
+<h2 id="MVP"><a href="#MVP" class="headerlink" title="MVP"></a>MVP</h2><p>最小可行性产品（MVP）</p>
+<h2 id="PCT"><a href="#PCT" class="headerlink" title="PCT"></a>PCT</h2><p><strong>客单价</strong>（Per Customer Transaction）：平均交易金额/顾客平均购买商品的金额</p>
 <script type="math/tex; mode=display">客单价=销售总额/成交总笔数</script><p> 或</p>
 <script type="math/tex; mode=display">客单价=商品平均单价\times每一个顾客平均购买商品个数</script><p> 或</p>
-<script type="math/tex; mode=display">客单价=动线长度\times停留率\times注目率\times购买率\times购买个数\times商品单价</script><h2><span id="pmf">PMF</span></h2><p>PMF（Product/Market Fit）：产品与市场相契合的状态</p>
-<h2><span id="ppc">PPC</span></h2><p>点击付费广告（PPC，Pay Per Click）</p>
-<h2><span id="pv">PV</span></h2><p><strong>页面浏览量</strong>（PV，Page View）：网站在某一段时间内的页面浏览量是多少</p>
+<script type="math/tex; mode=display">客单价=动线长度\times停留率\times注目率\times购买率\times购买个数\times商品单价</script><h2 id="PMF"><a href="#PMF" class="headerlink" title="PMF"></a>PMF</h2><p>PMF（Product/Market Fit）：产品与市场相契合的状态</p>
+<h2 id="PPC"><a href="#PPC" class="headerlink" title="PPC"></a>PPC</h2><p>点击付费广告（PPC，Pay Per Click）</p>
+<h2 id="PV"><a href="#PV" class="headerlink" title="PV"></a>PV</h2><p><strong>页面浏览量</strong>（PV，Page View）：网站在某一段时间内的页面浏览量是多少</p>
 <ul>
 <li>用户每一次对网站中的每个网页访问均被记录一个PV</li>
 </ul>
-<h2><span id="seo">SEO</span></h2><ul>
+<h2 id="SEO"><a href="#SEO" class="headerlink" title="SEO"></a>SEO</h2><ul>
 <li>搜索引擎优化（SEO，Search Engine Optimization）</li>
 </ul>
-<h2><span id="sku-spu">SKU | SPU</span></h2><ul>
+<h2 id="SKU-SPU"><a href="#SKU-SPU" class="headerlink" title="SKU | SPU"></a>SKU | SPU</h2><ul>
 <li><strong>SKU</strong>（Stock Keeping Unit）库存量单位：也称最小库存单元、最小库存单位、最小存货单位、单品等，<ul>
 <li>对电商而言，SKU是指一款商品；一款商品多色，则有多个SKU</li>
 </ul>
@@ -1554,9 +1554,9 @@
 </ul>
 </li>
 </ul>
-<h2><span id="ts">TS</span></h2><p>渠道来源（Traffic Sources）：用户流量来源于哪些不同的渠道</p>
-<h2><span id="ud">UD</span></h2><p>访客特征（UD，User Demographics）：访问用户具有哪些特征值，可用来做用户分类</p>
-<h2><span id="uv">UV</span></h2><ul>
+<h2 id="TS"><a href="#TS" class="headerlink" title="TS"></a>TS</h2><p>渠道来源（Traffic Sources）：用户流量来源于哪些不同的渠道</p>
+<h2 id="UD"><a href="#UD" class="headerlink" title="UD"></a>UD</h2><p>访客特征（UD，User Demographics）：访问用户具有哪些特征值，可用来做用户分类</p>
+<h2 id="UV"><a href="#UV" class="headerlink" title="UV"></a>UV</h2><ul>
 <li><p><strong>UV</strong>（Unique Visitor）：通过互联网访问、浏览该网站的自然人；一台电脑客户端视为一个访客。</p>
 <ul>
 <li>独立UV以浏览器cookie为依据；只要cookie不清除，同一天00:00-24:00内相同的客户端只被计算一次（2个人用不同的账号登录同一台电脑的同一个浏览器，只记录一个UV）</li>
@@ -1567,15 +1567,15 @@
 <li><p><strong>用户浏览量</strong>（UV，User View）：网站在某一段时间内的用户浏览量是多少</p>
 </li>
 </ul>
-<h2><span id="vv">VV</span></h2><p>VV（Visit View）：统计所有访客一天内访问网站的次数</p>
+<h2 id="VV"><a href="#VV" class="headerlink" title="VV"></a>VV</h2><p>VV（Visit View）：统计所有访客一天内访问网站的次数</p>
 <ul>
 <li>访客完成浏览并最终关掉该网站的所有页面即完成一次访问（Visit）</li>
 <li>同一访客一天内可能有多次访问行为</li>
 </ul>
-<h2><span id> </span></h2><ul>
+<h2 id><a href="#" class="headerlink" title=" "></a> </h2><ul>
 <li>VIP顾客销售额占比（%）：用于判断店铺会员贡献<script type="math/tex; mode=display">VIP顾客销售额占比=\frac{会员顾客消费金额}{总销售额}\times100\%</script></li>
 </ul>
-<h1><span id="参考资料">参考资料</span></h1><ul>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
 <li><a href="https://baijiahao.baidu.com/s?id=1611777819781232073&amp;wfr=spider&amp;for=pc" target="_blank" rel="noopener">SPU和SKU都是什么意思</a></li>
 <li><a href="https://www.jianshu.com/p/a94d6f102108" target="_blank" rel="noopener">电商业务中大家都说的SKU是啥</a></li>
 <li><a href="https://www.zhihu.com/question/20448467" target="_blank" rel="noopener">如何清楚易懂地解释“UV”和“PV”的定义？</a></li>

@@ -217,7 +217,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1><span id="numpy">NumPy</span></h1><h2><span id="argmax">.argmax()</span></h2><p>返回矩阵/数组的最大值的索引</p>
+          <h1 id="NumPy"><a href="#NumPy" class="headerlink" title="NumPy"></a>NumPy</h1><h2 id="argmax"><a href="#argmax" class="headerlink" title=".argmax()"></a>.argmax()</h2><p>返回矩阵/数组的最大值的索引</p>
 <pre><code class="lang-Python">import numpy as np
 
 a = np.arange(12).reshape(3,4)  ## 3行4列
@@ -235,7 +235,7 @@ np.argmax(a, axis=0)  ## 返回每列的最大值的索引
 np.argmax(a, axis=1)  ## 返回每行的最大值的索引
 # array([3, 3, 3], dtype=int64)
 </code></pre>
-<h2><span id="argmin">.argmin()</span></h2><p>返回矩阵/数组的最小值的索引</p>
+<h2 id="argmin"><a href="#argmin" class="headerlink" title=".argmin()"></a>.argmin()</h2><p>返回矩阵/数组的最小值的索引</p>
 <pre><code class="lang-Python">import numpy as np
 
 a = np.arange(12).reshape(3,4)  ## 3行4列
@@ -258,8 +258,8 @@ a
 np.argmin(a, axis=0)  ## 多个最小值，只返回第一个最小值的索引
 # array([0, 0, 0, 0], dtype=int64)
 </code></pre>
-<h2><span id="ptp">.ptp()</span></h2><p>最大值与最小值的差</p>
-<h2><span id="reshape">.reshape()</span></h2><p>改变矩阵/数组的维数</p>
+<h2 id="ptp"><a href="#ptp" class="headerlink" title=".ptp()"></a>.ptp()</h2><p>最大值与最小值的差</p>
+<h2 id="reshape"><a href="#reshape" class="headerlink" title=".reshape()"></a>.reshape()</h2><p>改变矩阵/数组的维数</p>
 <pre><code class="lang-Python">import numpy as np
 
 a = np.arange(12).reshape(3, 4)  ## 3行4列
@@ -268,7 +268,7 @@ a
 #       [ 4,  5,  6,  7],
 #       [ 8,  9, 10, 11]])
 </code></pre>
-<h3><span id="reshapem-1">.reshape(m,-1)</span></h3><p>将数组形状变为m行（列数相应确定）；元素个数必须是m的整数倍</p>
+<h3 id="reshape-m-1"><a href="#reshape-m-1" class="headerlink" title=".reshape(m,-1)"></a>.reshape(m,-1)</h3><p>将数组形状变为m行（列数相应确定）；元素个数必须是m的整数倍</p>
 <pre><code class="lang-Python">a = np.arange(12).reshape(1, -1)  ## 1行（不指定列数）
 a
 # array([[ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11]])
@@ -279,7 +279,7 @@ a
 #       [ 4,  5,  6,  7],
 #       [ 8,  9, 10, 11]])
 </code></pre>
-<h3><span id="reshape-1n">.reshape(-1,n)</span></h3><p>将数组形状变为n列（行数相应确定）；元素个数必须是n的整数倍</p>
+<h3 id="reshape-1-n"><a href="#reshape-1-n" class="headerlink" title=".reshape(-1,n)"></a>.reshape(-1,n)</h3><p>将数组形状变为n列（行数相应确定）；元素个数必须是n的整数倍</p>
 <pre><code class="lang-Python">a = np.arange(12).reshape(-1, 4)  ## 4列
 a
 # array([[ 0,  1,  2,  3],
@@ -295,7 +295,7 @@ a
 <pre><code class="lang-Python">
 
 </code></pre>
-<h1><span id="参考资料">参考资料</span></h1><p>[] <a href></a><br>[] <a href="https://blog.csdn.net/weixin_41770169/article/details/80714461" target="_blank" rel="noopener">Numpy.argmin的使用</a></p>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p>[] <a href></a><br>[] <a href="https://blog.csdn.net/weixin_41770169/article/details/80714461" target="_blank" rel="noopener">Numpy.argmin的使用</a></p>
 
       
     </div>
@@ -354,8 +354,8 @@ a
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1><span id="keras">keras</span></h1><p>Keras 是一个用 Python 编写的高级神经网络 API，它能够以 TensorFlow, CNTK, 或者 Theano 作为后端运行。</p>
-<h2><span id="安装">安装</span></h2><ul>
+          <h1 id="keras"><a href="#keras" class="headerlink" title="keras"></a>keras</h1><p>Keras 是一个用 Python 编写的高级神经网络 API，它能够以 TensorFlow, CNTK, 或者 Theano 作为后端运行。</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><ul>
 <li>使用PyPI安装<pre><code class="lang-shell">## Anaconda Prompt
 pip install keras
 </code></pre>
@@ -366,7 +366,7 @@ python setup.py install
 </code></pre>
 </li>
 </ul>
-<h2><span id="后端">后端</span></h2><ul>
+<h2 id="后端"><a href="#后端" class="headerlink" title="后端"></a>后端</h2><ul>
 <li>Keras不处理如张量乘积、卷积等低级操作</li>
 <li>依赖于一个专门的、优化的张量操作库来完成这个操作，它可以作为 Keras 的「后端引擎」</li>
 <li>Keras 有三个后端实现可用: <ul>
@@ -377,14 +377,14 @@ python setup.py install
 </li>
 </ul>
 <p>配置见：<a href="https://keras.io/zh/backend/" target="_blank" rel="noopener">Keras后端配置</a></p>
-<h2><span id="sequential顺序模型">Sequential顺序模型</span></h2><ul>
+<h2 id="Sequential顺序模型"><a href="#Sequential顺序模型" class="headerlink" title="Sequential顺序模型"></a>Sequential顺序模型</h2><ul>
 <li>由多个网络层线性堆叠</li>
 </ul>
 <pre><code class="lang-Python">from keras.models import Sequential
 
 model = Sequential()
 </code></pre>
-<h3><span id="堆叠">堆叠</span></h3><p>可以使用<code>.add()</code>来堆叠模型：</p>
+<h3 id="堆叠"><a href="#堆叠" class="headerlink" title="堆叠"></a>堆叠</h3><p>可以使用<code>.add()</code>来堆叠模型：</p>
 <pre><code class="lang-Python">from keras.models import Sequential
 from keras.layers import Dense
 
@@ -418,7 +418,7 @@ model.add(Dense(32, input_shape=(784,)))
 model = Sequential()
 model.add(Dense(32, input_dim=784))
 </code></pre>
-<h3><span id="编译">编译</span></h3><p>构建模型之后，可以使用<code>.compile()</code>来配置学习过程。</p>
+<h3 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h3><p>构建模型之后，可以使用<code>.compile()</code>来配置学习过程。</p>
 <ul>
 <li>优化器<code>optimizer</code>：可以是现有优化器的字符串标识符，也可以是Optimizer类的实例。<ul>
 <li>现有优化器的字符串标识符：<code>rmsprop</code>、<code>adagrad</code></li>
@@ -464,7 +464,7 @@ model.compile(optimizer=&#39;rmsprop&#39;,
 </code></pre>
 </li>
 </ul>
-<h3><span id="训练">训练</span></h3><p>然后在训练集数据上进行迭代(<strong>训练</strong>)：</p>
+<h3 id="训练"><a href="#训练" class="headerlink" title="训练"></a>训练</h3><p>然后在训练集数据上进行迭代(<strong>训练</strong>)：</p>
 <pre><code class="lang-Python">model.fit(x_train, y_train, epochs=5, batch_size=32)
 </code></pre>
 <p><strong>评估</strong>模型性能:</p>
@@ -476,7 +476,7 @@ model.compile(optimizer=&#39;rmsprop&#39;,
 <pre><code class="lang-Python">
 
 </code></pre>
-<h1><span id="参考资料">参考资料</span></h1><p>[1] <a href="https://keras.io/zh/" target="_blank" rel="noopener">Keras中文文档</a></p>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p>[1] <a href="https://keras.io/zh/" target="_blank" rel="noopener">Keras中文文档</a></p>
 
       
     </div>
@@ -631,11 +631,11 @@ model.compile(optimizer=&#39;rmsprop&#39;,
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1><span id="pip">pip</span></h1><p>一般在Anaconda Prompt中输入pip命令</p>
-<h2><span id="版本更新">版本更新</span></h2><p>参考：<a href="https://mp.weixin.qq.com/s?__biz=MzAwNDc0MTUxMw==&amp;mid=2649643692&amp;idx=1&amp;sn=70dbc41763a8c644a4d6c77ae5f7dd7e&amp;chksm=833dba4ab44a335cc7e177dc657f1967ebbd38214c692153cb9a82fdfb542d9a132c2325a227&amp;mpshare=1&amp;scene=1&amp;srcid=&amp;sharer_sharetime=1589007082512&amp;sharer_shareid=b539221659d6ecf12200314308b58dd3&amp;key=cbc079077f0681e386b6535f2cb4ef718f051657f8a1901edd559d983b9035139ec5357fc73a707c01d8308cb77ec658498db2c158f5ec06b4af30c7b17076247a4aee34eb0c3830103a133ab46a209f&amp;ascene=1&amp;uin=MjAwNDUzMjgxNw%3D%3D&amp;devicetype=Windows+10+x64&amp;version=62090070&amp;lang=zh_CN&amp;exportkey=ARqsCMWgte4FkZi5FL4hNrc%3D&amp;pass_ticket=CmNRIqxaQvL5KoUpjMG2wm1sm1tONovrasNNAw%2F3Gmy%2FS79A7RAXf525qAh80qgw" target="_blank" rel="noopener">pip 发布新版本了！</a></p>
+          <h1 id="pip"><a href="#pip" class="headerlink" title="pip"></a>pip</h1><p>一般在Anaconda Prompt中输入pip命令</p>
+<h2 id="版本更新"><a href="#版本更新" class="headerlink" title="版本更新"></a>版本更新</h2><p>参考：<a href="https://mp.weixin.qq.com/s?__biz=MzAwNDc0MTUxMw==&amp;mid=2649643692&amp;idx=1&amp;sn=70dbc41763a8c644a4d6c77ae5f7dd7e&amp;chksm=833dba4ab44a335cc7e177dc657f1967ebbd38214c692153cb9a82fdfb542d9a132c2325a227&amp;mpshare=1&amp;scene=1&amp;srcid=&amp;sharer_sharetime=1589007082512&amp;sharer_shareid=b539221659d6ecf12200314308b58dd3&amp;key=cbc079077f0681e386b6535f2cb4ef718f051657f8a1901edd559d983b9035139ec5357fc73a707c01d8308cb77ec658498db2c158f5ec06b4af30c7b17076247a4aee34eb0c3830103a133ab46a209f&amp;ascene=1&amp;uin=MjAwNDUzMjgxNw%3D%3D&amp;devicetype=Windows+10+x64&amp;version=62090070&amp;lang=zh_CN&amp;exportkey=ARqsCMWgte4FkZi5FL4hNrc%3D&amp;pass_ticket=CmNRIqxaQvL5KoUpjMG2wm1sm1tONovrasNNAw%2F3Gmy%2FS79A7RAXf525qAh80qgw" target="_blank" rel="noopener">pip 发布新版本了！</a></p>
 <pre><code class="lang-shell">python -m pip install --upgrade pip
 </code></pre>
-<h1><span id="参考资料">参考资料</span></h1><p>[]</p>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p>[] </p>
 
       
     </div>
@@ -694,7 +694,7 @@ model.compile(optimizer=&#39;rmsprop&#39;,
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1><span id="c">C++</span></h1><h2><span id="getchar">getchar()</span></h2><p>用于暂停程序，以便查看程序输出的内容</p>
+          <h1 id="C"><a href="#C" class="headerlink" title="C++"></a>C++</h1><h2 id="getchar"><a href="#getchar" class="headerlink" title="getchar()"></a>getchar()</h2><p>用于暂停程序，以便查看程序输出的内容</p>
 <pre><code class="lang-cpp">#include &lt;stdio.h&gt;
 
 int main()
@@ -865,7 +865,7 @@ int main()
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1><span id="pyecharts">pyecharts</span></h1><p><strong>安装</strong>：<br>在Anaconda Prompt中输入：</p>
+          <h1 id="pyecharts"><a href="#pyecharts" class="headerlink" title="pyecharts"></a>pyecharts</h1><p><strong>安装</strong>：<br>在Anaconda Prompt中输入：</p>
 <pre><code class="lang-bash">pip install pyecharts
 </code></pre>
 <p>安装过程可能会出现多种问题：</p>
@@ -875,7 +875,7 @@ int main()
 <li>提示找不到相应版本</li>
 </ol>
 <p><a href="https://blog.csdn.net/qq_37954088/article/details/88876791" target="_blank" rel="noopener">解决方法</a></p>
-<h2><span id="插入到ppt">插入到PPT</span></h2><ol>
+<h2 id="插入到PPT"><a href="#插入到PPT" class="headerlink" title="插入到PPT"></a>插入到PPT</h2><ol>
 <li>使用pyecharts画图并生成html文件</li>
 <li>查看html的源代码</li>
 <li>把相关的源代码复制到PPT插件中，点击运行即可</li>
@@ -928,7 +928,7 @@ c = (
 <p><meta name="referrer" content="no-referrer"><br><img data-src="/2020/05/08/python-pyecharts%E6%A8%A1%E5%9D%97/pic3.png" class title="报错"><br>点击“×”，并点击齿轮“Setting”；再次点击“Run Fiddle!”按钮，即可成功生成交互式echarts。</p>
 <p><meta name="referrer" content="no-referrer"><br><img data-src="/2020/05/08/python-pyecharts%E6%A8%A1%E5%9D%97/pic4.png" class title="成功的交互式桑基图"></p>
 <p>非第一次使用该插件，可从“插入”——“我的加载项”中找到该插件。</p>
-<h1><span id="参考资料">参考资料</span></h1><p>[1] <a href="https://pyecharts.org/#/" target="_blank" rel="noopener">pyecharts官方文档</a><br>[2] <a href="http://gallery.pyecharts.org/#/" target="_blank" rel="noopener">Pyecharts-Gallary</a><br>[3] <a href="https://campus.alibaba.com/traineePositions.htm?spm=a1z3e1.11874847.0.0.5d8d4928Tx32T7&amp;refno=12394" target="_blank" rel="noopener">如何把pyecharts的炫酷延续到PPT里？</a><br>[] <a href></a><br>[] <a href></a></p>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p>[1] <a href="https://pyecharts.org/#/" target="_blank" rel="noopener">pyecharts官方文档</a><br>[2] <a href="http://gallery.pyecharts.org/#/" target="_blank" rel="noopener">Pyecharts-Gallary</a><br>[3] <a href="https://campus.alibaba.com/traineePositions.htm?spm=a1z3e1.11874847.0.0.5d8d4928Tx32T7&amp;refno=12394" target="_blank" rel="noopener">如何把pyecharts的炫酷延续到PPT里？</a><br>[] <a href></a><br>[] <a href></a></p>
 
       
     </div>
@@ -1077,7 +1077,7 @@ c = (
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1><span id="linkedin">LinkedIn</span></h1><p>早期的业务框架：</p>
+          <h1 id="LinkedIn"><a href="#LinkedIn" class="headerlink" title="LinkedIn"></a>LinkedIn</h1><p>早期的业务框架：</p>
 <ul>
 <li>用户<br>用户的使用、活跃、增长</li>
 <li>数据<br>用户使用产生的行为数据、服务端日志数据和交易数据</li>
@@ -1091,7 +1091,7 @@ c = (
     data-->idea;</pre>
 
 
-<h1><span id="参考资料">参考资料</span></h1><p>[1] <a href="http://blog.growingio.com/growth/298" target="_blank" rel="noopener">增长秘籍：互联网增长的第一本数据分析手册</a></p>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p>[1] <a href="http://blog.growingio.com/growth/298" target="_blank" rel="noopener">增长秘籍：互联网增长的第一本数据分析手册</a></p>
 
       
     </div>
@@ -1163,7 +1163,7 @@ c = (
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1><span id="大整数相乘">大整数相乘</span></h1><ul>
+          <h1 id="大整数相乘"><a href="#大整数相乘" class="headerlink" title="大整数相乘"></a>大整数相乘</h1><ul>
 <li>有两个用字符串表示的非常大的大整数,算出他们的乘积，也是用字符串表示。不能用系统自带的大整数类型。<blockquote>
 <p>拼多多2018年校招内推编程题</p>
 </blockquote>
@@ -1177,7 +1177,7 @@ c = (
     except:
         break
 </code></pre>
-<h1><span id="六一儿童节">六一儿童节</span></h1><ul>
+<h1 id="六一儿童节"><a href="#六一儿童节" class="headerlink" title="六一儿童节"></a>六一儿童节</h1><ul>
 <li>六一儿童节，老师带了很多好吃的巧克力到幼儿园。每块巧克力j的重量为w[j]，对于每个小朋友i，当他分到的巧克力大小达到h[i] (即w[j]&gt;=h[i])，他才会上去表演节目。老师的目标是将巧克力分发给孩子们，使得最多的小孩上台表演。可以保证每个w[i]&gt; 0且不能将多块巧克力分给一个孩子或将一块分给多个孩子。</li>
 <li>第一行：n，表示h数组元素个数</li>
 <li>第二行：n个h数组元素</li>
@@ -1213,7 +1213,7 @@ c = (
         break
 </code></pre>
 <p><a href="https://blog.csdn.net/qq_28626909/article/details/88246948" target="_blank" rel="noopener">参考</a></p>
-<h1><span id="迷宫寻路">迷宫寻路</span></h1><ul>
+<h1 id="迷宫寻路"><a href="#迷宫寻路" class="headerlink" title="迷宫寻路"></a>迷宫寻路</h1><ul>
 <li>假设一个探险家被困在了地底的迷宫之中，要从当前位置开始找到一条通往迷宫出口的路径。迷宫可以用一个二维矩阵组成，有的部分是墙，有的部分是路。迷宫之中有的路上还有门，每扇门都在迷宫的某个地方有与之匹配的钥匙，只有先拿到钥匙才能打开门。请设计一个算法，帮助探险家找到脱困的最短路径。如前所述，迷宫是通过一个二维矩阵表示的，每个元素的值的含义如下 0-墙，1-路，2-探险家的起始位置，3-迷宫的出口，大写字母-门，小写字母-对应大写字母所代表的门的钥匙</li>
 <li>迷宫的地图，用二维矩阵表示。第一行是表示矩阵的行数和列数M和N</li>
 <li>后面的M行是矩阵的数据，每一行对应与矩阵的一行（中间没有空格）。M和N都不超过100, 门不超过10扇。<blockquote>

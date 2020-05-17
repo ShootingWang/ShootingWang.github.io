@@ -221,7 +221,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1><span id="pandas">Pandas</span></h1><h2><span id="cut">.cut()</span></h2><p>将数组按区间划分</p>
+        <h1 id="Pandas"><a href="#Pandas" class="headerlink" title="Pandas"></a>Pandas</h1><h2 id="cut"><a href="#cut" class="headerlink" title=".cut()"></a>.cut()</h2><p>将数组按区间划分</p>
 <pre><code class="lang-Python">cut(数据数组, 面元数组)  # 将数据数组按区间划分
 cut(数据数组, 面元个数, precision=2)  # 将数据数组均分；每个面元的间距一致
 # precision=2表示保留2位小数
@@ -275,7 +275,7 @@ df.head().append(df.tail())  # 查看前5行和最后5行
 # 28   11    (6, 12]           少儿
 # 29   18   (12, 18]          青少年
 </code></pre>
-<h3><span id="codes">.codes</span></h3><p>查看数据对应的面元编号</p>
+<h3 id="codes"><a href="#codes" class="headerlink" title=".codes"></a>.codes</h3><p>查看数据对应的面元编号</p>
 <pre><code class="lang-Python">import pandas as pd
 
 ages = [23, 45, 21, 15, 24, 54, 36, 48, 57, 86, 61, 45]  # 数据数组
@@ -287,7 +287,7 @@ cat  # 返回每个数据对应的面元
 # Length: 12
 # Categories (6, interval[int64]): [(0, 18] &lt; (18, 30] &lt; (30, 40] &lt; (40, 50] &lt; (50, 65] &lt; (65, 100]]
 </code></pre>
-<h3><span id="value_counts">.value_counts()</span></h3><p>不同面元里含有的数据个数</p>
+<h3 id="value-counts"><a href="#value-counts" class="headerlink" title=".value_counts()"></a>.value_counts()</h3><p>不同面元里含有的数据个数</p>
 <pre><code class="lang-Python">cat.value_counts()  # 不同面元里含有的数据个数
 # (0, 18]      1
 # (18, 30]     3
@@ -297,7 +297,7 @@ cat  # 返回每个数据对应的面元
 # (65, 100]    1
 # dtype: int64
 </code></pre>
-<h2><span id="qcut">.qcut()</span></h2><pre><code class="lang-Python">qcut(数据数组, 面元个数)  # 将数据数组均分；每个面元的数据个数相等
+<h2 id="qcut"><a href="#qcut" class="headerlink" title=".qcut()"></a>.qcut()</h2><pre><code class="lang-Python">qcut(数据数组, 面元个数)  # 将数据数组均分；每个面元的数据个数相等
 </code></pre>
 <pre><code class="lang-Python">cat3 = pd.qcut(ages, 5)
 cat3
@@ -326,7 +326,7 @@ cat4.value_counts()
 <pre><code class="lang-Python">
 
 </code></pre>
-<h1><span id="参考资料">参考资料</span></h1><p>[] <a href></a></p>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p>[] <a href></a></p>
 
     </div>
 
@@ -444,7 +444,7 @@ cat4.value_counts()
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#"><span class="nav-number">1.</span> <span class="nav-text">Pandas</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">1.1.</span> <span class="nav-text">.cut()</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#"><span class="nav-number">1.1.1.</span> <span class="nav-text">.codes</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#"><span class="nav-number">1.1.2.</span> <span class="nav-text">.value_counts()</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">1.2.</span> <span class="nav-text">.qcut()</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#"><span class="nav-number">2.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Pandas"><span class="nav-number">1.</span> <span class="nav-text">Pandas</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#cut"><span class="nav-number">1.1.</span> <span class="nav-text">.cut()</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#codes"><span class="nav-number">1.1.1.</span> <span class="nav-text">.codes</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#value-counts"><span class="nav-number">1.1.2.</span> <span class="nav-text">.value_counts()</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#qcut"><span class="nav-number">1.2.</span> <span class="nav-text">.qcut()</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料"><span class="nav-number">2.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
