@@ -174,6 +174,121 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://github.com/ShootingWang/ShootingWang.github.io/2020/05/05/python-collections%E6%A8%A1%E5%9D%97/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ShootingWang">
+      <meta itemprop="description" content="无猫病重症患者">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ShootingWang">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/05/05/python-collections%E6%A8%A1%E5%9D%97/" class="post-title-link" itemprop="url">Python | collections</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-05-05 13:36:41" itemprop="dateCreated datePublished" datetime="2020-05-05T13:36:41+08:00">2020-05-05</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-05-17 13:24:31" itemprop="dateModified" datetime="2020-05-17T13:24:31+08:00">2020-05-17</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/05/05/python-collections%E6%A8%A1%E5%9D%97/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/05/05/python-collections%E6%A8%A1%E5%9D%97/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="collections"><a href="#collections" class="headerlink" title="collections"></a>collections</h1><h2 id="deque"><a href="#deque" class="headerlink" title="deque"></a>deque</h2><p><strong>双边队列</strong>（double-ended queue），具有队列和栈的性质，在列表（list）的基础上增加了移动、旋转和增删等</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> deque</span><br><span class="line"></span><br><span class="line">d = deque()  <span class="comment">## 创建一个队列</span></span><br><span class="line">print(d)</span><br><span class="line"><span class="comment"># deque([])</span></span><br><span class="line"></span><br><span class="line">d1 = deque(range(<span class="number">10</span>))</span><br><span class="line">print(d1)</span><br><span class="line"><span class="comment"># deque([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])</span></span><br></pre></td></tr></table></figure>
+<p>如果指定了参数<code>maxlen</code>，则会生成固定长度的队列；插入元素时，若队列已满，</p>
+<ul>
+<li>从右侧插入，会“挤掉”最左侧的元素</li>
+<li>从左侧插入，会“挤掉”最右侧的元素<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">d = deque(maxlen=<span class="number">3</span>)</span><br><span class="line">d.append(<span class="number">1</span>)</span><br><span class="line">d.append(<span class="number">2</span>)</span><br><span class="line">d.append(<span class="number">3</span>)</span><br><span class="line">d</span><br><span class="line"><span class="comment"># deque([1, 2, 3])</span></span><br><span class="line">d.append(<span class="number">4</span>)</span><br><span class="line">d</span><br><span class="line"><span class="comment"># deque([2, 3, 4])</span></span><br><span class="line">d.appendleft(<span class="number">5</span>)</span><br><span class="line">d</span><br><span class="line"><span class="comment"># deque([5, 2, 3])</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="append"><a href="#append" class="headerlink" title=".append()"></a>.append()</h3><p>在队列右侧添加元素</p>
+<h3 id="appendleft"><a href="#appendleft" class="headerlink" title=".appendleft()"></a>.appendleft()</h3><p>在队列左侧添加元素<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
+<h3 id="count"><a href="#count" class="headerlink" title=".count()"></a>.count()</h3><p>统计队列中某元素的个数</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="extend"><a href="#extend" class="headerlink" title=".extend()"></a>.extend()</h3><p>在队列右边依次添加所有元素<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
+<h3 id="extendleft"><a href="#extendleft" class="headerlink" title=".extendleft()"></a>.extendleft()</h3><p>在队列左侧依次添加所有元素</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">d = deque([<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>])</span><br><span class="line"></span><br><span class="line">d</span><br><span class="line"><span class="comment">#  deque(['a', 'b', 'c'])</span></span><br><span class="line"></span><br><span class="line">d.extendleft([<span class="string">'d'</span>, <span class="string">'e'</span>, <span class="string">'f'</span>])</span><br><span class="line"></span><br><span class="line">d</span><br><span class="line"><span class="comment"># deque(['f', 'e', 'd', 'a', 'b', 'c'])</span></span><br></pre></td></tr></table></figure>
+<h3 id="pop"><a href="#pop" class="headerlink" title=".pop()"></a>.pop()</h3><p>从队列的右侧删除（取出）一个元素</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="popleft"><a href="#popleft" class="headerlink" title=".popleft()"></a>.popleft()</h3><p>从队列的左侧删除（取出）一个元素<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
+<h3 id="remove"><a href="#remove" class="headerlink" title=".remove()"></a>.remove()</h3><p>将队列中的某元素删除<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
+<h3 id="reverse"><a href="#reverse" class="headerlink" title=".reverse()"></a>.reverse()</h3><p>将队列倒序<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
+<h3 id="rotate"><a href="#rotate" class="headerlink" title=".rotate()"></a>.rotate()</h3><p><code>.rotate(n)</code></p>
+<ul>
+<li>$n &gt; 0$：将队列最右边的n个数据，移到队列的左边</li>
+<li>$n &lt; 0$：将队列最左边的n个数据，移到队列的右边</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">d = deque(range(<span class="number">10</span>))</span><br><span class="line">d</span><br><span class="line"><span class="comment"># deque([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])</span></span><br><span class="line"></span><br><span class="line">d.rotate(<span class="number">3</span>)</span><br><span class="line">d</span><br><span class="line"><span class="comment">#  deque([7, 8, 9, 0, 1, 2, 3, 4, 5, 6])</span></span><br><span class="line"></span><br><span class="line">d = deque(range(<span class="number">10</span>))</span><br><span class="line">d</span><br><span class="line"><span class="comment"># deque([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])</span></span><br><span class="line"></span><br><span class="line">d.rotate(<span class="number">-3</span>)</span><br><span class="line">d</span><br><span class="line"><span class="comment"># deque([3, 4, 5, 6, 7, 8, 9, 0, 1, 2])</span></span><br></pre></td></tr></table></figure>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p>[1] <a href="https://blog.csdn.net/happyrocking/article/details/80058623" target="_blank" rel="noopener">collections.deque介绍</a><br>[2] <a href="https://www.cnblogs.com/LouisZJ/p/8118637.html" target="_blank" rel="noopener">deque 双向队列</a><br>[] <a href></a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+    
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://github.com/ShootingWang/ShootingWang.github.io/2020/05/05/%E9%98%9F%E5%88%97/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1207,86 +1322,6 @@
   
   
 
-    
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/ShootingWang/ShootingWang.github.io/2020/05/04/%E6%8B%BC%E5%A4%9A%E5%A4%9A%E6%B1%82%E8%81%8C/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="ShootingWang">
-      <meta itemprop="description" content="无猫病重症患者">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ShootingWang">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/05/04/%E6%8B%BC%E5%A4%9A%E5%A4%9A%E6%B1%82%E8%81%8C/" class="post-title-link" itemprop="url">拼多多求职</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-05-04 16:44:06" itemprop="dateCreated datePublished" datetime="2020-05-04T16:44:06+08:00">2020-05-04</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-05-06 17:18:04" itemprop="dateModified" datetime="2020-05-06T17:18:04+08:00">2020-05-06</time>
-              </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2020/05/04/%E6%8B%BC%E5%A4%9A%E5%A4%9A%E6%B1%82%E8%81%8C/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/05/04/%E6%8B%BC%E5%A4%9A%E5%A4%9A%E6%B1%82%E8%81%8C/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>加油!</p>
-<h1 id="目标岗位"><a href="#目标岗位" class="headerlink" title="目标岗位"></a>目标岗位</h1><h2 id><a href="#" class="headerlink" title=" "></a> </h2><h2 id="-1"><a href="#-1" class="headerlink" title=" "></a> </h2><h1 id="面经"><a href="#面经" class="headerlink" title="面经"></a>面经</h1><h1 id="笔试"><a href="#笔试" class="headerlink" title="笔试"></a>笔试</h1>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1356,7 +1391,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">98</span>
+          <span class="site-state-item-count">99</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1369,7 +1404,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">42</span>
+        <span class="site-state-item-count">43</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -1471,6 +1506,8 @@
 
 
 
+
+  
 
 
 
