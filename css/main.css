@@ -1486,7 +1486,7 @@ pre code {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #4b12ff;
+  background: #4fffff;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2582,6 +2582,7 @@ mjx-container + br {
   }
 }
 .main-inner {
+  background: rgba(255,255,255,0.5);
   align-items: flex-start;
   display: flex;
   justify-content: space-between;
@@ -2593,7 +2594,7 @@ mjx-container + br {
   }
 }
 .content-wrap {
-  opacity: 0.9;
+  background: rgba(255,255,255,0.5);
   border-radius: initial;
   box-shadow: initial;
   box-sizing: border-box;
