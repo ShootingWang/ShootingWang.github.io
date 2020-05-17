@@ -201,6 +201,13 @@
             </span>
 
           
+            <span id="/2020/05/14/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-donot-overfit/" class="post-meta-item leancloud_visitors" data-flag-title="Kaggle | Don't Overfit!" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
             <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
@@ -208,6 +215,20 @@
               <span class="post-meta-item-text">阅读次数：</span>
               <span id="busuanzi_value_page_pv"></span>
             </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/05/14/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-donot-overfit/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/05/14/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-donot-overfit/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
 
         </div>
       </header>
@@ -286,6 +307,7 @@
 
           </div>
           
+    <div class="comments" id="valine-comments"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -462,6 +484,8 @@
 
 
 
+  
+
 
 
 
@@ -484,14 +508,27 @@ if (document.querySelectorAll('pre.mermaid').length) {
     });
   }, window.mermaid);
 }
+</script>
+
+
+  
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js', () => {
+    new Valine(Object.assign({
+      el         : '#valine-comments',
+      path       : location.pathname,
+    }, {"enable":true,"appId":"HcqUrzMwsA9TmLMLtyTdUNC6-gzGzoHsz","appKey":"6nR2wyQzY0oDXRMFbiINPbE7","notify":true,"verify":false,"placeholder":"Just go go","avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"language":null,"visitor":true,"comment_count":true,"recordIP":false,"serverURLs":null}
+    ));
+  }, window.Valine);
+});
 </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-
-
-  
-
-  
-
-  
 
 </body>
 </html>
