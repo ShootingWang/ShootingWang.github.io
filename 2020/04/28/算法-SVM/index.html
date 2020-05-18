@@ -29,12 +29,13 @@
 <meta property="og:site_name" content="ShootingWang">
 <meta property="og:description" content="SVM Support Vector Machine">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://github.com/2020/04/28/%E7%AE%97%E6%B3%95-SVM/svm.jpg">
 <meta property="og:image" content="https://github.com/img/SVM-Figure_1.png">
 <meta property="og:image" content="https://github.com/img/SVM-Figure_3.png">
 <meta property="og:image" content="https://github.com/img/SVM-Figure_2.png">
 <meta property="og:image" content="https://github.com/img/SVM-Figure_4.jpeg">
 <meta property="article:published_time" content="2020-04-28T02:00:00.000Z">
-<meta property="article:modified_time" content="2020-05-18T01:49:39.713Z">
+<meta property="article:modified_time" content="2020-05-18T01:57:06.628Z">
 <meta property="article:author" content="ShootingWang">
 <meta property="article:tag" content="算法">
 <meta property="article:tag" content="机器学习">
@@ -43,7 +44,7 @@
 <meta property="article:tag" content="有监督学习">
 <meta property="article:tag" content="判别式模型">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://github.com/img/SVM-Figure_1.png">
+<meta name="twitter:image" content="https://github.com/2020/04/28/%E7%AE%97%E6%B3%95-SVM/svm.jpg">
 
 <link rel="canonical" href="https://github.com/ShootingWang/ShootingWang.github.io/2020/04/28/%E7%AE%97%E6%B3%95-SVM/">
 
@@ -219,7 +220,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-05-18 09:49:39" itemprop="dateModified" datetime="2020-05-18T09:49:39+08:00">2020-05-18</time>
+                <time title="修改时间：2020-05-18 09:57:06" itemprop="dateModified" datetime="2020-05-18T09:57:06+08:00">2020-05-18</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -277,6 +278,7 @@
 <p>最初SVM被提出用于二类分类问题。</p>
 <p>支持向量机是<a href="/2020/05/11/%E7%94%9F%E6%88%90%E5%BC%8F%E6%A8%A1%E5%9E%8B-%E5%88%A4%E5%88%AB%E5%BC%8F%E6%A8%A1%E5%9E%8B/" title="判别分类方法">判别分类方法</a>，用一条分割线（二维空间中的直线或曲线）或流形体（多维空间中的曲线、曲面等概念的推广）将各种类型分割开。</p>
 <h2 id="基本思想"><a href="#基本思想" class="headerlink" title="基本思想"></a>基本思想</h2><p>在特征空间中寻找间隔最大的分离超平面将数据高效地分为两类。</p>
+<p><meta name="referrer" content="no-referrer"><br><img src="/2020/04/28/%E7%AE%97%E6%B3%95-SVM/svm.jpg" class title="支持向量机"></p>
 <p>简单分类数据：<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns</span><br><span class="line">sns.set()</span><br><span class="line"></span><br><span class="line"><span class="comment">## 创建类别数为2的分类数据</span></span><br><span class="line"><span class="keyword">from</span> sklearn.datasets.samples_generator <span class="keyword">import</span> make_blobs</span><br><span class="line">X, y = make_blobs(n_samples=<span class="number">50</span>, centers=<span class="number">2</span>, random_state=<span class="number">0</span>, cluster_std=<span class="number">0.60</span>)</span><br><span class="line">plt.scatter(X[:, <span class="number">0</span>], X[:, <span class="number">1</span>], c=y, s=<span class="number">50</span>, cmap=<span class="string">'autumn'</span>)</span><br></pre></td></tr></table></figure></p>
 <p><img src="/img/SVM-Figure_1.png" alt="简单分类数据"></p>
 <p>简单分割线：<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">xfit = np.linspace(<span class="number">-1</span>, <span class="number">3.5</span>)</span><br><span class="line">plt.scatter(X[:, <span class="number">0</span>], X[:, <span class="number">1</span>], c=y, s=<span class="number">50</span>, cmap=<span class="string">'autumn'</span>)</span><br><span class="line">plt.plot([<span class="number">0.6</span>], [<span class="number">2.1</span>], <span class="string">'x'</span>, color=<span class="string">'red'</span>, markeredgewidth=<span class="number">2</span>, markersize=<span class="number">10</span>)  <span class="comment">##特殊点</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> m, b <span class="keyword">in</span> [(<span class="number">1</span>, <span class="number">0.65</span>), (<span class="number">0.5</span>, <span class="number">1.6</span>), (<span class="number">-0.2</span>, <span class="number">2.9</span>)]:</span><br><span class="line">    plt.plot(xfit, m * xfit + b, <span class="string">'-k'</span>)  <span class="comment">##画三条分割直线</span></span><br><span class="line"></span><br><span class="line">plt.xlim(<span class="number">-1</span>, <span class="number">3.5</span>)</span><br></pre></td></tr></table></figure></p>
@@ -310,7 +312,8 @@
 <li>使样本正确分类<script type="math/tex; mode=display">y_i(\mathbf{w}^T\mathbf{x}_i+b)\geq 1</script>$i=1,2,\cdots, n$.</li>
 </ol>
 <p>即：</p>
-<script type="math/tex; mode=display">\min_{\mathbf{w},b}\frac{1}{2}||\mathbf{w}||^2</script><script type="math/tex; mode=display">\mathrm{s.t.} y_i(\mathbf{w}^T\mathbf{x}_i+b)\geq 1, \forall i</script><h3 id="求解"><a href="#求解" class="headerlink" title="求解"></a>求解</h3><p>使用拉格朗日函数求解上述<u>有约束条件的最优化问题</u></p>
+<script type="math/tex; mode=display">\min_{\mathbf{w},b}\frac{1}{2}||\mathbf{w}||^2</script><script type="math/tex; mode=display">\mathrm{s.t.} y_i(\mathbf{w}^T\mathbf{x}_i+b)\geq 1, \forall i</script><p>$\mathbf{w}$使超平面参数</p>
+<h3 id="求解"><a href="#求解" class="headerlink" title="求解"></a>求解</h3><p>使用拉格朗日函数求解上述<u>有约束条件的最优化问题</u></p>
 <script type="math/tex; mode=display">\min_{\mathbf{w},b}\max_{\lambda} = \frac{1}{2}||\mathbf{w}||^2+\sum_{i=1}^n\lambda_i\left[1-y_i(\mathbf{w}^T\mathbf{x}_i+b) \right], \mathrm{s.t. } \lambda_i\geq0, \forall i</script><h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><h2 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h2><p>SVM的优点：</p>
 <ol>
 <li>模型以来的支持向量比较少，消耗内存少</li>
@@ -328,7 +331,7 @@
 <li><a href="https://mp.weixin.qq.com/s?__biz=MzI3NTkyMjA4NA==&amp;mid=2247493162&amp;idx=1&amp;sn=59c051af70c1b4e0ab40d661df1d1ade&amp;chksm=eb7fcbe1dc0842f7cfc9c7224d4c0e2a3fe52d5abe18fe241b717bdf85b59c15d6c16fc99ee8&amp;scene=126&amp;sessionid=1588039863&amp;key=974eeeca00c2ed2bc09cde22429650400361fd61321edc232f5976aa402ec1f37e927d042d76e7eba2cc584551a40b22a7d2cd6e65fe539e5bd3854b306460a7770a747143ced86385ab3a53ffb7ba92&amp;ascene=1&amp;uin=MjAwNDUzMjgxNw%3D%3D&amp;devicetype=Windows+10&amp;version=62080079&amp;lang=zh_CN&amp;exportkey=AWzG3axKR6jb4RKDg8wBmkw%3D&amp;pass_ticket=581sFN8nM0rkEWD6Hp%2BhUJbN5RHzfuAW3vhCzJ2BWY6u9zDUMhZpRh3fnoocgekU" target="_blank" rel="noopener">中文开源！《Python数据科学》PDF下载</a></li>
 <li><a href="https://github.com/jakevdp/PythonDataScienceHandbook">Python Data Science Handbook: full text in Jupyter Notebooks</a></li>
 <li><a href="https://mp.weixin.qq.com/s?__biz=MzU4OTQ1MTA4OQ==&amp;mid=2247484526&amp;idx=2&amp;sn=2b4c5e1515399faa68c0a26c4af86a8a&amp;chksm=fdcc1e50cabb9746ed4540e85f04a46d619c9f742983263ec7e0d745461207130dc942d9b13a&amp;mpshare=1&amp;scene=1&amp;srcid=&amp;sharer_sharetime=1589763512771&amp;sharer_shareid=b539221659d6ecf12200314308b58dd3&amp;key=7813388b70745838ea5587ffa273a7987bc9cc48091ec6078d4ee6aa0f4006b626cf94cde5ee7e9421ccece1dfec15a1470a661bf846a2f2c04d777ecb964c1269220b461add3339f0275e49b7b93a94&amp;ascene=1&amp;uin=MjAwNDUzMjgxNw%3D%3D&amp;devicetype=Windows+10+x64&amp;version=62090070&amp;lang=zh_CN&amp;exportkey=AczC7cKlIl3ih7o5BG26J80%3D&amp;pass_ticket=xR1KSeE3lIX5nnCWlcYTeKvMJAtr4TZjSz63TI%2BWkF05sxtwyAUkGLgSphim0pcM" target="_blank" rel="noopener">关于SVM，面试官们都怎么问</a></li>
-<li><a href></a></li>
+<li><a href="https://pic3.zhimg.com/v2-197913c461c1953c30b804b4a7eddfcc_1200x500.jpg" target="_blank" rel="noopener">图-支持向量机</a></li>
 </ul>
 
     </div>
