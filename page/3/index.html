@@ -174,6 +174,1248 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://github.com/ShootingWang/ShootingWang.github.io/2020/05/12/sql-SQL%E8%BF%9B%E9%98%B6%E6%95%99%E7%A8%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ShootingWang">
+      <meta itemprop="description" content="无猫病重症患者">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ShootingWang">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/05/12/sql-SQL%E8%BF%9B%E9%98%B6%E6%95%99%E7%A8%8B/" class="post-title-link" itemprop="url">SQL | 《SQL进阶教程》</a>
+        </h2>
+
+        <div class="post-meta">
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-05-12 22:52:46" itemprop="dateCreated datePublished" datetime="2020-05-12T22:52:46+08:00">2020-05-12</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-05-17 09:01:29" itemprop="dateModified" datetime="2020-05-17T09:01:29+08:00">2020-05-17</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">数据库</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/05/12/sql-SQL%E8%BF%9B%E9%98%B6%E6%95%99%E7%A8%8B/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/05/12/sql-SQL%E8%BF%9B%E9%98%B6%E6%95%99%E7%A8%8B/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>《SQL进阶教程》读书笔记</p>
+<h1 id="CASE表达式"><a href="#CASE表达式" class="headerlink" title="CASE表达式"></a>CASE表达式</h1><p>CASE表达式：</p>
+<ul>
+<li>简单CASE表达式（simple case expression）</li>
+<li>搜索CASE表达式（searched case expression）</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 简单CASE表达式</span></span><br><span class="line">CASE sex</span><br><span class="line">    WHEN '1' THEN 'male'</span><br><span class="line">    WHEN '2' THEN 'female'</span><br><span class="line">ELSE '其他' <span class="keyword">END</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 搜索CASE表达式</span></span><br><span class="line"><span class="keyword">CASE</span> <span class="keyword">WHEN</span> sex = <span class="string">'1'</span> <span class="keyword">THEN</span> <span class="string">'male'</span></span><br><span class="line">     <span class="keyword">WHEN</span> sex = <span class="string">'2'</span> <span class="keyword">THEN</span> <span class="string">'female'</span></span><br><span class="line"><span class="keyword">ELSE</span> <span class="string">'其他'</span> <span class="keyword">END</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>注意：使用WHEN子句时需要注意条件的排他性</li>
+<li>一定要注意CASE表达式里每个分支返回的数据类型是否一致<ul>
+<li>某个分支返回字符型，而其他分支返回数值型的写法是错误的</li>
+</ul>
+</li>
+<li>CASE表达式末尾不要忘记写END</li>
+<li>ELSE子句是可选的<ul>
+<li>不写ELSE子句时，CASE表达式的执行结果是NULL</li>
+<li>不写ELSE子句可能会造成“语法没有错误，结果却不对”</li>
+</ul>
+</li>
+<li>最好明确地写上ELSE子句</li>
+<li>CASE表达式是一种表法式而不是语句</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">+<span class="comment">-----------+------------+</span></span><br><span class="line">| pref_name | population |</span><br><span class="line">+<span class="comment">-----------+------------+</span></span><br><span class="line">| 东京      |        400 |</span><br><span class="line">| 佐贺      |        100 |</span><br><span class="line">| 德岛      |        100 |</span><br><span class="line">| 爱媛      |        150 |</span><br><span class="line">| 福冈      |        300 |</span><br><span class="line">| 群马      |         50 |</span><br><span class="line">| 长崎      |        200 |</span><br><span class="line">| 香川      |        200 |</span><br><span class="line">| 高知      |        200 |</span><br><span class="line">+<span class="comment">-----------+------------+</span></span><br><span class="line">9 rows in <span class="keyword">set</span> (<span class="number">0.00</span> sec)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 根据县人口统计表，统计不同地区的人口数量</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">CASE</span> pref_name</span><br><span class="line">                <span class="keyword">WHEN</span> <span class="string">'德岛'</span> <span class="keyword">THEN</span> <span class="string">'四国'</span></span><br><span class="line">                <span class="keyword">WHEN</span> <span class="string">'香川'</span> <span class="keyword">THEN</span> <span class="string">'四国'</span></span><br><span class="line">                <span class="keyword">WHEN</span> <span class="string">'爱媛'</span> <span class="keyword">THEN</span> <span class="string">'四国'</span></span><br><span class="line">                <span class="keyword">WHEN</span> <span class="string">'高知'</span> <span class="keyword">THEN</span> <span class="string">'四国'</span></span><br><span class="line">                <span class="keyword">WHEN</span> <span class="string">'福冈'</span> <span class="keyword">THEN</span> <span class="string">'九州'</span></span><br><span class="line">                <span class="keyword">WHEN</span> <span class="string">'长崎'</span> <span class="keyword">THEN</span> <span class="string">'九州'</span></span><br><span class="line">                <span class="keyword">WHEN</span> <span class="string">'佐贺'</span> <span class="keyword">THEN</span> <span class="string">'九州'</span></span><br><span class="line">        <span class="keyword">ELSE</span> <span class="string">'其他'</span> <span class="keyword">END</span> <span class="keyword">AS</span> district,</span><br><span class="line">        <span class="keyword">SUM</span>(population)</span><br><span class="line"><span class="keyword">FROM</span> PopTbl</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> <span class="keyword">CASE</span> pref_name</span><br><span class="line">                <span class="keyword">WHEN</span> <span class="string">'德岛'</span> <span class="keyword">THEN</span> <span class="string">'四国'</span></span><br><span class="line">                <span class="keyword">WHEN</span> <span class="string">'香川'</span> <span class="keyword">THEN</span> <span class="string">'四国'</span></span><br><span class="line">                <span class="keyword">WHEN</span> <span class="string">'爱媛'</span> <span class="keyword">THEN</span> <span class="string">'四国'</span></span><br><span class="line">                <span class="keyword">WHEN</span> <span class="string">'高知'</span> <span class="keyword">THEN</span> <span class="string">'四国'</span></span><br><span class="line">                <span class="keyword">WHEN</span> <span class="string">'福冈'</span> <span class="keyword">THEN</span> <span class="string">'九州'</span></span><br><span class="line">                <span class="keyword">WHEN</span> <span class="string">'长崎'</span> <span class="keyword">THEN</span> <span class="string">'九州'</span></span><br><span class="line">                <span class="keyword">WHEN</span> <span class="string">'佐贺'</span> <span class="keyword">THEN</span> <span class="string">'九州'</span></span><br><span class="line">         <span class="keyword">ELSE</span> <span class="string">'其他'</span> <span class="keyword">END</span>;</span><br><span class="line"><span class="comment">-- 注意是对转换后的列 GROUP</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">CASE</span> pref_name</span><br><span class="line">                <span class="keyword">WHEN</span> <span class="string">'德岛'</span> <span class="keyword">THEN</span> <span class="string">'四国'</span></span><br><span class="line">                <span class="keyword">WHEN</span> <span class="string">'香川'</span> <span class="keyword">THEN</span> <span class="string">'四国'</span></span><br><span class="line">                <span class="keyword">WHEN</span> <span class="string">'爱媛'</span> <span class="keyword">THEN</span> <span class="string">'四国'</span></span><br><span class="line">                <span class="keyword">WHEN</span> <span class="string">'高知'</span> <span class="keyword">THEN</span> <span class="string">'四国'</span></span><br><span class="line">                <span class="keyword">WHEN</span> <span class="string">'福冈'</span> <span class="keyword">THEN</span> <span class="string">'九州'</span></span><br><span class="line">                <span class="keyword">WHEN</span> <span class="string">'长崎'</span> <span class="keyword">THEN</span> <span class="string">'九州'</span></span><br><span class="line">                <span class="keyword">WHEN</span> <span class="string">'佐贺'</span> <span class="keyword">THEN</span> <span class="string">'九州'</span></span><br><span class="line">        <span class="keyword">ELSE</span> <span class="string">'其他'</span> <span class="keyword">END</span> <span class="keyword">AS</span> district,</span><br><span class="line">        <span class="keyword">SUM</span>(population)</span><br><span class="line"><span class="keyword">FROM</span> PopTbl</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> district;</span><br><span class="line"><span class="comment">-- 这里引用了SELECT子句中定义的别名来 GROUP</span></span><br><span class="line"><span class="comment">-- 与上面那种方法相比，这里不需要写两段CASE WHEN；</span></span><br><span class="line"><span class="comment">-- 而上面的需要写两段CASE WHEN，当CASE内容需要修改时，需要修改两处，容易出错</span></span><br><span class="line"><span class="comment">-- 但是该写法违反标准SQL的规则，因为GROUP BY子句比SELECT语句先执行</span></span><br></pre></td></tr></table></figure>
+<p>CASE WHEN 聚合之后：<br><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">+<span class="comment">----------+-----------------+</span></span><br><span class="line">| district | SUM(population) |</span><br><span class="line">+<span class="comment">----------+-----------------+</span></span><br><span class="line">| 九州     |             600 |</span><br><span class="line">| 其他     |             450 |</span><br><span class="line">| 四国     |             650 |</span><br><span class="line">+<span class="comment">----------+-----------------+</span></span><br></pre></td></tr></table></figure></p>
+<p>进行不同条件的统计：<br><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">+<span class="comment">-----------+-----+------------+</span></span><br><span class="line">| pref_name | sex | population |</span><br><span class="line">+<span class="comment">-----------+-----+------------+</span></span><br><span class="line">| 东京      | 1   |        250 |</span><br><span class="line">| 东京      | 2   |        150 |</span><br><span class="line">| 佐贺      | 1   |         20 |</span><br><span class="line">| 佐贺      | 2   |         80 |</span><br><span class="line">| 德岛      | 1   |         60 |</span><br><span class="line">| 德岛      | 2   |         40 |</span><br><span class="line">| 爱媛      | 1   |        100 |</span><br><span class="line">| 爱媛      | 2   |         50 |</span><br><span class="line">| 福冈      | 1   |        100 |</span><br><span class="line">| 福冈      | 2   |        200 |</span><br><span class="line">| 长崎      | 1   |        125 |</span><br><span class="line">| 长崎      | 2   |        125 |</span><br><span class="line">| 香川      | 1   |        100 |</span><br><span class="line">| 香川      | 2   |        100 |</span><br><span class="line">| 高知      | 1   |        100 |</span><br><span class="line">| 高知      | 2   |        100 |</span><br><span class="line">+<span class="comment">-----------+-----+------------+</span></span><br><span class="line">16 rows in <span class="keyword">set</span> (<span class="number">0.00</span> sec)</span><br><span class="line"><span class="comment">-- 如果上表有新列“性别”sex，population列为某县的某个性别人口数</span></span><br><span class="line"><span class="keyword">SELECT</span> pref_name,</span><br><span class="line"><span class="comment">-- 男性人口</span></span><br><span class="line">    <span class="keyword">SUM</span>(<span class="keyword">CASE</span> <span class="keyword">WHEN</span> sex=<span class="string">'1'</span> <span class="keyword">THEN</span> population <span class="keyword">ELSE</span> <span class="number">0</span> <span class="keyword">END</span>) <span class="keyword">AS</span> cnt_m,</span><br><span class="line"><span class="comment">-- 女性人口</span></span><br><span class="line">    <span class="keyword">SUM</span>(<span class="keyword">CASE</span> <span class="keyword">WHEN</span> sex=<span class="string">'2'</span> <span class="keyword">THEN</span> population <span class="keyword">ELSE</span> <span class="number">0</span> <span class="keyword">END</span>) <span class="keyword">AS</span> cnt_f</span><br><span class="line"><span class="keyword">FROM</span> PopTbl2</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> pref_name;</span><br><span class="line">+<span class="comment">-----------+-------+-------+</span></span><br><span class="line">| pref_name | cnt_m | cnt_f |</span><br><span class="line">+<span class="comment">-----------+-------+-------+</span></span><br><span class="line">| 东京      |   250 |   150 |</span><br><span class="line">| 佐贺      |    20 |    80 |</span><br><span class="line">| 德岛      |    60 |    40 |</span><br><span class="line">| 爱媛      |   100 |    50 |</span><br><span class="line">| 福冈      |   100 |   200 |</span><br><span class="line">| 长崎      |   125 |   125 |</span><br><span class="line">| 香川      |   100 |   100 |</span><br><span class="line">| 高知      |   100 |   100 |</span><br><span class="line">+<span class="comment">-----------+-------+-------+</span></span><br><span class="line">8 rows in <span class="keyword">set</span> (<span class="number">0.00</span> sec)</span><br></pre></td></tr></table></figure></p>
+<p>使用CHECK约束定义多个列的条件关系：<br><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">CONSTRAINT check_salary <span class="keyword">CHECK</span></span><br><span class="line">        (<span class="keyword">CASE</span> <span class="keyword">WHEN</span> dept=<span class="string">'IT'</span> </span><br><span class="line">              <span class="keyword">THEN</span> <span class="keyword">CASE</span> <span class="keyword">WHEN</span> salary&gt;=<span class="number">20000</span></span><br><span class="line">                        <span class="keyword">THEN</span> <span class="number">1</span> <span class="keyword">ELSE</span> <span class="number">0</span> <span class="keyword">END</span></span><br><span class="line">              <span class="keyword">ELSE</span> <span class="number">1</span> <span class="keyword">END</span> = <span class="number">1</span>)</span><br><span class="line"><span class="comment">-- 如果是IT部门的员工，则工资应大于等于2万；如果不是IT部门的员工，则工资不受该约束限制</span></span><br><span class="line"><span class="comment">-- 蕴含式（conditional）</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 如果用逻辑与（logical product）</span></span><br><span class="line"><span class="keyword">CONSTRAINT</span> check_salary <span class="keyword">CHECK</span> </span><br><span class="line">            (dept=<span class="string">'IT'</span> <span class="keyword">AND</span> salary&gt;=<span class="number">20000</span>)</span><br><span class="line"><span class="comment">-- 表示 salary里的记录只能是'IT'部门的，且工资大于等于2万</span></span><br></pre></td></tr></table></figure></p>
+<p>在UPDATE语句里进行条件分支：<br><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">+<span class="comment">--------+--------+</span></span><br><span class="line">| name   | salary |</span><br><span class="line">+<span class="comment">--------+--------+</span></span><br><span class="line">| 木村   | 220000 |</span><br><span class="line">| 相田   | 300000 |</span><br><span class="line">| 神崎   | 270000 |</span><br><span class="line">| 齐藤   | 290000 |</span><br><span class="line">+<span class="comment">--------+--------+</span></span><br><span class="line">4 rows in <span class="keyword">set</span> (<span class="number">0.01</span> sec)</span><br><span class="line"></span><br><span class="line"><span class="keyword">UPDATE</span> Salaries </span><br><span class="line">   <span class="keyword">SET</span> salary = <span class="keyword">CASE</span> <span class="keyword">WHEN</span> salary&gt;=<span class="number">300000</span> <span class="keyword">THEN</span> salary*<span class="number">0.9</span></span><br><span class="line">                     <span class="keyword">WHEN</span> salary&gt;=<span class="number">250000</span> <span class="keyword">AND</span> salary&lt;<span class="number">280000</span> <span class="keyword">THEN</span> salary*<span class="number">1.2</span></span><br><span class="line">                     <span class="keyword">ELSE</span> salary <span class="keyword">END</span>;  <span class="comment">-- 最后一句很重要</span></span><br><span class="line"><span class="comment">-- 当前工资为30万元以上的员工，降薪10%；</span></span><br><span class="line"><span class="comment">-- 当前工资为25万元~28万元（不满28万元）的员工，加薪20%</span></span><br><span class="line">+<span class="comment">--------+--------+</span></span><br><span class="line">| name   | salary |</span><br><span class="line">+<span class="comment">--------+--------+</span></span><br><span class="line">| 木村   | 220000 |</span><br><span class="line">| 相田   | 270000 |</span><br><span class="line">| 神崎   | 324000 |</span><br><span class="line">| 齐藤   | 290000 |</span><br><span class="line">+<span class="comment">--------+--------+</span></span><br><span class="line">4 rows in <span class="keyword">set</span> (<span class="number">0.00</span> sec)</span><br></pre></td></tr></table></figure></p>
+<p>调换主键值：<br><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">+<span class="comment">-------+-------+-------+</span></span><br><span class="line">| p_key | col_1 | col_2 |</span><br><span class="line">+<span class="comment">-------+-------+-------+</span></span><br><span class="line">| a     |     1 | 一    |</span><br><span class="line">| b     |     2 | 二    |</span><br><span class="line">| c     |     3 | 三    |</span><br><span class="line">+<span class="comment">-------+-------+-------+</span></span><br><span class="line">3 rows in <span class="keyword">set</span> (<span class="number">0.00</span> sec)</span><br><span class="line"></span><br><span class="line"><span class="keyword">UPDATE</span> SomeTable</span><br><span class="line">   <span class="keyword">SET</span> p_key = <span class="keyword">CASE</span> <span class="keyword">WHEN</span> p_key=<span class="string">'a'</span> <span class="keyword">THEN</span> <span class="string">'b'</span></span><br><span class="line">                    <span class="keyword">WHEN</span> p_key=<span class="string">'b'</span> <span class="keyword">THEN</span> <span class="string">'a'</span></span><br><span class="line">                    <span class="keyword">ELSE</span> p_key <span class="keyword">END</span>   <span class="comment">-- 该句很重要</span></span><br><span class="line"><span class="keyword">WHERE</span> p_key <span class="keyword">IN</span> (<span class="string">'a'</span>, <span class="string">'b'</span>);</span><br><span class="line"><span class="comment">-- 在PostgreSQL和MySQL中执行该语句，会因为主键重复而报错</span></span><br><span class="line"><span class="comment">-- 如: ERROR 1062 (23000): Duplicate entry 'b' for key 'PRIMARY'</span></span><br></pre></td></tr></table></figure></p>
+<p>在CASE表达式中，可以使用<code>BETWEEN</code>、<code>LIKE</code> 和 <code>&lt;</code>、<code>&gt;</code>等谓词组合，以及能嵌套子查询的 <code>IN</code> 和 <code>EXISTS</code> 谓词<br><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">mysql&gt; SELECT * FROM CourseMaster;</span><br><span class="line">+<span class="comment">-----------+--------------+</span></span><br><span class="line">| course_id | course_name  |</span><br><span class="line">+<span class="comment">-----------+--------------+</span></span><br><span class="line">|         1 | 会计入门     |</span><br><span class="line">|         2 | 财务知识     |</span><br><span class="line">|         3 | 簿记考试     |</span><br><span class="line">|         4 | 税务师       |</span><br><span class="line">+<span class="comment">-----------+--------------+</span></span><br><span class="line">4 rows in <span class="keyword">set</span> (<span class="number">0.00</span> sec)</span><br><span class="line"></span><br><span class="line">mysql&gt; <span class="keyword">SELECT</span> * <span class="keyword">FROM</span> OpenCourses;</span><br><span class="line">+<span class="comment">--------+-----------+</span></span><br><span class="line">| month  | course_id |</span><br><span class="line">+<span class="comment">--------+-----------+</span></span><br><span class="line">| 200706 |         1 |</span><br><span class="line">| 200706 |         3 |</span><br><span class="line">| 200706 |         4 |</span><br><span class="line">| 200707 |         4 |</span><br><span class="line">| 200708 |         2 |</span><br><span class="line">| 200708 |         4 |</span><br><span class="line">+<span class="comment">--------+-----------+</span></span><br><span class="line">6 rows in <span class="keyword">set</span> (<span class="number">0.00</span> sec)</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 如果用 IN 谓词</span></span><br><span class="line"><span class="keyword">SELECT</span> course_name,</span><br><span class="line">       <span class="keyword">CASE</span> <span class="keyword">WHEN</span> course_id <span class="keyword">IN</span> </span><br><span class="line">                     (<span class="keyword">SELECT</span> course_id <span class="keyword">FROM</span> OpenCourses </span><br><span class="line">                      <span class="keyword">WHERE</span> <span class="keyword">month</span> = <span class="number">200706</span>) <span class="keyword">THEN</span> <span class="string">'⚪'</span></span><br><span class="line">            <span class="keyword">ELSE</span> <span class="string">'×'</span> <span class="keyword">END</span> <span class="keyword">AS</span> <span class="string">"6月"</span>,</span><br><span class="line">       <span class="keyword">CASE</span> <span class="keyword">WHEN</span> course_id <span class="keyword">IN</span> </span><br><span class="line">                     (<span class="keyword">SELECT</span> course_id <span class="keyword">FROM</span> OpenCourses</span><br><span class="line">                      <span class="keyword">WHERE</span> <span class="keyword">month</span> = <span class="number">200707</span>) <span class="keyword">THEN</span> <span class="string">'⚪'</span></span><br><span class="line">            <span class="keyword">ELSE</span> <span class="string">'×'</span> <span class="keyword">END</span> <span class="keyword">AS</span> <span class="string">"7月"</span>,  </span><br><span class="line">       <span class="keyword">CASE</span> <span class="keyword">WHEN</span> course_id <span class="keyword">IN</span> </span><br><span class="line">                     (<span class="keyword">SELECT</span> course_id <span class="keyword">FROM</span> OpenCourses</span><br><span class="line">                      <span class="keyword">WHERE</span> <span class="keyword">month</span> = <span class="number">200708</span>) <span class="keyword">THEN</span> <span class="string">'⚪'</span></span><br><span class="line">            <span class="keyword">ELSE</span> <span class="string">'×'</span> <span class="keyword">END</span> <span class="keyword">AS</span> <span class="string">"8月"</span></span><br><span class="line"><span class="keyword">FROM</span> CourseMaster;   </span><br><span class="line"></span><br><span class="line"><span class="comment">-- 使用EXISTS谓词</span></span><br><span class="line"><span class="keyword">SELECT</span> CM.course_name,</span><br><span class="line">       <span class="keyword">CASE</span> <span class="keyword">WHEN</span> <span class="keyword">EXISTS</span></span><br><span class="line">                   (<span class="keyword">SELECT</span> course_id <span class="keyword">FROM</span> OpenCourses OC</span><br><span class="line">                    <span class="keyword">WHERE</span> OC.month=<span class="number">200706</span> </span><br><span class="line">                      <span class="keyword">AND</span> OC.course_id=CM.course_id) <span class="keyword">THEN</span> <span class="string">'O'</span></span><br><span class="line">             <span class="keyword">ELSE</span> <span class="string">'X'</span> <span class="keyword">END</span> <span class="keyword">AS</span> <span class="string">'6月'</span>,</span><br><span class="line">        <span class="keyword">CASE</span> <span class="keyword">WHEN</span> <span class="keyword">EXISTS</span></span><br><span class="line">                    (<span class="keyword">SELECT</span> course_id <span class="keyword">FROM</span> OpenCourses OC</span><br><span class="line">                     <span class="keyword">WHERE</span> OC.month=<span class="number">200707</span></span><br><span class="line">                       <span class="keyword">AND</span> OC.course_id=CM.course_id) <span class="keyword">THEN</span> <span class="string">'O'</span></span><br><span class="line">             <span class="keyword">ELSE</span> <span class="string">'X'</span> <span class="keyword">END</span> <span class="keyword">AS</span> <span class="string">'7月'</span>,</span><br><span class="line">         <span class="keyword">CASE</span> <span class="keyword">WHEN</span> <span class="keyword">EXISTS</span></span><br><span class="line">                     (<span class="keyword">SELECT</span> course_id <span class="keyword">FROM</span> OpenCourses OC</span><br><span class="line">                     <span class="keyword">WHERE</span> OC.month=<span class="number">200708</span></span><br><span class="line">                       <span class="keyword">AND</span> OC.course_id=CM.course_id) <span class="keyword">THEN</span> <span class="string">'O'</span></span><br><span class="line">             <span class="keyword">ELSE</span> <span class="string">'X'</span> <span class="keyword">END</span> <span class="keyword">AS</span> <span class="string">'8月'</span>         </span><br><span class="line"><span class="keyword">FROM</span> CourseMaster CM;</span><br></pre></td></tr></table></figure></p>
+<p>CASE表达式用在SELECT子句里时，既可以写在聚合函数内部，也可以写在聚合函数外部。<br><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">## StudentClub</span></span><br><span class="line">+<span class="comment">--------+---------+-----------+---------------+</span></span><br><span class="line">| std_id | club_id | club_name | main_club_flg |</span><br><span class="line">+<span class="comment">--------+---------+-----------+---------------+</span></span><br><span class="line">|    100 |       1 | 棒球      | Y             |</span><br><span class="line">|    100 |       2 | 管弦乐    | N             |</span><br><span class="line">|    200 |       2 | 管弦乐    | N             |</span><br><span class="line">|    200 |       3 | 羽毛球    | Y             |</span><br><span class="line">|    200 |       4 | 足球      | N             |</span><br><span class="line">|    300 |       4 | 足球      | N             |</span><br><span class="line">|    400 |       5 | 游泳      | N             |</span><br><span class="line">|    500 |       6 | 围棋      | N             |</span><br><span class="line">+<span class="comment">--------+---------+-----------+---------------+</span></span><br><span class="line">8 rows in <span class="keyword">set</span> (<span class="number">0.00</span> sec)</span><br><span class="line"><span class="comment">-- main_club_flg='Y' 表示加入多个社团的学生的主社团</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 找出学生的主社团</span></span><br><span class="line"><span class="keyword">SELECT</span> std_id,</span><br><span class="line">        <span class="keyword">CASE</span> <span class="keyword">WHEN</span> <span class="keyword">COUNT</span>(*) = <span class="number">1</span></span><br><span class="line">              <span class="keyword">THEN</span> <span class="keyword">MAX</span>(club_id)</span><br><span class="line">              <span class="keyword">ELSE</span> <span class="keyword">MAX</span>(<span class="keyword">CASE</span> <span class="keyword">WHEN</span> main_club_flg = <span class="string">'Y'</span></span><br><span class="line">                            <span class="keyword">THEN</span> club_id</span><br><span class="line">                            <span class="keyword">ELSE</span> <span class="literal">NULL</span> <span class="keyword">END</span>)</span><br><span class="line">              <span class="keyword">END</span> <span class="keyword">AS</span> main_club</span><br><span class="line"><span class="keyword">FROM</span> StudentClub</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> std_id;</span><br><span class="line"></span><br><span class="line">+<span class="comment">--------+-----------+</span></span><br><span class="line">| std_id | main_club |</span><br><span class="line">+<span class="comment">--------+-----------+</span></span><br><span class="line">|    100 |         1 |</span><br><span class="line">|    200 |         3 |</span><br><span class="line">|    300 |         4 |</span><br><span class="line">|    400 |         5 |</span><br><span class="line">|    500 |         6 |</span><br><span class="line">+<span class="comment">--------+-----------+</span></span><br><span class="line">5 rows in <span class="keyword">set</span> (<span class="number">0.00</span> sec)</span><br></pre></td></tr></table></figure></p>
+<h2 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h2><p>找最大值<br><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- Greatests</span></span><br><span class="line">+<span class="comment">------+---+---+---+</span></span><br><span class="line">| key0 | x | y | z |</span><br><span class="line">+<span class="comment">------+---+---+---+</span></span><br><span class="line">| A    | 1 | 2 | 3 |</span><br><span class="line">| B    | 5 | 5 | 2 |</span><br><span class="line">| C    | 4 | 7 | 1 |</span><br><span class="line">| D    | 3 | 3 | 8 |</span><br><span class="line">+<span class="comment">------+---+---+---+</span></span><br><span class="line">4 rows in <span class="keyword">set</span> (<span class="number">0.00</span> sec)</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 找出多列数据中的最大值</span></span><br><span class="line"><span class="comment">/* 找出x列和y列中的最大值 */</span></span><br><span class="line"><span class="keyword">SELECT</span> key0,</span><br><span class="line">       <span class="keyword">CASE</span> <span class="keyword">WHEN</span> x &lt; y <span class="keyword">THEN</span> y</span><br><span class="line">            <span class="keyword">ELSE</span> x <span class="keyword">END</span> <span class="keyword">AS</span> <span class="keyword">greatest</span></span><br><span class="line"><span class="keyword">FROM</span> Greatests;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- MySQL自带函数 GREATEST 直接可实现上述过程</span></span><br><span class="line"><span class="keyword">SELECT</span> key0,  <span class="keyword">GREATEST</span>(x,y) <span class="keyword">AS</span> <span class="keyword">greatest</span></span><br><span class="line"><span class="keyword">FROM</span> Greatests;</span><br><span class="line"></span><br><span class="line">+<span class="comment">------+----------+</span></span><br><span class="line">| key0 | greatest |</span><br><span class="line">+<span class="comment">------+----------+</span></span><br><span class="line">| A    |        2 |</span><br><span class="line">| B    |        5 |</span><br><span class="line">| C    |        7 |</span><br><span class="line">| D    |        3 |</span><br><span class="line">+<span class="comment">------+----------+</span></span><br><span class="line">4 rows in <span class="keyword">set</span> (<span class="number">0.00</span> sec)</span><br></pre></td></tr></table></figure></p>
+<p>求和：<br><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">+<span class="comment">-----------+-----+------------+</span></span><br><span class="line">| pref_name | sex | population |</span><br><span class="line">+<span class="comment">-----------+-----+------------+</span></span><br><span class="line">| 东京      | 1   |        250 |</span><br><span class="line">| 东京      | 2   |        150 |</span><br><span class="line">| 佐贺      | 1   |         20 |</span><br><span class="line">| 佐贺      | 2   |         80 |</span><br><span class="line">| 德岛      | 1   |         60 |</span><br><span class="line">| 德岛      | 2   |         40 |</span><br><span class="line">| 爱媛      | 1   |        100 |</span><br><span class="line">| 爱媛      | 2   |         50 |</span><br><span class="line">| 福冈      | 1   |        100 |</span><br><span class="line">| 福冈      | 2   |        200 |</span><br><span class="line">| 长崎      | 1   |        125 |</span><br><span class="line">| 长崎      | 2   |        125 |</span><br><span class="line">| 香川      | 1   |        100 |</span><br><span class="line">| 香川      | 2   |        100 |</span><br><span class="line">| 高知      | 1   |        100 |</span><br><span class="line">| 高知      | 2   |        100 |</span><br><span class="line">+<span class="comment">-----------+-----+------------+</span></span><br><span class="line">16 rows in <span class="keyword">set</span> (<span class="number">0.00</span> sec)</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> sex <span class="keyword">AS</span> <span class="string">'性别'</span>,</span><br><span class="line">       <span class="keyword">SUM</span>(population) <span class="keyword">AS</span> <span class="string">'全国'</span>,</span><br><span class="line">       <span class="keyword">SUM</span>(<span class="keyword">CASE</span> <span class="keyword">WHEN</span> pref_name = <span class="string">'德岛'</span> <span class="keyword">THEN</span> population <span class="keyword">ELSE</span> <span class="number">0</span> <span class="keyword">END</span>) <span class="keyword">AS</span> <span class="string">"德岛"</span>,</span><br><span class="line">       <span class="keyword">SUM</span>(<span class="keyword">CASE</span> <span class="keyword">WHEN</span> pref_name = <span class="string">'香川'</span> <span class="keyword">THEN</span> population <span class="keyword">ELSE</span> <span class="number">0</span> <span class="keyword">END</span>) <span class="keyword">AS</span> <span class="string">"香川"</span>,</span><br><span class="line">       <span class="keyword">SUM</span>(<span class="keyword">CASE</span> <span class="keyword">WHEN</span> pref_name = <span class="string">'爱媛'</span> <span class="keyword">THEN</span> population <span class="keyword">ELSE</span> <span class="number">0</span> <span class="keyword">END</span>) <span class="keyword">AS</span> <span class="string">"爱媛"</span>,</span><br><span class="line">       <span class="keyword">SUM</span>(<span class="keyword">CASE</span> <span class="keyword">WHEN</span> pref_name = <span class="string">'高知'</span> <span class="keyword">THEN</span> population <span class="keyword">ELSE</span> <span class="number">0</span> <span class="keyword">END</span>) <span class="keyword">AS</span> <span class="string">"高知"</span>,</span><br><span class="line">       <span class="keyword">SUM</span>(<span class="keyword">CASE</span> <span class="keyword">WHEN</span> pref_name <span class="keyword">IN</span> (<span class="string">'德岛'</span>, <span class="string">'香川'</span>, <span class="string">'爱媛'</span>, <span class="string">'高知'</span>)</span><br><span class="line">                <span class="keyword">THEN</span> population <span class="keyword">ELSE</span> <span class="number">0</span> <span class="keyword">END</span>) <span class="keyword">AS</span> zaijie</span><br><span class="line">  <span class="keyword">FROM</span> PopTbl2</span><br><span class="line"> <span class="keyword">GROUP</span> <span class="keyword">BY</span> sex;</span><br><span class="line"></span><br><span class="line">+<span class="comment">--------+--------+--------+--------+--------+--------+--------+</span></span><br><span class="line">| 性别   | 全国   | 德岛   | 香川   | 爱媛   | 高知   | zaijie |</span><br><span class="line">+<span class="comment">--------+--------+--------+--------+--------+--------+--------+</span></span><br><span class="line">| 1      |    855 |     60 |    100 |    100 |    100 |    360 |</span><br><span class="line">| 2      |    845 |     40 |    100 |     50 |    100 |    290 |</span><br><span class="line">+<span class="comment">--------+--------+--------+--------+--------+--------+--------+</span></span><br><span class="line">2 rows in <span class="keyword">set</span> (<span class="number">0.00</span> sec)</span><br></pre></td></tr></table></figure></p>
+<p>乱序排序：<br><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">-- 按照 B-A-D-C排序</span></span><br><span class="line"><span class="keyword">SELECT</span> key0,</span><br><span class="line">       <span class="keyword">CASE</span> key0</span><br><span class="line">         <span class="keyword">WHEN</span> <span class="string">'B'</span> <span class="keyword">THEN</span> <span class="number">1</span></span><br><span class="line">         <span class="keyword">WHEN</span> <span class="string">'A'</span> <span class="keyword">THEN</span> <span class="number">2</span></span><br><span class="line">         <span class="keyword">WHEN</span> <span class="string">'D'</span> <span class="keyword">THEN</span> <span class="number">3</span></span><br><span class="line">         <span class="keyword">WHEN</span> <span class="string">'C'</span> <span class="keyword">THEN</span> <span class="number">4</span></span><br><span class="line">         <span class="keyword">ELSE</span> <span class="literal">NULL</span> <span class="keyword">END</span> <span class="keyword">AS</span> sort_col</span><br><span class="line">  <span class="keyword">FROM</span> Greatests</span><br><span class="line"> <span class="keyword">ORDER</span> <span class="keyword">BY</span> sort_col;</span><br><span class="line"></span><br><span class="line">+<span class="comment">------+----------+</span></span><br><span class="line">| key0 | sort_col |</span><br><span class="line">+<span class="comment">------+----------+</span></span><br><span class="line">| B    |        1 |</span><br><span class="line">| A    |        2 |</span><br><span class="line">| D    |        3 |</span><br><span class="line">| C    |        4 |</span><br><span class="line">+<span class="comment">------+----------+</span></span><br><span class="line">4 rows in <span class="keyword">set</span> (<span class="number">0.00</span> sec)</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p>[1] <a href="https://mp.weixin.qq.com/s?__biz=MzU5NzkxODMxOA==&amp;mid=2247486368&amp;idx=1&amp;sn=3ef74be0a7b7345cba471da1370f8986&amp;chksm=fe4d5ca1c93ad5b7481d65a8fa0a8b4e585714af57ad69437d599bbac5830910562a9097a12b&amp;token=1415910284&amp;lang=zh_CN#rd" target="_blank" rel="noopener">Notes | SQL进阶教程 | 001</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://github.com/ShootingWang/ShootingWang.github.io/2020/05/12/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-%E5%A4%A9%E6%B1%A0-%E4%BA%8C%E6%89%8B%E8%BD%A6%E4%BA%A4%E6%98%93%E6%95%B0%E6%8D%AE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ShootingWang">
+      <meta itemprop="description" content="无猫病重症患者">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ShootingWang">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/05/12/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-%E5%A4%A9%E6%B1%A0-%E4%BA%8C%E6%89%8B%E8%BD%A6%E4%BA%A4%E6%98%93%E6%95%B0%E6%8D%AE/" class="post-title-link" itemprop="url">天池 | 二手车交易数据</a>
+        </h2>
+
+        <div class="post-meta">
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-05-12 22:00:00" itemprop="dateCreated datePublished" datetime="2020-05-12T22:00:00+08:00">2020-05-12</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-05-17 11:12:29" itemprop="dateModified" datetime="2020-05-17T11:12:29+08:00">2020-05-17</time>
+              </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/05/12/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-%E5%A4%A9%E6%B1%A0-%E4%BA%8C%E6%89%8B%E8%BD%A6%E4%BA%A4%E6%98%93%E6%95%B0%E6%8D%AE/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/05/12/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-%E5%A4%A9%E6%B1%A0-%E4%BA%8C%E6%89%8B%E8%BD%A6%E4%BA%A4%E6%98%93%E6%95%B0%E6%8D%AE/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="数据说明"><a href="#数据说明" class="headerlink" title="数据说明"></a>数据说明</h1><p>数据来源：<a href="https://tianchi.aliyun.com/notebook-ai/detail?spm=5176.12281978.0.0.68021b43DOhgme&amp;postId=95422" target="_blank" rel="noopener">天池</a></p>
+<p><a href="https://tianchi.aliyun.com/competition/entrance/231784/information" target="_blank" rel="noopener">数据详情</a></p>
+<blockquote>
+<p>本篇笔记的代码使用Jupyter Lab实现</p>
+</blockquote>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a><strong>参考资料</strong></h2><p>[1] <a href="https://tianchi.aliyun.com/notebook-ai/detail?spm=5176.12281978.0.0.6802593aEHEy7Y&amp;postId=95422" target="_blank" rel="noopener">Baseline方案</a></p>
+<p>[2] <a href="https://tianchi.aliyun.com/notebook-ai/detail?spm=5176.12281978.0.0.6802593aEHEy7Y&amp;postId=95456" target="_blank" rel="noopener">赛题理解</a></p>
+<p>[3] <a href="https://tianchi.aliyun.com/notebook-ai/detail?spm=5176.12281978.0.0.6802593aEHEy7Y&amp;postId=95457" target="_blank" rel="noopener">数据分析</a></p>
+<p>[4] <a href="https://tianchi.aliyun.com/notebook-ai/detail?spm=5176.12281978.0.0.6802593aEHEy7Y&amp;postId=95501" target="_blank" rel="noopener">特征工程</a></p>
+<p>[5] <a href="https://tianchi.aliyun.com/notebook-ai/detail?spm=5176.12281978.0.0.6802593aEHEy7Y&amp;postId=95460" target="_blank" rel="noopener">建模调参</a></p>
+<p>[6] <a href="https://tianchi.aliyun.com/notebook-ai/detail?spm=5176.12281978.0.0.6802593aEHEy7Y&amp;postId=95535" target="_blank" rel="noopener">模型融合</a></p>
+<h1 id="数据处理-amp-分析"><a href="#数据处理-amp-分析" class="headerlink" title="数据处理&amp;分析"></a>数据处理&amp;分析</h1><h2 id="载入需要的模块"><a href="#载入需要的模块" class="headerlink" title="载入需要的模块"></a>载入需要的模块</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 基础模块</span></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> warnings</span><br><span class="line"><span class="keyword">import</span> matplotlib</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns</span><br><span class="line"><span class="keyword">from</span> scipy.special <span class="keyword">import</span> jn</span><br><span class="line"><span class="keyword">from</span> IPython.display <span class="keyword">import</span> display, clear_output</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line">warnings.filterwarnings(<span class="string">'ignore'</span>)</span><br><span class="line">%matplotlib inline</span><br><span class="line"></span><br><span class="line"><span class="comment">## 模型预测</span></span><br><span class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> linear_model</span><br><span class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> preprocessing</span><br><span class="line"><span class="keyword">from</span> sklearn.svm <span class="keyword">import</span> SVR</span><br><span class="line"><span class="keyword">from</span> sklearn.ensemble <span class="keyword">import</span> RandomForestRegressor, GradientBoostingRegressor</span><br><span class="line"><span class="keyword">import</span> lightgbm <span class="keyword">as</span> lgb</span><br><span class="line"><span class="keyword">import</span> xgboost <span class="keyword">as</span> xgb</span><br><span class="line"></span><br><span class="line"><span class="comment">## 降维</span></span><br><span class="line"><span class="keyword">from</span> sklearn.decomposition <span class="keyword">import</span> PCA, FastICA, FactorAnalysis, SparsePCA</span><br><span class="line"></span><br><span class="line"><span class="comment">## 网格搜索、模型评估</span></span><br><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> GridSearchCV, StratifiedKFold</span><br><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> cross_val_score, train_test_split</span><br><span class="line"><span class="keyword">from</span> sklearn.metrics <span class="keyword">import</span> mean_squared_error, mean_absolute_error</span><br></pre></td></tr></table></figure>
+<h2 id="载入数据"><a href="#载入数据" class="headerlink" title="载入数据"></a>载入数据</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 读取数据</span></span><br><span class="line">train_data = pd.read_csv(<span class="string">"used_car_train_20200313.csv"</span>, sep=<span class="string">" "</span>)</span><br><span class="line">testB_data = pd.read_csv(<span class="string">"used_car_testB_20200421.csv"</span>, sep=<span class="string">" "</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">## 训练集大小</span></span><br><span class="line">print(<span class="string">"Train data shape:"</span>, train_data.shape)</span><br></pre></td></tr></table></figure>
+<pre><code>Train data shape: (150000, 31)
+</code></pre><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 测试集大小</span></span><br><span class="line">print(<span class="string">"TestB data shape:"</span>, testB_data.shape)</span><br></pre></td></tr></table></figure>
+<pre><code>TestB data shape: (50000, 30)
+</code></pre><h2 id="数据预览"><a href="#数据预览" class="headerlink" title="数据预览"></a>数据预览</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">train_data.head()  <span class="comment">## 预览前5行</span></span><br></pre></td></tr></table></figure>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>SaleID</th>
+      <th>name</th>
+      <th>regDate</th>
+      <th>model</th>
+      <th>brand</th>
+      <th>bodyType</th>
+      <th>fuelType</th>
+      <th>gearbox</th>
+      <th>power</th>
+      <th>kilometer</th>
+      <th>...</th>
+      <th>v_5</th>
+      <th>v_6</th>
+      <th>v_7</th>
+      <th>v_8</th>
+      <th>v_9</th>
+      <th>v_10</th>
+      <th>v_11</th>
+      <th>v_12</th>
+      <th>v_13</th>
+      <th>v_14</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>736</td>
+      <td>20040402</td>
+      <td>30.0</td>
+      <td>6</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>60</td>
+      <td>12.5</td>
+      <td>...</td>
+      <td>0.235676</td>
+      <td>0.101988</td>
+      <td>0.129549</td>
+      <td>0.022816</td>
+      <td>0.097462</td>
+      <td>-2.881803</td>
+      <td>2.804097</td>
+      <td>-2.420821</td>
+      <td>0.795292</td>
+      <td>0.914762</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>2262</td>
+      <td>20030301</td>
+      <td>40.0</td>
+      <td>1</td>
+      <td>2.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>15.0</td>
+      <td>...</td>
+      <td>0.264777</td>
+      <td>0.121004</td>
+      <td>0.135731</td>
+      <td>0.026597</td>
+      <td>0.020582</td>
+      <td>-4.900482</td>
+      <td>2.096338</td>
+      <td>-1.030483</td>
+      <td>-1.722674</td>
+      <td>0.245522</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>14874</td>
+      <td>20040403</td>
+      <td>115.0</td>
+      <td>15</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>163</td>
+      <td>12.5</td>
+      <td>...</td>
+      <td>0.251410</td>
+      <td>0.114912</td>
+      <td>0.165147</td>
+      <td>0.062173</td>
+      <td>0.027075</td>
+      <td>-4.846749</td>
+      <td>1.803559</td>
+      <td>1.565330</td>
+      <td>-0.832687</td>
+      <td>-0.229963</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3</td>
+      <td>71865</td>
+      <td>19960908</td>
+      <td>109.0</td>
+      <td>10</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>193</td>
+      <td>15.0</td>
+      <td>...</td>
+      <td>0.274293</td>
+      <td>0.110300</td>
+      <td>0.121964</td>
+      <td>0.033395</td>
+      <td>0.000000</td>
+      <td>-4.509599</td>
+      <td>1.285940</td>
+      <td>-0.501868</td>
+      <td>-2.438353</td>
+      <td>-0.478699</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4</td>
+      <td>111080</td>
+      <td>20120103</td>
+      <td>110.0</td>
+      <td>5</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>68</td>
+      <td>5.0</td>
+      <td>...</td>
+      <td>0.228036</td>
+      <td>0.073205</td>
+      <td>0.091880</td>
+      <td>0.078819</td>
+      <td>0.121534</td>
+      <td>-1.896240</td>
+      <td>0.910783</td>
+      <td>0.931110</td>
+      <td>2.834518</td>
+      <td>1.923482</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 31 columns</p>
+</div>
+
+
+
+
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">train_data.tail()  <span class="comment">## 预览最后5行</span></span><br></pre></td></tr></table></figure>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>SaleID</th>
+      <th>name</th>
+      <th>regDate</th>
+      <th>model</th>
+      <th>brand</th>
+      <th>bodyType</th>
+      <th>fuelType</th>
+      <th>gearbox</th>
+      <th>power</th>
+      <th>kilometer</th>
+      <th>...</th>
+      <th>v_5</th>
+      <th>v_6</th>
+      <th>v_7</th>
+      <th>v_8</th>
+      <th>v_9</th>
+      <th>v_10</th>
+      <th>v_11</th>
+      <th>v_12</th>
+      <th>v_13</th>
+      <th>v_14</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>149995</th>
+      <td>149995</td>
+      <td>163978</td>
+      <td>20000607</td>
+      <td>121.0</td>
+      <td>10</td>
+      <td>4.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>163</td>
+      <td>15.0</td>
+      <td>...</td>
+      <td>0.280264</td>
+      <td>0.000310</td>
+      <td>0.048441</td>
+      <td>0.071158</td>
+      <td>0.019174</td>
+      <td>1.988114</td>
+      <td>-2.983973</td>
+      <td>0.589167</td>
+      <td>-1.304370</td>
+      <td>-0.302592</td>
+    </tr>
+    <tr>
+      <th>149996</th>
+      <td>149996</td>
+      <td>184535</td>
+      <td>20091102</td>
+      <td>116.0</td>
+      <td>11</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>125</td>
+      <td>10.0</td>
+      <td>...</td>
+      <td>0.253217</td>
+      <td>0.000777</td>
+      <td>0.084079</td>
+      <td>0.099681</td>
+      <td>0.079371</td>
+      <td>1.839166</td>
+      <td>-2.774615</td>
+      <td>2.553994</td>
+      <td>0.924196</td>
+      <td>-0.272160</td>
+    </tr>
+    <tr>
+      <th>149997</th>
+      <td>149997</td>
+      <td>147587</td>
+      <td>20101003</td>
+      <td>60.0</td>
+      <td>11</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>90</td>
+      <td>6.0</td>
+      <td>...</td>
+      <td>0.233353</td>
+      <td>0.000705</td>
+      <td>0.118872</td>
+      <td>0.100118</td>
+      <td>0.097914</td>
+      <td>2.439812</td>
+      <td>-1.630677</td>
+      <td>2.290197</td>
+      <td>1.891922</td>
+      <td>0.414931</td>
+    </tr>
+    <tr>
+      <th>149998</th>
+      <td>149998</td>
+      <td>45907</td>
+      <td>20060312</td>
+      <td>34.0</td>
+      <td>10</td>
+      <td>3.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>156</td>
+      <td>15.0</td>
+      <td>...</td>
+      <td>0.256369</td>
+      <td>0.000252</td>
+      <td>0.081479</td>
+      <td>0.083558</td>
+      <td>0.081498</td>
+      <td>2.075380</td>
+      <td>-2.633719</td>
+      <td>1.414937</td>
+      <td>0.431981</td>
+      <td>-1.659014</td>
+    </tr>
+    <tr>
+      <th>149999</th>
+      <td>149999</td>
+      <td>177672</td>
+      <td>19990204</td>
+      <td>19.0</td>
+      <td>28</td>
+      <td>6.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>193</td>
+      <td>12.5</td>
+      <td>...</td>
+      <td>0.284475</td>
+      <td>0.000000</td>
+      <td>0.040072</td>
+      <td>0.062543</td>
+      <td>0.025819</td>
+      <td>1.978453</td>
+      <td>-3.179913</td>
+      <td>0.031724</td>
+      <td>-1.483350</td>
+      <td>-0.342674</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 31 columns</p>
+</div>
+
+
+
+
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## .info()简要查看每列对应的数据类型、非缺失样本量</span></span><br><span class="line">train_data.info()</span><br><span class="line"><span class="comment">## 总共有150000个样本量</span></span><br><span class="line"><span class="comment">## 149999表明'model'列有1个缺失值</span></span><br></pre></td></tr></table></figure>
+<pre><code>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 150000 entries, 0 to 149999
+Data columns (total 31 columns):
+SaleID               150000 non-null int64
+name                 150000 non-null int64
+regDate              150000 non-null int64
+model                149999 non-null float64
+brand                150000 non-null int64
+bodyType             145494 non-null float64
+fuelType             141320 non-null float64
+gearbox              144019 non-null float64
+power                150000 non-null int64
+kilometer            150000 non-null float64
+notRepairedDamage    150000 non-null object
+regionCode           150000 non-null int64
+seller               150000 non-null int64
+offerType            150000 non-null int64
+creatDate            150000 non-null int64
+price                150000 non-null int64
+v_0                  150000 non-null float64
+v_1                  150000 non-null float64
+v_2                  150000 non-null float64
+v_3                  150000 non-null float64
+v_4                  150000 non-null float64
+v_5                  150000 non-null float64
+v_6                  150000 non-null float64
+v_7                  150000 non-null float64
+v_8                  150000 non-null float64
+v_9                  150000 non-null float64
+v_10                 150000 non-null float64
+v_11                 150000 non-null float64
+v_12                 150000 non-null float64
+v_13                 150000 non-null float64
+v_14                 150000 non-null float64
+dtypes: float64(20), int64(10), object(1)
+memory usage: 35.5+ MB
+</code></pre><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">train_data.columns  <span class="comment">## 查看所有列名</span></span><br></pre></td></tr></table></figure>
+<pre><code>Index([&#39;SaleID&#39;, &#39;name&#39;, &#39;regDate&#39;, &#39;model&#39;, &#39;brand&#39;, &#39;bodyType&#39;, &#39;fuelType&#39;,
+       &#39;gearbox&#39;, &#39;power&#39;, &#39;kilometer&#39;, &#39;notRepairedDamage&#39;, &#39;regionCode&#39;,
+       &#39;seller&#39;, &#39;offerType&#39;, &#39;creatDate&#39;, &#39;price&#39;, &#39;v_0&#39;, &#39;v_1&#39;, &#39;v_2&#39;, &#39;v_3&#39;,
+       &#39;v_4&#39;, &#39;v_5&#39;, &#39;v_6&#39;, &#39;v_7&#39;, &#39;v_8&#39;, &#39;v_9&#39;, &#39;v_10&#39;, &#39;v_11&#39;, &#39;v_12&#39;,
+       &#39;v_13&#39;, &#39;v_14&#39;],
+      dtype=&#39;object&#39;)
+</code></pre><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">testB_data.info()</span><br><span class="line"><span class="comment">## 测试集有50000个样本</span></span><br></pre></td></tr></table></figure>
+<pre><code>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 50000 entries, 0 to 49999
+Data columns (total 30 columns):
+SaleID               50000 non-null int64
+name                 50000 non-null int64
+regDate              50000 non-null int64
+model                50000 non-null float64
+brand                50000 non-null int64
+bodyType             48496 non-null float64
+fuelType             47076 non-null float64
+gearbox              48032 non-null float64
+power                50000 non-null int64
+kilometer            50000 non-null float64
+notRepairedDamage    50000 non-null object
+regionCode           50000 non-null int64
+seller               50000 non-null int64
+offerType            50000 non-null int64
+creatDate            50000 non-null int64
+v_0                  50000 non-null float64
+v_1                  50000 non-null float64
+v_2                  50000 non-null float64
+v_3                  50000 non-null float64
+v_4                  50000 non-null float64
+v_5                  50000 non-null float64
+v_6                  50000 non-null float64
+v_7                  50000 non-null float64
+v_8                  50000 non-null float64
+v_9                  50000 non-null float64
+v_10                 50000 non-null float64
+v_11                 50000 non-null float64
+v_12                 50000 non-null float64
+v_13                 50000 non-null float64
+v_14                 50000 non-null float64
+dtypes: float64(20), int64(9), object(1)
+memory usage: 11.4+ MB
+</code></pre><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 描述性统计</span></span><br><span class="line">train_data.describe()</span><br><span class="line"><span class="comment">## 查看每列的非空样本量、均值mean、标准差std、最小值min、25%分位数、</span></span><br><span class="line"><span class="comment">## 中位数（即50%分位数）、75%分位数、最大值max</span></span><br></pre></td></tr></table></figure>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>SaleID</th>
+      <th>name</th>
+      <th>regDate</th>
+      <th>model</th>
+      <th>brand</th>
+      <th>bodyType</th>
+      <th>fuelType</th>
+      <th>gearbox</th>
+      <th>power</th>
+      <th>kilometer</th>
+      <th>...</th>
+      <th>v_5</th>
+      <th>v_6</th>
+      <th>v_7</th>
+      <th>v_8</th>
+      <th>v_9</th>
+      <th>v_10</th>
+      <th>v_11</th>
+      <th>v_12</th>
+      <th>v_13</th>
+      <th>v_14</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>150000.000000</td>
+      <td>150000.000000</td>
+      <td>1.500000e+05</td>
+      <td>149999.000000</td>
+      <td>150000.000000</td>
+      <td>145494.000000</td>
+      <td>141320.000000</td>
+      <td>144019.000000</td>
+      <td>150000.000000</td>
+      <td>150000.000000</td>
+      <td>...</td>
+      <td>150000.000000</td>
+      <td>150000.000000</td>
+      <td>150000.000000</td>
+      <td>150000.000000</td>
+      <td>150000.000000</td>
+      <td>150000.000000</td>
+      <td>150000.000000</td>
+      <td>150000.000000</td>
+      <td>150000.000000</td>
+      <td>150000.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>74999.500000</td>
+      <td>68349.172873</td>
+      <td>2.003417e+07</td>
+      <td>47.129021</td>
+      <td>8.052733</td>
+      <td>1.792369</td>
+      <td>0.375842</td>
+      <td>0.224943</td>
+      <td>119.316547</td>
+      <td>12.597160</td>
+      <td>...</td>
+      <td>0.248204</td>
+      <td>0.044923</td>
+      <td>0.124692</td>
+      <td>0.058144</td>
+      <td>0.061996</td>
+      <td>-0.001000</td>
+      <td>0.009035</td>
+      <td>0.004813</td>
+      <td>0.000313</td>
+      <td>-0.000688</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>43301.414527</td>
+      <td>61103.875095</td>
+      <td>5.364988e+04</td>
+      <td>49.536040</td>
+      <td>7.864956</td>
+      <td>1.760640</td>
+      <td>0.548677</td>
+      <td>0.417546</td>
+      <td>177.168419</td>
+      <td>3.919576</td>
+      <td>...</td>
+      <td>0.045804</td>
+      <td>0.051743</td>
+      <td>0.201410</td>
+      <td>0.029186</td>
+      <td>0.035692</td>
+      <td>3.772386</td>
+      <td>3.286071</td>
+      <td>2.517478</td>
+      <td>1.288988</td>
+      <td>1.038685</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>1.991000e+07</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.500000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>-9.168192</td>
+      <td>-5.558207</td>
+      <td>-9.639552</td>
+      <td>-4.153899</td>
+      <td>-6.546556</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>37499.750000</td>
+      <td>11156.000000</td>
+      <td>1.999091e+07</td>
+      <td>10.000000</td>
+      <td>1.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>75.000000</td>
+      <td>12.500000</td>
+      <td>...</td>
+      <td>0.243615</td>
+      <td>0.000038</td>
+      <td>0.062474</td>
+      <td>0.035334</td>
+      <td>0.033930</td>
+      <td>-3.722303</td>
+      <td>-1.951543</td>
+      <td>-1.871846</td>
+      <td>-1.057789</td>
+      <td>-0.437034</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>74999.500000</td>
+      <td>51638.000000</td>
+      <td>2.003091e+07</td>
+      <td>30.000000</td>
+      <td>6.000000</td>
+      <td>1.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>110.000000</td>
+      <td>15.000000</td>
+      <td>...</td>
+      <td>0.257798</td>
+      <td>0.000812</td>
+      <td>0.095866</td>
+      <td>0.057014</td>
+      <td>0.058484</td>
+      <td>1.624076</td>
+      <td>-0.358053</td>
+      <td>-0.130753</td>
+      <td>-0.036245</td>
+      <td>0.141246</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>112499.250000</td>
+      <td>118841.250000</td>
+      <td>2.007111e+07</td>
+      <td>66.000000</td>
+      <td>13.000000</td>
+      <td>3.000000</td>
+      <td>1.000000</td>
+      <td>0.000000</td>
+      <td>150.000000</td>
+      <td>15.000000</td>
+      <td>...</td>
+      <td>0.265297</td>
+      <td>0.102009</td>
+      <td>0.125243</td>
+      <td>0.079382</td>
+      <td>0.087491</td>
+      <td>2.844357</td>
+      <td>1.255022</td>
+      <td>1.776933</td>
+      <td>0.942813</td>
+      <td>0.680378</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>149999.000000</td>
+      <td>196812.000000</td>
+      <td>2.015121e+07</td>
+      <td>247.000000</td>
+      <td>39.000000</td>
+      <td>7.000000</td>
+      <td>6.000000</td>
+      <td>1.000000</td>
+      <td>19312.000000</td>
+      <td>15.000000</td>
+      <td>...</td>
+      <td>0.291838</td>
+      <td>0.151420</td>
+      <td>1.404936</td>
+      <td>0.160791</td>
+      <td>0.222787</td>
+      <td>12.357011</td>
+      <td>18.819042</td>
+      <td>13.847792</td>
+      <td>11.147669</td>
+      <td>8.658418</td>
+    </tr>
+  </tbody>
+</table>
+<p>8 rows × 30 columns</p>
+</div>
+
+
+
+
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">testB_data.describe()</span><br></pre></td></tr></table></figure>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>SaleID</th>
+      <th>name</th>
+      <th>regDate</th>
+      <th>model</th>
+      <th>brand</th>
+      <th>bodyType</th>
+      <th>fuelType</th>
+      <th>gearbox</th>
+      <th>power</th>
+      <th>kilometer</th>
+      <th>...</th>
+      <th>v_5</th>
+      <th>v_6</th>
+      <th>v_7</th>
+      <th>v_8</th>
+      <th>v_9</th>
+      <th>v_10</th>
+      <th>v_11</th>
+      <th>v_12</th>
+      <th>v_13</th>
+      <th>v_14</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>50000.000000</td>
+      <td>50000.000000</td>
+      <td>5.000000e+04</td>
+      <td>50000.00000</td>
+      <td>50000.000000</td>
+      <td>48496.000000</td>
+      <td>47076.000000</td>
+      <td>48032.000000</td>
+      <td>50000.000000</td>
+      <td>50000.000000</td>
+      <td>...</td>
+      <td>50000.000000</td>
+      <td>50000.000000</td>
+      <td>50000.000000</td>
+      <td>50000.000000</td>
+      <td>50000.000000</td>
+      <td>50000.000000</td>
+      <td>50000.000000</td>
+      <td>50000.000000</td>
+      <td>50000.000000</td>
+      <td>50000.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>224999.500000</td>
+      <td>68505.606100</td>
+      <td>2.003401e+07</td>
+      <td>47.64948</td>
+      <td>8.087140</td>
+      <td>1.793736</td>
+      <td>0.376498</td>
+      <td>0.226953</td>
+      <td>119.766960</td>
+      <td>12.598260</td>
+      <td>...</td>
+      <td>0.248147</td>
+      <td>0.044624</td>
+      <td>0.124693</td>
+      <td>0.058198</td>
+      <td>0.062113</td>
+      <td>0.019633</td>
+      <td>0.002759</td>
+      <td>0.004342</td>
+      <td>0.004570</td>
+      <td>-0.007209</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>14433.901067</td>
+      <td>61032.124271</td>
+      <td>5.351615e+04</td>
+      <td>49.90741</td>
+      <td>7.899648</td>
+      <td>1.764970</td>
+      <td>0.549281</td>
+      <td>0.418866</td>
+      <td>206.313348</td>
+      <td>3.912519</td>
+      <td>...</td>
+      <td>0.045836</td>
+      <td>0.051664</td>
+      <td>0.201440</td>
+      <td>0.029171</td>
+      <td>0.035723</td>
+      <td>3.764095</td>
+      <td>3.289523</td>
+      <td>2.515912</td>
+      <td>1.287194</td>
+      <td>1.044718</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>200000.000000</td>
+      <td>1.000000</td>
+      <td>1.991000e+07</td>
+      <td>0.00000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.500000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>-9.119719</td>
+      <td>-5.662163</td>
+      <td>-8.291868</td>
+      <td>-4.157649</td>
+      <td>-6.098192</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>212499.750000</td>
+      <td>11315.000000</td>
+      <td>1.999100e+07</td>
+      <td>11.00000</td>
+      <td>1.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>75.000000</td>
+      <td>12.500000</td>
+      <td>...</td>
+      <td>0.243436</td>
+      <td>0.000035</td>
+      <td>0.062519</td>
+      <td>0.035413</td>
+      <td>0.033880</td>
+      <td>-3.675196</td>
+      <td>-1.963928</td>
+      <td>-1.865406</td>
+      <td>-1.048722</td>
+      <td>-0.440706</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>224999.500000</td>
+      <td>52215.000000</td>
+      <td>2.003091e+07</td>
+      <td>30.00000</td>
+      <td>6.000000</td>
+      <td>1.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>110.000000</td>
+      <td>15.000000</td>
+      <td>...</td>
+      <td>0.257818</td>
+      <td>0.000801</td>
+      <td>0.095880</td>
+      <td>0.056804</td>
+      <td>0.058749</td>
+      <td>1.632134</td>
+      <td>-0.375537</td>
+      <td>-0.138943</td>
+      <td>-0.036352</td>
+      <td>0.136849</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>237499.250000</td>
+      <td>118710.750000</td>
+      <td>2.007110e+07</td>
+      <td>66.00000</td>
+      <td>13.000000</td>
+      <td>3.000000</td>
+      <td>1.000000</td>
+      <td>0.000000</td>
+      <td>150.000000</td>
+      <td>15.000000</td>
+      <td>...</td>
+      <td>0.265263</td>
+      <td>0.101654</td>
+      <td>0.125470</td>
+      <td>0.079387</td>
+      <td>0.087624</td>
+      <td>2.846205</td>
+      <td>1.263451</td>
+      <td>1.775632</td>
+      <td>0.945239</td>
+      <td>0.685555</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>249999.000000</td>
+      <td>196808.000000</td>
+      <td>2.015121e+07</td>
+      <td>246.00000</td>
+      <td>39.000000</td>
+      <td>7.000000</td>
+      <td>6.000000</td>
+      <td>1.000000</td>
+      <td>19211.000000</td>
+      <td>15.000000</td>
+      <td>...</td>
+      <td>0.291176</td>
+      <td>0.153403</td>
+      <td>1.411559</td>
+      <td>0.157458</td>
+      <td>0.211304</td>
+      <td>12.177864</td>
+      <td>18.789496</td>
+      <td>13.384828</td>
+      <td>5.635374</td>
+      <td>2.649768</td>
+    </tr>
+  </tbody>
+</table>
+<p>8 rows × 29 columns</p>
+</div>
+
+
+
+<h2 id="数据特征"><a href="#数据特征" class="headerlink" title="数据特征"></a>数据特征</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 提取数值型特征列名</span></span><br><span class="line">numerical_cols = train_data.select_dtypes(exclude=<span class="string">'object'</span>).columns</span><br><span class="line">print(numerical_cols)</span><br></pre></td></tr></table></figure>
+<pre><code>Index([&#39;SaleID&#39;, &#39;name&#39;, &#39;regDate&#39;, &#39;model&#39;, &#39;brand&#39;, &#39;bodyType&#39;, &#39;fuelType&#39;,
+       &#39;gearbox&#39;, &#39;power&#39;, &#39;kilometer&#39;, &#39;regionCode&#39;, &#39;seller&#39;, &#39;offerType&#39;,
+       &#39;creatDate&#39;, &#39;price&#39;, &#39;v_0&#39;, &#39;v_1&#39;, &#39;v_2&#39;, &#39;v_3&#39;, &#39;v_4&#39;, &#39;v_5&#39;, &#39;v_6&#39;,
+       &#39;v_7&#39;, &#39;v_8&#39;, &#39;v_9&#39;, &#39;v_10&#39;, &#39;v_11&#39;, &#39;v_12&#39;, &#39;v_13&#39;, &#39;v_14&#39;],
+      dtype=&#39;object&#39;)
+</code></pre><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 提取非数值型特征列名</span></span><br><span class="line">categorical_cols = train_data.select_dtypes(include=<span class="string">'object'</span>).columns</span><br><span class="line">print(categorical_cols)</span><br></pre></td></tr></table></figure>
+<pre><code>Index([&#39;notRepairedDamage&#39;], dtype=&#39;object&#39;)
+</code></pre><h2 id="训练集和测试集"><a href="#训练集和测试集" class="headerlink" title="训练集和测试集"></a>训练集和测试集</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 选择特征列</span></span><br><span class="line">feature_cols = [col <span class="keyword">for</span> col <span class="keyword">in</span> numerical_cols <span class="keyword">if</span> col <span class="keyword">not</span> <span class="keyword">in</span> [<span class="string">'SaleID'</span>, <span class="string">'name'</span>, <span class="string">'regDate'</span>,<span class="string">'creatDate'</span>,<span class="string">'price'</span>,<span class="string">'model'</span>,<span class="string">'brand'</span>,<span class="string">'regionCode'</span>,<span class="string">'seller'</span>]]</span><br><span class="line">feature_cols = [col <span class="keyword">for</span> col <span class="keyword">in</span> feature_cols <span class="keyword">if</span> <span class="string">'Type'</span> <span class="keyword">not</span> <span class="keyword">in</span> col]</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 提取特征列、标签列构造训练集和测试集</span></span><br><span class="line">X_train = train_data[feature_cols]  <span class="comment">## 训练集特征</span></span><br><span class="line">y_train = train_data[<span class="string">'price'</span>]  <span class="comment">## 训练集标签</span></span><br><span class="line"></span><br><span class="line">X_test = testB_data[feature_cols]  <span class="comment">## 测试集标签</span></span><br><span class="line"></span><br><span class="line">print(<span class="string">'X train shape is :'</span>, X_train.shape)</span><br><span class="line">print(<span class="string">'X test shape is :'</span>, X_test.shape)</span><br></pre></td></tr></table></figure>
+<pre><code>X train shape is : (150000, 18)
+X test shape is : (50000, 18)
+</code></pre><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 统计标签的基本分布信息</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">stat_info</span><span class="params">(data)</span>:</span></span><br><span class="line">    print(<span class="string">'_min'</span>, np.min(data))</span><br><span class="line">    print(<span class="string">'_max'</span>, np.max(data))</span><br><span class="line">    print(<span class="string">'_mean'</span>, np.mean(data))</span><br><span class="line">    print(<span class="string">'_ptp'</span>, np.ptp(data))  <span class="comment">## 最大值与最小值的差</span></span><br><span class="line">    print(<span class="string">'_std'</span>, np.std(data))</span><br><span class="line">    print(<span class="string">'_var'</span>, np.var(data))</span><br><span class="line"></span><br><span class="line">print(<span class="string">'Stat of label:'</span>)</span><br><span class="line">stat_info(y_train)</span><br></pre></td></tr></table></figure>
+<pre><code>Stat of label:
+_min 11
+_max 99999
+_mean 5923.327333333334
+_ptp 99988
+_std 7501.973469876438
+_var 56279605.94272992
+</code></pre><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## label中可能存在异常大值</span></span><br><span class="line"><span class="comment">## 绘制标签的直方图，查看标签分布</span></span><br><span class="line">plt.hist(y_train)</span><br><span class="line">plt.show()</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
+<p><meta name="referrer" content="no-referrer"><br><img src="/2020/05/12/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-%E5%A4%A9%E6%B1%A0-%E4%BA%8C%E6%89%8B%E8%BD%A6%E4%BA%A4%E6%98%93%E6%95%B0%E6%8D%AE/output_23_0.png" class title="直方图"></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 填补缺失值</span></span><br><span class="line">X_train = X_train.fillna(<span class="number">-1</span>)  <span class="comment">## 用-1填补</span></span><br><span class="line">X_test = X_test.fillna(<span class="number">-1</span>)</span><br></pre></td></tr></table></figure>
+<h1 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 利用XGBoost进行5折交叉验证</span></span><br><span class="line">xgb_reg = xgb.XGBRegressor(</span><br><span class="line">    n_estimators=<span class="number">120</span>, </span><br><span class="line">    learning_rate=<span class="number">0.1</span>, </span><br><span class="line">    gamma=<span class="number">0</span>,</span><br><span class="line">    subsample=<span class="number">0.8</span>,</span><br><span class="line">    colsample_bytree=<span class="number">0.9</span>,</span><br><span class="line">    max_depth=<span class="number">7</span>,</span><br><span class="line">    objective=<span class="string">'reg:squarederror'</span></span><br><span class="line">)</span><br><span class="line">scores_train = []</span><br><span class="line">scores = []</span><br><span class="line"></span><br><span class="line"><span class="comment">## 5折交叉验证</span></span><br><span class="line">folds = StratifiedKFold(n_splits=<span class="number">5</span>, shuffle=<span class="literal">True</span>, random_state=<span class="number">0</span>)</span><br><span class="line"><span class="keyword">for</span> train_idx, val_idx <span class="keyword">in</span> folds.split(X_train, y_train):</span><br><span class="line">    train_X = X_train.iloc[train_idx].values</span><br><span class="line">    train_y = y_train.iloc[train_idx]</span><br><span class="line">    val_X = X_train.iloc[val_idx].values</span><br><span class="line">    val_y = y_train.iloc[val_idx]</span><br><span class="line">    </span><br><span class="line">    xgb_reg.fit(train_X, train_y)</span><br><span class="line">    pred_train_y_xgb = xgb_reg.predict(train_X)</span><br><span class="line">    pred_val_y_xgb = xgb_reg.predict(val_X)</span><br><span class="line">    </span><br><span class="line">    score_train = mean_absolute_error(train_y, pred_train_y_xgb)</span><br><span class="line">    scores_train.append(score_train)</span><br><span class="line">    score = mean_absolute_error(val_y, pred_val_y_xgb)</span><br><span class="line">    scores.append(score)</span><br><span class="line">    </span><br><span class="line">print(<span class="string">'Train MAE:'</span>, np.mean(score_train))</span><br><span class="line">print(<span class="string">'Validation MAE:'</span>, np.mean(scores))</span><br></pre></td></tr></table></figure>
+<pre><code>Train MAE: 622.8334142499367
+Validation MAE: 713.7602744693083
+</code></pre><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 定义xgb和lgb模型函数</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">XGB_model</span><span class="params">(x_train, y_train)</span>:</span></span><br><span class="line">    model = xgb.XGBRegressor(</span><br><span class="line">        n_estimators=<span class="number">150</span>,</span><br><span class="line">        learning_rate=<span class="number">0.1</span>,</span><br><span class="line">        gamma=<span class="number">0</span>,</span><br><span class="line">        subsample=<span class="number">0.8</span>,</span><br><span class="line">        colsample_bytree=<span class="number">0.9</span>,</span><br><span class="line">        max_depth=<span class="number">7</span>,</span><br><span class="line">        objective=<span class="string">'reg:squarederror'</span></span><br><span class="line">    )</span><br><span class="line">    model.fit(x_train, y_train)</span><br><span class="line">    <span class="keyword">return</span> model</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">LGB_model</span><span class="params">(x_train, y_train)</span>:</span></span><br><span class="line">    estimator = lgb.LGBMRegressor(</span><br><span class="line">        num_leaves=<span class="number">127</span>,</span><br><span class="line">        n_estimators=<span class="number">150</span></span><br><span class="line">    )</span><br><span class="line">    param_grid = &#123;</span><br><span class="line">        <span class="string">'learning_rate'</span>: [<span class="number">0.01</span>, <span class="number">0.05</span>, <span class="number">0.1</span>, <span class="number">0.2</span>],</span><br><span class="line">    &#125;</span><br><span class="line">    gbm = GridSearchCV(estimator, param_grid)</span><br><span class="line">    gbm.fit(x_train, y_train)</span><br><span class="line">    <span class="keyword">return</span> gbm</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 切分训练集和验证集</span></span><br><span class="line">x_train, x_val, yy_train, y_val = train_test_split(X_train, y_train, test_size=<span class="number">0.3</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">print(<span class="string">"Training LGB ..."</span>)</span><br><span class="line">model_lgb = LGB_model(x_train, yy_train)</span><br><span class="line">val_lgb = model_lgb.predict(x_val)</span><br><span class="line">MAE_lgb = mean_absolute_error(y_val, val_lgb)</span><br><span class="line">print(<span class="string">"MAE of val with LGB:"</span>, MAE_lgb)</span><br><span class="line"></span><br><span class="line">print(<span class="string">"Predict LGB ..."</span>)</span><br><span class="line">model_lgb_pred = LGB_model(X_train, y_train)</span><br><span class="line">subB_lgb = model_lgb_pred.predict(X_test)</span><br><span class="line">print(<span class="string">"stat of Predict LGB:"</span>)</span><br><span class="line">stat_info(subB_lgb)</span><br></pre></td></tr></table></figure>
+<pre><code>Training LGB ...
+MAE of val with LGB: 687.1736052804791
+Predict LGB ...
+stat of Predict LGB:
+_min -589.8793550785414
+_max 90760.26063584947
+_mean 5906.935218383807
+_ptp 91350.13999092802
+_std 7344.644970956768
+_var 53943809.749400534
+</code></pre><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">print(<span class="string">"Training XGB ..."</span>)</span><br><span class="line">model_xgb = XGB_model(x_train, yy_train)</span><br><span class="line">val_xgb = model_xgb.predict(x_val)</span><br><span class="line">MAE_xgb = mean_absolute_error(y_val, val_xgb)</span><br><span class="line">print(<span class="string">"MAE of val with xgb:"</span>, MAE_xgb)</span><br><span class="line"></span><br><span class="line">print(<span class="string">"Predict xgb ..."</span>)</span><br><span class="line">model_xgb_pred = XGB_model(X_train, y_train)</span><br><span class="line">subB_xgb = model_xgb_pred.predict(X_test)</span><br><span class="line">print(<span class="string">"Stat of Predict XGB:"</span>)</span><br><span class="line">stat_info(subB_xgb)</span><br></pre></td></tr></table></figure>
+<pre><code>Training XGB ...
+MAE of val with xgb: 713.8987584188461
+Predict xgb ...
+Stat of Predict XGB:
+_min -318.2115
+_max 90140.625
+_mean 5910.76
+_ptp 90458.836
+_std 7345.9653
+_var 53963204.0
+</code></pre><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 加权融合两模型的结果</span></span><br><span class="line">val_weighted = (<span class="number">1</span> - MAE_lgb / (MAE_xgb + MAE_lgb)) * val_lgb + (<span class="number">1</span> - MAE_xgb / (MAE_xgb + MAE_lgb) * val_xgb)</span><br><span class="line">val_weighted[val_weighted &lt; <span class="number">0</span>] = <span class="number">10</span>  <span class="comment">## 修正预测值为负的样本</span></span><br><span class="line">print(<span class="string">"MAE of val with weighted ensemble:"</span>, mean_absolute_error(y_val, val_weighted))</span><br></pre></td></tr></table></figure>
+<pre><code>MAE of val with weighted ensemble: 5888.071354671169
+</code></pre><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">sub_weighted = (<span class="number">1</span> - MAE_lgb / (MAE_xgb + MAE_lgb)) * subB_lgb + (<span class="number">1</span> - MAE_xgb / (MAE_xgb + MAE_lgb)) * subB_xgb</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 查看预测值的直方图</span></span><br><span class="line">plt.hist(sub_weighted)</span><br><span class="line">plt.show()</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
+<p><meta name="referrer" content="no-referrer"><br><img src="/2020/05/12/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-%E5%A4%A9%E6%B1%A0-%E4%BA%8C%E6%89%8B%E8%BD%A6%E4%BA%A4%E6%98%93%E6%95%B0%E6%8D%AE/output_33_0.png" class title="直方图"></p>
+<h1 id="输出结果"><a href="#输出结果" class="headerlink" title="输出结果"></a>输出结果</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">sub = pd.DataFrame()</span><br><span class="line">sub[<span class="string">'SaleID'</span>] = testB_data.SaleID</span><br><span class="line">sub[<span class="string">'price'</span>] = sub_weighted</span><br><span class="line">sub.to_csv(<span class="string">"./sub_weighted.csv"</span>, index=<span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">sub.head()  <span class="comment">## 预览结果</span></span><br></pre></td></tr></table></figure>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>SaleID</th>
+      <th>price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>200000</td>
+      <td>1177.409043</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>200001</td>
+      <td>1806.548102</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>200002</td>
+      <td>8560.376569</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>200003</td>
+      <td>1346.403363</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>200004</td>
+      <td>2074.413901</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://github.com/ShootingWang/ShootingWang.github.io/2020/05/12/sql-sql%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2014,447 +3256,10 @@
   
   
 
-      
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/ShootingWang/ShootingWang.github.io/2020/05/11/R/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="ShootingWang">
-      <meta itemprop="description" content="无猫病重症患者">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ShootingWang">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/05/11/R/" class="post-title-link" itemprop="url">R</a>
-        </h2>
-
-        <div class="post-meta">
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-05-11 11:26:55" itemprop="dateCreated datePublished" datetime="2020-05-11T11:26:55+08:00">2020-05-11</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-05-18 08:37:10" itemprop="dateModified" datetime="2020-05-18T08:37:10+08:00">2020-05-18</time>
-              </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2020/05/11/R/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/05/11/R/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <center>R语言</center>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/05/11/R/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/ShootingWang/ShootingWang.github.io/2020/05/11/Machine-Learning-%E8%81%9A%E7%B1%BB%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="ShootingWang">
-      <meta itemprop="description" content="无猫病重症患者">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ShootingWang">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/05/11/Machine-Learning-%E8%81%9A%E7%B1%BB%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0/" class="post-title-link" itemprop="url">Machine Learning | 聚类模型评估</a>
-        </h2>
-
-        <div class="post-meta">
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-05-11 08:59:07" itemprop="dateCreated datePublished" datetime="2020-05-11T08:59:07+08:00">2020-05-11</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-05-17 09:04:19" itemprop="dateModified" datetime="2020-05-17T09:04:19+08:00">2020-05-17</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2020/05/11/Machine-Learning-%E8%81%9A%E7%B1%BB%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/05/11/Machine-Learning-%E8%81%9A%E7%B1%BB%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><strong>模型评估/评价</strong>：对于已经建立的一个或多个模型，根据模型的类别，选择不同的指标评价其性能优劣的过程。</p>
-<h1 id="聚类评估"><a href="#聚类评估" class="headerlink" title="聚类评估"></a>聚类评估</h1><p>关于聚类分析，往往是希望聚类结果中，组内（同类别）的相似性（稠密程度）越大、组间（不同类别）的相似性（离散程度）越小。</p>
-<p>聚类模型的评估指标/方法：</p>
-<ul>
-<li>ARI评价法（兰德系数）</li>
-<li>AMI评价法（互信息）</li>
-<li>V-measure评分</li>
-<li>FMI评价法</li>
-<li>轮廓系数</li>
-<li>Calinski-Harabasz分数</li>
-<li>……</li>
-</ul>
-<h2 id="ARI评价法"><a href="#ARI评价法" class="headerlink" title="ARI评价法"></a>ARI评价法</h2><h3 id="兰德系数RI"><a href="#兰德系数RI" class="headerlink" title="兰德系数RI"></a>兰德系数RI</h3><p><strong>兰德系数/兰德指数</strong>（RI，Rand Index）：用于聚类模型的性能评估。</p>
-<ul>
-<li>需要真实的类别</li>
-<li>最佳值为1</li>
-<li>RI的取值范围为 [0,1]；值越大意味着聚类结果与真实情况越吻合</li>
-</ul>
-<blockquote>
-<ul>
-<li>样本个数$n$</li>
-<li>$n$个样本集合$S=\{x_1,\cdots,x_n\}$</li>
-<li>样本集合的真实划分$U=\{u_1,\cdots,u_R\}$</li>
-<li>样本集合的聚类结果$V=\{v_1,\cdots,v_C\}$</li>
-<li>$a$：在$U$中为同一类且在$V$中也为同一类别的数据点对数（即TP）</li>
-<li>$b$：在$U$中为同一类但在$V$中却是不同类别的数据点对数（即FN）</li>
-<li>$c$：在$U$中不是同一类但在$V$中却是同一类的数据点对数（即FP）</li>
-<li>$d$：在$U$中不是同一类且在$V$中也是不同类别的数据点对数（即TN）</li>
-</ul>
-</blockquote>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th style="text-align:center">Class\Cluster</th>
-<th style="text-align:center">Same Cluster</th>
-<th style="text-align:center">Different Cluster</th>
-<th style="text-align:center">Sum(U)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">Same Class</td>
-<td style="text-align:center">a</td>
-<td style="text-align:center">b</td>
-<td style="text-align:center">a+b</td>
-</tr>
-<tr>
-<td style="text-align:center">Different Class</td>
-<td style="text-align:center">c</td>
-<td style="text-align:center">d</td>
-<td style="text-align:center">c+d</td>
-</tr>
-<tr>
-<td style="text-align:center">Sum(V)</td>
-<td style="text-align:center">a+c</td>
-<td style="text-align:center">b+d</td>
-<td style="text-align:center">a+b+c+d</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>则兰德指数为</p>
-<script type="math/tex; mode=display">\mathrm{RI}=\frac{a+d}{C_n^2}=\frac{TP+TN}{TP+FP+TN+FN}</script><p>其中，</p>
-<script type="math/tex; mode=display">C_n^2=
-\left(\begin{array}{c}
-n\\
-2
-\end{array}\right)=\frac{n(n-1)}{2}</script><p>是样本集中能够组成的元素对数。</p>
-<h3 id="调整兰德系数ARI"><a href="#调整兰德系数ARI" class="headerlink" title="调整兰德系数ARI"></a>调整兰德系数ARI</h3><p>对于随机聚类结果，RI并不能保证接近零。为了实现“在聚类结果随机产生的情况下，指标应该接近零”，有人提出了<strong>调整兰德系数</strong>（ARI，Adjusted Rand Index），具有更高的区分度</p>
-<ul>
-<li>ARI的取值范围为 [-1,1] ；值越大意味着聚类结果与真实情况越吻合</li>
-<li>ARI实际是RI去均值归一化</li>
-<li>从广义的角度来看，ARI衡量的是两个数据分布的吻合程度（相似度）</li>
-</ul>
-<script type="math/tex; mode=display">\mathrm{ARI}=\frac{\mathrm{RI}-E(\mathrm{RI})}{\max{(\mathrm{RI})}-E(\mathrm{RI})}</script><div class="table-container">
-<table>
-<thead>
-<tr>
-<th style="text-align:center">Class\Cluster</th>
-<th style="text-align:center">$v_1$</th>
-<th style="text-align:center">$v_2$</th>
-<th style="text-align:center">$\cdots$</th>
-<th style="text-align:center">$v_C$</th>
-<th style="text-align:center">SUM</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">$u_1$</td>
-<td style="text-align:center">$n_{11}$</td>
-<td style="text-align:center">$n_{12}$</td>
-<td style="text-align:center">$\cdots$</td>
-<td style="text-align:center">$n_{1C}$</td>
-<td style="text-align:center">$n_{1.}$</td>
-</tr>
-<tr>
-<td style="text-align:center">$u_2$</td>
-<td style="text-align:center">$n_{21}$</td>
-<td style="text-align:center">$n_{22}$</td>
-<td style="text-align:center">$\cdots$</td>
-<td style="text-align:center">$n_{2C}$</td>
-<td style="text-align:center">$n_{2.}$</td>
-</tr>
-<tr>
-<td style="text-align:center">$\cdots$</td>
-<td style="text-align:center">$\cdots$</td>
-<td style="text-align:center">$\cdots$</td>
-<td style="text-align:center">$\cdots$</td>
-<td style="text-align:center">$\cdots$</td>
-<td style="text-align:center">$\cdots$</td>
-</tr>
-<tr>
-<td style="text-align:center">$u_R$</td>
-<td style="text-align:center">$n_{R1}$</td>
-<td style="text-align:center">$n_{R2}$</td>
-<td style="text-align:center">$\cdots$</td>
-<td style="text-align:center">$n_{RC}$</td>
-<td style="text-align:center">$n_{R.}$</td>
-</tr>
-<tr>
-<td style="text-align:center">SUM</td>
-<td style="text-align:center">$n_{.1}$</td>
-<td style="text-align:center">$n_{.2}$</td>
-<td style="text-align:center">$\cdots$</td>
-<td style="text-align:center">$n_{. C}$</td>
-<td style="text-align:center">$n_{..}=n$</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>RI中的$a+d$可表示为</p>
-<script type="math/tex; mode=display">\sum_{i,j}\left(\begin{array}{c}
-n_{ij}\\
-2
-\end{array}\right)</script><p>且</p>
-<script type="math/tex; mode=display">E(\mathrm{RI})=E(\sum_{i,j}\left(\begin{array}{c}
-n_{ij}\\
-2
-\end{array}\right))=\frac{\sum_i\left(\begin{array}{c}
-n_{i.}\\
-2
-\end{array}\right)\sum_j\left(\begin{array}{c}
-n_{.j}\\
-2
-\end{array}\right)
-}{
-\left(\begin{array}{c}
-n\\2
-\end{array}\right)
-}</script><script type="math/tex; mode=display">\max{(\mathrm{RI})}=\frac{1}{2}[\sum_i\left(\begin{array}{c}
-n_{i.}\\
-2
-\end{array}\right)+\sum_j\left(\begin{array}{c}
-n_{.j}\\
-2
-\end{array}\right)]</script><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Python实现</span></span><br><span class="line"><span class="keyword">from</span> sklearn.metrics <span class="keyword">import</span> adjust_rand_score</span><br><span class="line"></span><br><span class="line">ari = adjusted_rand_score(labels_true, labels_pred)</span><br><span class="line"><span class="comment"># labels_true：真实的分类标签</span></span><br><span class="line"><span class="comment"># label_pred：模型聚类的结果</span></span><br><span class="line"><span class="comment"># ARI = (RI - Expected_RI) / (max(RI) - Expected_RI)</span></span><br><span class="line"><span class="comment"># adjusted_rand_score(a, b) == adjusted_rand_score(b, a)</span></span><br></pre></td></tr></table></figure>
-<h2 id="AMI评价法"><a href="#AMI评价法" class="headerlink" title="AMI评价法"></a>AMI评价法</h2><p><strong>互信息</strong>（MI，Mutual Information）：衡量两个数据分布的吻合程度。</p>
-<ul>
-<li>需要真实类别</li>
-<li>最佳值为1</li>
-<li>MI和NMI的取值范围为 [0,1]；AMI的取值范围为 [-1,1]；都是值越大，意味着聚类结果与真实情况越吻合</li>
-</ul>
-<h3 id="互信息MI"><a href="#互信息MI" class="headerlink" title="互信息MI"></a>互信息MI</h3><p>两个离散随机变量$X$和$Y$的互信息定义为</p>
-<script type="math/tex; mode=display">I(X,Y)=\sum_{y\in Y}\sum_{x\in X}p(x,y)\log{\frac{p(x,y)}{p(x)p(y)}}</script><p>其中，$p(x,y)$是$X$和$Y$的联合概率分布函数，$p(x)$、$p(y)$分别是$X$和$Y$的边缘概率分布函数。<br>两个连续随机变量的互信息定义为</p>
-<script type="math/tex; mode=display">I(X,Y)=\int_Y\int_Xp(x,y)\log{\frac{p(x,y)}{p(x)p(y)}}\mathrm{d}x\mathrm{d}y</script><p>其中，$p(x,y)$是$X$和$Y$的联合概率密度函数，$p(x)$、$p(y)$分别是$X$和$Y$的边缘概率密度函数。</p>
-<ul>
-<li>互信息是互信息量$I(x_i,y_j)$在联合概率空间中的统计平均值</li>
-<li>（平均）互信息克服了互信息量$I(x_i,y_j)$的随机性，是一个确定的量</li>
-<li>互信息是$X$和$Y$的联合分布相对于假定$X$和$Y$独立情况下的联合分布之间的内在依赖性</li>
-<li>$I(X,Y)=0$当且仅当$X$和$Y$独立时成立</li>
-<li>当$X$和$Y$独立时，$p(x,y)=p(x)p(y)$。因此<script type="math/tex; mode=display">\log{\frac{p(x,y)}{p(x)p(y)}}=\log1=0</script></li>
-</ul>
-<p>用互信息来评估聚类效果：</p>
-<blockquote>
-<ul>
-<li>样本个数$n$</li>
-<li>$n$个样本集合$S=\{x_1,\cdots,x_n\}$</li>
-<li>样本集合的真实划分$U=\{u_1,\cdots,u_R\}$</li>
-<li>样本集合的聚类结果$V=\{v_1,\cdots,v_C\}$</li>
-<li>$P(i)$为$u_i$在$U$中的概率（比率）<script type="math/tex; mode=display">P(i)=\frac{||u_i||}{n}=\frac{n_{i.}}{n}</script></li>
-<li>$P^\prime(j)$为$v_j$在$V$中的概率（比率）<script type="math/tex; mode=display">P^\prime(j)=\frac{||v_j||}{n}=\frac{n_{.j}}{n}</script></li>
-<li>$U$的熵为<script type="math/tex; mode=display">H(U)=\sum_{i=1}^RP(i)\log{\left(P(i)\right)}</script></li>
-<li>$V$的熵为<script type="math/tex; mode=display">H(V)=\sum_{j=1}^CP^\prime(j)\log{\left(P^\prime(j)\right)}</script></li>
-</ul>
-</blockquote>
-<p>$U$和$V$之间的<strong>互信息</strong>（MI）为</p>
-<script type="math/tex; mode=display">\mathrm{MI}(U,V)=\sum_{i=1}^R\sum_{j=1}^CP(i,j)\log{\left(\frac{P(i,j)}{P(i)P^\prime(j)}\right)}</script><p>其中$P(i,j)=n_{ij}/n$。</p>
-<h3 id="标准化的互信息NMI"><a href="#标准化的互信息NMI" class="headerlink" title="标准化的互信息NMI"></a>标准化的互信息NMI</h3><p><strong>标准化后的互信息</strong>（NMI，Normalized Mutual Information）为</p>
-<script type="math/tex; mode=display">\mathrm{NMI}(U,V)=\frac{\mathrm{MI}(U,V)}{\sqrt{H(U)H(V)}}</script><h3 id="调整互信息AMI"><a href="#调整互信息AMI" class="headerlink" title="调整互信息AMI"></a>调整互信息AMI</h3><p><strong>调整互信息</strong>（AMI，Adjusted Mutual Information）为</p>
-<script type="math/tex; mode=display">\mathrm{AMI}=\frac{\mathrm{MI}-E[\mathrm{MI}]}{\max{\left(H(U),H(V)\right)}-E[\mathrm{MI}]}</script><p>\begin{equation}<br>  \begin{aligned}<br>E[\mathrm{MI}(U,V)]=&amp;\sum_{i=1}^R\sum_{j=1}^C\sum_{n_{ij}=(n_{i.}+n_{.j}-n)^+}^{\min{(n_{i.},n_{.j})}}\frac{n_{ij}}{n}<br>\log{\left(\frac{n\cdot n_{ij}}{n_{i.}n_{.j}}\right)}\times\\<br>&amp;\frac{n_{i.}!n_{.j}(n-n_{i.})!(n-n_{.j})!}{n!n_{ij}!(n_{i.}-n_{ij})!(n_{.j-n_{ij}})!(n-n_{i.}-n_{.j}+n_{ij})!}<br>  \end{aligned}<br>\end{equation}</p>
-<ul>
-<li>$(n_{i.}+n_{.j}-n)^+=\max{\{1, n_{i.}+n_{.j}-n\}}$</li>
-<li>$n_{i.}=\sum_{j=1}^Cn_{ij}$</li>
-<li>$n_{.j}=\sum_{i=1}^Rn_{ij}$</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Python实现</span></span><br><span class="line"><span class="keyword">from</span> sklearn.metrics <span class="keyword">import</span> adjusted_mutual_info_score</span><br><span class="line"></span><br><span class="line"><span class="comment">## AMI</span></span><br><span class="line">ami = adjusted_mutual_info_score(labels_true, labels_pred)</span><br><span class="line"><span class="comment"># labels_true：真实的分类标签</span></span><br><span class="line"><span class="comment"># label_pred：模型聚类的结果</span></span><br><span class="line"><span class="comment"># Python的sklearn中的AMI的公式为</span></span><br><span class="line"><span class="comment"># AMI(U,V)=[MI(U,V) - E(MI(U,V))] / [avg(H(U),H(V)) - E(MI(U,V))]</span></span><br><span class="line"><span class="comment"># 其中用的是avg而不是max</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## NMI</span></span><br><span class="line"><span class="keyword">from</span> sklearn.metrics <span class="keyword">import</span> normalized_mutual_info_score</span><br><span class="line"></span><br><span class="line">nmi = normalized_mutual_info_score(labels_true, labels_pred)</span><br></pre></td></tr></table></figure>
-<h2 id="V-measure评价法"><a href="#V-measure评价法" class="headerlink" title="V-measure评价法"></a>V-measure评价法</h2><p>V-measure评价法：同质性（Homogeneity）和完整性（Completeness）的调和平均值。</p>
-<ul>
-<li>需要真实值</li>
-<li>最佳值为1</li>
-<li>对簇结构不作假设，可以比较两种聚类算法的结果（比如k均值算法和谱聚类算法）</li>
-<li>随机聚类的V-measure不会为零</li>
-<li>当样本数较大（&gt;1000） 或 聚类数较小（&lt;10）时，可以忽略“V-measure不为零”的问题；当样本数较小或聚类数较大时，使用AMI或ARI会更可靠</li>
-</ul>
-<h3 id="同质性"><a href="#同质性" class="headerlink" title="同质性"></a>同质性</h3><p>同质性（Homogeneity）：每个簇(cluster)只包含单个类成员</p>
-<ul>
-<li>在一个簇内包含的类别越少，则聚类效果越好</li>
-<li>取值范围为 [0,1]<script type="math/tex; mode=display">h=1-\frac{H(U|V)}{H(U)}</script>其中<script type="math/tex; mode=display">H(U|V)=-\sum_{i=1}^R\sum_{j=1}^C\frac{n_{ij}}{n}\log{\left(\frac{n_{ij}}{n_{.j}}\right)}</script><script type="math/tex; mode=display">H(U)=-\sum_{i=1}^R\frac{n_{i.}}{n}\log{\left(\frac{n_{i.}}{n}\right)}</script></li>
-</ul>
-<h3 id="完整性"><a href="#完整性" class="headerlink" title="完整性"></a>完整性</h3><p>完整性（Completeness）：给定类的所有成员分配给同一簇类</p>
-<script type="math/tex; mode=display">c=1-\frac{H(V|U)}{H(V)}</script><p>其中</p>
-<script type="math/tex; mode=display">H(V|U)=-\sum_{i=1}^R\sum_{j=1}^C\frac{n_{ij}}{n}\log{\left(\frac{n_{ij}}{n_{i.}}\right)}</script><script type="math/tex; mode=display">H(V)=-\sum_{j=1}^C\frac{n_{.j}}{n}\log{\left(\frac{n_{.j}}{n}\right)}</script><h3 id="V-measure"><a href="#V-measure" class="headerlink" title="V-measure"></a>V-measure</h3><p>V-measure是同质性和完整性的调和平均数，公式为</p>
-<script type="math/tex; mode=display">V=\frac{2\cdot h\cdot c}{h+c}</script><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Python实现 V-measure</span></span><br><span class="line"><span class="keyword">from</span> sklearn.metrics.cluster <span class="keyword">import</span> v_measure_score</span><br><span class="line"></span><br><span class="line">vs = v_measure_score(labels_true, labels_pred, beta=<span class="number">1.0</span>)</span><br><span class="line"><span class="comment"># labels_true：真实的分类标签</span></span><br><span class="line"><span class="comment"># label_pred：模型聚类的结果</span></span><br><span class="line"><span class="comment"># v = (1 + beta) * homogeneity * completenes</span></span><br><span class="line"><span class="comment">#     / (beta * homogeneity + completeness)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># homogeneity</span></span><br><span class="line"><span class="keyword">from</span> sklearn.metrics.cluster <span class="keyword">import</span> homogeneity_score</span><br><span class="line"></span><br><span class="line">h = homogeneity_score(labels_true, labels_pred)</span><br><span class="line"></span><br><span class="line"><span class="comment"># completeness</span></span><br><span class="line"><span class="keyword">from</span> sklearn.metrics <span class="keyword">import</span> completeness_score</span><br><span class="line"></span><br><span class="line">c = completeness_score(labels_true, labels_pred)</span><br></pre></td></tr></table></figure>
-<h2 id="FMI评价法"><a href="#FMI评价法" class="headerlink" title="FMI评价法"></a>FMI评价法</h2><p><strong>FMI评价法</strong>（Fowlkes-Mallows score FMI）：精确率（Precision）和召回率（Recall）的几何平均值</p>
-<ul>
-<li>需要真实值</li>
-<li>最佳值为1<script type="math/tex; mode=display">\mathrm{FMI}=\sqrt{\mathrm{Precision\cdot Recall}}=\frac{TP}{\sqrt{(TP+FP)(TP+FN)}}</script></li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Python实现</span></span><br><span class="line"><span class="keyword">from</span> sklearn.metrics <span class="keyword">import</span> fowlkes_mallows_score</span><br><span class="line"></span><br><span class="line">fmi = fowlkes_mallows_score(labels_true, labels_pred)</span><br></pre></td></tr></table></figure>
-<h2 id="轮廓系数"><a href="#轮廓系数" class="headerlink" title="轮廓系数"></a>轮廓系数</h2><p><strong>轮廓系数</strong>（Silhouette Coefficient）：适用于实际类别信息未知的情况。</p>
-<ul>
-<li>轮廓系数的取值范围为 [-1,1]</li>
-<li>同类别样本距离越相近且不同类别样本距离越远，值越高，表明聚类效果越好</li>
-</ul>
-<p>计算单个样本的轮廓系数：</p>
-<ol>
-<li>计算样本$x_i$到同簇其他样本的平均距离$a_i$（$a_i$ 称为样本$x_i$的<strong>簇内不相似度</strong>）。 $a_i$ 越小，说明样本$x_i$ 越应该被聚类到该簇。</li>
-<li>计算样本$x_i$到其他簇$C_j$的所有样本的平均距离$b_{ij}$，称为样本$x_i$与簇$C_j$的不相似度。定义样本$x_i$的<strong>簇间不相似度</strong>为$b_i=\min\{b_{ij},j\neq i\}$。$b_i$越大，说明样本$x_i$越不属于其他簇。</li>
-<li>根据样本$x_i$的簇内不相似度$a_i$和簇间不相似度$b_i$，定义样本$x_i$的<strong>轮廓系数</strong><script type="math/tex; mode=display">s_i=\frac{b_i-a_i}{\max\{a_i,b_i\}}=\left\{
-\begin{array}{ll}
-1-\frac{a_i}{b_i} & a_i<b_i\\
-0 & a_i=b_i\\
-\frac{b_i}{a_i}-1 & a_i>b_i
-\end{array}
-\right.</script></li>
-<li>判断：<ul>
-<li>$s_i$接近1，说明样本$x_i$聚类合理</li>
-<li>$s_i$接近-1，说明样本$x_i$更应该分类到另外的簇</li>
-<li>若$s_i$约等于0，则说明样本$x_i$在两个簇的边界上</li>
-</ul>
-</li>
-</ol>
-<p>样本集合的轮廓系数是其所有样本轮廓系数的平均值。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Python</span></span><br><span class="line"><span class="keyword">from</span> sklearn.metrics <span class="keyword">import</span> silhouette_score</span><br><span class="line"></span><br><span class="line">ss = silhouette_scor(X, labels, metric=<span class="string">'euclidean'</span>)</span><br></pre></td></tr></table></figure>
-<h2 id="Calinski-Harabasz指数"><a href="#Calinski-Harabasz指数" class="headerlink" title="Calinski-Harabasz指数"></a>Calinski-Harabasz指数</h2><p><strong>Calinski-Harabasz Index</strong>（Variance Ratio Criterion）：用簇内的稠密程度和簇间的离散程度来评估聚类的效果。</p>
-<ul>
-<li>主要用于k-均值聚类</li>
-<li>类别内部数据的协方差越小越好，类别之间的协方差越大越好，则Calinski-Harabasz分数会越高，表明聚类效果越好</li>
-</ul>
-<p>\begin{equation}<br>  \begin{aligned}<br>s(k) &amp;= \frac{\mathrm{tr}(B_k)/(k-1)}{\mathrm{tr}(W_k)/(n-k)}= \frac{\mathrm{tr}(B_k)}{\mathrm{tr}(W_k)}\times\frac{n-k}{k-1}\\<br>&amp;= \frac{SS_B/(k-1)}{SS_W/(n-k)}=\frac{SS_B}{SS_W}\times\frac{n-k}{k-1}<br>  \end{aligned}<br>\end{equation}<br>其中</p>
-<ul>
-<li>$B_k$是类别之间的协方差矩阵（$SS_B$ is the overall between-cluster variance）<script type="math/tex; mode=display">SS_B=TSS-SS_W</script>total sum of squares TSS<script type="math/tex; mode=display">TSS=\sum_{i=1}^n(x_i-\bar{x})^2</script></li>
-<li>$W_k$是类别内部数据的协方差矩阵（$SS_W$ is the overall within-cluster variance）</li>
-<li>$\mathrm{tr}$ 是矩阵的迹</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Python实现</span></span><br><span class="line"><span class="keyword">from</span> sklearn.metrics <span class="keyword">import</span> calinski-harabasz_score</span><br><span class="line"></span><br><span class="line">ch = calinski_harabasz_score(X, labels)</span><br></pre></td></tr></table></figure>
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p>[1] <a href="https://mp.weixin.qq.com/s?__biz=MzU5NzkxODMxOA==&amp;mid=2247486297&amp;idx=1&amp;sn=0a2c549de4e1cfe54694e8364acfceb9&amp;chksm=fe4d5c58c93ad54e7b45b5f644870f011f5e7ffc1d6cb0698f53d15d38e1419bc8cc7c0e1cd7&amp;token=1168016353&amp;lang=zh_CN#rd" target="_blank" rel="noopener">聚类模型评估</a><br>[2] <a href="https://www.lagou.com/lgeduarticle/109119.html" target="_blank" rel="noopener">机器学习之模型评估详解</a><br>[3] <a href="https://zhaokv.com/machine_learning/2016/03/ml-metric.html" target="_blank" rel="noopener">机器学习评价指标大汇总</a><br>[4] <a href="https://en.wikipedia.org/wiki/Rand_index#Adjusted_Rand_index" target="_blank" rel="noopener"> 维基百科-Rand Index</a><br>[5] <a href="https://en.wikipedia.org/wiki/Adjusted_mutual_information" target="_blank" rel="noopener">维基百科-调整互信息</a><br>[6] <a href="https://blog.csdn.net/sinat_30203515/article/details/82634778" target="_blank" rel="noopener">兰德系数、调整兰德系数</a><br>[7] <a href="https://www.wandouip.com/t5i267906/" target="_blank" rel="noopener">方法名称最优值sklearn函数</a><br>[8] <a href="https://www.jianshu.com/p/b9528df2f57a" target="_blank" rel="noopener">聚类模型评估</a><br>[9] <a href="https://cloud.tencent.com/developer/article/1010857" target="_blank" rel="noopener">聚类︱python实现六大分群质量评估指标（兰德系数、互信息、轮廓系数）</a><br>[10] <a href="https://www.cnblogs.com/pinard/p/6169370.html" target="_blank" rel="noopener">用scikit-learn学习K-Means聚类</a><br>[11] <a href="https://ethen8181.github.io/machine-learning/clustering_old/clustering/clustering.html" target="_blank" rel="noopener">Calinski-Harabasz Index and Bootstrap Evaluation with Clustering Methods</a><br>[12] <a href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.adjusted_mutual_info_score.html" target="_blank" rel="noopener">sklearn.metrics.adjusted_mutual_info_score</a><br>[13] <a href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.adjusted_rand_score.html" target="_blank" rel="noopener">sklearn.metrics.adjusted_rand_score</a><br>[14] <a href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.v_measure_score.html" target="_blank" rel="noopener">sklearn.metrics.v_measure_score</a><br>[15] <a href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.homogeneity_score.html#sklearn.metrics.homogeneity_score" target="_blank" rel="noopener">sklearn.metrics.homogeneity_score</a><br>[16] <a href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.completeness_score.html" target="_blank" rel="noopener">sklearn.metrics.completeness_score</a><br>[17] <a href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.silhouette_score.html" target="_blank" rel="noopener">sklearn.metrics.silhouette_score</a><br>[18] <a href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.calinski_harabasz_score.html" target="_blank" rel="noopener">sklearn.metrics.calinski_harabasz_score</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -2520,7 +3325,7 @@ n_{.j}\\
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">100</span>
+          <span class="site-state-item-count">102</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -2533,7 +3338,7 @@ n_{.j}\\
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">43</span>
+        <span class="site-state-item-count">45</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
