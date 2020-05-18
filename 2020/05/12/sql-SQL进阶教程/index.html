@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon2.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon2.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"github.com","root":"/","scheme":"Pisces","version":"8.0.0-rc.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"valine","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+<link rel="stylesheet" href="/js/prism/prism.css">
+
+  <meta name="description" content="《SQL进阶教程》读书笔记 CASE表达式CASE表达式：  简单CASE表达式（simple case expression） 搜索CASE表达式（searched case expression）  -- 简单CASE表达式CASE sex    WHEN &#39;1&#39; THEN &#39;male&#39;    WHEN &#39;2&#39; THEN &#39;female&#39;ELSE &#39;其他&#39; END-- 搜索CASE表达式CAS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SQL | 《SQL进阶教程》">
+<meta property="og:url" content="https://github.com/ShootingWang/ShootingWang.github.io/2020/05/12/sql-SQL%E8%BF%9B%E9%98%B6%E6%95%99%E7%A8%8B/index.html">
+<meta property="og:site_name" content="ShootingWang">
+<meta property="og:description" content="《SQL进阶教程》读书笔记 CASE表达式CASE表达式：  简单CASE表达式（simple case expression） 搜索CASE表达式（searched case expression）  -- 简单CASE表达式CASE sex    WHEN &#39;1&#39; THEN &#39;male&#39;    WHEN &#39;2&#39; THEN &#39;female&#39;ELSE &#39;其他&#39; END-- 搜索CASE表达式CAS">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-05-12T14:52:46.000Z">
+<meta property="article:modified_time" content="2020-05-17T01:01:29.786Z">
+<meta property="article:author" content="ShootingWang">
+<meta property="article:tag" content="SQL">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://github.com/ShootingWang/ShootingWang.github.io/2020/05/12/sql-SQL%E8%BF%9B%E9%98%B6%E6%95%99%E7%A8%8B/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>SQL | 《SQL进阶教程》 | ShootingWang</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><script type="text/javascript" color="0,0,0" opacity='0.5' zIndex="-1" count="99" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+  </script>
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+        <span class="toggle-line toggle-line-first"></span>
+        <span class="toggle-line toggle-line-middle"></span>
+        <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">ShootingWang</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-tools">
+
+    <a href="/tools/" rel="section"><i class="fa fa-tools fa-fw"></i>tools</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/ShootingWang" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://github.com/ShootingWang/ShootingWang.github.io/2020/05/12/sql-SQL%E8%BF%9B%E9%98%B6%E6%95%99%E7%A8%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ShootingWang">
+      <meta itemprop="description" content="无猫病重症患者">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ShootingWang">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          SQL | 《SQL进阶教程》
+        </h1>
+
+        <div class="post-meta">
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-05-12 22:52:46" itemprop="dateCreated datePublished" datetime="2020-05-12T22:52:46+08:00">2020-05-12</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-05-17 09:01:29" itemprop="dateModified" datetime="2020-05-17T09:01:29+08:00">2020-05-17</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">数据库</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/05/12/sql-SQL%E8%BF%9B%E9%98%B6%E6%95%99%E7%A8%8B/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/05/12/sql-SQL%E8%BF%9B%E9%98%B6%E6%95%99%E7%A8%8B/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>《SQL进阶教程》读书笔记</p>
+<h1 id="CASE表达式"><a href="#CASE表达式" class="headerlink" title="CASE表达式"></a>CASE表达式</h1><p>CASE表达式：</p>
+<ul>
+<li>简单CASE表达式（simple case expression）</li>
+<li>搜索CASE表达式（searched case expression）</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 简单CASE表达式</span></span><br><span class="line">CASE sex</span><br><span class="line">    WHEN '1' THEN 'male'</span><br><span class="line">    WHEN '2' THEN 'female'</span><br><span class="line">ELSE '其他' <span class="keyword">END</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 搜索CASE表达式</span></span><br><span class="line"><span class="keyword">CASE</span> <span class="keyword">WHEN</span> sex = <span class="string">'1'</span> <span class="keyword">THEN</span> <span class="string">'male'</span></span><br><span class="line">     <span class="keyword">WHEN</span> sex = <span class="string">'2'</span> <span class="keyword">THEN</span> <span class="string">'female'</span></span><br><span class="line"><span class="keyword">ELSE</span> <span class="string">'其他'</span> <span class="keyword">END</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>注意：使用WHEN子句时需要注意条件的排他性</li>
+<li>一定要注意CASE表达式里每个分支返回的数据类型是否一致<ul>
+<li>某个分支返回字符型，而其他分支返回数值型的写法是错误的</li>
+</ul>
+</li>
+<li>CASE表达式末尾不要忘记写END</li>
+<li>ELSE子句是可选的<ul>
+<li>不写ELSE子句时，CASE表达式的执行结果是NULL</li>
+<li>不写ELSE子句可能会造成“语法没有错误，结果却不对”</li>
+</ul>
+</li>
+<li>最好明确地写上ELSE子句</li>
+<li>CASE表达式是一种表法式而不是语句</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">+<span class="comment">-----------+------------+</span></span><br><span class="line">| pref_name | population |</span><br><span class="line">+<span class="comment">-----------+------------+</span></span><br><span class="line">| 东京      |        400 |</span><br><span class="line">| 佐贺      |        100 |</span><br><span class="line">| 德岛      |        100 |</span><br><span class="line">| 爱媛      |        150 |</span><br><span class="line">| 福冈      |        300 |</span><br><span class="line">| 群马      |         50 |</span><br><span class="line">| 长崎      |        200 |</span><br><span class="line">| 香川      |        200 |</span><br><span class="line">| 高知      |        200 |</span><br><span class="line">+<span class="comment">-----------+------------+</span></span><br><span class="line">9 rows in <span class="keyword">set</span> (<span class="number">0.00</span> sec)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 根据县人口统计表，统计不同地区的人口数量</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">CASE</span> pref_name</span><br><span class="line">                <span class="keyword">WHEN</span> <span class="string">'德岛'</span> <span class="keyword">THEN</span> <span class="string">'四国'</span></span><br><span class="line">                <span class="keyword">WHEN</span> <span class="string">'香川'</span> <span class="keyword">THEN</span> <span class="string">'四国'</span></span><br><span class="line">                <span class="keyword">WHEN</span> <span class="string">'爱媛'</span> <span class="keyword">THEN</span> <span class="string">'四国'</span></span><br><span class="line">                <span class="keyword">WHEN</span> <span class="string">'高知'</span> <span class="keyword">THEN</span> <span class="string">'四国'</span></span><br><span class="line">                <span class="keyword">WHEN</span> <span class="string">'福冈'</span> <span class="keyword">THEN</span> <span class="string">'九州'</span></span><br><span class="line">                <span class="keyword">WHEN</span> <span class="string">'长崎'</span> <span class="keyword">THEN</span> <span class="string">'九州'</span></span><br><span class="line">                <span class="keyword">WHEN</span> <span class="string">'佐贺'</span> <span class="keyword">THEN</span> <span class="string">'九州'</span></span><br><span class="line">        <span class="keyword">ELSE</span> <span class="string">'其他'</span> <span class="keyword">END</span> <span class="keyword">AS</span> district,</span><br><span class="line">        <span class="keyword">SUM</span>(population)</span><br><span class="line"><span class="keyword">FROM</span> PopTbl</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> <span class="keyword">CASE</span> pref_name</span><br><span class="line">                <span class="keyword">WHEN</span> <span class="string">'德岛'</span> <span class="keyword">THEN</span> <span class="string">'四国'</span></span><br><span class="line">                <span class="keyword">WHEN</span> <span class="string">'香川'</span> <span class="keyword">THEN</span> <span class="string">'四国'</span></span><br><span class="line">                <span class="keyword">WHEN</span> <span class="string">'爱媛'</span> <span class="keyword">THEN</span> <span class="string">'四国'</span></span><br><span class="line">                <span class="keyword">WHEN</span> <span class="string">'高知'</span> <span class="keyword">THEN</span> <span class="string">'四国'</span></span><br><span class="line">                <span class="keyword">WHEN</span> <span class="string">'福冈'</span> <span class="keyword">THEN</span> <span class="string">'九州'</span></span><br><span class="line">                <span class="keyword">WHEN</span> <span class="string">'长崎'</span> <span class="keyword">THEN</span> <span class="string">'九州'</span></span><br><span class="line">                <span class="keyword">WHEN</span> <span class="string">'佐贺'</span> <span class="keyword">THEN</span> <span class="string">'九州'</span></span><br><span class="line">         <span class="keyword">ELSE</span> <span class="string">'其他'</span> <span class="keyword">END</span>;</span><br><span class="line"><span class="comment">-- 注意是对转换后的列 GROUP</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">CASE</span> pref_name</span><br><span class="line">                <span class="keyword">WHEN</span> <span class="string">'德岛'</span> <span class="keyword">THEN</span> <span class="string">'四国'</span></span><br><span class="line">                <span class="keyword">WHEN</span> <span class="string">'香川'</span> <span class="keyword">THEN</span> <span class="string">'四国'</span></span><br><span class="line">                <span class="keyword">WHEN</span> <span class="string">'爱媛'</span> <span class="keyword">THEN</span> <span class="string">'四国'</span></span><br><span class="line">                <span class="keyword">WHEN</span> <span class="string">'高知'</span> <span class="keyword">THEN</span> <span class="string">'四国'</span></span><br><span class="line">                <span class="keyword">WHEN</span> <span class="string">'福冈'</span> <span class="keyword">THEN</span> <span class="string">'九州'</span></span><br><span class="line">                <span class="keyword">WHEN</span> <span class="string">'长崎'</span> <span class="keyword">THEN</span> <span class="string">'九州'</span></span><br><span class="line">                <span class="keyword">WHEN</span> <span class="string">'佐贺'</span> <span class="keyword">THEN</span> <span class="string">'九州'</span></span><br><span class="line">        <span class="keyword">ELSE</span> <span class="string">'其他'</span> <span class="keyword">END</span> <span class="keyword">AS</span> district,</span><br><span class="line">        <span class="keyword">SUM</span>(population)</span><br><span class="line"><span class="keyword">FROM</span> PopTbl</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> district;</span><br><span class="line"><span class="comment">-- 这里引用了SELECT子句中定义的别名来 GROUP</span></span><br><span class="line"><span class="comment">-- 与上面那种方法相比，这里不需要写两段CASE WHEN；</span></span><br><span class="line"><span class="comment">-- 而上面的需要写两段CASE WHEN，当CASE内容需要修改时，需要修改两处，容易出错</span></span><br><span class="line"><span class="comment">-- 但是该写法违反标准SQL的规则，因为GROUP BY子句比SELECT语句先执行</span></span><br></pre></td></tr></table></figure>
+<p>CASE WHEN 聚合之后：<br><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">+<span class="comment">----------+-----------------+</span></span><br><span class="line">| district | SUM(population) |</span><br><span class="line">+<span class="comment">----------+-----------------+</span></span><br><span class="line">| 九州     |             600 |</span><br><span class="line">| 其他     |             450 |</span><br><span class="line">| 四国     |             650 |</span><br><span class="line">+<span class="comment">----------+-----------------+</span></span><br></pre></td></tr></table></figure></p>
+<p>进行不同条件的统计：<br><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">+<span class="comment">-----------+-----+------------+</span></span><br><span class="line">| pref_name | sex | population |</span><br><span class="line">+<span class="comment">-----------+-----+------------+</span></span><br><span class="line">| 东京      | 1   |        250 |</span><br><span class="line">| 东京      | 2   |        150 |</span><br><span class="line">| 佐贺      | 1   |         20 |</span><br><span class="line">| 佐贺      | 2   |         80 |</span><br><span class="line">| 德岛      | 1   |         60 |</span><br><span class="line">| 德岛      | 2   |         40 |</span><br><span class="line">| 爱媛      | 1   |        100 |</span><br><span class="line">| 爱媛      | 2   |         50 |</span><br><span class="line">| 福冈      | 1   |        100 |</span><br><span class="line">| 福冈      | 2   |        200 |</span><br><span class="line">| 长崎      | 1   |        125 |</span><br><span class="line">| 长崎      | 2   |        125 |</span><br><span class="line">| 香川      | 1   |        100 |</span><br><span class="line">| 香川      | 2   |        100 |</span><br><span class="line">| 高知      | 1   |        100 |</span><br><span class="line">| 高知      | 2   |        100 |</span><br><span class="line">+<span class="comment">-----------+-----+------------+</span></span><br><span class="line">16 rows in <span class="keyword">set</span> (<span class="number">0.00</span> sec)</span><br><span class="line"><span class="comment">-- 如果上表有新列“性别”sex，population列为某县的某个性别人口数</span></span><br><span class="line"><span class="keyword">SELECT</span> pref_name,</span><br><span class="line"><span class="comment">-- 男性人口</span></span><br><span class="line">    <span class="keyword">SUM</span>(<span class="keyword">CASE</span> <span class="keyword">WHEN</span> sex=<span class="string">'1'</span> <span class="keyword">THEN</span> population <span class="keyword">ELSE</span> <span class="number">0</span> <span class="keyword">END</span>) <span class="keyword">AS</span> cnt_m,</span><br><span class="line"><span class="comment">-- 女性人口</span></span><br><span class="line">    <span class="keyword">SUM</span>(<span class="keyword">CASE</span> <span class="keyword">WHEN</span> sex=<span class="string">'2'</span> <span class="keyword">THEN</span> population <span class="keyword">ELSE</span> <span class="number">0</span> <span class="keyword">END</span>) <span class="keyword">AS</span> cnt_f</span><br><span class="line"><span class="keyword">FROM</span> PopTbl2</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> pref_name;</span><br><span class="line">+<span class="comment">-----------+-------+-------+</span></span><br><span class="line">| pref_name | cnt_m | cnt_f |</span><br><span class="line">+<span class="comment">-----------+-------+-------+</span></span><br><span class="line">| 东京      |   250 |   150 |</span><br><span class="line">| 佐贺      |    20 |    80 |</span><br><span class="line">| 德岛      |    60 |    40 |</span><br><span class="line">| 爱媛      |   100 |    50 |</span><br><span class="line">| 福冈      |   100 |   200 |</span><br><span class="line">| 长崎      |   125 |   125 |</span><br><span class="line">| 香川      |   100 |   100 |</span><br><span class="line">| 高知      |   100 |   100 |</span><br><span class="line">+<span class="comment">-----------+-------+-------+</span></span><br><span class="line">8 rows in <span class="keyword">set</span> (<span class="number">0.00</span> sec)</span><br></pre></td></tr></table></figure></p>
+<p>使用CHECK约束定义多个列的条件关系：<br><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">CONSTRAINT check_salary <span class="keyword">CHECK</span></span><br><span class="line">        (<span class="keyword">CASE</span> <span class="keyword">WHEN</span> dept=<span class="string">'IT'</span> </span><br><span class="line">              <span class="keyword">THEN</span> <span class="keyword">CASE</span> <span class="keyword">WHEN</span> salary&gt;=<span class="number">20000</span></span><br><span class="line">                        <span class="keyword">THEN</span> <span class="number">1</span> <span class="keyword">ELSE</span> <span class="number">0</span> <span class="keyword">END</span></span><br><span class="line">              <span class="keyword">ELSE</span> <span class="number">1</span> <span class="keyword">END</span> = <span class="number">1</span>)</span><br><span class="line"><span class="comment">-- 如果是IT部门的员工，则工资应大于等于2万；如果不是IT部门的员工，则工资不受该约束限制</span></span><br><span class="line"><span class="comment">-- 蕴含式（conditional）</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 如果用逻辑与（logical product）</span></span><br><span class="line"><span class="keyword">CONSTRAINT</span> check_salary <span class="keyword">CHECK</span> </span><br><span class="line">            (dept=<span class="string">'IT'</span> <span class="keyword">AND</span> salary&gt;=<span class="number">20000</span>)</span><br><span class="line"><span class="comment">-- 表示 salary里的记录只能是'IT'部门的，且工资大于等于2万</span></span><br></pre></td></tr></table></figure></p>
+<p>在UPDATE语句里进行条件分支：<br><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">+<span class="comment">--------+--------+</span></span><br><span class="line">| name   | salary |</span><br><span class="line">+<span class="comment">--------+--------+</span></span><br><span class="line">| 木村   | 220000 |</span><br><span class="line">| 相田   | 300000 |</span><br><span class="line">| 神崎   | 270000 |</span><br><span class="line">| 齐藤   | 290000 |</span><br><span class="line">+<span class="comment">--------+--------+</span></span><br><span class="line">4 rows in <span class="keyword">set</span> (<span class="number">0.01</span> sec)</span><br><span class="line"></span><br><span class="line"><span class="keyword">UPDATE</span> Salaries </span><br><span class="line">   <span class="keyword">SET</span> salary = <span class="keyword">CASE</span> <span class="keyword">WHEN</span> salary&gt;=<span class="number">300000</span> <span class="keyword">THEN</span> salary*<span class="number">0.9</span></span><br><span class="line">                     <span class="keyword">WHEN</span> salary&gt;=<span class="number">250000</span> <span class="keyword">AND</span> salary&lt;<span class="number">280000</span> <span class="keyword">THEN</span> salary*<span class="number">1.2</span></span><br><span class="line">                     <span class="keyword">ELSE</span> salary <span class="keyword">END</span>;  <span class="comment">-- 最后一句很重要</span></span><br><span class="line"><span class="comment">-- 当前工资为30万元以上的员工，降薪10%；</span></span><br><span class="line"><span class="comment">-- 当前工资为25万元~28万元（不满28万元）的员工，加薪20%</span></span><br><span class="line">+<span class="comment">--------+--------+</span></span><br><span class="line">| name   | salary |</span><br><span class="line">+<span class="comment">--------+--------+</span></span><br><span class="line">| 木村   | 220000 |</span><br><span class="line">| 相田   | 270000 |</span><br><span class="line">| 神崎   | 324000 |</span><br><span class="line">| 齐藤   | 290000 |</span><br><span class="line">+<span class="comment">--------+--------+</span></span><br><span class="line">4 rows in <span class="keyword">set</span> (<span class="number">0.00</span> sec)</span><br></pre></td></tr></table></figure></p>
+<p>调换主键值：<br><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">+<span class="comment">-------+-------+-------+</span></span><br><span class="line">| p_key | col_1 | col_2 |</span><br><span class="line">+<span class="comment">-------+-------+-------+</span></span><br><span class="line">| a     |     1 | 一    |</span><br><span class="line">| b     |     2 | 二    |</span><br><span class="line">| c     |     3 | 三    |</span><br><span class="line">+<span class="comment">-------+-------+-------+</span></span><br><span class="line">3 rows in <span class="keyword">set</span> (<span class="number">0.00</span> sec)</span><br><span class="line"></span><br><span class="line"><span class="keyword">UPDATE</span> SomeTable</span><br><span class="line">   <span class="keyword">SET</span> p_key = <span class="keyword">CASE</span> <span class="keyword">WHEN</span> p_key=<span class="string">'a'</span> <span class="keyword">THEN</span> <span class="string">'b'</span></span><br><span class="line">                    <span class="keyword">WHEN</span> p_key=<span class="string">'b'</span> <span class="keyword">THEN</span> <span class="string">'a'</span></span><br><span class="line">                    <span class="keyword">ELSE</span> p_key <span class="keyword">END</span>   <span class="comment">-- 该句很重要</span></span><br><span class="line"><span class="keyword">WHERE</span> p_key <span class="keyword">IN</span> (<span class="string">'a'</span>, <span class="string">'b'</span>);</span><br><span class="line"><span class="comment">-- 在PostgreSQL和MySQL中执行该语句，会因为主键重复而报错</span></span><br><span class="line"><span class="comment">-- 如: ERROR 1062 (23000): Duplicate entry 'b' for key 'PRIMARY'</span></span><br></pre></td></tr></table></figure></p>
+<p>在CASE表达式中，可以使用<code>BETWEEN</code>、<code>LIKE</code> 和 <code>&lt;</code>、<code>&gt;</code>等谓词组合，以及能嵌套子查询的 <code>IN</code> 和 <code>EXISTS</code> 谓词<br><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">mysql&gt; SELECT * FROM CourseMaster;</span><br><span class="line">+<span class="comment">-----------+--------------+</span></span><br><span class="line">| course_id | course_name  |</span><br><span class="line">+<span class="comment">-----------+--------------+</span></span><br><span class="line">|         1 | 会计入门     |</span><br><span class="line">|         2 | 财务知识     |</span><br><span class="line">|         3 | 簿记考试     |</span><br><span class="line">|         4 | 税务师       |</span><br><span class="line">+<span class="comment">-----------+--------------+</span></span><br><span class="line">4 rows in <span class="keyword">set</span> (<span class="number">0.00</span> sec)</span><br><span class="line"></span><br><span class="line">mysql&gt; <span class="keyword">SELECT</span> * <span class="keyword">FROM</span> OpenCourses;</span><br><span class="line">+<span class="comment">--------+-----------+</span></span><br><span class="line">| month  | course_id |</span><br><span class="line">+<span class="comment">--------+-----------+</span></span><br><span class="line">| 200706 |         1 |</span><br><span class="line">| 200706 |         3 |</span><br><span class="line">| 200706 |         4 |</span><br><span class="line">| 200707 |         4 |</span><br><span class="line">| 200708 |         2 |</span><br><span class="line">| 200708 |         4 |</span><br><span class="line">+<span class="comment">--------+-----------+</span></span><br><span class="line">6 rows in <span class="keyword">set</span> (<span class="number">0.00</span> sec)</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 如果用 IN 谓词</span></span><br><span class="line"><span class="keyword">SELECT</span> course_name,</span><br><span class="line">       <span class="keyword">CASE</span> <span class="keyword">WHEN</span> course_id <span class="keyword">IN</span> </span><br><span class="line">                     (<span class="keyword">SELECT</span> course_id <span class="keyword">FROM</span> OpenCourses </span><br><span class="line">                      <span class="keyword">WHERE</span> <span class="keyword">month</span> = <span class="number">200706</span>) <span class="keyword">THEN</span> <span class="string">'⚪'</span></span><br><span class="line">            <span class="keyword">ELSE</span> <span class="string">'×'</span> <span class="keyword">END</span> <span class="keyword">AS</span> <span class="string">"6月"</span>,</span><br><span class="line">       <span class="keyword">CASE</span> <span class="keyword">WHEN</span> course_id <span class="keyword">IN</span> </span><br><span class="line">                     (<span class="keyword">SELECT</span> course_id <span class="keyword">FROM</span> OpenCourses</span><br><span class="line">                      <span class="keyword">WHERE</span> <span class="keyword">month</span> = <span class="number">200707</span>) <span class="keyword">THEN</span> <span class="string">'⚪'</span></span><br><span class="line">            <span class="keyword">ELSE</span> <span class="string">'×'</span> <span class="keyword">END</span> <span class="keyword">AS</span> <span class="string">"7月"</span>,  </span><br><span class="line">       <span class="keyword">CASE</span> <span class="keyword">WHEN</span> course_id <span class="keyword">IN</span> </span><br><span class="line">                     (<span class="keyword">SELECT</span> course_id <span class="keyword">FROM</span> OpenCourses</span><br><span class="line">                      <span class="keyword">WHERE</span> <span class="keyword">month</span> = <span class="number">200708</span>) <span class="keyword">THEN</span> <span class="string">'⚪'</span></span><br><span class="line">            <span class="keyword">ELSE</span> <span class="string">'×'</span> <span class="keyword">END</span> <span class="keyword">AS</span> <span class="string">"8月"</span></span><br><span class="line"><span class="keyword">FROM</span> CourseMaster;   </span><br><span class="line"></span><br><span class="line"><span class="comment">-- 使用EXISTS谓词</span></span><br><span class="line"><span class="keyword">SELECT</span> CM.course_name,</span><br><span class="line">       <span class="keyword">CASE</span> <span class="keyword">WHEN</span> <span class="keyword">EXISTS</span></span><br><span class="line">                   (<span class="keyword">SELECT</span> course_id <span class="keyword">FROM</span> OpenCourses OC</span><br><span class="line">                    <span class="keyword">WHERE</span> OC.month=<span class="number">200706</span> </span><br><span class="line">                      <span class="keyword">AND</span> OC.course_id=CM.course_id) <span class="keyword">THEN</span> <span class="string">'O'</span></span><br><span class="line">             <span class="keyword">ELSE</span> <span class="string">'X'</span> <span class="keyword">END</span> <span class="keyword">AS</span> <span class="string">'6月'</span>,</span><br><span class="line">        <span class="keyword">CASE</span> <span class="keyword">WHEN</span> <span class="keyword">EXISTS</span></span><br><span class="line">                    (<span class="keyword">SELECT</span> course_id <span class="keyword">FROM</span> OpenCourses OC</span><br><span class="line">                     <span class="keyword">WHERE</span> OC.month=<span class="number">200707</span></span><br><span class="line">                       <span class="keyword">AND</span> OC.course_id=CM.course_id) <span class="keyword">THEN</span> <span class="string">'O'</span></span><br><span class="line">             <span class="keyword">ELSE</span> <span class="string">'X'</span> <span class="keyword">END</span> <span class="keyword">AS</span> <span class="string">'7月'</span>,</span><br><span class="line">         <span class="keyword">CASE</span> <span class="keyword">WHEN</span> <span class="keyword">EXISTS</span></span><br><span class="line">                     (<span class="keyword">SELECT</span> course_id <span class="keyword">FROM</span> OpenCourses OC</span><br><span class="line">                     <span class="keyword">WHERE</span> OC.month=<span class="number">200708</span></span><br><span class="line">                       <span class="keyword">AND</span> OC.course_id=CM.course_id) <span class="keyword">THEN</span> <span class="string">'O'</span></span><br><span class="line">             <span class="keyword">ELSE</span> <span class="string">'X'</span> <span class="keyword">END</span> <span class="keyword">AS</span> <span class="string">'8月'</span>         </span><br><span class="line"><span class="keyword">FROM</span> CourseMaster CM;</span><br></pre></td></tr></table></figure></p>
+<p>CASE表达式用在SELECT子句里时，既可以写在聚合函数内部，也可以写在聚合函数外部。<br><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">## StudentClub</span></span><br><span class="line">+<span class="comment">--------+---------+-----------+---------------+</span></span><br><span class="line">| std_id | club_id | club_name | main_club_flg |</span><br><span class="line">+<span class="comment">--------+---------+-----------+---------------+</span></span><br><span class="line">|    100 |       1 | 棒球      | Y             |</span><br><span class="line">|    100 |       2 | 管弦乐    | N             |</span><br><span class="line">|    200 |       2 | 管弦乐    | N             |</span><br><span class="line">|    200 |       3 | 羽毛球    | Y             |</span><br><span class="line">|    200 |       4 | 足球      | N             |</span><br><span class="line">|    300 |       4 | 足球      | N             |</span><br><span class="line">|    400 |       5 | 游泳      | N             |</span><br><span class="line">|    500 |       6 | 围棋      | N             |</span><br><span class="line">+<span class="comment">--------+---------+-----------+---------------+</span></span><br><span class="line">8 rows in <span class="keyword">set</span> (<span class="number">0.00</span> sec)</span><br><span class="line"><span class="comment">-- main_club_flg='Y' 表示加入多个社团的学生的主社团</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 找出学生的主社团</span></span><br><span class="line"><span class="keyword">SELECT</span> std_id,</span><br><span class="line">        <span class="keyword">CASE</span> <span class="keyword">WHEN</span> <span class="keyword">COUNT</span>(*) = <span class="number">1</span></span><br><span class="line">              <span class="keyword">THEN</span> <span class="keyword">MAX</span>(club_id)</span><br><span class="line">              <span class="keyword">ELSE</span> <span class="keyword">MAX</span>(<span class="keyword">CASE</span> <span class="keyword">WHEN</span> main_club_flg = <span class="string">'Y'</span></span><br><span class="line">                            <span class="keyword">THEN</span> club_id</span><br><span class="line">                            <span class="keyword">ELSE</span> <span class="literal">NULL</span> <span class="keyword">END</span>)</span><br><span class="line">              <span class="keyword">END</span> <span class="keyword">AS</span> main_club</span><br><span class="line"><span class="keyword">FROM</span> StudentClub</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> std_id;</span><br><span class="line"></span><br><span class="line">+<span class="comment">--------+-----------+</span></span><br><span class="line">| std_id | main_club |</span><br><span class="line">+<span class="comment">--------+-----------+</span></span><br><span class="line">|    100 |         1 |</span><br><span class="line">|    200 |         3 |</span><br><span class="line">|    300 |         4 |</span><br><span class="line">|    400 |         5 |</span><br><span class="line">|    500 |         6 |</span><br><span class="line">+<span class="comment">--------+-----------+</span></span><br><span class="line">5 rows in <span class="keyword">set</span> (<span class="number">0.00</span> sec)</span><br></pre></td></tr></table></figure></p>
+<h2 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h2><p>找最大值<br><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- Greatests</span></span><br><span class="line">+<span class="comment">------+---+---+---+</span></span><br><span class="line">| key0 | x | y | z |</span><br><span class="line">+<span class="comment">------+---+---+---+</span></span><br><span class="line">| A    | 1 | 2 | 3 |</span><br><span class="line">| B    | 5 | 5 | 2 |</span><br><span class="line">| C    | 4 | 7 | 1 |</span><br><span class="line">| D    | 3 | 3 | 8 |</span><br><span class="line">+<span class="comment">------+---+---+---+</span></span><br><span class="line">4 rows in <span class="keyword">set</span> (<span class="number">0.00</span> sec)</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 找出多列数据中的最大值</span></span><br><span class="line"><span class="comment">/* 找出x列和y列中的最大值 */</span></span><br><span class="line"><span class="keyword">SELECT</span> key0,</span><br><span class="line">       <span class="keyword">CASE</span> <span class="keyword">WHEN</span> x &lt; y <span class="keyword">THEN</span> y</span><br><span class="line">            <span class="keyword">ELSE</span> x <span class="keyword">END</span> <span class="keyword">AS</span> <span class="keyword">greatest</span></span><br><span class="line"><span class="keyword">FROM</span> Greatests;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- MySQL自带函数 GREATEST 直接可实现上述过程</span></span><br><span class="line"><span class="keyword">SELECT</span> key0,  <span class="keyword">GREATEST</span>(x,y) <span class="keyword">AS</span> <span class="keyword">greatest</span></span><br><span class="line"><span class="keyword">FROM</span> Greatests;</span><br><span class="line"></span><br><span class="line">+<span class="comment">------+----------+</span></span><br><span class="line">| key0 | greatest |</span><br><span class="line">+<span class="comment">------+----------+</span></span><br><span class="line">| A    |        2 |</span><br><span class="line">| B    |        5 |</span><br><span class="line">| C    |        7 |</span><br><span class="line">| D    |        3 |</span><br><span class="line">+<span class="comment">------+----------+</span></span><br><span class="line">4 rows in <span class="keyword">set</span> (<span class="number">0.00</span> sec)</span><br></pre></td></tr></table></figure></p>
+<p>求和：<br><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">+<span class="comment">-----------+-----+------------+</span></span><br><span class="line">| pref_name | sex | population |</span><br><span class="line">+<span class="comment">-----------+-----+------------+</span></span><br><span class="line">| 东京      | 1   |        250 |</span><br><span class="line">| 东京      | 2   |        150 |</span><br><span class="line">| 佐贺      | 1   |         20 |</span><br><span class="line">| 佐贺      | 2   |         80 |</span><br><span class="line">| 德岛      | 1   |         60 |</span><br><span class="line">| 德岛      | 2   |         40 |</span><br><span class="line">| 爱媛      | 1   |        100 |</span><br><span class="line">| 爱媛      | 2   |         50 |</span><br><span class="line">| 福冈      | 1   |        100 |</span><br><span class="line">| 福冈      | 2   |        200 |</span><br><span class="line">| 长崎      | 1   |        125 |</span><br><span class="line">| 长崎      | 2   |        125 |</span><br><span class="line">| 香川      | 1   |        100 |</span><br><span class="line">| 香川      | 2   |        100 |</span><br><span class="line">| 高知      | 1   |        100 |</span><br><span class="line">| 高知      | 2   |        100 |</span><br><span class="line">+<span class="comment">-----------+-----+------------+</span></span><br><span class="line">16 rows in <span class="keyword">set</span> (<span class="number">0.00</span> sec)</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> sex <span class="keyword">AS</span> <span class="string">'性别'</span>,</span><br><span class="line">       <span class="keyword">SUM</span>(population) <span class="keyword">AS</span> <span class="string">'全国'</span>,</span><br><span class="line">       <span class="keyword">SUM</span>(<span class="keyword">CASE</span> <span class="keyword">WHEN</span> pref_name = <span class="string">'德岛'</span> <span class="keyword">THEN</span> population <span class="keyword">ELSE</span> <span class="number">0</span> <span class="keyword">END</span>) <span class="keyword">AS</span> <span class="string">"德岛"</span>,</span><br><span class="line">       <span class="keyword">SUM</span>(<span class="keyword">CASE</span> <span class="keyword">WHEN</span> pref_name = <span class="string">'香川'</span> <span class="keyword">THEN</span> population <span class="keyword">ELSE</span> <span class="number">0</span> <span class="keyword">END</span>) <span class="keyword">AS</span> <span class="string">"香川"</span>,</span><br><span class="line">       <span class="keyword">SUM</span>(<span class="keyword">CASE</span> <span class="keyword">WHEN</span> pref_name = <span class="string">'爱媛'</span> <span class="keyword">THEN</span> population <span class="keyword">ELSE</span> <span class="number">0</span> <span class="keyword">END</span>) <span class="keyword">AS</span> <span class="string">"爱媛"</span>,</span><br><span class="line">       <span class="keyword">SUM</span>(<span class="keyword">CASE</span> <span class="keyword">WHEN</span> pref_name = <span class="string">'高知'</span> <span class="keyword">THEN</span> population <span class="keyword">ELSE</span> <span class="number">0</span> <span class="keyword">END</span>) <span class="keyword">AS</span> <span class="string">"高知"</span>,</span><br><span class="line">       <span class="keyword">SUM</span>(<span class="keyword">CASE</span> <span class="keyword">WHEN</span> pref_name <span class="keyword">IN</span> (<span class="string">'德岛'</span>, <span class="string">'香川'</span>, <span class="string">'爱媛'</span>, <span class="string">'高知'</span>)</span><br><span class="line">                <span class="keyword">THEN</span> population <span class="keyword">ELSE</span> <span class="number">0</span> <span class="keyword">END</span>) <span class="keyword">AS</span> zaijie</span><br><span class="line">  <span class="keyword">FROM</span> PopTbl2</span><br><span class="line"> <span class="keyword">GROUP</span> <span class="keyword">BY</span> sex;</span><br><span class="line"></span><br><span class="line">+<span class="comment">--------+--------+--------+--------+--------+--------+--------+</span></span><br><span class="line">| 性别   | 全国   | 德岛   | 香川   | 爱媛   | 高知   | zaijie |</span><br><span class="line">+<span class="comment">--------+--------+--------+--------+--------+--------+--------+</span></span><br><span class="line">| 1      |    855 |     60 |    100 |    100 |    100 |    360 |</span><br><span class="line">| 2      |    845 |     40 |    100 |     50 |    100 |    290 |</span><br><span class="line">+<span class="comment">--------+--------+--------+--------+--------+--------+--------+</span></span><br><span class="line">2 rows in <span class="keyword">set</span> (<span class="number">0.00</span> sec)</span><br></pre></td></tr></table></figure></p>
+<p>乱序排序：<br><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">-- 按照 B-A-D-C排序</span></span><br><span class="line"><span class="keyword">SELECT</span> key0,</span><br><span class="line">       <span class="keyword">CASE</span> key0</span><br><span class="line">         <span class="keyword">WHEN</span> <span class="string">'B'</span> <span class="keyword">THEN</span> <span class="number">1</span></span><br><span class="line">         <span class="keyword">WHEN</span> <span class="string">'A'</span> <span class="keyword">THEN</span> <span class="number">2</span></span><br><span class="line">         <span class="keyword">WHEN</span> <span class="string">'D'</span> <span class="keyword">THEN</span> <span class="number">3</span></span><br><span class="line">         <span class="keyword">WHEN</span> <span class="string">'C'</span> <span class="keyword">THEN</span> <span class="number">4</span></span><br><span class="line">         <span class="keyword">ELSE</span> <span class="literal">NULL</span> <span class="keyword">END</span> <span class="keyword">AS</span> sort_col</span><br><span class="line">  <span class="keyword">FROM</span> Greatests</span><br><span class="line"> <span class="keyword">ORDER</span> <span class="keyword">BY</span> sort_col;</span><br><span class="line"></span><br><span class="line">+<span class="comment">------+----------+</span></span><br><span class="line">| key0 | sort_col |</span><br><span class="line">+<span class="comment">------+----------+</span></span><br><span class="line">| B    |        1 |</span><br><span class="line">| A    |        2 |</span><br><span class="line">| D    |        3 |</span><br><span class="line">| C    |        4 |</span><br><span class="line">+<span class="comment">------+----------+</span></span><br><span class="line">4 rows in <span class="keyword">set</span> (<span class="number">0.00</span> sec)</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p>[1] <a href="https://mp.weixin.qq.com/s?__biz=MzU5NzkxODMxOA==&amp;mid=2247486368&amp;idx=1&amp;sn=3ef74be0a7b7345cba471da1370f8986&amp;chksm=fe4d5ca1c93ad5b7481d65a8fa0a8b4e585714af57ad69437d599bbac5830910562a9097a12b&amp;token=1415910284&amp;lang=zh_CN#rd" target="_blank" rel="noopener">Notes | SQL进阶教程 | 001</a></p>
+
+    </div>
+
+    
+    
+    
+        <div class="reward-container">
+  <div></div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/reward.png" alt="ShootingWang 微信支付">
+        <p>微信支付</p>
+      </div>
+
+  </div>
+</div>
+
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/images/wechat_qrcode.jpg">
+            <span class="icon">
+              <i class="fab fa-weixin"></i>
+            </span>
+
+            <span class="label">WeChat</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/SQL/" rel="tag"># SQL</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/05/12/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-%E5%A4%A9%E6%B1%A0-%E4%BA%8C%E6%89%8B%E8%BD%A6%E4%BA%A4%E6%98%93%E6%95%B0%E6%8D%AE/" rel="prev" title="天池 | 二手车交易数据">
+      <i class="fa fa-chevron-left"></i> 天池 | 二手车交易数据
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/05/13/%E7%AE%97%E6%B3%95-K-Means/" rel="next" title="Machine Learning | K-Means">
+      Machine Learning | K-Means <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#CASE表达式"><span class="nav-number">1.</span> <span class="nav-text">CASE表达式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#练习"><span class="nav-number">1.1.</span> <span class="nav-text">练习</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料"><span class="nav-number">2.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">ShootingWang</p>
+  <div class="site-description" itemprop="description">无猫病重症患者</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">102</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">45</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/ShootingWang" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;ShootingWang"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ShootingWang</span>
+</div>
+
+<script src="/js/prism/clipboard.js"></script>
+<script src="/js/prism/prism.js" async></script>
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+  <script defer src="/lib/three/three.min.js"></script>
+    <script defer src="/lib/three/canvas_lines.min.js"></script>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js', () => {
+    new Valine(Object.assign({
+      el         : '#valine-comments',
+      path       : location.pathname,
+    }, {"enable":true,"appId":"yFKKmB84nH4WRrBC07BTRKLC-gzGzoHsz","appKey":"EFXmIM4ipk11GLk8Stx40FYk","notify":true,"verify":false,"placeholder":"Don't forget to write down your E-Mail, then you can receive my reply by email.","avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"language":null,"visitor":false,"comment_count":true,"recordIP":false,"serverURLs":null}
+    ));
+  }, window.Valine);
+});
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
+</html>
