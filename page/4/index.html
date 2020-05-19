@@ -174,6 +174,396 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://github.com/ShootingWang/ShootingWang.github.io/2020/05/11/%E9%9B%86%E6%88%90%E6%96%B9%E6%B3%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ShootingWang">
+      <meta itemprop="description" content="无猫病重症患者">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ShootingWang">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/05/11/%E9%9B%86%E6%88%90%E6%96%B9%E6%B3%95/" class="post-title-link" itemprop="url">Machine Learning | 集成方法</a>
+        </h2>
+
+        <div class="post-meta">
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-05-11 13:40:19" itemprop="dateCreated datePublished" datetime="2020-05-11T13:40:19+08:00">2020-05-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-05-17 13:51:54" itemprop="dateModified" datetime="2020-05-17T13:51:54+08:00">2020-05-17</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/05/11/%E9%9B%86%E6%88%90%E6%96%B9%E6%B3%95/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/05/11/%E9%9B%86%E6%88%90%E6%96%B9%E6%B3%95/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="集成方法"><a href="#集成方法" class="headerlink" title="集成方法"></a>集成方法</h1><ul>
+<li>Bagging</li>
+<li>Boosting</li>
+<li>Stacking</li>
+</ul>
+<p>集成学习（Ensemble Learning），基于多个学习算法的集成，提升预测结果。</p>
+<ul>
+<li>多个弱学习器通过一定的策略结合成一个强学习器。</li>
+<li>集成学习不是一个算法，是算法的门类。</li>
+</ul>
+<blockquote>
+<p>The process by which multiple models are <u>strategically generated</u> and <u>combined</u> in order to <u>better</u> solve a particular Machine Learning problem.<br>清华大学-数据挖掘：集成学习</p>
+</blockquote>
+<p>如何创建多个、不同的基础分类器/基础学习器/基分类器：</p>
+<ul>
+<li>使用不同的学习算法：DT，SVM，NN，KNN，…</li>
+<li>使用不同的训练过程：<ul>
+<li>不同的参数</li>
+<li>不同的训练集：bootstrap samples（有放回采样）</li>
+<li>不同的特征集</li>
+</ul>
+</li>
+</ul>
+<h2 id="基学习器"><a href="#基学习器" class="headerlink" title="基学习器"></a>基学习器</h2><p>基分类器：</p>
+<ul>
+<li>基分类器不需要很强；强分类器可能会有很多问题</li>
+<li>基分类器需要有较大的差异，差异性过小的分类器被集成没有意义</li>
+<li>基分类器的精度最好略高于0.5（正确分类率）<br>随着集成规模的增加，低于0.5的弱分类器会导致集成分类准确率不断下降，而高于0.5则会提升模型的准确率（趋于1）</li>
+</ul>
+<h2 id="结合策略"><a href="#结合策略" class="headerlink" title="结合策略"></a>结合策略</h2><p>怎么将基分类器的结果结合起来？</p>
+<ol>
+<li>平均法</li>
+<li>投票法</li>
+<li>学习法</li>
+</ol>
+<h3 id="平均法"><a href="#平均法" class="headerlink" title="平均法"></a>平均法</h3><p>平均法（Averaging）：取所有基础学习器（基分类器）的输出结果的平均作为最终决策</p>
+<script type="math/tex; mode=display">H(x)=\sum_{i=1}^T\omega_ih_i(x)</script><p>其中</p>
+<ul>
+<li>共$T$个基础学习器（弱学习器）$\{h_1,\cdots,h_T\}$</li>
+<li>对任意一个样本$x$，$h_i(x)$为第$i$个学习器的分类结果</li>
+<li>$\omega_i$为基础学习器$h_i$的权重，$\omega_i\geq0,\ \sum_{i=1}^T\omega_i=1$</li>
+<li>预测类别为$\{c_1,c_2,\cdots,c_K\}$</li>
+</ul>
+<p>最简单的平均是\textbf{算数平均}：</p>
+<script type="math/tex; mode=display">\omega_i=\frac{1}{T}</script><script type="math/tex; mode=display">H(x)=\frac{1}{T}\sum_{i=1}^Th_i(x)</script><h3 id="投票法"><a href="#投票法" class="headerlink" title="投票法"></a>投票法</h3><p>投票法（Voting）：使用所有基础学习器（基分类器）结果的凸组合作为最终决策</p>
+<ul>
+<li><strong>相对多数投票法</strong>（Plurality Voting）：少数服从多数；分类问题中，对样本的预测结果中票数最多的那个类别作为最终的分类类别；若获得最高票的类别不止一个，则随机选择其中一个作为最终类别</li>
+<li><strong>绝对多数投票法</strong>（Majority Voting）：票过半数；多个基分类器对某一类别的预测结果大于总投票结果的一半，则预测结果为该类别，否则拒绝预测<blockquote>
+<p>如：</p>
+</blockquote>
+</li>
+<li><strong>加权投票法</strong>（Weighted Majority Voting）：类似加权平均法；给予每个基分类器的预测结果权重，计算各类别的加权票数和，票数最高的那个类别作为最终预测类别<blockquote>
+<p>如：AdaBoost</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="学习法"><a href="#学习法" class="headerlink" title="学习法"></a>学习法</h3><ul>
+<li>General Combiner：Stacking</li>
+<li>Piecewise Combiner：RegionBoost</li>
+</ul>
+<h2 id="类别"><a href="#类别" class="headerlink" title="类别"></a>类别</h2><p>集成学习的集成方法按基分类器连接方式分为两种：</p>
+<ol>
+<li><strong>序列集成</strong>（sequential ensemble）：基分类器按照顺序生成；基分类器之间存在依赖关系；通过对前面训练中错误——Boosting</li>
+<li><strong>并行集成</strong>（parallel ensemble）：基学习器可以并行生成；利用基学习器之间的独立性，通过平均可以显著降低分类错误——Bagging</li>
+</ol>
+<h3 id="Bagging"><a href="#Bagging" class="headerlink" title="Bagging"></a>Bagging</h3><ul>
+<li>
+</li>
+</ul>
+<p>Bagging（Bootstrap Aggregating）：对样本进行Bootstrap随机采样（Bootstrap sampling），得到k个训练集，对每个训练集训练一个弱学习器（弱分类器），得到k个分类器，通过一定的结合策略，得到一个强学习器。</p>
+<h3 id="Boosting"><a href="#Boosting" class="headerlink" title="Boosting"></a>Boosting</h3><ul>
+<li>AdaBoost</li>
+<li>XGBoost</li>
+<li>LightGBM</li>
+<li>CatBoost</li>
+<li>Boosting Tree（提升树）</li>
+</ul>
+<p>Boosting算法（提升方法），是一类可以用来减小监督式学习中偏差的机器学习算法；将弱分类器提升为强分类器。</p>
+<ul>
+<li>Boosting会减小在上一轮训练正确的样本的权重，增大错误样本的权重</li>
+</ul>
+<h4 id="AdaBoost"><a href="#AdaBoost" class="headerlink" title="AdaBoost"></a>AdaBoost</h4><ul>
+<li>每次使用的是全部样本</li>
+<li>每轮训练改变样本的权重</li>
+<li>下一轮训练的目标是找到一个函数来拟合上一轮训练后的残差</li>
+<li>当残差足够小或达到设置的最大迭代次数时停止训练</li>
+</ul>
+<h3 id="Stacking"><a href="#Stacking" class="headerlink" title="Stacking"></a>Stacking</h3><ul>
+<li>是Bagging的升级版</li>
+<li>改进预测</li>
+<li>结合策略是“学习法”</li>
+<li>将训练集弱学习器（基学习器）的学习结果作为输入，将训练集的输出作为输出，重新训练一个学习器来得到最终决策</li>
+<li>这里称弱学习器为初级学习器，最后用于结合的学习器称为次级学习器</li>
+<li>对于测试集，先用初级学习器预测一次，得到次级学习器的输入（Input），再用次级学习器预测一次，得到最终的预测结果</li>
+</ul>
+<h2 id="Bagging-vs-Boosting"><a href="#Bagging-vs-Boosting" class="headerlink" title="Bagging vs Boosting"></a>Bagging vs Boosting</h2><h3 id="相同点"><a href="#相同点" class="headerlink" title="相同点"></a>相同点</h3><ul>
+<li>都是模型融合的方法</li>
+<li>可以将弱分类器融合形成一个强分类器，融合之后的分类效果比最好的弱分类器效果更好</li>
+</ul>
+<h3 id="不同点"><a href="#不同点" class="headerlink" title="不同点"></a>不同点</h3><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: center;">
+      <th></th>
+      <th>Bagging</th>
+      <th>Boosting</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="2">样本选择</th>
+      <td>训练集是在原始数据集中有放回抽取的</td>
+      <td>每一轮的训练集不变</td>
+    </tr>
+    <tr>
+      <td>从原始数据集中选出的各轮训练集之间相互独立</td>
+      <td>每轮的训练集中每个样例在分类器中的权重发生变化;权值根据上一轮的分类结果进行调整</td>
+    </tr>
+    <tr>
+      <th>样例权重</th>
+      <td>每个样例的权重相等</td>
+      <td>根据错误率不断调整样例的权重;<br>错误率越大则权重越大</td>
+    </tr>
+    <tr>
+      <th>基分类器</th>
+      <td>所有基分类器权重相等</td>
+      <td>分类误差小的基分类器权重更大</td>
+    </tr>
+    <tr>
+      <th>并行计算</th>
+      <td>基分类器可以并行生成</td>
+      <td>基分类器只能序列生成</td>
+    </tr>
+    <tr>
+      <th>bias-variance</th>
+      <td>减少variance</td>
+      <td>减少bias</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<blockquote>
+<p>为什么“Bagging是减少Variance，而Boosting是减少Bias”？</p>
+<ul>
+<li><strong>Bagging</strong>对样本重采样（bootstrap），对每一轮采样得到的子样本集训练一个模型，最后对模型的结果取均值。<ul>
+<li>由于子样本集的相似性及基分类器都是同种模型，所以各模型有近似相等的Bias和Variance</li>
+<li>因为$E\left[\frac{\sum_iX_i}{n}\right]=E(X_i)$，所以bagging后的Bias和单个基分类器接近，所以不能“显著降低Bias”</li>
+<li>若各基分类器独立，则有<script type="math/tex; mode=display">Var\large(\frac{\sum_iX_i}{n}\large)=\frac{Var(X_i)}{n}</script>因此可以“显著降低Variance”</li>
+<li>若各基分类器完全相同，则<script type="math/tex; mode=display">Var\left(\frac{\sum_iX_i}{n}\right)=Var(X_i)</script>此时不会“降低Variance”</li>
+<li>Bagging得到的各基分类器具有一定的相关性，但又不完全相同，所以可以“一定程度地降低Variance”</li>
+</ul>
+</li>
+<li><strong>Boosting</strong>使用forward-stagewise（贪心法）最小化损失函数$L(y,\sum_ia_if_i(x))$<ul>
+<li>在第$n$步，求解新的子模型$f(x)$及步长$a$来最小化$L(y, f_{n-1}(x)+af(x))$($f_{n-1}(x)$是前$n-1$步得到地子模型的和)</li>
+<li>Boosting是在“Sequential”地最小化损失函数，其Bias逐步下降</li>
+<li>Boosting的基分类器之间是强相关的，所以并不能“显著降低Variance”</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
+<li><a href="https://blog.csdn.net/u013709270/article/details/72553282" target="_blank" rel="noopener">机器学习中Bagging和Boosting的区别</a></li>
+<li><a href="https://www.zhihu.com/question/26760839/answer/40337791" target="_blank" rel="noopener">为什么说bagging是减少variance，而boosting是减少bias?</a></li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://github.com/ShootingWang/ShootingWang.github.io/2020/05/11/%E7%94%9F%E6%88%90%E5%BC%8F%E6%A8%A1%E5%9E%8B-%E5%88%A4%E5%88%AB%E5%BC%8F%E6%A8%A1%E5%9E%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ShootingWang">
+      <meta itemprop="description" content="无猫病重症患者">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ShootingWang">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/05/11/%E7%94%9F%E6%88%90%E5%BC%8F%E6%A8%A1%E5%9E%8B-%E5%88%A4%E5%88%AB%E5%BC%8F%E6%A8%A1%E5%9E%8B/" class="post-title-link" itemprop="url">生成式模型 & 判别式模型</a>
+        </h2>
+
+        <div class="post-meta">
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-05-11 13:04:42" itemprop="dateCreated datePublished" datetime="2020-05-11T13:04:42+08:00">2020-05-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-05-19 12:55:34" itemprop="dateModified" datetime="2020-05-19T12:55:34+08:00">2020-05-19</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/05/11/%E7%94%9F%E6%88%90%E5%BC%8F%E6%A8%A1%E5%9E%8B-%E5%88%A4%E5%88%AB%E5%BC%8F%E6%A8%A1%E5%9E%8B/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/05/11/%E7%94%9F%E6%88%90%E5%BC%8F%E6%A8%A1%E5%9E%8B-%E5%88%A4%E5%88%AB%E5%BC%8F%E6%A8%A1%E5%9E%8B/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="生成式模型"><a href="#生成式模型" class="headerlink" title="生成式模型"></a>生成式模型</h1><p>生成式模型（Generative Model）：生成数据的分布的模型（有多个模型，将测试用例分别放进各个模型，最后比较其结果，选择最优的作为label）</p>
+<ul>
+<li>会对$x$和$y$的联合分布$p(x,y)$进行建模，然后通过<a href="/2020/05/11/%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF/" title="贝叶斯公式">贝叶斯公式</a>来求得$p(y|x)$，最后选取使得$p(y|x)$最大的$y_i$，即<br>\begin{equation}<br>\begin{aligned}<br>y^*&amp;=\arg{\max_{y_i}p(y_i|x)}\\<br>&amp;=\arg{\max_{y_i}\frac{p(x|y_i)p(y_i)}{p(x)}}\\<br>&amp;=\arg{\max_{y_i}p(x|y_i)p(y_i)}\\<br>&amp;=\arg{\max_{y_i}p(x,y_i)}<br>\end{aligned}<br>\end{equation}</li>
+</ul>
+<p>生成式模型有：</p>
+<ul>
+<li><a href="/2020/05/11/%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF/" title="朴素贝叶斯(Naive Bayes)">朴素贝叶斯(Naive Bayes)</a></li>
+<li><a href="/2020/05/06/%E7%AE%97%E6%B3%95-KNN/" title="k邻近（KNN）">k邻近（KNN）</a></li>
+<li>高斯混合模型（GMM）</li>
+<li>隐马尔可夫模型（HMM）</li>
+<li>贝叶斯网络</li>
+<li>Sigmoid Belief Networks</li>
+<li>马尔可夫随机场（Markov Random Fields）</li>
+<li>深度信念网络（DBN）</li>
+<li>迪利克雷分布模型（LDA，Latent Dirichlet Allocation）</li>
+</ul>
+<h1 id="判别式模型"><a href="#判别式模型" class="headerlink" title="判别式模型"></a>判别式模型</h1><p>判别式模型（Discriminative Model）：判别数据输出量的模型（只有一个模型，将模型应用到测试用例中，生成label）</p>
+<ul>
+<li>会直接对$p(y|x)$进行建模</li>
+</ul>
+<p>判别式模型有：</p>
+<ul>
+<li><a href="/2020/05/04/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/" title="线性回归（Linear Regression）">线性回归（Linear Regression）</a></li>
+<li>线性判别分析</li>
+<li><a href="/2020/05/15/%E7%AE%97%E6%B3%95-LogisticRegression/" title="逻辑回归（Logistic Regression）">逻辑回归（Logistic Regression）</a></li>
+<li><a href="/2020/05/18/%E7%AE%97%E6%B3%95-%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/" title="神经网络（NN）">神经网络（NN）</a></li>
+<li><a href="/2020/04/28/%E7%AE%97%E6%B3%95-SVM/" title="支持向量机（SVM）">支持向量机（SVM）</a></li>
+<li>高斯过程（Gaussian Process）</li>
+<li>条件随机场（CRF）</li>
+<li>CART（Classification and Regression Tree）</li>
+</ul>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p>[1] <a href="https://blog.csdn.net/u013630349/article/details/47146425" target="_blank" rel="noopener">机器学习 之 生成式模型 VS 判别式模型</a><br>[2] <a href="https://www.cnblogs.com/kemaswill/p/3427422.html" target="_blank" rel="noopener">判别式模型 vs. 生成式模型</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://github.com/ShootingWang/ShootingWang.github.io/2020/05/11/%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1364,183 +1754,6 @@ n_{.j}\\
   
   
 
-      
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/ShootingWang/ShootingWang.github.io/2020/05/09/python-pip/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="ShootingWang">
-      <meta itemprop="description" content="无猫病重症患者">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ShootingWang">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/05/09/python-pip/" class="post-title-link" itemprop="url">Python | pip</a>
-        </h2>
-
-        <div class="post-meta">
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-05-09 14:39:56" itemprop="dateCreated datePublished" datetime="2020-05-09T14:39:56+08:00">2020-05-09</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-05-17 13:25:54" itemprop="dateModified" datetime="2020-05-17T13:25:54+08:00">2020-05-17</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2020/05/09/python-pip/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/05/09/python-pip/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="pip"><a href="#pip" class="headerlink" title="pip"></a>pip</h1><p>一般在Anaconda Prompt中输入pip命令</p>
-<h2 id="版本更新"><a href="#版本更新" class="headerlink" title="版本更新"></a>版本更新</h2><p>参考：<a href="https://mp.weixin.qq.com/s?__biz=MzAwNDc0MTUxMw==&amp;mid=2649643692&amp;idx=1&amp;sn=70dbc41763a8c644a4d6c77ae5f7dd7e&amp;chksm=833dba4ab44a335cc7e177dc657f1967ebbd38214c692153cb9a82fdfb542d9a132c2325a227&amp;mpshare=1&amp;scene=1&amp;srcid=&amp;sharer_sharetime=1589007082512&amp;sharer_shareid=b539221659d6ecf12200314308b58dd3&amp;key=cbc079077f0681e386b6535f2cb4ef718f051657f8a1901edd559d983b9035139ec5357fc73a707c01d8308cb77ec658498db2c158f5ec06b4af30c7b17076247a4aee34eb0c3830103a133ab46a209f&amp;ascene=1&amp;uin=MjAwNDUzMjgxNw%3D%3D&amp;devicetype=Windows+10+x64&amp;version=62090070&amp;lang=zh_CN&amp;exportkey=ARqsCMWgte4FkZi5FL4hNrc%3D&amp;pass_ticket=CmNRIqxaQvL5KoUpjMG2wm1sm1tONovrasNNAw%2F3Gmy%2FS79A7RAXf525qAh80qgw" target="_blank" rel="noopener">pip 发布新版本了！</a></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">python -m pip install --upgrade pip</span><br></pre></td></tr></table></figure>
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p>[] </p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/ShootingWang/ShootingWang.github.io/2020/05/08/C-%E5%AD%A6%E4%B9%A0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="ShootingWang">
-      <meta itemprop="description" content="无猫病重症患者">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ShootingWang">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/05/08/C-%E5%AD%A6%E4%B9%A0/" class="post-title-link" itemprop="url">C++学习</a>
-        </h2>
-
-        <div class="post-meta">
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-05-08 14:08:14" itemprop="dateCreated datePublished" datetime="2020-05-08T14:08:14+08:00">2020-05-08</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-05-17 08:51:38" itemprop="dateModified" datetime="2020-05-17T08:51:38+08:00">2020-05-17</time>
-              </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2020/05/08/C-%E5%AD%A6%E4%B9%A0/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/05/08/C-%E5%AD%A6%E4%B9%A0/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="C"><a href="#C" class="headerlink" title="C++"></a>C++</h1><h2 id="getchar"><a href="#getchar" class="headerlink" title="getchar()"></a>getchar()</h2><p>用于暂停程序，以便查看程序输出的内容</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a[<span class="number">11</span>],i,j,t;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;=<span class="number">10</span>;i++)</span><br><span class="line">        a[i]=<span class="number">0</span>;  <span class="comment">//初始化为0</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=<span class="number">5</span>;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;t);</span><br><span class="line">        a[t]++;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;=<span class="number">10</span>;i++)</span><br><span class="line">        <span class="keyword">for</span>(j=<span class="number">1</span>;j&lt;=a[i];j++)</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"%d"</span>,i);</span><br><span class="line">    </span><br><span class="line">    getchar();getchar();  <span class="comment">//用来暂停程序</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1610,7 +1823,7 @@ n_{.j}\\
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">103</span>
+          <span class="site-state-item-count">104</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
