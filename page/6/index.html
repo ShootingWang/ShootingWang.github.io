@@ -174,6 +174,354 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://github.com/ShootingWang/ShootingWang.github.io/2020/05/06/%E7%AE%97%E6%B3%95-KNN/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ShootingWang">
+      <meta itemprop="description" content="无猫病重症患者">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ShootingWang">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/05/06/%E7%AE%97%E6%B3%95-KNN/" class="post-title-link" itemprop="url">Machine Learning | KNN</a>
+        </h2>
+
+        <div class="post-meta">
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-05-06 00:10:47" itemprop="dateCreated datePublished" datetime="2020-05-06T00:10:47+08:00">2020-05-06</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-05-17 23:30:19" itemprop="dateModified" datetime="2020-05-17T23:30:19+08:00">2020-05-17</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/05/06/%E7%AE%97%E6%B3%95-KNN/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/05/06/%E7%AE%97%E6%B3%95-KNN/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>KNN<br>K最近邻算法<br>K-nearest neighbours</p>
+<h1 id="KNN"><a href="#KNN" class="headerlink" title="KNN"></a>KNN</h1><p><strong>k最邻近算法</strong>（kNN, k-Nearest Neighbors Algorithm），是一种<u>lazy learning</u>（消极学习法）</p>
+<ul>
+<li>不需要使用训练集进行训练，训练的时间复杂度为0</li>
+<li>kNN分类的计算复杂度和训练集中的样本数目成正比</li>
+<li>kNN是一种可用于分类和回归的方法</li>
+</ul>
+<blockquote>
+<p>In machine learning, <strong>lazy learning</strong> is a learning method in which generalization of the training data is, in theory, delayed until a query is made to the system, as opposed to in eager learning, where the system tries to generalize the training data before receiving queries.<br><strong>维基百科：Lazy Learning</strong></p>
+<p>In AI, <strong>eager learning</strong> is a learning method in which the system tries to construct a general, input-independent target function during training of the system, as opposed to lazy learning, where generalization beyond the training data is delayed until a query is made to the system.<br><strong>维基百科：Eager Learning</strong></p>
+</blockquote>
+<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>假设有$m$类不同的样本数据，要判断某个待分类点A属于哪个类别，计算这个待分类点A与其他所有已知分类的样本点的距离（一般是计算<u>欧式距离</u>或<u>曼哈顿距离</u>）；距离点A最近的k个样本点中，属于同一类别的样本点数最多的那个类别记为 $i$ ，则待分类点A从属于类别 $i$ 。</p>
+<p>考虑点$(x_i,y_i)$和$(x_j,y_j)$</p>
+<ul>
+<li><strong>欧氏距离</strong><script type="math/tex; mode=display">d=\sqrt{(x_i-x_j)^2+(y_i-y_j)^2}</script></li>
+<li><strong>曼哈顿距离</strong><script type="math/tex; mode=display">d=|x_i-x_j|+|y_i-y_j|</script></li>
+</ul>
+<h3 id="K"><a href="#K" class="headerlink" title="K"></a>K</h3><ul>
+<li>k值的选取非常重要<ul>
+<li>如果k值太小，则该分类器容易受到训练数据的噪声而产生过拟合影响</li>
+<li>如果k值太大，则分类器容易欠拟合；最邻近列表中可能包含远离其近邻的数据点</li>
+</ul>
+</li>
+<li>k值一般选取1，3，5，7等较小的值</li>
+<li>可以通过交叉验证来选取最优的k值</li>
+</ul>
+<h2 id="用途"><a href="#用途" class="headerlink" title="用途"></a>用途</h2><ul>
+<li>分类</li>
+<li>回归</li>
+</ul>
+<p>应用：</p>
+<ul>
+<li>创建推荐系统</li>
+<li>光学字符识别（OCR，Optical Character Recognition）：自动识别图片中的文字<ul>
+<li>OCR算法提取线段、点和曲线等特征</li>
+</ul>
+</li>
+<li>创建垃圾邮件（spam）分类器</li>
+</ul>
+<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><h3 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h3><p>使用Python的<code>scikit-learn</code>库。<br>scikit-learn库中有若干个数据集Toy datasets。</p>
+<h4 id="二分类"><a href="#二分类" class="headerlink" title="二分类"></a>二分类</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">##导入数据集生成器</span></span><br><span class="line"><span class="keyword">from</span> sklearn.datasets <span class="keyword">import</span> make_blobs</span><br><span class="line"><span class="comment">##导入kNN分类器</span></span><br><span class="line"><span class="keyword">from</span> sklearn.neighbors <span class="keyword">import</span> KNeighborsClassifier</span><br><span class="line"></span><br><span class="line"><span class="comment">##导入绘图工具</span></span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="comment">###为了在Jupyter Notebook显示图片，加入以下代码行</span></span><br><span class="line">%matplotlib inline</span><br><span class="line"></span><br><span class="line"><span class="comment">##导入数据集拆分工具</span></span><br><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> train_test_split</span><br><span class="line"></span><br><span class="line"><span class="comment">##生成样本数n=200，分类为2的数据集</span></span><br><span class="line">data = make_blobs(n_samples=<span class="number">200</span>, centers=<span class="number">2</span>, random_state=<span class="number">8</span>)</span><br><span class="line">X, y = data</span><br><span class="line"></span><br><span class="line"><span class="comment">##可视化</span></span><br><span class="line">plt.scatter(X[:, <span class="number">0</span>], X[:, <span class="number">1</span>], c=y, cmap=plt.cm.spring, edgecolors=<span class="string">'k'</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<p>补充图片</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 用kNN进行二分类</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">kclassifier = KNeighborsClassifier()</span><br><span class="line">kclassifier.fit(X, y)</span><br><span class="line">%matplotlib inline</span><br><span class="line"><span class="comment">##横纵轴坐标范围</span></span><br><span class="line">x_min, x_max = X[:, <span class="number">0</span>].min() - <span class="number">1</span>, X[:, <span class="number">0</span>].max() + <span class="number">1</span></span><br><span class="line">y_min, y_max = X[:, <span class="number">1</span>].min() - <span class="number">1</span>, X[:, <span class="number">1</span>].max() + <span class="number">1</span></span><br><span class="line">xx, yy = np.meshgrid(np.arange(x_min, x_max, <span class="number">.02</span>),</span><br><span class="line">                    np.arange(y_min, y_max, <span class="number">.02</span>))</span><br><span class="line">Z = kclassifier.predict(np.c_[xx.ravel(), yy.ravel()])</span><br><span class="line">Z = Z.reshape(xx.shape)</span><br><span class="line">plt.pcolormesh(xx, yy, Z, cmap=plt.cm.Pastel1)</span><br><span class="line">plt.scatter(X[:, <span class="number">0</span>], X[:, <span class="number">1</span>], c=y, cmap=plt.cm.spring, edgecolors=<span class="string">'k'</span>)</span><br><span class="line">plt.xlim(xx.min(), xx.max())</span><br><span class="line">plt.ylim(yy.min(), yy.max())</span><br><span class="line">plt.title(<span class="string">"Classifier:kNN"</span>)</span><br><span class="line"></span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<p>补充图片</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">##对新数据点分类进行判断</span></span><br><span class="line">print(<span class="string">"新数据点的分类是："</span>, kclassifier.predict([[<span class="number">6.75</span>, <span class="number">4.82</span>]]))</span><br><span class="line"><span class="comment">#新数据点的分类是： [1]</span></span><br></pre></td></tr></table></figure>
+<h4 id="多分类"><a href="#多分类" class="headerlink" title="多分类"></a>多分类</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.datasets <span class="keyword">import</span> make_blobs</span><br><span class="line"><span class="keyword">from</span> sklearn.neighbors <span class="keyword">import</span> KNeighborsClassifier</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line"><span class="comment">##生成样本数为500，分类数为5的数据集</span></span><br><span class="line">data2 = make_blobs(n_samples=<span class="number">500</span>, centers=<span class="number">5</span>, random_state=<span class="number">8</span>)</span><br><span class="line">X2, y2 = data2</span><br><span class="line"></span><br><span class="line">%matplotlib inline</span><br><span class="line"></span><br><span class="line">plt.scatter(X2[:, <span class="number">0</span>], X2[:,<span class="number">1</span>], c=y2, cmap=plt.cm.spring, edgecolors=<span class="string">'k'</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<p>补充图片</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">clf = KNeighborsClassifier()</span><br><span class="line">clf.fit(X2, y2)</span><br><span class="line"></span><br><span class="line">x_min, x_max = X2[:, <span class="number">0</span>].min() - <span class="number">1</span>, X2[:, <span class="number">0</span>].max() + <span class="number">1</span></span><br><span class="line">y_min, y_max = X2[:, <span class="number">1</span>].min() - <span class="number">1</span>, X2[:, <span class="number">1</span>].max() + <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">%matplotlib inline</span><br><span class="line"></span><br><span class="line">xx, yy = np.meshgrid(np.arange(x_min, x_max, <span class="number">.02</span>),</span><br><span class="line">                    np.arange(y_min, y_max, <span class="number">.02</span>))</span><br><span class="line">Z = clf.predict(np.c_[xx.ravel(), yy.ravel()])</span><br><span class="line">Z = Z.reshape(xx.shape)</span><br><span class="line"></span><br><span class="line">plt.pcolormesh(xx, yy, Z, cmap = plt.cm.Pastel1)</span><br><span class="line">plt.scatter(X2[:, <span class="number">0</span>], X2[:, <span class="number">1</span>], c=y2, cmap=plt.cm.spring, edgecolors=<span class="string">'k'</span>)</span><br><span class="line">plt.xlim(xx.min(), xx.max())</span><br><span class="line">plt.ylim(yy.min(), yy.max())</span><br><span class="line">plt.title(<span class="string">"Classifier:kNN"</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<p>补充图片</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">##模型的评分</span></span><br><span class="line">print(<span class="string">"模型正确率：&#123;:.2f&#125;"</span>.format(clf.score(X2, y2)))</span><br><span class="line"><span class="comment">#模型正确率：0.96</span></span><br></pre></td></tr></table></figure>
+<h4 id="回归"><a href="#回归" class="headerlink" title="回归"></a>回归</h4><p>kNN的n_neighbors默认为5。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">##导入数据生成器make_regression</span></span><br><span class="line"><span class="keyword">from</span> sklearn.datasets <span class="keyword">import</span> make_regression</span><br><span class="line"></span><br><span class="line"><span class="comment">##生成特征数量为1，噪音为50的数据集</span></span><br><span class="line">X, y = make_regression(n_features=<span class="number">1</span>, n_informative=<span class="number">1</span>, noise=<span class="number">50</span>, random_state=<span class="number">8</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">##可视化</span></span><br><span class="line">%matplotlib inline</span><br><span class="line">plt.scatter(X, y, c=<span class="string">'orange'</span>, edgecolors=<span class="string">'k'</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<p>补充图片</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">##导入用于回归分析的kNN模型</span></span><br><span class="line"><span class="keyword">from</span> sklearn.neighbors <span class="keyword">import</span> KNeighborsRegressor</span><br><span class="line">reg = KNeighborsRegressor()</span><br><span class="line"></span><br><span class="line"><span class="comment">##用kNN模型拟合数据</span></span><br><span class="line">reg.fit(X, y)</span><br><span class="line"></span><br><span class="line"><span class="comment">##可视化预测结果</span></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">z = np.linspace(<span class="number">-3</span>, <span class="number">3</span>, <span class="number">200</span>).reshape(<span class="number">-1</span>, <span class="number">1</span>)</span><br><span class="line">%matplotlib inline</span><br><span class="line">plt.scatter(X, y, c=<span class="string">'orange'</span>, edgecolors=<span class="string">'k'</span>)</span><br><span class="line">plt.plot(z, reg.predict(z), c=<span class="string">'k'</span>, linewidth=<span class="number">3</span>)</span><br><span class="line">plt.title(<span class="string">"kNN Regressor"</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<p>补充图片</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">##模型评分</span></span><br><span class="line">print(<span class="string">"模型评分：&#123;:.2f&#125;"</span>.format(reg.score(X, y)))</span><br><span class="line"><span class="comment">#模型评分：0.77</span></span><br></pre></td></tr></table></figure>
+<p>修改模型的<code>n_estimators</code>参数</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">reg2 = KNeighborsRegressor(n_neighbors=<span class="number">2</span>)</span><br><span class="line">reg2.fit(X, y)</span><br><span class="line"></span><br><span class="line">%matplotlib inline</span><br><span class="line">plt.scatter(X, y, c=<span class="string">'orange'</span>, edgecolors=<span class="string">'k'</span>)</span><br><span class="line">plt.plot(z, reg2.predict(z), c=<span class="string">'k'</span>, linewidth=<span class="number">3</span>)</span><br><span class="line">plt.title(<span class="string">"kNN Regressor:n_neighbors=2"</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<p>补充图片</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">print(<span class="string">"模型评分为：&#123;:.2f&#125;"</span>.format(reg2.score(X, y)))</span><br><span class="line"><span class="comment">#模型评分为：0.86</span></span><br></pre></td></tr></table></figure>
+<p>模型评分从0.77提升到0.86，有显著的提升。</p>
+<h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><h3 id="酒的分类"><a href="#酒的分类" class="headerlink" title="酒的分类"></a>酒的分类</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">##导入数据集</span></span><br><span class="line"><span class="keyword">from</span> sklearn.datasets <span class="keyword">import</span> load_wine</span><br><span class="line">wine_dataset = load_wine()</span><br><span class="line"><span class="comment">###使用load_wine()导入的酒数据集，是一种Bunch对象，包括键（keys）和数值（values）</span></span><br><span class="line"></span><br><span class="line"><span class="comment">###查看该数据集里的键</span></span><br><span class="line">print(<span class="string">"红酒数据集中的键：\n&#123;&#125;"</span>.format(wine_dataset.keys()))</span><br></pre></td></tr></table></figure>
+<pre><code> 红酒数据集中的键：
+ dict_keys([&#39;data&#39;, &#39;target&#39;, &#39;target_names&#39;, &#39;DESCR&#39;, &#39;feature_names&#39;])
+</code></pre><p>数据集中包括数据data、目标分类target、目标分类名称target_names、数据描述DESCR和特征变量的名称features_names。</p>
+<p>下面查看数据的样本量和变量数目：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">print(<span class="string">"数据概况：&#123;&#125;"</span>.format(wine_dataset[<span class="string">'data'</span>].shape))</span><br><span class="line"><span class="comment">#数据概况：(178, 13)</span></span><br></pre></td></tr></table></figure>
+<p>共有178个样本，每个样本有13个特征变量。</p>
+<p>下面查看该数据集的描述（超长）：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">print(wine_dataset[<span class="string">'DESCR'</span>])</span><br></pre></td></tr></table></figure>
+<pre><code> .. _wine_dataset:
+
+ Wine recognition dataset
+ ------------------------
+
+ **Data Set Characteristics:**
+
+ :Number of Instances: 178 (50 in each of three classes)
+ :Number of Attributes: 13 numeric, predictive attributes and the class
+ :Attribute Information:
+     - Alcohol
+     - Malic acid
+     - Ash
+    - Alcalinity of ash  
+     - Magnesium
+    - Total phenols
+     - Flavanoids
+     - Nonflavanoid phenols
+     - Proanthocyanins
+    - Color intensity
+     - Hue
+     - OD280/OD315 of diluted wines
+     - Proline
+
+ - class:
+        - class_0
+        - class_1
+        - class_2
+
+ :Summary Statistics:
+
+ ============================= ==== ===== ======= =====
+                               Min   Max   Mean     SD
+ ============================= ==== ===== ======= =====
+ Alcohol:                      11.0  14.8    13.0   0.8
+ Malic Acid:                   0.74  5.80    2.34  1.12
+ Ash:                          1.36  3.23    2.36  0.27
+ Alcalinity of Ash:            10.6  30.0    19.5   3.3
+ Magnesium:                    70.0 162.0    99.7  14.3
+ Total Phenols:                0.98  3.88    2.29  0.63
+ Flavanoids:                   0.34  5.08    2.03  1.00
+ Nonflavanoid Phenols:         0.13  0.66    0.36  0.12
+ Proanthocyanins:              0.41  3.58    1.59  0.57
+ Colour Intensity:              1.3  13.0     5.1   2.3
+ Hue:                          0.48  1.71    0.96  0.23
+ OD280/OD315 of diluted wines: 1.27  4.00    2.61  0.71
+ Proline:                       278  1680     746   315
+ ============================= ==== ===== ======= =====
+
+ :Missing Attribute Values: None
+ :Class Distribution: class_0 (59), class_1 (71), class_2 (48)
+ :Creator: R.A. Fisher
+ :Donor: Michael Marshall (MARSHALL%PLU@io.arc.nasa.gov)
+ :Date: July, 1988
+
+ This is a copy of UCI ML Wine recognition datasets.
+ https://archive.ics.uci.edu/ml/machine-learning-databases/wine/wine.data
+
+ The data is the results of a chemical analysis of wines grown in the same
+ region in Italy by three different cultivators. There are thirteen different
+ measurements taken for different constituents found in the three types of
+ wine.
+
+ Original Owners: 
+
+ Forina, M. et al, PARVUS - 
+ An Extendible Package for Data Exploration, Classification and Correlation. 
+ Institute of Pharmaceutical and Food Analysis and Technologies,
+ Via Brigata Salerno, 16147 Genoa, Italy.
+
+ Citation:
+
+ Lichman, M. (2013). UCI Machine Learning Repository
+ [http://archive.ics.uci.edu/ml]. Irvine, CA: University of California,
+ School of Information and Computer Science. 
+
+ .. topic:: References
+
+ (1) S. Aeberhard, D. Coomans and O. de Vel, 
+ Comparison of Classifiers in High Dimensional Settings, 
+ Tech. Rep. no. 92-02, (1992), Dept. of Computer Science and Dept. of  
+ Mathematics and Statistics, James Cook University of North Queensland. 
+ (Also submitted to Technometrics). 
+
+  The data was used with many others for comparing various 
+ classifiers. The classes are separable, though only RDA 
+ has achieved 100% correct classification. 
+ (RDA : 100%, QDA 99.4%, LDA 98.9%, 1NN 96.1% (z-transformed data)) 
+ (All results using the leave-one-out technique) 
+
+ (2) S. Aeberhard, D. Coomans and O. de Vel, 
+ &quot;THE CLASSIFICATION PERFORMANCE OF RDA&quot; 
+ Tech. Rep. no. 92-01, (1992), Dept. of Computer Science and Dept. of 
+ Mathematics and Statistics, James Cook University of North Queensland. 
+ (Also submitted to Journal of Chemometrics).
+</code></pre><p>划分训练集和测试集（使用scikit-learn中的train_test_split函数）：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">##导入数据拆分工具</span></span><br><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> train_test_split</span><br><span class="line"></span><br><span class="line">X_train, X_test, y_train, y_test = train_test_split(wine_dataset[<span class="string">'data'</span>],</span><br><span class="line">                                                   wine_dataset[<span class="string">'target'</span>],</span><br><span class="line">                                                   random_state=<span class="number">0</span>)</span><br><span class="line"><span class="comment">###这里random_state即设置seed，固定seed则能保证每次产生的伪随机数不变；</span></span><br><span class="line"><span class="comment">###若random_state设置为0或者缺省时，则每次生成的伪随机数不同。</span></span><br><span class="line"></span><br><span class="line">print(<span class="string">"X_train shape:&#123;&#125;"</span>.format(X_train.shape))</span><br><span class="line">print(<span class="string">"X_test shape:&#123;&#125;"</span>.format(X_test.shape))</span><br><span class="line">print(<span class="string">"y_train shape:&#123;&#125;"</span>.format(y_train.shape))</span><br><span class="line">print(<span class="string">"y_test shape:&#123;&#125;"</span>.format(y_test.shape))</span><br></pre></td></tr></table></figure>
+<pre><code> X_train shape:(133, 13)
+ X_test shape:(45, 13)
+ y_train shape:(133,)
+ y_test shape:(45,)
+</code></pre><p>训练集样本数为133个，测试集样本数为45个。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">##导入kNN分类器</span></span><br><span class="line"><span class="keyword">from</span> sklearn.neighbors <span class="keyword">import</span> KNeighborsClassifier</span><br><span class="line"></span><br><span class="line"><span class="comment">##指定模型的n_neighbors参数为1</span></span><br><span class="line">knn = KNeighborsClassifier(n_neighbors=<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">knn.fit(X_train, y_train)</span><br><span class="line">print(knn)</span><br></pre></td></tr></table></figure>
+<p>score()：计算模型的得分（得分越高，则表示吻合度越高，模型表现越好）：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">knn.score(X_test, y_test)</span><br></pre></td></tr></table></figure>
+<pre><code> 0.7555555555555555
+</code></pre><p>模型对新的样本数据做出正确分类预测的概率为76%。</p>
+<p>对新的红酒分类：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">X_new = np.array([[<span class="number">13.2</span>, <span class="number">2.77</span>, <span class="number">2.51</span>, <span class="number">18.5</span>, <span class="number">96.6</span>, <span class="number">1.04</span>,<span class="number">2.55</span>, <span class="number">0.57</span>, <span class="number">1.47</span>, <span class="number">6.2</span>, <span class="number">1.05</span>, <span class="number">3.33</span>, <span class="number">820</span>]])</span><br><span class="line"></span><br><span class="line"><span class="comment">##对新的数据点进行预测</span></span><br><span class="line">prediction = knn.predict(X_new)</span><br><span class="line">print(<span class="string">"预测新红酒的分类为：&#123;&#125;"</span>.format(wine_dataset[<span class="string">'target_names'</span>][prediction]))</span><br></pre></td></tr></table></figure>
+<pre><code> 预测新红酒的分类为：[&#39;class_2&#39;]
+</code></pre><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="KNN-vs-K-Means"><a href="#KNN-vs-K-Means" class="headerlink" title="KNN vs K-Means"></a>KNN vs K-Means</h2><ul>
+<li><a href="/2020/05/13/%E7%AE%97%E6%B3%95-K-Means/" title="K-Means算法">K-Means算法</a>
+</li>
+</ul>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: center;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: center;">
+      <th></th>
+      <th>K-Means</th>
+      <th>KNN</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>分类</th>
+      <td>聚类算法</td>
+      <td>分类/回归算法</td>
+    </tr>
+    <tr>
+      <th>监督</th>
+      <td>无监督学习</td>
+      <td>有监督学习</td>
+    </tr>
+    <tr>
+      <th>训练集</th>
+      <td>无标签数据</td>
+      <td>有标签数据<br>无序变有序</td>
+    </tr>
+    <tr>
+      <th>相似点</th>
+      <td colspan="2">都包含——给定一个点，在数据集中找离它最近的点——的过程；即，二者都使用了NN（Nearest Neighbor）算法，一般用KD树实现NN</td>
+    </tr>
+    <tr>
+  </tr></tbody>
+</table>
+</div>
+
+<h1 id="kNN图"><a href="#kNN图" class="headerlink" title="kNN图"></a>kNN图</h1><p>k-Nearest Neighbour Graph</p>
+<p>假设空间中有$n$个节点，对任一节点$v_i$，找出距离<sup><a href="#fn_1" id="reffn_1">1</a></sup>它最近的$k$个邻点$v_1,\cdots,v_k$，分别将$v_i$与这$k$个邻点连结起来，形成$k$条有向边。</p>
+<p>对空间中的所有顶点都按此方法进行，最后得到的图便是kNN图。</p>
+<blockquote id="fn_1">
+<sup>1</sup>. 欧氏距离、马氏距离、……<a href="#reffn_1" title="Jump back to footnote [1] in the text."> &#8617;</a>
+</blockquote>
+<ul>
+<li>可用于<strong>异常点检测</strong><blockquote>
+<p>在大量高维数据点中，一般正常的数据点会聚集成一个个簇，而异常数据点与正常数据点的簇距离较远</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="构建kNN图"><a href="#构建kNN图" class="headerlink" title="构建kNN图"></a>构建kNN图</h2><ol>
+<li>空间分割树算法（Space-Partitioning Trees）</li>
+<li>局部敏感哈希算法（Locality Sensitive Hashing）</li>
+<li>邻居搜索算法（Neighbor Exploring Techniques)</li>
+</ol>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
+<li><a href="https://book.douban.com/subject/26979890/" target="_blank" rel="noopener">图解算法</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Lazy_learning" target="_blank" rel="noopener">维基百科-Lazy Learning</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Eager_learning" target="_blank" rel="noopener">维基百科-Eager Learning</a></li>
+<li>段小手.<a href="https://baike.baidu.com/item/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BAPython%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/22799668?fr=aladdin" target="_blank" rel="noopener">深入浅出 Python 机器学习</a>[M]. 清华大学出版社, 2018.</li>
+<li><a href="https://blog.csdn.net/Dream_angel_Z/article/details/45896449" target="_blank" rel="noopener">机器学习算法-K最近邻从原理到实现（Python）</a></li>
+<li><a href="https://www.cnblogs.com/ybjourney/p/4702562.html" target="_blank" rel="noopener">机器学习（一）——K-近邻（KNN）算法</a></li>
+<li><a href="http://bindog.github.io/blog/2016/06/04/from-sne-to-tsne-to-largevis/" target="_blank" rel="noopener">从SNE到t-SNE再到LargeVis</a></li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://github.com/ShootingWang/ShootingWang.github.io/2020/05/05/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1656,97 +2004,6 @@
   
   
 
-      
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/ShootingWang/ShootingWang.github.io/2020/05/05/%E5%90%88%E5%B9%B6%E6%8E%92%E5%BA%8F/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="ShootingWang">
-      <meta itemprop="description" content="无猫病重症患者">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ShootingWang">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/05/05/%E5%90%88%E5%B9%B6%E6%8E%92%E5%BA%8F/" class="post-title-link" itemprop="url">合并排序</a>
-        </h2>
-
-        <div class="post-meta">
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2020-05-05 10:30:41 / 修改时间：10:33:33" itemprop="dateCreated datePublished" datetime="2020-05-05T10:30:41+08:00">2020-05-05</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%AE%97%E6%B3%95/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">基础算法</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2020/05/05/%E5%90%88%E5%B9%B6%E6%8E%92%E5%BA%8F/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/05/05/%E5%90%88%E5%B9%B6%E6%8E%92%E5%BA%8F/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>merge sort</p>
-<h1 id="合并排序"><a href="#合并排序" class="headerlink" title="合并排序"></a>合并排序</h1><h2 id="运行时间"><a href="#运行时间" class="headerlink" title="运行时间"></a>运行时间</h2><p>合并排序的运行时间为$O(n\log{n})$</p>
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p>[1] <a href="https://book.douban.com/subject/26979890/" target="_blank" rel="noopener">图解算法</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1816,7 +2073,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">104</span>
+          <span class="site-state-item-count">105</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
