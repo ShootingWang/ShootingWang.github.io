@@ -1486,7 +1486,7 @@ pre code {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #bba3a2;
+  background: #705990;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2637,6 +2637,9 @@ mjx-container + br {
     padding-right: 0;
     width: auto;
   }
+}
+.mermaid {
+  background: transparent;
 }
 .site-brand-container {
   background: #222;
