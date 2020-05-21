@@ -39,7 +39,7 @@
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : false,
+    isHome : true,
     isPost : false,
     lang   : 'zh-CN'
   };
@@ -174,7 +174,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/ShootingWang/ShootingWang.github.io/2020/05/09/%E6%A6%82%E7%8E%87%E8%AE%BA%E5%9F%BA%E7%A1%80/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/ShootingWang/ShootingWang.github.io/2020/05/21/%E7%AE%97%E6%B3%95-ADMM/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -188,7 +188,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/05/09/%E6%A6%82%E7%8E%87%E8%AE%BA%E5%9F%BA%E7%A1%80/" class="post-title-link" itemprop="url">概率论基础</a>
+            <a href="/2020/05/21/%E7%AE%97%E6%B3%95-ADMM/" class="post-title-link" itemprop="url">Machine Learning | ADMM</a>
         </h2>
 
         <div class="post-meta">
@@ -199,23 +199,17 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2020-05-09 21:36:05" itemprop="dateCreated datePublished" datetime="2020-05-09T21:36:05+08:00">2020-05-09</time>
+              <time title="创建时间：2020-05-21 13:07:17 / 修改时间：14:46:01" itemprop="dateCreated datePublished" datetime="2020-05-21T13:07:17+08:00">2020-05-21</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-05-17 23:15:42" itemprop="dateModified" datetime="2020-05-17T23:15:42+08:00">2020-05-17</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Home/" itemprop="url" rel="index"><span itemprop="name">Home</span></a>
+                  <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
                 </span>
             </span>
 
@@ -228,8 +222,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2020/05/09/%E6%A6%82%E7%8E%87%E8%AE%BA%E5%9F%BA%E7%A1%80/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/05/09/%E6%A6%82%E7%8E%87%E8%AE%BA%E5%9F%BA%E7%A1%80/" itemprop="commentCount"></span>
+    <a title="valine" href="/2020/05/21/%E7%AE%97%E6%B3%95-ADMM/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/05/21/%E7%AE%97%E6%B3%95-ADMM/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -244,15 +238,14 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <center>Probability Theory</center>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/05/09/%E6%A6%82%E7%8E%87%E8%AE%BA%E5%9F%BA%E7%A1%80/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
+          <p>ADMM<br>Alternating Direction Method of Multipliers</p>
+<h1 id="ADMM"><a href="#ADMM" class="headerlink" title="ADMM"></a>ADMM</h1><p>用于解决如下问题<br>\begin{equation}<br>\begin{aligned}<br>\min &amp; \quad f(x)+g(z)\\<br>\mathrm{s.t.} &amp; \quad Ax+Bz=c<br>\end{aligned}<br>\end{equation}</p>
+<p>该优化问题的扩展拉格朗日函数为</p>
+<script type="math/tex; mode=display">L_\lambda(x,y,z)=f(x)+g(z)+y^T(Ax+Bz-c)+\frac{\lambda}{2}||Ax+Bz-c||^2</script><p>其中${\lambda}{2}||Ax+Bz-c||^2$是扩展项（augmented term）。</p>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
+<li><a href></a></li>
+</ul>
+
       
     </div>
 
@@ -272,7 +265,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/ShootingWang/ShootingWang.github.io/2020/05/04/%E7%BC%96%E7%A8%8B%E9%A2%98%E5%BA%93/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/ShootingWang/ShootingWang.github.io/2020/05/20/python-missingno/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -286,7 +279,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/05/04/%E7%BC%96%E7%A8%8B%E9%A2%98%E5%BA%93/" class="post-title-link" itemprop="url">编程题库</a>
+            <a href="/2020/05/20/python-missingno/" class="post-title-link" itemprop="url">Python | missingno</a>
         </h2>
 
         <div class="post-meta">
@@ -297,23 +290,17 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2020-05-04 00:00:15" itemprop="dateCreated datePublished" datetime="2020-05-04T00:00:15+08:00">2020-05-04</time>
+              <time title="创建时间：2020-05-20 13:43:49 / 修改时间：19:28:19" itemprop="dateCreated datePublished" datetime="2020-05-20T13:43:49+08:00">2020-05-20</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-05-17 09:45:14" itemprop="dateModified" datetime="2020-05-17T09:45:14+08:00">2020-05-17</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Home/" itemprop="url" rel="index"><span itemprop="name">Home</span></a>
+                  <a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a>
                 </span>
             </span>
 
@@ -326,8 +313,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2020/05/04/%E7%BC%96%E7%A8%8B%E9%A2%98%E5%BA%93/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/05/04/%E7%BC%96%E7%A8%8B%E9%A2%98%E5%BA%93/" itemprop="commentCount"></span>
+    <a title="valine" href="/2020/05/20/python-missingno/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/05/20/python-missingno/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -342,15 +329,238 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <center>编程刷题记录</center>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/05/04/%E7%BC%96%E7%A8%8B%E9%A2%98%E5%BA%93/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
+          <p>用于可视化缺失值</p>
+<h1 id="missingno"><a href="#missingno" class="headerlink" title="missingno"></a>missingno</h1><p>安装：<br><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install missingno</span><br></pre></td></tr></table></figure></p>
+<p>首先下载样本数据：<br><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install quilt</span><br><span class="line">quilt install ResidentMario/missingno_data</span><br></pre></td></tr></table></figure></p>
+<p>加载数据：<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> quilt.data.ResidentMario <span class="keyword">import</span> missingno_data</span><br><span class="line"></span><br><span class="line">collisions = missingno_data.nyc_collision_factors()</span><br><span class="line">collisions = collisions.replace(<span class="string">'nan'</span>, np.nan)</span><br><span class="line">collisions.head()</span><br></pre></td></tr></table></figure></p>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Unnamed: 0</th>
+      <th>DATE</th>
+      <th>TIME</th>
+      <th>BOROUGH</th>
+      <th>ZIP CODE</th>
+      <th>LATITUDE</th>
+      <th>LONGITUDE</th>
+      <th>LOCATION</th>
+      <th>ON STREET NAME</th>
+      <th>CROSS STREET NAME</th>
+      <th>OFF STREET NAME</th>
+      <th>NUMBER OF PERSONS INJURED</th>
+      <th>NUMBER OF PERSONS KILLED</th>
+      <th>NUMBER OF PEDESTRIANS INJURED</th>
+      <th>NUMBER OF PEDESTRIANS KILLED</th>
+      <th>NUMBER OF CYCLISTS INJURED</th>
+      <th>NUMBER OF CYCLISTS KILLED</th>
+      <th>CONTRIBUTING FACTOR VEHICLE 1</th>
+      <th>CONTRIBUTING FACTOR VEHICLE 2</th>
+      <th>CONTRIBUTING FACTOR VEHICLE 3</th>
+      <th>CONTRIBUTING FACTOR VEHICLE 4</th>
+      <th>CONTRIBUTING FACTOR VEHICLE 5</th>
+      <th>VEHICLE TYPE CODE 1</th>
+      <th>VEHICLE TYPE CODE 2</th>
+      <th>VEHICLE TYPE CODE 3</th>
+      <th>VEHICLE TYPE CODE 4</th>
+      <th>VEHICLE TYPE CODE 5</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>11/10/2016</td>
+      <td>16:11:00</td>
+      <td>BROOKLYN</td>
+      <td>11208.0</td>
+      <td>40.662514</td>
+      <td>-73.872007</td>
+      <td>(40.6625139, -73.8720068)</td>
+      <td>WORTMAN AVENUE</td>
+      <td>MONTAUK AVENUE</td>
+      <td>NaN</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Failure to Yield Right-of-Way</td>
+      <td>Unspecified</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>TAXI</td>
+      <td>PASSENGER VEHICLE</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>11/10/2016</td>
+      <td>05:11:00</td>
+      <td>MANHATTAN</td>
+      <td>10013.0</td>
+      <td>40.721323</td>
+      <td>-74.008344</td>
+      <td>(40.7213228, -74.0083444)</td>
+      <td>HUBERT STREET</td>
+      <td>HUDSON STREET</td>
+      <td>NaN</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Failure to Yield Right-of-Way</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>PASSENGER VEHICLE</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>04/16/2016</td>
+      <td>09:15:00</td>
+      <td>BROOKLYN</td>
+      <td>11201.0</td>
+      <td>40.687999</td>
+      <td>-73.997563</td>
+      <td>(40.6879989, -73.9975625)</td>
+      <td>HENRY STREET</td>
+      <td>WARREN STREET</td>
+      <td>NaN</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Lost Consciousness</td>
+      <td>Lost Consciousness</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>PASSENGER VEHICLE</td>
+      <td>VAN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3</td>
+      <td>04/15/2016</td>
+      <td>10:20:00</td>
+      <td>QUEENS</td>
+      <td>11375.0</td>
+      <td>40.719228</td>
+      <td>-73.854542</td>
+      <td>(40.7192276, -73.8545422)</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>67-64 FLEET STREET</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Failure to Yield Right-of-Way</td>
+      <td>Failure to Yield Right-of-Way</td>
+      <td>Failure to Yield Right-of-Way</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>PASSENGER VEHICLE</td>
+      <td>PASSENGER VEHICLE</td>
+      <td>PASSENGER VEHICLE</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4</td>
+      <td>04/15/2016</td>
+      <td>10:35:00</td>
+      <td>BROOKLYN</td>
+      <td>11210.0</td>
+      <td>40.632147</td>
+      <td>-73.952731</td>
+      <td>(40.6321467, -73.9527315)</td>
+      <td>BEDFORD AVENUE</td>
+      <td>CAMPUS ROAD</td>
+      <td>NaN</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Failure to Yield Right-of-Way</td>
+      <td>Failure to Yield Right-of-Way</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>PASSENGER VEHICLE</td>
+      <td>PASSENGER VEHICLE</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h2 id="bar"><a href="#bar" class="headerlink" title="bar()"></a>bar()</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">msno.bar(collisions.sample(<span class="number">1000</span>))</span><br></pre></td></tr></table></figure>
+<p><meta name="referrer" content="no-referrer"><br><img src="/2020/05/20/python-missingno/output_4_1.png" class title="条形图"></p>
+<h2 id="Dendrogram"><a href="#Dendrogram" class="headerlink" title="Dendrogram()"></a>Dendrogram()</h2><p>谱系图/系统树图</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">msno.dendrogram(collisions)</span><br></pre></td></tr></table></figure>
+<p><meta name="referrer" content="no-referrer"><br><img src="/2020/05/20/python-missingno/output_6_1.png" class title="谱系图"></p>
+<ul>
+<li><code>NUMBER OF CYCLISTS INJURED</code>,<code>NUMBER OF CYCLISTS SKILLED</code>,<code>CONTRIBUTING FACTOR VEHICLE 1</code>,<code>NUMBER OF PEDESTRIANS SKILLED</code>,<code>NUMBER OF PEDESTRIANS INJURED</code>,<code>NUMBER OF PERSONS KILLED</code>等数据完整，没有缺失值，他们的距离为零，聚为一类。</li>
+<li><code>BOROUGH</code>,<code>ZIP CODE</code>缺失相关性为1（同时缺失），距离为零；且缺失数据最少（除完整数据外），所以在完整数据后聚为一类。</li>
+<li>……</li>
+</ul>
+<h2 id="heatmap"><a href="#heatmap" class="headerlink" title="heatmap()"></a>heatmap()</h2><p>热力图<br>体现一个变量的存在或不存在如何强烈影响另一个变量的存在</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">msno.heatmap(collisions)</span><br></pre></td></tr></table></figure>
+<p><meta name="referrer" content="no-referrer"><br><img src="/2020/05/20/python-missingno/output_5_1.png" class title="热力图"></p>
+<p><code>ZIP CODE</code>与<code>BOROUGH</code>的缺失相关性为1，说明：只要<code>BOROUGH</code>发生了缺失，<code>ZIP CODE</code>也会缺失。</p>
+<h2 id="matrix"><a href="#matrix" class="headerlink" title="matrix()"></a>matrix()</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> missingno <span class="keyword">as</span> msno</span><br><span class="line">%matplotlib inline</span><br><span class="line"></span><br><span class="line">msno.matrix(collisions.sample(<span class="number">250</span>))</span><br></pre></td></tr></table></figure>
+<p><meta name="referrer" content="no-referrer"><br><img src="/2020/05/20/python-missingno/output_1_2.png" class title="矩阵图"></p>
+<p>白色的为缺失</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line">null_pattern = (np.random.random(<span class="number">1000</span>).reshape((<span class="number">50</span>, <span class="number">20</span>)) &gt; <span class="number">0.5</span>).astype(bool)</span><br><span class="line">null_pattern = pd.DataFrame(null_pattern).replace(&#123;<span class="literal">False</span>: <span class="literal">None</span>&#125;)</span><br><span class="line">msno.matrix(null_pattern.set_index(pd.period_range(<span class="string">'1/1/2011'</span>, <span class="string">'2/1/2015'</span>, freq=<span class="string">'M'</span>)), freq=<span class="string">'BQ'</span>)</span><br></pre></td></tr></table></figure>
+<p><meta name="referrer" content="no-referrer"><br><img src="/2020/05/20/python-missingno/output_3_1.png" class title="矩阵图"></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
+<li><a href="https://github.com/ResidentMario/missingno">GitHub-missingno</a></li>
+<li><a href="https://blog.csdn.net/Andy_shenzl/article/details/81633356" target="_blank" rel="noopener">缺失值可视化处理—missingno</a></li>
+</ul>
+
       
     </div>
 
@@ -370,7 +580,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/ShootingWang/ShootingWang.github.io/2020/05/03/Python/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/ShootingWang/ShootingWang.github.io/2020/05/20/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-ABtest/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -384,7 +594,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/05/03/Python/" class="post-title-link" itemprop="url">Python</a>
+            <a href="/2020/05/20/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-ABtest/" class="post-title-link" itemprop="url">数据分析 | ABtest</a>
         </h2>
 
         <div class="post-meta">
@@ -395,23 +605,17 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2020-05-03 13:54:22" itemprop="dateCreated datePublished" datetime="2020-05-03T13:54:22+08:00">2020-05-03</time>
+              <time title="创建时间：2020-05-20 10:34:38 / 修改时间：13:27:15" itemprop="dateCreated datePublished" datetime="2020-05-20T10:34:38+08:00">2020-05-20</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-05-20 14:13:22" itemprop="dateModified" datetime="2020-05-20T14:13:22+08:00">2020-05-20</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Home/" itemprop="url" rel="index"><span itemprop="name">Home</span></a>
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/" itemprop="url" rel="index"><span itemprop="name">数据分析</span></a>
                 </span>
             </span>
 
@@ -424,8 +628,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2020/05/03/Python/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/05/03/Python/" itemprop="commentCount"></span>
+    <a title="valine" href="/2020/05/20/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-ABtest/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/05/20/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-ABtest/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -440,15 +644,143 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <center>Python使用手册</center>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/05/03/Python/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
+          <h1 id="双盲测试"><a href="#双盲测试" class="headerlink" title="双盲测试"></a>双盲测试</h1><p>将病人随机分为两组，病人在不知情的情况下分别服用安慰剂和测试用药，经过一段时间的实验后，比较两组病人的表现是否具有显著差异，以确定测试用药是否具有疗效。</p>
+<h1 id="ABtest"><a href="#ABtest" class="headerlink" title="ABtest"></a>ABtest</h1><p>AB测试</p>
+<p>将Web或App界面或流程的两个或多个版本，在同一时间维度，分别让两个或多个属性或组成成分相同（相似）的访客群组访问，收集各群组的用户体验数据和业务数据，最后分析评估出最好版本正式采用。</p>
+<h2 id="测试要点"><a href="#测试要点" class="headerlink" title="测试要点"></a>测试要点</h2><ul>
+<li>两个关键<ol>
+<li>同一时间维度</li>
+<li>成分相同（相似）的访客群组</li>
+</ol>
+</li>
+<li>一个任务<ul>
+<li>收集各群组的用户体验数据和业务数据</li>
+</ul>
+</li>
+<li>一个目标<ul>
+<li>分析评估出最好版本正式采用</li>
+</ul>
+</li>
+</ul>
+<h2 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h2><p>ABtest的主要应用场景有两个：</p>
+<ol>
+<li>界面设计<ul>
+<li>调整界面颜色</li>
+<li>调整按钮颜色</li>
+<li>调整界面外观</li>
+<li>……</li>
+</ul>
+</li>
+<li>算法优化<br>重点针对页面中现实的元素进行优化<ul>
+<li>根据推荐算法向用户推荐一些高频搜索或关注的内容</li>
+<li>调整不同小版块的出现顺序或者所在位置，帮助用户在最短时间内到达自己需要的内容</li>
+</ul>
+</li>
+</ol>
+<h2 id="测试流程"><a href="#测试流程" class="headerlink" title="测试流程"></a>测试流程</h2><ol>
+<li>分析实际业务场景，明确改进关键点，制定优化建议</li>
+<li>与项目经历确定优化目标，设计优化方案</li>
+<li>根据优化目标及方案搭建数据分析指标体系，明确数据口径</li>
+<li>由UI设计师或算法工程师根据方案完成样例开发，并设定数据埋点</li>
+<li>调整流量池，在同一时间内对目标用户进行测试</li>
+<li>根据时间进度及时收集数据，并根据数据情况调整流量池或重新进行测试</li>
+<li>经过多次试验取得成功后，确定新版本功能，正式发布</li>
+</ol>
+<pre class="mermaid">graph LR;
+    id0(分析现状<br>推测假设) --> id1(制定目标<br>设计方案);
+    id1 --> id2(搭建数据<br>指标体系);
+    id2 --> id3(界面设计);
+    id2 --> id4(算法优化);
+    id3 --> id5(调整流量<br>实施方案);
+    id4 --> id5;
+    id5 --> id6(收集数据<br>计算指标);
+    id6 --> id7(确定版本<br>正式发布);
+    id6 --优化方案<br>重新开始--> id1;
+    id6 --调整流量<br>继续测试-->id5;</pre>
+
+<p><strong>灰度测试</strong>：调整版本对企业影响极大，设定目标中的两个版本可能都不是有效版本，故不能将所有用户直接一分为二全部进行AB测试，对此可以采用灰度发布的方式——只选择其中极小部分用户AB测试，并逐步推广到所有用户。</p>
+<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><ul>
+<li>AB测试需要分析参与测试用户的整体分布情况，而不仅是个别用户的情况</li>
+<li>数据的有效性<ul>
+<li>正常情况下，在推进AB测试时，前三天的数据波动会比较大，不建议直接使用</li>
+<li>一般进行AB测试需要大约7~14天为周期进行推进</li>
+<li>需要注意工作日与节假日影响的不同</li>
+</ul>
+</li>
+<li>若AB测试开始后用户反馈反方向发展：<ul>
+<li>先缩小测试用的流量池，减少测试的用户数量</li>
+<li>同时分析目前的用户反馈情况，跟进反馈背后问题的真实原因，优化调整AB测试方案</li>
+<li>不要着急直接停止AB测试</li>
+</ul>
+</li>
+</ul>
+<h1 id="ABN-test"><a href="#ABN-test" class="headerlink" title="ABN test"></a>ABN test</h1><h1 id="ANB-test"><a href="#ANB-test" class="headerlink" title="ANB test"></a>ANB test</h1><h1 id="多维测试"><a href="#多维测试" class="headerlink" title="多维测试"></a>多维测试</h1><p>正常情况下，完成一个AB测试的整个周期为15天~1个月，这样一年内能完成的测试数目较为有限，为了保证高速迭代，可以在多个维度内同时推进AB测试</p>
+<ul>
+<li>一定要保证任意两个维度互不影响</li>
+</ul>
+<h1 id="数据分析师的任务与职责"><a href="#数据分析师的任务与职责" class="headerlink" title="数据分析师的任务与职责"></a>数据分析师的任务与职责</h1><ol>
+<li>针对业务场景，制定专题分析，明确分析目标</li>
+<li>AB测试初期，分析业务场景，提出优化方向</li>
+<li>与产品经理沟通设计解决方案，制定数据分析体系，明确数据口径<ul>
+<li>围绕核心目标，先行制定出最重要的指标</li>
+<li>指标体系需要由核心指标进行拆解，逐步到可落地实施</li>
+<li>在制定指标时，需要结合实际业务场景</li>
+<li>在明确指标的同时，明确取数的口径以及推算要求</li>
+</ul>
+</li>
+<li>与测试人员明确流量分配情况，确保流量分配方式有效</li>
+<li>及时收集数据，分析并对测试过程不断优化<ul>
+<li>加强注意数据的收集与整理，判断收集来的数据是否完整、能否支持分析</li>
+<li>对数据进行整理与分析，确定数据情况能否反映真实业务、与预期情况的匹配程度</li>
+<li>通过数据结果，判断是否需要对流量分配情况进行调整，是否需要加大测试量</li>
+<li>如果有一段时间的数据情况并不理想，找出真实原因并进行方案调整</li>
+<li>注意收集测试期间用户的反馈，为下一次测试提前做好准备</li>
+</ul>
+</li>
+<li>跟进测试过程，了解测试用户的反馈情况，分析其他优化点</li>
+<li>完成测试后，撰写专题报告，整理测试方案、测试数据、测试报告等，完成文件归档<br>需要归档的文件：<ul>
+<li>测试启动会议记录</li>
+<li>测试方案研讨会会议记录</li>
+<li>测试实施方案及进度甘特图</li>
+<li>测试目标及数据指标体系</li>
+<li>测试过程数据集和数据口径</li>
+<li>测试最终总结报告</li>
+<li>……</li>
+</ul>
+</li>
+</ol>
+<h1 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h1><h2 id="转化率"><a href="#转化率" class="headerlink" title="转化率"></a>转化率</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">A组</th>
+<th style="text-align:center">B组</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">转化率</td>
+<td style="text-align:center">$p_A$</td>
+<td style="text-align:center">$p_B$</td>
+</tr>
+<tr>
+<td style="text-align:center">用户数</td>
+<td style="text-align:center">$n_A$</td>
+<td style="text-align:center">$n_B$</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>零假设为</p>
+<script type="math/tex; mode=display">H_0:p_A\leq p_B</script><p>备择假设为</p>
+<script type="math/tex; mode=display">H_1:p_A > p_B</script><p>则AB测试的$Z$值为</p>
+<script type="math/tex; mode=display">Z=\frac{p_B-p_A}{\sqrt{\frac{p_A(1-p_A)}{n_A}+\frac{p_B(1-p_B)}{n_B}}}</script><h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
+<li><a href="https://mp.weixin.qq.com/s?__biz=MzUzODYwMDAzNA==&amp;mid=2247490797&amp;idx=3&amp;sn=5eeb1eeac5facb704c77c21eb1c703a6&amp;chksm=fad46be0cda3e2f6738947f9ce7dca4f60796870453d1222f51ba44cecbb321e0cbcaa881289&amp;mpshare=1&amp;scene=24&amp;srcid=&amp;sharer_sharetime=1589846450651&amp;sharer_shareid=b539221659d6ecf12200314308b58dd3&amp;key=e224f213fcbe84759f79aacb516d4bf8e8fa647879ab62d1eb6fd667e362e3ab352226749e8c5a94c9d72a3123286a45310529e7ab57c50dbece5f0296aa536ff328b1637c3af7f351a13bd2c7e76b00&amp;ascene=14&amp;uin=MjAwNDUzMjgxNw%3D%3D&amp;devicetype=Windows+10+x64&amp;version=62090070&amp;lang=zh_CN&amp;exportkey=AT3GI1XwfMzd87mEXW7wlLk%3D&amp;pass_ticket=vCOnZ86B9zjbSGFnUl2pZh2C3sFfxo%2BAKXmGUdzX1teUg6KzXE86GrBP%2Fo1Z8BFC" target="_blank" rel="noopener">数据分析师必知必会：AB测试项目复盘</a></li>
+<li><a href></a></li>
+<li><a href></a></li>
+</ul>
+
       
     </div>
 
@@ -468,7 +800,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/ShootingWang/ShootingWang.github.io/2020/05/02/Machine-Learning-%E6%B1%87%E6%80%BB/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/ShootingWang/ShootingWang.github.io/2020/05/19/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-%E6%B3%A2%E7%89%B9%E4%BA%94%E5%8A%9B%E6%A8%A1%E5%9E%8B/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -482,38 +814,28 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/05/02/Machine-Learning-%E6%B1%87%E6%80%BB/" class="post-title-link" itemprop="url">Machine Learning-汇总</a>
+            <a href="/2020/05/19/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-%E6%B3%A2%E7%89%B9%E4%BA%94%E5%8A%9B%E6%A8%A1%E5%9E%8B/" class="post-title-link" itemprop="url">数据分析 | 波特五力模型</a>
         </h2>
 
         <div class="post-meta">
 
-          
-            <i class="fa fa-thumb-tack"></i>
-            <font color="green">置顶</font>
-            <span class="post-meta-divider">|</span>
           
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2020-05-02 10:45:48" itemprop="dateCreated datePublished" datetime="2020-05-02T10:45:48+08:00">2020-05-02</time>
+              <time title="创建时间：2020-05-19 14:06:45 / 修改时间：15:34:03" itemprop="dateCreated datePublished" datetime="2020-05-19T14:06:45+08:00">2020-05-19</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-05-19 13:57:07" itemprop="dateModified" datetime="2020-05-19T13:57:07+08:00">2020-05-19</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Home/" itemprop="url" rel="index"><span itemprop="name">Home</span></a>
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/" itemprop="url" rel="index"><span itemprop="name">数据分析</span></a>
                 </span>
             </span>
 
@@ -526,8 +848,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2020/05/02/Machine-Learning-%E6%B1%87%E6%80%BB/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/05/02/Machine-Learning-%E6%B1%87%E6%80%BB/" itemprop="commentCount"></span>
+    <a title="valine" href="/2020/05/19/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-%E6%B3%A2%E7%89%B9%E4%BA%94%E5%8A%9B%E6%A8%A1%E5%9E%8B/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/05/19/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-%E6%B3%A2%E7%89%B9%E4%BA%94%E5%8A%9B%E6%A8%A1%E5%9E%8B/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -542,15 +864,116 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <center>Machine Learning 算法汇总</center>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/05/02/Machine-Learning-%E6%B1%87%E6%80%BB/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
+          <p>Michael Porter Five Forces Model</p>
+<h1 id="波特五力模型"><a href="#波特五力模型" class="headerlink" title="波特五力模型"></a>波特五力模型</h1><ul>
+<li>被广泛应用于很多行业得战略制定</li>
+</ul>
+<p>Michael Porter于20世纪80年代初提出。他认为行业中存在着决定竞争规模和程度的五种力量，这五种力量综合起来影响着产业的吸引力以及现有企业的竞争战略决策。</p>
+<p>这五种力量包括：</p>
+<ol>
+<li>同业竞争者的竞争程度（Rivalry）</li>
+<li>潜在新竞争者的进入（the threat of new entrants）</li>
+<li>潜在替代品的威胁（the threat of substitute offerings）</li>
+<li>供应商的议价能力（the bargaining power of suppliers）</li>
+<li>购买者的议价能力（the bargaining power of buyers）</li>
+</ol>
+<pre class="mermaid">graph
+    id1(潜在进入者) --> id0(同业竞争者)
+    id2(与顾客（下游）的谈判能力) --> id0
+    id3(与供方（上游）的谈判能力) --> id0
+    id4(替代品威胁) --> id0</pre>
+
+<h2 id="同业竞争者"><a href="#同业竞争者" class="headerlink" title="同业竞争者"></a>同业竞争者</h2><p>企业必须在市场、价格、质量、产量、功能、服务、研发等方面建立自己的核心竞争优势。</p>
+<p>影响行业内企业竞争的因素有：</p>
+<ul>
+<li>产业增加</li>
+<li>固定成本/附加价值周期性生产过剩</li>
+<li>产品差异</li>
+<li>商标专有</li>
+<li>转换成本</li>
+<li>售后服务</li>
+<li>集中与平衡</li>
+<li>信息复杂性</li>
+<li>竞争者的多样性</li>
+<li>退出堡垒</li>
+<li>……</li>
+</ul>
+<p>意味着行业中现有企业之间竞争加剧的情况有：</p>
+<ul>
+<li>行业进入障碍较低，势均力敌竞争对手较多，竞争参与者范围广泛</li>
+<li>市场趋于成熟，产品需求增长缓慢</li>
+<li>竞争者企图采用降价等手段促销</li>
+<li>竞争者提供几乎相同的产品或服务，用户转换成本很低</li>
+<li>退出障碍较高（退出竞争比继续参与竞争的代价更高）。退出障碍具体包括：<ul>
+<li>资产的专用性</li>
+<li>退出的固定费用</li>
+<li>战略上的互相牵制</li>
+<li>情绪上的难以接受</li>
+<li>政府和社会的限制</li>
+<li>……</li>
+</ul>
+</li>
+</ul>
+<h2 id="新进入者的威胁"><a href="#新进入者的威胁" class="headerlink" title="新进入者的威胁"></a>新进入者的威胁</h2><p>影响潜在新竞争者进入的因素有：</p>
+<ul>
+<li>经济规模</li>
+<li>专卖产品的差别</li>
+<li>商标转悠</li>
+<li>资本需求</li>
+<li>分销渠道</li>
+<li>绝对成本优势</li>
+<li>政府政策</li>
+<li>行业内企业的预期反击</li>
+<li>……</li>
+</ul>
+<h2 id="替代品的威胁"><a href="#替代品的威胁" class="headerlink" title="替代品的威胁"></a>替代品的威胁</h2><p>决定替代品威胁程度的因素：</p>
+<ul>
+<li>替代品的相对价格表现</li>
+<li>转换成本</li>
+<li>客户对替代品的使用倾向</li>
+</ul>
+<h2 id="供应商的议价能力"><a href="#供应商的议价能力" class="headerlink" title="供应商的议价能力"></a>供应商的议价能力</h2><p>决定供应商议价能力的因素有：</p>
+<ul>
+<li>投入的差异</li>
+<li>产品中供方和企业的转换成本</li>
+<li>替代品投入的现状</li>
+<li>供方的集中程度</li>
+<li>批量大小对供方的重要性</li>
+<li>与产业总购买量的相关成本</li>
+<li>投入对成本和特色的影响</li>
+<li>产业中企业前向整合相对于后向整合的威胁</li>
+<li>……</li>
+</ul>
+<h2 id="购买者的议价能力"><a href="#购买者的议价能力" class="headerlink" title="购买者的议价能力"></a>购买者的议价能力</h2><p>购买者主要通过压价与要求提供较高的产品或服务质量的能力，来影响行业中现有企业的盈利能力。</p>
+<p>购买者议价能力主要取决于：</p>
+<ul>
+<li>购买者的集中程度或业务量的大小</li>
+<li>产品差异化程度与资产专用性程度</li>
+<li>纵向一体化（后向整合能力）<ul>
+<li>如果购买者实行了部分一体化或后向一体化的现实威胁，则在议价中购买者处于有利地位</li>
+</ul>
+</li>
+<li>购买者转换成本相对企业转换成本</li>
+</ul>
+<p>一般来说，满足以下条件的购买者可能具有较强的议价能力：</p>
+<ul>
+<li>购买者的总数较少，且每个购买者的购买量较大</li>
+<li>卖方行业由大量的规模相对较小的企业组成</li>
+<li>购买者所购买的主要是标准化产品，同时向多个供应商购买产品在经济上完全可行</li>
+<li>购买者有能力实现后向一体化，而供应商不可能前向一体化</li>
+</ul>
+<blockquote>
+<ul>
+<li><a href="https://baike.baidu.com/item/%E5%89%8D%E5%90%91%E4%B8%80%E4%BD%93%E5%8C%96/3216356?fr=aladdin" target="_blank" rel="noopener">前向一体化</a>就是企业沿产业链向下游的用户方向扩展，即企业在被动接受用户委托进行快件传递的现有业务经营的基础上，向服务的应用层拓展，通过收购、自建、联合等方式进军网络购物市场，或与业有显著关联效应的出口导向型经贸企业和相关组织单位开展合作，根据市场需求，主动设计并向客户提供定制化、个性化的业务与延伸服务，以提高企业业务量并增加业务收入。实施前向一体化的一种有效方式是特许经营（franchising ）。</li>
+</ul>
+</blockquote>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
+<li><a href="https://baike.baidu.com/item/%E6%B3%A2%E7%89%B9%E4%BA%94%E5%8A%9B%E6%A8%A1%E5%9E%8B/9495965?fromtitle=%E6%B3%A2%E7%89%B9%E4%BA%94%E5%8A%9B&amp;fromid=10805232&amp;fr=aladdin" target="_blank" rel="noopener">百度百科-波特五力模型</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/134238096" target="_blank" rel="noopener">如何进行波特五力分析？</a></li>
+<li><a href="https://mp.weixin.qq.com/s?__biz=MzU5Mjg2OTQ1MA==&amp;mid=2247485604&amp;idx=1&amp;sn=6132243e552196c5357f7be5661a2fbc&amp;chksm=fe186981c96fe097090839cac38109670803301d3af2e6cb7e3aa1fb4dbe3643f5cdd1fc7a74&amp;mpshare=1&amp;scene=24&amp;srcid=&amp;sharer_sharetime=1589809278889&amp;sharer_shareid=b539221659d6ecf12200314308b58dd3&amp;key=61d9a55bd4b13250d9d9b72c926e31f3c963fa7004ed53af86ab53fe1f6b5801bf460986f5969cc4d9ddf3fd098c904d6f1b8f640c0d7aca9f572945246ccea42c22b5d804b881a7955b74528f2f0865&amp;ascene=14&amp;uin=MjAwNDUzMjgxNw%3D%3D&amp;devicetype=Windows+10+x64&amp;version=62090070&amp;lang=zh_CN&amp;exportkey=AYkajeOrvqQzbnEaJ%2BpPxfA%3D&amp;pass_ticket=3hFOenbHRrI0XNiw95BJRgPjuKhLFRWJBVANkKsJrq9CYNi1R7fJlSrcHa4V3zgz" target="_blank" rel="noopener">10大经典数据分析模型，你知道几个？</a></li>
+<li><a href="https://iask.sina.com.cn/b/bHe4XXEqVr1.html" target="_blank" rel="noopener">购买者部分一体化或存在后向一体化</a></li>
+</ul>
+
       
     </div>
 
@@ -570,7 +993,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/ShootingWang/ShootingWang.github.io/2020/05/02/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-%E4%B8%9A%E5%8A%A1%E5%90%91%E9%97%AE%E9%A2%98%E5%92%8C%E6%96%B9%E6%B3%95%E6%B1%87%E6%80%BB/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/ShootingWang/ShootingWang.github.io/2020/05/19/TED-TrySomethingNewfor30days/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -584,7 +1007,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/05/02/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-%E4%B8%9A%E5%8A%A1%E5%90%91%E9%97%AE%E9%A2%98%E5%92%8C%E6%96%B9%E6%B3%95%E6%B1%87%E6%80%BB/" class="post-title-link" itemprop="url">数据分析 | 业务向问题和方法汇总</a>
+            <a href="/2020/05/19/TED-TrySomethingNewfor30days/" class="post-title-link" itemprop="url">TED | Try Something New for 30 days</a>
         </h2>
 
         <div class="post-meta">
@@ -596,24 +1019,15 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2020-05-02 09:23:07" itemprop="dateCreated datePublished" datetime="2020-05-02T09:23:07+08:00">2020-05-02</time>
+              <time title="创建时间：2020-05-19 00:25:38" itemprop="dateCreated datePublished" datetime="2020-05-19T00:25:38+08:00">2020-05-19</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-05-20 14:45:14" itemprop="dateModified" datetime="2020-05-20T14:45:14+08:00">2020-05-20</time>
+                <time title="修改时间：2020-05-21 14:35:55" itemprop="dateModified" datetime="2020-05-21T14:35:55+08:00">2020-05-21</time>
               </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Home/" itemprop="url" rel="index"><span itemprop="name">Home</span></a>
-                </span>
-            </span>
 
           
   
@@ -624,8 +1038,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2020/05/02/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-%E4%B8%9A%E5%8A%A1%E5%90%91%E9%97%AE%E9%A2%98%E5%92%8C%E6%96%B9%E6%B3%95%E6%B1%87%E6%80%BB/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/05/02/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-%E4%B8%9A%E5%8A%A1%E5%90%91%E9%97%AE%E9%A2%98%E5%92%8C%E6%96%B9%E6%B3%95%E6%B1%87%E6%80%BB/" itemprop="commentCount"></span>
+    <a title="valine" href="/2020/05/19/TED-TrySomethingNewfor30days/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/05/19/TED-TrySomethingNewfor30days/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -640,15 +1054,53 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>Data Analysis<br></p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/05/02/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-%E4%B8%9A%E5%8A%A1%E5%90%91%E9%97%AE%E9%A2%98%E5%92%8C%E6%96%B9%E6%B3%95%E6%B1%87%E6%80%BB/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
+          <h1 id="初衷"><a href="#初衷" class="headerlink" title="初衷"></a>初衷</h1><p>2020年05月18日，做了个重要的决定，解决了一个困扰了我许久的问题，虽然转而需要在有限的时间里完成一个重要又艰巨的任务，但是我很欣慰自己做出的改变。</p>
+<p>2020年05月18日晚上，久违地点开邮箱里的TED Recommends，听了一个TED演讲，萌生了一个念头——养成听TED演讲的习惯。</p>
+<p>但我很可能又只是一时脑热，没坚持几天就又停止了。</p>
+<p>于是乎，想到了一个能扩宽视野+能提高英语水平+能督促自我的方式——听写。</p>
+<script type="math/tex; mode=display">听写TED</script><p>该系列就诞生啦~</p>
+<p>初步设定：</p>
+<ul>
+<li>尽量做到每周完整听完2~3个TED视频</li>
+<li>listen and write down all I recognised</li>
+<li>check out with subtitles</li>
+<li><del>删除线</del>删除错误的词句，<strong>粗体</strong>补充遗漏的词句</li>
+</ul>
+<h1 id="1st-Try-Something-New-for-30-Days"><a href="#1st-Try-Something-New-for-30-Days" class="headerlink" title="1st - Try Something New for 30 Days"></a>1st - Try Something New for 30 Days</h1><ul>
+<li><a href="https://www.ted.com/talks/matt_cutts_try_something_new_for_30_days/transcript?referrer=playlist-great_ted_talks_for_language_practice" target="_blank" rel="noopener">Try Something New for 30 Days</a></li>
+<li>2020.05.19</li>
+</ul>
+<p>A few years ago, I <del>thought</del> <strong>felt</strong> that I was stuck <del>and rot</del> <strong>in a rut</strong>, so I decided to follow <del>some steps</del> <strong>in the footsteps of the great</strong> <del>Great an</del>  Ameriacan <del>fellow</del> <strong>philosopher, Morgan Spurlock, and</strong> try something new for 30 days. The idea is actually pretty simple. Think about something <del>you</del> <strong>you’ve</strong> always <del>want</del> <strong>wanted</strong> to <strong>add to</strong> your life and try <strong>it</strong> for the next 30 days. It turns out, 30 day is just about <strong>the right amount of time</strong> to add <del>your</del> <strong>a new</strong> habit or substract <del>your</del> <strong>a</strong> habit <strong>—</strong> like watching the news <strong>—</strong> from your life.</p>
+<p>There is <strong>a</strong> few thing<strong>s</strong> that I learned <strong>while doing thest</strong> <del>from</del> 30-day challenges. <strong>The first</strong> <del>First</del> was, instead <strong>of the months</strong> <del>month</del> flying by<strong>,</strong> forgotten, the time <del>is</del> <strong>was</strong> much more <del>mememble</del><strong>memorable</strong>. This <strong>was</strong> part of <strong>a</strong> challenge I <strong>did to</strong> take pictures every day for a month<del>,</del><strong>.</strong> and I remember exactly where I was and what was I doing that day. I also notice<strong>d</strong><del>,</del> that <strong>as</strong> I <strong>started to do</strong> more and harder 30 <strong>-</strong>day challenges, my self-confidence grew. I went <strong>rom desk-dwelling</strong> <del>to dual desk</del> computer <del>room too,</del> <strong>nerd to</strong> the kind <strong>of guy who</strong> bike<strong>s</strong> to work for fun.</p>
+<p>Even last year, I<del>‘d piking mountain</del> <strong>ended up hikiing up Mt.Kilianjaro,</strong> the highest mountain in Africa. I would never have been that adventure<strong>s</strong> before <strong>I started</strong> my 30 <strong>-</strong>day challenges.<br>I also figure<strong>ed</strong> out that if you really want something <del>mad</del> <strong>badly</strong> enough, you can do anything for 30 days. <del>If</del> <strong>Have</strong> you <strong>ever</strong> want<strong>ed</strong> to write a novel<del>,</del><strong>?</strong> every November <strong>,</strong> tens of thousands of people try to write <strong>their own</strong> <del>a</del> 50,000 <strong>-</strong> word novel <strong>,</strong> from <del>Scritch</del> <strong>scratch,</strong> in 30 days. It turns out, all you have to do is write <del>1,600 and 60 more</del> <strong>1,667 words</strong> a day for a month. So I did, by the way, the secret is not to go to sleep until you <strong>‘ve</strong> written your <del>work</del> <strong>words for the</strong> <del>this</del> day. You might be <del>sleepy bread</del> <strong>sleep-deprived</strong>, but you<strong>‘ll</strong> finish<del>ed a</del> <strong>your</strong> novel.</p>
+<p>Now, it’s my book the next great American novel? Nooooo, I wrote it in a month, it’s awful.<br>But, for the rest of my life, if I meet John <strong>Hodgman</strong> <del>in a tech</del> <strong>at a TED</strong> party, I don’t have to say &lsquo;I’am a computer scientist’, no, no, if I want to, I can say, ‘I’am a novelist’.</p>
+<p>So here is one last thing I’d like to mention. I learned <strong>that</strong> when I <del>make</del> <strong>made</strong> small sustainable changes, things I <del>can</del> <strong>could</strong> keep doing, they <del>would</del> <strong>were</strong> more likely <del>sticked</del> <strong>to stick</strong>. There is nothing wrong with <strong>big,</strong> crazy challenges <strong>.In</strong> <del>and</del> fact, they are <strong>a ton of fun.</strong><del>,</del> but they <strong>‘re less</strong> likely to stick<del>ed</del>. When I <del>give</del> <strong>gave</strong> up sugar for 30 days, <del>then</del> <strong>day</strong> 31 <del>looks</del> <strong>looked</strong> like this (picture).</p>
+<p>So here is my question to you, what are you waiting for? I gurantee to you the next 30 days are going to pass <del>when you and I get</del> <strong>whether you like it or</strong> not. So why not think about something you have always want<strong>ed</strong> to try and <del>get to finish it</del> <strong>give it a shot</strong> for the next 30 days.<br>Thanks.</p>
+<h1 id="2nd-Lies-damned-lies-and-statistics"><a href="#2nd-Lies-damned-lies-and-statistics" class="headerlink" title="2nd - Lies, damned lies and statistics"></a>2nd - Lies, damned lies and statistics</h1><ul>
+<li><a href="https://www.ted.com/talks/sebastian_wernicke_lies_damned_lies_and_statistics_about_tedtalks" target="_blank" rel="noopener">Lies, damned lies and statistics</a></li>
+<li>2020.05.19</li>
+</ul>
+<p>If you go on the TED website, you can currently find there over a full week of TED talk videos, over 1.3 million words of transcript<strong>s</strong> and millions of <strong>user</strong> ratings. And that<strong>‘s</strong> <del>was</del> huge <del>managed</del> <strong>amount of</strong> data and <strong>it</strong> got me wondering, if <strong>you</strong> took all <del>these</del> <strong>this</strong> data and put it through <del>the</del> statistical analysis, could you reverse engineer a TED talk, could you create the <strong>ultimate</strong> TED talk, and also, could you create the <del>worse</del> <strong>worst</strong> possible TED talk that <del>I</del> <strong>they would still let</strong> <del>get</del> you <strong>get</strong> away with.</p>
+<p>To find this out, I looked at three things. I looked at the topic, that <del>it</del> <strong>you</strong> should <del>truth</del> <strong>choose, I looked at</strong> how <del>it</del> <strong>you</strong> should <del>deliberately</del> <strong>deliver it and the visuals onstage</strong> <del>the videos on stage</del>. Now, with <del>a</del> <strong>the</strong> topic <strong>: there is a</strong> <del>at the</del> whole range of the topics you can choose, but you should choose wisely, because <del>if</del> your topic strongly <del>correlated</del> <strong>correlates</strong> with how users <strong>will</strong> react~ed~ to <del>the</del> <strong>your</strong> talk. Now, to make this more <del>concreat</del> <strong>concrete</strong>, let’s look at the list of top 10 words that statistically stick<del>ed</del> out <del>and</del> <strong>in the</strong> most favorite TED talks and <strong>in</strong> the least favorite TED talks. So if you came here to talk about how French coffee <strong>will</strong> spread<del>s</del> happiness in <del>your</del> <strong>our</strong> brain<strong>s</strong>, that’s a <del>goal</del> <strong>go</strong>! Whereas, if you want<strong>ed</strong> to talk about your project involving oxygen, girls, aircraft, <del>and ~~ actually I ~~will</del> <strong>would like to</strong> hear that talk, but statistics say<del>s</del> it is not <strong>so</strong> good.</p>
+<p>If you <del>generalise</del> <strong>generalize</strong> this<strong>,</strong> the most favorite TED talks <strong>those</strong> that feature topic<strong>s</strong> can <strong>conn</strong>net with<strong>,</strong> both easily and deeply, such as<del>,</del> happiness,our own body, food and emotions, and the more technical topics such as architecture, materials and strange<strong>ly</strong> enough, men <strong>, those</strong> are not good topics to talk about.</p>
+<p>How should you <del>deliberate</del> <strong>deliver</strong> your talk<strong>?</strong> <del>and</del> TED <del>it</del> is famous for keeping a very <del>short</del> <strong>sharp</strong> eye on the clock, so there’re going to hate me for revealing this, because actually you should talk as long as they <del>would</del> <strong>let</strong> let you, because the most favorite TED talks are on average <del>are</del> <strong>over</strong> <del>15%</del> <strong>50 percent</strong> longer than the least favorite ones. And <del>it is</del> <strong>this holds</strong> true for all ranking <strong>lists</strong> on TED <strong>.com</strong> <del>talks come</del> except if you want to have a talk that is beautiful, inspiring <del>and</del> <strong>or</strong> funny then you should <strong>be brief</strong> <del>breath</del>, <del>and after</del> <strong>But other than</strong> that, talk<del>s</del> until they drag you off <del>this</del> <strong>the</strong> stage.</p>
+<ul>
+<li>TO BE CONTINUE.</li>
+</ul>
+<h1 id="3rd-What-is-depression"><a href="#3rd-What-is-depression" class="headerlink" title="3rd - What is depression?"></a>3rd - What is depression?</h1><ul>
+<li><a href="https://www.ted.com/talks/helen_m_farrell_what_is_depression/up-next#t-3329" target="_blank" rel="noopener">What is depression?</a></li>
+<li>2020.05.21</li>
+<li>暑期实习终破0 offer，学习动力更加高涨！加油啊！</li>
+</ul>
+<p>Depression is the leading cause of disability in the world. In the United States, <del>cause</del> <strong>close</strong> 10 percent of <del>dogs</del> <strong>adults</strong> struggl<del>ed</del> with depression. But <del>the of</del> <strong>because it’s a</strong> mental illness <strong>,</strong> it can be <del>lard</del> <strong>a lot harder</strong> to understand <strong>than</strong>,<del>and said</del> <strong>say</strong>, <strong>high cholesterol</strong>(胆固醇).</p>
+<p>One major <del>sauce</del> <strong>source</strong> of confusion is the difference between having depression and just feeling depressed. Almost everyone feels down from time to time<del>,</del> <strong>G</strong>etting a bad grade, losing a job, having an argument, even the rainy day can bring on feeling of sadness. Sometimes there was not trigger at all, it just <del>pass about</del> <strong>pops up out of the</strong> blue, then <del>circustance</del> <strong>circumstances</strong> change<del>d</del>, <strong>and</strong> those sad feeling<strong>s</strong> disappeared.</p>
+<p>Clinical depression is different, it is medical disorder, and it won’t go away just because you want it to. It <del>rankered to</del> <strong>lingers for at least</strong> two <del>and</del> <strong>consecutive</strong> weeks and significantly <del>enters</del> <strong>interferes with one’s</strong> <del>your feels with</del> ability to work, play or love.</p>
+<p>Depression can have a lot of different symptoms, <del>alone</del> <strong>a low</strong> mood, <del>lots</del> <strong>loss</strong> of interest<del>ing</del> <strong>in</strong> things you<strong>‘d normally</strong> <del>no more</del> enjoy, changes in appetite, feeling worthless or <strong>excessively</strong> guilty, sleeping <del>at</del> <strong>either</strong> too much or too little, poor concentration, rest<strong>less</strong>ness or slowness, loss of energy, or recurrent thoughts of suicide. If you have at least 5 of those symptoms, according to <strong>psychiatric</strong>（精神病学的） guideline<strong>s</strong>, you <del>qualified</del> <strong>qualify</strong> for a diagnose of depression. </p>
+<p>And it<strong>‘s not</strong> just <del>not behaviored your</del> <strong>behavioral</strong> symptoms, depression has physical manifestation<strong>s</strong> inside the brain. First of all, <del>they wolud</del> <strong>there are</strong> change<strong>s</strong> <del>as they would</del> <strong>that could</strong> be seen <del>in</del> <strong>with</strong> the naked eyes in X.Ray vision<strong>.</strong> <del>,</del> <strong>There include</strong> small<strong>er</strong> frontal lobe<strong>s</strong>（耳垂；脑叶） and <del>hippocampus</del> <strong>hippocampal</strong>（海马趾的） <del>volumn</del> <strong>volumes</strong>. On a more microscale, depression is <strong>associated</strong> with <strong>a</strong> few things, the abnormal <del>transmition</del> <strong>transmission</strong> or <strong>depletion（消耗;用尽） of certain neurotransmitters（神经传递素）,</strong> especially serotonin（血清素）, norepinephrine（降肾上腺素,去甲肾上腺素） and dopamine（多巴胺） <strong>, blunted（钝的，不锋利的；生硬的） circadian（昼夜节奏的） rhythms,</strong> or <del>speficity</del> <strong>specific</strong> changes in the <strong>REM</strong> and slow<strong>-wave</strong> <del>ways</del> parts <strong>of your</strong> sleep cycle and <del>homo</del> <strong>hormone abnormalities,</strong>  such as high <strong>crotisol</strong> and deregulation of <strong>thyroid hormones</strong>（甲状腺激素）.</p>
+<p>But neuralscientist<strong>s still don’t</strong> have a complete <strong>picture</strong> of <strong>what</strong> causes <del>of</del> depression, it seems to have to do with a complex interaction between genes and environment. But we don’t have a <del>diagnose</del> <strong>diagnostic</strong> tool that can accurately predict where or when it <del>would</del> <strong>will</strong> show up.</p>
+<p>And because <del>of</del> depression symptoms are <strong>intangible</strong>（难以捉摸的, 难以理解的, 无法确定的）, it is hard to know who might look<del>ed</del> fine but actually struggling. According to the <strong>National Institute of Mental Health</strong> <del>into health</del>, it takes <strong>the</strong> average <del>per</del> person suffering with <strong>a</strong> mental illness over 10 years to ask for help. But there are very effective teatments, medication<strong>s</strong> and therapy<del>,</del> <strong>complement</strong> each other<del>, the</del> <strong>to</strong> boost <del>bring</del> <strong>chemicals</strong> . In <strong>extreme</strong> cases, <del>electrical</del> <strong>electroconvulsive</strong>（电惊厥的,电休克的） therapy<strong>,</strong> which is like <strong>a</strong> control<strong>ed</strong> <del>and bring</del> <strong>seizure（夺取；捕获；没收） in the patient’s brain</strong> , it is also very helpful. Other pro<strong>missing</strong> treatments, like transcranial magnetic stimulation（经颅磁刺激）, are being investigated <strong>,</strong> too.</p>
+<p>So if you know someone struggling with depression, encourage them, <strong>gently</strong> <del>Ja</del>, to seek out <strong>some of these</strong> <del>this</del> options, you might <del>be</del> <strong>even</strong> offer<del>ed</del> to help with <strong>specific</strong> task, like looking up <del>therapy</del> <strong>therapists</strong> in the area, or making a list of questions to ask a doctor. To someone with depression, <del>this</del> <strong>these</strong> first step<strong>s</strong> <del>to</del> <strong>can seem insurmountable（不可逾越的）.</strong><del>,</del> <strong>I</strong>f they feel guilty or ashamed, point out <del>the</del> <strong>that</strong> depression is a medical condition, just like <del>asoma</del> <strong>asthma</strong> or <del>that</del> <strong>diabetes.</strong> <del>,</del> <strong>It’s not a</strong> weakness or a person<strong>ality trait,</strong> and they should<strong>n’t</strong> <del>explain</del> <strong>expect</strong> themsleves to just get over <del>them</del> <strong>it</strong> <del>, any themselves</del> <strong>anymore than they could will themselves</strong> to get over a broken arm. If you <del>have to express</del> <strong>haven’t experienced</strong> depression <del>to</del> yourself, avoid <del>to</del> comparing <strong>it to times</strong> <del>your</del> <strong>you’ve felt</strong> <del>feel</del> down, comparing what they<strong>‘re</strong> <del>expressing</del> <strong>experiencing</strong> to normal<strong>,</strong> temporary feelings of sadness can make them feel guilty <strong>f</strong>or struggling. Even just talking about depression openly can help. For example, research<del>er</del> <strong>shows</strong> <del>said they asked</del> <strong>that asking</strong> someone about <del>suicide</del> <strong>suicidal thoughts</strong> <del>or faults</del> actually reduce<strong>s</strong> their suicide risk. Open conversation<strong>s</strong> about mental illness help <strong>erode stigma</strong> <del>you</del> and make it easier for people to ask for help, and the more patient<strong>s seek treatment</strong> <del>to desecret them then</del> <strong>the</strong> more scientists <del>would</del> <strong>will</strong> learn<del>ed</del> about depression, and the better treatments <del>would</del> <strong>will</strong> get.</p>
+
       
     </div>
 
@@ -668,7 +1120,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/ShootingWang/ShootingWang.github.io/2020/04/30/Data-Cleaning-Projects/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/ShootingWang/ShootingWang.github.io/2020/05/18/%E7%AE%97%E6%B3%95-%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -682,7 +1134,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/04/30/Data-Cleaning-Projects/" class="post-title-link" itemprop="url">Data Cleaning Projects</a>
+            <a href="/2020/05/18/%E7%AE%97%E6%B3%95-%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/" class="post-title-link" itemprop="url">Machine Learning | 神经网络</a>
         </h2>
 
         <div class="post-meta">
@@ -693,23 +1145,17 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2020-04-30 15:08:01" itemprop="dateCreated datePublished" datetime="2020-04-30T15:08:01+08:00">2020-04-30</time>
+              <time title="创建时间：2020-05-18 09:14:58 / 修改时间：09:55:11" itemprop="dateCreated datePublished" datetime="2020-05-18T09:14:58+08:00">2020-05-18</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-05-17 09:48:37" itemprop="dateModified" datetime="2020-05-17T09:48:37+08:00">2020-05-17</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Home/" itemprop="url" rel="index"><span itemprop="name">Home</span></a>
+                  <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
                 </span>
             </span>
 
@@ -722,8 +1168,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2020/04/30/Data-Cleaning-Projects/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/04/30/Data-Cleaning-Projects/" itemprop="commentCount"></span>
+    <a title="valine" href="/2020/05/18/%E7%AE%97%E6%B3%95-%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/05/18/%E7%AE%97%E6%B3%95-%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -738,15 +1184,25 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <center>Data Cleansing Projects 汇总</center>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/04/30/Data-Cleaning-Projects/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
+          <p>NN<br>神经网络<br>Neural Network</p>
+<h1 id="神经网络"><a href="#神经网络" class="headerlink" title="神经网络"></a>神经网络</h1><p><meta name="referrer" content="no-referrer"><br><img src="/2020/05/18/%E7%AE%97%E6%B3%95-%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/neural-network.png" class title="简单神经网络"></p>
+<p>上图的每个圆圈都是一个神经元，每条线表示神经元之间的连接。</p>
+<h2 id="激活函数"><a href="#激活函数" class="headerlink" title="激活函数"></a>激活函数</h2><p>神经网络的激活函数</p>
+<h3 id="sigmoid"><a href="#sigmoid" class="headerlink" title="sigmoid"></a>sigmoid</h3><ul>
+<li>取值范围：$(0,1)$<script type="math/tex; mode=display">sigmoid(x)=\frac{1}{1+e^{-x}}</script></li>
+</ul>
+<h3 id="tanh"><a href="#tanh" class="headerlink" title="tanh"></a>tanh</h3><ul>
+<li>取值范围：$(-1,1)$<script type="math/tex; mode=display">\tanh(x)=\frac{\sinh{x}}{\cosh{x}}=\frac{e^x-e^{-x}}{e^x+e^{-x}}=\frac{1+e^{-2x}}{1-e^{-2x}}</script></li>
+</ul>
+<h3 id="relu"><a href="#relu" class="headerlink" title="relu"></a>relu</h3><ul>
+<li>线性整流函数（Rectified Linear Unit, <strong>ReLU</strong>）</li>
+<li>取值范围：$(0,+\infty)$<script type="math/tex; mode=display">f(x)=\max{(0,x)}</script>在神经网络中为<script type="math/tex; mode=display">f(x)=\max{(0, w^Tx+b)}</script></li>
+</ul>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
+<li><a href></a></li>
+<li><a href="http://www.texample.net/media/tikz/examples/PDF/neural-network.pdf" target="_blank" rel="noopener">图-简单神经网络</a></li>
+</ul>
+
       
     </div>
 
@@ -766,7 +1222,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/ShootingWang/ShootingWang.github.io/2020/04/30/Jupyter-Notebook%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/ShootingWang/ShootingWang.github.io/2020/05/18/%E7%AE%97%E6%B3%95-%E6%84%9F%E7%9F%A5%E6%9C%BA/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -780,7 +1236,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/04/30/Jupyter-Notebook%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/" class="post-title-link" itemprop="url">Jupyter Notebook使用技巧</a>
+            <a href="/2020/05/18/%E7%AE%97%E6%B3%95-%E6%84%9F%E7%9F%A5%E6%9C%BA/" class="post-title-link" itemprop="url">Machine Learning | 感知器</a>
         </h2>
 
         <div class="post-meta">
@@ -791,23 +1247,17 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2020-04-30 00:59:06" itemprop="dateCreated datePublished" datetime="2020-04-30T00:59:06+08:00">2020-04-30</time>
+              <time title="创建时间：2020-05-18 09:10:06 / 修改时间：09:14:34" itemprop="dateCreated datePublished" datetime="2020-05-18T09:10:06+08:00">2020-05-18</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-05-17 09:42:42" itemprop="dateModified" datetime="2020-05-17T09:42:42+08:00">2020-05-17</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Home/" itemprop="url" rel="index"><span itemprop="name">Home</span></a>
+                  <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
                 </span>
             </span>
 
@@ -820,8 +1270,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2020/04/30/Jupyter-Notebook%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/04/30/Jupyter-Notebook%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/" itemprop="commentCount"></span>
+    <a title="valine" href="/2020/05/18/%E7%AE%97%E6%B3%95-%E6%84%9F%E7%9F%A5%E6%9C%BA/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/05/18/%E7%AE%97%E6%B3%95-%E6%84%9F%E7%9F%A5%E6%9C%BA/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -836,15 +1286,13 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <center>Jupyter Tips!</center>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/04/30/Jupyter-Notebook%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
+          <p>Perceptron<br>感知机/感知器/人工神经元</p>
+<h1 id="感知器"><a href="#感知器" class="headerlink" title="感知器"></a>感知器</h1><p><strong>神经元</strong>——神经网络的组成单元——也称<strong>感知机</strong>/<strong>感知器</strong>。</p>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
+<li><a href="https://www.zybuluo.com/hanbingtao/note/433855" target="_blank" rel="noopener">零基础入门深度学习(1) - 感知器</a></li>
+<li><a href></a></li>
+</ul>
+
       
     </div>
 
@@ -864,7 +1312,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/ShootingWang/ShootingWang.github.io/2020/04/30/SQL%E9%A2%98%E5%BA%93/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/ShootingWang/ShootingWang.github.io/2020/05/17/%E7%AE%97%E6%B3%95-DBSCAN/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -878,7 +1326,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/04/30/SQL%E9%A2%98%E5%BA%93/" class="post-title-link" itemprop="url">SQL</a>
+            <a href="/2020/05/17/%E7%AE%97%E6%B3%95-DBSCAN/" class="post-title-link" itemprop="url">Machine Learning | DBSCAN</a>
         </h2>
 
         <div class="post-meta">
@@ -889,23 +1337,17 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2020-04-30 00:58:41" itemprop="dateCreated datePublished" datetime="2020-04-30T00:58:41+08:00">2020-04-30</time>
+              <time title="创建时间：2020-05-17 23:41:52 / 修改时间：23:46:25" itemprop="dateCreated datePublished" datetime="2020-05-17T23:41:52+08:00">2020-05-17</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-05-17 09:44:22" itemprop="dateModified" datetime="2020-05-17T09:44:22+08:00">2020-05-17</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Home/" itemprop="url" rel="index"><span itemprop="name">Home</span></a>
+                  <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
                 </span>
             </span>
 
@@ -918,8 +1360,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2020/04/30/SQL%E9%A2%98%E5%BA%93/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/04/30/SQL%E9%A2%98%E5%BA%93/" itemprop="commentCount"></span>
+    <a title="valine" href="/2020/05/17/%E7%AE%97%E6%B3%95-DBSCAN/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/05/17/%E7%AE%97%E6%B3%95-DBSCAN/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -934,15 +1376,26 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <center>SQL相关知识积累~</center>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/04/30/SQL%E9%A2%98%E5%BA%93/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
+          <p>DBSCAN<br>具有噪声的基于密度的聚类方法<br>Density-Based Spatial Clustering of Applications with Noise</p>
+<h1 id="DBSCAN"><a href="#DBSCAN" class="headerlink" title="DBSCAN"></a>DBSCAN</h1><p>DBSCAN是一种基于密度的空间聚类算法。该算法将具有足够密度的区域划分为簇，并在具有噪声的空间数据库中发现任意形状的簇，将簇定义为“密度相连的点的最大集合”。</p>
+<blockquote>
+<p>Martin Ester等人于1996年提出。<br>原文：<a href="https://www.researchgate.net/publication/44250717_A_Density_Based_Algorithm_for_Discovering_Density_Varied_Clusters_in_Large_Spatial_Databases" target="_blank" rel="noopener">A density-based algorithm for discovering clusters in large spatial databases with noise.</a><br>（截至2020年01月9日，被引用次数已达16602次）</p>
+</blockquote>
+<ul>
+<li>聚类的时候不需要事先指定簇的个数</li>
+<li>最终的簇的个数不确定</li>
+</ul>
+<h2 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h2><p>DBSCAN算法首先要确定两个参数：</p>
+<ol>
+<li>半径（Eps或epsilon）<br>在一个点周围邻近区域的半径。若两点之间的距离小于或等于该值，则这些点被认为是相邻的。如果选择的eps值太小，则很大一部分数据不会聚集，将被视为异常点；如果选择的eps太大，则群集会被合并，会造成大多数对象处于同一群集中。因此，应该根据数据集的距离来选择eps；一般，eps的取值尽量取小。</li>
+<li>MinPts<br>邻近区域内至少包含点的个数。对于具有噪声的数据集，应考虑较大的MinPts；MinPts的最小值必须为3。数据集越大，对应选择的MinPts应越大。</li>
+</ol>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
+<li><a href="https://blog.csdn.net/huacha__/article/details/81094891" target="_blank" rel="noopener">DBSCAN聚类算法——机器学习（理论+图解+python代码）</a></li>
+<li><a href="https://www.cnblogs.com/bonelee/p/8692336.html" target="_blank" rel="noopener">DBSCAN方法及应用</a></li>
+<li><a href="https://mp.weixin.qq.com/s?__biz=MzU5NzkxODMxOA==&amp;mid=2247485595&amp;idx=1&amp;sn=830a5f9ac8d3e9966ae36859fbcdab0b&amp;chksm=fe4d5f9ac93ad68cae44a066ab689b9f6178618d2b2420473de316fe95c85ebb8789c5f5abb8&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">DBSCAN密度聚类</a></li>
+</ul>
+
       
     </div>
 
@@ -962,7 +1415,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/ShootingWang/ShootingWang.github.io/2020/04/29/Leetcode%E5%88%B7%E9%A2%98/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/ShootingWang/ShootingWang.github.io/2020/05/17/%E7%AE%97%E6%B3%95-t-SNE/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -976,7 +1429,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/04/29/Leetcode%E5%88%B7%E9%A2%98/" class="post-title-link" itemprop="url">Leetcode刷题</a>
+            <a href="/2020/05/17/%E7%AE%97%E6%B3%95-t-SNE/" class="post-title-link" itemprop="url">Machine Learning | t-SNE</a>
         </h2>
 
         <div class="post-meta">
@@ -987,23 +1440,17 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2020-04-29 20:00:00" itemprop="dateCreated datePublished" datetime="2020-04-29T20:00:00+08:00">2020-04-29</time>
+              <time title="创建时间：2020-05-17 22:39:01 / 修改时间：23:40:04" itemprop="dateCreated datePublished" datetime="2020-05-17T22:39:01+08:00">2020-05-17</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-05-20 23:21:35" itemprop="dateModified" datetime="2020-05-20T23:21:35+08:00">2020-05-20</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Home/" itemprop="url" rel="index"><span itemprop="name">Home</span></a>
+                  <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
                 </span>
             </span>
 
@@ -1016,8 +1463,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2020/04/29/Leetcode%E5%88%B7%E9%A2%98/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/04/29/Leetcode%E5%88%B7%E9%A2%98/" itemprop="commentCount"></span>
+    <a title="valine" href="/2020/05/17/%E7%AE%97%E6%B3%95-t-SNE/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/05/17/%E7%AE%97%E6%B3%95-t-SNE/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -1032,15 +1479,34 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <center>Leetcode刷题记录~</center>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/04/29/Leetcode%E5%88%B7%E9%A2%98/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
+          <p>t-SNE<br>t分布随机邻域嵌入算法<br>t-Distributed Stochastic Neighbor Embedding</p>
+<h1 id="降维"><a href="#降维" class="headerlink" title="降维"></a>降维</h1><p>Dimensionality Reduction<br>把数据或特征的维数降低</p>
+<p>一般分为2种：</p>
+<ol>
+<li><strong>线性降维</strong><ul>
+<li>主成分分析（PCA，Principal Components Analysis）</li>
+<li>线性判别分析（LDA，Linear Discriminant Analysis）</li>
+<li>多维尺度变换（MDS，Classical Multidimensional Scaling）</li>
+</ul>
+</li>
+<li><strong>非线性降维</strong><ul>
+<li>等距特征映射（IsoMap，Isometric Mapping）</li>
+<li>局部线性嵌入（LLE，Locally Linear Embedding）</li>
+<li>拉普拉斯特征映射（LE，Laplacian Eigenmaps）</li>
+<li>t-SNE</li>
+</ul>
+</li>
+</ol>
+<h1 id="t-SNE"><a href="#t-SNE" class="headerlink" title="t-SNE"></a>t-SNE</h1><ul>
+<li>是一种非线性降维方法</li>
+<li>但主要被用于可视化</li>
+</ul>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
+<li><a href="http://bindog.github.io/blog/2016/06/04/from-sne-to-tsne-to-largevis/" target="_blank" rel="noopener">从SNE到t-SNE再到LargeVis</a></li>
+<li><a href="https://www.sohu.com/a/204249302_465975" target="_blank" rel="noopener">机器之心-深度 | 详解可视化利器t-SNE算法：数无形时少直觉</a></li>
+<li><a href="https://www.jianshu.com/p/8c20b975a174" target="_blank" rel="noopener">t-SNE和PCA介绍</a></li>
+</ul>
+
       
     </div>
 
@@ -1060,7 +1526,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/ShootingWang/ShootingWang.github.io/2020/04/29/Python%E9%A2%98%E5%BA%93/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/ShootingWang/ShootingWang.github.io/2020/05/16/%E7%AE%97%E6%B3%95-%E6%AC%A0%E6%8B%9F%E5%90%88/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -1074,7 +1540,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/04/29/Python%E9%A2%98%E5%BA%93/" class="post-title-link" itemprop="url">Python题库</a>
+            <a href="/2020/05/16/%E7%AE%97%E6%B3%95-%E6%AC%A0%E6%8B%9F%E5%90%88/" class="post-title-link" itemprop="url">Machine Learning | 欠拟合</a>
         </h2>
 
         <div class="post-meta">
@@ -1086,14 +1552,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2020-04-29 15:25:22" itemprop="dateCreated datePublished" datetime="2020-04-29T15:25:22+08:00">2020-04-29</time>
+              <time title="创建时间：2020-05-16 16:56:41" itemprop="dateCreated datePublished" datetime="2020-05-16T16:56:41+08:00">2020-05-16</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-05-17 09:43:23" itemprop="dateModified" datetime="2020-05-17T09:43:23+08:00">2020-05-17</time>
+                <time title="修改时间：2020-05-17 09:11:13" itemprop="dateModified" datetime="2020-05-17T09:11:13+08:00">2020-05-17</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1101,7 +1567,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Home/" itemprop="url" rel="index"><span itemprop="name">Home</span></a>
+                  <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
                 </span>
             </span>
 
@@ -1114,8 +1580,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2020/04/29/Python%E9%A2%98%E5%BA%93/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/04/29/Python%E9%A2%98%E5%BA%93/" itemprop="commentCount"></span>
+    <a title="valine" href="/2020/05/16/%E7%AE%97%E6%B3%95-%E6%AC%A0%E6%8B%9F%E5%90%88/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/05/16/%E7%AE%97%E6%B3%95-%E6%AC%A0%E6%8B%9F%E5%90%88/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -1130,15 +1596,19 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <center>Python相关题目积累~</center>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/04/29/Python%E9%A2%98%E5%BA%93/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
+          <h1 id="欠拟合"><a href="#欠拟合" class="headerlink" title="欠拟合"></a>欠拟合</h1><h2 id="如何改善欠拟合"><a href="#如何改善欠拟合" class="headerlink" title="如何改善欠拟合"></a>如何改善欠拟合</h2><ul>
+<li>尝试减小正则项参数$\lambda$</li>
+<li>尝试增加交叉特征</li>
+<li>增加模型的复杂度<ul>
+<li>线性模型：添加高次项</li>
+<li>神经网络模型：增加网络层数、增加神经元个数</li>
+</ul>
+</li>
+</ul>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
+<li><a href></a></li>
+</ul>
+
       
     </div>
 
@@ -1156,7 +1626,7 @@
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -1375,6 +1845,59 @@ if (document.querySelectorAll('pre.mermaid').length) {
   
 
   
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
 
   
 
