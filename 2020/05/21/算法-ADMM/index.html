@@ -22,16 +22,18 @@
 
 <link rel="stylesheet" href="/js/prism/prism.css">
 
-  <meta name="description" content="无猫病重症患者">
+  <meta name="description" content="ADMMAlternating Direction Method of Multipliers ADMM用于解决如下问题\begin{equation}\begin{aligned}\min &amp; \quad f(x)+g(z)\\\mathrm{s.t.} &amp; \quad Ax+Bz&#x3D;c\end{aligned}\end{equation} 该优化问题的扩展拉格朗日函数为 L_\l">
 <meta property="og:type" content="article">
-<meta property="og:title" content="算法-ADMM">
+<meta property="og:title" content="Machine Learning | ADMM">
 <meta property="og:url" content="https://github.com/ShootingWang/ShootingWang.github.io/2020/05/21/%E7%AE%97%E6%B3%95-ADMM/index.html">
 <meta property="og:site_name" content="ShootingWang">
-<meta property="og:description" content="无猫病重症患者">
+<meta property="og:description" content="ADMMAlternating Direction Method of Multipliers ADMM用于解决如下问题\begin{equation}\begin{aligned}\min &amp; \quad f(x)+g(z)\\\mathrm{s.t.} &amp; \quad Ax+Bz&#x3D;c\end{aligned}\end{equation} 该优化问题的扩展拉格朗日函数为 L_\l">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-05-21T05:07:17.000Z">
-<meta property="article:modified_time" content="2020-05-21T05:07:17.410Z">
+<meta property="article:modified_time" content="2020-05-21T06:44:50.504Z">
 <meta property="article:author" content="ShootingWang">
+<meta property="article:tag" content="算法">
+<meta property="article:tag" content="机器学习">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="https://github.com/ShootingWang/ShootingWang.github.io/2020/05/21/%E7%AE%97%E6%B3%95-ADMM/">
@@ -47,7 +49,7 @@
   };
 </script>
 
-  <title>算法-ADMM | ShootingWang</title>
+  <title>Machine Learning | ADMM | ShootingWang</title>
   
 
 
@@ -189,7 +191,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          算法-ADMM
+          Machine Learning | ADMM
         </h1>
 
         <div class="post-meta">
@@ -200,8 +202,18 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2020-05-21 13:07:17" itemprop="dateCreated datePublished" datetime="2020-05-21T13:07:17+08:00">2020-05-21</time>
+              <time title="创建时间：2020-05-21 13:07:17 / 修改时间：14:44:50" itemprop="dateCreated datePublished" datetime="2020-05-21T13:07:17+08:00">2020-05-21</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
+                </span>
             </span>
 
           
@@ -236,7 +248,13 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        
+        <p>ADMM<br>Alternating Direction Method of Multipliers</p>
+<h1 id="ADMM"><a href="#ADMM" class="headerlink" title="ADMM"></a>ADMM</h1><p>用于解决如下问题<br>\begin{equation}<br>\begin{aligned}<br>\min &amp; \quad f(x)+g(z)\\<br>\mathrm{s.t.} &amp; \quad Ax+Bz=c<br>\end{aligned}<br>\end{equation}</p>
+<p>该优化问题的扩展拉格朗日函数为</p>
+<script type="math/tex; mode=display">L_\lambda(x,y,z)=f(x)+g(z)+y^T(Ax+Bz-c)+\frac{\lambda}{2}||Ax+Bz-c||^2</script><h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
+<li><a href></a></li>
+</ul>
+
     </div>
 
     
@@ -278,6 +296,10 @@
 
 
       <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"># 算法</a>
+              <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" rel="tag"># 机器学习</a>
+          </div>
 
         
 
@@ -348,6 +370,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ADMM"><span class="nav-number">1.</span> <span class="nav-text">ADMM</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料"><span class="nav-number">2.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -514,6 +537,59 @@ if (document.querySelectorAll('pre.mermaid').length) {
   
 
   
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
 
   
 
