@@ -22,21 +22,21 @@
 
 <link rel="stylesheet" href="/js/prism/prism.css">
 
-  <meta name="description" content="视图ACCESS窗体的视图有：  窗体视图 数据表视图 设计视图 数据透视表视图 数据透视图视图">
+  <meta name="description" content="表的类型 永久表 创建以后用于长期保存数据的表   临时表 只保存临时数据 能够长久存在   虚表&#x2F;视图永久表  临时表内存临时表 使用的是MEMORY存储引擎  磁盘临时表视图索引索引是存储在一张表中特定列上的数据结构  索引是在列上创建的 索引是一种数据结构  全局索引FULLTEXT  目前只有MyISAM引擎支持全局索引  哈希索引HASH  是MySQL中用到的唯一键值对（key-val">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ACCESS窗体">
-<meta property="og:url" content="https://github.com/ShootingWang/ShootingWang.github.io/2020/05/03/access-1/index.html">
+<meta property="og:title" content="MySQL">
+<meta property="og:url" content="https://github.com/ShootingWang/ShootingWang.github.io/2020/05/22/MySQL/index.html">
 <meta property="og:site_name" content="ShootingWang">
-<meta property="og:description" content="视图ACCESS窗体的视图有：  窗体视图 数据表视图 设计视图 数据透视表视图 数据透视图视图">
+<meta property="og:description" content="表的类型 永久表 创建以后用于长期保存数据的表   临时表 只保存临时数据 能够长久存在   虚表&#x2F;视图永久表  临时表内存临时表 使用的是MEMORY存储引擎  磁盘临时表视图索引索引是存储在一张表中特定列上的数据结构  索引是在列上创建的 索引是一种数据结构  全局索引FULLTEXT  目前只有MyISAM引擎支持全局索引  哈希索引HASH  是MySQL中用到的唯一键值对（key-val">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-05-03T03:20:04.000Z">
-<meta property="article:modified_time" content="2020-05-17T00:51:20.580Z">
+<meta property="article:published_time" content="2020-05-22T12:39:35.000Z">
+<meta property="article:modified_time" content="2020-05-22T12:46:03.054Z">
 <meta property="article:author" content="ShootingWang">
 <meta property="article:tag" content="SQL">
-<meta property="article:tag" content="ACCESS">
+<meta property="article:tag" content="MySQL">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://github.com/ShootingWang/ShootingWang.github.io/2020/05/03/access-1/">
+<link rel="canonical" href="https://github.com/ShootingWang/ShootingWang.github.io/2020/05/22/MySQL/">
 
 
 <script id="page-configurations">
@@ -49,7 +49,7 @@
   };
 </script>
 
-  <title>ACCESS窗体 | ShootingWang</title>
+  <title>MySQL | ShootingWang</title>
   
 
 
@@ -178,7 +178,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/ShootingWang/ShootingWang.github.io/2020/05/03/access-1/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/ShootingWang/ShootingWang.github.io/2020/05/22/MySQL/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -191,7 +191,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          ACCESS窗体
+          MySQL
         </h1>
 
         <div class="post-meta">
@@ -200,16 +200,10 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2020-05-03 11:20:04" itemprop="dateCreated datePublished" datetime="2020-05-03T11:20:04+08:00">2020-05-03</time>
+              <time title="创建时间：2020-05-22 20:39:35 / 修改时间：20:46:03" itemprop="dateCreated datePublished" datetime="2020-05-22T20:39:35+08:00">2020-05-22</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-05-17 08:51:20" itemprop="dateModified" datetime="2020-05-17T08:51:20+08:00">2020-05-17</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -236,8 +230,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2020/05/03/access-1/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/05/03/access-1/" itemprop="commentCount"></span>
+    <a title="valine" href="/2020/05/22/MySQL/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/05/22/MySQL/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -252,13 +246,59 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="视图"><a href="#视图" class="headerlink" title="视图"></a>视图</h1><p>ACCESS窗体的视图有：</p>
+        <h1 id="表的类型"><a href="#表的类型" class="headerlink" title="表的类型"></a>表的类型</h1><ol>
+<li><strong>永久表</strong><ul>
+<li>创建以后用于长期保存数据的表</li>
+</ul>
+</li>
+<li><strong>临时表</strong><ul>
+<li>只保存临时数据</li>
+<li>能够长久存在</li>
+</ul>
+</li>
+<li><strong>虚表/视图</strong><h2 id="永久表"><a href="#永久表" class="headerlink" title="永久表"></a>永久表</h2></li>
+</ol>
+<h2 id="临时表"><a href="#临时表" class="headerlink" title="临时表"></a>临时表</h2><h3 id="内存临时表"><a href="#内存临时表" class="headerlink" title="内存临时表"></a>内存临时表</h3><ul>
+<li>使用的是MEMORY存储引擎</li>
+</ul>
+<h3 id="磁盘临时表"><a href="#磁盘临时表" class="headerlink" title="磁盘临时表"></a>磁盘临时表</h3><h2 id="视图"><a href="#视图" class="headerlink" title="视图"></a>视图</h2><h1 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h1><p>索引是存储在一张表中特定列上的数据结构</p>
 <ul>
-<li>窗体视图</li>
-<li>数据表视图</li>
-<li>设计视图</li>
-<li>数据透视表视图</li>
-<li>数据透视图视图</li>
+<li>索引是在列上创建的</li>
+<li>索引是一种数据结构</li>
+</ul>
+<h2 id="全局索引"><a href="#全局索引" class="headerlink" title="全局索引"></a>全局索引</h2><p>FULLTEXT</p>
+<ul>
+<li>目前只有MyISAM引擎支持全局索引</li>
+</ul>
+<h2 id="哈希索引"><a href="#哈希索引" class="headerlink" title="哈希索引"></a>哈希索引</h2><p>HASH</p>
+<ul>
+<li>是MySQL中用到的唯一键值对（key-value）的数据结构</li>
+<li>哈希索引适合应用于查找单个键的情况</li>
+<li>在范围查找中，哈希索引的性能很低</li>
+</ul>
+<h2 id="B-Tree索引"><a href="#B-Tree索引" class="headerlink" title="B-Tree索引"></a>B-Tree索引</h2><p>平衡树索引</p>
+<ul>
+<li>存在很多变种<ul>
+<li>B+Tree</li>
+<li>……</li>
+</ul>
+</li>
+</ul>
+<h2 id="R-Tree索引"><a href="#R-Tree索引" class="headerlink" title="R-Tree索引"></a>R-Tree索引</h2><ul>
+<li>在MySQL中较少使用</li>
+<li>仅支持geometry数据类型</li>
+<li>支持该类型的存储引擎有：<ul>
+<li>MyISAM</li>
+<li>BDb</li>
+<li>InnoDb</li>
+<li>NDb</li>
+<li>Archive</li>
+</ul>
+</li>
+<li>相对于B-Tree来说，R-Tree的优势在于范围查找</li>
+</ul>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
+<li><a href="https://mp.weixin.qq.com/s?__biz=MzA3MTg4NjY4Mw==&amp;mid=2457305755&amp;idx=2&amp;sn=764158cf905b0622e1697f51baa718f2&amp;chksm=88a590afbfd219b98bd7d83c2f4ea4d572654b5889eff254bbbb60f2189f61aee393e1801510&amp;mpshare=1&amp;scene=1&amp;srcid=&amp;sharer_sharetime=1590150427096&amp;sharer_shareid=b539221659d6ecf12200314308b58dd3&amp;key=21ed68970b00e8fc75b1e914e6c754e962a5fcec08d9c1e0fb5bfcb82d495aac1ab014508f15a5ebb1eaf6e1c2a2036cecc7516e989e5f1bd3b3615846e67437d7d0ad461bc0ca4d28139dc860680c5b&amp;ascene=1&amp;uin=MjAwNDUzMjgxNw%3D%3D&amp;devicetype=Windows+10+x64&amp;version=62090070&amp;lang=zh_CN&amp;exportkey=AbupEngztSgB4dsmRHvGbpk%3D&amp;pass_ticket=iLa2XiZaCBS2XSrbXAnYFAIdgj9HEiggWqWDoDR8tX5Ckgf6sdWkU3%2BCxbmiJIYM" target="_blank" rel="noopener">9 道 MySQL 面试题</a></li>
 </ul>
 
     </div>
@@ -304,7 +344,7 @@
       <footer class="post-footer">
           <div class="post-tags">
               <a href="/tags/SQL/" rel="tag"># SQL</a>
-              <a href="/tags/ACCESS/" rel="tag"># ACCESS</a>
+              <a href="/tags/MySQL/" rel="tag"># MySQL</a>
           </div>
 
         
@@ -313,13 +353,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/05/03/sql-3-%E6%95%B0%E6%8D%AE%E5%AE%8C%E6%95%B4%E6%80%A7/" rel="prev" title="SQL | 数据完整性">
-      <i class="fa fa-chevron-left"></i> SQL | 数据完整性
+    <a href="/2020/05/22/NoSQL/" rel="prev" title="NoSQL">
+      <i class="fa fa-chevron-left"></i> NoSQL
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2020/05/03/python-7-%E5%88%87%E7%89%87%E6%93%8D%E4%BD%9C/" rel="next" title="Python | 切片操作">
-      Python | 切片操作 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -379,7 +416,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#视图"><span class="nav-number">1.</span> <span class="nav-text">视图</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#表的类型"><span class="nav-number">1.</span> <span class="nav-text">表的类型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#永久表"><span class="nav-number">1.1.</span> <span class="nav-text">永久表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#临时表"><span class="nav-number">1.2.</span> <span class="nav-text">临时表</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#内存临时表"><span class="nav-number">1.2.1.</span> <span class="nav-text">内存临时表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#磁盘临时表"><span class="nav-number">1.2.2.</span> <span class="nav-text">磁盘临时表</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#视图"><span class="nav-number">1.3.</span> <span class="nav-text">视图</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#索引"><span class="nav-number">2.</span> <span class="nav-text">索引</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#全局索引"><span class="nav-number">2.1.</span> <span class="nav-text">全局索引</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#哈希索引"><span class="nav-number">2.2.</span> <span class="nav-text">哈希索引</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#B-Tree索引"><span class="nav-number">2.3.</span> <span class="nav-text">B-Tree索引</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#R-Tree索引"><span class="nav-number">2.4.</span> <span class="nav-text">R-Tree索引</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料"><span class="nav-number">3.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -393,14 +430,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">108</span>
+          <span class="site-state-item-count">109</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-count">10</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -448,13 +485,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">143k</span>
+    <span title="站点总字数">144k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">2:10</span>
+    <span title="站点阅读时长">2:11</span>
 </div>
 
 
