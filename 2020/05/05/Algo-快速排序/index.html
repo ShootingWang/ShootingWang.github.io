@@ -24,19 +24,19 @@
 
   <meta name="description" content="D&amp;CDivide and Conquer，分而治之  找出基线条件基线条件尽可能简单 不断将问题分解，直到符合基线条件  快速排序 一种著名的递归式问题解决方法 分而治之（D&amp;C, divide and conquer）   C语言标准库中的函数qsort实现的是快速排序   基线条件：数组为空或只包含一个元素  原理 从数组中选择一个元素——基准值（pivot） 找出比基准值小">
 <meta property="og:type" content="article">
-<meta property="og:title" content="快速排序">
-<meta property="og:url" content="https://github.com/ShootingWang/ShootingWang.github.io/2020/05/05/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/index.html">
+<meta property="og:title" content="Algorithm | 快速排序">
+<meta property="og:url" content="https://github.com/ShootingWang/ShootingWang.github.io/2020/05/05/Algo-%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/index.html">
 <meta property="og:site_name" content="ShootingWang">
 <meta property="og:description" content="D&amp;CDivide and Conquer，分而治之  找出基线条件基线条件尽可能简单 不断将问题分解，直到符合基线条件  快速排序 一种著名的递归式问题解决方法 分而治之（D&amp;C, divide and conquer）   C语言标准库中的函数qsort实现的是快速排序   基线条件：数组为空或只包含一个元素  原理 从数组中选择一个元素——基准值（pivot） 找出比基准值小">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-05-05T02:08:01.000Z">
-<meta property="article:modified_time" content="2020-05-05T02:52:44.953Z">
+<meta property="article:modified_time" content="2020-05-22T14:25:59.118Z">
 <meta property="article:author" content="ShootingWang">
 <meta property="article:tag" content="算法">
 <meta property="article:tag" content="基础算法">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://github.com/ShootingWang/ShootingWang.github.io/2020/05/05/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/">
+<link rel="canonical" href="https://github.com/ShootingWang/ShootingWang.github.io/2020/05/05/Algo-%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/">
 
 
 <script id="page-configurations">
@@ -49,7 +49,7 @@
   };
 </script>
 
-  <title>快速排序 | ShootingWang</title>
+  <title>Algorithm | 快速排序 | ShootingWang</title>
   
 
 
@@ -178,7 +178,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/ShootingWang/ShootingWang.github.io/2020/05/05/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/ShootingWang/ShootingWang.github.io/2020/05/05/Algo-%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -191,7 +191,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          快速排序
+          Algorithm | 快速排序
         </h1>
 
         <div class="post-meta">
@@ -200,10 +200,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-05-05 10:08:01 / 修改时间：10:52:44" itemprop="dateCreated datePublished" datetime="2020-05-05T10:08:01+08:00">2020-05-05</time>
+              <time title="创建时间：2020-05-05 10:08:01" itemprop="dateCreated datePublished" datetime="2020-05-05T10:08:01+08:00">2020-05-05</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-05-22 22:25:59" itemprop="dateModified" datetime="2020-05-22T22:25:59+08:00">2020-05-22</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -234,8 +240,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2020/05/05/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/05/05/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/" itemprop="commentCount"></span>
+    <a title="valine" href="/2020/05/05/Algo-%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/05/05/Algo-%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -352,8 +358,8 @@
       <i class="fa fa-chevron-left"></i> 递归
     </a></div>
       <div class="post-nav-item">
-    <a href="/2020/05/05/%E5%90%88%E5%B9%B6%E6%8E%92%E5%BA%8F/" rel="next" title="合并排序">
-      合并排序 <i class="fa fa-chevron-right"></i>
+    <a href="/2020/05/05/Algo-%E5%90%88%E5%B9%B6%E6%8E%92%E5%BA%8F/" rel="next" title="Algorithm | 合并排序">
+      Algorithm | 合并排序 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
