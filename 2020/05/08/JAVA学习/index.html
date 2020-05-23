@@ -30,7 +30,7 @@
 <meta property="og:description" content="JAVA小白的学习之路">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-05-08T03:15:00.000Z">
-<meta property="article:modified_time" content="2020-05-17T01:50:17.795Z">
+<meta property="article:modified_time" content="2020-05-23T08:15:30.834Z">
 <meta property="article:author" content="ShootingWang">
 <meta property="article:tag" content="JAVA">
 <meta property="article:tag" content="编程">
@@ -208,7 +208,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-05-17 09:50:17" itemprop="dateModified" datetime="2020-05-17T09:50:17+08:00">2020-05-17</time>
+                <time title="修改时间：2020-05-23 16:15:30" itemprop="dateModified" datetime="2020-05-23T16:15:30+08:00">2020-05-23</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -254,13 +254,227 @@
       
         <p>JAVA小白的学习之路</p>
 <a id="more"></a>
-<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><h2 id="安装JAVA"><a href="#安装JAVA" class="headerlink" title="安装JAVA"></a>安装JAVA</h2><ul>
-<li><a href="https://courses.edx.org/courses/course-v1:Microsoft+DEV285x+3T2019/courseware/a8a0bb660fda4b71b4c7439aa4a07dae/16d23967e4514f7fa6a3e78a3edfc0eb/?child=first" target="_blank" rel="noopener">安装JAVA和IDE</a></li>
+<h1 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h1><ul>
+<li><a href="https://www.runoob.com/java/java-environment-setup.html" target="_blank" rel="noopener">Java 开发环境配置</a></li>
+<li><a href="https://mp.weixin.qq.com/s?__biz=MzU5NzkxODMxOA==&amp;mid=2247484931&amp;idx=1&amp;sn=711689c6734cf40856639baae8fb375c&amp;chksm=fe4d5102c93ad8146c09e3a9d001db254899668f77b0f4cedd8537758d4089b4aab0e9e1a24d&amp;token=1150466167&amp;lang=zh_CN#rd" target="_blank" rel="noopener">JAVA JDK 安装配置</a></li>
 </ul>
 <h2 id="安装IDE"><a href="#安装IDE" class="headerlink" title="安装IDE"></a>安装IDE</h2><ul>
 <li><a href="https://www.jetbrains.com/idea/download/download-thanks.html?platform=windows&amp;code=IIC" target="_blank" rel="noopener">IntelliJ IDEA下载</a></li>
 </ul>
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p>[1] <a href="https://cn.bing.com/images/search?view=detailV2&amp;ccid=zThJuq%2bC&amp;id=474DFD30EC584147A5C8FC0F10952D615CF2795A&amp;thid=OIP.zThJuq-CIVq3uElNx7mDVQHaEK&amp;mediaurl=https%3a%2f%2fwww.vizteams.com%2fwp-content%2fuploads%2f2015%2f07%2fjava-logo.png&amp;exph=576&amp;expw=1024&amp;q=java&amp;simid=608020279042638133&amp;selectedIndex=2" target="_blank" rel="noopener">首页缩略图</a><br>[2] <a href></a><br>[3] <a href></a><br>[4] <a href></a></p>
+<h1 id="基础语法"><a href="#基础语法" class="headerlink" title="基础语法"></a>基础语法</h1><h2 id="一些概念"><a href="#一些概念" class="headerlink" title="一些概念"></a>一些概念</h2><ul>
+<li><strong>对象</strong>：是类的一个实例，有状态和行为。</li>
+<li><strong>类</strong>：类是一个模板，描述一类对象的行为和状态。</li>
+<li><strong>方法</strong>：就是行为，一个类可以有很多方法。<ul>
+<li>逻辑运算</li>
+<li>数据修改</li>
+<li>……</li>
+</ul>
+</li>
+<li><strong>实例变量</strong>：每个对象都有独特的实例变量，对象的状态由这些实例变量的值决定。</li>
+</ul>
+<h2 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h2><ul>
+<li>大小写敏感</li>
+<li>类名<ul>
+<li>类名的首字母应该大写</li>
+<li>若类名由多个单词组成，则每个单词的首字母应该大写</li>
+</ul>
+</li>
+<li>方法名<ul>
+<li>所有方法名都应该以小写字母开头</li>
+<li>若方法名由多个单词组成，则后面的每个单词首字母大写</li>
+</ul>
+</li>
+<li>源文件名<ul>
+<li>源文件名必须与类名相同</li>
+<li>后缀为<code>.java</code></li>
+</ul>
+</li>
+<li>主方法入口<ul>
+<li>所有的JAVA程序由 public static void main(String []args) 方法开始执行</li>
+</ul>
+</li>
+</ul>
+<h2 id="标识符"><a href="#标识符" class="headerlink" title="标识符"></a>标识符</h2><ul>
+<li>Java的所有组成部分都需要名字</li>
+<li>类名、变量名及方法名都被称为<strong>标识符</strong></li>
+</ul>
+<p>注意事项：</p>
+<ul>
+<li>标识符应以字母、美元符或下划线开始</li>
+<li>首字符后可以是字母、美元符、下划线或数字的任何字符组合</li>
+<li>关键字不能用作标识符</li>
+<li>标识符是大小写敏感的</li>
+</ul>
+<h2 id="修饰符"><a href="#修饰符" class="headerlink" title="修饰符"></a>修饰符</h2><p>用于修饰类中方法和属性。</p>
+<p>主要有两类：</p>
+<ol>
+<li>访问控制修饰符<ul>
+<li><code>default</code></li>
+<li><code>public</code></li>
+<li><code>protected</code></li>
+<li><code>private</code></li>
+</ul>
+</li>
+<li>非访问控制修饰符<ul>
+<li><code>final</code></li>
+<li><code>abstract</code></li>
+<li><code>static</code></li>
+<li><code>synchronized</code></li>
+</ul>
+</li>
+</ol>
+<h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><p>主要有三类：</p>
+<ol>
+<li>局部变量</li>
+<li>类变量/静态变量</li>
+<li>成员变量/非静态变量</li>
+</ol>
+<h2 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h2><h3 id="访问控制"><a href="#访问控制" class="headerlink" title="访问控制"></a>访问控制</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">关键字</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>private</code></td>
+<td style="text-align:left">私有的</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>protected</code></td>
+<td style="text-align:left">受保护的</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>public</code></td>
+<td style="text-align:left">公共的</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>default</code></td>
+<td style="text-align:left">默认</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="类、方法和变量修饰符"><a href="#类、方法和变量修饰符" class="headerlink" title="类、方法和变量修饰符"></a>类、方法和变量修饰符</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">关键字</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>abstract</code></td>
+<td style="text-align:left">声明抽象</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>class</code></td>
+<td style="text-align:left">类</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>extends</code></td>
+<td style="text-align:left">扩充，继承</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>final</code></td>
+<td style="text-align:left">最终值，不可改变的</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>implements</code></td>
+<td style="text-align:left">实现（接口）</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>未完待续</p>
+<h3 id="程序控制句"><a href="#程序控制句" class="headerlink" title="程序控制句"></a>程序控制句</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">关键字</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="错误处理"><a href="#错误处理" class="headerlink" title="错误处理"></a>错误处理</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">关键字</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="包相关"><a href="#包相关" class="headerlink" title="包相关"></a>包相关</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">关键字</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="基本类型"><a href="#基本类型" class="headerlink" title="基本类型"></a>基本类型</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">关键字</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
+<li><a href="https://cn.bing.com/images/search?view=detailV2&amp;ccid=zThJuq%2bC&amp;id=474DFD30EC584147A5C8FC0F10952D615CF2795A&amp;thid=OIP.zThJuq-CIVq3uElNx7mDVQHaEK&amp;mediaurl=https%3a%2f%2fwww.vizteams.com%2fwp-content%2fuploads%2f2015%2f07%2fjava-logo.png&amp;exph=576&amp;expw=1024&amp;q=java&amp;simid=608020279042638133&amp;selectedIndex=2" target="_blank" rel="noopener">首页缩略图</a></li>
+<li><a href="https://www.runoob.com/java/java-basic-syntax.html" target="_blank" rel="noopener">Java 基础语法</a></li>
+<li><a href></a></li>
+<li><a href></a></li>
+</ul>
 
     </div>
 
@@ -380,7 +594,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#安装"><span class="nav-number">1.</span> <span class="nav-text">安装</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装JAVA"><span class="nav-number">1.1.</span> <span class="nav-text">安装JAVA</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装IDE"><span class="nav-number">1.2.</span> <span class="nav-text">安装IDE</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料"><span class="nav-number">2.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#环境配置"><span class="nav-number">1.</span> <span class="nav-text">环境配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装IDE"><span class="nav-number">1.1.</span> <span class="nav-text">安装IDE</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#基础语法"><span class="nav-number">2.</span> <span class="nav-text">基础语法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一些概念"><span class="nav-number">2.1.</span> <span class="nav-text">一些概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基本语法"><span class="nav-number">2.2.</span> <span class="nav-text">基本语法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#标识符"><span class="nav-number">2.3.</span> <span class="nav-text">标识符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修饰符"><span class="nav-number">2.4.</span> <span class="nav-text">修饰符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变量"><span class="nav-number">2.5.</span> <span class="nav-text">变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关键字"><span class="nav-number">2.6.</span> <span class="nav-text">关键字</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#访问控制"><span class="nav-number">2.6.1.</span> <span class="nav-text">访问控制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#类、方法和变量修饰符"><span class="nav-number">2.6.2.</span> <span class="nav-text">类、方法和变量修饰符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#程序控制句"><span class="nav-number">2.6.3.</span> <span class="nav-text">程序控制句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#错误处理"><span class="nav-number">2.6.4.</span> <span class="nav-text">错误处理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#包相关"><span class="nav-number">2.6.5.</span> <span class="nav-text">包相关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基本类型"><span class="nav-number">2.6.6.</span> <span class="nav-text">基本类型</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料"><span class="nav-number">3.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -530,8 +744,6 @@
 
 
 
-
-  
 
 
 
