@@ -684,7 +684,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-05-24 10:51:09" itemprop="dateModified" datetime="2020-05-24T10:51:09+08:00">2020-05-24</time>
+                <time title="修改时间：2020-05-24 11:07:04" itemprop="dateModified" datetime="2020-05-24T11:07:04+08:00">2020-05-24</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -768,8 +768,82 @@
 </ul>
 </li>
 </ul>
+<h1 id="t-检验-vs-u-检验"><a href="#t-检验-vs-u-检验" class="headerlink" title="$t$检验 vs $u$检验"></a>$t$检验 vs $u$检验</h1><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: center;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: center;">
+      <th>检验法</th>
+      <th>$H_0$</th>
+      <th>$H_1$</th>
+      <th>检验统计量</th>
+      <th>拒绝域</th>
+      <th>$p$值</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="3">$u$检验<br>($\sigma$已知)</th>
+      <td>$\mu\leq\mu_0$</td>
+      <td>$\mu>\mu_0$</td>
+      <td rowspan="3">$u=\frac{\bar{x}-\mu_0}{\sigma/\sqrt{n}}$</td>
+      <td>$\{u\geq u_{1-\alpha}\}$</td>
+      <td>$1-\Phi(u_0)$</td>
+    </tr>
+    <tr>
+      <td>$\mu\geq\mu_0$</td>
+      <td>$\mu<\mu_0$< td>
+      <td>$\{u\leq u_{\alpha}\}$</td>
+      <td>$\Phi(u_0)$</td>
+    </\mu_0$<></td></tr>
+    <tr>
+      <td>$\mu=\mu_0$</td>
+      <td>$\mu\neq\mu_0$</td>
+      <td>$\{|u|\geq u_{1-\alpha/2}\}$</td>
+      <td>$2(1-\Phi(|u_0|))$</td>
+    </tr>
+    <tr>
+      <th rowspan="3">$t$检验<br>($\sigma$未知)</th>
+      <td>$\mu\leq\mu_0$</td>
+      <td>$\mu>\mu_0$</td>
+      <td rowspan="3">$t=\frac{\bar{x}-\mu_0}{s/\sqrt{n}}$</td>
+      <td>$\{t\geq t_{1-\alpha}(n-1)\}$</td>
+      <td>$P(t\geq t_0)$</td>
+    </tr>
+    <tr>
+      <td>$\mu\geq\mu_0$</td>
+      <td>$\mu<\mu_0$< td>
+      <td>$\{t\leq t_{\alpha}(n-1)\}$</td>
+      <td>$P(t\leq t_0)$</td>
+    </\mu_0$<></td></tr>
+    <tr>
+      <td>$\mu=\mu_0$</td>
+      <td>$\mu\neq\mu_0$</td>
+      <td>$\{|t|\geq t_{1-\alpha/2}\}(n-1)$</td>
+      <td>P(|t|\geq|t_0|)</td>
+    </tr>
+    <tr>
+  </tr></tbody>
+</table>
+</div>
+
+
+
 <h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
 <li><a href="https://www.skillsyouneed.com/num/statistics-identifying-patterns.html" target="_blank" rel="noopener">Statistical Analysis: Identifying Patterns</a></li>
+<li><a href="https://book.douban.com/subject/5998092/" target="_blank" rel="noopener">概率论与数理统计教程</a></li>
 </ul>
 
       
@@ -1399,7 +1473,7 @@
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">2:12</span>
+    <span title="站点阅读时长">2:13</span>
 </div>
 
 
