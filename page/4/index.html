@@ -179,6 +179,202 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://github.com/ShootingWang/ShootingWang.github.io/2020/05/13/%E7%AE%97%E6%B3%95-K-Means/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ShootingWang">
+      <meta itemprop="description" content="无猫病重症患者">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ShootingWang">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/05/13/%E7%AE%97%E6%B3%95-K-Means/" class="post-title-link" itemprop="url">Machine Learning | K-Means</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-05-13 15:15:46" itemprop="dateCreated datePublished" datetime="2020-05-13T15:15:46+08:00">2020-05-13</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-05-21 14:39:06" itemprop="dateModified" datetime="2020-05-21T14:39:06+08:00">2020-05-21</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/05/13/%E7%AE%97%E6%B3%95-K-Means/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/05/13/%E7%AE%97%E6%B3%95-K-Means/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="K-Means"><a href="#K-Means" class="headerlink" title="K-Means"></a>K-Means</h1><ul>
+<li>无监督学习</li>
+<li>$K$值无法自动获取</li>
+<li>初始聚类中心随机选择</li>
+</ul>
+<h2 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h2><ul>
+<li>原理简单</li>
+<li>容易实现</li>
+<li>对大数据集有较高的学习效率，且具有可伸缩性</li>
+</ul>
+<h2 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h2><ul>
+<li>收敛速度较慢</li>
+<li>算法的时间复杂度较高$O(nKt)$<ul>
+<li>$n$：样本点个数</li>
+<li>$K$：聚类类别数</li>
+<li>$t$：迭代次数</li>
+</ul>
+</li>
+<li>不能发现非凸形状的簇</li>
+<li>对噪声和离群点敏感</li>
+<li>结果不一定是全局最优，只能保证局部最优</li>
+</ul>
+<h2 id="K-Means-vs-K-Medoids"><a href="#K-Means-vs-K-Medoids" class="headerlink" title="K-Means vs K-Medoids"></a>K-Means vs K-Medoids</h2><ul>
+<li>二者的区别主要在于：质心的选择</li>
+</ul>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">K-Means</th>
+<th style="text-align:center">K-Medoids</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">质心的选择</td>
+<td style="text-align:center">样本点均值</td>
+<td style="text-align:center">从样本点中选取</td>
+</tr>
+<tr>
+<td style="text-align:center">计算质心的时间复杂度</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">$O(n^2)$<br>运行速度较慢</td>
+</tr>
+<tr>
+<td style="text-align:center">对噪声</td>
+<td style="text-align:center">敏感</td>
+<td style="text-align:center">相对较不敏感，比较稳健（robust）</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="K-Means-vs-KNN"><a href="#K-Means-vs-KNN" class="headerlink" title="K-Means vs KNN"></a>K-Means vs KNN</h2><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: center;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: center;">
+      <th></th>
+      <th>K-Means</th>
+      <th>KNN</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>分类</th>
+      <td>聚类算法</td>
+      <td>分类/回归算法</td>
+    </tr>
+    <tr>
+      <th>监督</th>
+      <td>无监督学习</td>
+      <td>有监督学习</td>
+    </tr>
+    <tr>
+      <th>训练集</th>
+      <td>无标签数据</td>
+      <td>有标签数据<br>无序变有序</td>
+    </tr>
+    <tr>
+      <th>相似点</th>
+      <td colspan="2">都包含——给定一个点，在数据集中找离它最近的点——的过程；即，二者都使用了NN（Nearest Neighbor）算法，一般用KD树实现NN</td>
+    </tr>
+    <tr>
+  </tr></tbody>
+</table>
+</div>
+
+
+
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
+<li><a href="https://blog.csdn.net/databatman/article/details/50445561" target="_blank" rel="noopener">机器学习：K-means和K-medoids对比</a></li>
+<li><a href="https://www.cnblogs.com/nucdy/p/6349172.html" target="_blank" rel="noopener">KNN与K-Means的区别</a></li>
+<li><a href></a></li>
+<li><a href></a></li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://github.com/ShootingWang/ShootingWang.github.io/2020/05/12/sql-SQL%E8%BF%9B%E9%98%B6%E6%95%99%E7%A8%8B/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -3052,202 +3248,6 @@ _var 53963204.0
   
   
 
-      
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/ShootingWang/ShootingWang.github.io/2020/05/11/%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="ShootingWang">
-      <meta itemprop="description" content="无猫病重症患者">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ShootingWang">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/05/11/%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF/" class="post-title-link" itemprop="url">Machine Learning | Naive Bayes</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-05-11 12:58:39" itemprop="dateCreated datePublished" datetime="2020-05-11T12:58:39+08:00">2020-05-11</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-05-19 21:26:22" itemprop="dateModified" datetime="2020-05-19T21:26:22+08:00">2020-05-19</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2020/05/11/%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/05/11/%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Naive Bayes</p>
-<h1 id="朴素贝叶斯"><a href="#朴素贝叶斯" class="headerlink" title="朴素贝叶斯"></a>朴素贝叶斯</h1><ul>
-<li>分类方法</li>
-<li><a href="/2020/05/11/%E7%94%9F%E6%88%90%E5%BC%8F%E6%A8%A1%E5%9E%8B-%E5%88%A4%E5%88%AB%E5%BC%8F%E6%A8%A1%E5%9E%8B/" title="生成式模型">生成式模型</a>
-</li>
-</ul>
-<blockquote>
-<p>贝叶斯学派的思想可概括为：</p>
-<script type="math/tex; mode=display">先验概率+数据=后验概率</script><p>——刘建平Pinard</p>
-</blockquote>
-<h2 id="贝叶斯公式"><a href="#贝叶斯公式" class="headerlink" title="贝叶斯公式"></a>贝叶斯公式</h2><ul>
-<li><strong>条件概率</strong>公式<script type="math/tex; mode=display">P(X|Y)=\frac{P(X,Y)}{P(Y)}=\frac{P(Y|X)P(X)}{P(Y)}</script><script type="math/tex; mode=display">P(Y|X)=\frac{P(X,Y)}{P(X)}=\frac{P(X|Y)P(Y)}{P(X)}</script></li>
-<li><strong>全概率</strong>公式<script type="math/tex; mode=display">P(X)=\sum_{k}P(X|Y=Y_k)P(Y_k)</script>其中$\sum_{k}P(Y_k)=1$。</li>
-<li><strong>贝叶斯公式</strong><script type="math/tex; mode=display">P(Y_k|X)=\frac{P(X|Y_k)P(Y_k)}{\sum_{k}P(X|Y=Y_k)P(Y_k)}</script></li>
-</ul>
-<h2 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h2><p>考虑</p>
-<ul>
-<li>$n$个样本，每个样本有$p$个特征<script type="math/tex; mode=display">x_i=(x_{i1},\cdots, x_{ip})^T</script>$i=1,\cdots,n$</li>
-<li>有$K$个类别$C=\{C_1,\cdots,C_K\}$</li>
-<li>每个样本的类别标签为$y_i \in \{C_1,\cdots,C_K\}$</li>
-</ul>
-<p>从样本数据可以学习到朴素贝叶斯的先验分布$(k=1,\cdots,K)$</p>
-<script type="math/tex; mode=display">P(Y=C_k)</script><p>从而学习到条件概率分布</p>
-<script type="math/tex; mode=display">P(X=x|Y=C_k)=P(X_1=x_1,\cdots,X_p=x_p|Y=C_k)</script><p>接着用贝叶斯公式可以得到$X$和$Y$的联合分布$P(X,Y)$<br>\begin{equation}<br>  \begin{aligned}<br>P(X,Y=C_k)&amp;=P(Y=C_k)P(X=x|Y=C_k)\\<br>&amp;= P(Y=C_k)P(X_1=x_1,\cdots,X_p=x_p|Y=C_k)<br>  \end{aligned}<br>\end{equation}</p>
-<p>由极大似然法可得$P(Y=C_k)$为类别$C_k$在训练集样本中出现的频数，即</p>
-<script type="math/tex; mode=display">P(Y=C_k)=\sum_{i=1}^n\frac{1}{n}I\left\{y_i=C_k\right\}</script><p>其中</p>
-<script type="math/tex; mode=display">I\left\{y_i=C_k\right\}=\left\{
-\begin{array}{ll}
-  1 & \mbox{如果}y_i=C_k\\
-  0 & \mbox{如果}y_i\neq C_k
-\end{array}
-\right.</script><p>为了降低$P(X_1=x_1,\cdots,X_p=x_p|Y=C_k)$的求解难度，朴素贝叶斯方法<u>假设$X$的$p$个维度之间相互独立</u>，则有<br>\begin{equation}<br>  \begin{aligned}<br>&amp;P(X_1=x_1,\cdots,X_p=x_p|Y=C_k)\\<br>=&amp;P(X_1=x_1|Y=C_k)P(X_2=x_2|Y=C_k)\cdots P(X_p=x_p|Y=C_k)<br>  \end{aligned}<br>\end{equation}</p>
-<h3 id="基本假设"><a href="#基本假设" class="headerlink" title="基本假设"></a>基本假设</h3><ul>
-<li>所有的$x_i$对于给定条件$y$是相互独立的<br>$i=1,\cdots,p.$<ul>
-<li>不是所有$x_i$相互独立，是$x_i|y$相互独立</li>
-</ul>
-</li>
-</ul>
-<p>相关问题</p>
-<ul>
-<li><a href="https://www.nowcoder.com/test/question/done?tid=33437220&amp;qid=304794#summary" target="_blank" rel="noopener">如果在模型训练过程中，由于失误操作导致训练数据中两个维度重复表示</a>，则模型效果精度降低</li>
-</ul>
-<h3 id="连续型特征"><a href="#连续型特征" class="headerlink" title="连续型特征"></a>连续型特征</h3><p>当特征属性是<u>连续型</u>时，通常假设其服从<u>高斯分布</u>（即正态分布）</p>
-<script type="math/tex; mode=display">g(x;\mu,\sigma)=\frac{1}{\sqrt{2\pi\sigma}}exp\{-\frac{(x-\mu)^2}{2\sigma^2}\}</script><p>则有</p>
-<script type="math/tex; mode=display">P(X_j=x_j|y_i)=g(x_j;\mu_{y_i},\sigma_{y_i})</script><h3 id="Laplace校准"><a href="#Laplace校准" class="headerlink" title="Laplace校准"></a>Laplace校准</h3><p>Laplace校准 / 拉普拉斯平滑（Laplace Smoothing）：<br>可能会存在某个特征项划分没有出现的情况，即$P(x_j|y_i)=0$，这会导致分类器的质量降低——可使用<strong>Laplace校准</strong>改善</p>
-<p>假设随机特征$z$的可能取值有$\{1,\cdots,k\}$，使用$\Phi_i=P(z=i)$参数化其分布。对于$n$个独立样本（观测集合）$\{z^{(1)},\cdots,z^{(n)}\}$，参数$\Phi_j$的极大似然估计为</p>
-<script type="math/tex; mode=display">\phi_j=\frac{\sum_{i=1}^n\mathbb{1}\{z^{(i)}=j\}}{n}</script><p>使用Laplace平滑进行修正：</p>
-<script type="math/tex; mode=display">\phi_j=\frac{\sum_{i=1}^n\mathbb{1}\{z^{(i)}=j\}+1}{n+k}</script><ul>
-<li>分子加1<ul>
-<li>保证了$\Phi_j\neq0$对所有的$\Phi_j$都成立</li>
-</ul>
-</li>
-<li>分母加$k$（随机变量$z$能取到的最大值）<ul>
-<li>保证了$\sum_{j=1}^k\Phi_j=1$仍然成立</li>
-</ul>
-</li>
-</ul>
-<h3 id="预测"><a href="#预测" class="headerlink" title="预测"></a>预测</h3><p>对于新的样本$x{0}=(x_1^0,\cdots,x_p^0)^T$，如何预测其所属的类别？</p>
-<blockquote>
-<p>根据<strong>最大后验概率</strong>来判断分类</p>
-</blockquote>
-<ul>
-<li>计算所有$K$个条件概率$P(Y=C_k|X=x^0)$</li>
-<li>$x^0$属于条件概率最大的那个类别</li>
-</ul>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><ul>
-<li>发源于古典数学理论，有稳定的分类效率</li>
-<li>对小规模数据的表现很好</li>
-<li>能够处理过分类问题</li>
-<li>对缺失数据不太敏感</li>
-<li>算法简单</li>
-<li>常用于文本分类</li>
-</ul>
-<h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><ul>
-<li>朴素贝叶斯模型在给定输出类别的情况下假设各特征之间相互独立，但实际应用中该假设往往不成立<ul>
-<li>特征数量较多或特征之间的相关性较大时，分类效果较差</li>
-<li>特征的相关性较小时，分两类效果较为良好</li>
-</ul>
-</li>
-<li>需要知道先验概率——先验概率一般基于假设<ul>
-<li>可能会因为先验模型假设不当，导致预测效果不佳</li>
-</ul>
-</li>
-<li>对输入数据的表达形式很敏感（？）</li>
-</ul>
-<h2 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h2><ul>
-<li><a href="https://www.ruanyifeng.com/blog/2013/12/naive_bayes_classifier.html" target="_blank" rel="noopener">朴素贝叶斯分类器的应用</a><ul>
-<li>病人分类</li>
-<li>性别分类</li>
-</ul>
-</li>
-<li><a href="https://www.cnblogs.com/leoo2sk/archive/2010/09/17/1829190.html" target="_blank" rel="noopener">算法杂货铺——分类算法之朴素贝叶斯分类(Naive Bayesian classification)</a><ul>
-<li>检测SNS社区中不真实账号</li>
-</ul>
-</li>
-<li><a href="https://zyzypeter.github.io/2017/07/22/machine-learning-ch5-Naive-Bayes/" target="_blank" rel="noopener">机器学习 第五章 朴素贝叶斯算法(Naive Bayes) 拉普拉斯平滑(Laplace smoothing) 文本分类的事件模型</a><ul>
-<li>文本分类问题</li>
-</ul>
-</li>
-<li><a href="https://wizardforcel.gitbooks.io/dm-algo-top10/content/naive-bayes.html" target="_blank" rel="noopener">朴素贝叶斯分类器</a><ul>
-<li>按照某人是否要打网球来划分天气</li>
-</ul>
-</li>
-</ul>
-<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><ul>
-<li>对朴素贝叶斯的理解：<br>朴素贝叶斯是在已知一些先验概率的情况下，由果索因的一种方法</li>
-</ul>
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p>[1] <a href="https://www.cnblogs.com/pinard/p/6069267.html" target="_blank" rel="noopener">朴素贝叶斯算法原理小结</a><br>[2] <a href="https://www.cnblogs.com/leoo2sk/archive/2010/09/17/1829190.html" target="_blank" rel="noopener">算法杂货铺——分类算法之朴素贝叶斯分类(Naive Bayesian classification)</a><br>[3] <a href="https://zyzypeter.github.io/2017/07/22/machine-learning-ch5-Naive-Bayes/" target="_blank" rel="noopener">机器学习 第五章 朴素贝叶斯算法(Naive Bayes) 拉普拉斯平滑(Laplace smoothing) 文本分类的事件模型</a><br>[] <a href></a><br>[] <a href></a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -3317,7 +3317,7 @@ _var 53963204.0
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">111</span>
+          <span class="site-state-item-count">112</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -3378,7 +3378,7 @@ _var 53963204.0
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">2:17</span>
+    <span title="站点阅读时长">2:18</span>
 </div>
 
 
