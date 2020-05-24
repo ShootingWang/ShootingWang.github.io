@@ -684,7 +684,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-05-24 13:37:31" itemprop="dateModified" datetime="2020-05-24T13:37:31+08:00">2020-05-24</time>
+                <time title="修改时间：2020-05-24 13:43:20" itemprop="dateModified" datetime="2020-05-24T13:43:20+08:00">2020-05-24</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -768,7 +768,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="配对样本-t-检验"><a href="#配对样本-t-检验" class="headerlink" title="配对样本$t$检验"></a>配对样本$t$检验</h2><p>设$x_1,\cdots,x_m$是来自正态总体$N(\mu_1,\sigma_1^2)$的样本，$y_1,y_2,\cdots,y_n$是来自另一个正态总体$N(\mu_2,\sigma_2^2)$的样本，两个样本相互独立，其中</p>
+<h2 id="独立样本-t-检验"><a href="#独立样本-t-检验" class="headerlink" title="独立样本$t$检验"></a>独立样本$t$检验</h2><p>设$x_1,\cdots,x_m$是来自正态总体$N(\mu_1,\sigma_1^2)$的样本，$y_1,y_2,\cdots,y_n$是来自另一个正态总体$N(\mu_2,\sigma_2^2)$的样本，两个样本相互独立，其中</p>
 <script type="math/tex; mode=display">\sigma_1=\sigma_2=\sigma但未知</script><p>考虑如下三类检验问题：</p>
 <ol>
 <li><script type="math/tex; mode=display">H_0:\mu_1-\mu_2 \leq 0 \quad vs \quad H_1:\mu_1-\mu_2 > 0</script></li>
@@ -801,7 +801,7 @@
 </ul>
 </li>
 </ul>
-<h1 id="t-检验-vs-u-检验"><a href="#t-检验-vs-u-检验" class="headerlink" title="$t$检验 vs $u$检验"></a>$t$检验 vs $u$检验</h1><h2 id="单样本"><a href="#单样本" class="headerlink" title="单样本"></a>单样本</h2><div>
+<h2 id="配对样本"><a href="#配对样本" class="headerlink" title="配对样本"></a>配对样本</h2><h1 id="t-检验-vs-u-检验"><a href="#t-检验-vs-u-检验" class="headerlink" title="$t$检验 vs $u$检验"></a>$t$检验 vs $u$检验</h1><h2 id="单样本"><a href="#单样本" class="headerlink" title="单样本"></a>单样本</h2><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -879,7 +879,7 @@
 <li>$t_0=\frac{\sqrt{n}(\bar{x}-\mu_0)}{s}$</li>
 </ul>
 </blockquote>
-<h2 id="配对样本"><a href="#配对样本" class="headerlink" title="配对样本"></a>配对样本</h2><div>
+<h2 id="独立样本"><a href="#独立样本" class="headerlink" title="独立样本"></a>独立样本</h2><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -992,9 +992,11 @@
 <blockquote>
 <ul>
 <li>$u_1=\frac{\bar{x}-\bar{y}}{\sqrt{\frac{\sigma_1^2}{m}+\frac{\sigma_2^2}{n}}}$</li>
-<li>$t_1=\frac{\bar{x}-\bar{y}}{s_w\sqrt{\frac{1}{m}+\frac{1}{n}}}$;$T_1$是服从自由度为$m+n-2$的$t$分布的随机变量</li>
+<li>$t_1=\frac{\bar{x}-\bar{y}}{s_w\sqrt{\frac{1}{m}+\frac{1}{n}}}$</li>
+<li>$T_1$是服从自由度为$m+n-2$的$t$分布的随机变量</li>
 <li>$u_2=\frac{\bar{x}-\bar{y}}{\sqrt{\frac{s_x^2}{m}+\frac{s_y^2}{n}}}$</li>
-<li>$t_2=\frac{\bar{x}-\bar{y}}{\sqrt{\frac{s_x^2}{m}+\frac{s_y^2}{n}}}$;$T_2$是服从自由度为$l$的$t$分布的随机变量，其中$l$为<script type="math/tex; mode=display">l=\frac{s_x^2/m+s_y^2/n}{\frac{s_x^2}{m^2(m-1)}+\frac{s_y^2}{n^2(n-1)}}</script>$l$一般不为整数，可以取与$l$最接近的整数代替之。</li>
+<li>$t_2=\frac{\bar{x}-\bar{y}}{\sqrt{\frac{s_x^2}{m}+\frac{s_y^2}{n}}}$</li>
+<li>$T_2$是服从自由度为$l$的$t$分布的随机变量，其中$l$为<script type="math/tex; mode=display">l=\frac{s_x^2/m+s_y^2/n}{\frac{s_x^2}{m^2(m-1)}+\frac{s_y^2}{n^2(n-1)}}</script>$l$一般不为整数，可以取与$l$最接近的整数代替之。</li>
 </ul>
 </blockquote>
 <h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
