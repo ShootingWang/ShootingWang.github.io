@@ -38,7 +38,7 @@
 <meta property="og:image" content="https://github.com/2020/05/08/python-pyecharts%E6%A8%A1%E5%9D%97/pic3.png">
 <meta property="og:image" content="https://github.com/2020/05/08/python-pyecharts%E6%A8%A1%E5%9D%97/pic4.png">
 <meta property="article:published_time" content="2020-05-08T01:40:20.000Z">
-<meta property="article:modified_time" content="2020-05-25T08:37:51.520Z">
+<meta property="article:modified_time" content="2020-05-25T08:42:09.649Z">
 <meta property="article:author" content="ShootingWang">
 <meta property="article:tag" content="Python">
 <meta name="twitter:card" content="summary">
@@ -187,7 +187,1813 @@
           <div class="content post posts-expand">
             
 
-  [object Promise]
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://github.com/ShootingWang/ShootingWang.github.io/2020/05/08/python-pyecharts%E6%A8%A1%E5%9D%97/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ShootingWang">
+      <meta itemprop="description" content="无猫病重症患者">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ShootingWang">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Python | pyecharts
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-05-08 09:40:20" itemprop="dateCreated datePublished" datetime="2020-05-08T09:40:20+08:00">2020-05-08</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-05-25 16:42:09" itemprop="dateModified" datetime="2020-05-25T16:42:09+08:00">2020-05-25</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/05/08/python-pyecharts%E6%A8%A1%E5%9D%97/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/05/08/python-pyecharts%E6%A8%A1%E5%9D%97/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="pyecharts"><a href="#pyecharts" class="headerlink" title="pyecharts"></a>pyecharts</h1><ul>
+<li><a href="https://pyecharts.org/" target="_blank" rel="noopener">pyecharts官网</a></li>
+</ul>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>在Anaconda Prompt中输入：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip install pyecharts</span><br></pre></td></tr></table></figure></p>
+<p>安装过程可能会出现多种问题：</p>
+<ol>
+<li>缺少相关的库</li>
+<li>安装MarkupSafe出错</li>
+<li>提示找不到相应版本</li>
+</ol>
+<p><a href="https://blog.csdn.net/qq_37954088/article/details/88876791" target="_blank" rel="noopener">解决方法</a></p>
+<h2 id="渲染图片"><a href="#渲染图片" class="headerlink" title="渲染图片"></a>渲染图片</h2><p>仅运行demo，并不能直接获得图片，要想获得图片输出（即使用pyecharts将输出渲染成图片），需要进行一点操作，根据官网的说明，共有3种方式：</p>
+<ul>
+<li><a href="https://pyecharts.org/#/zh-cn/render_images" target="_blank" rel="noopener">渲染图片</a></li>
+</ul>
+<ol>
+<li>selenium</li>
+<li>phantomjs</li>
+<li>pyppeteer</li>
+</ol>
+<h3 id="selenium"><a href="#selenium" class="headerlink" title="selenium"></a>selenium</h3><p>安装snapshot-selenium（在Anaconda Prompt中运行）：<br><figure class="highlight md"><table><tr><td class="code"><pre><span class="line">pip install snapshot-selenium</span><br></pre></td></tr></table></figure></p>
+<p>使用selenium<sup><a href="#fn_2" id="reffn_2">2</a></sup>，需要配置browser driver（浏览器驱动程序），详情可参见:<br><a href="https://selenium-python.readthedocs.io/installation.html#drivers" target="_blank" rel="noopener">https://selenium-python.readthedocs.io/installation.html#drivers</a></p>
+<p>选择浏览器对应的driver，下面以Edge浏览器<sup><a href="#fn_1" id="reffn_1">1</a></sup>为例：<br><a href="https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/" target="_blank" rel="noopener">Edge的WebDriver下载地址</a></p>
+<ol>
+<li>首先查看Edge的版本信息（version）：点击Edge浏览器右上角的“…”，选择“设置”，“常规”的最下方有Edge版本信息<br><meta name="referrer" content="no-referrer"><img src="/2020/05/08/python-pyecharts%E6%A8%A1%E5%9D%97/oldedge.png" class title="旧Edge版本信息">
+<ul>
+<li>查看全新Edge的版本信息：点击右上角的“…”，选择“帮助与反馈”中的“关于Microsoft Edge”，即可查看相应的版本信息<br><meta name="referrer" content="no-referrer"><img src="/2020/05/08/python-pyecharts%E6%A8%A1%E5%9D%97/newedgev.png" class title="新Edge版本信息"></li>
+</ul>
+</li>
+<li>接着下载<a href="https://msedgewebdriverstorage.z22.web.core.windows.net/?prefix=79.0.309.68/" target="_blank" rel="noopener">版本79.0.309.68的Edge对应的WebDriver</a>，从<a href="https://msedgewebdriverstorage.z22.web.core.windows.net/" target="_blank" rel="noopener">各版本WebDriver</a>中找到相应版本</li>
+<li>下载后解压，将driver的路径添加到系统路径中：<ul>
+<li>右键单击“此电脑/我的电脑”</li>
+<li>选择“属性”</li>
+<li>选择“高级系统设置”—“环境变量”</li>
+<li>在”系统变量“中的”Path“添加driver的路径</li>
+</ul>
+</li>
+</ol>
+<blockquote id="fn_1">
+<sup>1</sup>. 2020年01月16日，基于Chromium内核的全新Microsoft Edge正式上线微软官网，可自行下载进行更新。<a href="https://www.microsoft.com/en-us/edge" target="_blank" rel="noopener">全新Microsoft Edge</a><a href="#reffn_1" title="Jump back to footnote [1] in the text."> &#8617;</a>
+</blockquote>
+<p><meta name="referrer" content="no-referrer"><br><img src="/2020/05/08/python-pyecharts%E6%A8%A1%E5%9D%97/newedge.png" class title="全新Edge"></p>
+<blockquote id="fn_2">
+<sup>2</sup>. selenium目前支持Chrome和Safari<a href="#reffn_2" title="Jump back to footnote [2] in the text."> &#8617;</a>
+</blockquote>
+<p>Chrome的Driver下载可见：<br><a href="https://sites.google.com/a/chromium.org/chromedriver/home" target="_blank" rel="noopener">https://sites.google.com/a/chromium.org/chromedriver/home</a></p>
+<p>使用selenium渲染图片，需要在运行python代码时添加以下代码（举例）：<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> pyecharts.render <span class="keyword">import</span> make_snapshot</span><br><span class="line"><span class="keyword">from</span> snapshot_selenium <span class="keyword">import</span> snapshot</span><br><span class="line"></span><br><span class="line">make_snapshot(snapshot, calendar_base().render(), <span class="string">"calendar0.png"</span>)</span><br></pre></td></tr></table></figure><br>总是报错(ノへ￣、)</p>
+<p>将Chrome Driver应用程序直接放在项目文件所在的文件夹中即可正常运行（惊了</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> pyecharts <span class="keyword">import</span> options <span class="keyword">as</span> opts</span><br><span class="line"><span class="keyword">from</span> pyecharts.charts <span class="keyword">import</span> Calendar</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> pyecharts.render <span class="keyword">import</span> make_snapshot</span><br><span class="line"><span class="keyword">from</span> snapshot_selenium <span class="keyword">import</span> snapshot</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">calendar_base</span><span class="params">()</span> -&gt; Calendar:</span></span><br><span class="line">    begin = datetime.date(<span class="number">2019</span>, <span class="number">1</span>, <span class="number">1</span>)</span><br><span class="line">    end = datetime.date(<span class="number">2019</span>, <span class="number">12</span>, <span class="number">31</span>)</span><br><span class="line">    data = [</span><br><span class="line">        [str(begin + datetime.timedelta(days=i)), </span><br><span class="line">        random.randint(<span class="number">1000</span>, <span class="number">25000</span>)] </span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range((end - begin).days + <span class="number">1</span>)</span><br><span class="line">    ]</span><br><span class="line">    c = (</span><br><span class="line">        Calendar()</span><br><span class="line">        .add(<span class="string">""</span>, data, calendar_opts=opts.CalendarOpts(range_=<span class="string">"2019"</span>))</span><br><span class="line">        .set_global_opts(</span><br><span class="line">            title_opts=opts.TitleOpts(title=<span class="string">"Calendar-2019年每日步数情况"</span>),</span><br><span class="line">            visualmap_opts=opts.VisualMapOpts(</span><br><span class="line">                max_ = <span class="number">20000</span>,</span><br><span class="line">                min_ = <span class="number">500</span>,</span><br><span class="line">                orient = <span class="string">"horizontal"</span>,</span><br><span class="line">                is_piecewise = <span class="literal">True</span>,</span><br><span class="line">                pos_top = <span class="string">"230px"</span>,</span><br><span class="line">                pos_left = <span class="string">"100px"</span>,</span><br><span class="line">            ),</span><br><span class="line">        )</span><br><span class="line">    )</span><br><span class="line">    <span class="keyword">return</span> c</span><br><span class="line"></span><br><span class="line">make_snapshot(snapshot, calendar_base().render(), <span class="string">"calendar0.png"</span>)</span><br></pre></td></tr></table></figure>
+<div id="echarts9796" style="width: 100%;height: 500px;margin: 0 auto"></div>
+<script src="https://cdn.bootcss.com/echarts/3.8.0/echarts.common.min.js"></script>
+<script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('echarts9796'));
+        // 指定图表的配置项和数据
+        var option = {
+        var chart_60ec65364f26491fbff3f5d07c19ba88 = echarts.init(
+            document.getElementById('60ec65364f26491fbff3f5d07c19ba88'), 'white', {renderer: 'canvas'});
+        var option_60ec65364f26491fbff3f5d07c19ba88 = {
+    "animation": true,
+    "animationThreshold": 2000,
+    "animationDuration": 1000,
+    "animationEasing": "cubicOut",
+    "animationDelay": 0,
+    "animationDurationUpdate": 300,
+    "animationEasingUpdate": "cubicOut",
+    "animationDelayUpdate": 0,
+    "color": [
+        "#c23531",
+        "#2f4554",
+        "#61a0a8",
+        "#d48265",
+        "#749f83",
+        "#ca8622",
+        "#bda29a",
+        "#6e7074",
+        "#546570",
+        "#c4ccd3",
+        "#f05b72",
+        "#ef5b9c",
+        "#f47920",
+        "#905a3d",
+        "#fab27b",
+        "#2a5caa",
+        "#444693",
+        "#726930",
+        "#b2d235",
+        "#6d8346",
+        "#ac6767",
+        "#1d953f",
+        "#6950a1",
+        "#918597"
+    ],
+    "series": [
+        {
+            "type": "heatmap",
+            "coordinateSystem": "calendar",
+            "data": [
+                [
+                    "2019-01-01",
+                    23406
+                ],
+                [
+                    "2019-01-02",
+                    6165
+                ],
+                [
+                    "2019-01-03",
+                    6137
+                ],
+                [
+                    "2019-01-04",
+                    12021
+                ],
+                [
+                    "2019-01-05",
+                    9408
+                ],
+                [
+                    "2019-01-06",
+                    7132
+                ],
+                [
+                    "2019-01-07",
+                    11685
+                ],
+                [
+                    "2019-01-08",
+                    23999
+                ],
+                [
+                    "2019-01-09",
+                    9508
+                ],
+                [
+                    "2019-01-10",
+                    11550
+                ],
+                [
+                    "2019-01-11",
+                    12196
+                ],
+                [
+                    "2019-01-12",
+                    8491
+                ],
+                [
+                    "2019-01-13",
+                    20187
+                ],
+                [
+                    "2019-01-14",
+                    22544
+                ],
+                [
+                    "2019-01-15",
+                    6092
+                ],
+                [
+                    "2019-01-16",
+                    2391
+                ],
+                [
+                    "2019-01-17",
+                    10106
+                ],
+                [
+                    "2019-01-18",
+                    9989
+                ],
+                [
+                    "2019-01-19",
+                    24079
+                ],
+                [
+                    "2019-01-20",
+                    24926
+                ],
+                [
+                    "2019-01-21",
+                    19049
+                ],
+                [
+                    "2019-01-22",
+                    23145
+                ],
+                [
+                    "2019-01-23",
+                    1467
+                ],
+                [
+                    "2019-01-24",
+                    4236
+                ],
+                [
+                    "2019-01-25",
+                    15144
+                ],
+                [
+                    "2019-01-26",
+                    11458
+                ],
+                [
+                    "2019-01-27",
+                    20449
+                ],
+                [
+                    "2019-01-28",
+                    10987
+                ],
+                [
+                    "2019-01-29",
+                    16216
+                ],
+                [
+                    "2019-01-30",
+                    23221
+                ],
+                [
+                    "2019-01-31",
+                    4898
+                ],
+                [
+                    "2019-02-01",
+                    16107
+                ],
+                [
+                    "2019-02-02",
+                    6927
+                ],
+                [
+                    "2019-02-03",
+                    18119
+                ],
+                [
+                    "2019-02-04",
+                    16478
+                ],
+                [
+                    "2019-02-05",
+                    20976
+                ],
+                [
+                    "2019-02-06",
+                    13234
+                ],
+                [
+                    "2019-02-07",
+                    10315
+                ],
+                [
+                    "2019-02-08",
+                    7422
+                ],
+                [
+                    "2019-02-09",
+                    19262
+                ],
+                [
+                    "2019-02-10",
+                    22245
+                ],
+                [
+                    "2019-02-11",
+                    12667
+                ],
+                [
+                    "2019-02-12",
+                    11361
+                ],
+                [
+                    "2019-02-13",
+                    17826
+                ],
+                [
+                    "2019-02-14",
+                    3914
+                ],
+                [
+                    "2019-02-15",
+                    15442
+                ],
+                [
+                    "2019-02-16",
+                    19950
+                ],
+                [
+                    "2019-02-17",
+                    16586
+                ],
+                [
+                    "2019-02-18",
+                    8918
+                ],
+                [
+                    "2019-02-19",
+                    5241
+                ],
+                [
+                    "2019-02-20",
+                    4499
+                ],
+                [
+                    "2019-02-21",
+                    19841
+                ],
+                [
+                    "2019-02-22",
+                    24370
+                ],
+                [
+                    "2019-02-23",
+                    16844
+                ],
+                [
+                    "2019-02-24",
+                    6945
+                ],
+                [
+                    "2019-02-25",
+                    3369
+                ],
+                [
+                    "2019-02-26",
+                    7078
+                ],
+                [
+                    "2019-02-27",
+                    13958
+                ],
+                [
+                    "2019-02-28",
+                    11307
+                ],
+                [
+                    "2019-03-01",
+                    18357
+                ],
+                [
+                    "2019-03-02",
+                    14784
+                ],
+                [
+                    "2019-03-03",
+                    14640
+                ],
+                [
+                    "2019-03-04",
+                    19538
+                ],
+                [
+                    "2019-03-05",
+                    22528
+                ],
+                [
+                    "2019-03-06",
+                    19810
+                ],
+                [
+                    "2019-03-07",
+                    24122
+                ],
+                [
+                    "2019-03-08",
+                    24297
+                ],
+                [
+                    "2019-03-09",
+                    2230
+                ],
+                [
+                    "2019-03-10",
+                    9903
+                ],
+                [
+                    "2019-03-11",
+                    5233
+                ],
+                [
+                    "2019-03-12",
+                    1585
+                ],
+                [
+                    "2019-03-13",
+                    18889
+                ],
+                [
+                    "2019-03-14",
+                    7955
+                ],
+                [
+                    "2019-03-15",
+                    24147
+                ],
+                [
+                    "2019-03-16",
+                    1625
+                ],
+                [
+                    "2019-03-17",
+                    9122
+                ],
+                [
+                    "2019-03-18",
+                    9980
+                ],
+                [
+                    "2019-03-19",
+                    16484
+                ],
+                [
+                    "2019-03-20",
+                    16810
+                ],
+                [
+                    "2019-03-21",
+                    2080
+                ],
+                [
+                    "2019-03-22",
+                    9997
+                ],
+                [
+                    "2019-03-23",
+                    14457
+                ],
+                [
+                    "2019-03-24",
+                    16058
+                ],
+                [
+                    "2019-03-25",
+                    20753
+                ],
+                [
+                    "2019-03-26",
+                    22183
+                ],
+                [
+                    "2019-03-27",
+                    19506
+                ],
+                [
+                    "2019-03-28",
+                    9629
+                ],
+                [
+                    "2019-03-29",
+                    19339
+                ],
+                [
+                    "2019-03-30",
+                    11677
+                ],
+                [
+                    "2019-03-31",
+                    5193
+                ],
+                [
+                    "2019-04-01",
+                    24641
+                ],
+                [
+                    "2019-04-02",
+                    4283
+                ],
+                [
+                    "2019-04-03",
+                    14950
+                ],
+                [
+                    "2019-04-04",
+                    1127
+                ],
+                [
+                    "2019-04-05",
+                    18356
+                ],
+                [
+                    "2019-04-06",
+                    1653
+                ],
+                [
+                    "2019-04-07",
+                    4464
+                ],
+                [
+                    "2019-04-08",
+                    7120
+                ],
+                [
+                    "2019-04-09",
+                    4464
+                ],
+                [
+                    "2019-04-10",
+                    18270
+                ],
+                [
+                    "2019-04-11",
+                    21947
+                ],
+                [
+                    "2019-04-12",
+                    15687
+                ],
+                [
+                    "2019-04-13",
+                    4303
+                ],
+                [
+                    "2019-04-14",
+                    19565
+                ],
+                [
+                    "2019-04-15",
+                    3385
+                ],
+                [
+                    "2019-04-16",
+                    23819
+                ],
+                [
+                    "2019-04-17",
+                    12400
+                ],
+                [
+                    "2019-04-18",
+                    18026
+                ],
+                [
+                    "2019-04-19",
+                    12882
+                ],
+                [
+                    "2019-04-20",
+                    9079
+                ],
+                [
+                    "2019-04-21",
+                    18052
+                ],
+                [
+                    "2019-04-22",
+                    9966
+                ],
+                [
+                    "2019-04-23",
+                    18786
+                ],
+                [
+                    "2019-04-24",
+                    8400
+                ],
+                [
+                    "2019-04-25",
+                    4502
+                ],
+                [
+                    "2019-04-26",
+                    6905
+                ],
+                [
+                    "2019-04-27",
+                    3592
+                ],
+                [
+                    "2019-04-28",
+                    8772
+                ],
+                [
+                    "2019-04-29",
+                    9907
+                ],
+                [
+                    "2019-04-30",
+                    3267
+                ],
+                [
+                    "2019-05-01",
+                    4695
+                ],
+                [
+                    "2019-05-02",
+                    17480
+                ],
+                [
+                    "2019-05-03",
+                    17901
+                ],
+                [
+                    "2019-05-04",
+                    16092
+                ],
+                [
+                    "2019-05-05",
+                    23269
+                ],
+                [
+                    "2019-05-06",
+                    3413
+                ],
+                [
+                    "2019-05-07",
+                    7214
+                ],
+                [
+                    "2019-05-08",
+                    2328
+                ],
+                [
+                    "2019-05-09",
+                    10552
+                ],
+                [
+                    "2019-05-10",
+                    1665
+                ],
+                [
+                    "2019-05-11",
+                    17231
+                ],
+                [
+                    "2019-05-12",
+                    2617
+                ],
+                [
+                    "2019-05-13",
+                    22277
+                ],
+                [
+                    "2019-05-14",
+                    9797
+                ],
+                [
+                    "2019-05-15",
+                    17060
+                ],
+                [
+                    "2019-05-16",
+                    12017
+                ],
+                [
+                    "2019-05-17",
+                    4524
+                ],
+                [
+                    "2019-05-18",
+                    9331
+                ],
+                [
+                    "2019-05-19",
+                    10197
+                ],
+                [
+                    "2019-05-20",
+                    24047
+                ],
+                [
+                    "2019-05-21",
+                    17154
+                ],
+                [
+                    "2019-05-22",
+                    19446
+                ],
+                [
+                    "2019-05-23",
+                    14369
+                ],
+                [
+                    "2019-05-24",
+                    7241
+                ],
+                [
+                    "2019-05-25",
+                    11879
+                ],
+                [
+                    "2019-05-26",
+                    5905
+                ],
+                [
+                    "2019-05-27",
+                    18993
+                ],
+                [
+                    "2019-05-28",
+                    7297
+                ],
+                [
+                    "2019-05-29",
+                    6234
+                ],
+                [
+                    "2019-05-30",
+                    13467
+                ],
+                [
+                    "2019-05-31",
+                    8220
+                ],
+                [
+                    "2019-06-01",
+                    7480
+                ],
+                [
+                    "2019-06-02",
+                    6409
+                ],
+                [
+                    "2019-06-03",
+                    17377
+                ],
+                [
+                    "2019-06-04",
+                    6880
+                ],
+                [
+                    "2019-06-05",
+                    6876
+                ],
+                [
+                    "2019-06-06",
+                    12004
+                ],
+                [
+                    "2019-06-07",
+                    2233
+                ],
+                [
+                    "2019-06-08",
+                    14276
+                ],
+                [
+                    "2019-06-09",
+                    10598
+                ],
+                [
+                    "2019-06-10",
+                    11404
+                ],
+                [
+                    "2019-06-11",
+                    10441
+                ],
+                [
+                    "2019-06-12",
+                    6409
+                ],
+                [
+                    "2019-06-13",
+                    16930
+                ],
+                [
+                    "2019-06-14",
+                    14145
+                ],
+                [
+                    "2019-06-15",
+                    6426
+                ],
+                [
+                    "2019-06-16",
+                    11269
+                ],
+                [
+                    "2019-06-17",
+                    23267
+                ],
+                [
+                    "2019-06-18",
+                    2221
+                ],
+                [
+                    "2019-06-19",
+                    4859
+                ],
+                [
+                    "2019-06-20",
+                    17936
+                ],
+                [
+                    "2019-06-21",
+                    14787
+                ],
+                [
+                    "2019-06-22",
+                    16648
+                ],
+                [
+                    "2019-06-23",
+                    23525
+                ],
+                [
+                    "2019-06-24",
+                    24007
+                ],
+                [
+                    "2019-06-25",
+                    1468
+                ],
+                [
+                    "2019-06-26",
+                    20968
+                ],
+                [
+                    "2019-06-27",
+                    2886
+                ],
+                [
+                    "2019-06-28",
+                    24247
+                ],
+                [
+                    "2019-06-29",
+                    9510
+                ],
+                [
+                    "2019-06-30",
+                    11039
+                ],
+                [
+                    "2019-07-01",
+                    17211
+                ],
+                [
+                    "2019-07-02",
+                    14036
+                ],
+                [
+                    "2019-07-03",
+                    14366
+                ],
+                [
+                    "2019-07-04",
+                    15948
+                ],
+                [
+                    "2019-07-05",
+                    3142
+                ],
+                [
+                    "2019-07-06",
+                    10060
+                ],
+                [
+                    "2019-07-07",
+                    10228
+                ],
+                [
+                    "2019-07-08",
+                    14120
+                ],
+                [
+                    "2019-07-09",
+                    19022
+                ],
+                [
+                    "2019-07-10",
+                    3699
+                ],
+                [
+                    "2019-07-11",
+                    24457
+                ],
+                [
+                    "2019-07-12",
+                    12696
+                ],
+                [
+                    "2019-07-13",
+                    1416
+                ],
+                [
+                    "2019-07-14",
+                    2970
+                ],
+                [
+                    "2019-07-15",
+                    20550
+                ],
+                [
+                    "2019-07-16",
+                    24580
+                ],
+                [
+                    "2019-07-17",
+                    8727
+                ],
+                [
+                    "2019-07-18",
+                    23294
+                ],
+                [
+                    "2019-07-19",
+                    24044
+                ],
+                [
+                    "2019-07-20",
+                    14632
+                ],
+                [
+                    "2019-07-21",
+                    2175
+                ],
+                [
+                    "2019-07-22",
+                    10966
+                ],
+                [
+                    "2019-07-23",
+                    21701
+                ],
+                [
+                    "2019-07-24",
+                    12343
+                ],
+                [
+                    "2019-07-25",
+                    22883
+                ],
+                [
+                    "2019-07-26",
+                    13522
+                ],
+                [
+                    "2019-07-27",
+                    4730
+                ],
+                [
+                    "2019-07-28",
+                    8682
+                ],
+                [
+                    "2019-07-29",
+                    3920
+                ],
+                [
+                    "2019-07-30",
+                    23055
+                ],
+                [
+                    "2019-07-31",
+                    6682
+                ],
+                [
+                    "2019-08-01",
+                    6339
+                ],
+                [
+                    "2019-08-02",
+                    19250
+                ],
+                [
+                    "2019-08-03",
+                    21951
+                ],
+                [
+                    "2019-08-04",
+                    7500
+                ],
+                [
+                    "2019-08-05",
+                    23072
+                ],
+                [
+                    "2019-08-06",
+                    17547
+                ],
+                [
+                    "2019-08-07",
+                    13738
+                ],
+                [
+                    "2019-08-08",
+                    13835
+                ],
+                [
+                    "2019-08-09",
+                    15856
+                ],
+                [
+                    "2019-08-10",
+                    3456
+                ],
+                [
+                    "2019-08-11",
+                    4432
+                ],
+                [
+                    "2019-08-12",
+                    15899
+                ],
+                [
+                    "2019-08-13",
+                    23792
+                ],
+                [
+                    "2019-08-14",
+                    16722
+                ],
+                [
+                    "2019-08-15",
+                    6579
+                ],
+                [
+                    "2019-08-16",
+                    6218
+                ],
+                [
+                    "2019-08-17",
+                    13659
+                ],
+                [
+                    "2019-08-18",
+                    7836
+                ],
+                [
+                    "2019-08-19",
+                    5202
+                ],
+                [
+                    "2019-08-20",
+                    24788
+                ],
+                [
+                    "2019-08-21",
+                    11424
+                ],
+                [
+                    "2019-08-22",
+                    14056
+                ],
+                [
+                    "2019-08-23",
+                    11633
+                ],
+                [
+                    "2019-08-24",
+                    4283
+                ],
+                [
+                    "2019-08-25",
+                    10809
+                ],
+                [
+                    "2019-08-26",
+                    17178
+                ],
+                [
+                    "2019-08-27",
+                    15198
+                ],
+                [
+                    "2019-08-28",
+                    23901
+                ],
+                [
+                    "2019-08-29",
+                    7383
+                ],
+                [
+                    "2019-08-30",
+                    3956
+                ],
+                [
+                    "2019-08-31",
+                    6486
+                ],
+                [
+                    "2019-09-01",
+                    21498
+                ],
+                [
+                    "2019-09-02",
+                    2600
+                ],
+                [
+                    "2019-09-03",
+                    24346
+                ],
+                [
+                    "2019-09-04",
+                    5571
+                ],
+                [
+                    "2019-09-05",
+                    4472
+                ],
+                [
+                    "2019-09-06",
+                    21697
+                ],
+                [
+                    "2019-09-07",
+                    8397
+                ],
+                [
+                    "2019-09-08",
+                    16605
+                ],
+                [
+                    "2019-09-09",
+                    16330
+                ],
+                [
+                    "2019-09-10",
+                    18337
+                ],
+                [
+                    "2019-09-11",
+                    14041
+                ],
+                [
+                    "2019-09-12",
+                    7102
+                ],
+                [
+                    "2019-09-13",
+                    2554
+                ],
+                [
+                    "2019-09-14",
+                    24224
+                ],
+                [
+                    "2019-09-15",
+                    8342
+                ],
+                [
+                    "2019-09-16",
+                    17383
+                ],
+                [
+                    "2019-09-17",
+                    14698
+                ],
+                [
+                    "2019-09-18",
+                    11561
+                ],
+                [
+                    "2019-09-19",
+                    8152
+                ],
+                [
+                    "2019-09-20",
+                    1782
+                ],
+                [
+                    "2019-09-21",
+                    15258
+                ],
+                [
+                    "2019-09-22",
+                    7965
+                ],
+                [
+                    "2019-09-23",
+                    4502
+                ],
+                [
+                    "2019-09-24",
+                    12695
+                ],
+                [
+                    "2019-09-25",
+                    19454
+                ],
+                [
+                    "2019-09-26",
+                    16863
+                ],
+                [
+                    "2019-09-27",
+                    22981
+                ],
+                [
+                    "2019-09-28",
+                    13694
+                ],
+                [
+                    "2019-09-29",
+                    8013
+                ],
+                [
+                    "2019-09-30",
+                    23256
+                ],
+                [
+                    "2019-10-01",
+                    11546
+                ],
+                [
+                    "2019-10-02",
+                    7482
+                ],
+                [
+                    "2019-10-03",
+                    13574
+                ],
+                [
+                    "2019-10-04",
+                    4898
+                ],
+                [
+                    "2019-10-05",
+                    17651
+                ],
+                [
+                    "2019-10-06",
+                    23646
+                ],
+                [
+                    "2019-10-07",
+                    23075
+                ],
+                [
+                    "2019-10-08",
+                    13793
+                ],
+                [
+                    "2019-10-09",
+                    13654
+                ],
+                [
+                    "2019-10-10",
+                    21152
+                ],
+                [
+                    "2019-10-11",
+                    8390
+                ],
+                [
+                    "2019-10-12",
+                    7104
+                ],
+                [
+                    "2019-10-13",
+                    21070
+                ],
+                [
+                    "2019-10-14",
+                    15755
+                ],
+                [
+                    "2019-10-15",
+                    15515
+                ],
+                [
+                    "2019-10-16",
+                    17806
+                ],
+                [
+                    "2019-10-17",
+                    22746
+                ],
+                [
+                    "2019-10-18",
+                    9488
+                ],
+                [
+                    "2019-10-19",
+                    24277
+                ],
+                [
+                    "2019-10-20",
+                    5346
+                ],
+                [
+                    "2019-10-21",
+                    23801
+                ],
+                [
+                    "2019-10-22",
+                    5871
+                ],
+                [
+                    "2019-10-23",
+                    24792
+                ],
+                [
+                    "2019-10-24",
+                    19866
+                ],
+                [
+                    "2019-10-25",
+                    8469
+                ],
+                [
+                    "2019-10-26",
+                    21214
+                ],
+                [
+                    "2019-10-27",
+                    18212
+                ],
+                [
+                    "2019-10-28",
+                    7086
+                ],
+                [
+                    "2019-10-29",
+                    21226
+                ],
+                [
+                    "2019-10-30",
+                    17804
+                ],
+                [
+                    "2019-10-31",
+                    9658
+                ],
+                [
+                    "2019-11-01",
+                    10472
+                ],
+                [
+                    "2019-11-02",
+                    11041
+                ],
+                [
+                    "2019-11-03",
+                    9007
+                ],
+                [
+                    "2019-11-04",
+                    13168
+                ],
+                [
+                    "2019-11-05",
+                    19848
+                ],
+                [
+                    "2019-11-06",
+                    8221
+                ],
+                [
+                    "2019-11-07",
+                    2278
+                ],
+                [
+                    "2019-11-08",
+                    6783
+                ],
+                [
+                    "2019-11-09",
+                    18414
+                ],
+                [
+                    "2019-11-10",
+                    5252
+                ],
+                [
+                    "2019-11-11",
+                    17221
+                ],
+                [
+                    "2019-11-12",
+                    10749
+                ],
+                [
+                    "2019-11-13",
+                    24293
+                ],
+                [
+                    "2019-11-14",
+                    1830
+                ],
+                [
+                    "2019-11-15",
+                    12433
+                ],
+                [
+                    "2019-11-16",
+                    13679
+                ],
+                [
+                    "2019-11-17",
+                    18420
+                ],
+                [
+                    "2019-11-18",
+                    8936
+                ],
+                [
+                    "2019-11-19",
+                    20545
+                ],
+                [
+                    "2019-11-20",
+                    17679
+                ],
+                [
+                    "2019-11-21",
+                    21054
+                ],
+                [
+                    "2019-11-22",
+                    14949
+                ],
+                [
+                    "2019-11-23",
+                    12846
+                ],
+                [
+                    "2019-11-24",
+                    6436
+                ],
+                [
+                    "2019-11-25",
+                    15984
+                ],
+                [
+                    "2019-11-26",
+                    13098
+                ],
+                [
+                    "2019-11-27",
+                    13892
+                ],
+                [
+                    "2019-11-28",
+                    9280
+                ],
+                [
+                    "2019-11-29",
+                    22523
+                ],
+                [
+                    "2019-11-30",
+                    16440
+                ],
+                [
+                    "2019-12-01",
+                    2358
+                ],
+                [
+                    "2019-12-02",
+                    19918
+                ],
+                [
+                    "2019-12-03",
+                    1087
+                ],
+                [
+                    "2019-12-04",
+                    16585
+                ],
+                [
+                    "2019-12-05",
+                    1992
+                ],
+                [
+                    "2019-12-06",
+                    22605
+                ],
+                [
+                    "2019-12-07",
+                    8750
+                ],
+                [
+                    "2019-12-08",
+                    11351
+                ],
+                [
+                    "2019-12-09",
+                    22816
+                ],
+                [
+                    "2019-12-10",
+                    24334
+                ],
+                [
+                    "2019-12-11",
+                    22517
+                ],
+                [
+                    "2019-12-12",
+                    4774
+                ],
+                [
+                    "2019-12-13",
+                    6617
+                ],
+                [
+                    "2019-12-14",
+                    24337
+                ],
+                [
+                    "2019-12-15",
+                    23041
+                ],
+                [
+                    "2019-12-16",
+                    19195
+                ],
+                [
+                    "2019-12-17",
+                    9877
+                ],
+                [
+                    "2019-12-18",
+                    21878
+                ],
+                [
+                    "2019-12-19",
+                    23344
+                ],
+                [
+                    "2019-12-20",
+                    1155
+                ],
+                [
+                    "2019-12-21",
+                    12167
+                ],
+                [
+                    "2019-12-22",
+                    21647
+                ],
+                [
+                    "2019-12-23",
+                    2359
+                ],
+                [
+                    "2019-12-24",
+                    3652
+                ],
+                [
+                    "2019-12-25",
+                    21106
+                ],
+                [
+                    "2019-12-26",
+                    19158
+                ],
+                [
+                    "2019-12-27",
+                    8110
+                ],
+                [
+                    "2019-12-28",
+                    13299
+                ],
+                [
+                    "2019-12-29",
+                    21112
+                ],
+                [
+                    "2019-12-30",
+                    13479
+                ],
+                [
+                    "2019-12-31",
+                    16970
+                ]
+            ],
+            "label": {
+                "show": true,
+                "position": "top",
+                "margin": 8
+            }
+        }
+    ],
+    "legend": [
+        {
+            "data": [
+                ""
+            ],
+            "selected": {
+                "": true
+            },
+            "show": true,
+            "padding": 5,
+            "itemGap": 10,
+            "itemWidth": 25,
+            "itemHeight": 14
+        }
+    ],
+    "tooltip": {
+        "show": true,
+        "trigger": "item",
+        "triggerOn": "mousemove|click",
+        "axisPointer": {
+            "type": "line"
+        },
+        "textStyle": {
+            "fontSize": 14
+        },
+        "borderWidth": 0
+    },
+    "calendar": {
+        "range": "2019"
+    },
+    "title": [
+        {
+            "text": "Calendar-2019\u5e74\u6bcf\u65e5\u6b65\u6570\u60c5\u51b5",
+            "padding": 5,
+            "itemGap": 10
+        }
+    ],
+    "visualMap": {
+        "show": true,
+        "type": "piecewise",
+        "min": 500,
+        "max": 20000,
+        "inRange": {
+            "color": [
+                "#50a3ba",
+                "#eac763",
+                "#d94e5d"
+            ]
+        },
+        "calculable": true,
+        "inverse": false,
+        "splitNumber": 5,
+        "orient": "horizontal",
+        "left": "100px",
+        "top": "230px",
+        "showLabel": true,
+        "itemWidth": 20,
+        "itemHeight": 14,
+        "borderWidth": 0
+    }
+};
+        chart_60ec65364f26491fbff3f5d07c19ba88.setOption(option_60ec65364f26491fbff3f5d07c19ba88);
+}
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+</script>
+<h2 id="将echart插入到PPT"><a href="#将echart插入到PPT" class="headerlink" title="将echart插入到PPT"></a>将echart插入到PPT</h2><ol>
+<li>使用pyecharts画图并生成html文件</li>
+<li>查看html的源代码</li>
+<li>把相关的源代码复制到PPT插件中，点击运行即可</li>
+</ol>
+<blockquote>
+<p>需要安装PPT插件<code>Office Apps Fiddle for PowerPoint</code></p>
+</blockquote>
+<p>参考<a href="http://gallery.pyecharts.org/#/Sankey/sankey_base" target="_blank" rel="noopener">官方源码</a>生成html文件：<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> pyecharts <span class="keyword">import</span> options <span class="keyword">as</span> opts</span><br><span class="line"><span class="keyword">from</span> pyecharts.charts <span class="keyword">import</span> Sankey</span><br><span class="line"></span><br><span class="line">nodes = [</span><br><span class="line">    &#123;<span class="string">"name"</span>: <span class="string">"category1"</span>&#125;,</span><br><span class="line">    &#123;<span class="string">"name"</span>: <span class="string">"category2"</span>&#125;,</span><br><span class="line">    &#123;<span class="string">"name"</span>: <span class="string">"category3"</span>&#125;,</span><br><span class="line">    &#123;<span class="string">"name"</span>: <span class="string">"category4"</span>&#125;,</span><br><span class="line">    &#123;<span class="string">"name"</span>: <span class="string">"category5"</span>&#125;,</span><br><span class="line">    &#123;<span class="string">"name"</span>: <span class="string">"category6"</span>&#125;,</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">links = [</span><br><span class="line">    &#123;<span class="string">"source"</span>: <span class="string">"category1"</span>, <span class="string">"target"</span>: <span class="string">"category2"</span>, <span class="string">"value"</span>: <span class="number">10</span>&#125;,</span><br><span class="line">    &#123;<span class="string">"source"</span>: <span class="string">"category2"</span>, <span class="string">"target"</span>: <span class="string">"category3"</span>, <span class="string">"value"</span>: <span class="number">15</span>&#125;,</span><br><span class="line">    &#123;<span class="string">"source"</span>: <span class="string">"category3"</span>, <span class="string">"target"</span>: <span class="string">"category4"</span>, <span class="string">"value"</span>: <span class="number">20</span>&#125;,</span><br><span class="line">    &#123;<span class="string">"source"</span>: <span class="string">"category5"</span>, <span class="string">"target"</span>: <span class="string">"category6"</span>, <span class="string">"value"</span>: <span class="number">25</span>&#125;,</span><br><span class="line">]</span><br><span class="line">c = (</span><br><span class="line">    Sankey()</span><br><span class="line">    .add(</span><br><span class="line">        <span class="string">"sankey"</span>,</span><br><span class="line">        nodes,</span><br><span class="line">        links,</span><br><span class="line">        linestyle_opt=opts.LineStyleOpts(opacity=<span class="number">0.2</span>, curve=<span class="number">0.5</span>, color=<span class="string">"source"</span>),</span><br><span class="line">        label_opts=opts.LabelOpts(position=<span class="string">"right"</span>),</span><br><span class="line">    )</span><br><span class="line">    .set_global_opts(title_opts=opts.TitleOpts(title=<span class="string">"Sankey-基本示例"</span>))</span><br><span class="line">    .render(<span class="string">"sankey_base.html"</span>)</span><br><span class="line">)</span><br></pre></td></tr></table></figure><br><strong>查看html源代码</strong>：<br>二选一</p>
+<ol>
+<li>用浏览器打开<code>sankey_base.html</code>，右键选择“查看源代码”或<code>Ctrl+U</code></li>
+<li>用Visual Sudio Code打开<code>sankey_base.html</code><br>查看源代码<br><meta name="referrer" content="no-referrer"><img src="/2020/05/08/python-pyecharts%E6%A8%A1%E5%9D%97/code1.png" class title="html源代码">
+</li>
+</ol>
+<p><strong>安装PPT插件</strong>：<br>打开PowerPoint，选择“插入”——“获取加载项”——搜索“html”，添加“Office Apps Fiddle for PowerPoint”。</p>
+<p><meta name="referrer" content="no-referrer"><br><img src="/2020/05/08/python-pyecharts%E6%A8%A1%E5%9D%97/pic2.png" class title="安装PPT插件"></p>
+<p>将html的源代码粘贴到该插件的“HTML”中</p>
+<p><meta name="referrer" content="no-referrer"><br><img src="/2020/05/08/python-pyecharts%E6%A8%A1%E5%9D%97/pic.png" class title="粘贴html源代码"></p>
+<p>点击“Run Fiddle!”按钮，会报错</p>
+<p><meta name="referrer" content="no-referrer"><br><img src="/2020/05/08/python-pyecharts%E6%A8%A1%E5%9D%97/pic3.png" class title="报错"></p>
+<p>点击“×”，并点击齿轮“Setting”；再次点击“Run Fiddle!”按钮，即可成功生成交互式echarts。</p>
+<p><meta name="referrer" content="no-referrer"><br><img src="/2020/05/08/python-pyecharts%E6%A8%A1%E5%9D%97/pic4.png" class title="成功的交互式桑基图"></p>
+<p>非第一次使用该插件，可从“插入”——“我的加载项”中找到该插件。</p>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
+<li><a href="https://pyecharts.org/#/" target="_blank" rel="noopener">pyecharts官方文档</a></li>
+<li><a href="http://gallery.pyecharts.org/#/" target="_blank" rel="noopener">Pyecharts-Gallary</a></li>
+<li><a href="https://campus.alibaba.com/traineePositions.htm?spm=a1z3e1.11874847.0.0.5d8d4928Tx32T7&amp;refno=12394" target="_blank" rel="noopener">如何把pyecharts的炫酷延续到PPT里？</a></li>
+<li><a href></a></li>
+<li><a href></a></li>
+</ul>
+
+    </div>
+
+    
+    
+    
+        <div class="reward-container">
+  <div></div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/reward.png" alt="ShootingWang 微信支付">
+        <p>微信支付</p>
+      </div>
+
+  </div>
+</div>
+
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/images/wechat_qrcode.jpg">
+            <span class="icon">
+              <i class="fab fa-weixin"></i>
+            </span>
+
+            <span class="label">WeChat</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Python/" rel="tag"># Python</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/05/07/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-AARRR%E6%A8%A1%E5%9E%8B/" rel="prev" title="数据分析 | AARRR模型">
+      <i class="fa fa-chevron-left"></i> 数据分析 | AARRR模型
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/05/08/JAVA%E5%AD%A6%E4%B9%A0/" rel="next" title="JAVA">
+      JAVA <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
 
 
           </div>
@@ -389,8 +2195,6 @@
 
 
 
-
-  
 
 
 
