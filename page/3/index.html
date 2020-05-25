@@ -179,6 +179,213 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://github.com/ShootingWang/ShootingWang.github.io/2020/05/15/%E7%AE%97%E6%B3%95-LogisticRegression/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ShootingWang">
+      <meta itemprop="description" content="无猫病重症患者">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ShootingWang">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/05/15/%E7%AE%97%E6%B3%95-LogisticRegression/" class="post-title-link" itemprop="url">Machine Learning | LogisticRegression</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-05-15 17:24:12" itemprop="dateCreated datePublished" datetime="2020-05-15T17:24:12+08:00">2020-05-15</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-05-17 11:10:54" itemprop="dateModified" datetime="2020-05-17T11:10:54+08:00">2020-05-17</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/05/15/%E7%AE%97%E6%B3%95-LogisticRegression/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/05/15/%E7%AE%97%E6%B3%95-LogisticRegression/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <a id="more"></a>
+<h1 id="Logistic-Regression"><a href="#Logistic-Regression" class="headerlink" title="Logistic Regression"></a>Logistic Regression</h1><p>逻辑回归（<strong>LR</strong>，Logistic Regression），是一种<u>对数几率模型</u>（Logit Model），常用于二分类问题（binary classification problems）</p>
+<ul>
+<li>逻辑回归和线性回归（Linear Regression）都是一种广义线性模型（GLM，Generalized Linear Model）</li>
+<li>属于<strong>有监督学习</strong>（Supervised Learning）</li>
+<li>是一种分类器（Classifier）</li>
+<li>因变量是分类变量（Qualitative response）</li>
+</ul>
+<blockquote>
+<p>其他分类器有：</p>
+<ul>
+<li>判别分析（Discriminant Analysis）</li>
+<li>决策树（Decision Tree）</li>
+<li>随机森林（Random Forest）</li>
+<li>支持向量机（Support Vector Machine）</li>
+<li>神经网络（Neural Network）</li>
+<li>……</li>
+</ul>
+</blockquote>
+<h2 id="逻辑分布"><a href="#逻辑分布" class="headerlink" title="逻辑分布"></a>逻辑分布</h2><p>Logistic分布是一种连续型分布，其分布函数（Cumulative distribution function）为</p>
+<script type="math/tex; mode=display">F(x)=P(X\leq x)=\frac{1}{1+e^{-(x-\mu)/s}}=\frac{1}{2}+\frac{1}{2}\tanh\left(\frac{x-\mu}{2s}\right)</script><p><meta name="referrer" content="no-referrer"><br><img src="/2020/05/15/%E7%AE%97%E6%B3%95-LogisticRegression/LR-CDF.png" class title="不同取值参数对应的CDF"></p>
+<p>概率密度函数为</p>
+<script type="math/tex; mode=display">f(x)=F^\prime(x)=\frac{e^{-(x-\mu)/s}}{s\left(1+e^{-(x-\mu)/s}\right)^2}=\frac{1}{4s}\mathrm{sech}^2\left(\frac{x-2\mu}{2s}\right),\quad -\infty< x< +\infty</script><p>其中</p>
+<ul>
+<li>$\mu$为位置参数（location parameter）</li>
+<li>$s$为尺度参数（scale parameter）</li>
+<li>期望<script type="math/tex; mode=display">\mathrm{E(X)}=\mu</script></li>
+<li>中位数<script type="math/tex; mode=display">\mathrm{Median(X)}=\mu</script></li>
+<li>方差<script type="math/tex; mode=display">\mathrm{Var}(X)=\frac{s^2\pi^2}{3}</script></li>
+</ul>
+<p><meta name="referrer" content="no-referrer"><br><img src="/2020/05/15/%E7%AE%97%E6%B3%95-LogisticRegression/LR-pdf.png" class title="不同取值参数对应的pdf"></p>
+<h2 id="逻辑函数"><a href="#逻辑函数" class="headerlink" title="逻辑函数"></a>逻辑函数</h2><p>一个简单的Logistic函数：</p>
+<script type="math/tex; mode=display">P(t)=\frac{1}{1+e^{-t}}</script><p><meta name="referrer" content="no-referrer"><br><img src="/2020/05/15/%E7%AE%97%E6%B3%95-LogisticRegression/LR-slog.png" class title="标准Logistic函数"></p>
+<p>广义Logistic曲线可以模拟一些人口增长的S形曲线：初始阶段大致是指数增长；然后开始变得饱和，增加变慢；最后，达到成熟时增加停止。</p>
+<h2 id="逻辑回归"><a href="#逻辑回归" class="headerlink" title="逻辑回归"></a>逻辑回归</h2><p>逻辑回归通常用于二分类问题（因变量是分类变量），用来表示某件事发生的可能性。</p>
+<p>Andrew Ng的CS229中的例子：根据肿瘤的大小（Tumor Size）$X$来判断肿瘤是否是恶性的（Malignant）$Y$。</p>
+<p>考虑构建线性回归模型$h_\theta(x)$，$h_\theta(x)\geq 0.5$ 为恶性肿瘤，$h_\theta(x)&lt;0.5$为良性肿瘤。<br>\begin{equation}<br>  Y=\left\{<br>\begin{array}{ll}<br>1, &amp; \mbox{如果} h_\theta(x)\geq 0.5\\<br>0, &amp; \mbox{如果} h_\theta(x)&lt;0.5<br>\end{array}\right.<br>\end{equation}</p>
+<p>Logistic函数/<strong>Sigmoid函数</strong>可以将任意实数值映射到(0,1)区间（不包括0和1，但可以无限接近）。因此，使用Sigmoid函数来将线性回归的结果按照一定的阈值分为2类（二分类问题）或更多类（多分类问题）。</p>
+<p><meta name="referrer" content="no-referrer"><br><img src="/2020/05/15/%E7%AE%97%E6%B3%95-LogisticRegression/LR-heart.png" class title="来自：机器之心-从原理到应用-简述Logistic回归算法"></p>
+<p>令</p>
+<script type="math/tex; mode=display">h_\theta(x)=g(\theta^Tx)=\frac{1}{1+e^{-\theta^Tx}}=\frac{e^{\theta^Tx}}{1+e^{\theta^Tx}}</script><p>其中$z=\theta^Tx$（这里$x$包含截距项），Sigmoid函数为</p>
+<script type="math/tex; mode=display">g(z)=\frac{1}{1+e^{-z}}=\frac{e^z}{1+e^z}</script><p>Sigmoid保证$h_\theta(x)$取值在0和1之间（概率取值范围为[0,1]）。</p>
+<p><strong>Log-odds</strong>，也称<strong>Logit</strong>（Logit transformation / Link function）表示为</p>
+<script type="math/tex; mode=display">\log\frac{p}{1-p}=\log\frac{h_\theta(x)}{1-h_\theta(x)}=\theta^Tx</script><p>其中$p=h_\theta(x)$表示概率。</p>
+<p>$h_\theta(x)$表示输入$x$后分类结果为1的概率</p>
+<script type="math/tex; mode=display">P(Y=1|x;\theta)=h_\theta(x)</script><script type="math/tex; mode=display">P(Y=0|x;\theta)=1-h_\theta(x)</script><p>因此，因变量$Y$服从Bernoulli分布</p>
+<script type="math/tex; mode=display">Y|X=x_i\sim \mathrm{Bernoulli}\left(h_\theta(x_i)\right)</script><p>概率函数为</p>
+<script type="math/tex; mode=display">P(y|x;\theta)=\left[h_\theta(x) \right]^y\left[1-h_\theta(x) \right]^{1-y}</script><p>使用训练数据集$x=\{x_1,x_2,\cdots,x_n\}$（特征数据）和$y=\{y_1,y_2\cdots,y_n\}$（分类数据）构建回归模型。</p>
+<p>如何求解逻辑回归方程中的参数？通常使用极大似然法。</p>
+<h3 id="极大似然法"><a href="#极大似然法" class="headerlink" title="极大似然法"></a>极大似然法</h3><p>$n$个独立样本的似然函数为</p>
+<script type="math/tex; mode=display">L(\theta)=\Pi_{i=1}^nP(y_i|x_i;\theta)=\Pi_{i=1}^nh_\theta(x_i)^{y_i}\left[1-h_\theta(x_i) \right]^{1-y_i}</script><p>对数似然函数为<br>\begin{equation}<br>\begin{aligned}<br>  l(\theta)=\log{L(\theta)}&amp;=\sum_{i=1}^n\left\{y_i\log{h_\theta(x_i)}+(1-y_i)\log{\left[1-h_\theta(x_i) \right]}\right\}\\<br>  &amp;= \sum_{i=1}^n\left\{y_i\theta^Tx_i-\log{\left[1+e^{\theta^Tx_i} \right]}\right\}<br>\end{aligned}<br>\end{equation}<br>其中</p>
+<script type="math/tex; mode=display">\log{h_\theta(x_i)}=\log{\frac{e^{\theta^Tx_i}}{1+e^{\theta^Tx_i}}}=\theta^Tx_i-\log{\left[1+e^{\theta^Tx_i}\right]}</script><script type="math/tex; mode=display">\log{\left[1-h_\theta(x_i)\right]}=\log{\frac{1}{1+e^{\theta^Tx_i}}}=-\log{\left[1+e^{\theta^Tx_i}\right]}</script><script type="math/tex; mode=display">\max{L(\theta)}\Leftrightarrow\max{l(\theta)}\Leftrightarrow\min{\{-l(\theta)\}}</script><p>其中$-l(\theta)=-\log{L(\theta)}$称为<strong>交叉熵误差函数</strong>（cross-entropy error function）。</p>
+<p>考虑$p+1$维的参数$\theta=(\theta_0,\theta_1,\cdots,\theta_p)^T$，其中$\theta_0$ 为线性回归方程$z=\theta^Tx$的截距。<br>\begin{equation}<br>\theta=\left(<br>\begin{array}{c}<br>  \theta_0\\<br>  \theta_1\\<br>  \theta_2\\<br>  \vdots\\<br>  \theta_p<br>\end{array}<br>\right),\quad<br>x_i=\left(<br>\begin{array}{c}<br>  1\\<br>  x_{i1}\\<br>  x_{i2}\\<br>  \vdots\\<br>  x_{ip}<br>\end{array}<br>\right)<br>\end{equation}<br>对数似然函数$l(\theta)$分别对$\theta_j\ (j=0,1,\cdots,p)$求偏导，并令导数为零</p>
+<script type="math/tex; mode=display">\frac{\partial{l(\theta)}}{\partial{\theta_j}}=\sum_{i=1}^n\left\{y_ix_{ij}-\frac{e^{\theta^Tx_i}}{1+e^{\theta^Tx_i}}x_{ij}\right\}=\sum_{i=1}^n\left\{x_{ij}\left[y_i-h_\theta(x_i) \right]\right\}=0</script><p>写成向量形式</p>
+<script type="math/tex; mode=display">\frac{\partial{l(\theta)}}{\partial{\theta}}=\sum_{i=1}^n\left\{x_i\left[y_i-h_\theta(x_i) \right]\right\}=0</script><p>该式也被称为<strong>score equation</strong>。</p>
+<p>这里$x_i$的第一个元素为1，因此由上式可得</p>
+<script type="math/tex; mode=display">\sum_{i=1}^ny_i=\sum_{i=1}^nh_\theta(x_i)</script><p>表示$Y$取值为1的样本量（$n$个样本中得恶性肿瘤的人数）等于“事件”（如肿瘤为恶性肿瘤）发生的概率和。</p>
+<p>当$p$较小时，score equation可得到解析解（精确解）；但当$p$较大时，score equation 往往得不到解析解。这时，可以考虑使用Newton-Raphson算法求得数值解（numerical solution）。</p>
+<h3 id="Newton-Raphson算法"><a href="#Newton-Raphson算法" class="headerlink" title="Newton-Raphson算法"></a>Newton-Raphson算法</h3><p>首先计算二阶偏导（Hessian Matrix）：<br>\begin{equation}<br>\begin{aligned}<br>\frac{\partial^2l(\theta)}{\partial{\theta_k}\partial{\theta_j}}&amp;=\frac{\partial}{\partial{\theta_k}}\sum_{i=1}^n\left\{x_{ij}\left[y_i-h_\theta(x_i)\right]\right\}\\<br>&amp;=\frac{\partial}{\partial{\theta_k}}\sum_{i=1}^n\left\{x_{ij}\left[y_i-\frac{e^{\theta^Tx_i}}{1+e^{\theta^Tx_i}}\right]\right\}\\<br>&amp;=\sum_{i=1}^nx_{ij}\left\{-\frac{e^{\theta^Tx_i}x_{ik}(1+e^{\theta^Tx_i})-e^{\theta^Tx_i}e^{\theta^Tx_i}x_{ik}}{\left(1+e^{\theta^Tx_i}\right)^2}\right\}\\<br>&amp;=-\sum_{i=1}^nx_{ij}x_{ik}\frac{e^{\theta^Tx_i}}{1+e^{\theta^Tx_i}}\left(1-\frac{e^{\theta^Tx_i}}{1+e^{\theta^Tx_i}}\right)\\<br>&amp;=-\sum_{i=1}^nx_{ij}x_{ij}h_\theta(x_i)\left[1-h_\theta(x_i)\right]<br>\end{aligned}<br>\end{equation}<br>其中$j,k=0,1,\cdots,p$。</p>
+<p><strong>Hessian Matrix</strong>为</p>
+<script type="math/tex; mode=display">\frac{\partial^2l(\theta)}{\partial\theta\partial\theta^T}=-\sum_{i=1}^nx_ix_i^Th_\theta(x_i)[1- h_\theta(x_i)]</script><p>由$\theta^{old}$开始，Newton-Raphson的更新步骤（updating step）为</p>
+<script type="math/tex; mode=display">\theta^{new}=\theta^{old}-\left[\frac{\partial^2l(\theta)}{\partial\theta\partial\theta^T}\right]^{-1}\frac{\partial{l(\theta)}}{\partial\theta}</script><p>这里考虑步长为1的pure Newton’s Method。即</p>
+<script type="math/tex; mode=display">\theta^{new}=\theta^{old}-\alpha\left[\frac{\partial^2l(\theta)}{\partial\theta\partial\theta^T}\right]^{-1}\frac{\partial{l(\theta)}}{\partial\theta}\quad \mbox{with}\ \alpha=1</script><p>用矩阵形式表示<br>\begin{equation}<br>\mathbf{y}=\left(<br>\begin{array}{c}<br>  y_1\\<br>  y_2\\<br>  \vdots\\<br>  y_n<br>\end{array}<br>\right),\quad<br>\mathbf{X}=\left(<br>\begin{array}{c}<br>  x_1^T\\<br>  x_2^T\\<br>  \vdots\\<br>  x_n^T<br>\end{array}<br>\right)=<br>\left(<br>\begin{array}{ccccc}<br>  1 &amp; x_{11} &amp; x_{12} &amp; \cdots &amp; x_{1p}\\<br>  1 &amp; x_{21} &amp; x_{22} &amp; \cdots &amp; x_{2p}\\<br>  \vdots &amp; \vdots &amp; \vdots &amp;\ddots &amp; \vdots \\<br>  1 &amp; x_{n1} &amp; x_{n2} &amp; \cdots &amp; x_{np}<br>\end{array}<br>\right)<br>\end{equation}</p>
+<p>\begin{equation}<br>\mathbf{P}=\left(<br>\begin{array}{c}<br>  h_{\theta^{old}}(x_1)\\<br>  h_{\theta^{old}}(x_2)\\<br>  \vdots\\<br>  h_{\theta^{old}}(x_n)<br>\end{array}<br>\right),\quad<br>\mathbf{W}=\mathrm{diag}\left\{<br>  h_{\theta^{old}}(x_i)(1-h_{\theta^{old}}(x_i))<br>\right\}<br>\end{equation}</p>
+<p>则有</p>
+<script type="math/tex; mode=display">\frac{\partial{l(\theta)}}{\partial\theta}=\mathbf{X}^T(\mathbf{y}-\mathbf{P})</script><script type="math/tex; mode=display">\frac{\partial^2l(\theta)}{\partial\theta\partial\theta^T}=-\mathbf{X}^T\mathbf{W}\mathbf{X}</script><p>因此<br>\begin{equation}<br>\begin{aligned}<br>\theta^{new}&amp;=\theta^{old}-\left[\frac{\partial^2l(\theta)}{\partial\theta\partial\theta^T} \right]^{-1}\frac{\partial{l(\theta)}}{\partial\theta}\\<br>&amp;= \theta^{old}+\left(\mathbf{X}^T\mathbf{W}\mathbf{X}\right)^{-1}\mathbf{X}^T(\bf{y}-\bf{P})\\<br>&amp;= \left(\mathbf{X}^T\mathbf{W}\mathbf{X}\right)^{-1}\mathbf{X}^T\mathbf{W}\left[\mathbf{X}\theta^{old}+\mathbf{W}^{-1}(\mathbf{y}-\mathbf{P}) \right]\\<br>&amp;= \left(\mathbf{X}^T\mathbf{W}\mathbf{X}\right)^{-1}\mathbf{X}^T\mathbf{W}\mathbf{z}<br>\end{aligned}<br>\end{equation}</p>
+<p>其中$\mathbf{z}=\mathbf{X}\theta^{old}+\mathbf{W}^{-1}(\mathbf{y}-\mathbf{P})$。</p>
+<p>每次迭代中，$\bf{P}$更新，$\bf{W}$和$\bf{z}$也随之更新。</p>
+<p>$\theta^{new}$可以看作是$\bf{z}$关于$\bf{X}$回归的加权最小二乘（weighted least square）。</p>
+<p>式</p>
+<script type="math/tex; mode=display">\theta^{new}=\left(\mathbf{X}^T\mathbf{W}\mathbf{X}\right)^{-1}\mathbf{X}^T\mathbf{W}\mathbf{z}</script><p>这种迭代法也称为<u>迭代重加权最小二乘</u>（iteratively reweighted least squares，IRLS）。</p>
+<h1 id="逻辑回归-vs-线性回归"><a href="#逻辑回归-vs-线性回归" class="headerlink" title="逻辑回归 vs 线性回归"></a>逻辑回归 vs 线性回归</h1><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center"><strong>逻辑回归</strong></th>
+<th style="text-align:center"><strong>线性回归</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center">分类</td>
+<td style="text-align:center">回归</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>因变量</strong></td>
+<td style="text-align:center">离散的变量</td>
+<td style="text-align:center">连续的变量</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>自变量与因变量</strong></td>
+<td style="text-align:center">可以不符合线性关系</td>
+<td style="text-align:center">符合线性关系</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center">无法直观表达变量关系</td>
+<td style="text-align:center">直观表达变量关系</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
+<li><a href="https://zh.wikipedia.org/wiki/%E9%82%8F%E8%BC%AF%E8%BF%B4%E6%AD%B8" target="_blank" rel="noopener">维基百科-逻辑回归</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/28408516" target="_blank" rel="noopener">逻辑回归（Logistic Regression）（一）</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Logistic_distribution" target="_blank" rel="noopener">维基百科-逻辑分布</a></li>
+<li><a href="https://zh.wikipedia.org/wiki/%E9%82%8F%E8%BC%AF%E5%87%BD%E6%95%B8" target="_blank" rel="noopener">维基百科-逻辑函数</a></li>
+<li><a href="https://www.jiqizhixin.com/articles/2018-05-13-3" target="_blank" rel="noopener">从原理到应用-简述Logistic回归算法</a></li>
+<li><a href="https://www.cnblogs.com/sparkwen/p/3441197.html" target="_blank" rel="noopener">逻辑回归模型基础</a></li>
+<li><a href="https://easyai.tech/ai-definition/logistic-regression/" target="_blank" rel="noopener">逻辑回归</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/67842740" target="_blank" rel="noopener">Logistic回归，梯度下降法，牛顿法，IRLS算法</a></li>
+<li><a href="https://blog.csdn.net/u012526120/article/details/48897135" target="_blank" rel="noopener">Logistic和牛顿法</a></li>
+<li><a href="https://www.afenxi.com/56409.html" target="_blank" rel="noopener">如何在R中执行Logistic回归？</a></li>
+<li><a href="https://www.cnblogs.com/nxld/p/6170690.html" target="_blank" rel="noopener">如何在R语言中使用Logistic回归模型</a></li>
+<li><a href="https://blog.csdn.net/zllnau66/article/details/81742798" target="_blank" rel="noopener">Python3常用的数据清洗方法</a></li>
+<li><a href="https://www.cnblogs.com/wuchuanying/p/6243987.html" target="_blank" rel="noopener">Python_Sklearn机器学习库学习笔记（三）</a></li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://github.com/ShootingWang/ShootingWang.github.io/2020/05/15/%E7%AE%97%E6%B3%95-SupervisedLearning/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1418,130 +1625,6 @@
   
   
 
-      
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/ShootingWang/ShootingWang.github.io/2020/05/13/python-sklearn/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="ShootingWang">
-      <meta itemprop="description" content="无猫病重症患者">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ShootingWang">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/05/13/python-sklearn/" class="post-title-link" itemprop="url">Python | sklearn</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-05-13 16:33:22" itemprop="dateCreated datePublished" datetime="2020-05-13T16:33:22+08:00">2020-05-13</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-05-20 13:45:14" itemprop="dateModified" datetime="2020-05-20T13:45:14+08:00">2020-05-20</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2020/05/13/python-sklearn/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/05/13/python-sklearn/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="Scikit-learn"><a href="#Scikit-learn" class="headerlink" title="Scikit-learn"></a>Scikit-learn</h1><h2 id="liner-model"><a href="#liner-model" class="headerlink" title=".liner_model"></a>.liner_model</h2><h3 id="LinearRegression"><a href="#LinearRegression" class="headerlink" title=".LinearRegression()"></a>.LinearRegression()</h3><p>LinearRegression()：用于拟合线性回归模型。在sklearn库中的linear_model模块中。</p>
-<ul>
-<li><code>.fit()</code>：拟合模型</li>
-<li><code>.predict()</code>：预测结果</li>
-<li><code>.coef_[0]</code>：一元线性回归中，特征变量的参数估计值</li>
-<li><code>.coef_[:]</code> ：多元线性回归中，特征变量的参数估计值</li>
-<li><code>.intercept_</code> ：一元线性回归中，截距项的估计值</li>
-<li><code>.score()</code>：看测试集的表现得分</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">###导入线性回归模型</span></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">from</span> sklearn.linear_model <span class="keyword">import</span> LinearRegression</span><br><span class="line"></span><br><span class="line">%matplotlib inline</span><br><span class="line"></span><br><span class="line">X = [[<span class="number">1</span>], [<span class="number">4</span>]]   <span class="comment">###两个点的横坐标</span></span><br><span class="line">y = [<span class="number">3</span>, <span class="number">5</span>]   <span class="comment">###两个点的纵坐标</span></span><br><span class="line"></span><br><span class="line">lr = LinearRegression().fit(X, y)</span><br><span class="line">z = np.linspace(<span class="number">0</span>, <span class="number">5</span>, <span class="number">20</span>)</span><br><span class="line">plt.scatter(X, y, s= <span class="number">50</span>)   <span class="comment">###参数s设置点的大小</span></span><br><span class="line">plt.plot(z, lr.predict(z.reshape(<span class="number">-1</span>, <span class="number">1</span>)), c=<span class="string">'green'</span>)</span><br><span class="line">plt.title(<span class="string">"Straight Line"</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
-<p><meta name="referrer" content="no-referrer"><br><img src="/2020/05/13/python-sklearn/output_0_0.png" class></p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">print(<span class="string">"y = &#123;:.4f&#125;"</span>.format(lr.coef_[<span class="number">0</span>]),<span class="string">"x"</span>,<span class="string">"+&#123;:.4f&#125;"</span>.format(lr.intercept_))</span><br></pre></td></tr></table></figure>
-<pre><code>y = 0.6667 x +2.3333
-</code></pre><p>考虑多个数据点的线性回归：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line"><span class="comment">###首先生成数据集</span></span><br><span class="line"><span class="keyword">from</span> sklearn.datasets <span class="keyword">import</span> make_regression</span><br><span class="line"></span><br><span class="line">X ,y = make_regression(n_samples=<span class="number">100</span>, n_features=<span class="number">1</span>, </span><br><span class="line">                      n_informative=<span class="number">1</span>, noise=<span class="number">50</span>, random_state=<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> sklearn.linear_model <span class="keyword">import</span> LinearRegression</span><br><span class="line"><span class="comment">###拟合</span></span><br><span class="line">reg = LinearRegression()</span><br><span class="line">reg.fit(X, y)</span><br><span class="line">z = np.linspace(<span class="number">-3</span>, <span class="number">3</span>, <span class="number">200</span>).reshape(<span class="number">-1</span>, <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">plt.scatter(X, y, c=<span class="string">'blue'</span>, s=<span class="number">50</span>)</span><br><span class="line">plt.plot(z, reg.predict(z), c=<span class="string">'k'</span>)</span><br><span class="line">plt.title(<span class="string">"Linear Regression"</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
-<p><meta name="referrer" content="no-referrer"><br><img src="/2020/05/13/python-sklearn/output_2_0.png" class></p>
-<p>糖尿病数据，线性回归：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">###加载糖尿病数据集</span></span><br><span class="line"><span class="keyword">from</span> sklearn.datasets <span class="keyword">import</span> load_diabetes</span><br><span class="line"></span><br><span class="line">X, y = load_diabetes().data, load_diabetes().target</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> train_test_split</span><br><span class="line">X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=<span class="number">8</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> sklearn.linear_model <span class="keyword">import</span> LinearRegression</span><br><span class="line">lr = LinearRegression().fit(X_train, y_train)</span><br><span class="line"></span><br><span class="line">print(<span class="string">"训练数据集得分：&#123;:.3f&#125;"</span>.format(lr.score(X_train, y_train)))</span><br><span class="line">print(<span class="string">"测试数据集得分：&#123;:.3f&#125;"</span>.format(lr.score(X_test, y_test)))</span><br></pre></td></tr></table></figure>
-<pre><code>训练数据集得分：0.530
-测试数据集得分：0.459
-</code></pre><ul>
-<li><strong>损失函数</strong>（Loss Function），也称<strong>成本函数</strong>（Cost Function），用于定义模型预测值与观测值的误差。</li>
-<li><strong>残差</strong>（residuals）/<strong>训练误差</strong>（training errors）：模型预测值与训练集数据的差异。</li>
-<li><strong>预测误差</strong>（prediction errors）/<strong>测试误差</strong>（test errors）：模型预测值与测试集数据的差异。</li>
-</ul>
-<p>考虑带损失函数的模型拟合结果评估（标注残差、计算残差平方和）：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">X = [[<span class="number">6</span>], [<span class="number">8</span>], [<span class="number">10</span>], [<span class="number">14</span>], [<span class="number">18</span>]]</span><br><span class="line">y = [[<span class="number">7</span>], [<span class="number">9</span>], [<span class="number">13</span>], [<span class="number">17.5</span>], [<span class="number">18</span>]]</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> sklearn.linear_model <span class="keyword">import</span> LinearRegression</span><br><span class="line">model = LinearRegression()</span><br><span class="line">model.fit(X, y)</span><br><span class="line">X2 = [[<span class="number">0</span>], [<span class="number">10</span>], [<span class="number">14</span>], [<span class="number">25</span>]]</span><br><span class="line">y2 = model.predict(X2)</span><br><span class="line"></span><br><span class="line"><span class="comment">###残差</span></span><br><span class="line">yr = model.predict(X)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">%matplotlib inline</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line">plt.plot(X, y, <span class="string">'k.'</span>)</span><br><span class="line">plt.plot(X2, y2, <span class="string">'g-'</span>)</span><br><span class="line"><span class="keyword">for</span> idx, x <span class="keyword">in</span> enumerate(X):</span><br><span class="line">    plt.plot([x, x], [y[idx], yr[idx]], <span class="string">'r-'</span>)</span><br><span class="line"></span><br><span class="line">plt.xlabel(<span class="string">"X"</span>)</span><br><span class="line">plt.ylabel(<span class="string">"y"</span>)</span><br><span class="line">plt.axis([<span class="number">0</span>, <span class="number">25</span>, <span class="number">0</span>, <span class="number">25</span>])</span><br><span class="line">plt.grid(<span class="literal">True</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
-<p><meta name="referrer" content="no-referrer"><br><img src="/2020/05/13/python-sklearn/output_4_0.png" class></p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
-<li><a href="https://mp.weixin.qq.com/s?__biz=MzU5NzkxODMxOA==&amp;mid=2247484190&amp;idx=1&amp;sn=e7484e733ae84785a8940270cdf289b1&amp;chksm=fe4d541fc93add09a7d2730ec0ec9aeb04bc1d1fe38e9c662087e368b20bb20c087611191956&amp;token=1683818096&amp;lang=zh_CN#rd" target="_blank" rel="noopener">Sklearn学习：线性回归、岭回归、Lasso、Elastic Net</a></li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1611,7 +1694,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">112</span>
+          <span class="site-state-item-count">113</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1666,13 +1749,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">155k</span>
+    <span title="站点总字数">159k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">2:21</span>
+    <span title="站点阅读时长">2:24</span>
 </div>
 
 
