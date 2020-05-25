@@ -38,7 +38,7 @@
 <meta property="og:image" content="https://github.com/2020/05/08/python-pyecharts%E6%A8%A1%E5%9D%97/pic3.png">
 <meta property="og:image" content="https://github.com/2020/05/08/python-pyecharts%E6%A8%A1%E5%9D%97/pic4.png">
 <meta property="article:published_time" content="2020-05-08T01:40:20.000Z">
-<meta property="article:modified_time" content="2020-05-25T11:43:34.703Z">
+<meta property="article:modified_time" content="2020-05-25T11:49:28.946Z">
 <meta property="article:author" content="ShootingWang">
 <meta property="article:tag" content="Python">
 <meta name="twitter:card" content="summary">
@@ -222,7 +222,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-05-25 19:43:34" itemprop="dateModified" datetime="2020-05-25T19:43:34+08:00">2020-05-25</time>
+                <time title="修改时间：2020-05-25 19:49:28" itemprop="dateModified" datetime="2020-05-25T19:49:28+08:00">2020-05-25</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1890,10 +1890,20 @@
         chart_60ec65364f26491fbff3f5d07c19ba88.setOption(option_60ec65364f26491fbff3f5d07c19ba88);
 </script>
 
-
-
-
-
+<h3 id="phantomjs"><a href="#phantomjs" class="headerlink" title="phantomjs"></a>phantomjs</h3><p>安装snapshot-phantomjs（在Anaconda Prompt中运行）：<br><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install snapshot-phantomjs</span><br></pre></td></tr></table></figure></p>
+<p>使用snapshot-phantomjs需要安装phantom.exe，<a href="https://phantomjs.org/download.html" target="_blank" rel="noopener">下载地址</a></p>
+<p>下载后解压即可（需要将phantomjs所在路径添加到系统变量的PATH中）</p>
+<p>仍是报错(ノへ￣、)</p>
+<p>将Phantom.exe直接放在项目文件所在的文件夹内即可正常运行</p>
+<blockquote>
+<p><a href="https://phantomjs.org/quick-start.html" target="_blank" rel="noopener">简单认识PhantomJS</a></p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> pyecharts <span class="keyword">import</span> options <span class="keyword">as</span> opts</span><br><span class="line"><span class="keyword">from</span> pyecharts.charts <span class="keyword">import</span> Bar</span><br><span class="line"><span class="keyword">from</span> pyecharts.render <span class="keyword">import</span> make_snapshot</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> snapshot_phantomjs <span class="keyword">import</span> snapshot</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">bar_chart</span><span class="params">()</span> -&gt; Bar:</span></span><br><span class="line">    c = (</span><br><span class="line">        Bar()</span><br><span class="line">        .add_xaxis([<span class="string">"衬衫"</span>, <span class="string">"毛衣"</span>, <span class="string">"领带"</span>, <span class="string">"裤子"</span>, <span class="string">"风衣"</span>, <span class="string">"高跟鞋"</span>, <span class="string">"袜子"</span>])</span><br><span class="line">        .add_yaxis(<span class="string">"商家A"</span>, [<span class="number">114</span>, <span class="number">55</span>, <span class="number">27</span>, <span class="number">101</span>, <span class="number">125</span>, <span class="number">27</span>, <span class="number">105</span>])</span><br><span class="line">        .add_yaxis(<span class="string">"商家B"</span>, [<span class="number">57</span>, <span class="number">134</span>, <span class="number">137</span>, <span class="number">129</span>, <span class="number">145</span>, <span class="number">60</span>, <span class="number">49</span>])</span><br><span class="line">        .reversal_axis()</span><br><span class="line">        .set_series_opts(label_opts=opts.LabelOpts(position=<span class="string">"right"</span>))</span><br><span class="line">        .set_global_opts(title_opts=opts.TitleOpts(title=<span class="string">"Bar-测试渲染图片"</span>))</span><br><span class="line">    )</span><br><span class="line">    <span class="keyword">return</span> c</span><br><span class="line"></span><br><span class="line">make_snapshot(snapshot, bar_chart().render(), <span class="string">"bar0.png"</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="pyppeteer"><a href="#pyppeteer" class="headerlink" title="pyppeteer"></a>pyppeteer</h3><p>安装snapshot-pyppeteer（在Anaconda Prompt中运行）：<br><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install snapshot-pyppeteer</span><br></pre></td></tr></table></figure></p>
+<p>并执行chromium安装命令（在Anaconda Prompt中运行）：<br><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pyppeteer-install</span><br></pre></td></tr></table></figure></p>
+<p>最简单直接的方式：<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">xxx().render()</span><br></pre></td></tr></table></figure><br>其中<code>xxx()</code>是相应的pyecharts对象的执行命令</p>
+<p>输出的对象为html文件，打开html文件，单击右键可保存图片</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> pyecharts <span class="keyword">import</span> options <span class="keyword">as</span> opts</span><br><span class="line"><span class="keyword">from</span> pyecharts.charts <span class="keyword">import</span> Graph, Page</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">graph_base</span><span class="params">()</span> -&gt; Graph:</span></span><br><span class="line">    nodes = [</span><br><span class="line">        &#123;<span class="string">"name"</span>: <span class="string">"结点1"</span>, <span class="string">"symbolSize"</span>: <span class="number">10</span>&#125;,</span><br><span class="line">        &#123;<span class="string">"name"</span>: <span class="string">"结点2"</span>, <span class="string">"symbolSize"</span>: <span class="number">20</span>&#125;,</span><br><span class="line">        &#123;<span class="string">"name"</span>: <span class="string">"结点3"</span>, <span class="string">"symbolSize"</span>: <span class="number">30</span>&#125;,</span><br><span class="line">        &#123;<span class="string">"name"</span>: <span class="string">"结点4"</span>, <span class="string">"symbolSize"</span>: <span class="number">40</span>&#125;,</span><br><span class="line">        &#123;<span class="string">"name"</span>: <span class="string">"结点5"</span>, <span class="string">"symbolSize"</span>: <span class="number">50</span>&#125;,</span><br><span class="line">        &#123;<span class="string">"name"</span>: <span class="string">"结点6"</span>, <span class="string">"symbolSize"</span>: <span class="number">40</span>&#125;,</span><br><span class="line">        &#123;<span class="string">"name"</span>: <span class="string">"结点7"</span>, <span class="string">"symbolSize"</span>: <span class="number">30</span>&#125;,</span><br><span class="line">        &#123;<span class="string">"name"</span>: <span class="string">"结点8"</span>, <span class="string">"symbolSize"</span>: <span class="number">20</span>&#125;,</span><br><span class="line">    ]</span><br><span class="line">    links = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> nodes:</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> nodes:</span><br><span class="line">            links.append(&#123;<span class="string">"source"</span>: i.get(<span class="string">"name"</span>), <span class="string">"target"</span>: j.get(<span class="string">"name"</span>)&#125;)</span><br><span class="line">    c = (</span><br><span class="line">        Graph()</span><br><span class="line">        .add(<span class="string">""</span>, nodes, links, repulsion=<span class="number">8000</span>)</span><br><span class="line">        .set_global_opts(title_opts=opts.TitleOpts(title=<span class="string">"Graph-基本示例"</span>))</span><br><span class="line">    )</span><br><span class="line">    <span class="keyword">return</span> c</span><br><span class="line"></span><br><span class="line">graph_base().render()</span><br></pre></td></tr></table></figure>
 <h2 id="将echart插入到PPT"><a href="#将echart插入到PPT" class="headerlink" title="将echart插入到PPT"></a>将echart插入到PPT</h2><ol>
 <li>使用pyecharts画图并生成html文件</li>
 <li>查看html的源代码</li>
@@ -2042,7 +2052,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#pyecharts"><span class="nav-number">1.</span> <span class="nav-text">pyecharts</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">1.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#渲染图片"><span class="nav-number">1.2.</span> <span class="nav-text">渲染图片</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#selenium"><span class="nav-number">1.2.1.</span> <span class="nav-text">selenium</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#将echart插入到PPT"><span class="nav-number">1.3.</span> <span class="nav-text">将echart插入到PPT</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料"><span class="nav-number">2.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#pyecharts"><span class="nav-number">1.</span> <span class="nav-text">pyecharts</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">1.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#渲染图片"><span class="nav-number">1.2.</span> <span class="nav-text">渲染图片</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#selenium"><span class="nav-number">1.2.1.</span> <span class="nav-text">selenium</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#phantomjs"><span class="nav-number">1.2.2.</span> <span class="nav-text">phantomjs</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pyppeteer"><span class="nav-number">1.2.3.</span> <span class="nav-text">pyppeteer</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#将echart插入到PPT"><span class="nav-number">1.3.</span> <span class="nav-text">将echart插入到PPT</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料"><span class="nav-number">2.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -2117,7 +2127,7 @@
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">2:33</span>
+    <span title="站点阅读时长">2:34</span>
 </div>
 
 
