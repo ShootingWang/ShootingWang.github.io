@@ -22,24 +22,25 @@
 
 <link rel="stylesheet" href="/js/prism/prism.css">
 
-  <meta name="description" content="pyecharts安装：在Anaconda Prompt中输入：pip install pyecharts 安装过程可能会出现多种问题：  缺少相关的库 安装MarkupSafe出错 提示找不到相应版本  解决方法 插入到PPT 使用pyecharts画图并生成html文件 查看html的源代码 把相关的源代码复制到PPT插件中，点击运行即可   需要安装PPT插件Office Apps Fidd">
+  <meta name="description" content="pyecharts pyecharts官网  安装在Anaconda Prompt中输入：pip install pyecharts 安装过程可能会出现多种问题：  缺少相关的库 安装MarkupSafe出错 提示找不到相应版本  解决方法 渲染图片仅运行demo，并不能直接获得图片，要想获得图片输出（即使用pyecharts将输出渲染成图片），需要进行一点操作，根据官网的说明，共有3种方式：">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python | pyecharts">
 <meta property="og:url" content="https://github.com/ShootingWang/ShootingWang.github.io/2020/05/08/python-pyecharts%E6%A8%A1%E5%9D%97/index.html">
 <meta property="og:site_name" content="ShootingWang">
-<meta property="og:description" content="pyecharts安装：在Anaconda Prompt中输入：pip install pyecharts 安装过程可能会出现多种问题：  缺少相关的库 安装MarkupSafe出错 提示找不到相应版本  解决方法 插入到PPT 使用pyecharts画图并生成html文件 查看html的源代码 把相关的源代码复制到PPT插件中，点击运行即可   需要安装PPT插件Office Apps Fidd">
+<meta property="og:description" content="pyecharts pyecharts官网  安装在Anaconda Prompt中输入：pip install pyecharts 安装过程可能会出现多种问题：  缺少相关的库 安装MarkupSafe出错 提示找不到相应版本  解决方法 渲染图片仅运行demo，并不能直接获得图片，要想获得图片输出（即使用pyecharts将输出渲染成图片），需要进行一点操作，根据官网的说明，共有3种方式：">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://github.com/2020/05/08/python-pyecharts%E6%A8%A1%E5%9D%97/oldedge.png">
 <meta property="og:image" content="https://github.com/2020/05/08/python-pyecharts%E6%A8%A1%E5%9D%97/code1.png">
 <meta property="og:image" content="https://github.com/2020/05/08/python-pyecharts%E6%A8%A1%E5%9D%97/pic2.png">
 <meta property="og:image" content="https://github.com/2020/05/08/python-pyecharts%E6%A8%A1%E5%9D%97/pic.png">
 <meta property="og:image" content="https://github.com/2020/05/08/python-pyecharts%E6%A8%A1%E5%9D%97/pic3.png">
 <meta property="og:image" content="https://github.com/2020/05/08/python-pyecharts%E6%A8%A1%E5%9D%97/pic4.png">
 <meta property="article:published_time" content="2020-05-08T01:40:20.000Z">
-<meta property="article:modified_time" content="2020-05-25T08:06:23.226Z">
+<meta property="article:modified_time" content="2020-05-25T08:17:57.185Z">
 <meta property="article:author" content="ShootingWang">
 <meta property="article:tag" content="Python">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://github.com/2020/05/08/python-pyecharts%E6%A8%A1%E5%9D%97/code1.png">
+<meta name="twitter:image" content="https://github.com/2020/05/08/python-pyecharts%E6%A8%A1%E5%9D%97/oldedge.png">
 
 <link rel="canonical" href="https://github.com/ShootingWang/ShootingWang.github.io/2020/05/08/python-pyecharts%E6%A8%A1%E5%9D%97/">
 
@@ -218,7 +219,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-05-25 16:06:23" itemprop="dateModified" datetime="2020-05-25T16:06:23+08:00">2020-05-25</time>
+                <time title="修改时间：2020-05-25 16:17:57" itemprop="dateModified" datetime="2020-05-25T16:17:57+08:00">2020-05-25</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -262,7 +263,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="pyecharts"><a href="#pyecharts" class="headerlink" title="pyecharts"></a>pyecharts</h1><p><strong>安装</strong>：<br>在Anaconda Prompt中输入：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip install pyecharts</span><br></pre></td></tr></table></figure></p>
+        <h1 id="pyecharts"><a href="#pyecharts" class="headerlink" title="pyecharts"></a>pyecharts</h1><ul>
+<li><a href="https://pyecharts.org/" target="_blank" rel="noopener">pyecharts官网</a></li>
+</ul>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>在Anaconda Prompt中输入：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip install pyecharts</span><br></pre></td></tr></table></figure></p>
 <p>安装过程可能会出现多种问题：</p>
 <ol>
 <li>缺少相关的库</li>
@@ -270,7 +274,30 @@
 <li>提示找不到相应版本</li>
 </ol>
 <p><a href="https://blog.csdn.net/qq_37954088/article/details/88876791" target="_blank" rel="noopener">解决方法</a></p>
-<h2 id="插入到PPT"><a href="#插入到PPT" class="headerlink" title="插入到PPT"></a>插入到PPT</h2><ol>
+<h2 id="渲染图片"><a href="#渲染图片" class="headerlink" title="渲染图片"></a>渲染图片</h2><p>仅运行demo，并不能直接获得图片，要想获得图片输出（即使用pyecharts将输出渲染成图片），需要进行一点操作，根据官网的说明，共有3种方式：</p>
+<ul>
+<li><a href="https://pyecharts.org/#/zh-cn/render_images" target="_blank" rel="noopener">渲染图片</a></li>
+</ul>
+<ol>
+<li>selenium</li>
+<li>phantomjs</li>
+<li>pyppeteer</li>
+</ol>
+<h3 id="selenium"><a href="#selenium" class="headerlink" title="selenium"></a>selenium</h3><p>安装snapshot-selenium（在Anaconda Prompt中运行）：<br><figure class="highlight md"><table><tr><td class="code"><pre><span class="line">pip install snapshot-selenium</span><br></pre></td></tr></table></figure></p>
+<p>使用selenium，需要配置browser driver（浏览器驱动程序），详情可参见:<br><a href="https://selenium-python.readthedocs.io/installation.html#drivers" target="_blank" rel="noopener">https://selenium-python.readthedocs.io/installation.html#drivers</a></p>
+<p>选择浏览器对应的driver，下面以Edge浏览器<sup><a href="#fn_1" id="reffn_1">1</a></sup>为例：<br><a href="https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/" target="_blank" rel="noopener">下载地址</a></p>
+<ol>
+<li>首先查看Edge的版本信息（version）：点击Edge浏览器右上角的“…”，选择“设置”，“常规”的最下方有Edge版本信息<br><meta name="referrer" content="no-referrer"><img src="/2020/05/08/python-pyecharts%E6%A8%A1%E5%9D%97/oldedge.png" class title="旧Edge版本信息">
+<ul>
+<li>查看全新Edge的版本信息：点击右上角的“…”，选择“帮助与反馈”中的“关于Microsoft Edge”，即可查看相应的版本信息</li>
+</ul>
+</li>
+<li>接着下载版本79.0.309.68的Edge对应的WebDriver，从下面链接中找到相应版本</li>
+</ol>
+<blockquote id="fn_1">
+<sup>1</sup>. 2020年01月16日，基于Chromium内核的全新Microsoft Edge正式上线微软官网，可自行下载进行更新。<a href="https://www.microsoft.com/en-us/edge" target="_blank" rel="noopener">全新Microsoft Edge</a><a href="#reffn_1" title="Jump back to footnote [1] in the text."> &#8617;</a>
+</blockquote>
+<h2 id="将echart插入到PPT"><a href="#将echart插入到PPT" class="headerlink" title="将echart插入到PPT"></a>将echart插入到PPT</h2><ol>
 <li>使用pyecharts画图并生成html文件</li>
 <li>查看html的源代码</li>
 <li>把相关的源代码复制到PPT插件中，点击运行即可</li>
@@ -418,7 +445,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#pyecharts"><span class="nav-number">1.</span> <span class="nav-text">pyecharts</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#插入到PPT"><span class="nav-number">1.1.</span> <span class="nav-text">插入到PPT</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料"><span class="nav-number">2.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#pyecharts"><span class="nav-number">1.</span> <span class="nav-text">pyecharts</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">1.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#渲染图片"><span class="nav-number">1.2.</span> <span class="nav-text">渲染图片</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#selenium"><span class="nav-number">1.2.1.</span> <span class="nav-text">selenium</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#将echart插入到PPT"><span class="nav-number">1.3.</span> <span class="nav-text">将echart插入到PPT</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料"><span class="nav-number">2.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -493,7 +520,7 @@
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">2:24</span>
+    <span title="站点阅读时长">2:25</span>
 </div>
 
 
