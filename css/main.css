@@ -500,11 +500,29 @@ Original highlight.js style (c) Ivan Sagalaev <maniac@softwaremaniacs.org>
   transition-delay: 0s;
   transition-duration: 0.2s;
   transition-timing-function: ease-in-out;
-  background: #fff;
-  border: 0;
-  font-size: 0.8125em;
+  color: var(--highlight-foreground);
+  font-size: 14px;
   right: 0;
-  top: 0;
+  top: 2px;
+}
+.highlight {
+  border-radius: 5px;
+  box-shadow: 0 10px 30px 0 rgba(0,0,0,0.4);
+  padding-top: 30px;
+}
+.highlight .table-container {
+  border-radius: 0 0 5px 5px;
+}
+.highlight::before {
+  background: #fc625d;
+  border-radius: 50%;
+  box-shadow: 20px 0 #fdbc40, 40px 0 #35cd4b;
+  content: ' ';
+  height: 12px;
+  left: 12px;
+  margin-top: -20px;
+  position: absolute;
+  width: 12px;
 }
 .highlight,
 pre {
@@ -1486,7 +1504,7 @@ pre code {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #9a2d71;
+  background: #706211;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
