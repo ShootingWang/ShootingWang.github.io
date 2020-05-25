@@ -565,11 +565,11 @@
 <p>使用selenium渲染图片，需要在运行python代码时添加以下代码（举例）：<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> pyecharts.render <span class="keyword">import</span> make_snapshot</span><br><span class="line"><span class="keyword">from</span> snapshot_selenium <span class="keyword">import</span> snapshot</span><br><span class="line"></span><br><span class="line">make_snapshot(snapshot, calendar_base().render(), <span class="string">"calendar0.png"</span>)</span><br></pre></td></tr></table></figure><br>总是报错(ノへ￣、)</p>
 <p>将Chrome Driver应用程序直接放在项目文件所在的文件夹中即可正常运行（惊了</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> pyecharts <span class="keyword">import</span> options <span class="keyword">as</span> opts</span><br><span class="line"><span class="keyword">from</span> pyecharts.charts <span class="keyword">import</span> Calendar</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> pyecharts.render <span class="keyword">import</span> make_snapshot</span><br><span class="line"><span class="keyword">from</span> snapshot_selenium <span class="keyword">import</span> snapshot</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">calendar_base</span><span class="params">()</span> -&gt; Calendar:</span></span><br><span class="line">    begin = datetime.date(<span class="number">2019</span>, <span class="number">1</span>, <span class="number">1</span>)</span><br><span class="line">    end = datetime.date(<span class="number">2019</span>, <span class="number">12</span>, <span class="number">31</span>)</span><br><span class="line">    data = [</span><br><span class="line">        [str(begin + datetime.timedelta(days=i)), </span><br><span class="line">        random.randint(<span class="number">1000</span>, <span class="number">25000</span>)] </span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range((end - begin).days + <span class="number">1</span>)</span><br><span class="line">    ]</span><br><span class="line">    c = (</span><br><span class="line">        Calendar()</span><br><span class="line">        .add(<span class="string">""</span>, data, calendar_opts=opts.CalendarOpts(range_=<span class="string">"2019"</span>))</span><br><span class="line">        .set_global_opts(</span><br><span class="line">            title_opts=opts.TitleOpts(title=<span class="string">"Calendar-2019年每日步数情况"</span>),</span><br><span class="line">            visualmap_opts=opts.VisualMapOpts(</span><br><span class="line">                max_ = <span class="number">20000</span>,</span><br><span class="line">                min_ = <span class="number">500</span>,</span><br><span class="line">                orient = <span class="string">"horizontal"</span>,</span><br><span class="line">                is_piecewise = <span class="literal">True</span>,</span><br><span class="line">                pos_top = <span class="string">"230px"</span>,</span><br><span class="line">                pos_left = <span class="string">"100px"</span>,</span><br><span class="line">            ),</span><br><span class="line">        )</span><br><span class="line">    )</span><br><span class="line">    <span class="keyword">return</span> c</span><br><span class="line"></span><br><span class="line">make_snapshot(snapshot, calendar_base().render(), <span class="string">"calendar0.png"</span>)</span><br></pre></td></tr></table></figure>
-<div id="echarts9796" style="width: 100%;height: 500px;margin: 0 auto"></div>
+<div id="echarts1857" style="width: 100%;height: 500px;margin: 0 auto"></div>
 <script src="https://cdn.bootcss.com/echarts/3.8.0/echarts.common.min.js"></script>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts9796'));
+        var myChart = echarts.init(document.getElementById('echarts1857'));
         // 指定图表的配置项和数据
         var option = {
         var chart_60ec65364f26491fbff3f5d07c19ba88 = echarts.init(
@@ -3047,8 +3047,6 @@
 
 
 
-
-  
 
 
 
