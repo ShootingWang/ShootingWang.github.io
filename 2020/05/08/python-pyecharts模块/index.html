@@ -30,13 +30,15 @@
 <meta property="og:description" content="pyecharts pyecharts官网  安装在Anaconda Prompt中输入：pip install pyecharts 安装过程可能会出现多种问题：  缺少相关的库 安装MarkupSafe出错 提示找不到相应版本  解决方法 渲染图片仅运行demo，并不能直接获得图片，要想获得图片输出（即使用pyecharts将输出渲染成图片），需要进行一点操作，根据官网的说明，共有3种方式：">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://github.com/2020/05/08/python-pyecharts%E6%A8%A1%E5%9D%97/oldedge.png">
+<meta property="og:image" content="https://github.com/2020/05/08/python-pyecharts%E6%A8%A1%E5%9D%97/newedgev.png">
+<meta property="og:image" content="https://github.com/2020/05/08/python-pyecharts%E6%A8%A1%E5%9D%97/newedge.png">
 <meta property="og:image" content="https://github.com/2020/05/08/python-pyecharts%E6%A8%A1%E5%9D%97/code1.png">
 <meta property="og:image" content="https://github.com/2020/05/08/python-pyecharts%E6%A8%A1%E5%9D%97/pic2.png">
 <meta property="og:image" content="https://github.com/2020/05/08/python-pyecharts%E6%A8%A1%E5%9D%97/pic.png">
 <meta property="og:image" content="https://github.com/2020/05/08/python-pyecharts%E6%A8%A1%E5%9D%97/pic3.png">
 <meta property="og:image" content="https://github.com/2020/05/08/python-pyecharts%E6%A8%A1%E5%9D%97/pic4.png">
 <meta property="article:published_time" content="2020-05-08T01:40:20.000Z">
-<meta property="article:modified_time" content="2020-05-25T08:17:57.185Z">
+<meta property="article:modified_time" content="2020-05-25T08:27:12.899Z">
 <meta property="article:author" content="ShootingWang">
 <meta property="article:tag" content="Python">
 <meta name="twitter:card" content="summary">
@@ -219,7 +221,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-05-25 16:17:57" itemprop="dateModified" datetime="2020-05-25T16:17:57+08:00">2020-05-25</time>
+                <time title="修改时间：2020-05-25 16:27:12" itemprop="dateModified" datetime="2020-05-25T16:27:12+08:00">2020-05-25</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -284,19 +286,34 @@
 <li>pyppeteer</li>
 </ol>
 <h3 id="selenium"><a href="#selenium" class="headerlink" title="selenium"></a>selenium</h3><p>安装snapshot-selenium（在Anaconda Prompt中运行）：<br><figure class="highlight md"><table><tr><td class="code"><pre><span class="line">pip install snapshot-selenium</span><br></pre></td></tr></table></figure></p>
-<p>使用selenium，需要配置browser driver（浏览器驱动程序），详情可参见:<br><a href="https://selenium-python.readthedocs.io/installation.html#drivers" target="_blank" rel="noopener">https://selenium-python.readthedocs.io/installation.html#drivers</a></p>
-<p>选择浏览器对应的driver，下面以Edge浏览器<sup><a href="#fn_1" id="reffn_1">1</a></sup>为例：<br><a href="https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/" target="_blank" rel="noopener">下载地址</a></p>
+<p>使用selenium<sup><a href="#fn_2" id="reffn_2">2</a></sup>，需要配置browser driver（浏览器驱动程序），详情可参见:<br><a href="https://selenium-python.readthedocs.io/installation.html#drivers" target="_blank" rel="noopener">https://selenium-python.readthedocs.io/installation.html#drivers</a></p>
+<p>选择浏览器对应的driver，下面以Edge浏览器<sup><a href="#fn_1" id="reffn_1">1</a></sup>为例：<br><a href="https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/" target="_blank" rel="noopener">Edge的WebDriver下载地址</a></p>
 <ol>
 <li>首先查看Edge的版本信息（version）：点击Edge浏览器右上角的“…”，选择“设置”，“常规”的最下方有Edge版本信息<br><meta name="referrer" content="no-referrer"><img src="/2020/05/08/python-pyecharts%E6%A8%A1%E5%9D%97/oldedge.png" class title="旧Edge版本信息">
 <ul>
-<li>查看全新Edge的版本信息：点击右上角的“…”，选择“帮助与反馈”中的“关于Microsoft Edge”，即可查看相应的版本信息</li>
+<li>查看全新Edge的版本信息：点击右上角的“…”，选择“帮助与反馈”中的“关于Microsoft Edge”，即可查看相应的版本信息<br><meta name="referrer" content="no-referrer"><img src="/2020/05/08/python-pyecharts%E6%A8%A1%E5%9D%97/newedgev.png" class title="新Edge版本信息"></li>
 </ul>
 </li>
-<li>接着下载版本79.0.309.68的Edge对应的WebDriver，从下面链接中找到相应版本</li>
+<li>接着下载<a href="https://msedgewebdriverstorage.z22.web.core.windows.net/?prefix=79.0.309.68/" target="_blank" rel="noopener">版本79.0.309.68的Edge对应的WebDriver</a>，从<a href="https://msedgewebdriverstorage.z22.web.core.windows.net/" target="_blank" rel="noopener">各版本WebDriver</a>中找到相应版本</li>
+<li>下载后解压，将driver的路径添加到系统路径中：<ul>
+<li>右键单击“此电脑/我的电脑”</li>
+<li>选择“属性”</li>
+<li>选择“高级系统设置”—“环境变量”</li>
+<li>在”系统变量“中的”Path“添加driver的路径</li>
+</ul>
+</li>
 </ol>
 <blockquote id="fn_1">
 <sup>1</sup>. 2020年01月16日，基于Chromium内核的全新Microsoft Edge正式上线微软官网，可自行下载进行更新。<a href="https://www.microsoft.com/en-us/edge" target="_blank" rel="noopener">全新Microsoft Edge</a><a href="#reffn_1" title="Jump back to footnote [1] in the text."> &#8617;</a>
 </blockquote>
+<p><meta name="referrer" content="no-referrer"><br><img src="/2020/05/08/python-pyecharts%E6%A8%A1%E5%9D%97/newedge.png" class title="全新Edge"></p>
+<blockquote id="fn_2">
+<sup>2</sup>. selenium目前支持Chrome和Safari<a href="#reffn_2" title="Jump back to footnote [2] in the text."> &#8617;</a>
+</blockquote>
+<p>Chrome的Driver下载可见：<br><a href="https://sites.google.com/a/chromium.org/chromedriver/home" target="_blank" rel="noopener">https://sites.google.com/a/chromium.org/chromedriver/home</a></p>
+<p>使用selenium渲染图片，需要在运行python代码时添加以下代码（举例）：<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> pyecharts.render <span class="keyword">import</span> make_snapshot</span><br><span class="line"><span class="keyword">from</span> snapshot_selenium <span class="keyword">import</span> snapshot</span><br><span class="line"></span><br><span class="line">make_snapshot(snapshot, calendar_base().render(), <span class="string">"calendar0.png"</span>)</span><br></pre></td></tr></table></figure><br>总是报错(ノへ￣、)</p>
+<p>将Chrome Driver应用程序直接放在项目文件所在的文件夹中即可正常运行（惊了</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> pyecharts <span class="keyword">import</span> options <span class="keyword">as</span> opts</span><br><span class="line"><span class="keyword">from</span> pyecharts.charts <span class="keyword">import</span> Calendar</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> pyecharts.render <span class="keyword">import</span> make_snapshot</span><br><span class="line"><span class="keyword">from</span> snapshot_selenium <span class="keyword">import</span> snapshot</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">calendar_base</span><span class="params">()</span> -&gt; Calendar:</span></span><br><span class="line">    begin = datetime.date(<span class="number">2019</span>, <span class="number">1</span>, <span class="number">1</span>)</span><br><span class="line">    end = datetime.date(<span class="number">2019</span>, <span class="number">12</span>, <span class="number">31</span>)</span><br><span class="line">    data = [</span><br><span class="line">        [str(begin + datetime.timedelta(days=i)), </span><br><span class="line">        random.randint(<span class="number">1000</span>, <span class="number">25000</span>)] </span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range((end - begin).days + <span class="number">1</span>)</span><br><span class="line">    ]</span><br><span class="line">    c = (</span><br><span class="line">        Calendar()</span><br><span class="line">        .add(<span class="string">""</span>, data, calendar_opts=opts.CalendarOpts(range_=<span class="string">"2019"</span>))</span><br><span class="line">        .set_global_opts(</span><br><span class="line">            title_opts=opts.TitleOpts(title=<span class="string">"Calendar-2019年每日步数情况"</span>),</span><br><span class="line">            visualmap_opts=opts.VisualMapOpts(</span><br><span class="line">                max_ = <span class="number">20000</span>,</span><br><span class="line">                min_ = <span class="number">500</span>,</span><br><span class="line">                orient = <span class="string">"horizontal"</span>,</span><br><span class="line">                is_piecewise = <span class="literal">True</span>,</span><br><span class="line">                pos_top = <span class="string">"230px"</span>,</span><br><span class="line">                pos_left = <span class="string">"100px"</span>,</span><br><span class="line">            ),</span><br><span class="line">        )</span><br><span class="line">    )</span><br><span class="line">    <span class="keyword">return</span> c</span><br><span class="line"></span><br><span class="line">make_snapshot(snapshot, calendar_base().render(), <span class="string">"calendar0.png"</span>)</span><br></pre></td></tr></table></figure>
 <h2 id="将echart插入到PPT"><a href="#将echart插入到PPT" class="headerlink" title="将echart插入到PPT"></a>将echart插入到PPT</h2><ol>
 <li>使用pyecharts画图并生成html文件</li>
 <li>查看html的源代码</li>
