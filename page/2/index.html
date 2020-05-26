@@ -182,6 +182,179 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://github.com/ShootingWang/ShootingWang.github.io/2020/05/22/python-%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ShootingWang">
+      <meta itemprop="description" content="无猫病重症患者">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ShootingWang">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/05/22/python-%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0/" class="post-title-link" itemprop="url">Python | 内置函数</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-05-22 16:43:02 / 修改时间：16:54:50" itemprop="dateCreated datePublished" datetime="2020-05-22T16:43:02+08:00">2020-05-22</time>
+            </span>
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/05/22/python-%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/05/22/python-%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="内置函数"><a href="#内置函数" class="headerlink" title="内置函数"></a>内置函数</h1><h2 id="open"><a href="#open" class="headerlink" title="open()"></a>open()</h2><p>打开一个文件，创建一个file对象</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">open(name[, mode[, buffering]])</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>name</code>：文件名称</li>
+<li><code>mode</code>：打开文件的模式</li>
+<li><code>buffering</code>：是否寄存<ul>
+<li><code>buffering=0</code>：不寄存</li>
+<li><code>buffering=1</code>：访问文件时会寄存行</li>
+<li><code>buffering=c</code>：$c&gt;1$，表明寄存区的缓冲大小</li>
+<li><code>buffering=c</code>：$c&lt;0$，寄存区的缓冲大小为系统默认</li>
+</ul>
+</li>
+</ul>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">模式</th>
+<th style="text-align:left">打开方式</th>
+<th style="text-align:left">其他说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>r</code></td>
+<td style="text-align:left">只读</td>
+<td style="text-align:left">（1）文件的指针放在文件的开头<br>（2）默认模式</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>rb</code></td>
+<td style="text-align:left">以二进制格式打开文件用于只读</td>
+<td style="text-align:left">（1）文件的指针放在文件的开头<br>（2）默认模式</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>r+</code></td>
+<td style="text-align:left">用于读写</td>
+<td style="text-align:left">文件的指针放在文件的开头</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>rb+</code></td>
+<td style="text-align:left">以二进制格式打开文件用于读写</td>
+<td style="text-align:left">文件的指针放在文件的开头</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>w</code></td>
+<td style="text-align:left">只用于写入</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>wb</code></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>w+</code></td>
+<td style="text-align:left">用于读写</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>wb+</code></td>
+<td style="text-align:left">以二进制格式打开文件用于读写</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>a</code></td>
+<td style="text-align:left">用于追加</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>ab</code></td>
+<td style="text-align:left">以二进制格式打开文件用于追加</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>a+</code></td>
+<td style="text-align:left">用于读写</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>ab+</code></td>
+<td style="text-align:left">以二进制格式打开文件用于追加</td>
+<td style="text-align:left">（1）如果该文件已存在，文件指针将会放在文件的结尾<br>（2）如果该文件不存在，创建新文件用于读写。</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
+<li><a href="https://www.runoob.com/python/python-func-open.html" target="_blank" rel="noopener">Python open() 函数</a></li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://github.com/ShootingWang/ShootingWang.github.io/2020/05/21/%E7%AE%97%E6%B3%95-ADMM/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1705,108 +1878,6 @@
 <li><a href="http://bindog.github.io/blog/2016/06/04/from-sne-to-tsne-to-largevis/" target="_blank" rel="noopener">从SNE到t-SNE再到LargeVis</a></li>
 <li><a href="https://www.sohu.com/a/204249302_465975" target="_blank" rel="noopener">机器之心-深度 | 详解可视化利器t-SNE算法：数无形时少直觉</a></li>
 <li><a href="https://www.jianshu.com/p/8c20b975a174" target="_blank" rel="noopener">t-SNE和PCA介绍</a></li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/ShootingWang/ShootingWang.github.io/2020/05/16/%E7%AE%97%E6%B3%95-%E6%AC%A0%E6%8B%9F%E5%90%88/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="ShootingWang">
-      <meta itemprop="description" content="无猫病重症患者">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ShootingWang">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/05/16/%E7%AE%97%E6%B3%95-%E6%AC%A0%E6%8B%9F%E5%90%88/" class="post-title-link" itemprop="url">Machine Learning | 欠拟合</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-05-16 16:56:41" itemprop="dateCreated datePublished" datetime="2020-05-16T16:56:41+08:00">2020-05-16</time>
-            </span>
-
-          
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-05-17 09:11:13" itemprop="dateModified" datetime="2020-05-17T09:11:13+08:00">2020-05-17</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2020/05/16/%E7%AE%97%E6%B3%95-%E6%AC%A0%E6%8B%9F%E5%90%88/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/05/16/%E7%AE%97%E6%B3%95-%E6%AC%A0%E6%8B%9F%E5%90%88/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="欠拟合"><a href="#欠拟合" class="headerlink" title="欠拟合"></a>欠拟合</h1><h2 id="如何改善欠拟合"><a href="#如何改善欠拟合" class="headerlink" title="如何改善欠拟合"></a>如何改善欠拟合</h2><ul>
-<li>尝试减小正则项参数$\lambda$</li>
-<li>尝试增加交叉特征</li>
-<li>增加模型的复杂度<ul>
-<li>线性模型：添加高次项</li>
-<li>神经网络模型：增加网络层数、增加神经元个数</li>
-</ul>
-</li>
-</ul>
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
-<li><a href></a></li>
 </ul>
 
       
