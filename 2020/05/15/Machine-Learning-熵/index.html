@@ -31,7 +31,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://github.com/2020/05/15/Machine-Learning-%E7%86%B5/mi.png">
 <meta property="article:published_time" content="2020-05-15T12:29:18.000Z">
-<meta property="article:modified_time" content="2020-05-26T09:32:25.613Z">
+<meta property="article:modified_time" content="2020-05-26T09:34:36.599Z">
 <meta property="article:author" content="ShootingWang">
 <meta property="article:tag" content="算法">
 <meta property="article:tag" content="机器学习">
@@ -219,7 +219,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-05-26 17:32:25" itemprop="dateModified" datetime="2020-05-26T17:32:25+08:00">2020-05-26</time>
+                <time title="修改时间：2020-05-26 17:34:36" itemprop="dateModified" datetime="2020-05-26T17:34:36+08:00">2020-05-26</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -321,7 +321,7 @@
 <h2 id="性质"><a href="#性质" class="headerlink" title="性质"></a>性质</h2><p>信息熵的一个性质为：<br><div class="note success">
             <script type="math/tex; mode=display">0\leq H(X)\leq\log{n}</script><p>这里$n$表示事件的个数。</p><blockquote><p>即：当随机分布为均匀分布时，熵最大</p></blockquote>
           </div><br><div class="note default">
-            <p>证明：使用拉格朗日乘子法<br>因为$p(x_1)+p(x_2)+\cdots+p(x_n)=1$，所以目标函数为</p><script type="math/tex; mode=display">f\left(p(x_1),\cdots,p(x_n)\right)=-\left[p(x_1)\log{p(x_1)}+p(x_2)\log{p(x_2)}+\cdots+p(x_n)\log{p(x_n)} \right]</script><p>约束条件为</p><script type="math/tex; mode=display">g\left(p(x_1),\cdots,p(x_n)\right)=p(x_1)+p(x_2)+\cdots+p(x_n)-1=0</script><p>定义拉格朗日函数：<br>\begin{equation}<br>\begin{aligned}<br>L(p(x_1),\cdots,p(x_n);\lambda)&amp;=-\left[p(x_1)\log{p(x_1)}+p(x_2)\log{p(x_2)}+\cdots+p(x_n)\log{p(x_n)} \right]\\<br>&amp;+\lambda\left[p(x_1)+p(x_2)+\cdots+p(x_n)-1 \right]<br>\end{aligned}<br>\end{equation}<br>$L(p(x_1),\cdots,p(x_n);\lambda)$分别对$p(x_1),p(x_2),\cdots,p(x_n),\lambda$求偏导，并令偏导数为0，得到<br>\begin{equation}<br>\left\{<br>\begin{array}{l}<br>\lambda-\log p(x_1)-1=0\\<br>\lambda-\log p(x_2)-1=0\\<br>\cdots\\<br>\lambda-\log p(x_n)-1=0\\<br>p(x_1)+p(x_2)+\cdots+p(x_n)-1=0<br>\end{array}\right.<br>\end{equation}<br>解上述方程组，可得</p><script type="math/tex; mode=display">p(x_1)=p(x_2)=\cdots=p(x_n)=\frac{1}{n}</script><p>所以目标函数的极大值为</p><script type="math/tex; mode=display">f\left(\frac{1}{n},\frac{1}{n},\cdots,\frac{1}{n}\right)=-\left[\frac{1}{n}\log\frac{1}{n}+\frac{1}{n}\log\frac{1}{n}+\cdots+\frac{1}{n}\log\frac{1}{n} \right]=-\log\frac{1}{n}=\log n</script><p>即：当随机分布为均匀分布时，熵最大。</p>
+            <p>证明：使用拉格朗日乘子法<br>因为$p(x_1)+p(x_2)+\cdots+p(x_n)=1$，所以目标函数为</p><script type="math/tex; mode=display">f\left(p(x_1),\cdots,p(x_n)\right)=-\left[p(x_1)\log{p(x_1)}+p(x_2)\log{p(x_2)}+\cdots+p(x_n)\log{p(x_n)} \right]</script><p>约束条件为</p><script type="math/tex; mode=display">g\left(p(x_1),\cdots,p(x_n)\right)=p(x_1)+p(x_2)+\cdots+p(x_n)-1=0</script><p>定义拉格朗日函数：<br>\begin{aligned}<br>L(p(x_1),\cdots,p(x_n);\lambda)&amp;=-\left[p(x_1)\log{p(x_1)}+p(x_2)\log{p(x_2)}+\cdots+p(x_n)\log{p(x_n)} \right]\\<br>&amp;+\lambda\left[p(x_1)+p(x_2)+\cdots+p(x_n)-1 \right]<br>\end{aligned}<br>$L(p(x_1),\cdots,p(x_n);\lambda)$分别对$p(x_1),p(x_2),\cdots,p(x_n),\lambda$求偏导，并令偏导数为0，得到</p><script type="math/tex; mode=display">\left\{\begin{array}{l}\lambda-\log p(x_1)-1=0\\\lambda-\log p(x_2)-1=0\\\cdots\\\lambda-\log p(x_n)-1=0\\p(x_1)+p(x_2)+\cdots+p(x_n)-1=0\end{array}\right.</script><p>解上述方程组，可得</p><script type="math/tex; mode=display">p(x_1)=p(x_2)=\cdots=p(x_n)=\frac{1}{n}</script><p>所以目标函数的极大值为</p><script type="math/tex; mode=display">f\left(\frac{1}{n},\frac{1}{n},\cdots,\frac{1}{n}\right)=-\left[\frac{1}{n}\log\frac{1}{n}+\frac{1}{n}\log\frac{1}{n}+\cdots+\frac{1}{n}\log\frac{1}{n} \right]=-\log\frac{1}{n}=\log n</script><p>即：当随机分布为均匀分布时，熵最大。</p>
           </div></p>
 <h1 id="联合熵-复合熵"><a href="#联合熵-复合熵" class="headerlink" title="联合熵/复合熵"></a>联合熵/复合熵</h1><p>联合熵/复合熵：度量两个随机变量$X$和$Y$在一起时的不确定性</p>
 <p>假设</p>
