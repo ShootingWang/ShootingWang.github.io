@@ -713,7 +713,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-05-22 22:23:35" itemprop="dateModified" datetime="2020-05-22T22:23:35+08:00">2020-05-22</time>
+                <time title="修改时间：2020-05-26 13:56:33" itemprop="dateModified" datetime="2020-05-26T13:56:33+08:00">2020-05-26</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -754,12 +754,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="贝尔曼-福德算法"><a href="#贝尔曼-福德算法" class="headerlink" title="贝尔曼-福德算法"></a>贝尔曼-福德算法</h1><p>Bellman-Ford Algorithm</p>
-<ul>
-<li>适用于包含负权边的图的最短路径搜索</li>
-</ul>
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p>[1] <a href="https://book.douban.com/subject/26979890/" target="_blank" rel="noopener">图解算法</a></p>
-
+          <p><center>Bellman-Ford Algorithm</center><br></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/05/05/Algo-%E8%B4%9D%E5%B0%94%E6%9B%BC-%E7%A6%8F%E5%BE%B7%E7%AE%97%E6%B3%95/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -812,7 +815,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-05-17 09:04:47" itemprop="dateModified" datetime="2020-05-17T09:04:47+08:00">2020-05-17</time>
+                <time title="修改时间：2020-05-26 13:56:57" itemprop="dateModified" datetime="2020-05-26T13:56:57+08:00">2020-05-26</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -853,23 +856,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="狄克斯特拉算法"><a href="#狄克斯特拉算法" class="headerlink" title="狄克斯特拉算法"></a>狄克斯特拉算法</h1><p>Dijkstra’s Algorithm</p>
-<ul>
-<li>加权图的最快路径查找</li>
-<li>只适用于<strong>有向无环图</strong>（directed acyclic graph，DAG）</li>
-</ul>
-<blockquote>
-<p>绕环的路径不可能是最短的路径<br>无向图意味着两个节点彼此指向对方，其实是环</p>
-</blockquote>
-<h2 id="加权图"><a href="#加权图" class="headerlink" title="加权图"></a>加权图</h2><ul>
-<li>图的每条边都有关联的数字，这些数字称为<strong>权重</strong>（weight）</li>
-<li>带权重的图称为<strong>加权图</strong>（weighted graph）</li>
-<li>不带权重的图称为<strong>非加权图</strong>（unweighted graph）</li>
-<li>计算非加权图中的最短路径，可使用广度优先搜索</li>
-<li>计算加权图中的最短路径，可使用狄克斯特拉算法</li>
-</ul>
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p>[1] <a href="https://book.douban.com/subject/26979890/" target="_blank" rel="noopener">图解算法</a></p>
-
+          <p><center>Dijkstra's Algorithm</center><br></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/05/05/Algo-%E7%8B%84%E5%85%8B%E6%96%AF%E7%89%B9%E6%8B%89%E7%AE%97%E6%B3%95/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -922,7 +917,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-05-17 13:24:31" itemprop="dateModified" datetime="2020-05-17T13:24:31+08:00">2020-05-17</time>
+                <time title="修改时间：2020-05-26 13:57:15" itemprop="dateModified" datetime="2020-05-26T13:57:15+08:00">2020-05-26</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -959,34 +954,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="collections"><a href="#collections" class="headerlink" title="collections"></a>collections</h1><h2 id="deque"><a href="#deque" class="headerlink" title="deque"></a>deque</h2><p><strong>双边队列</strong>（double-ended queue），具有队列和栈的性质，在列表（list）的基础上增加了移动、旋转和增删等</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> deque</span><br><span class="line"></span><br><span class="line">d = deque()  <span class="comment">## 创建一个队列</span></span><br><span class="line">print(d)</span><br><span class="line"><span class="comment"># deque([])</span></span><br><span class="line"></span><br><span class="line">d1 = deque(range(<span class="number">10</span>))</span><br><span class="line">print(d1)</span><br><span class="line"><span class="comment"># deque([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])</span></span><br></pre></td></tr></table></figure>
-<p>如果指定了参数<code>maxlen</code>，则会生成固定长度的队列；插入元素时，若队列已满，</p>
-<ul>
-<li>从右侧插入，会“挤掉”最左侧的元素</li>
-<li>从左侧插入，会“挤掉”最右侧的元素<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">d = deque(maxlen=<span class="number">3</span>)</span><br><span class="line">d.append(<span class="number">1</span>)</span><br><span class="line">d.append(<span class="number">2</span>)</span><br><span class="line">d.append(<span class="number">3</span>)</span><br><span class="line">d</span><br><span class="line"><span class="comment"># deque([1, 2, 3])</span></span><br><span class="line">d.append(<span class="number">4</span>)</span><br><span class="line">d</span><br><span class="line"><span class="comment"># deque([2, 3, 4])</span></span><br><span class="line">d.appendleft(<span class="number">5</span>)</span><br><span class="line">d</span><br><span class="line"><span class="comment"># deque([5, 2, 3])</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="append"><a href="#append" class="headerlink" title=".append()"></a>.append()</h3><p>在队列右侧添加元素</p>
-<h3 id="appendleft"><a href="#appendleft" class="headerlink" title=".appendleft()"></a>.appendleft()</h3><p>在队列左侧添加元素<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
-<h3 id="count"><a href="#count" class="headerlink" title=".count()"></a>.count()</h3><p>统计队列中某元素的个数</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h3 id="extend"><a href="#extend" class="headerlink" title=".extend()"></a>.extend()</h3><p>在队列右边依次添加所有元素<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
-<h3 id="extendleft"><a href="#extendleft" class="headerlink" title=".extendleft()"></a>.extendleft()</h3><p>在队列左侧依次添加所有元素</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">d = deque([<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>])</span><br><span class="line"></span><br><span class="line">d</span><br><span class="line"><span class="comment">#  deque(['a', 'b', 'c'])</span></span><br><span class="line"></span><br><span class="line">d.extendleft([<span class="string">'d'</span>, <span class="string">'e'</span>, <span class="string">'f'</span>])</span><br><span class="line"></span><br><span class="line">d</span><br><span class="line"><span class="comment"># deque(['f', 'e', 'd', 'a', 'b', 'c'])</span></span><br></pre></td></tr></table></figure>
-<h3 id="pop"><a href="#pop" class="headerlink" title=".pop()"></a>.pop()</h3><p>从队列的右侧删除（取出）一个元素</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h3 id="popleft"><a href="#popleft" class="headerlink" title=".popleft()"></a>.popleft()</h3><p>从队列的左侧删除（取出）一个元素<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
-<h3 id="remove"><a href="#remove" class="headerlink" title=".remove()"></a>.remove()</h3><p>将队列中的某元素删除<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
-<h3 id="reverse"><a href="#reverse" class="headerlink" title=".reverse()"></a>.reverse()</h3><p>将队列倒序<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
-<h3 id="rotate"><a href="#rotate" class="headerlink" title=".rotate()"></a>.rotate()</h3><p><code>.rotate(n)</code></p>
-<ul>
-<li>$n &gt; 0$：将队列最右边的n个数据，移到队列的左边</li>
-<li>$n &lt; 0$：将队列最左边的n个数据，移到队列的右边</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">d = deque(range(<span class="number">10</span>))</span><br><span class="line">d</span><br><span class="line"><span class="comment"># deque([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])</span></span><br><span class="line"></span><br><span class="line">d.rotate(<span class="number">3</span>)</span><br><span class="line">d</span><br><span class="line"><span class="comment">#  deque([7, 8, 9, 0, 1, 2, 3, 4, 5, 6])</span></span><br><span class="line"></span><br><span class="line">d = deque(range(<span class="number">10</span>))</span><br><span class="line">d</span><br><span class="line"><span class="comment"># deque([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])</span></span><br><span class="line"></span><br><span class="line">d.rotate(<span class="number">-3</span>)</span><br><span class="line">d</span><br><span class="line"><span class="comment"># deque([3, 4, 5, 6, 7, 8, 9, 0, 1, 2])</span></span><br></pre></td></tr></table></figure>
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p>[1] <a href="https://blog.csdn.net/happyrocking/article/details/80058623" target="_blank" rel="noopener">collections.deque介绍</a><br>[2] <a href="https://www.cnblogs.com/LouisZJ/p/8118637.html" target="_blank" rel="noopener">deque 双向队列</a><br>[] <a href></a></p>
-
+          <p><center></center><br></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/05/05/python-collections%E6%A8%A1%E5%9D%97/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
