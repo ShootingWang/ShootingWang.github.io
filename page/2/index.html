@@ -891,12 +891,18 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-05-18 09:10:06 / 修改时间：09:14:34" itemprop="dateCreated datePublished" datetime="2020-05-18T09:10:06+08:00">2020-05-18</time>
+              <time title="创建时间：2020-05-18 09:10:06" itemprop="dateCreated datePublished" datetime="2020-05-18T09:10:06+08:00">2020-05-18</time>
             </span>
 
           
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-05-26 13:28:40" itemprop="dateModified" datetime="2020-05-26T13:28:40+08:00">2020-05-26</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -932,13 +938,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>Perceptron<br>感知机/感知器/人工神经元</p>
-<h1 id="感知器"><a href="#感知器" class="headerlink" title="感知器"></a>感知器</h1><p><strong>神经元</strong>——神经网络的组成单元——也称<strong>感知机</strong>/<strong>感知器</strong>。</p>
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
-<li><a href="https://www.zybuluo.com/hanbingtao/note/433855" target="_blank" rel="noopener">零基础入门深度学习(1) - 感知器</a></li>
-<li><a href></a></li>
-</ul>
-
+          <p><center>Perceptron</center><br></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/05/18/%E7%AE%97%E6%B3%95-%E6%84%9F%E7%9F%A5%E6%9C%BA/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -981,12 +989,18 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-05-17 23:41:52 / 修改时间：23:46:25" itemprop="dateCreated datePublished" datetime="2020-05-17T23:41:52+08:00">2020-05-17</time>
+              <time title="创建时间：2020-05-17 23:41:52" itemprop="dateCreated datePublished" datetime="2020-05-17T23:41:52+08:00">2020-05-17</time>
             </span>
 
           
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-05-26 13:29:01" itemprop="dateModified" datetime="2020-05-26T13:29:01+08:00">2020-05-26</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -1022,26 +1036,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>DBSCAN<br>具有噪声的基于密度的聚类方法<br>Density-Based Spatial Clustering of Applications with Noise</p>
-<h1 id="DBSCAN"><a href="#DBSCAN" class="headerlink" title="DBSCAN"></a>DBSCAN</h1><p>DBSCAN是一种基于密度的空间聚类算法。该算法将具有足够密度的区域划分为簇，并在具有噪声的空间数据库中发现任意形状的簇，将簇定义为“密度相连的点的最大集合”。</p>
-<blockquote>
-<p>Martin Ester等人于1996年提出。<br>原文：<a href="https://www.researchgate.net/publication/44250717_A_Density_Based_Algorithm_for_Discovering_Density_Varied_Clusters_in_Large_Spatial_Databases" target="_blank" rel="noopener">A density-based algorithm for discovering clusters in large spatial databases with noise.</a><br>（截至2020年01月9日，被引用次数已达16602次）</p>
-</blockquote>
-<ul>
-<li>聚类的时候不需要事先指定簇的个数</li>
-<li>最终的簇的个数不确定</li>
-</ul>
-<h2 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h2><p>DBSCAN算法首先要确定两个参数：</p>
-<ol>
-<li>半径（Eps或epsilon）<br>在一个点周围邻近区域的半径。若两点之间的距离小于或等于该值，则这些点被认为是相邻的。如果选择的eps值太小，则很大一部分数据不会聚集，将被视为异常点；如果选择的eps太大，则群集会被合并，会造成大多数对象处于同一群集中。因此，应该根据数据集的距离来选择eps；一般，eps的取值尽量取小。</li>
-<li>MinPts<br>邻近区域内至少包含点的个数。对于具有噪声的数据集，应考虑较大的MinPts；MinPts的最小值必须为3。数据集越大，对应选择的MinPts应越大。</li>
-</ol>
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
-<li><a href="https://blog.csdn.net/huacha__/article/details/81094891" target="_blank" rel="noopener">DBSCAN聚类算法——机器学习（理论+图解+python代码）</a></li>
-<li><a href="https://www.cnblogs.com/bonelee/p/8692336.html" target="_blank" rel="noopener">DBSCAN方法及应用</a></li>
-<li><a href="https://mp.weixin.qq.com/s?__biz=MzU5NzkxODMxOA==&amp;mid=2247485595&amp;idx=1&amp;sn=830a5f9ac8d3e9966ae36859fbcdab0b&amp;chksm=fe4d5f9ac93ad68cae44a066ab689b9f6178618d2b2420473de316fe95c85ebb8789c5f5abb8&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">DBSCAN密度聚类</a></li>
-</ul>
-
+          <p><center>Density-Based Spatial Clustering of Applications with Noise</center><br></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/05/17/%E7%AE%97%E6%B3%95-DBSCAN/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -1084,12 +1087,18 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-05-17 22:39:01 / 修改时间：23:40:04" itemprop="dateCreated datePublished" datetime="2020-05-17T22:39:01+08:00">2020-05-17</time>
+              <time title="创建时间：2020-05-17 22:39:01" itemprop="dateCreated datePublished" datetime="2020-05-17T22:39:01+08:00">2020-05-17</time>
             </span>
 
           
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-05-26 13:29:20" itemprop="dateModified" datetime="2020-05-26T13:29:20+08:00">2020-05-26</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -1125,34 +1134,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>t-SNE<br>t分布随机邻域嵌入算法<br>t-Distributed Stochastic Neighbor Embedding</p>
-<h1 id="降维"><a href="#降维" class="headerlink" title="降维"></a>降维</h1><p>Dimensionality Reduction<br>把数据或特征的维数降低</p>
-<p>一般分为2种：</p>
-<ol>
-<li><strong>线性降维</strong><ul>
-<li>主成分分析（PCA，Principal Components Analysis）</li>
-<li>线性判别分析（LDA，Linear Discriminant Analysis）</li>
-<li>多维尺度变换（MDS，Classical Multidimensional Scaling）</li>
-</ul>
-</li>
-<li><strong>非线性降维</strong><ul>
-<li>等距特征映射（IsoMap，Isometric Mapping）</li>
-<li>局部线性嵌入（LLE，Locally Linear Embedding）</li>
-<li>拉普拉斯特征映射（LE，Laplacian Eigenmaps）</li>
-<li>t-SNE</li>
-</ul>
-</li>
-</ol>
-<h1 id="t-SNE"><a href="#t-SNE" class="headerlink" title="t-SNE"></a>t-SNE</h1><ul>
-<li>是一种非线性降维方法</li>
-<li>但主要被用于可视化</li>
-</ul>
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
-<li><a href="http://bindog.github.io/blog/2016/06/04/from-sne-to-tsne-to-largevis/" target="_blank" rel="noopener">从SNE到t-SNE再到LargeVis</a></li>
-<li><a href="https://www.sohu.com/a/204249302_465975" target="_blank" rel="noopener">机器之心-深度 | 详解可视化利器t-SNE算法：数无形时少直觉</a></li>
-<li><a href="https://www.jianshu.com/p/8c20b975a174" target="_blank" rel="noopener">t-SNE和PCA介绍</a></li>
-</ul>
-
+          <p><center>t-Distributed Stochastic Neighbor Embedding</center><br></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/05/17/%E7%AE%97%E6%B3%95-t-SNE/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
