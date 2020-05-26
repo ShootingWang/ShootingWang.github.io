@@ -24,13 +24,13 @@
 
   <meta name="description" content="优先按照英文排序；若无英文，则按中文排序  AAPA活跃付费用户数（Active Payment Account） 活跃付费用户数（APA）&#x3D;月活跃用户数（MAU）\times 月付费率（MPR）解决问题：  产品的付费用户规模 APA的构成情况 付费群体的价值（整体稳定性分析）  ARPU客单价&#x2F;平均每用户收入（Average Revenue Per User）  在统计时间内，活跃用户产生的">
 <meta property="og:type" content="article">
-<meta property="og:title" content="数据分析 | 电商类指标">
+<meta property="og:title" content="数据分析 | 业务分析主要指标">
 <meta property="og:url" content="https://github.com/ShootingWang/ShootingWang.github.io/2020/05/15/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-%E4%B8%BB%E8%A6%81%E6%8C%87%E6%A0%87/index.html">
 <meta property="og:site_name" content="ShootingWang">
 <meta property="og:description" content="优先按照英文排序；若无英文，则按中文排序  AAPA活跃付费用户数（Active Payment Account） 活跃付费用户数（APA）&#x3D;月活跃用户数（MAU）\times 月付费率（MPR）解决问题：  产品的付费用户规模 APA的构成情况 付费群体的价值（整体稳定性分析）  ARPU客单价&#x2F;平均每用户收入（Average Revenue Per User）  在统计时间内，活跃用户产生的">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-05-15T05:40:03.000Z">
-<meta property="article:modified_time" content="2020-05-26T01:55:51.889Z">
+<meta property="article:modified_time" content="2020-05-26T02:01:21.020Z">
 <meta property="article:author" content="ShootingWang">
 <meta property="article:tag" content="数据分析">
 <meta property="article:tag" content="业务向">
@@ -50,7 +50,7 @@
   };
 </script>
 
-  <title>数据分析 | 电商类指标 | ShootingWang</title>
+  <title>数据分析 | 业务分析主要指标 | ShootingWang</title>
   
 
 
@@ -198,7 +198,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          数据分析 | 电商类指标
+          数据分析 | 业务分析主要指标
         </h1>
 
         <div class="post-meta">
@@ -215,7 +215,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-05-26 09:55:51" itemprop="dateModified" datetime="2020-05-26T09:55:51+08:00">2020-05-26</time>
+                <time title="修改时间：2020-05-26 10:01:21" itemprop="dateModified" datetime="2020-05-26T10:01:21+08:00">2020-05-26</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -274,8 +274,23 @@
 <li>在统计时间内，活跃用户产生的平均收入（一般以月计）</li>
 <li>ARPU用于产品定位初期的不同规模下的收入估计，也是LTV的重要参考依据</li>
 </ul>
-<script type="math/tex; mode=display">\mathrm{ARPU}=\frac{总收入}{活跃用户AU}=\frac{Revenue}{User}</script><script type="math/tex; mode=display">\mathrm{Monthly ARPU}=\frac{Revenue}{MAU}</script><h2 id="ARPPU"><a href="#ARPPU" class="headerlink" title="ARPPU"></a>ARPPU</h2><p>平均每付费用户收入（Average Revenue Per Paying User）</p>
-<script type="math/tex; mode=display">ARPPU=\frac{总收入}{活跃付费用户数APA}</script><h2 id="AU"><a href="#AU" class="headerlink" title="AU"></a>AU</h2><p>活跃用户（Active Users）</p>
+<script type="math/tex; mode=display">ARPU=\frac{总收入}{活跃用户AU}=\frac{Revenue}{User}</script><script type="math/tex; mode=display">Monthly\ ARPU=\frac{Revenue}{MAU}</script><p>解决问题：</p>
+<ul>
+<li>不同渠道用户质量分析</li>
+<li>产品收益贡献分析</li>
+<li>活跃用户人均收入与投放成本的关系</li>
+</ul>
+<h2 id="ARPPU"><a href="#ARPPU" class="headerlink" title="ARPPU"></a>ARPPU</h2><p>平均每付费用户收入（Average Revenue Per Paying User）</p>
+<ul>
+<li>在统计时间内，付费用户产生的平均收入（一般以月计）</li>
+</ul>
+<script type="math/tex; mode=display">ARPPU=\frac{总收入}{活跃付费用户数APA}</script><p>解决问题：</p>
+<ul>
+<li>付费用户的付费能力和梯度变化</li>
+<li>付费用户的整体付费趋势和不同付费阶层差异</li>
+<li>对高付费用户的价值挖掘</li>
+</ul>
+<h2 id="AU"><a href="#AU" class="headerlink" title="AU"></a>AU</h2><p>活跃用户（Active Users）</p>
 <h3 id="DAU"><a href="#DAU" class="headerlink" title="DAU"></a>DAU</h3><p>日活跃用户数（DAU，Daily Active Users）：反映网站/APP/游戏的运营情况</p>
 <p>解决问题：</p>
 <ul>
@@ -340,7 +355,13 @@
 <ul>
 <li>同一天00:00-24:00内相同IP地址仅计算一次</li>
 </ul>
-<h2 id="LTV"><a href="#LTV" class="headerlink" title="LTV"></a>LTV</h2><p><strong>用户生命周期价值</strong>（LTV）</p>
+<h1 id="L"><a href="#L" class="headerlink" title="L"></a>L</h1><h2 id="LTV"><a href="#LTV" class="headerlink" title="LTV"></a>LTV</h2><p><strong>用户生命周期价值</strong>（LTV，Life Time Value）：公司从用户的互动中得到的全部经济收益的总和；不区分付费与非付费用户</p>
+<script type="math/tex; mode=display">LTV = ARPU \times LT（按天或月计算的平均生命周期）</script><div class="note default">
+            <p>实际计算：跟踪某日或某周的新增用户，计算该批用户在随后的7日、14日、30日的累积收入贡献，除以该批新增用户数，即为累积收入/新增用户数=累积ARPU（LTV）</p>
+          </div>
+<div class="note info">
+            <p>解决问题：</p><ul><li>用户收益贡献周期</li><li>用户群与渠道的利润贡献</li></ul>
+          </div>
 <h1 id="M"><a href="#M" class="headerlink" title="M"></a>M</h1><h2 id="MVP"><a href="#MVP" class="headerlink" title="MVP"></a>MVP</h2><p>最小可行性产品（MVP）</p>
 <h1 id="P"><a href="#P" class="headerlink" title="P"></a>P</h1><h2 id="PCT"><a href="#PCT" class="headerlink" title="PCT"></a>PCT</h2><p><strong>客单价</strong>（Per Customer Transaction）：平均交易金额/顾客平均购买商品的金额</p>
 <script type="math/tex; mode=display">客单价=销售总额/成交总笔数</script><p> 或</p>
@@ -565,7 +586,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#A"><span class="nav-number">1.</span> <span class="nav-text">A</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#APA"><span class="nav-number">1.1.</span> <span class="nav-text">APA</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ARPU"><span class="nav-number">1.2.</span> <span class="nav-text">ARPU</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ARPPU"><span class="nav-number">1.3.</span> <span class="nav-text">ARPPU</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AU"><span class="nav-number">1.4.</span> <span class="nav-text">AU</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#DAU"><span class="nav-number">1.4.1.</span> <span class="nav-text">DAU</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MAU"><span class="nav-number">1.4.2.</span> <span class="nav-text">MAU</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WAU"><span class="nav-number">1.4.3.</span> <span class="nav-text">WAU</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#C"><span class="nav-number">2.</span> <span class="nav-text">C</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#CAC"><span class="nav-number">2.1.</span> <span class="nav-text">CAC</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#D"><span class="nav-number">3.</span> <span class="nav-text">D</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#DAOT"><span class="nav-number">3.1.</span> <span class="nav-text">DAOT</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DNU"><span class="nav-number">3.2.</span> <span class="nav-text">DNU</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Enquiry"><span class="nav-number">3.3.</span> <span class="nav-text">Enquiry</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FR"><span class="nav-number">3.4.</span> <span class="nav-text">FR</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IP"><span class="nav-number">3.5.</span> <span class="nav-text">IP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LTV"><span class="nav-number">3.6.</span> <span class="nav-text">LTV</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#M"><span class="nav-number">4.</span> <span class="nav-text">M</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#MVP"><span class="nav-number">4.1.</span> <span class="nav-text">MVP</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#P"><span class="nav-number">5.</span> <span class="nav-text">P</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#PCT"><span class="nav-number">5.1.</span> <span class="nav-text">PCT</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PMF"><span class="nav-number">5.2.</span> <span class="nav-text">PMF</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PPC"><span class="nav-number">5.3.</span> <span class="nav-text">PPC</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PR-PUR"><span class="nav-number">5.4.</span> <span class="nav-text">PR&#x2F;PUR</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PV"><span class="nav-number">5.5.</span> <span class="nav-text">PV</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#R"><span class="nav-number">6.</span> <span class="nav-text">R</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Retention"><span class="nav-number">6.1.</span> <span class="nav-text">Retention</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#S"><span class="nav-number">7.</span> <span class="nav-text">S</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#SEO"><span class="nav-number">7.1.</span> <span class="nav-text">SEO</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SKU-SPU"><span class="nav-number">7.2.</span> <span class="nav-text">SKU | SPU</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TS"><span class="nav-number">7.3.</span> <span class="nav-text">TS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#UD"><span class="nav-number">7.4.</span> <span class="nav-text">UD</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#UV"><span class="nav-number">7.5.</span> <span class="nav-text">UV</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#VV"><span class="nav-number">7.6.</span> <span class="nav-text">VV</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">7.7.</span> <span class="nav-text"> </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料"><span class="nav-number">8.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#A"><span class="nav-number">1.</span> <span class="nav-text">A</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#APA"><span class="nav-number">1.1.</span> <span class="nav-text">APA</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ARPU"><span class="nav-number">1.2.</span> <span class="nav-text">ARPU</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ARPPU"><span class="nav-number">1.3.</span> <span class="nav-text">ARPPU</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AU"><span class="nav-number">1.4.</span> <span class="nav-text">AU</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#DAU"><span class="nav-number">1.4.1.</span> <span class="nav-text">DAU</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MAU"><span class="nav-number">1.4.2.</span> <span class="nav-text">MAU</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WAU"><span class="nav-number">1.4.3.</span> <span class="nav-text">WAU</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#C"><span class="nav-number">2.</span> <span class="nav-text">C</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#CAC"><span class="nav-number">2.1.</span> <span class="nav-text">CAC</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#D"><span class="nav-number">3.</span> <span class="nav-text">D</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#DAOT"><span class="nav-number">3.1.</span> <span class="nav-text">DAOT</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DNU"><span class="nav-number">3.2.</span> <span class="nav-text">DNU</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Enquiry"><span class="nav-number">3.3.</span> <span class="nav-text">Enquiry</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FR"><span class="nav-number">3.4.</span> <span class="nav-text">FR</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IP"><span class="nav-number">3.5.</span> <span class="nav-text">IP</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#L"><span class="nav-number">4.</span> <span class="nav-text">L</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#LTV"><span class="nav-number">4.1.</span> <span class="nav-text">LTV</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#M"><span class="nav-number">5.</span> <span class="nav-text">M</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#MVP"><span class="nav-number">5.1.</span> <span class="nav-text">MVP</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#P"><span class="nav-number">6.</span> <span class="nav-text">P</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#PCT"><span class="nav-number">6.1.</span> <span class="nav-text">PCT</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PMF"><span class="nav-number">6.2.</span> <span class="nav-text">PMF</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PPC"><span class="nav-number">6.3.</span> <span class="nav-text">PPC</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PR-PUR"><span class="nav-number">6.4.</span> <span class="nav-text">PR&#x2F;PUR</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PV"><span class="nav-number">6.5.</span> <span class="nav-text">PV</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#R"><span class="nav-number">7.</span> <span class="nav-text">R</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Retention"><span class="nav-number">7.1.</span> <span class="nav-text">Retention</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#S"><span class="nav-number">8.</span> <span class="nav-text">S</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#SEO"><span class="nav-number">8.1.</span> <span class="nav-text">SEO</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SKU-SPU"><span class="nav-number">8.2.</span> <span class="nav-text">SKU | SPU</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TS"><span class="nav-number">8.3.</span> <span class="nav-text">TS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#UD"><span class="nav-number">8.4.</span> <span class="nav-text">UD</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#UV"><span class="nav-number">8.5.</span> <span class="nav-text">UV</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#VV"><span class="nav-number">8.6.</span> <span class="nav-text">VV</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">8.7.</span> <span class="nav-text"> </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料"><span class="nav-number">9.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -640,7 +661,7 @@
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">2:34</span>
+    <span title="站点阅读时长">2:35</span>
 </div>
 
 
@@ -715,8 +736,6 @@
 
 
 
-
-  
 
 
 
