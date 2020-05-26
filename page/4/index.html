@@ -892,7 +892,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-05-17 11:12:52" itemprop="dateModified" datetime="2020-05-17T11:12:52+08:00">2020-05-17</time>
+                <time title="修改时间：2020-05-26 13:40:48" itemprop="dateModified" datetime="2020-05-26T13:40:48+08:00">2020-05-26</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -929,16 +929,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="Pandas"><a href="#Pandas" class="headerlink" title="Pandas"></a>Pandas</h1><h2 id="cut"><a href="#cut" class="headerlink" title=".cut()"></a>.cut()</h2><p>将数组按区间划分</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">cut(数据数组, 面元数组)  <span class="comment"># 将数据数组按区间划分</span></span><br><span class="line">cut(数据数组, 面元个数, precision=<span class="number">2</span>)  <span class="comment"># 将数据数组均分；每个面元的间距一致</span></span><br><span class="line"><span class="comment"># precision=2表示保留2位小数</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line">ages = [<span class="number">23</span>, <span class="number">45</span>, <span class="number">21</span>, <span class="number">15</span>, <span class="number">24</span>, <span class="number">54</span>, <span class="number">36</span>, <span class="number">48</span>, <span class="number">57</span>, <span class="number">86</span>, <span class="number">61</span>, <span class="number">45</span>]  <span class="comment"># 数据数组</span></span><br><span class="line">cat2 = pd.cut(ages, <span class="number">5</span>)  <span class="comment"># 不指定面元划分，只指定面元个数</span></span><br><span class="line">cat2</span><br><span class="line"><span class="comment"># [(14.929, 29.2], (43.4, 57.6], (14.929, 29.2], (14.929, 29.2], (14.929, 29.2], ..., (43.4, 57.6], (43.4, 57.6], (71.8, 86.0], (57.6, 71.8], (43.4, 57.6]]</span></span><br><span class="line"><span class="comment"># Length: 12</span></span><br><span class="line"><span class="comment"># Categories (5, interval[float64]): [(14.929, 29.2] &lt; (29.2, 43.4] &lt; (43.4, 57.6] &lt; (57.6, 71.8] &lt; (71.8, 86.0]]</span></span><br></pre></td></tr></table></figure>
-<p>指定面元标签：<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line">ages = np.random.randint(<span class="number">18</span>, <span class="number">89</span>, size = <span class="number">30</span>)</span><br><span class="line">ages</span><br><span class="line"><span class="comment"># array([75, 66,  1, 25, 38, 53, 29, 50, 88, 54, 87, 93, 53, 16, 51, 34, 69,</span></span><br><span class="line"><span class="comment">#        60, 70, 58, 95, 76, 52,  8, 20, 48, 61,  1, 11, 18])</span></span><br><span class="line">df = pd.DataFrame()</span><br><span class="line">df[<span class="string">'age'</span>] = ages</span><br><span class="line"><span class="comment"># 一般来说：0（初生）-6岁为婴幼儿；7-12岁为少儿；</span></span><br><span class="line"><span class="comment"># 13-17岁为青少年；18-45岁为青年；46-69岁为中年；&gt;69岁为老年。</span></span><br><span class="line">bins = [<span class="number">0</span>, <span class="number">6</span>, <span class="number">12</span>, <span class="number">18</span>, <span class="number">45</span>, <span class="number">69</span>, <span class="number">100</span>]</span><br><span class="line"></span><br><span class="line">df[<span class="string">'age_bin'</span>] = pd.cut(df[<span class="string">'age'</span>], bins)</span><br><span class="line">df.head()</span><br><span class="line"><span class="comment">#    age    age_bin</span></span><br><span class="line"><span class="comment"># 0   75  (69, 100]</span></span><br><span class="line"><span class="comment"># 1   66   (45, 69]</span></span><br><span class="line"><span class="comment"># 2    1     (0, 6]</span></span><br><span class="line"><span class="comment"># 3   25   (18, 45]</span></span><br><span class="line"><span class="comment"># 4   38   (18, 45]</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 给区间添加标签</span></span><br><span class="line">df[<span class="string">'age_category'</span>] = pd.cut(df[<span class="string">'age'</span>], bins, </span><br><span class="line">  labels=[<span class="string">'婴幼儿'</span>, <span class="string">'少儿'</span>, <span class="string">'青少年'</span>, <span class="string">'青年'</span>, <span class="string">'中年'</span>, <span class="string">'老年'</span>])</span><br><span class="line"></span><br><span class="line">df.head().append(df.tail())  <span class="comment"># 查看前5行和最后5行</span></span><br><span class="line"><span class="comment">#     age    age_bin age_category</span></span><br><span class="line"><span class="comment"># 0    75  (69, 100]           老年</span></span><br><span class="line"><span class="comment"># 1    66   (45, 69]           中年</span></span><br><span class="line"><span class="comment"># 2     1     (0, 6]          婴幼儿</span></span><br><span class="line"><span class="comment"># 3    25   (18, 45]           青年</span></span><br><span class="line"><span class="comment"># 4    38   (18, 45]           青年</span></span><br><span class="line"><span class="comment"># 25   48   (45, 69]           中年</span></span><br><span class="line"><span class="comment"># 26   61   (45, 69]           中年</span></span><br><span class="line"><span class="comment"># 27    1     (0, 6]          婴幼儿</span></span><br><span class="line"><span class="comment"># 28   11    (6, 12]           少儿</span></span><br><span class="line"><span class="comment"># 29   18   (12, 18]          青少年</span></span><br></pre></td></tr></table></figure></p>
-<h3 id="codes"><a href="#codes" class="headerlink" title=".codes"></a>.codes</h3><p>查看数据对应的面元编号<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line">ages = [<span class="number">23</span>, <span class="number">45</span>, <span class="number">21</span>, <span class="number">15</span>, <span class="number">24</span>, <span class="number">54</span>, <span class="number">36</span>, <span class="number">48</span>, <span class="number">57</span>, <span class="number">86</span>, <span class="number">61</span>, <span class="number">45</span>]  <span class="comment"># 数据数组</span></span><br><span class="line">bins = [<span class="number">0</span>,<span class="number">18</span>, <span class="number">30</span>, <span class="number">40</span>, <span class="number">50</span>, <span class="number">65</span>,<span class="number">100</span>]  <span class="comment"># 面元数组</span></span><br><span class="line"></span><br><span class="line">cat = pd.cut(ages, bins)</span><br><span class="line">cat  <span class="comment"># 返回每个数据对应的面元</span></span><br><span class="line"><span class="comment"># [(18, 30], (40, 50], (18, 30], (0, 18], (18, 30], ..., (40, 50], (50, 65], (65, 100], (50, 65], (40, 50]]</span></span><br><span class="line"><span class="comment"># Length: 12</span></span><br><span class="line"><span class="comment"># Categories (6, interval[int64]): [(0, 18] &lt; (18, 30] &lt; (30, 40] &lt; (40, 50] &lt; (50, 65] &lt; (65, 100]]</span></span><br></pre></td></tr></table></figure></p>
-<h3 id="value-counts"><a href="#value-counts" class="headerlink" title=".value_counts()"></a>.value_counts()</h3><p>不同面元里含有的数据个数<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">cat.value_counts()  <span class="comment"># 不同面元里含有的数据个数</span></span><br><span class="line"><span class="comment"># (0, 18]      1</span></span><br><span class="line"><span class="comment"># (18, 30]     3</span></span><br><span class="line"><span class="comment"># (30, 40]     1</span></span><br><span class="line"><span class="comment"># (40, 50]     3</span></span><br><span class="line"><span class="comment"># (50, 65]     3</span></span><br><span class="line"><span class="comment"># (65, 100]    1</span></span><br><span class="line"><span class="comment"># dtype: int64</span></span><br></pre></td></tr></table></figure></p>
-<h2 id="qcut"><a href="#qcut" class="headerlink" title=".qcut()"></a>.qcut()</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">qcut(数据数组, 面元个数)  <span class="comment"># 将数据数组均分；每个面元的数据个数相等</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">cat3 = pd.qcut(ages, <span class="number">5</span>)</span><br><span class="line">cat3</span><br><span class="line"><span class="comment"># [(14.999, 23.2], (39.6, 46.8], (14.999, 23.2], (14.999, 23.2], (23.2, 39.6], ..., (46.8, 56.4], (56.4, 86.0], (56.4, 86.0], (56.4, 86.0], (39.6, 46.8]]</span></span><br><span class="line"><span class="comment"># Length: 12</span></span><br><span class="line"><span class="comment"># Categories (5, interval[float64]): [(14.999, 23.2] &lt; (23.2, 39.6] &lt; (39.6, 46.8] &lt; (46.8, 56.4] &lt; (56.4, 86.0]]</span></span><br><span class="line">cat3.value_counts()  <span class="comment"># qcut()会尽可能保证每个面元包含的数据个数相等</span></span><br><span class="line"><span class="comment"># (14.999, 23.2]    3</span></span><br><span class="line"><span class="comment"># (23.2, 39.6]      2</span></span><br><span class="line"><span class="comment"># (39.6, 46.8]      2</span></span><br><span class="line"><span class="comment"># (46.8, 56.4]      2</span></span><br><span class="line"><span class="comment"># (56.4, 86.0]      3</span></span><br><span class="line"><span class="comment"># dtype: int64</span></span><br><span class="line"></span><br><span class="line">cat4 = pd.qcut(ages, <span class="number">3</span>)  <span class="comment"># 将ages均分成3份，每个面元有4个数据</span></span><br><span class="line">cat4</span><br><span class="line"><span class="comment"># [(14.999, 32.0], (32.0, 50.0], (14.999, 32.0], (14.999, 32.0], (14.999, 32.0], ..., (32.0, 50.0], (50.0, 86.0], (50.0, 86.0], (50.0, 86.0], (32.0, 50.0]]</span></span><br><span class="line"><span class="comment"># Length: 12</span></span><br><span class="line"><span class="comment"># Categories (3, interval[float64]): [(14.999, 32.0] &lt; (32.0, 50.0] &lt; (50.0, 86.0]]</span></span><br><span class="line">cat4.value_counts()</span><br><span class="line"><span class="comment"># (14.999, 32.0]    4</span></span><br><span class="line"><span class="comment"># (32.0, 50.0]      4</span></span><br><span class="line"><span class="comment"># (50.0, 86.0]      4</span></span><br><span class="line"><span class="comment"># dtype: int64</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p>[] <a href></a></p>
-
+          <p><center></center><br></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/05/12/python-pandas%E6%A8%A1%E5%9D%97/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -991,7 +990,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-05-17 13:45:29" itemprop="dateModified" datetime="2020-05-17T13:45:29+08:00">2020-05-17</time>
+                <time title="修改时间：2020-05-26 13:41:09" itemprop="dateModified" datetime="2020-05-26T13:41:09+08:00">2020-05-26</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1028,229 +1027,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="Python2-vs-Python-3"><a href="#Python2-vs-Python-3" class="headerlink" title="Python2 vs Python 3"></a>Python2 vs Python 3</h1><h2 id="默认编码"><a href="#默认编码" class="headerlink" title="默认编码"></a>默认编码</h2><div class="table-container">
-<table>
-<thead>
-<tr>
-<th style="text-align:center"></th>
-<th style="text-align:center">Python 2</th>
-<th style="text-align:center">Python 3</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">默认编码</td>
-<td style="text-align:center">ASCII</td>
-<td style="text-align:center">utf-8</td>
-</tr>
-</tbody>
-</table>
-</div>
-<h2 id="用户交互"><a href="#用户交互" class="headerlink" title="用户交互"></a>用户交互</h2><div class="table-container">
-<table>
-<thead>
-<tr>
-<th style="text-align:center"></th>
-<th style="text-align:center">Python 2</th>
-<th style="text-align:center">Python 3</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">用户输入函数</td>
-<td style="text-align:center"><code>raw_input()</code></td>
-<td style="text-align:center"><code>input()</code></td>
-</tr>
-</tbody>
-</table>
-</div>
-<h2 id="Unicode"><a href="#Unicode" class="headerlink" title="Unicode"></a>Unicode</h2><div class="table-container">
-<table>
-<thead>
-<tr>
-<th style="text-align:center"></th>
-<th style="text-align:center">Python 2</th>
-<th style="text-align:center">Python 3</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">Unicode默认</td>
-<td style="text-align:center">2个字节表示一个字符</td>
-<td style="text-align:center">4个字节表示一个字符</td>
-</tr>
-</tbody>
-</table>
-</div>
-<h2 id="init文件"><a href="#init文件" class="headerlink" title="init文件"></a>init文件</h2><div class="table-container">
-<table>
-<thead>
-<tr>
-<th style="text-align:center"></th>
-<th style="text-align:center">Python 2</th>
-<th style="text-align:center">Python 3</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">init文件</td>
-<td style="text-align:center">新建的包如果没有init文件，不能被调用</td>
-<td style="text-align:center">新建的包里面的init文件如果被删除，包照样可以被调用</td>
-</tr>
-</tbody>
-</table>
-</div>
-<h2 id="range"><a href="#range" class="headerlink" title="range"></a>range</h2><div class="table-container">
-<table>
-<thead>
-<tr>
-<th style="text-align:center"></th>
-<th style="text-align:center">Python 2</th>
-<th style="text-align:center">Python 3</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center"><code>xrange</code></td>
-<td style="text-align:center">有<br>返回一个迭代器<br>在每次循环中生成序列的下一个数字</td>
-<td style="text-align:center">无</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>range</code></td>
-<td style="text-align:center">有<br>返回一个list</td>
-<td style="text-align:center">有<br>相当于Python2中的<code>xrange</code></td>
-</tr>
-</tbody>
-</table>
-</div>
-<h2 id="print函数"><a href="#print函数" class="headerlink" title="print函数"></a>print函数</h2><div class="table-container">
-<table>
-<thead>
-<tr>
-<th style="text-align:center"></th>
-<th style="text-align:center">Python 2</th>
-<th style="text-align:center">Python 3</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center"><code>print</code></td>
-<td style="text-align:center">是statement，不需要加括号</td>
-<td style="text-align:center">是函数，需要加括号</td>
-</tr>
-</tbody>
-</table>
-</div>
-<h2 id="整数相除"><a href="#整数相除" class="headerlink" title="整数相除"></a>整数相除</h2><div class="table-container">
-<table>
-<thead>
-<tr>
-<th style="text-align:center"></th>
-<th style="text-align:center">Python 2</th>
-<th style="text-align:center">Python 3</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center"><code>/</code></td>
-<td style="text-align:center"><code>3/2</code>是<code>int</code></td>
-<td style="text-align:center"><code>3/2</code>是<code>float</code></td>
-</tr>
-</tbody>
-</table>
-</div>
-<h2 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h2><div class="table-container">
-<table>
-<thead>
-<tr>
-<th style="text-align:center"></th>
-<th style="text-align:center">Python 2</th>
-<th style="text-align:center">Python 3</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center"><code>as</code>关键字</td>
-<td style="text-align:center">不用使用</td>
-<td style="text-align:center">必须使用</td>
-</tr>
-</tbody>
-</table>
-</div>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## Python 2</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    <span class="number">1</span>/<span class="number">0</span></span><br><span class="line"><span class="keyword">except</span> ZeroDivisionError, e:</span><br><span class="line">    <span class="keyword">print</span> str(e)</span><br><span class="line"></span><br><span class="line"><span class="comment">## Python 3</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    <span class="number">1</span>/<span class="number">0</span></span><br><span class="line"><span class="keyword">except</span> ZeroDivisionError <span class="keyword">as</span> e:</span><br><span class="line">    print(str(e))</span><br></pre></td></tr></table></figure>
-<h2 id="map函数"><a href="#map函数" class="headerlink" title="map函数"></a>map函数</h2><div class="table-container">
-<table>
-<thead>
-<tr>
-<th style="text-align:center"></th>
-<th style="text-align:center">Python 2</th>
-<th style="text-align:center">Python 3</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center"><code>map()</code></td>
-<td style="text-align:center">返回list</td>
-<td style="text-align:center">返回迭代器（iterator）</td>
-</tr>
-</tbody>
-</table>
-</div>
-<h2 id="不等运算符"><a href="#不等运算符" class="headerlink" title="不等运算符"></a>不等运算符</h2><div class="table-container">
-<table>
-<thead>
-<tr>
-<th style="text-align:center"></th>
-<th style="text-align:center">Python 2</th>
-<th style="text-align:center">Python 3</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">不等运算符</td>
-<td style="text-align:center"><code>&lt;&gt;</code> 或 <code>!=</code></td>
-<td style="text-align:center">只有<code>!=</code></td>
-</tr>
-</tbody>
-</table>
-</div>
-<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><div class="table-container">
-<table>
-<thead>
-<tr>
-<th style="text-align:center"></th>
-<th style="text-align:center">Python 2</th>
-<th style="text-align:center">Python 3</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">数据类型</td>
-<td style="text-align:center">有 <code>long</code>类型</td>
-<td style="text-align:center">没有<code>long</code>类型，只有<code>int</code></td>
-</tr>
-</tbody>
-</table>
-</div>
-<h2 id="has-key方法"><a href="#has-key方法" class="headerlink" title="has_key方法"></a>has_key方法</h2><div class="table-container">
-<table>
-<thead>
-<tr>
-<th style="text-align:center"></th>
-<th style="text-align:center">Python 2</th>
-<th style="text-align:center">Python 3</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">字典</td>
-<td style="text-align:center">字典支持has_key方法</td>
-<td style="text-align:center">字典不支持has_key方法</td>
-</tr>
-</tbody>
-</table>
-</div>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">person = &#123;<span class="string">"age"</span>: <span class="number">35</span>, <span class="string">"name"</span>: <span class="string">"Wang Wu"</span>&#125;</span><br><span class="line"><span class="comment">## Python 2</span></span><br><span class="line"><span class="keyword">print</span> <span class="string">"person has key \"age\":"</span>, person.has_key(<span class="string">"age"</span>)</span><br><span class="line"><span class="comment"># person has key "age": True</span></span><br><span class="line"><span class="keyword">print</span> <span class="string">"person has key \"age\":"</span>, <span class="string">"age"</span> <span class="keyword">in</span> person</span><br><span class="line"><span class="comment"># person has key "age": True</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## Python 3</span></span><br><span class="line">print(<span class="string">"person has key \"age\":"</span>, <span class="string">"age"</span> <span class="keyword">in</span> person)</span><br><span class="line"><span class="comment"># person has key "age": True</span></span><br></pre></td></tr></table></figure>
+          <p><center>Python 2 vs Python 3</center><br></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/05/12/python-23%E5%8C%BA%E5%88%AB/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
