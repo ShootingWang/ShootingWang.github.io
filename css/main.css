@@ -1511,7 +1511,7 @@ pre code {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #ff2a3d;
+  background: #bed2ff;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -1875,6 +1875,7 @@ pre code {
 .post-body .exturl .fa {
   font-size: 0.875em;
   margin-left: 4px;
+  color: #5f9ea0;
 }
 .post-body .image-caption,
 .post-body .figure .caption {
