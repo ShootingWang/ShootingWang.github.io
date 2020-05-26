@@ -406,7 +406,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-05-26 13:14:52" itemprop="dateModified" datetime="2020-05-26T13:14:52+08:00">2020-05-26</time>
+                <time title="修改时间：2020-05-26 13:17:45" itemprop="dateModified" datetime="2020-05-26T13:17:45+08:00">2020-05-26</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -443,15 +443,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <center>《SQL解惑（第二版）》学习笔记</center>
-
-<h1 id="财政年度表"><a href="#财政年度表" class="headerlink" title="财政年度表"></a>财政年度表</h1><ul>
-<li>创建表格时需要添加约束，保证表格的正确性</li>
-</ul>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> FiscalYears</span><br><span class="line">(fiscal_year <span class="built_in">INTEGER</span> <span class="keyword">NOT</span> <span class="literal">NULL</span> PRIMARY <span class="keyword">KEY</span>,   <span class="comment">-- 主键约束</span></span><br><span class="line">start_date <span class="built_in">DATE</span> <span class="keyword">NOT</span> <span class="literal">NULL</span>,</span><br><span class="line"><span class="keyword">CONSTRAINT</span> valid_start_date  <span class="comment">-- 判断start_date是否符合会计年度规定</span></span><br><span class="line">			<span class="keyword">CHECK</span> ( (<span class="keyword">EXTRACT</span>(<span class="keyword">YEAR</span> <span class="keyword">FROM</span> start_date)  = fiscal_year - <span class="number">1</span>)  <span class="comment">-- EXTRACT()从start_date中提取年份</span></span><br><span class="line">				 <span class="keyword">AND</span> (<span class="keyword">EXTRACT</span>(<span class="keyword">MONTH</span> <span class="keyword">FROM</span> start_date) = <span class="number">10</span>)</span><br><span class="line">                 <span class="keyword">AND</span> (<span class="keyword">EXTRACT</span>(<span class="keyword">DAY</span> <span class="keyword">FROM</span> start_date) = <span class="number">01</span>) ),</span><br><span class="line">end_date <span class="built_in">DATE</span> <span class="keyword">NOT</span> <span class="literal">NULL</span>,</span><br><span class="line"><span class="keyword">CONSTRAINT</span> valid_end_date  <span class="comment">-- 判断end_date是否符合会计年度规定</span></span><br><span class="line">			<span class="keyword">CHECK</span> ((<span class="keyword">EXTRACT</span>(<span class="keyword">YEAR</span> <span class="keyword">FROM</span> end_date) = fiscal_year)</span><br><span class="line">				<span class="keyword">AND</span> (<span class="keyword">EXTRACT</span>(<span class="keyword">MONTH</span> <span class="keyword">FROM</span> end_date) = <span class="number">09</span>)</span><br><span class="line">                <span class="keyword">AND</span> (<span class="keyword">EXTRACT</span>(<span class="keyword">DAY</span> <span class="keyword">FROM</span> end_date) = <span class="number">30</span>)));</span><br></pre></td></tr></table></figure>
-<p>但是……错误的语句竟然成功插入了？？<br><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">mysql&gt; INSERT INTO FiscalYears VALUES</span><br><span class="line">    -&gt; (1996, '1995-10-01', '1996-08-30');</span><br><span class="line">Query OK, 1 row affected (0.00 sec)</span><br><span class="line"></span><br><span class="line">mysql&gt; SELECT * FROM FiscalYears;</span><br><span class="line">+<span class="comment">-------------+------------+------------+</span></span><br><span class="line">| fiscal_year | start_date | end_date   |</span><br><span class="line">+<span class="comment">-------------+------------+------------+</span></span><br><span class="line">|        1996 | 1995-10-01 | 1996-08-30 |</span><br><span class="line">+<span class="comment">-------------+------------+------------+</span></span><br><span class="line">1 row in <span class="keyword">set</span> (<span class="number">0.00</span> sec)</span><br></pre></td></tr></table></figure></p>
-<p>bug待解决……</p>
-<h1 id="缺勤者"><a href="#缺勤者" class="headerlink" title="缺勤者"></a>缺勤者</h1>
+          <p><center>《SQL解惑（第二版）》学习笔记</center><br></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/05/25/sql-sql%E8%A7%A3%E6%83%91/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -504,7 +504,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-05-26 13:15:11" itemprop="dateModified" datetime="2020-05-26T13:15:11+08:00">2020-05-26</time>
+                <time title="修改时间：2020-05-26 13:17:13" itemprop="dateModified" datetime="2020-05-26T13:17:13+08:00">2020-05-26</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -541,23 +541,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <center>A New Week!</center>
-
-<h1 id="Why-Do-Cats-Act-so-Weird"><a href="#Why-Do-Cats-Act-so-Weird" class="headerlink" title="Why Do Cats Act so Weird?"></a>Why Do Cats Act so Weird?</h1><ul>
-<li><a href="https://www.ted.com/talks/tony_buffington_why_do_cats_act_so_weird" target="_blank" rel="noopener">Why Do Cats Act so Weird?</a></li>
-<li>2020.05.25</li>
-</ul>
-<p>They are cute, they are lovable. And judging by the 26 billion views of over 2 millon youtude videos of <del>they</del> <strong>them</strong> pouncing, bouncing, climbing, <del>criming</del><strong>cramming</strong>, <del>stacking</del><strong>stalking</strong>, chattering（喋喋不休） and purring（猫喘鸣）, one thing is certain<del>ed</del>, cats are very entertainning.</p>
-<p><del>The someone</del> <strong>These somewhat</strong> strange <del>feel on</del> <strong>feline</strong>(猫科的) behaviors both amusing and <del>bathing</del><strong>baffling</strong>(令人困惑的), <del>maybe</del> <strong>leave many of us</strong> asking, why do cats do that?</p>
-<p><del>The rough</del> <strong>Throughout</strong> time, cats were simultaneously <del>predictors</del><strong>predators</strong>(食肉动物；掠食者) <del>and</del> <strong>of smaller</strong> animals and prey（被捕食动物） for large <strong>carnivores</strong>(食肉动物；食虫植物) . As both <strong>predator</strong> and <del>prayer</del> <strong>prey</strong>, <del>survive</del> <strong>survival of their species depended</strong> <del>depends</del> on <del>their and uncrucious</del> <strong>crucial instinctual</strong>(关键本能) behaviors, which <strong>we</strong> still observe<del>d</del> in wild and <strong>domestic</strong> cats today.</p>
-<p>While the <strong>feline</strong> actions <del>cats</del> <strong>of</strong> your house cat<del>s</del> <strong>Grizmo might seem perplexing(使困惑),</strong> in the wild<strong>, these</strong> <del>the</del> same behavior<strong>s</strong> naturally <del>bring in</del> <strong>bred into</strong> cats for million<strong>s of</strong> years<strong>,</strong> would <del>made</del> <strong>Grizmo</strong>  a super cat. </p>
-<p>Enable by their unique <strong>muscular</strong> <del>mas</del> structure and keen <del>bouncing</del> <strong>balancing abilities</strong> <del>ability</del>, cats climb<strong>ed</strong> to high <del>adventure</del> <strong>vantage</strong>(优势，有利地位) point<strong>s</strong> to <strong>survey their territory</strong> <del>the</del> and <del>spout prayer</del> <strong>spot prey</strong> in the wild. <strong>Grizmo</strong> doesn’t need particular skill<strong>s</strong> to find and hunt down dinner in her food <del>ball</del> <strong>bowl</strong> today, but <strong>instinctually</strong>(本能地) <del>instantiously</del>, <del>even</del> <strong>viewing</strong> the living room from the top of the bookcase is exactly what she has <strong>evolved</strong> to do.</p>
-<p>As wild <del>predictors</del> <strong>predators</strong>, cat has  <strong>opportunistic</strong> and hunt whenever <strong>prey</strong> <del>are</del> <strong>is</strong> available. Since most cat<del>s</del> prey <strong>are</strong> small<strong>, cats in the</strong> <del>catching</del> wild need<strong>ed to</strong> eat many times each day, and <strong>use a stalk, pounce, kill,</strong> <del>its stack pounching</del> eat strategy <del>is</del> stay <strong>fed</strong> . This is why <strong>Grizmo</strong> <del>cats</del> prefer<strong>s</strong> to <del>chess</del> <strong>chase</strong> and pounce on <strong>little</strong> toys and eat small meals over the <del>quarts</del> <strong>courses</strong> of day and night. Also<strong>,</strong> small prey <strong>tend to hide in</strong> <del>high and</del> tiny spaces in the natural environments, so one <strong>explanation for Grizmo’s propensity to reach into containers and</strong> <del>for for pensity for rich entercontrainer</del> opening is that she <strong>is compelled</strong> <del>compare</del> by the same curiosity <strong>that helped ensure the continuation of her species</strong> <del>they hope continue</del> for million<strong>s of</strong> years before.</p>
-<p>In the wild, cats need<strong>ed</strong> to <strong>sharp claws</strong> <del>close</del> for climbing, <strong>hunting, and self-defense.</strong><del>pouncing,</del> <strong>Sharpening</strong> thier <strong>claws on nearby surfaces kept them conditioned and ready,</strong> <del>by cap them condition</del> help<strong>ed</strong> stretch their back and <del>like</del> <strong>leg</strong> muscle<strong>s</strong>, <strong>and relieve</strong> some <strong>stress,</strong> too. So it is <strong>not that Grizmo hates your</strong> <del>nothing</del> couch, chair, <strong>ottoman,</strong> pillows, curtains and everything <strong>else</strong> you put in their environment. She <strong>is ripping these things to shreds（碎片，破布）</strong> <del>needs to rip</del> and keep<strong>ing</strong> her <del>clause</del> <strong>claws in tip-top(极好的) shape</strong> <del>to top shade,</del> because this is exactly what her ancestor<strong>s</strong> did in order to survive. </p>
-<p>As animals <del>to</del> <strong>that were preyed upon</strong> , cats <strong>evolved</strong> to not get <strong>caught, and</strong> <del>close</del> in the wild, <strong>the cats that were the best at avoiding predators thrived</strong>. So at your house today, <del>even</del> <strong>Grizmo is an</strong> expert at squeezing <del>in</del> <strong>into</strong> small spaces and seeking out and hiding <strong>in unconventonal(非传统地) spots</strong> <del>un</del>. It also <strong>explains why she</strong> prefer<strong>s</strong> <del>at</del> <strong>a</strong> clean<del>ing</del> and <del>older free</del> <strong>odor-free</strong>(无异味地) little box. That <strong>is less likely to</strong> give <strong>away</strong> her <del>vacation</del> <strong>location to any predactors that may be sniffing</strong>(嗅探) <del>and</del> around <del>you by</del> <strong>nearby</strong>.</p>
-<p>Considering everything <del>you</del> <strong>we</strong> do know about cats, it seems <strong>that</strong> one of <del>the</del> <strong>their</strong> most <del>predominant</del> <strong>predominate</strong> behavior<strong>s is</strong> still one of the most <del>weird</del> <strong>mysterious</strong>(神秘的，难以理解的). Cats may pur<em>r</em> for any number of reasons, such as happiness, stress and hunger. But curiously, the frequency of they <del>pur</del> <strong>purrs</strong> between 25 and 150 <strong>hertz,</strong> is within a range <strong>that</strong> can <strong>promote</strong> tissue(组织，纸巾) <strong>re</strong>generation. So <del>why</del> <strong>while her</strong> purring <strong>makes Grizmo an</strong> <del>and</del> excellent <strong>nap companion</strong>, it is also possible that her pur<strong>r</strong> is healing <strong>her</strong> muscles and bones, and <del>even</del> maybe <strong>even yours,</strong> too.</p>
-<p>They develope<strong>ed</strong> through time and <del>soli</del> <strong>solitary(孤独的，独居的) predactors that</strong> <del>predic</del> hunted and killed <strong>to eat, and stealthy（秘密的，鬼鬼祟祟的） prey that hid and escaped</strong> <del>they eat still feel</del> to survive. So cats today retain many <strong>of the</strong> same <del>things</del> <strong>instincts</strong> allow<strong>ed</strong> them to <del>fly</del> <strong>thrive</strong>(兴盛，茁壮) in the wild for millions of years. This explain<strong>s</strong> some of <strong>their seemlingly</strong> strange behaviors<strong>.</strong>  To them, our homes are their jungles. But <del>it fits</del> <strong>if this is</strong> the case<strong>, in</strong> our own cat’s eyes, who <strong>are we? Big, dumb, hairless cats</strong> <del>will</del> competing with them with resource <strong>?</strong><del>,</del> Terribly stupid <strong>predactors</strong> they <strong>are</strong> able to <strong>outsmart</strong>(用计谋打败) everyday<strong>?</strong> Or maybe they think we are the prey.</p>
-
+          <p><center>A New Week!</center><br></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/05/25/TED-WhyDoCatsActSoWeird/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
