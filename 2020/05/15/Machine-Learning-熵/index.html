@@ -31,7 +31,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://github.com/2020/05/15/Machine-Learning-%E7%86%B5/mi.png">
 <meta property="article:published_time" content="2020-05-15T12:29:18.000Z">
-<meta property="article:modified_time" content="2020-05-26T09:24:19.699Z">
+<meta property="article:modified_time" content="2020-05-26T09:26:52.127Z">
 <meta property="article:author" content="ShootingWang">
 <meta property="article:tag" content="算法">
 <meta property="article:tag" content="机器学习">
@@ -219,7 +219,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-05-26 17:24:19" itemprop="dateModified" datetime="2020-05-26T17:24:19+08:00">2020-05-26</time>
+                <time title="修改时间：2020-05-26 17:26:52" itemprop="dateModified" datetime="2020-05-26T17:26:52+08:00">2020-05-26</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -354,13 +354,13 @@
 <h1 id="相对熵-KL散度"><a href="#相对熵-KL散度" class="headerlink" title="相对熵/KL散度"></a>相对熵/KL散度</h1><p><strong>相对熵</strong>，又称互熵、鉴别信息、Kullback熵、<strong>Kullback-Leible散度</strong>（KL散度），是两个概率分布间差异的非对称性度量；常常用来度量两个随机变量的“距离”。在信息论中，相对熵等价于两个概率分布的信息熵的差值。如果其中一个概率分布为真实分布，另一个为理论分布/拟合分布，则相对熵等于交叉熵与真实分布的信息熵之差，表示使用理论分布拟合真实分布时的信息损耗。</p>
 <p>设$p(x)$和$q(x)$是两个概率分布，则$p$对$q$的相对熵为</p>
 <script type="math/tex; mode=display">D_{KL}(p||q)=E_{p(x)}\left(\log{\frac{p(x)}{q(x)}}\right)=\sum_{i=1}^np(x_i)\log{\frac{p(x_i)}{q(x_i)}}</script><p>相对熵不具有对称性：</p>
-<script type="math/tex; mode=display">D(p||q)\neq D(q||p)</script><h2 id="性质-3"><a href="#性质-3" class="headerlink" title="性质"></a>性质</h2><p>相对熵不为负：</p>
-<script type="math/tex; mode=display">D(p||q)\geq0,\ D(q||p)\geq0</script><p>且相对熵公式只有在$p(x_i)$等于$q(x_i)$时等于0。</p>
-<p><font face="仿宋"><br>证明：要证明</font></p>
-<script type="math/tex; mode=display">D_{KL}(p||q)=\sum_{i=1}^n\left(p(x_i)\log{p(x_i)}-p(x_i)\log{q(x_i)}\right)\geq0</script><p><font face="仿宋"><br>即证</font></p>
-<script type="math/tex; mode=display">\sum_{i=1}^np(x_i)\log{\frac{q(x_i)}{p(x_i)}}\leq0</script><p><font face="仿宋"><br>因为$\ln{x}\leq x-1$当且仅当$x=1$时等号成立，所以</font></p>
-<script type="math/tex; mode=display">\sum_{i=1}^np(x_i)\log{\frac{q(x_i)}{p(x_i)}}\leq\sum_{i=1}^np(x_i)\left(\frac{q(x_i)}{p(x_i)}-1\right)=\sum_{i=1}^n\left(q(x_i)-p(x_i)\right)</script><p><font face="仿宋">当且仅当$p(x_i)=q(x_i)$（对所有的$i,\ i=1,2,\cdots,n$）时有</font></p>
-<script type="math/tex; mode=display">\sum_{i=1}^np(x_i)\log{\frac{q(x_i)}{p(x_i)}}=\sum_{i=1}^n\left[q(x_i)-p(x_i)\right]=0</script><h1 id="交叉熵"><a href="#交叉熵" class="headerlink" title="交叉熵"></a>交叉熵</h1><p>交叉熵（Cross entropy）：是一种损失函数/代价函数，用于描述模型预测值与真实值的差距大小。</p>
+<script type="math/tex; mode=display">D(p||q)\neq D(q||p)</script><h2 id="性质-3"><a href="#性质-3" class="headerlink" title="性质"></a>性质</h2><div class="note success">
+            <p>相对熵不为负：</p><script type="math/tex; mode=display">D(p||q)\geq0,\ D(q||p)\geq0</script><p>且相对熵公式只有在$p(x_i)$等于$q(x_i)$时等于0。</p>
+          </div>
+<div class="note default">
+            <p>证明：要证明</p><script type="math/tex; mode=display">D_{KL}(p||q)=\sum_{i=1}^n\left(p(x_i)\log{p(x_i)}-p(x_i)\log{q(x_i)}\right)\geq0</script><p>即证</p><script type="math/tex; mode=display">\sum_{i=1}^np(x_i)\log{\frac{q(x_i)}{p(x_i)}}\leq0</script><p>因为$\ln{x}\leq x-1$当且仅当$x=1$时等号成立，所以</p><script type="math/tex; mode=display">\sum_{i=1}^np(x_i)\log{\frac{q(x_i)}{p(x_i)}}\leq\sum_{i=1}^np(x_i)\left(\frac{q(x_i)}{p(x_i)}-1\right)=\sum_{i=1}^n\left(q(x_i)-p(x_i)\right)</script><p>当且仅当$p(x_i)=q(x_i)$（对所有的$i,\ i=1,2,\cdots,n$）时有</p><script type="math/tex; mode=display">\sum_{i=1}^np(x_i)\log{\frac{q(x_i)}{p(x_i)}}=\sum_{i=1}^n\left[q(x_i)-p(x_i)\right]=0</script>
+          </div>
+<h1 id="交叉熵"><a href="#交叉熵" class="headerlink" title="交叉熵"></a>交叉熵</h1><p>交叉熵（Cross entropy）：是一种损失函数/代价函数，用于描述模型预测值与真实值的差距大小。</p>
 <p>真实概率分布$p(x)$和预测概率分布$q(x)$之间的交叉熵为</p>
 <script type="math/tex; mode=display">H(p,q)=-\sum_{i=1}^np(x_i)\log{q(x_i)}</script><p>交叉熵在分类问题中，常常与softmax搭配使用，softmax将输出的结果进行处理，使多个分类类别的预测值的和为1，再使用交叉熵计算损失。</p>
 <p>将KL散度公式拆开：<br>\begin{equation}<br>\begin{aligned}<br>  D_{KL}(p||q)&amp;=\sum_{i=1}^np(x_i)\log{\frac{p(x_i)}{q(x_i)}}\\<br>&amp;= \underline{\sum_{i=1}^np(x_i)\log{p(x_i)}}-\sum_{i=1}^np(x_i)\log{q(x_i)}\\<br>&amp;= \underline{-H\left(p(x)\right)}+\left[-\sum_{i=1}^np(x_i)\log{q(x_i)} \right]<br>\end{aligned}<br>\end{equation}<br>其中，$H\left(p(x)\right)$表示真实分布的信息熵，后者即为交叉熵。</p>
