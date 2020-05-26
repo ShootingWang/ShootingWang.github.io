@@ -29,13 +29,15 @@
 <meta property="og:site_name" content="ShootingWang">
 <meta property="og:description" content="Entropy">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://github.com/2020/05/15/Machine-Learning-%E7%86%B5/mi.png">
 <meta property="article:published_time" content="2020-05-15T12:29:18.000Z">
-<meta property="article:modified_time" content="2020-05-26T08:56:04.380Z">
+<meta property="article:modified_time" content="2020-05-26T09:16:35.278Z">
 <meta property="article:author" content="ShootingWang">
 <meta property="article:tag" content="算法">
 <meta property="article:tag" content="机器学习">
 <meta property="article:tag" content="基础">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://github.com/2020/05/15/Machine-Learning-%E7%86%B5/mi.png">
 
 <link rel="canonical" href="https://github.com/ShootingWang/ShootingWang.github.io/2020/05/15/Machine-Learning-%E7%86%B5/">
 
@@ -217,7 +219,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-05-26 16:56:04" itemprop="dateModified" datetime="2020-05-26T16:56:04+08:00">2020-05-26</time>
+                <time title="修改时间：2020-05-26 17:16:35" itemprop="dateModified" datetime="2020-05-26T17:16:35+08:00">2020-05-26</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -321,62 +323,191 @@
 <blockquote>
 <p>即：当随机分布为均匀分布时，熵最大</p>
 </blockquote>
-<p><font face="仿宋"><br>证明：使用拉格朗日乘子法<br>因为$p(x_1)+p(x_2)+\cdots+p(x_n)=1$，所以目标函数为</font></p>
-<script type="math/tex; mode=display">f\left(p(x_1),\cdots,p(x_n)\right)=-\left[p(x_1)\log{p(x_1)}+p(x_2)\log{p(x_2)}+\cdots+p(x_n)\log{p(x_n)}\right]</script><p><font face="仿宋">约束条件为</font></p>
-<script type="math/tex; mode=display">g\left(p(x_1),\cdots,p(x_n)\right)=p(x_1)+p(x_2)+\cdots+p(x_n)-1=0</script><p><font face="仿宋">定义拉格朗日函数：<br>\begin{equation}<br>\begin{aligned}<br>L(p(x_1),\cdots,p(x_n);\lambda)&amp;=-\left[p(x_1)\log{p(x_1)}+p(x_2)\log{p(x_2)}+\cdots+p(x_n)\log{p(x_n)}\right]\\<br>&amp;+\lambda\left[p(x_1)+p(x_2)+\cdots+p(x_n)-1\right]<br>\end{aligned}<br>\end{equation}<br>$L(p(x_1),\cdots,p(x_n);\lambda)$分别对$p(x_1),p(x_2),\cdots,p(x_n),\lambda$求偏导，并令偏导数为0，得到<br>\begin{equation}<br>\left\{<br>\begin{array}{l}<br>\lambda-\log p(x_1)-1=0\\<br>\lambda-\log p(x_2)-1=0\\<br>\cdots\\<br>\lambda-\log p(x_n)-1=0\\<br>p(x_1)+p(x_2)+\cdots+p(x_n)-1=0<br>\end{array}\right.<br>\end{equation}<br>解上述方程组，可得</font></p>
-<script type="math/tex; mode=display">p(x_1)=p(x_2)=\cdots=p(x_n)=\frac{1}{n}</script><p>&lt;/font&gt;</p>
-<p><font face="仿宋">所以目标函数的极大值为</font></p>
-<script type="math/tex; mode=display">f\left(\frac{1}{n},\frac{1}{n},\cdots,\frac{1}{n}\right)=-\left[\frac{1}{n}\log\frac{1}{n}+\frac{1}{n}\log\frac{1}{n}+\cdots+\frac{1}{n}\log\frac{1}{n}\right]=-\log\frac{1}{n}=\log n</script><p>&lt;/font&gt;<br>即：当随机分布为均匀分布时，熵最大。</p>
-<h1 id="联合熵-复合熵"><a href="#联合熵-复合熵" class="headerlink" title="联合熵/复合熵"></a>联合熵/复合熵</h1><p>联合熵/复合熵：度量两个随机变量$X$和$Y$在一起时的不确定性</p>
-<p>假设</p>
-<ul>
-<li>离散情况：随机变量$(X,Y)$的联合概率分布为<script type="math/tex; mode=display">P(X=x_i,Y=y_j)=p_{ij},\ i=1,\cdots,n;\ j=1,\cdots,m</script></li>
-<li>连续情况：随机变量$(X,Y)$的联合密度函数为<script type="math/tex; mode=display">f(x,y)\quad (x\in \Omega_X;\ y\in \Omega_Y)</script></li>
-</ul>
-<p><strong>复合熵/联合熵</strong>为</p>
-<script type="math/tex; mode=display">H(X,Y)=-\sum_{i=1}^n\sum_{j=1}^mp_{ij}\log{p_{ij}}</script><script type="math/tex; mode=display">H(X,Y)=-\int_{\Omega_X}\int_{\Omega_Y}f(x,y)\log{f(x,y)}\mathrm{dx}\mathrm{dy}</script><h2 id="性质-1"><a href="#性质-1" class="headerlink" title="性质"></a>性质</h2><ul>
-<li>联合熵大于独立熵的和<br>\begin{equation}<br>\begin{aligned}<br>H(X,Y)&amp;\geq\max{\left[H(X),H(Y) \right]}\\<br>H(X_1,\cdots,X_N)&amp;\geq\max{\left[H(X_1),\cdots,H(X_N) \right]}<br>\end{aligned}<br>\end{equation}</li>
-<li>联合熵小于各独立熵的和<br>\begin{equation}<br>\begin{aligned}<br>H(X,Y)&amp;\leq H(X)+H(Y)\\<br>H(X_1,\cdots,X_N)&amp;\leq H(X_1)+\cdots+H(X_N)<br>\end{aligned}<br>\end{equation}</li>
-</ul>
-<h1 id="条件熵"><a href="#条件熵" class="headerlink" title="条件熵"></a>条件熵</h1><p>条件熵：代表在某一个条件$X$下，随机变量$Y$的复杂度（不确定度）</p>
-<blockquote>
-<p>即：在给定条件X下，Y的条件概率分布的熵关于X的数学期望</p>
-</blockquote>
-<p><strong>条件熵</strong>$H(Y|X)$表示在已知随机变量$X$的条件下、随机变量$Y$ 的不确定性。<br>\begin{equation}<br>\begin{aligned}<br>  H(Y|X) &amp;= \sum_{i=1}^np(x_i)H(Y|X=x_i)\\<br>&amp;= -\sum_{i=1}^np(x_i)\sum_{j=1}^mp(y_j|x_i)\log{p(y_j|x_i)}\\<br>&amp;= -\sum_{i=1}^n\sum_{j=1}^mp(x_i,y_j)\log{p(y_j|x_i)}\\<br>H(Y|X)&amp;= \int_{x\in\Omega_X}f(x)H(Y|X=x)\mathrm{dx}\\<br>&amp;= -\int_{x\in\Omega_X}f(x)\int_{y\in\Omega_Y}f(y|x)\log{f(y|x)}\mathrm{dy}\\<br>&amp;= -\int_{x\in\Omega_X}\int_{y\in\Omega_Y}f(x)f(y|x)\log{f(y|x)}\mathrm{dx}\mathrm{dy}<br>\end{aligned}<br>\end{equation}</p>
-<p>当信息熵和条件熵中的概率由样本数据估计而得时，所对应的信息熵与条件熵称为<strong>经验熵</strong>（empirical entropy）和<strong>经验条件熵</strong>（empirical conditional entropy）。</p>
-<h2 id="性质-2"><a href="#性质-2" class="headerlink" title="性质"></a>性质</h2><script type="math/tex; mode=display">H(Y|X)=H(X,Y)-H(X)</script><p><font face="仿宋"><br>证明：（仅证明离散情况）<br>\begin{equation}<br>\begin{aligned}<br>H(Y|X)&amp;= -\sum_{i=1}^n\sum_{j=1}^mp(x_i,y_j)\log{p(y_j|x_i)}\\<br>&amp;= -\sum_{i=1}^n\sum_{j=1}^mp(x_i,y_j)\log{\frac{p(x_i,y_j)}{p(x_i)}}\\<br>&amp;= -\sum_{i=1}^n\sum_{j=1}^mp(x_i,y_j)\left(\log{p(x_i,y_j)}-\log{p(x_i)}\right)\\<br>&amp;= -\sum_{i=1}^n\sum_{j=1}^m\left(p(x_i,y_j)\log{p(x_i,y_j)}-p(x_i,y_j)\log{p(x_i)}\right)\\<br>&amp;= -\sum_{i=1}^n\sum_{j=1}^mp(x_i,y_j)\log{p(x_i,y_j)}-\left(-\sum_{i=1}^n\sum_{j=1}^mp(x_i,y_j)\log{p(x_i)}\right)\\<br>&amp;= H(X,Y)-H(X)<br>\end{aligned}<br>\end{equation}
-</font></p>
-<p><font face="仿宋"><br>同理可得</font></p>
-<script type="math/tex; mode=display">H(X|Y)=H(X,Y)-H(Y)</script><p><font face="仿宋">合并上述两个公式可得</font></p>
-<script type="math/tex; mode=display">H(Y|X)+H(X)=H(X,Y)=H(X|Y)+H(Y)</script><p>体现了熵的对称性。</p>
-<h1 id="相对熵-KL散度"><a href="#相对熵-KL散度" class="headerlink" title="相对熵/KL散度"></a>相对熵/KL散度</h1><p><strong>相对熵</strong>，又称互熵、鉴别信息、Kullback熵、<strong>Kullback-Leible散度</strong>（KL散度），是两个概率分布间差异的非对称性度量；常常用来度量两个随机变量的“距离”。在信息论中，相对熵等价于两个概率分布的信息熵的差值。如果其中一个概率分布为真实分布，另一个为理论分布/拟合分布，则相对熵等于交叉熵与真实分布的信息熵之差，表示使用理论分布拟合真实分布时的信息损耗。</p>
-<p>设$p(x)$和$q(x)$是两个概率分布，则$p$对$q$的相对熵为</p>
-<script type="math/tex; mode=display">D_{KL}(p||q)=E_{p(x)}\left(\log{\frac{p(x)}{q(x)}}\right)=\sum_{i=1}^np(x_i)\log{\frac{p(x_i)}{q(x_i)}}</script><p>相对熵不具有对称性：</p>
-<script type="math/tex; mode=display">D(p||q)\neq D(q||p)</script><h2 id="性质-3"><a href="#性质-3" class="headerlink" title="性质"></a>性质</h2><p>相对熵不为负：</p>
-<script type="math/tex; mode=display">D(p||q)\geq0,\ D(q||p)\geq0</script><p>且相对熵公式只有在$p(x_i)$等于$q(x_i)$时等于0。</p>
-<p><font face="仿宋"><br>证明：要证明</font></p>
-<script type="math/tex; mode=display">D_{KL}(p||q)=\sum_{i=1}^n\left(p(x_i)\log{p(x_i)}-p(x_i)\log{q(x_i)}\right)\geq0</script><p><font face="仿宋"><br>即证</font></p>
-<script type="math/tex; mode=display">\sum_{i=1}^np(x_i)\log{\frac{q(x_i)}{p(x_i)}}\leq0</script><p><font face="仿宋"><br>因为$\ln{x}\leq x-1$当且仅当$x=1$时等号成立，所以</font></p>
-<script type="math/tex; mode=display">\sum_{i=1}^np(x_i)\log{\frac{q(x_i)}{p(x_i)}}\leq\sum_{i=1}^np(x_i)\left(\frac{q(x_i)}{p(x_i)}-1\right)=\sum_{i=1}^n\left(q(x_i)-p(x_i)\right)</script><p><font face="仿宋">当且仅当$p(x_i)=q(x_i)$（对所有的$i,\ i=1,2,\cdots,n$）时有</font></p>
-<script type="math/tex; mode=display">\sum_{i=1}^np(x_i)\log{\frac{q(x_i)}{p(x_i)}}=\sum_{i=1}^n\left[q(x_i)-p(x_i)\right]=0</script><h1 id="交叉熵"><a href="#交叉熵" class="headerlink" title="交叉熵"></a>交叉熵</h1><p>交叉熵（Cross entropy）：是一种损失函数/代价函数，用于描述模型预测值与真实值的差距大小。</p>
-<p>真实概率分布$p(x)$和预测概率分布$q(x)$之间的交叉熵为</p>
-<script type="math/tex; mode=display">H(p,q)=-\sum_{i=1}^np(x_i)\log{q(x_i)}</script><p>交叉熵在分类问题中，常常与softmax搭配使用，softmax将输出的结果进行处理，使多个分类类别的预测值的和为1，再使用交叉熵计算损失。</p>
-<p>将KL散度公式拆开：<br>\begin{equation}<br>\begin{aligned}<br>  D_{KL}(p||q)&amp;=\sum_{i=1}^np(x_i)\log{\frac{p(x_i)}{q(x_i)}}\\<br>&amp;= \underline{\sum_{i=1}^np(x_i)\log{p(x_i)}}-\sum_{i=1}^np(x_i)\log{q(x_i)}\\<br>&amp;= \underline{-H\left(p(x)\right)}+\left[-\sum_{i=1}^np(x_i)\log{q(x_i)} \right]<br>\end{aligned}<br>\end{equation}<br>其中，$H\left(p(x)\right)$表示真实分布的信息熵，后者即为交叉熵。</p>
-<script type="math/tex; mode=display">KL散度=交叉熵-信息熵</script><p>KL散度（相对熵）衡量的是真实概率分布与预测概率分布之间的差异；KL散度越小，表明预测的效果越好。在机器学习训练模型时，输入数据（Input）与标签（Label）通常已确定，那么真实概率分布$p$也已确定，信息熵$H\left(p(x)\right)$就是一个常量。因此，最小化KL散度等价于最小化交叉熵。所以，在机器学习中常常使用交叉熵作为损失函数。</p>
-<h1 id="互信息"><a href="#互信息" class="headerlink" title="互信息"></a>互信息</h1><p>互信息（Mutual Information）：也是信息论中的一种信息度量，是一个随机变量中包含的关于另一个随机变量的信息量，或者说，是一个随机变量由于已知另一个随机变量而减少的不确定性。</p>
-<ul>
-<li>两个<strong>离散</strong>随机变量$X$和$Y$的互信息定义为<script type="math/tex; mode=display">I(X,Y)=\sum_{y\in Y}\sum_{x\in X}p(x,y)\log{\frac{p(x,y)}{p(x)p(y)}}</script>其中，$p(x,y)$是$X$和$Y$的联合概率分布函数，$p(x)$、$p(y)$分别是$X$和$Y$的边缘概率分布函数。</li>
-<li><p>两个<strong>连续</strong>随机变量的互信息定义为</p>
-<script type="math/tex; mode=display">I(X,Y)=\int_Y\int_Xp(x,y)\log{\frac{p(x,y)}{p(x)p(y)}}\mathrm{d}x\mathrm{d}y</script><p>其中，$p(x,y)$是$X$和$Y$的联合概率密度函数，$p(x)$、$p(y)$分别是$X$和$Y$的边缘概率密度函数。</p>
-</li>
-<li><p>互信息是互信息量$I(x_i,y_j)$在联合概率空间中的统计平均值。</p>
-</li>
-<li>（平均）互信息克服了互信息量$I(x_i,y_j)$的随机性，是一个确定的量。</li>
-<li>互信息是$X$和$Y$的联合分布相对于假定$X$和$Y$独立情况下的联合分布之间的内在依赖性。</li>
-<li>$I(X,Y)=0$当且仅当$X$和$Y$独立时成立。</li>
-<li>当$X$和$Y$独立时，$p(x,y)=p(x)p(y)$。因此<script type="math/tex; mode=display">\log{\frac{p(x,y)}{p(x)p(y)}}=\log1=0</script></li>
-</ul>
-<p><meta name="referrer" content="no-referrer"><br></p>
+<font face="仿宋">
+证明：使用拉格朗日乘子法
+因为$p(x_1)+p(x_2)+\cdots+p(x_n)=1$，所以目标函数为</font>
+$$f\left(p(x_1),\cdots,p(x_n)\right)=-\left[p(x_1)\log{p(x_1)}+p(x_2)\log{p(x_2)}+\cdots+p(x_n)\log{p(x_n)}\right]$$
+<font face="仿宋">约束条件为</font>
+$$g\left(p(x_1),\cdots,p(x_n)\right)=p(x_1)+p(x_2)+\cdots+p(x_n)-1=0$$
+<font face="仿宋">定义拉格朗日函数：
+\begin{equation}
+\begin{aligned}
+L(p(x_1),\cdots,p(x_n);\lambda)&=-\left[p(x_1)\log{p(x_1)}+p(x_2)\log{p(x_2)}+\cdots+p(x_n)\log{p(x_n)}\right]\\
+&+\lambda\left[p(x_1)+p(x_2)+\cdots+p(x_n)-1\right]
+\end{aligned}
+\end{equation}
+$L(p(x_1),\cdots,p(x_n);\lambda)$分别对$p(x_1),p(x_2),\cdots,p(x_n),\lambda$求偏导，并令偏导数为0，得到
+\begin{equation}
+\left\{
+\begin{array}{l}
+\lambda-\log p(x_1)-1=0\\
+\lambda-\log p(x_2)-1=0\\
+\cdots\\
+\lambda-\log p(x_n)-1=0\\
+p(x_1)+p(x_2)+\cdots+p(x_n)-1=0
+\end{array}\right.
+\end{equation}
+解上述方程组，可得
+$$p(x_1)=p(x_2)=\cdots=p(x_n)=\frac{1}{n}$$
+</font>
+<font face="仿宋">所以目标函数的极大值为
+$$f\left(\frac{1}{n},\frac{1}{n},\cdots,\frac{1}{n}\right)=-\left[\frac{1}{n}\log\frac{1}{n}+\frac{1}{n}\log\frac{1}{n}+\cdots+\frac{1}{n}\log\frac{1}{n}\right]=-\log\frac{1}{n}=\log n$$
+</font>
+即：当随机分布为均匀分布时，熵最大。
+
+# 联合熵/复合熵
+联合熵/复合熵：度量两个随机变量$X$和$Y$在一起时的不确定性
+
+假设
+- 离散情况：随机变量$(X,Y)$的联合概率分布为
+$$P(X=x_i,Y=y_j)=p_{ij},\ i=1,\cdots,n;\ j=1,\cdots,m$$
+- 连续情况：随机变量$(X,Y)$的联合密度函数为
+$$f(x,y)\quad (x\in \Omega_X;\ y\in \Omega_Y)$$
+
+**复合熵/联合熵**为
+$$H(X,Y)=-\sum_{i=1}^n\sum_{j=1}^mp_{ij}\log{p_{ij}}$$
+$$H(X,Y)=-\int_{\Omega_X}\int_{\Omega_Y}f(x,y)\log{f(x,y)}\mathrm{dx}\mathrm{dy}$$
+
+## 性质
+- 联合熵大于独立熵的和
+\begin{equation}
+  \begin{aligned}
+  H(X,Y)&\geq\max{\left[H(X),H(Y) \right]}\\
+  H(X_1,\cdots,X_N)&\geq\max{\left[H(X_1),\cdots,H(X_N) \right]}
+\end{aligned}
+\end{equation}
+- 联合熵小于各独立熵的和
+\begin{equation}
+\begin{aligned}
+H(X,Y)&\leq H(X)+H(Y)\\
+H(X_1,\cdots,X_N)&\leq H(X_1)+\cdots+H(X_N)
+\end{aligned}
+\end{equation}
+
+
+
+
+# 条件熵
+条件熵：代表在某一个条件$X$下，随机变量$Y$的复杂度（不确定度）
+> 即：在给定条件X下，Y的条件概率分布的熵关于X的数学期望
+
+**条件熵**$H(Y|X)$表示在已知随机变量$X$的条件下、随机变量$Y$ 的不确定性。
+\begin{equation}
+\begin{aligned}
+  H(Y|X) &= \sum_{i=1}^np(x_i)H(Y|X=x_i)\\
+&= -\sum_{i=1}^np(x_i)\sum_{j=1}^mp(y_j|x_i)\log{p(y_j|x_i)}\\
+&= -\sum_{i=1}^n\sum_{j=1}^mp(x_i,y_j)\log{p(y_j|x_i)}\\
+H(Y|X)&= \int_{x\in\Omega_X}f(x)H(Y|X=x)\mathrm{dx}\\
+&= -\int_{x\in\Omega_X}f(x)\int_{y\in\Omega_Y}f(y|x)\log{f(y|x)}\mathrm{dy}\\
+&= -\int_{x\in\Omega_X}\int_{y\in\Omega_Y}f(x)f(y|x)\log{f(y|x)}\mathrm{dx}\mathrm{dy}
+\end{aligned}
+\end{equation}
+
+当信息熵和条件熵中的概率由样本数据估计而得时，所对应的信息熵与条件熵称为**经验熵**（empirical entropy）和**经验条件熵**（empirical conditional entropy）。
+
+## 性质
+$$H(Y|X)=H(X,Y)-H(X)$$
+<font face="仿宋">
+证明：（仅证明离散情况）
+\begin{equation}
+\begin{aligned}
+H(Y|X)&= -\sum_{i=1}^n\sum_{j=1}^mp(x_i,y_j)\log{p(y_j|x_i)}\\
+&= -\sum_{i=1}^n\sum_{j=1}^mp(x_i,y_j)\log{\frac{p(x_i,y_j)}{p(x_i)}}\\
+&= -\sum_{i=1}^n\sum_{j=1}^mp(x_i,y_j)\left(\log{p(x_i,y_j)}-\log{p(x_i)}\right)\\
+&= -\sum_{i=1}^n\sum_{j=1}^m\left(p(x_i,y_j)\log{p(x_i,y_j)}-p(x_i,y_j)\log{p(x_i)}\right)\\
+&= -\sum_{i=1}^n\sum_{j=1}^mp(x_i,y_j)\log{p(x_i,y_j)}-\left(-\sum_{i=1}^n\sum_{j=1}^mp(x_i,y_j)\log{p(x_i)}\right)\\
+&= H(X,Y)-H(X)
+\end{aligned}
+\end{equation}
+</font>
+<font face="仿宋">
+同理可得</font>
+$$H(X|Y)=H(X,Y)-H(Y)$$
+<font face="仿宋">合并上述两个公式可得</font>
+$$H(Y|X)+H(X)=H(X,Y)=H(X|Y)+H(Y)$$
+
+体现了熵的对称性。
+
+# 相对熵/KL散度
+**相对熵**，又称互熵、鉴别信息、Kullback熵、**Kullback-Leible散度**（KL散度），是两个概率分布间差异的非对称性度量；常常用来度量两个随机变量的“距离”。在信息论中，相对熵等价于两个概率分布的信息熵的差值。如果其中一个概率分布为真实分布，另一个为理论分布/拟合分布，则相对熵等于交叉熵与真实分布的信息熵之差，表示使用理论分布拟合真实分布时的信息损耗。
+
+设$p(x)$和$q(x)$是两个概率分布，则$p$对$q$的相对熵为
+$$D_{KL}(p||q)=E_{p(x)}\left(\log{\frac{p(x)}{q(x)}}\right)=\sum_{i=1}^np(x_i)\log{\frac{p(x_i)}{q(x_i)}}$$
+相对熵不具有对称性：
+$$D(p||q)\neq D(q||p)$$
+
+## 性质
+相对熵不为负：
+$$D(p||q)\geq0,\ D(q||p)\geq0$$
+且相对熵公式只有在$p(x_i)$等于$q(x_i)$时等于0。
+<font face="仿宋">
+证明：要证明</font>
+$$D_{KL}(p||q)=\sum_{i=1}^n\left(p(x_i)\log{p(x_i)}-p(x_i)\log{q(x_i)}\right)\geq0$$
+<font face="仿宋">
+即证</font>
+$$\sum_{i=1}^np(x_i)\log{\frac{q(x_i)}{p(x_i)}}\leq0$$
+<font face="仿宋">
+因为$\ln{x}\leq x-1$当且仅当$x=1$时等号成立，所以</font>
+$$\sum_{i=1}^np(x_i)\log{\frac{q(x_i)}{p(x_i)}}\leq\sum_{i=1}^np(x_i)\left(\frac{q(x_i)}{p(x_i)}-1\right)=\sum_{i=1}^n\left(q(x_i)-p(x_i)\right)$$
+<font face="仿宋">当且仅当$p(x_i)=q(x_i)$（对所有的$i,\ i=1,2,\cdots,n$）时有</font>
+$$\sum_{i=1}^np(x_i)\log{\frac{q(x_i)}{p(x_i)}}=\sum_{i=1}^n\left[q(x_i)-p(x_i)\right]=0$$
+
+# 交叉熵
+交叉熵（Cross entropy）：是一种损失函数/代价函数，用于描述模型预测值与真实值的差距大小。
+
+真实概率分布$p(x)$和预测概率分布$q(x)$之间的交叉熵为
+$$H(p,q)=-\sum_{i=1}^np(x_i)\log{q(x_i)}$$
+
+交叉熵在分类问题中，常常与softmax搭配使用，softmax将输出的结果进行处理，使多个分类类别的预测值的和为1，再使用交叉熵计算损失。
+
+将KL散度公式拆开：
+\begin{equation}
+\begin{aligned}
+  D_{KL}(p||q)&=\sum_{i=1}^np(x_i)\log{\frac{p(x_i)}{q(x_i)}}\\
+&= \underline{\sum_{i=1}^np(x_i)\log{p(x_i)}}-\sum_{i=1}^np(x_i)\log{q(x_i)}\\
+&= \underline{-H\left(p(x)\right)}+\left[-\sum_{i=1}^np(x_i)\log{q(x_i)} \right]
+\end{aligned}
+\end{equation}
+其中，$H\left(p(x)\right)$表示真实分布的信息熵，后者即为交叉熵。
+
+$$KL散度=交叉熵-信息熵$$
+KL散度（相对熵）衡量的是真实概率分布与预测概率分布之间的差异；KL散度越小，表明预测的效果越好。在机器学习训练模型时，输入数据（Input）与标签（Label）通常已确定，那么真实概率分布$p$也已确定，信息熵$H\left(p(x)\right)$就是一个常量。因此，最小化KL散度等价于最小化交叉熵。所以，在机器学习中常常使用交叉熵作为损失函数。
+
+# 互信息
+互信息（Mutual Information）：也是信息论中的一种信息度量，是一个随机变量中包含的关于另一个随机变量的信息量，或者说，是一个随机变量由于已知另一个随机变量而减少的不确定性。
+
+- 两个**离散**随机变量$X$和$Y$的互信息定义为
+$$I(X,Y)=\sum_{y\in Y}\sum_{x\in X}p(x,y)\log{\frac{p(x,y)}{p(x)p(y)}}$$
+其中，$p(x,y)$是$X$和$Y$的联合概率分布函数，$p(x)$、$p(y)$分别是$X$和$Y$的边缘概率分布函数。
+- 两个**连续**随机变量的互信息定义为
+$$I(X,Y)=\int_Y\int_Xp(x,y)\log{\frac{p(x,y)}{p(x)p(y)}}\mathrm{d}x\mathrm{d}y$$
+其中，$p(x,y)$是$X$和$Y$的联合概率密度函数，$p(x)$、$p(y)$分别是$X$和$Y$的边缘概率密度函数。
+
+- 互信息是互信息量$I(x_i,y_j)$在联合概率空间中的统计平均值。
+- （平均）互信息克服了互信息量$I(x_i,y_j)$的随机性，是一个确定的量。
+- 互信息是$X$和$Y$的联合分布相对于假定$X$和$Y$独立情况下的联合分布之间的内在依赖性。
+- $I(X,Y)=0$当且仅当$X$和$Y$独立时成立。
+- 当$X$和$Y$独立时，$p(x,y)=p(x)p(y)$。因此
+ $$\log{\frac{p(x,y)}{p(x)p(y)}}=\log1=0$$
+
+互信息和条件熵的关系为
+$$I(X,Y)=H(X)-H(Y|X)=H(Y)-H(Y|X)$$
+<font face="仿宋">
+**证明**：
+\begin{aligned}
+H(X)-H(X,Y) &= -\sum_{x\in X}\underline{p(x)}\log{p(x)}+\sum_{x\in X}\sum_{y\in Y}p(x,y)\log{p(x|y)}\\
+&= \sum_{x\in X}\sum_{y\in Y}p(x,y)\log{p(x|y)}-\sum_{x\in X}\underline{\sum_{y\in Y}p(x,y)}\log{p(x)}\\
+&= \sum_{x\in X}\sum_{y\in Y}p(x,y)\left(\log{p(x|y)}-\log{p(x)} \right)\\
+&= \sum_{x\in X}\sum_{y\in Y}p(x,y)\log{\frac{p(x|y)}{p(x)}}\\
+&= \sum_{x\in X}\sum_{y\in Y}\log{\frac{p(x,y)}{p(x)p(y)}}\\
+&= I(X,Y)
+\end{aligned}
+
+</font>
+
+
+
+<p><meta name="referrer" content="no-referrer"><br><img src="/2020/05/15/Machine-Learning-%E7%86%B5/mi.png" class title="信息熵、联合熵、条件熵、互信息的关系"></p>
 <h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
 <li><a href="https://zhuanlan.zhihu.com/p/26486223" target="_blank" rel="noopener">通俗理解信息熵</a></li>
 <li><a href="http://blog.sina.com.cn/s/blog_6e85bf420100ohma.html" target="_blank" rel="noopener">ID3算法</a></li>
@@ -511,7 +642,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#信息量"><span class="nav-number">1.</span> <span class="nav-text">信息量</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#信息熵-香农熵"><span class="nav-number">2.</span> <span class="nav-text">信息熵&#x2F;香农熵</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#对数的底"><span class="nav-number">2.1.</span> <span class="nav-text">对数的底</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#性质"><span class="nav-number">2.2.</span> <span class="nav-text">性质</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#联合熵-复合熵"><span class="nav-number">3.</span> <span class="nav-text">联合熵&#x2F;复合熵</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#性质-1"><span class="nav-number">3.1.</span> <span class="nav-text">性质</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#条件熵"><span class="nav-number">4.</span> <span class="nav-text">条件熵</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#性质-2"><span class="nav-number">4.1.</span> <span class="nav-text">性质</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#相对熵-KL散度"><span class="nav-number">5.</span> <span class="nav-text">相对熵&#x2F;KL散度</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#性质-3"><span class="nav-number">5.1.</span> <span class="nav-text">性质</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#交叉熵"><span class="nav-number">6.</span> <span class="nav-text">交叉熵</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#互信息"><span class="nav-number">7.</span> <span class="nav-text">互信息</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料"><span class="nav-number">8.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#信息量"><span class="nav-number">1.</span> <span class="nav-text">信息量</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#信息熵-香农熵"><span class="nav-number">2.</span> <span class="nav-text">信息熵&#x2F;香农熵</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#对数的底"><span class="nav-number">2.1.</span> <span class="nav-text">对数的底</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#性质"><span class="nav-number">2.2.</span> <span class="nav-text">性质</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料"><span class="nav-number">3.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -580,13 +711,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">166k</span>
+    <span title="站点总字数">167k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">2:31</span>
+    <span title="站点阅读时长">2:32</span>
 </div>
 
 
