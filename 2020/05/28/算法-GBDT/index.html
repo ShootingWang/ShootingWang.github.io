@@ -22,16 +22,16 @@
 
 <link rel="stylesheet" href="/js/prism/prism.css">
 
-  <meta name="description" content="Gradient Boosting Decision Tree  梯度提升树">
+  <meta name="description" content="Gradient Boosting Decision Tree 梯度提升树&lt;&#x2F;center&gt;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Machine Learning | GBDT">
 <meta property="og:url" content="https://github.com/ShootingWang/ShootingWang.github.io/2020/05/28/%E7%AE%97%E6%B3%95-GBDT/index.html">
 <meta property="og:site_name" content="ShootingWang">
-<meta property="og:description" content="Gradient Boosting Decision Tree  梯度提升树">
+<meta property="og:description" content="Gradient Boosting Decision Tree 梯度提升树&lt;&#x2F;center&gt;">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://github.com/2020/05/28/%E7%AE%97%E6%B3%95-GBDT/GBDT.png">
 <meta property="article:published_time" content="2020-05-28T09:00:00.000Z">
-<meta property="article:modified_time" content="2020-05-28T11:54:34.436Z">
+<meta property="article:modified_time" content="2020-05-28T11:54:55.789Z">
 <meta property="article:author" content="ShootingWang">
 <meta property="article:tag" content="算法">
 <meta property="article:tag" content="机器学习">
@@ -214,7 +214,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-05-28 17:00:00 / 修改时间：19:54:34" itemprop="dateCreated datePublished" datetime="2020-05-28T17:00:00+08:00">2020-05-28</time>
+              <time title="创建时间：2020-05-28 17:00:00 / 修改时间：19:54:55" itemprop="dateCreated datePublished" datetime="2020-05-28T17:00:00+08:00">2020-05-28</time>
             </span>
 
           
@@ -260,33 +260,20 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <center>Gradient Boosting Decision Tree
-
-梯度提升树
-</center>
-<a id="more"></a>
-
-# GBDT
-
-
-<div class="note default">
+        <p><center>Gradient Boosting Decision Tree</center></p>
+<p>梯度提升树<br>&lt;/center&gt;<br><a id="more"></a></p>
+<h1 id="GBDT"><a href="#GBDT" class="headerlink" title="GBDT"></a>GBDT</h1><div class="note default">
             <p>Breiman, L. (June 1997). “<a href="https://statistics.berkeley.edu/sites/default/files/tech-reports/486.pdf" target="_blank" rel="noopener">Arcing The Edge</a>“. Technical Report 486. Statistics Department, University of California, Berkeley.</p>
           </div>
-
-不同简称：
-- GBDT (Gradient Boosting Decision Tree)
-- GBT (Gradient Boosting Tree)
-- GTB (Gradient Tree Boosting)
-- GBRT (Gradient Boosting Regression Tree)
-- MART (Multiple Additive Regression Tree)
-
-
-<meta name="referrer" content="no-referrer">
-<img src="/2020/05/28/%E7%AE%97%E6%B3%95-GBDT/GBDT.png" class title="GBDT训练过程">
-
-<center><font face="字体" size="字号" color="颜色">图片来自[Boosting框架](https://www.zybuluo.com/vivounicorn/note/446479#24-bagging-and-boosting%E6%A1%86%E6%9E%B6)</font></center>
-
-
+<p>不同简称：</p>
+<ul>
+<li>GBDT (Gradient Boosting Decision Tree)</li>
+<li>GBT (Gradient Boosting Tree)</li>
+<li>GTB (Gradient Tree Boosting)</li>
+<li>GBRT (Gradient Boosting Regression Tree)</li>
+<li>MART (Multiple Additive Regression Tree)</li>
+</ul>
+<p><meta name="referrer" content="no-referrer"><br><img src="/2020/05/28/%E7%AE%97%E6%B3%95-GBDT/GBDT.png" class title="GBDT训练过程"></p>
 <h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>GBDT进行$T$次迭代，第$t$次（$t=1,\cdots,T$）迭代产生一个弱分类器$h_t(x)$；下一次迭代时，会根据上一次迭代计算得到的残差进行学习，并生成一个弱分类器。</p>
 <p>最终得到的强分类器为</p>
 <script type="math/tex; mode=display">H(x)=\sum_{t=1}^Th_t(x)</script><p>在GBDT的第$t$次迭代，假设在前一轮迭代得到的组合强学习器是$H_{t-1}(x)$，损失函数是$L(y,H_{t-1}(x))$</p>
@@ -482,7 +469,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#原理"><span class="nav-number">1.</span> <span class="nav-text">原理</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#GBDT-vs-RF"><span class="nav-number"></span> <span class="nav-text">GBDT vs RF</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料"><span class="nav-number"></span> <span class="nav-text">参考资料</span></a></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#GBDT"><span class="nav-number">1.</span> <span class="nav-text">GBDT</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#原理"><span class="nav-number">1.1.</span> <span class="nav-text">原理</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#GBDT-vs-RF"><span class="nav-number">2.</span> <span class="nav-text">GBDT vs RF</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料"><span class="nav-number">3.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
