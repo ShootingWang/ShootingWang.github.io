@@ -1511,7 +1511,7 @@ pre code {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #f026ff;
+  background: #9ef48b;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -1861,17 +1861,6 @@ pre code {
   width: 0;
   z-index: 1500;
   top: 0;
-}
-.post-body p a {
-  font-family: 'Muli', "PingFang SC", "Microsoft YaHei", sans-serif;
-  overflow-wrap: break-word;
-  word-wrap: break-word;
-  color: #0593d3;
-  border-bottom: none;
-}
-.post-body p a:hover {
-  color: #0477ab;
-  text-decoration: underline;
 }
 @media (min-width: 1200px) {
   .post-body p a {
