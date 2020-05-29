@@ -31,7 +31,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://github.com/2020/05/28/%E7%AE%97%E6%B3%95-GBDT/GBDT.png">
 <meta property="article:published_time" content="2020-05-28T09:00:00.000Z">
-<meta property="article:modified_time" content="2020-05-29T01:38:13.125Z">
+<meta property="article:modified_time" content="2020-05-29T01:39:31.966Z">
 <meta property="article:author" content="ShootingWang">
 <meta property="article:tag" content="算法">
 <meta property="article:tag" content="机器学习">
@@ -222,7 +222,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-05-29 09:38:13" itemprop="dateModified" datetime="2020-05-29T09:38:13+08:00">2020-05-29</time>
+                <time title="修改时间：2020-05-29 09:39:31" itemprop="dateModified" datetime="2020-05-29T09:39:31+08:00">2020-05-29</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -328,7 +328,7 @@
 <p>Python中<code>sklearn</code>的GBDT不支持多因变量，可以针对每个因变量单独运行GBDT，建立多个GBDT模型</p>
 </blockquote>
 <div class="note danger">
-            <h2 id="GBDT多分类算法"><a href="#GBDT多分类算法" class="headerlink" title="GBDT多分类算法"></a>GBDT多分类算法</h2><p><strong>输入</strong>：训练数据集$\{(x_1,y_1),\cdots, (x_N,y_N)\}$</p><p>  $x_i\in X\subseteq \mathbb{R}^p,\quad y_i\in Y\subseteq \mathbb{R}^K$</p><script type="math/tex; mode=display">y_i=(y_{i1},\cdots,y_{iK})^T, \quad y_{ij}=\left\{\begin{array}{ll}  1, & 如果第$i$个样本属于第$k$个类别\\  0, & j\neq k  \end{array} \right.</script><p><strong>输出</strong>：提升树</p><script type="math/tex; mode=display">H(x)=H_0(x)+\sum_{t=1}^T\sum_{j=1}^Jc_j^{(t)}\mathbf{I}\left(x\in R_j^{(t)} \right)</script><ol><li>初始化 <script type="math/tex; mode=display">H_0(x)=\left(f_1^{(0)}(x),\cdots,f_K^{(0)}(x) \right)^T, 其中f_j^{(0)}(x)=0(j=1,\cdots,K)</script></li><li>对$t=1,\cdots,T$，<ol><li>对$k=1,\cdots,K$，计算<script type="math/tex; mode=display">p_k(x)=\frac{\exp{f_k^{(t)}(x)}}{\sum_{l=1}^K\exp{f_l^{(t)}(x)}}</script></li></ol></li></ol>
+            <h2 id="GBDT多分类算法"><a href="#GBDT多分类算法" class="headerlink" title="GBDT多分类算法"></a>GBDT多分类算法</h2><p><strong>输入</strong>：训练数据集$\{(x_1,y_1),\cdots, (x_N,y_N)\}$</p><p>  $x_i\in X\subseteq \mathbb{R}^p,\quad y_i\in Y\subseteq \mathbb{R}^K$</p><script type="math/tex; mode=display">y_i=(y_{i1},\cdots,y_{iK})^T, \quad y_{ij}=\left\{\begin{array}{ll}  1, & 如果第i个样本属于第k个类别\\  0, & j\neq k  \end{array} \right.</script><p><strong>输出</strong>：提升树</p><script type="math/tex; mode=display">H(x)=H_0(x)+\sum_{t=1}^T\sum_{j=1}^Jc_j^{(t)}\mathbf{I}\left(x\in R_j^{(t)} \right)</script><ol><li>初始化 <script type="math/tex; mode=display">H_0(x)=\left(f_1^{(0)}(x),\cdots,f_K^{(0)}(x) \right)^T, 其中f_j^{(0)}(x)=0(j=1,\cdots,K)</script></li><li>对$t=1,\cdots,T$，<ol><li>对$k=1,\cdots,K$，计算<script type="math/tex; mode=display">p_k(x)=\frac{\exp{f_k^{(t)}(x)}}{\sum_{l=1}^K\exp{f_l^{(t)}(x)}}</script></li></ol></li></ol>
           </div>
 <h2 id="正则化"><a href="#正则化" class="headerlink" title="正则化"></a>正则化</h2><p>为了防止过拟合，可以对GBDT进行正则化。</p>
 <ol>
