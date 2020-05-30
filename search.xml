@@ -703,8 +703,8 @@
       </categories>
       <tags>
         <tag>Python</tag>
-        <tag>编程</tag>
         <tag>Leetcode</tag>
+        <tag>编程</tag>
         <tag>SQL</tag>
         <tag>题库</tag>
       </tags>
@@ -8662,8 +8662,8 @@ E(X)&=\int_0^1 x\frac{1}{B(\alpha,\beta)}x^{\alpha-1}(1-x)^{\beta-1}\mathrm{d}x\
         <category>JAVA</category>
       </categories>
       <tags>
-        <tag>JAVA</tag>
         <tag>编程</tag>
+        <tag>JAVA</tag>
       </tags>
   </entry>
   <entry>
