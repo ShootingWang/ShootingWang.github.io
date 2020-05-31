@@ -533,7 +533,7 @@ pre {
 }
 pre,
 code {
-  font-family: 'Anonymous Pro Regular', Century, consolas, Menlo, monospace, "PingFang SC", "Microsoft YaHei";
+  font-family: Anonymous Pro Regular, consolas, Menlo, monospace, "PingFang SC", "Microsoft YaHei";
 }
 code {
   background: #eee;
@@ -1514,7 +1514,7 @@ pre code {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #ff3d4f;
+  background: #557d9f;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
