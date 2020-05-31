@@ -11319,6 +11319,21 @@ E(X)&=\int_0^1 x\frac{1}{B(\alpha,\beta)}x^{\alpha-1}(1-x)^{\beta-1}\mathrm{d}x\
 <li>在适当控制$\alpha$中制约$\beta$</li>
 <li>$\alpha$的最常用选择为$\alpha=0.5$，此外还有$\alpha=0.1$或$\alpha=0.01$</li>
 </ul>
+<p>一般情况下，寻找某对假设的显著性检验的步骤如下：</p>
+<ol>
+<li>根据实际问题，建立假设$H_0\quad\mathrm{vs}\quad H_1$</li>
+<li>选取一个合适的检验统计量$T(X)$，使当$H_0$成立时，$T$的分布完全已知，并根据$H_0$及$H_1$的特点，确定拒绝域$W$的形状</li>
+<li>确定显著性水平$\alpha$</li>
+<li>确定具体的拒绝域$W$</li>
+<li>由样本观测值$x_1,\cdots,x_n$，计算检验统计量的值$T(x_1,\cdots,x_n)$，根据$T(x_1,\cdots,x_n)$是否属于$W$，做出判断</li>
+</ol>
+<div class="note warning">
+            <h2 id="p值"><a href="#p值" class="headerlink" title="p值"></a>p值</h2><p>在一个假设检验问题中，利用样本观测值能够作出拒绝原假设的<u>最小的显著性水平</u>称为<strong>检验的p值</strong>。</p>
+          </div>
+<ul>
+<li>如果$p\leq \alpha$，则在显著性水平$\alpha$下拒绝$H_0$</li>
+<li>如果$p&gt;\alpha$，则在显著性水平$\alpha$下接受$H_0$</li>
+</ul>
 <h1 id="检验方法"><a href="#检验方法" class="headerlink" title="检验方法"></a>检验方法</h1><h2 id="参数检验"><a href="#参数检验" class="headerlink" title="参数检验"></a>参数检验</h2><ul>
 <li>两均值对比<ul>
 <li>Z检验<blockquote>
@@ -11381,6 +11396,7 @@ E(X)&=\int_0^1 x\frac{1}{B(\alpha,\beta)}x^{\alpha-1}(1-x)^{\beta-1}\mathrm{d}x\
 <li><a href="https://tse3-mm.cn.bing.net/th/id/OIP.Kswu83OuyrC-6NiH646D-QHaGg?w=222&amp;h=160&amp;c=7&amp;o=5&amp;dpr=1.5&amp;pid=1.7" target="_blank" rel="noopener">首页缩略图</a></li>
 <li><a href="https://www.skillsyouneed.com/num/statistics-identifying-patterns.html" target="_blank" rel="noopener">Statistical Analysis: Identifying Patterns</a></li>
 <li><a href="https://zhuanlan.zhihu.com/p/68736699" target="_blank" rel="noopener">三种T检验的详细区分</a></li>
+<li><a href="https://book.douban.com/subject/5998092/" target="_blank" rel="noopener">概率论与数理统计教程</a></li>
 </ul>
 ]]></content>
       <categories>
