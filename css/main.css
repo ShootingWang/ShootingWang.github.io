@@ -533,7 +533,7 @@ pre {
 }
 pre,
 code {
-  font-family: Candara, consolas, Menlo, monospace, "PingFang SC", "Microsoft YaHei";
+  font-family: Century, Candara, consolas, Menlo, monospace, "PingFang SC", "Microsoft YaHei";
 }
 code {
   background: #eee;
@@ -1514,7 +1514,7 @@ pre code {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #f28fc6;
+  background: #faf;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
