@@ -11260,7 +11260,7 @@ E(X)&=\int_0^1 x\frac{1}{B(\alpha,\beta)}x^{\alpha-1}(1-x)^{\beta-1}\mathrm{d}x\
 <li>选择检验统计量，给出拒绝域形式</li>
 <li>选择显著性水平</li>
 <li>给出拒绝域</li>
-<li>做出判断</li>
+<li>作出判断</li>
 </ol>
 <div class="note warning">
             <h2 id="参数假设检验"><a href="#参数假设检验" class="headerlink" title="参数假设检验"></a>参数假设检验</h2><p>考虑来自某个参数分布族$\{F(x,\theta)|\theta\in \Theta\}$的样本$x_1,\cdots,x_n$，其中$\Theta$为参数空间。</p><ul><li>设$\Theta_0\subset \Theta$，且$\Theta_0\neq \emptyset $</li><li>设$\Theta_1\subset \Theta$，$\Theta_0\cap \Theta_1=\emptyset$（一般是$\Theta_1=\Theta-\Theta_0=\Theta_0^c$）</li></ul><p>则命题</p><script type="math/tex; mode=display">H_0:\theta\in \Theta_0</script><p>称为一个<strong>假设</strong>或<strong>原假设</strong>或<strong>零假设</strong>（null hypothesis）。</p><p>命题</p><script type="math/tex; mode=display">H_1:\theta\in\Theta_1</script><p>称为$H_0$的<strong>对立假设</strong>或<strong>备择假设</strong>（alternative hypothesis）。</p><script type="math/tex; mode=display">H_0:\theta\in \Theta_0\quad \mathrm{vs} \quad H_1:\theta\in \Theta_1</script>
@@ -11325,7 +11325,7 @@ E(X)&=\int_0^1 x\frac{1}{B(\alpha,\beta)}x^{\alpha-1}(1-x)^{\beta-1}\mathrm{d}x\
 <li>选取一个合适的检验统计量$T(X)$，使当$H_0$成立时，$T$的分布完全已知，并根据$H_0$及$H_1$的特点，确定拒绝域$W$的形状</li>
 <li>确定显著性水平$\alpha$</li>
 <li>确定具体的拒绝域$W$</li>
-<li>由样本观测值$x_1,\cdots,x_n$，计算检验统计量的值$T(x_1,\cdots,x_n)$，根据$T(x_1,\cdots,x_n)$是否属于$W$，做出判断</li>
+<li>由样本观测值$x_1,\cdots,x_n$，计算检验统计量的值$T(x_1,\cdots,x_n)$，根据$T(x_1,\cdots,x_n)$是否属于$W$，作出判断</li>
 </ol>
 <div class="note warning">
             <h2 id="p值"><a href="#p值" class="headerlink" title="p值"></a>p值</h2><p>在一个假设检验问题中，利用样本观测值能够作出拒绝原假设的<u>最小的显著性水平</u>称为<strong>检验的p值</strong>。</p>
@@ -11334,6 +11334,7 @@ E(X)&=\int_0^1 x\frac{1}{B(\alpha,\beta)}x^{\alpha-1}(1-x)^{\beta-1}\mathrm{d}x\
 <li>如果$p\leq \alpha$，则在显著性水平$\alpha$下拒绝$H_0$</li>
 <li>如果$p&gt;\alpha$，则在显著性水平$\alpha$下接受$H_0$</li>
 </ul>
+<p>在进行检验假设时，可能计算得到的p值与显著性水平$\alpha$非常接近，这时就比较难作出判断。</p>
 <h1 id="检验方法"><a href="#检验方法" class="headerlink" title="检验方法"></a>检验方法</h1><h2 id="参数检验"><a href="#参数检验" class="headerlink" title="参数检验"></a>参数检验</h2><ul>
 <li>两均值对比<ul>
 <li>Z检验<blockquote>
