@@ -5414,7 +5414,7 @@ n_{.j}\\
 </ul>
 </blockquote>
 <div class="note warning">
-            <h2 id="错误"><a href="#错误" class="headerlink" title="错误"></a>错误</h2><p>假设检验的两类错误</p><ul><li><strong>第一类错误</strong>（type Ⅰ Error）/ <strong>拒真错误</strong> / 错误拒绝 / false positive<br>$H_0$ is true but reject $H_0$<br>犯第一类错误概率：<script type="math/tex; mode=display">\alpha=P(X\in W|H_0)</script></li><li><strong>第二类错误</strong>（type Ⅱ Error）/ <strong>取伪错误</strong> / 错误接受<br>$H_0$ is not true but accept $H_0$<br>犯第二类错误概率：<script type="math/tex; mode=display">\beta=P(X\in \overline{W}|H_1)</script></li></ul>
+            <h2 id="错误"><a href="#错误" class="headerlink" title="错误"></a>错误</h2><p>假设检验的两类错误</p><ul><li><p><strong>第一类错误</strong>（type Ⅰ Error）/ <strong>拒真错误</strong> / 错误拒绝 / false positive<br>$H_0$ is true but reject $H_0$</p><p>犯第一类错误概率：</p><script type="math/tex; mode=display">\alpha=P(X\in W|H_0)</script></li><li><p><strong>第二类错误</strong>（type Ⅱ Error）/ <strong>取伪错误</strong> / 错误接受<br>$H_0$ is not true but accept $H_0$</p><p>犯第二类错误概率：</p><script type="math/tex; mode=display">\beta=P(X\in \overline{W}|H_1)</script></li></ul>
           </div>
 <p>无法找到一个检验使得犯两类错误的概率都尽可能地小。</p>
 <div class="note warning">
