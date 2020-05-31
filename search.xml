@@ -1297,8 +1297,8 @@
         <tag>机器学习</tag>
         <tag>分类</tag>
         <tag>集成学习</tag>
-        <tag>Boosting</tag>
         <tag>回归</tag>
+        <tag>Boosting</tag>
       </tags>
   </entry>
   <entry>
@@ -2207,8 +2207,8 @@ Outer range (high) of the distribution:
         <tag>机器学习</tag>
         <tag>分类</tag>
         <tag>集成学习</tag>
-        <tag>Boosting</tag>
         <tag>回归</tag>
+        <tag>Boosting</tag>
       </tags>
   </entry>
   <entry>
@@ -4509,8 +4509,8 @@ dtype: int64
         <tag>机器学习</tag>
         <tag>分类</tag>
         <tag>集成学习</tag>
-        <tag>Boosting</tag>
         <tag>回归</tag>
+        <tag>Boosting</tag>
       </tags>
   </entry>
   <entry>
