@@ -911,10 +911,13 @@
             <p>抽样调查遵循的<strong>原则</strong>是：<u>随机原则</u></p><p><font face="宋体" color="grey">来自：<a href="https://www.nowcoder.com/test/23567918/summary" target="_blank" rel="noopener">小红书2020校招数据分析笔试题卷一</a></font><br>来自：<a href="https://www.nowcoder.com/test/23567918/summary" target="_blank" rel="noopener">小红书2020校招数据分析笔试题卷一</a></p>
           </div>
 <div class="note default">
-            <p>抽样估计的优良标准：</p><ul><li>无偏性</li><li>一致性</li><li>有效性</li></ul>
+            <p>抽样估计的优良标准：</p><ul><li>无偏性</li><li>一致性</li><li>有效性</li></ul><font face="宋体" color="grey">来自：[小红书2020校招数据分析笔试题卷一](https://www.nowcoder.com/test/23567918/summary)</font>
           </div>
 <h1 id="机器学习"><a href="#机器学习" class="headerlink" title="机器学习"></a>机器学习</h1><div class="note default">
             <p>常用的<strong>最优模型选择方法</strong>是哪些？</p><ul><li>增加正则化项</li><li>交叉验证</li><li>增加罚项</li></ul><p>来自：<a href="https://www.nowcoder.com/test/23567918/summary" target="_blank" rel="noopener">小红书2020校招数据分析笔试题卷一</a></p>
+          </div>
+<div class="note default">
+            <p>三种常见的聚类算法:</p><ul><li>K-means聚类、K-中心点聚类、CLARANS算法、DIANA算法、BIRCH算法、Chameleon算法</li><li>EM算法</li><li>OPTICS算法、DBSCAN算法</li></ul><font face="宋体" color="grey">来自：[小红书2020校招数据分析笔试题卷一](https://www.nowcoder.com/test/23567918/summary)</font>
           </div>
 <h1 id="时间序列"><a href="#时间序列" class="headerlink" title="时间序列"></a>时间序列</h1><div class="note default">
             <p>影响时间序列的因素：</p><ul><li>长期趋势</li><li>季节变动</li><li>循环波动</li><li>不规则波动</li></ul>
