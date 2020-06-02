@@ -922,6 +922,9 @@
 <h1 id="时间序列"><a href="#时间序列" class="headerlink" title="时间序列"></a>时间序列</h1><div class="note default">
             <p>影响时间序列的因素：</p><ul><li>长期趋势</li><li>季节变动</li><li>循环波动</li><li>不规则波动</li></ul>
           </div>
+<h1 id="SQL"><a href="#SQL" class="headerlink" title="SQL"></a>SQL</h1><div class="note default">
+            <p>某电商有100家店铺，每家店铺每天销售商品和销售额gmv的数据存放在purchase表中，现需统计5月和6月，总gmv中，两个月分别的贡献前50% gmv的店铺名</p><font face="宋体" color="grey">来自：[小红书2020校招数据分析笔试题卷一](https://www.nowcoder.com/questionTerminal/be517fb03c854905be5acb706b680199)</font>
+          </div>
 <div class="note default">
             <font face="宋体" color="grey">来自：[]()</font>
           </div>
