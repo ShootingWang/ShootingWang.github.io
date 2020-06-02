@@ -898,6 +898,30 @@
       </tags>
   </entry>
   <entry>
+    <title>数据分析 | 笔试题目积累</title>
+    <url>/2020/06/02/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-%E7%AC%94%E8%AF%95%E9%A2%98%E7%9B%AE%E7%A7%AF%E7%B4%AF/</url>
+    <content><![CDATA[<p><center> </center><br><a id="more"></a></p>
+<h1 id="概率统计"><a href="#概率统计" class="headerlink" title="概率统计"></a>概率统计</h1><h1 id="抽样调查"><a href="#抽样调查" class="headerlink" title="抽样调查"></a>抽样调查</h1><div class="note default">
+            <p>抽样调查遵循的<strong>原则</strong>是：<u>随机原则</u><br>来自：<a href="https://www.nowcoder.com/test/23567918/summary" target="_blank" rel="noopener">小红书2020校招数据分析笔试题卷一</a></p>
+          </div>
+<h1 id="机器学习"><a href="#机器学习" class="headerlink" title="机器学习"></a>机器学习</h1><div class="note default">
+            <p>常用的<strong>最优模型选择方法</strong>是哪些？</p><ul><li>增加正则化项</li><li>基奥查验证</li><li>增加罚项<br>来自：<a href="https://www.nowcoder.com/test/23567918/summary" target="_blank" rel="noopener">小红书2020校招数据分析笔试题卷一</a></li></ul>
+          </div>
+<div class="note default">
+            
+          </div>
+<div class="note default">
+            
+          </div>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1>]]></content>
+      <categories>
+        <category>数据分析</category>
+      </categories>
+      <tags>
+        <tag>数据分析</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Python | statistics</title>
     <url>/2020/05/30/python-statistics/</url>
     <content><![CDATA[<p><center> </center><br><a id="more"></a></p>
