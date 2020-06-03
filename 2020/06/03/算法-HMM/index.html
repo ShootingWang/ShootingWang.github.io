@@ -22,17 +22,21 @@
 
 <link rel="stylesheet" href="/js/prism/prism.css">
 
-  <meta name="description" content="无猫病重症患者">
-<meta property="og:type" content="website">
-<meta property="og:title" content="ShootingWang">
-<meta property="og:url" content="https://github.com/ShootingWang/ShootingWang.github.io/tags/TED/index.html">
+  <meta name="description" content="Hidden Markov Model">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Machine Learning | 隐马尔可夫模型">
+<meta property="og:url" content="https://github.com/ShootingWang/ShootingWang.github.io/2020/06/03/%E7%AE%97%E6%B3%95-HMM/index.html">
 <meta property="og:site_name" content="ShootingWang">
-<meta property="og:description" content="无猫病重症患者">
+<meta property="og:description" content="Hidden Markov Model">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-06-03T09:43:09.000Z">
+<meta property="article:modified_time" content="2020-06-03T15:54:29.783Z">
 <meta property="article:author" content="ShootingWang">
+<meta property="article:tag" content="算法">
+<meta property="article:tag" content="机器学习">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://github.com/ShootingWang/ShootingWang.github.io/tags/TED/">
+<link rel="canonical" href="https://github.com/ShootingWang/ShootingWang.github.io/2020/06/03/%E7%AE%97%E6%B3%95-HMM/">
 
 
 <script id="page-configurations">
@@ -40,12 +44,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>标签: TED | ShootingWang</title>
+  <title>Machine Learning | 隐马尔可夫模型 | ShootingWang</title>
   
 
 
@@ -206,97 +210,191 @@
         <div class="content-wrap">
           
 
-          <div class="content tag">
+          <div class="content post posts-expand">
             
 
+    
   
   
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://github.com/ShootingWang/ShootingWang.github.io/2020/06/03/%E7%AE%97%E6%B3%95-HMM/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ShootingWang">
+      <meta itemprop="description" content="无猫病重症患者">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ShootingWang">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Machine Learning | 隐马尔可夫模型
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-06-03 17:43:09 / 修改时间：23:54:29" itemprop="dateCreated datePublished" datetime="2020-06-03T17:43:09+08:00">2020-06-03</time>
+            </span>
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
   
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h2 class="collection-header">TED
-          <small>标签</small>
-        </h2>
-      </div>
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/06/03/%E7%AE%97%E6%B3%95-HMM/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/06/03/%E7%AE%97%E6%B3%95-HMM/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2020</span>
+        <p><center>Hidden Markov Model</center><br><a id="more"></a></p>
+<h1 id="HMM"><a href="#HMM" class="headerlink" title="HMM"></a>HMM</h1><p>隐马尔可夫模型是关于<strong>时序</strong>的概率模型。</p>
+<ul>
+<li>用来描述一个含有隐含未知参数的马尔可夫过程</li>
+<li>是可用于标注问题的统计学习模型</li>
+<li><a href="/2020/05/11/%E7%94%9F%E6%88%90%E5%BC%8F%E6%A8%A1%E5%9E%8B-%E5%88%A4%E5%88%AB%E5%BC%8F%E6%A8%A1%E5%9E%8B/" title="生成式模型">生成式模型</a></li>
+<li>隐马尔可夫模型由<strong>初始概率分布</strong>、<strong>状态转移概率分布</strong>以及<strong>观测概率分布</strong>确定。</li>
+<li>HMM在语言识别、自然语言处理、模式识别等领域得到广泛的应用</li>
+<li>HMM适用的问题：<ol>
+<li>问题是基于序列的（如时间序列，或状态序列）</li>
+<li>问题中有两类数据，一类序列数据是可以观测到的（<strong>观测序列</strong>），另一类数据是不可观测的（<strong>隐藏状态序列</strong>，简称<strong>状态序列</strong>）</li>
+</ol>
+</li>
+</ul>
+<p>隐马尔可夫模型描述由一个隐藏的马尔可夫链随机生成不可观测的状态随机序列，再由各个状态生成一个观测而产生观测随机序列的过程。</p>
+<ul>
+<li><strong>状态序列</strong>（state sequence）：隐藏的马尔可夫链随机生成的状态的序列</li>
+<li><strong>观测序列</strong>（observation sequence）：每个状态生成一个观测，而由此产的观测的随机序列</li>
+<li>序列的每一个位置又可以看作是一个时刻</li>
+</ul>
+<div class="note warning">
+            <p>假设：</p><ul><li>$Q$是所有可能的隐藏状态的集合<script type="math/tex; mode=display">Q=\{q_1, q_2,\cdots, q_N\}</script>其中，$N$是可能的隐藏状态数。</li><li>$V$是所有可能的观测状态的集合<script type="math/tex; mode=display">V=\{v_1,v_2,\cdots,v_M\}</script>其中，$M$是可能的观测状态数。</li></ul><p>对于一个长度为$T$的序列，</p><ul><li>$I$是对应的隐藏状态序列<script type="math/tex; mode=display">I=\{i_1,i_2,\cdots, i_T\}</script></li><li>$O$是对应的观测状态序列<script type="math/tex; mode=display">O=\{o_1,o_2,\cdots,o_T\}</script>其中，$\forall i_t\in Q,\quad \forall o_t\in V$。</li></ul>
+          </div>
+<p>未完待续</p>
+<h1 id="笔试题目"><a href="#笔试题目" class="headerlink" title="笔试题目"></a>笔试题目</h1><div class="note default">
+            <p>在HMM中,如果已知观察序列和产生观察序列的状态序列,那么可用以下哪种方法直接进行参数估计(D)<br>A. EM算法<br>B. 维特比算法<br>C. 前向后向算法<br>D. 极大似然估计</p><p>[<font face="宋体" color="grey">来自：<a href="https://www.nowcoder.com/questionTerminal/dc4e7ad7e9634b65b56f2541a580eba0" target="_blank" rel="noopener">牛客试题广场</a></font>]</p>
+          </div>
+<ul>
+<li>EM算法：只有观测序列，无状态序列时，用于学习模型参数，即Baum-Welch算法</li>
+<li>维特比算法：用动态规划解决HMM的预测问题，不是参数估计</li>
+<li>前向后向算法：用于算概率</li>
+<li>极大似然估计：预测序列和相应的状态序列都存在时的监督学习算法，用来估计参数</li>
+</ul>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
+<li><a href="https://book.douban.com/subject/10590856/" target="_blank" rel="noopener">李航-统计学习方法</a></li>
+<li><a href="https://www.cnblogs.com/skyme/p/4651331.html" target="_blank" rel="noopener">一文搞懂HMM（隐马尔可夫模型）</a></li>
+<li><a href="https://www.cnblogs.com/pinard/p/6945257.html" target="_blank" rel="noopener">刘建平Pinard-隐马尔科夫模型HMM（一）HMM模型</a></li>
+</ul>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-06-03T08:28:53+08:00"
-              content="2020-06-03">
-          06-03
-        </time>
+    
+    
+    
+        <div class="reward-container">
+  <div></div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/reward.png" alt="ShootingWang 微信支付">
+        <p>微信支付</p>
       </div>
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/06/03/TED-5WaystoCreateStrongerConnections/" itemprop="url">
-            <span itemprop="name">TED | 5 Ways to Create Stronger Connections</span>
+  </div>
+</div>
+
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/images/wechat_qrcode.jpg">
+            <span class="icon">
+              <i class="fab fa-weixin"></i>
+            </span>
+
+            <span class="label">WeChat</span>
           </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-05-25T09:41:28+08:00"
-              content="2020-05-25">
-          05-25
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/05/25/TED-WhyDoCatsActSoWeird/" itemprop="url">
-            <span itemprop="name">TED | Why Do Cats Act so Weird</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-05-19T00:25:38+08:00"
-              content="2020-05-19">
-          05-19
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/05/19/TED-TrySomethingNewfor30days/" itemprop="url">
-            <span itemprop="name">TED | Try Something New for 30 days</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
+        </div>
     </div>
   </div>
-  
-  
-  
 
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"># 算法</a>
+              <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" rel="tag"># 机器学习</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/06/03/%E7%AE%97%E6%B3%95-BIRCH/" rel="prev" title="Machine Learning | BIRCH">
+      <i class="fa fa-chevron-left"></i> Machine Learning | BIRCH
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
   
 
 
 
           </div>
           
+    <div class="comments" id="valine-comments"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -343,6 +441,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#HMM"><span class="nav-number">1.</span> <span class="nav-text">HMM</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#笔试题目"><span class="nav-number">2.</span> <span class="nav-text">笔试题目</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料"><span class="nav-number">3.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -528,6 +627,59 @@ if (document.querySelectorAll('pre.mermaid').length) {
   
 
   
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
 
   
 
