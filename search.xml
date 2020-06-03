@@ -898,6 +898,44 @@
       </tags>
   </entry>
   <entry>
+    <title>Machine Learning | BIRCH</title>
+    <url>/2020/06/03/%E7%AE%97%E6%B3%95-BIRCH/</url>
+    <content><![CDATA[<p><center>Balanced Iterative Reducing and Clustering Using Hierarchies</center><br><a id="more"></a></p>
+<p>利用层次方法的平衡迭代规约和聚类</p>
+<h1 id="BIRCH"><a href="#BIRCH" class="headerlink" title="BIRCH"></a>BIRCH</h1><ul>
+<li>是一种针对大规模数据集的聚类算法</li>
+</ul>
+<h2 id="聚类特征"><a href="#聚类特征" class="headerlink" title="聚类特征"></a>聚类特征</h2><p>聚类特征（CF，Clustering Feature）</p>
+<ul>
+<li>是BIRCH增量聚类算法的核心</li>
+<li>使用CF概括描述各簇的信息</li>
+</ul>
+<p>设某簇中有$N$个$p$维数据点$\{\mathbf{x}_i\}\quad (i=1,\cdots,N)$，则该簇的聚类特征（CF）定义为三元组：</p>
+<script type="math/tex; mode=display">CF=(N, LS, SS)</script><p>其中：</p>
+<ul>
+<li>$N$：簇中点的数目</li>
+<li>矢量$LS$：各点的线性求和，即<script type="math/tex; mode=display">\sum_{i=1}^N\mathbf{x}_i=\left(\sum_{i=1}^Nx_{i1},\cdots, \sum_{i=1}^Nx_{ip} \right)^T</script></li>
+<li>标量$SS$：各点的平方和，即<script type="math/tex; mode=display">\sum_{i=1}^N\mathbf{x}_i^T\mathbf{x}_i=\sum_{i=1}^N\sum_{j=1}^px_{ij}^2</script></li>
+</ul>
+<div class="note warning">
+            <p>聚类特征（CF）具有可加性。</p><p>若有$CF_1=(n_1,LS_1,SS_1)$, $CF_2=(n_2,LS_2,SS_2)$，则$CF_1+CF_2=(n_1+n_2,LS_1+LS_2, SS_1+SS_2)$表示将两个不相交的簇合并成一个大簇的聚类特征。</p>
+          </div>
+<h2 id="聚类特征树"><a href="#聚类特征树" class="headerlink" title="聚类特征树"></a>聚类特征树</h2><p>聚类特征树（CF-tree）</p>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
+<li><a href="https://blog.csdn.net/congnaahahei/article/details/78881128" target="_blank" rel="noopener">BIRCH算法</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>机器学习</tag>
+        <tag>聚类</tag>
+        <tag>Clustering</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>TED | 5 Ways to Create Stronger Connections</title>
     <url>/2020/06/03/TED-5WaystoCreateStrongerConnections/</url>
     <content><![CDATA[<p><center>Another New Week!</center><br><a id="more"></a></p>
