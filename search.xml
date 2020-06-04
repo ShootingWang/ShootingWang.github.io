@@ -14052,6 +14052,9 @@ E(X)&=\int_0^1 x\frac{1}{B(\alpha,\beta)}x^{\alpha-1}(1-x)^{\beta-1}\mathrm{d}x\
 </ul>
 <p>隐马尔可夫模型科用三元组表示：</p>
 <script type="math/tex; mode=display">\lambda=(A,B,\Pi)</script><p>$A,B,\Pi$称为隐马尔可夫模型的<strong>三要素</strong>。</p>
+<div class="note danger">
+            <h2 id="算法：观测序列的生成"><a href="#算法：观测序列的生成" class="headerlink" title="算法：观测序列的生成"></a>算法：观测序列的生成</h2><p><strong>输入</strong>：</p><ul><li>隐马尔可夫模型$\lambda=(A,B,\Pi)$</li><li>观测序列的长度$T$</li></ul><p><strong>输出</strong>：观测序列$O=\{o_1,\cdots,o_T\}$</p><ol><li>根据初始状态概率分布$\Pi$生成隐藏状态$i_1$</li><li>对于$t=1,\cdots,T$，<br> (a) 按照隐藏状态$i_t$的观测状态分布$b_{i_t}(k)$生成观测状态$o_t$<br> (b) 按照隐藏状态$i_t$的状态转移概率分布$a_{i_t,i_{t+1}}$产生隐藏状态$i_{t+1}\quad (i_{t+1}=1,\cdots,N)$</li></ol>
+          </div>
 <p>未完待续</p>
 <h1 id="笔试题目"><a href="#笔试题目" class="headerlink" title="笔试题目"></a>笔试题目</h1><div class="note default">
             <p>在HMM中,如果已知观察序列和产生观察序列的状态序列,那么可用以下哪种方法直接进行参数估计(D)<br>A. EM算法<br>B. 维特比算法<br>C. 前向后向算法<br>D. 极大似然估计</p><p>[<font face="宋体" color="grey">来自：<a href="https://www.nowcoder.com/questionTerminal/dc4e7ad7e9634b65b56f2541a580eba0" target="_blank" rel="noopener">牛客试题广场</a></font>]</p>
