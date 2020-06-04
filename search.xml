@@ -980,7 +980,7 @@
 <li>算法的时间复杂度为$O(TN^T)$</li>
 </ul>
 <p>对于一些隐藏状态数极少的模型，可以使用上述“暴力求解”法来求解观测序列出现的概率。但是，如果隐藏状态多，上述算法太过耗时，则应考虑<strong>前向后向算法</strong>。</p>
-<div class="note danger">
+<div class="note warning">
             <p><strong>前向概率</strong>：</p><p>给定隐马尔可夫模型$\lambda$，定义时刻$t$的隐藏状态为$q_i$，观测状态序列为$o_1,o_2,\cdots,o_t$的概率为前向概率。记为</p><script type="math/tex; mode=display">a_t(i)=P(o_1,o_2,\cdots,o_t,i_t=q_i|\lambda)</script>
           </div>
 <p>假设已经找到在时刻$t$时各个隐藏状态的前向概率，需要递推初时刻$t+1$时各个隐藏状态的前向概率。</p>
