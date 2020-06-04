@@ -30,7 +30,7 @@
 <meta property="og:description" content="Hidden Markov Model">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-06-03T09:43:09.000Z">
-<meta property="article:modified_time" content="2020-06-04T05:30:33.426Z">
+<meta property="article:modified_time" content="2020-06-04T05:34:39.587Z">
 <meta property="article:author" content="ShootingWang">
 <meta property="article:tag" content="算法">
 <meta property="article:tag" content="机器学习">
@@ -249,7 +249,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-04 13:30:33" itemprop="dateModified" datetime="2020-06-04T13:30:33+08:00">2020-06-04</time>
+                <time title="修改时间：2020-06-04 13:34:39" itemprop="dateModified" datetime="2020-06-04T13:34:39+08:00">2020-06-04</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -343,18 +343,18 @@
           </div>
 <h2 id="基本问题"><a href="#基本问题" class="headerlink" title="基本问题"></a>基本问题</h2><p>隐马尔可夫模型有三个经典的基本问题需要解决：</p>
 <ol>
-<li>概率计算问题<ul>
+<li><strong>概率计算问题</strong><ul>
 <li>给定模型$\lambda=(A,B,\Pi)$和观测序列$O=\{o_1,\cdots,o_T\}$，计算在模型$\lambda$下观测序列$O$出现的概率$P(O|\lambda)$</li>
 <li>用<strong>前向后向算法</strong></li>
 </ul>
 </li>
-<li>模型参数学习问题<ul>
+<li><strong>模型参数学习问题</strong><ul>
 <li>给定观测序列$O=\{o_1,\cdots,o_T\}$，估计模型$\lambda=(A,B,\Pi)$的参数，使得在该模型下观测序列的条件概率$P(O|\lambda)$最大</li>
 <li>用<strong>极大似然估计</strong>的方法估计参数</li>
 <li>用<strong>基于EM算法的Baum-Welch算法</strong></li>
 </ul>
 </li>
-<li>预测问题/解码（decoding）问题<ul>
+<li><strong>预测问题/解码（decoding）问题</strong><ul>
 <li>给定模型$\lambda=(A,B,\Pi)$和观测序列$O=\{o_1,\cdots,o_T\}$，求给定观测序列条件该概率$P(I|O)$下，最可能出现的对应的状态序列$I=\{i_1,\cdots,i_T\}$</li>
 <li>用<strong>基于动态规划的维特比算法</strong></li>
 </ul>
@@ -366,6 +366,11 @@
 <script type="math/tex; mode=display">P(I|\lambda)=\pi_{i_1}a_{i_1i_2}a_{i_2i_3}\cdots a_{i_{T-1}i_T}</script><p>对固定的状态序列$I=\{i_1,i_2,\cdots,i_T\}$，（要求的）观测序列$O=\{o_1,o_2,\cdots,o_T\}$出现的概率是</p>
 <script type="math/tex; mode=display">P(O|I,\lambda)=b_{i_1}(o_1)b_{i_2}(o_2)\cdots b_{i_T}(o_T)</script><p>则$O$和$I$同时出现的联合概率为<br>\begin{aligned}<br>P(O,I|\lambda) &amp;= P(I|\lambda)P(O|I,\lambda)\\<br>&amp;= \pi_{i_1}b_{i_1}(o_1)a_{i_1i_2}b_{i_2}(o_2)\cdots a_{i_{T-1}i_T}b_{i_T}(o_T)<br>\end{aligned}</p>
 <p>然后对所有可能的状态序列$I$求和，得到观测序列$O$的边缘概率<br>\begin{aligned}<br>P(O|\lambda) &amp;= \sum_I P(O,I|\lambda)\\<br>&amp;= \sum_{I}P(O|I,\lambda)P(I|\lambda)\\<br>&amp;= \sum_{i_1,i_2,\cdots,i_T}\pi_{i_1}b_{i_1}(o_1)a_{i_1i_2}b_{i_2}(o_2)\cdots a_{i_{T-1}i_T}b_{i_T}(o_T)<br>\end{aligned}</p>
+<ul>
+<li>预测状态有$N^T$种组合</li>
+<li>算法的时间复杂度为$O(TN^T)$</li>
+</ul>
+<p>对于一些隐藏状态数极少的模型，可以使用上述“暴力求解”法来求解观测序列出现的概率。但是，如果隐藏状态多，上述算法太过耗时，则应考虑<strong>前向后向算法</strong>。</p>
 <h2 id="前向后向算法"><a href="#前向后向算法" class="headerlink" title="前向后向算法"></a>前向后向算法</h2><p>未完待续</p>
 <h1 id="笔试题目"><a href="#笔试题目" class="headerlink" title="笔试题目"></a>笔试题目</h1><div class="note default">
             <p>在HMM中,如果已知观察序列和产生观察序列的状态序列,那么可用以下哪种方法直接进行参数估计(D)<br>A. EM算法<br>B. 维特比算法<br>C. 前向后向算法<br>D. 极大似然估计</p><p>[<font face="宋体" color="grey">来自：<a href="https://www.nowcoder.com/questionTerminal/dc4e7ad7e9634b65b56f2541a580eba0" target="_blank" rel="noopener">牛客试题广场</a></font>]</p>
