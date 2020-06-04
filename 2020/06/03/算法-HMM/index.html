@@ -30,7 +30,7 @@
 <meta property="og:description" content="Hidden Markov Model">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-06-03T09:43:09.000Z">
-<meta property="article:modified_time" content="2020-06-04T06:30:58.576Z">
+<meta property="article:modified_time" content="2020-06-04T06:34:22.639Z">
 <meta property="article:author" content="ShootingWang">
 <meta property="article:tag" content="算法">
 <meta property="article:tag" content="机器学习">
@@ -249,7 +249,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-04 14:30:58" itemprop="dateModified" datetime="2020-06-04T14:30:58+08:00">2020-06-04</time>
+                <time title="修改时间：2020-06-04 14:34:22" itemprop="dateModified" datetime="2020-06-04T14:34:22+08:00">2020-06-04</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -377,7 +377,7 @@
             <p><strong>前向概率</strong>：</p><p>给定隐马尔可夫模型$\lambda$，定义时刻$t$的隐藏状态为$q_i$，观测状态序列为$o_1,o_2,\cdots,o_t$的概率为前向概率。记为</p><script type="math/tex; mode=display">\alpha_t(i)=P(o_1,o_2,\cdots,o_t,i_t=q_i|\lambda)</script>
           </div>
 <p>假设已经找到在时刻$t$时各个隐藏状态的前向概率，需要递推初时刻$t+1$时各个隐藏状态的前向概率。</p>
-<p>基于时刻$t$时各个隐藏状态的前向概率$a_t(j)$，乘以对应的状态转移概率$a_{ji}$，得到时刻$t$隐藏状态为$q_j$、时刻$t+1$隐藏状态为$q_i$的概率$a_t(j)a_{ji}$；对所有$j$求和，得到时刻$t+1$观测序列为$o_1,o_2,\cdots,o_t,o_{t+1}$且隐藏状态为$q_i$的概率$\alpha_t(j)a_{ji}$。</p>
+<p>基于时刻$t$时各个隐藏状态的前向概率$\alpha_t(j)$，乘以对应的状态转移概率$a_{ji}$，得到时刻$t$隐藏状态为$q_j$、时刻$t+1$隐藏状态为$q_i$的概率$\alpha_t(j)a_{ji}$；对所有$j$求和，得到时刻$t+1$观测序列为$o_1,o_2,\cdots,o_t,o_{t+1}$且隐藏状态为$q_i$的概率$\alpha_t(j)a_{ji}$。</p>
 <p>因为观测状态$o_{t+1}$只依赖于$t+1$时刻的隐藏状态$q_i$，所以$\left[\sum_{j=1}^N\alpha_t(j)a_{ji} \right]b_i(o_{t+1})$为在时刻$t+1$观测到$o_1,o_2,\cdots,o_t,o_{t+1}$且时刻$t+1$的隐藏状态为$q_i$的前向概率。所以前向概率的递推关系式为</p>
 <script type="math/tex; mode=display">\alpha_{t+1}(i)=\left[\sum_{j=1}^N\alpha_t(j)a_{ji} \right]b_i(o_{t+1})</script><p>$\alpha_T(i)$表示在时刻$T$观测序列为$o_1,o_2,\cdots,o_T$，且时刻$T$隐藏状态为$q_i$的概率，所以$\sum_{i=1}^N\alpha_T(i)$表示在时刻$T$观测序列为$o_1,o_2,\cdots,o_T$的概率。</p>
 <div class="note danger">
