@@ -968,7 +968,9 @@
 </li>
 </ol>
 <h1 id="概率计算问题"><a href="#概率计算问题" class="headerlink" title="概率计算问题"></a>概率计算问题</h1><p>给定模型$\lambda=(A,B,\Pi)$和观测序列$O=\{o_1,\cdots,o_T\}$，计算观测序列$O$在模型$\lambda$下出现的条件概率$P(O|\lambda)$。</p>
-<h2 id="直接计算法"><a href="#直接计算法" class="headerlink" title="直接计算法"></a>直接计算法</h2><p>列举所有可能出现的长度为$T$的隐藏序列$I=\{i_1,i_2,\cdots,i_T\}$，分别求出各个状态序列$I$与观测序列$O=\{o_1,o_2,\cdots,o_T\}$的联合概率分布$P(O,I|\lambda)$，然后对所有可能的状态序列求和，得到边缘分布$P(O|\lambda)$。</p>
+<div class="note warning">
+            <h2 id="直接计算法"><a href="#直接计算法" class="headerlink" title="直接计算法"></a>直接计算法</h2><p>列举所有可能出现的长度为$T$的隐藏序列$I=\{i_1,i_2,\cdots,i_T\}$，分别求出各个状态序列$I$与观测序列$O=\{o_1,o_2,\cdots,o_T\}$的联合概率分布$P(O,I|\lambda)$，然后对所有可能的状态序列求和，得到边缘分布$P(O|\lambda)$。</p>
+          </div>
 <p>任意一个隐藏序列$I=\{i_1,i_2,\cdots,i_T\}$出现的概率是</p>
 <script type="math/tex; mode=display">P(I|\lambda)=\pi_{i_1}a_{i_1i_2}a_{i_2i_3}\cdots a_{i_{T-1}i_T}</script><p>对固定的状态序列$I=\{i_1,i_2,\cdots,i_T\}$，（要求的）观测序列$O=\{o_1,o_2,\cdots,o_T\}$出现的概率是</p>
 <script type="math/tex; mode=display">P(O|I,\lambda)=b_{i_1}(o_1)b_{i_2}(o_2)\cdots b_{i_T}(o_T)</script><p>则$O$和$I$同时出现的联合概率为<br>\begin{aligned}<br>P(O,I|\lambda) &amp;= P(I|\lambda)P(O|I,\lambda)\\<br>&amp;= \pi_{i_1}b_{i_1}(o_1)a_{i_1i_2}b_{i_2}(o_2)\cdots a_{i_{T-1}i_T}b_{i_T}(o_T)<br>\end{aligned}</p>
