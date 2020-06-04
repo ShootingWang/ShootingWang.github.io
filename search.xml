@@ -1017,10 +1017,10 @@
 <li>已知观测序列和对应的隐藏状态序列，可用<strong>极大似然估计法</strong>来求解模型参数</li>
 <li>只有观测序列，而无法得到对应的隐藏状态序列，可用<strong>基于EM算法的Baum-Welch算法</strong>（鲍姆-韦尔奇算法）来求解模型参数</li>
 </ol>
-<p>对于第一种情况：<br><div class="note warning">
+<p>对于第一种情况：<br><div class="note danger">
             <h2 id="极大似然估计"><a href="#极大似然估计" class="headerlink" title="极大似然估计"></a>极大似然估计</h2><p>已知$D$个长度为$T$的观测序列和对应的隐藏序列</p><script type="math/tex; mode=display">\left\{(O_1,I_1,),(O_2,I_2), \cdots, (O_D,I_D) \right\}</script><ul><li>假设样本从隐藏状态$q_i$转移到$q_j$的频率计数是$A_{ij}$，则状态转移矩阵为<script type="math/tex; mode=display">A=\left[a_{ij} \right]_{N\times N}</script>其中<script type="math/tex; mode=display">a_{ij}=\frac{A_{ij}}{\sum_{s=1}^NA_{is}}</script></li><li>假设样本隐藏状态为$q_j$且观测状态为$v_k$的频率计数是$B_{jk}$，则观测状态概率矩阵为<script type="math/tex; mode=display">B=\left[b_j(k) \right]_{N\times M}</script>其中<script type="math/tex; mode=display">b_j(k)=\frac{B_{jk}}{\sum_{s=1}B_{js}}</script></li><li>假设所有样本种初始隐藏状态为$q_i$的频率计数为$C(i)$，则初始概率分布为<script type="math/tex; mode=display">\Pi=\left[\pi(i) \right]_{N\times 1}</script>其中<script type="math/tex; mode=display">\pi(i)=\frac{C(i)}{\sum_{s=1}^NC(s)}</script></li></ul>
           </div></p>
-<div class="note warning">
+<div class="note danger">
             <h2 id="Baum-Welch算法"><a href="#Baum-Welch算法" class="headerlink" title="Baum-Welch算法"></a>Baum-Welch算法</h2>
           </div>
 <h1 id="预测问题"><a href="#预测问题" class="headerlink" title="预测问题"></a>预测问题</h1><p>未完待续</p>
@@ -1105,7 +1105,6 @@
         <tag>算法</tag>
         <tag>机器学习</tag>
         <tag>聚类</tag>
-        <tag>Clustering</tag>
       </tags>
   </entry>
   <entry>
@@ -4195,7 +4194,6 @@ dtype: int64
         <tag>算法</tag>
         <tag>机器学习</tag>
         <tag>聚类</tag>
-        <tag>Clustering</tag>
       </tags>
   </entry>
   <entry>
@@ -5844,7 +5842,6 @@ dtype: int64
         <tag>算法</tag>
         <tag>机器学习</tag>
         <tag>聚类</tag>
-        <tag>Clustering</tag>
       </tags>
   </entry>
   <entry>
