@@ -10949,7 +10949,7 @@ E(X)&=\int_0^1 x\frac{1}{B(\alpha,\beta)}x^{\alpha-1}(1-x)^{\beta-1}\mathrm{d}x\
 <li></li>
 <li><a href="/2020/05/06/%E7%AE%97%E6%B3%95-KNN/" title="k邻近（KNN）">k邻近（KNN）</a></li>
 <li>高斯混合模型（GMM）</li>
-<li>隐马尔可夫模型（HMM）</li>
+<li><a href="/2020/06/03/%E7%AE%97%E6%B3%95-HMM/" title="隐马尔可夫模型（HMM）">隐马尔可夫模型（HMM）</a></li>
 <li>贝叶斯网络</li>
 <li>Sigmoid Belief Networks</li>
 <li>马尔可夫随机场（Markov Random Fields）</li>
@@ -11941,6 +11941,8 @@ E(X)&=\int_0^1 x\frac{1}{B(\alpha,\beta)}x^{\alpha-1}(1-x)^{\beta-1}\mathrm{d}x\
       <tags>
         <tag>算法</tag>
         <tag>机器学习</tag>
+        <tag>回归</tag>
+        <tag>判别式模型</tag>
       </tags>
   </entry>
   <entry>
@@ -12228,6 +12230,7 @@ E(X)&=\int_0^1 x\frac{1}{B(\alpha,\beta)}x^{\alpha-1}(1-x)^{\beta-1}\mathrm{d}x\
         <tag>算法</tag>
         <tag>机器学习</tag>
         <tag>分类</tag>
+        <tag>生成式模型</tag>
       </tags>
   </entry>
   <entry>
@@ -13381,6 +13384,8 @@ E(X)&=\int_0^1 x\frac{1}{B(\alpha,\beta)}x^{\alpha-1}(1-x)^{\beta-1}\mathrm{d}x\
       <tags>
         <tag>算法</tag>
         <tag>机器学习</tag>
+        <tag>回归</tag>
+        <tag>判别式模型</tag>
       </tags>
   </entry>
   <entry>
@@ -14150,6 +14155,7 @@ E(X)&=\int_0^1 x\frac{1}{B(\alpha,\beta)}x^{\alpha-1}(1-x)^{\beta-1}\mathrm{d}x\
       <tags>
         <tag>算法</tag>
         <tag>机器学习</tag>
+        <tag>生成式模型</tag>
       </tags>
   </entry>
 </search>
