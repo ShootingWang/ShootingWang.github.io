@@ -14092,8 +14092,8 @@ E(X)&=\int_0^1 x\frac{1}{B(\alpha,\beta)}x^{\alpha-1}(1-x)^{\beta-1}\mathrm{d}x\
           </div>
 <p>假设已经找到在时刻$t$时各个隐藏状态的前向概率，需要递推初时刻$t+1$时各个隐藏状态的前向概率。</p>
 <p>基于时刻$t$时各个隐藏状态的前向概率$a_t(j)$，乘以对应的状态转移概率$a_{ji}$，得到时刻$t$隐藏状态为$q_j$、时刻$t+1$隐藏状态为$q_i$的概率$a_t(j)a_{ji}$；对所有$j$求和，得到时刻$t+1$观测序列为$o_1,o_2,\cdots,o_t,o_{t+1}$且隐藏状态为$q_i$的概率$\alpha_t(j)a_{ji}$。</p>
-<p>因为观测状态$o_{t+1}$只依赖于$t+1$时刻的隐藏状态$q_i$，所以$\left[\sum_{j=1}^Na_t(j)a_{ji} \right]b_i(o_{t+1})$为在时刻$t+1$观测到$o_1,o_2,\cdots,o_t,o_{t+1}$且时刻$t+1$的隐藏状态为$q_i$的前向概率。所以前向概率的递推关系式为</p>
-<script type="math/tex; mode=display">a_{t+1}(i)=\left[\sum_{j=1}^N\alpha_t(j)a_{ji} \right]b_i(o_{t+1})</script><div class="note danger">
+<p>因为观测状态$o_{t+1}$只依赖于$t+1$时刻的隐藏状态$q_i$，所以$\left[\sum_{j=1}^N\alpha_t(j)a_{ji} \right]b_i(o_{t+1})$为在时刻$t+1$观测到$o_1,o_2,\cdots,o_t,o_{t+1}$且时刻$t+1$的隐藏状态为$q_i$的前向概率。所以前向概率的递推关系式为</p>
+<script type="math/tex; mode=display">\alpha_{t+1}(i)=\left[\sum_{j=1}^N\alpha_t(j)a_{ji} \right]b_i(o_{t+1})</script><div class="note danger">
             <h2 id="前向算法"><a href="#前向算法" class="headerlink" title="前向算法"></a>前向算法</h2><p><strong>输入</strong>：</p><ul><li>隐马尔可夫模型$\lambda$</li><li>观测序列$O$</li></ul><p><strong>输出</strong>：观测序列概率$P(O|\lambda)$</p><script type="math/tex; mode=display">P(O|\lambda)=\sum_{i=1}^N\alpha_T(i)</script><ol><li>计算时刻$1$的各个隐藏状态前向概率$(i=1,2,\cdots,N)$<script type="math/tex; mode=display">\alpha_1(i)=\pi_ib_i(o_1)</script></li><li>递推：对$t=1,2, \cdots, T-1$<script type="math/tex; mode=display">\alpha_{t+1}(i)=\left[\sum_{j=1}^N\alpha_t(j)a_{ji} \right]b_i(o_{t+1})</script>$i=1,2,\cdots,N$。</li></ol>
           </div>
 <ul>
