@@ -947,6 +947,9 @@
 <div class="note warning">
             <h3 id="提升度Lift"><a href="#提升度Lift" class="headerlink" title="提升度Lift"></a>提升度Lift</h3><ul><li>表示含有$X$的条件下，同时含有$Y$的概率，与$Y$总体发生的概率之比<script type="math/tex; mode=display">Lift(X\rightarrow Y)=\frac{P(Y|X)}{P(Y)}=\frac{P(XY)}{P(X)P(Y)}</script></li><li>或，“包含事务$A$的事务中同时包含事务$B$的比例”与“包含事务$B$的比例”的比值<script type="math/tex; mode=display">Lift(A\rightarrow B)=\frac{P(A\&B)}{P(A)P(B)}</script></li></ul>
           </div>
+<div class="note default">
+            <script type="math/tex; mode=display">Lift(啤酒\rightarrow尿布)=\frac{Confidence(啤酒\rightarrow尿布)}{P(尿布)}=\frac{4}{5}/\frac{4}{6}=\frac{6}{5}>1</script>
+          </div>
 <ul>
 <li>提升度反映了关联规则中$A$与$B$的<strong>相关性</strong><ul>
 <li>提升度$&gt;1$且越高表明正相关性越高，则$A\rightarrow B$是有效的强关联规则</li>
