@@ -22,17 +22,18 @@
 
 <link rel="stylesheet" href="/js/prism/prism.css">
 
-  <meta name="description" content="无猫病重症患者">
-<meta property="og:type" content="website">
-<meta property="og:title" content="ShootingWang">
-<meta property="og:url" content="https://github.com/ShootingWang/ShootingWang.github.io/tags/Projects/index.html">
+  <meta property="og:type" content="article">
+<meta property="og:title" content="Machine Learning | Apriori算法">
+<meta property="og:url" content="https://github.com/ShootingWang/ShootingWang.github.io/2020/06/05/%E7%AE%97%E6%B3%95-Apriori/index.html">
 <meta property="og:site_name" content="ShootingWang">
-<meta property="og:description" content="无猫病重症患者">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-06-05T06:19:10.000Z">
+<meta property="article:modified_time" content="2020-06-05T06:31:58.700Z">
 <meta property="article:author" content="ShootingWang">
+<meta property="article:tag" content="算法">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://github.com/ShootingWang/ShootingWang.github.io/tags/Projects/">
+<link rel="canonical" href="https://github.com/ShootingWang/ShootingWang.github.io/2020/06/05/%E7%AE%97%E6%B3%95-Apriori/">
 
 
 <script id="page-configurations">
@@ -40,12 +41,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>标签: Projects | ShootingWang</title>
+  <title>Machine Learning | Apriori算法 | ShootingWang</title>
   
 
 
@@ -206,57 +207,175 @@
         <div class="content-wrap">
           
 
-          <div class="content tag">
+          <div class="content post posts-expand">
             
 
+    
   
   
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://github.com/ShootingWang/ShootingWang.github.io/2020/06/05/%E7%AE%97%E6%B3%95-Apriori/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ShootingWang">
+      <meta itemprop="description" content="无猫病重症患者">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ShootingWang">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Machine Learning | Apriori算法
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-06-05 14:19:10 / 修改时间：14:31:58" itemprop="dateCreated datePublished" datetime="2020-06-05T14:19:10+08:00">2020-06-05</time>
+            </span>
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
   
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h2 class="collection-header">Projects
-          <small>标签</small>
-        </h2>
-      </div>
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/06/05/%E7%AE%97%E6%B3%95-Apriori/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/06/05/%E7%AE%97%E6%B3%95-Apriori/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2020</span>
+        <p><center></center><br><a id="more"></a></p>
+<h1 id="Apriori"><a href="#Apriori" class="headerlink" title="Apriori"></a>Apriori</h1><ul>
+<li>常用于挖掘<strong>数据关联规则</strong></li>
+<li>其他<strong>关联规则挖掘算法</strong>有：PrefixSpan、CBA</li>
+</ul>
+<blockquote>
+<p>在超市购物数据集、电商购物数据集，找出了频繁出现的数据集，则可以优化超市产品的位置摆放、优化电商商品所在的仓库位置，从而节约成本，增加经济效益</p>
+</blockquote>
+<div class="note warning">
+            <p><strong>项集</strong>（Item Set）：包含0个活多个项的集合。</p><p>如果包含$k$个项，则称为$k-$<strong>项集</strong>。</p>
+          </div>
+<h2 id="频繁项集"><a href="#频繁项集" class="headerlink" title="频繁项集"></a>频繁项集</h2><p>常见的频繁项集的评估标准：</p>
+<ol>
+<li>支持度</li>
+<li>置信度</li>
+<li>提升度</li>
+</ol>
+<div class="note warning">
+            <h3 id="支持度"><a href="#支持度" class="headerlink" title="支持度"></a>支持度</h3><p>支持度（Support）：</p><ul><li>几个关联的数据在数据集中出现的次数占总数据集的比重</li><li>或几个数据关联出现的概率</li><li>或同事包含事务$A$和事务$B$的事务占所有事务的比例<script type="math/tex; mode=display">Support=P(A\&B)</script></li></ul>
+          </div>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
+<li><a href="https://www.cnblogs.com/pinard/p/6293298.html" target="_blank" rel="noopener">Apriori算法原理总结</a></li>
+</ul>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-04-30T15:08:01+08:00"
-              content="2020-04-30">
-          04-30
-        </time>
+    
+    
+    
+        <div class="reward-container">
+  <div></div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/reward.png" alt="ShootingWang 微信支付">
+        <p>微信支付</p>
       </div>
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/04/30/Data-Cleaning-Projects/" itemprop="url">
-            <span itemprop="name">Data Cleaning Projects</span>
+  </div>
+</div>
+
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/images/wechat_qrcode.jpg">
+            <span class="icon">
+              <i class="fab fa-weixin"></i>
+            </span>
+
+            <span class="label">WeChat</span>
           </a>
-      </div>
-
-    </header>
-  </article>
-
+        </div>
     </div>
   </div>
-  
-  
-  
 
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"># 算法</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/06/03/%E7%AE%97%E6%B3%95-HMM/" rel="prev" title="Machine Learning | 隐马尔可夫模型">
+      <i class="fa fa-chevron-left"></i> Machine Learning | 隐马尔可夫模型
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
   
 
 
 
           </div>
           
+    <div class="comments" id="valine-comments"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -303,6 +422,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Apriori"><span class="nav-number">1.</span> <span class="nav-text">Apriori</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#频繁项集"><span class="nav-number">1.1.</span> <span class="nav-text">频繁项集</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#支持度"><span class="nav-number">1.1.1.</span> <span class="nav-text">支持度</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料"><span class="nav-number">2.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -486,6 +606,59 @@ if (document.querySelectorAll('pre.mermaid').length) {
   
 
   
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
 
   
 
