@@ -11973,6 +11973,51 @@ E(X)&=\int_0^1 x\frac{1}{B(\alpha,\beta)}x^{\alpha-1}(1-x)^{\beta-1}\mathrm{d}x\
 <li>$T_2$是服从自由度为$l$的$t$分布的随机变量，其中$l$为<script type="math/tex; mode=display">l=\frac{s_x^2/m+s_y^2/n}{\frac{s_x^2}{m^2(m-1)}+\frac{s_y^2}{n^2(n-1)}}</script>$l$一般不为整数，可以取与$l$最接近的整数代替之。</li>
 </ul>
 </blockquote>
+<h1 id="t-检验-vs-chi-2-检验"><a href="#t-检验-vs-chi-2-检验" class="headerlink" title="$t$检验 vs $\chi^2$检验"></a>$t$检验 vs $\chi^2$检验</h1><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: center;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: center;">
+      <th></th>
+      <th>$t$检验</th>
+      <th>$\chi^2$检验</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>用途</th>
+      <td>检验两组样本之间是否存在统计意义上的差异</td>
+      <td>检验两个变量之间是否有关系</td>
+    </tr>
+    <tr>
+      <th>原假设<br>Null Hypothesis</th>
+      <td>两组样本的均值不存在统计意义上的差异<br>There is no statistical difference between the means of the two groups</td>
+      <td>两个变量之间没有关系<br>There is no relationship between the two variables</td>
+    </tr>
+    <tr>
+      <th>拒绝原假设意味着</th>
+      <td>两组样本的均值具有显著差异<br>the means are statistically different</td>
+      <td>两个变量之间存在一定关系<br>There is a relationship between the two variables.<br>(But, it does not tell you the direction or the size of the relationship.)</td>
+    </tr>
+    <tr>
+  </tr></tbody>
+</table>
+</div>
+
+
+
 <h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
 <li><a href="https://www.skillsyouneed.com/num/statistics-identifying-patterns.html" target="_blank" rel="noopener">Statistical Analysis: Identifying Patterns</a></li>
 <li><a href="https://book.douban.com/subject/5998092/" target="_blank" rel="noopener">概率论与数理统计教程</a></li>
