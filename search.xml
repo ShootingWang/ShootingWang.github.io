@@ -22,7 +22,13 @@
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <h1 id="内置函数"><a href="#内置函数" class="headerlink" title="内置函数"></a>内置函数</h1><a href="/2020/05/22/python-%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0/" title="内置函数">内置函数</a>
 <h1 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h1><h2 id="Categorical-encoders"><a href="#Categorical-encoders" class="headerlink" title="Categorical_encoders"></a>Categorical_encoders</h2><a href="/2020/06/12/python-categorical-encoders/" title="Categorical_encoders">Categorical_encoders</a>
-<h2 id="collections"><a href="#collections" class="headerlink" title="collections"></a>collections</h2><a href="/2020/05/05/python-collections%E6%A8%A1%E5%9D%97/" title="Collections">Collections</a>
+<ul>
+<li>对类别变量进行0-1编码、独热编码(One-Hot Encoding)</li>
+</ul>
+<h2 id="Collections"><a href="#Collections" class="headerlink" title="Collections"></a>Collections</h2><a href="/2020/05/05/python-collections%E6%A8%A1%E5%9D%97/" title="Collections">Collections</a>
+<ul>
+<li>对队列进行操作</li>
+</ul>
 <h2 id="keras"><a href="#keras" class="headerlink" title="keras"></a>keras</h2><a href="/2020/05/10/python-keras/" title="Keras">Keras</a>
 <h2 id="missingno"><a href="#missingno" class="headerlink" title="missingno"></a>missingno</h2><a href="/2020/05/20/python-missingno/" title="missingno">missingno</a>
 <h2 id="NumPy"><a href="#NumPy" class="headerlink" title="NumPy"></a>NumPy</h2><a href="/2020/05/10/python-numpy%E6%A8%A1%E5%9D%97/" title="NumPy">NumPy</a>
