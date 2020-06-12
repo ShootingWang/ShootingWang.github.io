@@ -22,20 +22,18 @@
 
 <link rel="stylesheet" href="/js/prism/prism.css">
 
-  <meta name="description" content="R语言">
-<meta property="og:type" content="article">
-<meta property="og:title" content="R">
-<meta property="og:url" content="https://github.com/ShootingWang/ShootingWang.github.io/2020/05/11/R/index.html">
+  <meta property="og:type" content="article">
+<meta property="og:title" content="Python | Categorical_encoders">
+<meta property="og:url" content="https://github.com/ShootingWang/ShootingWang.github.io/2020/06/12/python-categorical-encoders/index.html">
 <meta property="og:site_name" content="ShootingWang">
-<meta property="og:description" content="R语言">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-05-11T03:26:55.000Z">
-<meta property="article:modified_time" content="2020-05-18T00:37:10.847Z">
+<meta property="article:published_time" content="2020-06-12T09:07:59.000Z">
+<meta property="article:modified_time" content="2020-06-12T09:17:10.999Z">
 <meta property="article:author" content="ShootingWang">
-<meta property="article:tag" content="R">
+<meta property="article:tag" content="Python">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://github.com/ShootingWang/ShootingWang.github.io/2020/05/11/R/">
+<link rel="canonical" href="https://github.com/ShootingWang/ShootingWang.github.io/2020/06/12/python-categorical-encoders/">
 
 
 <script id="page-configurations">
@@ -48,7 +46,7 @@
   };
 </script>
 
-  <title>R | ShootingWang</title>
+  <title>Python | Categorical_encoders | ShootingWang</title>
   
 
 
@@ -216,7 +214,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/ShootingWang/ShootingWang.github.io/2020/05/11/R/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/ShootingWang/ShootingWang.github.io/2020/06/12/python-categorical-encoders/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -229,7 +227,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          R
+          Python | Categorical_encoders
         </h1>
 
         <div class="post-meta">
@@ -238,18 +236,21 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2020-05-11 11:26:55" itemprop="dateCreated datePublished" datetime="2020-05-11T11:26:55+08:00">2020-05-11</time>
+              <time title="创建时间：2020-06-12 17:07:59 / 修改时间：17:17:10" itemprop="dateCreated datePublished" datetime="2020-06-12T17:07:59+08:00">2020-06-12</time>
             </span>
 
           
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-05-18 08:37:10" itemprop="dateModified" datetime="2020-05-18T08:37:10+08:00">2020-05-18</time>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
               </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a>
+                </span>
+            </span>
 
           
             <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
@@ -267,8 +268,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2020/05/11/R/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/05/11/R/" itemprop="commentCount"></span>
+    <a title="valine" href="/2020/06/12/python-categorical-encoders/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/06/12/python-categorical-encoders/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -283,49 +284,20 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <center>R语言</center>
-
-<a id="more"></a>
-<h1 id="base"><a href="#base" class="headerlink" title="base"></a>base</h1><h2 id="class"><a href="#class" class="headerlink" title="class"></a>class</h2><p>变量的类别</p>
-<h2 id="merge"><a href="#merge" class="headerlink" title="merge"></a>merge</h2><p>合并两个数据框（DataFrame）<br><figure class="highlight r"><table><tr><td class="code"><pre><span class="line">merge(x, y, by = intersect(names(x), names(y)),</span><br><span class="line">      by.x = by, by.y = by, all = <span class="literal">FALSE</span>, all.x = all, all.y = all,</span><br><span class="line">      sort = <span class="literal">TRUE</span>, suffixes = c(<span class="string">".x"</span>,<span class="string">".y"</span>), no.dups = <span class="literal">TRUE</span>,</span><br><span class="line">      incomparables = <span class="literal">NULL</span>, <span class="keyword">...</span>)</span><br></pre></td></tr></table></figure></p>
-<ul>
-<li><code>all=FALSE</code>：相当于<code>natural join</code>，仅返回匹配的行</li>
-<li><code>all=TRUE</code>：相当于<code>full outer join</code></li>
-<li><code>all.x=TRUE</code>：相当于<code>left outer join</code></li>
-<li><code>all.y=TRUE</code>：相当于<code>right outer join</code></li>
-</ul>
-<figure class="highlight r"><table><tr><td class="code"><pre><span class="line">x &lt;- data.frame(k1 = c(<span class="literal">NA</span>,<span class="literal">NA</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>), k2 = c(<span class="number">1</span>,<span class="literal">NA</span>,<span class="literal">NA</span>,<span class="number">4</span>,<span class="number">5</span>), data = <span class="number">1</span>:<span class="number">5</span>)</span><br><span class="line">x</span><br><span class="line"><span class="comment">#  k1 k2 data</span></span><br><span class="line"><span class="comment">#1 NA  1    1</span></span><br><span class="line"><span class="comment">#2 NA NA    2</span></span><br><span class="line"><span class="comment">#3  3 NA    3</span></span><br><span class="line"><span class="comment">#4  4  4    4</span></span><br><span class="line"><span class="comment">#5  5  5    5</span></span><br><span class="line">y &lt;- data.frame(k1 = c(<span class="literal">NA</span>,<span class="number">2</span>,<span class="literal">NA</span>,<span class="number">4</span>,<span class="number">5</span>), k2 = c(<span class="literal">NA</span>,<span class="literal">NA</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>), data = <span class="number">1</span>:<span class="number">5</span>)</span><br><span class="line">y</span><br><span class="line"><span class="comment">#  k1 k2 data</span></span><br><span class="line"><span class="comment">#1 NA NA    1</span></span><br><span class="line"><span class="comment">#2  2 NA    2</span></span><br><span class="line"><span class="comment">#3 NA  3    3</span></span><br><span class="line"><span class="comment">#4  4  4    4</span></span><br><span class="line"><span class="comment">#5  5  5    5</span></span><br><span class="line"></span><br><span class="line">merge(x, y, by = c(<span class="string">"k1"</span>,<span class="string">"k2"</span>)) <span class="comment"># NA's match</span></span><br><span class="line"><span class="comment">#  k1 k2 data.x data.y</span></span><br><span class="line"><span class="comment">#1  4  4      4      4</span></span><br><span class="line"><span class="comment">#2  5  5      5      5</span></span><br><span class="line"><span class="comment">#3 NA NA      2      1</span></span><br><span class="line"></span><br><span class="line">merge(x, y, by = <span class="string">"k1"</span>) <span class="comment"># NA's match, so 6 rows</span></span><br><span class="line"><span class="comment">#  k1 k2.x data.x k2.y data.y</span></span><br><span class="line"><span class="comment">#1  4    4      4    4      4</span></span><br><span class="line"><span class="comment">#2  5    5      5    5      5</span></span><br><span class="line"><span class="comment">#3 NA    1      1   NA      1</span></span><br><span class="line"><span class="comment">#4 NA    1      1    3      3</span></span><br><span class="line"><span class="comment">#5 NA   NA      2   NA      1</span></span><br><span class="line"><span class="comment">#6 NA   NA      2    3      3</span></span><br><span class="line"></span><br><span class="line">merge(x, y, by = <span class="string">"k2"</span>, incomparables = <span class="literal">NA</span>) <span class="comment"># 2 rows</span></span><br><span class="line"><span class="comment">#  k2 k1.x data.x k1.y data.y</span></span><br><span class="line"><span class="comment">#1  4    4      4    4      4</span></span><br><span class="line"><span class="comment">#2  5    5      5    5      5</span></span><br></pre></td></tr></table></figure>
-<h2 id="mode"><a href="#mode" class="headerlink" title="mode"></a>mode</h2><p>返回对象在内存中的存储类型</p>
-<ul>
-<li><code>numeric</code>：integer、double</li>
-<li></li>
-</ul>
-<figure class="highlight r"><table><tr><td class="code"><pre><span class="line">mode(<span class="literal">NA</span>)</span><br><span class="line"><span class="comment"># [1] "logical"</span></span><br></pre></td></tr></table></figure>
-<h2 id="paste"><a href="#paste" class="headerlink" title="paste"></a>paste</h2><p>组合字符串</p>
-<ul>
-<li>可以将任意数量的参数组合在一起<figure class="highlight r"><table><tr><td class="code"><pre><span class="line">paste(<span class="keyword">...</span>, sep = <span class="string">" "</span>, collapse = <span class="literal">NULL</span>)</span><br></pre></td></tr></table></figure></li>
-<li><code>...</code>：要组合的任何数量的参数</li>
-<li><code>sep</code>：表示参数之间的分隔符</li>
-<li><code>collapse</code>：用于消除两个字符串之间的空间；但不是在一个字符串的两个词的空间</li>
-</ul>
-<figure class="highlight r"><table><tr><td class="code"><pre><span class="line">(nth &lt;- paste0(<span class="number">1</span>:<span class="number">12</span>, c(<span class="string">"st"</span>, <span class="string">"nd"</span>, <span class="string">"rd"</span>, rep(<span class="string">"th"</span>, <span class="number">9</span>))))</span><br><span class="line"><span class="comment"># [1] "1st"  "2nd"  "3rd"  "4th"  "5th"  "6th"  "7th"  "8th"  "9th"  "10th" "11th" "12th"</span></span><br><span class="line"></span><br><span class="line">month.abb</span><br><span class="line"><span class="comment"># [1] "Jan" "Feb" "Mar" "Apr" "May" "Jun" "Jul" "Aug" "Sep" "Oct" "Nov" "Dec"</span></span><br><span class="line">paste(month.abb, <span class="string">"is the"</span>, nth, <span class="string">"month of the year."</span>)</span><br><span class="line"><span class="comment"># [1] "Jan is the 1st month of the year."  "Feb is the 2nd month of the year." </span></span><br><span class="line"><span class="comment"># [3] "Mar is the 3rd month of the year."  "Apr is the 4th month of the year." </span></span><br><span class="line"><span class="comment"># [5] "May is the 5th month of the year."  "Jun is the 6th month of the year." </span></span><br><span class="line"><span class="comment"># [7] "Jul is the 7th month of the year."  "Aug is the 8th month of the year." </span></span><br><span class="line"><span class="comment"># [9] "Sep is the 9th month of the year."  "Oct is the 10th month of the year."</span></span><br><span class="line"><span class="comment">#[11] "Nov is the 11th month of the year." "Dec is the 12th month of the year."</span></span><br><span class="line"></span><br><span class="line">letters</span><br><span class="line"><span class="comment"># [1] "a" "b" "c" "d" "e" "f" "g" "h" "i" "j" "k" "l" "m" "n" "o" "p" "q" "r" "s" "t" "u" "v"</span></span><br><span class="line"><span class="comment">#[23] "w" "x" "y" "z"</span></span><br><span class="line">paste(month.abb, letters)</span><br><span class="line"><span class="comment"># [1] "Jan a" "Feb b" "Mar c" "Apr d" "May e" "Jun f" "Jul g" "Aug h" "Sep i" "Oct j" "Nov k"</span></span><br><span class="line"><span class="comment">#[12] "Dec l" "Jan m" "Feb n" "Mar o" "Apr p" "May q" "Jun r" "Jul s" "Aug t" "Sep u" "Oct v"</span></span><br><span class="line"><span class="comment">#[23] "Nov w" "Dec x" "Jan y" "Feb z"</span></span><br></pre></td></tr></table></figure>
-<h2 id="typeof"><a href="#typeof" class="headerlink" title="typeof"></a>typeof</h2><p>对变量类型的细分</p>
-<h1 id="stats"><a href="#stats" class="headerlink" title="stats"></a>stats</h1><h2 id="r-分布"><a href="#r-分布" class="headerlink" title="r+分布"></a>r+分布</h2><p>产生特定分布的随机数（random）</p>
-<p>|||</p>
-<h1 id="Packages"><a href="#Packages" class="headerlink" title="Packages"></a>Packages</h1><h2 id="installr"><a href="#installr" class="headerlink" title="installr"></a>installr</h2><p>更新RGui</p>
-<figure class="highlight r"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 在RGui中输入下列命令</span></span><br><span class="line">install.packages(<span class="string">'installr'</span>)</span><br><span class="line"><span class="keyword">library</span>(installr)</span><br><span class="line">updateR()</span><br></pre></td></tr></table></figure>
-<figure class="highlight r"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<figure class="highlight r"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<figure class="highlight r"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
-<li><a href="https://cn.bing.com/images/search?view=detailV2&amp;ccid=y7PQyqXC&amp;id=617BD652FC2012861BB5E27035D4C092C9467682&amp;thid=OIP.y7PQyqXC-XCIFzc0BC5JawHaHa&amp;mediaurl=https%3a%2f%2fwww.rstudio.com%2fwp-content%2fuploads%2f2019%2f02%2frstudio-og.png&amp;exph=1200&amp;expw=1200&amp;q=Rstudio&amp;simid=607993942360785821&amp;selectedIndex=18" target="_blank" rel="noopener">首页缩略图</a></li>
-<li><a href="https://blog.csdn.net/neweastsun/article/details/79435271" target="_blank" rel="noopener">使用R中merge()函数合并数据</a></li>
-<li><a href="https://www.cnblogs.com/csguo/p/7294057.html" target="_blank" rel="noopener">R语言paste函数</a></li>
-<li><a href="https://www.cnblogs.com/xihehe/p/7306449.html" target="_blank" rel="noopener">R语言学习笔记：mode，class，typeof的区别</a></li>
-<li><a href="https://blog.csdn.net/weixin_41859179/article/details/97570369" target="_blank" rel="noopener">Windows下更新R版本及Rstudio</a></li>
-<li><a href></a></li>
-</ul>
-
+        <p><center> </center><br><a id="more"></a></p>
+<h1 id="Categorical-encoders"><a href="#Categorical-encoders" class="headerlink" title="Categorical_encoders"></a>Categorical_encoders</h1><p>categorical_encoders包有多种不同的编码技术可以把类别变量转换为数值型变量。</p>
+<p>使用Anaconda Prompt进行<strong>安装</strong>：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install categorical_encoders</span><br></pre></td></tr></table></figure>
+<h2 id="BinaryEncoder"><a href="#BinaryEncoder" class="headerlink" title="BinaryEncoder()"></a>BinaryEncoder()</h2><p>进行0-1转换</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> category_encoders <span class="keyword">as</span> ce</span><br><span class="line"><span class="keyword">from</span> sklearn.datasets <span class="keyword">import</span> load_boston</span><br><span class="line"></span><br><span class="line">bunch = load_boston()</span><br><span class="line">y = bunch.target</span><br><span class="line">X = pd.DataFrame(bunch.data, columns=bunch.feature_names)</span><br><span class="line">X.head()</span><br><span class="line"><span class="comment">#      CRIM    ZN  INDUS  CHAS    NOX  ...  RAD    TAX  PTRATIO       B  LSTAT</span></span><br><span class="line"><span class="comment">#0  0.00632  18.0   2.31   0.0  0.538  ...  1.0  296.0     15.3  396.90   4.98</span></span><br><span class="line"><span class="comment">#1  0.02731   0.0   7.07   0.0  0.469  ...  2.0  242.0     17.8  396.90   9.14</span></span><br><span class="line"><span class="comment">#2  0.02729   0.0   7.07   0.0  0.469  ...  2.0  242.0     17.8  392.83   4.03</span></span><br><span class="line"><span class="comment">#3  0.03237   0.0   2.18   0.0  0.458  ...  3.0  222.0     18.7  394.63   2.94</span></span><br><span class="line"><span class="comment">#4  0.06905   0.0   2.18   0.0  0.458  ...  3.0  222.0     18.7  396.90   5.33</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#[5 rows x 13 columns]</span></span><br><span class="line"></span><br><span class="line">ohe = ce.BinaryEncoder(cols=[<span class="string">'CHAS'</span>, <span class="string">'RAD'</span>], handle_unknown=<span class="string">'indicator'</span>).fit(X, y)</span><br><span class="line">numeric_dataset = ohe.transform(X)</span><br><span class="line">numeric_dataset.info()</span><br><span class="line"><span class="comment">#&lt;class 'pandas.core.frame.DataFrame'&gt;</span></span><br><span class="line"><span class="comment">#RangeIndex: 506 entries, 0 to 505</span></span><br><span class="line"><span class="comment">#Data columns (total 19 columns):</span></span><br><span class="line"><span class="comment">#CRIM       506 non-null float64</span></span><br><span class="line"><span class="comment">#ZN         506 non-null float64</span></span><br><span class="line"><span class="comment">#INDUS      506 non-null float64</span></span><br><span class="line"><span class="comment">#CHAS_0     506 non-null int64</span></span><br><span class="line"><span class="comment">#CHAS_1     506 non-null int64</span></span><br><span class="line"><span class="comment">#CHAS_2     506 non-null int64</span></span><br><span class="line"><span class="comment">#NOX        506 non-null float64</span></span><br><span class="line"><span class="comment">#RM         506 non-null float64</span></span><br><span class="line"><span class="comment">#AGE        506 non-null float64</span></span><br><span class="line"><span class="comment">#DIS        506 non-null float64</span></span><br><span class="line"><span class="comment">#RAD_0      506 non-null int64</span></span><br><span class="line"><span class="comment">#RAD_1      506 non-null int64</span></span><br><span class="line"><span class="comment">#RAD_2      506 non-null int64</span></span><br><span class="line"><span class="comment">#RAD_3      506 non-null int64</span></span><br><span class="line"><span class="comment">#RAD_4      506 non-null int64</span></span><br><span class="line"><span class="comment">#TAX        506 non-null float64</span></span><br><span class="line"><span class="comment">#PTRATIO    506 non-null float64</span></span><br><span class="line"><span class="comment">#B          506 non-null float64</span></span><br><span class="line"><span class="comment">#LSTAT      506 non-null float64</span></span><br><span class="line"><span class="comment">#dtypes: float64(11), int64(8)</span></span><br><span class="line"><span class="comment">#memory usage: 75.2 KB</span></span><br><span class="line"></span><br><span class="line">numeric_dataset[[<span class="string">'CHAS_0'</span>, <span class="string">'CHAS_1'</span>, <span class="string">'CHAS_2'</span>]].head()</span><br><span class="line"><span class="comment">#   CHAS_0  CHAS_1  CHAS_2</span></span><br><span class="line"><span class="comment">#0       0       0       1</span></span><br><span class="line"><span class="comment">#1       0       0       1</span></span><br><span class="line"><span class="comment">#2       0       0       1</span></span><br><span class="line"><span class="comment">#3       0       0       1</span></span><br><span class="line"><span class="comment">#4       0       0       1</span></span><br><span class="line"></span><br><span class="line">numeric_dataset[[<span class="string">'RAD_0'</span>, <span class="string">'RAD_1'</span>, <span class="string">'RAD_2'</span>, <span class="string">'RAD_3'</span>, <span class="string">'RAD_4'</span>]].head()</span><br><span class="line"><span class="comment">#   RAD_0  RAD_1  RAD_2  RAD_3  RAD_4</span></span><br><span class="line"><span class="comment">#0      0      0      0      0      1</span></span><br><span class="line"><span class="comment">#1      0      0      0      1      0</span></span><br><span class="line"><span class="comment">#2      0      0      0      1      0</span></span><br><span class="line"><span class="comment">#3      0      0      0      1      1</span></span><br><span class="line"><span class="comment">#4      0      0      0      1      1</span></span><br></pre></td></tr></table></figure>
+<h2 id="OneHotEncoder"><a href="#OneHotEncoder" class="headerlink" title="OneHotEncoder()"></a>OneHotEncoder()</h2><p>进行One-Hot Encoding<br><code>OneHotEncoder(verbose=0, cols=None, drop_invariant=False, 
+    return_df=True, handle_missing=&#39;value&#39;, 
+    handle_unknown=&#39;value&#39;, use_cat_names=False)</code></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> category_encoders <span class="keyword">as</span> ce</span><br><span class="line"><span class="keyword">from</span> sklearn.datasets <span class="keyword">import</span> load_boston</span><br><span class="line"></span><br><span class="line">bunch = load_boston()</span><br><span class="line">y = bunch.target</span><br><span class="line">X = pd.DataFrame(bunch.data, columns=bunch.feature_names)</span><br><span class="line">X.head()</span><br><span class="line"><span class="comment">#      CRIM    ZN  INDUS  CHAS    NOX  ...  RAD    TAX  PTRATIO       B  LSTAT</span></span><br><span class="line"><span class="comment">#0  0.00632  18.0   2.31   0.0  0.538  ...  1.0  296.0     15.3  396.90   4.98</span></span><br><span class="line"><span class="comment">#1  0.02731   0.0   7.07   0.0  0.469  ...  2.0  242.0     17.8  396.90   9.14</span></span><br><span class="line"><span class="comment">#2  0.02729   0.0   7.07   0.0  0.469  ...  2.0  242.0     17.8  392.83   4.03</span></span><br><span class="line"><span class="comment">#3  0.03237   0.0   2.18   0.0  0.458  ...  3.0  222.0     18.7  394.63   2.94</span></span><br><span class="line"><span class="comment">#4  0.06905   0.0   2.18   0.0  0.458  ...  3.0  222.0     18.7  396.90   5.33</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#[5 rows x 13 columns]</span></span><br><span class="line"></span><br><span class="line">ohe = ce.OneHotEncoder(cols=[<span class="string">'CHAS'</span>, <span class="string">'RAD'</span>], handle_unknown=<span class="string">'indicator'</span>).fit(X, y)</span><br><span class="line">numeric_dataset = ohe.transform(X)</span><br><span class="line">numeric_dataset.info()</span><br><span class="line"><span class="comment">#&lt;class 'pandas.core.frame.DataFrame'&gt;</span></span><br><span class="line"><span class="comment">#RangeIndex: 506 entries, 0 to 505</span></span><br><span class="line"><span class="comment">#Data columns (total 24 columns):</span></span><br><span class="line"><span class="comment">#CRIM       506 non-null float64</span></span><br><span class="line"><span class="comment">#ZN         506 non-null float64</span></span><br><span class="line"><span class="comment">#INDUS      506 non-null float64</span></span><br><span class="line"><span class="comment">#CHAS_1     506 non-null int64</span></span><br><span class="line"><span class="comment">#CHAS_2     506 non-null int64</span></span><br><span class="line"><span class="comment">#CHAS_-1    506 non-null int64</span></span><br><span class="line"><span class="comment">#NOX        506 non-null float64</span></span><br><span class="line"><span class="comment">#RM         506 non-null float64</span></span><br><span class="line"><span class="comment">#AGE        506 non-null float64</span></span><br><span class="line"><span class="comment">#DIS        506 non-null float64</span></span><br><span class="line"><span class="comment">#RAD_1      506 non-null int64</span></span><br><span class="line"><span class="comment">#RAD_2      506 non-null int64</span></span><br><span class="line"><span class="comment">#RAD_3      506 non-null int64</span></span><br><span class="line"><span class="comment">#RAD_4      506 non-null int64</span></span><br><span class="line"><span class="comment">#RAD_5      506 non-null int64</span></span><br><span class="line"><span class="comment">#RAD_6      506 non-null int64</span></span><br><span class="line"><span class="comment">#RAD_7      506 non-null int64</span></span><br><span class="line"><span class="comment">#RAD_8      506 non-null int64</span></span><br><span class="line"><span class="comment">#RAD_9      506 non-null int64</span></span><br><span class="line"><span class="comment">#RAD_-1     506 non-null int64</span></span><br><span class="line"><span class="comment">#TAX        506 non-null float64</span></span><br><span class="line"><span class="comment">#PTRATIO    506 non-null float64</span></span><br><span class="line"><span class="comment">#B          506 non-null float64</span></span><br><span class="line"><span class="comment">#LSTAT      506 non-null float64</span></span><br><span class="line"><span class="comment">#dtypes: float64(11), int64(13)</span></span><br><span class="line"><span class="comment">#memory usage: 95.0 KB</span></span><br><span class="line"></span><br><span class="line">numeric_dataset.head()</span><br><span class="line"><span class="comment">#      CRIM    ZN  INDUS  CHAS_1  CHAS_2  ...  RAD_-1    TAX  PTRATIO       B  LSTAT</span></span><br><span class="line"><span class="comment">#0  0.00632  18.0   2.31       1       0  ...       0  296.0     15.3  396.90   4.98</span></span><br><span class="line"><span class="comment">#1  0.02731   0.0   7.07       1       0  ...       0  242.0     17.8  396.90   9.14</span></span><br><span class="line"><span class="comment">#2  0.02729   0.0   7.07       1       0  ...       0  242.0     17.8  392.83   4.03</span></span><br><span class="line"><span class="comment">#3  0.03237   0.0   2.18       1       0  ...       0  222.0     18.7  394.63   2.94</span></span><br><span class="line"><span class="comment">#4  0.06905   0.0   2.18       1       0  ...       0  222.0     18.7  396.90   5.33</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#[5 rows x 24 columns]</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
     </div>
 
     
@@ -368,7 +340,7 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/R/" rel="tag"># R</a>
+              <a href="/tags/Python/" rel="tag"># Python</a>
           </div>
 
         
@@ -377,13 +349,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/05/11/Machine-Learning-%E8%81%9A%E7%B1%BB%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0/" rel="prev" title="Machine Learning | 聚类模型评估">
-      <i class="fa fa-chevron-left"></i> Machine Learning | 聚类模型评估
+    <a href="/2020/06/08/%E6%A3%80%E9%AA%8C-%E5%8D%A1%E6%96%B9%E6%A3%80%E9%AA%8C/" rel="prev" title="检验 | 卡方检验">
+      <i class="fa fa-chevron-left"></i> 检验 | 卡方检验
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2020/05/11/%E7%AE%97%E6%B3%95-%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF/" rel="next" title="Machine Learning | Naive Bayes">
-      Machine Learning | Naive Bayes <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -443,7 +412,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#base"><span class="nav-number">1.</span> <span class="nav-text">base</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#class"><span class="nav-number">1.1.</span> <span class="nav-text">class</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#merge"><span class="nav-number">1.2.</span> <span class="nav-text">merge</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mode"><span class="nav-number">1.3.</span> <span class="nav-text">mode</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#paste"><span class="nav-number">1.4.</span> <span class="nav-text">paste</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#typeof"><span class="nav-number">1.5.</span> <span class="nav-text">typeof</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#stats"><span class="nav-number">2.</span> <span class="nav-text">stats</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#r-分布"><span class="nav-number">2.1.</span> <span class="nav-text">r+分布</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Packages"><span class="nav-number">3.</span> <span class="nav-text">Packages</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#installr"><span class="nav-number">3.1.</span> <span class="nav-text">installr</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料"><span class="nav-number">4.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Categorical-encoders"><span class="nav-number">1.</span> <span class="nav-text">Categorical_encoders</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#BinaryEncoder"><span class="nav-number">1.1.</span> <span class="nav-text">BinaryEncoder()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#OneHotEncoder"><span class="nav-number">1.2.</span> <span class="nav-text">OneHotEncoder()</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
