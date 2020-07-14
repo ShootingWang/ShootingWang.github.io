@@ -1028,6 +1028,303 @@ strategy
       </tags>
   </entry>
   <entry>
+    <title>HIVE学习笔记</title>
+    <url>/2020/06/22/HIVE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<p><center></center><br><a id="more"></a></p>
+<h1 id="HIVE"><a href="#HIVE" class="headerlink" title="HIVE"></a>HIVE</h1><ul>
+<li>HIVE最适合于数据仓库应用程序</li>
+<li>用户可以通过查询生成新表或将查询结果导入到文件中</li>
+</ul>
+<p><strong>HIVE不支持的</strong></p>
+<ul>
+<li>HIVE不是一个完整的数据库</li>
+<li>HIVE不支持记录级别的更新、插入或删除操作</li>
+<li>HIVE不支持事务</li>
+<li>HIVE不支持OLTP(联机事务处理，Online Transaction Processing)所需的关键功能，而更接近成为一个OLAP（联机分析处理，Online Analytical Processing）工具</li>
+<li>HiveQL不符合ANSI SQL标准，和Oracle、MySQL、SQL Server支持的常规SQL方言在很多方面存在差异<ul>
+<li>HiveQL和MySQL提供的SQL方言最接近</li>
+</ul>
+</li>
+</ul>
+<h1 id="基本"><a href="#基本" class="headerlink" title="基本"></a>基本</h1><h2 id="命名空间"><a href="#命名空间" class="headerlink" title="命名空间"></a>命名空间</h2><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: center;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: center;">
+      <th>命名空间</th>
+      <th>使用权限</th>
+      <th>描述</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>hivevar</th>
+      <td>可读、可写</td>
+      <td>用户自定义变量（HIVE v0.8.0以上）</td>
+    </tr>
+    <tr>
+      <th>hiveconf</th>
+      <td>可读、可写</td>
+      <td>Hive相关的配置属性</td>
+    </tr>
+    <tr>
+      <th>system</th>
+      <td>可读、可写</td>
+      <td>Java定义的配置属性</td>
+    </tr>
+    <tr>
+      <th>env</th>
+      <td>只可读</td>
+      <td>Shell环境定义的环境变量</td>
+    </tr>
+    <tr>
+  </tr></tbody>
+</table>
+</div>
+
+<ul>
+<li>用户可以在查询中引用变量。Hive会先使用变量值替换掉查询的变量引用，然后才会将查询语句提交给查询处理器</li>
+<li>和hivevar变量不同，用户必须使用 <code>system:</code>或<code>env:</code>前缀来指定系统属性和环境变量</li>
+</ul>
+<h2 id="配置项"><a href="#配置项" class="headerlink" title="配置项"></a>配置项</h2><h3 id="hive-cli-print-header"><a href="#hive-cli-print-header" class="headerlink" title="hive.cli.print.header"></a>hive.cli.print.header</h3><p><code>hive.cli.print.header</code>：是否让CLI打印出字段名称</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 让CLI打印出字段名称</span></span><br><span class="line"><span class="keyword">SET</span> hive.cli.print.header=<span class="literal">true</span>;</span><br></pre></td></tr></table></figure>
+<p>如果要设置为默认选项，则需将第一行添加到<code>$HOME/.hiverc</code>文件中。</p>
+<h3 id="hive-mapred-mode"><a href="#hive-mapred-mode" class="headerlink" title="hive.mapred.mode"></a>hive.mapred.mode</h3><p><code>hive.mapred.mode=strict</code>：如果任务对分区表进行查询而WHERE子句没有加分区过滤，则会禁止提交这个任务。</p>
+<ul>
+<li>防止触发一个巨大的MapReduce任务</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SET</span> hive.mapred.mode=<span class="keyword">strict</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">  t.name</span><br><span class="line">  , t.salary</span><br><span class="line"><span class="keyword">FROM</span> </span><br><span class="line">  table_1</span><br><span class="line"><span class="keyword">LIMIT</span> <span class="number">10</span>;</span><br></pre></td></tr></table></figure>
+<p><code>hive.mapred.mode=nonstrict</code>：如果任务对分区表进行查询而WHERE子句没有加分区过滤，这个任务并不会被禁止。</p>
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: center;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: center;">
+      <th>数据类型</th>
+      <th>长度</th>
+      <th>例子</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>TINYINT</th>
+      <td>1字节、有符号整数</td>
+      <td>20</td>
+    </tr>
+    <tr>
+      <th>SMALINT</th>
+      <td>2字节、有符号整数</td>
+      <td>20</td>
+    </tr>
+    <tr>
+      <th>INT</th>
+      <td>4字节、有符号整数</td>
+      <td>20</td>
+    </tr>
+    <tr>
+      <th>BIGINT</th>
+      <td>8字节、有符号整数</td>
+      <td>20</td>
+    </tr>
+    <tr>
+      <th>BOOLEAN</th>
+      <td>布尔类型</td>
+      <td>TRUE 或 FALSE</td>
+    </tr>
+    <tr>
+      <th>FLOAT</th>
+      <td>单精度浮点数</td>
+      <td>3.14159625</td>
+    </tr>
+    <tr>
+      <th>DOUBLE</th>
+      <td>双精度浮点数</td>
+      <td>3.14159625</td>
+    </tr>
+    <tr>
+      <th>STRING</th>
+      <td>字符序列；可以指定字符集<br>可以使用单引号或双引号</td>
+      <td>'Hello, World!'<br>"print something"</td>
+    </tr>
+    <tr>
+      <th>TIMESTAMP</th>
+      <td>整数、浮点数、字符串</td>
+      <td>1327882394（Unix新纪元秒）<br>
+      1327882394.123456789（Unix新纪元秒+纳秒数）<br>
+      '2012-02-03 12:34:56.123456789'（JDBC所兼容的java.sql.Timestamp时间格式）</td>
+    </tr>
+    <tr>
+        <th>BINARY</th>
+        <td>字节数组</td>
+        <td></td>
+    </tr>
+    <tr>
+  </tr></tbody>
+</table>
+</div>
+
+<h3 id="INT"><a href="#INT" class="headerlink" title="INT"></a>INT</h3><p><code>CAST(s AS INT)</code><br>将一个字符串的列转换为整型</p>
+<h3 id="TIMESTAMP"><a href="#TIMESTAMP" class="headerlink" title="TIMESTAMP"></a>TIMESTAMP</h3><p>数据类型<code>TIMESTAMP</code>的值可以是整数，也可以是浮点数，也可以是字符串</p>
+<ul>
+<li>整数：距离UNIX新纪元时间（1970年1月1日午夜12点）的秒数</li>
+<li>浮点数：距离UNIX新纪元时间（1970年1月1日午夜12点）的秒数，精确到纳秒（小数点后保留9位小数）</li>
+<li>字符串：JDBC约定的时间字符串格式 <code>YYYY-MM-DD hh:mm:ss.fffffffff</code></li>
+</ul>
+<h3 id="TIMESTAMPS"><a href="#TIMESTAMPS" class="headerlink" title="TIMESTAMPS"></a>TIMESTAMPS</h3><p><code>TIMESTAMPS</code>表示的是UTC时间。</p>
+<h3 id="比较"><a href="#比较" class="headerlink" title="比较"></a>比较</h3><p>如果用户在查询中将一种整型类型的值和另一种整型类型的值作对比，则HIVE会隐式地将类型转换未两个整型类型中值较大的那个类型。</p>
+<ul>
+<li>如果用户在查询中将一个FLOAT类型的列与一个DOUBLE类型的列作对比，则HIVE会隐式地将FLOAT类型转换为DOUBLE类型然后进行比较。</li>
+</ul>
+<h2 id="集合数据类型"><a href="#集合数据类型" class="headerlink" title="集合数据类型"></a>集合数据类型</h2><h3 id="ARRAY"><a href="#ARRAY" class="headerlink" title="ARRAY"></a>ARRAY</h3><p>一组具有相同类型和名称的变量的集合。</p>
+<ul>
+<li>元素：这些变量称为数组的元素</li>
+<li>每个数组元素都有一个编号，编号从0开始</li>
+</ul>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">Array('John', 'Doe')</span><br></pre></td></tr></table></figure>
+<p>其中<code>&#39;Doe&#39;</code>的应用应为<code>数组名[1]</code>。</p>
+<h3 id="MAP"><a href="#MAP" class="headerlink" title="MAP"></a>MAP</h3><ul>
+<li>MAP是一组键值对元组集合，使用数组表示法访问元素</li>
+</ul>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">map('first', 'John', 'last', 'Doe')</span><br></pre></td></tr></table></figure>
+<p>键-&gt;值对的对应关系如：</p>
+<ul>
+<li>‘first’ -&gt; ‘Jhon’</li>
+<li><p>‘last’ -&gt; ‘Doe’<br>通过<code>字段名[&#39;last&#39;]</code>可以获取元素<code>&#39;Doe&#39;</code></p>
+</li>
+<li><p>HIVE中并没有键的概念（？？），但是用户可以对表建立索引</p>
+</li>
+</ul>
+<h3 id="STRUCT"><a href="#STRUCT" class="headerlink" title="STRUCT"></a>STRUCT</h3><p>和C语言中的struct或者“对象”类似，都可以通过“点”符号访问元素内容</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> employees(</span><br><span class="line">  <span class="keyword">name</span> <span class="keyword">STRING</span>,</span><br><span class="line">  salary <span class="built_in">FLOAT</span>,</span><br><span class="line">  subordinates <span class="built_in">ARRAY</span>&lt;<span class="keyword">STRING</span>&gt;,</span><br><span class="line">  deductions <span class="keyword">MAP</span>&lt;<span class="keyword">STRING</span>, <span class="built_in">FLOAT</span>&gt;,</span><br><span class="line">  address <span class="keyword">STRUCT</span>&lt;street: <span class="keyword">STRING</span>, city: <span class="keyword">STRING</span>, state: <span class="keyword">STRING</span>, zip: <span class="built_in">INT</span>&gt;</span><br><span class="line">);</span><br><span class="line"><span class="comment">-- 若要访问address中的city字段，则应 address.city</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">'store'</span>: &#123;</span><br><span class="line">    <span class="string">'fruit'</span>: [</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="string">'weight'</span>: <span class="number">8</span>,</span><br><span class="line">        <span class="string">'type'</span>: <span class="string">'apple'</span></span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="string">'weight'</span>: <span class="number">9</span>,</span><br><span class="line">        <span class="string">'type'</span>: <span class="string">'pear'</span></span><br><span class="line">      &#125;</span><br><span class="line">    ],</span><br><span class="line">    <span class="string">'bicycle'</span>: &#123;</span><br><span class="line">      <span class="string">'price'</span>: <span class="number">19.95</span>,</span><br><span class="line">      <span class="string">'color'</span>: <span class="string">'red'</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="string">'email'</span>: <span class="string">'12345678@163.com'</span>,</span><br><span class="line">  <span class="string">'owner'</span>: <span class="string">'Jack'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>假设上述JSON数据存储在字段s中，则若要读取<code>apple</code>的<code>weight</code>，则应<br><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">GET_JSON_OBJECT(s, '$.store.fruit[0].weight')</span><br><span class="line"><span class="comment">-- 返回 8</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="字段分隔符"><a href="#字段分隔符" class="headerlink" title="字段分隔符"></a>字段分隔符</h2><p>70页</p>
+<h2 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h2><ul>
+<li>如果没有显式指定数据库，则会使用默认的数据库default</li>
+</ul>
+<h1 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h1><h2 id="S"><a href="#S" class="headerlink" title="-S"></a>-S</h2><p>开启静默模式，可将输出结果中的<code>OK</code>和<code>Time taken</code>等行以及其他一些无关紧要的输出信息</p>
+<h2 id="alter"><a href="#alter" class="headerlink" title="alter"></a>alter</h2><p>大多数的表属性可以通过<code>ALTER TABLE</code>语句进行修改。</p>
+<ul>
+<li><code>ALTER TABLE</code>会修改元数据，但不会修改数据本身</li>
+</ul>
+<h3 id="重命名表"><a href="#重命名表" class="headerlink" title="重命名表"></a>重命名表</h3><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> table_old_name <span class="keyword">RENAME</span> <span class="keyword">TO</span> table_new_name;</span><br></pre></td></tr></table></figure>
+<h3 id="增加表分区"><a href="#增加表分区" class="headerlink" title="增加表分区"></a>增加表分区</h3><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 增加表分区</span></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> table_name <span class="keyword">ADD</span> <span class="keyword">IF</span> <span class="keyword">NOT</span> <span class="keyword">EXISTS</span></span><br><span class="line"><span class="keyword">PARTITION</span> (<span class="keyword">year</span>=<span class="number">2020</span>, <span class="keyword">month</span>=<span class="number">7</span>, <span class="keyword">day</span>=<span class="number">15</span>) LOCATION <span class="string">'/logs/2020/07/15'</span>;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>HIVE v0.8.0及以上版本，可在同一个查询中同时增加多个分区。</li>
+</ul>
+<h3 id="修改表分区"><a href="#修改表分区" class="headerlink" title="修改表分区"></a>修改表分区</h3><p>修改某个分区的路径：<br><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> table_name <span class="keyword">PARTITION</span>(<span class="keyword">year</span>=<span class="number">2020</span>, <span class="keyword">month</span>=<span class="number">7</span>, <span class="keyword">day</span>=<span class="number">15</span>) <span class="keyword">SET</span> LOCATION <span class="string">'s3n://ourbucket/logs/2020/07/15'</span>;</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>该命令不会将数据从旧的路径转移走，也不会删除旧的数据</li>
+</ul>
+<h3 id="删除表分区"><a href="#删除表分区" class="headerlink" title="删除表分区"></a>删除表分区</h3><p>删除某个表分区：<br><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> table_name <span class="keyword">DROP</span> <span class="keyword">IF</span> <span class="keyword">EXISTS</span> <span class="keyword">PARTITION</span>(<span class="keyword">year</span>=<span class="number">2020</span>, <span class="keyword">month</span>=<span class="number">7</span>, <span class="keyword">day</span>=<span class="number">15</span>);</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>对于管理表，即使是使用<code>ALTER TABLE ... ADD PARTITION</code>语句增加的分区，分区内的数据也会同时和元数据信息一起被删除</li>
+<li>对于外部表，分区内数据不会被删除</li>
+</ul>
+<h3 id="修改列"><a href="#修改列" class="headerlink" title="修改列"></a>修改列</h3><p>对某个字段进行重命名，修改其位置、类型或注释：<br><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> table_name</span><br><span class="line"><span class="keyword">CHANGE</span> <span class="keyword">COLUMN</span> old_col_name new_col_name <span class="built_in">INT</span>  <span class="comment">-- 重命名old_col_name为new_col_name，且数据类型为INT</span></span><br><span class="line"><span class="keyword">COMMENT</span> <span class="string">'Comment for Column new_col_name'</span>  <span class="comment">-- 修改该列的注释</span></span><br><span class="line"><span class="keyword">AFTER</span> another_column;  <span class="comment">-- 将new_col_name的位置修改到another_column列的后面</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="comment"><a href="#comment" class="headerlink" title="comment"></a>comment</h2><p>添加描述信息(备注).</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">DATABASE</span> db_name_1</span><br><span class="line"><span class="keyword">COMMENT</span> <span class="string">'Some comments for database db_name_1.'</span>;</span><br><span class="line"><span class="comment">-- 在创建数据库时添加备注，方便后续他人查看数据库的说明</span></span><br></pre></td></tr></table></figure>
+<h2 id="create"><a href="#create" class="headerlink" title="create"></a>create</h2><h3 id="create-database"><a href="#create-database" class="headerlink" title="create database"></a>create database</h3><p>创建数据库：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> DATEABASE db_name;</span><br><span class="line"><span class="comment">-- 如果该数据库db_name已存在，则会报错</span></span><br><span class="line"><span class="comment">-- 避免报错：</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">DATABASE</span> <span class="keyword">IF</span> <span class="keyword">NOT</span> <span class="keyword">EXISTS</span> db_name;</span><br></pre></td></tr></table></figure>
+<h3 id="create-table"><a href="#create-table" class="headerlink" title="create table"></a>create table</h3><ul>
+<li>默认情况下，HIVE总是将创建的表的目录放置在这个表所属的数据库目录之后</li>
+<li>但default库在<code>/user/hive/warehouse</code>下没有对应一个数据库目录，default库中的表目录会直接位于<code>/user/hive/warehouse</code>目录之后（除了用户明确指定为其他路径）</li>
+</ul>
+<p>在创建表时，可以直接拷贝一张已经存在的表的表模式：<br><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="keyword">IF</span> <span class="keyword">NOT</span> <span class="keyword">EXISTS</span> db_name_1.tbl_2</span><br><span class="line"><span class="keyword">LIKE</span> db_name_1.tbl_1;</span><br></pre></td></tr></table></figure></p>
+<h2 id="describe"><a href="#describe" class="headerlink" title="describe"></a>describe</h2><ul>
+<li>查看数据库的描述信息：</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">DESCRIBE</span> <span class="keyword">DATABASE</span> db_name_1;</span><br><span class="line"><span class="comment">-- 则会返回：</span></span><br><span class="line"><span class="comment">-- Some comments for database db_name_1.</span></span><br><span class="line"><span class="comment">-- 以及数据库所在的文件目录位置路径</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>查看某一列的信息：<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">DESCRIBE</span> db_name.table_name.col_name;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="extended"><a href="#extended" class="headerlink" title="extended"></a>extended</h3><p>用户可以为数据库增加一些和其相关的键值对属性信息，通过下列语句可以显示出这些信息：</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 创建数据库时增加一些和其相关的键值对属性信息</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">DATABASE</span> db_name_1</span><br><span class="line"><span class="keyword">WITH</span> DBPROPERTIES (<span class="string">'creator'</span> = <span class="string">'Mark Moneybags'</span>, <span class="string">'date'</span> = <span class="string">'2020-07-12'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 显示那些信息</span></span><br><span class="line"><span class="keyword">DESCRIBE</span> <span class="keyword">DATABASE</span> <span class="keyword">EXTENDED</span> db_name_1;</span><br><span class="line">db_name_1 hdfs://master-server/user/hive/warehouse/db_name_1.db</span><br><span class="line">&#123;date=2020-07-12, creator=Mark Moneybags&#125;;</span><br></pre></td></tr></table></figure>
+<p><code>DESRIBE EXTENDED table_name</code>也会显示出分区键。</p>
+<h3 id="formatted"><a href="#formatted" class="headerlink" title="formatted"></a>formatted</h3><p>显示数据库的信息，输出内容详细且可读性强</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">DESCRIBE</span> <span class="keyword">DATABASE</span> FORMATTED db_name_1;</span><br></pre></td></tr></table></figure>
+<h2 id="drop"><a href="#drop" class="headerlink" title="drop"></a>drop</h2><p>删除数据库：<br><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">DROP</span> <span class="keyword">DATABASE</span> <span class="keyword">IF</span> <span class="keyword">EXISTS</span> db_name_1;</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>HIVE不允许用户删除一个包含表的数据库<ul>
+<li>或，先删除数据库中的表，再删除数据库</li>
+<li>或，在删除命令的最后加上关键字<code>CASCADE</code>——可以使HIVE自行先删除数据库中的表</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">DROP</span> <span class="keyword">DATABASE</span> <span class="keyword">IF</span> <span class="keyword">EXISTS</span> db_name_1 <span class="keyword">CASCADE</span>;</span><br></pre></td></tr></table></figure>
+<p>删除数据表:</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">DROP</span> <span class="keyword">TABLE</span> <span class="keyword">IF</span> <span class="keyword">EXISTS</span> table_name;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>若删除管理表，则表的元数据信息和表内的数据都会被删除。</li>
+<li>若删除外部表，则表的元数据信息会被删除，但是表中的数据不会被删除。</li>
+</ul>
+<h2 id="get-json-object"><a href="#get-json-object" class="headerlink" title="get_json_object()"></a>get_json_object()</h2><h2 id="location"><a href="#location" class="headerlink" title="location"></a>location</h2><p>创建数据库时修改数据库的存储位置</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">DATABASE</span> db_name1</span><br><span class="line">LOCATION <span class="string">'/my/preferred/directory'</span>;</span><br></pre></td></tr></table></figure>
+<h2 id="partitioned"><a href="#partitioned" class="headerlink" title="partitioned"></a>partitioned</h2><p>一般按照分区存储、管理表</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> employees (</span><br><span class="line">  <span class="keyword">name</span>          <span class="keyword">STRING</span>,</span><br><span class="line">  salary        <span class="built_in">FLOAT</span>,</span><br><span class="line">  subordinates  <span class="built_in">ARRAY</span>&lt;<span class="keyword">STRING</span>&gt;,</span><br><span class="line">  deductions    <span class="keyword">MAP</span>&lt;<span class="keyword">STRING</span>, <span class="built_in">FLOAT</span>&gt;,</span><br><span class="line">  address       <span class="keyword">STRUCT</span>&lt;street: <span class="keyword">STRING</span>, city: <span class="keyword">STRING</span>, state: <span class="keyword">STRING</span>, zip: <span class="built_in">INT</span>&gt;</span><br><span class="line">)</span><br><span class="line">PARTITIONED <span class="keyword">BY</span> (country <span class="keyword">STRING</span>, state <span class="keyword">STRING</span>);</span><br><span class="line"><span class="comment">-- 按照country、state进行分区管理</span></span><br><span class="line"><span class="comment">-- country是第一级细分</span></span><br><span class="line"><span class="comment">-- state是第二级细分</span></span><br></pre></td></tr></table></figure>
+<p><code>SHOW PARTITIONS table_name</code>：查看数据表中存在的所有分区。</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SHOW</span> <span class="keyword">PARTITIONS</span> employees;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- Country=CA/state=AB</span></span><br><span class="line"><span class="comment">-- Country=CA/state=BC</span></span><br><span class="line"><span class="comment">-- ...</span></span><br></pre></td></tr></table></figure>
+<p><code>SHOW PARTITIONS table_name PARTITION(country=&#39;US&#39;)</code>：查看数据表中的某个一级细分下的所有分区。</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SHOW</span> <span class="keyword">PARTITIONS</span> employees <span class="keyword">PARTITION</span>(country=<span class="string">'US'</span>);</span><br><span class="line"><span class="keyword">SHOW</span> <span class="keyword">PARTITIONS</span> employees <span class="keyword">PARTITION</span>(country=<span class="string">'US'</span>, state=<span class="string">'AK'</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="set"><a href="#set" class="headerlink" title="set"></a>set</h2><ul>
+<li>可用于给变量赋新的值</li>
+</ul>
+<h2 id="show"><a href="#show" class="headerlink" title="show"></a>show</h2><ul>
+<li>查看Hive中所包含的数据库：</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SHOW</span> <span class="keyword">DATABASES</span>;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>显示当前数据库下的所有表：</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SHOW</span> <span class="keyword">TABLES</span>;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>显示指定数据库下的所有表：</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SHOW</span> <span class="keyword">TABLES</span> <span class="keyword">IN</span> db_name_2;</span><br></pre></td></tr></table></figure>
+<p>也可使用正则表达式筛选表名：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SHOW</span> <span class="keyword">TABLES</span> <span class="string">'empl.*'</span>;</span><br><span class="line"><span class="comment">-- 列出所有以empl开头的所有表名</span></span><br></pre></td></tr></table></figure>
+<h2 id="use"><a href="#use" class="headerlink" title="use"></a>use</h2><p>用于将某个数据库设置为用户当前的工作数据库</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">USE</span> db_name_2;</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
+<li><a href>HIVE编程指南</a></li>
+<li><a href></a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>数据库</category>
+      </categories>
+      <tags>
+        <tag>HIVE</tag>
+        <tag>数据库</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Python | Categorical_encoders</title>
     <url>/2020/06/12/python-categorical-encoders/</url>
     <content><![CDATA[<p><center> </center><br><a id="more"></a></p>
