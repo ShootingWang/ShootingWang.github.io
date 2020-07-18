@@ -1487,6 +1487,10 @@ strategy
 <li>返回值是STRING</li>
 </ul>
 <h2 id="context-ngrams"><a href="#context-ngrams" class="headerlink" title="context_ngrams()"></a>context_ngrams()</h2><p><code>CONTEXT_NGRAMS(ARRAY&lt;ARRAY&lt;STRING&gt;&gt;, ARRAY&lt;STRING&gt;, INT k, INT pf)</code>：和ngrams类似，从每个外层数组的第二个单词数组来查找前k个字尾<br>（不理解）</p>
+<h2 id="day"><a href="#day" class="headerlink" title="day()"></a>day()</h2><p><code>DAY(STRING date)</code>：提取时间字符串中的天<br><code>DAYOFMONTH(STRING date)</code>：返回当月第几天</p>
+<ul>
+<li>返回值是INT</li>
+</ul>
 <h2 id="decode"><a href="#decode" class="headerlink" title="decode()"></a>decode()</h2><p><code>DECODE(BINARY bin, STRING charset)</code>：使用指定的字符集charset将二进制值bin解码成字符串</p>
 <ul>
 <li>若任一输入参数为NULL，则结果为NULL</li>
@@ -1525,10 +1529,23 @@ strategy
 <li>返回值是STRING</li>
 <li>如果d为0，则输出整数字符串</li>
 </ul>
+<h2 id="from-unixtime"><a href="#from-unixtime" class="headerlink" title="from_unixtime()"></a>from_unixtime()</h2><p><code>FROM_UNIXTIME(BIGINT unixtime[, STRING format])</code>：将时间戳秒数转换为UTC时间</p>
+<ul>
+<li>返回值是STRING</li>
+<li>可以通过format指定输出的时间格式<ul>
+<li>‘yyyyMMdd’</li>
+<li>‘yyyy-MM-dd’</li>
+</ul>
+</li>
+</ul>
 <h2 id="get-json-object"><a href="#get-json-object" class="headerlink" title="get_json_object()"></a>get_json_object()</h2><p><code>GET_JSON_OBJECCT(STRING json_string, STRING path)</code>：从给定路径上的JSON字符串中抽取出JSON对象，并返回这个对象的JSOM字符串形式</p>
 <ul>
 <li>返回值是STRING</li>
 <li>如果输入的JSON字符串是非法的，则返回NULL</li>
+</ul>
+<h2 id="hour"><a href="#hour" class="headerlink" title="hour()"></a>hour()</h2><p><code>HOUR(STRING date)</code>：提取时间戳字符串中的小时</p>
+<ul>
+<li>返回值是INT</li>
 </ul>
 <h2 id="in"><a href="#in" class="headerlink" title="in"></a>in</h2><p><code>test IN (val1, val2, ...)</code>：判断test是否等于后面列表中的任一值，是的话返回true</p>
 <ul>
@@ -1561,6 +1578,14 @@ strategy
 <li>返回值是STRING</li>
 </ul>
 <h2 id="ltrim"><a href="#ltrim" class="headerlink" title="ltrim()"></a>ltrim()</h2><p><code>LTRIM(STRING s)</code> ：将字符串s前面出现的空格全部去除</p>
+<h2 id="minuite"><a href="#minuite" class="headerlink" title="minuite()"></a>minuite()</h2><p><code>MINUTE(STRING date)</code>：提取时间字符串中的分钟数</p>
+<ul>
+<li>返回值是INT</li>
+</ul>
+<h2 id="month"><a href="#month" class="headerlink" title="month()"></a>month()</h2><p><code>MONTH(STRING date)</code>：提取时间字符串中的月份</p>
+<ul>
+<li>返回值是INT</li>
+</ul>
 <h2 id="ngrams"><a href="#ngrams" class="headerlink" title="ngrams()"></a>ngrams()</h2><p><code>NGRAMS(ARRAY&lt;ARRAY&lt;string&gt;&gt;, INT n, INT k, INT pf)</code>：估算文件前k个字尾</p>
 <ul>
 <li>其中pf是精度系数</li>
@@ -1613,6 +1638,10 @@ strategy
 <ul>
 <li>返回值是STRING</li>
 </ul>
+<h2 id="second"><a href="#second" class="headerlink" title="second()"></a>second()</h2><p><code>SECOND(STRING date)</code>：提取时间字符串中的秒数</p>
+<ul>
+<li>返回值是INT</li>
+</ul>
 <h2 id="sentences"><a href="#sentences" class="headerlink" title="sentences()"></a>sentences()</h2><p><code>SENTENCES(STRING s, STRING lang, STRING locale)</code>：将输入字符串s转换成句子数组，每个句子又由一个单词数组构成。</p>
 <ul>
 <li>参数<code>lang</code>：可选</li>
@@ -1642,6 +1671,11 @@ strategy
 <li>包括start_index位置上的字符在内</li>
 <li>返回值是STRING</li>
 </ul>
+<h2 id="to-date"><a href="#to-date" class="headerlink" title="to_date()"></a>to_date()</h2><p><code>TO_DATE(STRING timestamp)</code>：返回时间字符串的日期部分</p>
+<ul>
+<li>返回值是STRING</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">TO_DATE('1970-01-01 00:00:00')</span><br><span class="line"><span class="comment">-- "1970-01-01"</span></span><br></pre></td></tr></table></figure>
 <h2 id="translate"><a href="#translate" class="headerlink" title="translate()"></a>translate()</h2><p>？？？</p>
 <h2 id="trim"><a href="#trim" class="headerlink" title="trim()"></a>trim()</h2><p><code>TRIM(STRING s)</code>：将字符串s前后出现的空格全部去除掉</p>
 <ul>
@@ -1652,16 +1686,16 @@ strategy
 <li>BASE64字符表：ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/</li>
 <li>返回值是BINARY</li>
 </ul>
-<h2 id="upper-ucase"><a href="#upper-ucase" class="headerlink" title="upper(), ucase()"></a>upper(), ucase()</h2><p><code>UPPER(STRING s)</code> 或 <code>UCASE(STRING s)</code>：将字符串s中所有字母转换成大写字母</p>
-<h2 id="from-unixtime"><a href="#from-unixtime" class="headerlink" title="from_unixtime()"></a>from_unixtime()</h2><p><code>FROM_UNIXTIME(BIGINT unixtime[, STRING format])</code>：将时间戳秒数转换为UTC时间</p>
+<h2 id="unix-timestamp"><a href="#unix-timestamp" class="headerlink" title="unix_timestamp()"></a>unix_timestamp()</h2><p><code>UNIX_TIMESTAMP(BIGINT unixtime[, STRING format])</code>：获取当前本地时区下的当前时间戳<br><code>UNIX_TIMESTAMP(STRING date)</code>：输入的时间字符串格式必须是<code>yyyy-MM-dd HH:mm:ss</code>。如果不符合，则返回0；如果符合，则将此时间字符串转换成Unix时间戳<br><code>UNIX_TIMESTAMP(STRING date, STRING pattern)</code>：将指定时间字符串格式字符串转换成Unix时间戳。如果格式不符合，则返回0。</p>
 <ul>
-<li>返回值是STRING</li>
-<li>可以通过format指定输出的时间格式<ul>
-<li></li>
+<li>返回值是BIGINT</li>
 </ul>
-</li>
+<h2 id="upper-ucase"><a href="#upper-ucase" class="headerlink" title="upper(), ucase()"></a>upper(), ucase()</h2><p><code>UPPER(STRING s)</code> 或 <code>UCASE(STRING s)</code>：将字符串s中所有字母转换成大写字母</p>
+<h2 id="year"><a href="#year" class="headerlink" title="year()"></a>year()</h2><p><code>YEAR(STRING date)</code>：提取时间字符串中的年份</p>
+<ul>
+<li>返回值是INT</li>
 </ul>
-<p>91页</p>
+<h2 id><a href="#" class="headerlink" title=" "></a> </h2><p>91页</p>
 <h1 id="数据操作"><a href="#数据操作" class="headerlink" title="数据操作"></a>数据操作</h1><ul>
 <li>Hive没有行级别的数据插入、数据更新和删除操作</li>
 <li>数据插入方式有：<ul>
