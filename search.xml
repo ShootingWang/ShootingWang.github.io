@@ -664,174 +664,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Hexo+GitHub+Markdown常用用法</title>
-    <url>/2020/04/28/Hexo-GitHub-Markdown%E5%B8%B8%E7%94%A8%E7%94%A8%E6%B3%95/</url>
-    <content><![CDATA[<center>记录一些Hexo+Markdown的常用语法~</center>
-
-<a id="more"></a>
-<!--toc-->
-<h1 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h1><h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><h3 id="新建博客"><a href="#新建博客" class="headerlink" title="新建博客"></a>新建博客</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> hexo n <span class="string">'博客名称'</span></span></span><br></pre></td></tr></table></figure>
-<h3 id="上传"><a href="#上传" class="headerlink" title="上传"></a>上传</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> hexo g</span></span><br></pre></td></tr></table></figure>
-<p>即 <code>hexo generate</code></p>
-<h2 id="标题自动编号"><a href="#标题自动编号" class="headerlink" title="标题自动编号"></a>标题自动编号</h2><ul>
-<li><a href="http://r12f.com/posts/adding-index-to-your-headings-with-hexo-heading-index/" target="_blank" rel="noopener">为Hexo博客标题自动添加序号：hexo-heading-index</a></li>
-</ul>
-<h2 id="代码高亮"><a href="#代码高亮" class="headerlink" title="代码高亮"></a>代码高亮</h2><ul>
-<li><a href="https://www.zfl9.com/hexo-code.html" target="_blank" rel="noopener">使用prism.js进行代码高亮</a></li>
-<li><a href="https://www.jianshu.com/p/1f223eb78ad8" target="_blank" rel="noopener">markdown代码块支持的语言</a></li>
-</ul>
-<h2 id="Fluid主题"><a href="#Fluid主题" class="headerlink" title="Fluid主题"></a>Fluid主题</h2><p>安装可见：<a href="https://hexo.fluid-dev.com/docs/guide/#%E4%B8%BB%E9%A2%98%E7%AE%80%E4%BB%8B" target="_blank" rel="noopener">Hexo-fluid</a></p>
-<p>压缩包<a href="https://github.com/fluid-dev/hexo-theme-fluid/releases/tag/v1.8.0-beta2">下载</a></p>
-<h2 id="Fork-me-on-GitHub"><a href="#Fork-me-on-GitHub" class="headerlink" title="Fork me on GitHub"></a>Fork me on GitHub</h2><ul>
-<li><a href="https://blog.csdn.net/fly_wt/article/details/86674138" target="_blank" rel="noopener">在右上角实现fork me on github</a></li>
-</ul>
-<h2 id="流程图"><a href="#流程图" class="headerlink" title="流程图"></a>流程图</h2><ul>
-<li><a href="https://www.cnblogs.com/icoty23/p/10911231.html" target="_blank" rel="noopener">Hexo引入Mermaid流程图和MathJax数学公式</a></li>
-<li><a href="https://blog.csdn.net/Olivia_Vang/article/details/92987859#%E8%AF%AD%E6%B3%95" target="_blank" rel="noopener">Hexo中插入mermaid diagrams</a></li>
-<li><a href="https://tyloafer.github.io/posts/7790/" target="_blank" rel="noopener">Hexo中引入Mermaid流程图</a></li>
-<li><a href="https://rogersnowing.cn/post/38b5106c.html" target="_blank" rel="noopener">hexo集成mermaid画图</a></li>
-<li><a href="https://blog.csdn.net/Subson/article/details/78054689" target="_blank" rel="noopener">Markdown里面使用mermaid画流程图（基础）</a></li>
-</ul>
-<h2 id="NeXT主题"><a href="#NeXT主题" class="headerlink" title="NeXT主题"></a>NeXT主题</h2><ul>
-<li><a href="https://juejin.im/post/5bcd2d395188255c3b7dc1db#heading-11" target="_blank" rel="noopener">Hexo+NexT 打造一个炫酷博客</a></li>
-<li><a href="https://tding.top/archives/dfac1e9c.html" target="_blank" rel="noopener">Hexo-NexT 主题样式美化 - 动画设置</a></li>
-<li><a href="https://lvxuefei.top/%E5%88%A9%E7%94%A8Hexo-Next%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%88%E4%B8%89%EF%BC%89-%E4%BC%98%E5%8C%96-%E5%90%84%E7%A7%8Dtips%E3%80%81%E9%BB%91%E7%A7%91%E6%8A%80%EF%BC%8C%E4%B8%8D%E6%96%AD%E6%9B%B4%E6%96%B0/" target="_blank" rel="noopener">利用 Hexo+Next 搭建个人博客（三）—— 优化 (各种 tips、黑科技，不断更新)</a></li>
-<li><a href="https://jzwdsb.github.io/2019/02/next_canvax/" target="_blank" rel="noopener">next 主题背景添加 canvas nest 特效</a></li>
-<li><a href="https://blog.qust.cc/archives/63320.html" target="_blank" rel="noopener">Hexo Next阅读次数不正常、显示多个阅读次数</a></li>
-</ul>
-<h2 id="评论"><a href="#评论" class="headerlink" title="评论"></a>评论</h2><ul>
-<li><a href="https://litstronger.github.io/2020/04/03/hexo-fluid%E6%B7%BB%E5%8A%A0utterances%E8%AF%84%E8%AE%BA%E5%8A%9F%E8%83%BD/" target="_blank" rel="noopener">hexo-fluid添加utterances评论功能</a></li>
-<li><a href="https://tding.top/archives/ed8b904f.html" target="_blank" rel="noopener">Hexo-NexT 配置 Valine</a></li>
-<li><a href="https://zucchiniy.cn/archives/c7b31ff.html" target="_blank" rel="noopener">Valine 评论使用报错 504</a></li>
-<li><a href="https://qianfanguojin.github.io/2019/07/23/Hexo%E5%8D%9A%E5%AE%A2%E8%BF%9B%E9%98%B6%EF%BC%9A%E4%B8%BANext%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0Valine%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/" target="_blank" rel="noopener">Hexo博客进阶：为Next主题添加Valine评论系统</a></li>
-</ul>
-<h2 id="搜索"><a href="#搜索" class="headerlink" title="搜索"></a>搜索</h2><ul>
-<li><a href="https://vic.kim/2019/05/22/Hexo%20Next%20%E4%B8%BB%E9%A2%98%E4%B8%AD%E6%B7%BB%E5%8A%A0%E6%9C%AC%E5%9C%B0%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD/" target="_blank" rel="noopener">Hexo Next 主题中添加本地搜索功能</a></li>
-</ul>
-<h1 id="Markdown"><a href="#Markdown" class="headerlink" title="Markdown"></a>Markdown</h1><h2 id="Font-matter区"><a href="#Font-matter区" class="headerlink" title="Font-matter区"></a>Font-matter区</h2><p>Font-matter区即 两行<code>---</code>之间的内容</p>
-<h2 id="文章摘要"><a href="#文章摘要" class="headerlink" title="文章摘要"></a>文章摘要</h2><p>若想要在博客首页只展示文章的摘要，在摘要与正文中间插入<br><figure class="highlight md"><table><tr><td class="code"><pre><span class="line"><span class="xml"><span class="comment">&lt;!--more--&gt;</span></span></span><br></pre></td></tr></table></figure></p>
-<h2 id="引用站内文章"><a href="#引用站内文章" class="headerlink" title="引用站内文章"></a>引用站内文章</h2><figure class="highlight md"><table><tr><td class="code"><pre><span class="line">&#123;% post_link 站内文章对应的.md名称（不带后缀.md） %&#125;</span><br></pre></td></tr></table></figure>
-<p>如：引用站内文章《<a href="/2020/04/27/Restart/" title="Restart!">Restart!</a>》，对应的文件名是<code>Restart.md</code><br><figure class="highlight md"><table><tr><td class="code"><pre><span class="line">&#123;% post_link Restart %&#125;</span><br></pre></td></tr></table></figure></p>
-<h2 id="居中引用"><a href="#居中引用" class="headerlink" title="居中引用"></a>居中引用</h2><ul>
-<li><a href="https://tding.top/archives/29bfe8c9.html" target="_blank" rel="noopener">Hexo-NexT Tag 插件的使用</a></li>
-</ul>
-<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">&#123;% cq %&#125;居中引用&#123;% endcq %&#125;</span><br></pre></td></tr></table></figure>
-<p>效果：</p>
-<blockquote class="blockquote-center">
-            <i class="fa fa-quote-left"></i>
-            <p>居中引用</p>
-
-            <i class="fa fa-quote-right"></i>
-          </blockquote>
-<h2 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h2><figure class="highlight md"><table><tr><td class="code"><pre><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">font</span> <span class="attr">face</span>=<span class="string">"字体"</span> <span class="attr">size</span>=<span class="string">"字号"</span> <span class="attr">color</span>=<span class="string">"颜色"</span>&gt;</span></span>这里是需要突出显示的内容<span class="xml"><span class="tag">&lt;/<span class="name">font</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
-<h2 id="插入图片"><a href="#插入图片" class="headerlink" title="插入图片"></a>插入图片</h2><p>参考：<a href="https://blog.csdn.net/xjm850552586/article/details/84101345" target="_blank" rel="noopener">hexo引用本地图片无法显示</a></p>
-<p>Markdown语法：<br><figure class="highlight md"><table><tr><td class="code"><pre><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"referrer"</span> <span class="attr">content</span>=<span class="string">"no-referrer"</span> /&gt;</span></span></span><br><span class="line">&#123;% asset_img inorder.png 中序遍历 %&#125;</span><br></pre></td></tr></table></figure><br>或<br><figure class="highlight md"><table><tr><td class="code"><pre><span class="line">![<span class="string">title</span>](<span class="link">name.jpg</span>)</span><br></pre></td></tr></table></figure><br>或<br><figure class="highlight md"><table><tr><td class="code"><pre><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"/asset/[your_image]"</span> <span class="attr">width</span>=<span class="string">"[width]"</span> <span class="attr">height</span>=<span class="string">"[height]"</span> <span class="attr">alt</span>=<span class="string">"[alternative_text]"</span> <span class="attr">title</span>=<span class="string">"[title]"</span>&gt;</span></span></span><br></pre></td></tr></table></figure></p>
-<h2 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h2><ul>
-<li><a href="https://www.jianshu.com/p/b6c85800c44e" target="_blank" rel="noopener">Markdown表格中换行、合并单元格</a></li>
-<li>插入表格：<figure class="highlight md"><table><tr><td class="code"><pre><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">style</span> <span class="attr">scoped</span>&gt;</span></span></span><br><span class="line"><span class="code">    .dataframe tbody tr th:only-of-type &#123;</span></span><br><span class="line"><span class="code">        vertical-align: middle;</span></span><br><span class="line"><span class="code">    &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="code">    .dataframe tbody tr th &#123;</span></span><br><span class="line"><span class="code">        vertical-align: top;</span></span><br><span class="line"><span class="code">    &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="code">    .dataframe thead th &#123;</span></span><br><span class="line"><span class="code">        text-align: center;</span></span><br><span class="line"><span class="code">    &#125;</span></span><br><span class="line"><span class="xml"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">table</span> <span class="attr">border</span>=<span class="string">"1"</span> <span class="attr">class</span>=<span class="string">"dataframe"</span>&gt;</span></span></span><br><span class="line">  <span class="xml"><span class="tag">&lt;<span class="name">thead</span>&gt;</span></span></span><br><span class="line"><span class="code">    &lt;tr style="text-align: center;"&gt;</span></span><br><span class="line"><span class="code">      &lt;th&gt;标题行&lt;/th&gt;</span></span><br><span class="line"><span class="code">      &lt;th&gt;第一列标题&lt;/th&gt;</span></span><br><span class="line"><span class="code">      &lt;th&gt;第二列标题&lt;/th&gt;</span></span><br><span class="line"><span class="code">    &lt;/tr&gt;</span></span><br><span class="line">  <span class="xml"><span class="tag">&lt;/<span class="name">thead</span>&gt;</span></span></span><br><span class="line">  <span class="xml"><span class="tag">&lt;<span class="name">tbody</span>&gt;</span></span></span><br><span class="line"><span class="code">    &lt;tr&gt;</span></span><br><span class="line"><span class="code">      &lt;th&gt;第一行&lt;/th&gt;</span></span><br><span class="line"><span class="code">      &lt;td&gt;$a_&#123;11&#125;$&lt;/td&gt;</span></span><br><span class="line"><span class="code">      &lt;td&gt;$a_&#123;12&#125;$&lt;/td&gt;</span></span><br><span class="line"><span class="code">    &lt;/tr&gt;</span></span><br><span class="line"><span class="code">    &lt;tr&gt;</span></span><br><span class="line"><span class="code">      &lt;th rowspan="2"&gt;合并两行单元格&lt;/th&gt;</span></span><br><span class="line"><span class="code">      &lt;td&gt;$a_&#123;21&#125;$&lt;/td&gt;</span></span><br><span class="line"><span class="code">      &lt;td&gt;$a_&#123;22&#125;$&lt;/td&gt;</span></span><br><span class="line"><span class="code">    &lt;/tr&gt;</span></span><br><span class="line"><span class="code">    &lt;tr&gt;</span></span><br><span class="line"><span class="code">      &lt;td&gt;第三行就少一个单元格&lt;/td&gt;</span></span><br><span class="line"><span class="code">      &lt;td&gt;$a_&#123;32&#125;$&lt;/td&gt;</span></span><br><span class="line"><span class="code">    &lt;/tr&gt;</span></span><br><span class="line"><span class="code">    &lt;tr&gt;</span></span><br><span class="line"><span class="code">      &lt;th&gt;第四行&lt;/th&gt;</span></span><br><span class="line"><span class="code">      &lt;td colspan="2"&gt;合并两列&lt;/td&gt;</span></span><br><span class="line"><span class="code">    &lt;/tr&gt;</span></span><br><span class="line"><span class="code">    &lt;tr&gt;</span></span><br><span class="line">  <span class="xml"><span class="tag">&lt;/<span class="name">tbody</span>&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>效果：</p>
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: center;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: center;">
-      <th>标题行</th>
-      <th>第一列标题</th>
-      <th>第二列标题</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>第一行</th>
-      <td>$a_{11}$</td>
-      <td>$a_{12}$</td>
-    </tr>
-    <tr>
-      <th rowspan="2">合并两行单元格</th>
-      <td>$a_{21}$</td>
-      <td>$a_{22}$</td>
-    </tr>
-    <tr>
-      <td>第三行就少一个单元格</td>
-      <td>$a_{32}$</td>
-    </tr>
-    <tr>
-      <th>第四行</th>
-      <td colspan="2">合并两列</td>
-    </tr>
-    <tr>
-  </tr></tbody>
-</table>
-</div>
-
-<h2 id="公式"><a href="#公式" class="headerlink" title="公式"></a>公式</h2><ul>
-<li>公式对齐<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">\begin&#123;equation&#125;</span><br><span class="line">\begin&#123;aligned&#125;</span><br><span class="line">第一行 &amp;= 对齐符号为\&amp; 然后两个斜杠换行\\</span><br><span class="line">第二 &amp;+ 左边有个对齐符 \\</span><br><span class="line">三 &amp;+ 第二三行的加号与第一行的等号对齐</span><br><span class="line">\end&#123;aligned&#125;</span><br><span class="line">\end&#123;equation&#125;</span><br></pre></td></tr></table></figure>
-效果如下：<br>\begin{equation}<br>\begin{aligned}<br>第一行 &amp;= 对齐符号为\&amp; 然后两个斜杠换行\\<br>第二 &amp;+ 左边有个对齐符 \\<br>三 &amp;+ 第二三行的加号与第一行的等号对齐<br>\end{aligned}<br>\end{equation}</li>
-</ul>
-<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><h3 id="提示块"><a href="#提示块" class="headerlink" title="提示块"></a>提示块</h3><ul>
-<li><a href="https://tding.top/archives/29bfe8c9.html" target="_blank" rel="noopener">Hexo-NexT Tag 插件的使用</a></li>
-</ul>
-<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">&#123;% note default %&#125;</span><br><span class="line">default 提示块标签</span><br><span class="line">&#123;% endnote %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% note primary %&#125;</span><br><span class="line">primary 提示块标签</span><br><span class="line">&#123;% endnote %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% note success %&#125;</span><br><span class="line">success 提示块标签</span><br><span class="line">&#123;% endnote %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% note info %&#125;</span><br><span class="line">info 提示块标签</span><br><span class="line">&#123;% endnote %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% note warning %&#125;</span><br><span class="line">warning 提示块标签</span><br><span class="line">&#123;% endnote %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% note danger %&#125;</span><br><span class="line">danger 提示块标签</span><br><span class="line">&#123;% endnote %&#125;</span><br></pre></td></tr></table></figure>
-<p>在主题配置文件<code>_config.yml</code>中修改配置:<br><figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Note tag (bs-callout)</span></span><br><span class="line"><span class="attr">note:</span></span><br><span class="line">  <span class="comment"># Note tag style values:</span></span><br><span class="line">  <span class="comment">#  - simple    bs-callout old alert style. Default.</span></span><br><span class="line">  <span class="comment">#  - modern    bs-callout new (v2-v3) alert style.</span></span><br><span class="line">  <span class="comment">#  - flat      flat callout style with background, like on Mozilla or StackOverflow.</span></span><br><span class="line">  <span class="comment">#  - disabled  disable all CSS styles import of note tag.</span></span><br><span class="line">  <span class="attr">style:</span> <span class="string">flat</span>  <span class="comment">## 风格</span></span><br><span class="line">  <span class="attr">icons:</span> <span class="literal">false</span> <span class="comment">## 要不要图标</span></span><br><span class="line">  <span class="attr">border_radius:</span> <span class="number">3</span>  <span class="comment">## 圆角矩形</span></span><br><span class="line">  <span class="comment"># Offset lighter of background in % for modern and flat styles (modern: -12 | 12; flat: -18 | 6).</span></span><br><span class="line">  <span class="comment"># Offset also applied to label tag variables. This option can work with disabled note tag.</span></span><br><span class="line">  <span class="attr">light_bg_offset:</span> <span class="number">0</span></span><br></pre></td></tr></table></figure></p>
-<p>效果：<br><div class="note default">
-            <p>default 提示块标签</p>
-          </div></p>
-<div class="note primary">
-            <p>primary 提示块标签</p>
-          </div>
-<div class="note success">
-            <p>success 提示块标签</p>
-          </div>
-<div class="note info">
-            <p>info 提示块标签</p>
-          </div>
-<div class="note warning">
-            <p>warning 提示块标签</p>
-          </div>
-<div class="note danger">
-            <p>danger 提示块标签</p>
-          </div>
-<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">&#123;% note warning %&#125;</span><br><span class="line">定义</span><br><span class="line">&#123;% endnote %&#125;</span><br></pre></td></tr></table></figure>
-<div class="note warning">
-            <p>定义</p>
-          </div>
-<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">&#123;% note danger %&#125;</span><br><span class="line">算法</span><br><span class="line">&#123;% endnote %&#125;</span><br></pre></td></tr></table></figure>
-<div class="note danger">
-            <p>算法</p>
-          </div>
-<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">&#123;% note success %&#125;</span><br><span class="line">定理/性质</span><br><span class="line">&#123;% endnote %&#125;</span><br></pre></td></tr></table></figure>
-<div class="note success">
-            <p>定理/性质</p>
-          </div>
-<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">&#123;% note default %&#125;</span><br><span class="line">证明 或 推荐 或 引用 或 示例</span><br><span class="line">&#123;% endnote %&#125;</span><br></pre></td></tr></table></figure>
-<div class="note default">
-            <p>证明 或 推荐 或 引用 或 示例</p>
-          </div>
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1>]]></content>
-      <categories>
-        <category>Home</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-        <tag>GitHub</tag>
-        <tag>Markdown</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Data Scientist | 数据仓库</title>
     <url>/2020/07/25/%E6%95%B0%E6%8D%AE-%E6%95%B0%E6%8D%AE%E4%BB%93%E5%BA%93/</url>
     <content><![CDATA[<p><center>Data Warehouse</center><br><a id="more"></a></p>
@@ -15326,6 +15158,174 @@ E(X)&=\int_0^1 x\frac{1}{B(\alpha,\beta)}x^{\alpha-1}(1-x)^{\beta-1}\mathrm{d}x\
       </categories>
       <tags>
         <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo+GitHub+Markdown常用用法</title>
+    <url>/2020/04/28/Hexo-GitHub-Markdown%E5%B8%B8%E7%94%A8%E7%94%A8%E6%B3%95/</url>
+    <content><![CDATA[<center>记录一些Hexo+Markdown的常用语法~</center>
+
+<a id="more"></a>
+<!--toc-->
+<h1 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h1><h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><h3 id="新建博客"><a href="#新建博客" class="headerlink" title="新建博客"></a>新建博客</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> hexo n <span class="string">'博客名称'</span></span></span><br></pre></td></tr></table></figure>
+<h3 id="上传"><a href="#上传" class="headerlink" title="上传"></a>上传</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> hexo g</span></span><br></pre></td></tr></table></figure>
+<p>即 <code>hexo generate</code></p>
+<h2 id="标题自动编号"><a href="#标题自动编号" class="headerlink" title="标题自动编号"></a>标题自动编号</h2><ul>
+<li><a href="http://r12f.com/posts/adding-index-to-your-headings-with-hexo-heading-index/" target="_blank" rel="noopener">为Hexo博客标题自动添加序号：hexo-heading-index</a></li>
+</ul>
+<h2 id="代码高亮"><a href="#代码高亮" class="headerlink" title="代码高亮"></a>代码高亮</h2><ul>
+<li><a href="https://www.zfl9.com/hexo-code.html" target="_blank" rel="noopener">使用prism.js进行代码高亮</a></li>
+<li><a href="https://www.jianshu.com/p/1f223eb78ad8" target="_blank" rel="noopener">markdown代码块支持的语言</a></li>
+</ul>
+<h2 id="Fluid主题"><a href="#Fluid主题" class="headerlink" title="Fluid主题"></a>Fluid主题</h2><p>安装可见：<a href="https://hexo.fluid-dev.com/docs/guide/#%E4%B8%BB%E9%A2%98%E7%AE%80%E4%BB%8B" target="_blank" rel="noopener">Hexo-fluid</a></p>
+<p>压缩包<a href="https://github.com/fluid-dev/hexo-theme-fluid/releases/tag/v1.8.0-beta2">下载</a></p>
+<h2 id="Fork-me-on-GitHub"><a href="#Fork-me-on-GitHub" class="headerlink" title="Fork me on GitHub"></a>Fork me on GitHub</h2><ul>
+<li><a href="https://blog.csdn.net/fly_wt/article/details/86674138" target="_blank" rel="noopener">在右上角实现fork me on github</a></li>
+</ul>
+<h2 id="流程图"><a href="#流程图" class="headerlink" title="流程图"></a>流程图</h2><ul>
+<li><a href="https://www.cnblogs.com/icoty23/p/10911231.html" target="_blank" rel="noopener">Hexo引入Mermaid流程图和MathJax数学公式</a></li>
+<li><a href="https://blog.csdn.net/Olivia_Vang/article/details/92987859#%E8%AF%AD%E6%B3%95" target="_blank" rel="noopener">Hexo中插入mermaid diagrams</a></li>
+<li><a href="https://tyloafer.github.io/posts/7790/" target="_blank" rel="noopener">Hexo中引入Mermaid流程图</a></li>
+<li><a href="https://rogersnowing.cn/post/38b5106c.html" target="_blank" rel="noopener">hexo集成mermaid画图</a></li>
+<li><a href="https://blog.csdn.net/Subson/article/details/78054689" target="_blank" rel="noopener">Markdown里面使用mermaid画流程图（基础）</a></li>
+</ul>
+<h2 id="NeXT主题"><a href="#NeXT主题" class="headerlink" title="NeXT主题"></a>NeXT主题</h2><ul>
+<li><a href="https://juejin.im/post/5bcd2d395188255c3b7dc1db#heading-11" target="_blank" rel="noopener">Hexo+NexT 打造一个炫酷博客</a></li>
+<li><a href="https://tding.top/archives/dfac1e9c.html" target="_blank" rel="noopener">Hexo-NexT 主题样式美化 - 动画设置</a></li>
+<li><a href="https://lvxuefei.top/%E5%88%A9%E7%94%A8Hexo-Next%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%88%E4%B8%89%EF%BC%89-%E4%BC%98%E5%8C%96-%E5%90%84%E7%A7%8Dtips%E3%80%81%E9%BB%91%E7%A7%91%E6%8A%80%EF%BC%8C%E4%B8%8D%E6%96%AD%E6%9B%B4%E6%96%B0/" target="_blank" rel="noopener">利用 Hexo+Next 搭建个人博客（三）—— 优化 (各种 tips、黑科技，不断更新)</a></li>
+<li><a href="https://jzwdsb.github.io/2019/02/next_canvax/" target="_blank" rel="noopener">next 主题背景添加 canvas nest 特效</a></li>
+<li><a href="https://blog.qust.cc/archives/63320.html" target="_blank" rel="noopener">Hexo Next阅读次数不正常、显示多个阅读次数</a></li>
+</ul>
+<h2 id="评论"><a href="#评论" class="headerlink" title="评论"></a>评论</h2><ul>
+<li><a href="https://litstronger.github.io/2020/04/03/hexo-fluid%E6%B7%BB%E5%8A%A0utterances%E8%AF%84%E8%AE%BA%E5%8A%9F%E8%83%BD/" target="_blank" rel="noopener">hexo-fluid添加utterances评论功能</a></li>
+<li><a href="https://tding.top/archives/ed8b904f.html" target="_blank" rel="noopener">Hexo-NexT 配置 Valine</a></li>
+<li><a href="https://zucchiniy.cn/archives/c7b31ff.html" target="_blank" rel="noopener">Valine 评论使用报错 504</a></li>
+<li><a href="https://qianfanguojin.github.io/2019/07/23/Hexo%E5%8D%9A%E5%AE%A2%E8%BF%9B%E9%98%B6%EF%BC%9A%E4%B8%BANext%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0Valine%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/" target="_blank" rel="noopener">Hexo博客进阶：为Next主题添加Valine评论系统</a></li>
+</ul>
+<h2 id="搜索"><a href="#搜索" class="headerlink" title="搜索"></a>搜索</h2><ul>
+<li><a href="https://vic.kim/2019/05/22/Hexo%20Next%20%E4%B8%BB%E9%A2%98%E4%B8%AD%E6%B7%BB%E5%8A%A0%E6%9C%AC%E5%9C%B0%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD/" target="_blank" rel="noopener">Hexo Next 主题中添加本地搜索功能</a></li>
+</ul>
+<h1 id="Markdown"><a href="#Markdown" class="headerlink" title="Markdown"></a>Markdown</h1><h2 id="Font-matter区"><a href="#Font-matter区" class="headerlink" title="Font-matter区"></a>Font-matter区</h2><p>Font-matter区即 两行<code>---</code>之间的内容</p>
+<h2 id="文章摘要"><a href="#文章摘要" class="headerlink" title="文章摘要"></a>文章摘要</h2><p>若想要在博客首页只展示文章的摘要，在摘要与正文中间插入<br><figure class="highlight md"><table><tr><td class="code"><pre><span class="line"><span class="xml"><span class="comment">&lt;!--more--&gt;</span></span></span><br></pre></td></tr></table></figure></p>
+<h2 id="引用站内文章"><a href="#引用站内文章" class="headerlink" title="引用站内文章"></a>引用站内文章</h2><figure class="highlight md"><table><tr><td class="code"><pre><span class="line">&#123;% post_link 站内文章对应的.md名称（不带后缀.md） %&#125;</span><br></pre></td></tr></table></figure>
+<p>如：引用站内文章《<a href="/2020/04/27/Restart/" title="Restart!">Restart!</a>》，对应的文件名是<code>Restart.md</code><br><figure class="highlight md"><table><tr><td class="code"><pre><span class="line">&#123;% post_link Restart %&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="居中引用"><a href="#居中引用" class="headerlink" title="居中引用"></a>居中引用</h2><ul>
+<li><a href="https://tding.top/archives/29bfe8c9.html" target="_blank" rel="noopener">Hexo-NexT Tag 插件的使用</a></li>
+</ul>
+<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">&#123;% cq %&#125;居中引用&#123;% endcq %&#125;</span><br></pre></td></tr></table></figure>
+<p>效果：</p>
+<blockquote class="blockquote-center">
+            <i class="fa fa-quote-left"></i>
+            <p>居中引用</p>
+
+            <i class="fa fa-quote-right"></i>
+          </blockquote>
+<h2 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h2><figure class="highlight md"><table><tr><td class="code"><pre><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">font</span> <span class="attr">face</span>=<span class="string">"字体"</span> <span class="attr">size</span>=<span class="string">"字号"</span> <span class="attr">color</span>=<span class="string">"颜色"</span>&gt;</span></span>这里是需要突出显示的内容<span class="xml"><span class="tag">&lt;/<span class="name">font</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+<h2 id="插入图片"><a href="#插入图片" class="headerlink" title="插入图片"></a>插入图片</h2><p>参考：<a href="https://blog.csdn.net/xjm850552586/article/details/84101345" target="_blank" rel="noopener">hexo引用本地图片无法显示</a></p>
+<p>Markdown语法：<br><figure class="highlight md"><table><tr><td class="code"><pre><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"referrer"</span> <span class="attr">content</span>=<span class="string">"no-referrer"</span> /&gt;</span></span></span><br><span class="line">&#123;% asset_img inorder.png 中序遍历 %&#125;</span><br></pre></td></tr></table></figure><br>或<br><figure class="highlight md"><table><tr><td class="code"><pre><span class="line">![<span class="string">title</span>](<span class="link">name.jpg</span>)</span><br></pre></td></tr></table></figure><br>或<br><figure class="highlight md"><table><tr><td class="code"><pre><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"/asset/[your_image]"</span> <span class="attr">width</span>=<span class="string">"[width]"</span> <span class="attr">height</span>=<span class="string">"[height]"</span> <span class="attr">alt</span>=<span class="string">"[alternative_text]"</span> <span class="attr">title</span>=<span class="string">"[title]"</span>&gt;</span></span></span><br></pre></td></tr></table></figure></p>
+<h2 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h2><ul>
+<li><a href="https://www.jianshu.com/p/b6c85800c44e" target="_blank" rel="noopener">Markdown表格中换行、合并单元格</a></li>
+<li>插入表格：<figure class="highlight md"><table><tr><td class="code"><pre><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">style</span> <span class="attr">scoped</span>&gt;</span></span></span><br><span class="line"><span class="code">    .dataframe tbody tr th:only-of-type &#123;</span></span><br><span class="line"><span class="code">        vertical-align: middle;</span></span><br><span class="line"><span class="code">    &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="code">    .dataframe tbody tr th &#123;</span></span><br><span class="line"><span class="code">        vertical-align: top;</span></span><br><span class="line"><span class="code">    &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="code">    .dataframe thead th &#123;</span></span><br><span class="line"><span class="code">        text-align: center;</span></span><br><span class="line"><span class="code">    &#125;</span></span><br><span class="line"><span class="xml"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">table</span> <span class="attr">border</span>=<span class="string">"1"</span> <span class="attr">class</span>=<span class="string">"dataframe"</span>&gt;</span></span></span><br><span class="line">  <span class="xml"><span class="tag">&lt;<span class="name">thead</span>&gt;</span></span></span><br><span class="line"><span class="code">    &lt;tr style="text-align: center;"&gt;</span></span><br><span class="line"><span class="code">      &lt;th&gt;标题行&lt;/th&gt;</span></span><br><span class="line"><span class="code">      &lt;th&gt;第一列标题&lt;/th&gt;</span></span><br><span class="line"><span class="code">      &lt;th&gt;第二列标题&lt;/th&gt;</span></span><br><span class="line"><span class="code">    &lt;/tr&gt;</span></span><br><span class="line">  <span class="xml"><span class="tag">&lt;/<span class="name">thead</span>&gt;</span></span></span><br><span class="line">  <span class="xml"><span class="tag">&lt;<span class="name">tbody</span>&gt;</span></span></span><br><span class="line"><span class="code">    &lt;tr&gt;</span></span><br><span class="line"><span class="code">      &lt;th&gt;第一行&lt;/th&gt;</span></span><br><span class="line"><span class="code">      &lt;td&gt;$a_&#123;11&#125;$&lt;/td&gt;</span></span><br><span class="line"><span class="code">      &lt;td&gt;$a_&#123;12&#125;$&lt;/td&gt;</span></span><br><span class="line"><span class="code">    &lt;/tr&gt;</span></span><br><span class="line"><span class="code">    &lt;tr&gt;</span></span><br><span class="line"><span class="code">      &lt;th rowspan="2"&gt;合并两行单元格&lt;/th&gt;</span></span><br><span class="line"><span class="code">      &lt;td&gt;$a_&#123;21&#125;$&lt;/td&gt;</span></span><br><span class="line"><span class="code">      &lt;td&gt;$a_&#123;22&#125;$&lt;/td&gt;</span></span><br><span class="line"><span class="code">    &lt;/tr&gt;</span></span><br><span class="line"><span class="code">    &lt;tr&gt;</span></span><br><span class="line"><span class="code">      &lt;td&gt;第三行就少一个单元格&lt;/td&gt;</span></span><br><span class="line"><span class="code">      &lt;td&gt;$a_&#123;32&#125;$&lt;/td&gt;</span></span><br><span class="line"><span class="code">    &lt;/tr&gt;</span></span><br><span class="line"><span class="code">    &lt;tr&gt;</span></span><br><span class="line"><span class="code">      &lt;th&gt;第四行&lt;/th&gt;</span></span><br><span class="line"><span class="code">      &lt;td colspan="2"&gt;合并两列&lt;/td&gt;</span></span><br><span class="line"><span class="code">    &lt;/tr&gt;</span></span><br><span class="line"><span class="code">    &lt;tr&gt;</span></span><br><span class="line">  <span class="xml"><span class="tag">&lt;/<span class="name">tbody</span>&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>效果：</p>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: center;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: center;">
+      <th>标题行</th>
+      <th>第一列标题</th>
+      <th>第二列标题</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>第一行</th>
+      <td>$a_{11}$</td>
+      <td>$a_{12}$</td>
+    </tr>
+    <tr>
+      <th rowspan="2">合并两行单元格</th>
+      <td>$a_{21}$</td>
+      <td>$a_{22}$</td>
+    </tr>
+    <tr>
+      <td>第三行就少一个单元格</td>
+      <td>$a_{32}$</td>
+    </tr>
+    <tr>
+      <th>第四行</th>
+      <td colspan="2">合并两列</td>
+    </tr>
+    <tr>
+  </tr></tbody>
+</table>
+</div>
+
+<h2 id="公式"><a href="#公式" class="headerlink" title="公式"></a>公式</h2><ul>
+<li>公式对齐<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">\begin&#123;equation&#125;</span><br><span class="line">\begin&#123;aligned&#125;</span><br><span class="line">第一行 &amp;= 对齐符号为\&amp; 然后两个斜杠换行\\</span><br><span class="line">第二 &amp;+ 左边有个对齐符 \\</span><br><span class="line">三 &amp;+ 第二三行的加号与第一行的等号对齐</span><br><span class="line">\end&#123;aligned&#125;</span><br><span class="line">\end&#123;equation&#125;</span><br></pre></td></tr></table></figure>
+效果如下：<br>\begin{equation}<br>\begin{aligned}<br>第一行 &amp;= 对齐符号为\&amp; 然后两个斜杠换行\\<br>第二 &amp;+ 左边有个对齐符 \\<br>三 &amp;+ 第二三行的加号与第一行的等号对齐<br>\end{aligned}<br>\end{equation}</li>
+</ul>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><h3 id="提示块"><a href="#提示块" class="headerlink" title="提示块"></a>提示块</h3><ul>
+<li><a href="https://tding.top/archives/29bfe8c9.html" target="_blank" rel="noopener">Hexo-NexT Tag 插件的使用</a></li>
+</ul>
+<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">&#123;% note default %&#125;</span><br><span class="line">default 提示块标签</span><br><span class="line">&#123;% endnote %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% note primary %&#125;</span><br><span class="line">primary 提示块标签</span><br><span class="line">&#123;% endnote %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% note success %&#125;</span><br><span class="line">success 提示块标签</span><br><span class="line">&#123;% endnote %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% note info %&#125;</span><br><span class="line">info 提示块标签</span><br><span class="line">&#123;% endnote %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% note warning %&#125;</span><br><span class="line">warning 提示块标签</span><br><span class="line">&#123;% endnote %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% note danger %&#125;</span><br><span class="line">danger 提示块标签</span><br><span class="line">&#123;% endnote %&#125;</span><br></pre></td></tr></table></figure>
+<p>在主题配置文件<code>_config.yml</code>中修改配置:<br><figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Note tag (bs-callout)</span></span><br><span class="line"><span class="attr">note:</span></span><br><span class="line">  <span class="comment"># Note tag style values:</span></span><br><span class="line">  <span class="comment">#  - simple    bs-callout old alert style. Default.</span></span><br><span class="line">  <span class="comment">#  - modern    bs-callout new (v2-v3) alert style.</span></span><br><span class="line">  <span class="comment">#  - flat      flat callout style with background, like on Mozilla or StackOverflow.</span></span><br><span class="line">  <span class="comment">#  - disabled  disable all CSS styles import of note tag.</span></span><br><span class="line">  <span class="attr">style:</span> <span class="string">flat</span>  <span class="comment">## 风格</span></span><br><span class="line">  <span class="attr">icons:</span> <span class="literal">false</span> <span class="comment">## 要不要图标</span></span><br><span class="line">  <span class="attr">border_radius:</span> <span class="number">3</span>  <span class="comment">## 圆角矩形</span></span><br><span class="line">  <span class="comment"># Offset lighter of background in % for modern and flat styles (modern: -12 | 12; flat: -18 | 6).</span></span><br><span class="line">  <span class="comment"># Offset also applied to label tag variables. This option can work with disabled note tag.</span></span><br><span class="line">  <span class="attr">light_bg_offset:</span> <span class="number">0</span></span><br></pre></td></tr></table></figure></p>
+<p>效果：<br><div class="note default">
+            <p>default 提示块标签</p>
+          </div></p>
+<div class="note primary">
+            <p>primary 提示块标签</p>
+          </div>
+<div class="note success">
+            <p>success 提示块标签</p>
+          </div>
+<div class="note info">
+            <p>info 提示块标签</p>
+          </div>
+<div class="note warning">
+            <p>warning 提示块标签</p>
+          </div>
+<div class="note danger">
+            <p>danger 提示块标签</p>
+          </div>
+<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">&#123;% note warning %&#125;</span><br><span class="line">定义</span><br><span class="line">&#123;% endnote %&#125;</span><br></pre></td></tr></table></figure>
+<div class="note warning">
+            <p>定义</p>
+          </div>
+<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">&#123;% note danger %&#125;</span><br><span class="line">算法</span><br><span class="line">&#123;% endnote %&#125;</span><br></pre></td></tr></table></figure>
+<div class="note danger">
+            <p>算法</p>
+          </div>
+<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">&#123;% note success %&#125;</span><br><span class="line">定理/性质</span><br><span class="line">&#123;% endnote %&#125;</span><br></pre></td></tr></table></figure>
+<div class="note success">
+            <p>定理/性质</p>
+          </div>
+<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">&#123;% note default %&#125;</span><br><span class="line">证明 或 推荐 或 引用 或 示例</span><br><span class="line">&#123;% endnote %&#125;</span><br></pre></td></tr></table></figure>
+<div class="note default">
+            <p>证明 或 推荐 或 引用 或 示例</p>
+          </div>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1>]]></content>
+      <categories>
+        <category>Home</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>GitHub</tag>
+        <tag>Markdown</tag>
       </tags>
   </entry>
   <entry>
