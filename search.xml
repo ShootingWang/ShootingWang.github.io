@@ -1131,7 +1131,7 @@
 </ul>
 ]]></content>
       <categories>
-        <category>Home</category>
+        <category>Data Scientist</category>
       </categories>
       <tags>
         <tag>Data</tag>
@@ -6183,6 +6183,7 @@ n_{.j}\\
 </ul>
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 以下式子都会被判为unknown</span></span><br><span class="line">1 = NULL</span><br><span class="line">2 &gt; NULL</span><br><span class="line">3 &lt; NULL</span><br><span class="line">4 &lt;&gt; NULL</span><br><span class="line">NULL = NULL</span><br></pre></td></tr></table></figure>
 <p>三值逻辑的真值表（NOT）<br>|x|NOT x|<br>|:—:|:—:|<br>|true|false|<br>|unknown|unknown|<br>|false|true|</p>
+<p>三值逻辑</p>
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p>[1] <a href="https://mp.weixin.qq.com/s?__biz=MzU5NzkxODMxOA==&amp;mid=2247486368&amp;idx=1&amp;sn=3ef74be0a7b7345cba471da1370f8986&amp;chksm=fe4d5ca1c93ad5b7481d65a8fa0a8b4e585714af57ad69437d599bbac5830910562a9097a12b&amp;token=1415910284&amp;lang=zh_CN#rd" target="_blank" rel="noopener">Notes | SQL进阶教程 | 001</a></p>
