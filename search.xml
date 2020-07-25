@@ -7391,6 +7391,9 @@ dtype: int64
 <li><code>OR</code>中的优先级：<code>true</code> &gt; <code>unknown</code> &gt; <code>false</code></li>
 </ul>
 <figure class="highlight"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- a = 2, b = 4, c = NULL</span></span><br><span class="line">a &lt; b AND b &gt; c </span><br><span class="line"><span class="comment">-- true AND unknown = unknown</span></span><br><span class="line"></span><br><span class="line">a &gt; b OR b &lt; c  -- false OR unknown = unknown</span><br><span class="line">a &lt; b OR b &lt; c  -- true OR unknown = true</span><br><span class="line">NOT (b &lt;&gt; c)    -- NOT(unknown) = unknown</span><br></pre></td></tr></table></figure>
+<div class="note warning">
+            <p><strong>排中律（Law of Excluded Middle）</strong>：<br>命题“把命题和它的否命题通过OR连接而成的命题全都是真命题”在二值逻辑中被称为排中律。</p>
+          </div>
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
