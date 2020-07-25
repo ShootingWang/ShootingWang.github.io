@@ -1087,7 +1087,7 @@
       </tags>
   </entry>
   <entry>
-    <title>用户体验要素</title>
+    <title>数据分析 | 用户体验要素</title>
     <url>/2020/06/23/%E7%94%A8%E6%88%B7%E4%BD%93%E9%AA%8C%E8%A6%81%E7%B4%A0/</url>
     <content><![CDATA[<center>《用户体验要素》学习笔记</center>
 <a id="more"></a>
@@ -1193,6 +1193,9 @@ strategy
 <li><a href>用户体验要素：以用户为中心的产品设计</a></li>
 </ul>
 ]]></content>
+      <categories>
+        <category>数据分析</category>
+      </categories>
       <tags>
         <tag>数据分析</tag>
       </tags>
