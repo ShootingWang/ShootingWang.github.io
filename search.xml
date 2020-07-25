@@ -7390,7 +7390,7 @@ dtype: int64
 <li><code>AND</code>中的优先级：<code>false</code> &gt; <code>unknown</code> &gt; <code>true</code></li>
 <li><code>OR</code>中的优先级：<code>true</code> &gt; <code>unknown</code> &gt; <code>false</code></li>
 </ul>
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- a = 2, b = 4, c = NULL</span></span><br><span class="line">a &lt; b AND b &gt; c -- true AND unknown = unknown</span><br><span class="line">a &gt; b OR b &lt; c  -- false OR unknown = unknown</span><br><span class="line">a &lt; b OR b &lt; c  -- true OR unknown = true</span><br><span class="line">NOT (b &lt;&gt; c)    -- NOT(unknown) = unknown</span><br></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- a = 2, b = 4, c = NULL</span></span><br><span class="line">a &lt; b AND b &gt; c </span><br><span class="line"><span class="comment">-- true AND unknown = unknown</span></span><br><span class="line"></span><br><span class="line">a &gt; b OR b &lt; c  -- false OR unknown = unknown</span><br><span class="line">a &lt; b OR b &lt; c  -- true OR unknown = true</span><br><span class="line">NOT (b &lt;&gt; c)    -- NOT(unknown) = unknown</span><br></pre></td></tr></table></figure>
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
