@@ -28,7 +28,7 @@
 <meta property="og:site_name" content="ShootingWang">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-05-06T09:16:34.000Z">
-<meta property="article:modified_time" content="2020-05-26T05:52:39.604Z">
+<meta property="article:modified_time" content="2020-07-22T05:38:35.402Z">
 <meta property="article:author" content="ShootingWang">
 <meta property="article:tag" content="Python">
 <meta property="article:tag" content="求职">
@@ -247,7 +247,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-05-26 13:52:39" itemprop="dateModified" datetime="2020-05-26T13:52:39+08:00">2020-05-26</time>
+                <time title="修改时间：2020-07-22 13:38:35" itemprop="dateModified" datetime="2020-07-22T13:38:35+08:00">2020-07-22</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -309,7 +309,7 @@
 </blockquote>
 </li>
 </ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        n = int(input())  <span class="comment">## 小孩个数</span></span><br><span class="line">        hlst = list(map(int, input().split()))  <span class="comment">## 小孩对应列表</span></span><br><span class="line">        m = int(input())  <span class="comment">## 巧克力个数</span></span><br><span class="line">        wlst = list(map(int, input().split()))  <span class="comment">## 巧克力对应列表</span></span><br><span class="line">        hlst.sort(reverse=<span class="literal">True</span>)</span><br><span class="line">        wlst.sort(reverse=<span class="literal">True</span>)</span><br><span class="line">        count = <span class="number">0</span></span><br><span class="line">        dot = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(m):</span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> range(dot, n):</span><br><span class="line">                <span class="keyword">if</span> wlst[j] &gt;= hlst[i]:</span><br><span class="line">                    count += <span class="number">1</span></span><br><span class="line">                    dot = i</span><br><span class="line">                    <span class="keyword">break</span></span><br><span class="line">            <span class="keyword">if</span> dot == n <span class="keyword">or</span> dot == m:</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">if</span> count &gt; n:</span><br><span class="line">            print(n)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            print(count)</span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        <span class="keyword">break</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        n = int(input())  <span class="comment">## 小孩个数</span></span><br><span class="line">        hlst = list(map(int, input().split()))  <span class="comment">## 小孩对应列表</span></span><br><span class="line">        m = int(input())  <span class="comment">## 巧克力个数</span></span><br><span class="line">        wlst = list(map(int, input().split()))  <span class="comment">## 巧克力对应列表</span></span><br><span class="line">        hlst.sort(revesrse=<span class="literal">True</span>)</span><br><span class="line">        wlst.sort(reverse=<span class="literal">True</span>)</span><br><span class="line">        count = <span class="number">0</span></span><br><span class="line">        dot = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(m):</span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> range(dot, n):</span><br><span class="line">                <span class="keyword">if</span> wlst[j] &gt;= hlst[i]:</span><br><span class="line">                    count += <span class="number">1</span></span><br><span class="line">                    dot = i</span><br><span class="line">                    <span class="keyword">break</span></span><br><span class="line">            <span class="keyword">if</span> dot == n <span class="keyword">or</span> dot == m:</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">if</span> count &gt; n:</span><br><span class="line">            print(n)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            print(count)</span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        <span class="keyword">break</span></span><br></pre></td></tr></table></figure>
 <p><a href="https://blog.csdn.net/qq_28626909/article/details/88246948" target="_blank" rel="noopener">参考</a></p>
 <h1 id="迷宫寻路"><a href="#迷宫寻路" class="headerlink" title="迷宫寻路"></a>迷宫寻路</h1><ul>
 <li>假设一个探险家被困在了地底的迷宫之中，要从当前位置开始找到一条通往迷宫出口的路径。迷宫可以用一个二维矩阵组成，有的部分是墙，有的部分是路。迷宫之中有的路上还有门，每扇门都在迷宫的某个地方有与之匹配的钥匙，只有先拿到钥匙才能打开门。请设计一个算法，帮助探险家找到脱困的最短路径。如前所述，迷宫是通过一个二维矩阵表示的，每个元素的值的含义如下 0-墙，1-路，2-探险家的起始位置，3-迷宫的出口，大写字母-门，小写字母-对应大写字母所代表的门的钥匙</li>
@@ -320,6 +320,15 @@
 </li>
 </ul>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="最大乘积"><a href="#最大乘积" class="headerlink" title="最大乘积"></a>最大乘积</h1><ul>
+<li>给定一个无序数组，包含正数、负数和0，要求从中找出3个数的乘积，使得乘积最大，要求时间复杂度：O(n)，空间复杂度：O(1)</li>
+<li>输入共2行，第一行包括一个整数n，表示数组长度；第二行为n个以空格隔开的整数，分别为A1,A2, … ,An。</li>
+<li>输出描述：满足条件的最大乘积<blockquote>
+<p>拼多多2018年校招内推编程题</p>
+</blockquote>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        n = int(input())</span><br><span class="line">        lst = list(map(int, input().split()))</span><br><span class="line">        lst.sort()</span><br><span class="line">        <span class="keyword">if</span> lst[<span class="number">0</span>]*lst[<span class="number">1</span>]*lst[<span class="number">-1</span>] &lt; lst[<span class="number">-1</span>]*lst[<span class="number">-2</span>]*lst[<span class="number">-3</span>]:</span><br><span class="line">            print(lst[<span class="number">-1</span>]*lst[<span class="number">-2</span>]*lst[<span class="number">-3</span>])</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            print(lst[<span class="number">0</span>]*lst[<span class="number">1</span>]*lst[<span class="number">-1</span>]) </span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        <span class="keyword">break</span></span><br></pre></td></tr></table></figure>
     </div>
 
     
@@ -438,7 +447,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#大整数相乘"><span class="nav-number">1.</span> <span class="nav-text">大整数相乘</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#六一儿童节"><span class="nav-number">2.</span> <span class="nav-text">六一儿童节</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#迷宫寻路"><span class="nav-number">3.</span> <span class="nav-text">迷宫寻路</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#大整数相乘"><span class="nav-number">1.</span> <span class="nav-text">大整数相乘</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#六一儿童节"><span class="nav-number">2.</span> <span class="nav-text">六一儿童节</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#迷宫寻路"><span class="nav-number">3.</span> <span class="nav-text">迷宫寻路</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#最大乘积"><span class="nav-number">4.</span> <span class="nav-text">最大乘积</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -507,13 +516,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">254k</span>
+    <span title="站点总字数">255k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">3:51</span>
+    <span title="站点阅读时长">3:52</span>
 </div>
 
 

@@ -7325,12 +7325,81 @@ dtype: int64
 </table>
 </div>
 
+<h2 id="K-Means-vs-DBSCAN"><a href="#K-Means-vs-DBSCAN" class="headerlink" title="K-Means vs DBSCAN"></a>K-Means vs DBSCAN</h2><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
 
+    .dataframe thead th {
+        text-align: center;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: center;">
+      <th></th>
+      <th>K-Means</th>
+      <th>DBSCAN</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>聚类类型</th>
+      <td>基于划分</td>
+      <td>基于密度</td>
+    </tr>
+    <tr>
+      <th rowspan="2">对象</th>
+      <td colspan="2">都是将每个对象指派到单个簇的划分聚类算法</td>
+    </tr>
+    <tr>
+      <td>一般聚类所有对象</td>
+      <td>丢弃被它识别为噪声的对象</td>
+    </tr>
+    <tr>
+      <th>簇</th>
+      <td>很难处理非球形的簇和不同大小的簇；<br>可以发现不是明显分离的簇</td>
+      <td>可以处理不同大小或形状的簇；<br>会合并有重叠的簇</td>
+    </tr>
+    <tr>
+      <th>噪声/离群点</th>
+      <td></td>
+      <td>不太受噪声和离群点的影响</td>
+    </tr>
+    <tr>
+      <th>时间复杂度</th>
+      <td>$O(n)$</td>
+      <td>$O(n^2)$</td>
+    </tr>
+    <tr>
+      <th>结果可重复性</th>
+      <td>通常随机初始化质心，不会产生相同结果</td>
+      <td>多次运行产生相同的结果</td>
+    </tr>
+    <tr>
+      <th>稀疏数据</th>
+      <td>可用于稀疏的高维数据</td>
+      <td>在稀疏的高维数据上的表现很差</td>
+    </tr>
+    <tr>
+  </tr></tbody>
+</table>
+</div>
+
+<p>其中：</p>
+<ul>
+<li>$n$是样本点个数</li>
+<li>聚类可分为<u>基于划分、层次、密度、图形和模型</u>五大类</li>
+</ul>
 <h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
 <li><a href="https://blog.csdn.net/databatman/article/details/50445561" target="_blank" rel="noopener">机器学习：K-means和K-medoids对比</a></li>
 <li><a href="https://www.cnblogs.com/nucdy/p/6349172.html" target="_blank" rel="noopener">KNN与K-Means的区别</a></li>
-<li><a href></a></li>
+<li><a href="https://www.cnblogs.com/hugechuanqi/p/10509307.html" target="_blank" rel="noopener">机器学习 之k-means和DBSCAN的区别</a></li>
 <li><a href></a></li>
 </ul>
 ]]></content>
@@ -11164,7 +11233,7 @@ E(X)&=\int_0^1 x\frac{1}{B(\alpha,\beta)}x^{\alpha-1}(1-x)^{\beta-1}\mathrm{d}x\
 </blockquote>
 </li>
 </ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        n = int(input())  <span class="comment">## 小孩个数</span></span><br><span class="line">        hlst = list(map(int, input().split()))  <span class="comment">## 小孩对应列表</span></span><br><span class="line">        m = int(input())  <span class="comment">## 巧克力个数</span></span><br><span class="line">        wlst = list(map(int, input().split()))  <span class="comment">## 巧克力对应列表</span></span><br><span class="line">        hlst.sort(reverse=<span class="literal">True</span>)</span><br><span class="line">        wlst.sort(reverse=<span class="literal">True</span>)</span><br><span class="line">        count = <span class="number">0</span></span><br><span class="line">        dot = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(m):</span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> range(dot, n):</span><br><span class="line">                <span class="keyword">if</span> wlst[j] &gt;= hlst[i]:</span><br><span class="line">                    count += <span class="number">1</span></span><br><span class="line">                    dot = i</span><br><span class="line">                    <span class="keyword">break</span></span><br><span class="line">            <span class="keyword">if</span> dot == n <span class="keyword">or</span> dot == m:</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">if</span> count &gt; n:</span><br><span class="line">            print(n)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            print(count)</span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        <span class="keyword">break</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        n = int(input())  <span class="comment">## 小孩个数</span></span><br><span class="line">        hlst = list(map(int, input().split()))  <span class="comment">## 小孩对应列表</span></span><br><span class="line">        m = int(input())  <span class="comment">## 巧克力个数</span></span><br><span class="line">        wlst = list(map(int, input().split()))  <span class="comment">## 巧克力对应列表</span></span><br><span class="line">        hlst.sort(revesrse=<span class="literal">True</span>)</span><br><span class="line">        wlst.sort(reverse=<span class="literal">True</span>)</span><br><span class="line">        count = <span class="number">0</span></span><br><span class="line">        dot = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(m):</span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> range(dot, n):</span><br><span class="line">                <span class="keyword">if</span> wlst[j] &gt;= hlst[i]:</span><br><span class="line">                    count += <span class="number">1</span></span><br><span class="line">                    dot = i</span><br><span class="line">                    <span class="keyword">break</span></span><br><span class="line">            <span class="keyword">if</span> dot == n <span class="keyword">or</span> dot == m:</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">if</span> count &gt; n:</span><br><span class="line">            print(n)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            print(count)</span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        <span class="keyword">break</span></span><br></pre></td></tr></table></figure>
 <p><a href="https://blog.csdn.net/qq_28626909/article/details/88246948" target="_blank" rel="noopener">参考</a></p>
 <h1 id="迷宫寻路"><a href="#迷宫寻路" class="headerlink" title="迷宫寻路"></a>迷宫寻路</h1><ul>
 <li>假设一个探险家被困在了地底的迷宫之中，要从当前位置开始找到一条通往迷宫出口的路径。迷宫可以用一个二维矩阵组成，有的部分是墙，有的部分是路。迷宫之中有的路上还有门，每扇门都在迷宫的某个地方有与之匹配的钥匙，只有先拿到钥匙才能打开门。请设计一个算法，帮助探险家找到脱困的最短路径。如前所述，迷宫是通过一个二维矩阵表示的，每个元素的值的含义如下 0-墙，1-路，2-探险家的起始位置，3-迷宫的出口，大写字母-门，小写字母-对应大写字母所代表的门的钥匙</li>
@@ -11174,7 +11243,16 @@ E(X)&=\int_0^1 x\frac{1}{B(\alpha,\beta)}x^{\alpha-1}(1-x)^{\beta-1}\mathrm{d}x\
 </blockquote>
 </li>
 </ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="最大乘积"><a href="#最大乘积" class="headerlink" title="最大乘积"></a>最大乘积</h1><ul>
+<li>给定一个无序数组，包含正数、负数和0，要求从中找出3个数的乘积，使得乘积最大，要求时间复杂度：O(n)，空间复杂度：O(1)</li>
+<li>输入共2行，第一行包括一个整数n，表示数组长度；第二行为n个以空格隔开的整数，分别为A1,A2, … ,An。</li>
+<li>输出描述：满足条件的最大乘积<blockquote>
+<p>拼多多2018年校招内推编程题</p>
+</blockquote>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        n = int(input())</span><br><span class="line">        lst = list(map(int, input().split()))</span><br><span class="line">        lst.sort()</span><br><span class="line">        <span class="keyword">if</span> lst[<span class="number">0</span>]*lst[<span class="number">1</span>]*lst[<span class="number">-1</span>] &lt; lst[<span class="number">-1</span>]*lst[<span class="number">-2</span>]*lst[<span class="number">-3</span>]:</span><br><span class="line">            print(lst[<span class="number">-1</span>]*lst[<span class="number">-2</span>]*lst[<span class="number">-3</span>])</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            print(lst[<span class="number">0</span>]*lst[<span class="number">1</span>]*lst[<span class="number">-1</span>]) </span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        <span class="keyword">break</span></span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>题库</category>
       </categories>
