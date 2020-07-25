@@ -718,7 +718,7 @@
 </ul>
 ]]></content>
       <categories>
-        <category>Home</category>
+        <category>题库</category>
       </categories>
       <tags>
         <tag>Python</tag>
@@ -12470,13 +12470,13 @@ E(X)&=\int_0^1 x\frac{1}{B(\alpha,\beta)}x^{\alpha-1}(1-x)^{\beta-1}\mathrm{d}x\
 </ul>
 ]]></content>
       <categories>
+        <category>数据结构</category>
         <category>算法</category>
         <category>基础算法</category>
-        <category>数据结构</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>数据结构</tag>
+        <tag>算法</tag>
       </tags>
   </entry>
   <entry>
@@ -12590,13 +12590,13 @@ E(X)&=\int_0^1 x\frac{1}{B(\alpha,\beta)}x^{\alpha-1}(1-x)^{\beta-1}\mathrm{d}x\
 </ul>
 ]]></content>
       <categories>
+        <category>数据结构</category>
         <category>算法</category>
         <category>基础算法</category>
-        <category>数据结构</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>数据结构</tag>
+        <tag>算法</tag>
       </tags>
   </entry>
   <entry>
