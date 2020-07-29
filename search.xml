@@ -605,6 +605,41 @@
       </tags>
   </entry>
   <entry>
+    <title>Data Scientist | 数据埋点</title>
+    <url>/2020/07/30/%E6%95%B0%E6%8D%AE-%E6%95%B0%E6%8D%AE%E5%9F%8B%E7%82%B9/</url>
+    <content><![CDATA[<p><center></center><br><a id="more"></a></p>
+<h1 id="数据埋点"><a href="#数据埋点" class="headerlink" title="数据埋点"></a>数据埋点</h1><blockquote>
+<p>数据埋点是数据产品经理、数据运营以及数据分析师，基于业务需求或产品需求对用户在应用内产生行为的每一个事件对应的页面和位置植入相关代码，并通过采集工具上报统计数据，以便相关人员追踪用户行为，推动产品优化或知道运营的一项工程。 ——<a href="http://www.woshipm.com/pd/3261924.html" target="_blank" rel="noopener">产品埋点答疑指南</a></p>
+</blockquote>
+<h2 id="平台"><a href="#平台" class="headerlink" title="平台"></a>平台</h2><ul>
+<li><strong>移动产品</strong>：经常称之为<strong>移动端</strong>、<strong>M端</strong><ul>
+<li>手机APP</li>
+<li>内嵌H5页面</li>
+<li>小程序</li>
+<li>WQ页面</li>
+<li>……</li>
+</ul>
+</li>
+<li><strong>网页产品</strong>：经常称之为<strong>PC端</strong><ul>
+<li>WEB页面</li>
+<li>PC客户端</li>
+</ul>
+</li>
+<li><strong>移动设备</strong>：智能手环、POS机等各种智能设备、掌上电脑</li>
+<li><strong>服务端</strong>：一般是指服务端服务器资源</li>
+</ul>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
+<li><a href="http://www.woshipm.com/pd/3261924.html" target="_blank" rel="noopener">产品埋点答疑指南</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Data Scientist</category>
+      </categories>
+      <tags>
+        <tag>Data Scientist</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Data Scientist | 数据仓库</title>
     <url>/2020/07/25/%E6%95%B0%E6%8D%AE-%E6%95%B0%E6%8D%AE%E4%BB%93%E5%BA%93/</url>
     <content><![CDATA[<p><center>Data Warehouse</center><br><a id="more"></a></p>
