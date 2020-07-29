@@ -628,6 +628,179 @@
 <li><strong>移动设备</strong>：智能手环、POS机等各种智能设备、掌上电脑</li>
 <li><strong>服务端</strong>：一般是指服务端服务器资源</li>
 </ul>
+<p>各种平台的埋点手段：</p>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: center;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: center;">
+      <th>设备类型</th>
+      <th>展现形式</th>
+      <th>展示形式</th>
+      <th>采集工具</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="2">PC设备</th>
+      <td>PC站</td>
+      <td>WEB页面</td>
+      <td>JS</td>
+    </tr>
+    <tr>
+      <td>PC客户端</td>
+      <td>客户端</td>
+      <td>JS</td>
+    </tr>
+    <tr>
+      <th rowspan="2">移动设备</th>
+      <td>手机App</td>
+      <td>移动应用</td>
+      <td>SDK、http</td>
+    </tr>
+    <tr>
+      <td>App内嵌</td>
+      <td>App内嵌H5页面</td>
+      <td>JS</td>
+    </tr>
+    <tr>
+      <td>M站</td>
+      <td>WEB页面</td>
+      <td>JS</td>
+    </tr>
+    <tr>
+      <td>微信</td>
+      <td>WEB页面</td>
+      <td>JS</td>
+    </tr>
+    <tr>
+      <td>微信小程序</td>
+      <td>WEB页面</td>
+      <td>JS</td>
+    </tr>
+    <tr>
+      <th>服务端</th>
+      <td>服务接口</td>
+      <td>服务接口</td>
+      <td>http</td>
+    </tr>
+    <tr>
+      <th colspan="2">移动终端</th>
+      <td>智能设备</td>
+      <td>移动应用</td>
+      <td>SDL、http</td>
+    </tr>
+    <tr>
+      <td>掌上电脑</td>
+      <td>硬件服务</td>
+      <td>http</td>
+    </tr>
+    <tr>
+  </tr></tbody>
+</table>
+</div>
+
+<h2 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h2><p>按照<u>获取数据的类型</u>以及<u>用户触发行为</u>的不同，可将埋点分为以下几种：</p>
+<h3 id="点击事件"><a href="#点击事件" class="headerlink" title="点击事件"></a>点击事件</h3><p>用户在应用内的每一次点击行为，都可以记为一次点击事件。</p>
+<p>一般通过点击事件，可以统计得到点击PV、点击UV</p>
+<h3 id="曝光事件"><a href="#曝光事件" class="headerlink" title="曝光事件"></a>曝光事件</h3><p><strong>曝光事件</strong>是为了统计应用内的某些局部区域是否被用户有效浏览。</p>
+<blockquote>
+<p>eg：推荐区域、某个按钮</p>
+</blockquote>
+<p>做曝光埋点的时候应该注意：</p>
+<ol>
+<li>要科学、合理地定义有效曝光</li>
+<li>为了不影响页面性能和用户体验，不能在应用内的所有区域都加曝光埋点</li>
+</ol>
+<h3 id="页面事件"><a href="#页面事件" class="headerlink" title="页面事件"></a>页面事件</h3><p><strong>页面事件</strong>通常是指页面的各种维度信息的统计</p>
+<blockquote>
+<p>eg：页面流量PV、页面流量UV</p>
+</blockquote>
+<p>页面事件通常统计的信息包括：</p>
+<ul>
+<li><strong>浏览器信息</strong>：浏览器版本、浏览器语言、浏览器编码、屏幕分辨率等</li>
+<li><strong>访问信息</strong>：用户账号、当前页面URL、上次访问时间、访问时长、页面停留时间等</li>
+<li><strong>来源信息</strong>：</li>
+<li><strong>物品信息</strong></li>
+</ul>
+<h1 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h1><p>埋点的基本流程：</p>
+<ol>
+<li>整理埋点方案</li>
+<li>采集工具植入</li>
+<li>埋点测试</li>
+<li>线上数据跟踪</li>
+</ol>
+<h2 id="整理埋点方案"><a href="#整理埋点方案" class="headerlink" title="整理埋点方案"></a>整理埋点方案</h2><p>通常至少要包含以下几点内容：</p>
+<ul>
+<li><strong>埋点位置</strong>：需要添加埋点相关信息的位置</li>
+<li><strong>埋点标识</strong>：每一个位置上需要设置一个埋点的标识来代表这个点击位<ul>
+<li>必须全站唯一，不能出现重复</li>
+</ul>
+</li>
+<li><strong>埋点参数</strong>：除了正常的流量数据（UV、PV）外，还想看到的数据</li>
+<li><strong>页面名称</strong>：当前埋点索数的页面</li>
+<li><strong>应用标识</strong>：当前应用的唯一标识，也叫站点；用来进行数据归属划分</li>
+</ul>
+<h2 id="采集工具植入"><a href="#采集工具植入" class="headerlink" title="采集工具植入"></a>采集工具植入</h2><ul>
+<li>数据的采集工具通常为埋点代码</li>
+<li>不同的产品形态采取不同的埋点代码植入</li>
+</ul>
+<p>通常有3种：</p>
+<ul>
+<li>JS文件</li>
+<li>SDK</li>
+<li>http清酒</li>
+</ul>
+<h2 id="埋点测试"><a href="#埋点测试" class="headerlink" title="埋点测试"></a>埋点测试</h2><p><strong>埋点测试</strong>是指完成埋点代码植入后，需要对埋点的有效性进行测试</p>
+<p>通常关注以下内容：</p>
+<ul>
+<li>埋点代码是否引入</li>
+<li>点击位以及相关事件参数是否正常加入埋点</li>
+<li>数据能否正常上报</li>
+</ul>
+<h2 id="线上数据跟踪"><a href="#线上数据跟踪" class="headerlink" title="线上数据跟踪"></a>线上数据跟踪</h2><p>埋点上线后，可用对应的数据可视化产品进行产品数据展示，或使用SQL提数看数据。</p>
+<h1 id="意义"><a href="#意义" class="headerlink" title="意义"></a>意义</h1><ul>
+<li>了解用户行为<ul>
+<li>用户的使用习惯</li>
+<li>用户的决策路径</li>
+<li>用户的注意力分布</li>
+</ul>
+</li>
+<li>掌握产品动向<ul>
+<li>产品用户量</li>
+<li>产品所处的生命周期</li>
+</ul>
+</li>
+<li>支持产品决策<ul>
+<li>新功能的上线</li>
+<li>旧功能的迭代优化</li>
+</ul>
+</li>
+</ul>
+<h1 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h1><ul>
+<li>埋点方案的梳理要越早越好，并且与开发同步，以防止相关的埋点参数接口取不到</li>
+<li>埋点一定要测试</li>
+<li>埋点标识要唯一</li>
+<li>埋点方案发生变动要及时同步到各方</li>
+</ul>
+<ul>
+<li><strong>引</strong>：埋点代码是否引入，引入的代码是否与当前产品形态吻合</li>
+<li><strong>埋</strong>：是否产品的所有模块都添加了埋点</li>
+<li><strong>报</strong>：埋点之后数据是否能够正常上报</li>
+<li><strong>落</strong>：上报的数据最后是否落到了对应的表里面</li>
+</ul>
 <h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
 <li><a href="http://www.woshipm.com/pd/3261924.html" target="_blank" rel="noopener">产品埋点答疑指南</a></li>
 </ul>
