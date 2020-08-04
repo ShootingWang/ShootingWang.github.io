@@ -562,17 +562,10 @@
   </entry>
   <entry>
     <title>SQL</title>
-    <url>/2020/04/30/SQL%E9%A2%98%E5%BA%93/</url>
+    <url>/2020/04/30/SQL/</url>
     <content><![CDATA[<center>SQL相关知识积累~</center>
 
 <a id="more"></a>
-<h1 id="通用"><a href="#通用" class="headerlink" title="通用"></a>通用</h1><ul>
-<li><a href="/2020/05/03/sql-1-%E8%8C%83%E5%BC%8F/" title="范式">范式</a></li>
-<li><a href="/2020/05/03/sql-2-%E6%A8%A1%E5%BC%8F/" title="模式">模式</a></li>
-<li><a href="/2020/05/03/sql-3-%E6%95%B0%E6%8D%AE%E5%AE%8C%E6%95%B4%E6%80%A7/" title="数据完整性">数据完整性</a></li>
-<li><a href="/2020/05/28/sql-sql%E8%AF%AD%E5%8F%A5%E6%89%A7%E8%A1%8C%E9%A1%BA%E5%BA%8F/" title="SQL语句执行顺序">SQL语句执行顺序</a>
-</li>
-</ul>
 <h1 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h1><ul>
 <li><a href="/2020/05/22/MySQL/" title="MySQL">MySQL</a>
 </li>
@@ -595,13 +588,57 @@
 <li><a href="/2020/05/25/sql-sql%E8%A7%A3%E6%83%91/" title="《SQL解惑》">《SQL解惑》</a>
 </li>
 </ul>
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1>]]></content>
+<h1 id="通用"><a href="#通用" class="headerlink" title="通用"></a>通用</h1><ul>
+<li><a href="/2020/05/03/sql-1-%E8%8C%83%E5%BC%8F/" title="范式">范式</a></li>
+<li><a href="/2020/05/03/sql-2-%E6%A8%A1%E5%BC%8F/" title="模式">模式</a></li>
+<li><a href="/2020/05/03/sql-3-%E6%95%B0%E6%8D%AE%E5%AE%8C%E6%95%B4%E6%80%A7/" title="数据完整性">数据完整性</a></li>
+<li><a href="/2020/05/28/sql-sql%E8%AF%AD%E5%8F%A5%E6%89%A7%E8%A1%8C%E9%A1%BA%E5%BA%8F/" title="SQL语句执行顺序">SQL语句执行顺序</a>
+</li>
+</ul>
+<h2 id="ORDER-BY"><a href="#ORDER-BY" class="headerlink" title="ORDER BY"></a>ORDER BY</h2><ul>
+<li>用于排序</li>
+<li>默认升序<code>ASC</code>；降序需要在列名后加<code>DESC</code></li>
+<li>对带有排序作用的<code>ORDER BY</code>子句的查询，<code>ORDER BY</code>返回的是一个对象，其中的行按特定的顺序组织在一起，这种对象被称为<strong>游标</strong></li>
+<li><code>ORDER BY</code>子句是唯一能重用列别名的子句<ul>
+<li>这是因为<code>ORDER BY</code>子句是在<code>SELECT</code>子句之后才执行的<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">(8)<span class="keyword">SELECT</span> (<span class="number">9</span>)<span class="keyword">DISTINCT</span> (<span class="number">11</span>) &lt;TOP <span class="keyword">num</span>&gt;&lt;<span class="keyword">SELECT</span> <span class="keyword">list</span>&gt;</span><br><span class="line">(<span class="number">1</span>)<span class="keyword">FROM</span> [left_table]</span><br><span class="line">(<span class="number">3</span>)&lt;JOIN_type&gt; <span class="keyword">JOIN</span> &lt;right_table&gt;</span><br><span class="line">(<span class="number">2</span>)<span class="keyword">ON</span> &lt;join_condition&gt;</span><br><span class="line">(<span class="number">4</span>)<span class="keyword">WHERE</span> &lt;where_condition&gt;</span><br><span class="line">(<span class="number">5</span>)<span class="keyword">GROUP</span> <span class="keyword">BY</span> &lt;group_by_list&gt;</span><br><span class="line">(<span class="number">6</span>)<span class="keyword">WITH</span> &lt;<span class="keyword">CUBE</span> | <span class="keyword">ROLLUP</span>&gt;</span><br><span class="line">(<span class="number">7</span>)<span class="keyword">HAVING</span> &lt;having_condition&gt;</span><br><span class="line">(<span class="number">10</span>)<span class="keyword">ORDER</span> <span class="keyword">BY</span> &lt;order_by_list&gt;;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li>谨慎使用<code>ORDER BY</code>后面接数字的方式来进行排序，尽量使用<code>ORDER BY+列名</code>或<code>ORDER BY+列别名</code><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">  col_a,</span><br><span class="line">  col_b,</span><br><span class="line">  col_c</span><br><span class="line"><span class="keyword">FROM</span> table_1</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>; </span><br><span class="line"><span class="comment">-- 实际按照SELECT后的字段顺序col_a, col_b, col_c进行排序</span></span><br><span class="line"><span class="comment">-- 当查询的列发生改变时，而忘了修改ORDER BY后的数字时，可能会获得错误的查询结果</span></span><br></pre></td></tr></table></figure></li>
+<li>表表达式不能使用<code>ORDER BY</code>进行排序<ul>
+<li><strong>表表达式</strong>包括：<ul>
+<li>视图（VIEW）</li>
+<li>内联表值函数</li>
+<li>派生表（子查询）</li>
+<li>公用表表达式（CTE）</li>
+</ul>
+</li>
+<li>表表达式加了<code>TOP</code>可以使用<code>ORDER BY</code><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">  col_a</span><br><span class="line">  , col_b</span><br><span class="line"><span class="keyword">FROM</span> </span><br><span class="line">(</span><br><span class="line">    <span class="keyword">SELECT</span> TOP <span class="number">5</span> *</span><br><span class="line">    <span class="keyword">FROM</span> table_1</span><br><span class="line">    <span class="keyword">ORDER</span> <span class="keyword">BY</span> col_c</span><br><span class="line">) <span class="keyword">AS</span> t1  <span class="comment">-- 实际返回的是没有固定顺序的表</span></span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> col_a, col_b <span class="keyword">DESC</span>;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
+<li><a href="https://mp.weixin.qq.com/s/5iv1z6SCf0nMyIEWavlyRQ" target="_blank" rel="noopener">ORDER BY的用法</a></li>
+</ul>
+]]></content>
       <categories>
         <category>Home</category>
       </categories>
       <tags>
         <tag>SQL</tag>
         <tag>MySQL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Python | 列表</title>
+    <url>/2020/08/03/python-%E5%88%97%E8%A1%A8/</url>
+    <content><![CDATA[<p><center></center><br><a id="more"></a></p>
+<h1 id="List"><a href="#List" class="headerlink" title="List"></a>List</h1><h2 id="append"><a href="#append" class="headerlink" title="append()"></a>append()</h2><h2 id="pop"><a href="#pop" class="headerlink" title="pop()"></a>pop()</h2>]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
       </tags>
   </entry>
   <entry>
