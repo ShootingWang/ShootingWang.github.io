@@ -28,7 +28,7 @@
 <meta property="og:site_name" content="ShootingWang">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-05-22T12:39:35.000Z">
-<meta property="article:modified_time" content="2020-07-12T14:18:36.414Z">
+<meta property="article:modified_time" content="2020-08-08T15:29:00.928Z">
 <meta property="article:author" content="ShootingWang">
 <meta property="article:tag" content="SQL">
 <meta property="article:tag" content="MySQL">
@@ -247,7 +247,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-07-12 22:18:36" itemprop="dateModified" datetime="2020-07-12T22:18:36+08:00">2020-07-12</time>
+                <time title="修改时间：2020-08-08 23:29:00" itemprop="dateModified" datetime="2020-08-08T23:29:00+08:00">2020-08-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -343,6 +343,280 @@
 </li>
 <li>相对于B-Tree来说，R-Tree的优势在于范围查找</li>
 </ul>
+<h1 id="MySQL自带数据库"><a href="#MySQL自带数据库" class="headerlink" title="MySQL自带数据库"></a>MySQL自带数据库</h1><p>MySQL自带三个数据库：</p>
+<ul>
+<li>information_schema</li>
+<li>performance_schema</li>
+<li>mysql</li>
+</ul>
+<h2 id="information-schema"><a href="#information-schema" class="headerlink" title="information_schema"></a>information_schema</h2><p>提供访问数据库元数据的方式；可称information_schema是一个元数据库。</p>
+<p><strong>元数据</strong>（meta data）：关于数据的数据（data about data）。也可称为“数据词典”、“系统目录”</p>
+<ul>
+<li>数据库名</li>
+<li>表名</li>
+<li>列的数据类型</li>
+<li>访问权限</li>
+<li>……</li>
+</ul>
+<p><strong>常见的表</strong>：</p>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: center;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: center;">
+      <th>表</th>
+      <th>表的含义</th>
+      <th>表中字段</th>
+      <th>字段含义</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="3">schemata</th>
+      <td rowspan="3">提供数据库信息<br>相关命令：SHOW DATABASES;</td>
+      <td>schema_name</td>
+      <td>数据库名</td>
+    </tr>
+    <tr>
+      <td>default_character_set_name</td>
+      <td>字符集</td>
+    </tr>
+    <tr>
+      <td>default_collation_name</td>
+      <td>排序规则</td>
+    </tr>
+    <tr>
+      <th rowspan="5">tables</th>
+      <td rowspan="5">提供表的信息<br>相关命令：SHOW TABLES FROM schema_name;</td>
+      <td>table_schema</td>
+      <td>数据库名</td>
+    </tr>
+    <tr>
+      <td>table_name</td>
+      <td>表名</td>
+    </tr>
+    <tr>
+      <td>table_type</td>
+      <td>表的类型<br>base table, view, system view</td>
+    </tr>
+    <tr>
+      <td>engine</td>
+      <td>存储引擎</td>
+    </tr>
+    <tr>
+      <td>create_time</td>
+      <td>建表时间</td>
+    </tr>
+    <tr>
+      <th rowspan="4">columns</th>
+      <td rowspan="4">提供表中字段信息<br>相关命令：SHOW COLUMNS; 或 DESC TCTEST.EMP</td>
+      <td>schema_schema</td>
+      <td>数据库名</td>
+    </tr>
+    <tr>
+      <td>table_name</td>
+      <td>表名</td>
+    </tr>
+    <tr>
+      <td>column_name</td>
+      <td>字段名</td>
+    </tr>
+    <tr>
+      <td>column_type</td>
+      <td>字段类型</td>
+    </tr>
+    <tr>
+      <th rowspan="6">statistics</th>
+      <td rowspan="6">索引信息<br>相关命令：SHOW INDEX; </td>
+      <td>schema_schema</td>
+      <td>数据库名</td>
+    </tr>
+    <tr>
+      <td>table_name</td>
+      <td>表名</td>
+    </tr>
+    <tr>
+      <td>index_schema</td>
+      <td>数据库名</td>
+    </tr>
+    <tr>
+      <td>index_name</td>
+      <td>索引名</td>
+    </tr>
+    <tr>
+      <td>column_name</td>
+      <td>字段名</td>
+    </tr>
+    <tr>
+      <td>index_type</td>
+      <td>索引类型<br>一般是BTREE</td>
+    </tr>
+    <tr>
+      <th rowspan="5">table_constraints</th>
+      <td rowspan="5">约束信息</td>
+      <td>constraint_schema</td>
+      <td>数据库名</td>
+    </tr>
+    <tr>
+      <td>constraint_name</td>
+      <td>约束名</td>
+    </tr>
+    <tr>
+      <td>table_schema</td>
+      <td>数据库名</td>
+    </tr>
+    <tr>
+      <td>table_name</td>
+      <td>表名</td>
+    </tr>
+    <tr>
+      <td>constraint_type</td>
+      <td>约束类型<br>UNIQUE, PRIMARY KEY, FOREIGN KEY</td>
+    </tr>
+    <tr>
+      <th rowspan="8">key_column_usage</th>
+      <td rowspan="8">外键的参考信息</td>
+      <td>constraint_schema</td>
+      <td>数据库名</td>
+    </tr>
+    <tr>
+      <td>constraint_name</td>
+      <td>约束名</td>
+    </tr>
+    <tr>
+      <td>table_schema</td>
+      <td>数据库名</td>
+    </tr>
+    <tr>
+      <td>table_name</td>
+      <td>表名</td>
+    </tr>
+    <tr>
+      <td>column_name</td>
+      <td>字段名</td>
+    </tr>
+    <tr>
+      <td>referenced_table_schema</td>
+      <td>参考的数据库</td>
+    </tr>
+    <tr>
+      <td>referenced_table_name</td>
+      <td>参考的表</td>
+    </tr>
+    <tr>
+      <td>referenced_column_name</td>
+      <td>参考的列</td>
+    </tr>
+    <tr>
+      <th rowspan="6">routines</th>
+      <td rowspan="6">函数和存储过程</td>
+      <td>specific_name</td>
+      <td>程序名</td>
+    </tr>
+    <tr>
+      <td>routine_schema</td>
+      <td>数据库名</td>
+    </tr>
+    <tr>
+      <td>routine_name</td>
+      <td>程序名</td>
+    </tr>
+    <tr>
+      <td>routine_type</td>
+      <td>程序类型<br>PROCEDURE或FUNCTION</td>
+    </tr>
+    <tr>
+      <td>routine_body</td>
+      <td>函数体</td>
+    </tr>
+    <tr>
+      <td>routine_definition</td>
+      <td>具体的程序语句</td>
+    </tr>
+    <tr>
+      <th rowspan="3">views</th>
+      <td rowspan="3">视图</td>
+      <td>table_schema</td>
+      <td>数据库名</td>
+    </tr>
+    <tr>
+      <td>table_name</td>
+      <td>表名</td>
+    </tr>
+    <tr>
+      <td>view_definition</td>
+      <td>视图定义语句</td>
+    </tr>
+    <tr>
+      <th rowspan="6">triggers</th>
+      <td rowspan="6">触发器<br>相关命令：SHOW TRIGGERS FROM table_name;</td>
+      <td>trigger_schema</td>
+      <td>数据库名</td>
+    </tr>
+    <tr>
+      <td>trigger_name</td>
+      <td>触发器名</td>
+    </tr>
+    <tr>
+      <td>event_object_schema</td>
+      <td>触发的数据库</td>
+    </tr>
+    <tr>
+      <td>event_object_table</td>
+      <td>触发的表</td>
+    </tr>
+    <tr>
+      <td>action_statement</td>
+      <td>触发的语句</td>
+    </tr>
+    <tr>
+      <td>action_timing</td>
+      <td>触发的时机<br>BEFORE或AFTER</td>
+    </tr>
+    <tr>
+      <th>engines</th>
+      <td>当前数据库对InnoDB、Memory、MyISAM等存储引擎的支持情况<br>相关命令：SHOW ENGINES;</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>global_variables</th>
+      <td>服务器变量设置，一些开关和设置<br>相关命令：SHOW GLOBAL VARIABLES;</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>plugins</th>
+      <td>插件列表<br>相关命令：SHOW PLUGINS;</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>processlist</th>
+      <td>正在运行的线程<br>相关命令：SHOW FULL PROCESSLIST;</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+  </tr></tbody>
+</table>
+</div>
+
+
+
+
 <h1 id="时间"><a href="#时间" class="headerlink" title="时间"></a>时间</h1><ul>
 <li>时间不能写为<code>&lt;=&#39;2020-07-12&#39;</code>的形式<ul>
 <li><code>&lt;&#39;2020-07-12&#39;</code>是指2020年07月12日之前，不包括2020年07月12日</li>
@@ -372,6 +646,9 @@
 <h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
 <li><a href="https://mp.weixin.qq.com/s?__biz=MzA3MTg4NjY4Mw==&amp;mid=2457305755&amp;idx=2&amp;sn=764158cf905b0622e1697f51baa718f2&amp;chksm=88a590afbfd219b98bd7d83c2f4ea4d572654b5889eff254bbbb60f2189f61aee393e1801510&amp;mpshare=1&amp;scene=1&amp;srcid=&amp;sharer_sharetime=1590150427096&amp;sharer_shareid=b539221659d6ecf12200314308b58dd3&amp;key=21ed68970b00e8fc75b1e914e6c754e962a5fcec08d9c1e0fb5bfcb82d495aac1ab014508f15a5ebb1eaf6e1c2a2036cecc7516e989e5f1bd3b3615846e67437d7d0ad461bc0ca4d28139dc860680c5b&amp;ascene=1&amp;uin=MjAwNDUzMjgxNw%3D%3D&amp;devicetype=Windows+10+x64&amp;version=62090070&amp;lang=zh_CN&amp;exportkey=AbupEngztSgB4dsmRHvGbpk%3D&amp;pass_ticket=iLa2XiZaCBS2XSrbXAnYFAIdgj9HEiggWqWDoDR8tX5Ckgf6sdWkU3%2BCxbmiJIYM" target="_blank" rel="noopener">9 道 MySQL 面试题</a></li>
 <li><a href="https://mp.weixin.qq.com/s?__biz=MzA3MTg4NjY4Mw==&amp;mid=2457307570&amp;idx=2&amp;sn=c8a3f3f45fa2ed9998be713528272ad9&amp;chksm=88a59b86bfd21290bf9dc79be9bebfe57bffcc1352682b152bb354c7177449021777f6fcb1ca&amp;mpshare=1&amp;scene=24&amp;srcid=&amp;sharer_sharetime=1592959329103&amp;sharer_shareid=b539221659d6ecf12200314308b58dd3&amp;key=41f971365debdfe9cf3f83cd39b1b1e3392a61f125626cee8d56db3cf1d9e8674ec2fb0399a4cedb0f3b12737250e9ccd8423a5f76c71a1e27a8026edf2de8c86538603ff9370d460020772e5dfff60d&amp;ascene=14&amp;uin=MjAwNDUzMjgxNw%3D%3D&amp;devicetype=Windows+10+x64&amp;version=62090529&amp;lang=zh_CN&amp;exportkey=AXttlvqiichHWPtD4HqdOrU%3D&amp;pass_ticket=ws7WEjys7meG8tQvR9%2BINrP5RKEp1Mus1mqNfeaPYCNHYnD2%2FhjK5ZF3mONasy7H" target="_blank" rel="noopener">那些SQL里面踩过的坑</a></li>
+<li><a href="https://www.jianshu.com/p/ea15158f39f7" target="_blank" rel="noopener">MySQL的information_schema库</a></li>
+<li><a href="https://www.cnblogs.com/postnull/p/6697077.html" target="_blank" rel="noopener">MySQL元数据库——information_schema</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/88342863" target="_blank" rel="noopener">MySQL information_schema 详解</a></li>
 </ul>
 
     </div>
@@ -492,7 +769,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#表的类型"><span class="nav-number">1.</span> <span class="nav-text">表的类型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#永久表"><span class="nav-number">1.1.</span> <span class="nav-text">永久表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#临时表"><span class="nav-number">1.2.</span> <span class="nav-text">临时表</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#内存临时表"><span class="nav-number">1.2.1.</span> <span class="nav-text">内存临时表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#磁盘临时表"><span class="nav-number">1.2.2.</span> <span class="nav-text">磁盘临时表</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#视图"><span class="nav-number">1.3.</span> <span class="nav-text">视图</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#索引"><span class="nav-number">2.</span> <span class="nav-text">索引</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#全局索引"><span class="nav-number">2.1.</span> <span class="nav-text">全局索引</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#哈希索引"><span class="nav-number">2.2.</span> <span class="nav-text">哈希索引</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#B-Tree索引"><span class="nav-number">2.3.</span> <span class="nav-text">B-Tree索引</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#R-Tree索引"><span class="nav-number">2.4.</span> <span class="nav-text">R-Tree索引</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#时间"><span class="nav-number">3.</span> <span class="nav-text">时间</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#运算"><span class="nav-number">4.</span> <span class="nav-text">运算</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#不等于"><span class="nav-number">4.1.</span> <span class="nav-text">不等于</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#字符串"><span class="nav-number">5.</span> <span class="nav-text">字符串</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#REPLACE"><span class="nav-number">5.1.</span> <span class="nav-text">REPLACE()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SUBTRING"><span class="nav-number">5.2.</span> <span class="nav-text">SUBTRING()</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#其他"><span class="nav-number">6.</span> <span class="nav-text">其他</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#SET"><span class="nav-number">6.1.</span> <span class="nav-text">SET</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#其他注意事项"><span class="nav-number">7.</span> <span class="nav-text">其他注意事项</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料"><span class="nav-number">8.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#表的类型"><span class="nav-number">1.</span> <span class="nav-text">表的类型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#永久表"><span class="nav-number">1.1.</span> <span class="nav-text">永久表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#临时表"><span class="nav-number">1.2.</span> <span class="nav-text">临时表</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#内存临时表"><span class="nav-number">1.2.1.</span> <span class="nav-text">内存临时表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#磁盘临时表"><span class="nav-number">1.2.2.</span> <span class="nav-text">磁盘临时表</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#视图"><span class="nav-number">1.3.</span> <span class="nav-text">视图</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#索引"><span class="nav-number">2.</span> <span class="nav-text">索引</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#全局索引"><span class="nav-number">2.1.</span> <span class="nav-text">全局索引</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#哈希索引"><span class="nav-number">2.2.</span> <span class="nav-text">哈希索引</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#B-Tree索引"><span class="nav-number">2.3.</span> <span class="nav-text">B-Tree索引</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#R-Tree索引"><span class="nav-number">2.4.</span> <span class="nav-text">R-Tree索引</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#MySQL自带数据库"><span class="nav-number">3.</span> <span class="nav-text">MySQL自带数据库</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#information-schema"><span class="nav-number">3.1.</span> <span class="nav-text">information_schema</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#时间"><span class="nav-number">4.</span> <span class="nav-text">时间</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#运算"><span class="nav-number">5.</span> <span class="nav-text">运算</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#不等于"><span class="nav-number">5.1.</span> <span class="nav-text">不等于</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#字符串"><span class="nav-number">6.</span> <span class="nav-text">字符串</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#REPLACE"><span class="nav-number">6.1.</span> <span class="nav-text">REPLACE()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SUBTRING"><span class="nav-number">6.2.</span> <span class="nav-text">SUBTRING()</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#其他"><span class="nav-number">7.</span> <span class="nav-text">其他</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#SET"><span class="nav-number">7.1.</span> <span class="nav-text">SET</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#其他注意事项"><span class="nav-number">8.</span> <span class="nav-text">其他注意事项</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料"><span class="nav-number">9.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -561,13 +838,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">261k</span>
+    <span title="站点总字数">263k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">3:57</span>
+    <span title="站点阅读时长">3:59</span>
 </div>
 
 
