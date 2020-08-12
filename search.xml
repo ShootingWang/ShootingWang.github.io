@@ -15977,7 +15977,7 @@ E(X)&=\int_0^1 x\frac{1}{B(\alpha,\beta)}x^{\alpha-1}(1-x)^{\beta-1}\mathrm{d}x\
 <h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p>[1] <a href="https://www.google.com/Jupyter" target="_blank" rel="noopener">首页缩略图</a><br>[2] <a href="https://www.cnblogs.com/bella1102/p/11032519.html" target="_blank" rel="noopener">Jupyter Notebook 如何让一个Cell 可以同时输出多个语句的值？</a><br>[3] <a href="https://www.sohu.com/a/219989263_774914" target="_blank" rel="noopener">Jupyter Notebook/Lab中添加R Kernel的详细步骤</a><br>[4] <a href="https://blog.csdn.net/create115721/article/details/79243641" target="_blank" rel="noopener">Jupyter Notebook的27个窍门，技巧和快捷键</a><br>[5] <a href="https://mp.weixin.qq.com/s/5sFkpI4eEodVQuLya3K5rw" target="_blank" rel="noopener">九大神招，让Python里数据分析神器Jupyter，完美升华</a></p>
 ]]></content>
       <categories>
-        <category>Home</category>
+        <category>Python</category>
       </categories>
       <tags>
         <tag>Python</tag>
