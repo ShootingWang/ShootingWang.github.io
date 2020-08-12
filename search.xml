@@ -307,7 +307,7 @@
 </ul>
 ]]></content>
       <categories>
-        <category>Home</category>
+        <category>机器学习</category>
       </categories>
       <tags>
         <tag>算法</tag>
@@ -1290,7 +1290,7 @@
   </entry>
   <entry>
     <title>数据分析 | 用户体验要素</title>
-    <url>/2020/06/23/%E7%94%A8%E6%88%B7%E4%BD%93%E9%AA%8C%E8%A6%81%E7%B4%A0/</url>
+    <url>/2020/06/23/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-%E7%94%A8%E6%88%B7%E4%BD%93%E9%AA%8C%E8%A6%81%E7%B4%A0/</url>
     <content><![CDATA[<center>《用户体验要素》学习笔记</center>
 <a id="more"></a>
 
@@ -3102,7 +3102,7 @@ strategy
 </ul>
 ]]></content>
       <categories>
-        <category>算法</category>
+        <category>机器学习</category>
       </categories>
       <tags>
         <tag>算法</tag>
@@ -6240,7 +6240,7 @@ dtype: int64
 </ul>
 ]]></content>
       <categories>
-        <category>算法</category>
+        <category>机器学习</category>
       </categories>
       <tags>
         <tag>机器学习</tag>
@@ -6260,7 +6260,7 @@ dtype: int64
 </ul>
 ]]></content>
       <categories>
-        <category>算法</category>
+        <category>机器学习</category>
       </categories>
       <tags>
         <tag>机器学习</tag>
@@ -6334,7 +6334,7 @@ dtype: int64
 </ul>
 ]]></content>
       <categories>
-        <category>算法</category>
+        <category>机器学习</category>
       </categories>
       <tags>
         <tag>算法</tag>
@@ -6360,7 +6360,7 @@ dtype: int64
 </ul>
 ]]></content>
       <categories>
-        <category>算法</category>
+        <category>机器学习</category>
       </categories>
       <tags>
         <tag>算法</tag>
@@ -6842,7 +6842,7 @@ dtype: int64
 </ul>
 ]]></content>
       <categories>
-        <category>算法</category>
+        <category>机器学习</category>
       </categories>
       <tags>
         <tag>算法</tag>
@@ -6902,7 +6902,7 @@ dtype: int64
 </ul>
 ]]></content>
       <categories>
-        <category>算法</category>
+        <category>机器学习</category>
       </categories>
       <tags>
         <tag>算法</tag>
@@ -7068,7 +7068,7 @@ dtype: int64
 </ul>
 ]]></content>
       <categories>
-        <category>算法</category>
+        <category>机器学习</category>
       </categories>
       <tags>
         <tag>算法</tag>
@@ -7745,7 +7745,7 @@ dtype: int64
 </ul>
 ]]></content>
       <categories>
-        <category>算法</category>
+        <category>机器学习</category>
       </categories>
       <tags>
         <tag>算法</tag>
@@ -10461,7 +10461,7 @@ _var 53963204.0
 </ul>
 ]]></content>
       <categories>
-        <category>算法</category>
+        <category>机器学习</category>
       </categories>
       <tags>
         <tag>算法</tag>
@@ -10636,7 +10636,7 @@ _var 53963204.0
 </ul>
 ]]></content>
       <categories>
-        <category>算法</category>
+        <category>机器学习</category>
       </categories>
       <tags>
         <tag>算法</tag>
@@ -14737,7 +14737,7 @@ E(X)&=\int_0^1 x\frac{1}{B(\alpha,\beta)}x^{\alpha-1}(1-x)^{\beta-1}\mathrm{d}x\
 </ul>
 ]]></content>
       <categories>
-        <category>算法</category>
+        <category>机器学习</category>
       </categories>
       <tags>
         <tag>算法</tag>
@@ -16459,7 +16459,7 @@ E(X)&=\int_0^1 x\frac{1}{B(\alpha,\beta)}x^{\alpha-1}(1-x)^{\beta-1}\mathrm{d}x\
 
 <h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1>]]></content>
       <categories>
-        <category>算法</category>
+        <category>机器学习</category>
       </categories>
       <tags>
         <tag>算法</tag>
@@ -16858,7 +16858,7 @@ E(X)&=\int_0^1 x\frac{1}{B(\alpha,\beta)}x^{\alpha-1}(1-x)^{\beta-1}\mathrm{d}x\
 </ul>
 ]]></content>
       <categories>
-        <category>算法</category>
+        <category>机器学习</category>
       </categories>
       <tags>
         <tag>算法</tag>
