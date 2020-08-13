@@ -10521,7 +10521,7 @@ _var 53963204.0
   </entry>
   <entry>
     <title>大数据</title>
-    <url>/2020/05/11/%E5%A4%A7%E6%95%B0%E6%8D%AE/</url>
+    <url>/2020/05/11/%E6%95%B0%E6%8D%AE-%E5%A4%A7%E6%95%B0%E6%8D%AE/</url>
     <content><![CDATA[<p><center>Big Data</center><br><a id="more"></a></p>
 <h1 id="Big-Data"><a href="#Big-Data" class="headerlink" title="Big Data"></a>Big Data</h1><ul>
 <li>What is Big Data?</li>
@@ -10581,6 +10581,9 @@ _var 53963204.0
 <li><a href="https://www.ibm.com/blogs/watson-health/the-5-vs-of-big-data/" target="_blank" rel="noopener">IBM-The 5 V’s of big data</a></li>
 </ul>
 ]]></content>
+      <categories>
+        <category>Data Scientist</category>
+      </categories>
   </entry>
   <entry>
     <title>Machine Learning | 集成方法</title>
@@ -10761,7 +10764,7 @@ _var 53963204.0
       </tags>
   </entry>
   <entry>
-    <title>生成式模型 &amp; 判别式模型</title>
+    <title>Machine Learning | 生成式模型 &amp; 判别式模型</title>
     <url>/2020/05/11/%E7%94%9F%E6%88%90%E5%BC%8F%E6%A8%A1%E5%9E%8B-%E5%88%A4%E5%88%AB%E5%BC%8F%E6%A8%A1%E5%9E%8B/</url>
     <content><![CDATA[<p><center>Generative Model & Discriminative Model</center><br><a id="more"></a></p>
 <h1 id="生成式模型"><a href="#生成式模型" class="headerlink" title="生成式模型"></a>生成式模型</h1><p>生成式模型（Generative Model）：生成数据的分布的模型（有多个模型，将测试用例分别放进各个模型，最后比较其结果，选择最优的作为label）</p>
@@ -12397,7 +12400,7 @@ E(X)&=\int_0^1 x\frac{1}{B(\alpha,\beta)}x^{\alpha-1}(1-x)^{\beta-1}\mathrm{d}x\
 <blockquote>
 <p>Data Structures by definition, the way that the data is organized in a computer’s memory very similar to the way the different kind of milks.<br>from <a href="https://courses.edx.org/courses/course-v1:Microsoft+DEV285x+3T2019/course/" target="_blank" rel="noopener">Algorithms and Data Structures</a> </p>
 </blockquote>
-<h2 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h2><p>数据结构研究涉及的内容有：</p>
+<p>数据结构研究涉及的内容有：</p>
 <ol>
 <li>数据的<strong>逻辑结构</strong><ul>
 <li>逻辑结构是指数据之间的逻辑关系</li>
@@ -12416,7 +12419,8 @@ E(X)&=\int_0^1 x\frac{1}{B(\alpha,\beta)}x^{\alpha-1}(1-x)^{\beta-1}\mathrm{d}x\
 <ul>
 <li>三者是贯穿数据结构的主线，相辅相成</li>
 </ul>
-<h1 id><a href="#" class="headerlink" title=" "></a> </h1><ul>
+<p>数据结构：</p>
+<ul>
 <li>顺序表、哈希表、单链表表示几种数据结构，既描述<u>逻辑结构</u>，也描述<u>存储结构</u>和<u>数据运算</u>。</li>
 <li><strong>有序表</strong>是指关键字有序的线性表，可以<u>链式存储</u>，也可以<u>顺序存储</u>，仅描述了元素之间的逻辑关系，属于<u>逻辑结构</u>。</li>
 </ul>
