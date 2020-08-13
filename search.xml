@@ -660,6 +660,7 @@
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">lst = [<span class="number">3</span>, <span class="number">42</span>, <span class="number">34</span>, <span class="number">12</span>, <span class="number">2</span>, <span class="number">1</span>, <span class="number">5</span>]</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> heapq</span><br><span class="line"></span><br><span class="line">heapq.nsmallest(<span class="number">4</span>, lst)</span><br><span class="line"><span class="comment"># [1, 2, 3, 5]</span></span><br></pre></td></tr></table></figure>
 <h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
 <li><a href="https://mp.weixin.qq.com/s/tMok3YAKvMWnI3eW46OYlg" target="_blank" rel="noopener">Python 优先级队列</a></li>
+<li><a href="https://www.jianshu.com/p/801318c77ab5" target="_blank" rel="noopener">Python标准库模块之heapq</a></li>
 </ul>
 ]]></content>
       <categories>
