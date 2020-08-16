@@ -11723,7 +11723,7 @@ n_{.j}\\
 <h1 id="str"><a href="#str" class="headerlink" title="str()"></a>str()</h1><h2 id="endswith"><a href="#endswith" class="headerlink" title=".endswith()"></a>.endswith()</h2><p>判断字符串是否以指定字符或子字符串结尾，常用于判断文件类型<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">str1 = <span class="string">'Hello, world'</span></span><br><span class="line">str2 = <span class="string">'rld'</span></span><br><span class="line">str1.endswith(str2)  <span class="comment">## str1是否以str2结尾</span></span><br><span class="line"><span class="comment"># True</span></span><br><span class="line"></span><br><span class="line">str1.endswith(<span class="string">'wor'</span>, <span class="number">3</span>)  <span class="comment">## （从左数）从索引为3的字符开始检测是否以"wor"结尾</span></span><br><span class="line"><span class="comment"># False</span></span><br><span class="line"></span><br><span class="line">str1.endswith(<span class="string">'wor'</span>, <span class="number">3</span>, <span class="number">10</span>)  </span><br><span class="line"><span class="comment">## （从左数）从索引为3的字符开始、到索引为10(不包括10)检测是否以"wor"结尾</span></span><br><span class="line"><span class="comment">## str1中逗号后含空格（算一个字符）</span></span><br><span class="line"><span class="comment"># True</span></span><br><span class="line"></span><br><span class="line">str1.endswith((<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'d'</span>))  <span class="comment">## 匹配元组，只要有一个满足就行</span></span><br><span class="line"><span class="comment"># True</span></span><br></pre></td></tr></table></figure></p>
 <h2 id="r"><a href="#r" class="headerlink" title="r"></a>r</h2><p>表示 <code>&#39;&#39;</code>内的字符串默认不转义<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">print(<span class="string">'Hello,\nWorld'</span>)  <span class="comment">## ''内的\n发生了转义（换行）</span></span><br><span class="line"><span class="comment">#Hello,</span></span><br><span class="line"><span class="comment">#World</span></span><br><span class="line"></span><br><span class="line">print(<span class="string">r'Hello,\nWorld'</span>)   <span class="comment">## ''内的\n视为字符串（不转义）</span></span><br><span class="line"><span class="comment">#Hello,\nWorld</span></span><br></pre></td></tr></table></figure></p>
 <h1 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h1><p>正则表达式：对字符串类型数据进行匹配、提取等操作的逻辑公式。</p>
-<p><strong>元字符</strong>（Meta Characters）：标点等特殊字符。主要有<code>. $ * + ? | \ ^ [ ] { } ( )</code>等。</p>
+<h2 id="元字符"><a href="#元字符" class="headerlink" title="元字符"></a>元字符</h2><p><strong>元字符</strong>（Meta Characters）：标点等特殊字符。主要有<code>. $ * + ? | \ ^ [ ] { } ( )</code>等。</p>
 <div class="table-container">
 <table>
 <thead>
@@ -11764,10 +11764,26 @@ n_{.j}\\
 <td style="text-align:center"><code>\</code></td>
 <td style="text-align:left">将一个字符标记为一个特殊字符/原义字符，或一个向后引用、或一个八进制转义符。<br>例如：<code>\n</code>表示换行符，而<code>n</code>表示字母“n”；<code>\\</code>表示右斜杠“\”；<code>\t</code>表示制表符。</td>
 </tr>
+<tr>
+<td style="text-align:center"><code>^</code></td>
+<td style="text-align:left">取非匹配</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>[]</code></td>
+<td style="text-align:left">选择方括号例的任意一个。<br>例如，<code>[0-2]</code>与<code>[012]</code>完全等价；<code>[Rr]</code>表示匹配字母R和r。</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>{}</code></td>
+<td style="text-align:left">前面的字符或表达式的重复次数。<br>例如，<code>{5,12}</code>表示重复的次数不能小于5，不能多于12，否则都不匹配。</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>()</code></td>
+<td style="text-align:left">提取匹配的字符串。<br>例如,<code>(\\s*)</code>表示连续空格的字符串</td>
+</tr>
 </tbody>
 </table>
 </div>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="数量词"><a href="#数量词" class="headerlink" title="数量词"></a>数量词</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
 <li><a href="https://www.cnblogs.com/Allen-rg/p/10501125.html" target="_blank" rel="noopener">Python endswith() 函数</a></li>
