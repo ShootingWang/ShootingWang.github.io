@@ -11735,12 +11735,34 @@ n_{.j}\\
 <tbody>
 <tr>
 <td style="text-align:center"><code>.</code></td>
-<td style="text-align:left">匹配除换行符（<code>\n</code>，<code>\r</code>）之外的任何单个字符。<br>若要匹配包括<code>\n</code>在内的任何字符，则应使用`(.</td>
+<td style="text-align:left">匹配除换行符（<code>\n</code>，<code>\r</code>）之外的任何单个字符。<br>若要匹配包括<code>\n</code>在内的任何字符，则应使用`(.\</td>
 <td>\n)`。</td>
 </tr>
 <tr>
 <td style="text-align:center"><code>$</code></td>
 <td style="text-align:left">匹配输入字符串的结束位置。<br>如果设置了regex对象的Multiline属性，则<code>$</code>也匹配<code>\n</code>或<code>\r</code>之前的位置。如果<code>$</code>置于character class （即<code>[$]</code>）中，则消除了其特殊意义。<br>例如，<code>[akm$]</code>示匹配<code>a</code>、<code>k</code>、<code>m</code>或<code>$</code>。</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>*</code></td>
+<td style="text-align:left">匹配<code>*</code>前面的子表达式零次或多次。<br>等价于 <code>{0,}</code>。</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>+</code></td>
+<td style="text-align:left">匹配<code>+</code>前面的子表达式一次或多次；至少匹配一次。<br>等价于<code>{1,}</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>?</code></td>
+<td style="text-align:left">匹配<code>?</code>前面的子表达式零次或一次。<br>等价于<code>{0,1}</code></td>
+</tr>
+<tr>
+<td style="text-align:center">`</td>
+<td style="text-align:left">`</td>
+<td>表示可选项（或），即`</td>
+<td>`前后的表达式任选一个。</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>\</code></td>
+<td style="text-align:left">将一个字符标记为一个特殊字符/原义字符，或一个向后引用、或一个八进制转义符。<br>例如：<code>\n</code>表示换行符，而<code>n</code>表示字母“n”；<code>\\</code>表示右斜杠“\”；<code>\t</code>表示制表符。</td>
 </tr>
 </tbody>
 </table>
