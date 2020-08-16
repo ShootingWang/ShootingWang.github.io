@@ -6116,32 +6116,28 @@ n_{.j}\\
       <td>匹配?前面的子表达式零次或一次。<br>等价于{0,1}</td>
     </tr>
     <tr>
-      <th>\</th>
+      <th>|</th>
       <td>表示可选项（或），即 | 前后的表达式任选一个。</td>
     </tr>
     <tr>
-      <th></th>
-      <td></td>
+      <th>\</th>
+      <td>将一个字符标记为一个特殊字符/原义字符，或一个向后引用、或一个八进制转义符。<br>例如：\n表示换行符，而 n 表示字母“n”； \ 表示右斜杠“\”；\t表示制表符。</td>
     </tr>
     <tr>
-      <th></th>
-      <td></td>
+      <th>^</th>
+      <td>取非匹配</td>
     </tr>
     <tr>
-      <th></th>
-      <td></td>
+      <th>[]</th>
+      <td>选择方括号例的任意一个。<br>例如，[0-2]与[012]完全等价，[Rr] 表示匹配字母R和r</td>
     </tr>
     <tr>
-      <th></th>
-      <td></td>
+      <th>{}</th>
+      <td>前面的字符或表达式的重复次数。<br>例如，{5,12}表示重复的次数不能小于5，不能多于12，否则都不匹配</td>
     </tr>
     <tr>
-      <th></th>
-      <td></td>
-    </tr>
-    <tr>
-      <th></th>
-      <td></td>
+      <th>()</th>
+      <td>提取匹配的字符串。<br>例如，(\\s*)表示连续空格的字符串</td>
     </tr>
     <tr>
   </tr></tbody>
@@ -6184,23 +6180,22 @@ n_{.j}\\
 </tr>
 <tr>
 <td style="text-align:center"><code>\</code></td>
-<td style="text-align:left">将一个字符标记为一个特殊字符/原义字符，或一个向后引用、或一个八进制转义符。<br>例如：<code>\n</code>表示换行符，而<code>n</code>表示字母“n”；<code>\\</code>表示右斜杠“\”；<code>\t</code>表示制表符。</td>
+<td style="text-align:left"></td>
 </tr>
 <tr>
 <td style="text-align:center"><code>^</code></td>
-<td style="text-align:left">取非匹配</td>
+<td style="text-align:left"></td>
 </tr>
 <tr>
 <td style="text-align:center"><code>[]</code></td>
-<td style="text-align:left">选择方括号例的任意一个。<br>例如，<code>[0-2]</code>与<code>[012]</code>完全等价；<code>[Rr]</code>表示匹配字母R和r。</td>
+<td style="text-align:left">。</td>
 </tr>
 <tr>
 <td style="text-align:center"><code>{}</code></td>
-<td style="text-align:left">前面的字符或表达式的重复次数。<br>例如，<code>{5,12}</code>表示重复的次数不能小于5，不能多于12，否则都不匹配。</td>
+<td style="text-align:left">。</td>
 </tr>
 <tr>
 <td style="text-align:center"><code>()</code></td>
-<td style="text-align:left">提取匹配的字符串。<br>例如,<code>(\\s*)</code>表示连续空格的字符串</td>
 </tr>
 </tbody>
 </table>
