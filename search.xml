@@ -11755,9 +11755,9 @@ n_{.j}\\
 <td style="text-align:left">匹配<code>?</code>前面的子表达式零次或一次。<br>等价于<code>{0,1}</code></td>
 </tr>
 <tr>
-<td style="text-align:center">`</td>
+<td style="text-align:center">`\</td>
 <td style="text-align:left">`</td>
-<td>表示可选项（或），即`</td>
+<td>表示可选项（或），即`\</td>
 <td>`前后的表达式任选一个。</td>
 </tr>
 <tr>
