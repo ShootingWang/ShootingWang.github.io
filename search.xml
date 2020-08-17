@@ -651,8 +651,52 @@
 <li>分类目录</li>
 <li>搜索引擎</li>
 </ul>
-<p>和搜索引擎一样，推荐系统也是一种帮助用户快速发现有用信息的工具。和搜索引擎不同的是，推荐系统不需要用户提供明确的需求，而是通过分析用户的历史行为给用户的兴趣建模，从而主动给用户推荐能够满足他们行区和需求的信息。</p>
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1>]]></content>
+<p>和搜索引擎一样，推荐系统也是一种帮助用户快速发现有用信息的工具。和搜索引擎不同的是，推荐系统不需要用户提供明确的需求，而是通过分析用户的历史行为给用户的兴趣建模，从而主动给用户推荐能够满足他们兴趣和需求的信息。</p>
+<p>推荐系统就是自动联系用户和物品的一种工具，能够在信息过载的环境中帮助用户发现令他们感兴趣的信息，也能将信息推送给对它们感兴趣的用户。</p>
+<h2 id="社会化推荐"><a href="#社会化推荐" class="headerlink" title="社会化推荐"></a>社会化推荐</h2><p>社会化推荐（Social Recommendation）：让好友给自己推荐物品</p>
+<h2 id="基于物品的推荐"><a href="#基于物品的推荐" class="headerlink" title="基于物品的推荐"></a>基于物品的推荐</h2><p>基于物品的推荐（item-based method）：给用户推荐那些和他们之前喜欢的物品相似的物品</p>
+<h2 id="基于内容的推荐"><a href="#基于内容的推荐" class="headerlink" title="基于内容的推荐"></a>基于内容的推荐</h2><p>基于内容的推荐（content-based filtering）：</p>
+<h2 id="基于协同过滤的推荐"><a href="#基于协同过滤的推荐" class="headerlink" title="基于协同过滤的推荐"></a>基于协同过滤的推荐</h2><p>基于协同过滤的推荐（collaborative filtering）：</p>
+<h1 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h1><p>几乎所有的推荐系统应用都是由以下3部分构成：</p>
+<ol>
+<li>前台的展示页面</li>
+<li>后台的日志系统</li>
+<li>推荐算法系统</li>
+</ol>
+<p>广泛利用推荐系统的领域包括：</p>
+<ol>
+<li><p>电子商务</p>
+<ul>
+<li>亚马逊（基于物品的推荐算法）<ul>
+<li>给用户推荐那些和他们之前喜欢的物品相似的物品</li>
+<li>给用户推荐他们的Facebook好友在亚马逊上喜欢的物品</li>
+<li>相关推荐列表：在商品信息下展示相关的商品；可打包销售（cross selling）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>电影和视频</p>
+<ul>
+<li>Netflix（基于物品的推荐算法）<ul>
+<li>Netflix Prize推荐系统比赛</li>
+<li>Netflix电影推荐</li>
+</ul>
+</li>
+<li>YouTube（基于物品的推荐算法）<ul>
+<li>个性化推荐的点击率明显高于热门视频的点击率</li>
+</ul>
+</li>
+<li>Hulu</li>
+</ul>
+</li>
+<li><p>音乐</p>
+</li>
+<li>社交网络</li>
+<li>阅读</li>
+<li>基于位置的服务</li>
+<li>个性化邮件和广告</li>
+</ol>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><style>.post-copyright{display:none}</style>]]></content>
       <categories>
         <category>数据分析</category>
       </categories>
