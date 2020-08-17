@@ -30,7 +30,7 @@
 <meta property="og:description" content="《推荐系统实践》读书笔记">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-08-16T14:56:07.000Z">
-<meta property="article:modified_time" content="2020-08-17T13:50:48.710Z">
+<meta property="article:modified_time" content="2020-08-17T14:36:19.566Z">
 <meta property="article:author" content="ShootingWang">
 <meta property="article:tag" content="数据分析">
 <meta property="article:tag" content="推荐系统">
@@ -254,7 +254,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-17 21:50:48" itemprop="dateModified" datetime="2020-08-17T21:50:48+08:00">2020-08-17</time>
+                <time title="修改时间：2020-08-17 22:36:19" itemprop="dateModified" datetime="2020-08-17T22:36:19+08:00">2020-08-17</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -319,8 +319,21 @@
 </ol>
 <p>广泛利用推荐系统的领域包括：</p>
 <ol>
-<li><p>电子商务</p>
-<ul>
+<li>电子商务</li>
+<li>电影和视频</li>
+<li>音乐</li>
+<li>社交网络</li>
+<li>阅读</li>
+<li>基于位置的服务</li>
+<li>个性化邮件</li>
+<li>个性化广告</li>
+</ol>
+<p>个性化推荐的成功应用需要两个条件：</p>
+<ol>
+<li>存在信息过载：因为如果用户可以很容易地从所有物品中找到喜欢的物品，就不需要个性化推荐了</li>
+<li>用户大部分时候没有特别明确的需求：因为用户如果有明确的需求，可以直接通过搜索引擎找到感兴趣的物品</li>
+</ol>
+<h2 id="电子商务"><a href="#电子商务" class="headerlink" title="电子商务"></a>电子商务</h2><ul>
 <li>亚马逊（基于物品的推荐算法）<ul>
 <li>给用户推荐那些和他们之前喜欢的物品相似的物品</li>
 <li>给用户推荐他们的Facebook好友在亚马逊上喜欢的物品</li>
@@ -328,12 +341,12 @@
 </ul>
 </li>
 </ul>
-</li>
-<li><p>电影和视频</p>
-<ul>
+<h2 id="电影和视频"><a href="#电影和视频" class="headerlink" title="电影和视频"></a>电影和视频</h2><ul>
 <li>Netflix（基于物品的推荐算法）<ul>
-<li>Netflix Prize推荐系统比赛</li>
+<li>Netflix Prize推荐系统比赛<ul>
 <li>Netflix电影推荐</li>
+</ul>
+</li>
 </ul>
 </li>
 <li>YouTube（基于物品的推荐算法）<ul>
@@ -342,15 +355,135 @@
 </li>
 <li>Hulu</li>
 </ul>
+<h2 id="音乐"><a href="#音乐" class="headerlink" title="音乐"></a>音乐</h2><p>个性化音乐网络电台</p>
+<ul>
+<li>Pandora（基于内容的推荐）<ul>
+<li>根据专家标注的“基因”计算歌曲的相似度，并给用户推荐和他之前喜欢的音乐基因相似的其他音乐</li>
+<li>使用了Facebook的推荐API（Instant Personalization）</li>
+</ul>
 </li>
-<li><p>音乐</p>
+<li>Last.fm<ul>
+<li>记录了所有用户的听歌记录</li>
+<li>主要利用用户行为计算歌曲的相似度</li>
+</ul>
 </li>
-<li>社交网络</li>
-<li>阅读</li>
-<li>基于位置的服务</li>
-<li>个性化邮件和广告</li>
+<li>豆瓣电台</li>
+<li>网易云私人FM</li>
+</ul>
+<h2 id="社交网络"><a href="#社交网络" class="headerlink" title="社交网络"></a>社交网络</h2><p>社交网络的个性化推荐系统主要应用在以下3个方面：</p>
+<ol>
+<li>利用用户的社交网络信息对用户进行个性化的物品推荐</li>
+<li>信息流的会话推荐</li>
+<li>给用户推荐好友</li>
 </ol>
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><style>.post-copyright{display:none}</style>
+<ul>
+<li>Facebook<ul>
+<li>宝贵数据：（1）用户之间的社交网络关系（2）用户的偏好信息</li>
+<li>推荐API，Instant Personalization，根据用户好友喜欢的信息，给用户推荐他们好友最喜欢的物品</li>
+<li>开发了EdgeRank算法，对用户的会话进行排序</li>
+</ul>
+</li>
+</ul>
+<h2 id="个性化阅读"><a href="#个性化阅读" class="headerlink" title="个性化阅读"></a>个性化阅读</h2><ul>
+<li>Google Reader<ul>
+<li>允许用户关注自己感兴趣的人并看到所关注用户分享的文章</li>
+</ul>
+</li>
+<li>Zite<ul>
+<li>收集用户对文章的偏好信息</li>
+</ul>
+</li>
+<li>Flipboard</li>
+<li>新闻阅读网站Digg<ul>
+<li>根据用户的历史计算用户之间的兴趣相似度，然后给用户推荐和他兴趣相似的用户喜欢的文章</li>
+</ul>
+</li>
+</ul>
+<h2 id="基于位置的服务"><a href="#基于位置的服务" class="headerlink" title="基于位置的服务"></a>基于位置的服务</h2><ul>
+<li>位置是一种很重要的上下文信息</li>
+<li>往往与社交网络相结合</li>
+</ul>
+<h2 id="个性化邮件"><a href="#个性化邮件" class="headerlink" title="个性化邮件"></a>个性化邮件</h2><ul>
+<li>个性化邮件推荐系统Tapestry<ul>
+<li>通过分析用户阅读邮件的历史行为和习惯对新邮件进行重新排序，提高用户的工作效率</li>
+</ul>
+</li>
+<li>Google Gmail优先级收件箱功能<ul>
+<li>通过分析用户对邮件的历史行为，找到用户感兴趣的邮件，展示在一个专门的收件箱里</li>
+</ul>
+</li>
+</ul>
+<h2 id="个性化广告"><a href="#个性化广告" class="headerlink" title="个性化广告"></a>个性化广告</h2><p>广告定向投放（Ad Targeting）：将广告投放给潜在客户群</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:left">狭义个性化推荐</th>
+<th style="text-align:left">个性化广告投放</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">着重于</td>
+<td style="text-align:left">帮助用户找到可能令他们感兴趣的物品</td>
+<td style="text-align:left">帮助广告找到可能对它们感兴趣的用户</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:left">以用户为核心</td>
+<td style="text-align:left">以广告为核心</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>目前的<strong>个性化广告投放技术</strong>主要分为3种：</p>
+<ol>
+<li><strong>上下文广告</strong>：通过分析用户正在浏览的网页内容，投放和网页内容相关的广告<ul>
+<li>谷歌的Adsense</li>
+</ul>
+</li>
+<li><strong>搜索广告</strong>：通过分析用户在当前会话中的搜索记录，判断用户的搜索目的，投放和用户目的相关的广告</li>
+<li><strong>个性化展示广告</strong>：我们经常在很多网站看到大量展示广告，它们是根据用户的兴趣，对不同用户投放不同的展示广告<ul>
+<li>雅虎</li>
+</ul>
+</li>
+</ol>
+<h1 id="评测"><a href="#评测" class="headerlink" title="评测"></a>评测</h1><p>一个完整的推荐系统一般存在3个<strong>参与方</strong>：</p>
+<ol>
+<li><strong>用户</strong>：推荐系统要满足用户的需求，给用户推荐那些他们感兴趣的物品；好的推荐系统不仅仅能够准确预测用户的行为，而且能够扩展用户的视野，帮助用户发现那些他们可能会感兴趣，但却不那么容易发现的东西</li>
+<li><strong>物品提供者</strong>：推荐系统要让所有物品都能够被推荐给对其感兴趣的用户</li>
+<li><strong>提供推荐系统的网站</strong>：好的推荐系统设计，能够让推荐系统本身收集到高质量的用户反馈，不断完善推荐的质量，增加用户和网站的交互，提高网站的收入</li>
+</ol>
+<p>在评测一个推荐系统时，需要同时考虑三方的利益。</p>
+<h2 id="实验方法"><a href="#实验方法" class="headerlink" title="实验方法"></a>实验方法</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">方法</th>
+<th style="text-align:left">优点</th>
+<th style="text-align:left">缺点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">离线实验</td>
+<td style="text-align:left">1. 不需要对实际系统的控制权<br>2. 不需要用户参与实验 <br>3. 速度快，可以测试大量算法</td>
+<td style="text-align:left">1. 无法计算商业上关注的指标<br>2. 离线实验的指标和商业指标存在差距</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="离线实验"><a href="#离线实验" class="headerlink" title="离线实验"></a>离线实验</h3><p>离线实验（offline experiment）的的方法一般由如下几个步骤构成：</p>
+<ol>
+<li>通过日志系统获得用户行为数据，并按照一定格式生成一个标准的数据集</li>
+<li>将数据集按照一定的规则分成训练集和测试集</li>
+<li>在训练集上训练用户兴趣模型，在测试集上进行预测</li>
+<li>通过事先定义的离线指标评测算法在测试集上的预测结果</li>
+</ol>
+<h3 id="用户调查"><a href="#用户调查" class="headerlink" title="用户调查"></a>用户调查</h3><p>用户调查（user study）</p>
+<h3 id="在线实验"><a href="#在线实验" class="headerlink" title="在线实验"></a>在线实验</h3><p>在线实验（online experiment）</p>
+<h2 id="评测指标"><a href="#评测指标" class="headerlink" title="评测指标"></a>评测指标</h2><h3 id="准确度"><a href="#准确度" class="headerlink" title="准确度"></a>准确度</h3><h3 id="覆盖度"><a href="#覆盖度" class="headerlink" title="覆盖度"></a>覆盖度</h3><h3 id="新颖度"><a href="#新颖度" class="headerlink" title="新颖度"></a>新颖度</h3><h3 id="惊喜度"><a href="#惊喜度" class="headerlink" title="惊喜度"></a>惊喜度</h3><h3 id="信任度"><a href="#信任度" class="headerlink" title="信任度"></a>信任度</h3><h3 id="透明度"><a href="#透明度" class="headerlink" title="透明度"></a>透明度</h3><h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><style>.post-copyright{display:none}</style>
     </div>
 
     
@@ -466,7 +599,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#推荐系统"><span class="nav-number">1.</span> <span class="nav-text">推荐系统</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#社会化推荐"><span class="nav-number">1.1.</span> <span class="nav-text">社会化推荐</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基于物品的推荐"><span class="nav-number">1.2.</span> <span class="nav-text">基于物品的推荐</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基于内容的推荐"><span class="nav-number">1.3.</span> <span class="nav-text">基于内容的推荐</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基于协同过滤的推荐"><span class="nav-number">1.4.</span> <span class="nav-text">基于协同过滤的推荐</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#应用"><span class="nav-number">2.</span> <span class="nav-text">应用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料"><span class="nav-number">3.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#推荐系统"><span class="nav-number">1.</span> <span class="nav-text">推荐系统</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#社会化推荐"><span class="nav-number">1.1.</span> <span class="nav-text">社会化推荐</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基于物品的推荐"><span class="nav-number">1.2.</span> <span class="nav-text">基于物品的推荐</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基于内容的推荐"><span class="nav-number">1.3.</span> <span class="nav-text">基于内容的推荐</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基于协同过滤的推荐"><span class="nav-number">1.4.</span> <span class="nav-text">基于协同过滤的推荐</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#应用"><span class="nav-number">2.</span> <span class="nav-text">应用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#电子商务"><span class="nav-number">2.1.</span> <span class="nav-text">电子商务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#电影和视频"><span class="nav-number">2.2.</span> <span class="nav-text">电影和视频</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#音乐"><span class="nav-number">2.3.</span> <span class="nav-text">音乐</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#社交网络"><span class="nav-number">2.4.</span> <span class="nav-text">社交网络</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#个性化阅读"><span class="nav-number">2.5.</span> <span class="nav-text">个性化阅读</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基于位置的服务"><span class="nav-number">2.6.</span> <span class="nav-text">基于位置的服务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#个性化邮件"><span class="nav-number">2.7.</span> <span class="nav-text">个性化邮件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#个性化广告"><span class="nav-number">2.8.</span> <span class="nav-text">个性化广告</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#评测"><span class="nav-number">3.</span> <span class="nav-text">评测</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#实验方法"><span class="nav-number">3.1.</span> <span class="nav-text">实验方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#离线实验"><span class="nav-number">3.1.1.</span> <span class="nav-text">离线实验</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用户调查"><span class="nav-number">3.1.2.</span> <span class="nav-text">用户调查</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在线实验"><span class="nav-number">3.1.3.</span> <span class="nav-text">在线实验</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#评测指标"><span class="nav-number">3.2.</span> <span class="nav-text">评测指标</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#准确度"><span class="nav-number">3.2.1.</span> <span class="nav-text">准确度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#覆盖度"><span class="nav-number">3.2.2.</span> <span class="nav-text">覆盖度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#新颖度"><span class="nav-number">3.2.3.</span> <span class="nav-text">新颖度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#惊喜度"><span class="nav-number">3.2.4.</span> <span class="nav-text">惊喜度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#信任度"><span class="nav-number">3.2.5.</span> <span class="nav-text">信任度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#透明度"><span class="nav-number">3.2.6.</span> <span class="nav-text">透明度</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料"><span class="nav-number">4.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -535,13 +668,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">274k</span>
+    <span title="站点总字数">275k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">4:09</span>
+    <span title="站点阅读时长">4:10</span>
 </div>
 
 
