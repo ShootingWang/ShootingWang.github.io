@@ -7731,11 +7731,12 @@ dtype: int64
 <script type="math/tex; mode=display">\mathrm{Cost}(h_\theta(X),y)=\left\{
   \begin{array}{ll}
   -\log{h_\theta(X)},& \mathrm{if}\quad y=1\\
-  -\log{\left(1-h_\theta(X)\right)}, & \mathrm{if }\quady=0
+  -\log{\left(1-h_\theta(X)\right)}, & \mathrm{if }\quad y=0
   \end{array}
   \right.</script><p>即</p>
 <script type="math/tex; mode=display">\mathrm{Cost}(h_\theta(X),y)=-\left[y\log{h_\theta(X)}+(1-y)\log{\left(1-h_\theta(X)\right)} \right]</script><p>该式被称为<strong>交叉熵代价函数</strong>（cross entropy cost function）。</p>
-<p>对于训练集的所有样本(样本量为$n$)来说，共同造成的损失函数的均值为<br>\begin{aligned}<br>H_\theta(X)&amp;=\frac{1}{n}\sum_{i=1}^n\mathrm{Cost}\left(h_\theta(X^{(i)}),y^{(i)} \right)\\<br>&amp;= -\frac{1}{n}\sum_{i=1}^n\left[y^{(i)}\log{h_\theta(X^{(i)})}+(1-y^{(i)})\log{\left(1-h_\theta(X^{(i)}\right) \right]<br>\end{aligned}</p>
+<p>对于训练集的所有样本(样本量为$n$)来说，共同造成的损失函数的均值为</p>
+<p>\begin{aligned}<br>H_\theta(X)&amp;=\frac{1}{n}\sum_{i=1}^n\mathrm{Cost}\left(h_\theta(X^{(i)}),y^{(i)} \right)\\<br>&amp;= -\frac{1}{n}\sum_{i=1}^n\left[y^{(i)}\log{h_\theta(X^{(i)})}+(1-y^{(i)})\log{\left(1-h_\theta(X^{(i)}\right) \right]<br>\end{aligned}</p>
 <p>如何求解逻辑回归方程中的参数？通常使用极大似然法。</p>
 <h3 id="极大似然法"><a href="#极大似然法" class="headerlink" title="极大似然法"></a>极大似然法</h3><p>$n$个独立样本的似然函数为</p>
 <script type="math/tex; mode=display">L(\theta)=\Pi_{i=1}^nP(y_i|x_i;\theta)=\Pi_{i=1}^nh_\theta(x_i)^{y_i}\left[1-h_\theta(x_i) \right]^{1-y_i}</script><p>对数似然函数为<br>\begin{equation}<br>\begin{aligned}<br>  l(\theta)=\log{L(\theta)}&amp;=\sum_{i=1}^n\left\{y_i\log{h_\theta(x_i)}+(1-y_i)\log{\left[1-h_\theta(x_i) \right]}\right\}\\<br>  &amp;= \sum_{i=1}^n\left\{y_i\theta^Tx_i-\log{\left[1+e^{\theta^Tx_i} \right]}\right\}<br>\end{aligned}<br>\end{equation}<br>其中</p>
