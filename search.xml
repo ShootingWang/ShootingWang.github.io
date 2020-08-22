@@ -13373,6 +13373,9 @@ E(X)&=\int_0^1 x\frac{1}{B(\alpha,\beta)}x^{\alpha-1}(1-x)^{\beta-1}\mathrm{d}x\
 <li>k值一般选取1，3，5，7等较小的值</li>
 <li>可以通过交叉验证来选取最优的k值</li>
 </ul>
+<div class="note default">
+            <p>在large-scale且sparse的数据分析中，KNN的k个最近邻应该如何选择？<br>A. 随机选择<br>B. L1-norm最近的<br>C. L2-norm最近的<br>D.不用KNN</p><p>答案：D. 不用KNN</p><ul><li>KNN需要存储所有的样本</li><li>KNN需要进行繁重的距离计算量</li></ul><p>所以不适合大规模的稀疏的数据<br><a href="https://www.nowcoder.com/questionTerminal/e744eccb59194771916a15b772851d73?source=relative" target="_blank" rel="noopener">题目来源</a></p>
+          </div>
 <h2 id="用途"><a href="#用途" class="headerlink" title="用途"></a>用途</h2><ul>
 <li>分类</li>
 <li>回归</li>
