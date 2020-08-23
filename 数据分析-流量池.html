@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon2.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon2.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"github.com","root":"/","scheme":"Pisces","version":"8.0.0-rc.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"valine","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+<link rel="stylesheet" href="/js/prism/prism.css">
+
+  <meta name="description" content="《流量池》读书笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据分析 | 流量池">
+<meta property="og:url" content="https://github.com/ShootingWang/ShootingWang.github.io/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-%E6%B5%81%E9%87%8F%E6%B1%A0.html">
+<meta property="og:site_name" content="ShootingWang">
+<meta property="og:description" content="《流量池》读书笔记">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-08-15T14:22:31.000Z">
+<meta property="article:modified_time" content="2020-08-16T07:49:38.005Z">
+<meta property="article:author" content="ShootingWang">
+<meta property="article:tag" content="数据分析">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://github.com/ShootingWang/ShootingWang.github.io/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-%E6%B5%81%E9%87%8F%E6%B1%A0.html">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>数据分析 | 流量池 | ShootingWang</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><script type="text/javascript" color="0,0,0" opacity='0.5' zIndex="-1" count="99" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+  </script>
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+        <span class="toggle-line toggle-line-first"></span>
+        <span class="toggle-line toggle-line-middle"></span>
+        <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">ShootingWang</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-update">
+
+    <a href="/update/" rel="section"><i class="fa fa-list-ul fa-fw"></i>更新</a>
+
+  </li>
+        <li class="menu-item menu-item-tool">
+
+    <a href="/tools/" rel="section"><i class="fa fa-tools fa-fw"></i>工具</a>
+
+  </li>
+        <li class="menu-item menu-item-treasure">
+
+    <a href="/treasure/" rel="section"><i class="fa fa-gem fa-fw"></i>资源</a>
+
+  </li>
+        <li class="menu-item menu-item-pool">
+
+    <a href="/pool/" rel="section"><i class="fa fa-book fa-fw"></i>题库</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/ShootingWang" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+    <!-- echarts -->
+    <script type="text/javascript" src="/js/src/echarts.common.js"></script>
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://github.com/ShootingWang/ShootingWang.github.io/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-%E6%B5%81%E9%87%8F%E6%B1%A0.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ShootingWang">
+      <meta itemprop="description" content="无猫病重症患者">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ShootingWang">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          数据分析 | 流量池
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-08-15 22:22:31" itemprop="dateCreated datePublished" datetime="2020-08-15T22:22:31+08:00">2020-08-15</time>
+            </span>
+
+          
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-16 15:49:38" itemprop="dateModified" datetime="2020-08-16T15:49:38+08:00">2020-08-16</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/" itemprop="url" rel="index"><span itemprop="name">数据分析</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-%E6%B5%81%E9%87%8F%E6%B1%A0.html#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-%E6%B5%81%E9%87%8F%E6%B1%A0.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p><center>《流量池》读书笔记</center><br><a id="more"></a></p>
+<h1 id="获取流量的必备工具"><a href="#获取流量的必备工具" class="headerlink" title="获取流量的必备工具"></a>获取流量的必备工具</h1><ol>
+<li>品牌<ul>
+<li>最稳定的流量来源</li>
+</ul>
+</li>
+<li>微信<ul>
+<li>社会化营销的流量高地</li>
+</ul>
+</li>
+<li>数字广告<ul>
+<li>流量转化品效合一的关键</li>
+</ul>
+<ol>
+<li>搜索广告：以关键词为核心</li>
+<li>社交媒体广告</li>
+</ol>
+</li>
+</ol>
+<h2 id="品牌"><a href="#品牌" class="headerlink" title="品牌"></a>品牌</h2><p>品牌广告怎么做才能获得实效？</p>
+<blockquote class="blockquote-center">
+            <i class="fa fa-quote-left"></i>
+            <p>定位符号塑品牌<br>场景触点做实效</p>
+
+            <i class="fa fa-quote-right"></i>
+          </blockquote>
+<h3 id="定位"><a href="#定位" class="headerlink" title="定位"></a>定位</h3><ol>
+<li><p>对立型定位</p>
+<ul>
+<li>通常会使用“更”、“比”、“没有”、“增加”、“不是什么，而是什么”的形式</li>
+</ul>
+<blockquote>
+<ul>
+<li>百度更懂中文——巩固百度的中文搜索地位</li>
+<li>不是所有的牛奶都叫特仑苏——突出特仑苏奶中贵族的特质</li>
+</ul>
+</blockquote>
+</li>
+<li><p>USP定位</p>
+<ul>
+<li>对产品进行物理属性的定位，找出产品独特的销售价值主张</li>
+<li>通常使用场景化口号</li>
+<li>明确场景，明确利益点</li>
+</ul>
+<blockquote>
+<ul>
+<li>今年过节不收礼啊，收礼只收脑白金</li>
+<li>怕上火就喝王老吉</li>
+<li>经常用脑，多喝六个核桃</li>
+<li>斯达舒：胃痛、胃酸、胃胀</li>
+<li>OPPO：充电五分钟，通话两小时</li>
+</ul>
+</blockquote>
+</li>
+<li><p>升维定位</p>
+<ul>
+<li>完全不和对手在一个水平面上进行差异化竞争，而是找到一个更高的维度创造新的蓝海品类市场</li>
+<li>引导和创造用户的新的需求</li>
+</ul>
+</li>
+</ol>
+<h3 id="符号"><a href="#符号" class="headerlink" title="符号"></a>符号</h3><ol>
+<li>视觉符号：产品的logo、包装、人物代言</li>
+<li>听觉符号：口号、韵曲</li>
+</ol>
+<h3 id="场景营销"><a href="#场景营销" class="headerlink" title="场景营销"></a>场景营销</h3><p>场景营销：为产品找到具体的消费环境，包括时间、地点、心情、状态</p>
+<ul>
+<li>场景营销是让品牌能够迅速接地气、带流量、出效果的关键</li>
+</ul>
+<h3 id="接触点"><a href="#接触点" class="headerlink" title="接触点"></a>接触点</h3><p>品牌接触点：品牌和用户能够接触的地方</p>
+<ul>
+<li>快消品的接触点：产品包装、促销人员等</li>
+<li>服务产品的接触点：装修、造型、服务员的着装、话术等</li>
+</ul>
+<h2 id="微信"><a href="#微信" class="headerlink" title="微信"></a>微信</h2><ul>
+<li>是企业宣传的一个出口</li>
+<li>也是社会营销的重要平台<br>微信该怎样实现流量改造来发挥最大的转化效率呢？</li>
+</ul>
+<blockquote class="blockquote-center">
+            <i class="fa fa-quote-left"></i>
+            <p>官方严肃摆架子<br>不如轻快网感说人话<br>上了微信就能买<br>销售实时能转化<br>创意技术加福利<br>期期做到十万加</p>
+
+            <i class="fa fa-quote-right"></i>
+          </blockquote>
+<p>“上了微信就能买”——对于微信运营，首先一定要实现企业的产品功能；通过微信实现业务转化</p>
+<p>企业在做微信流量转化时的必不可少的三要素为：</p>
+<ol>
+<li>创意<ul>
+<li>可以解决流量吸引的问题</li>
+</ul>
+</li>
+<li>技术<ul>
+<li>在创意的基础上，增加一些交互技术，让创意互动趣味更高、分享力度更大</li>
+</ul>
+</li>
+<li>福利<ul>
+<li>在日常创意的基础上，加上一些福利、奖品、好玩的东西，刺激大家去分享，使传播扩散的更快</li>
+</ul>
+</li>
+</ol>
+<h2 id="数字广告"><a href="#数字广告" class="headerlink" title="数字广告"></a>数字广告</h2><p>靠谱的数字广告投放形式：</p>
+<ol>
+<li>搜索渠道<ul>
+<li>企业快速获得流量的低成本入口</li>
+<li>搜索营销中的核心手段是<strong>搜索引擎营销</strong>（SEM）</li>
+</ul>
+</li>
+<li>原生广告</li>
+<li>落地页</li>
+</ol>
+<blockquote class="blockquote-center">
+            <i class="fa fa-quote-left"></i>
+            <p>SEM SEO<br>检索原则要跟紧<br>数据动态要追踪<br>信息流广告更融入<br>朋友圈广告没得说<br>LSB和排期<br>效果品牌都抓牢<br>落地页<br>落地页<br>落地页<br>重要事情说三遍<br>临门一脚很关键<br>简单直白要有效<br>用户一看就明了<br>注册购买留资料<br>关键信息就够了</p>
+
+            <i class="fa fa-quote-right"></i>
+          </blockquote>
+<h3 id="搜索渠道"><a href="#搜索渠道" class="headerlink" title="搜索渠道"></a>搜索渠道</h3><h4 id="搜索引擎营销"><a href="#搜索引擎营销" class="headerlink" title="搜索引擎营销"></a>搜索引擎营销</h4><p>搜索引擎营销（SEM）渠道的主要资源是各大搜索引擎的流量。</p>
+<p>移动互联网端的推广渠道分为：</p>
+<ol>
+<li>关键词广告<ul>
+<li>百度搜索</li>
+<li>搜狗搜索</li>
+<li>360搜索</li>
+<li>神马搜索</li>
+</ul>
+</li>
+<li>展示类广告<ul>
+<li>百度联盟</li>
+<li>搜狗网盟</li>
+</ul>
+</li>
+</ol>
+<p>一般是在投放前进行趋势分期，关注数据动态，找到波峰和波谷出现的时间，并分析原因。</p>
+<p>关键词更换是SEM的重要环节，也是控制营销效果的关键因素。企业要根据投放情况，不断结合产品特性和实际情况，为关键词制定账户策略进行调整，找到最佳匹配。</p>
+<h4 id="搜索引擎优化"><a href="#搜索引擎优化" class="headerlink" title="搜索引擎优化"></a>搜索引擎优化</h4><p>搜索引擎优化（SEO）：投入比较少、效果也比较好的营销搜索方式。为了从搜索引擎中获得更多免费流量，从网站结构、内容建设方案、用户互动传播这些方面进行合理规划。</p>
+<p>SEO可以免费任意点击，可以规避百度的恶意搜索。</p>
+<h4 id="应用商店优化"><a href="#应用商店优化" class="headerlink" title="应用商店优化"></a>应用商店优化</h4><p>应用商店优化（ASO）：利用应用商店的排名和搜索规则，让APP更容易被用户搜索到。</p>
+<ul>
+<li>面对的是主动搜索应用的用户，用户更加真实准确</li>
+<li>可以提高品牌APP的露出频次，提升下载量</li>
+</ul>
+<h3 id="原生广告"><a href="#原生广告" class="headerlink" title="原生广告"></a>原生广告</h3><p>原生广告：把广告变成内容，通过场景化、定制化、融合性的内容和当前页面的环境整合，实现一体化的阅读体验。即常说的信息流广告。</p>
+<p>要实现信息流广告的效果最大化，主要得抓住有吸引力的标题和精美又生活化的配图，更加融入内容本身。</p>
+<p>微信朋友圈：最贵的信息流广告。借助LBS（Location Based Services，基于位置的服务）技术，朋友圈推广可以精确定位周围三到五公里的人群，适合线下有实体店的零售商家。</p>
+<p>LBS定投广告是一种竞价投放机制，如果抢的人太多，出价再高也拿不了太多的流量。可以选择<strong>排期品牌广告</strong>，可以提前锁定曝光量，提前冻结账户里面的预定排期金额，是一种保价保量的合约购买方式。</p>
+<p>排期广告形式更多，支持图文、视频广告，单次投放金额5万起步，适合想针对目标人群快速增加品牌曝光的企业。</p>
+<h3 id="落地页"><a href="#落地页" class="headerlink" title="落地页"></a>落地页</h3><ul>
+<li>落地页是数字广告转化的第一生产力。</li>
+<li>落地页一定要从产品和营销的整体策略出发去考虑如何提高用户的浏览量、留存时间、转化率，都要不厌其烦地反复推敲。</li>
+<li>在设计落地页时，要把“尽可能收集有效的用户信息”作为第一要义</li>
+</ul>
+<p>落地页的逻辑结构有6个构成要素：</p>
+<ol>
+<li>梳理出核心卖点和品牌活动信息<ul>
+<li>要用最简短的画面构成、最直白的话术，迅速打开和消费者沟通的局面，完成最直接有效的信息传递</li>
+</ul>
+</li>
+<li>品牌的整体印象和产品口碑<ul>
+<li>一张优质的品牌图片胜过一大段文案描述</li>
+<li>构图上要简单直白，同时可以尽量突出其他用户的使用情况，利用从众心理促成更多的用户转化</li>
+</ul>
+</li>
+<li>消费者益处<ul>
+<li>让消费者在浏览瞬间就看到产品能够给他提供什么服务、带来什么价值、有多大的优惠力度让他完成冲动型消费</li>
+</ul>
+</li>
+<li>权威认证<ul>
+<li>降低用户使用的心理门槛，打消用户疑虑</li>
+</ul>
+</li>
+<li>用户留资<ul>
+<li>落地页最核心的作用</li>
+<li>希望用户注册、购买或留下他们的资料，完成流量到用户、再到销售转化的过程</li>
+</ul>
+</li>
+<li>索取有效信息<ul>
+<li>一定不要在落地页索取不需要的信息，给用户添加负担</li>
+</ul>
+</li>
+</ol>
+<h1 id="获取流量的进阶工具"><a href="#获取流量的进阶工具" class="headerlink" title="获取流量的进阶工具"></a>获取流量的进阶工具</h1><p>内容流量运营和再发掘</p>
+<ol>
+<li>裂变营销<ul>
+<li>从存量找增量的核心获客手段</li>
+</ul>
+<ol>
+<li>裂变强调分享</li>
+<li>后付奖励：将原先拉新获客的广告费用，分解成用户推荐的奖励费用和新用户注册的奖励费用，可以降低企业的广告投放风险</li>
+<li>裂变是最低成本的获客之道，是以存量找增量的核心手段</li>
+</ol>
+</li>
+<li>跨界营销<ul>
+<li>流量与流量间的对碰升华</li>
+</ul>
+<ol>
+<li>能够丰富品牌的内涵，增加品牌受众的新鲜度和丰富度</li>
+<li>和同等量级的品牌抱团，可以让双方的粉丝交叉流量户籍，实现双方平台价值利用最大化</li>
+<li>是个以低成本获得流量的快捷方式</li>
+</ol>
+</li>
+<li>事件营销<ul>
+<li>以小博大，撬动流量增长的杠杆手段</li>
+</ul>
+<ol>
+<li>能够迅速打开知名度，聚焦关注</li>
+<li>能够以小博大，节约大量的媒体投放费用</li>
+<li>但现在用户对于刷屏级的事件内容越来越挑剔，以小博大的难度变大，营销的投入也越来越大，效果不一定能够和销量挂钩</li>
+</ol>
+</li>
+<li>直播营销<ul>
+<li>值得关注的新的营销流量入口</li>
+</ul>
+<ol>
+<li>可以承载广告片插播、品牌logo曝光、品牌slogan口播等形式的硬广告</li>
+<li>也可以进行富有看点的内容营销创意</li>
+</ol>
+</li>
+</ol>
+<h2 id="裂变营销"><a href="#裂变营销" class="headerlink" title="裂变营销"></a>裂变营销</h2><h3 id="关键因素"><a href="#关键因素" class="headerlink" title="关键因素"></a>关键因素</h3><p>裂变营销的三个关键因素：</p>
+<ol>
+<li>种子用户</li>
+<li>裂变诱饵</li>
+<li>分享趣味</li>
+</ol>
+<h4 id="种子用户的选择"><a href="#种子用户的选择" class="headerlink" title="种子用户的选择"></a>种子用户的选择</h4><p>裂变选择的种子用户不等同于产品的初始用户。</p>
+<p>种子用户需要具备三大特征：</p>
+<ol>
+<li>活跃度高、影响力大的忠实用户</li>
+<li>种子用户的质量要高于数量</li>
+<li>种子用户需要反馈产品建议</li>
+</ol>
+<h4 id="裂变诱饵的投放"><a href="#裂变诱饵的投放" class="headerlink" title="裂变诱饵的投放"></a>裂变诱饵的投放</h4><p>最常见的裂变诱饵是福利补贴。此外，还有</p>
+<ul>
+<li>好的创意内容</li>
+<li>创新情景交互</li>
+<li>有趣的玩法</li>
+<li>……</li>
+</ul>
+<p>福利补贴的效果确定性比较大，在福利的诱导下，再加入一些创意进行诱导催化，就更容易撬动用户的社交关系，产生情感关系，才能获得更多的社交流量。</p>
+<h4 id="分享趣味的满足"><a href="#分享趣味的满足" class="headerlink" title="分享趣味的满足"></a>分享趣味的满足</h4><p>除了利益刺激，裂变本身的趣味性是决定其发酵程度的重要一环。</p>
+<p>当裂变的内容有助于塑造个人形象时，也会调动用户的分享热情。</p>
+<blockquote>
+<ul>
+<li>攀登读书会：阅读数量和时长分享</li>
+<li>Keep：训练打卡分享、成就分享</li>
+</ul>
+</blockquote>
+<h3 id="部署裂变系统"><a href="#部署裂变系统" class="headerlink" title="部署裂变系统"></a>部署裂变系统</h3><p>如何部署流量的裂变系统？</p>
+<ol>
+<li>平台部署<ul>
+<li>流量裂变的平台渠道是裂变的土壤</li>
+<li>需要企业针对用户画像进行分析和选择</li>
+</ul>
+</li>
+<li>创意部署<ul>
+<li>流量裂变的创意内容是裂变的催化剂</li>
+<li>有趣、有料的创意内容和IP内容才能撬动用户的社交关系，形成裂变传播</li>
+</ul>
+</li>
+<li>福利部署<ul>
+<li>有品质的福利和复利模式的福利规则设计，能够极大提高用户参与社交裂变的动机，激励用户去打通关系链</li>
+</ul>
+</li>
+<li>技术部署<ul>
+<li>系统化的裂变技术，能够最大限度降低用户参与裂变创业的门槛，提高裂变福利的分享效率，简化用户分享传播裂变的路径</li>
+</ul>
+</li>
+</ol>
+<h3 id="裂变系统"><a href="#裂变系统" class="headerlink" title="裂变系统"></a>裂变系统</h3><p>裂变系统一般包括：</p>
+<ul>
+<li>裂变前端创建系统</li>
+<li>裂变后台配置系统</li>
+<li>裂变福利核销系统</li>
+<li>裂变用户管理系统</li>
+<li>裂变数据管理系统</li>
+<li>裂变平台对接系统</li>
+</ul>
+<h3 id="裂变渠道"><a href="#裂变渠道" class="headerlink" title="裂变渠道"></a>裂变渠道</h3><ol>
+<li>APP</li>
+<li>微信</li>
+<li>线下</li>
+</ol>
+<h4 id="APP裂变"><a href="#APP裂变" class="headerlink" title="APP裂变"></a>APP裂变</h4><p>APP的裂变玩法有：</p>
+<ol>
+<li>拉新奖励</li>
+<li>裂变红包</li>
+<li>IP裂变</li>
+<li>储值裂变<ul>
+<li>增加亲情、账号等功能</li>
+</ul>
+</li>
+<li>个体福利裂变<ul>
+<li>eg：一些付费的产品经过分享朋友圈后，可以免费获得一些小的福利/给用户一次试用机会</li>
+</ul>
+</li>
+<li>团购裂变<ul>
+<li>eg：拼多多得团购裂变</li>
+<li>用户在看到平台低价福利刺激后付款开团和分享社交平台完成病毒式传播</li>
+</ul>
+</li>
+</ol>
+<h4 id="微信裂变"><a href="#微信裂变" class="headerlink" title="微信裂变"></a>微信裂变</h4><p>微信得裂变形式有：</p>
+<ol>
+<li>分销裂变</li>
+<li>众筹裂变<ul>
+<li>砍价活动</li>
+<li>考验品牌在朋友圈的人气和能够动用的社交力量</li>
+</ul>
+</li>
+<li>微信卡券<ul>
+<li>企业通过公众号、二维码、摇一摇、电视摇一摇、周边等渠道进行的卡券投放，可以提高顾客的到店量</li>
+</ul>
+</li>
+<li>微信礼品卡<ul>
+<li>是微信限制开放的一个功能</li>
+<li>用户购买电子礼品卡或商品来赠送好友</li>
+</ul>
+</li>
+</ol>
+<h4 id="线下裂变"><a href="#线下裂变" class="headerlink" title="线下裂变"></a>线下裂变</h4><p>可以通过o2o把流量导到线上，然后通过社交媒体进行分享。</p>
+<blockquote>
+<ul>
+<li>味全的包装裂变</li>
+<li>每日C的拼字瓶</li>
+<li>可口可乐的歌词瓶</li>
+</ul>
+</blockquote>
+<h2 id="跨界营销"><a href="#跨界营销" class="headerlink" title="跨界营销"></a>跨界营销</h2><p>跨界营销的合作通常有4个不同的阶段：</p>
+<ol>
+<li>联合创意品牌<ul>
+<li>双方联合想一些创意、做一些活动</li>
+</ul>
+</li>
+<li>内容平台合作<ul>
+<li>品牌双方可以借助创意的形式植入内容，互推品牌广告，能够实现更深程度的利益互享</li>
+</ul>
+</li>
+<li>产品技术合作<blockquote>
+<p>肯德基与阴阳师合作，在八个城市设置了不同的主题门店，推出阴阳师定制套餐，同时在游戏场景中设置了肯德基门店副本</p>
+</blockquote>
+</li>
+<li>订单交易合作<ul>
+<li>和一些重要的品牌完成内部承担交易和订单分享<blockquote>
+<p>手机上一些预装软件即是软件品牌与手机厂商的合作，订单完成时双方会共同分享</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ol>
+<p>企业一定要重视娱乐资源和金融资源。</p>
+<ol>
+<li>娱乐资源：通过明星、影视、娱乐宣传发行获得的分享、下载和转化的效果远远高于一些纯创意性的传播，可以大大降低企业营销的传播和创意成本</li>
+<li>金融资源：增加收益；企业和金融机构的商务合作形式，通常是企业联合银行通过广告产品绑定联名卡的方式获得银行的采购收入、营销支持。</li>
+</ol>
+<p>怎样才能找到合适的跨界资源？</p>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
+<li><a href="https://book.douban.com/subject/30191451/" target="_blank" rel="noopener">流量池</a></li>
+<li><a href="https://www.jianshu.com/p/70586dd06214" target="_blank" rel="noopener">裂变营销的三个关键因素</a></li>
+</ul>
+
+    </div>
+
+    
+    
+    
+        <div class="reward-container">
+  <div></div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/reward.png" alt="ShootingWang 微信支付">
+        <p>微信支付</p>
+      </div>
+
+  </div>
+</div>
+
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/images/wechat_qrcode.jpg">
+            <span class="icon">
+              <i class="fab fa-weixin"></i>
+            </span>
+
+            <span class="label">WeChat</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/" rel="tag"># 数据分析</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/Algo-%E5%A0%86%E6%8E%92%E5%BA%8F.html" rel="prev" title="Algorithm | 堆排序">
+      <i class="fa fa-chevron-left"></i> Algorithm | 堆排序
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E5%AE%9E%E8%B7%B5.html" rel="next" title="数据分析 | 推荐系统实践">
+      数据分析 | 推荐系统实践 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#获取流量的必备工具"><span class="nav-number">1.</span> <span class="nav-text">获取流量的必备工具</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#品牌"><span class="nav-number">1.1.</span> <span class="nav-text">品牌</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定位"><span class="nav-number">1.1.1.</span> <span class="nav-text">定位</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#符号"><span class="nav-number">1.1.2.</span> <span class="nav-text">符号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#场景营销"><span class="nav-number">1.1.3.</span> <span class="nav-text">场景营销</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#接触点"><span class="nav-number">1.1.4.</span> <span class="nav-text">接触点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#微信"><span class="nav-number">1.2.</span> <span class="nav-text">微信</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数字广告"><span class="nav-number">1.3.</span> <span class="nav-text">数字广告</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#搜索渠道"><span class="nav-number">1.3.1.</span> <span class="nav-text">搜索渠道</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#搜索引擎营销"><span class="nav-number">1.3.1.1.</span> <span class="nav-text">搜索引擎营销</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#搜索引擎优化"><span class="nav-number">1.3.1.2.</span> <span class="nav-text">搜索引擎优化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#应用商店优化"><span class="nav-number">1.3.1.3.</span> <span class="nav-text">应用商店优化</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#原生广告"><span class="nav-number">1.3.2.</span> <span class="nav-text">原生广告</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#落地页"><span class="nav-number">1.3.3.</span> <span class="nav-text">落地页</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#获取流量的进阶工具"><span class="nav-number">2.</span> <span class="nav-text">获取流量的进阶工具</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#裂变营销"><span class="nav-number">2.1.</span> <span class="nav-text">裂变营销</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#关键因素"><span class="nav-number">2.1.1.</span> <span class="nav-text">关键因素</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#种子用户的选择"><span class="nav-number">2.1.1.1.</span> <span class="nav-text">种子用户的选择</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#裂变诱饵的投放"><span class="nav-number">2.1.1.2.</span> <span class="nav-text">裂变诱饵的投放</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#分享趣味的满足"><span class="nav-number">2.1.1.3.</span> <span class="nav-text">分享趣味的满足</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#部署裂变系统"><span class="nav-number">2.1.2.</span> <span class="nav-text">部署裂变系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#裂变系统"><span class="nav-number">2.1.3.</span> <span class="nav-text">裂变系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#裂变渠道"><span class="nav-number">2.1.4.</span> <span class="nav-text">裂变渠道</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#APP裂变"><span class="nav-number">2.1.4.1.</span> <span class="nav-text">APP裂变</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#微信裂变"><span class="nav-number">2.1.4.2.</span> <span class="nav-text">微信裂变</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#线下裂变"><span class="nav-number">2.1.4.3.</span> <span class="nav-text">线下裂变</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#跨界营销"><span class="nav-number">2.2.</span> <span class="nav-text">跨界营销</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料"><span class="nav-number">3.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">ShootingWang</p>
+  <div class="site-description" itemprop="description">无猫病重症患者</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">132</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">52</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/ShootingWang" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;ShootingWang"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2019 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-star"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ShootingWang</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">277k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">4:12</span>
+</div>
+
+
+  <script src='https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js'></script>
+  <script>
+    if (window.mermaid) {
+      mermaid.initialize({theme: 'forest'});
+    }
+  </script>
+
+
+<script src="/js/prism/clipboard.js"></script>
+<script src="/js/prism/prism.js" async></script>
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+  <script defer src="/lib/three/three.min.js"></script>
+    <script defer src="/lib/three/canvas_lines.min.js"></script>
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js', () => {
+    new Valine(Object.assign({
+      el         : '#valine-comments',
+      path       : location.pathname,
+    }, {"enable":true,"appId":"yFKKmB84nH4WRrBC07BTRKLC-gzGzoHsz","appKey":"EFXmIM4ipk11GLk8Stx40FYk","notify":true,"verify":false,"placeholder":"记得填写邮箱哦~这样你就能及时收到我的回复了~","avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"language":null,"visitor":false,"comment_count":true,"recordIP":false,"serverURLs":null}
+    ));
+  }, window.Valine);
+});
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
+</html>
