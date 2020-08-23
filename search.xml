@@ -17418,10 +17418,13 @@ E(X)&=\int_0^1 x\frac{1}{B(\alpha,\beta)}x^{\alpha-1}(1-x)^{\beta-1}\mathrm{d}x\
 <h2 id="搜索"><a href="#搜索" class="headerlink" title="搜索"></a>搜索</h2><ul>
 <li><a href="https://vic.kim/2019/05/22/Hexo%20Next%20%E4%B8%BB%E9%A2%98%E4%B8%AD%E6%B7%BB%E5%8A%A0%E6%9C%AC%E5%9C%B0%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD/" target="_blank" rel="noopener">Hexo Next 主题中添加本地搜索功能</a></li>
 </ul>
+<h2 id="SEO"><a href="#SEO" class="headerlink" title="SEO"></a>SEO</h2><ul>
+<li><a href="http://www.ehcoo.com/seo.html" target="_blank" rel="noopener">【搜索优化】Hexo-next百度和谷歌搜索优化</a></li>
+</ul>
 <h1 id="Markdown"><a href="#Markdown" class="headerlink" title="Markdown"></a>Markdown</h1><h2 id="Font-matter区"><a href="#Font-matter区" class="headerlink" title="Font-matter区"></a>Font-matter区</h2><p>Font-matter区即 两行<code>---</code>之间的内容</p>
 <h2 id="文章摘要"><a href="#文章摘要" class="headerlink" title="文章摘要"></a>文章摘要</h2><p>若想要在博客首页只展示文章的摘要，在摘要与正文中间插入<br><figure class="highlight md"><table><tr><td class="code"><pre><span class="line"><span class="xml"><span class="comment">&lt;!--more--&gt;</span></span></span><br></pre></td></tr></table></figure></p>
 <h2 id="引用站内文章"><a href="#引用站内文章" class="headerlink" title="引用站内文章"></a>引用站内文章</h2><figure class="highlight md"><table><tr><td class="code"><pre><span class="line">&#123;% post_link 站内文章对应的.md名称（不带后缀.md） %&#125;</span><br></pre></td></tr></table></figure>
-<p>如：引用站内文章《<a href="/2020/04/27/Restart/" title="Restart!">Restart!</a>》，对应的文件名是<code>Restart.md</code><br><figure class="highlight md"><table><tr><td class="code"><pre><span class="line">&#123;% post_link Restart %&#125;</span><br></pre></td></tr></table></figure></p>
+<p>如：引用站内文章《<a href="/Restart.html" title="Restart!">Restart!</a>》，对应的文件名是<code>Restart.md</code><br><figure class="highlight md"><table><tr><td class="code"><pre><span class="line">&#123;% post_link Restart %&#125;</span><br></pre></td></tr></table></figure></p>
 <h2 id="居中引用"><a href="#居中引用" class="headerlink" title="居中引用"></a>居中引用</h2><ul>
 <li><a href="https://tding.top/archives/29bfe8c9.html" target="_blank" rel="noopener">Hexo-NexT Tag 插件的使用</a></li>
 </ul>
