@@ -12460,8 +12460,13 @@ n_{.j}\\
 </ul>
 <h3 id="期望"><a href="#期望" class="headerlink" title="期望"></a>期望</h3><p>Expectation</p>
 <script type="math/tex; mode=display">E(X)=\int xf_X(x)\mathrm{d}x</script><h4 id="条件期望"><a href="#条件期望" class="headerlink" title="条件期望"></a>条件期望</h4><p>条件期望/条件均值（Conditional Mean）：</p>
-<script type="math/tex; mode=display">E\left(X|Y=y\right)=\int xf_{X|Y}(x|y)\mathrm{d}x</script><h4 id="重期望"><a href="#重期望" class="headerlink" title="重期望"></a>重期望</h4><p>LIE(Law of Iterated Expectation)</p>
-<script type="math/tex; mode=display">E(X)=E\left[E\left(X|Y\right) \right]</script><script type="math/tex; mode=display">E\left[Z|X \right]=E\left[E\left(Z|Y,X\right)|X \right]</script><script type="math/tex; mode=display">Var(X)=E\left[Var(X|Y) \right]+Var\left[E\left(X|Y \right)\right]</script><h3 id="方差"><a href="#方差" class="headerlink" title="方差"></a>方差</h3><h4 id="条件方差"><a href="#条件方差" class="headerlink" title="条件方差"></a>条件方差</h4><script type="math/tex; mode=display">Var\left(X|Y=y\right)=\int \left[x-E\left(X|Y=y \right)\right]^2f_{X|Y}(x|y)\mathrm{d}x</script><h3 id="协方差"><a href="#协方差" class="headerlink" title="协方差"></a>协方差</h3><p>Covariance</p>
+<script type="math/tex; mode=display">E\left(X|Y=y\right)=\int xf_{X|Y}(x|y)\mathrm{d}x</script><h4 id="重期望"><a href="#重期望" class="headerlink" title="重期望"></a>重期望</h4><p>LIE(Law of Iterated Expectation)<br><div class="note success">
+            <script type="math/tex; mode=display">E(X)=E\left[E\left(X|Y\right) \right]</script><script type="math/tex; mode=display">E\left[Z|X \right]=E\left[E\left(Z|Y,X\right)|X \right]</script><script type="math/tex; mode=display">Var(X)=E\left[Var(X|Y) \right]+Var\left[E\left(X|Y \right)\right]</script>
+          </div></p>
+<div class="note default">
+            <p>证明：</p>
+          </div>
+<h3 id="方差"><a href="#方差" class="headerlink" title="方差"></a>方差</h3><h4 id="条件方差"><a href="#条件方差" class="headerlink" title="条件方差"></a>条件方差</h4><script type="math/tex; mode=display">Var\left(X|Y=y\right)=\int \left[x-E\left(X|Y=y \right)\right]^2f_{X|Y}(x|y)\mathrm{d}x</script><h3 id="协方差"><a href="#协方差" class="headerlink" title="协方差"></a>协方差</h3><p>Covariance</p>
 <h4 id="条件协方差"><a href="#条件协方差" class="headerlink" title="条件协方差"></a>条件协方差</h4><p>Law of Total Conditional Variance：</p>
 <script type="math/tex; mode=display">Cov(Z|X)=Cov\left[E\left(Z|Y,X\right)|X \right]+E\left[Cov\left(Z|Y,X\right)|X \right]</script><h2 id="分布"><a href="#分布" class="headerlink" title="分布"></a>分布</h2><ul>
 <li><strong>概率密度函数</strong>（pdf，probability density function）</li>
