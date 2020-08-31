@@ -9735,9 +9735,9 @@ dtype: int64
             <p>解决问题：</p><ul><li>应用质量评估</li><li>用户质量评估</li><li>用户规模衡量</li></ul>
           </div>
 <ul>
-<li><strong>日流失率</strong>（Day 1 Churn Ratio）=$\frac{t日登录应用但随后7日未登录应用的活跃用户数}{t日活跃用户数}</li>
-<li><strong>周流失率</strong>（Week Churn Ratio）=$\frac{t周登录过应用但随后一周未登录应用的用户数}{t周周活跃用户数}</li>
-<li><strong>月流失率</strong>（Month Churn Ratio）=$\frac{t月登录过应用但随后一个月未登录应用的用户数}{t月月活跃用户数}</li>
+<li><strong>日流失率</strong>（Day 1 Churn Ratio）=$\frac{t日登录应用但随后7日未登录应用的活跃用户数}{t日活跃用户数}$</li>
+<li><strong>周流失率</strong>（Week Churn Ratio）=$\frac{t周登录过应用但随后一周未登录应用的用户数}{t周周活跃用户数}$</li>
+<li><strong>月流失率</strong>（Month Churn Ratio）=$\frac{t月登录过应用但随后一个月未登录应用的用户数}{t月月活跃用户数}$</li>
 </ul>
 <div class="note info">
             <p>解决问题：</p><ul><li>活跃用户生命周期分析</li><li>渠道的变化情况</li><li>版本更新对用户流失的影响评估</li><li>拉动收入的运营手段变化对用户流失的影响评估</li><li>行业比较</li><li>产品中期评估</li></ul>
