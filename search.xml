@@ -690,6 +690,216 @@
       </tags>
   </entry>
   <entry>
+    <title>Spark-数据源</title>
+    <url>/Spark-%E6%95%B0%E6%8D%AE%E6%BA%90.html</url>
+    <content><![CDATA[<p>Spark | 核心数据源</p>
+<p><center>data source</center><br><a id="more"></a></p>
+<h1 id="数据源"><a href="#数据源" class="headerlink" title="数据源"></a>数据源</h1><h2 id="核心数据源"><a href="#核心数据源" class="headerlink" title="核心数据源"></a>核心数据源</h2><p>Spark的6大核心数据源：</p>
+<ul>
+<li>CSV</li>
+<li>JSON</li>
+<li>Parquet</li>
+<li>ORC</li>
+<li>JDBC/ODBC连接</li>
+<li>纯文本文件</li>
+</ul>
+<h2 id="由社区创建的数据源"><a href="#由社区创建的数据源" class="headerlink" title="由社区创建的数据源"></a>由社区创建的数据源</h2><ul>
+<li>Cassandra</li>
+<li>HBase</li>
+<li>MongoDB</li>
+<li>AWS Redshift</li>
+<li>XML</li>
+<li>其他</li>
+</ul>
+<h1 id="数据源API"><a href="#数据源API" class="headerlink" title="数据源API"></a>数据源API</h1><h2 id="Read-API"><a href="#Read-API" class="headerlink" title="Read API"></a>Read API</h2><p>读取数据的核心结构：<code>DataFrameReader.format(...).option(&quot;key&quot;, &quot;value&quot;).schema(...).load()</code></p>
+<ul>
+<li><code>format()</code>：可选，默认情况下Spark将使用Parquet格式</li>
+<li><code>option()</code>：配置键值对来参数化读取数据的方式</li>
+</ul>
+<p>Spark数据读取使用<code>DataFrameReader</code>，通过SparkSession的read属性得到<br><figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line"><span class="module-access"><span class="module"><span class="identifier">Spark</span>.</span></span>read</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight less"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 例子</span></span><br><span class="line"><span class="selector-tag">spark</span><span class="selector-class">.read</span><span class="selector-class">.format</span>(“csv")</span><br><span class="line">    <span class="selector-class">.option</span>(“mode<span class="string">", “FAILFAST"</span>)  <span class="comment">// 读取模式</span></span><br><span class="line">    <span class="selector-class">.option</span>(“inferSchema<span class="string">", “true"</span>)  <span class="comment">// 使用模式推理</span></span><br><span class="line">    <span class="selector-class">.option</span>(“path<span class="string">", “path/to/file(s)"</span>)  <span class="comment">// 设置路径</span></span><br><span class="line">    <span class="selector-class">.schema</span>(someSchema)  <span class="comment">// 模式</span></span><br><span class="line">    <span class="selector-class">.load</span>()</span><br></pre></td></tr></table></figure>
+<h3 id="读取模式"><a href="#读取模式" class="headerlink" title="读取模式"></a>读取模式</h3><p>读取模式指定当Spark遇到错误格式的记录时应采取的操作</p>
+<ul>
+<li>默认是<code>permissive</code></li>
+</ul>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">读取模式</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>permissive</code></td>
+<td style="text-align:left">遇到错误格式的记录时，将所有字段设置为null并将所有错误格式的记录放在名为<code>_corrupt_record</code>字符串列中</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>dropMalformed</code></td>
+<td style="text-align:left">删除包含错误格式记录的行</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>failFast</code></td>
+<td style="text-align:left">遇到错误格式的记录后，立即返回失败</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="Write-API"><a href="#Write-API" class="headerlink" title="Write API"></a>Write API</h2><p>写数据的核心结构：<code>DataFrameWriter.format(...).option(...).partitionBy(...).bucketBy(...).sortBy(...).save()</code></p>
+<ul>
+<li><code>format()</code>：可选，默认情况下Spark将使用Parquet格式</li>
+<li><code>option()</code>：配置写出数据的方式</li>
+<li><code>PartitionBy</code>、<code>bucketBy</code>、<code>sortBy</code>仅适用基于文件的数据源</li>
+</ul>
+<p>Spark的写数据使用<code>DataFrameWriter</code>，通过DataFrame的write属性来获取DataFrameWriter：<br><figure class="highlight applescript"><table><tr><td class="code"><pre><span class="line">dataFrame.<span class="built_in">write</span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight scala"><table><tr><td class="code"><pre><span class="line"><span class="comment">// in Scala</span></span><br><span class="line"><span class="comment">// in Scala</span></span><br><span class="line">dataframe.write.format(“<span class="string">csv")</span></span><br><span class="line"><span class="string">    .option(“mode"</span>, “<span class="type">OVERWRITE</span><span class="string">")  // 保存模式</span></span><br><span class="line"><span class="string">    .option(“dateFormat"</span>, “yyyy-<span class="type">MM</span>-<span class="string">dd")</span></span><br><span class="line"><span class="string">    .option(“path"</span>, “path/to/file(s)<span class="string">")</span></span><br><span class="line"><span class="string">    .save()</span></span><br></pre></td></tr></table></figure>
+<h3 id="保存模式"><a href="#保存模式" class="headerlink" title="保存模式"></a>保存模式</h3><p>保存模式指明如果Spark在指定目标路径发现有其他数据占用时应采取的操作。</p>
+<ul>
+<li>默认是<code>errorIfExists</code></li>
+</ul>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">保存模式</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>append</code></td>
+<td style="text-align:left">将输出文件追加到目标路径已存在的文件上或目录的文件列表</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>overwrite</code></td>
+<td style="text-align:left">将完全覆盖目标路径中已存在的任何数据</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>errorIfExists</code></td>
+<td style="text-align:left">如果目标路径已存在数据或文件，则抛出错误并返回写入操作失败</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>Ignore</code></td>
+<td style="text-align:left">如果目标路径已存在数据或文件，则不执行任何操作</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h1 id="核心数据源-1"><a href="#核心数据源-1" class="headerlink" title="核心数据源"></a>核心数据源</h1><h2 id="CSV"><a href="#CSV" class="headerlink" title="CSV"></a>CSV</h2><p>逗号分隔值（CSV，comma-separated values），一种常见的文本文件格式；每行表示一条记录，用逗号分隔记录中的每个字段</p>
+<ul>
+<li>是最难处理的文件格式之一</li>
+</ul>
+<p><strong>CSV数据源选项</strong>：</p>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: center;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: center;">
+      <th>读取/写入</th>
+      <th>Key</th>
+      <th>取值范围</th>
+      <th>默认值</th>
+      <th>说明</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="5">Read</th>
+      <td>escapeQuotes</td>
+      <td>true, false</td>
+      <td>true</td>
+      <td>声明Spark是否应该转义在行中找到的引号</td>
+    </tr>
+    <tr>
+      <td>maxColumns</td>
+      <td>任意整数</td>
+      <td>20480</td>
+      <td>声明文件中的最大列数</td>
+    </tr>
+    <tr>
+      <td>maxCharsPerColumn</td>
+      <td>任意整数</td>
+      <td>1000000</td>
+      <td>声明列中的最大字符数</td>
+    </tr>
+    <tr>
+      <td>maxMalformedLogPerPartition</td>
+      <td>任意整数</td>
+      <td>10</td>
+      <td>设置Spark将为每个分区记录错误格式的行的最大数目，超出此数目的格式错误的记录将被忽略</td>
+    </tr>
+    <tr>
+      <td>multiline</td>
+      <td>true, false</td>
+      <td>false</td>
+      <td>此选项用于读取多行CSV文件，其中CSV文件中的每个逻辑行可能跨越文件本身中的多行</td>
+    </tr>
+    <tr>
+      <th>Write</th>
+      <td>quoteAll</td>
+      <td>true, false</td>
+      <td>false</td>
+      <td>指定是否将所有值括在引号中，而不是仅转义具有引号字符的值</td>
+    </tr>
+    <tr>
+      <th rowspan="5">Read & Write</th>
+      <td>Compression 或 codec</td>
+      <td>None, uncompressed, bzip2, deflate, gzip, lz4, snappy</td>
+      <td>none</td>
+      <td>声明Spark应该使用什么压缩编码器来读取或写入文件</td>
+    </tr>
+    <tr>
+      <td>dateFormat</td>
+      <td>任何符合Java的SimpleDataFormat式的字符串或字符</td>
+      <td>yyyy-MM-dd</td>
+      <td>日期类型的日期格</td>
+    </tr>
+    <tr>
+      <td>sep</td>
+      <td>任意单个字符串字符</td>
+      <td>,</td>
+      <td>用作每个字段和值的分隔符的单个字符</td>
+    </tr>
+    <tr>
+      <td>header</td>
+      <td>true, false</td>
+      <td>false</td>
+      <td>声明文件中的第一行是否为列的名称</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>true, false</td>
+      <td>false</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>true, false</td>
+      <td>false</td>
+      <td></td>
+    </tr>
+    <tr>
+  </tr></tbody>
+</table>
+</div>
+
+<p>目前到157页</p>
+<h2 id><a href="#" class="headerlink" title=" "></a> </h2>]]></content>
+  </entry>
+  <entry>
     <title>Data Scientist | Spark Learning</title>
     <url>/Spark-Learning.html</url>
     <content><![CDATA[<p><center></center><br><a id="more"></a></p>
@@ -1770,6 +1980,9 @@
 <li><a href></a></li>
 </ul>
 ]]></content>
+      <categories>
+        <category>Data Scientist</category>
+      </categories>
       <tags>
         <tag>Data Scientist</tag>
       </tags>
