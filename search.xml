@@ -746,7 +746,7 @@
 </tbody>
 </table>
 </div>
-<h2 id="Write-API"><a href="#Write-API" class="headerlink" title="Write API"></a>Write API</h2><p>写数据的核心结构：<code>DataFrameWriter.format(...).option(...).partitionBy(...).bucketBy(...).sortBy(...).save()</code></p>
+<h2 id="Write-API"><a href="#Write-API" class="headerlink" title="Write API"></a>Write API</h2><p>写数据的核心结构：<br><code>DataFrameWriter.format(...).option(...).partitionBy(...).bucketBy(...).sortBy(...).save()</code></p>
 <ul>
 <li><code>format()</code>：可选，默认情况下Spark将使用Parquet格式</li>
 <li><code>option()</code>：配置写出数据的方式</li>
