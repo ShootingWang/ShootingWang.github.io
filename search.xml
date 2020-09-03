@@ -5037,7 +5037,7 @@ strategy
 <ul>
 <li>返回值是STRING</li>
 </ul>
-<h2 id="rpad"><a href="#rpad" class="headerlink" title="rpad()"></a>rpad()</h2><p><code>RPAD(STRING s, INT len, STRING pad)</code>：从右边开始对字符串s使用字符串pad进行填充，直到达到len长度为止</p>
+<h2 id="row-number"><a href="#row-number" class="headerlink" title="row_number"></a>row_number</h2><h2 id="rpad"><a href="#rpad" class="headerlink" title="rpad()"></a>rpad()</h2><p><code>RPAD(STRING s, INT len, STRING pad)</code>：从右边开始对字符串s使用字符串pad进行填充，直到达到len长度为止</p>
 <ul>
 <li>如果字符串s本身长度比len大，则多余的部分被去除</li>
 <li>返回值是STRING</li>
