@@ -5017,7 +5017,7 @@ strategy
 <ul>
 <li><p>序号是连续的，且间隔为1</p>
 </li>
-<li><p>其他排序函数：<a href="#row-number">ROW_NUMBER</a>、<a href="#dense_rank">DENSE_RANK</a></p>
+<li><p>其他窗口函数：<a href="#row-number">ROW_NUMBER</a>、<a href="#dense_rank">DENSE_RANK</a></p>
 </li>
 </ul>
 <h2 id="regexp-extract"><a href="#regexp-extract" class="headerlink" title="regexp_extract"></a>regexp_extract</h2><p><code>REGEXP_EXTRACT(STRING s, STRING regex_pattern, STRING index)</code>：抽取字符串st中符合正则表达式regex_pattern的第index个部分的子字符串</p>
