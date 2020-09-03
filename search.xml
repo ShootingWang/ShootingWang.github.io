@@ -4892,6 +4892,10 @@ strategy
 </ul>
 </li>
 </ul>
+<h2 id="dense-rank"><a href="#dense-rank" class="headerlink" title="dense_rank()"></a>dense_rank()</h2><p><code>DENSE_RANK()</code>：生成数据项在分组中的排名，排名相等的名次一样，序号<strong>不会</strong>在中间留下空白</p>
+<ul>
+<li><a href="##rank(">RANK()</a>)：生成数据项在分组中的排名，排名相等的名次一样，序号<strong>会</strong>在中间留下空白</li>
+</ul>
 <h2 id="encode"><a href="#encode" class="headerlink" title="encode()"></a>encode()</h2><p><code>ENCODE(STRING str, STRING charset)</code>：使用指定的字符集charset将字符串str编码成二进制值</p>
 <ul>
 <li>若任一输入参数为NULL，则结果为NULL</li>
@@ -5009,8 +5013,12 @@ strategy
 <li>返回值是STRING</li>
 </ul>
 <h2 id="rand"><a href="#rand" class="headerlink" title="rand()"></a>rand()</h2><p>产生随机数<br><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 分桶抽样</span></span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> numbers</span><br><span class="line"><span class="keyword">TABLESAMPLE</span>(<span class="keyword">BUCKET</span> <span class="number">3</span> <span class="keyword">OUT</span> <span class="keyword">OF</span> <span class="number">10</span> <span class="keyword">ON</span> <span class="keyword">RAND</span>()) s;</span><br><span class="line"><span class="comment">-- 分母10表示的是数据将会被散列的桶的个数</span></span><br><span class="line"><span class="comment">-- 分子3表示的是将会选择的桶的个数</span></span><br></pre></td></tr></table></figure></p>
-<h2 id="rank"><a href="#rank" class="headerlink" title="rank()"></a>rank()</h2><ul>
-<li>其他排序函数：<a href="##row_number(">ROW_NUMBER()</a>)、<a href="##dense_rank(">DENSE_RANK()</a>)</li>
+<h2 id="rank"><a href="#rank" class="headerlink" title="rank()"></a>rank()</h2><p><code>RANK()</code>：从1开始，按照顺序生成分组内记录的序列</p>
+<ul>
+<li><p>序号是连续的，且间隔为1</p>
+</li>
+<li><p>其他排序函数：<a href="##row_number(">ROW_NUMBER()</a>)、<a href="##dense_rank(">DENSE_RANK()</a>)</p>
+</li>
 </ul>
 <h2 id="regexp-extract"><a href="#regexp-extract" class="headerlink" title="regexp_extract()"></a>regexp_extract()</h2><p><code>REGEXP_EXTRACT(STRING s, STRING regex_pattern, STRING index)</code>：抽取字符串st中符合正则表达式regex_pattern的第index个部分的子字符串</p>
 <ul>
