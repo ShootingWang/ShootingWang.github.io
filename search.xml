@@ -4874,6 +4874,10 @@ strategy
 <ul>
 <li>返回值是INT</li>
 </ul>
+<h2 id="dayofmonth"><a href="#dayofmonth" class="headerlink" title="dayofmonth()"></a>dayofmonth()</h2><p><code>DAYOFMONTH(STRING date)</code>：返回当月第几天</p>
+<ul>
+<li>返回值是INT</li>
+</ul>
 <h2 id="decode"><a href="#decode" class="headerlink" title="decode()"></a>decode()</h2><p><code>DECODE(BINARY bin, STRING charset)</code>：使用指定的字符集charset将二进制值bin解码成字符串</p>
 <ul>
 <li>若任一输入参数为NULL，则结果为NULL</li>
@@ -4973,10 +4977,15 @@ strategy
 <ul>
 <li>返回值是INT</li>
 </ul>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">MONTH('2020-09-01 12:00:05')</span><br><span class="line"><span class="comment">-- 9</span></span><br><span class="line"></span><br><span class="line">MONTH('2020-09-02')</span><br><span class="line"><span class="comment">-- 9</span></span><br></pre></td></tr></table></figure>
 <h2 id="ngrams"><a href="#ngrams" class="headerlink" title="ngrams()"></a>ngrams()</h2><p><code>NGRAMS(ARRAY&lt;ARRAY&lt;string&gt;&gt;, INT n, INT k, INT pf)</code>：估算文件前k个字尾</p>
 <ul>
 <li>其中pf是精度系数</li>
 <li>返回值是<code>ARRAY&lt;STRUCT&lt;STRING, DOUBLE&gt;&gt;</code><br>（不理解）</li>
+</ul>
+<h2 id="ntile"><a href="#ntile" class="headerlink" title="ntile()"></a>ntile()</h2><p><code>NTILE(INT n)</code>：将分组数据按照顺序切分为n片；返回当前切片值<br><code>NTILE(INT n) OVER(PARTITION BY col_1 ORDER BY col_2)</code></p>
+<ul>
+<li><code>NTILE()</code>不支持<code>ROWS BETWEEN</code></li>
 </ul>
 <h2 id="parse-url"><a href="#parse-url" class="headerlink" title="parse_url()"></a>parse_url()</h2><p><code>PARSE_URL(STRING url, STRING partname[, STRING key])</code>：从url中抽取指定部分的内容</p>
 <ul>
@@ -5000,6 +5009,9 @@ strategy
 <li>返回值是STRING</li>
 </ul>
 <h2 id="rand"><a href="#rand" class="headerlink" title="rand()"></a>rand()</h2><p>产生随机数<br><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 分桶抽样</span></span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> numbers</span><br><span class="line"><span class="keyword">TABLESAMPLE</span>(<span class="keyword">BUCKET</span> <span class="number">3</span> <span class="keyword">OUT</span> <span class="keyword">OF</span> <span class="number">10</span> <span class="keyword">ON</span> <span class="keyword">RAND</span>()) s;</span><br><span class="line"><span class="comment">-- 分母10表示的是数据将会被散列的桶的个数</span></span><br><span class="line"><span class="comment">-- 分子3表示的是将会选择的桶的个数</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="rank"><a href="#rank" class="headerlink" title="rank()"></a>rank()</h2><ul>
+<li>其他排序函数：<a href="##row_number(">ROW_NUMBER()</a>)、<a href="##dense_rank(">DENSE_RANK()</a>)</li>
+</ul>
 <h2 id="regexp-extract"><a href="#regexp-extract" class="headerlink" title="regexp_extract()"></a>regexp_extract()</h2><p><code>REGEXP_EXTRACT(STRING s, STRING regex_pattern, STRING index)</code>：抽取字符串st中符合正则表达式regex_pattern的第index个部分的子字符串</p>
 <ul>
 <li>返回值是STRING</li>
@@ -5030,6 +5042,7 @@ strategy
 <ul>
 <li>返回值是INT</li>
 </ul>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">SECOND('2020-09-01 12:23:34')</span><br><span class="line"><span class="comment">-- 34</span></span><br></pre></td></tr></table></figure>
 <h2 id="sentences"><a href="#sentences" class="headerlink" title="sentences()"></a>sentences()</h2><p><code>SENTENCES(STRING s, STRING lang, STRING locale)</code>：将输入字符串s转换成句子数组，每个句子又由一个单词数组构成。</p>
 <ul>
 <li>参数<code>lang</code>：可选</li>
@@ -5088,7 +5101,7 @@ strategy
 <li>BASE64字符表：ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/</li>
 <li>返回值是BINARY</li>
 </ul>
-<h2 id="unix-timestamp"><a href="#unix-timestamp" class="headerlink" title="unix_timestamp()"></a>unix_timestamp()</h2><p><code>UNIX_TIMESTAMP(BIGINT unixtime[, STRING format])</code>：获取当前本地时区下的当前时间戳<br><code>UNIX_TIMESTAMP(STRING date)</code>：输入的时间字符串格式必须是<code>yyyy-MM-dd HH:mm:ss</code>。如果不符合，则返回0；如果符合，则将此时间字符串转换成Unix时间戳<br><code>UNIX_TIMESTAMP(STRING date, STRING pattern)</code>：将指定时间字符串格式字符串转换成Unix时间戳。如果格式不符合，则返回0。</p>
+<h2 id="unix-timestamp"><a href="#unix-timestamp" class="headerlink" title="unix_timestamp()"></a>unix_timestamp()</h2><p><code>UNIX_TIMESTAMP()</code>：获取当前本地时区下的当前时间戳<br><code>UNIX_TIMESTAMP(STRING date)</code>：输入的时间字符串格式必须是<code>yyyy-MM-dd HH:mm:ss</code>。如果不符合，则返回0；如果符合，则将此时间字符串转换成Unix时间戳<br><code>UNIX_TIMESTAMP(STRING date, STRING pattern)</code>：将指定时间字符串格式字符串转换成Unix时间戳。如果格式不符合，则返回0。</p>
 <ul>
 <li>返回值是BIGINT</li>
 </ul>
@@ -5097,6 +5110,7 @@ strategy
 <ul>
 <li>返回值是INT</li>
 </ul>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">WEEKOFYEAR('2016-12-08 10:05:15')</span><br><span class="line"><span class="comment">-- 49</span></span><br></pre></td></tr></table></figure>
 <h2 id="year"><a href="#year" class="headerlink" title="year()"></a>year()</h2><p><code>YEAR(STRING date)</code>：提取时间字符串中的年份</p>
 <ul>
 <li>返回值是INT</li>
@@ -10658,7 +10672,14 @@ dtype: int64
 <li>对噪声和离群点敏感</li>
 <li>结果不一定是全局最优，只能保证局部最优</li>
 </ul>
-<h2 id="K-Means-vs-K-Medoids"><a href="#K-Means-vs-K-Medoids" class="headerlink" title="K-Means vs K-Medoids"></a>K-Means vs K-Medoids</h2><ul>
+<h1 id="确定K的方法"><a href="#确定K的方法" class="headerlink" title="确定K的方法"></a>确定K的方法</h1><h2 id="按需选择"><a href="#按需选择" class="headerlink" title="按需选择"></a>按需选择</h2><p>根据建模的需求和目的来选择聚类的个数</p>
+<h2 id="观察法"><a href="#观察法" class="headerlink" title="观察法"></a>观察法</h2><p>直接看数据的散点图，看数据点大致聚成几堆</p>
+<ul>
+<li>原始数据维数要低，一般是两维或三维，否则无法通过散点图观察</li>
+<li>对于高维数据，可以先利用PCA（主成分分析法）降维，然后进行观察</li>
+</ul>
+<h2 id="肘部法"><a href="#肘部法" class="headerlink" title="肘部法"></a>肘部法</h2><p>肘部法（Elbow Method），</p>
+<h2 id="Gap-Statistics方法"><a href="#Gap-Statistics方法" class="headerlink" title="Gap Statistics方法"></a>Gap Statistics方法</h2><h1 id="对比"><a href="#对比" class="headerlink" title="对比"></a>对比</h1><h2 id="K-Means-vs-K-Medoids"><a href="#K-Means-vs-K-Medoids" class="headerlink" title="K-Means vs K-Medoids"></a>K-Means vs K-Medoids</h2><ul>
 <li>二者的区别主要在于：质心的选择</li>
 </ul>
 <div class="table-container">
