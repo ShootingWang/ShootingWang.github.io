@@ -4852,33 +4852,33 @@ strategy
 <ul>
 <li>返回值是STRING</li>
 </ul>
-<h2 id="concat-ws"><a href="#concat-ws" class="headerlink" title="concat_ws()"></a>concat_ws()</h2><p>concat with sep<br><code>CONCAT_WS(STRING seperator, BINARY s1, STRING s2, ...)</code>：与<code>concat</code>类似，不过是使用指定的分隔符进行拼接</p>
+<h2 id="concat-ws"><a href="#concat-ws" class="headerlink" title="concat_ws"></a>concat_ws</h2><p>concat with sep，拼接字符串<br><code>CONCAT_WS(STRING seperator, BINARY s1, STRING s2, ...)</code>：与<code>concat</code>类似，不过是使用指定的分隔符进行拼接</p>
 <ul>
 <li>返回值是STRING</li>
 </ul>
-<h2 id="context-ngrams"><a href="#context-ngrams" class="headerlink" title="context_ngrams()"></a>context_ngrams()</h2><p><code>CONTEXT_NGRAMS(ARRAY&lt;ARRAY&lt;STRING&gt;&gt;, ARRAY&lt;STRING&gt;, INT k, INT pf)</code>：和ngrams类似，从每个外层数组的第二个单词数组来查找前k个字尾<br>（不理解）</p>
-<h2 id="date-add"><a href="#date-add" class="headerlink" title="date_add()"></a>date_add()</h2><p><code>DATE_ADD(STRING startdate, INT days)</code>：为开始时间<code>startdate</code>增加<code>days</code>天</p>
+<h2 id="context-ngrams"><a href="#context-ngrams" class="headerlink" title="context_ngrams"></a>context_ngrams</h2><p><code>CONTEXT_NGRAMS(ARRAY&lt;ARRAY&lt;STRING&gt;&gt;, ARRAY&lt;STRING&gt;, INT k, INT pf)</code>：和ngrams类似，从每个外层数组的第二个单词数组来查找前k个字尾<br>（不理解）</p>
+<h2 id="date-add"><a href="#date-add" class="headerlink" title="date_add"></a>date_add</h2><p><code>DATE_ADD(STRING startdate, INT days)</code>：为开始时间<code>startdate</code>增加<code>days</code>天</p>
 <ul>
 <li>返回值是STRING</li>
 </ul>
-<h2 id="datediff"><a href="#datediff" class="headerlink" title="datediff()"></a>datediff()</h2><p><code>DATEDIFF(STRING enddate, STRING startdate)</code>：计算开始时间<code>startdate</code>到结束时间<code>enddate</code>相差的天数</p>
+<h2 id="datediff"><a href="#datediff" class="headerlink" title="datediff"></a>datediff</h2><p><code>DATEDIFF(STRING enddate, STRING startdate)</code>：计算开始时间<code>startdate</code>到结束时间<code>enddate</code>相差的天数</p>
 <ul>
 <li>返回值是INT<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">DATEDIFF('2020-03-03', '2020-01')</span><br><span class="line"><span class="comment">-- 2</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<h2 id="date-sub"><a href="#date-sub" class="headerlink" title="date_sub()"></a>date_sub()</h2><p><code>DATE_SUB(STRING startdate, INT days)</code>：从开始时间<code>startdate</code>增加<code>days</code>天</p>
+<h2 id="date-sub"><a href="#date-sub" class="headerlink" title="date_sub"></a>date_sub</h2><p><code>DATE_SUB(STRING startdate, INT days)</code>：从开始时间<code>startdate</code>增加<code>days</code>天</p>
 <ul>
 <li>返回值是STRING</li>
 </ul>
-<h2 id="day"><a href="#day" class="headerlink" title="day()"></a>day()</h2><p><code>DAY(STRING date)</code>：提取时间字符串中的天<br><code>DAYOFMONTH(STRING date)</code>：返回当月第几天</p>
+<h2 id="day"><a href="#day" class="headerlink" title="day"></a>day</h2><p><code>DAY(STRING date)</code>：提取时间字符串中的天<br><code>DAYOFMONTH(STRING date)</code>：返回当月第几天</p>
 <ul>
 <li>返回值是INT</li>
 </ul>
-<h2 id="dayofmonth"><a href="#dayofmonth" class="headerlink" title="dayofmonth()"></a>dayofmonth()</h2><p><code>DAYOFMONTH(STRING date)</code>：返回当月第几天</p>
+<h2 id="dayofmonth"><a href="#dayofmonth" class="headerlink" title="dayofmonth"></a>dayofmonth</h2><p><code>DAYOFMONTH(STRING date)</code>：返回当月第几天</p>
 <ul>
 <li>返回值是INT</li>
 </ul>
-<h2 id="decode"><a href="#decode" class="headerlink" title="decode()"></a>decode()</h2><p><code>DECODE(BINARY bin, STRING charset)</code>：使用指定的字符集charset将二进制值bin解码成字符串</p>
+<h2 id="decode"><a href="#decode" class="headerlink" title="decode"></a>decode</h2><p><code>DECODE(BINARY bin, STRING charset)</code>：使用指定的字符集charset将二进制值bin解码成字符串</p>
 <ul>
 <li>若任一输入参数为NULL，则结果为NULL</li>
 <li>返回值是STRING</li>
@@ -4899,7 +4899,7 @@ strategy
 <li><p>其他窗口函数：<a href="#row-number">ROW_NUMBER</a>、<a href="#rank">RANK</a></p>
 </li>
 </ul>
-<h2 id="encode"><a href="#encode" class="headerlink" title="encode()"></a>encode()</h2><p><code>ENCODE(STRING str, STRING charset)</code>：使用指定的字符集charset将字符串str编码成二进制值</p>
+<h2 id="encode"><a href="#encode" class="headerlink" title="encode"></a>encode</h2><p><code>ENCODE(STRING str, STRING charset)</code>：使用指定的字符集charset将字符串str编码成二进制值</p>
 <ul>
 <li>若任一输入参数为NULL，则结果为NULL</li>
 <li>返回值是BINARY</li>
