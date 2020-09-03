@@ -19245,6 +19245,10 @@ E(X)&=\int_0^1 x\frac{1}{B(\alpha,\beta)}x^{\alpha-1}(1-x)^{\beta-1}\mathrm{d}x\
 <h2 id="文章摘要"><a href="#文章摘要" class="headerlink" title="文章摘要"></a>文章摘要</h2><p>若想要在博客首页只展示文章的摘要，在摘要与正文中间插入<br><figure class="highlight md"><table><tr><td class="code"><pre><span class="line"><span class="xml"><span class="comment">&lt;!--more--&gt;</span></span></span><br></pre></td></tr></table></figure></p>
 <h2 id="引用站内文章"><a href="#引用站内文章" class="headerlink" title="引用站内文章"></a>引用站内文章</h2><figure class="highlight md"><table><tr><td class="code"><pre><span class="line">&#123;% post_link 站内文章对应的.md名称（不带后缀.md） %&#125;</span><br></pre></td></tr></table></figure>
 <p>如：引用站内文章《<a href="/Restart.html" title="Restart!">Restart!</a>》，对应的文件名是<code>Restart.md</code><br><figure class="highlight md"><table><tr><td class="code"><pre><span class="line">&#123;% post_link Restart %&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="引用文章内锚点"><a href="#引用文章内锚点" class="headerlink" title="引用文章内锚点"></a>引用文章内锚点</h2><p>如：跳转到本文的<code>##代码高亮</code>小节<a href="#代码高亮">代码高亮</a><br><figure class="highlight md"><table><tr><td class="code"><pre><span class="line">[<span class="string">代码高亮</span>](<span class="link">#代码高亮</span>)</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>如果描点名称中有空格或下划线<code>_</code>等字符串，应将其改为分隔符<code>-</code></li>
+</ul>
 <h2 id="居中引用"><a href="#居中引用" class="headerlink" title="居中引用"></a>居中引用</h2><ul>
 <li><a href="https://tding.top/archives/29bfe8c9.html" target="_blank" rel="noopener">Hexo-NexT Tag 插件的使用</a></li>
 </ul>
