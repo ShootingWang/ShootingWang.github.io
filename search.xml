@@ -4894,7 +4894,7 @@ strategy
 </ul>
 <h2 id="dense-rank"><a href="#dense-rank" class="headerlink" title="dense_rank()"></a>dense_rank()</h2><p><code>DENSE_RANK()</code>：生成数据项在分组中的排名，排名相等的名次一样，序号<strong>不会</strong>在中间留下空白</p>
 <ul>
-<li><a href="##rank">RANK()</a>：生成数据项在分组中的排名，排名相等的名次一样，序号<strong>会</strong>在中间留下空白</li>
+<li><a href="#rank">RANK()</a>：生成数据项在分组中的排名，排名相等的名次一样，序号<strong>会</strong>在中间留下空白</li>
 </ul>
 <h2 id="encode"><a href="#encode" class="headerlink" title="encode()"></a>encode()</h2><p><code>ENCODE(STRING str, STRING charset)</code>：使用指定的字符集charset将字符串str编码成二进制值</p>
 <ul>
