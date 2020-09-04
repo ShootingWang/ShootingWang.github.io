@@ -10399,7 +10399,14 @@ dtype: int64
 </li>
 </ul>
 <h2 id="LTV"><a href="#LTV" class="headerlink" title="LTV"></a>LTV</h2><p><strong>用户生命周期价值</strong>（LTV，Life Time Value）：公司从用户的互动中得到的全部经济收益的总和（获客至流失所得的收益总和）；不区分付费与非付费用户</p>
-<script type="math/tex; mode=display">LTV = ARPU \times LT（按天或月计算的平均生命周期）</script><div class="note default">
+<ol>
+<li><p>每日的留存率乘以每日的用户平均收入</p>
+<script type="math/tex; mode=display">LTV = \sum_{t=1}^TR(t)\cdot ARPU(t)</script></li>
+<li><p>生命周期总长度乘以每用户平均收入</p>
+<script type="math/tex; mode=display">LTV = ARPU \times LT（按天或月计算的平均生命周期）</script></li>
+</ol>
+<p>两个公式是等价的，后面的公式是前面的公式的简化。</p>
+<div class="note default">
             <p>实际计算：跟踪某日或某周的新增用户，计算该批用户在随后的7日、14日、30日的累积收入贡献，除以该批新增用户数，即为累积收入/新增用户数=累积ARPU（LTV）</p>
           </div>
 <div class="note info">
