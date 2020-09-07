@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://github.com/ShootingWang/ShootingWang.github.io/SQL.html</loc>
+    <lastmod>2020-09-07</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/ShootingWang/ShootingWang.github.io/%E7%AE%97%E6%B3%95-K-Means.html</loc>
+    <lastmod>2020-09-04</lastmod>
+  </url>
+  <url>
     <loc>https://github.com/ShootingWang/ShootingWang.github.io/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-%E4%B8%BB%E8%A6%81%E6%8C%87%E6%A0%87.html</loc>
     <lastmod>2020-09-04</lastmod>
   </url>
@@ -15,10 +23,6 @@
   <url>
     <loc>https://github.com/ShootingWang/ShootingWang.github.io/Hexo-GitHub-Markdown%E5%B8%B8%E7%94%A8%E7%94%A8%E6%B3%95.html</loc>
     <lastmod>2020-09-03</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/ShootingWang/ShootingWang.github.io/%E7%AE%97%E6%B3%95-K-Means.html</loc>
-    <lastmod>2020-09-02</lastmod>
   </url>
   <url>
     <loc>https://github.com/ShootingWang/ShootingWang.github.io/TED-HowToOutsmart.html</loc>
@@ -39,10 +43,6 @@
   <url>
     <loc>https://github.com/ShootingWang/ShootingWang.github.io/Spark-%E6%95%B0%E6%8D%AE%E6%BA%90.html</loc>
     <lastmod>2020-09-01</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/ShootingWang/ShootingWang.github.io/SQL.html</loc>
-    <lastmod>2020-08-31</lastmod>
   </url>
   <url>
     <loc>https://github.com/ShootingWang/ShootingWang.github.io/Spark-Learning.html</loc>
