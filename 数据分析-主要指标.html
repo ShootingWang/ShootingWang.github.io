@@ -30,7 +30,7 @@
 <meta property="og:site_name" content="ShootingWang">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-05-15T05:40:03.000Z">
-<meta property="article:modified_time" content="2020-09-08T14:09:35.914Z">
+<meta property="article:modified_time" content="2020-09-08T16:37:35.266Z">
 <meta property="article:author" content="ShootingWang">
 <meta property="article:tag" content="数据分析">
 <meta property="article:tag" content="业务向">
@@ -255,7 +255,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-09-08 22:09:35" itemprop="dateModified" datetime="2020-09-08T22:09:35+08:00">2020-09-08</time>
+                <time title="修改时间：2020-09-09 00:37:35" itemprop="dateModified" datetime="2020-09-09T00:37:35+08:00">2020-09-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -682,14 +682,47 @@
 <li>VIP顾客销售额占比（%）：用于判断店铺会员贡献<script type="math/tex; mode=display">VIP顾客销售额占比=\frac{会员顾客消费金额}{总销售额}\times100\%</script></li>
 </ul>
 <h1 id="如何获取指标"><a href="#如何获取指标" class="headerlink" title="如何获取指标"></a>如何获取指标</h1><p><strong>埋点！！！</strong></p>
-<p><a href="/%E6%95%B0%E6%8D%AE-%E6%95%B0%E6%8D%AE%E5%9F%8B%E7%82%B9.html" title="埋点">埋点</a>是数据采集的基础，通过埋点，可以：</p>
+<a href="/%E6%95%B0%E6%8D%AE-%E6%95%B0%E6%8D%AE%E5%9F%8B%E7%82%B9.html" title="埋点">埋点</a>是数据采集的基础，通过埋点，可以：
+- 获得用户的行为轨迹
+- 追踪任一时间段数据的变化
+- 验证策略可行性
+- 找出产品设计漏洞
+- ……
+
+# 数据分析与设计方法
+- 事件分析
+- 留存分析
+- 漏斗分析
+- 用户分群分析
+- 对比分析
+- 多维度拆解
+
+## 事件分析
+事件即追踪或记录的用户行为或业务过程。
+- 事件是通过<a href="/%E6%95%B0%E6%8D%AE-%E6%95%B0%E6%8D%AE%E5%9F%8B%E7%82%B9.html" title="埋点">埋点</a>记录、通过SDK上传的用户行为或业务过程记录
+- 一个事件可能包含多个事件属性
+
+> 一个视频内容的产品可能包含的事件有：播放视频、暂停播放、继续播放、分享视频、发表评论、点赞等
+> 事件“播放视频”可能包含的属性有：视频来源、视频标题、是否自动播放、视频时长等
+
+## 留存分析
+- 留存率是验证用户粘性的关键指标
+- 可以利用留存率与竞品对标，衡量用户的粘性和忠诚度
+- 通常重点关注次日留存率、3日留存率、7日留存率、30日留存率，并观察留存率的衰减程度
+
+## 漏斗分析
+漏斗分析，即转化率分析，通过计算目标流程中的起点，到最后完成目标节点的用户量与留存率
+- 衡量每一节点的转化率，通过异常数据找出异常节点
+- 确定各个环节的流失率，分析用户怎么流失、为什么流失、在哪里流失
+- 根据数据改进产品，从而提升整体转化率
+- 经典的流量漏斗模型：<a href="/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-AARRR%E6%A8%A1%E5%9E%8B.html" title="AARRR模型">AARRR模型</a>
+<h2 id="用户分群分析"><a href="#用户分群分析" class="headerlink" title="用户分群分析"></a>用户分群分析</h2><p>用户在某个特定条件下的用户分组或占比</p>
+<h2 id="对比分析"><a href="#对比分析" class="headerlink" title="对比分析"></a>对比分析</h2><p>将不同时段的数据进行对比，找出差异，进行产品优化或验证设计</p>
 <ul>
-<li>获得用户的行为轨迹</li>
-<li>追踪任一时间段数据的变化</li>
-<li>验证策略可行性</li>
-<li>找出产品设计漏洞</li>
-<li>……</li>
+<li>自身产品对比：对比产品不同模块相似场景的数据，找出问题点</li>
+<li>行业产品对比：与同行业产品进行对比，找出优劣势，并持续优化</li>
 </ul>
+<h2 id="多维度拆解"><a href="#多维度拆解" class="headerlink" title="多维度拆解"></a>多维度拆解</h2><p>用不同维度视角拆分分析同一类数据指标</p>
 <h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
 <li><a href="https://baijiahao.baidu.com/s?id=1611777819781232073&amp;wfr=spider&amp;for=pc" target="_blank" rel="noopener">SPU和SKU都是什么意思</a></li>
 <li><a href="https://www.jianshu.com/p/a94d6f102108" target="_blank" rel="noopener">电商业务中大家都说的SKU是啥</a></li>
@@ -702,6 +735,7 @@
 <li><a href="http://www.woshipm.com/operate/1518912.html" target="_blank" rel="noopener">AARRR已是过去式，而RARRA才是更好的增长黑客模型</a></li>
 <li><a href="https://mp.weixin.qq.com/s?__biz=MzU5NDgyMjc0OQ==&amp;mid=2247488624&amp;idx=2&amp;sn=920c8875c2f3d33566e8c9de98a64406&amp;chksm=fe7a0742c90d8e540391f59924a3300cf917a89421d095d6e96d3bc88c447ed18c2275d119f9&amp;mpshare=1&amp;scene=24&amp;srcid=&amp;sharer_sharetime=1590564263763&amp;sharer_shareid=b539221659d6ecf12200314308b58dd3&amp;key=f35cd863eee202dce2e28017bc4094d1b2859bf5881092f4a055994b9e3467a965866061333034fb99b5cc0c774872ef04131c5755d1a55d542f19d23d6b377059875500a47021443c87f06051d831a4&amp;ascene=14&amp;uin=MjAwNDUzMjgxNw%3D%3D&amp;devicetype=Windows+10+x64&amp;version=62090070&amp;lang=zh_CN&amp;exportkey=AWstGTboQZQZLrI9jEzLFvs%3D&amp;pass_ticket=xoArabHCscAdV4DACRCVDCInO%2Bwgm6vCxCiSKNK2RM55GLTfFThL1GA6XQ9Qdhep" target="_blank" rel="noopener">数据分析：不同行业的常见指标</a></li>
 <li><a href="www.woshipm.com/pmd/645579.html">浅谈计算留存天数的三种方法</a></li>
+<li><a href="http://mp.weixin.qq.com/s?__biz=MzU4OTQ1MTA4OQ==&amp;mid=2247487676&amp;idx=2&amp;sn=f688d183f0621b21a871d89fcb5a8d48&amp;chksm=fdcc0a82cabb839402dc2b3fb7e6d56401183808545f47b98fae230b084f99050785a103d6fe&amp;mpshare=1&amp;scene=24&amp;srcid=0818Yq9tldgFJGEiMxsGjYyy&amp;sharer_sharetime=1597725059037&amp;sharer_shareid=b539221659d6ecf12200314308b58dd3#rd" target="_blank" rel="noopener">数据指标基础知识汇总</a></li>
 </ul>
 
     </div>
@@ -823,7 +857,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#不同行业的常见指标"><span class="nav-number">1.</span> <span class="nav-text">不同行业的常见指标</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#电商"><span class="nav-number">1.1.</span> <span class="nav-text">电商</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#游戏"><span class="nav-number">1.2.</span> <span class="nav-text">游戏</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#金融"><span class="nav-number">1.3.</span> <span class="nav-text">金融</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#直播"><span class="nav-number">1.4.</span> <span class="nav-text">直播</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#阅读"><span class="nav-number">1.5.</span> <span class="nav-text">阅读</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#指标分类"><span class="nav-number">2.</span> <span class="nav-text">指标分类</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#指标汇总"><span class="nav-number">3.</span> <span class="nav-text">指标汇总</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#ACU"><span class="nav-number">3.1.</span> <span class="nav-text">ACU</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#APA"><span class="nav-number">3.2.</span> <span class="nav-text">APA</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ARPU"><span class="nav-number">3.3.</span> <span class="nav-text">ARPU</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ARPPU"><span class="nav-number">3.4.</span> <span class="nav-text">ARPPU</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AU"><span class="nav-number">3.5.</span> <span class="nav-text">AU</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#DAU"><span class="nav-number">3.5.1.</span> <span class="nav-text">DAU</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MAU"><span class="nav-number">3.5.2.</span> <span class="nav-text">MAU</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WAU"><span class="nav-number">3.5.3.</span> <span class="nav-text">WAU</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CAC"><span class="nav-number">3.6.</span> <span class="nav-text">CAC</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DAOT"><span class="nav-number">3.7.</span> <span class="nav-text">DAOT</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DNU"><span class="nav-number">3.8.</span> <span class="nav-text">DNU</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DOU"><span class="nav-number">3.9.</span> <span class="nav-text">DOU</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Enquiry"><span class="nav-number">3.10.</span> <span class="nav-text">Enquiry</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FR"><span class="nav-number">3.11.</span> <span class="nav-text">FR</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GMV"><span class="nav-number">3.12.</span> <span class="nav-text">GMV</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IP"><span class="nav-number">3.13.</span> <span class="nav-text">IP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LT"><span class="nav-number">3.14.</span> <span class="nav-text">LT</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#全样本统计"><span class="nav-number">3.14.1.</span> <span class="nav-text">全样本统计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#倒推法"><span class="nav-number">3.14.2.</span> <span class="nav-text">倒推法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#月活跃天数"><span class="nav-number">3.14.3.</span> <span class="nav-text">月活跃天数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LTV"><span class="nav-number">3.15.</span> <span class="nav-text">LTV</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MVP"><span class="nav-number">3.16.</span> <span class="nav-text">MVP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PCT"><span class="nav-number">3.17.</span> <span class="nav-text">PCT</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PCU"><span class="nav-number">3.18.</span> <span class="nav-text">PCU</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PMF"><span class="nav-number">3.19.</span> <span class="nav-text">PMF</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PPC"><span class="nav-number">3.20.</span> <span class="nav-text">PPC</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PR-PUR"><span class="nav-number">3.21.</span> <span class="nav-text">PR&#x2F;PUR</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PV"><span class="nav-number">3.22.</span> <span class="nav-text">PV</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Retention"><span class="nav-number">3.23.</span> <span class="nav-text">Retention</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ROI"><span class="nav-number">3.24.</span> <span class="nav-text">ROI</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SEO"><span class="nav-number">3.25.</span> <span class="nav-text">SEO</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SKU-SPU"><span class="nav-number">3.26.</span> <span class="nav-text">SKU | SPU</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TS"><span class="nav-number">3.27.</span> <span class="nav-text">TS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#UD"><span class="nav-number">3.28.</span> <span class="nav-text">UD</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#UV"><span class="nav-number">3.29.</span> <span class="nav-text">UV</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#VV"><span class="nav-number">3.30.</span> <span class="nav-text">VV</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">3.31.</span> <span class="nav-text"> </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#如何获取指标"><span class="nav-number">4.</span> <span class="nav-text">如何获取指标</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料"><span class="nav-number">5.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#不同行业的常见指标"><span class="nav-number">1.</span> <span class="nav-text">不同行业的常见指标</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#电商"><span class="nav-number">1.1.</span> <span class="nav-text">电商</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#游戏"><span class="nav-number">1.2.</span> <span class="nav-text">游戏</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#金融"><span class="nav-number">1.3.</span> <span class="nav-text">金融</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#直播"><span class="nav-number">1.4.</span> <span class="nav-text">直播</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#阅读"><span class="nav-number">1.5.</span> <span class="nav-text">阅读</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#指标分类"><span class="nav-number">2.</span> <span class="nav-text">指标分类</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#指标汇总"><span class="nav-number">3.</span> <span class="nav-text">指标汇总</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#ACU"><span class="nav-number">3.1.</span> <span class="nav-text">ACU</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#APA"><span class="nav-number">3.2.</span> <span class="nav-text">APA</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ARPU"><span class="nav-number">3.3.</span> <span class="nav-text">ARPU</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ARPPU"><span class="nav-number">3.4.</span> <span class="nav-text">ARPPU</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AU"><span class="nav-number">3.5.</span> <span class="nav-text">AU</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#DAU"><span class="nav-number">3.5.1.</span> <span class="nav-text">DAU</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MAU"><span class="nav-number">3.5.2.</span> <span class="nav-text">MAU</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WAU"><span class="nav-number">3.5.3.</span> <span class="nav-text">WAU</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CAC"><span class="nav-number">3.6.</span> <span class="nav-text">CAC</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DAOT"><span class="nav-number">3.7.</span> <span class="nav-text">DAOT</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DNU"><span class="nav-number">3.8.</span> <span class="nav-text">DNU</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DOU"><span class="nav-number">3.9.</span> <span class="nav-text">DOU</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Enquiry"><span class="nav-number">3.10.</span> <span class="nav-text">Enquiry</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FR"><span class="nav-number">3.11.</span> <span class="nav-text">FR</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GMV"><span class="nav-number">3.12.</span> <span class="nav-text">GMV</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IP"><span class="nav-number">3.13.</span> <span class="nav-text">IP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LT"><span class="nav-number">3.14.</span> <span class="nav-text">LT</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#全样本统计"><span class="nav-number">3.14.1.</span> <span class="nav-text">全样本统计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#倒推法"><span class="nav-number">3.14.2.</span> <span class="nav-text">倒推法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#月活跃天数"><span class="nav-number">3.14.3.</span> <span class="nav-text">月活跃天数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LTV"><span class="nav-number">3.15.</span> <span class="nav-text">LTV</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MVP"><span class="nav-number">3.16.</span> <span class="nav-text">MVP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PCT"><span class="nav-number">3.17.</span> <span class="nav-text">PCT</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PCU"><span class="nav-number">3.18.</span> <span class="nav-text">PCU</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PMF"><span class="nav-number">3.19.</span> <span class="nav-text">PMF</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PPC"><span class="nav-number">3.20.</span> <span class="nav-text">PPC</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PR-PUR"><span class="nav-number">3.21.</span> <span class="nav-text">PR&#x2F;PUR</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PV"><span class="nav-number">3.22.</span> <span class="nav-text">PV</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Retention"><span class="nav-number">3.23.</span> <span class="nav-text">Retention</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ROI"><span class="nav-number">3.24.</span> <span class="nav-text">ROI</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SEO"><span class="nav-number">3.25.</span> <span class="nav-text">SEO</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SKU-SPU"><span class="nav-number">3.26.</span> <span class="nav-text">SKU | SPU</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TS"><span class="nav-number">3.27.</span> <span class="nav-text">TS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#UD"><span class="nav-number">3.28.</span> <span class="nav-text">UD</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#UV"><span class="nav-number">3.29.</span> <span class="nav-text">UV</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#VV"><span class="nav-number">3.30.</span> <span class="nav-text">VV</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">3.31.</span> <span class="nav-text"> </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#如何获取指标"><span class="nav-number">4.</span> <span class="nav-text">如何获取指标</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#用户分群分析"><span class="nav-number">4.1.</span> <span class="nav-text">用户分群分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对比分析"><span class="nav-number">4.2.</span> <span class="nav-text">对比分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多维度拆解"><span class="nav-number">4.3.</span> <span class="nav-text">多维度拆解</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料"><span class="nav-number">5.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -892,7 +926,7 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">302k</span>
+    <span title="站点总字数">303k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
@@ -978,6 +1012,8 @@
 
 
 
+
+  
 
 
 

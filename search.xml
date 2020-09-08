@@ -10574,14 +10574,47 @@ dtype: int64
 <li>VIP顾客销售额占比（%）：用于判断店铺会员贡献<script type="math/tex; mode=display">VIP顾客销售额占比=\frac{会员顾客消费金额}{总销售额}\times100\%</script></li>
 </ul>
 <h1 id="如何获取指标"><a href="#如何获取指标" class="headerlink" title="如何获取指标"></a>如何获取指标</h1><p><strong>埋点！！！</strong></p>
-<p><a href="/%E6%95%B0%E6%8D%AE-%E6%95%B0%E6%8D%AE%E5%9F%8B%E7%82%B9.html" title="埋点">埋点</a>是数据采集的基础，通过埋点，可以：</p>
+<a href="/%E6%95%B0%E6%8D%AE-%E6%95%B0%E6%8D%AE%E5%9F%8B%E7%82%B9.html" title="埋点">埋点</a>是数据采集的基础，通过埋点，可以：
+- 获得用户的行为轨迹
+- 追踪任一时间段数据的变化
+- 验证策略可行性
+- 找出产品设计漏洞
+- ……
+
+# 数据分析与设计方法
+- 事件分析
+- 留存分析
+- 漏斗分析
+- 用户分群分析
+- 对比分析
+- 多维度拆解
+
+## 事件分析
+事件即追踪或记录的用户行为或业务过程。
+- 事件是通过<a href="/%E6%95%B0%E6%8D%AE-%E6%95%B0%E6%8D%AE%E5%9F%8B%E7%82%B9.html" title="埋点">埋点</a>记录、通过SDK上传的用户行为或业务过程记录
+- 一个事件可能包含多个事件属性
+
+> 一个视频内容的产品可能包含的事件有：播放视频、暂停播放、继续播放、分享视频、发表评论、点赞等
+> 事件“播放视频”可能包含的属性有：视频来源、视频标题、是否自动播放、视频时长等
+
+## 留存分析
+- 留存率是验证用户粘性的关键指标
+- 可以利用留存率与竞品对标，衡量用户的粘性和忠诚度
+- 通常重点关注次日留存率、3日留存率、7日留存率、30日留存率，并观察留存率的衰减程度
+
+## 漏斗分析
+漏斗分析，即转化率分析，通过计算目标流程中的起点，到最后完成目标节点的用户量与留存率
+- 衡量每一节点的转化率，通过异常数据找出异常节点
+- 确定各个环节的流失率，分析用户怎么流失、为什么流失、在哪里流失
+- 根据数据改进产品，从而提升整体转化率
+- 经典的流量漏斗模型：<a href="/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-AARRR%E6%A8%A1%E5%9E%8B.html" title="AARRR模型">AARRR模型</a>
+<h2 id="用户分群分析"><a href="#用户分群分析" class="headerlink" title="用户分群分析"></a>用户分群分析</h2><p>用户在某个特定条件下的用户分组或占比</p>
+<h2 id="对比分析"><a href="#对比分析" class="headerlink" title="对比分析"></a>对比分析</h2><p>将不同时段的数据进行对比，找出差异，进行产品优化或验证设计</p>
 <ul>
-<li>获得用户的行为轨迹</li>
-<li>追踪任一时间段数据的变化</li>
-<li>验证策略可行性</li>
-<li>找出产品设计漏洞</li>
-<li>……</li>
+<li>自身产品对比：对比产品不同模块相似场景的数据，找出问题点</li>
+<li>行业产品对比：与同行业产品进行对比，找出优劣势，并持续优化</li>
 </ul>
+<h2 id="多维度拆解"><a href="#多维度拆解" class="headerlink" title="多维度拆解"></a>多维度拆解</h2><p>用不同维度视角拆分分析同一类数据指标</p>
 <h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
 <li><a href="https://baijiahao.baidu.com/s?id=1611777819781232073&amp;wfr=spider&amp;for=pc" target="_blank" rel="noopener">SPU和SKU都是什么意思</a></li>
 <li><a href="https://www.jianshu.com/p/a94d6f102108" target="_blank" rel="noopener">电商业务中大家都说的SKU是啥</a></li>
@@ -10594,6 +10627,7 @@ dtype: int64
 <li><a href="http://www.woshipm.com/operate/1518912.html" target="_blank" rel="noopener">AARRR已是过去式，而RARRA才是更好的增长黑客模型</a></li>
 <li><a href="https://mp.weixin.qq.com/s?__biz=MzU5NDgyMjc0OQ==&amp;mid=2247488624&amp;idx=2&amp;sn=920c8875c2f3d33566e8c9de98a64406&amp;chksm=fe7a0742c90d8e540391f59924a3300cf917a89421d095d6e96d3bc88c447ed18c2275d119f9&amp;mpshare=1&amp;scene=24&amp;srcid=&amp;sharer_sharetime=1590564263763&amp;sharer_shareid=b539221659d6ecf12200314308b58dd3&amp;key=f35cd863eee202dce2e28017bc4094d1b2859bf5881092f4a055994b9e3467a965866061333034fb99b5cc0c774872ef04131c5755d1a55d542f19d23d6b377059875500a47021443c87f06051d831a4&amp;ascene=14&amp;uin=MjAwNDUzMjgxNw%3D%3D&amp;devicetype=Windows+10+x64&amp;version=62090070&amp;lang=zh_CN&amp;exportkey=AWstGTboQZQZLrI9jEzLFvs%3D&amp;pass_ticket=xoArabHCscAdV4DACRCVDCInO%2Bwgm6vCxCiSKNK2RM55GLTfFThL1GA6XQ9Qdhep" target="_blank" rel="noopener">数据分析：不同行业的常见指标</a></li>
 <li><a href="www.woshipm.com/pmd/645579.html">浅谈计算留存天数的三种方法</a></li>
+<li><a href="http://mp.weixin.qq.com/s?__biz=MzU4OTQ1MTA4OQ==&amp;mid=2247487676&amp;idx=2&amp;sn=f688d183f0621b21a871d89fcb5a8d48&amp;chksm=fdcc0a82cabb839402dc2b3fb7e6d56401183808545f47b98fae230b084f99050785a103d6fe&amp;mpshare=1&amp;scene=24&amp;srcid=0818Yq9tldgFJGEiMxsGjYyy&amp;sharer_sharetime=1597725059037&amp;sharer_shareid=b539221659d6ecf12200314308b58dd3#rd" target="_blank" rel="noopener">数据指标基础知识汇总</a></li>
 </ul>
 ]]></content>
       <categories>
@@ -14834,7 +14868,7 @@ E(X)&=\int_0^1 x\frac{1}{B(\alpha,\beta)}x^{\alpha-1}(1-x)^{\beta-1}\mathrm{d}x\
 <pre class="mermaid">graph TD;
     id0(获取用户) --用户从何得知你的存在--> id1(提高活跃度);</pre>
 
-<p><meta name="referrer" content="no-referrer"><br><img src="/2020/05/07/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-AARRR%E6%A8%A1%E5%9E%8B/AARRR1.png" class title="百度百科-AARRR模型"></p>
+<p><meta name="referrer" content="no-referrer"><br><img src="/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-AARRR%E6%A8%A1%E5%9E%8B/AARRR1.png" class title="百度百科-AARRR模型"></p>
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -14940,10 +14974,13 @@ E(X)&=\int_0^1 x\frac{1}{B(\alpha,\beta)}x^{\alpha-1}(1-x)^{\beta-1}\mathrm{d}x\
 <li><strong>日活跃用户数</strong>（DAU，Daily Active Users）：反映网站/APP/游戏的运营情况<div class="note info">
             <p>解决问题：</p><ul><li>核心用户规模</li><li>产品生命周期分析</li><li>产品活跃用户流失，分解活跃用户</li><li>用户活跃率</li></ul>
           </div></li>
-<li><strong>周活跃用户数</strong>（WAU，Weekly Active Users）：最近7日（含当日）登录过应用的用户数；一般按照自然周计算<div class="note info">
+<li><p><strong>周活跃用户数</strong>（WAU，Weekly Active Users）：最近7日（含当日）登录过应用的用户数；一般按照自然周计算</p>
+<div class="note info">
             <p>解决问题：</p><ul><li>周期性用户规模</li><li>周期性变化趋势（eg：推广期和非推广期的比较）</li></ul>
-          </div></li>
-<li><strong>月活跃用户数</strong>（MAU，Monthly Active Users）：最近一个月（30日，含当日）登录过应用的用户数；一般按照自然月计算<div class="note info">
+          </div>
+</li>
+<li><p><strong>月活跃用户数</strong>（MAU，Monthly Active Users）：最近一个月（30日，含当日）登录过应用的用户数；一般按照自然月计算</p>
+<div class="note info">
             <p>解决问题：</p><ul><li>用户规模稳定性</li><li>推广效果评估</li><li>总体用户规模变化</li></ul>
           </div></li>
 <li><strong>活跃用户日均使用时长</strong>（DAOT，Daily Average Online Time）：了解参与黏性<script type="math/tex; mode=display">DAOT=\frac{日总在线时长}{日活跃用户数}</script><ul>
@@ -15022,7 +15059,7 @@ E(X)&=\int_0^1 x\frac{1}{B(\alpha,\beta)}x^{\alpha-1}(1-x)^{\beta-1}\mathrm{d}x\
 <li><strong>转化率</strong></li>
 </ul>
 <h1 id="RARRA模型"><a href="#RARRA模型" class="headerlink" title="RARRA模型"></a>RARRA模型</h1><p>AARRR专注于Acquisition，已较为过时。现在市场上产品井喷式产出，获取用户成本较高，需更多地关注用户留存（Retention）。Thomas Petit和Gabor Papp对海盗指标AARRR进行优化，提出RARRA模型，突出用户留存的重要性。</p>
-<p><meta name="referrer" content="no-referrer"><br><img src="/2020/05/07/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-AARRR%E6%A8%A1%E5%9E%8B/AARRR2.png" class title="RARRA模型"></p>
+<p><meta name="referrer" content="no-referrer"><br><img src="/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-AARRR%E6%A8%A1%E5%9E%8B/AARRR2.png" class title="RARRA模型"></p>
 <pre class="mermaid">graph LR;
     id0(Retention) --> id1(Activation);
     id1 --> id2(Referral);
