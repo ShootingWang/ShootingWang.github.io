@@ -649,6 +649,11 @@
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 计算次日、2日、3日留存率</span></span><br><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">    tt1.date</span><br><span class="line">    , tt2.gap</span><br><span class="line">    , tt2.retention_num</span><br><span class="line">    , tt2.retention_num / tt1.uv_day0 <span class="keyword">AS</span> cohort_rate</span><br><span class="line"><span class="keyword">FROM</span> </span><br><span class="line">(</span><br><span class="line">    <span class="keyword">SELECT</span> </span><br><span class="line">        <span class="built_in">date</span></span><br><span class="line">        , <span class="keyword">COUNT</span>(<span class="keyword">DISTINCT</span> user_id) <span class="keyword">AS</span> uv_day0</span><br><span class="line">    <span class="keyword">FROM</span> tbl_new_users</span><br><span class="line">    <span class="keyword">WHERE</span> <span class="built_in">date</span> = <span class="string">'2020-07-01'</span></span><br><span class="line">    <span class="keyword">GROUP</span> <span class="keyword">BY</span> <span class="built_in">date</span></span><br><span class="line">) <span class="keyword">AS</span> tt1</span><br><span class="line"></span><br><span class="line"><span class="keyword">LEFT</span> <span class="keyword">JOIN</span></span><br><span class="line">(</span><br><span class="line">    <span class="keyword">SELECT</span></span><br><span class="line">        t1.date</span><br><span class="line">        , gap</span><br><span class="line">        , <span class="keyword">COUNT</span>(*) <span class="keyword">AS</span> retention_num</span><br><span class="line">    <span class="keyword">FROM</span> </span><br><span class="line">    (</span><br><span class="line">        <span class="keyword">SELECT</span> </span><br><span class="line">            <span class="built_in">date</span></span><br><span class="line">            , user_id <span class="keyword">AS</span> uid1</span><br><span class="line">        <span class="keyword">FROM</span> tbl_new_users</span><br><span class="line">        <span class="keyword">WHERE</span> <span class="built_in">date</span> = <span class="string">'2020-07-01'</span></span><br><span class="line">    ) <span class="keyword">AS</span> t1</span><br><span class="line">    <span class="keyword">LEFT</span> <span class="keyword">JOIN</span> </span><br><span class="line">    (</span><br><span class="line">        <span class="keyword">SELECT</span></span><br><span class="line">            user_id <span class="keyword">AS</span> uid2</span><br><span class="line">            , <span class="keyword">DATEDIFF</span>(<span class="built_in">date</span>, <span class="string">'2020-07-01'</span>) <span class="keyword">AS</span> gap</span><br><span class="line">        <span class="keyword">FROM</span> tbl_active_users</span><br><span class="line">        <span class="keyword">WHERE</span> <span class="built_in">date</span> <span class="keyword">BETWEEN</span> <span class="string">'2020-07-01'</span> <span class="keyword">AND</span> <span class="string">'2020-07-03'</span></span><br><span class="line">    ) <span class="keyword">AS</span> t2</span><br><span class="line">    <span class="keyword">ON</span> t1.uid1 = t2.uid2</span><br><span class="line">    <span class="keyword">GROUP</span> <span class="keyword">BY</span> </span><br><span class="line">        <span class="built_in">date</span></span><br><span class="line">        , gap</span><br><span class="line">) tt2</span><br><span class="line"><span class="keyword">ON</span> tt1.date = tt2.date</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> </span><br><span class="line">    tt1.date</span><br><span class="line">    , tt2.gap;</span><br></pre></td></tr></table></figure>
 <h2 id="IIF"><a href="#IIF" class="headerlink" title="IIF()"></a>IIF()</h2><p><code>IIF(boolean_expression, valueForTrue, valueForFalse)</code>：如果<code>boolean_expression</code>为真，则返回<code>valueForTrue</code>；否则返回<code>valueForFalse</code>。</p>
 <h2 id="ISNULL"><a href="#ISNULL" class="headerlink" title="ISNULL()"></a>ISNULL()</h2><p><code>ISNULL(expression1, expression2)</code>：如果第一个参数为<code>NULL</code>，则返回第二个参数expression2；否则，返回第一个参数expression1。等价于<code>CASE WHEN expression1 IS NULL THEN expression2 ELSE expression1 END</code>。</p>
+<h2 id="MAX"><a href="#MAX" class="headerlink" title="MAX()"></a>MAX()</h2><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 用户最近登录的日期</span></span><br><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">    <span class="built_in">date</span> <span class="keyword">AS</span> d</span><br><span class="line"><span class="keyword">FROM</span> </span><br><span class="line">(</span><br><span class="line">    <span class="keyword">SELECT</span></span><br><span class="line">        user_id</span><br><span class="line">        , <span class="built_in">date</span></span><br><span class="line">        , ROW_NUMBER() <span class="keyword">OVER</span>(<span class="keyword">PARTITION</span> <span class="keyword">BY</span> user_id <span class="keyword">ORDER</span> <span class="keyword">BY</span> <span class="built_in">date</span> <span class="keyword">DESC</span>) <span class="keyword">AS</span> r_num</span><br><span class="line">    <span class="keyword">FROM</span> login</span><br><span class="line">) <span class="keyword">AS</span> t</span><br><span class="line"><span class="keyword">WHERE</span> r_num = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 或</span></span><br><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">    <span class="keyword">MAX</span>(<span class="built_in">date</span>)</span><br><span class="line"><span class="keyword">FROM</span> login</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> user_id</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> user_id;</span><br></pre></td></tr></table></figure>
+<h2 id="MIN"><a href="#MIN" class="headerlink" title="MIN"></a>MIN</h2><ul>
+<li><a href="https://www.nowcoder.com/practice/16d41af206cd4066a06a3a0aa585ad3d?tpId=82&amp;&amp;tqId=35086&amp;rp=1&amp;ru=/ta/sql&amp;qru=/ta/sql/question-ranking" target="_blank" rel="noopener">题源</a>：<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 新登录用户的次日登录成功的留存率</span></span><br><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">    <span class="keyword">ROUND</span>(<span class="number">1.0</span> * <span class="keyword">COUNT</span>(<span class="keyword">DISTINCT</span> l1.user_id) / (<span class="keyword">SELECT</span> <span class="keyword">COUNT</span>(<span class="keyword">DISTINCT</span> user_id) <span class="keyword">FROM</span> login), <span class="number">3</span>)</span><br><span class="line"><span class="keyword">FROM</span> login l1, login l2</span><br><span class="line"><span class="keyword">ON</span> l1.user_id = l2.user_id</span><br><span class="line"><span class="keyword">AND</span> <span class="built_in">DATE</span>(l1.date, <span class="string">'+1 day'</span>) = l2.date</span><br><span class="line"><span class="keyword">AND</span> l1.date = (<span class="keyword">SELECT</span> <span class="keyword">MIN</span>(<span class="built_in">date</span>) <span class="keyword">FROM</span> login <span class="keyword">WHERE</span> user_id = l1.user_id);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
 <h2 id="NULLIF"><a href="#NULLIF" class="headerlink" title="NULLIF()"></a>NULLIF()</h2><p><code>NULLIF(expression1, expression2)</code>：如果两个参数相等，则返回<code>NULL</code>；否则，返回第一个参数。等价于<code>CASE WHEN expression1 = expression2 THEN NULL ELSE expression1 END</code>。</p>
 <ul>
 <li>可用于防止分母中出现0而报错<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">a/NULLIF(b, 0)</span><br><span class="line"><span class="comment">-- 当b为0时，该式直接返回NULL</span></span><br></pre></td></tr></table></figure>
@@ -683,6 +688,7 @@
 <li>聚合函数之一</li>
 </ul>
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 求累计薪资和</span></span><br><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">    emp_no</span><br><span class="line">    , salary</span><br><span class="line">    , <span class="keyword">SUM</span>(salary) <span class="keyword">OVER</span>(<span class="keyword">ORDER</span> <span class="keyword">BY</span> emp_no) <span class="keyword">AS</span> running_total</span><br><span class="line"><span class="keyword">FROM</span> salaries</span><br><span class="line"><span class="keyword">WHERE</span> <span class="keyword">to_date</span> = <span class="string">'9999-01-01'</span></span><br><span class="line">;</span><br></pre></td></tr></table></figure>
+<p><a href="https://www.nowcoder.com/practice/e524dc7450234395aa21c75303a42b0a?tpId=82&amp;&amp;tqId=35087&amp;rp=1&amp;ru=/ta/sql&amp;qru=/ta/sql/question-ranking" target="_blank" rel="noopener">题源</a>：<br><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 统计每天的新用户</span></span><br><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">    <span class="built_in">date</span></span><br><span class="line">    , <span class="keyword">SUM</span>(<span class="keyword">CASE</span> <span class="keyword">WHEN</span> r_num = <span class="number">1</span> <span class="keyword">THEN</span> <span class="number">1</span> <span class="keyword">ELSE</span> <span class="number">0</span> <span class="keyword">END</span>) <span class="keyword">AS</span> <span class="keyword">new</span></span><br><span class="line"><span class="keyword">FROM</span> </span><br><span class="line">(</span><br><span class="line">    <span class="keyword">SELECT</span> </span><br><span class="line">        <span class="built_in">date</span></span><br><span class="line">        , ROW_NUMBER() <span class="keyword">OVER</span>(<span class="keyword">PARTITION</span> <span class="keyword">BY</span> user_id <span class="keyword">ORDER</span> <span class="keyword">BY</span> <span class="built_in">date</span> <span class="keyword">ASC</span>) <span class="keyword">AS</span> r_num</span><br><span class="line">    <span class="keyword">FROM</span> login</span><br><span class="line">) t1</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> <span class="built_in">date</span>;</span><br></pre></td></tr></table></figure></p>
 <h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
 <li><a href="https://mp.weixin.qq.com/s/5iv1z6SCf0nMyIEWavlyRQ" target="_blank" rel="noopener">ORDER BY的用法</a></li>
 </ul>
@@ -10311,13 +10317,41 @@ dtype: int64
 </ul>
 </li>
 </ul>
-<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><ul>
-<li>可用于评估<strong>用户粘性</strong>的指标：<ul>
-<li>回访数据</li>
+<h1 id="指标分类"><a href="#指标分类" class="headerlink" title="指标分类"></a>指标分类</h1><p>可将数据指标分为三大类：</p>
+<ol>
+<li>综合性指标<ul>
+<li>非交易型网站：<ul>
+<li><a href="#DAU">DAU</a></li>
+<li>留存率</li>
+<li>人均使用时长</li>
+</ul>
+</li>
+<li>交易型网站：<ul>
+<li><a href="#GMV">GMV</a></li>
+<li>支付UV</li>
+<li>人均订单数</li>
+<li>人均客单价</li>
 </ul>
 </li>
 </ul>
-<h1 id="指标汇总"><a href="#指标汇总" class="headerlink" title="指标汇总"></a>指标汇总</h1><h2 id="APA"><a href="#APA" class="headerlink" title="APA"></a>APA</h2><p>活跃付费用户数（Active Payment Account）</p>
+</li>
+<li>流程性指标<ul>
+<li>点击率</li>
+<li>转化率</li>
+<li>流失率</li>
+<li>完成率</li>
+</ul>
+</li>
+<li>业务性指标<ul>
+<li>人均评论数</li>
+<li>人均点赞数</li>
+<li>人均分享数</li>
+<li>……</li>
+</ul>
+</li>
+</ol>
+<h1 id="指标汇总"><a href="#指标汇总" class="headerlink" title="指标汇总"></a>指标汇总</h1><h2 id="ACU"><a href="#ACU" class="headerlink" title="ACU"></a>ACU</h2><p>平均同时在线人数（ACU，Average Concurrent Users）</p>
+<h2 id="APA"><a href="#APA" class="headerlink" title="APA"></a>APA</h2><p>活跃付费用户数（Active Payment Account）</p>
 <script type="math/tex; mode=display">活跃付费用户数（APA）=月活跃用户数（MAU）\times 月付费率（MPR）</script><div class="note info">
             <p>解决问题：</p><ul><li>产品的付费用户规模</li><li>APA的构成情况</li><li>付费群体的价值（整体稳定性分析）</li></ul>
           </div>
@@ -10368,12 +10402,14 @@ dtype: int64
 <div class="note info">
             <p>解决问题：</p><ul><li>不同渠道贡献的用户份额</li><li>是否存在大量垃圾用户</li><li>注册转化率分析</li><li>宏观走势，确定投放策略</li></ul>
           </div>
+<h2 id="DOU"><a href="#DOU" class="headerlink" title="DOU"></a>DOU</h2><p>日老用户（Day Old User）：每日登录的老用户。</p>
 <h2 id="Enquiry"><a href="#Enquiry" class="headerlink" title="Enquiry"></a>Enquiry</h2><ul>
 <li>询盘（Enquiry / Inquiry）：买方（或卖方）为了购买（或销售）某项商品，向对方询问有关交易条件的表示。在国际贸易的实际业务中，一般多由买方主动向卖方发出询盘。</li>
 <li>询盘量：有意向购买的卖家发给卖家的询盘的数量</li>
 </ul>
 <h2 id="FR"><a href="#FR" class="headerlink" title="FR"></a>FR</h2><p>访问路径（FR，Flow Report）：用户在网站上的访问行为，各个页面的进入率和跳出率</p>
-<h2 id="IP"><a href="#IP" class="headerlink" title="IP"></a>IP</h2><p><strong>IP</strong>（Internet Protocol）：访问过该网站的IP总数；以用户的IP地址作为统计依据。</p>
+<h2 id="GMV"><a href="#GMV" class="headerlink" title="GMV"></a>GMV</h2><p>成交总额（GMV，Gross Merchandise Volume）：下单产生的总金额</p>
+<script type="math/tex; mode=display">GMV=销售额+取消订单金额+退款金额</script><h2 id="IP"><a href="#IP" class="headerlink" title="IP"></a>IP</h2><p><strong>IP</strong>（Internet Protocol）：访问过该网站的IP总数；以用户的IP地址作为统计依据。</p>
 <ul>
 <li>同一天00:00-24:00内相同IP地址仅计算一次</li>
 </ul>
@@ -10394,7 +10430,7 @@ dtype: int64
 <ul>
 <li>该方法非常不灵敏；通常要求样本要足够大、时间跨度要足够长，得到的留存天数才会相对准确一些</li>
 </ul>
-<h3 id="倒推法"><a href="#倒推法" class="headerlink" title="倒推法"></a>倒推法</h3><h3 id><a href="#" class="headerlink" title=" "></a> </h3><h3 id="月活跃天数"><a href="#月活跃天数" class="headerlink" title="月活跃天数"></a>月活跃天数</h3><p>$\frac{DAU}{MAU}\times 该月的天数$：可以看出用户每月访问应用的平均天数；但是只用某天的DAU来计算月活跃天数，可能会因为周期性或特殊日期造成偏差，应该使用下面的公式计算月活跃天数：</p>
+<h3 id="倒推法"><a href="#倒推法" class="headerlink" title="倒推法"></a>倒推法</h3><h3 id="月活跃天数"><a href="#月活跃天数" class="headerlink" title="月活跃天数"></a>月活跃天数</h3><p>$\frac{DAU}{MAU}\times 该月的天数$：可以看出用户每月访问应用的平均天数；但是只用某天的DAU来计算月活跃天数，可能会因为周期性或特殊日期造成偏差，应该使用下面的公式计算月活跃天数：</p>
 <script type="math/tex; mode=display">\frac{当月每天DAU的总和}{MAU}</script><ul>
 <li>月活跃天数是用于评估<strong>用户黏性</strong>的一个重要指标</li>
 <li>DAU/MAU一般介于3.33%~100%</li>
@@ -10454,7 +10490,8 @@ dtype: int64
 <h2 id="PCT"><a href="#PCT" class="headerlink" title="PCT"></a>PCT</h2><p><strong>客单价</strong>（Per Customer Transaction）：平均交易金额/顾客平均购买商品的金额</p>
 <script type="math/tex; mode=display">客单价=销售总额/成交总笔数</script><p> 或</p>
 <script type="math/tex; mode=display">客单价=商品平均单价\times每一个顾客平均购买商品个数</script><p> 或</p>
-<script type="math/tex; mode=display">客单价=动线长度\times停留率\times注目率\times购买率\times购买个数\times商品单价</script><h2 id="PMF"><a href="#PMF" class="headerlink" title="PMF"></a>PMF</h2><p>PMF（Product/Market Fit）：产品与市场相契合的状态</p>
+<script type="math/tex; mode=display">客单价=动线长度\times停留率\times注目率\times购买率\times购买个数\times商品单价</script><h2 id="PCU"><a href="#PCU" class="headerlink" title="PCU"></a>PCU</h2><p>最高同时在线人数（PCU，Peak Concurrent Users）</p>
+<h2 id="PMF"><a href="#PMF" class="headerlink" title="PMF"></a>PMF</h2><p>PMF（Product/Market Fit）：产品与市场相契合的状态</p>
 <h2 id="PPC"><a href="#PPC" class="headerlink" title="PPC"></a>PPC</h2><p>点击付费广告（PPC，Pay Per Click）</p>
 <h2 id="PR-PUR"><a href="#PR-PUR" class="headerlink" title="PR/PUR"></a>PR/PUR</h2><p>付费比率（Pay User Rate）/付费率/付费渗透率（PR，Payment Ratio）：付费用户数占活跃用户的比例</p>
 <script type="math/tex; mode=display">PUR=\frac{活跃付费用户数APA}{活跃用户数AU}</script><ul>
@@ -10497,7 +10534,8 @@ dtype: int64
 <div class="note info">
             <p>解决问题：</p><ul><li>活跃用户生命周期分析</li><li>渠道的变化情况</li><li>版本更新对用户流失的影响评估</li><li>拉动收入的运营手段变化对用户流失的影响评估</li><li>行业比较</li><li>产品中期评估</li></ul>
           </div>
-<h2 id="SEO"><a href="#SEO" class="headerlink" title="SEO"></a>SEO</h2><ul>
+<h2 id="ROI"><a href="#ROI" class="headerlink" title="ROI"></a>ROI</h2><p>投资回报率（ROI，Return On Investment）</p>
+<script type="math/tex; mode=display">ROI=\frac{利润总额}{投入成本总额}\times 100%</script><h2 id="SEO"><a href="#SEO" class="headerlink" title="SEO"></a>SEO</h2><ul>
 <li>搜索引擎优化（SEO，Search Engine Optimization）</li>
 </ul>
 <h2 id="SKU-SPU"><a href="#SKU-SPU" class="headerlink" title="SKU | SPU"></a>SKU | SPU</h2><ul>
@@ -10531,8 +10569,17 @@ dtype: int64
 <li>访客完成浏览并最终关掉该网站的所有页面即完成一次访问（Visit）</li>
 <li>同一访客一天内可能有多次访问行为</li>
 </ul>
-<h2 id="-1"><a href="#-1" class="headerlink" title=" "></a> </h2><ul>
+<h2 id><a href="#" class="headerlink" title=" "></a> </h2><ul>
 <li>VIP顾客销售额占比（%）：用于判断店铺会员贡献<script type="math/tex; mode=display">VIP顾客销售额占比=\frac{会员顾客消费金额}{总销售额}\times100\%</script></li>
+</ul>
+<h1 id="如何获取指标"><a href="#如何获取指标" class="headerlink" title="如何获取指标"></a>如何获取指标</h1><p><strong>埋点！！！</strong></p>
+<p>埋点是数据采集的基础，通过埋点，可以：</p>
+<ul>
+<li>获得用户的行为轨迹</li>
+<li>追踪任一时间段数据的变化</li>
+<li>验证策略可行性</li>
+<li>找出产品设计漏洞</li>
+<li>……</li>
 </ul>
 <h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
 <li><a href="https://baijiahao.baidu.com/s?id=1611777819781232073&amp;wfr=spider&amp;for=pc" target="_blank" rel="noopener">SPU和SKU都是什么意思</a></li>
