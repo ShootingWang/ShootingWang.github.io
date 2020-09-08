@@ -10346,6 +10346,7 @@ dtype: int64
 <li>人均评论数</li>
 <li>人均点赞数</li>
 <li>人均分享数</li>
+<li>人均播放数</li>
 <li>……</li>
 </ul>
 </li>
@@ -10573,7 +10574,7 @@ dtype: int64
 <li>VIP顾客销售额占比（%）：用于判断店铺会员贡献<script type="math/tex; mode=display">VIP顾客销售额占比=\frac{会员顾客消费金额}{总销售额}\times100\%</script></li>
 </ul>
 <h1 id="如何获取指标"><a href="#如何获取指标" class="headerlink" title="如何获取指标"></a>如何获取指标</h1><p><strong>埋点！！！</strong></p>
-<p>埋点是数据采集的基础，通过埋点，可以：</p>
+<p><a href="/%E6%95%B0%E6%8D%AE-%E6%95%B0%E6%8D%AE%E5%9F%8B%E7%82%B9.html" title="埋点">埋点</a>是数据采集的基础，通过埋点，可以：</p>
 <ul>
 <li>获得用户的行为轨迹</li>
 <li>追踪任一时间段数据的变化</li>
