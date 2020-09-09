@@ -636,6 +636,12 @@
 <ul>
 <li>数据库的概念独立于具体的机器和DBMS</li>
 </ul>
+<h3 id="E-R方法"><a href="#E-R方法" class="headerlink" title="E-R方法"></a>E-R方法</h3><p>实体-联系方法（E-R，Entity-Relationship Approach），是描述现实世界概念结构模型的有效方法。</p>
+<ul>
+<li><strong>矩形</strong>：实体型</li>
+<li><strong>椭圆</strong>：实体的属性</li>
+<li><strong>菱形</strong>：实体型之间的联系</li>
+</ul>
 <h2 id="逻辑结构设计"><a href="#逻辑结构设计" class="headerlink" title="逻辑结构设计"></a>逻辑结构设计</h2><ul>
 <li>在数据库设计中，将ER图转换为关系数据模型的过程属于<strong>逻辑设计阶段</strong></li>
 </ul>
@@ -647,6 +653,20 @@
 </ul>
 <h1 id="键"><a href="#键" class="headerlink" title="键"></a>键</h1><h2 id="外键"><a href="#外键" class="headerlink" title="外键"></a>外键</h2><ul>
 <li>在SQL语言中使用<code>FOREIGN KEY</code>时，与之配合的语句是<code>REFERENCES</code></li>
+</ul>
+<h1 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h1><h2 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h2><p>数据库事务的四大特性（简称<strong>ACID</strong>）：</p>
+<ol>
+<li>原子性（Atomicity）</li>
+<li>一致性（Consistency）</li>
+<li>隔离性（Isolation）</li>
+<li>持久性（Durability）</li>
+</ol>
+<h3 id="原子性"><a href="#原子性" class="headerlink" title="原子性"></a>原子性</h3><p>不可分割的操作单元，事务中的所有操作，要么全部完成，要么全部不完成；不可能停滞在中间某个环节。事务在执行过程中若发生错误，会被回滚（rollback）到事务开始前的状态。</p>
+<h3 id="一致性"><a href="#一致性" class="headerlink" title="一致性"></a>一致性</h3><p>在事务开始之前和结束之后，数据库的完整性约束没有被破坏。<br>或：如果在执行事务之前数据库是一致的，那么在执行事务之后数据库也还是一致的。</p>
+<h3 id="隔离性"><a href="#隔离性" class="headerlink" title="隔离性"></a>隔离性</h3><p>事务操作之间彼此独立和透明，互不影响；事务独立运行；通常使用锁来实现。一个事务处理后的结果，影响了其他事务，那么其他事务会撤回。</p>
+<h3 id="持久性"><a href="#持久性" class="headerlink" title="持久性"></a>持久性</h3><p>事务一旦提交，其结果就是永久的；即使发生系统故障，也能恢复。<br>或：在事务完成后，该事务对数据库所作的更改便持久地保存在数据库中，并不会被回滚。</p>
+<ul>
+<li>持久性通过数据库备份和恢复来保证</li>
 </ul>
 <h1 id="视图-1"><a href="#视图-1" class="headerlink" title="视图"></a>视图</h1><ul>
 <li>在视图上能够完成的操作：<ul>
@@ -677,6 +697,8 @@
 <li><code>TRUNCATE</code>比<code>DELETE</code>的速度快</li>
 <li><code>TRUNCATE</code>是删除表的所有行；而<code>DELETE</code>是删除表的一行或多行（除非没有<code>WHERE</code>子句）</li>
 <li>在删除时，如果遇到任何一行违反约束（主要是外键约束），则<code>TRUNCATE</code>仍然删除表中数据，但是表的结构、列、约束、索引等保持不变，而<code>DELETE</code>直接返回错误</li>
+<li>对于被外键约束的表，不能使用<code>TRUNCATE</code>，而应该使用不带<code>WHERE</code>子句的<code>DELETE</code></li>
+<li>如果想保留标识计数值，要用<code>DELETE</code>；因为<code>TRUNCATE</code>会对新行标识所用的计数值重置为该列的种子</li>
 </ul>
 </li>
 </ul>
@@ -8085,6 +8107,12 @@ dtype: int64
           </div>
 <h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><h2 id="SET"><a href="#SET" class="headerlink" title="SET"></a>SET</h2><p><code>SET @变量名称=变量值</code>：可以快速替换重复的代码</p>
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SET</span> @DT=<span class="string">'2020-07-12'</span>;</span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> table_1 <span class="keyword">WHERE</span> <span class="built_in">date</span>&gt;@DT;</span><br></pre></td></tr></table></figure>
+<h2 id="延时注入"><a href="#延时注入" class="headerlink" title="延时注入"></a>延时注入</h2><p>MySQL中使用延时注入常用的语句：</p>
+<ul>
+<li><code>sleep(5)</code></li>
+<li><code>BENCHMARK(10000000, MDG(1))</code>：第一个参数是执行的次数，第二个参数是要执行的函数/表达式</li>
+</ul>
+<p>但是使用<code>BENCHMARK() (M)</code>会让MySQL停一下，会大量消耗web服务器资源</p>
 <h1 id="其他注意事项"><a href="#其他注意事项" class="headerlink" title="其他注意事项"></a>其他注意事项</h1><ul>
 <li>注意字段的格式，数字和字符串不会隐式转换</li>
 </ul>
