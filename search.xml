@@ -2919,26 +2919,26 @@
 <li><strong>TN</strong>（True Negative）：真负例；是负类且被预测为负类的实例</li>
 <li><strong>FN</strong>（False Negative）：假负例；是正类但被预测为负类的实例</li>
 </ul>
-<h2 id="Precision"><a href="#Precision" class="headerlink" title="Precision"></a>Precision</h2><p><strong>精确率</strong>（Precision）or <strong>查准率</strong>：</p>
+<h2 id="精确率-Precision"><a href="#精确率-Precision" class="headerlink" title="精确率 Precision"></a>精确率 Precision</h2><p><strong>精确率</strong>（Precision）or <strong>查准率</strong>：</p>
 <script type="math/tex; mode=display">Precision=\frac{TP}{TP+FP}</script><blockquote>
 <p>如：警察抓小偷，描述警察抓的人中有多少个是小偷的标准即Precision</p>
 </blockquote>
 <p>计算Precision的加权均值（<strong>AP</strong>，average precision）：</p>
 <script type="math/tex; mode=display">AP=\sum_i(R_i-R_{i-1})P_i</script><p>其中，$R_i$、$P_i$分别是第$i$个阈值对应的Recall和Precision。</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">sklearn.metrics.average_precision_score</span><br></pre></td></tr></table></figure>
-<h2 id="Recall"><a href="#Recall" class="headerlink" title="Recall"></a>Recall</h2><p><strong>召回率</strong>（Recall）or <strong>查全率</strong>：</p>
+<h2 id="召回率-Recall"><a href="#召回率-Recall" class="headerlink" title="召回率 Recall"></a>召回率 Recall</h2><p><strong>召回率</strong>（Recall）or <strong>查全率</strong>：</p>
 <script type="math/tex; mode=display">Recall=\frac{TP}{TP+FN}</script><script type="math/tex; mode=display">召回率=\frac{提取出的正确信息条数}{样本中相关的信息条数}</script><blockquote>
 <p>如：警察抓小偷，描述有多少比例的小偷被警察抓了的标准即Recall</p>
 </blockquote>
-<p><meta name="referrer" content="no-referrer"><br><img src="/2020/05/12/Machine-Learning-%E5%88%86%E7%B1%BB%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0/pic5.png" class title="维基百科-Precision and Recall"></p>
-<h2 id="Sensitivity"><a href="#Sensitivity" class="headerlink" title="Sensitivity"></a>Sensitivity</h2><p><strong>灵敏度</strong>（Sensitivity）or <strong>真正例率</strong>（TPR，True Positive Rate）</p>
+<p><meta name="referrer" content="no-referrer"><br><img src="/Machine-Learning-%E5%88%86%E7%B1%BB%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0/pic5.png" class title="维基百科-Precision and Recall"></p>
+<h2 id="灵敏度-Sensitivity"><a href="#灵敏度-Sensitivity" class="headerlink" title="灵敏度 Sensitivity"></a>灵敏度 Sensitivity</h2><p><strong>灵敏度</strong>（Sensitivity）or <strong>真正例率</strong>（TPR，True Positive Rate）</p>
 <script type="math/tex; mode=display">Sensitivity=TPR=Recall=\frac{TP}{TP+FN}</script><ul>
 <li>召回率的同义词</li>
 </ul>
 <p><strong>1-灵敏度</strong> or <strong>假负例率</strong>（FNR，False Negative Rate）or <strong>漏诊率</strong></p>
-<script type="math/tex; mode=display">FNR=1-Sensitivity=\frac{FN}{TP+FN}</script><h2 id="Specificity"><a href="#Specificity" class="headerlink" title="Specificity"></a>Specificity</h2><p><strong>特异度</strong>（Specificity）or <strong>真负例率</strong>（TNR，True Negative Rate）</p>
+<script type="math/tex; mode=display">FNR=1-Sensitivity=\frac{FN}{TP+FN}</script><h2 id="特异度-Specificity"><a href="#特异度-Specificity" class="headerlink" title="特异度 Specificity"></a>特异度 Specificity</h2><p><strong>特异度</strong>（Specificity）or <strong>真负例率</strong>（TNR，True Negative Rate）</p>
 <script type="math/tex; mode=display">Specificity=TNR=\frac{TN}{TN+FP}</script><p><strong>1-特异度</strong> or <strong>假正例率</strong>（FPR，False Positive Rate）or <strong>误诊率</strong></p>
-<script type="math/tex; mode=display">FPR=1-Specificity=\frac{FP}{TN+FP}</script><h2 id="Error"><a href="#Error" class="headerlink" title="Error"></a>Error</h2><script type="math/tex; mode=display">Error=\frac{FP+FN}{TP+FP+TN+FN}</script><h2 id="Accuracy"><a href="#Accuracy" class="headerlink" title="Accuracy"></a>Accuracy</h2><p>Accuracy(ACC)</p>
+<script type="math/tex; mode=display">FPR=1-Specificity=\frac{FP}{TN+FP}</script><h2 id="Error"><a href="#Error" class="headerlink" title="Error"></a>Error</h2><script type="math/tex; mode=display">Error=\frac{FP+FN}{TP+FP+TN+FN}</script><h2 id="准确率-Accuracy"><a href="#准确率-Accuracy" class="headerlink" title="准确率 Accuracy"></a>准确率 Accuracy</h2><p><strong>准确率</strong>（Accuracy，ACC）</p>
 <script type="math/tex; mode=display">ACC=\frac{TP+TN}{TP+FP+TN+FN}</script><h2 id="LR"><a href="#LR" class="headerlink" title="LR+"></a>LR+</h2><p>正例似然比（Positive Likelihood Ratio，LR+）=真正例率 / 假正例率=灵敏度 / （1-特异度）</p>
 <script type="math/tex; mode=display">LR+=\frac{TPR}{FPR}</script><h2 id="LR-1"><a href="#LR-1" class="headerlink" title="LR-"></a>LR-</h2><p>负例似然比（Negative Likelihood Ratio，LR-）=假负例率 / 真负例率=（1-灵敏度）/ 特异度</p>
 <script type="math/tex; mode=display">LR-=\frac{FNR}{TNR}</script><h2 id="DOR"><a href="#DOR" class="headerlink" title="DOR"></a>DOR</h2><p>DOR（Diagnostic Odds Ratio，诊断优势比）：</p>
@@ -2962,12 +2962,12 @@
 </blockquote>
 </li>
 </ul>
-<p><meta name="referrer" content="no-referrer"><br><img src="/2020/05/12/Machine-Learning-%E5%88%86%E7%B1%BB%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0/pic3.png" class title="ROC曲线"></p>
-<p><meta name="referrer" content="no-referrer"><br><img src="/2020/05/12/Machine-Learning-%E5%88%86%E7%B1%BB%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0/pic2.png" class title="ROC曲线上点的解读"></p>
+<p><meta name="referrer" content="no-referrer"><br><img src="/Machine-Learning-%E5%88%86%E7%B1%BB%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0/pic3.png" class title="ROC曲线"></p>
+<p><meta name="referrer" content="no-referrer"><br><img src="/Machine-Learning-%E5%88%86%E7%B1%BB%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0/pic2.png" class title="ROC曲线上点的解读"></p>
 <blockquote>
 <p><strong>ROC vs F1-score</strong><br>When you have a data imbalance between positive and negative samples, you should always use F1-score because of ROC averages over all possible thresholds.</p>
 </blockquote>
-<p><meta name="referrer" content="no-referrer"><br><img src="/2020/05/12/Machine-Learning-%E5%88%86%E7%B1%BB%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0/pic1.png" class title="ROC曲线&amp;TP,TN,FP,FN的关系"></p>
+<p><meta name="referrer" content="no-referrer"><br><img src="/Machine-Learning-%E5%88%86%E7%B1%BB%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0/pic1.png" class title="ROC曲线&amp;TP,TN,FP,FN的关系"></p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 计算ROC</span></span><br><span class="line">sklearn.metrics.roc_curve(y_true, y_score)</span><br></pre></td></tr></table></figure>
 <h2 id="AUC"><a href="#AUC" class="headerlink" title="AUC"></a>AUC</h2><p><strong>AUC</strong>（Area Under Curve）：ROC曲线下的面积</p>
 <ul>
@@ -3006,7 +3006,7 @@
 <li>不同阈值下的Precision、Recall值</li>
 <li>精确率越高，召回率越高，模型和算法就越高效；即，PR曲线越靠近右上越好</li>
 </ul>
-<p><meta name="referrer" content="no-referrer"><br><img src="/2020/05/12/Machine-Learning-%E5%88%86%E7%B1%BB%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0/pic4.png" class title="An Introduction to ROC Analysis"></p>
+<p><meta name="referrer" content="no-referrer"><br><img src="/Machine-Learning-%E5%88%86%E7%B1%BB%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0/pic4.png" class title="An Introduction to ROC Analysis"></p>
 <h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
 <li><a href="https://www.cnblogs.com/pinard/p/5993450.html" target="_blank" rel="noopener">精确率与召回率，RoC曲线与PR曲线</a></li>
 <li><a href="https://blog.csdn.net/qq_22238533/article/details/78666436" target="_blank" rel="noopener">AUC的计算方法</a></li>
@@ -3025,8 +3025,8 @@
 <li><a href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.roc_curve.html#sklearn.metrics.roc_curve" target="_blank" rel="noopener">sklearn.metrics.roc_curve</a></li>
 </ul>
 <h1 id="推荐阅读"><a href="#推荐阅读" class="headerlink" title="推荐阅读"></a>推荐阅读</h1><ul>
-<li><a href="/2020/05/11/Machine-Learning-%E8%81%9A%E7%B1%BB%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0/" title="Machine Learning | 聚类模型评估">Machine Learning | 聚类模型评估</a></li>
-<li><a href="/2020/05/02/Machine-Learning-%E6%B1%87%E6%80%BB/" title="Machine Learning | 汇总">Machine Learning | 汇总</a></li>
+<li><a href="/Machine-Learning-%E8%81%9A%E7%B1%BB%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0.html" title="Machine Learning | 聚类模型评估">Machine Learning | 聚类模型评估</a></li>
+<li><a href="/Machine-Learning-%E6%B1%87%E6%80%BB.html" title="Machine Learning | 汇总">Machine Learning | 汇总</a></li>
 </ul>
 ]]></content>
       <categories>
@@ -13746,7 +13746,7 @@ E(X)&=\int_0^1 x\frac{1}{B(\alpha,\beta)}x^{\alpha-1}(1-x)^{\beta-1}\mathrm{d}x\
 <li>$Var(X)=\frac{\alpha}{\beta^2}$</li>
 </ul>
 <h3 id="逆伽马分布"><a href="#逆伽马分布" class="headerlink" title="逆伽马分布"></a>逆伽马分布</h3><p>Inverted Gamma Distribution<br>$X\sim \Gamma(\alpha, \beta)$，定义$Y=\frac{1}{X}$，则$Y$服从逆伽马分布，概率密度函数为</p>
-<script type="math/tex; mode=display">f_Y(y)=\frac{\beta^{\alpha}}{\Gamma(\alpha)}y^{-(\alpha+1)}e^{-\frac{\beta}{y}},\quad y>0</script><h3 id="t-分布"><a href="#t-分布" class="headerlink" title="$t$分布"></a>$t$分布</h3><p>Student’s t-distribution<sup><a href="#fn_1" id="reffn_1">1</a></sup></p>
+<script type="math/tex; mode=display">f_Y(y)=\frac{\beta^{\alpha}}{\Gamma(\alpha)}y^{-(\alpha+1)}e^{-\frac{\beta}{y}},\quad y>0</script><h3 id="正态分布"><a href="#正态分布" class="headerlink" title="正态分布"></a>正态分布</h3><h3 id="t-分布"><a href="#t-分布" class="headerlink" title="$t$分布"></a>$t$分布</h3><p>Student’s t-distribution<sup><a href="#fn_1" id="reffn_1">1</a></sup></p>
 <p>从均值为$\mu$、方差为$\sigma^2$的正态总体种抽取容量为$n$的随机样本，随机样本的</p>
 <ul>
 <li>均值：$\bar{x}$</li>
@@ -13760,6 +13760,11 @@ E(X)&=\int_0^1 x\frac{1}{B(\alpha,\beta)}x^{\alpha-1}(1-x)^{\beta-1}\mathrm{d}x\
 <blockquote id="fn_1">
 <sup>1</sup>. ‘Student’是William Sealy Gosset的笔名<a href="#reffn_1" title="Jump back to footnote [1] in the text."> &#8617;</a>
 </blockquote>
+<h3 id="卡方分布"><a href="#卡方分布" class="headerlink" title="卡方分布"></a>卡方分布</h3><p>若$k$个随机变量$Z_1, Z_2, \cdots, Z_k$是相互独立、服从标准<a href="#正态分布">正态分布</a>的随机变量，则随机变量Z的平方和</p>
+<script type="math/tex; mode=display">X = \sum_{i=1}^kZ_i^2</script><p>服从自由度为$k$的卡方分布。</p>
+<ul>
+<li>$E(X)=$</li>
+</ul>
 <h2 id="分布的特征"><a href="#分布的特征" class="headerlink" title="分布的特征"></a>分布的特征</h2><h3 id="偏态"><a href="#偏态" class="headerlink" title="偏态"></a>偏态</h3><p>||左偏|正态|右偏|<br>|均值、中位数、众数|均值$&lt;$中位数$&lt;$众数|均值=中位数=众数|众数$&lt;$中位数$&lt;$均值|</p>
 <h3 id="峰度"><a href="#峰度" class="headerlink" title="峰度"></a>峰度</h3><h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
 <li><a href="https://book.douban.com/subject/5998092/" target="_blank" rel="noopener">概率论与数理统计教程</a></li>
