@@ -2733,7 +2733,12 @@
 <li>在计算该指标时需要有一个离线的数据集（包含用户的历史行为记录）；然后，将该数据集通过时间分成训练集和测试集；最后，通过在训练集上建立用户的行为和兴趣模型预测用户在测试集上的行为，并计算预测行为和测试集上实际行为的重合度（即预测准确度）</li>
 </ul>
 <p><strong>评分预测</strong>的预测准确度通常通过<strong>均方根误差</strong>（RMSE）和<strong>平均绝对误差</strong>（MAE）计算。</p>
-<h3 id="覆盖度"><a href="#覆盖度" class="headerlink" title="覆盖度"></a>覆盖度</h3><h3 id="新颖度"><a href="#新颖度" class="headerlink" title="新颖度"></a>新颖度</h3><h3 id="惊喜度"><a href="#惊喜度" class="headerlink" title="惊喜度"></a>惊喜度</h3><h3 id="信任度"><a href="#信任度" class="headerlink" title="信任度"></a>信任度</h3><h3 id="透明度"><a href="#透明度" class="headerlink" title="透明度"></a>透明度</h3><h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><style>.post-copyright{display:none}</style>]]></content>
+<script type="math/tex; mode=display">RMSE=\sqrt{\frac{\sum_{u,i\in T}(r_{ui}-\hat{r}_{ui})^2}{|T|}}</script><ul>
+<li>$T$是测试集</li>
+<li>$|T|$表示测试集的(用户，物品)对数</li>
+<li>对测试集中的有一个用户$u$和物品$i$，$r_{ui}$是用户$u$对物品$i$的实际评分，而$\hat{r}_{ui}$是推荐算法给出的预测评分</li>
+</ul>
+<script type="math/tex; mode=display">MAE=\frac{\sum_{u,i\in T}|r_{ui}-\hat{r}_{ui}|}{|T|}</script><h3 id="覆盖度"><a href="#覆盖度" class="headerlink" title="覆盖度"></a>覆盖度</h3><h3 id="新颖度"><a href="#新颖度" class="headerlink" title="新颖度"></a>新颖度</h3><h3 id="惊喜度"><a href="#惊喜度" class="headerlink" title="惊喜度"></a>惊喜度</h3><h3 id="信任度"><a href="#信任度" class="headerlink" title="信任度"></a>信任度</h3><h3 id="透明度"><a href="#透明度" class="headerlink" title="透明度"></a>透明度</h3><h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><style>.post-copyright{display:none}</style>]]></content>
       <categories>
         <category>数据分析</category>
       </categories>
@@ -19601,6 +19606,9 @@ E(X)&=\int_0^1 x\frac{1}{B(\alpha,\beta)}x^{\alpha-1}(1-x)^{\beta-1}\mathrm{d}x\
 <div class="note default">
             <p>证明 或 推荐 或 引用 或 示例</p>
           </div>
+<h1 id="其他-1"><a href="#其他-1" class="headerlink" title="其他"></a>其他</h1><h2 id="github-io无法访问"><a href="#github-io无法访问" class="headerlink" title="github.io无法访问"></a>github.io无法访问</h2><ul>
+<li><a href="https://juejin.im/post/6863358382410203144" target="_blank" rel="noopener">解决无法访问github pages的方法</a></li>
+</ul>
 <h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1>]]></content>
       <categories>
         <category>Everything</category>
