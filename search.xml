@@ -11147,7 +11147,7 @@ dtype: int64
 <li>未知（unknown）：虽然现在不知道，但加上某些条件后就可以知道</li>
 <li>不适用（not applicable，inapplicable）：无论怎么努力都无法知道</li>
 </ul>
-<p><meta name="referrer" content="no-referrer"><br><img src="/2020/05/12/sql-SQL%E8%BF%9B%E9%98%B6%E6%95%99%E7%A8%8B/NULL_lost.png" class title="丢失的信息的分类"></p>
+<p><meta name="referrer" content="no-referrer"><br><img src="/sql-SQL%E8%BF%9B%E9%98%B6%E6%95%99%E7%A8%8B/NULL_lost.png" class title="丢失的信息的分类"></p>
 <div class="note default">
             <p><strong>为什么必须写成<code>IS NULL</code>，而不是<code>=NULL</code>?</strong></p><p>因为对<code>NULL</code>使用比较谓词后得到的结果总是unknown，而SQL查询结果只会包含<code>WHERE</code>子句中判断结果为true的行，不会包含判断结果为false或unknown的行。因此使用<code>xxx = NULL</code>并不能得到正确的查询结果</p>
           </div>
@@ -11289,7 +11289,11 @@ dtype: int64
 <li>极值谓词（<code>MIN</code>、<code>MAX</code>）在输入为空表（空集）时会返回<code>NULL</code></li>
 <li>当需要返回所有行时，需要使用<code>ALL</code>谓词，或者使用<code>COALESCE</code>函数将极值函数返回的<code>NULL</code>处理成合适的值</li>
 </ul>
-<h1 id="HAVING子句"><a href="#HAVING子句" class="headerlink" title="HAVING子句"></a>HAVING子句</h1><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="HAVING子句"><a href="#HAVING子句" class="headerlink" title="HAVING子句"></a>HAVING子句</h1><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 查询编号是否连续</span></span><br><span class="line"><span class="keyword">SELECT</span>  <span class="string">'存在缺失的编号'</span> <span class="keyword">AS</span> gap </span><br><span class="line"><span class="keyword">FROM</span>    tbl</span><br><span class="line"><span class="keyword">HAVING</span>  <span class="keyword">COUNT</span>(<span class="number">1</span>) &lt;&gt; <span class="keyword">MAX</span>(seq);</span><br><span class="line"><span class="comment">-- 检查自然数集合和tbl集合之间是否存在一一映射</span></span><br><span class="line"><span class="comment">-- 上述语句没有GROUP BY子句，整张表会被聚合为一行</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>以前的SQL标准中，<code>HAVING</code>子句必须和<code>GROUP BY</code>子句一起使用；按照现在的SQL标准，<code>HAVING</code>子句可以单独使用，但是不能在<code>SELECT</code>子句里引用原来的表里的列</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
