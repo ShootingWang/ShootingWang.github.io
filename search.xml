@@ -11377,8 +11377,9 @@ dtype: int64
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p>[1] <a href="https://mp.weixin.qq.com/s?__biz=MzU5NzkxODMxOA==&amp;mid=2247486368&amp;idx=1&amp;sn=3ef74be0a7b7345cba471da1370f8986&amp;chksm=fe4d5ca1c93ad5b7481d65a8fa0a8b4e585714af57ad69437d599bbac5830910562a9097a12b&amp;token=1415910284&amp;lang=zh_CN#rd" target="_blank" rel="noopener">Notes | SQL进阶教程 | 001</a></p>
 <h1 id="推荐阅读"><a href="#推荐阅读" class="headerlink" title="推荐阅读"></a>推荐阅读</h1><ul>
-<li><a href="/sql-sql%E8%A7%A3%E6%83%91.html" title="《SQL解惑》读书笔记">《SQL解惑》读书笔记</a></li>
 <li><a href="/sql-sql%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A.html" title="《SQL必知必会》读书笔记">《SQL必知必会》读书笔记</a></li>
+<li><a href="/sql-sql%E8%A7%A3%E6%83%91.html" title="《SQL解惑》读书笔记">《SQL解惑》读书笔记</a>
+</li>
 </ul>
 ]]></content>
       <categories>
