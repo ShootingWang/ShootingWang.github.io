@@ -1,6 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>SQL Server</title>
+    <url>/SQL-Server.html</url>
+    <content><![CDATA[<p><center>SQL Server相关知识</center><br><a id="more"></a></p>
+<h1 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h1><h2 id="INTO"><a href="#INTO" class="headerlink" title="INTO"></a>INTO</h2><p><code>SELECT INTO FROM ...</code>和<code>INSERT INTO SELECT ... FROM ...</code>都是用于复制表，但二者存在区别：</p>
+<ul>
+<li><code>SELECT INTO FROM</code>要求目标表不存在<ul>
+<li>若目标表已存在，则会提示错误</li>
+<li>若目标表不存在，则语句执行成功，并在目标表中将原有的标识列自动设为标识列</li>
+</ul>
+</li>
+<li><code>INSERT INTO FROM</code>要求目标表存在</li>
+</ul>
+<blockquote>
+<p>MySQL不支持<code>SELECT INTO FROM</code></p>
+</blockquote>
+<ul>
+<li><a href="https://www.nowcoder.com/questionTerminal/5d6b5a80e83b4328938352423e7123c8" target="_blank" rel="noopener">相关题目</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>数据库</category>
+      </categories>
+      <tags>
+        <tag>SQL</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>ACCESS</title>
     <url>/ACCESS.html</url>
     <content><![CDATA[<p><center>ACCESS相关知识</center><br><a id="more"></a></p>
@@ -637,7 +664,7 @@
 <li><strong>嵌入式SQL</strong>：嵌入在高级语言的程序中使用；这些高级语言可以是C语言、PASCAL、COBOL等，被称为宿主语言</li>
 </ol>
 <h2 id="交互式SQL"><a href="#交互式SQL" class="headerlink" title="交互式SQL"></a>交互式SQL</h2><h3 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h3><a href="/MySQL.html" title="MySQL">MySQL</a>
-<h3 id="MS-SQL-Server"><a href="#MS-SQL-Server" class="headerlink" title="MS SQL Server"></a>MS SQL Server</h3>
+<h3 id="MS-SQL-Server"><a href="#MS-SQL-Server" class="headerlink" title="MS SQL Server"></a>MS SQL Server</h3><a href="/SQL-Server.html" title="SQL Server">SQL Server</a>
 <h3 id="ACCESS"><a href="#ACCESS" class="headerlink" title="ACCESS"></a>ACCESS</h3><a href="/ACCESS.html" title="ACCESS">ACCESS</a>
 <h2 id="嵌入式SQL"><a href="#嵌入式SQL" class="headerlink" title="嵌入式SQL"></a>嵌入式SQL</h2><h3 id="嵌入C语言程序"><a href="#嵌入C语言程序" class="headerlink" title="嵌入C语言程序"></a>嵌入C语言程序</h3><ul>
 <li>SQL 与 C 语言处理记录的方式是不同的。当将 SQL 语句嵌入到 C 语言程序时，为协调两者而引入<strong>游标</strong>（<a href="https://www.nowcoder.com/questionTerminal/56131e315f2d4071847d6a052b47260d" target="_blank" rel="noopener">题目来源</a>）</li>
@@ -739,7 +766,7 @@
 </ul>
 <h2 id="DROP"><a href="#DROP" class="headerlink" title="DROP"></a>DROP</h2><p>删除表：<code>DROP TABLE table_name</code></p>
 <h2 id="IIF"><a href="#IIF" class="headerlink" title="IIF()"></a>IIF()</h2><p><code>IIF(boolean_expression, valueForTrue, valueForFalse)</code>：如果<code>boolean_expression</code>为真，则返回<code>valueForTrue</code>；否则返回<code>valueForFalse</code>。</p>
-<h2 id="ISNULL"><a href="#ISNULL" class="headerlink" title="ISNULL()"></a>ISNULL()</h2><p><code>ISNULL(expression1, expression2)</code>：如果第一个参数为<code>NULL</code>，则返回第二个参数expression2；否则，返回第一个参数expression1。等价于<code>CASE WHEN expression1 IS NULL THEN expression2 ELSE expression1 END</code>。</p>
+<h2 id="INTO"><a href="#INTO" class="headerlink" title="INTO"></a>INTO</h2><h2 id="ISNULL"><a href="#ISNULL" class="headerlink" title="ISNULL()"></a>ISNULL()</h2><p><code>ISNULL(expression1, expression2)</code>：如果第一个参数为<code>NULL</code>，则返回第二个参数expression2；否则，返回第一个参数expression1。等价于<code>CASE WHEN expression1 IS NULL THEN expression2 ELSE expression1 END</code>。</p>
 <h2 id="MAX"><a href="#MAX" class="headerlink" title="MAX()"></a>MAX()</h2><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 用户最近登录的日期</span></span><br><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">    <span class="built_in">date</span> <span class="keyword">AS</span> d</span><br><span class="line"><span class="keyword">FROM</span> </span><br><span class="line">(</span><br><span class="line">    <span class="keyword">SELECT</span></span><br><span class="line">        user_id</span><br><span class="line">        , <span class="built_in">date</span></span><br><span class="line">        , ROW_NUMBER() <span class="keyword">OVER</span>(<span class="keyword">PARTITION</span> <span class="keyword">BY</span> user_id <span class="keyword">ORDER</span> <span class="keyword">BY</span> <span class="built_in">date</span> <span class="keyword">DESC</span>) <span class="keyword">AS</span> r_num</span><br><span class="line">    <span class="keyword">FROM</span> login</span><br><span class="line">) <span class="keyword">AS</span> t</span><br><span class="line"><span class="keyword">WHERE</span> r_num = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 或</span></span><br><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">    <span class="keyword">MAX</span>(<span class="built_in">date</span>)</span><br><span class="line"><span class="keyword">FROM</span> login</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> user_id</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> user_id;</span><br></pre></td></tr></table></figure>
 <h2 id="MIN"><a href="#MIN" class="headerlink" title="MIN"></a>MIN</h2><ul>
 <li><a href="https://www.nowcoder.com/practice/16d41af206cd4066a06a3a0aa585ad3d?tpId=82&amp;&amp;tqId=35086&amp;rp=1&amp;ru=/ta/sql&amp;qru=/ta/sql/question-ranking" target="_blank" rel="noopener">题源</a>：<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 新登录用户的次日登录成功的留存率</span></span><br><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">    <span class="keyword">ROUND</span>(<span class="number">1.0</span> * <span class="keyword">COUNT</span>(<span class="keyword">DISTINCT</span> l1.user_id) / (<span class="keyword">SELECT</span> <span class="keyword">COUNT</span>(<span class="keyword">DISTINCT</span> user_id) <span class="keyword">FROM</span> login), <span class="number">3</span>)</span><br><span class="line"><span class="keyword">FROM</span> login l1, login l2</span><br><span class="line"><span class="keyword">ON</span> l1.user_id = l2.user_id</span><br><span class="line"><span class="keyword">AND</span> <span class="built_in">DATE</span>(l1.date, <span class="string">'+1 day'</span>) = l2.date</span><br><span class="line"><span class="keyword">AND</span> l1.date = (<span class="keyword">SELECT</span> <span class="keyword">MIN</span>(<span class="built_in">date</span>) <span class="keyword">FROM</span> login <span class="keyword">WHERE</span> user_id = l1.user_id);</span><br></pre></td></tr></table></figure>
