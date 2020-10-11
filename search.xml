@@ -1,6 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>ACCESS</title>
+    <url>/ACCESS.html</url>
+    <content><![CDATA[<p><center>ACCESS相关知识</center><br><a id="more"></a></p>
+<h1 id="窗体控件"><a href="#窗体控件" class="headerlink" title="窗体控件"></a>窗体控件</h1><ul>
+<li><strong>文本框</strong>：用来输入或编辑数据</li>
+<li><strong>标签</strong>：用来显示一些说明文字</li>
+<li><strong>图形</strong>：用来显示指定的图形</li>
+<li><strong>命令按钮</strong>：用来提供给用户单击的按钏型控件</li>
+</ul>
+<h1 id="视图"><a href="#视图" class="headerlink" title="视图"></a>视图</h1><p>ACCESS窗体的视图有：</p>
+<ul>
+<li>窗体视图</li>
+<li>数据表视图</li>
+<li>设计视图</li>
+<li>数据透视表视图</li>
+<li>数据透视图视图</li>
+</ul>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1>]]></content>
+      <categories>
+        <category>数据库</category>
+      </categories>
+      <tags>
+        <tag>SQL</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Python</title>
     <url>/Python.html</url>
     <content><![CDATA[<center>Python使用手册</center>
@@ -608,24 +634,11 @@
 <h1 id="SQL"><a href="#SQL" class="headerlink" title="SQL"></a>SQL</h1><p>SQL语言具有两种<strong>使用方式</strong>，分别为</p>
 <ol>
 <li><strong>交互式SQL</strong>：在终端交互方式下使用</li>
-<li><strong>嵌入式SQL</strong>：嵌入在高级语言的程序中使用；这些高级语言可以是C语言、PASCAL、COBOL等，被称为宿主语言<h2 id="交互式SQL"><a href="#交互式SQL" class="headerlink" title="交互式SQL"></a>交互式SQL</h2><h3 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h3></li>
+<li><strong>嵌入式SQL</strong>：嵌入在高级语言的程序中使用；这些高级语言可以是C语言、PASCAL、COBOL等，被称为宿主语言<h2 id="交互式SQL"><a href="#交互式SQL" class="headerlink" title="交互式SQL"></a>交互式SQL</h2><h3 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h3><a href="/MySQL.html" title="MySQL">MySQL</a>
+</li>
 </ol>
-<ul>
-<li><a href="/MySQL.html" title="MySQL">MySQL</a>
-</li>
-</ul>
-<h3 id="MS-SQL-Server"><a href="#MS-SQL-Server" class="headerlink" title="MS SQL Server"></a>MS SQL Server</h3><ul>
-<li>
-</li>
-</ul>
-<h3 id="ACCESS"><a href="#ACCESS" class="headerlink" title="ACCESS"></a>ACCESS</h3><h4 id="视图"><a href="#视图" class="headerlink" title="视图"></a>视图</h4><p>ACCESS窗体的视图有：</p>
-<ul>
-<li>窗体视图</li>
-<li>数据表视图</li>
-<li>设计视图</li>
-<li>数据透视表视图</li>
-<li>数据透视图视图</li>
-</ul>
+<h3 id="MS-SQL-Server"><a href="#MS-SQL-Server" class="headerlink" title="MS SQL Server"></a>MS SQL Server</h3>
+<h3 id="ACCESS"><a href="#ACCESS" class="headerlink" title="ACCESS"></a>ACCESS</h3><a href="/ACCESS.html" title="ACCESS">ACCESS</a>
 <h2 id="嵌入式SQL"><a href="#嵌入式SQL" class="headerlink" title="嵌入式SQL"></a>嵌入式SQL</h2><h3 id="嵌入C语言程序"><a href="#嵌入C语言程序" class="headerlink" title="嵌入C语言程序"></a>嵌入C语言程序</h3><ul>
 <li>SQL 与 C 语言处理记录的方式是不同的。当将 SQL 语句嵌入到 C 语言程序时，为协调两者而引入<strong>游标</strong>（<a href="https://www.nowcoder.com/questionTerminal/56131e315f2d4071847d6a052b47260d" target="_blank" rel="noopener">题目来源</a>）</li>
 </ul>
@@ -635,7 +648,10 @@
 <li><a href="/sql-sql%E8%A7%A3%E6%83%91.html" title="《SQL解惑》">《SQL解惑》</a>
 </li>
 </ul>
-<h1 id="数据设计"><a href="#数据设计" class="headerlink" title="数据设计"></a>数据设计</h1><h2 id="概念结构设计"><a href="#概念结构设计" class="headerlink" title="概念结构设计"></a>概念结构设计</h2><p>数据设计中的E-R模型设计是<strong>概念结构设计</strong>阶段的主要工作之一</p>
+<h1 id="数据设计"><a href="#数据设计" class="headerlink" title="数据设计"></a>数据设计</h1><ul>
+<li>在关系数据库设计中，关系模式是用来记录用户数据的<strong>二维表</strong></li>
+</ul>
+<h2 id="概念结构设计"><a href="#概念结构设计" class="headerlink" title="概念结构设计"></a>概念结构设计</h2><p>数据设计中的E-R模型设计是<strong>概念结构设计</strong>阶段的主要工作之一</p>
 <ul>
 <li>数据库的概念独立于具体的机器和DBMS</li>
 </ul>
@@ -671,7 +687,7 @@
 <ul>
 <li>持久性通过数据库备份和恢复来保证</li>
 </ul>
-<h1 id="视图-1"><a href="#视图-1" class="headerlink" title="视图"></a>视图</h1><ul>
+<h1 id="视图"><a href="#视图" class="headerlink" title="视图"></a>视图</h1><ul>
 <li>在视图上能够完成的操作：<ul>
 <li>更新视图</li>
 <li>查询</li>
