@@ -336,7 +336,7 @@
 <li>一般决策问题：一般损失函数</li>
 </ul>
 <div class="note default">
-            <p>对于二分类问题，若将<a href="/2020/05/27/%E7%AE%97%E6%B3%95-AdaBoost/" title="AdaBoost算法">AdaBoost算法</a>中的基分类器限定为<strong>二类决策树</strong>，则为提升树。<br>此时，Boosting Tree是AdaBoost的特殊情况。</p>
+            <p>对于二分类问题，若将<a href="/%E7%AE%97%E6%B3%95-AdaBoost.html" title="AdaBoost算法">AdaBoost算法</a>中的基分类器限定为<strong>二类决策树</strong>，则为提升树。<br>此时，Boosting Tree是AdaBoost的特殊情况。</p>
           </div>
 <div class="note danger">
             <h2 id="回归提升树"><a href="#回归提升树" class="headerlink" title="回归提升树"></a>回归提升树</h2><p><strong>输入</strong>：训练数据集$\{(x_1,y_1),\cdots, (x_N,y_N)\}$<br>  $x_i\in X\subseteq \mathbb{R}^p,\quad y_i\in Y\subseteq \mathbb{R}$</p><p><strong>输出</strong>：提升树</p><script type="math/tex; mode=display">H(x)=\sum_{t=1}^Th_t(x)</script><ol><li>初始化提升树$H_0(x)=0$</li><li>对$t=1,\cdots,T$($T$为迭代次数)，<ol><li>计算上一轮迭代的残差<script type="math/tex; mode=display">r_i^{(t)}=y_i-H_{t-1}(x_i),\quad i=1,\cdots,N.</script></li><li>拟合残差$r_i^{(t)}$学习得到一棵回归树<script type="math/tex; mode=display">h_t(x;\theta_t)</script></li><li>更新提升树<script type="math/tex; mode=display">H_t(x)=H_{t-1}(x)+h_t(x;\theta_t)</script></li></ol></li></ol>

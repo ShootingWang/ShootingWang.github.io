@@ -312,11 +312,11 @@
 </li>
 </ul>
 <h1 id="HUAWEI"><a href="#HUAWEI" class="headerlink" title="HUAWEI"></a>HUAWEI</h1><ul>
-<li><a href="/2020/05/06/HUAWEI%E9%A2%98%E5%BA%93/" title="HUAWEI相关编程题库">HUAWEI相关编程题库</a>
+<li><a href="/HUAWEI%E9%A2%98%E5%BA%93.html" title="HUAWEI相关编程题库">HUAWEI相关编程题库</a>
 </li>
 </ul>
 <h1 id="PINDUODUO"><a href="#PINDUODUO" class="headerlink" title="PINDUODUO"></a>PINDUODUO</h1><ul>
-<li><a href="/2020/05/06/%E6%8B%BC%E5%A4%9A%E5%A4%9A%E9%A2%98%E5%BA%93/" title="PinDuoDuo相关编程题库">PinDuoDuo相关编程题库</a>
+<li><a href="/%E6%8B%BC%E5%A4%9A%E5%A4%9A%E9%A2%98%E5%BA%93.html" title="PinDuoDuo相关编程题库">PinDuoDuo相关编程题库</a>
 </li>
 </ul>
 <h1 id="题库"><a href="#题库" class="headerlink" title="题库"></a>题库</h1><h2 id="质数-素数"><a href="#质数-素数" class="headerlink" title="质数/素数"></a>质数/素数</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 列出小于整数n的所有质数</span></span><br><span class="line"><span class="comment">## 不导入模块</span></span><br><span class="line">n = <span class="number">20</span></span><br><span class="line">[i <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">2</span>, n) <span class="keyword">if</span> <span class="number">0</span> <span class="keyword">not</span> <span class="keyword">in</span> [i%j <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">2</span>, int(i**<span class="number">0.5</span>) + <span class="number">1</span>)]]</span><br><span class="line"><span class="comment"># [2, 3, 5, 7, 11, 13, 17, 19]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 使用Python的模块</span></span><br><span class="line">[i <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">2</span>, n) <span class="keyword">if</span> <span class="number">0</span> <span class="keyword">not</span> <span class="keyword">in</span> [i%j <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">2</span>, int(math.sqrt(i)) + <span class="number">1</span>)]]</span><br><span class="line"><span class="comment"># [2, 3, 5, 7, 11, 13, 17, 19]</span></span><br></pre></td></tr></table></figure>

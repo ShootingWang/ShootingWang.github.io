@@ -1,74 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>SQL Server</title>
-    <url>/SQL-Server.html</url>
-    <content><![CDATA[<p><center>SQL Server相关知识</center><br><a id="more"></a></p>
-<h1 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h1><h2 id="INTO"><a href="#INTO" class="headerlink" title="INTO"></a>INTO</h2><p><code>SELECT INTO FROM ...</code>和<code>INSERT INTO SELECT ... FROM ...</code>都是用于复制表，但二者存在区别：</p>
-<ul>
-<li><code>SELECT INTO FROM</code>要求目标表不存在<ul>
-<li>若目标表已存在，则会提示错误</li>
-<li>若目标表不存在，则语句执行成功，并在目标表中将原有的标识列自动设为标识列</li>
-</ul>
-</li>
-<li><code>INSERT INTO FROM</code>要求目标表存在</li>
-</ul>
-<blockquote>
-<p>MySQL不支持<code>SELECT INTO FROM</code></p>
-</blockquote>
-<ul>
-<li><a href="https://www.nowcoder.com/questionTerminal/5d6b5a80e83b4328938352423e7123c8" target="_blank" rel="noopener">相关题目</a></li>
-</ul>
-]]></content>
-      <categories>
-        <category>数据库</category>
-      </categories>
-      <tags>
-        <tag>SQL</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>ACCESS</title>
-    <url>/ACCESS.html</url>
-    <content><![CDATA[<p><center>ACCESS相关知识</center><br><a id="more"></a></p>
-<h1 id="窗体控件"><a href="#窗体控件" class="headerlink" title="窗体控件"></a>窗体控件</h1><ul>
-<li><strong>文本框</strong>：用来输入或编辑数据</li>
-<li><strong>标签</strong>：用来显示一些说明文字</li>
-<li><strong>图形</strong>：用来显示指定的图形</li>
-<li><strong>命令按钮</strong>：用来提供给用户单击的按钏型控件</li>
-</ul>
-<h1 id="视图"><a href="#视图" class="headerlink" title="视图"></a>视图</h1><p>ACCESS窗体的视图有：</p>
-<ul>
-<li>窗体视图</li>
-<li>数据表视图</li>
-<li>设计视图</li>
-<li>数据透视表视图</li>
-<li>数据透视图视图</li>
-</ul>
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1>]]></content>
-      <categories>
-        <category>数据库</category>
-      </categories>
-      <tags>
-        <tag>SQL</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Python</title>
     <url>/Python.html</url>
     <content><![CDATA[<center>Python使用手册</center>
 
 <a id="more"></a>
 <h1 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h1><ul>
-<li><a href="/2020/05/10/python-%E5%91%BD%E5%90%8D%E6%96%B9%E5%BC%8F/" title="命名方式">命名方式</a></li>
-<li><a href="/2020/05/03/python-4-%E8%BF%90%E7%AE%97%E7%AC%A6%E4%BC%98%E5%85%88%E7%BA%A7/" title="运算符">运算符</a></li>
-<li><a href="/2020/05/03/python-5-%E5%87%BD%E6%95%B0/" title="函数">函数</a></li>
-<li><a href="/2020/05/03/python-6-%E5%BE%AA%E7%8E%AF/" title="循环">循环</a></li>
-<li><a href="/2020/05/03/python-8-%E6%A8%A1%E5%9D%97/" title="模块">模块</a>
+<li><a href="/python-%E5%91%BD%E5%90%8D%E6%96%B9%E5%BC%8F.html" title="命名方式">命名方式</a></li>
+<li><a href="/python-4-%E8%BF%90%E7%AE%97%E7%AC%A6%E4%BC%98%E5%85%88%E7%BA%A7.html" title="运算符">运算符</a></li>
+<li><a href="/python-5-%E5%87%BD%E6%95%B0.html" title="函数">函数</a></li>
+<li><a href="/python-6-%E5%BE%AA%E7%8E%AF.html" title="循环">循环</a></li>
+<li><a href="/python-8-%E6%A8%A1%E5%9D%97.html" title="模块">模块</a>
 </li>
 </ul>
 <h1 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h1><h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><ul>
-<li><a href="/2020/05/10/python-%E5%AD%97%E7%AC%A6%E4%B8%B2/" title="字符串">字符串</a>
+<li><a href="/python-%E5%AD%97%E7%AC%A6%E4%B8%B2.html" title="字符串">字符串</a>
 </li>
 </ul>
 <h2 id="复数"><a href="#复数" class="headerlink" title="复数"></a>复数</h2><ul>
@@ -80,40 +27,40 @@
 </ul>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">lst1 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]  <span class="comment">## 可变对象</span></span><br><span class="line">lst2 = lst1  <span class="comment">## 引用传递</span></span><br><span class="line">lst1.append(<span class="number">5</span>)</span><br><span class="line">lst2</span><br><span class="line"><span class="comment"># [1, 2, 3, 5]</span></span><br><span class="line"><span class="comment">## 不可变对象为值传递</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h1 id="内置函数"><a href="#内置函数" class="headerlink" title="内置函数"></a>内置函数</h1><a href="/2020/05/22/python-%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0/" title="内置函数">内置函数</a>
-<h1 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h1><h2 id="Categorical-encoders"><a href="#Categorical-encoders" class="headerlink" title="Categorical_encoders"></a>Categorical_encoders</h2><a href="/2020/06/12/python-categorical-encoders/" title="Categorical_encoders">Categorical_encoders</a>
+<h1 id="内置函数"><a href="#内置函数" class="headerlink" title="内置函数"></a>内置函数</h1><a href="/python-%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0.html" title="内置函数">内置函数</a>
+<h1 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h1><h2 id="Categorical-encoders"><a href="#Categorical-encoders" class="headerlink" title="Categorical_encoders"></a>Categorical_encoders</h2><a href="/python-categorical-encoders.html" title="Categorical_encoders">Categorical_encoders</a>
 <ul>
 <li>对类别变量进行0-1编码、独热编码(One-Hot Encoding)</li>
 </ul>
-<h2 id="Collections"><a href="#Collections" class="headerlink" title="Collections"></a>Collections</h2><a href="/2020/05/05/python-collections%E6%A8%A1%E5%9D%97/" title="Collections">Collections</a>
+<h2 id="Collections"><a href="#Collections" class="headerlink" title="Collections"></a>Collections</h2><a href="/python-collections%E6%A8%A1%E5%9D%97.html" title="Collections">Collections</a>
 <ul>
 <li>对队列进行操作</li>
 </ul>
-<h2 id="heapq"><a href="#heapq" class="headerlink" title="heapq"></a>heapq</h2><a href="/2020/08/13/python-heapq/" title="heapq">heapq</a>
+<h2 id="heapq"><a href="#heapq" class="headerlink" title="heapq"></a>heapq</h2><a href="/python-heapq.html" title="heapq">heapq</a>
 <ul>
 <li>对堆进行操作</li>
 <li>可进行堆排序</li>
 </ul>
-<h2 id="keras"><a href="#keras" class="headerlink" title="keras"></a>keras</h2><a href="/2020/05/10/python-keras/" title="Keras">Keras</a>
-<h2 id="missingno"><a href="#missingno" class="headerlink" title="missingno"></a>missingno</h2><a href="/2020/05/20/python-missingno/" title="missingno">missingno</a>
+<h2 id="keras"><a href="#keras" class="headerlink" title="keras"></a>keras</h2><a href="/python-keras.html" title="Keras">Keras</a>
+<h2 id="missingno"><a href="#missingno" class="headerlink" title="missingno"></a>missingno</h2><a href="/python-missingno.html" title="missingno">missingno</a>
 <ul>
 <li>可视化缺失值</li>
 </ul>
-<h2 id="NumPy"><a href="#NumPy" class="headerlink" title="NumPy"></a>NumPy</h2><a href="/2020/05/10/python-numpy%E6%A8%A1%E5%9D%97/" title="NumPy">NumPy</a>
+<h2 id="NumPy"><a href="#NumPy" class="headerlink" title="NumPy"></a>NumPy</h2><a href="/python-numpy%E6%A8%A1%E5%9D%97.html" title="NumPy">NumPy</a>
 <ul>
 <li>对数组、矩阵操作</li>
 </ul>
-<h2 id="Pandas"><a href="#Pandas" class="headerlink" title="Pandas"></a>Pandas</h2><a href="/2020/05/12/python-pandas%E6%A8%A1%E5%9D%97/" title="Pandas">Pandas</a>
+<h2 id="Pandas"><a href="#Pandas" class="headerlink" title="Pandas"></a>Pandas</h2><a href="/python-pandas%E6%A8%A1%E5%9D%97.html" title="Pandas">Pandas</a>
 <ul>
 <li>对序列Series、数据框DataFrame进行操作</li>
 </ul>
-<h2 id="pip"><a href="#pip" class="headerlink" title="pip"></a>pip</h2><a href="/2020/05/09/python-pip/" title="pip">pip</a>
+<h2 id="pip"><a href="#pip" class="headerlink" title="pip"></a>pip</h2><a href="/python-pip.html" title="pip">pip</a>
 <ul>
 <li>安装p</li>
 </ul>
-<h2 id="pyecharts"><a href="#pyecharts" class="headerlink" title="pyecharts"></a>pyecharts</h2><a href="/2020/05/08/python-pyecharts%E6%A8%A1%E5%9D%97/" title="Pyecharts">Pyecharts</a>
-<h2 id="re"><a href="#re" class="headerlink" title="re"></a>re</h2><a href="/2020/05/03/python-re%E6%A8%A1%E5%9D%97/" title="re">re</a>
-<h2 id="sklearn"><a href="#sklearn" class="headerlink" title="sklearn"></a>sklearn</h2><a href="/2020/05/13/python-sklearn/" title="sklearn">sklearn</a>
+<h2 id="pyecharts"><a href="#pyecharts" class="headerlink" title="pyecharts"></a>pyecharts</h2><a href="/python-pyecharts%E6%A8%A1%E5%9D%97.html" title="Pyecharts">Pyecharts</a>
+<h2 id="re"><a href="#re" class="headerlink" title="re"></a>re</h2><a href="/python-re%E6%A8%A1%E5%9D%97.html" title="re">re</a>
+<h2 id="sklearn"><a href="#sklearn" class="headerlink" title="sklearn"></a>sklearn</h2><a href="/python-sklearn.html" title="sklearn">sklearn</a>
 
 
 ]]></content>
@@ -428,15 +375,15 @@
 <p>数据分析就是定性分析与定量分析相互结合、不断验证的过程。<br>提出假设、设计方案、分析数据、验证或推翻假设，最后抽丝剥茧，逐渐接近真相。</p>
 <p><strong>用户研究</strong>：通过对网站访问量、应用行为统计登数据的分析，从中发现用户使用产品的情况，从中总结出一定的规律和趋势，供其他部门（市场营销、产品规划等）制定决策用。</p>
 <h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><ul>
-<li><a href="/2020/05/01/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-%E8%B4%B9%E7%B1%B3%E9%97%AE%E9%A2%98/" title="费米问题">费米问题</a></li>
-<li><a href="/2020/05/02/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-%E6%8C%87%E6%A0%87%E5%BC%82%E5%8A%A8%E7%B1%BB%E9%97%AE%E9%A2%98/" title="指标异动类问题">指标异动类问题</a></li>
-<li><a href="/2020/05/02/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-VIP%E4%BC%9A%E5%91%98%E5%A5%97%E9%A4%90%E5%AE%9A%E4%BB%B7%E7%AD%96%E7%95%A5/" title="VIP会员套餐定价策略">VIP会员套餐定价策略</a>
+<li><a href="/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-%E8%B4%B9%E7%B1%B3%E9%97%AE%E9%A2%98.html" title="费米问题">费米问题</a></li>
+<li><a href="/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-%E6%8C%87%E6%A0%87%E5%BC%82%E5%8A%A8%E7%B1%BB%E9%97%AE%E9%A2%98.html" title="指标异动类问题">指标异动类问题</a></li>
+<li><a href="/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-VIP%E4%BC%9A%E5%91%98%E5%A5%97%E9%A4%90%E5%AE%9A%E4%BB%B7%E7%AD%96%E7%95%A5.html" title="VIP会员套餐定价策略">VIP会员套餐定价策略</a>
 </li>
 <li>
 </li>
 </ul>
 <h1 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h1><ul>
-<li><a href="/2020/05/07/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-AARRR%E6%A8%A1%E5%9E%8B/" title="AARRR模型">AARRR模型</a></li>
+<li><a href="/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-AARRR%E6%A8%A1%E5%9E%8B.html" title="AARRR模型">AARRR模型</a></li>
 <li>波特五力模型</li>
 <li>SWOT分析模型</li>
 <li>SPACE矩阵（战略第位与行动评价矩阵）</li>
@@ -447,12 +394,12 @@
 <li>三四矩阵</li>
 <li>价值链模型</li>
 <li>ROS/RMS矩阵</li>
-<li><a href="/2020/05/20/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-ABtest/" title="ABtest">ABtest</a>
+<li><a href="/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-ABtest.html" title="ABtest">ABtest</a>
 </li>
 </ul>
 <h1 id="指标-定义"><a href="#指标-定义" class="headerlink" title="指标/定义"></a>指标/定义</h1><ul>
-<li><a href="/2020/05/15/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-%E6%B8%B8%E6%88%8F%E7%B1%BB%E5%90%8D%E8%AF%8D%E5%92%8C%E6%8C%87%E6%A0%87/" title="游戏类名词和指标">游戏类名词和指标</a></li>
-<li><a href="/2020/05/15/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-%E4%B8%BB%E8%A6%81%E6%8C%87%E6%A0%87/" title="常见数据分析业务相关指标">常见数据分析业务相关指标</a>
+<li><a href="/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-%E6%B8%B8%E6%88%8F%E7%B1%BB%E5%90%8D%E8%AF%8D%E5%92%8C%E6%8C%87%E6%A0%87.html" title="游戏类名词和指标">游戏类名词和指标</a></li>
+<li><a href="/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-%E4%B8%BB%E8%A6%81%E6%8C%87%E6%A0%87.html" title="常见数据分析业务相关指标">常见数据分析业务相关指标</a>
 </li>
 </ul>
 <h1 id="不同行业"><a href="#不同行业" class="headerlink" title="不同行业"></a>不同行业</h1><h2 id="电商"><a href="#电商" class="headerlink" title="电商"></a>电商</h2><p>电商用户的转化漏斗一般是：</p>
@@ -576,7 +523,7 @@
 </table>
 </div>
 <h2 id="在线旅游"><a href="#在线旅游" class="headerlink" title="在线旅游"></a>在线旅游</h2><h2 id="求职网站"><a href="#求职网站" class="headerlink" title="求职网站"></a>求职网站</h2><ul>
-<li><a href="/2020/05/07/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-LinkedIn/" title="LinkedIn">LinkedIn</a></li>
+<li><a href="/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-LinkedIn.html" title="LinkedIn">LinkedIn</a></li>
 <li>
 </li>
 </ul>
@@ -819,6 +766,59 @@
       <tags>
         <tag>SQL</tag>
         <tag>MySQL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>SQL Server</title>
+    <url>/SQL-Server.html</url>
+    <content><![CDATA[<p><center>SQL Server相关知识</center><br><a id="more"></a></p>
+<h1 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h1><h2 id="INTO"><a href="#INTO" class="headerlink" title="INTO"></a>INTO</h2><p><code>SELECT INTO FROM ...</code>和<code>INSERT INTO SELECT ... FROM ...</code>都是用于复制表，但二者存在区别：</p>
+<ul>
+<li><code>SELECT INTO FROM</code>要求目标表不存在<ul>
+<li>若目标表已存在，则会提示错误</li>
+<li>若目标表不存在，则语句执行成功，并在目标表中将原有的标识列自动设为标识列</li>
+</ul>
+</li>
+<li><code>INSERT INTO FROM</code>要求目标表存在</li>
+</ul>
+<blockquote>
+<p>MySQL不支持<code>SELECT INTO FROM</code></p>
+</blockquote>
+<ul>
+<li><a href="https://www.nowcoder.com/questionTerminal/5d6b5a80e83b4328938352423e7123c8" target="_blank" rel="noopener">相关题目</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>数据库</category>
+      </categories>
+      <tags>
+        <tag>SQL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ACCESS</title>
+    <url>/ACCESS.html</url>
+    <content><![CDATA[<p><center>ACCESS相关知识</center><br><a id="more"></a></p>
+<h1 id="窗体控件"><a href="#窗体控件" class="headerlink" title="窗体控件"></a>窗体控件</h1><ul>
+<li><strong>文本框</strong>：用来输入或编辑数据</li>
+<li><strong>标签</strong>：用来显示一些说明文字</li>
+<li><strong>图形</strong>：用来显示指定的图形</li>
+<li><strong>命令按钮</strong>：用来提供给用户单击的按钏型控件</li>
+</ul>
+<h1 id="视图"><a href="#视图" class="headerlink" title="视图"></a>视图</h1><p>ACCESS窗体的视图有：</p>
+<ul>
+<li>窗体视图</li>
+<li>数据表视图</li>
+<li>设计视图</li>
+<li>数据透视表视图</li>
+<li>数据透视图视图</li>
+</ul>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1>]]></content>
+      <categories>
+        <category>数据库</category>
+      </categories>
+      <tags>
+        <tag>SQL</tag>
       </tags>
   </entry>
   <entry>
@@ -3184,14 +3184,14 @@
     <title>Algorithm | 堆排序</title>
     <url>/Algo-%E5%A0%86%E6%8E%92%E5%BA%8F.html</url>
     <content><![CDATA[<p><center>Heap Sort</center><br><a id="more"></a></p>
-<h1 id="堆"><a href="#堆" class="headerlink" title="堆"></a>堆</h1><p>堆是具有以下性质的<a href="/2020/05/01/%E6%A0%91/" title="完全二叉树">完全二叉树</a>：</p>
+<h1 id="堆"><a href="#堆" class="headerlink" title="堆"></a>堆</h1><p>堆是具有以下性质的<a href="/%E6%A0%91.html" title="完全二叉树">完全二叉树</a>：</p>
 <ul>
 <li>每个结点的值都大于或等于其左右孩子结点的值，称为<strong>大顶堆</strong></li>
 <li>或，每个结点的值都小于或等于其左右孩子结点的值，称为<strong>小顶堆</strong></li>
 </ul>
-<p><meta name="referrer" content="no-referrer"><br><img src="/2020/08/13/Algo-%E5%A0%86%E6%8E%92%E5%BA%8F/heap.png" class title="大顶堆和小顶堆"></p>
+<p><meta name="referrer" content="no-referrer"><br><img src="/Algo-%E5%A0%86%E6%8E%92%E5%BA%8F/heap.png" class title="大顶堆和小顶堆"></p>
 <p>对堆中的结点按层进行编号，并将这种逻辑结构映射到数组中，如下：</p>
-<p><meta name="referrer" content="no-referrer"><br><img src="/2020/08/13/Algo-%E5%A0%86%E6%8E%92%E5%BA%8F/array.png" class title="映射成数组"></p>
+<p><meta name="referrer" content="no-referrer"><br><img src="/Algo-%E5%A0%86%E6%8E%92%E5%BA%8F/array.png" class title="映射成数组"></p>
 <p>该数组即是一个堆结构。</p>
 <ul>
 <li>大顶堆：<script type="math/tex; mode=display">array[i] \geq array[2i+1] 且 array[i] \geq array[2i+2]</script></li>
@@ -3221,7 +3221,7 @@
     <url>/python-heapq.html</url>
     <content><![CDATA[<p><center></center><br><a id="more"></a></p>
 <h1 id="堆队列"><a href="#堆队列" class="headerlink" title="堆队列"></a>堆队列</h1><p>堆队列，也称为优先级队列。</p>
-<p>堆是一个二叉树，它的每个父节点的值都只会小于或大于所有孩子节点（的值），原理与<a href="/2020/08/13/Algo-%E5%A0%86%E6%8E%92%E5%BA%8F/" title="Algorithm | 堆排序">Algorithm | 堆排序</a>极为相似。</p>
+<p>堆是一个二叉树，它的每个父节点的值都只会小于或大于所有孩子节点（的值），原理与<a href="/Algo-%E5%A0%86%E6%8E%92%E5%BA%8F.html" title="Algorithm | 堆排序">Algorithm | 堆排序</a>极为相似。</p>
 <h2 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h2><ul>
 <li>最小的元素总是在根结点。<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">nums = [<span class="number">2</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">1</span>, <span class="number">54</span>, <span class="number">23</span>, <span class="number">132</span>]</span><br><span class="line">heap = []</span><br><span class="line"><span class="keyword">for</span> num <span class="keyword">in</span> nums:</span><br><span class="line">    heapq.heappush(heap, num)  <span class="comment"># 加入堆</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">heap[<span class="number">0</span>]  <span class="comment">## 获取最小值</span></span><br><span class="line"><span class="comment"># 1</span></span><br></pre></td></tr></table></figure></li>
 <li>堆的值也可以是元组，可以实现对带权值的元素进行排序<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">h = []</span><br><span class="line">heapq.heappush(h, (<span class="number">5</span>, <span class="string">'write code'</span>))</span><br><span class="line">heapq.heappush(h, (<span class="number">7</span>, <span class="string">'release product'</span>))</span><br><span class="line">heapq.heappush(h, (<span class="number">1</span>, <span class="string">'write spec'</span>))</span><br><span class="line">heapq.heappush(h, (<span class="number">3</span>, <span class="string">'create tests'</span>))</span><br><span class="line">h</span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">[(1, 'write spec'),</span></span><br><span class="line"><span class="string"> (3, 'create tests'),</span></span><br><span class="line"><span class="string"> (5, 'write code'),</span></span><br><span class="line"><span class="string"> (7, 'release product')]</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line">heapq.heappop(h)</span><br><span class="line"><span class="comment"># (1, 'write spec')</span></span><br></pre></td></tr></table></figure>
@@ -3335,7 +3335,7 @@
 </ul>
 <p>销售额的计算：</p>
 <script type="math/tex; mode=display">销售额=访客数\times 成交转化率\times 客单价</script><script type="math/tex; mode=display">销售额=曝光次数\times 点击率\times 成交转化率\times 客单价</script><h2 id="漏斗模型分析"><a href="#漏斗模型分析" class="headerlink" title="漏斗模型分析"></a>漏斗模型分析</h2><p>漏斗模型是一套流程式的数据分析模型，能够反映出用户行为状态以及从开始到最终各阶段的转化率及总体转化率情况。</p>
-<p>经典的漏斗模型：<a href="/2020/05/07/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-AARRR%E6%A8%A1%E5%9E%8B/" title="AARRR">AARRR</a>。</p>
+<p>经典的漏斗模型：<a href="/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-AARRR%E6%A8%A1%E5%9E%8B.html" title="AARRR">AARRR</a>。</p>
 <script type="math/tex; mode=display">Acquisition \rightarrow Activation \rightarrow Retention \rightarrow Revenue \rightarrow Referral</script><p>AARRR模型是围绕增长建立的，主要关注拉新、获客。但是当今时代，对绝大多数产品而言，拉新成本剧增，人口流量红利时代不复，转而流行的多是<strong>RARRA模型</strong></p>
 <script type="math/tex; mode=display">Retention \rightarrow Activation \rightarrow Referral \rightarrow Revenue \rightarrow Acquisition</script><p>RARRA模型突出用户留存的重要性，通过用户留存来关注增长。</p>
 <h2 id="用户画像分析"><a href="#用户画像分析" class="headerlink" title="用户画像分析"></a>用户画像分析</h2><p>用户画像是根据用户特征、网络浏览内容、网络社交活动和消费行为等信息抽象得到一个标签化的用户模型。</p>
@@ -5482,8 +5482,8 @@ strategy
         <category>Statistics</category>
       </categories>
       <tags>
-        <tag>检验</tag>
         <tag>概率统计基础</tag>
+        <tag>检验</tag>
       </tags>
   </entry>
   <entry>
@@ -5576,7 +5576,7 @@ strategy
 <ul>
 <li>用来描述一个含有隐含未知参数的马尔可夫过程</li>
 <li>是可用于标注问题的统计学习模型</li>
-<li><a href="/2020/05/11/%E7%94%9F%E6%88%90%E5%BC%8F%E6%A8%A1%E5%9E%8B-%E5%88%A4%E5%88%AB%E5%BC%8F%E6%A8%A1%E5%9E%8B/" title="生成式模型">生成式模型</a></li>
+<li><a href="/%E7%94%9F%E6%88%90%E5%BC%8F%E6%A8%A1%E5%9E%8B-%E5%88%A4%E5%88%AB%E5%BC%8F%E6%A8%A1%E5%9E%8B.html" title="生成式模型">生成式模型</a></li>
 <li>隐马尔可夫模型由<strong>初始概率分布</strong>、<strong>状态转移概率分布</strong>以及<strong>观测概率分布</strong>确定。</li>
 <li>HMM在语言识别、自然语言处理、模式识别等领域得到广泛的应用</li>
 <li>HMM适用的问题：<ol>
@@ -5658,7 +5658,7 @@ strategy
 <p>基于时刻$t$时各个隐藏状态的前向概率$\alpha_t(j)$，乘以对应的状态转移概率$a_{ji}$，得到时刻$t$隐藏状态为$q_j$、时刻$t+1$隐藏状态为$q_i$的概率$\alpha_t(j)a_{ji}$；对所有$j$求和，得到时刻$t+1$观测序列为$o_1,o_2,\cdots,o_t,o_{t+1}$且隐藏状态为$q_i$的概率$\alpha_t(j)a_{ji}$。</p>
 <p>因为观测状态$o_{t+1}$只依赖于$t+1$时刻的隐藏状态$q_i$，所以$\left[\sum_{j=1}^N\alpha_t(j)a_{ji} \right]b_i(o_{t+1})$为在时刻$t+1$观测到$o_1,o_2,\cdots,o_t,o_{t+1}$且时刻$t+1$的隐藏状态为$q_i$的前向概率。所以前向概率的递推关系式为</p>
 <script type="math/tex; mode=display">\alpha_{t+1}(i)=\left[\sum_{j=1}^N\alpha_t(j)a_{ji} \right]b_i(o_{t+1})</script><p>$\alpha_T(i)$表示在时刻$T$观测序列为$o_1,o_2,\cdots,o_T$，且时刻$T$隐藏状态为$q_i$的概率，所以$\sum_{i=1}^N\alpha_T(i)$表示在时刻$T$观测序列为$o_1,o_2,\cdots,o_T$的概率。</p>
-<p><meta name="referrer" content="no-referrer"><br><img src="/2020/06/03/%E7%AE%97%E6%B3%95-HMM/forward.png" class title="来自[刘建平Pinard-隐马尔科夫模型HMM（二）前向后向算法评估观察序列概率]"></p>
+<p><meta name="referrer" content="no-referrer"><br><img src="/%E7%AE%97%E6%B3%95-HMM/forward.png" class title="来自[刘建平Pinard-隐马尔科夫模型HMM（二）前向后向算法评估观察序列概率]"></p>
 <div class="note danger">
             <h2 id="前向算法"><a href="#前向算法" class="headerlink" title="前向算法"></a>前向算法</h2><p><strong>输入</strong>：</p><ul><li>隐马尔可夫模型$\lambda$</li><li>观测序列$O$</li></ul><p><strong>输出</strong>：观测序列概率$P(O|\lambda)$</p><script type="math/tex; mode=display">P(O|\lambda)=\sum_{i=1}^N\alpha_T(i)</script><ol><li>计算时刻$1$的各个隐藏状态前向概率$(i=1,2,\cdots,N)$<script type="math/tex; mode=display">\alpha_1(i)=\pi_ib_i(o_1)</script></li><li>递推：对$t=1,2, \cdots, T-1$<script type="math/tex; mode=display">\alpha_{t+1}(i)=\left[\sum_{j=1}^N\alpha_t(j)a_{ji} \right]b_i(o_{t+1})</script>$i=1,2,\cdots,N$。</li></ol>
           </div>
@@ -5672,7 +5672,7 @@ strategy
           </div>
 <p>假设已经找到在时刻$t+1$时各个隐藏状态的后向概率$\beta_{t+1}(j)$，需要递推初时刻$t$的各个隐藏状态的后向概率。</p>
 <p>可以计算出观测状态序列为$o_{t+2},o_{t+3},\cdots,o_T$、$t$时隐藏状态为$q_i$、$t+1$时隐藏状态为$q_j$的概率为$a_{ij}\beta_{t+1}(j)$；则观测状态序列为$o_{t+1},o_{t+2},o_{t+3},\cdots,o_T$、$t$时隐藏状态为$q_i$、$t+1$时隐藏状态为$q_j$的概率为$a_{ij}b_j(o_{t+1})\beta_{t+1}(j)$；将$t+1$时所有隐藏状态概率加总，得到观测状态序列为$o_{t+1},o_{t+2},o_{t+3},\cdots,o_T$、$t$时隐藏状态为$q_i$的概率为$\sum_{j=1}^Na_{ij}b_j(o_{t+1})\beta_{t+1}(j)$，即时刻$t$的后向概率。</p>
-<p><meta name="referrer" content="no-referrer"><br><img src="/2020/06/03/%E7%AE%97%E6%B3%95-HMM/backward.png" class title="来自[刘建平Pinard-隐马尔科夫模型HMM（二）前向后向算法评估观察序列概率]"></p>
+<p><meta name="referrer" content="no-referrer"><br><img src="/%E7%AE%97%E6%B3%95-HMM/backward.png" class title="来自[刘建平Pinard-隐马尔科夫模型HMM（二）前向后向算法评估观察序列概率]"></p>
 <div class="note danger">
             <h2 id="后向算法"><a href="#后向算法" class="headerlink" title="后向算法"></a>后向算法</h2><p><strong>输入</strong>：</p><ul><li>隐马尔可夫模型$\lambda$</li><li>观测序列$O$</li></ul><p><strong>输出</strong>：观测序列概率$P(O|\lambda)$</p><script type="math/tex; mode=display">P(O|\lambda)=\sum_{i=1}^N\pi_ib_i(o_1)\beta_1(i)</script><ol><li>初始化时刻$T$的各个隐藏状态后向概率<script type="math/tex; mode=display">\beta_T(i)=1</script>$i=1,2,\cdots,N$。</li><li>递推：对于$t=T-1,T-2,\cdots,1$，计算<script type="math/tex; mode=display">\beta_t(i)=\sum_{j=1}^Na_{ij}b_j(o_{t+1})\beta_{t+1}(j)</script>$i=1,2,\cdots,N$。</li></ol>
           </div>
@@ -5903,7 +5903,7 @@ strategy
 <div class="note default">
             <ul><li>SAVEPOINT：设置保存点</li><li>ROLLBACK：回滚</li><li>SET TRANSACTION：</li><li>COMMIT：提交事务</li></ul>
           </div>
-<p><meta name="referrer" content="no-referrer"><br><img src="/2020/06/02/sql-sql%E8%AF%AD%E8%A8%80%E7%B1%BB%E5%9E%8B/Types-of-SQL-Commands.jpg" class title="SQL语言"></p>
+<p><meta name="referrer" content="no-referrer"><br><img src="/sql-sql%E8%AF%AD%E8%A8%80%E7%B1%BB%E5%9E%8B/Types-of-SQL-Commands.jpg" class title="SQL语言"></p>
 <h1 id="笔试题目"><a href="#笔试题目" class="headerlink" title="笔试题目"></a>笔试题目</h1><div class="note default">
             <p>哪个不是DDL(数据库定义语言)语句？<br>A. ALTER<br>B. CREATE<br>C. RENAME<br>D. GRANT</p><p>答案：D</p><p>[<font face="宋体" color="grey">来自：<a href="https://www.nowcoder.com/questionTerminal/29cb393ca36146e78230f07f096247e5" target="_blank" rel="noopener">网易2018校招数据分析师笔试卷</a></font>]</p>
           </div>
@@ -5918,8 +5918,8 @@ strategy
         <category>数据库</category>
       </categories>
       <tags>
-        <tag>数据库</tag>
         <tag>SQL</tag>
+        <tag>数据库</tag>
       </tags>
   </entry>
   <entry>
@@ -6076,7 +6076,7 @@ strategy
 <h1 id="GBDT"><a href="#GBDT" class="headerlink" title="GBDT"></a>GBDT</h1><div class="note default">
             <p>Breiman, L. (June 1997). “<a href="https://statistics.berkeley.edu/sites/default/files/tech-reports/486.pdf" target="_blank" rel="noopener">Arcing The Edge</a>“. Technical Report 486. Statistics Department, University of California, Berkeley.</p>
           </div>
-<p><meta name="referrer" content="no-referrer"><br><img src="/2020/05/28/%E7%AE%97%E6%B3%95-GBDT/GBDT.png" class title="GBDT训练过程(图片来自:Boosting框架)"></p>
+<p><meta name="referrer" content="no-referrer"><br><img src="/%E7%AE%97%E6%B3%95-GBDT/GBDT.png" class title="GBDT训练过程(图片来自:Boosting框架)"></p>
 <h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>GBDT进行$T$次迭代，第$t$次（$t=1,\cdots,T$）迭代产生一个弱分类器$h_t(x)$；下一次迭代时，会根据上一次迭代计算得到的残差进行学习，并生成一个弱分类器。</p>
 <p>最终得到的强分类器为</p>
 <script type="math/tex; mode=display">H(x)=\sum_{t=1}^Th_t(x)</script><p>在GBDT的第$t$次迭代，假设在前一轮迭代得到的组合强学习器是$H_{t-1}(x)$，损失函数是$L(y,H_{t-1}(x))$</p>
@@ -6093,7 +6093,7 @@ strategy
 <p>通常使用平方损失函数（即残差）</p>
 </li>
 </ul>
-<p>到目前为止，上述方法描述的是<a href="/2020/05/15/%E7%AE%97%E6%B3%95-BoostingTree/" title="提升树(Boosting Tree)">提升树(Boosting Tree)</a>。</p>
+<p>到目前为止，上述方法描述的是<a href="/%E7%AE%97%E6%B3%95-BoostingTree.html" title="提升树(Boosting Tree)">提升树(Boosting Tree)</a>。</p>
 <p>当损失函数为平方损失函数时，每一步优化的实现较为简单，当损失函数为一般损失函数时，每一步优化的实现较为困难。</p>
 <p>针对该问题，Freidman提出了梯度提升（Gradient Boosting）算法——用损失函数的负梯度来拟合本轮迭代（优化）的近似值，进而拟合一棵CART回归树。</p>
 <p>第$t$轮迭代的第$i$个样本的损失函数的负梯度为</p>
@@ -6101,7 +6101,7 @@ strategy
             <h2 id="GBDT回归算法"><a href="#GBDT回归算法" class="headerlink" title="GBDT回归算法"></a>GBDT回归算法</h2><p><strong>输入</strong>：训练数据集$\{(x_1,y_1),\cdots, (x_N,y_N)\}$</p><p>  $x_i\in X\subseteq \mathbb{R}^p,\quad y_i\in Y\subseteq \mathbb{R}$</p><p><strong>输出</strong>：提升树</p><script type="math/tex; mode=display">H(x)=H_0(x)+\sum_{t=1}^T\sum_{j=1}^Jc_j^{(t)}\mathbf{I}\left(x\in R_j^{(t)} \right)</script><ol><li>初始化 <script type="math/tex; mode=display">H_0(x)=\arg{\min_c{\sum_{i=1}^NL(y_i, c)}}</script></li><li>对于$t=1,\cdots, T$，<ol><li>对$i=1,\cdots,N$，计算<script type="math/tex; mode=display">r_i^{(t)}=-\left[\frac{\partial{L(y_i,f(x_i))}}{\partial{f(x_i)}} \right]_{f(x)=H_{t-1}(x)}</script></li><li>对$r_i^{(t)}$拟合一棵回归树，得到第$t$棵树的叶结点区域$R_j^{(t)}\quad(j=1,\cdots,J)$，其中$J$为叶结点的个数</li><li>对$j=1,\cdots,J$，计算<script type="math/tex; mode=display">c_j^{(t)}=\arg{\min_c{\sum_{x_i\in R_j^{(t)}}L\left(y_i, H_{t-1}(x_i)+c \right)}}</script></li><li>更新<script type="math/tex; mode=display">H_t(x)=H_{t-1}(x)+\sum_{j=1}^Jc_j^{(t)}\mathbf{I}\left(x\in R_j^{(t)} \right)</script></li></ol></li></ol>
           </div>
 <p>再看GBDT分类算法。</p>
-<p>当损失函数为指数损失函数时，此时二分类GBDT退化为<a href="/2020/05/27/%E7%AE%97%E6%B3%95-AdaBoost/" title="AdaBoost算法">AdaBoost算法</a>。</p>
+<p>当损失函数为指数损失函数时，此时二分类GBDT退化为<a href="/%E7%AE%97%E6%B3%95-AdaBoost.html" title="AdaBoost算法">AdaBoost算法</a>。</p>
 <p>下面讨论对数似然损失函数的情况。</p>
 <p>损失函数为</p>
 <script type="math/tex; mode=display">L(y, H(x))=\log\left(1+\exp{\left(-yH(x) \right)} \right)</script><div class="note danger">
@@ -6129,7 +6129,7 @@ strategy
           </div>
 <h2 id="正则化"><a href="#正则化" class="headerlink" title="正则化"></a>正则化</h2><p>为了防止过拟合，可以对GBDT进行正则化。</p>
 <ol>
-<li>与<a href="/2020/05/27/%E7%AE%97%E6%B3%95-AdaBoost/" title="AdaBoost">AdaBoost</a>类似的正则化项，即<strong>步长</strong>（learning rate）$\nu$，在弱学习器的迭代<script type="math/tex; mode=display">H_{t}(x)=H_{t-1}(x)+h_t(x)</script>中添加正则化项，即<script type="math/tex; mode=display">H_{t}(x)=H_{t-1}(x)+\nu h_t(x)</script>其中$0&lt;\nu\leq1$<ul>
+<li>与<a href="/%E7%AE%97%E6%B3%95-AdaBoost.html" title="AdaBoost">AdaBoost</a>类似的正则化项，即<strong>步长</strong>（learning rate）$\nu$，在弱学习器的迭代<script type="math/tex; mode=display">H_{t}(x)=H_{t-1}(x)+h_t(x)</script>中添加正则化项，即<script type="math/tex; mode=display">H_{t}(x)=H_{t-1}(x)+\nu h_t(x)</script>其中$0&lt;\nu\leq1$<ul>
 <li>对于同一训练集，较小的$\nu$意味着需要更多的弱学习器的迭代次数（$T$需要更大）。</li>
 <li>通常结合<strong>步长</strong>和<strong>迭代最大次数</strong>一起决定算法的拟合效果。</li>
 </ul>
@@ -6190,7 +6190,7 @@ strategy
 </ul>
 </li>
 <li>使用Huber损失函数、Quantile损失函数，对异常值不敏感</li>
-<li>（相对<a href="/2020/04/28/%E7%AE%97%E6%B3%95-SVM/" title="SVM">SVM</a>来说）在相对少的调参时间情况下，预测的准确率也可以比较高</li>
+<li>（相对<a href="/%E7%AE%97%E6%B3%95-SVM.html" title="SVM">SVM</a>来说）在相对少的调参时间情况下，预测的准确率也可以比较高</li>
 </ul>
 <h2 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h2><ul>
 <li>弱学习器之间存在依赖关系，难以并行训练数据<ul>
@@ -6198,7 +6198,7 @@ strategy
 </ul>
 </li>
 </ul>
-<h1 id="比较"><a href="#比较" class="headerlink" title="比较"></a>比较</h1><h2 id="GBDT-vs-RF"><a href="#GBDT-vs-RF" class="headerlink" title="GBDT vs RF"></a>GBDT vs RF</h2><p>GBDT vs <a href="/2020/04/28/%E7%AE%97%E6%B3%95-%E9%9A%8F%E6%9C%BA%E6%A3%AE%E6%9E%97/" title="随机森林">随机森林</a></p>
+<h1 id="比较"><a href="#比较" class="headerlink" title="比较"></a>比较</h1><h2 id="GBDT-vs-RF"><a href="#GBDT-vs-RF" class="headerlink" title="GBDT vs RF"></a>GBDT vs RF</h2><p>GBDT vs <a href="/%E7%AE%97%E6%B3%95-%E9%9A%8F%E6%9C%BA%E6%A3%AE%E6%9E%97.html" title="随机森林">随机森林</a></p>
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -6262,7 +6262,7 @@ strategy
 </table>
 </div>
 
-<h2 id="GBDT-vs-XGBoost"><a href="#GBDT-vs-XGBoost" class="headerlink" title="GBDT vs XGBoost"></a>GBDT vs XGBoost</h2><p>GBDT vs <a href="/2020/05/15/%E7%AE%97%E6%B3%95-XGBoost/" title="XGBoost">XGBoost</a></p>
+<h2 id="GBDT-vs-XGBoost"><a href="#GBDT-vs-XGBoost" class="headerlink" title="GBDT vs XGBoost"></a>GBDT vs XGBoost</h2><p>GBDT vs <a href="/%E7%AE%97%E6%B3%95-XGBoost.html" title="XGBoost">XGBoost</a></p>
 <div class="table-container">
 <table>
 <thead>
@@ -6318,7 +6318,7 @@ strategy
 <blockquote id="fn_4">
 <sup>4</sup>. XGBoost借鉴了随机森林的做法，支持列抽样（column sampling），既能降低过拟合，还能减少计算<a href="#reffn_4" title="Jump back to footnote [4] in the text."> &#8617;</a>
 </blockquote>
-<h2 id="GBDT-vs-AdaBoost"><a href="#GBDT-vs-AdaBoost" class="headerlink" title="GBDT vs AdaBoost"></a>GBDT vs AdaBoost</h2><p>GBDT vs <a href="/2020/05/27/%E7%AE%97%E6%B3%95-AdaBoost/" title="AdaBoost">AdaBoost</a></p>
+<h2 id="GBDT-vs-AdaBoost"><a href="#GBDT-vs-AdaBoost" class="headerlink" title="GBDT vs AdaBoost"></a>GBDT vs AdaBoost</h2><p>GBDT vs <a href="/%E7%AE%97%E6%B3%95-AdaBoost.html" title="AdaBoost">AdaBoost</a></p>
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -6395,7 +6395,7 @@ strategy
     <content><![CDATA[<p><center></center><br><a id="more"></a></p>
 <blockquote class="blockquote-center">
             <i class="fa fa-quote-left"></i>
-            <p>汇总请见：<a href="/2020/04/30/Data-Cleaning-Projects/" title="数据清洗合集">数据清洗合集</a></p>
+            <p>汇总请见：<a href="/Data-Cleaning-Projects.html" title="数据清洗合集">数据清洗合集</a></p>
 
             <i class="fa fa-quote-right"></i>
           </blockquote>
@@ -6460,7 +6460,7 @@ Name: SalePrice, dtype: float64
 </ul>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 直方图</span></span><br><span class="line">sns.distplot(df_train[<span class="string">'SalePrice'</span>])</span><br></pre></td></tr></table></figure>
 <pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x16f6ce68828&gt;
-</code></pre><p><meta name="referrer" content="no-referrer"><br><img src="/2020/05/28/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-HousePrice/output_9_1.png" class title="直方图"></p>
+</code></pre><p><meta name="referrer" content="no-referrer"><br><img src="/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-HousePrice/output_9_1.png" class title="直方图"></p>
 <ul>
 <li>‘SalePrice’集中分布在300000以下</li>
 <li>右偏</li>
@@ -6474,18 +6474,18 @@ Kurtosis: 6.536282
 </ul>
 <h2 id="探究变量之间的关系"><a href="#探究变量之间的关系" class="headerlink" title="探究变量之间的关系"></a>探究变量之间的关系</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## GrLivArea: Above grade (ground) living area square feet</span></span><br><span class="line"><span class="comment">## ‘GrLivArea’与‘SalePrice’的散点图</span></span><br><span class="line">var = <span class="string">'GrLivArea'</span></span><br><span class="line">data = pd.concat([df_train[<span class="string">'SalePrice'</span>], df_train[var]],</span><br><span class="line">                axis=<span class="number">1</span>)  <span class="comment">## 按列合并</span></span><br><span class="line">data.plot.scatter(x=var, y=<span class="string">'SalePrice'</span>, ylim=(<span class="number">0</span>, <span class="number">800000</span>))</span><br></pre></td></tr></table></figure>
 <pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x16f6d629978&gt;
-</code></pre><p><meta name="referrer" content="no-referrer"><br><img src="/2020/05/28/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-HousePrice/output_14_1.png" class title="散点图"></p>
+</code></pre><p><meta name="referrer" content="no-referrer"><br><img src="/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-HousePrice/output_14_1.png" class title="散点图"></p>
 <p>‘GriLivArea’与’SalePrice’之间具有明显的线性关系</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">##  TotalBsmtSF：Total square feet of basement area</span></span><br><span class="line"><span class="comment">## ‘TotalBsmtSF’与‘SalePrice’的散点图</span></span><br><span class="line">var = <span class="string">'TotalBsmtSF'</span></span><br><span class="line">data = pd.concat([df_train[<span class="string">'SalePrice'</span>], df_train[var]],</span><br><span class="line">                axis=<span class="number">1</span>)  <span class="comment">## 按列合并</span></span><br><span class="line">data.plot.scatter(x=var, y=<span class="string">'SalePrice'</span>, ylim=(<span class="number">0</span>, <span class="number">800000</span>))</span><br></pre></td></tr></table></figure>
 <pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x16f6d6eacc0&gt;
-</code></pre><p><meta name="referrer" content="no-referrer"><br><img src="/2020/05/28/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-HousePrice/output_16_1.png" class title="散点图"></p>
+</code></pre><p><meta name="referrer" content="no-referrer"><br><img src="/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-HousePrice/output_16_1.png" class title="散点图"></p>
 <ul>
 <li>‘TotalBsmtSF’与‘SalePrice’之间也具有明显的线性关系</li>
 <li>一些样本中，‘TotalBsmtSF’为零</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## OverallQual: Rates the overall material and finish of the house</span></span><br><span class="line"><span class="comment">## 'OverallQual'与‘SalePrice’的箱线图</span></span><br><span class="line"><span class="comment">## 'OverallQual'是分类变量，有1~10共10个取值</span></span><br><span class="line">var = <span class="string">'OverallQual'</span></span><br><span class="line">data = pd.concat([df_train[<span class="string">'SalePrice'</span>], df_train[var]], </span><br><span class="line">                axis=<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">f, ax = plt.subplots(figsize=(<span class="number">8</span>, <span class="number">6</span>))</span><br><span class="line">fig = sns.boxplot(x=var, y=<span class="string">'SalePrice'</span>, data=data)</span><br><span class="line">fig.axis(ymin=<span class="number">0</span>, ymax=<span class="number">800000</span>)</span><br></pre></td></tr></table></figure>
 <pre><code>(-0.5, 9.5, 0, 800000)
-</code></pre><p><meta name="referrer" content="no-referrer"><br><img src="/2020/05/28/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-HousePrice/output_9_1.png" class title="箱线图"></p>
+</code></pre><p><meta name="referrer" content="no-referrer"><br><img src="/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-HousePrice/output_9_1.png" class title="箱线图"></p>
 <ul>
 <li>“OverallQual”越高，”SalePrice”的值相对越大</li>
 <li>“OverallQual”较高的”SalePrice”的分布较为分散</li>
@@ -6501,11 +6501,11 @@ Kurtosis: 6.536282
          91,  92,  93,  94,  95,  96,  97,  98,  99, 100, 101, 102, 103,
         104, 105, 106, 107, 108, 109, 110, 111]),
  &lt;a list of 112 Text xticklabel objects&gt;)
-</code></pre><p><meta name="referrer" content="no-referrer"><br><img src="/2020/05/28/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-HousePrice/output_20_1.png" class></p>
+</code></pre><p><meta name="referrer" content="no-referrer"><br><img src="/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-HousePrice/output_20_1.png" class></p>
 <p>不知“SalePrice”是否已剔除通胀影响的价格，无法对不同建造年份的房屋价格进行比较。</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 相关系数阵</span></span><br><span class="line">cor_m = df_train.corr()</span><br><span class="line"></span><br><span class="line">f, ax = plt.subplots(figsize=(<span class="number">12</span>, <span class="number">9</span>))</span><br><span class="line">sns.heatmap(cor_m, vmax=<span class="number">.8</span>, square=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
 <pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x16f6f3a2da0&gt;
-</code></pre><p><meta name="referrer" content="no-referrer"><br><img src="/2020/05/28/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-HousePrice/output_22_1.png" class title="相关系数矩阵热力图"></p>
+</code></pre><p><meta name="referrer" content="no-referrer"><br><img src="/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-HousePrice/output_22_1.png" class title="相关系数矩阵热力图"></p>
 <ul>
 <li>颜色越浅，表明正相关性越强<ul>
 <li>‘TotalBsmtSF’和’1stFlrSF’的正相关性很强（很显然）</li>
@@ -6526,7 +6526,7 @@ Kurtosis: 6.536282
 <li>GarageArea: Size of garage in square feet</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 放大相关系数矩阵热力图的部分</span></span><br><span class="line"><span class="comment">## 相关系数最大的10个变量</span></span><br><span class="line">k = <span class="number">10</span></span><br><span class="line">cols = cor_m.nlargest(k, <span class="string">'SalePrice'</span>)[<span class="string">'SalePrice'</span>].index</span><br><span class="line">cm = np.corrcoef(df_train[cols].values.T)</span><br><span class="line"></span><br><span class="line">sns.set(font_scale=<span class="number">1.25</span>)</span><br><span class="line">hm = sns.heatmap(cm, cbar=<span class="literal">True</span>, annot=<span class="literal">True</span>, square=<span class="literal">True</span>,</span><br><span class="line">                fmt=<span class="string">'.2f'</span>, annot_kws=&#123;<span class="string">'size'</span>: <span class="number">10</span>&#125;,</span><br><span class="line">                yticklabels=cols.values, xticklabels=cols.values)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
-<p><meta name="referrer" content="no-referrer"><br><img src="/2020/05/28/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-HousePrice/output_24_0.png" class title="相关性最强的10个变量的相关性热力图"></p>
+<p><meta name="referrer" content="no-referrer"><br><img src="/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-HousePrice/output_24_0.png" class title="相关性最强的10个变量的相关性热力图"></p>
 <p>相关性较强的几对变量：</p>
 <ul>
 <li>‘GarageCars’、‘GarageArea’</li>
@@ -6535,7 +6535,7 @@ Kurtosis: 6.536282
 </ul>
 <p>考虑剔除每对中的一个</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 散点图</span></span><br><span class="line">sns.set()</span><br><span class="line">cols = [<span class="string">'SalePrice'</span>, <span class="string">'OverallQual'</span>, <span class="string">'GrLivArea'</span>, <span class="string">'GarageCars'</span>, </span><br><span class="line">        <span class="string">'TotalBsmtSF'</span>, <span class="string">'FullBath'</span>, <span class="string">'YearBuilt'</span>]</span><br><span class="line">sns.pairplot(df_train[cols], size=<span class="number">2.5</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
-<p><meta name="referrer" content="no-referrer"><br><img src="/2020/05/28/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-HousePrice/output_26_0.png" class title="两两散点图"></p>
+<p><meta name="referrer" content="no-referrer"><br><img src="/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-HousePrice/output_26_0.png" class title="两两散点图"></p>
 <h2 id="数据清洗"><a href="#数据清洗" class="headerlink" title="数据清洗"></a>数据清洗</h2><h3 id="缺失"><a href="#缺失" class="headerlink" title="缺失"></a>缺失</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 统计每列的缺失数据个数，并按降序排列</span></span><br><span class="line">total = df_train.isnull().sum().sort_values(ascending=<span class="literal">False</span>)</span><br><span class="line">percent = (df_train.isnull().sum()/df_train.isnull().count()).sort_values(ascending=<span class="literal">False</span>)</span><br><span class="line">missing_data = pd.concat([total, percent], axis=<span class="number">1</span>,</span><br><span class="line">                        keys=[<span class="string">'Total'</span>, <span class="string">'Percent'</span>])</span><br><span class="line">missing_data.head(<span class="number">20</span>)  <span class="comment">## 缺失数据最多的20个列</span></span><br></pre></td></tr></table></figure>
 <div>
 <style scoped>
@@ -6711,7 +6711,7 @@ Outer range (high) of the distribution:
 
 
 &lt;matplotlib.axes._subplots.AxesSubplot at 0x16f736e0ac8&gt;
-</code></pre><p><meta name="referrer" content="no-referrer"><br><img src="/2020/05/28/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-HousePrice/output_35_2.png" class title="散点图"></p>
+</code></pre><p><meta name="referrer" content="no-referrer"><br><img src="/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-HousePrice/output_35_2.png" class title="散点图"></p>
 <p>观察上图，可以发现右上方和右下方各有2个点较为异常。</p>
 <ul>
 <li>右上方的两个点比较顺应整体趋势</li>
@@ -6826,8 +6826,8 @@ Outer range (high) of the distribution:
 <li>概率密度图(Q-Q图)</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">sns.distplot(df_train[<span class="string">'SalePrice'</span>], fit=norm)</span><br><span class="line">fig = plt.figure()</span><br><span class="line">res = stats.probplot(df_train[<span class="string">'SalePrice'</span>], plot=plt)</span><br></pre></td></tr></table></figure>
-<p><meta name="referrer" content="no-referrer"><br><img src="/2020/05/28/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-HousePrice/output_41_0.png" class title="密度曲线"></p>
-<p><meta name="referrer" content="no-referrer"><br><img src="/2020/05/28/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-HousePrice/output_41_1.png" class title="Q-Q图"></p>
+<p><meta name="referrer" content="no-referrer"><br><img src="/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-HousePrice/output_41_0.png" class title="密度曲线"></p>
+<p><meta name="referrer" content="no-referrer"><br><img src="/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-HousePrice/output_41_1.png" class title="Q-Q图"></p>
 <ul>
 <li>很显然，‘SalePrice’并不服从正态分布<ul>
 <li>右偏</li>
@@ -6837,33 +6837,33 @@ Outer range (high) of the distribution:
 </ul>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 对数据进行对数变换</span></span><br><span class="line">df_train[<span class="string">'SalePrice'</span>] = np.log(df_train[<span class="string">'SalePrice'</span>])</span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 检验对数变换后数据的正态性</span></span><br><span class="line">sns.distplot(df_train[<span class="string">'SalePrice'</span>], fit=norm)</span><br><span class="line">fig = plt.figure()</span><br><span class="line">res = stats.probplot(df_train[<span class="string">'SalePrice'</span>], plot=plt)</span><br></pre></td></tr></table></figure>
-<p><meta name="referrer" content="no-referrer"><br><img src="/2020/05/28/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-HousePrice/output_44_0.png" class title="密度曲线图"></p>
-<p><meta name="referrer" content="no-referrer"><br><img src="/2020/05/28/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-HousePrice/output_44_1.png" class title="Q-Q图"></p>
+<p><meta name="referrer" content="no-referrer"><br><img src="/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-HousePrice/output_44_0.png" class title="密度曲线图"></p>
+<p><meta name="referrer" content="no-referrer"><br><img src="/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-HousePrice/output_44_1.png" class title="Q-Q图"></p>
 <p>Perfect！</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 再来看看'GrLivArea'</span></span><br><span class="line">sns.distplot(df_train[<span class="string">'GrLivArea'</span>], fit=norm)</span><br><span class="line">fig = plt.figure()</span><br><span class="line">res = stats.probplot(df_train[<span class="string">'GrLivArea'</span>], plot=plt)</span><br></pre></td></tr></table></figure>
-<p><meta name="referrer" content="no-referrer"><br><img src="/2020/05/28/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-HousePrice/output_46_0.png" class title="密度曲线图"></p>
-<p><meta name="referrer" content="no-referrer"><br><img src="/2020/05/28/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-HousePrice/output_46_1.png" class title="Q-Q图"></p>
+<p><meta name="referrer" content="no-referrer"><br><img src="/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-HousePrice/output_46_0.png" class title="密度曲线图"></p>
+<p><meta name="referrer" content="no-referrer"><br><img src="/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-HousePrice/output_46_1.png" class title="Q-Q图"></p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 进行对数变换</span></span><br><span class="line">df_train[<span class="string">'GrLivArea'</span>] = np.log(df_train[<span class="string">'GrLivArea'</span>])</span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">sns.distplot(df_train[<span class="string">'GrLivArea'</span>], fit=norm)</span><br><span class="line">fig = plt.figure()</span><br><span class="line">res = stats.probplot(df_train[<span class="string">'GrLivArea'</span>], plot=plt)</span><br></pre></td></tr></table></figure>
-<p><meta name="referrer" content="no-referrer"><br><img src="/2020/05/28/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-HousePrice/output_48_0.png" class title="密度曲线图"></p>
-<p><meta name="referrer" content="no-referrer"><br><img src="/2020/05/28/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-HousePrice/output_48_1.png" class title="Q-Q图"></p>
+<p><meta name="referrer" content="no-referrer"><br><img src="/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-HousePrice/output_48_0.png" class title="密度曲线图"></p>
+<p><meta name="referrer" content="no-referrer"><br><img src="/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-HousePrice/output_48_1.png" class title="Q-Q图"></p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 'TotalBsmtSF'</span></span><br><span class="line">sns.distplot(df_train[<span class="string">'TotalBsmtSF'</span>], fit=norm);</span><br><span class="line">fig = plt.figure()</span><br><span class="line">res = stats.probplot(df_train[<span class="string">'TotalBsmtSF'</span>], plot=plt)</span><br></pre></td></tr></table></figure>
-<p><meta name="referrer" content="no-referrer"><br><img src="/2020/05/28/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-HousePrice/output_49_0.png" class title="密度曲线图"></p>
-<p><meta name="referrer" content="no-referrer"><br><img src="/2020/05/28/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-HousePrice/output_49_1.png" class title="Q-Q图"></p>
+<p><meta name="referrer" content="no-referrer"><br><img src="/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-HousePrice/output_49_0.png" class title="密度曲线图"></p>
+<p><meta name="referrer" content="no-referrer"><br><img src="/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-HousePrice/output_49_1.png" class title="Q-Q图"></p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 'TotalBsmtSF'存在0值，无法直接进行对数变换</span></span><br><span class="line"><span class="comment">## 只将'TotalBsmtSF'非零值的数据进行对数变换</span></span><br><span class="line">df_train[<span class="string">'HasBsmt'</span>] = pd.Series(len(df_train[<span class="string">'TotalBsmtSF'</span>]), index=df_train.index)</span><br><span class="line">df_train[<span class="string">'HasBsmt'</span>] = <span class="number">0</span> </span><br><span class="line">df_train.loc[df_train[<span class="string">'TotalBsmtSF'</span>]&gt;<span class="number">0</span>,<span class="string">'HasBsmt'</span>] = <span class="number">1</span></span><br><span class="line">df_train.loc[df_train[<span class="string">'HasBsmt'</span>]==<span class="number">1</span>,<span class="string">'TotalBsmtSF'</span>] = np.log(df_train[<span class="string">'TotalBsmtSF'</span>])</span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">sns.distplot(df_train[df_train[<span class="string">'TotalBsmtSF'</span>]&gt;<span class="number">0</span>][<span class="string">'TotalBsmtSF'</span>], fit=norm);</span><br><span class="line">fig = plt.figure()</span><br><span class="line">res = stats.probplot(df_train[df_train[<span class="string">'TotalBsmtSF'</span>]&gt;<span class="number">0</span>][<span class="string">'TotalBsmtSF'</span>], plot=plt)</span><br></pre></td></tr></table></figure>
-<p><meta name="referrer" content="no-referrer"><br><img src="/2020/05/28/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-HousePrice/output_51_0.png" class title="密度曲线图"></p>
-<p><meta name="referrer" content="no-referrer"><br><img src="/2020/05/28/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-HousePrice/output_51_1.png" class title="Q-Q图"></p>
+<p><meta name="referrer" content="no-referrer"><br><img src="/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-HousePrice/output_51_0.png" class title="密度曲线图"></p>
+<p><meta name="referrer" content="no-referrer"><br><img src="/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-HousePrice/output_51_1.png" class title="Q-Q图"></p>
 <h3 id="同方差性（同质性）"><a href="#同方差性（同质性）" class="headerlink" title="同方差性（同质性）"></a>同方差性（同质性）</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">plt.scatter(df_train[<span class="string">'GrLivArea'</span>], df_train[<span class="string">'SalePrice'</span>])</span><br></pre></td></tr></table></figure>
 <pre><code>&lt;matplotlib.collections.PathCollection at 0x16f7589eba8&gt;
-</code></pre><p><meta name="referrer" content="no-referrer"><br><img src="/2020/05/28/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-HousePrice/output_53_1.png" class title="散点图"></p>
+</code></pre><p><meta name="referrer" content="no-referrer"><br><img src="/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-HousePrice/output_53_1.png" class title="散点图"></p>
 <ul>
 <li>未进行对数变换前，’GrLivArea’和’SalePrice’散点图呈锥形</li>
 <li>进行对数变换后，不再呈锥形（上图）</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">plt.scatter(df_train[df_train[<span class="string">'TotalBsmtSF'</span>]&gt;<span class="number">0</span>][<span class="string">'TotalBsmtSF'</span>], df_train[df_train[<span class="string">'TotalBsmtSF'</span>]&gt;<span class="number">0</span>][<span class="string">'SalePrice'</span>])</span><br></pre></td></tr></table></figure>
 <pre><code>&lt;matplotlib.collections.PathCollection at 0x16f7589ebe0&gt;
-</code></pre><p><meta name="referrer" content="no-referrer"><br><img src="/2020/05/28/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-HousePrice/output_55_1.png" class title="散点图"></p>
+</code></pre><p><meta name="referrer" content="no-referrer"><br><img src="/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-HousePrice/output_55_1.png" class title="散点图"></p>
 <p>We can say that, in general, ‘SalePrice’ exhibit equal levels of variance across the range of ‘TotalBsmtSF’.</p>
 <h3 id="类别变量"><a href="#类别变量" class="headerlink" title="类别变量"></a>类别变量</h3><p>需要将类别变量转化为哑变量（dummy）</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">df_train = pd.get_dummies(df_train)</span><br></pre></td></tr></table></figure>
@@ -7117,8 +7117,8 @@ Outer range (high) of the distribution:
         <category>数据库</category>
       </categories>
       <tags>
-        <tag>数据库</tag>
         <tag>SQL</tag>
+        <tag>数据库</tag>
       </tags>
   </entry>
   <entry>
@@ -7713,12 +7713,12 @@ dtype: int64
 
 
 
-<p>也可应用Pandas模块中的<code>cut()</code>函数进行分组，具体可见<a href="/2020/05/12/python-pandas%E6%A8%A1%E5%9D%97/" title="Pandas模块">Pandas模块</a>。</p>
+<p>也可应用Pandas模块中的<code>cut()</code>函数进行分组，具体可见<a href="/python-pandas%E6%A8%A1%E5%9D%97.html" title="Pandas模块">Pandas模块</a>。</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 分组也可按如下操作</span></span><br><span class="line">bins1 = [<span class="number">0</span>, <span class="number">24</span>, <span class="number">29.99</span>, <span class="number">100</span>]</span><br><span class="line">df[<span class="string">'risk_bins'</span>] = df.cut(df[<span class="string">'bmi'</span>], bins1, labels=[<span class="string">'Normal'</span>, <span class="string">'OverWeight'</span>, <span class="string">'Obese'</span>])</span><br><span class="line"></span><br><span class="line">bins2 = [<span class="number">0</span>, <span class="number">25</span>, <span class="number">35</span>, <span class="number">55</span>, <span class="number">75</span>, <span class="number">100</span>]</span><br><span class="line">df[<span class="string">'age_bins'</span>] = df.cut(df[<span class="string">'age'</span>], bins2, </span><br><span class="line">                        labels=[<span class="string">"Age below 25 year"</span>, <span class="string">"Age 25 to 34 year"</span>, <span class="string">"Age 35 to 54 year"</span>, </span><br><span class="line">                               <span class="string">"Age 55 to 74 year"</span>, <span class="string">"Age more than 75 year"</span>])</span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">df[<span class="string">"Charge"</span>] = df[<span class="string">"charges"</span>]/<span class="number">1000</span></span><br></pre></td></tr></table></figure>
 <h1 id="数据可视化"><a href="#数据可视化" class="headerlink" title="数据可视化"></a>数据可视化</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 相关图</span></span><br><span class="line">sns.pairplot(df, height=<span class="number">1.8</span>)</span><br></pre></td></tr></table></figure>
 <pre><code>&lt;seaborn.axisgrid.PairGrid at 0x7f6074b5ced0&gt;
-</code></pre><p><meta name="referrer" content="no-referrer"><br><img src="/2020/05/24/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-MedicalCostPersonal/output_10_1.png" class title="相关图"></p>
+</code></pre><p><meta name="referrer" content="no-referrer"><br><img src="/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-MedicalCostPersonal/output_10_1.png" class title="相关图"></p>
 <ul>
 <li>对角线上的是特征的样本数据直方图</li>
 <li>非对角线的是两两特征之间的相关图（以两特征分别为横纵轴）</li>
@@ -7728,7 +7728,7 @@ dtype: int64
 </ul>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">plt.rcParams[<span class="string">"figure.figsize"</span>] = (<span class="number">20</span>, <span class="number">14</span>)</span><br><span class="line">plt.subplot(<span class="number">421</span>)  <span class="comment">## 将画布裁成4行2列  ## 第1个子图</span></span><br><span class="line">df[<span class="string">'age'</span>].value_counts().sort_index().plot.line(color=<span class="string">"k"</span>)  <span class="comment">## 折线图</span></span><br><span class="line">plt.title(<span class="string">"Age distribution in the Data"</span>)  <span class="comment">## 标题</span></span><br><span class="line"></span><br><span class="line">plt.subplot(<span class="number">422</span>)  <span class="comment">## 第2个子图</span></span><br><span class="line">df[<span class="string">'bmi'</span>].sort_index().plot.hist(color=<span class="string">"g"</span>)  <span class="comment">## 直方图</span></span><br><span class="line">plt.title(<span class="string">"bmi distribution in the Data"</span>)</span><br><span class="line"></span><br><span class="line">plt.subplot(<span class="number">423</span>)  <span class="comment">## 第3个子图</span></span><br><span class="line">df[<span class="string">'children'</span>].value_counts().plot.line(color=<span class="string">"b"</span>)  <span class="comment">## 折线图</span></span><br><span class="line">plt.title(<span class="string">"child distribution in the Data"</span>)</span><br><span class="line"></span><br><span class="line">plt.subplot(<span class="number">424</span>)</span><br><span class="line">df[<span class="string">'charges'</span>].plot.hist(color=<span class="string">"c"</span>)</span><br><span class="line">plt.title(<span class="string">"charges distribution in the Data"</span>)</span><br><span class="line"></span><br><span class="line">plt.subplot(<span class="number">425</span>)</span><br><span class="line">df[<span class="string">"risk_type"</span>].value_counts().plot.bar()  <span class="comment">## 条形图</span></span><br><span class="line">plt.title(<span class="string">"risk_type distribution in the Data"</span>)</span><br><span class="line"></span><br><span class="line">plt.subplot(<span class="number">426</span>)</span><br><span class="line">df[<span class="string">'smoker'</span>].value_counts().plot.bar()</span><br><span class="line">plt.title(<span class="string">"smoker distribution in the data"</span>)</span><br><span class="line"></span><br><span class="line">plt.subplot(<span class="number">427</span>)</span><br><span class="line">df[<span class="string">'Age_group'</span>].value_counts().plot.bar()</span><br><span class="line">plt.title(<span class="string">"Age_group distribution in the Data"</span>)</span><br></pre></td></tr></table></figure>
 <pre><code>Text(0.5, 1.0, &#39;Age_group distribution in the Data&#39;)
-</code></pre><p><meta name="referrer" content="no-referrer"><br><img src="/2020/05/24/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-MedicalCostPersonal/output_12_1.png" class></p>
+</code></pre><p><meta name="referrer" content="no-referrer"><br><img src="/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-MedicalCostPersonal/output_12_1.png" class></p>
 <ul>
 <li>样本中的年龄主要集中分布在“小于20岁”区间</li>
 <li>样本中肥胖的样本较多</li>
@@ -7736,32 +7736,32 @@ dtype: int64
 </ul>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">plt.rcParams[<span class="string">'figure.figsize'</span>] = (<span class="number">18</span>, <span class="number">8</span>)</span><br><span class="line">plt.subplot(<span class="number">221</span>)  <span class="comment">## 将画布分成2行2列</span></span><br><span class="line">sns.lineplot(x=<span class="string">'age'</span>, y=<span class="string">'bmi'</span>, data=df, color=<span class="string">"b"</span>)</span><br><span class="line"></span><br><span class="line">plt.subplot(<span class="number">222</span>)</span><br><span class="line">sns.lineplot(x=<span class="string">'age'</span>, y=<span class="string">'Charge'</span>, data=df, color=<span class="string">"g"</span>)  <span class="comment">## 折线图</span></span><br><span class="line"></span><br><span class="line">plt.subplot(<span class="number">223</span>)</span><br><span class="line">sns.scatterplot(x=<span class="string">"Charge"</span>, y=<span class="string">"bmi"</span>, data=df, color=<span class="string">"k"</span>)  <span class="comment">## 散点图</span></span><br></pre></td></tr></table></figure>
 <pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f6069f93d90&gt;
-</code></pre><p><meta name="referrer" content="no-referrer"><br><img src="/2020/05/24/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-MedicalCostPersonal/output_13_1.png" class></p>
+</code></pre><p><meta name="referrer" content="no-referrer"><br><img src="/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-MedicalCostPersonal/output_13_1.png" class></p>
 <ul>
 <li><code>bmi</code>有随<code>age</code>上升而上升的趋势</li>
 <li><code>charges</code>有随<code>age</code>上升而上升的趋势</li>
 </ul>
 <p>下面按年龄段绘制<code>bmi</code>、<code>charges</code>与<code>age</code>的折线图：<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">plt.rcParams[<span class="string">'figure.figsize'</span>] = (<span class="number">18</span>, <span class="number">8</span>)</span><br><span class="line">plt.subplot(<span class="number">221</span>)</span><br><span class="line"><span class="comment">## 横轴是age，纵轴是bmi，按Age_group分段绘制</span></span><br><span class="line">sns.lineplot(x=<span class="string">'age'</span>, y=<span class="string">'bmi'</span>, data=df, hue=<span class="string">"Age_group"</span>)</span><br><span class="line"></span><br><span class="line">plt.subplot(<span class="number">222</span>)</span><br><span class="line">sns.lineplot(x=<span class="string">'age'</span>, y=<span class="string">'Charge'</span>, data=df, hue=<span class="string">'Age_group'</span>)</span><br></pre></td></tr></table></figure></p>
 <pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f6069d0fad0&gt;
-</code></pre><p><meta name="referrer" content="no-referrer"><br><img src="/2020/05/24/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-MedicalCostPersonal/output_14_1.png" class></p>
+</code></pre><p><meta name="referrer" content="no-referrer"><br><img src="/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-MedicalCostPersonal/output_14_1.png" class></p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">plt.rcParams[<span class="string">"figure.figsize"</span>]=(<span class="number">18</span>,<span class="number">8</span>)</span><br><span class="line">plt.subplot(<span class="number">221</span>)</span><br><span class="line">sns.lineplot(x=<span class="string">"age"</span>, y=<span class="string">"bmi"</span>, data=df, color=<span class="string">"b"</span>, hue=<span class="string">"smoker"</span>)</span><br><span class="line"></span><br><span class="line">plt.subplot(<span class="number">222</span>)</span><br><span class="line">sns.lineplot(x=<span class="string">"age"</span>, y=<span class="string">"Charge"</span>, data=df, color=<span class="string">"g"</span>, hue=<span class="string">"smoker"</span>)</span><br></pre></td></tr></table></figure>
 <pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f6069c22150&gt;
-</code></pre><p><meta name="referrer" content="no-referrer"><br><img src="/2020/05/24/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-MedicalCostPersonal/output_15_1.png" class></p>
+</code></pre><p><meta name="referrer" content="no-referrer"><br><img src="/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-MedicalCostPersonal/output_15_1.png" class></p>
 <ul>
 <li>不吸烟的人的<code>Charge</code>整体比吸烟的人低</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## region</span></span><br><span class="line">southwest = df[df[<span class="string">"region"</span>]==<span class="string">"southwest"</span>]</span><br><span class="line">southeast = df[df[<span class="string">"region"</span>]==<span class="string">"southeast"</span>]</span><br><span class="line">northwest = df[df[<span class="string">"region"</span>]==<span class="string">"northwest"</span>]</span><br><span class="line">northeast = df[df[<span class="string">"region"</span>]==<span class="string">"northeast"</span>]</span><br><span class="line"></span><br><span class="line">plt.rcParams[<span class="string">"figure.figsize"</span>]=(<span class="number">18</span>,<span class="number">8</span>)</span><br><span class="line">plt.subplot(<span class="number">421</span>)</span><br><span class="line">sns.lineplot(x=<span class="string">"age"</span>, y=<span class="string">"bmi"</span>, data=southwest, hue=<span class="string">"risk_type"</span>, hue_order=[<span class="string">"Normal"</span>,<span class="string">"OverWeight"</span>,<span class="string">"Obese"</span>])</span><br><span class="line">plt.title(<span class="string">"southwest region"</span>)</span><br><span class="line"></span><br><span class="line">plt.subplot(<span class="number">422</span>)</span><br><span class="line">sns.lineplot(x=<span class="string">"bmi"</span>, y=<span class="string">"Charge"</span>, data=southwest, hue=<span class="string">"risk_type"</span>, hue_order=[<span class="string">"Normal"</span>,<span class="string">"OverWeight"</span>,<span class="string">"Obese"</span>])</span><br><span class="line">plt.title(<span class="string">"southwest region"</span>)</span><br><span class="line"></span><br><span class="line">plt.subplot(<span class="number">423</span>)</span><br><span class="line">sns.lineplot(x=<span class="string">"age"</span>, y=<span class="string">"bmi"</span>, data=southeast, hue=<span class="string">"risk_type"</span>, hue_order=[<span class="string">"Normal"</span>,<span class="string">"OverWeight"</span>,<span class="string">"Obese"</span>])</span><br><span class="line">plt.title(<span class="string">"southeast region"</span>)</span><br><span class="line"></span><br><span class="line">plt.subplot(<span class="number">424</span>)</span><br><span class="line">sns.lineplot(x=<span class="string">"bmi"</span>, y=<span class="string">"Charge"</span>, data=southeast, hue=<span class="string">"risk_type"</span>, hue_order=[<span class="string">"Normal"</span>,<span class="string">"OverWeight"</span>,<span class="string">"Obese"</span>])</span><br><span class="line">plt.title(<span class="string">"southeast region"</span>)</span><br><span class="line"></span><br><span class="line">plt.subplot(<span class="number">425</span>)</span><br><span class="line">sns.lineplot(x=<span class="string">"age"</span>, y=<span class="string">"bmi"</span>, data=northwest, hue=<span class="string">"risk_type"</span>, hue_order=[<span class="string">"Normal"</span>,<span class="string">"OverWeight"</span>,<span class="string">"Obese"</span>])</span><br><span class="line">plt.title(<span class="string">"northwest region"</span>)</span><br><span class="line"></span><br><span class="line">plt.subplot(<span class="number">426</span>)</span><br><span class="line">sns.lineplot(x=<span class="string">"bmi"</span>, y=<span class="string">"Charge"</span>, data=northwest, hue=<span class="string">"risk_type"</span>, hue_order=[<span class="string">"Normal"</span>,<span class="string">"OverWeight"</span>,<span class="string">"Obese"</span>])</span><br><span class="line">plt.title(<span class="string">"northwest region"</span>)</span><br><span class="line"></span><br><span class="line">plt.subplot(<span class="number">427</span>)</span><br><span class="line">sns.lineplot(x=<span class="string">"age"</span>, y=<span class="string">"bmi"</span>, data=northeast, hue=<span class="string">"risk_type"</span>, hue_order=[<span class="string">"Normal"</span>,<span class="string">"OverWeight"</span>,<span class="string">"Obese"</span>])</span><br><span class="line">plt.title(<span class="string">"northeast region"</span>)</span><br><span class="line"></span><br><span class="line">plt.subplot(<span class="number">428</span>)</span><br><span class="line">sns.lineplot(x=<span class="string">"bmi"</span>, y=<span class="string">"Charge"</span>, data=northeast, hue=<span class="string">"risk_type"</span>, hue_order=[<span class="string">"Normal"</span>,<span class="string">"OverWeight"</span>,<span class="string">"Obese"</span>])</span><br><span class="line">plt.title(<span class="string">"northeast region"</span>)</span><br></pre></td></tr></table></figure>
 <pre><code>Text(0.5, 1.0, &#39;northeast region&#39;)
-</code></pre><p><meta name="referrer" content="no-referrer"><br><img src="/2020/05/24/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-MedicalCostPersonal/output_16_1.png" class></p>
+</code></pre><p><meta name="referrer" content="no-referrer"><br><img src="/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-MedicalCostPersonal/output_16_1.png" class></p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">plt.rcParams[<span class="string">"figure.figsize"</span>]=(<span class="number">16</span>,<span class="number">6</span>)</span><br><span class="line">plt.subplot(<span class="number">2</span>,<span class="number">2</span>,<span class="number">1</span>)</span><br><span class="line">sns.violinplot(x=<span class="string">"sex"</span>, y=<span class="string">"bmi"</span>, data=df)  <span class="comment">## 小提琴图</span></span><br><span class="line"></span><br><span class="line">plt.subplot(<span class="number">2</span>,<span class="number">2</span>,<span class="number">2</span>)</span><br><span class="line">sns.violinplot(x=<span class="string">"smoker"</span>, y=<span class="string">"bmi"</span>, data=df)</span><br><span class="line"></span><br><span class="line">plt.subplot(<span class="number">2</span>,<span class="number">2</span>,<span class="number">3</span>)</span><br><span class="line">sns.violinplot(x=<span class="string">"risk_type"</span>, y=<span class="string">"bmi"</span>, data=df)</span><br><span class="line"></span><br><span class="line">plt.subplot(<span class="number">2</span>,<span class="number">2</span>,<span class="number">4</span>)</span><br><span class="line">sns.violinplot(x=<span class="string">"Age_group"</span>, y=<span class="string">"bmi"</span>, data=df)</span><br></pre></td></tr></table></figure>
 <pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f60692f6590&gt;
-</code></pre><p><meta name="referrer" content="no-referrer"><br><img src="/2020/05/24/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-MedicalCostPersonal/output_17_1.png" class></p>
+</code></pre><p><meta name="referrer" content="no-referrer"><br><img src="/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-MedicalCostPersonal/output_17_1.png" class></p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">plt.rcParams[<span class="string">"figure.figsize"</span>]=(<span class="number">16</span>,<span class="number">6</span>)</span><br><span class="line">plt.subplot(<span class="number">2</span>,<span class="number">2</span>,<span class="number">1</span>)</span><br><span class="line">sns.violinplot(x=<span class="string">"sex"</span>, y=<span class="string">"Charge"</span>, data=df)</span><br><span class="line"></span><br><span class="line">plt.subplot(<span class="number">2</span>,<span class="number">2</span>,<span class="number">2</span>)</span><br><span class="line">sns.violinplot(x=<span class="string">"smoker"</span>, y=<span class="string">"Charge"</span>, data=df)</span><br><span class="line"></span><br><span class="line">plt.subplot(<span class="number">2</span>,<span class="number">2</span>,<span class="number">3</span>)</span><br><span class="line">sns.violinplot(x=<span class="string">"risk_type"</span>, y=<span class="string">"Charge"</span>, data=df)</span><br><span class="line"></span><br><span class="line">plt.subplot(<span class="number">2</span>,<span class="number">2</span>,<span class="number">4</span>)</span><br><span class="line">sns.violinplot(x=<span class="string">"Age_group"</span>, y=<span class="string">"Charge"</span>, data=df)</span><br></pre></td></tr></table></figure>
 <pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f6069128bd0&gt;
-</code></pre><p><meta name="referrer" content="no-referrer"><br><img src="/2020/05/24/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-MedicalCostPersonal/output_18_1.png" class></p>
+</code></pre><p><meta name="referrer" content="no-referrer"><br><img src="/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-MedicalCostPersonal/output_18_1.png" class></p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">plt.rcParams[<span class="string">"figure.figsize"</span>]=(<span class="number">28</span>,<span class="number">10</span>)</span><br><span class="line">plt.subplot(<span class="number">2</span>,<span class="number">2</span>,<span class="number">1</span>)</span><br><span class="line">sns.violinplot(x=<span class="string">"children"</span>, y=<span class="string">"bmi"</span>, data=df, hue=<span class="string">"smoker"</span>)</span><br><span class="line"></span><br><span class="line">plt.rcParams[<span class="string">"figure.figsize"</span>]=(<span class="number">28</span>,<span class="number">10</span>)</span><br><span class="line">plt.subplot(<span class="number">2</span>,<span class="number">2</span>,<span class="number">3</span>)</span><br><span class="line">sns.violinplot(x=<span class="string">"children"</span>, y=<span class="string">"Charge"</span>, data=df, hue=<span class="string">"smoker"</span>)</span><br></pre></td></tr></table></figure>
 <pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f6069054ad0&gt;
-</code></pre><p><meta name="referrer" content="no-referrer"><br><img src="/2020/05/24/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-MedicalCostPersonal/output_19_1.png" class></p>
+</code></pre><p><meta name="referrer" content="no-referrer"><br><img src="/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-MedicalCostPersonal/output_19_1.png" class></p>
 ]]></content>
       <tags>
         <tag>Data</tag>
@@ -8387,8 +8387,8 @@ dtype: int64
 </ul>
 </li>
 </ul>
-<p><meta name="referrer" content="no-referrer"><br><img src="/2020/05/21/%E7%AE%97%E6%B3%95-ADMM/conjugate1.jpg" class title="来自：最强Fenchel对偶解读"></p>
-<p><meta name="referrer" content="no-referrer"><br><img src="/2020/05/21/%E7%AE%97%E6%B3%95-ADMM/conjugate2.jpg" class title="来自：最强Fenchel对偶解读"></p>
+<p><meta name="referrer" content="no-referrer"><br><img src="/%E7%AE%97%E6%B3%95-ADMM/conjugate1.jpg" class title="来自：最强Fenchel对偶解读"></p>
+<p><meta name="referrer" content="no-referrer"><br><img src="/%E7%AE%97%E6%B3%95-ADMM/conjugate2.jpg" class title="来自：最强Fenchel对偶解读"></p>
 <p>当$f(x)$是严格凸的时，取$z=\arg\max_x{\{y^Tx-f(x)\}}$，则有</p>
 <script type="math/tex; mode=display">f^*(y)=\max_x{\{y^Tx-f(x)\}}=y^Tz-f(z)</script><p>因此</p>
 <script type="math/tex; mode=display">\nabla f^*(y)=z=\arg\max_x{\{y^Tx-f(x)\}}=\arg\min_x{\{f(x)-y^Tx\}}</script><h2 id="带线性约束的优化问题"><a href="#带线性约束的优化问题" class="headerlink" title="带线性约束的优化问题"></a>带线性约束的优化问题</h2><p>考虑带线性约束的优化问题<br>\begin{equation}<br>\begin{aligned}<br>\min &amp; \quad f(x)\\<br>\mathrm{s.t.} &amp; \quad Ax=b<br>\end{aligned}<br>\end{equation}<br>其中$f(x)$是严格凸函数（strictly convex function）。</p>
@@ -8772,10 +8772,10 @@ dtype: int64
 </div>
 
 <h2 id="bar"><a href="#bar" class="headerlink" title="bar()"></a>bar()</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">msno.bar(collisions.sample(<span class="number">1000</span>))</span><br></pre></td></tr></table></figure>
-<p><meta name="referrer" content="no-referrer"><br><img src="/2020/05/20/python-missingno/output_4_1.png" class title="条形图"></p>
+<p><meta name="referrer" content="no-referrer"><br><img src="/python-missingno/output_4_1.png" class title="条形图"></p>
 <h2 id="Dendrogram"><a href="#Dendrogram" class="headerlink" title="Dendrogram()"></a>Dendrogram()</h2><p>谱系图/系统树图</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">msno.dendrogram(collisions)</span><br></pre></td></tr></table></figure>
-<p><meta name="referrer" content="no-referrer"><br><img src="/2020/05/20/python-missingno/output_6_1.png" class title="谱系图"></p>
+<p><meta name="referrer" content="no-referrer"><br><img src="/python-missingno/output_6_1.png" class title="谱系图"></p>
 <ul>
 <li><code>NUMBER OF CYCLISTS INJURED</code>,<code>NUMBER OF CYCLISTS SKILLED</code>,<code>CONTRIBUTING FACTOR VEHICLE 1</code>,<code>NUMBER OF PEDESTRIANS SKILLED</code>,<code>NUMBER OF PEDESTRIANS INJURED</code>,<code>NUMBER OF PERSONS KILLED</code>等数据完整，没有缺失值，他们的距离为零，聚为一类。</li>
 <li><code>BOROUGH</code>,<code>ZIP CODE</code>缺失相关性为1（同时缺失），距离为零；且缺失数据最少（除完整数据外），所以在完整数据后聚为一类。</li>
@@ -8783,13 +8783,13 @@ dtype: int64
 </ul>
 <h2 id="heatmap"><a href="#heatmap" class="headerlink" title="heatmap()"></a>heatmap()</h2><p>热力图<br>体现一个变量的存在或不存在如何强烈影响另一个变量的存在</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">msno.heatmap(collisions)</span><br></pre></td></tr></table></figure>
-<p><meta name="referrer" content="no-referrer"><br><img src="/2020/05/20/python-missingno/output_5_1.png" class title="热力图"></p>
+<p><meta name="referrer" content="no-referrer"><br><img src="/python-missingno/output_5_1.png" class title="热力图"></p>
 <p><code>ZIP CODE</code>与<code>BOROUGH</code>的缺失相关性为1，说明：只要<code>BOROUGH</code>发生了缺失，<code>ZIP CODE</code>也会缺失。</p>
 <h2 id="matrix"><a href="#matrix" class="headerlink" title="matrix()"></a>matrix()</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> missingno <span class="keyword">as</span> msno</span><br><span class="line">%matplotlib inline</span><br><span class="line"></span><br><span class="line">msno.matrix(collisions.sample(<span class="number">250</span>))</span><br></pre></td></tr></table></figure>
-<p><meta name="referrer" content="no-referrer"><br><img src="/2020/05/20/python-missingno/output_1_2.png" class title="矩阵图"></p>
+<p><meta name="referrer" content="no-referrer"><br><img src="/python-missingno/output_1_2.png" class title="矩阵图"></p>
 <p>白色的为缺失</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line">null_pattern = (np.random.random(<span class="number">1000</span>).reshape((<span class="number">50</span>, <span class="number">20</span>)) &gt; <span class="number">0.5</span>).astype(bool)</span><br><span class="line">null_pattern = pd.DataFrame(null_pattern).replace(&#123;<span class="literal">False</span>: <span class="literal">None</span>&#125;)</span><br><span class="line">msno.matrix(null_pattern.set_index(pd.period_range(<span class="string">'1/1/2011'</span>, <span class="string">'2/1/2015'</span>, freq=<span class="string">'M'</span>)), freq=<span class="string">'BQ'</span>)</span><br></pre></td></tr></table></figure>
-<p><meta name="referrer" content="no-referrer"><br><img src="/2020/05/20/python-missingno/output_3_1.png" class title="矩阵图"></p>
+<p><meta name="referrer" content="no-referrer"><br><img src="/python-missingno/output_3_1.png" class title="矩阵图"></p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
@@ -9167,7 +9167,7 @@ dtype: int64
     <url>/%E7%AE%97%E6%B3%95-%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C.html</url>
     <content><![CDATA[<p><center>Neural Network</center><br><a id="more"></a></p>
 <p>NN<br>神经网络</p>
-<h1 id="神经网络"><a href="#神经网络" class="headerlink" title="神经网络"></a>神经网络</h1><p><meta name="referrer" content="no-referrer"><br><img src="/2020/05/18/%E7%AE%97%E6%B3%95-%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/neural-network.png" class title="简单神经网络"></p>
+<h1 id="神经网络"><a href="#神经网络" class="headerlink" title="神经网络"></a>神经网络</h1><p><meta name="referrer" content="no-referrer"><br><img src="/%E7%AE%97%E6%B3%95-%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/neural-network.png" class title="简单神经网络"></p>
 <p>上图的每个圆圈都是一个神经元，每条线表示神经元之间的连接。</p>
 <h2 id="激活函数"><a href="#激活函数" class="headerlink" title="激活函数"></a>激活函数</h2><p>神经网络的激活函数</p>
 <h3 id="sigmoid"><a href="#sigmoid" class="headerlink" title="sigmoid"></a>sigmoid</h3><ul>
@@ -9437,7 +9437,7 @@ dtype: int64
 <div class="note default">
             <p>证明:<br>\begin{aligned}<br>H(X)-H(X,Y) &amp;= -\sum_{x\in X}\underline{p(x)}\log{p(x)}+\sum_{x\in X}\sum_{y\in Y}p(x,y)\log{p(x|y)}\\<br>&amp;= \sum_{x\in X}\sum_{y\in Y}p(x,y)\log{p(x|y)}-\sum_{x\in X}\underline{\sum_{y\in Y}p(x,y)}\log{p(x)}\\<br>&amp;= \sum_{x\in X}\sum_{y\in Y}p(x,y)\left(\log{p(x|y)}-\log{p(x)} \right)\\<br>&amp;= \sum_{x\in X}\sum_{y\in Y}p(x,y)\log{\frac{p(x|y)}{p(x)}}\\<br>&amp;= \sum_{x\in X}\sum_{y\in Y}\log{\frac{p(x,y)}{p(x)p(y)}}\\<br>&amp;= I(X,Y)<br>\end{aligned}</p>
           </div>
-<p><meta name="referrer" content="no-referrer"><br><img src="/2020/05/15/Machine-Learning-%E7%86%B5/mi.png" class title="信息熵、联合熵、条件熵、互信息的关系"></p>
+<p><meta name="referrer" content="no-referrer"><br><img src="/Machine-Learning-%E7%86%B5/mi.png" class title="信息熵、联合熵、条件熵、互信息的关系"></p>
 <h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
 <li><a href="https://zhuanlan.zhihu.com/p/26486223" target="_blank" rel="noopener">通俗理解信息熵</a></li>
 <li><a href="http://blog.sina.com.cn/s/blog_6e85bf420100ohma.html" target="_blank" rel="noopener">ID3算法</a></li>
@@ -9467,7 +9467,7 @@ dtype: int64
     <url>/%E7%AE%97%E6%B3%95-DecisionTree.html</url>
     <content><![CDATA[<p><center>Decision Tree</center><br><a id="more"></a></p>
 <div class="note default">
-            <p>基础阅读：<br><a href="/2020/05/15/Machine-Learning-%E7%86%B5/" title="Machine Learning | 熵">Machine Learning | 熵</a></p>
+            <p>基础阅读：<br><a href="/Machine-Learning-%E7%86%B5.html" title="Machine Learning | 熵">Machine Learning | 熵</a></p>
           </div>
 <h1 id="Decision-Tree"><a href="#Decision-Tree" class="headerlink" title="Decision Tree"></a>Decision Tree</h1><ul>
 <li>是一种基本的<strong>分类</strong>与<strong>回归</strong>方法</li>
@@ -9499,7 +9499,7 @@ dtype: int64
 <li><strong>非叶子节点与分支</strong>：中间过程</li>
 <li><strong>叶子节点</strong>：最终的决策结果</li>
 </ul>
-<p><meta name="referrer" content="no-referrer"><br><img src="/2020/05/15/%E7%AE%97%E6%B3%95-DecisionTree/%E5%86%B3%E7%AD%96%E6%A0%91.jpg" class title="决策树"></p>
+<p><meta name="referrer" content="no-referrer"><br><img src="/%E7%AE%97%E6%B3%95-DecisionTree/%E5%86%B3%E7%AD%96%E6%A0%91.jpg" class title="决策树"></p>
 <h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><h2 id="特征选择"><a href="#特征选择" class="headerlink" title="特征选择"></a>特征选择</h2><p>特征选择指选择最大化所定义目标函数的特征。</p>
 <p>为了衡量类别分布概率的倾斜程度，定义决策树节点node的<strong>不纯度</strong>（impurity）</p>
 <ul>
@@ -9512,7 +9512,7 @@ dtype: int64
 <li>分类误差率<script type="math/tex; mode=display">\mathrm{Classification\_error}(\mathrm{node})=1-\max_k\ p_k</script></li>
 </ol>
 <p>其中$p_k$表示样本中类别$k$的占比；共有$K$个类别。</p>
-<p><meta name="referrer" content="no-referrer"><br><img src="/2020/05/15/%E7%AE%97%E6%B3%95-DecisionTree/three.png" class title="熵、基尼不纯度、分类误差率之间的关系"></p>
+<p><meta name="referrer" content="no-referrer"><br><img src="/%E7%AE%97%E6%B3%95-DecisionTree/three.png" class title="熵、基尼不纯度、分类误差率之间的关系"></p>
 <p>其中</p>
 <ul>
 <li>为了更好地反映变量关系，曲线中的熵除以2</li>
@@ -9521,13 +9521,13 @@ dtype: int64
 <li>当$p=0.5$时，熵、基尼不纯度、分类误差率最大，表示不确定性最大</li>
 </ul>
 <h3 id="信息增益"><a href="#信息增益" class="headerlink" title="信息增益"></a>信息增益</h3><div class="note info">
-            <p>熵与条件熵：<br><a href="/2020/05/15/Machine-Learning-%E7%86%B5/" title="Machine Learning | 熵">Machine Learning | 熵</a></p>
+            <p>熵与条件熵：<br><a href="/Machine-Learning-%E7%86%B5.html" title="Machine Learning | 熵">Machine Learning | 熵</a></p>
           </div>
 <p><strong>信息增益</strong>（Information Gain）：表示已知特征$X$的信息而使得类$Y$的信息的不确定性减少的程度。</p>
 <div class="note warning">
             <p><strong>定义</strong>：特征$A$对训练数据集$D$的信息增益$g(D,A)$，定义为数据集$D$的经验熵$H(D)$与特征$A$给定条件下$D$的经验条件熵$H(D|A)$之差。即</p><script type="math/tex; mode=display">g(D,A)=H(D)-H(D|A)</script>
           </div>
-<p>一般地，熵$H(Y)$与条件熵$H(Y|X)$之差称为<a href="/2020/05/15/Machine-Learning-%E7%86%B5/" title="互信息（Mutual Information）">互信息（Mutual Information）</a>。</p>
+<p>一般地，熵$H(Y)$与条件熵$H(Y|X)$之差称为<a href="/Machine-Learning-%E7%86%B5.html" title="互信息（Mutual Information）">互信息（Mutual Information）</a>。</p>
 <ul>
 <li>决策树学习中的信息增益等价于训练数据集中类与特征的互信息</li>
 <li>给定训练数据集$D$和特征$A$，经验熵$H(D)$表示对数据集$D$进行分类的不确定性</li>
@@ -9636,8 +9636,8 @@ dtype: int64
         <tag>算法</tag>
         <tag>机器学习</tag>
         <tag>分类</tag>
-        <tag>回归</tag>
         <tag>有监督学习</tag>
+        <tag>回归</tag>
       </tags>
   </entry>
   <entry>
@@ -9663,7 +9663,7 @@ dtype: int64
 </ul>
 </blockquote>
 <h2 id="逻辑分布"><a href="#逻辑分布" class="headerlink" title="逻辑分布"></a>逻辑分布</h2><p>Logistic分布是一种连续型分布，其分布函数（Cumulative distribution function）为</p>
-<script type="math/tex; mode=display">F(x)=P(X\leq x)=\frac{1}{1+e^{-(x-\mu)/s}}=\frac{1}{2}+\frac{1}{2}\tanh\left(\frac{x-\mu}{2s}\right)</script><p><meta name="referrer" content="no-referrer"><br><img src="/2020/05/15/%E7%AE%97%E6%B3%95-LogisticRegression/LR-CDF.png" class title="不同取值参数对应的CDF"></p>
+<script type="math/tex; mode=display">F(x)=P(X\leq x)=\frac{1}{1+e^{-(x-\mu)/s}}=\frac{1}{2}+\frac{1}{2}\tanh\left(\frac{x-\mu}{2s}\right)</script><p><meta name="referrer" content="no-referrer"><br><img src="/%E7%AE%97%E6%B3%95-LogisticRegression/LR-CDF.png" class title="不同取值参数对应的CDF"></p>
 <p>概率密度函数为</p>
 <script type="math/tex; mode=display">f(x)=F^\prime(x)=\frac{e^{-(x-\mu)/s}}{s\left(1+e^{-(x-\mu)/s}\right)^2}=\frac{1}{4s}\mathrm{sech}^2\left(\frac{x-2\mu}{2s}\right),\quad -\infty< x< +\infty</script><p>其中</p>
 <ul>
@@ -9673,15 +9673,15 @@ dtype: int64
 <li>中位数<script type="math/tex; mode=display">\mathrm{Median(X)}=\mu</script></li>
 <li>方差<script type="math/tex; mode=display">\mathrm{Var}(X)=\frac{s^2\pi^2}{3}</script></li>
 </ul>
-<p><meta name="referrer" content="no-referrer"><br><img src="/2020/05/15/%E7%AE%97%E6%B3%95-LogisticRegression/LR-pdf.png" class title="不同取值参数对应的pdf"></p>
+<p><meta name="referrer" content="no-referrer"><br><img src="/%E7%AE%97%E6%B3%95-LogisticRegression/LR-pdf.png" class title="不同取值参数对应的pdf"></p>
 <h2 id="逻辑函数"><a href="#逻辑函数" class="headerlink" title="逻辑函数"></a>逻辑函数</h2><p>一个简单的Logistic函数：</p>
-<script type="math/tex; mode=display">P(t)=\frac{1}{1+e^{-t}}</script><p><meta name="referrer" content="no-referrer"><br><img src="/2020/05/15/%E7%AE%97%E6%B3%95-LogisticRegression/LR-slog.png" class title="标准Logistic函数"></p>
+<script type="math/tex; mode=display">P(t)=\frac{1}{1+e^{-t}}</script><p><meta name="referrer" content="no-referrer"><br><img src="/%E7%AE%97%E6%B3%95-LogisticRegression/LR-slog.png" class title="标准Logistic函数"></p>
 <p>广义Logistic曲线可以模拟一些人口增长的S形曲线：初始阶段大致是指数增长；然后开始变得饱和，增加变慢；最后，达到成熟时增加停止。</p>
 <h2 id="逻辑回归"><a href="#逻辑回归" class="headerlink" title="逻辑回归"></a>逻辑回归</h2><p>逻辑回归通常用于二分类问题（因变量是分类变量），用来表示某件事发生的可能性。</p>
 <p>Andrew Ng的CS229中的例子：根据肿瘤的大小（Tumor Size）$X$来判断肿瘤是否是恶性的（Malignant）$Y$。</p>
 <p>考虑构建线性回归模型$h_\theta(x)$，$h_\theta(x)\geq 0.5$ 为恶性肿瘤，$h_\theta(x)&lt;0.5$为良性肿瘤。<br>\begin{equation}<br>  Y=\left\{<br>\begin{array}{ll}<br>1, &amp; \mbox{如果} h_\theta(x)\geq 0.5\\<br>0, &amp; \mbox{如果} h_\theta(x)&lt;0.5<br>\end{array}\right.<br>\end{equation}</p>
 <p>Logistic函数/<strong>Sigmoid函数</strong>可以将任意实数值映射到(0,1)区间（不包括0和1，但可以无限接近）。因此，使用Sigmoid函数来将线性回归的结果按照一定的阈值分为2类（二分类问题）或更多类（多分类问题）。</p>
-<p><meta name="referrer" content="no-referrer"><br><img src="/2020/05/15/%E7%AE%97%E6%B3%95-LogisticRegression/LR-heart.png" class title="来自：机器之心-从原理到应用-简述Logistic回归算法"></p>
+<p><meta name="referrer" content="no-referrer"><br><img src="/%E7%AE%97%E6%B3%95-LogisticRegression/LR-heart.png" class title="来自：机器之心-从原理到应用-简述Logistic回归算法"></p>
 <p>令</p>
 <script type="math/tex; mode=display">h_\theta(x)=g(\theta^Tx)=\frac{1}{1+e^{-\theta^Tx}}=\frac{e^{\theta^Tx}}{1+e^{\theta^Tx}}</script><p>其中$z=\theta^Tx$（这里$x$包含截距项），Sigmoid函数为</p>
 <script type="math/tex; mode=display">g(z)=\frac{1}{1+e^{-z}}=\frac{e^z}{1+e^z}</script><p>Sigmoid保证$h_\theta(x)$取值在0和1之间（概率取值范围为[0,1]）。</p>
@@ -9897,7 +9897,7 @@ dtype: int64
 <li>一般决策问题：一般损失函数</li>
 </ul>
 <div class="note default">
-            <p>对于二分类问题，若将<a href="/2020/05/27/%E7%AE%97%E6%B3%95-AdaBoost/" title="AdaBoost算法">AdaBoost算法</a>中的基分类器限定为<strong>二类决策树</strong>，则为提升树。<br>此时，Boosting Tree是AdaBoost的特殊情况。</p>
+            <p>对于二分类问题，若将<a href="/%E7%AE%97%E6%B3%95-AdaBoost.html" title="AdaBoost算法">AdaBoost算法</a>中的基分类器限定为<strong>二类决策树</strong>，则为提升树。<br>此时，Boosting Tree是AdaBoost的特殊情况。</p>
           </div>
 <div class="note danger">
             <h2 id="回归提升树"><a href="#回归提升树" class="headerlink" title="回归提升树"></a>回归提升树</h2><p><strong>输入</strong>：训练数据集$\{(x_1,y_1),\cdots, (x_N,y_N)\}$<br>  $x_i\in X\subseteq \mathbb{R}^p,\quad y_i\in Y\subseteq \mathbb{R}$</p><p><strong>输出</strong>：提升树</p><script type="math/tex; mode=display">H(x)=\sum_{t=1}^Th_t(x)</script><ol><li>初始化提升树$H_0(x)=0$</li><li>对$t=1,\cdots,T$($T$为迭代次数)，<ol><li>计算上一轮迭代的残差<script type="math/tex; mode=display">r_i^{(t)}=y_i-H_{t-1}(x_i),\quad i=1,\cdots,N.</script></li><li>拟合残差$r_i^{(t)}$学习得到一棵回归树<script type="math/tex; mode=display">h_t(x;\theta_t)</script></li><li>更新提升树<script type="math/tex; mode=display">H_t(x)=H_{t-1}(x)+h_t(x;\theta_t)</script></li></ol></li></ol>
@@ -10887,12 +10887,12 @@ dtype: int64
 <li><code>.score()</code>：看测试集的表现得分</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">###导入线性回归模型</span></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">from</span> sklearn.linear_model <span class="keyword">import</span> LinearRegression</span><br><span class="line"></span><br><span class="line">%matplotlib inline</span><br><span class="line"></span><br><span class="line">X = [[<span class="number">1</span>], [<span class="number">4</span>]]   <span class="comment">###两个点的横坐标</span></span><br><span class="line">y = [<span class="number">3</span>, <span class="number">5</span>]   <span class="comment">###两个点的纵坐标</span></span><br><span class="line"></span><br><span class="line">lr = LinearRegression().fit(X, y)</span><br><span class="line">z = np.linspace(<span class="number">0</span>, <span class="number">5</span>, <span class="number">20</span>)</span><br><span class="line">plt.scatter(X, y, s= <span class="number">50</span>)   <span class="comment">###参数s设置点的大小</span></span><br><span class="line">plt.plot(z, lr.predict(z.reshape(<span class="number">-1</span>, <span class="number">1</span>)), c=<span class="string">'green'</span>)</span><br><span class="line">plt.title(<span class="string">"Straight Line"</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
-<p><meta name="referrer" content="no-referrer"><br><img src="/2020/05/13/python-sklearn/output_0_0.png" class></p>
+<p><meta name="referrer" content="no-referrer"><br><img src="/python-sklearn/output_0_0.png" class></p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">print(<span class="string">"y = &#123;:.4f&#125;"</span>.format(lr.coef_[<span class="number">0</span>]),<span class="string">"x"</span>,<span class="string">"+&#123;:.4f&#125;"</span>.format(lr.intercept_))</span><br></pre></td></tr></table></figure>
 <pre><code>y = 0.6667 x +2.3333
 </code></pre><p>考虑多个数据点的线性回归：</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line"><span class="comment">###首先生成数据集</span></span><br><span class="line"><span class="keyword">from</span> sklearn.datasets <span class="keyword">import</span> make_regression</span><br><span class="line"></span><br><span class="line">X ,y = make_regression(n_samples=<span class="number">100</span>, n_features=<span class="number">1</span>, </span><br><span class="line">                      n_informative=<span class="number">1</span>, noise=<span class="number">50</span>, random_state=<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> sklearn.linear_model <span class="keyword">import</span> LinearRegression</span><br><span class="line"><span class="comment">###拟合</span></span><br><span class="line">reg = LinearRegression()</span><br><span class="line">reg.fit(X, y)</span><br><span class="line">z = np.linspace(<span class="number">-3</span>, <span class="number">3</span>, <span class="number">200</span>).reshape(<span class="number">-1</span>, <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">plt.scatter(X, y, c=<span class="string">'blue'</span>, s=<span class="number">50</span>)</span><br><span class="line">plt.plot(z, reg.predict(z), c=<span class="string">'k'</span>)</span><br><span class="line">plt.title(<span class="string">"Linear Regression"</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
-<p><meta name="referrer" content="no-referrer"><br><img src="/2020/05/13/python-sklearn/output_2_0.png" class></p>
+<p><meta name="referrer" content="no-referrer"><br><img src="/python-sklearn/output_2_0.png" class></p>
 <p>糖尿病数据，线性回归：</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">###加载糖尿病数据集</span></span><br><span class="line"><span class="keyword">from</span> sklearn.datasets <span class="keyword">import</span> load_diabetes</span><br><span class="line"></span><br><span class="line">X, y = load_diabetes().data, load_diabetes().target</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> train_test_split</span><br><span class="line">X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=<span class="number">8</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> sklearn.linear_model <span class="keyword">import</span> LinearRegression</span><br><span class="line">lr = LinearRegression().fit(X_train, y_train)</span><br><span class="line"></span><br><span class="line">print(<span class="string">"训练数据集得分：&#123;:.3f&#125;"</span>.format(lr.score(X_train, y_train)))</span><br><span class="line">print(<span class="string">"测试数据集得分：&#123;:.3f&#125;"</span>.format(lr.score(X_test, y_test)))</span><br></pre></td></tr></table></figure>
 <pre><code>训练数据集得分：0.530
@@ -10904,7 +10904,7 @@ dtype: int64
 </ul>
 <p>考虑带损失函数的模型拟合结果评估（标注残差、计算残差平方和）：</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">X = [[<span class="number">6</span>], [<span class="number">8</span>], [<span class="number">10</span>], [<span class="number">14</span>], [<span class="number">18</span>]]</span><br><span class="line">y = [[<span class="number">7</span>], [<span class="number">9</span>], [<span class="number">13</span>], [<span class="number">17.5</span>], [<span class="number">18</span>]]</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> sklearn.linear_model <span class="keyword">import</span> LinearRegression</span><br><span class="line">model = LinearRegression()</span><br><span class="line">model.fit(X, y)</span><br><span class="line">X2 = [[<span class="number">0</span>], [<span class="number">10</span>], [<span class="number">14</span>], [<span class="number">25</span>]]</span><br><span class="line">y2 = model.predict(X2)</span><br><span class="line"></span><br><span class="line"><span class="comment">###残差</span></span><br><span class="line">yr = model.predict(X)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">%matplotlib inline</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line">plt.plot(X, y, <span class="string">'k.'</span>)</span><br><span class="line">plt.plot(X2, y2, <span class="string">'g-'</span>)</span><br><span class="line"><span class="keyword">for</span> idx, x <span class="keyword">in</span> enumerate(X):</span><br><span class="line">    plt.plot([x, x], [y[idx], yr[idx]], <span class="string">'r-'</span>)</span><br><span class="line"></span><br><span class="line">plt.xlabel(<span class="string">"X"</span>)</span><br><span class="line">plt.ylabel(<span class="string">"y"</span>)</span><br><span class="line">plt.axis([<span class="number">0</span>, <span class="number">25</span>, <span class="number">0</span>, <span class="number">25</span>])</span><br><span class="line">plt.grid(<span class="literal">True</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
-<p><meta name="referrer" content="no-referrer"><br><img src="/2020/05/13/python-sklearn/output_4_0.png" class></p>
+<p><meta name="referrer" content="no-referrer"><br><img src="/python-sklearn/output_4_0.png" class></p>
 <h2 id="preprocessing"><a href="#preprocessing" class="headerlink" title="preprocessing"></a>preprocessing</h2><p>sklearn模块中的preprocessing包含许多用于encoding的函数。</p>
 <h3 id="LabelBinarizer"><a href="#LabelBinarizer" class="headerlink" title="LabelBinarizer()"></a>LabelBinarizer()</h3><p>使用One-Hot Encoding将类别数据二进制化</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> preprocessing</span><br><span class="line">lb = preprocessing.LabelBinarizer()</span><br><span class="line"></span><br><span class="line">c_list = [<span class="string">'Quanzhou'</span>, <span class="string">'Xiamen'</span>, <span class="string">'Zhangzhou'</span>, <span class="string">'Quanzhou'</span>]</span><br><span class="line"></span><br><span class="line">lb.fit(c_list)</span><br><span class="line">lb.classes_</span><br><span class="line"><span class="comment">#array(['Quanzhou', 'Xiamen', 'Zhangzhou'], dtype='&lt;U9')</span></span><br><span class="line"></span><br><span class="line">c_list_lb = lb.transform(c_list)  <span class="comment">##Encoding</span></span><br><span class="line">c_list_lb</span><br><span class="line"><span class="comment">#array([[1, 0, 0],</span></span><br><span class="line"><span class="comment">#       [0, 1, 0],</span></span><br><span class="line"><span class="comment">#       [0, 0, 1],</span></span><br><span class="line"><span class="comment">#       [1, 0, 0]])</span></span><br><span class="line"></span><br><span class="line">c_list_new = lb.inverse_transform(c_list_lb)  <span class="comment">##Decoding</span></span><br><span class="line">c_list_new</span><br><span class="line"><span class="comment">#array(['Quanzhou', 'Xiamen', 'Zhangzhou', 'Quanzhou'], dtype='&lt;U9')</span></span><br></pre></td></tr></table></figure>
@@ -12416,7 +12416,7 @@ _ptp 99988
 _std 7501.973469876438
 _var 56279605.94272992
 </code></pre><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## label中可能存在异常大值</span></span><br><span class="line"><span class="comment">## 绘制标签的直方图，查看标签分布</span></span><br><span class="line">plt.hist(y_train)</span><br><span class="line">plt.show()</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
-<p><meta name="referrer" content="no-referrer"><br><img src="/2020/05/12/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-%E5%A4%A9%E6%B1%A0-%E4%BA%8C%E6%89%8B%E8%BD%A6%E4%BA%A4%E6%98%93%E6%95%B0%E6%8D%AE/output_23_0.png" class title="直方图"></p>
+<p><meta name="referrer" content="no-referrer"><br><img src="/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-%E5%A4%A9%E6%B1%A0-%E4%BA%8C%E6%89%8B%E8%BD%A6%E4%BA%A4%E6%98%93%E6%95%B0%E6%8D%AE/output_23_0.png" class title="直方图"></p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 填补缺失值</span></span><br><span class="line">X_train = X_train.fillna(<span class="number">-1</span>)  <span class="comment">## 用-1填补</span></span><br><span class="line">X_test = X_test.fillna(<span class="number">-1</span>)</span><br></pre></td></tr></table></figure>
 <h1 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 利用XGBoost进行5折交叉验证</span></span><br><span class="line">xgb_reg = xgb.XGBRegressor(</span><br><span class="line">    n_estimators=<span class="number">120</span>, </span><br><span class="line">    learning_rate=<span class="number">0.1</span>, </span><br><span class="line">    gamma=<span class="number">0</span>,</span><br><span class="line">    subsample=<span class="number">0.8</span>,</span><br><span class="line">    colsample_bytree=<span class="number">0.9</span>,</span><br><span class="line">    max_depth=<span class="number">7</span>,</span><br><span class="line">    objective=<span class="string">'reg:squarederror'</span></span><br><span class="line">)</span><br><span class="line">scores_train = []</span><br><span class="line">scores = []</span><br><span class="line"></span><br><span class="line"><span class="comment">## 5折交叉验证</span></span><br><span class="line">folds = StratifiedKFold(n_splits=<span class="number">5</span>, shuffle=<span class="literal">True</span>, random_state=<span class="number">0</span>)</span><br><span class="line"><span class="keyword">for</span> train_idx, val_idx <span class="keyword">in</span> folds.split(X_train, y_train):</span><br><span class="line">    train_X = X_train.iloc[train_idx].values</span><br><span class="line">    train_y = y_train.iloc[train_idx]</span><br><span class="line">    val_X = X_train.iloc[val_idx].values</span><br><span class="line">    val_y = y_train.iloc[val_idx]</span><br><span class="line">    </span><br><span class="line">    xgb_reg.fit(train_X, train_y)</span><br><span class="line">    pred_train_y_xgb = xgb_reg.predict(train_X)</span><br><span class="line">    pred_val_y_xgb = xgb_reg.predict(val_X)</span><br><span class="line">    </span><br><span class="line">    score_train = mean_absolute_error(train_y, pred_train_y_xgb)</span><br><span class="line">    scores_train.append(score_train)</span><br><span class="line">    score = mean_absolute_error(val_y, pred_val_y_xgb)</span><br><span class="line">    scores.append(score)</span><br><span class="line">    </span><br><span class="line">print(<span class="string">'Train MAE:'</span>, np.mean(score_train))</span><br><span class="line">print(<span class="string">'Validation MAE:'</span>, np.mean(scores))</span><br></pre></td></tr></table></figure>
 <pre><code>Train MAE: 622.8334142499367
@@ -12449,7 +12449,7 @@ _var 53963204.0
 <pre><code>MAE of val with weighted ensemble: 5888.071354671169
 </code></pre><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">sub_weighted = (<span class="number">1</span> - MAE_lgb / (MAE_xgb + MAE_lgb)) * subB_lgb + (<span class="number">1</span> - MAE_xgb / (MAE_xgb + MAE_lgb)) * subB_xgb</span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 查看预测值的直方图</span></span><br><span class="line">plt.hist(sub_weighted)</span><br><span class="line">plt.show()</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
-<p><meta name="referrer" content="no-referrer"><br><img src="/2020/05/12/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-%E5%A4%A9%E6%B1%A0-%E4%BA%8C%E6%89%8B%E8%BD%A6%E4%BA%A4%E6%98%93%E6%95%B0%E6%8D%AE/output_33_0.png" class title="直方图"></p>
+<p><meta name="referrer" content="no-referrer"><br><img src="/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-%E5%A4%A9%E6%B1%A0-%E4%BA%8C%E6%89%8B%E8%BD%A6%E4%BA%A4%E6%98%93%E6%95%B0%E6%8D%AE/output_33_0.png" class title="直方图"></p>
 <h1 id="输出结果"><a href="#输出结果" class="headerlink" title="输出结果"></a>输出结果</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">sub = pd.DataFrame()</span><br><span class="line">sub[<span class="string">'SaleID'</span>] = testB_data.SaleID</span><br><span class="line">sub[<span class="string">'price'</span>] = sub_weighted</span><br><span class="line">sub.to_csv(<span class="string">"./sub_weighted.csv"</span>, index=<span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">sub.head()  <span class="comment">## 预览结果</span></span><br></pre></td></tr></table></figure>
 <div>
@@ -13690,10 +13690,10 @@ _var 53963204.0
 </ul>
 <p>生成式模型有：</p>
 <ul>
-<li><a href="/2020/05/11/%E7%AE%97%E6%B3%95-%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF/" title="朴素贝叶斯(Naive Bayes)">朴素贝叶斯(Naive Bayes)</a></li>
-<li><a href="/2020/05/06/%E7%AE%97%E6%B3%95-KNN/" title="k邻近（KNN）">k邻近（KNN）</a></li>
+<li><a href="/%E7%AE%97%E6%B3%95-%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF.html" title="朴素贝叶斯(Naive Bayes)">朴素贝叶斯(Naive Bayes)</a></li>
+<li><a href="/%E7%AE%97%E6%B3%95-KNN.html" title="k邻近（KNN）">k邻近（KNN）</a></li>
 <li>高斯混合模型（GMM）</li>
-<li><a href="/2020/06/03/%E7%AE%97%E6%B3%95-HMM/" title="隐马尔可夫模型（HMM）">隐马尔可夫模型（HMM）</a></li>
+<li><a href="/%E7%AE%97%E6%B3%95-HMM.html" title="隐马尔可夫模型（HMM）">隐马尔可夫模型（HMM）</a></li>
 <li>贝叶斯网络</li>
 <li>Sigmoid Belief Networks</li>
 <li>马尔可夫随机场（Markov Random Fields）</li>
@@ -13706,11 +13706,11 @@ _var 53963204.0
 </ul>
 <p>判别式模型有：</p>
 <ul>
-<li><a href="/2020/05/04/%E7%AE%97%E6%B3%95-%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/" title="线性回归（Linear Regression）">线性回归（Linear Regression）</a></li>
+<li><a href="/%E7%AE%97%E6%B3%95-%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92.html" title="线性回归（Linear Regression）">线性回归（Linear Regression）</a></li>
 <li>线性判别分析</li>
-<li><a href="/2020/05/15/%E7%AE%97%E6%B3%95-LogisticRegression/" title="逻辑回归（Logistic Regression）">逻辑回归（Logistic Regression）</a></li>
-<li><a href="/2020/05/18/%E7%AE%97%E6%B3%95-%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/" title="神经网络（NN）">神经网络（NN）</a></li>
-<li><a href="/2020/04/28/%E7%AE%97%E6%B3%95-SVM/" title="支持向量机（SVM）">支持向量机（SVM）</a></li>
+<li><a href="/%E7%AE%97%E6%B3%95-LogisticRegression.html" title="逻辑回归（Logistic Regression）">逻辑回归（Logistic Regression）</a></li>
+<li><a href="/%E7%AE%97%E6%B3%95-%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C.html" title="神经网络（NN）">神经网络（NN）</a></li>
+<li><a href="/%E7%AE%97%E6%B3%95-SVM.html" title="支持向量机（SVM）">支持向量机（SVM）</a></li>
 <li>高斯过程（Gaussian Process）</li>
 <li>条件随机场（CRF）</li>
 <li>CART（Classification and Regression Tree）</li>
@@ -13737,7 +13737,7 @@ _var 53963204.0
 <p>Naive Bayes</p>
 <h1 id="朴素贝叶斯"><a href="#朴素贝叶斯" class="headerlink" title="朴素贝叶斯"></a>朴素贝叶斯</h1><ul>
 <li>分类方法</li>
-<li><a href="/2020/05/11/%E7%94%9F%E6%88%90%E5%BC%8F%E6%A8%A1%E5%9E%8B-%E5%88%A4%E5%88%AB%E5%BC%8F%E6%A8%A1%E5%9E%8B/" title="生成式模型">生成式模型</a>
+<li><a href="/%E7%94%9F%E6%88%90%E5%BC%8F%E6%A8%A1%E5%9E%8B-%E5%88%A4%E5%88%AB%E5%BC%8F%E6%A8%A1%E5%9E%8B.html" title="生成式模型">生成式模型</a>
 </li>
 </ul>
 <blockquote>
@@ -14189,7 +14189,7 @@ n_{.j}\\
 <li><a href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.calinski_harabasz_score.html" target="_blank" rel="noopener">sklearn.metrics.calinski_harabasz_score</a></li>
 </ul>
 <h1 id="推荐阅读"><a href="#推荐阅读" class="headerlink" title="推荐阅读"></a>推荐阅读</h1><ul>
-<li><a href="/2020/05/12/Machine-Learning-%E5%88%86%E7%B1%BB%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0/" title="分类模型评估">分类模型评估</a></li>
+<li><a href="/Machine-Learning-%E5%88%86%E7%B1%BB%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0.html" title="分类模型评估">分类模型评估</a></li>
 </ul>
 ]]></content>
       <categories>
@@ -15036,9 +15036,9 @@ E(X)&=\int_0^1 x\frac{1}{B(\alpha,\beta)}x^{\alpha-1}(1-x)^{\beta-1}\mathrm{d}x\
 <p>使用selenium<sup><a href="#fn_2" id="reffn_2">2</a></sup>，需要配置browser driver（浏览器驱动程序），详情可参见:<br><a href="https://selenium-python.readthedocs.io/installation.html#drivers" target="_blank" rel="noopener">https://selenium-python.readthedocs.io/installation.html#drivers</a></p>
 <p>选择浏览器对应的driver，下面以Edge浏览器<sup><a href="#fn_1" id="reffn_1">1</a></sup>为例：<br><a href="https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/" target="_blank" rel="noopener">Edge的WebDriver下载地址</a></p>
 <ol>
-<li>首先查看Edge的版本信息（version）：点击Edge浏览器右上角的“…”，选择“设置”，“常规”的最下方有Edge版本信息<br><meta name="referrer" content="no-referrer"><img src="/2020/05/08/python-pyecharts%E6%A8%A1%E5%9D%97/oldedge.png" class title="旧Edge版本信息">
+<li>首先查看Edge的版本信息（version）：点击Edge浏览器右上角的“…”，选择“设置”，“常规”的最下方有Edge版本信息<br><meta name="referrer" content="no-referrer"><img src="/python-pyecharts%E6%A8%A1%E5%9D%97/oldedge.png" class title="旧Edge版本信息">
 <ul>
-<li>查看全新Edge的版本信息：点击右上角的“…”，选择“帮助与反馈”中的“关于Microsoft Edge”，即可查看相应的版本信息<br><meta name="referrer" content="no-referrer"><img src="/2020/05/08/python-pyecharts%E6%A8%A1%E5%9D%97/newedgev.png" class title="新Edge版本信息"></li>
+<li>查看全新Edge的版本信息：点击右上角的“…”，选择“帮助与反馈”中的“关于Microsoft Edge”，即可查看相应的版本信息<br><meta name="referrer" content="no-referrer"><img src="/python-pyecharts%E6%A8%A1%E5%9D%97/newedgev.png" class title="新Edge版本信息"></li>
 </ul>
 </li>
 <li>接着下载<a href="https://msedgewebdriverstorage.z22.web.core.windows.net/?prefix=79.0.309.68/" target="_blank" rel="noopener">版本79.0.309.68的Edge对应的WebDriver</a>，从<a href="https://msedgewebdriverstorage.z22.web.core.windows.net/" target="_blank" rel="noopener">各版本WebDriver</a>中找到相应版本</li>
@@ -15053,7 +15053,7 @@ E(X)&=\int_0^1 x\frac{1}{B(\alpha,\beta)}x^{\alpha-1}(1-x)^{\beta-1}\mathrm{d}x\
 <blockquote id="fn_1">
 <sup>1</sup>. 2020年01月16日，基于Chromium内核的全新Microsoft Edge正式上线微软官网，可自行下载进行更新。<a href="https://www.microsoft.com/en-us/edge" target="_blank" rel="noopener">全新Microsoft Edge</a><a href="#reffn_1" title="Jump back to footnote [1] in the text."> &#8617;</a>
 </blockquote>
-<p><meta name="referrer" content="no-referrer"><br><img src="/2020/05/08/python-pyecharts%E6%A8%A1%E5%9D%97/newedge.png" class title="全新Edge"></p>
+<p><meta name="referrer" content="no-referrer"><br><img src="/python-pyecharts%E6%A8%A1%E5%9D%97/newedge.png" class title="全新Edge"></p>
 <blockquote id="fn_2">
 <sup>2</sup>. selenium目前支持Chrome和Safari<a href="#reffn_2" title="Jump back to footnote [2] in the text."> &#8617;</a>
 </blockquote>
@@ -15086,17 +15086,17 @@ E(X)&=\int_0^1 x\frac{1}{B(\alpha,\beta)}x^{\alpha-1}(1-x)^{\beta-1}\mathrm{d}x\
 <p>参考<a href="http://gallery.pyecharts.org/#/Sankey/sankey_base" target="_blank" rel="noopener">官方源码</a>生成html文件：<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> pyecharts <span class="keyword">import</span> options <span class="keyword">as</span> opts</span><br><span class="line"><span class="keyword">from</span> pyecharts.charts <span class="keyword">import</span> Sankey</span><br><span class="line"></span><br><span class="line">nodes = [</span><br><span class="line">    &#123;<span class="string">"name"</span>: <span class="string">"category1"</span>&#125;,</span><br><span class="line">    &#123;<span class="string">"name"</span>: <span class="string">"category2"</span>&#125;,</span><br><span class="line">    &#123;<span class="string">"name"</span>: <span class="string">"category3"</span>&#125;,</span><br><span class="line">    &#123;<span class="string">"name"</span>: <span class="string">"category4"</span>&#125;,</span><br><span class="line">    &#123;<span class="string">"name"</span>: <span class="string">"category5"</span>&#125;,</span><br><span class="line">    &#123;<span class="string">"name"</span>: <span class="string">"category6"</span>&#125;,</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">links = [</span><br><span class="line">    &#123;<span class="string">"source"</span>: <span class="string">"category1"</span>, <span class="string">"target"</span>: <span class="string">"category2"</span>, <span class="string">"value"</span>: <span class="number">10</span>&#125;,</span><br><span class="line">    &#123;<span class="string">"source"</span>: <span class="string">"category2"</span>, <span class="string">"target"</span>: <span class="string">"category3"</span>, <span class="string">"value"</span>: <span class="number">15</span>&#125;,</span><br><span class="line">    &#123;<span class="string">"source"</span>: <span class="string">"category3"</span>, <span class="string">"target"</span>: <span class="string">"category4"</span>, <span class="string">"value"</span>: <span class="number">20</span>&#125;,</span><br><span class="line">    &#123;<span class="string">"source"</span>: <span class="string">"category5"</span>, <span class="string">"target"</span>: <span class="string">"category6"</span>, <span class="string">"value"</span>: <span class="number">25</span>&#125;,</span><br><span class="line">]</span><br><span class="line">c = (</span><br><span class="line">    Sankey()</span><br><span class="line">    .add(</span><br><span class="line">        <span class="string">"sankey"</span>,</span><br><span class="line">        nodes,</span><br><span class="line">        links,</span><br><span class="line">        linestyle_opt=opts.LineStyleOpts(opacity=<span class="number">0.2</span>, curve=<span class="number">0.5</span>, color=<span class="string">"source"</span>),</span><br><span class="line">        label_opts=opts.LabelOpts(position=<span class="string">"right"</span>),</span><br><span class="line">    )</span><br><span class="line">    .set_global_opts(title_opts=opts.TitleOpts(title=<span class="string">"Sankey-基本示例"</span>))</span><br><span class="line">    .render(<span class="string">"sankey_base.html"</span>)</span><br><span class="line">)</span><br></pre></td></tr></table></figure><br><strong>查看html源代码</strong>：<br>二选一</p>
 <ol>
 <li>用浏览器打开<code>sankey_base.html</code>，右键选择“查看源代码”或<code>Ctrl+U</code></li>
-<li>用Visual Sudio Code打开<code>sankey_base.html</code><br>查看源代码<br><meta name="referrer" content="no-referrer"><img src="/2020/05/08/python-pyecharts%E6%A8%A1%E5%9D%97/code1.png" class title="html源代码">
+<li>用Visual Sudio Code打开<code>sankey_base.html</code><br>查看源代码<br><meta name="referrer" content="no-referrer"><img src="/python-pyecharts%E6%A8%A1%E5%9D%97/code1.png" class title="html源代码">
 </li>
 </ol>
 <p><strong>安装PPT插件</strong>：<br>打开PowerPoint，选择“插入”——“获取加载项”——搜索“html”，添加“Office Apps Fiddle for PowerPoint”。</p>
-<p><meta name="referrer" content="no-referrer"><br><img src="/2020/05/08/python-pyecharts%E6%A8%A1%E5%9D%97/pic2.png" class title="安装PPT插件"></p>
+<p><meta name="referrer" content="no-referrer"><br><img src="/python-pyecharts%E6%A8%A1%E5%9D%97/pic2.png" class title="安装PPT插件"></p>
 <p>将html的源代码粘贴到该插件的“HTML”中</p>
-<p><meta name="referrer" content="no-referrer"><br><img src="/2020/05/08/python-pyecharts%E6%A8%A1%E5%9D%97/pic.png" class title="粘贴html源代码"></p>
+<p><meta name="referrer" content="no-referrer"><br><img src="/python-pyecharts%E6%A8%A1%E5%9D%97/pic.png" class title="粘贴html源代码"></p>
 <p>点击“Run Fiddle!”按钮，会报错</p>
-<p><meta name="referrer" content="no-referrer"><br><img src="/2020/05/08/python-pyecharts%E6%A8%A1%E5%9D%97/pic3.png" class title="报错"></p>
+<p><meta name="referrer" content="no-referrer"><br><img src="/python-pyecharts%E6%A8%A1%E5%9D%97/pic3.png" class title="报错"></p>
 <p>点击“×”，并点击齿轮“Setting”；再次点击“Run Fiddle!”按钮，即可成功生成交互式echarts。</p>
-<p><meta name="referrer" content="no-referrer"><br><img src="/2020/05/08/python-pyecharts%E6%A8%A1%E5%9D%97/pic4.png" class title="成功的交互式桑基图"></p>
+<p><meta name="referrer" content="no-referrer"><br><img src="/python-pyecharts%E6%A8%A1%E5%9D%97/pic4.png" class title="成功的交互式桑基图"></p>
 <p>非第一次使用该插件，可从“插入”——“我的加载项”中找到该插件。</p>
 <h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
 <li><a href="https://pyecharts.org/#/" target="_blank" rel="noopener">pyecharts官方文档</a></li>
@@ -15780,7 +15780,7 @@ E(X)&=\int_0^1 x\frac{1}{B(\alpha,\beta)}x^{\alpha-1}(1-x)^{\beta-1}\mathrm{d}x\
 <pre><code> 预测新红酒的分类为：[&#39;class_2&#39;]
 </code></pre><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <h2 id="KNN-vs-K-Means"><a href="#KNN-vs-K-Means" class="headerlink" title="KNN vs K-Means"></a>KNN vs K-Means</h2><ul>
-<li><a href="/2020/05/13/%E7%AE%97%E6%B3%95-K-Means/" title="K-Means算法">K-Means算法</a>
+<li><a href="/%E7%AE%97%E6%B3%95-K-Means.html" title="K-Means算法">K-Means算法</a>
 </li>
 </ul>
 <div>
@@ -16545,8 +16545,8 @@ E(X)&=\int_0^1 x\frac{1}{B(\alpha,\beta)}x^{\alpha-1}(1-x)^{\beta-1}\mathrm{d}x\
         <category>数据结构</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>数据结构</tag>
+        <tag>算法</tag>
       </tags>
   </entry>
   <entry>
@@ -16663,8 +16663,8 @@ E(X)&=\int_0^1 x\frac{1}{B(\alpha,\beta)}x^{\alpha-1}(1-x)^{\beta-1}\mathrm{d}x\
         <category>数据结构</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>数据结构</tag>
+        <tag>算法</tag>
       </tags>
   </entry>
   <entry>
@@ -16916,8 +16916,8 @@ E(X)&=\int_0^1 x\frac{1}{B(\alpha,\beta)}x^{\alpha-1}(1-x)^{\beta-1}\mathrm{d}x\
 <li>输出（$\geq 1$）</li>
 </ol>
 <h2 id="查找方法"><a href="#查找方法" class="headerlink" title="查找方法"></a>查找方法</h2><ul>
-<li><a href="/2020/05/04/Algo-%E4%BA%8C%E5%88%86%E6%B3%95/" title="简单查找">简单查找</a></li>
-<li><a href="/2020/05/04/Algo-%E4%BA%8C%E5%88%86%E6%B3%95/" title="二分查找">二分查找</a>
+<li><a href="/Algo-%E4%BA%8C%E5%88%86%E6%B3%95.html" title="简单查找">简单查找</a></li>
+<li><a href="/Algo-%E4%BA%8C%E5%88%86%E6%B3%95.html" title="二分查找">二分查找</a>
 <blockquote>
 <ul>
 <li>二分查找的速度比简单查找快得多</li>
@@ -16927,45 +16927,45 @@ E(X)&=\int_0^1 x\frac{1}{B(\alpha,\beta)}x^{\alpha-1}(1-x)^{\beta-1}\mathrm{d}x\
 </li>
 </ul>
 <h2 id="排序方法"><a href="#排序方法" class="headerlink" title="排序方法"></a>排序方法</h2><ul>
-<li><a href="/2020/05/05/Algo-%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F/" title="选择排序">选择排序</a></li>
-<li><a href="/2020/05/05/Algo-%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/" title="快速排序">快速排序</a></li>
-<li><a href="/2020/05/05/Algo-%E5%90%88%E5%B9%B6%E6%8E%92%E5%BA%8F/" title="合并排序">合并排序</a>
+<li><a href="/Algo-%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F.html" title="选择排序">选择排序</a></li>
+<li><a href="/Algo-%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F.html" title="快速排序">快速排序</a></li>
+<li>
 </li>
 </ul>
 <h2 id="图相关"><a href="#图相关" class="headerlink" title="图相关"></a>图相关</h2><ul>
-<li><a href="/2020/05/05/Algo-BFS/" title="广度优先搜索">广度优先搜索</a>
+<li><a href="/Algo-BFS.html" title="广度优先搜索">广度优先搜索</a>
 <ul>
 <li>用于在非加权图中查找最短路径 </li>
 </ul>
 </li>
-<li><a href="/2020/05/05/Algo-%E7%8B%84%E5%85%8B%E6%96%AF%E7%89%B9%E6%8B%89%E7%AE%97%E6%B3%95/" title="狄克斯特拉算法">狄克斯特拉算法</a>
+<li><a href="/Algo-%E7%8B%84%E5%85%8B%E6%96%AF%E7%89%B9%E6%8B%89%E7%AE%97%E6%B3%95.html" title="狄克斯特拉算法">狄克斯特拉算法</a>
 <ul>
 <li>Dijkstra’s Algorithm</li>
 <li>用于在加权图中查找最短路径</li>
 <li>不能用于包含负权边的图</li>
 </ul>
 </li>
-<li><a href="/2020/05/05/Algo-%E8%B4%9D%E5%B0%94%E6%9B%BC-%E7%A6%8F%E5%BE%B7%E7%AE%97%E6%B3%95/" title="贝尔曼-福德算法">贝尔曼-福德算法</a>
+<li>
 <ul>
 <li>用于含负权边的加权图查找最短路径</li>
 </ul>
 </li>
-<li><a href="/2020/05/05/Algo-%E8%B4%AA%E5%A9%AA%E7%AE%97%E6%B3%95/" title="贪婪算法">贪婪算法</a>
+<li>
 </li>
 </ul>
 <h2 id><a href="#" class="headerlink" title=" "></a> </h2><ul>
-<li><a href="/2020/05/05/%E9%80%92%E5%BD%92/" title="递归">递归</a></li>
-<li><a href="/2020/05/05/Algo-%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" title="背包问题">背包问题</a>
+<li><a href="/%E9%80%92%E5%BD%92.html" title="递归">递归</a></li>
+<li><a href="/Algo-%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92.html" title="背包问题">背包问题</a>
 <ul>
-<li><a href="/2020/05/05/Algo-%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" title="动态规划">动态规划</a>
+<li><a href="/Algo-%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92.html" title="动态规划">动态规划</a>
 </li>
 </ul>
 </li>
 </ul>
 <h2 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h2><ul>
-<li><a href="/2020/05/06/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" title="数据结构">数据结构</a>
+<li><a href="/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.html" title="数据结构">数据结构</a>
 <ul>
-<li><a href="/2020/05/01/%E6%A0%91/" title="树">树</a></li>
+<li><a href="/%E6%A0%91.html" title="树">树</a></li>
 <li>
 </li>
 </ul>
@@ -17231,8 +17231,8 @@ E(X)&=\int_0^1 x\frac{1}{B(\alpha,\beta)}x^{\alpha-1}(1-x)^{\beta-1}\mathrm{d}x\
         <category>Statistics</category>
       </categories>
       <tags>
-        <tag>检验</tag>
         <tag>概率统计基础</tag>
+        <tag>检验</tag>
       </tags>
   </entry>
   <entry>
@@ -17581,8 +17581,8 @@ E(X)&=\int_0^1 x\frac{1}{B(\alpha,\beta)}x^{\alpha-1}(1-x)^{\beta-1}\mathrm{d}x\
         <category>Statistics</category>
       </categories>
       <tags>
-        <tag>检验</tag>
         <tag>概率统计基础</tag>
+        <tag>检验</tag>
       </tags>
   </entry>
   <entry>
@@ -17682,7 +17682,7 @@ E(X)&=\int_0^1 x\frac{1}{B(\alpha,\beta)}x^{\alpha-1}(1-x)^{\beta-1}\mathrm{d}x\
 <p>适用于样本量大、总体方差已知的样本</p>
 </blockquote>
 </li>
-<li><a href="/2020/05/04/%E6%A3%80%E9%AA%8C-t%E6%A3%80%E9%AA%8C/" title="t检验">t检验</a>
+<li><a href="/%E6%A3%80%E9%AA%8C-t%E6%A3%80%E9%AA%8C.html" title="t检验">t检验</a>
 <blockquote>
 <p>适用于样本量小、总体方差未知的样本</p>
 </blockquote>
@@ -17692,12 +17692,12 @@ E(X)&=\int_0^1 x\frac{1}{B(\alpha,\beta)}x^{\alpha-1}(1-x)^{\beta-1}\mathrm{d}x\
 </ul>
 <h2 id="非参数检验"><a href="#非参数检验" class="headerlink" title="非参数检验"></a>非参数检验</h2><ul>
 <li>两均值对比<ul>
-<li><a href="/2020/05/04/%E6%A3%80%E9%AA%8C-U%E6%A3%80%E9%AA%8C/" title="Mann-Whitney U检验">Mann-Whitney U检验</a>
+<li><a href="/%E6%A3%80%E9%AA%8C-U%E6%A3%80%E9%AA%8C.html" title="Mann-Whitney U检验">Mann-Whitney U检验</a>
 </li>
 </ul>
 </li>
 </ul>
-<p><meta name="referrer" content="no-referrer"><br><img src="/2020/05/04/%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C/howtochoose.png" class title="What Test?"></p>
+<p><meta name="referrer" content="no-referrer"><br><img src="/%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C/howtochoose.png" class title="What Test?"></p>
 <div class="table-container">
 <table>
 <thead>
@@ -17757,7 +17757,7 @@ E(X)&=\int_0^1 x\frac{1}{B(\alpha,\beta)}x^{\alpha-1}(1-x)^{\beta-1}\mathrm{d}x\
     <content><![CDATA[<p><center>Linear Regression</center><br><a id="more"></a></p>
 <h1 id="线性回归"><a href="#线性回归" class="headerlink" title="线性回归"></a>线性回归</h1><p>自变量$x$和因变量$y$之间存在线性相关关系</p>
 <ul>
-<li><a href="/2020/05/11/%E7%94%9F%E6%88%90%E5%BC%8F%E6%A8%A1%E5%9E%8B-%E5%88%A4%E5%88%AB%E5%BC%8F%E6%A8%A1%E5%9E%8B/" title="判别式模型">判别式模型</a>
+<li><a href="/%E7%94%9F%E6%88%90%E5%BC%8F%E6%A8%A1%E5%9E%8B-%E5%88%A4%E5%88%AB%E5%BC%8F%E6%A8%A1%E5%9E%8B.html" title="判别式模型">判别式模型</a>
 </li>
 </ul>
 <h2 id="变量别名"><a href="#变量别名" class="headerlink" title="变量别名"></a>变量别名</h2><div class="table-container">
@@ -18078,7 +18078,7 @@ E(X)&=\int_0^1 x\frac{1}{B(\alpha,\beta)}x^{\alpha-1}(1-x)^{\beta-1}\mathrm{d}x\
             <ul><li><p><strong>Simple linear regression</strong>情况</p><script type="math/tex; mode=display">y_i=\beta_0 +\beta_1 x_i+\varepsilon_i</script><p>\begin{aligned}<br>  SST&amp;=SSR+SSE\\<br>  SST&amp;=\sum_{i=1}^n(y_i-\bar{y})^2\\<br>  &amp;= \sum_{i=1}^n(y_i-\hat{y}_i+\hat{y}_i-\bar{y})^2\\<br>  &amp;= \sum_{i=1}^n(y_i-\hat{y}_i)^2 + 2\sum_{i=1}^n (y_i-\hat{y}_i)(\hat{y}_i-\bar{y})+ \sum_{i=1}^n(\hat{y}_i-\bar{y})^2\\<br>  &amp;= \sum_{i=1}^n(y_i-\hat{y}_i)^2 + \sum_{i=1}^n(\hat{y}_i-\bar{y})^2\\<br>  &amp;= SSR + SSE<br>\end{aligned}<br>下面证明</p><script type="math/tex; mode=display">\sum_{i=1}^n (y_i-\hat{y}_i)(\hat{y}_i-\bar{y})=0</script><p>在最小二乘法中，最小化$SSE$</p><script type="math/tex; mode=display">(\hat{\beta}_0,\hat{\beta}_1)=\arg \min_{\beta_0,\beta_1}\sum_{i=1}^n(y_i-\beta_0-\beta_1x_i)^2</script><p>$SSE$分别关于$\beta_0,\beta_1$求偏导<br>\begin{aligned}<br>  \frac{\partial{SSE}}{\partial{\beta_0}}&amp;=\sum_{i=1}^n2(y_i-\beta_0-\beta_1x_i)(-1)=0\\<br>  \frac{\partial{SSE}}{\partial{\beta_1}}&amp;=\sum_{i=1}^n2(y_i-\beta_0-\beta_1x_i)(-x_i)=0<br>\end{aligned}<br>所以有</p><script type="math/tex; mode=display">\sum_{i=1}^n(y_i-\hat{\beta}_0-\hat{\beta}_1x_i)=0</script><script type="math/tex; mode=display">\sum_{i=1}^n(y_i-\hat{\beta}_0-\hat{\beta}_1x_i)x_i=0</script><p>因此<br>\begin{aligned}<br>  \sum_{i=1}^n (y_i-\hat{y}_i)(\hat{y}_i-\bar{y})&amp;=\sum_{i=1}^n(y-\hat{\beta}_0-\hat{\beta}_1x_i)(\hat{\beta}_0+\hat{\beta}_1x_i-\bar{y})\\<br>  &amp;=(\hat{\beta}_0-\bar{y})\underline{\sum_{i=1}^n(y-\hat{\beta}_0-\hat{\beta}_1x_i)}+\hat{\beta}_1\underline{\sum_{i=1}^n(y-\hat{\beta}_0-\hat{\beta}_1x_i)x_i}\\<br>  &amp;=0<br>\end{aligned}</p></li><li><p><strong>Multiple linear regression</strong>情况<br>考虑$p$个自变量$({X}_1,{X}_2,\cdots, {X}_p)$</p><script type="math/tex; mode=display">\mathbf{y}=\mathbf{X}{\beta} + {\varepsilon}, \qquad {\varepsilon} \sim \mathcal{N}(\mathbf{0},\sigma^2\mathbf{I})</script><p>由最小二乘法得到的$\hat{\mathbf{\beta}}$满足</p><script type="math/tex; mode=display">\hat{\mathbf{\beta}}=\arg \min_{\mathbf{\beta}} \hat{\mathbf{\varepsilon}}^\prime \hat{\mathbf{\varepsilon}}=\arg \min_{\mathbf{\beta}} (\mathbf{y}-\mathbf{X}\mathbf{\beta})^\prime(\mathbf{y}-\mathbf{X}\mathbf{\beta})</script></li></ul><script type="math/tex; mode=display">\frac{\partial{\hat{\varepsilon}^\prime \hat{\varepsilon}}}{\partial{\beta}}=-2\mathbf{X}^\prime \mathbf{y}+2\mathbf{X}^\prime \mathbf{X}\mathbf{\beta}=\mathbf{0}</script><p>$\Longrightarrow$</p><script type="math/tex; mode=display">\hat{\beta}=(\mathbf{X}^\prime\mathbf{X})^{-1}\mathbf{X}^\prime \mathbf{y}</script><p>因此</p><script type="math/tex; mode=display">\hat{\mathbf{y}}=\mathbf{X}\hat{\mathbf{\beta}}=\mathbf{X}(\mathbf{X}^\prime\mathbf{X})^{-1}\mathbf{X}^\prime \mathbf{y}\triangleq \mathbf{H}\mathbf{y}</script><p>其中<br>$\mathbf{H}=\mathbf{X}(\mathbf{X}^\prime\mathbf{X})^{-1}\mathbf{X}^\prime$ 对称幂等，且$\mathbf{I}-\mathbf{H}$对称幂等。</p><p>\begin{aligned}<br>    SST&amp;=(\textbf{y}-\bar{\textbf{y}})^\prime(\textbf{y}-\bar{\textbf{y}})\\<br>    SSR&amp;=(\hat{\textbf{y}}-\bar{\textbf{y}})^\prime(\hat{\textbf{y}}-\bar{\textbf{y}})\\<br>    SSE&amp;=(\textbf{y}-\hat{\textbf{y}})^\prime(\textbf{y}-\hat{\textbf{y}})<br>  \end{aligned}</p><p>定义$\textbf{1}_n=(1,1,\cdots,1)^\prime$为元素全是1的 $n$ 维列向量，则均值算子为$\frac{\textbf{1}_n\textbf{1}_n^\prime}{n}$ （全是$\frac{1}{n}$ 的$n\times n$方阵），$\textbf{1}_n^\prime\textbf{1}_n=n$，且</p><script type="math/tex; mode=display">\left(\textbf{I}-\frac{\textbf{1}_n\textbf{1}_n^\prime}{n}\right)^\prime = \left(\textbf{I}-\frac{\textbf{1}_n\textbf{1}_n^\prime}{n}\right)</script><script type="math/tex; mode=display">\left(\textbf{I}-\frac{\textbf{1}_n\textbf{1}_n^\prime}{n}\right)^\prime\left(\textbf{I}-\frac{\textbf{1}_n\textbf{1}_n^\prime}{n}\right)=\textbf{I}-\frac{\textbf{1}_n\underline{\textbf{1}_n^\prime\textbf{1}_n}\textbf{1}_n^\prime}{n^2}=\left(\textbf{I}-\frac{\textbf{1}_n\textbf{1}_n^\prime}{n}\right)</script><p>即$\left(\textbf{I}-\frac{\textbf{1}_n\textbf{1}_n^\prime}{n}\right)$ 是对称幂等阵。则有</p><p>\begin{aligned}<br>    \textbf{y}-\bar{\textbf{y}}&amp;=\left(\textbf{I}-\frac{\textbf{1}_n\textbf{1}_n^\prime}{n}\right)\textbf{y}\\<br>    \hat{\mathbf{y}}-\bar{\mathbf{y}}&amp;=\left(\mathbf{H}-\frac{\textbf{1}_n\textbf{1}_n^\prime}{n}\right)\mathbf{y}\\<br>    \textbf{y}-\hat{\textbf{y}}&amp;=(\mathbf{I}-\mathbf{H})\mathbf{y}\\<br>    SST&amp;=\textbf{y}^\prime\left(\textbf{I}-\frac{\textbf{1}_n\textbf{1}_n^\prime}{n}\right)^\prime \left(\textbf{I}-\frac{\textbf{1}_n\textbf{1}_n^\prime}{n}\right) \textbf{y}=\textbf{y}^\prime \left(\textbf{I}-\frac{\textbf{1}_n\textbf{1}_n^\prime}{n}\right) \textbf{y}\\<br>    SSR&amp;=\mathbf{y}^\prime\left(\mathbf{H}-\frac{\textbf{1}_n\textbf{1}_n^\prime}{n}\right)^\prime\left(\mathbf{H}-\frac{\textbf{1}_n\textbf{1}_n^\prime}{n}\right)\mathbf{y}=\mathbf{y}^\prime\left(\mathbf{H}-\frac{\textbf{1}_n\textbf{1}_n^\prime}{n}\right)\mathbf{y}\\<br>    SSE&amp;=\mathbf{y}^\prime (\mathbf{I}-\mathbf{H})^\prime (\mathbf{I}-\mathbf{H}) \mathbf{y}=\mathbf{y}^\prime (\mathbf{I}-\mathbf{H}) \mathbf{y}<br>\end{aligned}<br>所以 <script type="math/tex">SST=SSR+SSE</script></p>
           </div>
 <h1 id="线性回归-vs-逻辑回归"><a href="#线性回归-vs-逻辑回归" class="headerlink" title="线性回归 vs 逻辑回归"></a>线性回归 vs 逻辑回归</h1><div class="note default">
-            <p>见<a href="/2020/05/15/%E7%AE%97%E6%B3%95-LogisticRegression/" title="Machine Learning | Logistic Regression">Machine Learning | Logistic Regression</a></p>
+            <p>见<a href="/%E7%AE%97%E6%B3%95-LogisticRegression.html" title="Machine Learning | Logistic Regression">Machine Learning | Logistic Regression</a></p>
           </div>
 <h1 id="面试题"><a href="#面试题" class="headerlink" title="面试题"></a>面试题</h1><ul>
 <li>State the <strong>assumptions</strong> in linear regression model<blockquote>
@@ -18135,11 +18135,11 @@ E(X)&=\int_0^1 x\frac{1}{B(\alpha,\beta)}x^{\alpha-1}(1-x)^{\beta-1}\mathrm{d}x\
 </li>
 </ul>
 <h1 id="HUAWEI"><a href="#HUAWEI" class="headerlink" title="HUAWEI"></a>HUAWEI</h1><ul>
-<li><a href="/2020/05/06/HUAWEI%E9%A2%98%E5%BA%93/" title="HUAWEI相关编程题库">HUAWEI相关编程题库</a>
+<li><a href="/HUAWEI%E9%A2%98%E5%BA%93.html" title="HUAWEI相关编程题库">HUAWEI相关编程题库</a>
 </li>
 </ul>
 <h1 id="PINDUODUO"><a href="#PINDUODUO" class="headerlink" title="PINDUODUO"></a>PINDUODUO</h1><ul>
-<li><a href="/2020/05/06/%E6%8B%BC%E5%A4%9A%E5%A4%9A%E9%A2%98%E5%BA%93/" title="PinDuoDuo相关编程题库">PinDuoDuo相关编程题库</a>
+<li><a href="/%E6%8B%BC%E5%A4%9A%E5%A4%9A%E9%A2%98%E5%BA%93.html" title="PinDuoDuo相关编程题库">PinDuoDuo相关编程题库</a>
 </li>
 </ul>
 <h1 id="题库"><a href="#题库" class="headerlink" title="题库"></a>题库</h1><h2 id="质数-素数"><a href="#质数-素数" class="headerlink" title="质数/素数"></a>质数/素数</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 列出小于整数n的所有质数</span></span><br><span class="line"><span class="comment">## 不导入模块</span></span><br><span class="line">n = <span class="number">20</span></span><br><span class="line">[i <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">2</span>, n) <span class="keyword">if</span> <span class="number">0</span> <span class="keyword">not</span> <span class="keyword">in</span> [i%j <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">2</span>, int(i**<span class="number">0.5</span>) + <span class="number">1</span>)]]</span><br><span class="line"><span class="comment"># [2, 3, 5, 7, 11, 13, 17, 19]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 使用Python的模块</span></span><br><span class="line">[i <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">2</span>, n) <span class="keyword">if</span> <span class="number">0</span> <span class="keyword">not</span> <span class="keyword">in</span> [i%j <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">2</span>, int(math.sqrt(i)) + <span class="number">1</span>)]]</span><br><span class="line"><span class="comment"># [2, 3, 5, 7, 11, 13, 17, 19]</span></span><br></pre></td></tr></table></figure>
@@ -18308,8 +18308,8 @@ E(X)&=\int_0^1 x\frac{1}{B(\alpha,\beta)}x^{\alpha-1}(1-x)^{\beta-1}\mathrm{d}x\
         <category>数据库</category>
       </categories>
       <tags>
-        <tag>数据库</tag>
         <tag>SQL</tag>
+        <tag>数据库</tag>
       </tags>
   </entry>
   <entry>
@@ -18343,7 +18343,7 @@ E(X)&=\int_0^1 x\frac{1}{B(\alpha,\beta)}x^{\alpha-1}(1-x)^{\beta-1}\mathrm{d}x\
 </li>
 <li>内模式是所有模式中的最底层的表示</li>
 </ul>
-<p><meta name="referrer" content="no-referrer"><br><img src="/2020/05/03/sql-2-%E6%A8%A1%E5%BC%8F/schema.png" class title="图片来自参考资料[2]"></p>
+<p><meta name="referrer" content="no-referrer"><br><img src="/sql-2-%E6%A8%A1%E5%BC%8F/schema.png" class title="图片来自参考资料[2]"></p>
 <h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
 <li><a href="https://blog.csdn.net/qq_37808895/article/details/94394123" target="_blank" rel="noopener">数据库模式</a></li>
 <li><a href="https://blog.csdn.net/qq_15950325/article/details/52654924" target="_blank" rel="noopener">浅谈数据库三大模式</a></li>
@@ -18353,8 +18353,8 @@ E(X)&=\int_0^1 x\frac{1}{B(\alpha,\beta)}x^{\alpha-1}(1-x)^{\beta-1}\mathrm{d}x\
         <category>数据库</category>
       </categories>
       <tags>
-        <tag>数据库</tag>
         <tag>SQL</tag>
+        <tag>数据库</tag>
       </tags>
   </entry>
   <entry>
@@ -18404,8 +18404,8 @@ E(X)&=\int_0^1 x\frac{1}{B(\alpha,\beta)}x^{\alpha-1}(1-x)^{\beta-1}\mathrm{d}x\
         <category>数据库</category>
       </categories>
       <tags>
-        <tag>数据库</tag>
         <tag>SQL</tag>
+        <tag>数据库</tag>
       </tags>
   </entry>
   <entry>
@@ -19165,7 +19165,7 @@ E(X)&=\int_0^1 x\frac{1}{B(\alpha,\beta)}x^{\alpha-1}(1-x)^{\beta-1}\mathrm{d}x\
 <script type="math/tex; mode=display">根结点 \rightarrow前序遍历左子树 \rightarrow 前序遍历右子树</script><script type="math/tex; mode=display">中\rightarrow左\rightarrow右</script></blockquote>
 </li>
 </ul>
-<p><meta name="referrer" content="no-referrer"><br><img src="/2020/05/01/%E6%A0%91/preorder.png" class title="前序遍历"></p>
+<p><meta name="referrer" content="no-referrer"><br><img src="/%E6%A0%91/preorder.png" class title="前序遍历"></p>
 <script type="math/tex; mode=display">1→2→4→5→3→6→7</script><h3 id="中序遍历"><a href="#中序遍历" class="headerlink" title="中序遍历"></a>中序遍历</h3><ul>
 <li>二叉树为空<blockquote>
 <p>返回空</p>
@@ -19175,7 +19175,7 @@ E(X)&=\int_0^1 x\frac{1}{B(\alpha,\beta)}x^{\alpha-1}(1-x)^{\beta-1}\mathrm{d}x\
 <script type="math/tex; mode=display">中序遍历根结点的左子树\rightarrow根结点\rightarrow中序遍历右子树</script><script type="math/tex; mode=display">左\rightarrow中\rightarrow右</script></blockquote>
 </li>
 </ul>
-<p><meta name="referrer" content="no-referrer"><br><img src="/2020/05/01/%E6%A0%91/inorder.png" class title="中序遍历"></p>
+<p><meta name="referrer" content="no-referrer"><br><img src="/%E6%A0%91/inorder.png" class title="中序遍历"></p>
 <script type="math/tex; mode=display">4→2→5→1→6→3→7</script><h3 id="后序遍历"><a href="#后序遍历" class="headerlink" title="后序遍历"></a>后序遍历</h3><ul>
 <li>二叉树为空<blockquote>
 <p>返回空</p>
@@ -19185,7 +19185,7 @@ E(X)&=\int_0^1 x\frac{1}{B(\alpha,\beta)}x^{\alpha-1}(1-x)^{\beta-1}\mathrm{d}x\
 <script type="math/tex; mode=display">后序遍历左子树\rightarrow后序遍历右子树\rightarrow根结点</script><script type="math/tex; mode=display">左\rightarrow右\rightarrow中</script></blockquote>
 </li>
 </ul>
-<p><meta name="referrer" content="no-referrer"><br><img src="/2020/05/01/%E6%A0%91/postorder.png" class title="后序遍历"></p>
+<p><meta name="referrer" content="no-referrer"><br><img src="/%E6%A0%91/postorder.png" class title="后序遍历"></p>
 <script type="math/tex; mode=display">4→5→2→6→7→3→1</script><h3 id="层序遍历"><a href="#层序遍历" class="headerlink" title="层序遍历"></a>层序遍历</h3><ul>
 <li>二叉树为空<blockquote>
 <p>返回空</p>
@@ -19196,7 +19196,7 @@ E(X)&=\int_0^1 x\frac{1}{B(\alpha,\beta)}x^{\alpha-1}(1-x)^{\beta-1}\mathrm{d}x\
 </blockquote>
 </li>
 </ul>
-<p><meta name="referrer" content="no-referrer"><br><img src="/2020/05/01/%E6%A0%91/cneg.png" class title="层序遍历"></p>
+<p><meta name="referrer" content="no-referrer"><br><img src="/%E6%A0%91/cneg.png" class title="层序遍历"></p>
 <script type="math/tex; mode=display">1→2→3→4→5→6→7</script><h1 id="赫夫曼"><a href="#赫夫曼" class="headerlink" title="赫夫曼"></a>赫夫曼</h1><h2 id="赫夫曼树"><a href="#赫夫曼树" class="headerlink" title="赫夫曼树"></a>赫夫曼树</h2><h2 id="赫夫曼编码"><a href="#赫夫曼编码" class="headerlink" title="赫夫曼编码"></a>赫夫曼编码</h2><h1 id="二叉查找树"><a href="#二叉查找树" class="headerlink" title="二叉查找树"></a>二叉查找树</h1><p><strong>二叉搜索树/二叉查找树</strong>（Binary Search Tree）</p>
 <ul>
 <li>是一种数据结构</li>
@@ -19288,10 +19288,10 @@ E(X)&=\int_0^1 x\frac{1}{B(\alpha,\beta)}x^{\alpha-1}(1-x)^{\beta-1}\mathrm{d}x\
 
 <a id="more"></a>
 <h1 id="Projects"><a href="#Projects" class="headerlink" title="Projects"></a>Projects</h1><ul>
-<li><a href="/2020/04/30/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-Titanic/" title="Kaggle | Titanic">Kaggle | Titanic</a></li>
-<li><a href="/2020/05/12/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-%E5%A4%A9%E6%B1%A0-%E4%BA%8C%E6%89%8B%E8%BD%A6%E4%BA%A4%E6%98%93%E6%95%B0%E6%8D%AE/" title="天池 | 二手车交易数据">天池 | 二手车交易数据</a></li>
-<li><a href="/2020/05/24/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-MedicalCostPersonal/" title="Kaggle | Medical Cost Personal">Kaggle | Medical Cost Personal</a></li>
-<li><a href="/2020/05/28/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-HousePrice/" title="Kaggle | House Prices:Advanced Regression Techniques">Kaggle | House Prices:Advanced Regression Techniques</a>
+<li><a href="/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-Titanic.html" title="Kaggle | Titanic">Kaggle | Titanic</a></li>
+<li><a href="/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-%E5%A4%A9%E6%B1%A0-%E4%BA%8C%E6%89%8B%E8%BD%A6%E4%BA%A4%E6%98%93%E6%95%B0%E6%8D%AE.html" title="天池 | 二手车交易数据">天池 | 二手车交易数据</a></li>
+<li><a href="/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-MedicalCostPersonal.html" title="Kaggle | Medical Cost Personal">Kaggle | Medical Cost Personal</a></li>
+<li><a href="/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-HousePrice.html" title="Kaggle | House Prices:Advanced Regression Techniques">Kaggle | House Prices:Advanced Regression Techniques</a>
 </li>
 </ul>
 <h1 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h1><h2 id="缺失值"><a href="#缺失值" class="headerlink" title="缺失值"></a>缺失值</h2><h3 id="可视化缺失值"><a href="#可视化缺失值" class="headerlink" title="可视化缺失值"></a>可视化缺失值</h3><ul>
@@ -19300,11 +19300,11 @@ E(X)&=\int_0^1 x\frac{1}{B(\alpha,\beta)}x^{\alpha-1}(1-x)^{\beta-1}\mathrm{d}x\
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line"><span class="comment">## 读取数据</span></span><br><span class="line">train_data = pd.read_csv(<span class="string">"used_car_train_20200313.csv"</span>, sep=<span class="string">" "</span>)</span><br><span class="line">missing = train_data.isnull().sum()  <span class="comment">## 统计每列的缺失值样本数</span></span><br><span class="line">missing = missing[missing &gt; <span class="number">0</span>]</span><br><span class="line">missing.sort_values(inplace=<span class="literal">True</span>)</span><br><span class="line">missing.plot.bar()</span><br></pre></td></tr></table></figure>
 <p><meta name="referrer" content="no-referrer"><br></p>
 <ul>
-<li><a href="/2020/05/20/python-missingno/" title="missingno">missingno</a>
+<li><a href="/python-missingno.html" title="missingno">missingno</a>
 </li>
 </ul>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> missingno <span class="keyword">as</span> msno</span><br><span class="line"></span><br><span class="line">msno.matrix(train_data.sample(<span class="number">250</span>))</span><br></pre></td></tr></table></figure>
-<p><meta name="referrer" content="no-referrer"><br><img src="/2020/04/30/Data-Cleaning-Projects/na_pic2.png" class title="将缺失值数量可视化"></p>
+<p><meta name="referrer" content="no-referrer"><br><img src="/Data-Cleaning-Projects/na_pic2.png" class title="将缺失值数量可视化"></p>
 <h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
 <li><a href="https://cn.bing.com/images/search?view=detailV2&amp;ccid=gpCSzLGU&amp;id=1898D7F14E27BFCC00B895A307ECC5F04313DE94&amp;thid=OIP.gpCSzLGUdIzn2Pkx-1iVFAHaEN&amp;mediaurl=https%3a%2f%2fpublic.tableau.com%2fs%2fsites%2fdefault%2ffiles%2fmedia%2fdata-cleaning-thumb2_20.jpg&amp;exph=766&amp;expw=1349&amp;q=data+cleaning&amp;simid=608010194433082183&amp;selectedIndex=175" target="_blank" rel="noopener">首页缩略图</a></li>
 <li><a href="https://tianchi.aliyun.com/notebook-ai/detail?spm=5176.12281978.0.0.68021b43hxXs9w&amp;postId=95457" target="_blank" rel="noopener">数据分析</a></li>
@@ -19521,10 +19521,10 @@ E(X)&=\int_0^1 x\frac{1}{B(\alpha,\beta)}x^{\alpha-1}(1-x)^{\beta-1}\mathrm{d}x\
         <category>题库</category>
       </categories>
       <tags>
+        <tag>SQL</tag>
         <tag>Python</tag>
         <tag>编程</tag>
         <tag>Leetcode</tag>
-        <tag>SQL</tag>
         <tag>题库</tag>
       </tags>
   </entry>
@@ -19590,11 +19590,11 @@ E(X)&=\int_0^1 x\frac{1}{B(\alpha,\beta)}x^{\alpha-1}(1-x)^{\beta-1}\mathrm{d}x\
     <url>/Python%E9%A2%98%E5%BA%93.html</url>
     <content><![CDATA[<p><center>Python相关题目积累~</center><br><a id="more"></a></p>
 <ul>
-<li><a href="/2020/04/29/Python-is-%E5%92%8C-%E7%9A%84%E5%8C%BA%E5%88%AB/" title="is和&#x3D;&#x3D;的区别">is和&#x3D;&#x3D;的区别</a></li>
-<li><a href="/2020/04/29/python-2-tuple%E5%92%8Clist/" title="tuple（元组）和list（列表）的区别">tuple（元组）和list（列表）的区别</a></li>
-<li><a href="/2020/04/29/python-3/" title="b, B, KB, MB, GB的区别">b, B, KB, MB, GB的区别</a></li>
-<li><a href="/2020/05/03/python-7-%E5%88%87%E7%89%87%E6%93%8D%E4%BD%9C/" title="切片操作不会引起下标越界异常">切片操作不会引起下标越界异常</a></li>
-<li><a href="/2020/05/12/python-23%E5%8C%BA%E5%88%AB/" title="Python 2和Python 3的区别">Python 2和Python 3的区别</a></li>
+<li><a href="/Python-is-%E5%92%8C-%E7%9A%84%E5%8C%BA%E5%88%AB.html" title="is和&#x3D;&#x3D;的区别">is和&#x3D;&#x3D;的区别</a></li>
+<li><a href="/python-2-tuple%E5%92%8Clist.html" title="tuple（元组）和list（列表）的区别">tuple（元组）和list（列表）的区别</a></li>
+<li><a href="/python-3.html" title="b, B, KB, MB, GB的区别">b, B, KB, MB, GB的区别</a></li>
+<li><a href="/python-7-%E5%88%87%E7%89%87%E6%93%8D%E4%BD%9C.html" title="切片操作不会引起下标越界异常">切片操作不会引起下标越界异常</a></li>
+<li><a href="/python-23%E5%8C%BA%E5%88%AB.html" title="Python 2和Python 3的区别">Python 2和Python 3的区别</a></li>
 <li></li>
 </ul>
 ]]></content>
@@ -19874,8 +19874,8 @@ E(X)&=\int_0^1 x\frac{1}{B(\alpha,\beta)}x^{\alpha-1}(1-x)^{\beta-1}\mathrm{d}x\
         <tag>算法</tag>
         <tag>机器学习</tag>
         <tag>分类</tag>
-        <tag>集成学习</tag>
         <tag>有监督学习</tag>
+        <tag>集成学习</tag>
         <tag>判别式模型</tag>
         <tag>Bagging</tag>
       </tags>
@@ -19885,21 +19885,21 @@ E(X)&=\int_0^1 x\frac{1}{B(\alpha,\beta)}x^{\alpha-1}(1-x)^{\beta-1}\mathrm{d}x\
     <url>/%E7%AE%97%E6%B3%95-SVM.html</url>
     <content><![CDATA[<p><center>Support Vector Machine</center><br><a id="more"></a><br>SVM</p>
 <h1 id="支持向量机"><a href="#支持向量机" class="headerlink" title="支持向量机"></a>支持向量机</h1><ul>
-<li><a href="/2020/05/15/%E7%AE%97%E6%B3%95-SupervisedLearning/" title="有监督学习">有监督学习</a></li>
+<li><a href="/%E7%AE%97%E6%B3%95-SupervisedLearning.html" title="有监督学习">有监督学习</a></li>
 <li>分类</li>
 <li>回归</li>
-<li><a href="/2020/05/11/%E7%94%9F%E6%88%90%E5%BC%8F%E6%A8%A1%E5%9E%8B-%E5%88%A4%E5%88%AB%E5%BC%8F%E6%A8%A1%E5%9E%8B/" title="判别式模型">判别式模型</a></li>
+<li><a href="/%E7%94%9F%E6%88%90%E5%BC%8F%E6%A8%A1%E5%9E%8B-%E5%88%A4%E5%88%AB%E5%BC%8F%E6%A8%A1%E5%9E%8B.html" title="判别式模型">判别式模型</a></li>
 <li>训练完成后，大部分训练样本都不需要保留，最终模型仅与支持向量有关</li>
 </ul>
 <p>支持向量机是一种<u>有监督学习</u>算法，既可以用于分类，也可以用于回归。</p>
 <p>最初SVM被提出用于二类分类问题。</p>
-<p>支持向量机是<a href="/2020/05/11/%E7%94%9F%E6%88%90%E5%BC%8F%E6%A8%A1%E5%9E%8B-%E5%88%A4%E5%88%AB%E5%BC%8F%E6%A8%A1%E5%9E%8B/" title="判别分类方法">判别分类方法</a>，用一条分割线（二维空间中的直线或曲线）或流形体（多维空间中的曲线、曲面等概念的推广）将各种类型分割开。</p>
+<p>支持向量机是<a href="/%E7%94%9F%E6%88%90%E5%BC%8F%E6%A8%A1%E5%9E%8B-%E5%88%A4%E5%88%AB%E5%BC%8F%E6%A8%A1%E5%9E%8B.html" title="判别分类方法">判别分类方法</a>，用一条分割线（二维空间中的直线或曲线）或流形体（多维空间中的曲线、曲面等概念的推广）将各种类型分割开。</p>
 <h2 id="基本思想"><a href="#基本思想" class="headerlink" title="基本思想"></a>基本思想</h2><p>在特征空间中寻找间隔最大的分离超平面将数据高效地分为两类。</p>
 <ul>
 <li>正确划分数据集</li>
 <li>分离超平面几何间隔最大</li>
 </ul>
-<p><meta name="referrer" content="no-referrer"><br><img src="/2020/04/28/%E7%AE%97%E6%B3%95-SVM/svm2.jpg" class title="支持向量机"></p>
+<p><meta name="referrer" content="no-referrer"><br><img src="/%E7%AE%97%E6%B3%95-SVM/svm2.jpg" class title="支持向量机"></p>
 <h3 id="类别"><a href="#类别" class="headerlink" title="类别"></a>类别</h3><ol>
 <li><strong>线性可分支持向量机</strong><ul>
 <li>训练样本线性可分</li>
@@ -20166,7 +20166,7 @@ E(X)&=\int_0^1 x\frac{1}{B(\alpha,\beta)}x^{\alpha-1}(1-x)^{\beta-1}\mathrm{d}x\
       <td colspan="2">都是监督学习算法</td>
     </tr>
     <tr>
-      <td colspan="2">都是<a href="/2020/05/11/%E7%94%9F%E6%88%90%E5%BC%8F%E6%A8%A1%E5%9E%8B-%E5%88%A4%E5%88%AB%E5%BC%8F%E6%A8%A1%E5%9E%8B/" title="判别式模型">判别式模型</a></td>
+      <td colspan="2">都是<a href="/%E7%94%9F%E6%88%90%E5%BC%8F%E6%A8%A1%E5%9E%8B-%E5%88%A4%E5%88%AB%E5%BC%8F%E6%A8%A1%E5%9E%8B.html" title="判别式模型">判别式模型</a></td>
     </tr>
     <tr>
       <th>损失函数</th>
@@ -20273,8 +20273,8 @@ E(X)&=\int_0^1 x\frac{1}{B(\alpha,\beta)}x^{\alpha-1}(1-x)^{\beta-1}\mathrm{d}x\
         <tag>算法</tag>
         <tag>机器学习</tag>
         <tag>分类</tag>
-        <tag>回归</tag>
         <tag>有监督学习</tag>
+        <tag>回归</tag>
         <tag>判别式模型</tag>
       </tags>
   </entry>
