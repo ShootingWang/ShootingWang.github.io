@@ -866,6 +866,9 @@
 <h1 id="SQL"><a href="#SQL" class="headerlink" title="SQL"></a>SQL</h1><h1 id="关系型数据库"><a href="#关系型数据库" class="headerlink" title="关系型数据库"></a>关系型数据库</h1><h2 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h2><h2 id="SQL-Server"><a href="#SQL-Server" class="headerlink" title="SQL Server"></a>SQL Server</h2><h2 id="Oracle"><a href="#Oracle" class="headerlink" title="Oracle"></a>Oracle</h2><h1 id="非关系型数据库-NoSQL"><a href="#非关系型数据库-NoSQL" class="headerlink" title="非关系型数据库 NoSQL"></a>非关系型数据库 NoSQL</h1><h2 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h2><h2 id="MongoDB"><a href="#MongoDB" class="headerlink" title="MongoDB"></a>MongoDB</h2><div class="note default">
             <p>与数据库管理相关的技术：</p><ul><li>RDBMS：关系型数据库管理系统</li><li>NoSQL：非关系型数据库</li><li>NewSQL：新型关系型数据库</li><li>HBase：是一个分布式的面向列的数据库</li></ul><p>与数据库管理无关的技术：</p><ul><li>Ngnix：是一个高性能的HTTP和反向<em>*</em>web服务器，同时也提供了IMAP/POP3/SMTP服务</li><li>ActiveMQ：Apache下的一个中间件</li></ul>
           </div>
+<h1 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h1><div class="note default">
+            <p>关于数据库索引，以下说法错误的是？</p><ul><li>针对某些字段建立索引，能够有效的减少相关数据库表的磁盘空间占用（×）</li><li>针对某些字段建立索引，能够有效的提升相关字段的读与写的效率（×）</li><li>常见数据库管理系统，通常使用hash表来存储索引（×）</li><li>数据库索引的存在，可能导致相关字段删除的效率降低（√）</li></ul>
+          </div>
 <h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1>]]></content>
       <categories>
         <category>数据库</category>
