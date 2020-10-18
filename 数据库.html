@@ -30,7 +30,7 @@
 <meta property="og:site_name" content="ShootingWang">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-10-17T13:29:18.000Z">
-<meta property="article:modified_time" content="2020-10-18T03:55:10.680Z">
+<meta property="article:modified_time" content="2020-10-18T04:03:30.381Z">
 <meta property="article:author" content="ShootingWang">
 <meta property="article:tag" content="SQL">
 <meta name="twitter:card" content="summary">
@@ -253,7 +253,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-10-18 11:55:10" itemprop="dateModified" datetime="2020-10-18T11:55:10+08:00">2020-10-18</time>
+                <time title="修改时间：2020-10-18 12:03:30" itemprop="dateModified" datetime="2020-10-18T12:03:30+08:00">2020-10-18</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -301,8 +301,13 @@
 <h1 id="SQL"><a href="#SQL" class="headerlink" title="SQL"></a>SQL</h1><h1 id="关系型数据库"><a href="#关系型数据库" class="headerlink" title="关系型数据库"></a>关系型数据库</h1><h2 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h2><h2 id="SQL-Server"><a href="#SQL-Server" class="headerlink" title="SQL Server"></a>SQL Server</h2><h2 id="Oracle"><a href="#Oracle" class="headerlink" title="Oracle"></a>Oracle</h2><h1 id="非关系型数据库-NoSQL"><a href="#非关系型数据库-NoSQL" class="headerlink" title="非关系型数据库 NoSQL"></a>非关系型数据库 NoSQL</h1><h2 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h2><h2 id="MongoDB"><a href="#MongoDB" class="headerlink" title="MongoDB"></a>MongoDB</h2><div class="note default">
             <p>与数据库管理相关的技术：</p><ul><li>RDBMS：关系型数据库管理系统</li><li>NoSQL：非关系型数据库</li><li>NewSQL：新型关系型数据库</li><li>HBase：是一个分布式的面向列的数据库</li></ul><p>与数据库管理无关的技术：</p><ul><li>Ngnix：是一个高性能的HTTP和反向<em>*</em>web服务器，同时也提供了IMAP/POP3/SMTP服务</li><li>ActiveMQ：Apache下的一个中间件</li></ul>
           </div>
-<h1 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h1><div class="note default">
-            <p>关于数据库索引，以下说法错误的是？</p><ul><li>针对某些字段建立索引，能够有效的减少相关数据库表的磁盘空间占用（×）</li><li>针对某些字段建立索引，能够有效的提升相关字段的读与写的效率（×）</li><li>常见数据库管理系统，通常使用hash表来存储索引（×）</li><li>数据库索引的存在，可能导致相关字段删除的效率降低（√）</li></ul>
+<h1 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h1><ul>
+<li>索引对数据插入的效率有一定的影响</li>
+<li>对于数据重复度高，值范围有限的列如果建索引建议使用位图索引</li>
+<li>可以在多个列上建立<strong>联合索引</strong></li>
+</ul>
+<div class="note default">
+            <p>关于数据库索引，以下说法错误的是？</p><ul><li>针对某些字段建立索引，能够有效的减少相关数据库表的磁盘空间占用（×）</li><li>针对某些字段建立索引，能够有效的提升相关字段的读与写的效率（×）</li><li>常见数据库管理系统，通常使用hash表来存储索引（×，应该是B+树）</li><li>索引是为了提高查询效率的，通过建立索引查询效率会得到提高（×）</li><li>唯一索引是一种特殊的索引，表中的行的物理顺序与索引顺序一致，且不允许两行数据在索引列上有相同的值（×，唯一索引的列的物理顺序并不和索引顺序一致，只有聚集索引列的物理顺序和逻辑顺序一致，一个表也只能有一个聚集索引）</li><li>数据库索引的存在，可能导致相关字段删除的效率降低（√，因为删除相关字段需要动态维护索引）</li></ul>
           </div>
 <h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1>
     </div>
@@ -436,7 +441,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">139</span>
+          <span class="site-state-item-count">141</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -491,13 +496,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">308k</span>
+    <span title="站点总字数">610k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">4:40</span>
+    <span title="站点阅读时长">9:15</span>
 </div>
 
 
