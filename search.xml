@@ -20297,7 +20297,7 @@ E(X)&=\int_0^1 x\frac{1}{B(\alpha,\beta)}x^{\alpha-1}(1-x)^{\beta-1}\mathrm{d}x\
       </tags>
   </entry>
   <entry>
-    <title>sql-事务</title>
+    <title>SQL | 事务</title>
     <url>/sql-%E4%BA%8B%E5%8A%A1.html</url>
     <content><![CDATA[<p><center></center><br><a id="more"></a></p>
 <h1 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h1><ul>
