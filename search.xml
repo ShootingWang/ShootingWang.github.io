@@ -14787,7 +14787,7 @@ div#notebook {
   <entry>
     <title>SQL | 事务</title>
     <url>/sql-%E4%BA%8B%E5%8A%A1.html</url>
-    <content><![CDATA[<p><center></center><br><a id="more"></a></p>
+    <content><![CDATA[<p><center>Transaction</center><br><a id="more"></a></p>
 <h1 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h1><ul>
 <li>一个数据库事务可以包含多个查询、修改、删除、插入等数据库动作，它们要么作为一个整体完全得到确认，要么完全失败（原子性）</li>
 <li>事务提交（commit）之后就不能回滚了</li>
