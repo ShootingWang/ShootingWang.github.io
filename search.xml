@@ -32229,14 +32229,6 @@ E(X)&=\int_0^1 x\frac{1}{B(\alpha,\beta)}x^{\alpha-1}(1-x)^{\beta-1}\mathrm{d}x\
 </ul>
 </li>
 </ul>
-<h1 id="HUAWEI"><a href="#HUAWEI" class="headerlink" title="HUAWEI"></a>HUAWEI</h1><ul>
-<li>
-</li>
-</ul>
-<h1 id="PINDUODUO"><a href="#PINDUODUO" class="headerlink" title="PINDUODUO"></a>PINDUODUO</h1><ul>
-<li>
-</li>
-</ul>
 <h1 id="题库"><a href="#题库" class="headerlink" title="题库"></a>题库</h1><h2 id="大整数相乘"><a href="#大整数相乘" class="headerlink" title="大整数相乘"></a>大整数相乘</h2><ul>
 <li>有两个用字符串表示的非常大的大整数,算出他们的乘积，也是用字符串表示。不能用系统自带的大整数类型。<blockquote>
 <p>拼多多2018年校招内推编程题</p>
