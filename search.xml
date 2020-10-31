@@ -20186,7 +20186,10 @@ E(X)&=\int_0^1 x\frac{1}{B(\alpha,\beta)}x^{\alpha-1}(1-x)^{\beta-1}\mathrm{d}x\
 <li>选择$\pmb{\lambda}^*$的一个满足条件$0&lt;\lambda_j^*&lt;\phi$的分量$\lambda_j^*$，计算<script type="math/tex; mode=display">b^*=y_j-\sum_{i=1}^n\lambda_j^*y_jK(\mathbf{x}_i,\mathbf{x}_j)</script></li>
 <li>分类决策函数为<script type="math/tex; mode=display">f(\mathbf{x})=\mathrm{sign}{\left(\sum_{i=1}^n\lambda_i^*y_iK(\mathbf{x},\mathbf{x}_i)+b^*\right)}</script></li>
 </ol>
-<h2 id="核函数"><a href="#核函数" class="headerlink" title="核函数"></a>核函数</h2><h3 id="线性核"><a href="#线性核" class="headerlink" title="线性核"></a>线性核</h3><h3 id="多项式核"><a href="#多项式核" class="headerlink" title="多项式核"></a>多项式核</h3><h3 id="RBF核"><a href="#RBF核" class="headerlink" title="RBF核"></a>RBF核</h3><p>高斯核函数/高斯径向基函数（Radial Basis Function）</p>
+<h2 id="核函数"><a href="#核函数" class="headerlink" title="核函数"></a>核函数</h2><ul>
+<li>SVM使用核函数的过程实质是进行特征转换的过程</li>
+</ul>
+<h3 id="线性核"><a href="#线性核" class="headerlink" title="线性核"></a>线性核</h3><h3 id="多项式核"><a href="#多项式核" class="headerlink" title="多项式核"></a>多项式核</h3><h3 id="RBF核"><a href="#RBF核" class="headerlink" title="RBF核"></a>RBF核</h3><p>高斯核函数/高斯径向基函数（Radial Basis Function）</p>
 <script type="math/tex; mode=display">K(x,z)=\exp\left(-\frac{||x-z||^2}{2\sigma^2} \right)</script><ul>
 <li>对应的SVM是<strong>高斯径向基函数分类器</strong></li>
 <li>对应的分类决策函数为<script type="math/tex; mode=display">f(\mathbf{x})=\mathrm{sign}{\left(\sum_{i=1}^n\lambda_i^*y_i\exp{\left(-\frac{||\mathbf{x}-\mathrm{x}_i||^2}{2\sigma^2}\right)}+b^*\right)}</script></li>
@@ -20262,6 +20265,9 @@ E(X)&=\int_0^1 x\frac{1}{B(\alpha,\beta)}x^{\alpha-1}(1-x)^{\beta-1}\mathrm{d}x\
 <li>与核函数方法的配合极具通用性，能够适用于不同类型的数据（不仅适用于线性问题，还适用于非线性问题）</li>
 <li>SVM是一个凸优化问题，所以求得的解是全局最优而不是局部最优</li>
 <li>理论基础比较完善</li>
+<li>通过调参往往可以得到很好的分类效果</li>
+<li>泛化能力好</li>
+<li>SVM对线性不可分的数据有较好的分类性能</li>
 </ul>
 <h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><p>SVM的缺点：</p>
 <ul>
