@@ -892,6 +892,13 @@
 <div class="note default">
             <p>适合建立索引的字段：</p><ul><li>外键字段</li><li>主键字段</li><li>在where子句中的字段</li></ul>
           </div>
+<p>在一个表中，可以建立：</p>
+<ul>
+<li>多个普通索引</li>
+<li>多个唯一索引</li>
+<li>多个候选索引</li>
+<li>一个主索引</li>
+</ul>
 <h2 id="唯一索引"><a href="#唯一索引" class="headerlink" title="唯一索引"></a>唯一索引</h2><ul>
 <li>通过创建唯一性索引，可以保证数据库表中每一行数据的唯一性</li>
 <li>MySQL中一张表可以有多个唯一索引</li>
