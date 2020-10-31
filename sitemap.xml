@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://github.com/ShootingWang/ShootingWang.github.io/%E7%BC%96%E7%A8%8B%E9%A2%98%E5%BA%93.html</loc>
+    
+    <lastmod>2020-10-31</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://github.com/ShootingWang/ShootingWang.github.io/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-%E4%B8%9A%E5%8A%A1%E5%90%91%E9%97%AE%E9%A2%98%E5%92%8C%E6%96%B9%E6%B3%95%E6%B1%87%E6%80%BB.html</loc>
     
     <lastmod>2020-10-31</lastmod>
@@ -264,13 +271,6 @@
     <loc>https://github.com/ShootingWang/ShootingWang.github.io/%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C.html</loc>
     
     <lastmod>2020-08-15</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://github.com/ShootingWang/ShootingWang.github.io/%E7%BC%96%E7%A8%8B%E9%A2%98%E5%BA%93.html</loc>
-    
-    <lastmod>2020-08-14</lastmod>
     
   </url>
   
@@ -667,13 +667,6 @@
   </url>
   
   <url>
-    <loc>https://github.com/ShootingWang/ShootingWang.github.io/%E6%8B%BC%E5%A4%9A%E5%A4%9A%E9%A2%98%E5%BA%93.html</loc>
-    
-    <lastmod>2020-07-22</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://github.com/ShootingWang/ShootingWang.github.io/tools/index.html</loc>
     
     <lastmod>2020-07-12</lastmod>
@@ -885,13 +878,6 @@
   
   <url>
     <loc>https://github.com/ShootingWang/ShootingWang.github.io/python-9-%E9%9B%86%E5%90%88.html</loc>
-    
-    <lastmod>2020-05-26</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://github.com/ShootingWang/ShootingWang.github.io/HUAWEI%E9%A2%98%E5%BA%93.html</loc>
     
     <lastmod>2020-05-26</lastmod>
     
@@ -1286,13 +1272,6 @@
   
   <url>
     <loc>https://github.com/ShootingWang/ShootingWang.github.io/tags/%E6%A3%80%E9%AA%8C/</loc>
-    <lastmod>2020-10-31</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://github.com/ShootingWang/ShootingWang.github.io/tags/%E6%B1%82%E8%81%8C/</loc>
     <lastmod>2020-10-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
