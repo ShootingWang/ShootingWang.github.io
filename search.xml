@@ -1210,7 +1210,8 @@
 <li>网状</li>
 <li>关系</li>
 </ol>
-<h1 id="完整性"><a href="#完整性" class="headerlink" title="完整性"></a>完整性</h1><ol>
+<h1 id="完整性"><a href="#完整性" class="headerlink" title="完整性"></a>完整性</h1><a href="/sql-%E6%95%B0%E6%8D%AE%E5%AE%8C%E6%95%B4%E6%80%A7.html" title="SQL | 数据完整性">SQL | 数据完整性</a>
+<ol>
 <li>域完整性：指列的值域的完整性，如数据类型、格式、值域范围、是否允许空值等</li>
 <li>实体完整性（Entity Integrity）：指表中行的完整性，关系的主关键字不能重复也不能取空值。</li>
 <li>参照完整性（引用完整性，Referential Integrity）：基于外键与被引用主键之间的关系，确保键值在所有表中的一致性；是定义建立关系之间联系的主关键字与外部关键字引用的约束条件。</li>
@@ -18391,7 +18392,7 @@ E(X)&=\int_0^1 x\frac{1}{B(\alpha,\beta)}x^{\alpha-1}(1-x)^{\beta-1}\mathrm{d}x\
   </entry>
   <entry>
     <title>SQL | 数据完整性</title>
-    <url>/sql-3-%E6%95%B0%E6%8D%AE%E5%AE%8C%E6%95%B4%E6%80%A7.html</url>
+    <url>/sql-%E6%95%B0%E6%8D%AE%E5%AE%8C%E6%95%B4%E6%80%A7.html</url>
     <content><![CDATA[<p><center></center><br><a id="more"></a></p>
 <h1 id="数据完整性约束"><a href="#数据完整性约束" class="headerlink" title="数据完整性约束"></a>数据完整性约束</h1><p>数据完整性是指存储在数据库中的所有数据值均正确的状态。</p>
 <ul>
