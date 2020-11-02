@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://github.com/ShootingWang/ShootingWang.github.io/tools/index.html</loc>
+    
+    <lastmod>2020-11-02</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://github.com/ShootingWang/ShootingWang.github.io/update/index.html</loc>
+    
+    <lastmod>2020-11-02</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://github.com/ShootingWang/ShootingWang.github.io/SQL.html</loc>
     
     <lastmod>2020-11-02</lastmod>
@@ -31,20 +45,6 @@
   
   <url>
     <loc>https://github.com/ShootingWang/ShootingWang.github.io/%E7%AE%97%E6%B3%95-SVM.html</loc>
-    
-    <lastmod>2020-10-31</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://github.com/ShootingWang/ShootingWang.github.io/update/index.html</loc>
-    
-    <lastmod>2020-10-31</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://github.com/ShootingWang/ShootingWang.github.io/tools/index.html</loc>
     
     <lastmod>2020-10-31</lastmod>
     
