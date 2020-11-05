@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://github.com/ShootingWang/ShootingWang.github.io/Python.html</loc>
+    <lastmod>2020-11-05</lastmod>
+  </url>
+  <url>
     <loc>https://github.com/ShootingWang/ShootingWang.github.io/python-jieba.html</loc>
     <lastmod>2020-11-05</lastmod>
   </url>
@@ -18,10 +22,6 @@
   </url>
   <url>
     <loc>https://github.com/ShootingWang/ShootingWang.github.io/%E6%95%B0%E6%8D%AE%E5%BA%93.html</loc>
-    <lastmod>2020-10-31</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/ShootingWang/ShootingWang.github.io/Python.html</loc>
     <lastmod>2020-10-31</lastmod>
   </url>
   <url>
