@@ -11236,6 +11236,26 @@ dtype: int64
 </ul>
 </li>
 </ul>
+<h2 id="TGI"><a href="#TGI" class="headerlink" title="TGI"></a>TGI</h2><p>目标群体指数（TGI，Target Group Index）</p>
+<script type="math/tex; mode=display">TGI指数=\frac{目标群体中具有某一特征的群体所占比例}{总体中具有相同特征的群体所占比例}\times 标准数100</script><ul>
+<li>TGI越大，目标人群对该领域的偏好越强</li>
+<li>$TGI &gt; 100$说明该人群在整体人群中偏好度偏高</li>
+<li>$TGI &lt; 100$说明该人群在整体人群中偏好度偏低</li>
+<li>$TGI$越接近100，越说明该人群与整体人群偏好度相当。<blockquote>
+<p>标准数是100，不是100%。</p>
+</blockquote>
+</li>
+</ul>
+<div class="note default">
+            <p>假设XX学校内的小王麻辣烫，每天光顾的顾客男女比例1:1，XX学校的男女比例为4:6，则男生还是女生更倾向于光顾小王麻辣烫呢？</p><ul><li>$男生的TGI=\frac{男生光顾这家店的比例}{整体上男生的比例}\times 100=\frac{50\%}{40\%}\times 100=125$</li><li>$女生的TGI=\frac{女生光顾这家店的比例}{整体上女生的比例}\times 100=\frac{50\%}{60\%}\times 100=83.33$</li></ul><p>男生的TGI大于女生的TGI，说明男生光顾这家麻辣烫的倾向性大于女生。</p>
+          </div>
+<blockquote>
+<p>淘宝关于喜好度的定义：<br>喜好度（TGI）：反映不同人群对该搜索词的偏好程度，数值越大则偏好程度越高。</p>
+<ul>
+<li>数据为100时，表示无明显偏好</li>
+<li>该数值不受人群基数的影响<script type="math/tex; mode=display">喜好度（TGI）=\frac{搜索词的该人群占比}{全网的该人群占比}\times 100</script></li>
+</ul>
+</blockquote>
 <h2 id="TS"><a href="#TS" class="headerlink" title="TS"></a>TS</h2><p>渠道来源（Traffic Sources）：用户流量来源于哪些不同的渠道</p>
 <h2 id="UD"><a href="#UD" class="headerlink" title="UD"></a>UD</h2><p>访客特征（UD，User Demographics）：访问用户具有哪些特征值，可用来做用户分类</p>
 <h2 id="UV"><a href="#UV" class="headerlink" title="UV"></a>UV</h2><ul>
@@ -11312,6 +11332,7 @@ dtype: int64
 <li><a href="https://mp.weixin.qq.com/s?__biz=MzU5NDgyMjc0OQ==&amp;mid=2247488624&amp;idx=2&amp;sn=920c8875c2f3d33566e8c9de98a64406&amp;chksm=fe7a0742c90d8e540391f59924a3300cf917a89421d095d6e96d3bc88c447ed18c2275d119f9&amp;mpshare=1&amp;scene=24&amp;srcid=&amp;sharer_sharetime=1590564263763&amp;sharer_shareid=b539221659d6ecf12200314308b58dd3&amp;key=f35cd863eee202dce2e28017bc4094d1b2859bf5881092f4a055994b9e3467a965866061333034fb99b5cc0c774872ef04131c5755d1a55d542f19d23d6b377059875500a47021443c87f06051d831a4&amp;ascene=14&amp;uin=MjAwNDUzMjgxNw%3D%3D&amp;devicetype=Windows+10+x64&amp;version=62090070&amp;lang=zh_CN&amp;exportkey=AWstGTboQZQZLrI9jEzLFvs%3D&amp;pass_ticket=xoArabHCscAdV4DACRCVDCInO%2Bwgm6vCxCiSKNK2RM55GLTfFThL1GA6XQ9Qdhep" target="_blank" rel="noopener">数据分析：不同行业的常见指标</a></li>
 <li><a href="www.woshipm.com/pmd/645579.html">浅谈计算留存天数的三种方法</a></li>
 <li><a href="http://mp.weixin.qq.com/s?__biz=MzU4OTQ1MTA4OQ==&amp;mid=2247487676&amp;idx=2&amp;sn=f688d183f0621b21a871d89fcb5a8d48&amp;chksm=fdcc0a82cabb839402dc2b3fb7e6d56401183808545f47b98fae230b084f99050785a103d6fe&amp;mpshare=1&amp;scene=24&amp;srcid=0818Yq9tldgFJGEiMxsGjYyy&amp;sharer_sharetime=1597725059037&amp;sharer_shareid=b539221659d6ecf12200314308b58dd3#rd" target="_blank" rel="noopener">数据指标基础知识汇总</a></li>
+<li><a href="zhihu.com/question/27115577">偏好度（TGI）是如何计算的，以及如何理解这个指标？</a></li>
 </ul>
 ]]></content>
       <categories>
