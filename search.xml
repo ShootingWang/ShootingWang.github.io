@@ -9796,6 +9796,10 @@ dtype: int64
 <li>通常，BP神经网络在训练之前会对数据进行归一化处理，将数据映射到更小的区间内，比如$[0,1]$或$[-1,1]$</li>
 </ul>
 <h2 id="基本原理"><a href="#基本原理" class="headerlink" title="基本原理"></a>基本原理</h2><h3 id="正向传递子过程"><a href="#正向传递子过程" class="headerlink" title="正向传递子过程"></a>正向传递子过程</h3><p>假设节点$i$和节点$j$之间的权值为$w_{ij}$，节点$j$的阈值为$b_j$，每个节点的输出值为$x_j$；每个节点的输出值是根据上层所有节点的输出值、当前节点与上层所有节点的权值、当前节点的阈值、激活函数来实现的，计算方式如下：<br>\begin{equation}<br>\begin{aligned}<br>S_j &amp;= \sum_{i=0}^{m-1}w_{ij}x_i+b_j\\<br>x_j &amp;= f(S_j)<br>\end{aligned}<br>\end{equation}</p>
+<p>其中，$f(\cdot)$是激活函数，一般选择Sigmoid函数或线性函数。</p>
+<ul>
+<li>在BP神经网络中，输入层节点没有阈值</li>
+</ul>
 <h3 id="反向传递子过程"><a href="#反向传递子过程" class="headerlink" title="反向传递子过程"></a>反向传递子过程</h3><h2 id="激活函数-1"><a href="#激活函数-1" class="headerlink" title="激活函数"></a>激活函数</h2><ul>
 <li>BP神经网络的激活函数要求处处可导</li>
 <li>BP神经网络一般用于分类或逼近问题<ul>
