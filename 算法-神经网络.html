@@ -34,7 +34,7 @@
 <meta property="og:image" content="https://github.com/%E7%AE%97%E6%B3%95-%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/neural-network.png">
 <meta property="og:image" content="https://github.com/%E7%AE%97%E6%B3%95-%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/neural-network.png">
 <meta property="article:published_time" content="2020-05-18T01:14:58.000Z">
-<meta property="article:modified_time" content="2020-11-14T14:50:22.859Z">
+<meta property="article:modified_time" content="2020-11-14T15:06:08.029Z">
 <meta property="article:author" content="ShootingWang">
 <meta property="article:tag" content="机器学习">
 <meta property="article:tag" content="神经网络">
@@ -260,7 +260,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-11-14 22:50:22" itemprop="dateModified" datetime="2020-11-14T22:50:22+08:00">2020-11-14</time>
+                <time title="修改时间：2020-11-14 23:06:08" itemprop="dateModified" datetime="2020-11-14T23:06:08+08:00">2020-11-14</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -351,7 +351,13 @@
 <ul>
 <li>在BP神经网络中，输入层节点没有阈值</li>
 </ul>
-<h3 id="反向传递子过程"><a href="#反向传递子过程" class="headerlink" title="反向传递子过程"></a>反向传递子过程</h3><h2 id="激活函数-1"><a href="#激活函数-1" class="headerlink" title="激活函数"></a>激活函数</h2><ul>
+<h3 id="反向传递子过程"><a href="#反向传递子过程" class="headerlink" title="反向传递子过程"></a>反向传递子过程</h3><ul>
+<li>误差信号反向传播子过程是基于Widrow-Hoff学习规则的</li>
+<li>BP神经网络的主要目的是：反复修正权值和阈值，使得误差函数达到最小</li>
+</ul>
+<p>假设输出层的结果为$d_j$，误差函数为</p>
+<script type="math/tex; mode=display">E(w,b)=\frac{1}{2}\sum_{j=0}^{n-1}(d_j-y_j)^2</script><p>Widrow-Hoff学习规则是通过沿着相对误差平方和的最速下降方向，连续调整网络的权值和阈值。根据梯度下降法，权值矢量的修正正比于当前位置上$E(w,b)$的梯度，对于第$j$个输出节点有</p>
+<script type="math/tex; mode=display">\Delta w(i,j)=-\eta\frac{\partial{E(w,b)}}{\partial{w(i,j)}}</script><h2 id="激活函数-1"><a href="#激活函数-1" class="headerlink" title="激活函数"></a>激活函数</h2><ul>
 <li>BP神经网络的激活函数要求处处可导</li>
 <li>BP神经网络一般用于分类或逼近问题<ul>
 <li>如果用于<strong>分类</strong>，激活函数一般使用<strong>Sigmoid函数</strong>或<strong>硬极限函数</strong></li>
@@ -585,7 +591,7 @@
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">4:46</span>
+    <span title="站点阅读时长">4:47</span>
 </div>
 
 

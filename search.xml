@@ -9800,7 +9800,13 @@ dtype: int64
 <ul>
 <li>在BP神经网络中，输入层节点没有阈值</li>
 </ul>
-<h3 id="反向传递子过程"><a href="#反向传递子过程" class="headerlink" title="反向传递子过程"></a>反向传递子过程</h3><h2 id="激活函数-1"><a href="#激活函数-1" class="headerlink" title="激活函数"></a>激活函数</h2><ul>
+<h3 id="反向传递子过程"><a href="#反向传递子过程" class="headerlink" title="反向传递子过程"></a>反向传递子过程</h3><ul>
+<li>误差信号反向传播子过程是基于Widrow-Hoff学习规则的</li>
+<li>BP神经网络的主要目的是：反复修正权值和阈值，使得误差函数达到最小</li>
+</ul>
+<p>假设输出层的结果为$d_j$，误差函数为</p>
+<script type="math/tex; mode=display">E(w,b)=\frac{1}{2}\sum_{j=0}^{n-1}(d_j-y_j)^2</script><p>Widrow-Hoff学习规则是通过沿着相对误差平方和的最速下降方向，连续调整网络的权值和阈值。根据梯度下降法，权值矢量的修正正比于当前位置上$E(w,b)$的梯度，对于第$j$个输出节点有</p>
+<script type="math/tex; mode=display">\Delta w(i,j)=-\eta\frac{\partial{E(w,b)}}{\partial{w(i,j)}}</script><h2 id="激活函数-1"><a href="#激活函数-1" class="headerlink" title="激活函数"></a>激活函数</h2><ul>
 <li>BP神经网络的激活函数要求处处可导</li>
 <li>BP神经网络一般用于分类或逼近问题<ul>
 <li>如果用于<strong>分类</strong>，激活函数一般使用<strong>Sigmoid函数</strong>或<strong>硬极限函数</strong></li>
