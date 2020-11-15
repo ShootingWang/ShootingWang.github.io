@@ -9771,6 +9771,7 @@ dtype: int64
 <h1 id="BP神经网络"><a href="#BP神经网络" class="headerlink" title="BP神经网络"></a>BP神经网络</h1><p>反向传播神经网络（Back Propagation Neural Network）</p>
 <ul>
 <li>David Rumelhart和J.McClelland于1985年提出</li>
+<li>有监督学习</li>
 </ul>
 <p>BP神经网络分为2个过程：</p>
 <ol>
@@ -9786,6 +9787,9 @@ dtype: int64
 <p><meta name="referrer" content="no-referrer"><br><img src="/%E7%AE%97%E6%B3%95-%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/neural-network.png" class title="简单神经网络"></p>
 <ul>
 <li><p>在BP神经网络中，单个样本有$m$个输入，有$n$个输出，在输入层（Input Layer）和输出层（Output Layer）之间通常还有若干个隐含层（Hidden Layer）</p>
+<ul>
+<li>输入层和输出层的节点个数都是确定的，而隐含层节点个数不确定</li>
+</ul>
 </li>
 <li><p>BP神经网络在训练数据时，可以采用<strong>增量学习</strong>或<strong>批量学习</strong></p>
 <ul>
@@ -9795,7 +9799,7 @@ dtype: int64
 </li>
 <li>通常，BP神经网络在训练之前会对数据进行归一化处理，将数据映射到更小的区间内，比如$[0,1]$或$[-1,1]$</li>
 </ul>
-<h2 id="基本原理"><a href="#基本原理" class="headerlink" title="基本原理"></a>基本原理</h2><h3 id="正向传递子过程"><a href="#正向传递子过程" class="headerlink" title="正向传递子过程"></a>正向传递子过程</h3><p>假设节点$i$和节点$j$之间的权值为$w_{ij}$，节点$j$的阈值为$b_j$，每个节点的输出值为$x_j$；每个节点的输出值是根据上层所有节点的输出值、当前节点与上层所有节点的权值、当前节点的阈值、激活函数来实现的，计算方式如下：<br>\begin{equation}<br>\begin{aligned}<br>S_j &amp;= \sum_{i=0}^{m-1}w_{ij}x_i+b_j\\<br>x_j &amp;= f(S_j)<br>\end{aligned}<br>\end{equation}</p>
+<h2 id="基本原理"><a href="#基本原理" class="headerlink" title="基本原理"></a>基本原理</h2><h3 id="正向传递子过程"><a href="#正向传递子过程" class="headerlink" title="正向传递子过程"></a>正向传递子过程</h3><p>假设节点$i$和节点$j$之间的权值（adjusting weight）为$w_{ij}$，节点$j$的阈值（deviation）为$b_j$，每个节点的输出值为$x_j$；每个节点的输出值是根据上层所有节点的输出值、当前节点与上层所有节点的权值、当前节点的阈值、激活函数来实现的，计算方式如下：<br>\begin{equation}<br>\begin{aligned}<br>S_j &amp;= \sum_{i=0}^{m-1}w_{ij}x_i+b_j\\<br>x_j &amp;= f(S_j)<br>\end{aligned}<br>\end{equation}</p>
 <p>其中，$f(\cdot)$是激活函数，一般选择Sigmoid函数或线性函数。</p>
 <ul>
 <li>在BP神经网络中，输入层节点没有阈值</li>
@@ -9821,6 +9825,18 @@ dtype: int64
 <script type="math/tex; mode=display">\delta_{ki}=\sum_{j=0}^{n-1}\delta_{ij}\cdot w_{ij}\cdot \frac{f(S_i)\left[A-f(S_i) \right]}{AB}</script><ul>
 <li>输入层和隐含层之间的权值调整：<script type="math/tex; mode=display">w_{ki} = w_{ki} - \eta_1\cdot\frac{\partial{E(w,b)}}{\partial{w_{ki}}} = w_{ki} - \eta_1\cdot\delta_{ki}\cdot x_k</script></li>
 <li>隐含层的阈值调整：<script type="math/tex; mode=display">b_i = b_i - \eta_2\cdot\frac{\partial{E(w,b)}}{\partial{b_i}} = b_i - \eta_2\cdot\delta_{ki}</script></li>
+</ul>
+<h2 id="隐含层的选取"><a href="#隐含层的选取" class="headerlink" title="隐含层的选取"></a>隐含层的选取</h2><p>在BP神经网络中，输入层和输出层的节点个数都是确定的，而隐含层节点个数不确定。</p>
+<ul>
+<li>隐含层节点个数的多少对神经网络的性能是有影响的</li>
+</ul>
+<p>可以使用下述经验公式确定隐含层的节点个数：</p>
+<script type="math/tex; mode=display">h = \sqrt{m+n}+a</script><p>其中：</p>
+<ul>
+<li>$h$：隐含层节点数目</li>
+<li>$m$：输入层节点数目</li>
+<li>$n$：输出层节点数目</li>
+<li>$a$：为$1~10$之间的调节常数</li>
 </ul>
 <h2 id="激活函数-1"><a href="#激活函数-1" class="headerlink" title="激活函数"></a>激活函数</h2><ul>
 <li>BP神经网络的激活函数要求处处可导</li>
