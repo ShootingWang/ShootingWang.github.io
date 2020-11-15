@@ -9831,7 +9831,8 @@ dtype: int64
 <li>隐含层节点个数的多少对神经网络的性能是有影响的</li>
 </ul>
 <p>可以使用下述经验公式确定隐含层的节点个数：</p>
-<script type="math/tex; mode=display">h = \sqrt{m+n}+a</script><p>其中：</p>
+<script type="math/tex; mode=display">h = \sqrt{m+n}+a</script><p>或者，使用下述经验公式确定隐含层的节点个数：</p>
+<script type="math/tex; mode=display">h = \log_2{m}</script><p>其中：</p>
 <ul>
 <li>$h$：隐含层节点数目</li>
 <li>$m$：输入层节点数目</li>
