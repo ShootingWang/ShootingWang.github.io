@@ -56,6 +56,11 @@
 </li>
 <li><a href="/python-pyecharts%E6%A8%A1%E5%9D%97.html" title="Pyecharts">Pyecharts</a></li>
 <li><a href="/python-re%E6%A8%A1%E5%9D%97.html" title="re">re</a></li>
+<li><a href="/python-seaborn.html" title="Python | Seaborn">Python | Seaborn</a>
+<ul>
+<li>基于Matplotlib的数据可视化库</li>
+</ul>
+</li>
 <li><a href="/python-sklearn.html" title="sklearn">sklearn</a></li>
 <li><a href="/python-string.html" title="string">string</a></li>
 <li><a href="/python-textwrap.html" title="TextWrap">TextWrap</a>
@@ -124,7 +129,7 @@
 <li>用方括号封装 [ ]</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">lst.append(a)   <span class="comment">##在列表lst尾部添加元素a</span></span><br><span class="line">lst.insert(num, c)  <span class="comment">##在列表lst的第num+1个位置（索引为num）插入元素c</span></span><br><span class="line">lst.pop()  <span class="comment">##删除列表lst的最后一个元素，并返回该元素</span></span><br><span class="line">lst.pop(i)  <span class="comment">##删除列表lst的索引为i的元素（i可以是负数；i=-2表示删除倒数第二个元素）</span></span><br></pre></td></tr></table></figure>
-<h2 id="字典"><a href="#字典" class="headerlink" title="字典"></a>字典</h2><h2 id="集合set"><a href="#集合set" class="headerlink" title="集合set()"></a>集合set()</h2><a href="/python-%E9%9B%86%E5%90%88.html" title="python-集合">python-集合</a>
+<h2 id="字典"><a href="#字典" class="headerlink" title="字典"></a>字典</h2><h2 id="集合set"><a href="#集合set" class="headerlink" title="集合set()"></a>集合set()</h2><a href="/python-%E9%9B%86%E5%90%88.html" title="Python | Set 集合">Python | Set 集合</a>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">set((<span class="string">"Rank"</span>))</span><br><span class="line"><span class="comment">#&#123;'R', 'a', 'k', 'n'&#125;</span></span><br><span class="line">set(<span class="string">"Rank"</span>)</span><br><span class="line"><span class="comment">#&#123;'R', 'a', 'k', 'n'&#125;</span></span><br><span class="line">set([<span class="string">"Rank"</span>])</span><br><span class="line"><span class="comment">#&#123;'Rank'&#125;</span></span><br></pre></td></tr></table></figure>
 <h1 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h1><p>正则表达式：对字符串类型数据进行匹配、提取等操作的逻辑公式。</p>
 <h2 id="元字符"><a href="#元字符" class="headerlink" title="元字符"></a>元字符</h2><p>元字符（Meta Characters）：标点等特殊字符。主要有<code>. $ * + ? | \ ^ [ ] { } ( )</code>等。</p>
@@ -1168,6 +1173,162 @@
       <tags>
         <tag>SQL</tag>
         <tag>MySQL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Python | Seaborn</title>
+    <url>/python-seaborn.html</url>
+    <content><![CDATA[<p><center></center><br><a id="more"></a></p>
+<h1 id="Seaborn"><a href="#Seaborn" class="headerlink" title="Seaborn"></a>Seaborn</h1><p>Seaborn是Python中一个基于Matplotlib的数据可视化库。</p>
+<p>功能：</p>
+<ul>
+<li>面向数据集的API，用于检查多个变量之间的关系。</li>
+<li>支持使用分类变量来显示样本或汇总统计数据。</li>
+<li>可使用单变量或而二分量来比较数据子集。</li>
+<li>针对不同类型的因变量进行线性回归模型的估计和绘制。</li>
+<li>便于观察复杂数据集的整体结构。</li>
+<li>用于构建多网格绘图，便于创造复杂的可视化图形。</li>
+<li>简洁地控制matplotlib图形样式和内置主题。</li>
+<li>可以选择调色板。</li>
+</ul>
+<p>安装：（在Anaconda Prompt中运行安装命令）<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">pip install seaborn</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 一个简单的例子：</span></span><br><span class="line"><span class="comment">##该例中，以“total_bill”为横坐标，“tip”为纵坐标，“time”为分面依据，“smoker”为形状依据，“size”为大小依据。</span></span><br><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns   <span class="comment">## 加载seaborn库</span></span><br><span class="line">sns.set()      <span class="comment">## 应用默认的seaborn主题、缩放、调色板</span></span><br><span class="line">tips = sns.load_dataset(<span class="string">"tips"</span>)  <span class="comment">##载入需要的数据tips</span></span><br><span class="line"></span><br><span class="line">%matplotlib inline  <span class="comment">##为了使图片在jupyter中显示</span></span><br><span class="line"><span class="comment">##绘制简单的分面散点图</span></span><br><span class="line">sns.relplot(x=<span class="string">"total_bill"</span>, y=<span class="string">"tip"</span>, col=<span class="string">"time"</span>,</span><br><span class="line">            hue=<span class="string">"smoker"</span>, style=<span class="string">"smoker"</span>, size=<span class="string">"size"</span>,</span><br><span class="line">            data=tips);</span><br></pre></td></tr></table></figure>
+<h1 id="高级函数"><a href="#高级函数" class="headerlink" title="高级函数"></a>高级函数</h1><p>seaborn四大高级绘图函数：</p>
+<ol>
+<li>catplot()</li>
+<li>distplot()</li>
+<li>lmplot()</li>
+<li>relplot()</li>
+</ol>
+<h2 id="catplot"><a href="#catplot" class="headerlink" title="catplot()"></a>catplot()</h2><p><code>catplot()</code> ：分类数据分布图（categorical）。<br><code>catplot(x=None, y=None, hue=None, data=None, row=None, 
+    col=None, col_wrap=None, estimator=&lt;function mean at 0x000001AB0E436EA0&gt;, 
+    ci=95, n_boot=1000, units=None, order=None, 
+    hue_order=None, row_order=None, col_order=None, 
+    kind=&#39;strip&#39;, height=5, aspect=1, orient=None, 
+    color=None, palette=None, legend=True, 
+    legend_out=True, sharex=True, sharey=True, 
+    margin_titles=False, facet_kws=None, **kwargs)</code></p>
+<ul>
+<li>参数 <code>kind</code> 可取值有：<ul>
+<li><code>strip</code>：散点图，默认</li>
+<li><code>swarm</code>：分簇散点图</li>
+<li><code>violin</code>：小提琴图</li>
+<li><code>box</code>：箱线图</li>
+<li><code>boxen</code>：增强箱型图</li>
+<li><code>point</code>：点图</li>
+<li><code>bar</code>：条形图</li>
+<li><code>count</code>：计数条形图</li>
+</ul>
+</li>
+<li><code>strip</code>和<code>swarm</code>之间存在细微差异（见下面的例子），swarm图会区分位置较为相近的点（使点不重叠）。</li>
+<li>参数 <code>aspect</code>：控制坐标轴的横纵比，默认为1</li>
+<li>参数 <code>col_wrap</code>：表示输出的图形中每行panel的个数</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">ex = sns.load_dataset(<span class="string">"exercise"</span>)</span><br><span class="line">ex.head()</span><br><span class="line"></span><br><span class="line">sns.catplot(x=<span class="string">"time"</span>, y=<span class="string">"pulse"</span>, hue=<span class="string">"kind"</span>,</span><br><span class="line">           col=<span class="string">"diet"</span>, data=ex)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 若参数aspect=0.8（改变的是坐标轴的横纵轴比）：</span></span><br><span class="line">sns.catplot(x=<span class="string">"time"</span>, y=<span class="string">"pulse"</span>, hue=<span class="string">"kind"</span>,</span><br><span class="line">           col=<span class="string">"diet"</span>, data=ex, aspect=<span class="number">0.8</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">ex = sns.load_dataset(<span class="string">"exercise"</span>)</span><br><span class="line">sns.catplot(x=<span class="string">"time"</span>, y=<span class="string">"pulse"</span>, hue=<span class="string">"kind"</span>,</span><br><span class="line">           col=<span class="string">"kind"</span>, data=ex)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">ex = sns.load_dataset(<span class="string">"exercise"</span>)</span><br><span class="line">sns.catplot(x=<span class="string">"time"</span>, y=<span class="string">"pulse"</span>, hue=<span class="string">"kind"</span>,</span><br><span class="line">           col=<span class="string">"kind"</span>, data=ex, col_wrap=<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 自定义图形的属性：</span></span><br><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line">%matplotlib inline</span><br><span class="line"></span><br><span class="line">tips = sns.load_dataset(<span class="string">"tips"</span>)    <span class="comment">## 导入数据</span></span><br><span class="line">g = sns.catplot(x=<span class="string">"total_bill"</span>, y=<span class="string">"day"</span>, hue=<span class="string">"time"</span>, </span><br><span class="line">               height=<span class="number">4</span>, aspect=<span class="number">1.5</span>, kind=<span class="string">"box"</span>,</span><br><span class="line">               legend=<span class="literal">False</span>, data=tips)</span><br><span class="line"><span class="comment">##加上图例，并修改图例的标题</span></span><br><span class="line">g.add_legend(title=<span class="string">"Meal"</span>)</span><br><span class="line"><span class="comment">##设置横轴和纵轴的标签</span></span><br><span class="line">g.set_axis_labels(<span class="string">"Total bill($)"</span>, <span class="string">""</span>)</span><br><span class="line"><span class="comment">##设置x轴的取值范围、y轴的刻度标签</span></span><br><span class="line">g.set(xlim=(<span class="number">0</span>, <span class="number">60</span>), </span><br><span class="line">      yticklabels=[<span class="string">"Tuesday"</span>, <span class="string">"Friday"</span>, <span class="string">"Saturday"</span>, <span class="string">"Sunday"</span>])</span><br><span class="line"><span class="comment">##设置图片尺寸（单位：英寸）</span></span><br><span class="line">g.fig.set_size_inches(<span class="number">6.5</span>, <span class="number">3.5</span>)</span><br><span class="line">g.ax.set_xticks([<span class="number">5</span> ,<span class="number">15</span>, <span class="number">25</span>, <span class="number">35</span>, <span class="number">45</span>, <span class="number">55</span>], minor=<span class="literal">True</span>);</span><br><span class="line">plt.setp(g.ax.get_yticklabels(), rotation=<span class="number">30</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="散点图strip"><a href="#散点图strip" class="headerlink" title="散点图strip"></a>散点图strip</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## catplot绘制默认strip：</span></span><br><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns</span><br><span class="line"></span><br><span class="line">tips = sns.load_dataset(<span class="string">"tips"</span>)   <span class="comment">## 加载数据</span></span><br><span class="line">%matplotlib inline</span><br><span class="line">sns.catplot(x=<span class="string">"day"</span>, y=<span class="string">"total_bill"</span>, hue=<span class="string">"smoker"</span>,</span><br><span class="line">           data=tips)</span><br></pre></td></tr></table></figure>
+<h3 id="散点图swarm"><a href="#散点图swarm" class="headerlink" title="散点图swarm"></a>散点图swarm</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## catplot绘制swarm：</span></span><br><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns</span><br><span class="line"></span><br><span class="line">tips = sns.load_dataset(<span class="string">"tips"</span>)</span><br><span class="line">%matplotlib inline</span><br><span class="line">sns.catplot(x=<span class="string">"day"</span>, y=<span class="string">"total_bill"</span>, hue=<span class="string">"smoker"</span>,</span><br><span class="line">           kind=<span class="string">"swarm"</span>, data=tips)</span><br></pre></td></tr></table></figure>
+<h3 id="小提琴图violin"><a href="#小提琴图violin" class="headerlink" title="小提琴图violin"></a>小提琴图violin</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 绘制violin（小提琴图）：</span></span><br><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns</span><br><span class="line"></span><br><span class="line">tips = sns.load_dataset(<span class="string">"tips"</span>)</span><br><span class="line">%matplotlib inline</span><br><span class="line">sns.catplot(x=<span class="string">"day"</span>, y=<span class="string">"total_bill"</span>, hue=<span class="string">"smoker"</span>,</span><br><span class="line">           data=tips, kind=<span class="string">"violin"</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 参数split为真，表示</span></span><br><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns</span><br><span class="line"></span><br><span class="line">tips = sns.load_dataset(<span class="string">"tips"</span>)</span><br><span class="line">%matplotlib inline</span><br><span class="line">sns.catplot(x=<span class="string">"day"</span>, y=<span class="string">"total_bill"</span>, hue=<span class="string">"smoker"</span>,</span><br><span class="line">           data=tips, kind=<span class="string">"violin"</span>, split=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="箱线图box"><a href="#箱线图box" class="headerlink" title="箱线图box"></a>箱线图box</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## catplot绘制box（箱线图）：</span></span><br><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns</span><br><span class="line"></span><br><span class="line">tips = sns.load_dataset(<span class="string">"tips"</span>)</span><br><span class="line">%matplotlib inline</span><br><span class="line">sns.catplot(x=<span class="string">"day"</span>, y=<span class="string">"total_bill"</span>, hue=<span class="string">"smoker"</span>,</span><br><span class="line">           data=tips, kind=<span class="string">"box"</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## catplot绘制boxen（增强箱型图/箱线图）：</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns</span><br><span class="line"></span><br><span class="line">tips = sns.load_dataset(<span class="string">"tips"</span>)</span><br><span class="line">%matplotlib inline</span><br><span class="line">sns.catplot(x=<span class="string">"day"</span>, y=<span class="string">"total_bill"</span>, hue=<span class="string">"smoker"</span>,</span><br><span class="line">           data=tips, kind=<span class="string">"boxen"</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="distplot"><a href="#distplot" class="headerlink" title="distplot()"></a>distplot()</h2><p><code>distplot()</code> ：数据集分布图（distribution）。</p>
+<p><code>distplot(a, bins=None, hist=True, kde=True, rug=False, 
+    fit=None, hist_kws=None, kde_kws=None, rug_kws=None, 
+    fit_kws=None, color=None, vertical=False, 
+    norm_hist=False, axlabel=None, label=None, ax=None)</code></p>
+<ul>
+<li><code>distplot</code>是hist（直方图）、rugplot（地毯图）、kdeplot（核密度估计图）的高级封装。</li>
+<li>参数<code>fit</code> ：指定拟合相应的分布（可缺省）。</li>
+</ul>
+<h3 id="直方图"><a href="#直方图" class="headerlink" title="直方图"></a>直方图</h3><h3 id="地毯图"><a href="#地毯图" class="headerlink" title="地毯图"></a>地毯图</h3><h3 id="核密度估计图"><a href="#核密度估计图" class="headerlink" title="核密度估计图"></a>核密度估计图</h3><h2 id="lmplot"><a href="#lmplot" class="headerlink" title="lmplot()"></a>lmplot()</h2><p><code>lmplot()</code> ：回归曲线图。<br><code>lmplot(x, y, data, hue=None, col=None, row=None,
+    palette=None, col_wrap=None, height=5, aspect=1, 
+    markers=&#39;o&#39;, sharex=True, sharey=True, hue_order=None, 
+    col_order=None, row_order=None, legend=True, 
+    legend_out=True, x_estimator=None, x_bins=None, 
+    x_ci=&#39;ci&#39;, scatter=True, fit_reg=True, ci=95, 
+    n_boot=1000, units=None, order=1, logistic=False, 
+    lowess=False, robust=False, logx=False, 
+    x_partial=None, y_partial=None, truncate=False, 
+    x_jitter=None, y_jitter=None, scatter_kws=None, 
+    line_kws=None, size=None)</code></p>
+<ul>
+<li>与<code>regplot()</code>的区别是：<code>lmplot()</code>必须指定<code>data</code>参数</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 使用数据tips绘制回归拟合曲线图并绘制置信区间：</span></span><br><span class="line">tips = sns.load_dataset(<span class="string">"tips"</span>)</span><br><span class="line"></span><br><span class="line">sns.lmplot(x=<span class="string">"total_bill"</span>, y=<span class="string">"tip"</span>, col=<span class="string">"time"</span>, hue=<span class="string">"smoker"</span>,</span><br><span class="line">           data=tips)</span><br></pre></td></tr></table></figure>
+<h2 id="regplot"><a href="#regplot" class="headerlink" title="regplot()"></a>regplot()</h2><p><code>relplot()</code> ：可视化变量间的关系（relationship）。可绘制散点图和曲线图。</p>
+<ul>
+<li>参数 <code>hue</code> ：分组变量</li>
+<li>参数 <code>style</code> ：在某一维度上，用线的不同表现形式区分</li>
+<li>参数 <code>size</code> ：控制数据点的大小或线条的粗细</li>
+<li>参数 <code>facet_kws</code>：设置坐标是否共享</li>
+</ul>
+<h3 id="散点图"><a href="#散点图" class="headerlink" title="散点图"></a>散点图</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">relplot(x=<span class="literal">None</span>, y=<span class="literal">None</span>, hue=<span class="literal">None</span>, size=<span class="literal">None</span>, style=<span class="literal">None</span>, </span><br><span class="line"> data=<span class="literal">None</span>, row=<span class="literal">None</span>, col=<span class="literal">None</span>, col_wrap=<span class="literal">None</span>, </span><br><span class="line"> row_order=<span class="literal">None</span>, col_order=<span class="literal">None</span>, palette=<span class="literal">None</span>, hue_order=<span class="literal">None</span>,</span><br><span class="line"> hue_norm=<span class="literal">None</span>, sizes=<span class="literal">None</span>, size_order=<span class="literal">None</span>, size_norm=<span class="literal">None</span>, </span><br><span class="line">    markers=<span class="literal">None</span>, dashes=<span class="literal">None</span>, style_order=<span class="literal">None</span>, legend=<span class="string">'brief'</span>,</span><br><span class="line">    kind=<span class="string">'scatter'</span>,      <span class="comment">## 散点图</span></span><br><span class="line">    height=<span class="number">5</span>, aspect=<span class="number">1</span>, facet_kws=<span class="literal">None</span>, **kwargs)</span><br></pre></td></tr></table></figure>
+<h3 id="曲线图"><a href="#曲线图" class="headerlink" title="曲线图"></a>曲线图</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">relplot(x=<span class="literal">None</span>, y=<span class="literal">None</span>, hue=<span class="literal">None</span>, size=<span class="literal">None</span>, style=<span class="literal">None</span>, </span><br><span class="line"> data=<span class="literal">None</span>, row=<span class="literal">None</span>, col=<span class="literal">None</span>, col_wrap=<span class="literal">None</span>, </span><br><span class="line"> row_order=<span class="literal">None</span>, col_order=<span class="literal">None</span>, palette=<span class="literal">None</span>, hue_order=<span class="literal">None</span>, </span><br><span class="line"> hue_norm=<span class="literal">None</span>, sizes=<span class="literal">None</span>, size_order=<span class="literal">None</span>, size_norm=<span class="literal">None</span>, </span><br><span class="line">    markers=<span class="literal">None</span>, dashes=<span class="literal">None</span>, style_order=<span class="literal">None</span>, legend=<span class="string">'brief'</span>, </span><br><span class="line">    kind=<span class="string">'line'</span>,        <span class="comment">## 曲线图</span></span><br><span class="line">    height=<span class="number">5</span>, aspect=<span class="number">1</span>, facet_kws=<span class="literal">None</span>, **kwargs)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 使用数据dots绘制曲线图：</span></span><br><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns</span><br><span class="line"></span><br><span class="line">dots = sns.load_dataset(<span class="string">"dots"</span>)</span><br><span class="line">dots.head()</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">sns.relplot(x=<span class="string">"time"</span>, y=<span class="string">"firing_rate"</span>, col=<span class="string">"align"</span>,</span><br><span class="line">           hue=<span class="string">"choice"</span>, size=<span class="string">"coherence"</span>, style=<span class="string">"choice"</span>,</span><br><span class="line">           facet_kws=dict(sharex=<span class="literal">False</span>), kind=<span class="string">"line"</span>,</span><br><span class="line">           legend=<span class="string">"full"</span>, data=dots)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">sns.relplot(x=<span class="string">"time"</span>, y=<span class="string">"firing_rate"</span>, col=<span class="string">"align"</span>,</span><br><span class="line">            hue=<span class="string">"choice"</span>, size=<span class="string">"coherence"</span>, style=<span class="string">"choice"</span>,</span><br><span class="line">            height=<span class="number">4.5</span>, aspect=<span class="number">2</span> / <span class="number">3</span>,</span><br><span class="line">            facet_kws=dict(sharex=<span class="literal">False</span>),</span><br><span class="line">            kind=<span class="string">"line"</span>, legend=<span class="string">"full"</span>, data=dots)</span><br><span class="line"><span class="comment">##参数aspect控制横纵比</span></span><br><span class="line"><span class="comment">##参数facet_kws设置坐标是否共享</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 使用数据fmri绘制曲线图，并且绘制置信区间：</span></span><br><span class="line">fmri = sns.load_dataset(<span class="string">"fmri"</span>)</span><br><span class="line">sns.relplot(x=<span class="string">"timepoint"</span>, y=<span class="string">"signal"</span>, col=<span class="string">"region"</span>,</span><br><span class="line">            hue=<span class="string">"event"</span>, style=<span class="string">"event"</span>,</span><br><span class="line">            kind=<span class="string">"line"</span>, data=fmri);</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">sns.relplot(x=<span class="string">"total_bill"</span>, y=<span class="string">"tip"</span>, col=<span class="string">"time"</span>,</span><br><span class="line">            hue=<span class="string">"size"</span>, style=<span class="string">"smoker"</span>, size=<span class="string">"size"</span>,</span><br><span class="line">            palette=<span class="string">"YlGnBu"</span>, markers=[<span class="string">"D"</span>, <span class="string">"o"</span>], sizes=(<span class="number">10</span>, <span class="number">125</span>),</span><br><span class="line">            edgecolor=<span class="string">".2"</span>, linewidth=<span class="number">.5</span>, alpha=<span class="number">.75</span>,</span><br><span class="line">            data=tips)</span><br></pre></td></tr></table></figure>
+<h1 id="调色板"><a href="#调色板" class="headerlink" title="调色板"></a>调色板</h1><h2 id="choose-colorbrewer-palette"><a href="#choose-colorbrewer-palette" class="headerlink" title="choose_colorbrewer_palette()"></a>choose_colorbrewer_palette()</h2><p>从Color Brewer中选择调色板。<br><code>choose_colorbrewer_palette(data_type, as_cmap=False)</code></p>
+<ul>
+<li>该函数只能在Jupyter Notebook中使用</li>
+<li>参数 <code>data_type</code> ：可选值有’sequential’, ‘diverging’, ‘qualitative’</li>
+<li>其中 <code>Set</code> 可选择不同的调色板</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">sns.palplot(sns.choose_colorbrewer_palette(data_type=<span class="string">"qualitative"</span>))</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">sns.palplot(sns.choose_colorbrewer_palette(data_type=<span class="string">"diverging"</span>))</span><br></pre></td></tr></table></figure>
+<h2 id="choose-cubehelix-palette"><a href="#choose-cubehelix-palette" class="headerlink" title="choose_cubehelix_palette()"></a>choose_cubehelix_palette()</h2><p><code>choose_cubehelix_palette(as_cmap=False)</code></p>
+<ul>
+<li><code>cubehelix()</code>函数对应的交互式小部件</li>
+<li>该函数只能在Jupyter Notebook中使用</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">sns.palplot(sns.choose_cubehelix_palette())</span><br></pre></td></tr></table></figure>
+<h2 id="choose-dark-palette"><a href="#choose-dark-palette" class="headerlink" title="choose_dark_palette()"></a>choose_dark_palette()</h2><p><code>choose_dark_palette(input=&#39;husl&#39;, as_cmap=False)</code></p>
+<ul>
+<li><code>dark_palette()</code>函数对应的交互式小部件</li>
+<li>该函数只能在Jupyter Notebook中使用</li>
+<li>参数 <code>input</code> ：可选值有<code>husl</code>, <code>hls</code>, <code>rgb</code></li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">sns.palplot(sns.choose_dark_palette())</span><br></pre></td></tr></table></figure>
+<h2 id="choose-diverging-palette"><a href="#choose-diverging-palette" class="headerlink" title="choose_diverging_palette()"></a>choose_diverging_palette()</h2><p><code>choose_diverging_palette(as_cmap=False)</code></p>
+<ul>
+<li><code>diverging_palette()</code>函数对应的交互式小部件</li>
+<li><code>center</code>部件可选择：light或dark</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">sns.palplot(sns.choose_diverging_palette())</span><br></pre></td></tr></table></figure>
+<h2 id="choose-light-palette"><a href="#choose-light-palette" class="headerlink" title="choose_light_palette()"></a>choose_light_palette()</h2><p><code>choose_light_palette(input=&#39;husl&#39;, as_cmap=False)</code></p>
+<ul>
+<li><code>light_palette()</code>函数对应的交互式小部件</li>
+<li>参数 <code>input</code> ：可选值有<code>husl</code>, <code>hls</code>, <code>rgb</code></li>
+<li>该函数只能在Jupyter Notebook中使用</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">sns.palplot(sns.choose_light_palette())</span><br></pre></td></tr></table></figure>
+<h2 id="color-palette"><a href="#color-palette" class="headerlink" title="color_palette()"></a>color_palette()</h2><p>调色板</p>
+<ul>
+<li>seaborn有6种不同的默认主题：deep，muted，pastel，bright，dark，colorblind</li>
+<li>若有任意类别的变量，但不突出任何一个类别时，可使用连续均匀间隔的颜色。</li>
+<li>分类调色板：Color Brewer</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## seaborn默认调色盘</span></span><br><span class="line">current_palette = sns.color_palette()</span><br><span class="line">sns.palplot(current_palette)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 默认调色板（muted）</span></span><br><span class="line">sns.palplot(sns.color_palette(<span class="string">"muted"</span>))</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 默认调色板（deep）</span></span><br><span class="line">sns.palplot(sns.color_palette(<span class="string">"deep"</span>))</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 默认调色板（pastel）</span></span><br><span class="line">sns.palplot(sns.color_palette(<span class="string">"pastel"</span>))</span><br></pre></td></tr></table></figure>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
+<li><a href="http://seaborn.pydata.org/" target="_blank" rel="noopener">seaborn主页</a></li>
+<li><a href="http://seaborn.pydata.org/examples/index.html" target="_blank" rel="noopener">seaborn Example Gallery</a></li>
+<li><a href="http://seaborn.pydata.org/examples/distplot_options.html" target="_blank" rel="noopener">displot例子</a></li>
+<li><a href="http://seaborn.pydata.org/examples/anscombes_quartet.html" target="_blank" rel="noopener">lmplot例子</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
       </tags>
   </entry>
   <entry>
