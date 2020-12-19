@@ -1220,6 +1220,18 @@
 <h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><blockquote>
 <p>推荐适用EndNote进行参考文献的插入、管理</p>
 </blockquote>
+<h1 id="EndNote"><a href="#EndNote" class="headerlink" title="EndNote"></a>EndNote</h1><h2 id="下载引用文本"><a href="#下载引用文本" class="headerlink" title="下载引用文本"></a>下载引用文本</h2><p>如何下载引用文本：</p>
+<ul>
+<li><a href="https://xueshu.baidu.com" target="_blank" rel="noopener">百度学术</a>：搜索目标文献，点击【引用】，选择引用格式，点击【导入链接】中的“EndNote”，即可下载.enw格式的引用文本</li>
+<li>知网：点击【引用】——【更多引用格式】——【文献导出格式】选择“EndNote”——【导出】，即可下载.txt格式的引用文本</li>
+</ul>
+<h2 id="导入引用文本"><a href="#导入引用文本" class="headerlink" title="导入引用文本"></a>导入引用文本</h2><p>点击【File】——【Import】，选择前面下载的引用文本文件，单击【Options】，修改【Import Options】：</p>
+<ul>
+<li>如果引用文本文件是.txt文件，则该选项为“Tab Delimited”</li>
+<li>如果引用文本文件是.enw文件，则该选项为“EndNote Import”</li>
+<li>如果引用文本文件是.ris文件，则该选项为“Reference Manager(RIS)”<br>然后点击“Import”即可。</li>
+</ul>
+<h2 id="同步Library"><a href="#同步Library" class="headerlink" title="同步Library"></a>同步Library</h2><p>单击图标“循环转圈圈”【Sync Library】，同步本地内容到online</p>
 ]]></content>
       <categories>
         <category>Everything</category>
