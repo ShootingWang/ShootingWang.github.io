@@ -1180,8 +1180,12 @@
     <title>LaTeX</title>
     <url>/LaTeX.html</url>
     <content><![CDATA[<p><center></center><br><a id="more"></a></p>
-<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><h2 id="MacOS"><a href="#MacOS" class="headerlink" title="MacOS"></a>MacOS</h2><p>在MacOS可以安装MacTeX，但是完整版较大，可以安装较小的<a href="http://www.tug.org/mactex/morepackages.html" target="_blank" rel="noopener">BasicTeX</a>，并安装编辑器TeXStudio（博主打不开官网）。</p>
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><h2 id="MacOS"><a href="#MacOS" class="headerlink" title="MacOS"></a>MacOS</h2><p>在MacOS可以安装MacTeX，但是完整版较大，安装后显示为TeXShop；可以安装较小的<a href="http://www.tug.org/mactex/morepackages.html" target="_blank" rel="noopener">BasicTeX</a>，并安装编辑器TeXStudio（博主打不开官网）。</p>
+<ul>
+<li>TeXShop默认编码不是Unicode，需点击TeXShop——偏好设置，将编码改为“Unicode（UTF-8）”，以便能够支持中文编译。</li>
+</ul>
 <h2 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h2><p>安装<a href="http://www.ctex.org/HomePage" target="_blank" rel="noopener">CTEX</a>，Windows对应的是<a href="https://miktex.org/" target="_blank" rel="noopener">MiKTeX</a>。</p>
+<h1 id="幻灯片Beamer"><a href="#幻灯片Beamer" class="headerlink" title="幻灯片Beamer"></a>幻灯片Beamer</h1><p>MacOS可以从“文件”中的“从模板新建”中选择“Beamer”新建幻灯片模板。</p>
 ]]></content>
       <categories>
         <category>Everything</category>
