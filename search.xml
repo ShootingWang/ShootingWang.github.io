@@ -1205,6 +1205,8 @@
 <h1 id="页码"><a href="#页码" class="headerlink" title="页码"></a>页码</h1><ul>
 <li><strong>插入页码</strong>：点击【插入】——【页码】</li>
 </ul>
+<h1 id="导出为pdf"><a href="#导出为pdf" class="headerlink" title="导出为pdf"></a>导出为pdf</h1><h2 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h2><p>单击【文件】——【导出】——【创建PDF\XPS文档】——【创建PDF\XPS】，命名，保存即可</p>
+<h2 id="MacOS"><a href="#MacOS" class="headerlink" title="MacOS"></a>MacOS</h2><p>单击【文件】——【另存为】——【文件格式】选择（导出格式）“PDF”，命名，保存即可</p>
 <h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><blockquote>
 <p>推荐适用EndNote进行参考文献的插入、管理</p>
 </blockquote>
