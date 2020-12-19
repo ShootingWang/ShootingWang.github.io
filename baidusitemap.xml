@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://github.com/ShootingWang/ShootingWang.github.io/Machine-Learning-%E6%B1%87%E6%80%BB.html</loc>
+    <lastmod>2020-12-19</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/ShootingWang/ShootingWang.github.io/LaTeX.html</loc>
+    <lastmod>2020-12-19</lastmod>
+  </url>
+  <url>
     <loc>https://github.com/ShootingWang/ShootingWang.github.io/python-seaborn.html</loc>
     <lastmod>2020-12-19</lastmod>
   </url>
@@ -145,6 +153,10 @@
     <lastmod>2020-09-12</lastmod>
   </url>
   <url>
+    <loc>https://github.com/ShootingWang/ShootingWang.github.io/%E7%AE%97%E6%B3%95-%E7%89%B9%E5%BE%81%E5%BD%92%E4%B8%80%E5%8C%96.html</loc>
+    <lastmod>2020-09-11</lastmod>
+  </url>
+  <url>
     <loc>https://github.com/ShootingWang/ShootingWang.github.io/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-AARRR%E6%A8%A1%E5%9E%8B.html</loc>
     <lastmod>2020-09-08</lastmod>
   </url>
@@ -175,10 +187,6 @@
   <url>
     <loc>https://github.com/ShootingWang/ShootingWang.github.io/Spark-%E6%95%B0%E6%8D%AE%E6%BA%90.html</loc>
     <lastmod>2020-09-01</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/ShootingWang/ShootingWang.github.io/Machine-Learning-%E6%B1%87%E6%80%BB.html</loc>
-    <lastmod>2020-08-29</lastmod>
   </url>
   <url>
     <loc>https://github.com/ShootingWang/ShootingWang.github.io/%E7%AE%97%E6%B3%95-DecisionTree.html</loc>
