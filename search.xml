@@ -1232,6 +1232,10 @@
 <li>如果引用文本文件是.ris文件，则该选项为“Reference Manager(RIS)”<br>然后点击“Import”即可。</li>
 </ul>
 <h2 id="同步Library"><a href="#同步Library" class="headerlink" title="同步Library"></a>同步Library</h2><p>单击图标“循环转圈圈”【Sync Library】，同步本地内容到online</p>
+<h2 id="Attach-PDF"><a href="#Attach-PDF" class="headerlink" title="Attach PDF"></a>Attach PDF</h2><p>将PDF与Reference连接到一起，便于根据Reference列表查找、阅读文献。鼠标选中目标Reference条目，单击“回形针”图标【Attach PDF】，选择本地PDF文件，即可将PDF绑定到相应的Reference条目。</p>
+<blockquote>
+<p>记得保存 并 及时Sync 哦~</p>
+</blockquote>
 ]]></content>
       <categories>
         <category>Everything</category>
