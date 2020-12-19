@@ -1218,7 +1218,7 @@
 <h1 id="导出为pdf"><a href="#导出为pdf" class="headerlink" title="导出为pdf"></a>导出为pdf</h1><h2 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h2><p>单击【文件】——【导出】——【创建PDF\XPS文档】——【创建PDF\XPS】，命名，保存即可</p>
 <h2 id="MacOS"><a href="#MacOS" class="headerlink" title="MacOS"></a>MacOS</h2><p>单击【文件】——【另存为】——【文件格式】选择（导出格式）“PDF”，命名，保存即可</p>
 <h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><blockquote>
-<p>推荐适用EndNote进行参考文献的插入、管理</p>
+<p>推荐使用<a href="https://www.endnote.com/" target="_blank" rel="noopener">EndNote</a>进行参考文献的插入、管理</p>
 </blockquote>
 <h1 id="EndNote"><a href="#EndNote" class="headerlink" title="EndNote"></a>EndNote</h1><h2 id="下载引用文本"><a href="#下载引用文本" class="headerlink" title="下载引用文本"></a>下载引用文本</h2><p>如何下载引用文本：</p>
 <ul>
@@ -1234,7 +1234,10 @@
 <h2 id="同步Library"><a href="#同步Library" class="headerlink" title="同步Library"></a>同步Library</h2><p>单击图标“循环转圈圈”【Sync Library】，同步本地内容到online</p>
 <h2 id="Attach-PDF"><a href="#Attach-PDF" class="headerlink" title="Attach PDF"></a>Attach PDF</h2><p>将PDF与Reference连接到一起，便于根据Reference列表查找、阅读文献。鼠标选中目标Reference条目，单击“回形针”图标【Attach PDF】，选择本地PDF文件，即可将PDF绑定到相应的Reference条目。</p>
 <blockquote>
-<p>记得保存 并 及时Sync 哦~</p>
+<ul>
+<li>记得保存 并 及时Sync 哦~</li>
+<li>在EndNote中阅读文件，可以使用编辑工具进行高亮注释、添加文本注释等，非常编辑了呢</li>
+</ul>
 </blockquote>
 ]]></content>
       <categories>
