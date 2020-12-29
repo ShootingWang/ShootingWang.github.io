@@ -2256,7 +2256,7 @@ Y(1)=\left(
 1, & Y_{it}(1)被观察到
 \end{array}
   \right.</script><p>则因果效应为</p>
-<script type="math/tex; mode=display">\gamma = \frac{\sum_{i,t}W_{it}\left(Y_{it}(1)-Y_{it}(0) \right)}{\sum_{i,t}W_{it}}</script><h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
+<script type="math/tex; mode=display">\gamma = \frac{\sum_{i,t}W_{it}\left(Y_{it}(1)-Y_{it}(0) \right)}{\sum_{i,t}W_{it}}</script><h1 id="混淆变量"><a href="#混淆变量" class="headerlink" title="混淆变量"></a>混淆变量</h1><h2 id="双重选择Double-Selection"><a href="#双重选择Double-Selection" class="headerlink" title="双重选择Double Selection"></a>双重选择Double Selection</h2><h2 id="双重机器学习DML"><a href="#双重机器学习DML" class="headerlink" title="双重机器学习DML"></a>双重机器学习DML</h2><h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
 <li><a href="https://www.douban.com/group/topic/138765167/" target="_blank" rel="noopener">断点回归设计RDD分类与操作案例</a></li>
 <li><a href="https://cosx.org/2013/08/causality6-instrumental-variable/" target="_blank" rel="noopener">因果推断简介之六：工具变量（instrumental variable）</a></li>
 <li><a href="https://dango.rocks/blog/2019/01/20/Causal-Inference-Introduction2-Propensity-Score-Matching/" target="_blank" rel="noopener">因果推断漫谈（二）：倾向性得分匹配介绍</a></li>
