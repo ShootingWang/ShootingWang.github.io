@@ -32,7 +32,7 @@
 <meta property="og:description" content="未完待续">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-11-05T14:42:34.000Z">
-<meta property="article:modified_time" content="2020-12-29T16:16:12.767Z">
+<meta property="article:modified_time" content="2020-12-29T16:30:24.470Z">
 <meta property="article:author" content="ShootingWang">
 <meta property="article:tag" content="数据分析">
 <meta name="twitter:card" content="summary">
@@ -255,7 +255,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-12-30 00:16:12" itemprop="dateModified" datetime="2020-12-30T00:16:12+08:00">2020-12-30</time>
+                <time title="修改时间：2020-12-30 00:30:24" itemprop="dateModified" datetime="2020-12-30T00:30:24+08:00">2020-12-30</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -390,13 +390,33 @@
 </ul>
 <h2 id="广义精确匹配CEM"><a href="#广义精确匹配CEM" class="headerlink" title="广义精确匹配CEM"></a>广义精确匹配CEM</h2><p>广义精确匹配（CEM，Coarsened Exact Matching）：通过给特征分桶进行匹配</p>
 <h1 id="合成控制法"><a href="#合成控制法" class="headerlink" title="合成控制法"></a>合成控制法</h1><p>合成控制法（SCM，Synthetic Control Method）</p>
+<ul>
+<li>当某个干预施加在某一类群体（或地区）上，虽然找不到单一的最佳对照组，但是可以构造一个虚拟的对照组</li>
+</ul>
 <h1 id="固定效应模型"><a href="#固定效应模型" class="headerlink" title="固定效应模型"></a>固定效应模型</h1><ul>
 <li>适用于面板数据</li>
 </ul>
 <p>模型为：</p>
 <script type="math/tex; mode=display">y_{it} = \alpha_i + x_{it}^T\beta + \varepsilon_{it}</script><p>或</p>
 <script type="math/tex; mode=display">y_{it} = \alpha_i + x_{it}^T\beta + d_t + \varepsilon_{it}</script><p>其中，$i=1,2,\cdots,N$，$t=1,2,\cdots,T$。</p>
-<h1 id="矩阵补全"><a href="#矩阵补全" class="headerlink" title="矩阵补全"></a>矩阵补全</h1><h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
+<h1 id="矩阵补全"><a href="#矩阵补全" class="headerlink" title="矩阵补全"></a>矩阵补全</h1><ul>
+<li>合成控制法的扩展</li>
+<li>合成控制法（SCM）的局限性：只有一个实验干预组（政策干预开始时间是在某个统一的时间段）</li>
+<li>矩阵补全<strong>适用于</strong>：多个实验干预，干预时间不一致。如：<ul>
+<li>一个AB实验下的策略是逐渐放量的过程，如何评估策略对用户的影响？</li>
+<li>产品新版本更新了UI界面，但是用户更新版本的时间不一致，如何评估新界面对用户使用时长的影响？</li>
+</ul>
+</li>
+<li>矩阵补全法：通过一定的方法将一个含有缺失值的矩阵恢复为一个完全的矩阵（通过求解一个凸优化问题，实现将一个低秩矩阵恢复），从而估计因果效应</li>
+</ul>
+<script type="math/tex; mode=display">Y(0)=\left(
+\begin{array}{ccccc}
+? & ? & \Checkmark & \cdots & ? \\
+\Checkmark & ? & \Checkmark & \cdots & \Checkmark \\
+\vdots & \vdots & \vdots & \ddots & \vdots \\
+? & \Checkmark & \Checkmark & \cdots & \Checkmark
+\end{array}
+\right)</script><h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
 <li><a href="https://www.douban.com/group/topic/138765167/" target="_blank" rel="noopener">断点回归设计RDD分类与操作案例</a></li>
 <li><a href="https://cosx.org/2013/08/causality6-instrumental-variable/" target="_blank" rel="noopener">因果推断简介之六：工具变量（instrumental variable）</a></li>
 <li><a href="https://dango.rocks/blog/2019/01/20/Causal-Inference-Introduction2-Propensity-Score-Matching/" target="_blank" rel="noopener">因果推断漫谈（二）：倾向性得分匹配介绍</a></li>
@@ -405,6 +425,7 @@
 </ul>
 </li>
 <li><a href="https://blog.csdn.net/deephub/article/details/105290843" target="_blank" rel="noopener">Python实现固定效应回归模型实现因果关系推断</a></li>
+<li><a href="https://www.zhihu.com/question/47716840" target="_blank" rel="noopener">矩阵补全（matrix completion）的经典算法有哪些？</a></li>
 </ul>
 
     </div>
@@ -593,7 +614,7 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">335k</span>
+    <span title="站点总字数">336k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
