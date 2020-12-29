@@ -2244,7 +2244,7 @@
 \qquad
 Y(1)=\left(
 \begin{array}{ccccc}
-\Checkmark & \Checkmark & ? & \cdots & \Checkmark \\
+$\Checkmark$ & \Checkmark & ? & \cdots & \Checkmark \\
 ? & \Checkmark & ? & \cdots & ? \\
 \vdots & \vdots & \vdots & \ddots & \vdots \\
 \Checkmark & ? & ? & \cdots & ?
