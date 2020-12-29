@@ -2240,8 +2240,7 @@
 \vdots & \vdots & \vdots & \ddots & \vdots \\
 ? & \Checkmark & \Checkmark & \cdots & \Checkmark
 \end{array}
-\right),
-\qquad
+\right)</script><script type="math/tex; mode=display">
 Y(1)=\left(
 \begin{array}{ccccc}
 $\Checkmark$ & \Checkmark & ? & \cdots & \Checkmark \\
