@@ -1814,7 +1814,7 @@ $$z = r(\cos \phi+\mathrm{i}\sin \phi) = re^{\mathrm{i}\phi}$$</p>
       </tags>
   </entry>
   <entry>
-    <title>Python ｜ String</title>
+    <title>Python | String</title>
     <url>/python-string.html</url>
     <content><![CDATA[<p><center></center><br><a id="more"></a></p>
 <h1 id="string"><a href="#string" class="headerlink" title="string"></a>string</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> string</span><br></pre></td></tr></table></figure>
