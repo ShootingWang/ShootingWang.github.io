@@ -7441,6 +7441,19 @@ $$z = r(\cos \phi+\mathrm{i}\sin \phi) = re^{\mathrm{i}\phi}$$</p>
 <h2 id="describe"><a class="header-anchor" href="#describe"></a>.describe</h2>
 <p>查看数据概况</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">df3.describe</span><br><span class="line"><span class="comment">#&lt;bound method NDFrame.describe of        Name Gender   Age  Grade  Class  Female</span></span><br><span class="line"><span class="comment">#one    Jane      F  16.0     91      2    True</span></span><br><span class="line"><span class="comment">#two    John      M   NaN     93      3   False</span></span><br><span class="line"><span class="comment">#three  Mike      M  25.0     89      1   False</span></span><br><span class="line"><span class="comment">#four   Jack      M   NaN     79      2   False&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="describe-2"><a class="header-anchor" href="#describe-2"></a>describe()</h2>
+<p>数据DataFrame的描述性统计</p>
+<ul>
+<li><code>count</code>：计数</li>
+<li><code>mean</code>：均值</li>
+<li><code>std</code>：标准差</li>
+<li><code>min</code>：最小值</li>
+<li><code>25%</code>：25%分位数</li>
+<li><code>50%</code>：中位数</li>
+<li><code>75%</code>：75%分位数</li>
+<li><code>max</code>：最大值</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">df.describe()</span><br></pre></td></tr></table></figure>
 <h2 id="drop"><a class="header-anchor" href="#drop"></a>.drop()</h2>
 <p>删除行或列</p>
 <ul>
@@ -7453,6 +7466,14 @@ $$z = r(\cos \phi+\mathrm{i}\sin \phi) = re^{\mathrm{i}\phi}$$</p>
 <p>按列删除：</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">df1.drop([<span class="string">'Gender'</span>, <span class="string">'Age'</span>], axis=<span class="number">1</span>)</span><br><span class="line"><span class="comment">#或</span></span><br><span class="line">df1.drop([<span class="string">'Gender'</span>, <span class="string">'Age'</span>], axis=<span class="string">'columns'</span>)</span><br><span class="line"><span class="comment">## df1并未改变</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 直接对DataFrame操作</span></span><br><span class="line">df1.drop([<span class="string">'Gender'</span>], axis=<span class="number">1</span>, inplace=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="dropna"><a class="header-anchor" href="#dropna"></a>dropna()</h2>
+<p>删除含缺失值的行</p>
+<h2 id="head"><a class="header-anchor" href="#head"></a>head()</h2>
+<p>预览前5行</p>
+<ul>
+<li>可以通过赋值<code>df.head(n)</code>中n来调整预览的行数</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">df.head()</span><br></pre></td></tr></table></figure>
 <h2 id="iloc"><a class="header-anchor" href="#iloc"></a>.iloc[]</h2>
 <p>通过<strong>行号</strong>索引行数据</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 在创建DataFrame时指定行标签：</span></span><br><span class="line">data1 = &#123;<span class="string">'Name'</span>:[<span class="string">'Jane'</span>, <span class="string">'John'</span>, <span class="string">'Mike'</span>, <span class="string">'Jack'</span>],</span><br><span class="line">        <span class="string">'Gender'</span>:[<span class="string">'F'</span>, <span class="string">'M'</span>, <span class="string">'M'</span>, <span class="string">'M'</span>],</span><br><span class="line">        <span class="string">'Age'</span>:[<span class="number">18</span>, <span class="number">19</span>, <span class="number">21</span>, <span class="number">17</span>],</span><br><span class="line">        <span class="string">'Grade'</span>:[<span class="number">89</span>, <span class="number">90</span>, <span class="number">87</span>, <span class="number">76</span>]&#125;</span><br><span class="line">df3 = DataFrame(data=data1, index=[<span class="string">'one'</span>, <span class="string">'two'</span>, <span class="string">'three'</span>, <span class="string">'four'</span>]</span><br><span class="line">df3.iloc[<span class="number">2</span>]</span><br><span class="line"><span class="comment">#Name      Mike</span></span><br><span class="line"><span class="comment">#Gender       M</span></span><br><span class="line"><span class="comment">#Age         21</span></span><br><span class="line"><span class="comment">#Grade       87</span></span><br><span class="line"><span class="comment">#Name: three, dtype: object</span></span><br><span class="line"></span><br><span class="line">df3.iloc[[<span class="number">0</span>,<span class="number">2</span>]]</span><br></pre></td></tr></table></figure>
@@ -7468,6 +7489,15 @@ $$z = r(\cos \phi+\mathrm{i}\sin \phi) = re^{\mathrm{i}\phi}$$</p>
 <h2 id="index-2"><a class="header-anchor" href="#index-2"></a>.index</h2>
 <p>查看DataFrame的行索引/标签</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">df3.index</span><br><span class="line"><span class="comment">#Index(['one', 'two', 'three', 'four'], dtype='object')</span></span><br></pre></td></tr></table></figure>
+<h2 id="isin"><a class="header-anchor" href="#isin"></a>isin()</h2>
+<p>用于选择DataFrame中符合条件的行</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">dates = pd.date_range(<span class="string">"20130101"</span>, periods=<span class="number">6</span>)</span><br><span class="line">dates</span><br><span class="line"><span class="comment"># DatetimeIndex(['2013-01-01', '2013-01-02', '2013-01-03', '2013-01-04',</span></span><br><span class="line"><span class="comment">#                '2013-01-05', '2013-01-06'],</span></span><br><span class="line"><span class="comment">#               dtype='datetime64[ns]', freq='D')</span></span><br><span class="line">df = pd.DataFrame(np.random.randn(<span class="number">6</span>, <span class="number">4</span>), index=dates, columns=list(<span class="string">"ABCD"</span>))</span><br><span class="line">df[<span class="string">"E"</span>] = [<span class="string">"one"</span>, <span class="string">"one"</span>, <span class="string">"two"</span>, <span class="string">"three"</span>, <span class="string">"four"</span>, <span class="string">"three"</span>]</span><br><span class="line">df.head()</span><br><span class="line"><span class="comment">#     A   B   C   D   E</span></span><br><span class="line"><span class="comment"># 2013-01-01 0.522782 -0.908932 0.503061 -1.133839 one</span></span><br><span class="line"><span class="comment"># 2013-01-02 -0.137954 -0.801103 0.416220 1.085829 one</span></span><br><span class="line"><span class="comment"># 2013-01-03 0.782363 0.044841 0.106608 1.169290 two</span></span><br><span class="line"><span class="comment"># 2013-01-04 1.143327 -2.648602 -1.410805 -0.639302 three</span></span><br><span class="line"><span class="comment"># 2013-01-05 -0.174496 0.810790 0.566061 -0.230608 four</span></span><br><span class="line">df[df[<span class="string">"E"</span>].isin([<span class="string">"two"</span>, <span class="string">"four"</span>])]</span><br><span class="line"><span class="comment">#     A   B   C   D   E</span></span><br><span class="line"><span class="comment"># 2013-01-03 0.782363 0.044841 0.106608 1.169290 two</span></span><br><span class="line"><span class="comment"># 2013-01-05 -0.174496 0.810790 0.566061 -0.230608 four</span></span><br></pre></td></tr></table></figure>
+<h2 id="isna"><a class="header-anchor" href="#isna"></a>isna()</h2>
+<p>判断数据是否缺失</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">pd.isna(df2[<span class="string">"one"</span>])</span><br><span class="line">df.isna()</span><br></pre></td></tr></table></figure>
+<p>注意：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="literal">None</span> == <span class="literal">None</span></span><br><span class="line"><span class="comment"># True</span></span><br><span class="line"></span><br><span class="line">np.nan == np.nan</span><br><span class="line"><span class="comment"># False</span></span><br><span class="line"><span class="comment"># 因此，不能使用 == np.nan来判断数据是否缺失</span></span><br></pre></td></tr></table></figure>
+<p>对于<code>datetime64</code>类型数据，<code>NaT</code>表示缺失值。</p>
 <h2 id="ix"><a class="header-anchor" href="#ix"></a>.ix[]</h2>
 <p>通过<strong>行号</strong> / <strong>行标签</strong> 索引行数据。是<code>.loc[]</code>和<code>.iloc[]</code>的结合。</p>
 <ul>
@@ -7486,8 +7516,28 @@ $$z = r(\cos \phi+\mathrm{i}\sin \phi) = re^{\mathrm{i}\phi}$$</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">df3.loc[:, <span class="string">'Age'</span>]  <span class="comment">##不显示列名</span></span><br><span class="line">df3.loc[:, [<span class="string">'Age'</span>]]  <span class="comment">##显示列名</span></span><br></pre></td></tr></table></figure>
 <p>获取多列数据：</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">df3.loc[:, <span class="string">'Age'</span>:]</span><br></pre></td></tr></table></figure>
+<h2 id="notna"><a class="header-anchor" href="#notna"></a>notna()</h2>
+<p>判断数据是否非缺失</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">df1[<span class="string">'B'</span>].notna()</span><br></pre></td></tr></table></figure>
+<h2 id="sort-index"><a class="header-anchor" href="#sort-index"></a>sort_index()</h2>
+<p>按照轴排序</p>
+<ul>
+<li>默认升序</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">df.sort_index(axis=<span class="number">1</span>, ascending=<span class="literal">False</span>) <span class="comment">## 按列名降序排序</span></span><br><span class="line"></span><br><span class="line">df.sort_index(by=<span class="string">'B'</span>) <span class="comment">## 按照B列的值升序排序</span></span><br></pre></td></tr></table></figure>
 <h2 id="T"><a class="header-anchor" href="#T"></a>.T</h2>
 <p>转置</p>
+<h2 id="tail"><a class="header-anchor" href="#tail"></a>tail()</h2>
+<p>预览最后5行</p>
+<ul>
+<li>可以通过赋值<code>df.tail(n)</code>中n来调整预览的行数</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">df.tail()</span><br></pre></td></tr></table></figure>
+<h2 id="to-numpy"><a class="header-anchor" href="#to-numpy"></a>to_numpy()</h2>
+<p>将DataFrame转换为数组Array</p>
+<ul>
+<li>输出不包括DataFrame的列名、索引</li>
+</ul>
 <h2 id="values-2"><a class="header-anchor" href="#values-2"></a>.values</h2>
 <p>查看DataFrame的数据</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">df3.values</span><br><span class="line"><span class="comment">#array([['Jane', 'F', 16.0, 91, 2, True],</span></span><br><span class="line"><span class="comment">#       ['John', 'M', nan, 93, 3, False],</span></span><br><span class="line"><span class="comment">#       ['Mike', 'M', 25.0, 89, 1, False],</span></span><br><span class="line"><span class="comment">#       ['Jack', 'M', nan, 79, 2, False]], dtype=object)</span></span><br></pre></td></tr></table></figure>
