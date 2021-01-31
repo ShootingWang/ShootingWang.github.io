@@ -1434,6 +1434,20 @@
 <li><strong>插入脚注</strong>：将鼠标定位到要插入脚注的地方，点击【引用】——【插入脚注】，即可。</li>
 <li><strong>修改脚注格式</strong>：右键点击脚注内容，选择【脚注】，修改脚注的【编号格式】、【起始编号】、【应用更改】（确定该更改应用的范围）等</li>
 </ul>
+<h2 id="公式"><a class="header-anchor" href="#公式"></a>公式</h2>
+<h2 id="插入公式"><a class="header-anchor" href="#插入公式"></a>插入公式</h2>
+<p>【插入】——【公式】——编辑公式</p>
+<ul>
+<li>快捷键：Ctrl + <code>+=</code></li>
+</ul>
+<h3 id="自动编号"><a class="header-anchor" href="#自动编号"></a>自动编号</h3>
+<p>将光标置于<strong>公式内</strong>的末尾，输入<code>#()</code>，然后将光标置于括号内，点击【插入】——【插入域】：</p>
+<ul>
+<li>【类别】选择“编号”</li>
+<li>【域名】选择“AutoNum”</li>
+<li>【选项】选择目标数字格式<br>
+点击【确认】即可。</li>
+</ul>
 <h1 id="页眉"><a class="header-anchor" href="#页眉"></a>页眉</h1>
 <ul>
 <li><strong>去掉页眉中的横线</strong>：全选页眉的文字或换行符，点击【开始】——边框选择“无框线”</li>
