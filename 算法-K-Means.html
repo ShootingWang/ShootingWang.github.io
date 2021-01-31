@@ -301,44 +301,52 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><center>K均值聚类</center><br><a id="more"></a></p>
-<h1 id="K-Means"><a href="#K-Means" class="headerlink" title="K-Means"></a>K-Means</h1><ul>
+        <center>K均值聚类</center>
+<a id="more"></a>
+<h1 id="K-Means"><a class="header-anchor" href="#K-Means"></a>K-Means</h1>
+<ul>
 <li>无监督学习</li>
 <li>$K$值无法自动获取</li>
 <li>初始聚类中心随机选择</li>
 </ul>
-<h2 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h2><ul>
+<h2 id="优点"><a class="header-anchor" href="#优点"></a>优点</h2>
+<ul>
 <li>原理简单</li>
 <li>容易实现</li>
 <li>对大数据集有较高的学习效率，且具有可伸缩性</li>
 </ul>
-<h2 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h2><ul>
+<h2 id="缺点"><a class="header-anchor" href="#缺点"></a>缺点</h2>
+<ul>
 <li>收敛速度较慢</li>
-<li>算法的时间复杂度较高$O(nKt)$<ul>
+<li>算法的时间复杂度较高$O(nKt)$</li>
 <li>$n$：样本点个数</li>
 <li>$K$：聚类类别数</li>
 <li>$t$：迭代次数</li>
-</ul>
-</li>
 <li>不能发现非凸形状的簇</li>
 <li>对噪声和离群点敏感</li>
 <li>结果不一定是全局最优，只能保证局部最优</li>
 </ul>
-<h1 id="确定K的方法"><a href="#确定K的方法" class="headerlink" title="确定K的方法"></a>确定K的方法</h1><h2 id="按需选择"><a href="#按需选择" class="headerlink" title="按需选择"></a>按需选择</h2><p>根据建模的需求和目的来选择聚类的个数</p>
-<h2 id="观察法"><a href="#观察法" class="headerlink" title="观察法"></a>观察法</h2><p>直接看数据的散点图，看数据点大致聚成几堆</p>
+<h1 id="确定K的方法"><a class="header-anchor" href="#确定K的方法"></a>确定K的方法</h1>
+<h2 id="按需选择"><a class="header-anchor" href="#按需选择"></a>按需选择</h2>
+<p>根据建模的需求和目的来选择聚类的个数</p>
+<h2 id="观察法"><a class="header-anchor" href="#观察法"></a>观察法</h2>
+<p>直接看数据的散点图，看数据点大致聚成几堆</p>
 <ul>
 <li>原始数据维数要低，一般是两维或三维，否则无法通过散点图观察</li>
 <li>对于高维数据，可以先利用PCA（主成分分析法）降维，然后进行观察</li>
 </ul>
-<h2 id="肘部法"><a href="#肘部法" class="headerlink" title="肘部法"></a>肘部法</h2><p>肘部法（Elbow Method），以聚类的数量为x轴，以WSS为y轴，绘制折线图，拐弯最明显的点对应的值就是比较合适的k值。</p>
+<h2 id="肘部法"><a class="header-anchor" href="#肘部法"></a>肘部法</h2>
+<p>肘部法（Elbow Method），以聚类的数量为x轴，以WSS为y轴，绘制折线图，拐弯最明显的点对应的值就是比较合适的k值。</p>
 <ul>
 <li>x轴为聚类的数量</li>
 <li>y轴为WSS（within cluster sum of squares），即各个点到cluster（簇）中心的距离的平方和</li>
 </ul>
-<h2 id="Gap-Statistics方法"><a href="#Gap-Statistics方法" class="headerlink" title="Gap Statistics方法"></a>Gap Statistics方法</h2><h1 id="对比"><a href="#对比" class="headerlink" title="对比"></a>对比</h1><h2 id="K-Means-vs-K-Medoids"><a href="#K-Means-vs-K-Medoids" class="headerlink" title="K-Means vs K-Medoids"></a>K-Means vs K-Medoids</h2><ul>
+<h2 id="Gap-Statistics方法"><a class="header-anchor" href="#Gap-Statistics方法"></a>Gap Statistics方法</h2>
+<h1 id="对比"><a class="header-anchor" href="#对比"></a>对比</h1>
+<h2 id="K-Means-vs-K-Medoids"><a class="header-anchor" href="#K-Means-vs-K-Medoids"></a>K-Means vs K-Medoids</h2>
+<ul>
 <li>二者的区别主要在于：质心的选择</li>
 </ul>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -365,20 +373,20 @@
 </tr>
 </tbody>
 </table>
-</div>
-<h2 id="K-Means-vs-KNN"><a href="#K-Means-vs-KNN" class="headerlink" title="K-Means vs KNN"></a>K-Means vs KNN</h2><div>
+<h2 id="K-Means-vs-KNN"><a class="header-anchor" href="#K-Means-vs-KNN"></a>K-Means vs KNN</h2>
+<div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: center;
-    }
+.dataframe thead th {
+    text-align: center;
+}
+</code></pre>
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -412,20 +420,20 @@
   </tr></tbody>
 </table>
 </div>
-
-<h2 id="K-Means-vs-DBSCAN"><a href="#K-Means-vs-DBSCAN" class="headerlink" title="K-Means vs DBSCAN"></a>K-Means vs DBSCAN</h2><div>
+<h2 id="K-Means-vs-DBSCAN"><a class="header-anchor" href="#K-Means-vs-DBSCAN"></a>K-Means vs DBSCAN</h2>
+<div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: center;
-    }
+.dataframe thead th {
+    text-align: center;
+}
+</code></pre>
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -478,13 +486,13 @@
   </tr></tbody>
 </table>
 </div>
-
 <p>其中：</p>
 <ul>
 <li>$n$是样本点个数</li>
 <li>聚类可分为<u>基于划分、层次、密度、图形和模型</u>五大类</li>
 </ul>
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
+<h1 id="参考资料"><a class="header-anchor" href="#参考资料"></a>参考资料</h1>
+<ul>
 <li><a href="https://blog.csdn.net/databatman/article/details/50445561" target="_blank" rel="noopener">机器学习：K-means和K-medoids对比</a></li>
 <li><a href="https://www.cnblogs.com/nucdy/p/6349172.html" target="_blank" rel="noopener">KNN与K-Means的区别</a></li>
 <li><a href="https://www.cnblogs.com/hugechuanqi/p/10509307.html" target="_blank" rel="noopener">机器学习 之k-means和DBSCAN的区别</a></li>
@@ -679,13 +687,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">338k</span>
+    <span title="站点总字数">345k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">5:07</span>
+    <span title="站点阅读时长">5:13</span>
 </div>
 
 

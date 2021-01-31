@@ -300,48 +300,45 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><center>JAVA小白的学习之路</center><br><a id="more"></a></p>
-<h1 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h1><ul>
+        <center>JAVA小白的学习之路</center>
+<a id="more"></a>
+<h1 id="环境配置"><a class="header-anchor" href="#环境配置"></a>环境配置</h1>
+<ul>
 <li><a href="https://www.runoob.com/java/java-environment-setup.html" target="_blank" rel="noopener">Java 开发环境配置</a></li>
 <li><a href="https://mp.weixin.qq.com/s?__biz=MzU5NzkxODMxOA==&amp;mid=2247484931&amp;idx=1&amp;sn=711689c6734cf40856639baae8fb375c&amp;chksm=fe4d5102c93ad8146c09e3a9d001db254899668f77b0f4cedd8537758d4089b4aab0e9e1a24d&amp;token=1150466167&amp;lang=zh_CN#rd" target="_blank" rel="noopener">JAVA JDK 安装配置</a></li>
 </ul>
-<h2 id="安装IDE"><a href="#安装IDE" class="headerlink" title="安装IDE"></a>安装IDE</h2><ul>
+<h2 id="安装IDE"><a class="header-anchor" href="#安装IDE"></a>安装IDE</h2>
+<ul>
 <li><a href="https://www.jetbrains.com/idea/download/download-thanks.html?platform=windows&amp;code=IIC" target="_blank" rel="noopener">IntelliJ IDEA下载</a></li>
 </ul>
-<h1 id="基础语法"><a href="#基础语法" class="headerlink" title="基础语法"></a>基础语法</h1><h2 id="一些概念"><a href="#一些概念" class="headerlink" title="一些概念"></a>一些概念</h2><ul>
+<h1 id="基础语法"><a class="header-anchor" href="#基础语法"></a>基础语法</h1>
+<h2 id="一些概念"><a class="header-anchor" href="#一些概念"></a>一些概念</h2>
+<ul>
 <li><strong>对象</strong>：是类的一个实例，有状态和行为。</li>
 <li><strong>类</strong>：类是一个模板，描述一类对象的行为和状态。</li>
-<li><strong>方法</strong>：就是行为，一个类可以有很多方法。<ul>
+<li><strong>方法</strong>：就是行为，一个类可以有很多方法。</li>
 <li>逻辑运算</li>
 <li>数据修改</li>
 <li>……</li>
-</ul>
-</li>
 <li><strong>实例变量</strong>：每个对象都有独特的实例变量，对象的状态由这些实例变量的值决定。</li>
 </ul>
-<h2 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h2><ul>
+<h2 id="基本语法"><a class="header-anchor" href="#基本语法"></a>基本语法</h2>
+<ul>
 <li>大小写敏感</li>
-<li>类名<ul>
+<li>类名</li>
 <li>类名的首字母应该大写</li>
 <li>若类名由多个单词组成，则每个单词的首字母应该大写</li>
-</ul>
-</li>
-<li>方法名<ul>
+<li>方法名</li>
 <li>所有方法名都应该以小写字母开头</li>
 <li>若方法名由多个单词组成，则后面的每个单词首字母大写</li>
-</ul>
-</li>
-<li>源文件名<ul>
+<li>源文件名</li>
 <li>源文件名必须与类名相同</li>
 <li>后缀为<code>.java</code></li>
-</ul>
-</li>
-<li>主方法入口<ul>
+<li>主方法入口</li>
 <li>所有的JAVA程序由 public static void main(String []args) 方法开始执行</li>
 </ul>
-</li>
-</ul>
-<h2 id="标识符"><a href="#标识符" class="headerlink" title="标识符"></a>标识符</h2><ul>
+<h2 id="标识符"><a class="header-anchor" href="#标识符"></a>标识符</h2>
+<ul>
 <li>Java的所有组成部分都需要名字</li>
 <li>类名、变量名及方法名都被称为<strong>标识符</strong></li>
 </ul>
@@ -352,31 +349,36 @@
 <li>关键字不能用作标识符</li>
 <li>标识符是大小写敏感的</li>
 </ul>
-<h2 id="修饰符"><a href="#修饰符" class="headerlink" title="修饰符"></a>修饰符</h2><p>用于修饰类中方法和属性。</p>
+<h2 id="修饰符"><a class="header-anchor" href="#修饰符"></a>修饰符</h2>
+<p>用于修饰类中方法和属性。</p>
 <p>主要有两类：</p>
 <ol>
-<li>访问控制修饰符<ul>
+<li>访问控制修饰符</li>
+</ol>
+<ul>
 <li><code>default</code></li>
 <li><code>public</code></li>
 <li><code>protected</code></li>
 <li><code>private</code></li>
 </ul>
-</li>
-<li>非访问控制修饰符<ul>
+<ol start="2">
+<li>非访问控制修饰符</li>
+</ol>
+<ul>
 <li><code>final</code></li>
 <li><code>abstract</code></li>
 <li><code>static</code></li>
 <li><code>synchronized</code></li>
 </ul>
-</li>
-</ol>
-<h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><p>主要有三类：</p>
+<h2 id="变量"><a class="header-anchor" href="#变量"></a>变量</h2>
+<p>主要有三类：</p>
 <ol>
 <li>局部变量</li>
 <li>类变量/静态变量</li>
 <li>成员变量/非静态变量</li>
 </ol>
-<h2 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h2><h3 id="访问控制"><a href="#访问控制" class="headerlink" title="访问控制"></a>访问控制</h3><div class="table-container">
+<h2 id="关键字"><a class="header-anchor" href="#关键字"></a>关键字</h2>
+<h3 id="访问控制"><a class="header-anchor" href="#访问控制"></a>访问控制</h3>
 <table>
 <thead>
 <tr>
@@ -403,8 +405,7 @@
 </tr>
 </tbody>
 </table>
-</div>
-<h3 id="类、方法和变量修饰符"><a href="#类、方法和变量修饰符" class="headerlink" title="类、方法和变量修饰符"></a>类、方法和变量修饰符</h3><div class="table-container">
+<h3 id="类、方法和变量修饰符"><a class="header-anchor" href="#类、方法和变量修饰符"></a>类、方法和变量修饰符</h3>
 <table>
 <thead>
 <tr>
@@ -435,12 +436,12 @@
 </tr>
 <tr>
 <td style="text-align:left"></td>
+<td style="text-align:left"></td>
 </tr>
 </tbody>
 </table>
-</div>
 <p>未完待续</p>
-<h3 id="程序控制句"><a href="#程序控制句" class="headerlink" title="程序控制句"></a>程序控制句</h3><div class="table-container">
+<h3 id="程序控制句"><a class="header-anchor" href="#程序控制句"></a>程序控制句</h3>
 <table>
 <thead>
 <tr>
@@ -455,11 +456,11 @@
 </tr>
 <tr>
 <td style="text-align:left"></td>
+<td style="text-align:left"></td>
 </tr>
 </tbody>
 </table>
-</div>
-<h3 id="错误处理"><a href="#错误处理" class="headerlink" title="错误处理"></a>错误处理</h3><div class="table-container">
+<h3 id="错误处理"><a class="header-anchor" href="#错误处理"></a>错误处理</h3>
 <table>
 <thead>
 <tr>
@@ -474,11 +475,11 @@
 </tr>
 <tr>
 <td style="text-align:left"></td>
+<td style="text-align:left"></td>
 </tr>
 </tbody>
 </table>
-</div>
-<h3 id="包相关"><a href="#包相关" class="headerlink" title="包相关"></a>包相关</h3><div class="table-container">
+<h3 id="包相关"><a class="header-anchor" href="#包相关"></a>包相关</h3>
 <table>
 <thead>
 <tr>
@@ -493,11 +494,11 @@
 </tr>
 <tr>
 <td style="text-align:left"></td>
+<td style="text-align:left"></td>
 </tr>
 </tbody>
 </table>
-</div>
-<h3 id="基本类型"><a href="#基本类型" class="headerlink" title="基本类型"></a>基本类型</h3><div class="table-container">
+<h3 id="基本类型"><a class="header-anchor" href="#基本类型"></a>基本类型</h3>
 <table>
 <thead>
 <tr>
@@ -512,11 +513,12 @@
 </tr>
 <tr>
 <td style="text-align:left"></td>
+<td style="text-align:left"></td>
 </tr>
 </tbody>
 </table>
-</div>
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
+<h1 id="参考资料"><a class="header-anchor" href="#参考资料"></a>参考资料</h1>
+<ul>
 <li><a href="https://cn.bing.com/images/search?view=detailV2&amp;ccid=zThJuq%2bC&amp;id=474DFD30EC584147A5C8FC0F10952D615CF2795A&amp;thid=OIP.zThJuq-CIVq3uElNx7mDVQHaEK&amp;mediaurl=https%3a%2f%2fwww.vizteams.com%2fwp-content%2fuploads%2f2015%2f07%2fjava-logo.png&amp;exph=576&amp;expw=1024&amp;q=java&amp;simid=608020279042638133&amp;selectedIndex=2" target="_blank" rel="noopener">首页缩略图</a></li>
 <li><a href="https://www.runoob.com/java/java-basic-syntax.html" target="_blank" rel="noopener">Java 基础语法</a></li>
 </ul>
@@ -708,13 +710,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">338k</span>
+    <span title="站点总字数">345k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">5:07</span>
+    <span title="站点阅读时长">5:13</span>
 </div>
 
 
