@@ -11818,6 +11818,8 @@ l(\theta)=\log{L(\theta)}&amp;=\sum_{i=1}^n\left{y_i\log{h_\theta(x_i)}+(1-y_i)\
 &amp;= \sum_{i=1}<sup>n\left{y_i\theta</sup>Tx_i-\log{\left[1+e<sup>{\theta</sup>Tx_i} \right]}\right}<br>
 \end{aligned}<br>
 \end{equation}</p>
+<p>其中<br>
+$$\log{h_\theta(x_i)}=\log{\frac{e<sup>{\theta</sup>Tx_i}}{1+e<sup>{\theta</sup>Tx_i}}}=\theta<sup>Tx_i-\log{\left[1+e</sup>{\theta^Tx_i}\right]}$$</p>
 <p>考虑$p+1$维的参数$\theta=(\theta_0,\theta_1,\cdots,\theta_p)^T$，其中$\theta_0$ 为线性回归方程$z=\theta^Tx$的截距。<br>
 \begin{equation}<br>
 \theta=\left(<br>
