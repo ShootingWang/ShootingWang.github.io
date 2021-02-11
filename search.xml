@@ -26104,6 +26104,7 @@ $$L_{LASSO}(\beta) = ||y-X\beta ||^2_2 + \lambda ||\beta||_1 $$</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <h1 id="参考资料"><a class="header-anchor" href="#参考资料"></a>参考资料</h1>
 <ul>
+<li><a href="https://zh.wikipedia.org/wiki/Lp%E8%8C%83%E6%95%B0" target="_blank" rel="noopener">Wiki: Lp-norm</a></li>
 <li><a href="https://www.statisticshowto.com/ridge-regression/" target="_blank" rel="noopener">Ridge Regression: Simple Definition</a></li>
 <li><a href="https://www.datacamp.com/community/tutorials/tutorial-ridge-lasso-elastic-net" target="_blank" rel="noopener">Regularization: Ridge, Lasso and Elastic Net</a></li>
 </ul>
