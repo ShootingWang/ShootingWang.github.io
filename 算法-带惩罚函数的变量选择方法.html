@@ -31,7 +31,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://github.com/%E7%AE%97%E6%B3%95-%E5%B8%A6%E6%83%A9%E7%BD%9A%E5%87%BD%E6%95%B0%E7%9A%84%E5%8F%98%E9%87%8F%E9%80%89%E6%8B%A9%E6%96%B9%E6%B3%95/RidgeRegressionCV.png">
 <meta property="article:published_time" content="2021-02-11T02:04:26.000Z">
-<meta property="article:modified_time" content="2021-02-11T08:33:23.360Z">
+<meta property="article:modified_time" content="2021-02-11T08:35:59.173Z">
 <meta property="article:author" content="ShootingWang">
 <meta property="article:tag" content="变量选择">
 <meta name="twitter:card" content="summary">
@@ -247,7 +247,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2021-02-11 10:04:26 / 修改时间：16:33:23" itemprop="dateCreated datePublished" datetime="2021-02-11T10:04:26+08:00">2021-02-11</time>
+              <time title="创建时间：2021-02-11 10:04:26 / 修改时间：16:35:59" itemprop="dateCreated datePublished" datetime="2021-02-11T10:04:26+08:00">2021-02-11</time>
             </span>
 
           
@@ -325,8 +325,10 @@
 </ul>
 <p>$\parallel y-X \hat{\beta}_{OLS} \parallel_2^2$对于$\beta$是常数，因此有</p>
 <script type="math/tex; mode=display">\arg\min_{\beta_j}  \parallel y-X\beta \parallel_2^2 + p_\lambda(\mid \beta_j \mid) \Leftrightarrow \arg\min_{\beta_j}  \left\{ (\hat{\beta}_{oj} - \beta_j)^2 + p_\lambda(\mid \beta_j \mid) \right\}</script><script type="math/tex; mode=display">\hat{\beta}_{j} = \arg \min_{\beta_j} \left\{ (\hat{\beta}_{oj} - \beta_j)^2 + p_\lambda(\mid \beta_j \mid) \right\}</script><ul>
-<li>对于岭回归（Ridge Regression），<script type="math/tex; mode=display">p_\lambda(\mid \beta_j \mid) = \lambda \mid\beta_j\mid^2</script><script type="math/tex; mode=display">\hat{\beta}_{j}^{Ridge} = \frac{1}{1 + \lambda}\hat{\beta}_{oj}</script></li>
-<li>对于LASSO，<script type="math/tex; mode=display">p_\lambda(\mid \beta_j \mid) = \lambda \mid\beta_j\mid</script><script type="math/tex; mode=display">\hat{\beta}_{j}^{LASSO} = \mathrm{sgn}(\hat{\beta}_{oj})\left( \mid \hat{\beta}_{oj} \mid - \frac{\lambda}{2} \right)_{+}</script></li>
+<li><p>对于岭回归（Ridge Regression），<br>\begin{equation}<br>\begin{aligned}<br>p_\lambda(\mid \beta_j \mid) &amp;= \lambda \mid\beta_j\mid^2 \\<br>\hat{\beta}_{j}^{Ridge} &amp;= \frac{1}{1 + \lambda}\hat{\beta}_{oj}<br>\end{aligned}<br>\end{equation}</p>
+</li>
+<li><p>对于LASSO，<br>\begin{equation}<br>\begin{aligned}<br>p_\lambda(\mid \beta_j \mid) &amp;= \lambda \mid\beta_j\mid \\<br>\hat{\beta}_{j}^{LASSO}<br>&amp;= \mathrm{sgn}(\hat{\beta}_{oj})<br>\left( \mid \hat{\beta}_{oj} \mid -<br>\frac{\lambda}{2} \right)_{+}<br>\end{aligned}<br>\end{equation}</p>
+</li>
 </ul>
 <h1 id="Rigde-Regression-岭回归"><a href="#Rigde-Regression-岭回归" class="headerlink" title="Rigde Regression 岭回归"></a>Rigde Regression 岭回归</h1><p>当自变量个数超过样本个数 或 样本数据存在多重共线性（multicollinearity）时，使用岭回归（Ridge Regression）可以得到一个精简的模型。</p>
 <blockquote>
@@ -576,13 +578,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">351k</span>
+    <span title="站点总字数">352k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">5:19</span>
+    <span title="站点阅读时长">5:20</span>
 </div>
 
 
@@ -662,6 +664,8 @@
 
 
 
+
+  
 
 
 
