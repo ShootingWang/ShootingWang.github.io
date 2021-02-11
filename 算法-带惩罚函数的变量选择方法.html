@@ -31,7 +31,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://github.com/%E7%AE%97%E6%B3%95-%E5%B8%A6%E6%83%A9%E7%BD%9A%E5%87%BD%E6%95%B0%E7%9A%84%E5%8F%98%E9%87%8F%E9%80%89%E6%8B%A9%E6%96%B9%E6%B3%95/RidgeRegressionCV.png">
 <meta property="article:published_time" content="2021-02-11T02:04:26.000Z">
-<meta property="article:modified_time" content="2021-02-11T07:39:05.740Z">
+<meta property="article:modified_time" content="2021-02-11T07:40:30.165Z">
 <meta property="article:author" content="ShootingWang">
 <meta property="article:tag" content="变量选择">
 <meta name="twitter:card" content="summary">
@@ -247,7 +247,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2021-02-11 10:04:26 / 修改时间：15:39:05" itemprop="dateCreated datePublished" datetime="2021-02-11T10:04:26+08:00">2021-02-11</time>
+              <time title="创建时间：2021-02-11 10:04:26 / 修改时间：15:40:30" itemprop="dateCreated datePublished" datetime="2021-02-11T10:04:26+08:00">2021-02-11</time>
             </span>
 
           
@@ -330,6 +330,9 @@ $$\parallel \vec{x} \parallel_{\infty} = \lim_{p\rightarrow +\infty} \left( \sum
 L(\beta) &amp;= \parallel y-X\beta \parallel_2^2 + \lambda\sum_{j=1}^p p_j(\mid \beta_j \mid) \<br>
 &amp;= \sum_{i=1}^n \left(y_i - \sum_{j=1}^p x_{ij}\beta_j \right)^2 + \lambda\sum_{j=1}^p p_j(\mid \beta_j \mid)<br>
 \end{aligned}</p>
+<ul>
+<li>假设惩罚函数对所有的系数都是一样的，即$p(\mid \cdot \mid)$</li>
+</ul>
 <h1 id="Rigde-Regression-岭回归"><a class="header-anchor" href="#Rigde-Regression-岭回归"></a>Rigde Regression 岭回归</h1>
 <p>当自变量个数超过样本个数 或 样本数据存在多重共线性（multicollinearity）时，使用岭回归（Ridge Regression）可以得到一个精简的模型。</p>
 <blockquote>

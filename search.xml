@@ -1517,6 +1517,9 @@ $$\parallel \vec{x} \parallel_{\infty} = \lim_{p\rightarrow +\infty} \left( \sum
 L(\beta) &amp;= \parallel y-X\beta \parallel_2^2 + \lambda\sum_{j=1}^p p_j(\mid \beta_j \mid) \<br>
 &amp;= \sum_{i=1}^n \left(y_i - \sum_{j=1}^p x_{ij}\beta_j \right)^2 + \lambda\sum_{j=1}^p p_j(\mid \beta_j \mid)<br>
 \end{aligned}</p>
+<ul>
+<li>假设惩罚函数对所有的系数都是一样的，即$p(\mid \cdot \mid)$</li>
+</ul>
 <h1 id="Rigde-Regression-岭回归"><a class="header-anchor" href="#Rigde-Regression-岭回归"></a>Rigde Regression 岭回归</h1>
 <p>当自变量个数超过样本个数 或 样本数据存在多重共线性（multicollinearity）时，使用岭回归（Ridge Regression）可以得到一个精简的模型。</p>
 <blockquote>
