@@ -1550,9 +1550,19 @@ $$\mathrm{Var}(\hat{\beta}</em>{Ridge}) = \sigma^2 \left( X^\prime X+\lambda I \
 <figure class="highlight r"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 使用令交叉验证预测误差均值最小的lambda</span></span><br><span class="line">rr &lt;- glmnet(X, y, alpha = <span class="number">0</span>, lambda = ridge_cv$lambda.min)</span><br><span class="line">y_hat &lt;- predict(rr, X)  <span class="comment">## y的估计值</span></span><br><span class="line">ssr &lt;- t(y - y_hat) %*% (y - y_hat)</span><br></pre></td></tr></table></figure>
 <h2 id="Python实现"><a class="header-anchor" href="#Python实现"></a>Python实现</h2>
 <h1 id="LASSO"><a class="header-anchor" href="#LASSO"></a>LASSO</h1>
+<p>LASSO（Least Absolute Shrinkage and Selection Operator）</p>
 <blockquote>
 <p>Tibshirani, Robert. “<a href="https://www.jstor.org/stable/2346178?seq=1" target="_blank" rel="noopener">Regression Shrinkage and Selection via the Lasso.</a>” Journal of the Royal Statistical Society. Series B (Methodological), vol. 58, no. 1, 1996, pp. 267–288. JSTOR, <a href="http://www.jstor.org/stable/2346178" target="_blank" rel="noopener">www.jstor.org/stable/2346178</a>. Accessed 11 Feb. 2021.</p>
 </blockquote>
+<ul>
+<li>
+<p>LASSO在损失函数中加上一个L1惩罚项（L1 penalty）</p>
+</li>
+<li>
+<p>目标函数：<br>
+$$L_{LASSO}(\beta) = ||y-X\beta ||^2_2 + \lambda ||\beta||_1 $$</p>
+</li>
+</ul>
 <h1 id><a class="header-anchor" href="#"></a></h1>
 <figure class="highlight r"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
