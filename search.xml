@@ -26017,7 +26017,7 @@ $$y = X\beta + \varepsilon, \qquad \varepsilon \sim N(0, \sigma^2)$$<br>
 <li>损失函数（Loss function）：<br>
 $$L(\beta) = ||y-X\beta||^2$$</li>
 <li>普通最小二乘（OLS，Ordinary Least Squares）回归系数估计：<br>
-$$\hat{\beta}_{OLS} = \left(X^\prime X\right)<sup>{-1}X</sup>\prime y$$</li>
+$$\hat{\beta}_{OLS} = \left(X^\prime X \right)^{-1} X^\prime y$$</li>
 </ul>
 <h1 id="Rigde-Regression-岭回归"><a class="header-anchor" href="#Rigde-Regression-岭回归"></a>Rigde Regression 岭回归</h1>
 <p>当自变量个数超过样本个数 或 样本数据存在多重共线性（multicollinearity）时，使用岭回归（Ridge Regression）可以得到一个精简的模型。</p>
