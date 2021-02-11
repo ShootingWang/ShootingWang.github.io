@@ -1522,7 +1522,7 @@
 </li>
 <li>当$\lambda \rightarrow \infty$时，有 $\hat{\beta}_{Ridge} \rightarrow 0$</li>
 </ul>
-<h2 id="Bias-Variance-Trade-off"><a href="#Bias-Variance-Trade-off" class="headerlink" title="Bias-Variance Trade-off"></a>Bias-Variance Trade-off</h2><p>\begin{equation<em>}<br>\begin{aligned}<br>\mathrm{Bias}(\hat{\beta}_{Ridge}) &amp;= -\lambda \left( X^\prime X+\lambda I \right)^{-1} \beta\\<br>\mathrm{Var}(\hat{\beta}_{Ridge}) &amp;= \sigma^2 \left( X^\prime X+\lambda I \right)^{-1} X^\prime X \left( X^\prime X+\lambda I \right)^{-1}<br>\end{aligned}<br>\end{equation</em>}</p>
+<h2 id="Bias-Variance-Trade-off"><a href="#Bias-Variance-Trade-off" class="headerlink" title="Bias-Variance Trade-off"></a>Bias-Variance Trade-off</h2><p>\begin{aligned}<br>\mathrm{Bias}(\hat{\beta}_{Ridge}) &amp;= -\lambda \left( X^\prime X+\lambda I \right)^{-1} \beta\\<br>\mathrm{Var}(\hat{\beta}_{Ridge}) &amp;= \sigma^2 \left( X^\prime X+\lambda I \right)^{-1} X^\prime X \left( X^\prime X+\lambda I \right)^{-1}<br>\end{aligned}</p>
 <h2 id="如何选择-lambda"><a href="#如何选择-lambda" class="headerlink" title="如何选择$\lambda$"></a>如何选择$\lambda$</h2><p>方法：</p>
 <ol>
 <li>最小化信息准则（Minimizing Information Criteria）：</li>
