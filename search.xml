@@ -1496,7 +1496,11 @@ $$\hat{\beta}_{OLS} = \left(X^\prime X \right)^{-1} X^\prime y$$</li>
 <blockquote>
 <p>$L_p$范数（$L_p$-norm）：<br>
 $$L_p(\vec{x}) = \parallel \vec{x} \parallel_p = \left( \sum_{i=1}^n \mid x_i \mid^p \right)^{1/p}, \qquad p\geq 1$$<br>
-其中，$\vec{x} = \left{ x_1, x_2, \cdots, x_n \right}$</p>
+其中，$\vec{x} = \left{ x_1, x_2, \cdots, x_n \right}$。</p>
+<ul>
+<li>$p = -\infty$：<br>
+$$\parallel \vec{x} \parallel_{\infty} = \lim_{p \rightarrow -\infty} \left( \sum_{i=1}^n \mid x_i \mid^p \right)^{1/p} = \min_i \mid x_i \mid $$</li>
+</ul>
 </blockquote>
 <h1 id="Rigde-Regression-岭回归"><a class="header-anchor" href="#Rigde-Regression-岭回归"></a>Rigde Regression 岭回归</h1>
 <p>当自变量个数超过样本个数 或 样本数据存在多重共线性（multicollinearity）时，使用岭回归（Ridge Regression）可以得到一个精简的模型。</p>
