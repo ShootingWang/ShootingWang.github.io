@@ -1542,6 +1542,10 @@ $$\hat{\beta}</em>{OLS} = \left( X^T X \right)^{-1} X^T y=X^Ty$$</li>
 <p>$\parallel y-X \hat{\beta}<em>{OLS} \parallel_2^2$对于$\beta$是常数，因此有<br>
 $$\arg\min</em>{\beta_j}  \parallel y-X\beta \parallel_2^2 + p_\lambda(\mid \beta_j \mid) \Leftrightarrow \arg\min_{\beta_j}  \left{ (\hat{\beta}<em>{oj} - \beta_j)^2 + p</em>\lambda(\mid \beta_j \mid) \right} $$</p>
 <p>$$\hat{\beta}<em>{j} = \arg \min</em>{\beta_j} \left{ (\hat{\beta}<em>{oj} - \beta_j)^2 + p</em>\lambda(\mid \beta_j \mid) \right}$$</p>
+<ul>
+<li>对于岭回归（Ridge Regression），<br>
+$$\hat{\beta}<em>{j}^{Ridge} = \frac{1}{1 + \lambda}\hat{\beta}</em>{oj}$$</li>
+</ul>
 <h1 id="Rigde-Regression-岭回归"><a class="header-anchor" href="#Rigde-Regression-岭回归"></a>Rigde Regression 岭回归</h1>
 <p>当自变量个数超过样本个数 或 样本数据存在多重共线性（multicollinearity）时，使用岭回归（Ridge Regression）可以得到一个精简的模型。</p>
 <blockquote>
