@@ -1546,7 +1546,8 @@ $$\arg\min</em>{\beta_j}  \parallel y-X\beta \parallel_2^2 + p_\lambda(\mid \bet
 \begin{equation}<br>
 \begin{aligned}<br>
 p_\lambda(\mid \beta_j \mid) &amp;= \lambda \mid\beta_j\mid^2 \<br>
-\hat{\beta}<em>{j}^{Ridge} &amp;= \frac{1}{1 + \lambda}\hat{\beta}</em>{oj}<br>
+\hat{\beta}<em>{j}^{Ridge}<br>
+&amp;= \frac{1}{1 + \lambda}\hat{\beta}</em>{oj}<br>
 \end{aligned}<br>
 \end{equation}</p>
 </li>
