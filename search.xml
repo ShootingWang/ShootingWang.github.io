@@ -1502,11 +1502,28 @@ $$\hat{\beta}_{OLS} = \left(X^\prime X \right)^{-1} X^\prime y$$</li>
 <p><strong>Shrinkage estimators</strong> theoretically produce new estimators that are shrunk closer to the ‘true’ population parameters.</p>
 </blockquote>
 <ul>
-<li>ridge regression是Tikhivov方法的其中一种</li>
-<li>ridge regression使用L2正则化（L2 Regularization）</li>
-</ul>
+<li>
+<p>ridge regression是Tikhivov方法的其中一种</p>
+</li>
+<li>
+<p>ridge regression使用L2正则化（L2 Regularization）</p>
+</li>
+<li>
 <p>目标函数：<br>
 $$L_{Ridge}(\beta) = ||y-X\beta ||^2_2 + \lambda ||\beta||^2_2$$</p>
+</li>
+<li>
+<p>回归系数估计：<br>
+$$\hat{\beta}_{Ridge} = \left( X^\prime X+\lambda I \right)<sup>{-1}X</sup>\prime y$$<br>
+其中，$I$是单位矩阵，$\lambda$是正则惩罚参数。</p>
+</li>
+<li>
+<p>当$\lambda \rightarrow 0$时，有$\hat{\beta}<em>{Ridge} \rightarrow \hat{\beta}</em>{OLS}$</p>
+</li>
+<li>
+<p>当$\lambda \rightarrow \infty$时，有$\hat{\beta}_{Ridge} \rightarrow 0$</p>
+</li>
+</ul>
 <h1 id="LASSO"><a class="header-anchor" href="#LASSO"></a>LASSO</h1>
 <h1 id><a class="header-anchor" href="#"></a></h1>
 <h1 id="参考资料"><a class="header-anchor" href="#参考资料"></a>参考资料</h1>
