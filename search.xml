@@ -1547,7 +1547,10 @@
 <li><p>目标函数：</p>
 <script type="math/tex; mode=display">L_{LASSO}(\beta) = ||y-X\beta ||^2_2 + \lambda ||\beta||_1</script></li>
 </ul>
-<h1 id><a href="#" class="headerlink" title=" "></a> </h1><figure class="highlight r"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="Bridge"><a href="#Bridge" class="headerlink" title="Bridge"></a>Bridge</h1><blockquote>
+<p>Fu, Wenjiang J . <a href="http://www.hpc.unm.edu/~andriese/doc/ref1_fu.pdf" target="_blank" rel="noopener">Penalized Regressions: The Bridge versus the Lasso</a>[J]. Journal of Computational and Graphical Statistics, 1998, 7(3):397.</p>
+</blockquote>
+<figure class="highlight r"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
 <li><a href="https://zh.wikipedia.org/wiki/Lp%E8%8C%83%E6%95%B0" target="_blank" rel="noopener">Wiki: Lp-norm</a></li>
