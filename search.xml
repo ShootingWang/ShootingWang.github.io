@@ -1536,7 +1536,7 @@ $$p_\lambda(\mid \beta_j \mid) = \lambda \mid\beta_j\mid^2$$</li>
 <li>对于LASSO，<br>
 $$p_\lambda(\mid \beta_j \mid) = \lambda \mid\beta_j\mid$$</li>
 <li>$\hat{\beta}<em>{OLS}$是回归方程的普通最小二乘估计，$\hat{\beta}</em>{oj}$是$\hat{\beta}<em>{OLS}$的第$j$个元素<br>
-$$\hat{\beta}</em>{OLS} = \left(X^T X\right)<sup>{-1}X</sup>Ty=X^Ty$$</li>
+$$\hat{\beta}</em>{OLS} = \left( X^T X \right)^{-1} X^T y=X^Ty$$</li>
 </ul>
 <p>$\parallel y-X \hat{\beta}<em>{OLS} \parallel_2^2$对于$\beta$是常数，因此有<br>
 $$\arg\min</em>{\beta_j} \quad \parallel y-X\beta \parallel_2^2 + p_\lambda(\mid \beta_j \mid) \Leftrightarrow \arg\min_{\beta_j} \quad  \left{ (\hat{\beta}<em>{oj} - \beta_j)^2 + p</em>\lambda(\mid \beta_j \mid) \right} $$</p>
