@@ -31,7 +31,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://github.com/%E7%AE%97%E6%B3%95-%E5%B8%A6%E6%83%A9%E7%BD%9A%E5%87%BD%E6%95%B0%E7%9A%84%E5%8F%98%E9%87%8F%E9%80%89%E6%8B%A9%E6%96%B9%E6%B3%95/RidgeRegressionCV.png">
 <meta property="article:published_time" content="2021-02-11T02:04:26.000Z">
-<meta property="article:modified_time" content="2021-02-11T07:48:22.700Z">
+<meta property="article:modified_time" content="2021-02-11T07:49:46.116Z">
 <meta property="article:author" content="ShootingWang">
 <meta property="article:tag" content="变量选择">
 <meta name="twitter:card" content="summary">
@@ -247,7 +247,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2021-02-11 10:04:26 / 修改时间：15:48:22" itemprop="dateCreated datePublished" datetime="2021-02-11T10:04:26+08:00">2021-02-11</time>
+              <time title="创建时间：2021-02-11 10:04:26 / 修改时间：15:49:46" itemprop="dateCreated datePublished" datetime="2021-02-11T10:04:26+08:00">2021-02-11</time>
             </span>
 
           
@@ -293,55 +293,36 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <center></center>
-<a id="more"></a>
-<p>假设有$n$个样本，$p$个自变量（predictor variables）。<br>
-考虑简单线性回归模型：<br>
-$$y = X\beta + \varepsilon, \qquad \varepsilon \sim N(0, \sigma^2)$$<br>
-其中，$y$是响应变量/因变量/被解释变量，$X$是$n\times p$维的样本（设计）矩阵，$\varepsilon$是服从方差为$\sigma^2$的正态分布的误差项。</p>
+        <p><center></center><br><a id="more"></a></p>
+<p>假设有$n$个样本，$p$个自变量（predictor variables）。<br>考虑简单线性回归模型：</p>
+<script type="math/tex; mode=display">y = X\beta + \varepsilon, \qquad \varepsilon \sim N(0, \sigma^2)</script><p>其中，$y$是响应变量/因变量/被解释变量，$X$是$n\times p$维的样本（设计）矩阵，$\varepsilon$是服从方差为$\sigma^2$的正态分布的误差项。</p>
 <p><strong>普通最小二乘</strong>（OLS，Ordinary Least Squares）:</p>
 <ul>
-<li>损失函数（Loss function）：<br>
-$$L(\beta) = ||y-X\beta||^2$$</li>
-<li>回归系数估计：<br>
-$$\hat{\beta}_{OLS} = \left(X^\prime X \right)^{-1} X^\prime y$$</li>
+<li>损失函数（Loss function）：<script type="math/tex; mode=display">L(\beta) = ||y-X\beta||^2</script></li>
+<li>回归系数估计：<script type="math/tex; mode=display">\hat{\beta}_{OLS} = \left(X^\prime X \right)^{-1} X^\prime y</script></li>
 </ul>
 <blockquote>
-<p>$L_p$范数（$L_p$-norm）：<br>
-$$L_p(\vec{x}) = \parallel \vec{x} \parallel_p = \left( \sum_{i=1}^n \mid x_i \mid^p \right)^{1/p}, \qquad p\geq 1$$<br>
-其中，$\vec{x} = ( x_1, x_2, \cdots, x_n )$。</p>
+<p>$L_p$范数（$L_p$-norm）：</p>
+<script type="math/tex; mode=display">L_p(\vec{x}) = \parallel \vec{x} \parallel_p = \left( \sum_{i=1}^n \mid x_i \mid^p \right)^{1/p}, \qquad p\geq 1</script><p>其中，$\vec{x} = ( x_1, x_2, \cdots, x_n )$。</p>
 <ul>
-<li>$p = -\infty$：<br>
-$$\parallel \vec{x} \parallel_{\infty} = \lim_{p \rightarrow -\infty} \left( \sum_{i=1}^n \mid x_i \mid^p \right)^{1/p} = \min_i \mid x_i \mid $$</li>
-<li>$p = 0$：（严格说，不属于范数）<br>
-$$\parallel \vec{x} \parallel_0 = \sharp(i) \quad \mathrm{with} \quad x_i\neq 0 $$<br>
-表示向量$\vec{x}$中非零元素的个数</li>
-<li>$p = 1$：（也称<strong>曼哈顿距离</strong>）<br>
-$$\parallel \vec{x} \parallel_1 = \sum_{i=1}^n \mid x_i \mid$$</li>
-<li>$p = 2$：（也称<strong>欧氏距离</strong>）<br>
-$$\parallel \vec{x} \parallel_2 = \sqrt{\sum_{i=1}^n \mid x_i \mid^2}$$</li>
-<li>$p = +\infty$：（无穷范数/最大范数）<br>
-$$\parallel \vec{x} \parallel_{\infty} = \lim_{p\rightarrow +\infty} \left( \sum_{i=1}^n \mid x_i \mid^p \right)^{1/p} = \max_i \mid x_i \mid$$</li>
+<li>$p = -\infty$：<script type="math/tex; mode=display">\parallel \vec{x} \parallel_{\infty} = \lim_{p \rightarrow -\infty} \left( \sum_{i=1}^n \mid x_i \mid^p \right)^{1/p} = \min_i \mid x_i \mid</script></li>
+<li>$p = 0$：（严格说，不属于范数）<script type="math/tex; mode=display">\parallel \vec{x} \parallel_0 = \sharp(i) \quad \mathrm{with} \quad x_i\neq 0</script>表示向量$\vec{x}$中非零元素的个数</li>
+<li>$p = 1$：（也称<strong>曼哈顿距离</strong>）<script type="math/tex; mode=display">\parallel \vec{x} \parallel_1 = \sum_{i=1}^n \mid x_i \mid</script></li>
+<li>$p = 2$：（也称<strong>欧氏距离</strong>）<script type="math/tex; mode=display">\parallel \vec{x} \parallel_2 = \sqrt{\sum_{i=1}^n \mid x_i \mid^2}</script></li>
+<li>$p = +\infty$：（无穷范数/最大范数）<script type="math/tex; mode=display">\parallel \vec{x} \parallel_{\infty} = \lim_{p\rightarrow +\infty} \left( \sum_{i=1}^n \mid x_i \mid^p \right)^{1/p} = \max_i \mid x_i \mid</script></li>
 </ul>
 </blockquote>
-<h1 id="Penalized-Least-Squares"><a class="header-anchor" href="#Penalized-Least-Squares"></a>Penalized Least Squares</h1>
-<blockquote>
+<h1 id="Penalized-Least-Squares"><a href="#Penalized-Least-Squares" class="headerlink" title="Penalized Least Squares"></a>Penalized Least Squares</h1><blockquote>
 <p>Li F R . <a href="https://escholarship.org/content/qt8j29393d/qt8j29393d.pdf" target="_blank" rel="noopener">Variable Selection via Nonconcave Penalized Likelihood and its Oracle Properties</a>[J]. Publications of the American Statistical Association, 2001, 96(456):1348-1360.</p>
 </blockquote>
-<p>目标函数：<br>
-\begin{equation}<br>
-\begin{aligned}<br>
-L(\beta) &amp;= \parallel y-X\beta \parallel_2^2 + \lambda\sum_{j=1}^p p_j(\mid \beta_j \mid) \<br>
-&amp;= \sum_{i=1}^n \left(y_i - \sum_{j=1}^p x_{ij}\beta_j \right)^2 + \lambda\sum_{j=1}^p p_j(\mid \beta_j \mid) \<br>
-&amp;= \sum_{i=1}^n \left(y_i - \sum_{j=1}^p x_{ij}\beta_j \right)^2 + \sum_{j=1}^p p_\lambda(\mid \beta_j \mid)<br>
-\end{aligned}<br>
-\end{equation}</p>
+<p>目标函数：<br>\begin{equation}<br>\begin{aligned}<br>L(\beta) &amp;= \parallel y-X\beta \parallel_2^2 + \lambda\sum_{j=1}^p p_j(\mid \beta_j \mid) \\<br>&amp;= \sum_{i=1}^n \left(y_i - \sum_{j=1}^p x_{ij}\beta_j \right)^2 + \lambda\sum_{j=1}^p p_j(\mid \beta_j \mid) \\<br>&amp;= \sum_{i=1}^n \left(y_i - \sum_{j=1}^p x_{ij}\beta_j \right)^2 + \sum_{j=1}^p p_\lambda(\mid \beta_j \mid)<br>\end{aligned}<br>\end{equation}</p>
 <ul>
 <li>假设惩罚函数对所有的系数都是一样的，即$p(\mid \cdot \mid)$</li>
 <li>进一步，将$\lambda p(\mid \cdot \mid)$记为$p_\lambda(\mid \cdot \mid)$</li>
+<li>对于岭回归（Ridge Regression），<script type="math/tex; mode=display">p_\lambda(\mid \beta_j \mid) = \lambda \mid\beta_j\mid^2</script></li>
+<li>对于LASSO，<script type="math/tex; mode=display">p_\lambda(\mid \beta_j \mid) = \lambda \mid\beta_j\mid</script></li>
 </ul>
-<h1 id="Rigde-Regression-岭回归"><a class="header-anchor" href="#Rigde-Regression-岭回归"></a>Rigde Regression 岭回归</h1>
-<p>当自变量个数超过样本个数 或 样本数据存在多重共线性（multicollinearity）时，使用岭回归（Ridge Regression）可以得到一个精简的模型。</p>
+<h1 id="Rigde-Regression-岭回归"><a href="#Rigde-Regression-岭回归" class="headerlink" title="Rigde Regression 岭回归"></a>Rigde Regression 岭回归</h1><p>当自变量个数超过样本个数 或 样本数据存在多重共线性（multicollinearity）时，使用岭回归（Ridge Regression）可以得到一个精简的模型。</p>
 <blockquote>
 <p>Hoerl, A., &amp; Kennard, R. (1970). <a href="https://www.jstor.org/stable/1267352?seq=1" target="_blank" rel="noopener">Ridge Regression: Applications to Nonorthogonal Problems</a>. Technometrics, 12(1), 69-82. doi:10.2307/1267352</p>
 </blockquote>
@@ -352,92 +333,54 @@ L(\beta) &amp;= \parallel y-X\beta \parallel_2^2 + \lambda\sum_{j=1}^p p_j(\mid 
 <p><strong>Shrinkage estimators</strong> theoretically produce new estimators that are shrunk closer to the ‘true’ population parameters.</p>
 </blockquote>
 <ul>
-<li>
-<p>ridge regression是Tikhivov方法的其中一种</p>
+<li>ridge regression是Tikhivov方法的其中一种</li>
+<li><p>ridge regression使用L2正则化（L2 Regularization）</p>
 </li>
-<li>
-<p>ridge regression使用L2正则化（L2 Regularization）</p>
+<li><p>目标函数：<br>\begin{equation}<br>\begin{aligned}<br>L_{Ridge}(\beta) &amp;= ||y-X\beta ||^2_2 + \lambda ||\beta||^2_2\\<br>&amp;= \sum_{i=1}^n \left(y_i - \sum_{j=1}^p x_{ij}\beta_j \right)^2 + \lambda \sum_{j=1}^p \beta_j^2<br>\end{aligned}<br>\end{equation}</p>
 </li>
-<li>
-<p>目标函数：<br>
-\begin{equation}<br>
-\begin{aligned}<br>
-L_{Ridge}(\beta) &amp;= ||y-X\beta ||^2_2 + \lambda ||\beta||^2_2\<br>
-&amp;= \sum_{i=1}^n \left(y_i - \sum_{j=1}^p x_{ij}\beta_j \right)^2 + \lambda \sum_{j=1}^p \beta_j^2<br>
-\end{aligned}<br>
-\end{equation}</p>
-</li>
-<li>
-<p>回归系数估计：</p>
+<li><p>回归系数估计：</p>
 </li>
 </ul>
-<p>\begin{equation}<br>
-\begin{aligned}<br>
-\hat{\beta}<em>{Ridge} &amp;= \arg \min</em>\beta \sum_{i=1}^n \left(y_i - \sum_{j=1}^p x_{ij}\beta_j \right)^2 \quad \mathrm{s.t.} \sum_{j=1}^p \beta_j^2 \leq s \<br>
-&amp;= \left( X^\prime X+\lambda I \right)^{-1} X^\prime y<br>
-\end{aligned}<br>
-\end{equation}<br>
-其中，$I$是单位矩阵，$\lambda$是正则惩罚参数。</p>
+<p>\begin{equation}<br>\begin{aligned}<br>\hat{\beta}_{Ridge} &amp;= \arg \min_\beta \sum_{i=1}^n \left(y_i - \sum_{j=1}^p x_{ij}\beta_j \right)^2 \quad \mathrm{s.t.} \sum_{j=1}^p \beta_j^2 \leq s \\<br>&amp;= \left( X^\prime X+\lambda I \right)^{-1} X^\prime y<br>\end{aligned}<br>\end{equation}<br>其中，$I$是单位矩阵，$\lambda$是正则惩罚参数。</p>
 <ul>
-<li>当$\lambda \rightarrow 0$时，有 $\hat{\beta}<em>{Ridge} \rightarrow \hat{\beta}</em>{OLS}$</li>
+<li>当$\lambda \rightarrow 0$时，有 $\hat{\beta}_{Ridge} \rightarrow \hat{\beta}_{OLS}$</li>
 <li>当$\lambda \rightarrow \infty$时，有 $\hat{\beta}_{Ridge} \rightarrow 0$</li>
 </ul>
-<h2 id="Bias-Variance-Trade-off"><a class="header-anchor" href="#Bias-Variance-Trade-off"></a>Bias-Variance Trade-off</h2>
-<p>\begin{aligned}<br>
-\mathrm{Bias}(\hat{\beta}<em>{Ridge}) &amp;= -\lambda \left( X^\prime X+\lambda I \right)^{-1} \beta\<br>
-\mathrm{Var}(\hat{\beta}</em>{Ridge}) &amp;= \sigma^2 \left( X^\prime X+\lambda I \right)^{-1} X^\prime X \left( X^\prime X+\lambda I \right)^{-1}<br>
-\end{aligned}</p>
-<h2 id="如何选择-lambda"><a class="header-anchor" href="#如何选择-lambda"></a>如何选择$\lambda$</h2>
-<p>方法：</p>
+<h2 id="Bias-Variance-Trade-off"><a href="#Bias-Variance-Trade-off" class="headerlink" title="Bias-Variance Trade-off"></a>Bias-Variance Trade-off</h2><p>\begin{aligned}<br>\mathrm{Bias}(\hat{\beta}_{Ridge}) &amp;= -\lambda \left( X^\prime X+\lambda I \right)^{-1} \beta\\<br>\mathrm{Var}(\hat{\beta}_{Ridge}) &amp;= \sigma^2 \left( X^\prime X+\lambda I \right)^{-1} X^\prime X \left( X^\prime X+\lambda I \right)^{-1}<br>\end{aligned}</p>
+<h2 id="如何选择-lambda"><a href="#如何选择-lambda" class="headerlink" title="如何选择$\lambda$"></a>如何选择$\lambda$</h2><p>方法：</p>
 <ol>
 <li>最小化信息准则（Minimizing Information Criteria）：</li>
 <li>交叉验证（cross-validation）</li>
 </ol>
-<h2 id="R实现"><a class="header-anchor" href="#R实现"></a>R实现</h2>
-<p>可使用R包<code>glmnet</code></p>
+<h2 id="R实现"><a href="#R实现" class="headerlink" title="R实现"></a>R实现</h2><p>可使用R包<code>glmnet</code></p>
 <ul>
-<li>注意：ridge regression假设自变量（predictors）是标准化的（standardized），且因变量是中心化的（centered）</li>
-</ul>
-<blockquote>
+<li>注意：ridge regression假设自变量（predictors）是标准化的（standardized），且因变量是中心化的（centered）<blockquote>
 <p>标准化、中心化见《<a href="/%E7%AE%97%E6%B3%95-%E7%89%B9%E5%BE%81%E5%BD%92%E4%B8%80%E5%8C%96.html" title="Feature Engineering | 特征缩放">Feature Engineering | 特征缩放</a>》</p>
 </blockquote>
-<figure class="highlight r"><table><tr><td class="code"><pre><span class="line"><span class="keyword">library</span>(glmnet)  <span class="comment">## 用于岭回归</span></span><br><span class="line"><span class="keyword">library</span>(dplyr)  <span class="comment">## 用于数据清洗</span></span><br><span class="line"><span class="keyword">library</span>(psych)  <span class="comment">## 使用 tr() 计算矩阵的迹</span></span><br><span class="line"></span><br><span class="line">data(<span class="string">'mtcars'</span>)  <span class="comment">## 载入数据mtcars</span></span><br><span class="line"><span class="comment">## 将y中心化</span></span><br><span class="line">y &lt;- mtcars %&gt;% select(mpg) %&gt;% </span><br><span class="line">  scale(center = <span class="literal">TRUE</span>, scale = <span class="literal">FALSE</span>) %&gt;%</span><br><span class="line">  as.matrix()</span><br><span class="line"><span class="comment">## 将X中心化</span></span><br><span class="line">X &lt;- mtcars %&gt;% select(-mpg) %&gt;%</span><br><span class="line">  scale(center = <span class="literal">TRUE</span>, scale = <span class="literal">TRUE</span>) %&gt;%  </span><br><span class="line">  as.matrix()</span><br><span class="line"><span class="comment">## X的标准化可以省略，令cv.glmnet()或glmnet()中的参数standardize = TRUE来标准化X</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 使用10折交叉验证选择最优lambda</span></span><br><span class="line">lambdas_seq &lt;- <span class="number">10</span>^seq(-<span class="number">3</span>, <span class="number">5</span>, length.out = <span class="number">100</span>)</span><br><span class="line"><span class="comment">## alpha = 0表示岭回归</span></span><br><span class="line">ridge_cv &lt;- cv.glmnet(X, y, alpha = <span class="number">0</span>, lambda = lambdas_seq,</span><br><span class="line">                      nfolds = <span class="number">10</span>)</span><br><span class="line">plot(ridge_cv)</span><br></pre></td></tr></table></figure>
-<meta name="referrer" content="no-referrer">
-<img src="/%E7%AE%97%E6%B3%95-%E5%B8%A6%E6%83%A9%E7%BD%9A%E5%87%BD%E6%95%B0%E7%9A%84%E5%8F%98%E9%87%8F%E9%80%89%E6%8B%A9%E6%96%B9%E6%B3%95/RidgeRegressionCV.png" class title="岭回归-10折交叉验证">
-<figure class="highlight r"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 使用令交叉验证预测误差均值最小的lambda</span></span><br><span class="line">rr &lt;- glmnet(X, y, alpha = <span class="number">0</span>, lambda = ridge_cv$lambda.min)</span><br><span class="line">y_hat &lt;- predict(rr, X)  <span class="comment">## y的估计值</span></span><br><span class="line">ssr &lt;- t(y - y_hat) %*% (y - y_hat)</span><br></pre></td></tr></table></figure>
-<h2 id="Python实现"><a class="header-anchor" href="#Python实现"></a>Python实现</h2>
-<h1 id="LASSO"><a class="header-anchor" href="#LASSO"></a>LASSO</h1>
-<p>LASSO（Least Absolute Shrinkage and Selection Operator）</p>
-<blockquote>
-<p>Tibshirani, Robert. “<a href="https://www.jstor.org/stable/2346178?seq=1" target="_blank" rel="noopener">Regression Shrinkage and Selection via the Lasso.</a>” Journal of the Royal Statistical Society. Series B (Methodological), vol. 58, no. 1, 1996, pp. 267–288. JSTOR, <a href="http://www.jstor.org/stable/2346178" target="_blank" rel="noopener">www.jstor.org/stable/2346178</a>. Accessed 11 Feb. 2021.</p>
-</blockquote>
-<ul>
-<li>
-<p>LASSO在损失函数中加上一个L1惩罚项（L1 penalty）</p>
-</li>
-<li>
-<p>目标函数：<br>
-\begin{equation}<br>
-\begin{aligned}<br>
-L_{LASSO}(\beta) &amp;= ||y-X\beta ||^2_2 + \lambda ||\beta||<em>1 \<br>
-&amp;= \sum</em>{i=1}^n \left(y_i - \sum_{j=1}^p x_{ij}\beta_j \right)^2 + \lambda \sum_{j=1}^p \mid \beta_j \mid<br>
-\end{aligned}<br>
-\end{equation}</p>
 </li>
 </ul>
-<h1 id="Bridge"><a class="header-anchor" href="#Bridge"></a>Bridge</h1>
+<figure class="highlight r"><table><tr><td class="code"><pre><span class="line"><span class="keyword">library</span>(glmnet)  <span class="comment">## 用于岭回归</span></span><br><span class="line"><span class="keyword">library</span>(dplyr)  <span class="comment">## 用于数据清洗</span></span><br><span class="line"><span class="keyword">library</span>(psych)  <span class="comment">## 使用 tr() 计算矩阵的迹</span></span><br><span class="line"></span><br><span class="line">data(<span class="string">'mtcars'</span>)  <span class="comment">## 载入数据mtcars</span></span><br><span class="line"><span class="comment">## 将y中心化</span></span><br><span class="line">y &lt;- mtcars %&gt;% select(mpg) %&gt;% </span><br><span class="line">  scale(center = <span class="literal">TRUE</span>, scale = <span class="literal">FALSE</span>) %&gt;%</span><br><span class="line">  as.matrix()</span><br><span class="line"><span class="comment">## 将X中心化</span></span><br><span class="line">X &lt;- mtcars %&gt;% select(-mpg) %&gt;%</span><br><span class="line">  scale(center = <span class="literal">TRUE</span>, scale = <span class="literal">TRUE</span>) %&gt;%  </span><br><span class="line">  as.matrix()</span><br><span class="line"><span class="comment">## X的标准化可以省略，令cv.glmnet()或glmnet()中的参数standardize = TRUE来标准化X</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 使用10折交叉验证选择最优lambda</span></span><br><span class="line">lambdas_seq &lt;- <span class="number">10</span>^seq(-<span class="number">3</span>, <span class="number">5</span>, length.out = <span class="number">100</span>)</span><br><span class="line"><span class="comment">## alpha = 0表示岭回归</span></span><br><span class="line">ridge_cv &lt;- cv.glmnet(X, y, alpha = <span class="number">0</span>, lambda = lambdas_seq,</span><br><span class="line">                      nfolds = <span class="number">10</span>)</span><br><span class="line">plot(ridge_cv)</span><br></pre></td></tr></table></figure>
+<p><meta name="referrer" content="no-referrer"><br><img src="/%E7%AE%97%E6%B3%95-%E5%B8%A6%E6%83%A9%E7%BD%9A%E5%87%BD%E6%95%B0%E7%9A%84%E5%8F%98%E9%87%8F%E9%80%89%E6%8B%A9%E6%96%B9%E6%B3%95/RidgeRegressionCV.png" class title="岭回归-10折交叉验证"></p>
+<figure class="highlight r"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 使用令交叉验证预测误差均值最小的lambda</span></span><br><span class="line">rr &lt;- glmnet(X, y, alpha = <span class="number">0</span>, lambda = ridge_cv$lambda.min)</span><br><span class="line">y_hat &lt;- predict(rr, X)  <span class="comment">## y的估计值</span></span><br><span class="line">ssr &lt;- t(y - y_hat) %*% (y - y_hat)</span><br></pre></td></tr></table></figure>
+<h2 id="Python实现"><a href="#Python实现" class="headerlink" title="Python实现"></a>Python实现</h2><h1 id="LASSO"><a href="#LASSO" class="headerlink" title="LASSO"></a>LASSO</h1><p>LASSO（Least Absolute Shrinkage and Selection Operator）</p>
 <blockquote>
-<p>Frank L E , Friedman J H . <a href="http://www.uwe-mortensen.de/FrankFriedmanStatViewChemometRegressionTools1993.pdf" target="_blank" rel="noopener">A Statistical View of Some Chemometrics Regression Tools</a>[J]. Technometrics, 1993, 35(2):109-135.<br>
-Fu, Wenjiang J . <a href="http://www.hpc.unm.edu/~andriese/doc/ref1_fu.pdf" target="_blank" rel="noopener">Penalized Regressions: The Bridge versus the Lasso</a>[J]. Journal of Computational and Graphical Statistics, 1998, 7(3):397.</p>
+<p>Tibshirani, Robert. “<a href="https://www.jstor.org/stable/2346178?seq=1" target="_blank" rel="noopener">Regression Shrinkage and Selection via the Lasso.</a>” Journal of the Royal Statistical Society. Series B (Methodological), vol. 58, no. 1, 1996, pp. 267–288. JSTOR, www.jstor.org/stable/2346178. Accessed 11 Feb. 2021.</p>
 </blockquote>
 <ul>
-<li>目标函数：<br>
-$$L_{Bridge}(\beta) = \parallel y-X\beta \parallel_2 + \lambda \sum_{i=1}^p \mid \beta_i \mid^\gamma, \qquad \gamma &gt; 0 $$</li>
+<li><p>LASSO在损失函数中加上一个L1惩罚项（L1 penalty）</p>
+</li>
+<li><p>目标函数：<br>\begin{equation}<br>\begin{aligned}<br>L_{LASSO}(\beta) &amp;= ||y-X\beta ||^2_2 + \lambda ||\beta||_1 \\<br>&amp;= \sum_{i=1}^n \left(y_i - \sum_{j=1}^p x_{ij}\beta_j \right)^2 + \lambda \sum_{j=1}^p \mid \beta_j \mid<br>\end{aligned}<br>\end{equation}</p>
+</li>
+</ul>
+<h1 id="Bridge"><a href="#Bridge" class="headerlink" title="Bridge"></a>Bridge</h1><blockquote>
+<p>Frank L E , Friedman J H . <a href="http://www.uwe-mortensen.de/FrankFriedmanStatViewChemometRegressionTools1993.pdf" target="_blank" rel="noopener">A Statistical View of Some Chemometrics Regression Tools</a>[J]. Technometrics, 1993, 35(2):109-135.<br>Fu, Wenjiang J . <a href="http://www.hpc.unm.edu/~andriese/doc/ref1_fu.pdf" target="_blank" rel="noopener">Penalized Regressions: The Bridge versus the Lasso</a>[J]. Journal of Computational and Graphical Statistics, 1998, 7(3):397.</p>
+</blockquote>
+<ul>
+<li>目标函数：<script type="math/tex; mode=display">L_{Bridge}(\beta) = \parallel y-X\beta \parallel_2 + \lambda \sum_{i=1}^p \mid \beta_i \mid^\gamma, \qquad \gamma > 0</script></li>
 </ul>
 <figure class="highlight r"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h1 id="参考资料"><a class="header-anchor" href="#参考资料"></a>参考资料</h1>
-<ul>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
 <li><a href="https://zh.wikipedia.org/wiki/Lp%E8%8C%83%E6%95%B0" target="_blank" rel="noopener">Wiki: Lp-norm</a></li>
 <li><a href="https://www.statisticshowto.com/ridge-regression/" target="_blank" rel="noopener">Ridge Regression: Simple Definition</a></li>
 <li><a href="https://www.datacamp.com/community/tutorials/tutorial-ridge-lasso-elastic-net" target="_blank" rel="noopener">Regularization: Ridge, Lasso and Elastic Net</a></li>
@@ -633,7 +576,7 @@ $$L_{Bridge}(\beta) = \parallel y-X\beta \parallel_2 + \lambda \sum_{i=1}^p \mid
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">5:18</span>
+    <span title="站点阅读时长">5:19</span>
 </div>
 
 
