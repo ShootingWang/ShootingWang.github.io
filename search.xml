@@ -1480,18 +1480,28 @@
   <entry>
     <title>Markdown</title>
     <url>/Markdown.html</url>
-    <content><![CDATA[<p><center></center><br><a id="more"></a></p>
-<h1 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h1><p>井号键<code>#</code>（N个代表N级标题） +<code>`（空格）+</code>标题内容`</p>
+    <content><![CDATA[<center></center>
+<a id="more"></a>
+<h1 id="标题"><a class="header-anchor" href="#标题"></a>标题</h1>
+<p>井号键<code>#</code>（N个代表N级标题） +<code> </code>（空格）+ <code>标题内容</code></p>
 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="section"># 一级标题</span></span><br><span class="line"><span class="section">## 二级标题</span></span><br><span class="line"><span class="section">### 三级标题</span></span><br></pre></td></tr></table></figure>
-<h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><p>示范<code>## 二级标题的效果</code></p>
-<h1 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h1><h2 id="加粗"><a href="#加粗" class="headerlink" title="加粗"></a>加粗</h2><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="strong">**加粗的内容**</span></span><br></pre></td></tr></table></figure>
+<h2 id="二级标题"><a class="header-anchor" href="#二级标题"></a>二级标题</h2>
+<p>示范<code>## 二级标题的效果</code></p>
+<h1 id="正文"><a class="header-anchor" href="#正文"></a>正文</h1>
+<h2 id="加粗"><a class="header-anchor" href="#加粗"></a>加粗</h2>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="strong">**加粗的内容**</span></span><br></pre></td></tr></table></figure>
 <p>效果：<strong>加粗的内容</strong></p>
-<h2 id="下划线"><a href="#下划线" class="headerlink" title="下划线"></a>下划线</h2><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">u</span>&gt;</span></span>需要下划线的内容<span class="xml"><span class="tag">&lt;/<span class="name">u</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+<h2 id="下划线"><a class="header-anchor" href="#下划线"></a>下划线</h2>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">u</span>&gt;</span></span>需要下划线的内容<span class="xml"><span class="tag">&lt;/<span class="name">u</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
 <p>效果：<u>需要下划线的内容</u></p>
+<h2 id="删除线"><a class="header-anchor" href="#删除线"></a>删除线</h2>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">~~需要加删除线的内容~~</span><br></pre></td></tr></table></figure>
+<p>效果：<s>需要加删除线的内容</s></p>
 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1>]]></content>
+<h1 id="参考资料"><a class="header-anchor" href="#参考资料"></a>参考资料</h1>
+]]></content>
       <categories>
         <category>Everything</category>
       </categories>
