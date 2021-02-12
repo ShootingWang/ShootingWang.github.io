@@ -1726,6 +1726,10 @@ $$</p>
 <p><a href="https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.445.4562&amp;rep=rep1&amp;type=pdf" target="_blank" rel="noopener">Zou and Hastie(2005)</a>：Bridge估计量可以看成是基于如下先验的贝叶斯后验模式（Bayes posterior mode）<br>
 $$p_{\lambda, \gamma}(\beta) = C(\lambda, \gamma)\exp{(-\lambda |\beta|_{\gamma}^{\gamma})} $$</p>
 </blockquote>
+<h2 id="SCAD"><a class="header-anchor" href="#SCAD"></a>SCAD</h2>
+<blockquote>
+<p>Fan, J., &amp; Li, R. (2001). <a href="https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.445.4562&amp;rep=rep1&amp;type=pdf" target="_blank" rel="noopener">Variable Selection via Nonconcave Penalized Likelihood and Its Oracle Properties</a>. Journal of the American Statistical Association, 96(456), 1348-1360.</p>
+</blockquote>
 <h2 id="Elastic-Net"><a class="header-anchor" href="#Elastic-Net"></a>Elastic Net</h2>
 <blockquote>
 <p>Zou, H. , &amp; Hastie, T. . (2005). <a href="https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.445.4562&amp;rep=rep1&amp;type=pdf" target="_blank" rel="noopener">Regularization and variable selection via the elastic net</a>. Journal of the Royal Statistical Society, 67(5), 768-768.</p>
