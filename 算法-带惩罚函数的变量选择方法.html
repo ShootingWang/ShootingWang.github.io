@@ -31,7 +31,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://github.com/%E7%AE%97%E6%B3%95-%E5%B8%A6%E6%83%A9%E7%BD%9A%E5%87%BD%E6%95%B0%E7%9A%84%E5%8F%98%E9%87%8F%E9%80%89%E6%8B%A9%E6%96%B9%E6%B3%95/RidgeRegressionCV.png">
 <meta property="article:published_time" content="2021-02-11T02:04:26.000Z">
-<meta property="article:modified_time" content="2021-02-12T14:02:58.891Z">
+<meta property="article:modified_time" content="2021-02-12T14:11:47.328Z">
 <meta property="article:author" content="ShootingWang">
 <meta property="article:tag" content="变量选择">
 <meta name="twitter:card" content="summary">
@@ -255,7 +255,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-02-12 22:02:58" itemprop="dateModified" datetime="2021-02-12T22:02:58+08:00">2021-02-12</time>
+                <time title="修改时间：2021-02-12 22:11:47" itemprop="dateModified" datetime="2021-02-12T22:11:47+08:00">2021-02-12</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -559,7 +559,18 @@ P_{MCP}^{\prime}(t;\lambda,\gamma) = \left\{
 <li>$L_2$ Group Bridge满足选择一致性</li>
 </ul>
 <h2 id="Group-MCP"><a href="#Group-MCP" class="headerlink" title="Group MCP"></a>Group MCP</h2><h1 id="Composite-Penalization-amp-Sparse-Group-Penalization"><a href="#Composite-Penalization-amp-Sparse-Group-Penalization" class="headerlink" title="Composite Penalization &amp; Sparse Group Penalization"></a>Composite Penalization &amp; Sparse Group Penalization</h1><p>Composite Penalization应用于异构整合分析：</p>
-<script type="math/tex; mode=display">J(\beta) = \sum_{j=1}^p p_{O, \lambda_{O}}\left( \sum_{k=1}^M p_{I, \lambda_{I}}(|\beta_j^k|) \right)</script><h2 id="Composite-MCP"><a href="#Composite-MCP" class="headerlink" title="Composite MCP"></a>Composite MCP</h2><p>\begin{aligned}<br>\mbox{outer penalty} &amp;: \mbox{MCP} \\<br>\mbox{inner penalty} &amp;: \mathrm{MCP} \\<br>\end{aligned}</p>
+<script type="math/tex; mode=display">J(\beta) = \sum_{j=1}^p p_{O, \lambda_{O}}\left( \sum_{k=1}^M p_{I, \lambda_{I}}(|\beta_j^k|) \right)</script><h2 id="Composite-MCP"><a href="#Composite-MCP" class="headerlink" title="Composite MCP"></a>Composite MCP</h2><blockquote>
+<ul>
+<li>Liu, J., Huang, J., &amp; Ma, S. (2014). <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3933169/pdf/nihms470951.pdf" target="_blank" rel="noopener">Integrative Analysis of Cancer Diagnosis Studies with Composite Penalization</a>. Scandinavian journal of statistics, theory and applications, 41(1), 87–103.</li>
+<li>Zhang, Q. , Zhang, S. , Liu, J. , Huang, J. , &amp; Ma, S. . (2015). <a href="http://www3.stat.sinica.edu.tw/statistica/oldpdf/A26n23.pdf" target="_blank" rel="noopener">Penalized integrative analysis under the accelerated failure time model</a>. Statistica Sinica, 26(2).</li>
+</ul>
+</blockquote>
+<p>\begin{aligned}<br>\mbox{outer penalty} &amp;: \mbox{MCP} \\<br>\mbox{inner penalty} &amp;: \mathrm{MCP} \\<br>\end{aligned}</p>
+<blockquote>
+<ul>
+<li><a href="http://www3.stat.sinica.edu.tw/statistica/oldpdf/A26n23.pdf" target="_blank" rel="noopener">Zhang等人(2015)</a>：在一定条件下，Composite MCP在组内和组间均满足选择一致性，而$L_1$ Group MCP只满足组选择一致性</li>
+</ul>
+</blockquote>
 <h2 id="MCP-amp-Ridge"><a href="#MCP-amp-Ridge" class="headerlink" title="MCP &amp; Ridge"></a>MCP &amp; Ridge</h2><h2 id="MCP-amp-LASSO"><a href="#MCP-amp-LASSO" class="headerlink" title="MCP &amp; LASSO"></a>MCP &amp; LASSO</h2><blockquote>
 <p>Liu, J., Huang, J., &amp; Ma, S. (2014). <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3933169/pdf/nihms470951.pdf" target="_blank" rel="noopener">Integrative Analysis of Cancer Diagnosis Studies with Composite Penalization</a>. Scandinavian journal of statistics, theory and applications, 41(1), 87–103.</p>
 </blockquote>
