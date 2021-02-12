@@ -1506,11 +1506,11 @@ Q(\beta | X,y) &amp;= L(\beta|X,y) + \sum_{j=1}^J \lambda_j {\parallel} \beta_j 
 <li>为了保证对大组、小组的惩罚力度一致，可取$\lambda_j = \lambda \sqrt{d_j}$</li>
 <li>当$d_j=1(1\leq j\leq J)$时，Group LASSO简化为标准LASSO，且$R_j=\frac{1}{n}\parallel X_j\parallel^2$正比于$X_j$的样本方差。</li>
 </ul>
-<h2 id="如何选择-R-j"><a class="header-anchor" href="#如何选择-R-j"></a>如何选择$R_j$</h2>
+<h2 id="如何选择-K-j"><a class="header-anchor" href="#如何选择-K-j"></a>如何选择$K_j$</h2>
 <p>对于标准正交的$X_j$，有<br>
 $$\frac{1}{n}X_j^TX_j = I_{d_j}, \qquad j=1, 2, \cdots, J.$$</p>
 <ul>
-<li><a href="http://www.columbia.edu/~my2550/papers/glasso.final.pdf" target="_blank" rel="noopener">Yuan and Lin(2006)</a>建议取$R_j=I_{d_j}$</li>
+<li><a href="http://www.columbia.edu/~my2550/papers/glasso.final.pdf" target="_blank" rel="noopener">Yuan and Lin(2006)</a>建议取$K_j=I_{d_j}$</li>
 </ul>
 <h2 id="求解"><a class="header-anchor" href="#求解"></a>求解</h2>
 <ul>
