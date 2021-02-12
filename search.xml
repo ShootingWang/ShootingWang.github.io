@@ -1781,6 +1781,12 @@ $$Q(\beta|X, y) = \parallel y-\sum_{k=1}^p x_k \beta_k \parallel_2^2 + \lambda_n
 <blockquote>
 <p>Ma, S., Huang, J., &amp; Song, X. (2011). <a href="https://pubmed.ncbi.nlm.nih.gov/21415015/" target="_blank" rel="noopener">Integrative analysis and variable selection with multiple high-dimensional data sets</a>. Biostatistics (Oxford, England), 12(4), 763–775.</p>
 </blockquote>
+<p>考虑有$M$组研究数据的样本数据（每组都含$p$个解释变量），第$j$组变量的系数$\beta_j$的惩罚函数为：<br>
+$$J(\beta_j) = \parallel \beta_j \parallel_2^{\gamma}$$</p>
+<ul>
+<li>$\parallel \beta_j \parallel_2 = \left[ (\beta_j<sup>1)</sup>2 + (\beta_j<sup>2)</sup>2 + \cdots + (\beta_j<sup>M)</sup>2 \right]$</li>
+<li>$0 &lt; \gamma &lt; 1$是固定的bridge因子（bridge index）</li>
+</ul>
 <h1 id="Group-MCP"><a class="header-anchor" href="#Group-MCP"></a>Group MCP</h1>
 <figure class="highlight r"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
