@@ -1727,6 +1727,10 @@ L(\lambda, \beta) &amp;= \parallel y-X\beta \parallel_2^2 + \lambda_2 \parallel 
 \hat{\beta} &amp;= \arg\min_{\beta} { L(\lambda, \beta) } \<br>
 &amp;= \arg\min_{\beta} \mid y-X\beta \mid^2, \qquad \mbox{subject to} (1-\alpha)\mid\beta\mid_1+\alpha\parallel \beta\parallel^2_2 \leq t \mbox{for some} t.\<br>
 \end{aligned}</p>
+<ul>
+<li>当$\alpha = 1$时，朴素弹性网（naive elastic net）变为简单岭回归（simple ridge regression）</li>
+<li>当$\alpha = 0$时，朴素弹性网（naive elastic net）变为LASSO</li>
+</ul>
 <h2 id="MCP"><a class="header-anchor" href="#MCP"></a>MCP</h2>
 <p>MCP（minimax concave penalty）</p>
 <blockquote>
