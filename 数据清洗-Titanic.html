@@ -288,9 +288,13 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><center></center><br><a id="more"></a></p>
-<h1 id="Titanic数据集"><a href="#Titanic数据集" class="headerlink" title="Titanic数据集"></a>Titanic数据集</h1><p>数据来源：Kaggle<br><a href="https://www.kaggle.com/c/titanic/data" target="_blank" rel="noopener">点击下载</a></p>
-<h2 id="数据预览"><a href="#数据预览" class="headerlink" title="数据预览"></a>数据预览</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line">os.chdir(<span class="string">"你的路径"</span>)  <span class="comment">##设置工作路径</span></span><br><span class="line">os.getcwd()  <span class="comment">##读取当前工作路径</span></span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line">train_data = pd.read_csv(<span class="string">"train.csv"</span>)</span><br><span class="line">train_data.head()  <span class="comment">##查看前5行</span></span><br></pre></td></tr></table></figure>
+        <center></center>
+<a id="more"></a>
+<h1 id="Titanic数据集"><a class="header-anchor" href="#Titanic数据集"></a>Titanic数据集</h1>
+<p>数据来源：Kaggle<br>
+<a href="https://www.kaggle.com/c/titanic/data" target="_blank" rel="noopener">点击下载</a></p>
+<h2 id="数据预览"><a class="header-anchor" href="#数据预览"></a>数据预览</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line">os.chdir(<span class="string">"你的路径"</span>)  <span class="comment">##设置工作路径</span></span><br><span class="line">os.getcwd()  <span class="comment">##读取当前工作路径</span></span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line">train_data = pd.read_csv(<span class="string">"train.csv"</span>)</span><br><span class="line">train_data.head()  <span class="comment">##查看前5行</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">train_data.describe()  <span class="comment">##变量的描述统计</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">train_data.isnull().sum().sort_values(ascending=<span class="literal">False</span>)  <span class="comment">##统计每列的缺失值个数</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">train_data = train_data.drop(columns=[<span class="string">"Cabin"</span>, <span class="string">"Name"</span>, <span class="string">"PassengerId"</span>, <span class="string">"Ticket"</span>])  <span class="comment">##去除缺失值较多的变量Cabin以及其他无用信息</span></span><br><span class="line">train_data.head()</span><br></pre></td></tr></table></figure>
@@ -483,13 +487,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">347k</span>
+    <span title="站点总字数">354k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">5:16</span>
+    <span title="站点阅读时长">5:22</span>
 </div>
 
 
