@@ -1516,7 +1516,7 @@
 <p>效果：<br>
 From <a href="https://en.wikipedia.org/wiki/Lasso_(statistics)" target="_blank" rel="noopener">Wiki: Lasso</a>:<br>
 Consider a sample consisting of $N$ cases, each of which consists of $p$ covariates and a single outcome. Let $y_{i}$ be the outcome and $x_{i}:=(x_{1},x_{2},\ldots ,x_{p})^{T}$ be the covariate vector for the ith case. Then the objective of lasso is to solve<br>
-$$\min_{\beta_0, \beta} \left{ \sum_{i=1}^N (y_i - \beta_0 - x_i<sup>T\beta)</sup>2 \right} \quad \mathrm{subject  to } \sum_{j=1}^p |\beta_j|\leq t.$$</p>
+$${\min_{\beta_0, \beta}} \left{ \sum_{i=1}^N (y_i - \beta_0 - x_i<sup>T\beta)</sup>2 \right} \quad \mathrm{subject  to } \sum_{j=1}^p |\beta_j|\leq t.$$</p>
 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
