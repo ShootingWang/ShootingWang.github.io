@@ -1665,7 +1665,7 @@ $$L_{Bridge}(\beta) = \parallel y-X\beta \parallel_2 + \lambda \sum_{i=1}^p \mid
 \begin{equation}<br>
 \begin{aligned}<br>
 Q(\beta | X,y) &amp;= L(\beta|X,y) + \lambda \sum_{j=1}^J {\parallel} \beta_j {\parallel_{K_j}} \<br>
-&amp;= \parallel y - \sum_{j=1}^JX_j\beta_j {\parallel_2^2} + \lambda \sum_{j=1}^J \parallel \beta_j {\parallel_{K_j}} \<br>
+&amp;= \parallel y - \sum_{j=1}^JX_j\beta_j {\parallel_2^2} + \lambda \sum_{j=1}^J \parallel \beta_j {\parallel_{K_j}}<br>
 \end{aligned}<br>
 \end{equation}</p>
 <ul>
