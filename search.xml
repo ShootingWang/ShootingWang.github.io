@@ -1632,7 +1632,7 @@ $$\min_{\beta_0, \beta} \left{ \sum_{i=1}^N (y_i - \beta_0 - x_i^T \beta)^2 \rig
 <ul>
 <li>目标函数：<script type="math/tex; mode=display">L_{Bridge}(\beta) = \parallel y-X\beta \parallel_2 + \lambda \sum_{i=1}^p \mid \beta_i \mid^\gamma, \qquad \gamma > 0</script></li>
 </ul>
-<h1 id="Group-LASSO"><a href="#Group-LASSO" class="headerlink" title="Group LASSO"></a>Group LASSO</h1><blockquote>
+<h1 id="Group-Penalization"><a href="#Group-Penalization" class="headerlink" title="Group Penalization"></a>Group Penalization</h1><h2 id="Group-LASSO"><a href="#Group-LASSO" class="headerlink" title="Group LASSO"></a>Group LASSO</h2><blockquote>
 <ul>
 <li>Yuan, M. and Lin, Y. (2006) <a href="http://www.columbia.edu/~my2550/papers/glasso.final.pdf" target="_blank" rel="noopener">Model Selection and Estimation in Regression with Grouped Variables</a>. Journal of the Royal Statistical Society: Series B, 68, 49-67.</li>
 <li>Huang, J., Breheny, P., &amp; Ma, S. (2012). <a href="https://arxiv.org/pdf/1204.6491.pdf" target="_blank" rel="noopener">A Selective Review of Group Selection in High-Dimensional Models</a>. Statistical science : a review journal of the Institute of Mathematical Statistics, 27(4), 10.</li>
@@ -1648,15 +1648,15 @@ $$\min_{\beta_0, \beta} \left{ \sum_{i=1}^N (y_i - \beta_0 - x_i^T \beta)^2 \rig
 <li><p><a href="https://www.researchgate.net/publication/40786418_A_Group_Bridge_Approach_for_Variable_Selection" target="_blank" rel="noopener">Huang等人(2009)</a>：Group LASSO就像是自适应加权岭回归（adaptively weighted ridge regression）</p>
 </li>
 </ul>
-<h2 id="如何选择-K-j"><a href="#如何选择-K-j" class="headerlink" title="如何选择$K_j$"></a>如何选择$K_j$</h2><p>对于标准正交的$X_j$，有</p>
+<h3 id="如何选择-K-j"><a href="#如何选择-K-j" class="headerlink" title="如何选择$K_j$"></a>如何选择$K_j$</h3><p>对于标准正交的$X_j$，有</p>
 <script type="math/tex; mode=display">\frac{1}{n}X_j^TX_j = I_{d_j}, \qquad j=1, 2, \cdots, J.</script><ul>
 <li><a href="http://www.columbia.edu/~my2550/papers/glasso.final.pdf" target="_blank" rel="noopener">Yuan and Lin(2006)</a>建议取$K_j=I_{d_j}$</li>
 </ul>
-<h2 id="求解"><a href="#求解" class="headerlink" title="求解"></a>求解</h2><ul>
+<h3 id="求解"><a href="#求解" class="headerlink" title="求解"></a>求解</h3><ul>
 <li><a href="http://www.columbia.edu/~my2550/papers/glasso.final.pdf" target="_blank" rel="noopener">Yuan and Lin(2006)</a>：通过组坐标下降法（Group Coordinate Descent Algorithm）计算Group LASSO的解</li>
 </ul>
 <p>令$z=\frac{1}{n}X_j^T y$为$y=X\beta+\varepsilon$的最小二乘解，则有</p>
-<script type="math/tex; mode=display">\hat{\beta}_{LASSO}(z;\lambda) = S(z, \lambda) = \left( 1-\frac{\lambda}{\parallel z \parallel_2} \right)_{+} z</script><h1 id="L-1-Group-Bridge"><a href="#L-1-Group-Bridge" class="headerlink" title="$L_1$ Group Bridge"></a>$L_1$ Group Bridge</h1><blockquote>
+<script type="math/tex; mode=display">\hat{\beta}_{LASSO}(z;\lambda) = S(z, \lambda) = \left( 1-\frac{\lambda}{\parallel z \parallel_2} \right)_{+} z</script><h2 id="L-1-Group-Bridge"><a href="#L-1-Group-Bridge" class="headerlink" title="$L_1$ Group Bridge"></a>$L_1$ Group Bridge</h2><blockquote>
 <p>Huang, J., Ma, S., Xie, H., &amp; Zhang, C. H. (2009). <a href="https://www.researchgate.net/publication/40786418_A_Group_Bridge_Approach_for_Variable_Selection" target="_blank" rel="noopener">A group bridge approach for variable selection</a>. Biometrika, 96(2), 339–355. </p>
 </blockquote>
 <p>\begin{aligned}<br>\mbox{group selection} &amp;: \mbox{Bridge penalty} \\<br>\mbox{within-group selection} &amp;: \mbox{Lasso } \mathrm{penalty} \\<br>\end{aligned}</p>
@@ -1673,7 +1673,7 @@ $$\min_{\beta_0, \beta} \left{ \sum_{i=1}^N (y_i - \beta_0 - x_i^T \beta)^2 \rig
 <blockquote>
 <p><a href="https://www.researchgate.net/publication/40786418_A_Group_Bridge_Approach_for_Variable_Selection" target="_blank" rel="noopener">Huang等人(2009)</a>：</p>
 </blockquote>
-<h1 id="L-2-Group-Bridge"><a href="#L-2-Group-Bridge" class="headerlink" title="$L_2$ Group Bridge"></a>$L_2$ Group Bridge</h1><blockquote>
+<h2 id="L-2-Group-Bridge"><a href="#L-2-Group-Bridge" class="headerlink" title="$L_2$ Group Bridge"></a>$L_2$ Group Bridge</h2><blockquote>
 <p>Ma, S., Huang, J., &amp; Song, X. (2011). <a href="https://pubmed.ncbi.nlm.nih.gov/21415015/" target="_blank" rel="noopener">Integrative analysis and variable selection with multiple high-dimensional data sets</a>. Biostatistics (Oxford, England), 12(4), 763–775.<br>马双鸽, 王小燕, 方匡南. <a href="https://core.ac.uk/download/pdf/41449289.pdf" target="_blank" rel="noopener">大数据的整合分析方法</a>[J]. 统计研究, 2015, 32(011):3-11.</p>
 </blockquote>
 <ul>
@@ -1688,7 +1688,7 @@ $$\min_{\beta_0, \beta} \left{ \sum_{i=1}^N (y_i - \beta_0 - x_i^T \beta)^2 \rig
 <li>当$\gamma = 1$时，$L_2$ Group Bridge简化为Group Lasso</li>
 <li>$L_2$ Group Bridge满足选择一致性</li>
 </ul>
-<h1 id="Group-MCP"><a href="#Group-MCP" class="headerlink" title="Group MCP"></a>Group MCP</h1><figure class="highlight r"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="Group-MCP"><a href="#Group-MCP" class="headerlink" title="Group MCP"></a>Group MCP</h2><h1 id="Composite-Penalization-amp-Sparse-Group-Penalization"><a href="#Composite-Penalization-amp-Sparse-Group-Penalization" class="headerlink" title="Composite Penalization &amp; Sparse Group Penalization"></a>Composite Penalization &amp; Sparse Group Penalization</h1><figure class="highlight r"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
 <li><a href="https://zh.wikipedia.org/wiki/Lp%E8%8C%83%E6%95%B0" target="_blank" rel="noopener">Wiki: Lp-norm</a></li>
