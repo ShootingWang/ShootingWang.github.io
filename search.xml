@@ -23204,7 +23204,8 @@ $$p_{\lambda, \alpha} = C(\lambda, \alpha) \exp{ -\lambda \left[ \alpha |\beta|^
 </ul>
 <blockquote>
 <p>Zhang, C. (2010). <a href="https://projecteuclid.org/download/pdfview_1/euclid.aos/1266586618" target="_blank" rel="noopener">Nearly unbiased variable selection under minimax concave penalty</a>. The Annals of Statistics, 38(2), 894-942.<br>
-Liu, J., Huang, J., &amp; Ma, S. (2014). <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3933169/pdf/nihms470951.pdf" target="_blank" rel="noopener">Integrative Analysis of Cancer Diagnosis Studies with Composite Penalization</a>. Scandinavian journal of statistics, theory and applications, 41(1), 87–103.</p>
+Liu, J., Huang, J., &amp; Ma, S. (2014). <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3933169/pdf/nihms470951.pdf" target="_blank" rel="noopener">Integrative Analysis of Cancer Diagnosis Studies with Composite Penalization</a>. Scandinavian journal of statistics, theory and applications, 41(1), 87–103.<br>
+Mazumder, R., Friedman, J. H., &amp; Hastie, T. (2011). <a href="https://web.stanford.edu/~hastie/Papers/Sparsenet/jasa_MFH_final.pdf" target="_blank" rel="noopener">SparseNet: Coordinate Descent With Nonconvex Penalties</a>. Journal of the American Statistical Association, 106(495), 1125–1138.</p>
 </blockquote>
 <p>MCP定义为：<br>
 $$<br>
