@@ -1952,6 +1952,9 @@ J(\beta_j) &amp;= \lambda \parallel \beta_j \parallel_2^{\gamma} \<br>
 \mbox{group selection} &amp;: \mbox{Ridge penalty} \<br>
 \mbox{within-group selection} &amp;: \mathrm{MCP} \<br>
 \end{aligned}</p>
+<blockquote>
+<p><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3399910/pdf/nihms390293.pdf" target="_blank" rel="noopener">Ma等人, 2011</a>：首次将$L_2$ Group MCP应用到整合分析</p>
+</blockquote>
 <h1 id="Composite-Penalization-Sparse-Group-Penalization"><a class="header-anchor" href="#Composite-Penalization-Sparse-Group-Penalization"></a>Composite Penalization &amp; Sparse Group Penalization</h1>
 <p>Composite Penalization应用于异构整合分析：<br>
 $$J(\beta) = \sum_{j=1}^p p_{O, \lambda_{O}}\left( \sum_{k=1}^M p_{I, \lambda_{I}}(|\beta_j^k|) \right)$$</p>
