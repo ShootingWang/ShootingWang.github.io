@@ -1656,7 +1656,8 @@ $$\min_{\beta_0, \beta} \left{ \sum_{i=1}^N (y_i - \beta_0 - x_i^T \beta)^2 \rig
 <li><a href="http://www.columbia.edu/~my2550/papers/glasso.final.pdf" target="_blank" rel="noopener">Yuan and Lin(2006)</a>：通过组坐标下降法（Group Coordinate Descent Algorithm）计算Group LASSO的解</li>
 </ul>
 <p>令$z=\frac{1}{n}X_j^T y$为$y=X\beta+\varepsilon$的最小二乘解，则有</p>
-<script type="math/tex; mode=display">\hat{\beta}_{LASSO}(z;\lambda) = S(z, \lambda) = \left( 1-\frac{\lambda}{\parallel z \parallel_2} \right)_{+} z</script><h3 id="应用于同构整合分析"><a href="#应用于同构整合分析" class="headerlink" title="应用于同构整合分析"></a>应用于同构整合分析</h3><blockquote>
+<script type="math/tex; mode=display">\hat{\beta}_{LASSO}(z;\lambda) = S(z, \lambda) = \left( 1-\frac{\lambda}{\parallel z \parallel_2} \right)_{+} z</script><h3 id="同构整合分析"><a href="#同构整合分析" class="headerlink" title="同构整合分析"></a>同构整合分析</h3><p>Group LASSO可应用于同构整合分析</p>
+<blockquote>
 <p>Zhang, Q. , Zhang, S. , Liu, J. , Huang, J. , &amp; Ma, S. . (2015). <a href="https://arxiv.org/pdf/1501.02458.pdf" target="_blank" rel="noopener">Penalized integrative analysis under the accelerated failure time model</a>. Statistica Sinica, 26(2).</p>
 </blockquote>
 <p>目标函数：<br>\begin{aligned}<br>L(\beta) &amp;= \frac{1}{2n}\parallel y-X\beta \parallel_2^2 + \lambda \sum_{j=1}^p\parallel \beta_j \parallel_2 \\<br>&amp;= \frac{1}{2n}\parallel y-X\beta \parallel_2^2 + \lambda \sum_{j=1}^p \left[ \sum_{k=1}^M (\beta_j^k)^2 \right]^{1/2} \\<br>\end{aligned}</p>
