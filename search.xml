@@ -23437,15 +23437,14 @@ $$Q(\beta|X, y) = \parallel y-\sum_{k=1}^p x_k \beta_k \parallel_2^2 + \lambda_n
 </ul>
 </blockquote>
 <p>\begin{aligned}<br>
-\mbox{outer penalty} &amp;: \mbox{MCP} \<br>
 \mbox{inner penalty} &amp;: \mathrm{MCP} \<br>
+\mbox{outer penalty} &amp;: \mbox{MCP} \<br>
 \end{aligned}</p>
 <blockquote>
 <ul>
 <li><a href="http://www3.stat.sinica.edu.tw/statistica/oldpdf/A26n23.pdf" target="_blank" rel="noopener">Zhang等人(2015)</a>：在一定条件下，Composite MCP在组内和组间均满足选择一致性，而$L_1$ Group MCP只满足组选择一致性</li>
 </ul>
 </blockquote>
-<h2 id="MCP-Ridge"><a class="header-anchor" href="#MCP-Ridge"></a>MCP &amp; Ridge</h2>
 <h2 id="Sparse-Group-Penalization"><a class="header-anchor" href="#Sparse-Group-Penalization"></a>Sparse Group Penalization</h2>
 <h3 id="SGL-Sparse-Group-LASSO"><a class="header-anchor" href="#SGL-Sparse-Group-LASSO"></a>SGL-Sparse Group LASSO</h3>
 <p>SGL（Sparse Group LASSO）是LASSO和Group LASSO的线性组合</p>
