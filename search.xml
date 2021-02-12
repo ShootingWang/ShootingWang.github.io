@@ -1512,7 +1512,7 @@
 <h1 id="公式"><a class="header-anchor" href="#公式"></a>公式</h1>
 <h2 id="行内公式"><a class="header-anchor" href="#行内公式"></a>行内公式</h2>
 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">\(...\)</span><br><span class="line">或</span><br><span class="line">$...$</span><br></pre></td></tr></table></figure>
-<p><code>$X_i$</code>等价于<code>$\(X_i\)$</code>：$X_i$等价于$(X_i)$</p>
+<p><code>$X_i$</code>等价于<code>\(X_i\)</code>：$X_i$等价于(X_i)</p>
 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">From [<span class="string">Wiki: Lasso</span>](<span class="link">https://en.wikipedia.org/wiki/Lasso_(statistics</span>)):</span><br><span class="line">Consider a sample consisting of $N$ cases, each of which consists of $p$ covariates and a single outcome. Let $y<span class="emphasis">_&#123;i&#125;$ be the outcome and $x_</span>&#123;i&#125;:=(x<span class="emphasis">_&#123;1&#125;,x_</span>&#123;2&#125;,\ldots ,x_&#123;p&#125;)^&#123;T&#125;$ be the covariate vector for the ith case. Then the objective of lasso is to solve</span><br><span class="line">$$\min<span class="emphasis">_&#123;\beta_</span>0, \beta&#125;\left\&#123; \sum<span class="emphasis">_&#123;i=1&#125;^N(y_</span>i - \beta<span class="emphasis">_0 - x_</span>i^T\beta)^2 \right\&#125; \quad \mathrm&#123;subject to &#125; \sum<span class="emphasis">_&#123;j=1&#125;^p |\beta_</span>j|\leq t.$$</span><br></pre></td></tr></table></figure>
 <p>效果：<br>
 From <a href="https://en.wikipedia.org/wiki/Lasso_(statistics)" target="_blank" rel="noopener">Wiki: Lasso</a>:<br>
