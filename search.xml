@@ -1761,7 +1761,9 @@ $$p_{\lambda, \alpha} = C(\lambda, \alpha) \exp{ -\lambda \left[ \alpha |\beta|^
 <p>MCP定义为：<br>
 $$\rho(t;\lambda) = \lambda \int_{0}^t \left( 1-\frac{x}{\gamma \lambda} \right)_{+} \mathrm{d}x$$</p>
 <ul>
-<li>正则化参数：$\gamma &gt; 0$</li>
+<li>正则化参数$\gamma &gt; 0$控制$\rho(\cdot)$的凹度（concavity）</li>
+<li>惩罚参数：$\lambda$</li>
+<li>$x_{+} = xI(x\geq 0)$</li>
 </ul>
 <h1 id="Group-Penalization"><a class="header-anchor" href="#Group-Penalization"></a>Group Penalization</h1>
 <h2 id="Group-LASSO"><a class="header-anchor" href="#Group-LASSO"></a>Group LASSO</h2>
