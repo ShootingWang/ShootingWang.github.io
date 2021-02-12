@@ -1937,7 +1937,21 @@ J(\beta_j) &amp;= \lambda \parallel \beta_j \parallel_2^{\gamma} \<br>
 <li>当$\gamma = 1$时，$L_2$ Group Bridge简化为Group Lasso</li>
 <li>$L_2$ Group Bridge满足选择一致性</li>
 </ul>
-<h2 id="Group-MCP"><a class="header-anchor" href="#Group-MCP"></a>Group MCP</h2>
+<h2 id="L-2-Group-MCP"><a class="header-anchor" href="#L-2-Group-MCP"></a>$L_2$ Group MCP</h2>
+<ul>
+<li>可用于进行组变量选择</li>
+<li>可用于同构数据的整合分析</li>
+</ul>
+<blockquote>
+<ul>
+<li>Huang, J. , Breheny, P. , &amp; Ma, S. . (2012). <a href="https://arxiv.org/pdf/1204.6491.pdf" target="_blank" rel="noopener">A selective review of group selection in high-dimensional models</a>. Statistical Science, 27(4), págs. 481-499.</li>
+<li>Ma, S., Huang, J., Wei, F., Xie, Y., &amp; Fang, K. (2011). <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3399910/pdf/nihms390293.pdf" target="_blank" rel="noopener">Integrative analysis of multiple cancer prognosis studies with gene expression measurements</a>. Statistics in medicine, 30(28), 3361–3371.</li>
+</ul>
+</blockquote>
+<p>\begin{aligned}<br>
+\mbox{group selection} &amp;: \mbox{Ridge penalty} \<br>
+\mbox{within-group selection} &amp;: \mathrm{MCP} \<br>
+\end{aligned}</p>
 <h1 id="Composite-Penalization-Sparse-Group-Penalization"><a class="header-anchor" href="#Composite-Penalization-Sparse-Group-Penalization"></a>Composite Penalization &amp; Sparse Group Penalization</h1>
 <p>Composite Penalization应用于异构整合分析：<br>
 $$J(\beta) = \sum_{j=1}^p p_{O, \lambda_{O}}\left( \sum_{k=1}^M p_{I, \lambda_{I}}(|\beta_j^k|) \right)$$</p>
