@@ -1761,7 +1761,7 @@ $$\hat{\beta}<em>{LASSO}(z;\lambda) = S(z, \lambda) = \left( 1-\frac{\lambda}{\p
 </blockquote>
 <p>\begin{aligned}<br>
 \mbox{group selection} &amp;: \mbox{bridge penalty} \<br>
-\mbox{within-group selection} &amp;: \mbox{lasso penalty} \<br>
+\mbox{within-group selection} &amp;: \mbox{lasso } \mathrm{penalty} \<br>
 \end{aligned}</p>
 <p>目标函数：<br>
 $$Q(\beta|X, y) = \parallel y-\sum_{k=1}^p x_k \beta_k \parallel_2^2 + \lambda_n \sum_{j=1}^J c_j\parallel \beta_{A_j} \parallel_1^{\gamma}, \qquad \lambda_n &gt; 0$$</p>
