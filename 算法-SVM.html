@@ -310,279 +310,178 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <center>Support Vector Machine</center>
-<a id="more"></a>
-SVM
-<h1 id="支持向量机"><a class="header-anchor" href="#支持向量机"></a>支持向量机</h1>
-<ul>
-<li>
-<a href="/%E7%AE%97%E6%B3%95-SupervisedLearning.html" title="有监督学习">有监督学习</a>
-</li>
+        <p><center>Support Vector Machine</center><br><a id="more"></a><br>SVM</p>
+<h1 id="支持向量机"><a href="#支持向量机" class="headerlink" title="支持向量机"></a>支持向量机</h1><ul>
+<li><a href="/%E7%AE%97%E6%B3%95-SupervisedLearning.html" title="有监督学习">有监督学习</a></li>
 <li>分类</li>
 <li>回归</li>
-<li>
-<a href="/%E7%94%9F%E6%88%90%E5%BC%8F%E6%A8%A1%E5%9E%8B-%E5%88%A4%E5%88%AB%E5%BC%8F%E6%A8%A1%E5%9E%8B.html" title="判别式模型">判别式模型</a>
-</li>
+<li><a href="/%E7%94%9F%E6%88%90%E5%BC%8F%E6%A8%A1%E5%9E%8B-%E5%88%A4%E5%88%AB%E5%BC%8F%E6%A8%A1%E5%9E%8B.html" title="判别式模型">判别式模型</a></li>
 <li>训练完成后，大部分训练样本都不需要保留，最终模型仅与支持向量有关</li>
 </ul>
 <p>支持向量机是一种<u>有监督学习</u>算法，既可以用于分类，也可以用于回归。</p>
 <p>最初SVM被提出用于二类分类问题。</p>
 <p>支持向量机是<a href="/%E7%94%9F%E6%88%90%E5%BC%8F%E6%A8%A1%E5%9E%8B-%E5%88%A4%E5%88%AB%E5%BC%8F%E6%A8%A1%E5%9E%8B.html" title="判别分类方法">判别分类方法</a>，用一条分割线（二维空间中的直线或曲线）或流形体（多维空间中的曲线、曲面等概念的推广）将各种类型分割开。</p>
-<h2 id="基本思想"><a class="header-anchor" href="#基本思想"></a>基本思想</h2>
-<p>在特征空间中寻找间隔最大的分离超平面将数据高效地分为两类。</p>
+<h2 id="基本思想"><a href="#基本思想" class="headerlink" title="基本思想"></a>基本思想</h2><p>在特征空间中寻找间隔最大的分离超平面将数据高效地分为两类。</p>
 <ul>
 <li>正确划分数据集</li>
 <li>分离超平面几何间隔最大</li>
 </ul>
-<meta name="referrer" content="no-referrer">
-<img src="/%E7%AE%97%E6%B3%95-SVM/svm2.jpg" class title="支持向量机">
-<h3 id="类别"><a class="header-anchor" href="#类别"></a>类别</h3>
-<ol>
-<li><strong>线性可分支持向量机</strong></li>
-</ol>
-<ul>
+<p><meta name="referrer" content="no-referrer"><br><img src="/%E7%AE%97%E6%B3%95-SVM/svm2.jpg" class title="支持向量机"></p>
+<h3 id="类别"><a href="#类别" class="headerlink" title="类别"></a>类别</h3><ol>
+<li><strong>线性可分支持向量机</strong><ul>
 <li>训练样本线性可分</li>
 <li>通过<u>硬间隔</u>最大化，学习一个线性分类器</li>
 </ul>
-<ol start="2">
-<li><strong>线性支持向量机</strong></li>
-</ol>
-<ul>
+</li>
+<li><strong>线性支持向量机</strong><ul>
 <li>训练样本近似线性可分</li>
 <li>引入松弛变量，通过<u>软间隔</u>最大化，学习一个线性分类器</li>
 </ul>
-<ol start="3">
-<li><strong>非线性支持向量机</strong></li>
-</ol>
-<ul>
+</li>
+<li><strong>非线性支持向量机</strong><ul>
 <li>训练样本线性不可分</li>
 <li>通过使用核函数及软间隔最大化，学习一个分类器</li>
 </ul>
-<h3 id="原理"><a class="header-anchor" href="#原理"></a>原理</h3>
-<p>考虑样本容量为$n$的训练数据集<br>
-$$S={(\mathbf{x}_1,y_1),(\mathbf{x}_2,y_2),\cdots,(\mathbf{x}_n,y_n)}$$</p>
-<ul>
+</li>
+</ol>
+<h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><p>考虑样本容量为$n$的训练数据集</p>
+<script type="math/tex; mode=display">S=\{(\mathbf{x}_1,y_1),(\mathbf{x}_2,y_2),\cdots,(\mathbf{x}_n,y_n)\}</script><ul>
 <li>$\mathbf{x}_i\in \mathbb{R}^p$为第$i$个样本（$i=1,\cdots,n$）</li>
 <li>$x_j$为第$j$个特征（$j=1,\cdots,p$）</li>
-<li>$y_i\in{+1,-1}$为第$i$个样本的标签（$i=1,\cdots,n$）</li>
+<li>$y_i\in\{+1,-1\}$为第$i$个样本的标签（$i=1,\cdots,n$）</li>
 </ul>
-<h4 id="线性可分"><a class="header-anchor" href="#线性可分"></a>线性可分</h4>
-<p>假设训练数据集线性可分的。</p>
+<h4 id="线性可分"><a href="#线性可分" class="headerlink" title="线性可分"></a>线性可分</h4><p>假设训练数据集线性可分的。</p>
 <ul>
-<li><strong>几何间隔</strong>：对于给定的数据集$S$和超平面  $\mathbf{w}\cdot \mathbf{x}+b=0$，超平面关于样本点$(\mathbf{x}_i,y_i)$的几何间隔为<br>
-$$\gamma_i=y_i\left(\frac{\mathbf{w}}{||\mathbf{w}||}\cdot\mathbf{x}_i+\frac{b}{||\mathbf{w}||}  \right)$$</li>
-<li><strong>支持向量</strong>（Support Vector）：在线性可分情况下，训练数据集中与分离超平面距离最近的样本点的实例称为支持向量</li>
+<li><strong>几何间隔</strong>：对于给定的数据集$S$和超平面  $\mathbf{w}\cdot \mathbf{x}+b=0$，超平面关于样本点$(\mathbf{x}_i,y_i)$的几何间隔为<script type="math/tex; mode=display">\gamma_i=y_i\left(\frac{\mathbf{w}}{||\mathbf{w}||}\cdot\mathbf{x}_i+\frac{b}{||\mathbf{w}||}  \right)</script></li>
+<li><strong>支持向量</strong>（Support Vector）：在线性可分情况下，训练数据集中与分离超平面距离最近的样本点的实例称为支持向量<ul>
 <li>即：满足约束条件$y_i(\mathbf{w}\cdot\mathbf{x}_i+b)=1$的样本点实例</li>
 <li>$y_i=+1$的正例点，支持向量在超平面$H_1:\mathbf{w}\cdot\mathbf{x}+b=1$上</li>
 <li>$y_i=-1$的负例点，支持向量在超平面$H_2:\mathbf{w}\cdot\mathbf{x}+b=-1$上</li>
-<li><strong>间隔</strong>（margin）：超平面$H_1$和$H_2$之间的距离，等于<br>
-$$\frac{2}{||\mathbf{w}||}$$</li>
 </ul>
-<p>超平面$\mathbf{w}\cdot \mathbf{x}+b=0$关于所有样本点的几何间隔最小值为<br>
-$$\gamma=\min_{i=1,\cdots,n}\gamma_i$$<br>
-即支持向量到超平面的距离。</p>
-<p>因此，求解“最大分割超平面问题”即求解下列带约束的最优化问题<br>
-$$\max_{\mathbf{w},b}\gamma\quad \mathrm{s.t.}\quad y_i\left(\frac{\mathbf{w}}{||\mathbf{w}||}\cdot\mathbf{x}_i+\frac{b}{||\mathbf{w}||}  \right)\geq \gamma,\quad i=1,\cdots,n$$</p>
-<p>等价于<br>
-$$y_i\left(\frac{\mathbf{w}}{||\mathbf{w}||\gamma}\cdot\mathbf{x}_i+\frac{b}{||\mathbf{w}||\gamma}  \right)\geq1,\quad i=1,\cdots,n$$<br>
-令<br>
-$$\mathbf{w}\triangleq\frac{\mathbf{w}}{||\mathbf{w}||\gamma}$$<br>
-$$b\triangleq\frac{b}{||\mathbf{w}||\gamma}$$<br>
-则约束问题为<br>
-$$y_i(\mathbf{w}\cdot \mathbf{x}_i+b)\geq1,\quad i=1,\cdots,n.$$</p>
-<p>$$\max{\gamma}\Longleftrightarrow\max{\frac{1}{||\mathbf{w}||}}\Longleftrightarrow\min\frac{1}{2}||\mathbf{w}||^2$$</p>
-<p>因此，SVM模型“求解最大分割超平面问题”即求解以下带约束条件的最优化问题<br>
-$$\min_{\mathbf{w},b}\frac{1}{2}||\mathbf{w}||^2$$<br>
-$$\mathrm{s.t.}\quad y_i(\mathbf{w}^T\mathbf{x}_i+b)\geq 1, \forall i$$<br>
-$\mathbf{w}$是超平面参数。</p>
-<p>使用拉格朗日乘子法求解上述<u>有约束条件的最优化问题</u><br>
-$$L(\mathbf{w},b,\mathbf{\lambda})=\frac{1}{2}||\mathbf{w}||<sup>2-\sum_{i=1}</sup>n\lambda_i\left[y_i(\mathbf{w}^T\mathbf{x}_i+b)-1 \right]$$<br>
-其中，$\lambda_i$为拉格朗日乘子，且$\lambda_i\geq 0$。</p>
-<p>令<br>
-$$\theta(\mathbf{w})=\max_{\lambda_i\geq0}L(\mathbf{w},b,\mathbf{\lambda})$$</p>
-<ul>
+</li>
+<li><strong>间隔</strong>（margin）：超平面$H_1$和$H_2$之间的距离，等于<script type="math/tex; mode=display">\frac{2}{||\mathbf{w}||}</script></li>
+</ul>
+<p>超平面$\mathbf{w}\cdot \mathbf{x}+b=0$关于所有样本点的几何间隔最小值为</p>
+<script type="math/tex; mode=display">\gamma=\min_{i=1,\cdots,n}\gamma_i</script><p>即支持向量到超平面的距离。</p>
+<p>因此，求解“最大分割超平面问题”即求解下列带约束的最优化问题</p>
+<script type="math/tex; mode=display">\max_{\mathbf{w},b}\gamma\quad \mathrm{s.t.}\quad y_i\left(\frac{\mathbf{w}}{||\mathbf{w}||}\cdot\mathbf{x}_i+\frac{b}{||\mathbf{w}||}  \right)\geq \gamma,\quad i=1,\cdots,n</script><p>等价于</p>
+<script type="math/tex; mode=display">y_i\left(\frac{\mathbf{w}}{||\mathbf{w}||\gamma}\cdot\mathbf{x}_i+\frac{b}{||\mathbf{w}||\gamma}  \right)\geq1,\quad i=1,\cdots,n</script><p>令</p>
+<script type="math/tex; mode=display">\mathbf{w}\triangleq\frac{\mathbf{w}}{||\mathbf{w}||\gamma}</script><script type="math/tex; mode=display">b\triangleq\frac{b}{||\mathbf{w}||\gamma}</script><p>则约束问题为</p>
+<script type="math/tex; mode=display">y_i(\mathbf{w}\cdot \mathbf{x}_i+b)\geq1,\quad i=1,\cdots,n.</script><script type="math/tex; mode=display">\max{\gamma}\Longleftrightarrow\max{\frac{1}{||\mathbf{w}||}}\Longleftrightarrow\min\frac{1}{2}||\mathbf{w}||^2</script><p>因此，SVM模型“求解最大分割超平面问题”即求解以下带约束条件的最优化问题</p>
+<script type="math/tex; mode=display">\min_{\mathbf{w},b}\frac{1}{2}||\mathbf{w}||^2</script><script type="math/tex; mode=display">\mathrm{s.t.}\quad y_i(\mathbf{w}^T\mathbf{x}_i+b)\geq 1, \forall i</script><p>$\mathbf{w}$是超平面参数。</p>
+<p>使用拉格朗日乘子法求解上述<u>有约束条件的最优化问题</u></p>
+<script type="math/tex; mode=display">L(\mathbf{w},b,\mathbf{\lambda})=\frac{1}{2}||\mathbf{w}||^2-\sum_{i=1}^n\lambda_i\left[y_i(\mathbf{w}^T\mathbf{x}_i+b)-1 \right]</script><p>其中，$\lambda_i$为拉格朗日乘子，且$\lambda_i\geq 0$。</p>
+<p>令</p>
+<script type="math/tex; mode=display">\theta(\mathbf{w})=\max_{\lambda_i\geq0}L(\mathbf{w},b,\mathbf{\lambda})</script><ul>
 <li>当样本点不满足约束条件时，即$y_i(\mathbf{w}^T\mathbf{x}_i+b)&lt;1$，将$\lambda_i$设置为无穷大，则$\theta(\mathbf{w})$也为无穷大</li>
 <li>当样本点满足约束条件时，即$y_i(\mathbf{w}^T\mathbf{x}_i+b)\geq 1$，将$\theta(\mathbf{w})$设置为原函数本身</li>
 </ul>
-<p>即<br>
-$$\theta(\mathbf{w})=\left{<br>
-\begin{array}{ll}<br>
-\frac{1}{2}||\mathbf{w}||^2, &amp; \mathbf{x}\in 可行区域\<br>
-+\infty, &amp; \mathbf{x}\in 不可行区域<br>
-\end{array}<br>
-\right.$$</p>
-<p>因此，约束问题等价于<br>
-$$\min_{\mathbf{w},b}\theta(\mathbf{w})=\min_{\mathbf{w},b}\max_{\lambda_1\geq 0}L(\mathbf{w},b,\mathbf{\lambda})=p^<em>$$<br>
-由拉格朗日函数的<strong>对偶性</strong>可得<br>
-$$\max_{\lambda_1\geq 0}\min_{\mathbf{w},b}L(\mathbf{w},b,\mathbf{\lambda})=d^</em>$$</p>
-<p>要使得$p<sup>*=d</sup>*$，需满足：</p>
+<p>即</p>
+<script type="math/tex; mode=display">\theta(\mathbf{w})=\left\{
+    \begin{array}{ll}
+    \frac{1}{2}||\mathbf{w}||^2, & \mathbf{x}\in 可行区域\\
+    +\infty, & \mathbf{x}\in 不可行区域
+    \end{array}
+    \right.</script><p>因此，约束问题等价于</p>
+<script type="math/tex; mode=display">\min_{\mathbf{w},b}\theta(\mathbf{w})=\min_{\mathbf{w},b}\max_{\lambda_1\geq 0}L(\mathbf{w},b,\mathbf{\lambda})=p^*</script><p>由拉格朗日函数的<strong>对偶性</strong>可得</p>
+<script type="math/tex; mode=display">\max_{\lambda_1\geq 0}\min_{\mathbf{w},b}L(\mathbf{w},b,\mathbf{\lambda})=d^*</script><p>要使得$p^*=d^*$，需满足：</p>
 <ol>
-<li>优化问题是凸优化问题<br>
-本优化问题是一个凸优化问题</li>
-<li>满足KKT条件<br>
-即要求<br>
-$$\left{<br>
-\begin{array}{l}<br>
-\lambda_i\geq0\<br>
-y_i(\mathbf{w}_i\cdot\mathbf{x}_i+b)-1\geq0\<br>
-\lambda_i\left[y_i(\mathbf{w}_i\cdot\mathbf{x}_i+b)-1 \right]=0<br>
-\end{array}<br>
-\right.$$</li>
+<li>优化问题是凸优化问题<br>本优化问题是一个凸优化问题</li>
+<li>满足KKT条件<br>即要求<script type="math/tex; mode=display">\left\{
+  \begin{array}{l}
+  \lambda_i\geq0\\
+  y_i(\mathbf{w}_i\cdot\mathbf{x}_i+b)-1\geq0\\
+  \lambda_i\left[y_i(\mathbf{w}_i\cdot\mathbf{x}_i+b)-1 \right]=0
+  \end{array}
+  \right.</script></li>
 </ol>
-<p>令<br>
-$$\frac{\partial L(\mathbf{w},b,\lambda)}{\partial \mathbf{w}}=0,\quad \frac{\partial L(\mathbf{w},b,\lambda)}{\partial b}=0$$<br>
-可得<br>
-$$\left{\begin{array}{l}<br>
-\mathbf{w}=\sum_{i=1}^n\lambda_i y_i \mathbf{x}<em>i\<br>
-\sum</em>{i=1}^n\lambda_iy_i=0<br>
-\end{array}<br>
-\right.$$</p>
-<p>代入$L(\mathbf{w},b,\lambda)$消去$\mathbf{w}$和$b$得<br>
-\begin{equation}<br>
-\begin{aligned}<br>
-L(\mathbf{w},b,\lambda) &amp;= \frac{1}{2}\sum_{i=1}<sup>n\sum_{j=1}</sup>n\lambda_i\lambda_jy_iy_j(\mathbf{x}_i \cdot \mathbf{x}<em>j )-\sum</em>{i=1}<sup>n\lambda_iy_i\left[\left(\sum_{j=1}</sup>n\lambda_jy_j\mathbf{x}<em>j \right)\cdot \mathbf{x}<em>i+b \right]+\sum</em>{i=1}^n\lambda_i\<br>
-&amp;= -\frac{1}{2}\sum</em>{i=1}<sup>n\sum_{j=1}</sup>n\lambda_i\lambda_jy_iy_j(\mathbf{x}_i \cdot \mathbf{x}<em>j )+\sum</em>{i=1}^n\lambda_i<br>
-\end{aligned}<br>
-\end{equation}</p>
-<p>则<br>
-$$\min_{\mathbf{w},b}L(\mathbf{w},b,\mathbf{\lambda})=-\frac{1}{2}\sum_{i=1}<sup>n\sum_{j=1}</sup>n\lambda_i\lambda_jy_iy_j(\mathbf{x}<em>i \cdot \mathbf{x}<em>j )+\sum</em>{i=1}^n\lambda_i$$<br>
-那么$$\max</em>{\lambda}\min_{\mathbf{w},b}L(\mathbf{w},b,\mathbf{\lambda})$$等价于<br>
-\begin{equation}<br>
-\begin{aligned}<br>
-\max_{\lambda} &amp; -\frac{1}{2}\sum_{i=1}<sup>n\sum_{j=1}</sup>n\lambda_i\lambda_jy_iy_j(\mathbf{x}<em>i \cdot \mathbf{x}<em>j )+\sum</em>{i=1}^n\lambda_i\<br>
-\mathrm{s.t.} &amp; \sum</em>{i=1}^n\lambda_iy_i=0\<br>
-&amp; \lambda_i\geq0,\quad i=1,\cdots,n.<br>
-\end{aligned}<br>
-\end{equation}</p>
+<p>令</p>
+<script type="math/tex; mode=display">\frac{\partial L(\mathbf{w},b,\lambda)}{\partial \mathbf{w}}=0,\quad \frac{\partial L(\mathbf{w},b,\lambda)}{\partial b}=0</script><p>可得</p>
+<script type="math/tex; mode=display">\left\{\begin{array}{l}
+    \mathbf{w}=\sum_{i=1}^n\lambda_i y_i \mathbf{x}_i\\
+    \sum_{i=1}^n\lambda_iy_i=0
+    \end{array}
+    \right.</script><p>代入$L(\mathbf{w},b,\lambda)$消去$\mathbf{w}$和$b$得<br>\begin{equation}<br>\begin{aligned}<br>L(\mathbf{w},b,\lambda) &amp;= \frac{1}{2}\sum_{i=1}^n\sum_{j=1}^n\lambda_i\lambda_jy_iy_j(\mathbf{x}_i \cdot \mathbf{x}_j )-\sum_{i=1}^n\lambda_iy_i\left[\left(\sum_{j=1}^n\lambda_jy_j\mathbf{x}_j \right)\cdot \mathbf{x}_i+b \right]+\sum_{i=1}^n\lambda_i\\<br>&amp;= -\frac{1}{2}\sum_{i=1}^n\sum_{j=1}^n\lambda_i\lambda_jy_iy_j(\mathbf{x}_i \cdot \mathbf{x}_j )+\sum_{i=1}^n\lambda_i<br>\end{aligned}<br>\end{equation}</p>
+<p>则</p>
+<script type="math/tex; mode=display">\min_{\mathbf{w},b}L(\mathbf{w},b,\mathbf{\lambda})=-\frac{1}{2}\sum_{i=1}^n\sum_{j=1}^n\lambda_i\lambda_jy_iy_j(\mathbf{x}_i \cdot \mathbf{x}_j )+\sum_{i=1}^n\lambda_i</script><p>那么<script type="math/tex">\max_{\lambda}\min_{\mathbf{w},b}L(\mathbf{w},b,\mathbf{\lambda})</script>等价于<br>\begin{equation}<br>\begin{aligned}<br>\max_{\lambda} &amp; -\frac{1}{2}\sum_{i=1}^n\sum_{j=1}^n\lambda_i\lambda_jy_iy_j(\mathbf{x}_i \cdot \mathbf{x}_j )+\sum_{i=1}^n\lambda_i\\<br>\mathrm{s.t.} &amp; \sum_{i=1}^n\lambda_iy_i=0\\<br>&amp; \lambda_i\geq0,\quad i=1,\cdots,n.<br>\end{aligned}<br>\end{equation}</p>
 <p>使用<strong>序列最小化算法</strong>（SMO）（待补充）求解上述优化问题。</p>
 <p>通过SMO算法求解得到最优$\pmb{\lambda}^*$，从而求解出$\mathbf{w}$和$b$，进而求得最优超平面——决策平面。</p>
 <blockquote>
-<p>在$\pmb{\lambda}<sup>*$中，至少存在一个$\lambda_j</sup>*&gt;0$<br>
-<font face="仿宋"><br>
-证明（反证法）：若不存在$\lambda_j^*&gt;0$，则$\mathbf{w}=0$，矛盾<br>
-</font></p>
+<p>在$\pmb{\lambda}^*$中，至少存在一个$\lambda_j^*&gt;0$</p>
+<font face="仿宋">
+证明（反证法）：若不存在$\lambda_j^*>0$，则$\mathbf{w}=0$，矛盾
+</font>
+
 </blockquote>
-<p>对$\lambda_j^*&gt;0$有<br>
-$$y_j\left(\mathbf{w}<sup>*\cdot\mathbf{x}_j+b</sup>* \right)-1=0$$<br>
-因此<br>
-\begin{equation}<br>
-\begin{aligned}<br>
-\mathbf{w}^* &amp;= \sum_{i=1}<sup>n\lambda_i</sup>*y_i\mathbf{x}<em>i\<br>
-b^* &amp;= y_j-\sum</em>{i=1}<sup>n\lambda_i</sup>*y_i(\mathbf{x}_i\cdot\mathbf{x}_j)<br>
-\end{aligned}<br>
-\end{equation}</p>
+<p>对$\lambda_j^*&gt;0$有</p>
+<script type="math/tex; mode=display">y_j\left(\mathbf{w}^*\cdot\mathbf{x}_j+b^* \right)-1=0</script><p>因此<br>\begin{equation}<br>\begin{aligned}<br>    \mathbf{w}^* &amp;= \sum_{i=1}^n\lambda_i^*y_i\mathbf{x}_i\\<br>    b^* &amp;= y_j-\sum_{i=1}^n\lambda_i^*y_i(\mathbf{x}_i\cdot\mathbf{x}_j)<br>\end{aligned}<br>\end{equation}</p>
 <blockquote>
-<p>对于任意训练样本$(\mathbf{x}_i,y_i)$，总有$\lambda_i=0$或$y_i\left(\mathbf{w}<sup>*\cdot\mathbf{x}_i+b</sup>* \right)=1$。</p>
+<p>对于任意训练样本$(\mathbf{x}_i,y_i)$，总有$\lambda_i=0$或$y_i\left(\mathbf{w}^*\cdot\mathbf{x}_i+b^* \right)=1$。</p>
 </blockquote>
 <ul>
 <li>若$\lambda_i=0$，则该样本不会出现在求解“决策平面”参数得式子中</li>
-<li>若$\lambda_i&gt;0$，则必有$y_i\left(\mathbf{w}<sup>*\cdot\mathbf{x}_i+b</sup>* \right)=1$，即样本点位于最大间隔边界上——$(\mathbf{x}_i,y_i)$是一个<strong>支持向量</strong></li>
+<li>若$\lambda_i&gt;0$，则必有$y_i\left(\mathbf{w}^*\cdot\mathbf{x}_i+b^* \right)=1$，即样本点位于最大间隔边界上——$(\mathbf{x}_i,y_i)$是一个<strong>支持向量</strong></li>
 </ul>
-<h4 id="近似线性可分"><a class="header-anchor" href="#近似线性可分"></a>近似线性可分</h4>
-<p>实际情况下，几乎不存在完全线性可分的数据，对于近似线性可分的训练数据集，引入<strong>软间隔</strong>——允许某些点不满足约束$y_i(\mathbf{w}\cdot\mathbf{x}_i+b)\geq 1$</p>
-<p>引入<strong>松弛变量</strong>(Hinge损失函数)$\xi_i=\max{0,1-y_i(\mathbf{w}\cdot\mathbf{x}<em>i+b)}$，将原优化问题改写为<br>
-\begin{equation}<br>
-\begin{aligned}<br>
-\min</em>{\mathbf{w},b,\xi} &amp;\quad \frac{1}{2}||\mathbf{w}||<sup>2+\phi\sum_{i=1}</sup>nxi_i\<br>
-\mathrm{s.t.} &amp;\quad y_i(\mathbf{w}\cdot\mathbf{x}_i+b)\geq1-\xi_i\<br>
-&amp; \quad \xi_i\geq 0,\quad i=1,\cdots,n.<br>
-\end{aligned}<br>
-\end{equation}<br>
-其中$\phi$为惩罚参数，$\phi$越大，对分类的惩罚越大。</p>
-<h4 id="非线性SVM"><a class="header-anchor" href="#非线性SVM"></a>非线性SVM</h4>
-<p>通过非线性变换将非线性分类问题转化为线性分类问题。</p>
+<h4 id="近似线性可分"><a href="#近似线性可分" class="headerlink" title="近似线性可分"></a>近似线性可分</h4><p>实际情况下，几乎不存在完全线性可分的数据，对于近似线性可分的训练数据集，引入<strong>软间隔</strong>——允许某些点不满足约束$y_i(\mathbf{w}\cdot\mathbf{x}_i+b)\geq 1$</p>
+<p>引入<strong>松弛变量</strong>(Hinge损失函数)$\xi_i=\max\{0,1-y_i(\mathbf{w}\cdot\mathbf{x}_i+b)\}$，将原优化问题改写为<br>\begin{equation}<br>\begin{aligned}<br>\min_{\mathbf{w},b,\xi} &amp;\quad \frac{1}{2}||\mathbf{w}||^2+\phi\sum_{i=1}^nxi_i\\<br>\mathrm{s.t.} &amp;\quad y_i(\mathbf{w}\cdot\mathbf{x}_i+b)\geq1-\xi_i\\<br>&amp; \quad \xi_i\geq 0,\quad i=1,\cdots,n.<br>\end{aligned}<br>\end{equation}<br>其中$\phi$为惩罚参数，$\phi$越大，对分类的惩罚越大。</p>
+<h4 id="非线性SVM"><a href="#非线性SVM" class="headerlink" title="非线性SVM"></a>非线性SVM</h4><p>通过非线性变换将非线性分类问题转化为线性分类问题。</p>
 <blockquote>
 <p>用核函数替换线性SVM中的内积</p>
 </blockquote>
 <ul>
-<li><strong>核函数</strong>（Kernel function）：存在一个从输入空间到特征空间的映射$\varphi(\cdot)$，对输入空间中的任意两点$x,z$有<br>
-$$K(x,z)=\varphi(x)\cdot\varphi(z)$$</li>
+<li><strong>核函数</strong>（Kernel function）：存在一个从输入空间到特征空间的映射$\varphi(\cdot)$，对输入空间中的任意两点$x,z$有<script type="math/tex; mode=display">K(x,z)=\varphi(x)\cdot\varphi(z)</script></li>
 </ul>
-<p>则分类决策函数变为<br>
-$$f(\mathbf{x})=\mathrm{sign}\left(\sum_{i=1}<sup>n\lambda_i</sup><em>y_iK(\mathbf{x},\mathbf{x}_i)+b^</em> \right)$$</p>
-<h2 id="算法"><a class="header-anchor" href="#算法"></a>算法</h2>
-<h3 id="线性支持向量机"><a class="header-anchor" href="#线性支持向量机"></a>线性支持向量机</h3>
-<p>综合原理章节的讨论，总结<strong>线性支持向量机学习算法</strong>如下：</p>
+<p>则分类决策函数变为</p>
+<script type="math/tex; mode=display">f(\mathbf{x})=\mathrm{sign}\left(\sum_{i=1}^n\lambda_i^*y_iK(\mathbf{x},\mathbf{x}_i)+b^* \right)</script><h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><h3 id="线性支持向量机"><a href="#线性支持向量机" class="headerlink" title="线性支持向量机"></a>线性支持向量机</h3><p>综合原理章节的讨论，总结<strong>线性支持向量机学习算法</strong>如下：</p>
 <ul>
-<li><strong>输入</strong>：训练数据集<br>
-$$S={(\mathbf{x}_1,y_1),(\mathbf{x}_2,y_2),\cdots,(\mathbf{x}_n,y_n)}$$</li>
+<li><strong>输入</strong>：训练数据集<script type="math/tex; mode=display">S=\{(\mathbf{x}_1,y_1),(\mathbf{x}_2,y_2),\cdots,(\mathbf{x}_n,y_n)\}</script><ul>
 <li>$\mathbf{x}_i\in \mathbb{R}^p$为第$i$个样本（$i=1,\cdots,n$）</li>
 <li>$x_j$为第$j$个特征（$j=1,\cdots,p$）</li>
-<li>$y_i\in{+1,-1}$为第$i$个样本的标签（$i=1,\cdots,n$）</li>
+<li>$y_i\in\{+1,-1\}$为第$i$个样本的标签（$i=1,\cdots,n$）</li>
+</ul>
+</li>
 <li><strong>输出</strong>：分离超平面、分类决策函数</li>
 </ul>
 <ol>
-<li>选择惩罚参数$\phi&gt;0$，构造并求解凸二次规划问题<br>
-\begin{equation}<br>
-\begin{aligned}<br>
-\min_{\pmb{\lambda}} &amp;\quad \frac{1}{2}\sum_{i=1}<sup>n\sum_{j=1}</sup>n\lambda_i\lambda_jy_iy_j(\mathbf{x}<em>i\cdot\mathbf{x}<em>j)-\sum</em>{i=1}^n\lambda_i\<br>
-\mathrm{s.t.} &amp;\quad \sum</em>{i=1}^n\lambda_iy_i=0\<br>
-&amp; \quad 0\leq \lambda_i\leq \phi,\quad i=1,\cdots,n.<br>
-\end{aligned}<br>
-\end{equation}<br>
-得到最优解<br>
-$$\pmb{\lambda}<sup>*=(\lambda_1</sup>*,\cdots,\lambda_n<sup>*)</sup>T$$</li>
-<li>计算<br>
-$$\mathbf{w}<sup>*=\sum_{i=1}</sup>n\lambda^*_iy_i\mathbf{x}_i$$<br>
-选择$\pmb{\lambda}<sup>*$的一个满足条件$0&lt;\lambda_j</sup>*&lt;\phi$的分量$\lambda_j^*$，计算<br>
-$$b<sup>*=y_j-\sum_{i=1}</sup>n\lambda_j^*y_j(\mathbf{x}_i\cdot\mathbf{x}_j)$$</li>
-<li>求分离超平面<br>
-$$\mathbf{w}<sup>*\cdot\mathbf{x}+b</sup><em>=0$$<br>
-分类决策函数为<br>
-$$f(\mathbf{x})=\mathrm{sign}{(\mathbf{w}<sup>*\cdot\mathbf{x}+b</sup></em>)}$$</li>
+<li>选择惩罚参数$\phi&gt;0$，构造并求解凸二次规划问题<br>\begin{equation}<br>\begin{aligned}<br>\min_{\pmb{\lambda}} &amp;\quad \frac{1}{2}\sum_{i=1}^n\sum_{j=1}^n\lambda_i\lambda_jy_iy_j(\mathbf{x}_i\cdot\mathbf{x}_j)-\sum_{i=1}^n\lambda_i\\<br>\mathrm{s.t.} &amp;\quad \sum_{i=1}^n\lambda_iy_i=0\\<br>&amp; \quad 0\leq \lambda_i\leq \phi,\quad i=1,\cdots,n.<br>\end{aligned}<br>\end{equation}<br>得到最优解<script type="math/tex; mode=display">\pmb{\lambda}^*=(\lambda_1^*,\cdots,\lambda_n^*)^T</script></li>
+<li>计算<script type="math/tex; mode=display">\mathbf{w}^*=\sum_{i=1}^n\lambda^*_iy_i\mathbf{x}_i</script>选择$\pmb{\lambda}^*$的一个满足条件$0&lt;\lambda_j^*&lt;\phi$的分量$\lambda_j^*$，计算<script type="math/tex; mode=display">b^*=y_j-\sum_{i=1}^n\lambda_j^*y_j(\mathbf{x}_i\cdot\mathbf{x}_j)</script></li>
+<li>求分离超平面<script type="math/tex; mode=display">\mathbf{w}^*\cdot\mathbf{x}+b^*=0</script>分类决策函数为<script type="math/tex; mode=display">f(\mathbf{x})=\mathrm{sign}{(\mathbf{w}^*\cdot\mathbf{x}+b^*)}</script></li>
 </ol>
-<h3 id="非线性支持向量机"><a class="header-anchor" href="#非线性支持向量机"></a>非线性支持向量机</h3>
-<ul>
-<li><strong>输入</strong>：训练数据集<br>
-$$S={(\mathbf{x}_1,y_1),(\mathbf{x}_2,y_2),\cdots,(\mathbf{x}_n,y_n)}$$</li>
+<h3 id="非线性支持向量机"><a href="#非线性支持向量机" class="headerlink" title="非线性支持向量机"></a>非线性支持向量机</h3><ul>
+<li><strong>输入</strong>：训练数据集<script type="math/tex; mode=display">S=\{(\mathbf{x}_1,y_1),(\mathbf{x}_2,y_2),\cdots,(\mathbf{x}_n,y_n)\}</script><ul>
 <li>$\mathbf{x}_i\in \mathbb{R}^p$为第$i$个样本（$i=1,\cdots,n$）</li>
 <li>$x_j$为第$j$个特征（$j=1,\cdots,p$）</li>
-<li>$y_i\in{+1,-1}$为第$i$个样本的标签（$i=1,\cdots,n$）</li>
+<li>$y_i\in\{+1,-1\}$为第$i$个样本的标签（$i=1,\cdots,n$）</li>
+</ul>
+</li>
 <li><strong>输出</strong>：分离超平面、分类决策函数</li>
 </ul>
 <ol>
-<li>选择适当的核函数$K(x,z)$和惩罚参数$\phi&gt;0$，构造并求解凸二次规划问题<br>
-\begin{equation}<br>
-\begin{aligned}<br>
-\min_{\pmb{\lambda}} &amp;\quad \frac{1}{2}\sum_{i=1}<sup>n\sum_{j=1}</sup>n\lambda_i\lambda_jy_iy_jK(\mathbf{x_i},\mathbf{x}<em>j)-\sum</em>{i=1}^n\lambda_i\<br>
-\mathrm{s.t.} &amp;\quad \sum_{i=1}^n\lambda_iy_i=0\<br>
-&amp; \quad 0\leq \lambda_i\leq \phi,\quad i=1,\cdots,n.<br>
-\end{aligned}<br>
-\end{equation}<br>
-得到最优解<br>
-$$\pmb{\lambda}<sup>*=(\lambda_1</sup>*,\cdots,\lambda_n<sup>*)</sup>T$$</li>
-<li>选择$\pmb{\lambda}<sup>*$的一个满足条件$0&lt;\lambda_j</sup>*&lt;\phi$的分量$\lambda_j^*$，计算<br>
-$$b<sup>*=y_j-\sum_{i=1}</sup>n\lambda_j^*y_jK(\mathbf{x}_i,\mathbf{x}_j)$$</li>
-<li>分类决策函数为<br>
-$$f(\mathbf{x})=\mathrm{sign}{\left(\sum_{i=1}<sup>n\lambda_i</sup><em>y_iK(\mathbf{x},\mathbf{x}_i)+b^</em>\right)}$$</li>
+<li>选择适当的核函数$K(x,z)$和惩罚参数$\phi&gt;0$，构造并求解凸二次规划问题<br>\begin{equation}<br>\begin{aligned}<br>\min_{\pmb{\lambda}} &amp;\quad \frac{1}{2}\sum_{i=1}^n\sum_{j=1}^n\lambda_i\lambda_jy_iy_jK(\mathbf{x_i},\mathbf{x}_j)-\sum_{i=1}^n\lambda_i\\<br>\mathrm{s.t.} &amp;\quad \sum_{i=1}^n\lambda_iy_i=0\\<br>&amp; \quad 0\leq \lambda_i\leq \phi,\quad i=1,\cdots,n.<br>\end{aligned}<br>\end{equation}<br>得到最优解<script type="math/tex; mode=display">\pmb{\lambda}^*=(\lambda_1^*,\cdots,\lambda_n^*)^T</script></li>
+<li>选择$\pmb{\lambda}^*$的一个满足条件$0&lt;\lambda_j^*&lt;\phi$的分量$\lambda_j^*$，计算<script type="math/tex; mode=display">b^*=y_j-\sum_{i=1}^n\lambda_j^*y_jK(\mathbf{x}_i,\mathbf{x}_j)</script></li>
+<li>分类决策函数为<script type="math/tex; mode=display">f(\mathbf{x})=\mathrm{sign}{\left(\sum_{i=1}^n\lambda_i^*y_iK(\mathbf{x},\mathbf{x}_i)+b^*\right)}</script></li>
 </ol>
-<h2 id="核函数"><a class="header-anchor" href="#核函数"></a>核函数</h2>
-<ul>
+<h2 id="核函数"><a href="#核函数" class="headerlink" title="核函数"></a>核函数</h2><ul>
 <li>SVM使用核函数的过程实质是进行特征转换的过程</li>
 </ul>
-<h3 id="线性核"><a class="header-anchor" href="#线性核"></a>线性核</h3>
-<h3 id="多项式核"><a class="header-anchor" href="#多项式核"></a>多项式核</h3>
-<h3 id="RBF核"><a class="header-anchor" href="#RBF核"></a>RBF核</h3>
-<p>高斯核函数/高斯径向基函数（Radial Basis Function）<br>
-$$K(x,z)=\exp\left(-\frac{||x-z||<sup>2}{2\sigma</sup>2} \right)$$</p>
-<ul>
+<h3 id="线性核"><a href="#线性核" class="headerlink" title="线性核"></a>线性核</h3><h3 id="多项式核"><a href="#多项式核" class="headerlink" title="多项式核"></a>多项式核</h3><h3 id="RBF核"><a href="#RBF核" class="headerlink" title="RBF核"></a>RBF核</h3><p>高斯核函数/高斯径向基函数（Radial Basis Function）</p>
+<script type="math/tex; mode=display">K(x,z)=\exp\left(-\frac{||x-z||^2}{2\sigma^2} \right)</script><ul>
 <li>对应的SVM是<strong>高斯径向基函数分类器</strong></li>
-<li>对应的分类决策函数为<br>
-$$f(\mathbf{x})=\mathrm{sign}{\left(\sum_{i=1}<sup>n\lambda_i</sup><em>y_i\exp{\left(-\frac{||\mathbf{x}-\mathrm{x}_i||<sup>2}{2\sigma</sup>2}\right)}+b^</em>\right)}$$</li>
+<li>对应的分类决策函数为<script type="math/tex; mode=display">f(\mathbf{x})=\mathrm{sign}{\left(\sum_{i=1}^n\lambda_i^*y_i\exp{\left(-\frac{||\mathbf{x}-\mathrm{x}_i||^2}{2\sigma^2}\right)}+b^*\right)}</script></li>
 </ul>
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
-<pre><code>.dataframe tbody tr th {
-    vertical-align: top;
-}
 
-.dataframe thead th {
-    text-align: center;
-}
-</code></pre>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: center;
+    }
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -620,6 +519,7 @@ $$f(\mathbf{x})=\mathrm{sign}{\left(\sum_{i=1}<sup>n\lambda_i</sup><em>y_i\exp{\
   </tr></tbody>
 </table>
 </div>
+
 <p>其中</p>
 <ul>
 <li>$n$：样本数</li>
@@ -628,13 +528,11 @@ $$f(\mathbf{x})=\mathrm{sign}{\left(\sum_{i=1}<sup>n\lambda_i</sup><em>y_i\exp{\
 <blockquote>
 <p>当$p$较小、$n$较大时，支持向量机性能通常不如深度神经网络</p>
 </blockquote>
-<h2 id="总结"><a class="header-anchor" href="#总结"></a>总结</h2>
-<p>若样本的某些特征数据缺失，可能会影响SVM模型训练结果的好坏。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>若样本的某些特征数据缺失，可能会影响SVM模型训练结果的好坏。</p>
 <ul>
 <li>SVM希望样本在特征空间中线性可分，所以特征空间的好坏对SVM的性能很重要</li>
 </ul>
-<h3 id="优点"><a class="header-anchor" href="#优点"></a>优点</h3>
-<p>SVM的优点：</p>
+<h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><p>SVM的优点：</p>
 <ul>
 <li>模型以来的支持向量比较少，消耗内存少</li>
 <li>预测阶段的速度快</li>
@@ -646,17 +544,14 @@ $$f(\mathbf{x})=\mathrm{sign}{\left(\sum_{i=1}<sup>n\lambda_i</sup><em>y_i\exp{\
 <li>泛化能力好</li>
 <li>SVM对线性不可分的数据有较好的分类性能</li>
 </ul>
-<h3 id="缺点"><a class="header-anchor" href="#缺点"></a>缺点</h3>
-<p>SVM的缺点：</p>
+<h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><p>SVM的缺点：</p>
 <ul>
-<li>随着样本量$N$的增加，模型的训练复杂度可能会高达$\mathcal{O}(N<sup>3)$，即使经过高效处理后，复杂度也有$\mathcal{O}(N</sup>2)$。即，大样本下模型学习的计算成本会很高。</li>
+<li>随着样本量$N$的增加，模型的训练复杂度可能会高达$\mathcal{O}(N^3)$，即使经过高效处理后，复杂度也有$\mathcal{O}(N^2)$。即，大样本下模型学习的计算成本会很高。</li>
 <li>训练效果非常依赖于边界软化参数$C$的选择是否合理；需要通过交叉检验进行检索；当数据集较大时，计算量也很大</li>
 <li>SVM对缺失数据敏感</li>
 <li>非线性问题的核函数的选择没有通用标准，难以选择一个合适的核函数</li>
 </ul>
-<h1 id="支持向量回归机"><a class="header-anchor" href="#支持向量回归机"></a>支持向量回归机</h1>
-<p>SVR<br>
-Support Vector Regression</p>
+<h1 id="支持向量回归机"><a href="#支持向量回归机" class="headerlink" title="支持向量回归机"></a>支持向量回归机</h1><p>SVR<br>Support Vector Regression</p>
 <ul>
 <li>SVM本身是针对二分类问题提出的</li>
 <li>SVR是SVM的一个重要的应用分支</li>
@@ -665,11 +560,8 @@ Support Vector Regression</p>
 <blockquote>
 <p>SVR的样本点只有一类，所寻求的最优超平面是使所有的样本点离该超平面的总偏差最小</p>
 </blockquote>
-<meta name="referrer" content="no-referrer">
-
-<h1 id="SVM-vs-LR"><a class="header-anchor" href="#SVM-vs-LR"></a>SVM vs LR</h1>
-<p>SVM：支持向量机<br>
-LR：逻辑回归</p>
+<p><meta name="referrer" content="no-referrer"><br></p>
+<h1 id="SVM-vs-LR"><a href="#SVM-vs-LR" class="headerlink" title="SVM vs LR"></a>SVM vs LR</h1><p>SVM：支持向量机<br>LR：逻辑回归</p>
 <ul>
 <li>最本质的区别：损失函数不同</li>
 </ul>
@@ -678,14 +570,14 @@ LR：逻辑回归</p>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
-<pre><code>.dataframe tbody tr th {
-    vertical-align: top;
-}
 
-.dataframe thead th {
-    text-align: center;
-}
-</code></pre>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: center;
+    }
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -748,54 +640,31 @@ LR：逻辑回归</p>
   </tr></tbody>
 </table>
 </div>
-<p>考虑标签为$y\in{0,1}$的LR和SVM。<br>
-LR的决策函数可以为<br>
-$$\hat{y}=\left{<br>
-\begin{array}{ll}<br>
-1 &amp; \mathrm{if} P(y=1|x)\geq P(y=0|x)\<br>
-0 &amp; \mathrm{otherwise}<br>
-\end{array}<br>
-\right.$$<br>
-其中<br>
-\begin{equation}<br>
-\begin{aligned}<br>
-P(y=1|x) &amp; \propto \exp{(\mathbf{w}^T\cdot\mathbf{x}+b)}\<br>
-P(y=0|x) &amp; \propto 1<br>
-\end{aligned}<br>
-\end{equation}</p>
-<p>如果我们只是想做出正确决策，而不是获得每个类别的概率，可以用似然比来进行决策<br>
-$$\frac{P(y=1|x)}{P(y=0|x)}\geq c,\quad c&gt;1$$<br>
-上述不等式两边同取对数，得<br>
-$$\log{(P(y=1|x))}- \log{(P(y=0|x))}\geq \log{c}$$<br>
-则有<br>
-$$\exp{(\mathbf{w}^T\cdot\mathbf{x}+b)}\geq \log{c}$$<br>
-因为$c$是任意常数，所以我们可取$c$满足$\log{c}=1$，使得<br>
-$$\exp{(\mathbf{w}^T\cdot\mathbf{x}+b)}\geq 1$$</p>
-<p>上式可能存在多个解，如果添加一个二次惩罚项进行约束，则能使解唯一：<br>
-\begin{equation}<br>
-\begin{aligned}<br>
-\min &amp; \quad \frac{1}{2}||\mathbf{w}||^2\<br>
-\mathrm{s.t.} &amp; \quad (2y_i-1)(\mathbf{w}^T\mathbf{x}_i+b)\geq 1,\quad \forall i=1,\cdots,n.<br>
-\end{aligned}<br>
-\end{equation}</p>
+
+<p>考虑标签为$y\in\{0,1\}$的LR和SVM。<br>LR的决策函数可以为</p>
+<script type="math/tex; mode=display">\hat{y}=\left\{
+    \begin{array}{ll}
+    1 & \mathrm{if} P(y=1|x)\geq P(y=0|x)\\
+    0 & \mathrm{otherwise}
+    \end{array}
+    \right.</script><p>其中<br>\begin{equation}<br>\begin{aligned}<br>P(y=1|x) &amp; \propto \exp{(\mathbf{w}^T\cdot\mathbf{x}+b)}\\<br>P(y=0|x) &amp; \propto 1<br>\end{aligned}<br>\end{equation}</p>
+<p>如果我们只是想做出正确决策，而不是获得每个类别的概率，可以用似然比来进行决策</p>
+<script type="math/tex; mode=display">\frac{P(y=1|x)}{P(y=0|x)}\geq c,\quad c>1</script><p>上述不等式两边同取对数，得</p>
+<script type="math/tex; mode=display">\log{(P(y=1|x))}- \log{(P(y=0|x))}\geq \log{c}</script><p>则有</p>
+<script type="math/tex; mode=display">\exp{(\mathbf{w}^T\cdot\mathbf{x}+b)}\geq \log{c}</script><p>因为$c$是任意常数，所以我们可取$c$满足$\log{c}=1$，使得</p>
+<script type="math/tex; mode=display">\exp{(\mathbf{w}^T\cdot\mathbf{x}+b)}\geq 1</script><p>上式可能存在多个解，如果添加一个二次惩罚项进行约束，则能使解唯一：<br>\begin{equation}<br>\begin{aligned}<br>\min &amp; \quad \frac{1}{2}||\mathbf{w}||^2\\<br>\mathrm{s.t.} &amp; \quad (2y_i-1)(\mathbf{w}^T\mathbf{x}_i+b)\geq 1,\quad \forall i=1,\cdots,n.<br>\end{aligned}<br>\end{equation}</p>
 <blockquote>
-<p>注意这里考虑的$y_i\in{0,1}$，而不是前面的$y_i\in{-1,+1}$，因此约束条件中是$(2y_i-1)$而不是$y_i$。</p>
+<p>注意这里考虑的$y_i\in\{0,1\}$，而不是前面的$y_i\in\{-1,+1\}$，因此约束条件中是$(2y_i-1)$而不是$y_i$。</p>
 </blockquote>
 <p>添加了约束条件后，得到的是SVM！</p>
 <blockquote>
 <p>We derived an SVM by asking LR to make the right decisions. ——from <a href="http://www.cs.toronto.edu/~kswersky/wp-content/uploads/svm_vs_lr.pdf" target="_blank" rel="noopener">Support Vector Machines vs Logistic Regression</a></p>
 </blockquote>
-<h2 id="多分类"><a class="header-anchor" href="#多分类"></a>多分类</h2>
-<ul>
-<li>多分类逻辑回归（Multi-class LR）<br>
-$$P(y=i|x)=\frac{\exp{(w_i<sup>Tx+b_i)}}{\sum_{j}\exp{(w_j</sup>Tx+b_j)}}$$</li>
-<li>多分类支持向量机（Multi-class SVM）<br>
-$$\frac{P(y=i|x)}{P(y=k|x)}\geq c \quad \forall \quad k\neq i$$<br>
-即<br>
-$$w_i<sup>Tx-w_k</sup>Tx\geq 1 \quad \forall \quad k\neq i$$</li>
+<h2 id="多分类"><a href="#多分类" class="headerlink" title="多分类"></a>多分类</h2><ul>
+<li>多分类逻辑回归（Multi-class LR）<script type="math/tex; mode=display">P(y=i|x)=\frac{\exp{(w_i^Tx+b_i)}}{\sum_{j}\exp{(w_j^Tx+b_j)}}</script></li>
+<li>多分类支持向量机（Multi-class SVM）<script type="math/tex; mode=display">\frac{P(y=i|x)}{P(y=k|x)}\geq c \quad \forall \quad k\neq i</script>即<script type="math/tex; mode=display">w_i^Tx-w_k^Tx\geq 1 \quad \forall \quad k\neq i</script></li>
 </ul>
-<h2 id="选择SVM还是LR？"><a class="header-anchor" href="#选择SVM还是LR？"></a>选择SVM还是LR？</h2>
-<blockquote>
+<h2 id="选择SVM还是LR？"><a href="#选择SVM还是LR？" class="headerlink" title="选择SVM还是LR？"></a>选择SVM还是LR？</h2><blockquote>
 <p>参考<a href="http://www.cs.toronto.edu/~kswersky/wp-content/uploads/svm_vs_lr.pdf" target="_blank" rel="noopener">Support Vector Machines vs Logistic Regression</a></p>
 </blockquote>
 <ul>
@@ -805,23 +674,17 @@ $$w_i<sup>Tx-w_k</sup>Tx\geq 1 \quad \forall \quad k\neq i$$</li>
 <li>SVMs don’t penalize examples for which the correct decision is made with sufficient confidence. 有利于泛化</li>
 <li>SVMs have a nice dual form（对偶形式）, giving sparse solutions when using the kernel trick (better scalability 良好的伸缩性)</li>
 </ul>
-<h1 id="Python实现"><a class="header-anchor" href="#Python实现"></a>Python实现</h1>
-<p>简单分类数据：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns</span><br><span class="line">sns.set()</span><br><span class="line"></span><br><span class="line"><span class="comment">## 创建类别数为2的分类数据</span></span><br><span class="line"><span class="keyword">from</span> sklearn.datasets.samples_generator <span class="keyword">import</span> make_blobs</span><br><span class="line">X, y = make_blobs(n_samples=<span class="number">50</span>, centers=<span class="number">2</span>, random_state=<span class="number">0</span>, cluster_std=<span class="number">0.60</span>)</span><br><span class="line">plt.scatter(X[:, <span class="number">0</span>], X[:, <span class="number">1</span>], c=y, s=<span class="number">50</span>, cmap=<span class="string">'autumn'</span>)</span><br></pre></td></tr></table></figure>
+<h1 id="Python实现"><a href="#Python实现" class="headerlink" title="Python实现"></a>Python实现</h1><p>简单分类数据：<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns</span><br><span class="line">sns.set()</span><br><span class="line"></span><br><span class="line"><span class="comment">## 创建类别数为2的分类数据</span></span><br><span class="line"><span class="keyword">from</span> sklearn.datasets.samples_generator <span class="keyword">import</span> make_blobs</span><br><span class="line">X, y = make_blobs(n_samples=<span class="number">50</span>, centers=<span class="number">2</span>, random_state=<span class="number">0</span>, cluster_std=<span class="number">0.60</span>)</span><br><span class="line">plt.scatter(X[:, <span class="number">0</span>], X[:, <span class="number">1</span>], c=y, s=<span class="number">50</span>, cmap=<span class="string">'autumn'</span>)</span><br></pre></td></tr></table></figure></p>
 <p><img src="/img/SVM-Figure_1.png" alt="简单分类数据"></p>
-<p>简单分割线：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">xfit = np.linspace(<span class="number">-1</span>, <span class="number">3.5</span>)</span><br><span class="line">plt.scatter(X[:, <span class="number">0</span>], X[:, <span class="number">1</span>], c=y, s=<span class="number">50</span>, cmap=<span class="string">'autumn'</span>)</span><br><span class="line">plt.plot([<span class="number">0.6</span>], [<span class="number">2.1</span>], <span class="string">'x'</span>, color=<span class="string">'red'</span>, markeredgewidth=<span class="number">2</span>, markersize=<span class="number">10</span>)  <span class="comment">##特殊点</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> m, b <span class="keyword">in</span> [(<span class="number">1</span>, <span class="number">0.65</span>), (<span class="number">0.5</span>, <span class="number">1.6</span>), (<span class="number">-0.2</span>, <span class="number">2.9</span>)]:</span><br><span class="line">    plt.plot(xfit, m * xfit + b, <span class="string">'-k'</span>)  <span class="comment">##画三条分割直线</span></span><br><span class="line"></span><br><span class="line">plt.xlim(<span class="number">-1</span>, <span class="number">3.5</span>)</span><br></pre></td></tr></table></figure>
-<p><img src="/img/SVM-Figure_3.png" alt="三条简单分割直线"><br>
-上图中的三条简单分割直线（分割器）都能很好地判别这些样本（每条直线都能将圆点数据点正确地分为两类）。但是对于点“X”，不同的分割器将其分配到不同的标签。</p>
-<p>若将分割直线变成具有宽度的、到最近点边界的线条，如下图：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">xfit = np.linspace(<span class="number">-1</span>, <span class="number">3.5</span>)</span><br><span class="line">plt.scatter(X[:, <span class="number">0</span>], X[:, <span class="number">1</span>], c=y, s=<span class="number">50</span>, cmap=<span class="string">'autumn'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> m, b, d <span class="keyword">in</span> [(<span class="number">1</span>, <span class="number">0.65</span>, <span class="number">0.33</span>), (<span class="number">0.5</span>, <span class="number">1.6</span>, <span class="number">0.55</span>), (<span class="number">-0.2</span>, <span class="number">2.9</span>, <span class="number">0.2</span>)]:</span><br><span class="line">    yfit = m * xfit + b</span><br><span class="line">    plt.plot(xfit, yfit, <span class="string">'-k'</span>)</span><br><span class="line">    plt.fill_between(xfit, yfit - d, yfit + d, edgecolor=<span class="string">'none'</span>, color=<span class="string">'#AAAAAA'</span>, alpha=<span class="number">0.4</span>)</span><br><span class="line"></span><br><span class="line">plt.xlim(<span class="number">-1</span>, <span class="number">3.5</span>)</span><br></pre></td></tr></table></figure>
+<p>简单分割线：<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">xfit = np.linspace(<span class="number">-1</span>, <span class="number">3.5</span>)</span><br><span class="line">plt.scatter(X[:, <span class="number">0</span>], X[:, <span class="number">1</span>], c=y, s=<span class="number">50</span>, cmap=<span class="string">'autumn'</span>)</span><br><span class="line">plt.plot([<span class="number">0.6</span>], [<span class="number">2.1</span>], <span class="string">'x'</span>, color=<span class="string">'red'</span>, markeredgewidth=<span class="number">2</span>, markersize=<span class="number">10</span>)  <span class="comment">##特殊点</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> m, b <span class="keyword">in</span> [(<span class="number">1</span>, <span class="number">0.65</span>), (<span class="number">0.5</span>, <span class="number">1.6</span>), (<span class="number">-0.2</span>, <span class="number">2.9</span>)]:</span><br><span class="line">    plt.plot(xfit, m * xfit + b, <span class="string">'-k'</span>)  <span class="comment">##画三条分割直线</span></span><br><span class="line"></span><br><span class="line">plt.xlim(<span class="number">-1</span>, <span class="number">3.5</span>)</span><br></pre></td></tr></table></figure></p>
+<p><img src="/img/SVM-Figure_3.png" alt="三条简单分割直线"><br>上图中的三条简单分割直线（分割器）都能很好地判别这些样本（每条直线都能将圆点数据点正确地分为两类）。但是对于点“X”，不同的分割器将其分配到不同的标签。</p>
+<p>若将分割直线变成具有宽度的、到最近点边界的线条，如下图：<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">xfit = np.linspace(<span class="number">-1</span>, <span class="number">3.5</span>)</span><br><span class="line">plt.scatter(X[:, <span class="number">0</span>], X[:, <span class="number">1</span>], c=y, s=<span class="number">50</span>, cmap=<span class="string">'autumn'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> m, b, d <span class="keyword">in</span> [(<span class="number">1</span>, <span class="number">0.65</span>, <span class="number">0.33</span>), (<span class="number">0.5</span>, <span class="number">1.6</span>, <span class="number">0.55</span>), (<span class="number">-0.2</span>, <span class="number">2.9</span>, <span class="number">0.2</span>)]:</span><br><span class="line">    yfit = m * xfit + b</span><br><span class="line">    plt.plot(xfit, yfit, <span class="string">'-k'</span>)</span><br><span class="line">    plt.fill_between(xfit, yfit - d, yfit + d, edgecolor=<span class="string">'none'</span>, color=<span class="string">'#AAAAAA'</span>, alpha=<span class="number">0.4</span>)</span><br><span class="line"></span><br><span class="line">plt.xlim(<span class="number">-1</span>, <span class="number">3.5</span>)</span><br></pre></td></tr></table></figure></p>
 <p><img src="/img/SVM-Figure_2.png" alt="带有边界的分割器"></p>
 <p><img src="/img/SVM-Figure_4.jpeg" alt="带边界线和支持向量的支持向量机分类器"></p>
 <p>正好在边界线上的点，被称为<strong>支持向量</strong>。</p>
 <p>在scikit-learn中，支持向量的坐标存放在分类器的<code>support_vectors_</code>属性中。</p>
 <p>SVM对远离边界的数据点不敏感。</p>
-<h1 id="参考资料"><a class="header-anchor" href="#参考资料"></a>参考资料</h1>
-<ul>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
 <li>Python数据科学手册：<a href="https://book.douban.com/subject/27667378/" target="_blank" rel="noopener">豆瓣图书</a>；<a href="https://jakevdp.github.io/PythonDataScienceHandbook/" target="_blank" rel="noopener">英文版在线阅读</a></li>
 <li><a href="https://mp.weixin.qq.com/s?__biz=MzI3NTkyMjA4NA==&amp;mid=2247493162&amp;idx=1&amp;sn=59c051af70c1b4e0ab40d661df1d1ade&amp;chksm=eb7fcbe1dc0842f7cfc9c7224d4c0e2a3fe52d5abe18fe241b717bdf85b59c15d6c16fc99ee8&amp;scene=126&amp;sessionid=1588039863&amp;key=974eeeca00c2ed2bc09cde22429650400361fd61321edc232f5976aa402ec1f37e927d042d76e7eba2cc584551a40b22a7d2cd6e65fe539e5bd3854b306460a7770a747143ced86385ab3a53ffb7ba92&amp;ascene=1&amp;uin=MjAwNDUzMjgxNw%3D%3D&amp;devicetype=Windows+10&amp;version=62080079&amp;lang=zh_CN&amp;exportkey=AWzG3axKR6jb4RKDg8wBmkw%3D&amp;pass_ticket=581sFN8nM0rkEWD6Hp%2BhUJbN5RHzfuAW3vhCzJ2BWY6u9zDUMhZpRh3fnoocgekU" target="_blank" rel="noopener">中文开源！《Python数据科学》PDF下载</a></li>
 <li><a href="https://github.com/jakevdp/PythonDataScienceHandbook">Python Data Science Handbook: full text in Jupyter Notebooks</a></li>
@@ -1027,13 +890,13 @@ $$w_i<sup>Tx-w_k</sup>Tx\geq 1 \quad \forall \quad k\neq i$$</li>
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">353k</span>
+    <span title="站点总字数">346k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">5:21</span>
+    <span title="站点阅读时长">5:14</span>
 </div>
 
 
