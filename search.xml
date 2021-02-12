@@ -1722,6 +1722,10 @@ $$L_{Bridge}(\beta) = \parallel y-X\beta \parallel_2 + \lambda \sum_{i=1}^p \mid
 &amp;= \arg \min_{\beta} \parallel y - X\beta \parallel_2^2 + \lambda \sum_{j=1}^p \mid \beta_j\mid^{\gamma} \<br>
 \end{aligned}<br>
 $$</p>
+<blockquote>
+<p><a href="https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.445.4562&amp;rep=rep1&amp;type=pdf" target="_blank" rel="noopener">Zou and Hastie(2005)</a>：Bridge估计量可以看成是基于如下先验的贝叶斯后验模式<br>
+$$p_{\lambda, \gamma}(\beta) = C(\lambda, \gamma)\exp{(-\lambda |\beta|_{\gamma}^{\gamma})} $$</p>
+</blockquote>
 <h2 id="Elastic-Net"><a class="header-anchor" href="#Elastic-Net"></a>Elastic Net</h2>
 <blockquote>
 <p>Zou, H. , &amp; Hastie, T. . (2005). <a href="https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.445.4562&amp;rep=rep1&amp;type=pdf" target="_blank" rel="noopener">Regularization and variable selection via the elastic net</a>. Journal of the Royal Statistical Society, 67(5), 768-768.</p>
