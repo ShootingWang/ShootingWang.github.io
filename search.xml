@@ -1757,6 +1757,7 @@ $$Q(\beta|X, y) = \parallel y-\sum_{k=1}^p x_k \beta_k \parallel_2^2 + \lambda_n
 <li>$A_j(j=1,2,\cdots,J)$可以有交集</li>
 <li>允许$\cup_{j=1}^J A_j$是${1, 2, \cdots, p}$的真子集，不在$\cup_{j=1}^J A_j$中的变量不受惩罚</li>
 <li>Bridge惩罚项被应用到组系数的$L_1$范数中</li>
+<li>当$\mid A_j\mid = 1(j=1,2,\cdots,J)$时，Group Bridge简化为标准Bridge</li>
 </ul>
 <h1 id="Group-MCP"><a class="header-anchor" href="#Group-MCP"></a>Group MCP</h1>
 <figure class="highlight r"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
