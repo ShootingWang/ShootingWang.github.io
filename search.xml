@@ -1718,6 +1718,11 @@ $$L_{Bridge}(\beta) = \parallel y-X\beta \parallel_2 + \lambda \sum_{i=1}^p \mid
 <blockquote>
 <p>Zou, H. , &amp; Hastie, T. . (2005). <a href="https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.445.4562&amp;rep=rep1&amp;type=pdf" target="_blank" rel="noopener">Regularization and variable selection via the elastic net</a>. Journal of the Royal Statistical Society, 67(5), 768-768.</p>
 </blockquote>
+<p>目标函数：<br>
+\begin{aligned}<br>
+L(\lambda, \beta) &amp;= \parallel y-X\beta \parallel_2^2 + \lambda_2 \parallel \beta\parallel <em>2^2 + \lambda_1 \parallel \beta \parallel_1 \<br>
+&amp;= \parallel y-X\beta \parallel_2^2 + \lambda_2 \sum</em>{j=1}^p \beta_j^2 + \lambda_1 \sum_{j=1}^p |\beta_j|<br>
+\end{aligned}</p>
 <h2 id="MCP"><a class="header-anchor" href="#MCP"></a>MCP</h2>
 <p>MCP（minimax concave penalty）</p>
 <blockquote>
