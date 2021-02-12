@@ -1777,6 +1777,10 @@ $$Q(\beta|X, y) = \parallel y-\sum_{k=1}^p x_k \beta_k \parallel_2^2 + \lambda_n
 <blockquote>
 <p><a href="https://www.researchgate.net/publication/40786418_A_Group_Bridge_Approach_for_Variable_Selection" target="_blank" rel="noopener">Huang等人(2009)</a>：</p>
 </blockquote>
+<h1 id="L-2-Group-Bridhe"><a class="header-anchor" href="#L-2-Group-Bridhe"></a>$L_2$ Group Bridhe</h1>
+<blockquote>
+<p>Ma, S., Huang, J., &amp; Song, X. (2011). <a href="https://pubmed.ncbi.nlm.nih.gov/21415015/" target="_blank" rel="noopener">Integrative analysis and variable selection with multiple high-dimensional data sets</a>. Biostatistics (Oxford, England), 12(4), 763–775.</p>
+</blockquote>
 <h1 id="Group-MCP"><a class="header-anchor" href="#Group-MCP"></a>Group MCP</h1>
 <figure class="highlight r"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
