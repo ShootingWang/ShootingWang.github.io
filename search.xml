@@ -1755,13 +1755,13 @@ $$\frac{1}{n}X_j^TX_j = I_{d_j}, \qquad j=1, 2, \cdots, J.$$</p>
 </ul>
 <p>令$z=\frac{1}{n}X_j^T y$为$y=X\beta+\varepsilon$的最小二乘解，则有<br>
 $$\hat{\beta}<em>{LASSO}(z;\lambda) = S(z, \lambda) = \left( 1-\frac{\lambda}{\parallel z \parallel_2} \right)</em>{+} z$$</p>
-<h1 id="Group-Bridge"><a class="header-anchor" href="#Group-Bridge"></a>Group Bridge</h1>
+<h1 id="L-1-Group-Bridge"><a class="header-anchor" href="#L-1-Group-Bridge"></a>$L_1$ Group Bridge</h1>
 <blockquote>
 <p>Huang, J., Ma, S., Xie, H., &amp; Zhang, C. H. (2009). <a href="https://www.researchgate.net/publication/40786418_A_Group_Bridge_Approach_for_Variable_Selection" target="_blank" rel="noopener">A group bridge approach for variable selection</a>. Biometrika, 96(2), 339–355.</p>
 </blockquote>
 <p>\begin{aligned}<br>
-\mbox{group selection} &amp;: \mbox{bridge penalty} \</p>
-<p>\mbox{within-group selection} &amp;: \mbox{lasso penalty} \<br>
+\mbox{group selection} &amp;: \mbox{bridge penalty} \<br>
+\mbox{within-group selection} &amp;: \mbox{lasso penalty} \<br>
 \end{aligned}</p>
 <p>目标函数：<br>
 $$Q(\beta|X, y) = \parallel y-\sum_{k=1}^p x_k \beta_k \parallel_2^2 + \lambda_n \sum_{j=1}^J c_j\parallel \beta_{A_j} \parallel_1^{\gamma}, \qquad \lambda_n &gt; 0$$</p>
