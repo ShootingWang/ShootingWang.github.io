@@ -1745,6 +1745,14 @@ L(\lambda, \beta) &amp;= \parallel y-X\beta \parallel_2^2 + \lambda_2 \parallel 
 </ul>
 <p>Elastic Net估计量可以看成是如下先验（介于Gaussian先验和Laplacian先验）的贝叶斯后验模式：<br>
 $$p_{\lambda, \alpha} = C(\lambda, \alpha) \exp{ -\lambda \left[ \alpha |\beta|^2 + (1-\alpha)|\beta|_1 \right] }$$</p>
+<h3 id="EN-vs-Bridge"><a class="header-anchor" href="#EN-vs-Bridge"></a>EN vs Bridge</h3>
+<ul>
+<li>$1&lt; \gamma &lt; 2$的Bridge回归与Elastic Net有许多相似之处</li>
+<li>Elastic Net可以产生稀疏解，而Bridge Regression不能</li>
+</ul>
+<blockquote>
+<p><a href="https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.445.4562&amp;rep=rep1&amp;type=pdf" target="_blank" rel="noopener">Fan and Li (2001)</a>：在$L_q(q\geq 1)$的惩罚函数族中，只有LASSO惩罚函数（$q=1$）能够产生稀疏解（sparse solution）</p>
+</blockquote>
 <h2 id="MCP"><a class="header-anchor" href="#MCP"></a>MCP</h2>
 <p>MCP（minimax concave penalty）</p>
 <blockquote>
