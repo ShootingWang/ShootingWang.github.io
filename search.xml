@@ -1714,6 +1714,11 @@ Fu, Wenjiang J . <a href="http://www.hpc.unm.edu/~andriese/doc/ref1_fu.pdf" targ
 <li>目标函数：<br>
 $$L_{Bridge}(\beta) = \parallel y-X\beta \parallel_2 + \lambda \sum_{i=1}^p \mid \beta_i \mid^\gamma, \qquad \gamma &gt; 0 $$</li>
 </ul>
+<h1 id="MCP"><a class="header-anchor" href="#MCP"></a>MCP</h1>
+<p>MCP（minimax concave penalty）</p>
+<blockquote>
+<p>Zhang, C. (2010). <a href="https://projecteuclid.org/download/pdfview_1/euclid.aos/1266586618" target="_blank" rel="noopener">Nearly unbiased variable selection under minimax concave penalty</a>. The Annals of Statistics, 38(2), 894-942.</p>
+</blockquote>
 <h1 id="Group-Penalization"><a class="header-anchor" href="#Group-Penalization"></a>Group Penalization</h1>
 <h2 id="Group-LASSO"><a class="header-anchor" href="#Group-LASSO"></a>Group LASSO</h2>
 <blockquote>
@@ -1824,6 +1829,7 @@ $$J(\beta) = \sum_{j=1}^p p_{O, \lambda_{O}}\left( \sum_{k=1}^M p_{I, \lambda_{I
 \mbox{outer penalty} &amp;: \mbox{MCP} \<br>
 \mbox{inner penalty} &amp;: \mathrm{MCP} \<br>
 \end{aligned}</p>
+<h2 id="MCP-Ridge"><a class="header-anchor" href="#MCP-Ridge"></a>MCP &amp; Ridge</h2>
 <h2 id="MCP-LASSO"><a class="header-anchor" href="#MCP-LASSO"></a>MCP &amp; LASSO</h2>
 <blockquote>
 <p>Liu, J., Huang, J., &amp; Ma, S. (2014). <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3933169/pdf/nihms470951.pdf" target="_blank" rel="noopener">Integrative Analysis of Cancer Diagnosis Studies with Composite Penalization</a>. Scandinavian journal of statistics, theory and applications, 41(1), 87–103.</p>
