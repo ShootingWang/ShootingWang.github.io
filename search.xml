@@ -1487,7 +1487,10 @@
 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="section"># 一级标题</span></span><br><span class="line"><span class="section">## 二级标题</span></span><br><span class="line"><span class="section">### 三级标题</span></span><br></pre></td></tr></table></figure>
 <h2 id="二级标题"><a class="header-anchor" href="#二级标题"></a>二级标题</h2>
 <p>示范<code>## 二级标题的效果</code></p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="正文"><a class="header-anchor" href="#正文"></a>正文</h1>
+<h2 id="加粗"><a class="header-anchor" href="#加粗"></a>加粗</h2>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="strong">**加粗的内容**</span></span><br></pre></td></tr></table></figure>
+<p>效果：<strong>加粗的内容</strong></p>
 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
