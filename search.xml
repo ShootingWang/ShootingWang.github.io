@@ -1512,6 +1512,12 @@ $$\frac{1}{n}X_j^TX_j = I_{d_j}, \qquad j=1, 2, \cdots, J.$$</p>
 <ul>
 <li><a href="http://www.columbia.edu/~my2550/papers/glasso.final.pdf" target="_blank" rel="noopener">Yuan and Lin(2006)</a>建议取$R_j=I_{d_j}$</li>
 </ul>
+<h2 id="求解"><a class="header-anchor" href="#求解"></a>求解</h2>
+<ul>
+<li><a href="http://www.columbia.edu/~my2550/papers/glasso.final.pdf" target="_blank" rel="noopener">Yuan and Lin(2006)</a>：通过组坐标下降法（Group Coordinate Descent Algorithm）计算Group LASSO的解</li>
+</ul>
+<p>令$z=\frac{1}{n}X_j^T y$为$y=X\beta+\varepsilon$的最小二乘解，则有<br>
+$$\hat{\beta}<em>{LASSO}(z;\lambda) = S(z, \lambda) = \left( 1-\frac{\lambda}{\parallel z \parallel_2} \right)</em>{+} z$$</p>
 <figure class="highlight r"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <h1 id="参考资料"><a class="header-anchor" href="#参考资料"></a>参考资料</h1>
