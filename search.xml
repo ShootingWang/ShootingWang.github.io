@@ -1570,7 +1570,11 @@ L(\beta) &= \parallel y-X\beta \parallel_2^2 + \lambda J(\beta) \\
 <blockquote>
 <p>Fan, J., &amp; Li, R. (2001). <a href="https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.445.4562&amp;rep=rep1&amp;type=pdf" target="_blank" rel="noopener">Variable Selection via Nonconcave Penalized Likelihood and Its Oracle Properties</a>. Journal of the American Statistical Association, 96(456), 1348-1360.</p>
 </blockquote>
-<h2 id="Elastic-Net"><a href="#Elastic-Net" class="headerlink" title="Elastic Net"></a>Elastic Net</h2><blockquote>
+<h2 id="Elastic-Net"><a href="#Elastic-Net" class="headerlink" title="Elastic Net"></a>Elastic Net</h2><ul>
+<li>EN是最早的具有群组变量选择功能的方法（王小燕等, 2015）</li>
+<li>惩罚函数是LASSO和岭回归的线性组合</li>
+</ul>
+<blockquote>
 <ul>
 <li>Zou, H. , &amp; Hastie, T. . (2005). <a href="https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.445.4562&amp;rep=rep1&amp;type=pdf" target="_blank" rel="noopener">Regularization and variable selection via the elastic net</a>. Journal of the Royal Statistical Society, 67(5), 768-768.</li>
 <li>王小燕,谢邦昌,马双鸽,方匡南.高维数据下群组变量选择的惩罚方法综述[J].数理统计与管理,2015,34(06):978-988.</li>
