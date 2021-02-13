@@ -2038,9 +2038,19 @@ $$P_{adSGL}(\beta;\lambda_1,\lambda_2) = \lambda_1\sum_{j=1}^p w_j \parallel\bet
 <p>Zhang, Q. , Zhang, S. , Liu, J. , Huang, J. , &amp; Ma, S. . (2015). <a href="https://arxiv.org/pdf/1501.02458.pdf" target="_blank" rel="noopener">Penalized integrative analysis under the accelerated failure time model</a>. Statistica Sinica, 26(2).</p>
 </blockquote>
 <h1 id="网格结构惩罚"><a class="header-anchor" href="#网格结构惩罚"></a>网格结构惩罚</h1>
+<h2 id="Sparse-Group-Laplacian-Shrinkage"><a class="header-anchor" href="#Sparse-Group-Laplacian-Shrinkage"></a>Sparse Group Laplacian Shrinkage</h2>
 <blockquote>
 <p>Liu, J., Huang, J., &amp; Ma, S. (2013). <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3909475/pdf/nihms-496945.pdf" target="_blank" rel="noopener">Incorporating network structure in integrative analysis of cancer prognosis data</a>. Genetic epidemiology, 37(2), 173–183.</p>
 </blockquote>
+<p>$$\hat{\beta} = \arg \min_{\beta} \left{ \frac{1}{n}L(\beta) + P_{\lambda, \gamma}(\beta) \right}$$<br>
+其中，<br>
+$$P_{\lambda, \gamma}(\beta) = \sum_{j=1}^p \rho(\parallel\beta_j\parallel_2; \sqrt{M_j}\lambda_1, \gamma) + \frac{1}{2}\lambda_2 d\sum_{1\leq j &lt; k \leq p}a_{jk}\left( \frac{\parallel\beta_j\parallel_2}{\sqrt{M_j}} - \frac{\parallel\beta_k\parallel_2}{\sqrt{M_k}} \right)^2$$</p>
+<ul>
+<li>$\lambda = (\lambda_1, \lambda_2)$</li>
+<li>$\lambda_1 \geq 0$ 且 $\lambda_2 \geq 0$是调和参数（tuning parameter）</li>
+<li>$\gamma$是正则化参数</li>
+<li>$\rho(\cdot)$是MCP惩罚函数</li>
+</ul>
 <figure class="highlight r"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <h1 id="参考资料"><a class="header-anchor" href="#参考资料"></a>参考资料</h1>
