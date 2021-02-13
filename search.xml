@@ -1605,6 +1605,10 @@ L_{LASSO}(\beta) &amp;= ||y-X\beta ||^2_2 + \lambda ||\beta||<em>1 \<br>
 <p>Tibshirani, R., Saunders, M., Rosset, S., Zhu, J. and Knight, K. (2005), <a href="https://web.stanford.edu/group/SOL/papers/fused-lasso-JRSSB.pdf" target="_blank" rel="noopener">Sparsity and smoothness via the fused lasso</a>. Journal of the Royal Statistical Society: Series B (Statistical Methodology), 67: 91-108.</p>
 </blockquote>
 <p>$$\hat{\beta}<em>{fLASSO} = \arg \min</em>{\beta} \left{ \sum_{i=1}^n\left( y_i - \sum_{j=1}^p x_{ij}\beta_j \right)^2 \right} \qquad \mbox{subject to } \sum_{j=1}^p |\beta_j| \leq s_1 \mbox{ and } \sum_{j=2}^p |\beta_j - \beta_{j-1}| \leq s_2$$</p>
+<ul>
+<li>$\sum_{j=1}^p |\beta_j| \leq s_1$鼓励回归系数的稀疏性</li>
+<li>$\sum_{j=2}^p |\beta_j - \beta_{j-1}| \leq s_2$鼓励回归系数差异上的稀疏性</li>
+</ul>
 <h3 id="Adaptive-LASSO"><a class="header-anchor" href="#Adaptive-LASSO"></a>Adaptive LASSO</h3>
 <blockquote>
 <p>Hui Zou (2006). <a href="http://pages.cs.wisc.edu/~shao/stat992/zou2006.pdf" target="_blank" rel="noopener">The Adaptive Lasso and Its Oracle Properties</a>, Journal of the American Statistical Association, 101:476, 1418-1429.</p>
