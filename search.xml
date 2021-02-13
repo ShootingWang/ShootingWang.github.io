@@ -19385,8 +19385,8 @@ $$1→2→3→4→5→6→7$$
 </ul>
 </li>
 <li>计算Mann-Whitney U检验统计量<br>
-$$U_x=# { X_i &gt; Y_j }=R_x-\frac{n_1(n_1+1)}{2}=n_1n_2+\frac{n_2(n_2+1)}{2}-R_y$$<br>
-$$U_y=# { X_i &lt; Y_j }=R_y-\frac{n_2(n_2+1)}{2}=n_1n_2+\frac{n_1(n_1+1)}{2}-R_x$$<br>
+$$U_x=\sharp { X_i &gt; Y_j }=R_x-\frac{n_1(n_1+1)}{2}=n_1n_2+\frac{n_2(n_2+1)}{2}-R_y$$<br>
+$$U_y=\sharp { X_i &lt; Y_j }=R_y-\frac{n_2(n_2+1)}{2}=n_1n_2+\frac{n_1(n_1+1)}{2}-R_x$$<br>
 其中$n_1$是第一组样本的样本量，$n_2$是第二组样本的样本量。<br>
 取$U=\min{W_1,W_2}$；与临界值$U_\alpha$进行比较。当$U &lt; U_\alpha$时，拒绝原假设$H_0$；否则，接受$H_0$。
 <blockquote>
