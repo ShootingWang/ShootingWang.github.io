@@ -30,7 +30,7 @@
 <meta property="og:site_name" content="ShootingWang">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-05-04T06:34:46.000Z">
-<meta property="article:modified_time" content="2021-02-13T10:59:39.248Z">
+<meta property="article:modified_time" content="2021-02-13T11:01:57.004Z">
 <meta property="article:author" content="ShootingWang">
 <meta property="article:tag" content="概率统计基础">
 <meta property="article:tag" content="检验">
@@ -254,7 +254,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-02-13 18:59:39" itemprop="dateModified" datetime="2021-02-13T18:59:39+08:00">2021-02-13</time>
+                <time title="修改时间：2021-02-13 19:01:57" itemprop="dateModified" datetime="2021-02-13T19:01:57+08:00">2021-02-13</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -344,33 +344,23 @@
 </ul>
 </li>
 <li>计算Mann-Whitney U检验统计量<br>
-$$U_x=\sharp { X_i &gt; Y_j }=R_x-\frac{n_1(n_1+1)}{2}=n_1n_2+\frac{n_2(n_2+1)}{2}-R_y$$<br>
-$$U_y=\sharp { X_i &lt; Y_j }=R_y-\frac{n_2(n_2+1)}{2}=n_1n_2+\frac{n_1(n_1+1)}{2}-R_x$$<br>
+$$U_x=\sharp \left{ X_i &gt; Y_j \right}=R_x-\frac{n_1(n_1+1)}{2}=n_1n_2+\frac{n_2(n_2+1)}{2}-R_y$$</li>
+</ol>
+<p>$$U_y=\sharp { X_i &lt; Y_j }=R_y-\frac{n_2(n_2+1)}{2}=n_1n_2+\frac{n_1(n_1+1)}{2}-R_x$$<br>
 其中$n_1$是第一组样本的样本量，$n_2$是第二组样本的样本量。<br>
-取$U=\min{W_1,W_2}$；与临界值$U_\alpha$进行比较。当$U &lt; U_\alpha$时，拒绝原假设$H_0$；否则，接受$H_0$。
-<blockquote>
-<ul>
-<li>当样本量足够大时（$n_1$和$n_2$都不小于10 时，或者$n_1n_2&gt;20$时），随机变量$U$近似服从正态分布</li>
-</ul>
-</blockquote>
-<ul>
-<li>$E(U)=\frac{n_1n_2}{2}$, $D(U)=\frac{n_1n_2(n_1+n_2+1)}{12}$</li>
-<li>$U_x=32.5-\frac{5*6}{2}=17.5$</li>
-<li>$U_y=33.5-\frac{6*7}{2}=14.5$</li>
-<li>$U=\min{17.5,14.5}=14.5$</li>
-</ul>
-</li>
-<li>假设第一个总体的均值为$\mu_1$，第二个总体的均值为$\mu_2$，临界值$U_\alpha$，则
-<ol>
-<li>$H_0:\mu_1\leq \mu_2,\quad H_1:\mu_1&gt;\mu_2$<br>
-如果$U&lt;-U_\alpha$，则拒绝$H_0$</li>
-<li>$H_0:\mu_1\geq \mu_2,\quad H_1:\mu_1&lt;\mu_2$<br>
-如果$U&gt;U_\alpha$，则拒绝$H_0$</li>
-<li>$H_0:\mu_1\geq \mu_2,\quad H_1:\mu_1&lt;\mu_2$<br>
-如果$U&gt;U_\alpha$，则拒绝$H_0$</li>
-</ol>
-</li>
-</ol>
+取$U=\min{W_1,W_2}$；与临界值$U_\alpha$进行比较。当$U &lt; U_\alpha$时，拒绝原假设$H_0$；否则，接受$H_0$。<br>
+&gt; - 当样本量足够大时（$n_1$和$n_2$都不小于10 时，或者$n_1n_2&gt;20$时），随机变量$U$近似服从正态分布<br>
+- $E(U)=\frac{n_1n_2}{2}$, $D(U)=\frac{n_1n_2(n_1+n_2+1)}{12}$<br>
+- $U_x=32.5-\frac{5<em>6}{2}=17.5$<br>
+- $U_y=33.5-\frac{6</em>7}{2}=14.5$<br>
+- $U=\min{17.5,14.5}=14.5$<br>
+4. 假设第一个总体的均值为$\mu_1$，第二个总体的均值为$\mu_2$，临界值$U_\alpha$，则<br>
+1. $H_0:\mu_1\leq \mu_2,\quad H_1:\mu_1&gt;\mu_2$<br>
+如果$U&lt;-U_\alpha$，则拒绝$H_0$<br>
+2. $H_0:\mu_1\geq \mu_2,\quad H_1:\mu_1&lt;\mu_2$<br>
+如果$U&gt;U_\alpha$，则拒绝$H_0$<br>
+3. $H_0:\mu_1\geq \mu_2,\quad H_1:\mu_1&lt;\mu_2$<br>
+如果$U&gt;U_\alpha$，则拒绝$H_0$</p>
 <h2 id="性质"><a class="header-anchor" href="#性质"></a>性质</h2>
 <p>$$E(U)=\frac{n_1n_2}{2},\quad D(U)=\frac{n_1n_2(n_1+n_2+1)}{12}$$<br>
 证明：<br>
