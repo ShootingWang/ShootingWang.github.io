@@ -31,7 +31,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://github.com/%E7%AE%97%E6%B3%95-%E5%B8%A6%E6%83%A9%E7%BD%9A%E5%87%BD%E6%95%B0%E7%9A%84%E5%8F%98%E9%87%8F%E9%80%89%E6%8B%A9%E6%96%B9%E6%B3%95/RidgeRegressionCV.png">
 <meta property="article:published_time" content="2021-02-11T02:04:26.000Z">
-<meta property="article:modified_time" content="2021-02-13T07:50:39.360Z">
+<meta property="article:modified_time" content="2021-02-13T12:52:07.347Z">
 <meta property="article:author" content="ShootingWang">
 <meta property="article:tag" content="变量选择">
 <meta name="twitter:card" content="summary">
@@ -255,7 +255,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-02-13 15:50:39" itemprop="dateModified" datetime="2021-02-13T15:50:39+08:00">2021-02-13</time>
+                <time title="修改时间：2021-02-13 20:52:07" itemprop="dateModified" datetime="2021-02-13T20:52:07+08:00">2021-02-13</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -407,6 +407,11 @@ L(\beta) &= \parallel y-X\beta \parallel_2^2 + \lambda J(\beta) \\
 <li><a href="https://fan.princeton.edu/papers/01/penlike.pdf" target="_blank" rel="noopener">Fan and Li, 2001</a>：在单数据集变量选择中，LASSO倾向于选择过多的变量，理论上不满足Oracle性质</li>
 </ul>
 </blockquote>
+<p><strong>缺点</strong>：</p>
+<ol>
+<li>LASSO最终选择的变量个数$c$不会超过样本个数$n$（$c = \min\{ n, p \}$）</li>
+<li>LASSO在对高度相关的变量进行选择时，只选择其中一个，而不关心是哪一个</li>
+</ol>
 <h3 id="Fused-LASSO"><a href="#Fused-LASSO" class="headerlink" title="Fused LASSO"></a>Fused LASSO</h3><blockquote>
 <p>Tibshirani, R., Saunders, M., Rosset, S., Zhu, J. and Knight, K. (2005), <a href="https://web.stanford.edu/group/SOL/papers/fused-lasso-JRSSB.pdf" target="_blank" rel="noopener">Sparsity and smoothness via the fused lasso</a>. Journal of the Royal Statistical Society: Series B (Statistical Methodology), 67: 91-108.</p>
 </blockquote>
@@ -442,7 +447,10 @@ L(\beta) &= \parallel y-X\beta \parallel_2^2 + \lambda J(\beta) \\
 <p>Fan, J., &amp; Li, R. (2001). <a href="https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.445.4562&amp;rep=rep1&amp;type=pdf" target="_blank" rel="noopener">Variable Selection via Nonconcave Penalized Likelihood and Its Oracle Properties</a>. Journal of the American Statistical Association, 96(456), 1348-1360.</p>
 </blockquote>
 <h2 id="Elastic-Net"><a href="#Elastic-Net" class="headerlink" title="Elastic Net"></a>Elastic Net</h2><blockquote>
-<p>Zou, H. , &amp; Hastie, T. . (2005). <a href="https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.445.4562&amp;rep=rep1&amp;type=pdf" target="_blank" rel="noopener">Regularization and variable selection via the elastic net</a>. Journal of the Royal Statistical Society, 67(5), 768-768.</p>
+<ul>
+<li>Zou, H. , &amp; Hastie, T. . (2005). <a href="https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.445.4562&amp;rep=rep1&amp;type=pdf" target="_blank" rel="noopener">Regularization and variable selection via the elastic net</a>. Journal of the Royal Statistical Society, 67(5), 768-768.</li>
+<li>王小燕,谢邦昌,马双鸽,方匡南.高维数据下群组变量选择的惩罚方法综述[J].数理统计与管理,2015,34(06):978-988.</li>
+</ul>
 </blockquote>
 <p>目标函数：<br>\begin{aligned}<br>L(\lambda, \beta) &amp;= \parallel y-X\beta \parallel_2^2 + \lambda_2 \parallel \beta\parallel _2^2 + \lambda_1 \parallel \beta \parallel_1 \\<br>&amp;= \parallel y-X\beta \parallel_2^2 + \lambda_2 \sum_{j=1}^p \beta_j^2 + \lambda_1 \sum_{j=1}^p |\beta_j|<br>\end{aligned}</p>
 <p>\begin{aligned}<br>\hat{\beta} &amp;= \arg\min_{\beta} \{ L(\lambda, \beta) \} \\<br>&amp;= \arg\min_{\beta} \parallel y-X\beta \parallel_2^2, \qquad \mbox{subject to } (1-\alpha)\mid\beta\mid_1+\alpha\parallel \beta\parallel^2_2 \leq t \mbox{ for some } t.\\<br>\end{aligned}</p>
@@ -453,7 +461,10 @@ L(\beta) &= \parallel y-X\beta \parallel_2^2 + \lambda J(\beta) \\
 <p>Elastic Net估计量可以看成是如下先验（介于Gaussian先验和Laplacian先验）的贝叶斯后验模式：</p>
 <script type="math/tex; mode=display">p_{\lambda, \alpha} = C(\lambda, \alpha) \exp\{ -\lambda \left[ \alpha |\beta|^2 + (1-\alpha)|\beta|_1 \right] \}</script><blockquote>
 <ul>
-<li><a href="https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.445.4562&amp;rep=rep1&amp;type=pdf" target="_blank" rel="noopener">Zou and Hui (2015)</a>：Elastic Net 没有Oracle性质</li>
+<li><p><a href="https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.445.4562&amp;rep=rep1&amp;type=pdf" target="_blank" rel="noopener">Zou and Hui (2015)</a>：Elastic Net 没有Oracle性质</p>
+</li>
+<li><p><a href="http://www.cnki.com.cn/Article/CJFDTotal-SLTJ201506005.htm" target="_blank" rel="noopener">王小燕等(2015)</a>：弹性网的缺点之一是往往选择过多的变量组</p>
+</li>
 </ul>
 </blockquote>
 <h3 id="EN-vs-Bridge"><a href="#EN-vs-Bridge" class="headerlink" title="EN vs Bridge"></a>EN vs Bridge</h3><ul>
