@@ -2007,10 +2007,15 @@ $$Q(\beta|X, y) = \parallel y-\sum_{k=1}^p x_k \beta_k \parallel_2^2 + \lambda_n
 </blockquote>
 <h2 id="Sparse-Group-Penalization"><a class="header-anchor" href="#Sparse-Group-Penalization"></a>Sparse Group Penalization</h2>
 <p>稀疏组惩罚是两个惩罚函数的线性组合：一个具有组选择功能，另一个具有单变量选择功能（<a href="https://core.ac.uk/download/pdf/41449289.pdf" target="_blank" rel="noopener">马双鸽等人, 2015</a>）。</p>
+<p>惩罚函数的一般形式：<br>
+$$P(\beta;\lambda_1,\lambda_2) = \lambda_1 \sum_{j=1}^p P_1(\parallel\beta_j\parallel) + \lambda_2\sum_{j=1}<sup>{p}\sum_{k=1}</sup>M P_2(|\beta_j^k|)$$</p>
 <h3 id="SGL-Sparse-Group-LASSO"><a class="header-anchor" href="#SGL-Sparse-Group-LASSO"></a>SGL-Sparse Group LASSO</h3>
 <p>SGL（Sparse Group LASSO）是LASSO和Group LASSO的线性组合</p>
 <blockquote>
-<p>J. Friedman and T. Hastie and R. Tibshirani. (2010).<a href="http://statweb.stanford.edu/~tibs/ftp/sparse-grlasso.pdf" target="_blank" rel="noopener">A note on the group lasso and a sparse group lasso</a>. arXiv e-prints.</p>
+<ul>
+<li>J. Friedman and T. Hastie and R. Tibshirani. (2010).<a href="http://statweb.stanford.edu/~tibs/ftp/sparse-grlasso.pdf" target="_blank" rel="noopener">A note on the group lasso and a sparse group lasso</a>. arXiv e-prints.</li>
+<li>Simon, N. , Friedman, J. , Hastie, T. , &amp; Tibshirani, R. . (2013). <a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.407.6991&amp;rep=rep1&amp;type=pdf" target="_blank" rel="noopener">A sparse-group lasso</a>. Journal of Computational &amp; Graphical Statistics, 22(2), 231-245.</li>
+</ul>
 </blockquote>
 <h3 id="adSGL-Adaptive-Sparse-Group-LASSO"><a class="header-anchor" href="#adSGL-Adaptive-Sparse-Group-LASSO"></a>adSGL-Adaptive Sparse Group LASSO</h3>
 <blockquote>
