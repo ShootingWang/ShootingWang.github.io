@@ -23076,7 +23076,7 @@ $$ P_{\lambda}(|\beta_j|) = \left{<br>
 $$</p>
 <p>$$ P_{\lambda}^{\prime}(|\beta_j|) = \lambda\left{ I(|\beta_j| \leq \lambda) + \frac{(a\lambda - |\beta_j|)_{+}}{(a-1)\lambda} I(|\beta_j| &gt; \lambda) \right}$$<br>
 其中$a&gt;2$。</p>
-<h2 id="Elastic-Net"><a class="header-anchor" href="#Elastic-Net"></a>Elastic Net</h2>
+<h2 id="Elastic-Net（Enet）"><a class="header-anchor" href="#Elastic-Net（Enet）"></a>Elastic Net（Enet）</h2>
 <ul>
 <li>EN是最早的具有群组变量选择功能的方法（王小燕等, 2015）</li>
 <li>惩罚函数是LASSO和岭回归的线性组合</li>
