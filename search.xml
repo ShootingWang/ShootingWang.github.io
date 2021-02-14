@@ -2036,7 +2036,10 @@ $$P_{SGL}(\beta;\lambda_1,\lambda_2) = \lambda_1\sum_{j=1}^J \parallel\beta_j\pa
 $$P_{adSGL}(\beta;\lambda_1,\lambda_2) = \lambda_1\sum_{j=1}^p w_j \parallel\beta_j\parallel_2 + \lambda_2 \xi^T \parallel\beta\parallel_1 $$</p>
 <h3 id="Sparse-Group-MCP"><a class="header-anchor" href="#Sparse-Group-MCP"></a>Sparse Group MCP</h3>
 <blockquote>
-<p>Zhang, Q. , Zhang, S. , Liu, J. , Huang, J. , &amp; Ma, S. . (2015). <a href="https://arxiv.org/pdf/1501.02458.pdf" target="_blank" rel="noopener">Penalized integrative analysis under the accelerated failure time model</a>. Statistica Sinica, 26(2).</p>
+<ul>
+<li>Liu, J., Huang, J., Xie, Y., &amp; Ma, S. (2013). <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4090387/pdf/nihms594452.pdf" target="_blank" rel="noopener">Sparse group penalized integrative analysis of multiple cancer prognosis datasets</a>. Genetics research, 95(2-3), 68–77.</li>
+<li>Zhang, Q. , Zhang, S. , Liu, J. , Huang, J. , &amp; Ma, S. . (2015). <a href="https://arxiv.org/pdf/1501.02458.pdf" target="_blank" rel="noopener">Penalized integrative analysis under the accelerated failure time model</a>. Statistica Sinica, 26(2).</li>
+</ul>
 </blockquote>
 <h1 id="Network-based-penalization-网格结构惩罚"><a class="header-anchor" href="#Network-based-penalization-网格结构惩罚"></a>Network-based penalization 网格结构惩罚</h1>
 <blockquote>
