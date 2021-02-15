@@ -1668,7 +1668,7 @@ $$p_{\lambda, \gamma}(\beta) = C(\lambda, \gamma)\exp{(-\lambda |\beta|_{\gamma}
 <p>目标函数：<br>
 $$ P_{\lambda}(|\beta_j|) = \left{<br>
 \begin{array}<br>
-{\lambda |\beta_j|}, &amp; 0\leq |\beta_j| \leq \lambda \<br>
+{\lambda} |\beta_j|, &amp; 0\leq |\beta_j| \leq \lambda \<br>
 -\frac{\left( |\beta_j|^2 - 2a\lambda |\beta_j| + \lambda^2 \right)}{2(a-1)}, &amp; \lambda &lt; |\beta_j| \leq a\lambda \<br>
 \frac{(a+1)\lambda^2}{2}, &amp; |\beta_j| &gt; a\lambda<br>
 \end{array}<br>
