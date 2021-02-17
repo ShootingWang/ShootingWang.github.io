@@ -2189,6 +2189,9 @@ P_{MCP}^{\prime}(t;\lambda,\gamma) = \left\{
 <li>编辑公式，在需要换行的地方，<code>Shift</code>+<code>Enter</code>，则会出现一个下箭头</li>
 <li>在需要对齐的等号或其他运算符号左边，单击右键，选择【公式对齐方式】（MacOS）即可</li>
 </ol>
+<h2 id="符号"><a class="header-anchor" href="#符号"></a>符号</h2>
+<h3 id="罗马数字"><a class="header-anchor" href="#罗马数字"></a>罗马数字</h3>
+<p>【插入】——【数字】——【数字】填写需要的数字——【编号类型】选择罗马数字</p>
 <h1 id="页眉"><a class="header-anchor" href="#页眉"></a>页眉</h1>
 <ul>
 <li><strong>去掉页眉中的横线</strong>：全选页眉的文字或换行符，点击【开始】——边框选择“无框线”</li>
