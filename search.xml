@@ -14373,7 +14373,7 @@ $$<br>
 &amp;=\frac{\partial}{\partial{\theta_k}} \sum_{i=1}^n \left{x_{ij} \left[y_i-\frac{e<sup>{\theta</sup>Tx_i}}{1+e<sup>{\theta</sup>Tx_i}} \right]\right}\<br>
 &amp;=\sum_{i=1}^nx_{ij} \left{-\frac{e<sup>{\theta</sup>Tx_i}x_{ik}(1+e<sup>{\theta</sup>Tx_i})-e<sup>{\theta</sup>Tx_i}e<sup>{\theta</sup>Tx_i}x_{ik}}{ \left(1+e<sup>{\theta</sup>Tx_i} \right)^2} \right}\<br>
 &amp;=-\sum_{i=1}<sup>nx_{ij}x_{ik}\frac{e</sup>{\theta<sup>Tx_i}}{1+e</sup>{\theta^Tx_i}} \left(1-\frac{e<sup>{\theta</sup>Tx_i}}{1+e<sup>{\theta</sup>Tx_i}} \right)\<br>
-&amp;=-\sum_{i=1}^nx_{ij}x_{ij}h_\theta(x_i) \left[1-h_\theta(x_i) \right]<br>
+&amp;=-\sum_{i=1}^nx_{ij}x_{ij}h_\theta(x_i) \left[1-h_\theta(x_i) \right] \<br>
 \end{aligned}<br>
 $$</p>
 <p>其中$j,k=0,1,\cdots,p$。</p>
