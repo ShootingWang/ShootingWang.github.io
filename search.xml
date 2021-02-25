@@ -14274,11 +14274,11 @@ $$P(t)=\frac{1}{1+e^{-t}}$$</p>
 <p>Andrew Ng的CS229中的例子：根据肿瘤的大小（Tumor Size）$X$来判断肿瘤是否是恶性的（Malignant）$Y$。</p>
 <p>考虑构建线性回归模型$h_\theta(x)$，$h_\theta(x)\geq 0.5$ 为恶性肿瘤，$h_\theta(x)&lt;0.5$为良性肿瘤。</p>
 <p>\begin{equation}<br>
-Y=\left{<br>
+Y= \left{<br>
 \begin{array}{ll}<br>
 1, &amp; \mbox{如果} h_\theta(x) \geq 0.5\<br>
 0, &amp; \mbox{如果} h_\theta(x) &lt;0.5\<br>
-\end{array}\right.<br>
+\end{array} \right.<br>
 \end{equation}</p>
 <p>Logistic函数<strong>Sigmoid函数</strong>可以将任意实数值映射到(0,1)区间（不包括0和1，但可以无限接近）。因此，使用Sigmoid函数来将线性回归的结果按照一定的阈值分为2类（二分类问题）或更多类（多分类问题）。</p>
 <meta name="referrer" content="no-referrer">
