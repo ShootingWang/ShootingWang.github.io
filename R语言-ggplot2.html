@@ -47,6 +47,7 @@
 <meta property="og:image" content="https://github.com/R%E8%AF%AD%E8%A8%80-ggplot2/%E7%B0%87%E7%8A%B6%E6%9D%A1%E5%BD%A2%E5%9B%BE.png">
 <meta property="og:image" content="https://github.com/R%E8%AF%AD%E8%A8%80-ggplot2/%E7%B0%87%E7%8A%B6%E6%9D%A1%E5%BD%A2%E5%9B%BE2.png">
 <meta property="og:image" content="https://github.com/R%E8%AF%AD%E8%A8%80-ggplot2/%E5%A0%86%E7%A7%AF%E6%9D%A1%E5%BD%A2%E5%9B%BE.png">
+<meta property="og:image" content="https://github.com/R%E8%AF%AD%E8%A8%80-ggplot2/%E5%A0%86%E7%A7%AF%E6%9D%A1%E5%BD%A2%E5%9B%BE2.png">
 <meta property="og:image" content="https://github.com/R%E8%AF%AD%E8%A8%80-ggplot2/%E7%99%BE%E5%88%86%E6%AF%94%E5%A0%86%E7%A7%AF%E6%9D%A1%E5%BD%A2%E5%9B%BE.png">
 <meta property="og:image" content="https://github.com/R%E8%AF%AD%E8%A8%80-ggplot2/%E7%AE%B1%E7%BA%BF%E5%9B%BE.png">
 <meta property="og:image" content="https://github.com/R%E8%AF%AD%E8%A8%80-ggplot2/%E5%A4%9A%E5%88%86%E7%BB%84%E5%8F%98%E9%87%8F%E7%AE%B1%E7%BA%BF%E5%9B%BE.png">
@@ -55,7 +56,7 @@
 <meta property="og:image" content="https://github.com/R%E8%AF%AD%E8%A8%80-ggplot2/%E7%82%B9%E5%9B%BE%E6%B7%BB%E5%8A%A0%E8%BE%B9%E9%99%85%E5%9C%B0%E6%AF%AF2.png">
 <meta property="og:image" content="https://github.com/R%E8%AF%AD%E8%A8%80-ggplot2/%E5%87%BD%E6%95%B0%E5%9B%BE%E5%83%8F.png">
 <meta property="article:published_time" content="2021-03-07T15:05:41.000Z">
-<meta property="article:modified_time" content="2021-03-08T08:46:12.259Z">
+<meta property="article:modified_time" content="2021-03-08T08:47:32.170Z">
 <meta property="article:author" content="ShootingWang">
 <meta property="article:tag" content="R">
 <meta name="twitter:card" content="summary">
@@ -279,7 +280,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-03-08 16:46:12" itemprop="dateModified" datetime="2021-03-08T16:46:12+08:00">2021-03-08</time>
+                <time title="修改时间：2021-03-08 16:47:32" itemprop="dateModified" datetime="2021-03-08T16:47:32+08:00">2021-03-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -435,6 +436,9 @@
 <figure class="highlight r"><table><tr><td class="code"><pre><span class="line">ggplot(cabbage_exp, aes(x = Date, y = Weight, fill = Cultivar)) + </span><br><span class="line">    geom_bar(stat = <span class="string">'identity'</span>)</span><br></pre></td></tr></table></figure>
 <meta name="referrer" content="no-referrer">
 <img src="/R%E8%AF%AD%E8%A8%80-ggplot2/%E5%A0%86%E7%A7%AF%E6%9D%A1%E5%BD%A2%E5%9B%BE.png" class title="堆积条形图">
+<figure class="highlight r"><table><tr><td class="code"><pre><span class="line">ggplot(cabbage_exp, aes(x = Date, y = Weight, fill = Cultivar)) + </span><br><span class="line">    geom_bar(stat = <span class="string">'identity'</span>) + </span><br><span class="line">    guides(fill = guide_legend(reverse = <span class="literal">TRUE</span>))</span><br><span class="line"><span class="comment">## 调整图例顺序</span></span><br></pre></td></tr></table></figure>
+<meta name="referrer" content="no-referrer">
+<img src="/R%E8%AF%AD%E8%A8%80-ggplot2/%E5%A0%86%E7%A7%AF%E6%9D%A1%E5%BD%A2%E5%9B%BE2.png" class title="堆积条形图">
 <h3 id="百分比堆积条形图"><a class="header-anchor" href="#百分比堆积条形图"></a>百分比堆积条形图</h3>
 <figure class="highlight r"><table><tr><td class="code"><pre><span class="line"><span class="keyword">library</span>(gcookbook)</span><br><span class="line">head(cabbage_exp)</span><br><span class="line"><span class="comment"># A data.frame: 6 × 6</span></span><br><span class="line"><span class="comment">#   Cultivar	Date	Weight	sd	n	se</span></span><br><span class="line"><span class="comment">#   &lt;fct&gt;	&lt;fct&gt;	&lt;dbl&gt;	&lt;dbl&gt;	&lt;int&gt;	&lt;dbl&gt;</span></span><br><span class="line"><span class="comment"># 1	c39	d16	3.18	0.9566144	10	0.30250803</span></span><br><span class="line"><span class="comment"># 2	c39	d20	2.80	0.2788867	10	0.08819171</span></span><br><span class="line"><span class="comment"># 3	c39	d21	2.74	0.9834181	10	0.31098410</span></span><br><span class="line"><span class="comment"># 4	c52	d16	2.26	0.4452215	10	0.14079141</span></span><br><span class="line"><span class="comment"># 5	c52	d20	3.11	0.7908505	10	0.25008887</span></span><br><span class="line"><span class="comment"># 6	c52	d21	1.47	0.2110819	10	0.06674995</span></span><br><span class="line"><span class="keyword">library</span>(plyr)</span><br><span class="line">ce = ddply(cabbage_exp, <span class="string">'Date'</span>, transform, </span><br><span class="line">          percent_weight = Weight / sum(Weight) * <span class="number">100</span>)</span><br><span class="line"><span class="comment">## ddply函数根据指定的变量Date对数据框cabbage_exp进行分组</span></span><br><span class="line"><span class="comment">## 并对各组数据执行transform()函数</span></span><br><span class="line">head(ce)</span><br><span class="line"><span class="comment"># A data.frame: 6 × 7</span></span><br><span class="line"><span class="comment"># Cultivar	Date	Weight	sd	n	se	percent_weight</span></span><br><span class="line"><span class="comment"># &lt;fct&gt;	&lt;fct&gt;	&lt;dbl&gt;	&lt;dbl&gt;	&lt;int&gt;	&lt;dbl&gt;	&lt;dbl&gt;</span></span><br><span class="line"><span class="comment"># 1	c39	d16	3.18	0.9566144	10	0.30250803	58.45588</span></span><br><span class="line"><span class="comment"># 2	c52	d16	2.26	0.4452215	10	0.14079141	41.54412</span></span><br><span class="line"><span class="comment"># 3	c39	d20	2.80	0.2788867	10	0.08819171	47.37733</span></span><br><span class="line"><span class="comment"># 4	c52	d20	3.11	0.7908505	10	0.25008887	52.62267</span></span><br><span class="line"><span class="comment"># 5	c39	d21	2.74	0.9834181	10	0.31098410	65.08314</span></span><br><span class="line"><span class="comment"># 6	c52	d21	1.47	0.2110819	10	0.06674995	34.91686</span></span><br><span class="line">ggplot(ce, aes(x = Date, y = percent_weight, fill = Cultivar)) + </span><br><span class="line">    geom_bar(stat = <span class="string">'identity'</span>)</span><br></pre></td></tr></table></figure>
 <meta name="referrer" content="no-referrer">
