@@ -5421,6 +5421,11 @@ $$TSS=\sum_{i=1}<sup>n(x_i-\bar{x})</sup>2$$</li>
 <ul>
 <li>可视化缺失值</li>
 </ul>
+<h2 id="ggplot2"><a class="header-anchor" href="#ggplot2"></a>ggplot2</h2>
+<a href="/R%E8%AF%AD%E8%A8%80-ggplot2.html" title="ggplot2包">ggplot2包</a>
+<ul>
+<li>绘图</li>
+</ul>
 <h2 id="grpreg"><a class="header-anchor" href="#grpreg"></a>grpreg</h2>
 <a href="/R%E8%AF%AD%E8%A8%80-grpreg.html" title="grpreg包">grpreg包</a>
 <ul>
