@@ -9872,7 +9872,7 @@ $$\alpha_{t+1}(i)=\left[\sum_{j=1}^N\alpha_t(j)a_{ji} \right]b_i(o_{t+1})$$</p>
 </ol>
 <p>对于<strong>第一种情况</strong>：<br>
 已知$D$个长度为$T$的观测序列和对应的隐藏序列<br>
-$$\left{(O_1,I_1,),(O_2,I_2), \cdots, (O_D,I_D) \right}$$</p>
+$$\left{ (O_1,I_1,),(O_2,I_2), \cdots, (O_D,I_D) \right}$$</p>
 <div class="note danger">
             <h2 id="极大似然估计"><a class="header-anchor" href="#极大似然估计"></a>极大似然估计</h2><ul><li>假设样本从隐藏状态$q_i$转移到$q_j$的频率计数是$A_{ij}$，则状态转移矩阵为<br>$$A=\left[a_{ij} \right]<em>{N\times N}$$<br>其中<br>$$a</em>{ij}=\frac{A_{ij}}{\sum_{s=1}^NA_{is}}$$</li><li>假设样本隐藏状态为$q_j$且观测状态为$v_k$的频率计数是$B_{jk}$，则观测状态概率矩阵为<br>$$B=\left[b_j(k) \right]<em>{N\times M}$$<br>其中<br>$$b_j(k)=\frac{B</em>{jk}}{\sum_{s=1}B_{js}}$$</li><li>假设所有样本种初始隐藏状态为$q_i$的频率计数为$C(i)$，则初始概率分布为<br>$$\Pi=\left[\pi(i) \right]<em>{N\times 1}$$<br>其中<br>$$\pi(i)=\frac{C(i)}{\sum</em>{s=1}^NC(s)}$$</li></ul>
           </div>
