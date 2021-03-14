@@ -365,6 +365,14 @@
 <li>type （数据类型）</li>
 <li>vlaue （值）</li>
 </ul>
+<h2 id="切片操作"><a href="#切片操作" class="headerlink" title="切片操作"></a>切片操作</h2><ul>
+<li><p>Python的切片操作不会引起下标越界异常</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">lst = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>]</span><br><span class="line">print(lst[<span class="number">15</span>:])</span><br><span class="line"><span class="comment">## 输出 []</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>索引操作可能会引起下标越界异常</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">lst = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>]</span><br><span class="line">print(lst[<span class="number">15</span>])</span><br><span class="line"><span class="comment">#Traceback (most recent call last):</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#  File "&lt;ipython-input-9-bcb28d671f1f&gt;", line #2, in &lt;module&gt;</span></span><br><span class="line"><span class="comment">#    print(lst[15])</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#IndexError: list index out of range</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
 <h1 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h1><p>Python3的6个标准数据类型：</p>
 <ul>
 <li>不可变：<ul>
@@ -710,6 +718,229 @@
 <h2 id="r"><a href="#r" class="headerlink" title="r"></a>r</h2><p>表示 <code>&#39;&#39;</code>内的字符串默认不转义<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">print(<span class="string">'Hello,\nWorld'</span>)  <span class="comment">## ''内的\n发生了转义（换行）</span></span><br><span class="line"><span class="comment">#Hello,</span></span><br><span class="line"><span class="comment">#World</span></span><br><span class="line"></span><br><span class="line">print(<span class="string">r'Hello,\nWorld'</span>)   <span class="comment">## ''内的\n视为字符串（不转义）</span></span><br><span class="line"><span class="comment">#Hello,\nWorld</span></span><br></pre></td></tr></table></figure></p>
 <h2 id="str"><a href="#str" class="headerlink" title="str()"></a>str()</h2><h2 id="zip"><a href="#zip" class="headerlink" title="zip()"></a>zip()</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> part <span class="keyword">in</span> zip(*[iter(<span class="string">'AABCAAADA'</span>)]*<span class="number">3</span>):</span><br><span class="line">    print(part)</span><br><span class="line"><span class="comment">#('A', 'A', 'B')</span></span><br><span class="line"><span class="comment">#('C', 'A', 'A')</span></span><br><span class="line"><span class="comment">#('A', 'D', 'A')</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> part <span class="keyword">in</span> zip(*[iter(<span class="string">'AABCAAADA'</span>)]*<span class="number">3</span>):</span><br><span class="line">    ans = []</span><br><span class="line">    <span class="keyword">for</span> x <span class="keyword">in</span> part:</span><br><span class="line">        <span class="keyword">if</span> x <span class="keyword">not</span> <span class="keyword">in</span> ans:</span><br><span class="line">            ans.append(x)</span><br><span class="line">    print(<span class="string">""</span>.join(ans))</span><br><span class="line"><span class="comment">#AB</span></span><br><span class="line"><span class="comment">#CA</span></span><br><span class="line"><span class="comment">#AD</span></span><br></pre></td></tr></table></figure>
+<h1 id="Python2-vs-Python-3"><a href="#Python2-vs-Python-3" class="headerlink" title="Python2 vs Python 3"></a>Python2 vs Python 3</h1><h2 id="默认编码"><a href="#默认编码" class="headerlink" title="默认编码"></a>默认编码</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">Python 2</th>
+<th style="text-align:center">Python 3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">默认编码</td>
+<td style="text-align:center">ASCII</td>
+<td style="text-align:center">utf-8</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="用户交互"><a href="#用户交互" class="headerlink" title="用户交互"></a>用户交互</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">Python 2</th>
+<th style="text-align:center">Python 3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">用户输入函数</td>
+<td style="text-align:center"><code>raw_input()</code></td>
+<td style="text-align:center"><code>input()</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="Unicode"><a href="#Unicode" class="headerlink" title="Unicode"></a>Unicode</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">Python 2</th>
+<th style="text-align:center">Python 3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Unicode默认</td>
+<td style="text-align:center">2个字节表示一个字符</td>
+<td style="text-align:center">4个字节表示一个字符</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="init文件"><a href="#init文件" class="headerlink" title="init文件"></a>init文件</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">Python 2</th>
+<th style="text-align:center">Python 3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">init文件</td>
+<td style="text-align:center">新建的包如果没有init文件，不能被调用</td>
+<td style="text-align:center">新建的包里面的init文件如果被删除，包照样可以被调用</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="range"><a href="#range" class="headerlink" title="range"></a>range</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">Python 2</th>
+<th style="text-align:center">Python 3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>xrange</code></td>
+<td style="text-align:center">有<br>返回一个迭代器<br>在每次循环中生成序列的下一个数字</td>
+<td style="text-align:center">无</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>range</code></td>
+<td style="text-align:center">有<br>返回一个list</td>
+<td style="text-align:center">有<br>相当于Python2中的<code>xrange</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="print函数"><a href="#print函数" class="headerlink" title="print函数"></a>print函数</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">Python 2</th>
+<th style="text-align:center">Python 3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>print</code></td>
+<td style="text-align:center">是statement，不需要加括号</td>
+<td style="text-align:center">是函数，需要加括号</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="整数相除"><a href="#整数相除" class="headerlink" title="整数相除"></a>整数相除</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">Python 2</th>
+<th style="text-align:center">Python 3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>/</code></td>
+<td style="text-align:center"><code>3/2</code>是<code>int</code></td>
+<td style="text-align:center"><code>3/2</code>是<code>float</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">Python 2</th>
+<th style="text-align:center">Python 3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>as</code>关键字</td>
+<td style="text-align:center">不用使用</td>
+<td style="text-align:center">必须使用</td>
+</tr>
+</tbody>
+</table>
+</div>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## Python 2</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    <span class="number">1</span>/<span class="number">0</span></span><br><span class="line"><span class="keyword">except</span> ZeroDivisionError, e:</span><br><span class="line">    <span class="keyword">print</span> str(e)</span><br><span class="line"></span><br><span class="line"><span class="comment">## Python 3</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    <span class="number">1</span>/<span class="number">0</span></span><br><span class="line"><span class="keyword">except</span> ZeroDivisionError <span class="keyword">as</span> e:</span><br><span class="line">    print(str(e))</span><br></pre></td></tr></table></figure>
+<h2 id="map函数"><a href="#map函数" class="headerlink" title="map函数"></a>map函数</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">Python 2</th>
+<th style="text-align:center">Python 3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>map()</code></td>
+<td style="text-align:center">返回list</td>
+<td style="text-align:center">返回迭代器（iterator）</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="不等运算符"><a href="#不等运算符" class="headerlink" title="不等运算符"></a>不等运算符</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">Python 2</th>
+<th style="text-align:center">Python 3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">不等运算符</td>
+<td style="text-align:center"><code>&lt;&gt;</code> 或 <code>!=</code></td>
+<td style="text-align:center">只有<code>!=</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="数据类型-1"><a href="#数据类型-1" class="headerlink" title="数据类型"></a>数据类型</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">Python 2</th>
+<th style="text-align:center">Python 3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">数据类型</td>
+<td style="text-align:center">有 <code>long</code>类型</td>
+<td style="text-align:center">没有<code>long</code>类型，只有<code>int</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="has-key方法"><a href="#has-key方法" class="headerlink" title="has_key方法"></a>has_key方法</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">Python 2</th>
+<th style="text-align:center">Python 3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">字典</td>
+<td style="text-align:center">字典支持has_key方法</td>
+<td style="text-align:center">字典不支持has_key方法</td>
+</tr>
+</tbody>
+</table>
+</div>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">person = &#123;<span class="string">"age"</span>: <span class="number">35</span>, <span class="string">"name"</span>: <span class="string">"Wang Wu"</span>&#125;</span><br><span class="line"><span class="comment">## Python 2</span></span><br><span class="line"><span class="keyword">print</span> <span class="string">"person has key \"age\":"</span>, person.has_key(<span class="string">"age"</span>)</span><br><span class="line"><span class="comment"># person has key "age": True</span></span><br><span class="line"><span class="keyword">print</span> <span class="string">"person has key \"age\":"</span>, <span class="string">"age"</span> <span class="keyword">in</span> person</span><br><span class="line"><span class="comment"># person has key "age": True</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## Python 3</span></span><br><span class="line">print(<span class="string">"person has key \"age\":"</span>, <span class="string">"age"</span> <span class="keyword">in</span> person)</span><br><span class="line"><span class="comment"># person has key "age": True</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
 <li><a href="https://www.runoob.com/python/python-func-open.html" target="_blank" rel="noopener">Python open() 函数</a></li>
@@ -18344,230 +18575,6 @@ _var 53963204.0
 <li><a href="https://github.com/zhouyanasd/or-pandas">【运筹OR帷幄｜数据科学】Pandas实战教程系列电子书</a></li>
 </ul>
 ]]></content>
-      <categories>
-        <category>Python</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Python | Python 2和Python 3的主要区别</title>
-    <url>/python-23%E5%8C%BA%E5%88%AB.html</url>
-    <content><![CDATA[<center>Python 2 vs Python 3</center>
-<a id="more"></a>
-# Python2 vs Python 3
-<h2 id="默认编码"><a class="header-anchor" href="#默认编码"></a>默认编码</h2>
-<table>
-<thead>
-<tr>
-<th style="text-align:center"></th>
-<th style="text-align:center">Python 2</th>
-<th style="text-align:center">Python 3</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">默认编码</td>
-<td style="text-align:center">ASCII</td>
-<td style="text-align:center">utf-8</td>
-</tr>
-</tbody>
-</table>
-<h2 id="用户交互"><a class="header-anchor" href="#用户交互"></a>用户交互</h2>
-<table>
-<thead>
-<tr>
-<th style="text-align:center"></th>
-<th style="text-align:center">Python 2</th>
-<th style="text-align:center">Python 3</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">用户输入函数</td>
-<td style="text-align:center"><code>raw_input()</code></td>
-<td style="text-align:center"><code>input()</code></td>
-</tr>
-</tbody>
-</table>
-<h2 id="Unicode"><a class="header-anchor" href="#Unicode"></a>Unicode</h2>
-<table>
-<thead>
-<tr>
-<th style="text-align:center"></th>
-<th style="text-align:center">Python 2</th>
-<th style="text-align:center">Python 3</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">Unicode默认</td>
-<td style="text-align:center">2个字节表示一个字符</td>
-<td style="text-align:center">4个字节表示一个字符</td>
-</tr>
-</tbody>
-</table>
-<h2 id="init文件"><a class="header-anchor" href="#init文件"></a>init文件</h2>
-<table>
-<thead>
-<tr>
-<th style="text-align:center"></th>
-<th style="text-align:center">Python 2</th>
-<th style="text-align:center">Python 3</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">init文件</td>
-<td style="text-align:center">新建的包如果没有init文件，不能被调用</td>
-<td style="text-align:center">新建的包里面的init文件如果被删除，包照样可以被调用</td>
-</tr>
-</tbody>
-</table>
-<h2 id="range"><a class="header-anchor" href="#range"></a>range</h2>
-<table>
-<thead>
-<tr>
-<th style="text-align:center"></th>
-<th style="text-align:center">Python 2</th>
-<th style="text-align:center">Python 3</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center"><code>xrange</code></td>
-<td style="text-align:center">有<br>返回一个迭代器<br>在每次循环中生成序列的下一个数字</td>
-<td style="text-align:center">无</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>range</code></td>
-<td style="text-align:center">有<br>返回一个list</td>
-<td style="text-align:center">有<br>相当于Python2中的<code>xrange</code></td>
-</tr>
-</tbody>
-</table>
-<h2 id="print函数"><a class="header-anchor" href="#print函数"></a>print函数</h2>
-<table>
-<thead>
-<tr>
-<th style="text-align:center"></th>
-<th style="text-align:center">Python 2</th>
-<th style="text-align:center">Python 3</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center"><code>print</code></td>
-<td style="text-align:center">是statement，不需要加括号</td>
-<td style="text-align:center">是函数，需要加括号</td>
-</tr>
-</tbody>
-</table>
-<h2 id="整数相除"><a class="header-anchor" href="#整数相除"></a>整数相除</h2>
-<table>
-<thead>
-<tr>
-<th style="text-align:center"></th>
-<th style="text-align:center">Python 2</th>
-<th style="text-align:center">Python 3</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center"><code>/</code></td>
-<td style="text-align:center"><code>3/2</code>是<code>int</code></td>
-<td style="text-align:center"><code>3/2</code>是<code>float</code></td>
-</tr>
-</tbody>
-</table>
-<h2 id="异常处理"><a class="header-anchor" href="#异常处理"></a>异常处理</h2>
-<table>
-<thead>
-<tr>
-<th style="text-align:center"></th>
-<th style="text-align:center">Python 2</th>
-<th style="text-align:center">Python 3</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center"><code>as</code>关键字</td>
-<td style="text-align:center">不用使用</td>
-<td style="text-align:center">必须使用</td>
-</tr>
-</tbody>
-</table>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## Python 2</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    <span class="number">1</span>/<span class="number">0</span></span><br><span class="line"><span class="keyword">except</span> ZeroDivisionError, e:</span><br><span class="line">    <span class="keyword">print</span> str(e)</span><br><span class="line"></span><br><span class="line"><span class="comment">## Python 3</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    <span class="number">1</span>/<span class="number">0</span></span><br><span class="line"><span class="keyword">except</span> ZeroDivisionError <span class="keyword">as</span> e:</span><br><span class="line">    print(str(e))</span><br></pre></td></tr></table></figure>
-<h2 id="map函数"><a class="header-anchor" href="#map函数"></a>map函数</h2>
-<table>
-<thead>
-<tr>
-<th style="text-align:center"></th>
-<th style="text-align:center">Python 2</th>
-<th style="text-align:center">Python 3</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center"><code>map()</code></td>
-<td style="text-align:center">返回list</td>
-<td style="text-align:center">返回迭代器（iterator）</td>
-</tr>
-</tbody>
-</table>
-<h2 id="不等运算符"><a class="header-anchor" href="#不等运算符"></a>不等运算符</h2>
-<table>
-<thead>
-<tr>
-<th style="text-align:center"></th>
-<th style="text-align:center">Python 2</th>
-<th style="text-align:center">Python 3</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">不等运算符</td>
-<td style="text-align:center"><code>&lt;&gt;</code> 或 <code>!=</code></td>
-<td style="text-align:center">只有<code>!=</code></td>
-</tr>
-</tbody>
-</table>
-<h2 id="数据类型"><a class="header-anchor" href="#数据类型"></a>数据类型</h2>
-<table>
-<thead>
-<tr>
-<th style="text-align:center"></th>
-<th style="text-align:center">Python 2</th>
-<th style="text-align:center">Python 3</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">数据类型</td>
-<td style="text-align:center">有 <code>long</code>类型</td>
-<td style="text-align:center">没有<code>long</code>类型，只有<code>int</code></td>
-</tr>
-</tbody>
-</table>
-<h2 id="has-key方法"><a class="header-anchor" href="#has-key方法"></a>has_key方法</h2>
-<table>
-<thead>
-<tr>
-<th style="text-align:center"></th>
-<th style="text-align:center">Python 2</th>
-<th style="text-align:center">Python 3</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">字典</td>
-<td style="text-align:center">字典支持has_key方法</td>
-<td style="text-align:center">字典不支持has_key方法</td>
-</tr>
-</tbody>
-</table>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">person = &#123;<span class="string">"age"</span>: <span class="number">35</span>, <span class="string">"name"</span>: <span class="string">"Wang Wu"</span>&#125;</span><br><span class="line"><span class="comment">## Python 2</span></span><br><span class="line"><span class="keyword">print</span> <span class="string">"person has key \"age\":"</span>, person.has_key(<span class="string">"age"</span>)</span><br><span class="line"><span class="comment"># person has key "age": True</span></span><br><span class="line"><span class="keyword">print</span> <span class="string">"person has key \"age\":"</span>, <span class="string">"age"</span> <span class="keyword">in</span> person</span><br><span class="line"><span class="comment"># person has key "age": True</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## Python 3</span></span><br><span class="line">print(<span class="string">"person has key \"age\":"</span>, <span class="string">"age"</span> <span class="keyword">in</span> person)</span><br><span class="line"><span class="comment"># person has key "age": True</span></span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>Python</category>
       </categories>
