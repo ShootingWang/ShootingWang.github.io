@@ -4190,7 +4190,7 @@ $$\log{\frac{p(x,y)}{p(x)p(y)}}=\log1=0$$</p>
       </tags>
   </entry>
   <entry>
-    <title>Markdown</title>
+    <title>Markdown语法</title>
     <url>/Markdown.html</url>
     <content><![CDATA[<center></center>
 <a id="more"></a>
@@ -4221,6 +4221,15 @@ $$\log{\frac{p(x,y)}{p(x)p(y)}}=\log1=0$$</p>
 <p>点击即可跳转</p>
 </blockquote>
 <p>效果：<a href="https://shootingwang.github.io/" target="_blank" rel="noopener">点击即可跳转到首页</a></p>
+<h2 id="列表"><a class="header-anchor" href="#列表"></a>列表</h2>
+<h3 id="有序列表"><a class="header-anchor" href="#有序列表"></a>有序列表</h3>
+<p><code>1.</code> + 空格 + 内容</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="bullet">1. </span>第一个item内容</span><br></pre></td></tr></table></figure>
+<p>效果：</p>
+<ol>
+<li>第一个item内容</li>
+<li>第二个item内容</li>
+</ol>
 <h1 id="公式"><a class="header-anchor" href="#公式"></a>公式</h1>
 <h2 id="行内公式"><a class="header-anchor" href="#行内公式"></a>行内公式</h2>
 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">$...$</span><br></pre></td></tr></table></figure>
