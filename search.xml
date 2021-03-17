@@ -13994,20 +13994,24 @@ $$\Delta w(i,j)=-\eta\frac{\partial{E(w,b)}}{\partial{w(i,j)}}$$</p>
 <p>如果选择Sigmoid函数作为激活函数<br>
 $$f(x)=\frac{A}{1+e^{-\frac{x}{B}}}$$<br>
 则有<br>
+\begin{equation}<br>
 \begin{aligned}<br>
 f^\prime(x) &amp;= \frac{Ae<sup>{-\frac{x}{B}}}{B(1+e</sup>{-\frac{x}{B}})^2}\<br>
-&amp;= \frac{1}{AB}\cdot \frac{A}{1+e<sup>{-\frac{x}{B}}}\cdot\left(A-\frac{A}{1+e</sup>{-\frac{x}{B}}}\right)\<br>
-&amp;= \frac{f(x)\left[A-f(x) \right]}{AB}<br>
-\end{aligned}</p>
-<p>对于$w_{ij}$有<br>
-\begin{aligned}<br>
-\frac{\partial{E(w,b)}}{\partial{w_{ij}}} &amp;= \frac{1}{\partial{w_{ij}}}\cdot\frac{1}{2}\sum_{j=0}<sup>{n-1}(d_j-y_j)</sup>2\<br>
-&amp;= (d_j-y_j)\cdot\frac{\partial{d_j}}{\partial{w_{ij}}}\<br>
-&amp;= (d_j-y_j)\cdot f^\prime(S_j)\cdot\frac{\partial{S_j}}{\partial{w_{ij}}}\<br>
-&amp;= (d_j-y_j)\cdot \frac{f(S_j)\left[A-f(S_j) \right]}{AB}\cdot \frac{\partial{S_j}}{\partial{w_{ij}}}\<br>
-&amp;= (d_j-y_j)\cdot \frac{f(S_j)\left[A-f(S_j) \right]}{AB}\cdot x_i\<br>
-&amp;= \delta_{ij}\cdot x_i<br>
+&amp;= \frac{1}{AB}\cdot \frac{A}{1+e<sup>{-\frac{x}{B}}}\cdot\left(A-\frac{A}{1+e</sup>{-\frac{x}{B}}}\right) \<br>
+&amp;= \frac{f(x)\left[A-f(x) \right]}{AB} \<br>
 \end{aligned}<br>
+\end{equation}</p>
+<p>对于$w_{ij}$有<br>
+\begin{equation}<br>
+\begin{aligned}<br>
+\frac{\partial{E(w,b)}}{\partial{w_{ij}}} &amp;= \frac{1}{\partial{w_{ij}}}\cdot\frac{1}{2}\sum_{j=0}<sup>{n-1}(d_j-y_j)</sup>2 \<br>
+&amp;= (d_j-y_j)\cdot\frac{\partial{d_j}}{\partial{w_{ij}}} \<br>
+&amp;= (d_j-y_j)\cdot f^\prime(S_j)\cdot\frac{\partial{S_j}}{\partial{w_{ij}}} \<br>
+&amp;= (d_j-y_j)\cdot \frac{f(S_j)\left[A-f(S_j) \right]}{AB}\cdot \frac{\partial{S_j}}{\partial{w_{ij}}} \<br>
+&amp;= (d_j-y_j)\cdot \frac{f(S_j)\left[A-f(S_j) \right]}{AB}\cdot x_i \<br>
+&amp;= \delta_{ij}\cdot x_i \<br>
+\end{aligned}<br>
+\end{equation}<br>
 其中<br>
 $$\delta_{ij}=(d_j-y_j)\cdot \frac{f(S_j)\left[A-f(S_j) \right]}{AB}$$</p>
 <p>对$b_j$有<br>
@@ -14022,14 +14026,16 @@ $$b_j = b_j - \eta_2 \cdot\frac{\partial{E(w,b)}}{\partial{b_j}} = b_j - \eta)2\
 </ul>
 <p>下面针对输入层和隐含层之间的权值、隐含层的阈值计算调整量。</p>
 <p>假设$w_{ki}$是输入层第$k$个节点和隐含层第$i$个节点之间的权值，则有<br>
+\begin{equation}<br>
 \begin{aligned}<br>
-\frac{\partial{E(w,b)}}{\partial{w_{ki}}} &amp;= \frac{1}{\partial{w_{ki}}}\cdot\frac{1}{2}\sum_{j=0}<sup>{n-1}(d_j-y_j)</sup>2\<br>
-&amp;= \sum_{j=0}^{n-1}(d_j-y_j)\cdot f^\prime(S_j)\cdot \frac{\partial{S_j}}{\partial{w_{ki}}}\<br>
-&amp;= \sum_{j=0}^{n-1}(d_j-y_j)\cdot f^\prime(S_j)\cdot \frac{\partial{S_j}}{\partial{x_i}}\cdot \frac{\partial{x_i}}{\partial{S_i}}\cdot \frac{\partial{S_i}}{\partial{w_{ki}}}\<br>
-&amp;= \sum_{j=0}^{n-1}\delta_{ij}\cdot w_{ij}\cdot \frac{f(S_i)\left[A-f(S_i) \right]}{AB}\cdot x_k\<br>
-&amp;= x_k\cdot \sum_{j=0}^{n-1}\delta_{ij}\cdot w_{ij}\cdot \frac{f(S_i)\left[A-f(S_i) \right]}{AB}\<br>
-&amp;= \delta_{ki}\cdot x_k<br>
+\frac{\partial{E(w,b)}}{\partial{w_{ki}}} &amp;= \frac{1}{\partial{w_{ki}}}\cdot\frac{1}{2}\sum_{j=0}<sup>{n-1}(d_j-y_j)</sup>2 \<br>
+&amp;= \sum_{j=0}^{n-1}(d_j-y_j)\cdot f^\prime(S_j)\cdot \frac{\partial{S_j}}{\partial{w_{ki}}} \<br>
+&amp;= \sum_{j=0}^{n-1}(d_j-y_j)\cdot f^\prime(S_j)\cdot \frac{\partial{S_j}}{\partial{x_i}}\cdot \frac{\partial{x_i}}{\partial{S_i}}\cdot \frac{\partial{S_i}}{\partial{w_{ki}}} \<br>
+&amp;= \sum_{j=0}^{n-1}\delta_{ij}\cdot w_{ij}\cdot \frac{f(S_i)\left[A-f(S_i) \right]}{AB}\cdot x_k \<br>
+&amp;= x_k\cdot \sum_{j=0}^{n-1}\delta_{ij}\cdot w_{ij}\cdot \frac{f(S_i)\left[A-f(S_i) \right]}{AB} \<br>
+&amp;= \delta_{ki}\cdot x_k \<br>
 \end{aligned}<br>
+\end{equation}<br>
 其中<br>
 $$\delta_{ki}=\sum_{j=0}^{n-1}\delta_{ij}\cdot w_{ij}\cdot \frac{f(S_i)\left[A-f(S_i) \right]}{AB}$$</p>
 <ul>
