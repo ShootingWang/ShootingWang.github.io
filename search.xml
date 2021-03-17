@@ -14189,55 +14189,6 @@ $$w_{ij}=w_{ij}-\eta_1\cdot \delta_{ij}\cdot x_i+\alpha \Delta w_{ij}$$</li>
       </tags>
   </entry>
   <entry>
-    <title>Machine Learning | t-SNE</title>
-    <url>/%E7%AE%97%E6%B3%95-t-SNE.html</url>
-    <content><![CDATA[<center>t-Distributed Stochastic Neighbor Embedding</center>
-<a id="more"></a>
-<p>t-SNE<br>
-t分布随机邻域嵌入算法</p>
-<h1 id="降维"><a class="header-anchor" href="#降维"></a>降维</h1>
-<p>Dimensionality Reduction<br>
-把数据或特征的维数降低</p>
-<p>一般分为2种：</p>
-<ol>
-<li><strong>线性降维</strong></li>
-</ol>
-<ul>
-<li>主成分分析（PCA，Principal Components Analysis）</li>
-<li>线性判别分析（LDA，Linear Discriminant Analysis）</li>
-<li>多维尺度变换（MDS，Classical Multidimensional Scaling）</li>
-</ul>
-<ol start="2">
-<li><strong>非线性降维</strong></li>
-</ol>
-<ul>
-<li>等距特征映射（IsoMap，Isometric Mapping）</li>
-<li>局部线性嵌入（LLE，Locally Linear Embedding）</li>
-<li>拉普拉斯特征映射（LE，Laplacian Eigenmaps）</li>
-<li>t-SNE</li>
-</ul>
-<h1 id="t-SNE"><a class="header-anchor" href="#t-SNE"></a>t-SNE</h1>
-<ul>
-<li>是一种非线性降维方法</li>
-<li>但主要被用于可视化</li>
-</ul>
-<h1 id="参考资料"><a class="header-anchor" href="#参考资料"></a>参考资料</h1>
-<ul>
-<li><a href="http://bindog.github.io/blog/2016/06/04/from-sne-to-tsne-to-largevis/" target="_blank" rel="noopener">从SNE到t-SNE再到LargeVis</a></li>
-<li><a href="https://www.sohu.com/a/204249302_465975" target="_blank" rel="noopener">机器之心-深度 | 详解可视化利器t-SNE算法：数无形时少直觉</a></li>
-<li><a href="https://www.jianshu.com/p/8c20b975a174" target="_blank" rel="noopener">t-SNE和PCA介绍</a></li>
-</ul>
-]]></content>
-      <categories>
-        <category>机器学习</category>
-      </categories>
-      <tags>
-        <tag>算法</tag>
-        <tag>机器学习</tag>
-        <tag>降维</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Machine Learning | 欠拟合</title>
     <url>/%E7%AE%97%E6%B3%95-%E6%AC%A0%E6%8B%9F%E5%90%88.html</url>
     <content><![CDATA[<center>Underfitting</center>
