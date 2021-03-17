@@ -24362,7 +24362,7 @@ $$每人每天消费的猪肉量=200g\times 50%=100g$$</li>
 \begin{aligned}<br>
 全国一年消费猪肉量&amp;=每人每天消费的猪肉量\times 全国人数\times 一年的天数\<br>
 &amp;= 每人每天消耗的肉量\times 猪肉在肉类食材中的占比\times 14亿\times 365天\<br>
-&amp;= 200g \times 50% \times 14亿\times 365天<br>
+&amp;= 200g \times 50 % \times 14亿\times 365天<br>
 \end{aligned}<br>
 \end{equation}</li>
 </ol>
@@ -24429,7 +24429,7 @@ $$北京每天需加油的车辆数=2150万÷4\times1÷5=107.5万台$$</li>
 - 加油站平均每天工作14小时<br>
 - 每小时加油桩利用率60%<br>
 - 每个桩加一次油耗时5分钟<br>
-$$每个加油站平均每天可加油车辆数=4\times14\times60%÷\frac{5分钟}{60分钟}=403.2$$</li>
+$$每个加油站平均每天可加油车辆数=4\times14 \times 60  %÷\frac{5分钟}{60分钟}=403.2$$</li>
 </ul>
 </blockquote>
 </li>
