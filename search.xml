@@ -3744,6 +3744,9 @@ $$派生/衍生指标 = 原子指标 + 时间周期 + 其他修饰词$$</li>
 </li>
 </ul>
 <h1 id="数据指标体系"><a class="header-anchor" href="#数据指标体系"></a>数据指标体系</h1>
+<div class="note default">
+            <p><a href="https://mp.weixin.qq.com/s/9aouRUnk-j46pMoB99TGXg" target="_blank" rel="noopener">猫耳朵</a>：指标体系是从不同维度梳理业务，并将零散的具有相互联系的指标系统化地组织起来。</p>
+          </div>
 <ul>
 <li>指标是单一的，指标体系是完整的，是可以表示业务之间的相关性和结构性的</li>
 </ul>
