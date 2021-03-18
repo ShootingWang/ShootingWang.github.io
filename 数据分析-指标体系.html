@@ -30,7 +30,7 @@
 <meta property="og:site_name" content="ShootingWang">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-11-15T12:42:05.000Z">
-<meta property="article:modified_time" content="2021-03-18T08:23:17.220Z">
+<meta property="article:modified_time" content="2021-03-18T08:39:27.758Z">
 <meta property="article:author" content="ShootingWang">
 <meta property="article:tag" content="数据分析">
 <meta name="twitter:card" content="summary">
@@ -253,7 +253,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-03-18 16:23:17" itemprop="dateModified" datetime="2021-03-18T16:23:17+08:00">2021-03-18</time>
+                <time title="修改时间：2021-03-18 16:39:27" itemprop="dateModified" datetime="2021-03-18T16:39:27+08:00">2021-03-18</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -297,8 +297,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><center></center><br><a id="more"></a></p>
-<h1 id="指标"><a href="#指标" class="headerlink" title="指标"></a>指标</h1><p>指标：在一定条件和时间下反映某种现象的规模和比例，由指标名称和数值构成</p>
+        <center></center>
+<a id="more"></a>
+<h1 id="指标"><a class="header-anchor" href="#指标"></a>指标</h1>
+<p>指标：在一定条件和时间下反映某种现象的规模和比例，由指标名称和数值构成</p>
 <ul>
 <li>指标是对当前业务有参考价值的统计数据</li>
 <li>指标使得业务目标可描述、可度量、可拆解</li>
@@ -311,17 +313,21 @@
 </ul>
 <p>指标可分为：</p>
 <ul>
-<li>原子指标：不加任何修饰词的指标（也称度量）<ul>
+<li>原子指标：不加任何修饰词的指标（也称度量）
+<ul>
 <li>如：订单量、用户量、支付金额等</li>
 </ul>
 </li>
-<li>派生指标/衍生指标：在原子指标上进行加减乘除或者添加修饰词的限定等<ul>
+<li>派生指标/衍生指标：在原子指标上进行加减乘除或者添加修饰词的限定等
+<ul>
 <li>派生指标：对原子指标圈定业务统计范围。如最近30天销售额</li>
-<li>衍生指标：基于原子指标组合构建的。如客单价=支付金额/购买人数<script type="math/tex; mode=display">派生/衍生指标 = 原子指标 + 时间周期 + 其他修饰词</script></li>
+<li>衍生指标：基于原子指标组合构建的。如客单价=支付金额/购买人数<br>
+$$派生/衍生指标 = 原子指标 + 时间周期 + 其他修饰词$$</li>
 </ul>
 </li>
 </ul>
-<h1 id="数据指标体系"><a href="#数据指标体系" class="headerlink" title="数据指标体系"></a>数据指标体系</h1><div class="note default">
+<h1 id="数据指标体系"><a class="header-anchor" href="#数据指标体系"></a>数据指标体系</h1>
+<div class="note default">
             <p><a href="https://mp.weixin.qq.com/s/9aouRUnk-j46pMoB99TGXg" target="_blank" rel="noopener">猫耳朵</a>：指标体系是对业务指标体系化的汇总，主要用来明确指标的维度、口径、指标取数逻辑等信息，并能够迅速获得指标的相关信息。</p>
           </div>
 <ul>
@@ -335,7 +341,6 @@
 <li>what’s should I do 策略分析：可以根据指标体系的结果描述和过程去进行问题定位，思考业务问题的解决方式</li>
 </ul>
 <p>构建完整的指标体系的搭建步骤，以及需要合作的同事：</p>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -377,28 +382,7 @@
 </tr>
 </tbody>
 </table>
-</div>
-<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><p>规划数据指标体系的3种方法：</p>
-<ol>
-<li>OSM模型（Object-Strategy-Measure）<ul>
-<li>业务目标（Object）：我们的业务、产品甚至是其中的一个小的功能存在的目的是什么、能够解决用户什么问题、满足用户的什么需求</li>
-<li>业务策略（strategy）：清楚业务目标后，为了达成上述目标，应该采取什么业务策略</li>
-<li>业务度量（measure）：用于衡量策略是否有效，用于反映目标的达成情况<ul>
-<li>KPI：用于直接衡量策略的有效性</li>
-<li>Target：预先给出的目标值，用于判断是否达到预期</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>UJM模型（User Journey Map，用户路径地图模型）：在设计一款产品的过程种，必须要去梳理的用户生命路径<ul>
-<li>拆解用户所处的每一个路径阶段</li>
-<li>了解每个阶段种用户的行为</li>
-<li>明确每个阶段中产品的目标</li>
-<li>发现各阶段中产品与用户的接触点</li>
-<li>最终从接触点里找到产品的痛点和机会点</li>
-</ul>
-</li>
-</ol>
+<h2 id="确定业务目标"><a class="header-anchor" href="#确定业务目标"></a>确定业务目标</h2>
 <p>选取目标时要注意4个原则（DUMB）：</p>
 <ol>
 <li>切实可行（Doable）</li>
@@ -406,20 +390,99 @@
 <li>可干预可管理（Manageable）</li>
 <li>正向的有益的（Beneficial）</li>
 </ol>
-<h2 id="三级指标体系"><a href="#三级指标体系" class="headerlink" title="三级指标体系"></a>三级指标体系</h2><p>可以针对不同的指标，分不同的层级</p>
+<p>目标应符合SMART原则：</p>
 <ol>
-<li><p>一级指标（Tier 1 Metrics）</p>
+<li>Specific 具体的
+<ul>
+<li>业务目标必须是明确的、具体的</li>
+</ul>
 </li>
-<li><p>二级指标（Tier 2 Metrics）</p>
+<li>Measurable 可度量的
+<ul>
+<li>目标可衡量</li>
+</ul>
 </li>
-<li><p>三级指标（Tier 3 Metrics）</p>
+<li>Attainable 可实现的
+<ul>
+<li>避免设立过高或过低的目标</li>
+</ul>
+</li>
+<li>Relevant 相关性</li>
+<li>Time-bound 有时限
+<ul>
+<li>目标是有时间限制的</li>
+</ul>
 </li>
 </ol>
-<h1 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h1><ul>
+<h2 id="三级指标体系"><a class="header-anchor" href="#三级指标体系"></a>三级指标体系</h2>
+<p>可以针对不同的指标，分不同的层级</p>
+<ol>
+<li>
+<p>一级指标（Tier 1 Metrics）</p>
+</li>
+<li>
+<p>二级指标（Tier 2 Metrics）</p>
+</li>
+<li>
+<p>三级指标（Tier 3 Metrics）</p>
+</li>
+</ol>
+<h1 id="方法-模型"><a class="header-anchor" href="#方法-模型"></a>方法/模型</h1>
+<p>规划数据指标体系的方法/模型</p>
+<h2 id="OSM"><a class="header-anchor" href="#OSM"></a>OSM</h2>
+<p>OSM模型（Object-Strategy-Measure）：在指标体系建设过程中辅助确定核心的重要方法</p>
+<ul>
+<li>业务目标（Object）：我们的业务、产品甚至是其中的一个小的功能存在的目的是什么、能够解决用户什么问题、满足用户的什么需求</li>
+<li>业务策略（strategy）：清楚业务目标后，为了达成上述目标，应该采取什么业务策略</li>
+<li>业务度量（measure）：用于衡量策略是否有效，用于反映目标的达成情况
+<ul>
+<li>KPI：用于直接衡量策略的有效性</li>
+<li>Target：预先给出的目标值，用于判断是否达到预期</li>
+</ul>
+</li>
+</ul>
+<h2 id="UJM"><a class="header-anchor" href="#UJM"></a>UJM</h2>
+<p>UJM模型（User Journey Map，用户路径地图模型）：在设计一款产品的过程种，必须要去梳理的用户生命路径</p>
+<ul>
+<li>拆解用户所处的每一个路径阶段</li>
+<li>了解每个阶段种用户的行为</li>
+<li>明确每个阶段中产品的目标</li>
+<li>发现各阶段中产品与用户的接触点</li>
+<li>最终从接触点里找到产品的痛点和机会点</li>
+</ul>
+<h2 id="PLC"><a class="header-anchor" href="#PLC"></a>PLC</h2>
+<p>PLC模型（Product Life Cycle，产品生命周期）：一种产品从进入市场到被市场淘汰的整个过程。</p>
+<p>在产品不同的生命周期阶段，各业务方的侧重点不同，关注的指标也有所不同。</p>
+<p>产品的生命周期包含以下阶段：</p>
+<ol>
+<li><strong>探索期</strong>：重点在于验证产品的核心价值，是否能够满足市场需求并从中获利。
+<ul>
+<li>着重关注目标用户画像、关键行为、留存率</li>
+</ul>
+</li>
+<li><strong>成长期</strong>：
+<ul>
+<li>需将注意力集中在：提高留存、用户激活、自传播</li>
+</ul>
+</li>
+<li><strong>成熟期</strong>：用户增速放缓
+<ul>
+<li>着重关注用户活跃度和商业转化路径</li>
+</ul>
+</li>
+<li><strong>衰退期</strong>
+<ul>
+<li>着重关注用户流失与维系</li>
+</ul>
+</li>
+</ol>
+<h1 id="作用"><a class="header-anchor" href="#作用"></a>作用</h1>
+<ul>
 <li>更好地梳理业务，提高问题分析效率</li>
 <li>为业务发展提供指引</li>
 </ul>
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
+<h1 id="参考资料"><a class="header-anchor" href="#参考资料"></a>参考资料</h1>
+<ul>
 <li><a href="https://mp.weixin.qq.com/s/RGEsQ08nWu1AXyzr-Zul0g" target="_blank" rel="noopener">从留存率业务案例谈0-1的数据指标体系</a></li>
 <li><a href="https://www.growingio.com/ebook/metric-and-track" target="_blank" rel="noopener">GrowingIO：指标体系和数据采集</a></li>
 <li><a href="https://mp.weixin.qq.com/s/9aouRUnk-j46pMoB99TGXg" target="_blank" rel="noopener">从0-1构建指标体系</a></li>
@@ -542,7 +605,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#指标"><span class="nav-number">1.</span> <span class="nav-text">指标</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据指标体系"><span class="nav-number">2.</span> <span class="nav-text">数据指标体系</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#方法"><span class="nav-number">2.1.</span> <span class="nav-text">方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三级指标体系"><span class="nav-number">2.2.</span> <span class="nav-text">三级指标体系</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#作用"><span class="nav-number">3.</span> <span class="nav-text">作用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料"><span class="nav-number">4.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#指标"><span class="nav-number">1.</span> <span class="nav-text">指标</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据指标体系"><span class="nav-number">2.</span> <span class="nav-text">数据指标体系</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#确定业务目标"><span class="nav-number">2.1.</span> <span class="nav-text">确定业务目标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三级指标体系"><span class="nav-number">2.2.</span> <span class="nav-text">三级指标体系</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#方法-模型"><span class="nav-number">3.</span> <span class="nav-text">方法&#x2F;模型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#OSM"><span class="nav-number">3.1.</span> <span class="nav-text">OSM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#UJM"><span class="nav-number">3.2.</span> <span class="nav-text">UJM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PLC"><span class="nav-number">3.3.</span> <span class="nav-text">PLC</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#作用"><span class="nav-number">4.</span> <span class="nav-text">作用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料"><span class="nav-number">5.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -611,7 +674,7 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">364k</span>
+    <span title="站点总字数">365k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
