@@ -3735,8 +3735,13 @@ $$z = r(\cos \phi+\mathrm{i}\sin \phi) = re^{\mathrm{i}\phi}$$</p>
 <li>如：订单量、用户量、支付金额等</li>
 </ul>
 </li>
-<li>派生指标/衍生指标：在原子指标上进行加减乘除或者添加修饰词的限定等<br>
+<li>派生指标/衍生指标：在原子指标上进行加减乘除或者添加修饰词的限定等
+<ul>
+<li>派生指标：对原子指标圈定业务统计范围。如最近30天销售额</li>
+<li>衍生指标：基于原子指标组合构建的。如客单价=支付金额/购买人数<br>
 $$派生/衍生指标 = 原子指标 + 时间周期 + 其他修饰词$$</li>
+</ul>
+</li>
 </ul>
 <h1 id="数据指标体系"><a class="header-anchor" href="#数据指标体系"></a>数据指标体系</h1>
 <ul>
@@ -3840,6 +3845,7 @@ $$派生/衍生指标 = 原子指标 + 时间周期 + 其他修饰词$$</li>
 <ul>
 <li><a href="https://mp.weixin.qq.com/s/RGEsQ08nWu1AXyzr-Zul0g" target="_blank" rel="noopener">从留存率业务案例谈0-1的数据指标体系</a></li>
 <li><a href="https://www.growingio.com/ebook/metric-and-track" target="_blank" rel="noopener">GrowingIO：指标体系和数据采集</a></li>
+<li><a href="https://mp.weixin.qq.com/s/9aouRUnk-j46pMoB99TGXg" target="_blank" rel="noopener">从0-1构建指标体系</a></li>
 </ul>
 ]]></content>
       <categories>
