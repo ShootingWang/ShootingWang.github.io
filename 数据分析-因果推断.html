@@ -32,7 +32,7 @@
 <meta property="og:description" content="未完待续">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-11-05T14:42:34.000Z">
-<meta property="article:modified_time" content="2020-12-29T17:07:06.546Z">
+<meta property="article:modified_time" content="2021-03-21T14:43:12.367Z">
 <meta property="article:author" content="ShootingWang">
 <meta property="article:tag" content="数据分析">
 <meta name="twitter:card" content="summary">
@@ -255,7 +255,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-12-30 01:07:06" itemprop="dateModified" datetime="2020-12-30T01:07:06+08:00">2020-12-30</time>
+                <time title="修改时间：2021-03-21 22:43:12" itemprop="dateModified" datetime="2021-03-21T22:43:12+08:00">2021-03-21</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -371,14 +371,18 @@ eg：AB实验</p>
 <ul>
 <li>$\alpha_i$：不可观测的个体固定效应</li>
 <li>$D_{it}$：干预是否发生的虚拟变量<br>
-$$D_{it}=\left{<br>
+\begin{equation}<br>
+D_{it}= \left{<br>
 \begin{array}{ll}<br>
 1, &amp; 干预发生\<br>
 0, &amp; 干预不发生<br>
 \end{array}<br>
-\right.$$</li>
+\right.<br>
+\end{equation}</li>
 <li>通过差分消除固定效应$\hat{\beta}$<br>
-$$\hat{\beta} = \hat{Y}<em>{post}<sup>{treatment}-\hat{Y}_{pre}</sup>{treatment}-\left(\hat{Y}</em>{post}^{control} - \hat{Y}_{pre}^{control} \right)$$</li>
+$$\hat{\beta} = \hat{Y}<em>{post}^{treatment}-<br>
+\hat{Y}</em>{pre}<sup>{treatment}-\left(\hat{Y}_{post}</sup>{control} -<br>
+\hat{Y}_{pre}^{control} \right)$$</li>
 </ul>
 <h1 id="工具变量"><a class="header-anchor" href="#工具变量"></a>工具变量</h1>
 <p>工具变量（IV，Instrumental Variable）</p>
