@@ -2908,9 +2908,14 @@ P_{MCP}^{\prime}(t;\lambda,\gamma) = \left\{
 <h1 id="表格tabular"><a class="header-anchor" href="#表格tabular"></a>表格tabular</h1>
 <figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="tag">\<span class="name">begin</span><span class="string">&#123;tabular&#125;</span><span class="string">[竖向位置]</span><span class="string">&#123;列格式&#125;</span></span></span><br><span class="line">第一行 <span class="tag">\<span class="name">\</span></span></span><br><span class="line">... <span class="tag">\<span class="name">\</span></span></span><br><span class="line">第末行 <span class="tag">\<span class="name">\</span></span></span><br><span class="line"><span class="tag">\<span class="name">end</span><span class="string">&#123;tabular&#125;</span></span></span><br></pre></td></tr></table></figure>
 <ul>
-<li>竖向位置：表格在竖直方向与外部文本行的相对位置，取值可以是t或b，缺省为居中</li>
-<li>表格每行由若干列组成，列与列之间用&amp;分隔，每行必须用 <code>\\</code> 结束</li>
-<li>列格式：由若干项组成，用于指定各列的格式，如<code>\begin{tabular}{|c|c|c|}</code>
+<li>
+<p>竖向位置：表格在竖直方向与外部文本行的相对位置，取值可以是t或b，缺省为居中</p>
+</li>
+<li>
+<p>表格每行由若干列组成，列与列之间用&amp;分隔，每行必须用 <code>\\</code> 结束</p>
+</li>
+<li>
+<p>列格式：由若干项组成，用于指定各列的格式，如<code>\begin{tabular}{|c|c|c|}</code></p>
 <ul>
 <li><code>l</code>：左对齐</li>
 <li><code>c</code>：居中</li>
@@ -2918,22 +2923,28 @@ P_{MCP}^{\prime}(t;\lambda,\gamma) = \left\{
 <li><code>|</code>：边界线</li>
 </ul>
 </li>
-<li>横线：
+<li>
+<p>横线：</p>
 <ul>
 <li><code>\hline</code>：与表格同宽的水平线</li>
 <li><code>\cline{m-n}</code>：从第m列开始到第n列结束的水平线</li>
 </ul>
 </li>
-<li>竖线：
+<li>
+<p>竖线：</p>
 <ul>
 <li><code>\vline</code>：在当前位置画一与行等高的竖线</li>
 </ul>
 </li>
-<li>合并相邻多列：<code>\multicolumn{列数}{列格式}{文本内容}</code>
+<li>
+<p>合并相邻多列：<code>\multicolumn{列数}{列格式}{文本内容}</code></p>
 <ul>
 <li>当列数=1时，可以改变当前列的对齐方式</li>
 <li>改变各行之间的间隔（改变行高）：<code>\\[长度]</code></li>
 </ul>
+</li>
+<li>
+<p><a href="https://www.tablesgenerator.com/latex_tables" target="_blank" rel="noopener">Tables Generator</a>：在线编辑表格，生成LaTex语法，可直接复制</p>
 </li>
 </ul>
 <h1 id="幻灯片Beamer"><a class="header-anchor" href="#幻灯片Beamer"></a>幻灯片Beamer</h1>
@@ -3108,6 +3119,11 @@ P_{MCP}^{\prime}(t;\lambda,\gamma) = \left\{
 <li>TeX长度由十进制小数加长度单位表示</li>
 <li>em、ex与当前字体尺寸相关</li>
 <li>1 in = 2.54 cm = 72.27 pt</li>
+</ul>
+<h1 id="资源"><a class="header-anchor" href="#资源"></a>资源</h1>
+<h2 id="字体"><a class="header-anchor" href="#字体"></a>字体</h2>
+<ul>
+<li><a href="https://tug.org/FontCatalogue/" target="_blank" rel="noopener">LaTex Font Catalogue</a></li>
 </ul>
 <figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
