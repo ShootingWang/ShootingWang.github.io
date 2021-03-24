@@ -1453,6 +1453,29 @@
 <li>填补缺失值</li>
 <li>可视化缺失值</li>
 </ul>
+<h1 id="其他"><a class="header-anchor" href="#其他"></a>其他</h1>
+<h2 id="快捷键"><a class="header-anchor" href="#快捷键"></a>快捷键</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:left"></th>
+<th style="text-align:left">Windows</th>
+<th style="text-align:left">MacOS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">注释</td>
+<td style="text-align:left"><code>Ctrl</code> + <code>Shift</code> + <code>C</code></td>
+<td style="text-align:left"><code>Cmd</code> + <code>Shift</code> + <code>C</code></td>
+</tr>
+<tr>
+<td style="text-align:left">运行</td>
+<td style="text-align:left"><code>Shift</code> + <code>Enter</code></td>
+<td style="text-align:left"><code>Ctrl</code> + <code>Enter</code></td>
+</tr>
+</tbody>
+</table>
 <figure class="highlight r"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <figure class="highlight r"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <figure class="highlight r"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
