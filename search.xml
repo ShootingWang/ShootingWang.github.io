@@ -25822,4 +25822,37 @@ $$H(x)=\frac{1}{T}\sum_{i=1}^Th_i(x)$$</p>
         <tag>可视化</tag>
       </tags>
   </entry>
+  <entry>
+    <title>数据分析 | SMART原则</title>
+    <url>/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-SMART%E5%8E%9F%E5%88%99.html</url>
+    <content><![CDATA[<center></center>
+<a id="more"></a>
+<h1 id="SMART原则"><a class="header-anchor" href="#SMART原则"></a>SMART原则</h1>
+<p>SMART原则是一种目标管理方法。</p>
+<h2 id="Specific"><a class="header-anchor" href="#Specific"></a>Specific</h2>
+<p><strong>具体性/可明确性</strong></p>
+<p>目标要具体、明确，不能笼统空泛</p>
+<blockquote>
+<p>eg1：我想要提高公众号的活跃度，即希望阅读公众号文章的用户数更多，则可以设定目标为“提高每天阅读本公众号文章的用户数”<br>
+eg2：我想要减肥，我可以定目标为“减重X斤”</p>
+</blockquote>
+<h2 id="Measurable"><a class="header-anchor" href="#Measurable"></a>Measurable</h2>
+<p><strong>衡量性</strong></p>
+<p>目标要可衡量的；目标要可量化或可行为化，能够获得相应的数据</p>
+<blockquote>
+<p>eg1：可以使用“本公众号的文章每日新增阅读数”作为衡量指标<br>
+eg2：可以使用“今天的体重与昨天的体重的差值/目标值”作为衡量目标</p>
+</blockquote>
+<h2 id="Attainable"><a class="header-anchor" href="#Attainable"></a>Attainable</h2>
+<h2 id="Relevant-Realistic"><a class="header-anchor" href="#Relevant-Realistic"></a>Relevant / Realistic</h2>
+<h2 id="Time-bound-Time-based"><a class="header-anchor" href="#Time-bound-Time-based"></a>Time-bound / Time-based</h2>
+<h1 id="参考资料"><a class="header-anchor" href="#参考资料"></a>参考资料</h1>
+]]></content>
+      <categories>
+        <category>数据分析</category>
+      </categories>
+      <tags>
+        <tag>数据分析</tag>
+      </tags>
+  </entry>
 </search>
