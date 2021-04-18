@@ -25207,7 +25207,7 @@ $$1→2→3→4→5→6→7$$
 <li>2021.04.18更新：一回学校，<a href="http://xn--github-ve8kx35d8jof36emoxa.io" target="_blank" rel="noopener">就无法访问github.io</a>，原先参照<a href="https://juejin.im/post/6863358382410203144" target="_blank" rel="noopener">解决无法访问github pages的方法</a>修改DNS可以解决“github.io无法访问”的问题，现该方法已失效。尝试了多种方法，最终<a href="https://www.cnblogs.com/hudunyu/p/14346032.html" target="_blank" rel="noopener">修改hosts文件</a>的方法奏效：
 <ul>
 <li>通过<a href="https://tools.ipip.net/dns.php" target="_blank" rel="noopener">ip查询网站</a>查询博客的ip，在第一个输入框输入<code>name.github.io</code>，回车即可在“解析IP”列得到4个IP地址</li>
-<li>将IP地址粘贴到hosts文件中，并附上博客地址<code>name.github.io</code></li>
+<li>将IP地址粘贴到hosts文件中，并附上博客地址<code>name.github.io</code>（比如本博客地址为<code>shootingwang.github.io</code>）</li>
 </ul>
 </li>
 </ul>
