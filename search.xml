@@ -1776,6 +1776,26 @@
       </tags>
   </entry>
   <entry>
+    <title>LaTeX | Beamer幻灯片</title>
+    <url>/LaTeX-Beamer.html</url>
+    <content><![CDATA[<center>使用LaTeX制作幻灯片</center>
+<a id="more"></a>
+<h1 id="主题"><a class="header-anchor" href="#主题"></a>主题</h1>
+<h1 id="封面信息"><a class="header-anchor" href="#封面信息"></a>封面信息</h1>
+<h1 id="目录"><a class="header-anchor" href="#目录"></a>目录</h1>
+<h1 id="正文"><a class="header-anchor" href="#正文"></a>正文</h1>
+<h1 id="汇总"><a class="header-anchor" href="#汇总"></a>汇总</h1>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="tag">\<span class="name">documentclass</span><span class="string">[16pt]</span><span class="string">&#123;beamer&#125;</span></span> </span><br><span class="line"><span class="comment">% 全局字体大小：16pt</span></span><br><span class="line"></span><br><span class="line"><span class="tag">\<span class="name">usetheme</span><span class="string">&#123;theme name&#125;</span></span>   <span class="comment">% 幻灯片主题</span></span><br></pre></td></tr></table></figure>
+<h1 id="参考资料"><a class="header-anchor" href="#参考资料"></a>参考资料</h1>
+]]></content>
+      <categories>
+        <category>Everything</category>
+      </categories>
+      <tags>
+        <tag>LaTeX</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>数据分析 | SMART原则</title>
     <url>/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-SMART%E5%8E%9F%E5%88%99.html</url>
     <content><![CDATA[<p><center></center><br><a id="more"></a></p>
