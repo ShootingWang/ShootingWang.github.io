@@ -1839,11 +1839,115 @@
 </table>
 <h2 id="细分主题"><a class="header-anchor" href="#细分主题"></a>细分主题</h2>
 <h3 id="外部主题"><a class="header-anchor" href="#外部主题"></a>外部主题</h3>
-<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="tag">\<span class="name">useoutertheme</span><span class="string">&#123;&#125;</span></span></span><br></pre></td></tr></table></figure>
+<p>设置幻灯片是否有顶部导航栏、底部导航栏、侧边栏，以及他们的结构</p>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="tag">\<span class="name">useoutertheme</span><span class="string">&#123;outer theme name&#125;</span></span></span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">outer theme name</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>default</code></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>infolines</code></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>miniframes</code></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>sidebar</code></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>smoothbars</code></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>smoothtree</code></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>split</code></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>shadow</code></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>tree</code></td>
+<td style="text-align:left"></td>
+</tr>
+</tbody>
+</table>
 <h3 id="内部主题"><a class="header-anchor" href="#内部主题"></a>内部主题</h3>
-<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>设置幻灯片正文内容（标题、列表、定理等）的样式</p>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="tag">\<span class="name">useinnertheme</span><span class="string">&#123;inner theme name&#125;</span></span></span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">inner theme name</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>default</code></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>circles</code></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>rectangles</code></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>rounded</code></td>
+<td style="text-align:left"></td>
+</tr>
+</tbody>
+</table>
 <h3 id="颜色主题"><a class="header-anchor" href="#颜色主题"></a>颜色主题</h3>
-<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>设置幻灯片各部分、各结构、各元素的配色</p>
+<ul>
+<li><a href="https://deic-web.uab.cat/~iblanes/beamer_gallery/index_by_color.html" target="_blank" rel="noopener">Beamer color theme gallery</a>（预览各颜色主题样式）</li>
+</ul>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="tag">\<span class="name">usecolortheme</span><span class="string">&#123;color theme name&#125;</span></span></span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">类别</th>
+<th style="text-align:left">color theme name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">基本颜色</td>
+<td style="text-align:left"><code>default</code>、<code>sidebartab</code>、<code>structure</code></td>
+</tr>
+<tr>
+<td style="text-align:left">完整颜色</td>
+<td style="text-align:left"><code>albatross</code>、<code>beaver</code>、<code>beetle</code></td>
+</tr>
+<tr>
+<td style="text-align:left">内部颜色</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">外部颜色</td>
+<td style="text-align:left"></td>
+</tr>
+</tbody>
+</table>
 <h3 id="字体主题"><a class="header-anchor" href="#字体主题"></a>字体主题</h3>
 <figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <h1 id="封面-标题页"><a class="header-anchor" href="#封面-标题页"></a>封面/标题页</h1>
