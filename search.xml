@@ -1936,20 +1936,54 @@
 </tr>
 <tr>
 <td style="text-align:left">完整颜色</td>
-<td style="text-align:left"><code>albatross</code>、<code>beaver</code>、<code>beetle</code></td>
+<td style="text-align:left"><code>albatross</code>、<code>beaver</code>、<code>beetle</code>、<code>crane</code>、<code>dove</code>、<code>fly</code>、<code>seagull</code>、<code>wolverine</code></td>
 </tr>
 <tr>
 <td style="text-align:left">内部颜色</td>
-<td style="text-align:left"></td>
+<td style="text-align:left"><code>lily</code>、<code>orchid</code>、<code>rose</code></td>
 </tr>
 <tr>
 <td style="text-align:left">外部颜色</td>
-<td style="text-align:left"></td>
+<td style="text-align:left"><code>dolphin</code>、<code>seahorse</code>、<code>whale</code></td>
 </tr>
 </tbody>
 </table>
 <h3 id="字体主题"><a class="header-anchor" href="#字体主题"></a>字体主题</h3>
-<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>设置幻灯片的字体</p>
+<ul>
+<li><a href="https://deic-web.uab.cat/~iblanes/beamer_gallery/index_by_font.html" target="_blank" rel="noopener">Beamer font theme gallery</a>（预览各字体主题样式）</li>
+</ul>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="tag">\<span class="name">usefonttheme</span><span class="string">&#123;font theme name&#125;</span></span></span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">font theme name</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>default</code></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>serif</code></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>structurebold</code></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>structureitalicserif</code></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>structuresmallcapsserif</code></td>
+<td style="text-align:left"></td>
+</tr>
+</tbody>
+</table>
 <h1 id="封面-标题页"><a class="header-anchor" href="#封面-标题页"></a>封面/标题页</h1>
 <h2 id="封面信息"><a class="header-anchor" href="#封面信息"></a>封面信息</h2>
 <figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="tag">\<span class="name">title</span><span class="string">[导航区报告标题]</span><span class="string">&#123;封面报告标题&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">author</span><span class="string">[导航区作者名]</span><span class="string">&#123;封面作者名&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">institute</span><span class="string">[导航区院系]</span><span class="string">&#123;封面院系&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">date</span><span class="string">&#123;日期&#125;</span></span></span><br><span class="line"><span class="comment">% \date&#123;\today&#125;：今天</span></span><br><span class="line"><span class="comment">% 例：\date&#123;\small \vskip -10pt \today&#125; 或 \date&#123;2021年04月&#125;</span></span><br></pre></td></tr></table></figure>
