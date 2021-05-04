@@ -3081,7 +3081,7 @@ P_{MCP}^{\prime}(t;\lambda,\gamma) = \left\{
 <h3 id="插入公式"><a class="header-anchor" href="#插入公式"></a>插入公式</h3>
 <p>【插入】——【公式】——编辑公式</p>
 <ul>
-<li>快捷键：Ctrl + <code>+=</code></li>
+<li>快捷键：<code>Alt</code> + <code>+=</code>（Windows）</li>
 </ul>
 <h3 id="自动编号"><a class="header-anchor" href="#自动编号"></a>自动编号</h3>
 <p>将光标置于<strong>公式内</strong>的末尾，输入<code>#()</code>，然后将光标置于括号内，点击【插入】——【插入域】：</p>
