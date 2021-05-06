@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://github.com/ShootingWang/ShootingWang.github.io/tools/index.html</loc>
+    <loc>https://github.com/ShootingWang/ShootingWang.github.io/python-sklearn.html</loc>
     
     <lastmod>2021-05-06</lastmod>
     
@@ -10,6 +10,13 @@
   
   <url>
     <loc>https://github.com/ShootingWang/ShootingWang.github.io/python-pandas%E6%A8%A1%E5%9D%97.html</loc>
+    
+    <lastmod>2021-05-06</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://github.com/ShootingWang/ShootingWang.github.io/tools/index.html</loc>
     
     <lastmod>2021-05-06</lastmod>
     
@@ -899,13 +906,6 @@
   
   <url>
     <loc>https://github.com/ShootingWang/ShootingWang.github.io/python-categorical-encoders.html</loc>
-    
-    <lastmod>2020-06-12</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://github.com/ShootingWang/ShootingWang.github.io/python-sklearn.html</loc>
     
     <lastmod>2020-06-12</lastmod>
     
