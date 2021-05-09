@@ -3560,15 +3560,12 @@ P_{MCP}^{\prime}(t;\lambda,\gamma) = \left\{
 <img src="/python-seaborn/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9B%BE%E5%BD%A2%E5%B1%9E%E6%80%A7.png" class title="自定义图形属性">
 <h3 id="散点图strip"><a class="header-anchor" href="#散点图strip"></a>散点图strip</h3>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## catplot绘制默认strip：</span></span><br><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns</span><br><span class="line"></span><br><span class="line">tips = sns.load_dataset(<span class="string">"tips"</span>)   <span class="comment">## 加载数据</span></span><br><span class="line">%matplotlib inline</span><br><span class="line">sns.catplot(x=<span class="string">"day"</span>, y=<span class="string">"total_bill"</span>, hue=<span class="string">"smoker"</span>,</span><br><span class="line">           data=tips)</span><br></pre></td></tr></table></figure>
-<meta name="referrer" content="no-referrer">
 <img src="/python-seaborn/%E6%95%A3%E7%82%B9%E5%9B%BEstrip.png" class title="散点图strip">
 <h3 id="散点图swarm"><a class="header-anchor" href="#散点图swarm"></a>散点图swarm</h3>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## catplot绘制swarm：</span></span><br><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns</span><br><span class="line"></span><br><span class="line">tips = sns.load_dataset(<span class="string">"tips"</span>)</span><br><span class="line">%matplotlib inline</span><br><span class="line">sns.catplot(x=<span class="string">"day"</span>, y=<span class="string">"total_bill"</span>, hue=<span class="string">"smoker"</span>,</span><br><span class="line">           kind=<span class="string">"swarm"</span>, data=tips)</span><br></pre></td></tr></table></figure>
-<meta name="referrer" content="no-referrer">
 <img src="/python-seaborn/%E6%95%A3%E7%82%B9%E5%9B%BEswarm.png" class title="散点图swarm">
 <h3 id="小提琴图violin"><a class="header-anchor" href="#小提琴图violin"></a>小提琴图violin</h3>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 绘制violin（小提琴图）：</span></span><br><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns</span><br><span class="line"></span><br><span class="line">tips = sns.load_dataset(<span class="string">"tips"</span>)</span><br><span class="line">%matplotlib inline</span><br><span class="line">sns.catplot(x=<span class="string">"day"</span>, y=<span class="string">"total_bill"</span>, hue=<span class="string">"smoker"</span>,</span><br><span class="line">           data=tips, kind=<span class="string">"violin"</span>)</span><br></pre></td></tr></table></figure>
-<meta name="referrer" content="no-referrer">
 <img src="/python-seaborn/%E5%B0%8F%E6%8F%90%E7%90%B4%E5%9B%BE.png" class title="小提琴图">
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 参数split为真，表示</span></span><br><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns</span><br><span class="line"></span><br><span class="line">tips = sns.load_dataset(<span class="string">"tips"</span>)</span><br><span class="line">%matplotlib inline</span><br><span class="line">sns.catplot(x=<span class="string">"day"</span>, y=<span class="string">"total_bill"</span>, hue=<span class="string">"smoker"</span>,</span><br><span class="line">           data=tips, kind=<span class="string">"violin"</span>, split=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
 <meta name="referrer" content="no-referrer">
@@ -3603,7 +3600,7 @@ P_{MCP}^{\prime}(t;\lambda,\gamma) = \left\{
 <li><code>hue</code>：分组进行线性回归</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns</span><br><span class="line"></span><br><span class="line">tips = sns.load_dataset(<span class="string">"tips"</span>)  <span class="comment">##载入需要的数据tips</span></span><br><span class="line">sns.lmplot(x=<span class="string">"total_bill"</span>, y=<span class="string">"tip"</span>, hue=<span class="string">"smoker"</span>, data=tips)</span><br></pre></td></tr></table></figure>
-<img src="/python-seaborn/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%921.png" class title="线性回归">
+<p>&lt;img src=“./线性回归1.png” width=“300”, height=“200”, alt=“线性回归”/&gt;</p>
 <h2 id="relplot"><a class="header-anchor" href="#relplot"></a>relplot()</h2>
 <p><code>relplot()</code> ：可视化变量间的关系（relationship）。可绘制散点图和曲线图。</p>
 <ul>

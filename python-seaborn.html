@@ -42,7 +42,6 @@
 <meta property="og:image" content="https://github.com/python-seaborn/%E5%B0%8F%E6%8F%90%E7%90%B4%E5%9B%BEsplit.png">
 <meta property="og:image" content="https://github.com/python-seaborn/%E7%AE%B1%E7%BA%BF%E5%9B%BE.png">
 <meta property="og:image" content="https://github.com/python-seaborn/%E5%A2%9E%E5%BC%BA%E7%AE%B1%E7%BA%BF%E5%9B%BE.png">
-<meta property="og:image" content="https://github.com/python-seaborn/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%921.png">
 <meta property="og:image" content="https://github.com/python-seaborn/%E5%88%86%E9%9D%A2%E6%8A%98%E7%BA%BF%E5%9B%BE.png">
 <meta property="og:image" content="https://github.com/python-seaborn/%E5%88%86%E9%9D%A2%E7%9B%B4%E6%96%B9%E5%9B%BE.png">
 <meta property="og:image" content="https://github.com/python-seaborn/%E9%87%8D%E5%8F%A0%E5%88%86%E9%9D%A2%E5%AF%86%E5%BA%A6%E6%9B%B2%E7%BA%BF%E5%9B%BE.png">
@@ -60,7 +59,7 @@
 <meta property="og:image" content="https://github.com/python-seaborn/%E4%B8%A4%E4%B8%A4%E9%85%8D%E5%AF%B9%E6%95%A3%E7%82%B9%E5%9B%BE.png">
 <meta property="og:image" content="https://github.com/python-seaborn/%E5%8E%BB%E9%99%A4%E5%9D%90%E6%A0%87%E8%84%8A.png">
 <meta property="article:published_time" content="2020-12-19T02:11:39.000Z">
-<meta property="article:modified_time" content="2021-05-09T09:01:56.362Z">
+<meta property="article:modified_time" content="2021-05-09T09:12:18.811Z">
 <meta property="article:author" content="Skye">
 <meta property="article:tag" content="Python">
 <meta property="article:tag" content="可视化">
@@ -290,7 +289,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-05-09 17:01:56" itemprop="dateModified" datetime="2021-05-09T17:01:56+08:00">2021-05-09</time>
+                <time title="修改时间：2021-05-09 17:12:18" itemprop="dateModified" datetime="2021-05-09T17:12:18+08:00">2021-05-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -405,15 +404,12 @@
 <img src="/python-seaborn/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9B%BE%E5%BD%A2%E5%B1%9E%E6%80%A7.png" class title="自定义图形属性">
 <h3 id="散点图strip"><a class="header-anchor" href="#散点图strip"></a>散点图strip</h3>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## catplot绘制默认strip：</span></span><br><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns</span><br><span class="line"></span><br><span class="line">tips = sns.load_dataset(<span class="string">"tips"</span>)   <span class="comment">## 加载数据</span></span><br><span class="line">%matplotlib inline</span><br><span class="line">sns.catplot(x=<span class="string">"day"</span>, y=<span class="string">"total_bill"</span>, hue=<span class="string">"smoker"</span>,</span><br><span class="line">           data=tips)</span><br></pre></td></tr></table></figure>
-<meta name="referrer" content="no-referrer">
 <img src="/python-seaborn/%E6%95%A3%E7%82%B9%E5%9B%BEstrip.png" class title="散点图strip">
 <h3 id="散点图swarm"><a class="header-anchor" href="#散点图swarm"></a>散点图swarm</h3>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## catplot绘制swarm：</span></span><br><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns</span><br><span class="line"></span><br><span class="line">tips = sns.load_dataset(<span class="string">"tips"</span>)</span><br><span class="line">%matplotlib inline</span><br><span class="line">sns.catplot(x=<span class="string">"day"</span>, y=<span class="string">"total_bill"</span>, hue=<span class="string">"smoker"</span>,</span><br><span class="line">           kind=<span class="string">"swarm"</span>, data=tips)</span><br></pre></td></tr></table></figure>
-<meta name="referrer" content="no-referrer">
 <img src="/python-seaborn/%E6%95%A3%E7%82%B9%E5%9B%BEswarm.png" class title="散点图swarm">
 <h3 id="小提琴图violin"><a class="header-anchor" href="#小提琴图violin"></a>小提琴图violin</h3>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 绘制violin（小提琴图）：</span></span><br><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns</span><br><span class="line"></span><br><span class="line">tips = sns.load_dataset(<span class="string">"tips"</span>)</span><br><span class="line">%matplotlib inline</span><br><span class="line">sns.catplot(x=<span class="string">"day"</span>, y=<span class="string">"total_bill"</span>, hue=<span class="string">"smoker"</span>,</span><br><span class="line">           data=tips, kind=<span class="string">"violin"</span>)</span><br></pre></td></tr></table></figure>
-<meta name="referrer" content="no-referrer">
 <img src="/python-seaborn/%E5%B0%8F%E6%8F%90%E7%90%B4%E5%9B%BE.png" class title="小提琴图">
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 参数split为真，表示</span></span><br><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns</span><br><span class="line"></span><br><span class="line">tips = sns.load_dataset(<span class="string">"tips"</span>)</span><br><span class="line">%matplotlib inline</span><br><span class="line">sns.catplot(x=<span class="string">"day"</span>, y=<span class="string">"total_bill"</span>, hue=<span class="string">"smoker"</span>,</span><br><span class="line">           data=tips, kind=<span class="string">"violin"</span>, split=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
 <meta name="referrer" content="no-referrer">
@@ -448,7 +444,7 @@
 <li><code>hue</code>：分组进行线性回归</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns</span><br><span class="line"></span><br><span class="line">tips = sns.load_dataset(<span class="string">"tips"</span>)  <span class="comment">##载入需要的数据tips</span></span><br><span class="line">sns.lmplot(x=<span class="string">"total_bill"</span>, y=<span class="string">"tip"</span>, hue=<span class="string">"smoker"</span>, data=tips)</span><br></pre></td></tr></table></figure>
-<img src="/python-seaborn/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%921.png" class title="线性回归">
+<p>&lt;img src=“./线性回归1.png” width=“300”, height=“200”, alt=“线性回归”/&gt;</p>
 <h2 id="relplot"><a class="header-anchor" href="#relplot"></a>relplot()</h2>
 <p><code>relplot()</code> ：可视化变量间的关系（relationship）。可绘制散点图和曲线图。</p>
 <ul>
