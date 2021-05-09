@@ -3596,6 +3596,14 @@ P_{MCP}^{\prime}(t;\lambda,\gamma) = \left\{
 <li>与<code>regplot()</code>的区别是：<code>lmplot()</code>必须指定<code>data</code>参数</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 使用数据tips绘制回归拟合曲线图并绘制置信区间：</span></span><br><span class="line">tips = sns.load_dataset(<span class="string">"tips"</span>)</span><br><span class="line"></span><br><span class="line">sns.lmplot(x=<span class="string">"total_bill"</span>, y=<span class="string">"tip"</span>, col=<span class="string">"time"</span>, hue=<span class="string">"smoker"</span>,</span><br><span class="line">           data=tips)</span><br></pre></td></tr></table></figure>
+<h3 id="线性回归"><a class="header-anchor" href="#线性回归"></a>线性回归</h3>
+<p>指定自变量<code>x</code>和因变量<code>y</code>即可</p>
+<ul>
+<li><code>hue</code>：分组进行线性回归</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns</span><br><span class="line"></span><br><span class="line">tips = sns.load_dataset(<span class="string">"tips"</span>)  <span class="comment">##载入需要的数据tips</span></span><br><span class="line">sns.lmplot(x=<span class="string">"total_bill"</span>, y=<span class="string">"tip"</span>, hue=<span class="string">"smoker"</span>, data=tips)</span><br></pre></td></tr></table></figure>
+<meta name="referrer" content="no-referrer">
+<img src="/python-seaborn/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%921.png" class title="线性回归">
 <h2 id="relplot"><a class="header-anchor" href="#relplot"></a>relplot()</h2>
 <p><code>relplot()</code> ：可视化变量间的关系（relationship）。可绘制散点图和曲线图。</p>
 <ul>
