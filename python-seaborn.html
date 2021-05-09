@@ -64,7 +64,7 @@
 <meta property="og:image" content="https://github.com/python-seaborn/%E4%B8%A4%E4%B8%A4%E9%85%8D%E5%AF%B9%E6%95%A3%E7%82%B9%E5%9B%BE.png">
 <meta property="og:image" content="https://github.com/python-seaborn/%E5%8E%BB%E9%99%A4%E5%9D%90%E6%A0%87%E8%84%8A.png">
 <meta property="article:published_time" content="2020-12-19T02:11:39.000Z">
-<meta property="article:modified_time" content="2021-05-09T14:26:43.817Z">
+<meta property="article:modified_time" content="2021-05-09T14:27:28.243Z">
 <meta property="article:author" content="Skye">
 <meta property="article:tag" content="Python">
 <meta property="article:tag" content="可视化">
@@ -294,7 +294,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-05-09 22:26:43" itemprop="dateModified" datetime="2021-05-09T22:26:43+08:00">2021-05-09</time>
+                <time title="修改时间：2021-05-09 22:27:28" itemprop="dateModified" datetime="2021-05-09T22:27:28+08:00">2021-05-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -441,9 +441,9 @@
 <code>lmplot(x, y, data, hue=None, col=None, row=None,     palette=None, col_wrap=None, height=5, aspect=1,      markers='o', sharex=True, sharey=True, hue_order=None,      col_order=None, row_order=None, legend=True,      legend_out=True, x_estimator=None, x_bins=None,      x_ci='ci', scatter=True, fit_reg=True, ci=95,      n_boot=1000, units=None, order=1, logistic=False,      lowess=False, robust=False, logx=False,      x_partial=None, y_partial=None, truncate=False,      x_jitter=None, y_jitter=None, scatter_kws=None,      line_kws=None, size=None)</code></p>
 <ul>
 <li>与<code>regplot()</code>的区别是：<code>lmplot()</code>必须指定<code>data</code>参数</li>
-<li><code>lowess = True</code>：进行局部加权线性回归（LOWESS）</li>
-<li><code>logx = True</code>：进行对数线性回归，估计$y \sim \log{(X)}$形式的线性回归（但是$x$必须为正）</li>
-<li><code>robust = True</code>：进行稳健线性回归</li>
+<li>参数<code>lowess = True</code>：进行局部加权线性回归（LOWESS）</li>
+<li>参数<code>logx = True</code>：进行对数线性回归，估计$y \sim \log{(X)}$形式的线性回归（但是$x$必须为正）</li>
+<li>参数<code>robust = True</code>：进行稳健线性回归</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 使用数据tips绘制回归拟合曲线图并绘制置信区间：</span></span><br><span class="line">tips = sns.load_dataset(<span class="string">"tips"</span>)</span><br><span class="line"></span><br><span class="line">sns.lmplot(x=<span class="string">"total_bill"</span>, y=<span class="string">"tip"</span>, col=<span class="string">"time"</span>, hue=<span class="string">"smoker"</span>,</span><br><span class="line">           data=tips)</span><br></pre></td></tr></table></figure>
 <h3 id="线性回归"><a class="header-anchor" href="#线性回归"></a>线性回归</h3>
