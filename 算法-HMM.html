@@ -310,20 +310,24 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><center>Hidden Markov Model</center><br><a id="more"></a></p>
-<h1 id="HMM"><a href="#HMM" class="headerlink" title="HMM"></a>HMM</h1><p>隐马尔可夫模型是关于<strong>时序</strong>的概率模型。</p>
+        <center>Hidden Markov Model</center>
+<a id="more"></a>
+<h1 id="HMM"><a class="header-anchor" href="#HMM"></a>HMM</h1>
+<p>隐马尔可夫模型是关于<strong>时序</strong>的概率模型。</p>
 <ul>
 <li>用来描述一个含有隐含未知参数的马尔可夫过程</li>
 <li>是可用于标注问题的统计学习模型</li>
-<li><a href="/%E7%94%9F%E6%88%90%E5%BC%8F%E6%A8%A1%E5%9E%8B-%E5%88%A4%E5%88%AB%E5%BC%8F%E6%A8%A1%E5%9E%8B.html" title="生成式模型">生成式模型</a></li>
+<li>
+<a href="/%E7%94%9F%E6%88%90%E5%BC%8F%E6%A8%A1%E5%9E%8B-%E5%88%A4%E5%88%AB%E5%BC%8F%E6%A8%A1%E5%9E%8B.html" title="生成式模型">生成式模型</a>
+</li>
 <li>隐马尔可夫模型由<strong>初始概率分布</strong>、<strong>状态转移概率分布</strong>以及<strong>观测概率分布</strong>确定。</li>
 <li>HMM在语言识别、自然语言处理、模式识别等领域得到广泛的应用</li>
-<li>HMM适用的问题：<ol>
+<li>HMM适用的问题：</li>
+</ul>
+<ol>
 <li>问题是基于序列的（如时间序列，或状态序列）</li>
 <li>问题中有两类数据，一类序列数据是可以观测到的（<strong>观测序列</strong>），另一类数据是不可观测的（<strong>隐藏状态序列</strong>，简称<strong>状态序列</strong>）</li>
 </ol>
-</li>
-</ul>
 <p>隐马尔可夫模型描述由一个隐藏的马尔可夫链随机生成不可观测的状态随机序列，再由各个状态生成一个观测而产生观测随机序列的过程。</p>
 <ul>
 <li><strong>状态序列</strong>（state sequence）：隐藏的马尔可夫链随机生成的状态的序列</li>
@@ -331,75 +335,100 @@
 <li>序列的每一个位置又可以看作是一个时刻</li>
 </ul>
 <div class="note warning">
-            <p>假设：</p><ul><li>$Q$是所有可能的隐藏状态的集合<script type="math/tex; mode=display">Q=\{q_1, q_2,\cdots, q_N\}</script>其中，$N$是可能的隐藏状态数。</li><li>$V$是所有可能的观测状态的集合<script type="math/tex; mode=display">V=\{v_1,v_2,\cdots,v_M\}</script>其中，$M$是可能的观测状态数。</li></ul><p>对于一个长度为$T$的序列，</p><ul><li>$I$是对应的状态序列<script type="math/tex; mode=display">I=\{i_1,i_2,\cdots, i_T\}</script></li><li>$O$是对应的观测序列<script type="math/tex; mode=display">O=\{o_1,o_2,\cdots,o_T\}</script>其中，$\forall i_t\in Q,\quad \forall o_t\in V$。</li></ul>
+            <p>假设：</p><ul><li>$Q$是所有可能的隐藏状态的集合<br>$$Q={q_1, q_2,\cdots, q_N}$$<br>其中，$N$是可能的隐藏状态数。</li><li>$V$是所有可能的观测状态的集合<br>$$V={v_1,v_2,\cdots,v_M}$$<br>其中，$M$是可能的观测状态数。</li></ul><p>对于一个长度为$T$的序列，</p><ul><li>$I$是对应的状态序列<br>$$I={i_1,i_2,\cdots, i_T}$$</li><li>$O$是对应的观测序列<br>$$O={o_1,o_2,\cdots,o_T}$$<br>其中，$\forall i_t\in Q,\quad \forall o_t\in V$。</li></ul>
           </div>
 <p>隐马尔可夫模型由<strong>初始概率分布</strong>、<strong>状态转移概率分布</strong>以及<strong>观测概率分布</strong>确定。</p>
 <div class="note warning">
-            <p>在时刻$t=1$的隐藏状态概率分布为</p><script type="math/tex; mode=display">\Pi=\left(\pi_i\right)_{N\times 1}</script><p>其中，</p><script type="math/tex; mode=display">\pi_i=P(i_1=q_i)</script><p>$i=1,\cdots,N$。</p>
+            <p>在时刻$t=1$的隐藏状态概率分布为<br>$$\Pi=\left(\pi_i\right)_{N\times 1}$$<br>其中，<br>$$\pi_i=P(i_1=q_i)$$<br>$i=1,\cdots,N$。</p>
           </div>
-<h2 id="基本假设"><a href="#基本假设" class="headerlink" title="基本假设"></a>基本假设</h2><p>HMM作了两个基本假设<br><div class="note info">
-            <h3 id="齐次马尔可夫性假设"><a href="#齐次马尔可夫性假设" class="headerlink" title="齐次马尔可夫性假设"></a>齐次马尔可夫性假设</h3><p>假设马尔可夫链在任意时刻$t$的隐藏状态只依赖于其前一时刻的状态，与其他时刻的状态及观测无关，也与时刻$t$无关。</p>
-          </div><br>基于该假设，有<br><div class="note warning">
-            <p>如果在时刻$t$的隐藏状态为$i_t=q_i$，在时刻$t+1$的隐藏状态为$i_{t+1}=q_j$，则从时刻$t$到时刻$t+1$的HMM状态转移概率$a_{ij}$为</p><script type="math/tex; mode=display">a_{ij}=P(i_{t+1}=q_j|i_t=q_i)</script><p>其中$i=1,\cdots,N;j=1,\cdots,N$。</p><p>马尔可夫链的状态转移概率矩阵为</p><script type="math/tex; mode=display">A=\left[a_{ij} \right]_{N\times N}</script>
-          </div></p>
+<h2 id="基本假设"><a class="header-anchor" href="#基本假设"></a>基本假设</h2>
+<p>HMM作了两个基本假设</p>
 <div class="note info">
-            <h3 id="观测独立性假设"><a href="#观测独立性假设" class="headerlink" title="观测独立性假设"></a>观测独立性假设</h3><p>假设任意时刻的观测状态只依赖于该时刻的隐藏状态，与其他观测及状态无关。</p>
+            <h3 id="齐次马尔可夫性假设"><a class="header-anchor" href="#齐次马尔可夫性假设"></a>齐次马尔可夫性假设</h3><p>假设马尔可夫链在任意时刻$t$的隐藏状态只依赖于其前一时刻的状态，与其他时刻的状态及观测无关，也与时刻$t$无关。</p>
           </div>
-<p>基于该假设，有<br><div class="note warning">
-            <p>如果在时刻$t$的隐藏状态为$i_t=q_j$，而对应的观测状态为$o_t=v_k$，则该时刻观测状态$v_k$在隐藏状态$q_j$下生成的概率为$b_j(k)$，满足</p><script type="math/tex; mode=display">b_j(k)=P\left(o_t=v_k|i_t=q_j\right)</script><p>其中$k=1,\cdots,M;j=1,\cdots,N$。</p><p>则观测状态生成的概率矩阵为</p><script type="math/tex; mode=display">B=\left[b_j(k) \right]_{N\times M}</script>
-          </div></p>
+<p>基于该假设，有</p>
+<div class="note warning">
+            <p>如果在时刻$t$的隐藏状态为$i_t=q_i$，在时刻$t+1$的隐藏状态为$i_{t+1}=q_j$，则从时刻$t$到时刻$t+1$的HMM状态转移概率$a_{ij}$为<br>$$a_{ij}=P(i_{t+1}=q_j|i_t=q_i)$$<br>其中$i=1,\cdots,N;j=1,\cdots,N$。</p><p>马尔可夫链的状态转移概率矩阵为<br>$$A=\left[a_{ij} \right]_{N\times N}$$</p>
+          </div>
+<div class="note info">
+            <h3 id="观测独立性假设"><a class="header-anchor" href="#观测独立性假设"></a>观测独立性假设</h3><p>假设任意时刻的观测状态只依赖于该时刻的隐藏状态，与其他观测及状态无关。</p>
+          </div>
+<p>基于该假设，有</p>
+<div class="note warning">
+            <p>如果在时刻$t$的隐藏状态为$i_t=q_j$，而对应的观测状态为$o_t=v_k$，则该时刻观测状态$v_k$在隐藏状态$q_j$下生成的概率为$b_j(k)$，满足<br>$$b_j(k)=P\left(o_t=v_k|i_t=q_j\right)$$<br>其中$k=1,\cdots,M;j=1,\cdots,N$。</p><p>则观测状态生成的概率矩阵为<br>$$B=\left[b_j(k) \right]_{N\times M}$$</p>
+          </div>
 <p>隐马尔可夫模型由<strong>初始状态概率向量</strong>$\Pi$、<strong>状态转移概率矩阵</strong>$A$以及<strong>观测概率矩阵</strong>$B$确定。</p>
 <ul>
 <li>$\Pi$和$A$决定状态序列</li>
 <li>$B$决定观测序列</li>
 </ul>
-<p>隐马尔可夫模型科用三元组表示：</p>
-<script type="math/tex; mode=display">\lambda=(A,B,\Pi)</script><p>$A,B,\Pi$称为隐马尔可夫模型的<strong>三要素</strong>。</p>
+<p>隐马尔可夫模型科用三元组表示：<br>
+$$\lambda=(A,B,\Pi)$$<br>
+$A,B,\Pi$称为隐马尔可夫模型的<strong>三要素</strong>。</p>
 <div class="note danger">
-            <h2 id="算法：观测序列的生成"><a href="#算法：观测序列的生成" class="headerlink" title="算法：观测序列的生成"></a>算法：观测序列的生成</h2><p><strong>输入</strong>：</p><ul><li>隐马尔可夫模型$\lambda=(A,B,\Pi)$</li><li>观测序列的长度$T$</li></ul><p><strong>输出</strong>：观测序列$O=\{o_1,\cdots,o_T\}$</p><ol><li>根据初始状态概率分布$\Pi$生成隐藏状态$i_1$</li><li>对于$t=1,\cdots,T$，<ol><li>按照隐藏状态$i_t$的观测状态分布$b_{i_t}(k)$生成观测状态$o_t$</li><li>按照隐藏状态$i_t$的状态转移概率分布$a_{i_t,i_{t+1}}$产生隐藏状态$i_{t+1}\quad (i_{t+1}=1,\cdots,N)$</li></ol></li></ol>
+            <h2 id="算法：观测序列的生成"><a class="header-anchor" href="#算法：观测序列的生成"></a>算法：观测序列的生成</h2><p><strong>输入</strong>：</p><ul><li>隐马尔可夫模型$\lambda=(A,B,\Pi)$</li><li>观测序列的长度$T$</li></ul><p><strong>输出</strong>：观测序列$O={o_1,\cdots,o_T}$</p><ol><li>根据初始状态概率分布$\Pi$生成隐藏状态$i_1$</li><li>对于$t=1,\cdots,T$，<ol><li>按照隐藏状态$i_t$的观测状态分布$b_{i_t}(k)$生成观测状态$o_t$</li><li>按照隐藏状态$i_t$的状态转移概率分布$a_{i_t,i_{t+1}}$产生隐藏状态$i_{t+1}\quad (i_{t+1}=1,\cdots,N)$</li></ol></li></ol>
           </div>
-<h2 id="基本问题"><a href="#基本问题" class="headerlink" title="基本问题"></a>基本问题</h2><p>隐马尔可夫模型有三个经典的基本问题需要解决：</p>
+<h2 id="基本问题"><a class="header-anchor" href="#基本问题"></a>基本问题</h2>
+<p>隐马尔可夫模型有三个经典的基本问题需要解决：</p>
 <ol>
-<li><strong>概率计算问题</strong><ul>
-<li>给定模型$\lambda=(A,B,\Pi)$和观测序列$O=\{o_1,\cdots,o_T\}$，计算在模型$\lambda$下观测序列$O$出现的概率$P(O|\lambda)$</li>
+<li><strong>概率计算问题</strong></li>
+</ol>
+<ul>
+<li>给定模型$\lambda=(A,B,\Pi)$和观测序列$O={o_1,\cdots,o_T}$，计算在模型$\lambda$下观测序列$O$出现的概率$P(O|\lambda)$</li>
 <li>用<strong>前向后向算法</strong></li>
 </ul>
-</li>
-<li><strong>模型参数学习问题</strong><ul>
-<li>给定观测序列$O=\{o_1,\cdots,o_T\}$，估计模型$\lambda=(A,B,\Pi)$的参数，使得在该模型下观测序列的条件概率$P(O|\lambda)$最大</li>
+<ol start="2">
+<li><strong>模型参数学习问题</strong></li>
+</ol>
+<ul>
+<li>给定观测序列$O={o_1,\cdots,o_T}$，估计模型$\lambda=(A,B,\Pi)$的参数，使得在该模型下观测序列的条件概率$P(O|\lambda)$最大</li>
 <li>用<strong>极大似然估计</strong>的方法估计参数</li>
 <li>用<strong>基于EM算法的Baum-Welch算法</strong></li>
 </ul>
-</li>
-<li><strong>预测问题/解码（decoding）问题</strong><ul>
-<li>给定模型$\lambda=(A,B,\Pi)$和观测序列$O=\{o_1,\cdots,o_T\}$，求给定观测序列条件该概率$P(I|O)$下，最可能出现的对应的状态序列$I=\{i_1,\cdots,i_T\}$</li>
+<ol start="3">
+<li><strong>预测问题/解码（decoding）问题</strong></li>
+</ol>
+<ul>
+<li>给定模型$\lambda=(A,B,\Pi)$和观测序列$O={o_1,\cdots,o_T}$，求给定观测序列条件该概率$P(I|O)$下，最可能出现的对应的状态序列$I={i_1,\cdots,i_T}$</li>
 <li>用<strong>基于动态规划的维特比算法</strong></li>
 </ul>
-</li>
-</ol>
-<h1 id="概率计算问题"><a href="#概率计算问题" class="headerlink" title="概率计算问题"></a>概率计算问题</h1><p>给定模型$\lambda=(A,B,\Pi)$和观测序列$O=\{o_1,\cdots,o_T\}$，计算观测序列$O$在模型$\lambda$下出现的条件概率$P(O|\lambda)$。</p>
+<h1 id="概率计算问题"><a class="header-anchor" href="#概率计算问题"></a>概率计算问题</h1>
+<p>给定模型$\lambda=(A,B,\Pi)$和观测序列$O={o_1,\cdots,o_T}$，计算观测序列$O$在模型$\lambda$下出现的条件概率$P(O|\lambda)$。</p>
 <div class="note danger">
-            <h2 id="直接计算法"><a href="#直接计算法" class="headerlink" title="直接计算法"></a>直接计算法</h2><p>列举所有可能出现的长度为$T$的隐藏序列$I=\{i_1,i_2,\cdots,i_T\}$，分别求出各个状态序列$I$与观测序列$O=\{o_1,o_2,\cdots,o_T\}$的联合概率分布$P(O,I|\lambda)$，然后对所有可能的状态序列求和，得到边缘分布$P(O|\lambda)$。</p>
+            <h2 id="直接计算法"><a class="header-anchor" href="#直接计算法"></a>直接计算法</h2><p>列举所有可能出现的长度为$T$的隐藏序列$I={i_1,i_2,\cdots,i_T}$，分别求出各个状态序列$I$与观测序列$O={o_1,o_2,\cdots,o_T}$的联合概率分布$P(O,I|\lambda)$，然后对所有可能的状态序列求和，得到边缘分布$P(O|\lambda)$。</p>
           </div>
-<p>任意一个隐藏序列$I=\{i_1,i_2,\cdots,i_T\}$出现的概率是</p>
-<script type="math/tex; mode=display">P(I|\lambda)=\pi_{i_1}a_{i_1i_2}a_{i_2i_3}\cdots a_{i_{T-1}i_T}</script><p>对固定的状态序列$I=\{i_1,i_2,\cdots,i_T\}$，（要求的）观测序列$O=\{o_1,o_2,\cdots,o_T\}$出现的概率是</p>
-<script type="math/tex; mode=display">P(O|I,\lambda)=b_{i_1}(o_1)b_{i_2}(o_2)\cdots b_{i_T}(o_T)</script><p>则$O$和$I$同时出现的联合概率为<br>\begin{aligned}<br>P(O,I|\lambda) &amp;= P(I|\lambda)P(O|I,\lambda)\\<br>&amp;= \pi_{i_1}b_{i_1}(o_1)a_{i_1i_2}b_{i_2}(o_2)\cdots a_{i_{T-1}i_T}b_{i_T}(o_T)<br>\end{aligned}</p>
-<p>然后对所有可能的状态序列$I$求和，得到观测序列$O$的边缘概率<br>\begin{aligned}<br>P(O|\lambda) &amp;= \sum_I P(O,I|\lambda)\\<br>&amp;= \sum_{I}P(O|I,\lambda)P(I|\lambda)\\<br>&amp;= \sum_{i_1,i_2,\cdots,i_T}\pi_{i_1}b_{i_1}(o_1)a_{i_1i_2}b_{i_2}(o_2)\cdots a_{i_{T-1}i_T}b_{i_T}(o_T)<br>\end{aligned}</p>
+<p>任意一个隐藏序列$I={i_1,i_2,\cdots,i_T}$出现的概率是<br>
+$$P(I|\lambda)=\pi_{i_1}a_{i_1i_2}a_{i_2i_3}\cdots a_{i_{T-1}i_T}$$</p>
+<p>对固定的状态序列$I={i_1,i_2,\cdots,i_T}$，（要求的）观测序列$O={o_1,o_2,\cdots,o_T}$出现的概率是<br>
+$$P(O|I,\lambda)=b_{i_1}(o_1)b_{i_2}(o_2)\cdots b_{i_T}(o_T)$$</p>
+<p>则$O$和$I$同时出现的联合概率为<br>
+\begin{aligned}<br>
+P(O,I|\lambda) &amp;= P(I|\lambda)P(O|I,\lambda)\<br>
+&amp;= \pi_{i_1}b_{i_1}(o_1)a_{i_1i_2}b_{i_2}(o_2)\cdots a_{i_{T-1}i_T}b_{i_T}(o_T)<br>
+\end{aligned}</p>
+<p>然后对所有可能的状态序列$I$求和，得到观测序列$O$的边缘概率<br>
+\begin{aligned}<br>
+P(O|\lambda) &amp;= \sum_I P(O,I|\lambda)\<br>
+&amp;= \sum_{I}P(O|I,\lambda)P(I|\lambda)\<br>
+&amp;= \sum_{i_1,i_2,\cdots,i_T}\pi_{i_1}b_{i_1}(o_1)a_{i_1i_2}b_{i_2}(o_2)\cdots a_{i_{T-1}i_T}b_{i_T}(o_T)<br>
+\end{aligned}</p>
 <ul>
 <li>预测状态有$N^T$种组合</li>
 <li>算法的时间复杂度为$O(TN^T)$</li>
 </ul>
 <p>对于一些隐藏状态数极少的模型，可以使用上述“暴力求解”法来求解观测序列出现的概率。但是，如果隐藏状态多，上述算法太过耗时，则应考虑<strong>前向后向算法</strong>。</p>
 <div class="note warning">
-            <p><strong>前向概率</strong>：</p><p>给定隐马尔可夫模型$\lambda$，定义时刻$t$的隐藏状态为$q_i$，观测状态序列为$o_1,o_2,\cdots,o_t$的概率为前向概率。记为</p><script type="math/tex; mode=display">\alpha_t(i)=P(o_1,o_2,\cdots,o_t,i_t=q_i|\lambda)</script>
+            <p><strong>前向概率</strong>：</p><p>给定隐马尔可夫模型$\lambda$，定义时刻$t$的隐藏状态为$q_i$，观测状态序列为$o_1,o_2,\cdots,o_t$的概率为前向概率。记为<br>$$\alpha_t(i)=P(o_1,o_2,\cdots,o_t,i_t=q_i|\lambda)$$</p>
           </div>
 <p>假设已经找到在时刻$t$时各个隐藏状态的前向概率，需要递推初时刻$t+1$时各个隐藏状态的前向概率。</p>
 <p>基于时刻$t$时各个隐藏状态的前向概率$\alpha_t(j)$，乘以对应的状态转移概率$a_{ji}$，得到时刻$t$隐藏状态为$q_j$、时刻$t+1$隐藏状态为$q_i$的概率$\alpha_t(j)a_{ji}$；对所有$j$求和，得到时刻$t+1$观测序列为$o_1,o_2,\cdots,o_t,o_{t+1}$且隐藏状态为$q_i$的概率$\alpha_t(j)a_{ji}$。</p>
-<p>因为观测状态$o_{t+1}$只依赖于$t+1$时刻的隐藏状态$q_i$，所以$\left[\sum_{j=1}^N\alpha_t(j)a_{ji} \right]b_i(o_{t+1})$为在时刻$t+1$观测到$o_1,o_2,\cdots,o_t,o_{t+1}$且时刻$t+1$的隐藏状态为$q_i$的前向概率。所以前向概率的递推关系式为</p>
-<script type="math/tex; mode=display">\alpha_{t+1}(i)=\left[\sum_{j=1}^N\alpha_t(j)a_{ji} \right]b_i(o_{t+1})</script><p>$\alpha_T(i)$表示在时刻$T$观测序列为$o_1,o_2,\cdots,o_T$，且时刻$T$隐藏状态为$q_i$的概率，所以$\sum_{i=1}^N\alpha_T(i)$表示在时刻$T$观测序列为$o_1,o_2,\cdots,o_T$的概率。</p>
-<p><meta name="referrer" content="no-referrer"><br><img src="/%E7%AE%97%E6%B3%95-HMM/forward.png" class title="来自[刘建平Pinard-隐马尔科夫模型HMM（二）前向后向算法评估观察序列概率]"></p>
+<p>因为观测状态$o_{t+1}$只依赖于$t+1$时刻的隐藏状态$q_i$，所以$\left[\sum_{j=1}^N\alpha_t(j)a_{ji} \right]b_i(o_{t+1})$为在时刻$t+1$观测到$o_1,o_2,\cdots,o_t,o_{t+1}$且时刻$t+1$的隐藏状态为$q_i$的前向概率。所以前向概率的递推关系式为<br>
+$$\alpha_{t+1}(i)=\left[\sum_{j=1}^N\alpha_t(j)a_{ji} \right]b_i(o_{t+1})$$</p>
+<p>$\alpha_T(i)$表示在时刻$T$观测序列为$o_1,o_2,\cdots,o_T$，且时刻$T$隐藏状态为$q_i$的概率，所以$\sum_{i=1}^N\alpha_T(i)$表示在时刻$T$观测序列为$o_1,o_2,\cdots,o_T$的概率。</p>
+<meta name="referrer" content="no-referrer">
+<img src="/%E7%AE%97%E6%B3%95-HMM/forward.png" class title="来自[刘建平Pinard-隐马尔科夫模型HMM（二）前向后向算法评估观察序列概率]">
 <div class="note danger">
-            <h2 id="前向算法"><a href="#前向算法" class="headerlink" title="前向算法"></a>前向算法</h2><p><strong>输入</strong>：</p><ul><li>隐马尔可夫模型$\lambda$</li><li>观测序列$O$</li></ul><p><strong>输出</strong>：观测序列概率$P(O|\lambda)$</p><script type="math/tex; mode=display">P(O|\lambda)=\sum_{i=1}^N\alpha_T(i)</script><ol><li>计算时刻$1$的各个隐藏状态前向概率$(i=1,2,\cdots,N)$<script type="math/tex; mode=display">\alpha_1(i)=\pi_ib_i(o_1)</script></li><li>递推：对$t=1,2, \cdots, T-1$<script type="math/tex; mode=display">\alpha_{t+1}(i)=\left[\sum_{j=1}^N\alpha_t(j)a_{ji} \right]b_i(o_{t+1})</script>$i=1,2,\cdots,N$。</li></ol>
+            <h2 id="前向算法"><a class="header-anchor" href="#前向算法"></a>前向算法</h2><p><strong>输入</strong>：</p><ul><li>隐马尔可夫模型$\lambda$</li><li>观测序列$O$</li></ul><p><strong>输出</strong>：观测序列概率$P(O|\lambda)$<br>$$P(O|\lambda)=\sum_{i=1}^N\alpha_T(i)$$</p><ol><li>计算时刻$1$的各个隐藏状态前向概率$(i=1,2,\cdots,N)$<br>$$\alpha_1(i)=\pi_ib_i(o_1)$$</li><li>递推：对$t=1,2, \cdots, T-1$<br>$$\alpha_{t+1}(i)=\left[\sum_{j=1}^N\alpha_t(j)a_{ji} \right]b_i(o_{t+1})$$<br>$i=1,2,\cdots,N$。</li></ol>
           </div>
 <ul>
 <li>前向算法本质上属于<strong>动态规划</strong>的算法</li>
@@ -407,42 +436,51 @@
 <li>前向算法的时间复杂度为$O(TN^2)$</li>
 </ul>
 <div class="note warning">
-            <p><strong>后向概率</strong>：</p><p>给定隐马尔可夫模型$\lambda$，定义时刻$t$时隐藏状态为$q_i$，从时刻$t+1$到最后时刻$T$的观测状态序列为$o_{t+1},o_{t+2},\cdots,o_T$的概率为后向概率。记为</p><script type="math/tex; mode=display">\beta_t(i)=P(o_{t+1},o_{t+2},\cdots,o_T|i_t=q_i, \lambda)</script>
+            <p><strong>后向概率</strong>：</p><p>给定隐马尔可夫模型$\lambda$，定义时刻$t$时隐藏状态为$q_i$，从时刻$t+1$到最后时刻$T$的观测状态序列为$o_{t+1},o_{t+2},\cdots,o_T$的概率为后向概率。记为<br>$$\beta_t(i)=P(o_{t+1},o_{t+2},\cdots,o_T|i_t=q_i, \lambda)$$</p>
           </div>
 <p>假设已经找到在时刻$t+1$时各个隐藏状态的后向概率$\beta_{t+1}(j)$，需要递推初时刻$t$的各个隐藏状态的后向概率。</p>
 <p>可以计算出观测状态序列为$o_{t+2},o_{t+3},\cdots,o_T$、$t$时隐藏状态为$q_i$、$t+1$时隐藏状态为$q_j$的概率为$a_{ij}\beta_{t+1}(j)$；则观测状态序列为$o_{t+1},o_{t+2},o_{t+3},\cdots,o_T$、$t$时隐藏状态为$q_i$、$t+1$时隐藏状态为$q_j$的概率为$a_{ij}b_j(o_{t+1})\beta_{t+1}(j)$；将$t+1$时所有隐藏状态概率加总，得到观测状态序列为$o_{t+1},o_{t+2},o_{t+3},\cdots,o_T$、$t$时隐藏状态为$q_i$的概率为$\sum_{j=1}^Na_{ij}b_j(o_{t+1})\beta_{t+1}(j)$，即时刻$t$的后向概率。</p>
-<p><meta name="referrer" content="no-referrer"><br><img src="/%E7%AE%97%E6%B3%95-HMM/backward.png" class title="来自[刘建平Pinard-隐马尔科夫模型HMM（二）前向后向算法评估观察序列概率]"></p>
+<meta name="referrer" content="no-referrer">
+<img src="/%E7%AE%97%E6%B3%95-HMM/backward.png" class title="来自[刘建平Pinard-隐马尔科夫模型HMM（二）前向后向算法评估观察序列概率]">
 <div class="note danger">
-            <h2 id="后向算法"><a href="#后向算法" class="headerlink" title="后向算法"></a>后向算法</h2><p><strong>输入</strong>：</p><ul><li>隐马尔可夫模型$\lambda$</li><li>观测序列$O$</li></ul><p><strong>输出</strong>：观测序列概率$P(O|\lambda)$</p><script type="math/tex; mode=display">P(O|\lambda)=\sum_{i=1}^N\pi_ib_i(o_1)\beta_1(i)</script><ol><li>初始化时刻$T$的各个隐藏状态后向概率<script type="math/tex; mode=display">\beta_T(i)=1</script>$i=1,2,\cdots,N$。</li><li>递推：对于$t=T-1,T-2,\cdots,1$，计算<script type="math/tex; mode=display">\beta_t(i)=\sum_{j=1}^Na_{ij}b_j(o_{t+1})\beta_{t+1}(j)</script>$i=1,2,\cdots,N$。</li></ol>
+            <h2 id="后向算法"><a class="header-anchor" href="#后向算法"></a>后向算法</h2><p><strong>输入</strong>：</p><ul><li>隐马尔可夫模型$\lambda$</li><li>观测序列$O$</li></ul><p><strong>输出</strong>：观测序列概率$P(O|\lambda)$<br>$$P(O|\lambda)=\sum_{i=1}^N\pi_ib_i(o_1)\beta_1(i)$$</p><ol><li>初始化时刻$T$的各个隐藏状态后向概率<br>$$\beta_T(i)=1$$<br>$i=1,2,\cdots,N$。</li><li>递推：对于$t=T-1,T-2,\cdots,1$，计算<br>$$\beta_t(i)=\sum_{j=1}^Na_{ij}b_j(o_{t+1})\beta_{t+1}(j)$$<br>$i=1,2,\cdots,N$。</li></ol>
           </div>
 <ul>
 <li>后向算法本质上也是属于<strong>动态规划</strong>的算法</li>
 <li>后向算法的时间复杂度为$O(TN^2)$</li>
 </ul>
 <div class="note warning">
-            <h2 id="常用概率计算"><a href="#常用概率计算" class="headerlink" title="常用概率计算"></a>常用概率计算</h2><p>给定隐马尔可夫模型$\lambda$和观测序列$O$，</p><ul><li>在时刻$t$处于状态$q_i$的概率为</li></ul><p>\begin{aligned}<br>\gamma_t(i)&amp;=P(i_t=q_i|O,\lambda) \\<br>&amp;= \frac{P(i_t=q_i,O|\lambda)}{P(O|\lambda)} \\<br>&amp;= \frac{\alpha_t(i)\beta_t(i)}{\sum_{j=1}^N\alpha_t(j)\beta_t(j)} \\<br>\end{aligned}</p><ul><li>在时刻$t$处于状态$q_i$、时刻$t+1$处于状态$q_j$的概率为</li></ul><p>\begin{equation}<br>\begin{aligned}<br>\xi_t(i,j) &amp;= P(i_t=q_i,i_{t+1}=q_j | O,\lambda)\\<br>&amp;= \frac{P(i_t=q_i,i_{t+1}=q_j,O|\lambda)}{P(O|\lambda)}\\<br>&amp;= \frac{\alpha_t(i)a_{ij} b_j(o_{t+1}) \beta_{t+1}(j)}{\sum_{r=1}^N \sum_{s=1}^N \alpha_t ( r ) a_{rs} b_s(o_{t+1})\beta_{t+1}(s)} \\<br>\end{aligned}<br>\end{equation}</p><ul><li>在观测序列$O$下<ul><li>状态$i$出现的期望值为<script type="math/tex; mode=display">\sum_{t=1}^T\gamma_t(i)</script></li><li>由状态$i$转移的期望值<script type="math/tex; mode=display">\sum_{t=1}^{T-1}\gamma_t(i)</script></li><li>由状态$i$转移到状态$j$的期望值<script type="math/tex; mode=display">\sum_{t=1}^{T-1}\xi_t(i,j)</script></li></ul></li></ul>
+            <h2 id="常用概率计算"><a class="header-anchor" href="#常用概率计算"></a>常用概率计算</h2><p>给定隐马尔可夫模型$\lambda$和观测序列$O$，</p><ul><li>在时刻$t$处于状态$q_i$的概率为</li></ul><p>\begin{aligned}<br>\gamma_t(i)&amp;=P(i_t=q_i|O,\lambda) \<br>&amp;= \frac{P(i_t=q_i,O|\lambda)}{P(O|\lambda)} \<br>&amp;= \frac{\alpha_t(i)\beta_t(i)}{\sum_{j=1}^N\alpha_t(j)\beta_t(j)} \<br>\end{aligned}</p><ul><li>在时刻$t$处于状态$q_i$、时刻$t+1$处于状态$q_j$的概率为</li></ul><p>\begin{equation}<br>\begin{aligned}<br>\xi_t(i,j) &amp;= P(i_t=q_i,i_{t+1}=q_j | O,\lambda)\<br>&amp;= \frac{P(i_t=q_i,i_{t+1}=q_j,O|\lambda)}{P(O|\lambda)}\<br>&amp;= \frac{\alpha_t(i)a_{ij} b_j(o_{t+1}) \beta_{t+1}(j)}{\sum_{r=1}^N \sum_{s=1}^N \alpha_t ( r ) a_{rs} b_s(o_{t+1})\beta_{t+1}(s)} \<br>\end{aligned}<br>\end{equation}</p><ul><li>在观测序列$O$下</li><li>状态$i$出现的期望值为<br>$$\sum_{t=1}^T\gamma_t(i)$$</li><li>由状态$i$转移的期望值<br>$$\sum_{t=1}^{T-1}\gamma_t(i)$$</li><li>由状态$i$转移到状态$j$的期望值<br>$$\sum_{t=1}^{T-1}\xi_t(i,j)$$</li></ul>
           </div>
-<h1 id="参数学习问题"><a href="#参数学习问题" class="headerlink" title="参数学习问题"></a>参数学习问题</h1><p>隐马尔可夫模型的参数求解根据<u>已知条件</u>可分为两种情况：</p>
+<h1 id="参数学习问题"><a class="header-anchor" href="#参数学习问题"></a>参数学习问题</h1>
+<p>隐马尔可夫模型的参数求解根据<u>已知条件</u>可分为两种情况：</p>
 <ol>
 <li>已知观测序列和对应的隐藏状态序列，可用<strong>极大似然估计法</strong>来求解模型参数</li>
 <li>只有观测序列，而无法得到对应的隐藏状态序列，可用<strong>基于EM算法的Baum-Welch算法</strong>（鲍姆-韦尔奇算法）来求解模型参数</li>
 </ol>
-<p>对于<strong>第一种情况</strong>：<br>已知$D$个长度为$T$的观测序列和对应的隐藏序列</p>
-<script type="math/tex; mode=display">\left\{ (O_1,I_1,),(O_2,I_2), \cdots, (O_D,I_D) \right\}</script><div class="note danger">
-            <h2 id="极大似然估计"><a href="#极大似然估计" class="headerlink" title="极大似然估计"></a>极大似然估计</h2><ul><li>假设样本从隐藏状态$q_i$转移到$q_j$的频率计数是$A_{ij}$，则状态转移矩阵为<script type="math/tex; mode=display">A=\left[a_{ij} \right]_{N\times N}</script>其中<script type="math/tex; mode=display">a_{ij}=\frac{A_{ij}}{\sum_{s=1}^NA_{is}}</script></li><li>假设样本隐藏状态为$q_j$且观测状态为$v_k$的频率计数是$B_{jk}$，则观测状态概率矩阵为<script type="math/tex; mode=display">B=\left[b_j(k) \right]_{N\times M}</script>其中<script type="math/tex; mode=display">b_j(k)=\frac{B_{jk}}{\sum_{s=1}B_{js}}</script></li><li>假设所有样本种初始隐藏状态为$q_i$的频率计数为$C(i)$，则初始概率分布为<script type="math/tex; mode=display">\Pi=\left[\pi(i) \right]_{N\times 1}</script>其中<script type="math/tex; mode=display">\pi(i)=\frac{C(i)}{\sum_{s=1}^NC(s)}</script></li></ul>
+<p>对于<strong>第一种情况</strong>：<br>
+已知$D$个长度为$T$的观测序列和对应的隐藏序列<br>
+$$\left{ (O_1,I_1,),(O_2,I_2), \cdots, (O_D,I_D) \right}$$</p>
+<div class="note danger">
+            <h2 id="极大似然估计"><a class="header-anchor" href="#极大似然估计"></a>极大似然估计</h2><ul><li>假设样本从隐藏状态$q_i$转移到$q_j$的频率计数是$A_{ij}$，则状态转移矩阵为<br>$$A=\left[a_{ij} \right]<em>{N\times N}$$<br>其中<br>$$a</em>{ij}=\frac{A_{ij}}{\sum_{s=1}^NA_{is}}$$</li><li>假设样本隐藏状态为$q_j$且观测状态为$v_k$的频率计数是$B_{jk}$，则观测状态概率矩阵为<br>$$B=\left[b_j(k) \right]<em>{N\times M}$$<br>其中<br>$$b_j(k)=\frac{B</em>{jk}}{\sum_{s=1}B_{js}}$$</li><li>假设所有样本种初始隐藏状态为$q_i$的频率计数为$C(i)$，则初始概率分布为<br>$$\Pi=\left[\pi(i) \right]<em>{N\times 1}$$<br>其中<br>$$\pi(i)=\frac{C(i)}{\sum</em>{s=1}^NC(s)}$$</li></ul>
           </div>
-<p>对于<strong>第二种情况</strong>：<br>只有$D$个长度为$T$的观测序列</p>
-<script type="math/tex; mode=display">\{(O_1),(O_2),\cdots,(O_D)\}</script><p>基于EM算法的Baum-Welch算法：</p>
+<p>对于<strong>第二种情况</strong>：<br>
+只有$D$个长度为$T$的观测序列<br>
+$${(O_1),(O_2),\cdots,(O_D)}$$</p>
+<p>基于EM算法的Baum-Welch算法：</p>
 <ul>
-<li>E步：基于条件概率$P(I|O,\overline{\lambda})$求出联合分布$P(O,I|\lambda)$<br>其中$\overline{\lambda}$为当前的模型参数</li>
+<li>E步：基于条件概率$P(I|O,\overline{\lambda})$求出联合分布$P(O,I|\lambda)$<br>
+其中$\overline{\lambda}$为当前的模型参数</li>
 <li>M步：最大化联合分布$P(O,I|\lambda)$的期望，得到更新的模型参数$\lambda$</li>
 </ul>
 <p>不停地进行EM迭代，直到模型参数的值收敛为止。</p>
 <div class="note danger">
-            <h2 id="Baum-Welch算法"><a href="#Baum-Welch算法" class="headerlink" title="Baum-Welch算法"></a>Baum-Welch算法</h2>
+            <h2 id="Baum-Welch算法"><a class="header-anchor" href="#Baum-Welch算法"></a>Baum-Welch算法</h2>
           </div>
-<h1 id="预测问题"><a href="#预测问题" class="headerlink" title="预测问题"></a>预测问题</h1><p>未完待续</p>
-<h1 id="笔试题目"><a href="#笔试题目" class="headerlink" title="笔试题目"></a>笔试题目</h1><div class="note default">
+<h1 id="预测问题"><a class="header-anchor" href="#预测问题"></a>预测问题</h1>
+<p>未完待续</p>
+<h1 id="笔试题目"><a class="header-anchor" href="#笔试题目"></a>笔试题目</h1>
+<div class="note default">
             <p>在HMM中,如果已知观察序列和产生观察序列的状态序列,那么可用以下哪种方法直接进行参数估计(D)<br>A. EM算法<br>B. 维特比算法<br>C. 前向后向算法<br>D. 极大似然估计</p><p>[<font face="宋体" color="grey">来自：<a href="https://www.nowcoder.com/questionTerminal/dc4e7ad7e9634b65b56f2541a580eba0" target="_blank" rel="noopener">牛客试题广场</a></font>]</p>
           </div>
 <ul>
@@ -451,7 +489,8 @@
 <li>前向后向算法：用于算概率</li>
 <li>极大似然估计：预测序列和相应的状态序列都存在时的监督学习算法，用来估计参数</li>
 </ul>
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
+<h1 id="参考资料"><a class="header-anchor" href="#参考资料"></a>参考资料</h1>
+<ul>
 <li><a href="https://book.douban.com/subject/10590856/" target="_blank" rel="noopener">李航-统计学习方法</a></li>
 <li><a href="https://www.cnblogs.com/skyme/p/4651331.html" target="_blank" rel="noopener">一文搞懂HMM（隐马尔可夫模型）</a></li>
 <li><a href="https://www.cnblogs.com/pinard/p/6945257.html" target="_blank" rel="noopener">刘建平Pinard-隐马尔科夫模型HMM（一）HMM模型</a></li>
@@ -647,13 +686,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">370k</span>
+    <span title="站点总字数">373k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">5:37</span>
+    <span title="站点阅读时长">5:39</span>
 </div>
 
 
