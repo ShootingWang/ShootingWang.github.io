@@ -1855,12 +1855,22 @@
 <blockquote>
 <ul>
 <li><strong>随机原则</strong>：在抽选样本时完全排除主观地、有意识地抽选某些调查单元，使每个单元都有一定机会被抽中</li>
-<li>随机原则 $\neq$ 等概率原则</li>
+<li>随机原则 $\neq$ 等概率原则：等概率抽样是一种随机抽样，但随机抽样并不限定必须是等概率抽样</li>
+<li>随机 VS 随意：
+<ul>
+<li>随机：可用概率来描述，有严格的科学含义</li>
+<li>随意：带有人为的或主观的因素，不是一个科学的概念</li>
+</ul>
+</li>
 </ul>
 </blockquote>
 <h3 id="概率抽样-随机抽样"><a class="header-anchor" href="#概率抽样-随机抽样"></a>概率抽样 / 随机抽样</h3>
 <p>概率抽样（probability sampling）/ 随机抽样（random sampling）：严格地按照给定的概率来抽取样本</p>
 <p>特点：</p>
+<ol>
+<li>按一定概率以随机原则抽取样本</li>
+<li></li>
+</ol>
 <h3 id="非概率抽样-非随机抽样"><a class="header-anchor" href="#非概率抽样-非随机抽样"></a>非概率抽样 / 非随机抽样</h3>
 <h1 id="参考资料"><a class="header-anchor" href="#参考资料"></a>参考资料</h1>
 <ul>
