@@ -1962,6 +1962,33 @@
 <li>抽样调查可以用来作为普查的试点以便及时发现问题，并在展开正式普查前进行修正和补充</li>
 <li>普查或其他全面调查的资料可以为抽样调查提供反映总体全部单元的抽样框</li>
 </ul>
+<h1 id="基本概念"><a class="header-anchor" href="#基本概念"></a>基本概念</h1>
+<h2 id="总体"><a class="header-anchor" href="#总体"></a>总体</h2>
+<p>总体（population）：由研究或调查对象的全体所构成的集合</p>
+<ul>
+<li><strong>目标总体</strong>（target population）：所感兴趣的所有调查对象的集合</li>
+<li><strong>抽样总体</strong>（sampling population）：实际抽样调查所覆盖的总体</li>
+</ul>
+<blockquote>
+<ul>
+<li>抽样总体可能与目标总体不完全一致</li>
+<li>理想状态下，目标总体与抽样总体应该完全一致</li>
+<li>依据调查的结果所得到的结论仅适用于抽样总体</li>
+</ul>
+</blockquote>
+<ul>
+<li><strong>有限总体</strong>：总体中所包含的个体数目是有限的</li>
+<li><strong>无限总体</strong>：总体中所包含的个体数目是无限的</li>
+</ul>
+<h2 id="抽样单元"><a class="header-anchor" href="#抽样单元"></a>抽样单元</h2>
+<ul>
+<li>总体是由个体（individual, item）组成的</li>
+</ul>
+<p><strong>抽样单元</strong>（sampling unit）：可以将总体划分成互不重叠又穷尽的有限多个部分，每个这样的部分成为抽样单元</p>
+<ul>
+<li>每个抽样单元由一个或多个个体组成</li>
+<li>抽样单元是构成抽样框的基本要素</li>
+</ul>
 <h1 id="参考资料"><a class="header-anchor" href="#参考资料"></a>参考资料</h1>
 <ul>
 <li><a href="https://book.douban.com/subject/19979195/" target="_blank" rel="noopener">冯士雍《抽样调查理论与方法》</a></li>
