@@ -1988,6 +1988,13 @@
 <ul>
 <li>每个抽样单元由一个或多个个体组成</li>
 <li>抽样单元是构成抽样框的基本要素</li>
+<li>抽样单元常可以分级，最小的那级抽样单元称为<strong>基本抽样单元</strong>
+<ul>
+<li>总体先分为若干个较大规模的抽样单元，称为<strong>初级（抽样）单元</strong>或<strong>一级（抽样）单元</strong>（primary sampling unit）</li>
+<li>每个初级单元又可包含若干个规模较小的单元，称为<strong>次级单元</strong>或<strong>二级单元</strong>（secondary sampling unit）</li>
+<li>以此类推，可定义<strong>三级单元</strong>、<strong>四级单元</strong>等等</li>
+</ul>
+</li>
 </ul>
 <h1 id="参考资料"><a class="header-anchor" href="#参考资料"></a>参考资料</h1>
 <ul>
