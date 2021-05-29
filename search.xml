@@ -3651,6 +3651,23 @@ $$P_{\lambda, \gamma}(\beta) = \sum_{j=1}^p \rho(\parallel\beta_j\parallel_2; \s
 </ul>
 <h3 id="GBT-7714-2015格式调整"><a class="header-anchor" href="#GBT-7714-2015格式调整"></a>GBT 7714-2015格式调整</h3>
 <p>从Endnote官网下载的GB/T 7714格式文件中的格式并不完全符合<a href="http://www.doc88.com/p-1136638747314.html" target="_blank" rel="noopener">GB/T 7714-2015</a>的要求。</p>
+<p>numeric版本：</p>
+<ul>
+<li><strong>Page Numbers</strong>：修改文献列表中页码的格式，选择<code>Show the full range of pages(e.g. 123-125)</code>，完全显示起始页码</li>
+<li><strong>Citations</strong>：修改引用格式
+<ul>
+<li>Author Lists：
+<ul>
+<li>将Author Separators中的<code>before last</code>、<code>before last in format: Author(Year)</code>的<code>and</code>改为<code>和</code></li>
+<li>Abbreviated Author List - First Appearance：选择第二种—— If <code>3</code> or more authors, list the first <code>1</code> author(s) and abbreviated with: <code>等</code>（若文献作者数大于等于3个，则只显示第一作者并以“等”结尾）</li>
+<li>Abbreviated Author List - Subsequent Appearances：选择第二种—— If <code>3</code> or more authors, list the first <code>1</code> author(s) and abbreviated with: <code>等</code></li>
+</ul>
+</li>
+<li>Author Name：</li>
+<li></li>
+</ul>
+</li>
+</ul>
 <h2 id="下载引用文本"><a class="header-anchor" href="#下载引用文本"></a>下载引用文本</h2>
 <p>如何下载引用文本：</p>
 <ul>
