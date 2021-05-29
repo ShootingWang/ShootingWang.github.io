@@ -3596,7 +3596,61 @@ $$P_{\lambda, \gamma}(\beta) = \sum_{j=1}^p \rho(\parallel\beta_j\parallel_2; \s
 <p>推荐使用<a href="https://www.endnote.com/" target="_blank" rel="noopener">EndNote</a>进行参考文献的插入、管理</p>
 </blockquote>
 <h1 id="EndNote"><a class="header-anchor" href="#EndNote"></a>EndNote</h1>
-<h2 id="引用格式"><a class="header-anchor" href="#引用格式"></a>引用格式</h2>
+<h2 id="Output-Style"><a class="header-anchor" href="#Output-Style"></a>Output Style</h2>
+<h3 id="安装"><a class="header-anchor" href="#安装"></a>安装</h3>
+<p>在Endnote官网可以查找并下载需要的Output Style格式文件。</p>
+<blockquote>
+<p>网址：<a href="https://endnote.com/downloads/styles/" target="_blank" rel="noopener">https://endnote.com/downloads/styles/</a></p>
+</blockquote>
+<ol>
+<li>在【Keyword】中输入关键词，在【Citation Style】中选择引用类型，点击【Research】进行搜索</li>
+<li>下载相应的格式文件</li>
+<li>双击下载的文件（则在Endnote中打开该文件）</li>
+<li>点击【File】选择【Choose As】，重命名格式文件名称，并保存【Save】</li>
+<li>点击【File】选择【Close Style】关闭文件</li>
+</ol>
+<blockquote>
+<p>例：查找、下载并安装GB/T 7714格式文件</p>
+<ul>
+<li>在【Keyword】中输入“GB”，并搜索</li>
+<li>得到两个搜索结果：
+<ul>
+<li>Chinese Standard GBT7714 (numeric)</li>
+<li>Chinese Standard GBT7714 (Author-Year)</li>
+</ul>
+</li>
+<li>根据自己的引用格式（numric或Author-Year）选择相应的格式文件下载</li>
+<li>双击下载的文件，在Endnote中打开该文件</li>
+<li>点击【File】选择【Choose As】，重命名该格式文件名称，并点【Save】保存</li>
+<li>点击【File】选择【Close Style】关闭文件</li>
+</ul>
+</blockquote>
+<h2 id="使用"><a class="header-anchor" href="#使用"></a>使用</h2>
+<p>点击【Edit】——【Output Styles】——【Open Style Manager】，打开Output Styles管理器。</p>
+<ul>
+<li>找到目标格式文件，勾选，则这些格式文件会显示在【Output Styles】中</li>
+<li>在【Edit】——【Output Styles】中选择想要使用的格式文件</li>
+</ul>
+<h3 id="编辑"><a class="header-anchor" href="#编辑"></a>编辑</h3>
+<p>有些既有的格式文件并不能完全满足我们的格式要求，这时就需要手动编辑/修改格式文件。</p>
+<blockquote>
+<p>点击【Edit】——【Output Styles】——【Edit “你选择的Style名称”】，打开Style编辑器</p>
+</blockquote>
+<ul>
+<li><strong>Citations</strong>：
+<ul>
+<li>Templates：修改引用格式</li>
+<li>Ambiguous Citations：引用不同文献、但引用文本一模一样时，如何区分文献
+<ul>
+<li>Add the title for different</li>
+<li>Add a letter after the year：在年份后添加a, b, c等字母区分（如：<code>2012a</code>、<code>2012b</code>）</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="GBT-7714-2015格式调整"><a class="header-anchor" href="#GBT-7714-2015格式调整"></a>GBT 7714-2015格式调整</h3>
+<p>从Endnote官网下载的GB/T 7714格式文件中的格式并不完全符合<a href="http://www.doc88.com/p-1136638747314.html" target="_blank" rel="noopener">GB/T 7714-2015</a>的要求。</p>
 <h2 id="下载引用文本"><a class="header-anchor" href="#下载引用文本"></a>下载引用文本</h2>
 <p>如何下载引用文本：</p>
 <ul>
