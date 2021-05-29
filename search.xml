@@ -3642,7 +3642,7 @@ $$P_{\lambda, \gamma}(\beta) = \sum_{j=1}^p \rho(\parallel\beta_j\parallel_2; \s
 <li>Templates：修改引用格式</li>
 <li>Ambiguous Citations：引用不同文献、但引用文本一模一样时，如何区分文献
 <ul>
-<li>Add the title for different</li>
+<li>Add the title for different works by the same author：同一作者的不同文献引用中添加文献标题（可选<code>Full Title</code>或<code>Short Title</code>）</li>
 <li>Add a letter after the year：在年份后添加a, b, c等字母区分（如：<code>2012a</code>、<code>2012b</code>）</li>
 </ul>
 </li>
