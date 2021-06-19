@@ -33,7 +33,7 @@
 <meta property="og:description" content="K均值聚类">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-05-13T07:15:46.000Z">
-<meta property="article:modified_time" content="2021-06-19T14:18:19.835Z">
+<meta property="article:modified_time" content="2021-06-19T14:19:06.955Z">
 <meta property="article:author" content="Skye">
 <meta property="article:tag" content="算法">
 <meta property="article:tag" content="机器学习">
@@ -263,7 +263,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-06-19 22:18:19" itemprop="dateModified" datetime="2021-06-19T22:18:19+08:00">2021-06-19</time>
+                <time title="修改时间：2021-06-19 22:19:06" itemprop="dateModified" datetime="2021-06-19T22:19:06+08:00">2021-06-19</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -307,56 +307,48 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <center>K均值聚类</center>
-<a id="more"></a>
-<h1 id="K-Means"><a class="header-anchor" href="#K-Means"></a>K-Means</h1>
-<ul>
+        <p><center>K均值聚类</center><br><a id="more"></a></p>
+<h1 id="K-Means"><a href="#K-Means" class="headerlink" title="K-Means"></a>K-Means</h1><ul>
 <li>无监督学习</li>
 <li>$K$值无法自动获取</li>
 <li>初始聚类中心随机选择</li>
 <li>迭代（iterative）算法</li>
 </ul>
 <div class="note danger">
-            <h2 id="算法"><a class="header-anchor" href="#算法"></a>算法</h2><p><strong>输入</strong>：</p><ul><li>类的个数：$K$</li><li>训练集：${ x^{(1)}, x^{(2)}, \cdots, x^{(n)} }$（其中，$x^{(i)}\in \mathbb{R}^{n}$）</li></ul><p><strong>训练</strong>：</p><ol><li>随机初始化$K$个簇（cluster）的质心（centroid）：$\mu_1, \mu_2, \cdots, \mu_K \in \mathbb{R}^n$；</li><li>对于每个训练样本$x<sup>{(i)}$，用$c</sup>{(i)}$表示最接近$x<sup>{(i)}$的簇的质心（簇分配步骤）；其中，$c</sup>{(i)} \in { 1,2,\cdots,K }$<br>$$c^{(i)} := \arg{\min_j || x^{i} - \mu_j ||}$$</li></ol><p><strong>输出</strong>：</p>
+            <h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><p><strong>输入</strong>：</p><ul><li>类的个数：$K$</li><li>训练集：$\\{ x^{(1)}, x^{(2)}, \cdots, x^{(n)} \\}$（其中，$x^{(i)}\in \mathbb{R}^{n}$）</li></ul><p><strong>训练</strong>：</p><ol><li>随机初始化$K$个簇（cluster）的质心（centroid）：$\mu_1, \mu_2, \cdots, \mu_K \in \mathbb{R}^n$；</li><li>对于每个训练样本$x^{(i)}$ ，用 $c^{(i)}$ 表示最接近$x^{(i)}$的簇的质心（簇分配步骤）；其中，$c^{(i)} \in \{ 1,2,\cdots,K \}$<script type="math/tex; mode=display">c^{(i)} := \arg{\min_j || x^{i} - \mu_j ||}</script></li></ol><p><strong>输出</strong>：</p>
           </div>
-<h1 id="确定K的方法"><a class="header-anchor" href="#确定K的方法"></a>确定K的方法</h1>
-<h2 id="按需选择"><a class="header-anchor" href="#按需选择"></a>按需选择</h2>
-<p>根据建模的需求和目的来选择聚类的个数</p>
-<h2 id="观察法"><a class="header-anchor" href="#观察法"></a>观察法</h2>
-<p>直接看数据的散点图，看数据点大致聚成几堆</p>
+<h1 id="确定K的方法"><a href="#确定K的方法" class="headerlink" title="确定K的方法"></a>确定K的方法</h1><h2 id="按需选择"><a href="#按需选择" class="headerlink" title="按需选择"></a>按需选择</h2><p>根据建模的需求和目的来选择聚类的个数</p>
+<h2 id="观察法"><a href="#观察法" class="headerlink" title="观察法"></a>观察法</h2><p>直接看数据的散点图，看数据点大致聚成几堆</p>
 <ul>
 <li>原始数据维数要低，一般是两维或三维，否则无法通过散点图观察</li>
 <li>对于高维数据，可以先利用PCA（主成分分析法）降维，然后进行观察</li>
 </ul>
-<h2 id="肘部法"><a class="header-anchor" href="#肘部法"></a>肘部法</h2>
-<p>肘部法（Elbow Method），以聚类的数量为x轴，以WSS为y轴，绘制折线图，拐弯最明显的点对应的值就是比较合适的k值。</p>
+<h2 id="肘部法"><a href="#肘部法" class="headerlink" title="肘部法"></a>肘部法</h2><p>肘部法（Elbow Method），以聚类的数量为x轴，以WSS为y轴，绘制折线图，拐弯最明显的点对应的值就是比较合适的k值。</p>
 <ul>
 <li>x轴为聚类的数量</li>
 <li>y轴为WSS（within cluster sum of squares），即各个点到cluster（簇）中心的距离的平方和</li>
 </ul>
-<h2 id="Gap-Statistics方法"><a class="header-anchor" href="#Gap-Statistics方法"></a>Gap Statistics方法</h2>
-<h1 id="对比"><a class="header-anchor" href="#对比"></a>对比</h1>
-<h2 id="优点"><a class="header-anchor" href="#优点"></a>优点</h2>
-<ul>
+<h2 id="Gap-Statistics方法"><a href="#Gap-Statistics方法" class="headerlink" title="Gap Statistics方法"></a>Gap Statistics方法</h2><h1 id="对比"><a href="#对比" class="headerlink" title="对比"></a>对比</h1><h2 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h2><ul>
 <li>原理简单</li>
 <li>容易实现</li>
 <li>对大数据集有较高的学习效率，且具有可伸缩性</li>
 </ul>
-<h2 id="缺点"><a class="header-anchor" href="#缺点"></a>缺点</h2>
-<ul>
+<h2 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h2><ul>
 <li>收敛速度较慢</li>
-<li>算法的时间复杂度较高$O(nKt)$</li>
+<li>算法的时间复杂度较高$O(nKt)$<ul>
 <li>$n$：样本点个数</li>
 <li>$K$：聚类类别数</li>
 <li>$t$：迭代次数</li>
+</ul>
+</li>
 <li>不能发现非凸形状的簇</li>
 <li>对噪声和离群点敏感</li>
 <li>结果不一定是全局最优，只能保证局部最优</li>
 </ul>
-<h2 id="K-Means-vs-K-Medoids"><a class="header-anchor" href="#K-Means-vs-K-Medoids"></a>K-Means vs K-Medoids</h2>
-<ul>
+<h2 id="K-Means-vs-K-Medoids"><a href="#K-Means-vs-K-Medoids" class="headerlink" title="K-Means vs K-Medoids"></a>K-Means vs K-Medoids</h2><ul>
 <li>二者的区别主要在于：质心的选择</li>
 </ul>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -383,20 +375,20 @@
 </tr>
 </tbody>
 </table>
-<h2 id="K-Means-vs-KNN"><a class="header-anchor" href="#K-Means-vs-KNN"></a>K-Means vs KNN</h2>
-<div>
+</div>
+<h2 id="K-Means-vs-KNN"><a href="#K-Means-vs-KNN" class="headerlink" title="K-Means vs KNN"></a>K-Means vs KNN</h2><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
-<pre><code>.dataframe tbody tr th {
-    vertical-align: top;
-}
 
-.dataframe thead th {
-    text-align: center;
-}
-</code></pre>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: center;
+    }
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -430,20 +422,20 @@
   </tr></tbody>
 </table>
 </div>
-<h2 id="K-Means-vs-DBSCAN"><a class="header-anchor" href="#K-Means-vs-DBSCAN"></a>K-Means vs DBSCAN</h2>
-<div>
+
+<h2 id="K-Means-vs-DBSCAN"><a href="#K-Means-vs-DBSCAN" class="headerlink" title="K-Means vs DBSCAN"></a>K-Means vs DBSCAN</h2><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
-<pre><code>.dataframe tbody tr th {
-    vertical-align: top;
-}
 
-.dataframe thead th {
-    text-align: center;
-}
-</code></pre>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: center;
+    }
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -496,13 +488,13 @@
   </tr></tbody>
 </table>
 </div>
+
 <p>其中：</p>
 <ul>
 <li>$n$是样本点个数</li>
 <li>聚类可分为<u>基于划分、层次、密度、图形和模型</u>五大类</li>
 </ul>
-<h1 id="参考资料"><a class="header-anchor" href="#参考资料"></a>参考资料</h1>
-<ul>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
 <li><a href="https://blog.csdn.net/databatman/article/details/50445561" target="_blank" rel="noopener">机器学习：K-means和K-medoids对比</a></li>
 <li><a href="https://www.cnblogs.com/nucdy/p/6349172.html" target="_blank" rel="noopener">KNN与K-Means的区别</a></li>
 <li><a href="https://www.cnblogs.com/hugechuanqi/p/10509307.html" target="_blank" rel="noopener">机器学习 之k-means和DBSCAN的区别</a></li>
