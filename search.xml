@@ -22659,7 +22659,7 @@ scikit-learn库中有若干个数据集Toy datasets。</p>
 <li>迭代（iterative）算法</li>
 </ul>
 <div class="note danger">
-            <h2 id="算法"><a class="header-anchor" href="#算法"></a>算法</h2><p><strong>输入</strong>：</p><ul><li>类的个数：$K$</li><li>训练集：${ x^{(1)}, x^{(2)}, \cdots, x^{(n)} }$（其中，$x^{(i)}\in \mathbb{R}^{n}$）</li></ul><p><strong>训练</strong>：</p><ol><li>随机初始化$K$个簇（cluster）的质心（centroid）：$\mu_1, \mu_2, \cdots, \mu_K \in \mathbb{R}^n$</li></ol><p><strong>输出</strong>：</p>
+            <h2 id="算法"><a class="header-anchor" href="#算法"></a>算法</h2><p><strong>输入</strong>：</p><ul><li>类的个数：$K$</li><li>训练集：${ x^{(1)}, x^{(2)}, \cdots, x^{(n)} }$（其中，$x^{(i)}\in \mathbb{R}^{n}$）</li></ul><p><strong>训练</strong>：</p><ol><li>随机初始化$K$个簇（cluster）的质心（centroid）：$\mu_1, \mu_2, \cdots, \mu_K \in \mathbb{R}^n$；</li><li>对于每个训练样本$x<sup>{(i)}$，用$c</sup>{(i)}$表示最接近$x<sup>{(i)}$的簇的质心（簇分配步骤）；其中，$c</sup>{(i)} \in { 1,2,\cdots,K }$</li></ol><p><strong>输出</strong>：</p>
           </div>
 <h1 id="确定K的方法"><a class="header-anchor" href="#确定K的方法"></a>确定K的方法</h1>
 <h2 id="按需选择"><a class="header-anchor" href="#按需选择"></a>按需选择</h2>
