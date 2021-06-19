@@ -3965,6 +3965,10 @@ $$P_{\lambda, \gamma}(\beta) = \sum_{j=1}^p \rho(\parallel\beta_j\parallel_2; \s
 <li><strong>中文角标</strong>要放入盒子，并指定字体大小<code>$x^{\mbox{\scriptsize 平方}}$</code></li>
 <li>可以根据需要手工改变角标字体大小或层次</li>
 </ul>
+<h2 id="字体"><a class="header-anchor" href="#字体"></a>字体</h2>
+<ul>
+<li>实数R（空心）：<code>\mathbb{R}</code></li>
+</ul>
 <h2 id="常用数学符号"><a class="header-anchor" href="#常用数学符号"></a>常用数学符号</h2>
 <table>
 <thead>
@@ -4034,7 +4038,7 @@ $$P_{\lambda, \gamma}(\beta) = \sum_{j=1}^p \rho(\parallel\beta_j\parallel_2; \s
 <li>1 in = 2.54 cm = 72.27 pt</li>
 </ul>
 <h1 id="资源"><a class="header-anchor" href="#资源"></a>资源</h1>
-<h2 id="字体"><a class="header-anchor" href="#字体"></a>字体</h2>
+<h2 id="字体-2"><a class="header-anchor" href="#字体-2"></a>字体</h2>
 <ul>
 <li><a href="https://tug.org/FontCatalogue/" target="_blank" rel="noopener">LaTex Font Catalogue</a></li>
 </ul>
@@ -18071,7 +18075,7 @@ $$VIP顾客销售额占比=\frac{会员顾客消费金额}{总销售额}\times10
 <li>迭代（iterative）算法</li>
 </ul>
 <div class="note danger">
-            <h2 id="算法"><a class="header-anchor" href="#算法"></a>算法</h2><p><strong>输入</strong>：</p><ul><li>$K$（类的个数）</li><li>训练集${x^{(1)}, x^{(2)}, \cdots, x^{(n)} }$</li></ul>
+            <h2 id="算法"><a class="header-anchor" href="#算法"></a>算法</h2><p><strong>输入</strong>：</p><ul><li>类的个数：$K$</li><li>训练集：${ x^{(1)}, x^{(2)}, \cdots, x^{(n)} }$（其中，$x^{(i)}\in \mathbb{R}^{n}$）</li></ul><p><strong>训练</strong>：</p><p><strong>输出</strong>：</p>
           </div>
 <h1 id="确定K的方法"><a class="header-anchor" href="#确定K的方法"></a>确定K的方法</h1>
 <h2 id="按需选择"><a class="header-anchor" href="#按需选择"></a>按需选择</h2>
