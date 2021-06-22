@@ -16130,7 +16130,7 @@ $$D_{ik}=D_i\cap C_k$$<br>
 $|D_{ik}|$为$D_{ik}$的样本个数</li>
 </ul>
 <div class="note danger">
-            <p><strong>信息增益算法</strong><br>输入：训练数据集$D$和特征$A$</p><p>输出：特征$A$对训练数据集$D$的信息增益$g(D,A)$</p><ol><li>计算训练集$D$的经验熵$H(D)$<br>$$H(D)=-\sum_{k=1}^K\frac{|C_k|}{|D|}\log{\frac{|C_k|}{|D|}}$$</li><li>计算特征$A$对数据集$D$的经验条件熵$H(D|A)$<br>\begin{equation}<br>\begin{aligned}<br>H(D|A)&amp;=\sum_{i=1}^m\frac{|D_i|}{|D|}H(D_i)\<br>&amp;=-\sum_{i=1}<sup>m\frac{|D_i|}{|D|}\sum_{k=1}</sup>K\frac{|D_{ik}|}{|D_i|}\log{\frac{|D_{ik}|}{|D_i|}}\<br>&amp;= -\sum_{i=1}<sup>m\sum_{k=1}</sup>K\frac{|D_{ik}|}{|D|}\log{\frac{|D_{ik}|}{|D_i|}}<br>\end{aligned}<br>\end{equation}</li><li>计算信息增益<br>$$g(D,A)=H(D)-H(D|A)$$</li></ol>
+            <p><strong>信息增益算法</strong><br>输入：训练数据集$D$和特征$A$</p><p>输出：特征$A$对训练数据集$D$的信息增益$g(D,A)$</p><ol><li>计算训练集$D$的经验熵$H(D)$<br>$$H(D)=-\sum_{k=1}^K\frac{|C_k|}{|D|}\log{\frac{|C_k|}{|D|}}$$</li><li>计算特征$A$对数据集$D$的经验条件熵$H(D|A)$<br>$$\begin{aligned} H(D|A)&amp;=\sum_{i=1}^m\frac{|D_i|}{|D|}H(D_i)\<br>&amp;=-\sum_{i=1}<sup>m\frac{|D_i|}{|D|}\sum_{k=1}</sup>K\frac{|D_{ik}|}{|D_i|}\log{\frac{|D_{ik}|}{|D_i|}}\<br>&amp;= -\sum_{i=1}<sup>m\sum_{k=1}</sup>K\frac{|D_{ik}|}{|D|}\log{\frac{|D_{ik}|}{|D_i|}}<br>\end{aligned}$$</li><li>计算信息增益<br>$$g(D,A)=H(D)-H(D|A)$$</li></ol>
           </div>
 <ul>
 <li>可用信息增益来进行决策树的划分属性选择<br>
