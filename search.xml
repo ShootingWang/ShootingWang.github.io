@@ -16244,10 +16244,8 @@ $$a^*=\arg\max_{a\in A} g(D,a)$$</li>
   <entry>
     <title>Machine Learning | Logistic Regression</title>
     <url>/%E7%AE%97%E6%B3%95-LogisticRegression.html</url>
-    <content><![CDATA[<center>逻辑回归</center>
-<a id="more"></a>
-<h1 id="Logistic-Regression"><a class="header-anchor" href="#Logistic-Regression"></a>Logistic Regression</h1>
-<p>逻辑回归（<strong>LR</strong>，Logistic Regression），是一种<u>对数几率模型</u>（Logit Model），常用于二分类问题（binary classification problems）</p>
+    <content><![CDATA[<p><center>逻辑回归</center><br><a id="more"></a></p>
+<h1 id="Logistic-Regression"><a href="#Logistic-Regression" class="headerlink" title="Logistic Regression"></a>Logistic Regression</h1><p>逻辑回归（<strong>LR</strong>，Logistic Regression），是一种<u>对数几率模型</u>（Logit Model），常用于二分类问题（binary classification problems）</p>
 <ul>
 <li>逻辑回归和线性回归（Linear Regression）都是一种广义线性模型（GLM，Generalized Linear Model）</li>
 <li>属于<strong>有监督学习</strong>（Supervised Learning）</li>
@@ -16256,7 +16254,6 @@ $$a^*=\arg\max_{a\in A} g(D,a)$$</li>
 </ul>
 <blockquote>
 <p>其他分类器有：</p>
-</blockquote>
 <ul>
 <li>判别分析（Discriminant Analysis）</li>
 <li>决策树（Decision Tree）</li>
@@ -16265,207 +16262,138 @@ $$a^*=\arg\max_{a\in A} g(D,a)$$</li>
 <li>神经网络（Neural Network）</li>
 <li>……</li>
 </ul>
-<h2 id="逻辑分布"><a class="header-anchor" href="#逻辑分布"></a>逻辑分布</h2>
-<p>Logistic分布是一种连续型分布，其分布函数（Cumulative distribution function）为<br>
-$$F(x)=P(X\leq x)=\frac{1}{1+e^{-(x-\mu)/s}}=\frac{1}{2}+\frac{1}{2}\tanh\left(\frac{x-\mu}{2s}\right)$$</p>
-<meta name="referrer" content="no-referrer">
-<img src="/%E7%AE%97%E6%B3%95-LogisticRegression/LR-CDF.png" class title="不同取值参数对应的CDF">
-<p>概率密度函数为<br>
-$$<br>
-f(x)=F^\prime (x)=\frac{e^{-(x-\mu)/s}}{s \left( 1+e^{-(x-\mu)/s} \right)^2}=\frac{1}{4s} \mathrm{sech}^2 \left( \frac{x-2\mu}{2s} \right),\quad -\infty&lt; x&lt; +\infty<br>
-$$<br>
-其中</p>
+</blockquote>
+<h2 id="逻辑分布"><a href="#逻辑分布" class="headerlink" title="逻辑分布"></a>逻辑分布</h2><p>Logistic分布是一种连续型分布，其分布函数（Cumulative distribution function）为</p>
+<script type="math/tex; mode=display">F(x)=P(X\leq x)=\frac{1}{1+e^{-(x-\mu)/s}}=\frac{1}{2}+\frac{1}{2}\tanh\left(\frac{x-\mu}{2s}\right)</script><p><meta name="referrer" content="no-referrer"><br><img src="/%E7%AE%97%E6%B3%95-LogisticRegression/LR-CDF.png" class title="不同取值参数对应的CDF"></p>
+<p>概率密度函数为</p>
+<script type="math/tex; mode=display">
+f(x)=F^\prime (x)=\frac{e^{-(x-\mu)/s}}{s \left( 1+e^{-(x-\mu)/s} \right)^2}=\frac{1}{4s} \mathrm{sech}^2 \left( \frac{x-2\mu}{2s} \right),\quad -\infty< x< +\infty</script><p>其中</p>
 <ul>
 <li>$\mu$为位置参数（location parameter）</li>
 <li>$s$为尺度参数（scale parameter）</li>
-<li>期望<br>
-$$\mathrm{E(X)}=\mu$$</li>
-<li>中位数<br>
-$$\mathrm{Median(X)}=\mu$$</li>
-<li>方差<br>
-$$\mathrm{Var}(X)=\frac{s^2 \pi^2}{3}$$</li>
+<li>期望<script type="math/tex; mode=display">\mathrm{E(X)}=\mu</script></li>
+<li>中位数<script type="math/tex; mode=display">\mathrm{Median(X)}=\mu</script></li>
+<li>方差<script type="math/tex; mode=display">\mathrm{Var}(X)=\frac{s^2 \pi^2}{3}</script></li>
 </ul>
-<meta name="referrer" content="no-referrer">
-<img src="/%E7%AE%97%E6%B3%95-LogisticRegression/LR-pdf.png" class title="不同取值参数对应的pdf">
-<h2 id="逻辑函数"><a class="header-anchor" href="#逻辑函数"></a>逻辑函数</h2>
-<p>一个简单的Logistic函数：<br>
-$$P(t)=\frac{1}{1+e^{-t}}$$</p>
-<meta name="referrer" content="no-referrer">
-<img src="/%E7%AE%97%E6%B3%95-LogisticRegression/LR-slog.png" class title="标准Logistic函数">
+<p><meta name="referrer" content="no-referrer"><br><img src="/%E7%AE%97%E6%B3%95-LogisticRegression/LR-pdf.png" class title="不同取值参数对应的pdf"></p>
+<h2 id="逻辑函数"><a href="#逻辑函数" class="headerlink" title="逻辑函数"></a>逻辑函数</h2><p>一个简单的Logistic函数：</p>
+<script type="math/tex; mode=display">P(t)=\frac{1}{1+e^{-t}}</script><p><meta name="referrer" content="no-referrer"><br><img src="/%E7%AE%97%E6%B3%95-LogisticRegression/LR-slog.png" class title="标准Logistic函数"></p>
 <p>广义Logistic曲线可以模拟一些人口增长的S形曲线：初始阶段大致是指数增长；然后开始变得饱和，增加变慢；最后，达到成熟时增加停止。</p>
-<h2 id="逻辑回归"><a class="header-anchor" href="#逻辑回归"></a>逻辑回归</h2>
-<p>逻辑回归通常用于二分类问题（因变量是分类变量），用来表示某件事发生的可能性。</p>
+<h2 id="逻辑回归"><a href="#逻辑回归" class="headerlink" title="逻辑回归"></a>逻辑回归</h2><p>逻辑回归通常用于二分类问题（因变量是分类变量），用来表示某件事发生的可能性。</p>
 <p>Andrew Ng的CS229中的例子：根据肿瘤的大小（Tumor Size）$X$来判断肿瘤是否是恶性的（Malignant）$Y$。</p>
 <p>考虑构建线性回归模型$h_\theta(x)$，$h_\theta(x)\geq 0.5$ 为恶性肿瘤，$h_\theta(x)&lt;0.5$为良性肿瘤。</p>
-<p>\begin{equation}<br>
-Y= \left{<br>
-\begin{array}{ll}<br>
-1, &amp; \mbox{如果} h_\theta(x) \geq 0.5\<br>
-0, &amp; \mbox{如果} h_\theta(x) &lt;0.5\<br>
-\end{array} \right.<br>
-\end{equation}</p>
+<p>\begin{equation}<br>Y= \left\{<br>\begin{array}{ll}<br>1, &amp; \mbox{如果} h_\theta(x) \geq 0.5\\<br>0, &amp; \mbox{如果} h_\theta(x) &lt;0.5\\<br>\end{array} \right.<br>\end{equation}</p>
 <p>Logistic函数<strong>Sigmoid函数</strong>可以将任意实数值映射到(0,1)区间（不包括0和1，但可以无限接近）。因此，使用Sigmoid函数来将线性回归的结果按照一定的阈值分为2类（二分类问题）或更多类（多分类问题）。</p>
-<meta name="referrer" content="no-referrer">
-<img src="/%E7%AE%97%E6%B3%95-LogisticRegression/LR-heart.png" class title="来自：机器之心-从原理到应用-简述Logistic回归算法">
-<p>令<br>
-$$h_\theta(x)=g(\theta^T x)=\frac{1}{1+e<sup>{-\theta</sup>T x}}=\frac{e<sup>{\theta</sup>T x}}{1+e<sup>{\theta</sup>T x}}$$<br>
-其中$z=\theta^Tx$（这里$x$包含截距项），Sigmoid函数为<br>
-$$g(z)=\frac{1}{1+e<sup>{-z}}=\frac{e</sup>z}{1+e^z}$$<br>
-Sigmoid保证$h_\theta(x)$取值在0和1之间（概率取值范围为$(0,1)$）。</p>
-<p><strong>Log-odds</strong>，也称<strong>Logit</strong>（Logit transformation / Link function）表示为<br>
-$$\log\frac{p}{1-p}=\log\frac{h_\theta(x)}{1-h_\theta(x)}=\theta^Tx$$<br>
-其中$p=h_\theta(x)$表示概率。</p>
-<p>$h_\theta(x)$表示输入$x$后分类结果为1的概率<br>
-$$P(Y=1|x;\theta)=h_\theta(x)$$<br>
-$$P(Y=0|x;\theta)=1-h_\theta(x)$$<br>
-因此，因变量$Y$服从Bernoulli分布<br>
-$$Y|X=x_i\sim \mathrm{Bernoulli}\left(h_\theta(x_i)\right)$$</p>
-<p>概率函数为<br>
-$$P(y|x;\theta)=\left[h_\theta(x) \right]^y\left[1-h_\theta(x) \right]^{1-y}$$<br>
-使用训练数据集$x={x_1,x_2,\cdots,x_n}$（特征数据）和$y={y_1,y_2\cdots,y_n}$（分类数据）构建回归模型。</p>
-<h3 id="损失函数"><a class="header-anchor" href="#损失函数"></a>损失函数</h3>
-<p>对于单个样本，其损失函数可以表示为</p>
-<p>\begin{equation}<br>
-\mathrm{Cost}(h_\theta(X),y)=\left{<br>
-\begin{array}{ll}<br>
--\log{h_\theta(X)},&amp; \mathrm{if}\quad y=1\<br>
--\log{\left(1-h_\theta(X)\right)}, &amp; \mathrm{if }\quad y=0\end{array}<br>
-\right.<br>
-\end{equation}</p>
-<p>即<br>
-$$\mathrm{Cost}(h_\theta(X),y)=-\left[y\log{h_\theta(X)}+(1-y)\log{\left(1-h_\theta(X)\right)} \right]$$<br>
-该式被称为<strong>交叉熵代价函数</strong>（cross entropy cost function）。</p>
+<p><meta name="referrer" content="no-referrer"><br><img src="/%E7%AE%97%E6%B3%95-LogisticRegression/LR-heart.png" class title="来自：机器之心-从原理到应用-简述Logistic回归算法"></p>
+<p>令</p>
+<script type="math/tex; mode=display">h_\theta(x)=g(\theta^T x)=\frac{1}{1+e^{-\theta^T x}}=\frac{e^{\theta^T x}}{1+e^{\theta^T x}}</script><p>其中$z=\theta^Tx$（这里$x$包含截距项），Sigmoid函数为</p>
+<script type="math/tex; mode=display">g(z)=\frac{1}{1+e^{-z}}=\frac{e^z}{1+e^z}</script><p>Sigmoid保证$h_\theta(x)$取值在0和1之间（概率取值范围为$(0,1)$）。</p>
+<p><strong>Log-odds</strong>，也称<strong>Logit</strong>（Logit transformation / Link function）表示为</p>
+<script type="math/tex; mode=display">\log\frac{p}{1-p}=\log\frac{h_\theta(x)}{1-h_\theta(x)}=\theta^Tx</script><p>其中$p=h_\theta(x)$表示概率。</p>
+<p>$h_\theta(x)$表示输入$x$后分类结果为1的概率</p>
+<script type="math/tex; mode=display">P(Y=1|x;\theta)=h_\theta(x)</script><script type="math/tex; mode=display">P(Y=0|x;\theta)=1-h_\theta(x)</script><p>因此，因变量$Y$服从Bernoulli分布</p>
+<script type="math/tex; mode=display">Y|X=x_i\sim \mathrm{Bernoulli}\left(h_\theta(x_i)\right)</script><p>概率函数为</p>
+<script type="math/tex; mode=display">P(y|x;\theta)=\left[h_\theta(x) \right]^y\left[1-h_\theta(x) \right]^{1-y}</script><p>使用训练数据集$x=\{x_1,x_2,\cdots,x_n\}$（特征数据）和$y=\{y_1,y_2\cdots,y_n\}$（分类数据）构建回归模型。</p>
+<h3 id="损失函数"><a href="#损失函数" class="headerlink" title="损失函数"></a>损失函数</h3><p>对于单个样本，其损失函数可以表示为</p>
+<p>\begin{equation}<br>\mathrm{Cost}(h_\theta(X),y)=\left\{<br>  \begin{array}{ll}<br>  -\log{h_\theta(X)},&amp; \mathrm{if}\quad y=1\\<br>  -\log{\left(1-h_\theta(X)\right)}, &amp; \mathrm{if }\quad y=0\end{array}<br>  \right.<br>\end{equation}</p>
+<p>即</p>
+<script type="math/tex; mode=display">\mathrm{Cost}(h_\theta(X),y)=-\left[y\log{h_\theta(X)}+(1-y)\log{\left(1-h_\theta(X)\right)} \right]</script><p>该式被称为<strong>交叉熵代价函数</strong>（cross entropy cost function）。</p>
 <p>对于训练集的所有样本(样本量为$n$)来说，共同造成的损失函数的均值为</p>
-<p>$$<br>
-\begin{aligned}<br>
-H_{\theta(X)} &amp;=\frac{1}{n} \sum_{i=1}^n \mathrm{Cost} \left( h_{\theta}(X<sup>{(i)}),y</sup>{(i)} \right)\<br>
-&amp;= -\frac{1}{n} \sum_{i=1}^n \left[ y^{(i)} \log{h_\theta(X<sup>{(i)})}+(1-y</sup>{(i)}) \log{ \left(1-h_\theta(X^{(i)})\right) } \right]<br>
-\end{aligned}<br>
-$$</p>
-<p>如何求解逻辑回归方程中的参数？通常使用极大似然法。</p>
-<h3 id="极大似然法"><a class="header-anchor" href="#极大似然法"></a>极大似然法</h3>
-<p>$n$个独立样本的似然函数为<br>
-$$L(\theta)=\Pi_{i=1}<sup>nP(y_i|x_i;\theta)=\Pi_{i=1}</sup>nh_\theta(x_i)^{y_i}\left[1-h_\theta(x_i) \right]^{1-y_i}$$<br>
-对数似然函数为<br>
-$$<br>
-\begin{aligned}<br>
-l(\theta)=\log{L(\theta)}&amp;=\sum_{i=1}^n\left{y_i\log{h_\theta(x_i)}+(1-y_i)\log{\left[1-h_\theta(x_i) \right]}\right}\<br>
-&amp;= \sum_{i=1}<sup>n\left{y_i\theta</sup>Tx_i-\log{\left[1+e<sup>{\theta</sup>Tx_i} \right]}\right}<br>
-\end{aligned}<br>
-$$</p>
-<p>其中<br>
-$$\log{h_\theta(x_i)}=\log{\frac{e<sup>{\theta</sup>Tx_i}}{1+e<sup>{\theta</sup>Tx_i}}}=\theta<sup>Tx_i-\log{\left[1+e</sup>{\theta^Tx_i}\right]}$$<br>
-$$\log{\left[1-h_\theta(x_i) \right]}=\log{\frac{1}{1+e<sup>{\theta</sup>Tx_i}}}=-\log{\left[1+e<sup>{\theta</sup>Tx_i} \right]}$$</p>
-<p>$$\max{L(\theta)} \Leftrightarrow \max{l(\theta)} \Leftrightarrow \min { -l(\theta)} $$<br>
-其中$-l(\theta)=-\log{L(\theta)}$称为<strong>交叉熵误差函数</strong>（cross-entropy error function）/交叉熵代价函数。</p>
-<p>考虑$p+1$维的参数$\theta=(\theta_0,\theta_1,\cdots,\theta_p)^T$，其中$\theta_0$ 为线性回归方程$z=\theta^Tx$的截距。<br>
-$$<br>
-\theta=\left(<br>
-\begin{array}{c}<br>
-\theta_0\<br>
-\theta_1\<br>
-\theta_2\<br>
-\vdots\<br>
-\theta_p<br>
-\end{array}<br>
-\right),<br>
-\quad<br>
-x_i=\left(<br>
-\begin{array}{c}<br>
-1\<br>
-x_{i1}\<br>
-x_{i2}\<br>
-\vdots\<br>
-x_{ip}<br>
-\end{array}<br>
-\right)<br>
-$$</p>
-<p>对数似然函数$l(\theta)$分别对$\theta_j\ (j=0,1,\cdots,p)$求偏导，并令导数为零<br>
-$$\frac{\partial{l(\theta)}}{\partial{\theta_j}}=\sum_{i=1}<sup>n\left{y_ix_{ij}-\frac{e</sup>{\theta<sup>Tx_i}}{1+e</sup>{\theta<sup>Tx_i}}x_{ij}\right}=\sum_{i=1}</sup>n\left{x_{ij}\left[y_i-h_\theta(x_i) \right]\right}=0$$<br>
-写成向量形式<br>
-$$\frac{\partial{l(\theta)}}{\partial{\theta}}=\sum_{i=1}^n\left{x_i\left[y_i-h_\theta(x_i) \right]\right}=0$$<br>
-该式也被称为<strong>score equation</strong>。</p>
-<p>这里$x_i$的第一个元素为1，因此由上式可得<br>
-$$\sum_{i=1}<sup>ny_i=\sum_{i=1}</sup>nh_\theta(x_i)$$<br>
-表示$Y$取值为1的样本量（$n$个样本中得恶性肿瘤的人数）等于“事件”（如肿瘤为恶性肿瘤）发生的概率和。</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+  H_{\theta(X)} &=\frac{1}{n} \sum_{i=1}^n \mathrm{Cost} \left( h_{\theta}(X^{(i)}),y^{(i)} \right)\\
+  &= -\frac{1}{n} \sum_{i=1}^n \left[ y^{(i)} \log{h_\theta(X^{(i)})}+(1-y^{(i)}) \log{ \left(1-h_\theta(X^{(i)})\right) } \right]
+\end{aligned}</script><p>如何求解逻辑回归方程中的参数？通常使用极大似然法。</p>
+<h3 id="极大似然法"><a href="#极大似然法" class="headerlink" title="极大似然法"></a>极大似然法</h3><p>$n$个独立样本的似然函数为</p>
+<script type="math/tex; mode=display">L(\theta)=\Pi_{i=1}^nP(y_i|x_i;\theta)=\Pi_{i=1}^nh_\theta(x_i)^{y_i}\left[1-h_\theta(x_i) \right]^{1-y_i}</script><p>对数似然函数为</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+  l(\theta)=\log{L(\theta)}&=\sum_{i=1}^n\left\{y_i\log{h_\theta(x_i)}+(1-y_i)\log{\left[1-h_\theta(x_i) \right]}\right\}\\
+  &= \sum_{i=1}^n\left\{y_i\theta^Tx_i-\log{\left[1+e^{\theta^Tx_i} \right]}\right\}
+\end{aligned}</script><p>其中</p>
+<script type="math/tex; mode=display">\log{h_\theta(x_i)}=\log{\frac{e^{\theta^Tx_i}}{1+e^{\theta^Tx_i}}}=\theta^Tx_i-\log{\left[1+e^{\theta^Tx_i}\right]}</script><script type="math/tex; mode=display">\log{\left[1-h_\theta(x_i) \right]}=\log{\frac{1}{1+e^{\theta^Tx_i}}}=-\log{\left[1+e^{\theta^Tx_i} \right]}</script><script type="math/tex; mode=display">\max{L(\theta)} \Leftrightarrow \max{l(\theta)} \Leftrightarrow \min \{ -l(\theta)\}</script><p>其中$-l(\theta)=-\log{L(\theta)}$称为<strong>交叉熵误差函数</strong>（cross-entropy error function）/交叉熵代价函数。</p>
+<p>考虑$p+1$维的参数$\theta=(\theta_0,\theta_1,\cdots,\theta_p)^T$，其中$\theta_0$ 为线性回归方程$z=\theta^Tx$的截距。</p>
+<script type="math/tex; mode=display">
+\theta=\left(
+\begin{array}{c}
+  \theta_0\\
+  \theta_1\\
+  \theta_2\\
+  \vdots\\
+  \theta_p
+\end{array}
+\right),
+\quad
+x_i=\left(
+\begin{array}{c}
+  1\\
+  x_{i1}\\
+  x_{i2}\\
+  \vdots\\
+  x_{ip}
+\end{array}
+\right)</script><p>对数似然函数$l(\theta)$分别对$\theta_j\ (j=0,1,\cdots,p)$求偏导，并令导数为零</p>
+<script type="math/tex; mode=display">\frac{\partial{l(\theta)}}{\partial{\theta_j}}=\sum_{i=1}^n\left\{y_ix_{ij}-\frac{e^{\theta^Tx_i}}{1+e^{\theta^Tx_i}}x_{ij}\right\}=\sum_{i=1}^n\left\{x_{ij}\left[y_i-h_\theta(x_i) \right]\right\}=0</script><p>写成向量形式</p>
+<script type="math/tex; mode=display">\frac{\partial{l(\theta)}}{\partial{\theta}}=\sum_{i=1}^n\left\{x_i\left[y_i-h_\theta(x_i) \right]\right\}=0</script><p>该式也被称为<strong>score equation</strong>。</p>
+<p>这里$x_i$的第一个元素为1，因此由上式可得</p>
+<script type="math/tex; mode=display">\sum_{i=1}^ny_i=\sum_{i=1}^nh_\theta(x_i)</script><p>表示$Y$取值为1的样本量（$n$个样本中得恶性肿瘤的人数）等于“事件”（如肿瘤为恶性肿瘤）发生的概率和。</p>
 <p>当$p$较小时，score equation可得到解析解（精确解）；但当$p$较大时，score equation 往往得不到解析解。这时，可以考虑使用Newton-Raphson算法求得数值解（numerical solution）。</p>
-<h3 id="Newton-Raphson算法"><a class="header-anchor" href="#Newton-Raphson算法"></a>Newton-Raphson算法</h3>
-<p>首先计算二阶偏导（Hessian Matrix）：<br>
-$$<br>
-\begin{aligned}<br>
-\frac{\partial^2 l(\theta)}{\partial{\theta_k} \partial{\theta_j}} &amp;= \frac{\partial}{\partial{\theta_k}}\sum_{i=1}^n\left{x_{ij}\left[ y_i-h_\theta(x_i) \right] \right}\<br>
-&amp;=\frac{\partial}{\partial{\theta_k}} \sum_{i=1}^n \left{x_{ij} \left[y_i-\frac{e<sup>{\theta</sup>Tx_i}}{1+e<sup>{\theta</sup>Tx_i}} \right]\right}\<br>
-&amp;=\sum_{i=1}^nx_{ij} \left{-\frac{e<sup>{\theta</sup>Tx_i}x_{ik}(1+e<sup>{\theta</sup>Tx_i})-e<sup>{\theta</sup>Tx_i}e<sup>{\theta</sup>Tx_i}x_{ik}}{ \left(1+e<sup>{\theta</sup>Tx_i} \right)^2} \right}\<br>
-&amp;=-\sum_{i=1}<sup>nx_{ij}x_{ik}\frac{e</sup>{\theta<sup>Tx_i}}{1+e</sup>{\theta^Tx_i}} \left(1-\frac{e<sup>{\theta</sup>Tx_i}}{1+e<sup>{\theta</sup>Tx_i}} \right)\<br>
-&amp;=-\sum_{i=1}^nx_{ij}x_{ij}h_\theta(x_i) \left[1-h_\theta(x_i) \right] \<br>
-\end{aligned}<br>
-$$</p>
-<p>其中$j,k=0,1,\cdots,p$。</p>
-<p><strong>Hessian Matrix</strong>为<br>
-$$\frac{\partial<sup>2l(\theta)}{\partial\theta\partial\theta</sup>T}=-\sum_{i=1}<sup>nx_ix_i</sup>Th_\theta(x_i)[1- h_\theta(x_i)]$$</p>
-<p>由$\theta^{old}$开始，Newton-Raphson的更新步骤（updating step）为<br>
-$$\theta<sup>{new}=\theta</sup>{old}-\left[\frac{\partial<sup>2l(\theta)}{\partial\theta\partial\theta</sup>T}\right]^{-1}\frac{\partial{l(\theta)}}{\partial\theta}$$<br>
-这里考虑步长为1的pure Newton’s Method。即<br>
-$$\theta<sup>{new}=\theta</sup>{old}-\alpha\left[\frac{\partial<sup>2l(\theta)}{\partial\theta\partial\theta</sup>T}\right]^{-1}\frac{\partial{l(\theta)}}{\partial\theta}\quad \mbox{with}\ \alpha=1$$<br>
-用矩阵形式表示<br>
-$$<br>
-\mathbf{y}=\left(<br>
-\begin{array}{c}<br>
-y_1\<br>
-y_2\<br>
-\vdots\<br>
-y_n<br>
-\end{array}<br>
-\right),\quad<br>
-\mathbf{X}=\left(<br>
-\begin{array}{c}<br>
-x_1^T\<br>
-x_2^T\<br>
-\vdots\<br>
-x_n^T<br>
-\end{array}<br>
-\right)=<br>
-\left(<br>
-\begin{array}{ccccc}<br>
-1 &amp; x_{11} &amp; x_{12} &amp; \cdots &amp; x_{1p}\<br>
-1 &amp; x_{21} &amp; x_{22} &amp; \cdots &amp; x_{2p}\<br>
-\vdots &amp; \vdots &amp; \vdots &amp;\ddots &amp; \vdots \<br>
-1 &amp; x_{n1} &amp; x_{n2} &amp; \cdots &amp; x_{np}<br>
-\end{array}<br>
-\right)<br>
-$$</p>
-<p>\begin{equation}<br>
-\mathbf{P}=\left(<br>
-\begin{array}{c}<br>
-h_{\theta^{old}}(x_1)\<br>
-h_{\theta^{old}}(x_2)\<br>
-\vdots\<br>
-h_{\theta^{old}}(x_n)<br>
-\end{array}<br>
-\right),\quad<br>
-\mathbf{W}=\mathrm{diag}\left{<br>
-h_{\theta<sup>{old}}(x_i)(1-h_{\theta</sup>{old}}(x_i))<br>
-\right}<br>
-\end{equation}</p>
-<p>则有<br>
-$$\frac{\partial{l(\theta)}}{\partial\theta}=\mathbf{X}^T(\mathbf{y}-\mathbf{P})$$<br>
-$$\frac{\partial<sup>2l(\theta)}{\partial\theta\partial\theta</sup>T}=-\mathbf{X}^T\mathbf{W}\mathbf{X}$$</p>
-<p>因此<br>
-\begin{equation}<br>
-\begin{aligned}<br>
-\theta<sup>{new}&amp;=\theta</sup>{old}-\left[\frac{\partial<sup>2l(\theta)}{\partial\theta\partial\theta</sup>T} \right]^{-1}\frac{\partial{l(\theta)}}{\partial\theta}\<br>
-&amp;= \theta<sup>{old}+\left(\mathbf{X}</sup>T\mathbf{W}\mathbf{X}\right)<sup>{-1}\mathbf{X}</sup>T(\bf{y}-\bf{P})\<br>
-&amp;= \left(\mathbf{X}<sup>T\mathbf{W}\mathbf{X}\right)</sup>{-1}\mathbf{X}<sup>T\mathbf{W}\left[\mathbf{X}\theta</sup>{old}+\mathbf{W}^{-1}(\mathbf{y}-\mathbf{P}) \right]\<br>
-&amp;= \left(\mathbf{X}<sup>T\mathbf{W}\mathbf{X}\right)</sup>{-1}\mathbf{X}^T\mathbf{W}\mathbf{z}<br>
-\end{aligned}<br>
-\end{equation}</p>
-<p>其中$\mathbf{z}=\mathbf{X}\theta<sup>{old}+\mathbf{W}</sup>{-1}(\mathbf{y}-\mathbf{P})$。</p>
+<h3 id="Newton-Raphson算法"><a href="#Newton-Raphson算法" class="headerlink" title="Newton-Raphson算法"></a>Newton-Raphson算法</h3><p>首先计算二阶偏导（Hessian Matrix）：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\frac{\partial^2 l(\theta)}{\partial{\theta_k} \partial{\theta_j}} &= \frac{\partial}{\partial{\theta_k}}\sum_{i=1}^n\left\{x_{ij}\left[ y_i-h_\theta(x_i) \right] \right\}\\
+&=\frac{\partial}{\partial{\theta_k}} \sum_{i=1}^n \left\{x_{ij} \left[y_i-\frac{e^{\theta^Tx_i}}{1+e^{\theta^Tx_i}} \right]\right\}\\
+&=\sum_{i=1}^nx_{ij} \left\{-\frac{e^{\theta^Tx_i}x_{ik}(1+e^{\theta^Tx_i})-e^{\theta^Tx_i}e^{\theta^Tx_i}x_{ik}}{ \left(1+e^{\theta^Tx_i} \right)^2} \right\}\\
+&=-\sum_{i=1}^nx_{ij}x_{ik}\frac{e^{\theta^Tx_i}}{1+e^{\theta^Tx_i}} \left(1-\frac{e^{\theta^Tx_i}}{1+e^{\theta^Tx_i}} \right)\\
+&=-\sum_{i=1}^nx_{ij}x_{ij}h_\theta(x_i) \left[1-h_\theta(x_i) \right] \\
+\end{aligned}</script><p>其中$j,k=0,1,\cdots,p$。</p>
+<p><strong>Hessian Matrix</strong>为</p>
+<script type="math/tex; mode=display">\frac{\partial^2l(\theta)}{\partial\theta\partial\theta^T}=-\sum_{i=1}^nx_ix_i^Th_\theta(x_i)[1- h_\theta(x_i)]</script><p>由$\theta^{old}$开始，Newton-Raphson的更新步骤（updating step）为</p>
+<script type="math/tex; mode=display">\theta^{new}=\theta^{old}-\left[\frac{\partial^2l(\theta)}{\partial\theta\partial\theta^T}\right]^{-1}\frac{\partial{l(\theta)}}{\partial\theta}</script><p>这里考虑步长为1的pure Newton’s Method。即</p>
+<script type="math/tex; mode=display">\theta^{new}=\theta^{old}-\alpha\left[\frac{\partial^2l(\theta)}{\partial\theta\partial\theta^T}\right]^{-1}\frac{\partial{l(\theta)}}{\partial\theta}\quad \mbox{with}\ \alpha=1</script><p>用矩阵形式表示</p>
+<script type="math/tex; mode=display">
+\mathbf{y}=\left(
+\begin{array}{c}
+  y_1\\
+  y_2\\
+  \vdots\\
+  y_n
+\end{array}
+\right),\quad
+\mathbf{X}=\left(
+\begin{array}{c}
+  x_1^T\\
+  x_2^T\\
+  \vdots\\
+  x_n^T
+\end{array}
+\right)=
+\left(
+\begin{array}{ccccc}
+  1 & x_{11} & x_{12} & \cdots & x_{1p}\\
+  1 & x_{21} & x_{22} & \cdots & x_{2p}\\
+  \vdots & \vdots & \vdots &\ddots & \vdots \\
+  1 & x_{n1} & x_{n2} & \cdots & x_{np}
+\end{array}
+\right)</script><p>\begin{equation}<br>\mathbf{P}=\left(<br>\begin{array}{c}<br>  h_{\theta^{old}}(x_1)\\<br>  h_{\theta^{old}}(x_2)\\<br>  \vdots\\<br>  h_{\theta^{old}}(x_n)<br>\end{array}<br>\right),\quad<br>\mathbf{W}=\mathrm{diag}\left\{<br>  h_{\theta^{old}}(x_i)(1-h_{\theta^{old}}(x_i))<br>\right\}<br>\end{equation}</p>
+<p>则有</p>
+<script type="math/tex; mode=display">\frac{\partial{l(\theta)}}{\partial\theta}=\mathbf{X}^T(\mathbf{y}-\mathbf{P})</script><script type="math/tex; mode=display">\frac{\partial^2l(\theta)}{\partial\theta\partial\theta^T}=-\mathbf{X}^T\mathbf{W}\mathbf{X}</script><p>因此<br>\begin{equation}<br>\begin{aligned}<br>\theta^{new}&amp;=\theta^{old}-\left[\frac{\partial^2l(\theta)}{\partial\theta\partial\theta^T} \right]^{-1}\frac{\partial{l(\theta)}}{\partial\theta}\\<br>&amp;= \theta^{old}+\left(\mathbf{X}^T\mathbf{W}\mathbf{X}\right)^{-1}\mathbf{X}^T(\bf{y}-\bf{P})\\<br>&amp;= \left(\mathbf{X}^T\mathbf{W}\mathbf{X}\right)^{-1}\mathbf{X}^T\mathbf{W}\left[\mathbf{X}\theta^{old}+\mathbf{W}^{-1}(\mathbf{y}-\mathbf{P}) \right]\\<br>&amp;= \left(\mathbf{X}^T\mathbf{W}\mathbf{X}\right)^{-1}\mathbf{X}^T\mathbf{W}\mathbf{z}<br>\end{aligned}<br>\end{equation}</p>
+<p>其中$\mathbf{z}=\mathbf{X}\theta^{old}+\mathbf{W}^{-1}(\mathbf{y}-\mathbf{P})$。</p>
 <p>每次迭代中，$\bf{P}$更新，$\bf{W}$和$\bf{z}$也随之更新。</p>
 <p>$\theta^{new}$可以看作是$\bf{z}$关于$\bf{X}$回归的加权最小二乘（weighted least square）。</p>
-<p>式<br>
-$$\theta<sup>{new}=\left(\mathbf{X}</sup>T\mathbf{W}\mathbf{X}\right)<sup>{-1}\mathbf{X}</sup>T\mathbf{W}\mathbf{z}$$<br>
-这种迭代法也称为<u>迭代重加权最小二乘</u>（iteratively reweighted least squares，IRLS）。</p>
-<h1 id="逻辑回归-vs-线性回归"><a class="header-anchor" href="#逻辑回归-vs-线性回归"></a>逻辑回归 vs 线性回归</h1>
+<p>式</p>
+<script type="math/tex; mode=display">\theta^{new}=\left(\mathbf{X}^T\mathbf{W}\mathbf{X}\right)^{-1}\mathbf{X}^T\mathbf{W}\mathbf{z}</script><p>这种迭代法也称为<u>迭代重加权最小二乘</u>（iteratively reweighted least squares，IRLS）。</p>
+<h1 id="对比"><a href="#对比" class="headerlink" title="对比"></a>对比</h1><h2 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h2><ul>
+<li>训练速度快</li>
+<li>模型具有较好的解释性</li>
+</ul>
+<h2 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h2><ul>
+<li>不能用逻辑回归解决非线性问题</li>
+<li>对多重共线性数据较为敏感</li>
+<li>在不平衡的数据中表现较差</li>
+<li>不能筛选特征（解释变量），当特征较多时，模型的解释性较差</li>
+</ul>
+<h2 id="逻辑回归-vs-线性回归"><a href="#逻辑回归-vs-线性回归" class="headerlink" title="逻辑回归 vs 线性回归"></a>逻辑回归 vs 线性回归</h2><div class="table-container">
 <table>
 <thead>
 <tr>
@@ -16517,8 +16445,8 @@ $$\theta<sup>{new}=\left(\mathbf{X}</sup>T\mathbf{W}\mathbf{X}\right)<sup>{-1}\m
 </tr>
 </tbody>
 </table>
-<h1 id="参考资料"><a class="header-anchor" href="#参考资料"></a>参考资料</h1>
-<ul>
+</div>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
 <li><a href="https://zh.wikipedia.org/wiki/%E9%82%8F%E8%BC%AF%E8%BF%B4%E6%AD%B8" target="_blank" rel="noopener">维基百科-逻辑回归</a></li>
 <li><a href="https://zhuanlan.zhihu.com/p/28408516" target="_blank" rel="noopener">逻辑回归（Logistic Regression）（一）</a></li>
 <li><a href="https://en.wikipedia.org/wiki/Logistic_distribution" target="_blank" rel="noopener">维基百科-逻辑分布</a></li>
