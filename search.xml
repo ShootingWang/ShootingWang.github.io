@@ -14984,7 +14984,7 @@ $$y_{it} = \alpha_i + x_{it}^T\beta + d_t + \varepsilon_{it}$$<br>
 <p>$$<br>
 Y(1)=\left(<br>
 \begin{array}{ccccc}<br>
-$\Checkmark$ &amp; \Checkmark &amp; ? &amp; \cdots &amp; \Checkmark \<br>
+\Checkmark &amp; \Checkmark &amp; ? &amp; \cdots &amp; \Checkmark \<br>
 ? &amp; \Checkmark &amp; ? &amp; \cdots &amp; ? \<br>
 \vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \<br>
 \Checkmark &amp; ? &amp; ? &amp; \cdots &amp; ?<br>
