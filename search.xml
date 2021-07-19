@@ -3773,92 +3773,59 @@ $$P_{\lambda, \gamma}(\beta) = \sum_{j=1}^p \rho(\parallel\beta_j\parallel_2; \s
   <entry>
     <title>LaTeX</title>
     <url>/LaTeX.html</url>
-    <content><![CDATA[<center></center>
-<a id="more"></a>
-<h1 id="安装"><a class="header-anchor" href="#安装"></a>安装</h1>
-<h2 id="MacOS"><a class="header-anchor" href="#MacOS"></a>MacOS</h2>
-<p>在MacOS可以安装MacTeX，但是完整版较大，安装后显示为TeXShop；可以安装较小的<a href="http://www.tug.org/mactex/morepackages.html" target="_blank" rel="noopener">BasicTeX</a>，并安装编辑器TeXStudio（博主打不开官网）。</p>
+    <content><![CDATA[<p><center></center><br><a id="more"></a></p>
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><h2 id="MacOS"><a href="#MacOS" class="headerlink" title="MacOS"></a>MacOS</h2><p>在MacOS可以安装MacTeX，但是完整版较大，安装后显示为TeXShop；可以安装较小的<a href="http://www.tug.org/mactex/morepackages.html" target="_blank" rel="noopener">BasicTeX</a>，并安装编辑器TeXStudio（博主打不开官网）。</p>
 <ul>
 <li>TeXShop默认编码不是Unicode，需点击TeXShop——偏好设置，将编码改为“Unicode（UTF-8）”，以便能够支持中文编译。</li>
 </ul>
-<h2 id="Windows"><a class="header-anchor" href="#Windows"></a>Windows</h2>
-<p>安装<a href="http://www.ctex.org/HomePage" target="_blank" rel="noopener">CTEX</a>，Windows对应的是<a href="https://miktex.org/" target="_blank" rel="noopener">MiKTeX</a>。</p>
-<h1 id="自定义命令"><a class="header-anchor" href="#自定义命令"></a>自定义命令</h1>
-<ul>
-<li>
-<p><code>\newcommand{新命令}[参数个数]{原命令}</code></p>
+<h2 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h2><p>安装<a href="http://www.ctex.org/HomePage" target="_blank" rel="noopener">CTEX</a>，Windows对应的是<a href="https://miktex.org/" target="_blank" rel="noopener">MiKTeX</a>。</p>
+<h1 id="自定义命令"><a href="#自定义命令" class="headerlink" title="自定义命令"></a>自定义命令</h1><ul>
+<li><code>\newcommand{新命令}[参数个数]{原命令}</code></li>
+<li><code>\newcommand*{新命令}[参数个数]{原命令}</code></li>
+<li><code>\renewcommand{新命令}[参数个数]{原命令}</code></li>
+<li><p><code>\renewcommand*{新命令}[参数个数]{原命令}</code></p>
 </li>
-<li>
-<p><code>\newcommand*{新命令}[参数个数]{原命令}</code></p>
+<li><p>参数个数不能超过9个</p>
 </li>
-<li>
-<p><code>\renewcommand{新命令}[参数个数]{原命令}</code></p>
-</li>
-<li>
-<p><code>\renewcommand*{新命令}[参数个数]{原命令}</code></p>
-</li>
-<li>
-<p>参数个数不能超过9个</p>
-</li>
-<li>
-<p>带星号的称为“短命令”（不能出现段落）</p>
-</li>
-<li>
-<p>LATEX编译时用原命令内容替换新命令，同时将相应的参数代入</p>
-</li>
-<li>
-<p>自定义命令本质上就是命令替换</p>
-</li>
+<li>带星号的称为“短命令”（不能出现段落）</li>
+<li>LATEX编译时用原命令内容替换新命令，同时将相应的参数代入</li>
+<li>自定义命令本质上就是命令替换</li>
 </ul>
 <p>自定义命令的作用范围：</p>
 <ol>
 <li>如果放在导言区，则全局有效</li>
 <li>如果放在正文中的某个环境或分组中定义，则仅在其所在环境或分组内部有效</li>
 </ol>
-<h1 id="表格tabular"><a class="header-anchor" href="#表格tabular"></a>表格tabular</h1>
-<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="tag">\<span class="name">begin</span><span class="string">&#123;tabular&#125;</span><span class="string">[竖向位置]</span><span class="string">&#123;列格式&#125;</span></span></span><br><span class="line">第一行 <span class="tag">\<span class="name">\</span></span></span><br><span class="line">... <span class="tag">\<span class="name">\</span></span></span><br><span class="line">第末行 <span class="tag">\<span class="name">\</span></span></span><br><span class="line"><span class="tag">\<span class="name">end</span><span class="string">&#123;tabular&#125;</span></span></span><br></pre></td></tr></table></figure>
+<h1 id="表格tabular"><a href="#表格tabular" class="headerlink" title="表格tabular"></a>表格tabular</h1><figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="tag">\<span class="name">begin</span><span class="string">&#123;tabular&#125;</span><span class="string">[竖向位置]</span><span class="string">&#123;列格式&#125;</span></span></span><br><span class="line">第一行 <span class="tag">\<span class="name">\</span></span></span><br><span class="line">... <span class="tag">\<span class="name">\</span></span></span><br><span class="line">第末行 <span class="tag">\<span class="name">\</span></span></span><br><span class="line"><span class="tag">\<span class="name">end</span><span class="string">&#123;tabular&#125;</span></span></span><br></pre></td></tr></table></figure>
 <ul>
-<li>
-<p>竖向位置：表格在竖直方向与外部文本行的相对位置，取值可以是t或b，缺省为居中</p>
-</li>
-<li>
-<p>表格每行由若干列组成，列与列之间用&amp;分隔，每行必须用 <code>\\</code> 结束</p>
-</li>
-<li>
-<p>列格式：由若干项组成，用于指定各列的格式，如<code>\begin{tabular}{|c|c|c|}</code></p>
-<ul>
+<li>竖向位置：表格在竖直方向与外部文本行的相对位置，取值可以是t或b，缺省为居中</li>
+<li>表格每行由若干列组成，列与列之间用&amp;分隔，每行必须用 <code>\\</code> 结束</li>
+<li>列格式：由若干项组成，用于指定各列的格式，如<code>\begin{tabular}{|c|c|c|}</code><ul>
 <li><code>l</code>：左对齐</li>
 <li><code>c</code>：居中</li>
 <li><code>r</code>：右对齐</li>
 <li><code>|</code>：边界线</li>
 </ul>
 </li>
-<li>
-<p>横线：</p>
-<ul>
+<li>横线：<ul>
 <li><code>\hline</code>：与表格同宽的水平线</li>
 <li><code>\cline{m-n}</code>：从第m列开始到第n列结束的水平线</li>
 </ul>
 </li>
-<li>
-<p>竖线：</p>
-<ul>
+<li>竖线：<ul>
 <li><code>\vline</code>：在当前位置画一与行等高的竖线</li>
 </ul>
 </li>
-<li>
-<p>合并相邻多列：<code>\multicolumn{列数}{列格式}{文本内容}</code></p>
-<ul>
+<li>合并相邻多列：<code>\multicolumn{列数}{列格式}{文本内容}</code><ul>
 <li>当列数=1时，可以改变当前列的对齐方式</li>
 <li>改变各行之间的间隔（改变行高）：<code>\\[长度]</code></li>
 </ul>
 </li>
-<li>
-<p><a href="https://www.tablesgenerator.com/latex_tables" target="_blank" rel="noopener">Tables Generator</a>：在线编辑表格，生成LaTex语法，可直接复制</p>
-</li>
 </ul>
-<h1 id="幻灯片Beamer"><a class="header-anchor" href="#幻灯片Beamer"></a>幻灯片Beamer</h1>
-<blockquote>
+<ul>
+<li><a href="https://www.tablesgenerator.com/latex_tables" target="_blank" rel="noopener">Tables Generator</a>：在线编辑表格，生成LaTex语法，可直接复制</li>
+</ul>
+<h1 id="幻灯片Beamer"><a href="#幻灯片Beamer" class="headerlink" title="幻灯片Beamer"></a>幻灯片Beamer</h1><blockquote>
 <a href="/LaTeX-Beamer.html" title="LaTeX | Beamer幻灯片">LaTeX | Beamer幻灯片</a>
 </blockquote>
 <p>MacOS可以从“文件”中的“从模板新建”中选择“Beamer”新建幻灯片模板。</p>
@@ -3867,20 +3834,15 @@ $$P_{\lambda, \gamma}(\beta) = \sum_{j=1}^p \rho(\parallel\beta_j\parallel_2; \s
 <li><a href="https://deic-web.uab.cat/~iblanes/beamer_gallery/" target="_blank" rel="noopener">Beamer theme gallery</a></li>
 <li><a href="https://www.overleaf.com/gallery/tagged/presentation#.Wv7RVIiFPIU" target="_blank" rel="noopener">OverLeaf Beamer主题Gallery</a></li>
 </ul>
-<h1 id="文档"><a class="header-anchor" href="#文档"></a>文档</h1>
-<h2 id="摘要Abstract"><a class="header-anchor" href="#摘要Abstract"></a>摘要Abstract</h2>
-<ul>
+<h1 id="文档"><a href="#文档" class="headerlink" title="文档"></a>文档</h1><h2 id="摘要Abstract"><a href="#摘要Abstract" class="headerlink" title="摘要Abstract"></a>摘要Abstract</h2><ul>
 <li>在 <code>\maketitle</code> 之后用 <code>abstract</code> 环境生成</li>
 </ul>
 <figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="tag">\<span class="name">begin</span><span class="string">&#123;abstract&#125;</span></span></span><br><span class="line">摘要内容</span><br><span class="line"><span class="tag">\<span class="name">end</span><span class="string">&#123;abstract&#125;</span></span></span><br></pre></td></tr></table></figure>
-<h2 id="目录"><a class="header-anchor" href="#目录"></a>目录</h2>
-<h3 id="导引线"><a class="header-anchor" href="#导引线"></a>导引线</h3>
-<ul>
+<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><h3 id="导引线"><a href="#导引线" class="headerlink" title="导引线"></a>导引线</h3><ul>
 <li><code>\dotfill</code>：省略号导引线</li>
 <li><code>\hrulefill</code></li>
 </ul>
-<h2 id="脚注footnote"><a class="header-anchor" href="#脚注footnote"></a>脚注footnote</h2>
-<p><code>\footnote{脚注内容}</code></p>
+<h2 id="脚注footnote"><a href="#脚注footnote" class="headerlink" title="脚注footnote"></a>脚注footnote</h2><p><code>\footnote{脚注内容}</code></p>
 <ul>
 <li>该脚注命令应紧接在需要注释的文字后面，排版后会在所在处显示一个脚注标记，并将脚注内容显示在当前页的底部，并带有相同的脚注标记</li>
 <li>脚注标记是上标形式的数字，并自动编号</li>
@@ -3888,28 +3850,21 @@ $$P_{\lambda, \gamma}(\beta) = \sum_{j=1}^p \rho(\parallel\beta_j\parallel_2; \s
 <li>在<code>book</code>和<code>report</code>文档类中，每章的脚注统一编号</li>
 <li>脚注只能位于普通文本中，不能位于数学模式，表格，LR盒子等中</li>
 </ul>
-<h1 id="页面布局"><a class="header-anchor" href="#页面布局"></a>页面布局</h1>
-<h2 id="页高度"><a class="header-anchor" href="#页高度"></a>页高度</h2>
-<p>增加当前页高度：有时可以避免难看的分页</p>
+<h1 id="页面布局"><a href="#页面布局" class="headerlink" title="页面布局"></a>页面布局</h1><h2 id="页高度"><a href="#页高度" class="headerlink" title="页高度"></a>页高度</h2><p>增加当前页高度：有时可以避免难看的分页</p>
 <ol>
 <li><code>\enlargethispage{尺寸}</code> ：可增加的最大高度</li>
 <li><code>\enlargethispage*{尺寸}</code> ：严格指定增加高度</li>
 </ol>
-<h2 id="分段"><a class="header-anchor" href="#分段"></a>分段</h2>
-<h2 id="分页"><a class="header-anchor" href="#分页"></a>分页</h2>
-<ul>
+<h2 id="分段"><a href="#分段" class="headerlink" title="分段"></a>分段</h2><h2 id="分页"><a href="#分页" class="headerlink" title="分页"></a>分页</h2><ul>
 <li>自动分页</li>
 <li>强制分页：<code>\newpage</code></li>
-<li>建议分页：
-<ul>
+<li>建议分页：<ul>
 <li><code>\pagebreak[n]</code></li>
 <li><code>\nopagebreak[n]</code></li>
 </ul>
 </li>
 </ul>
-<h1 id="数学"><a class="header-anchor" href="#数学"></a>数学</h1>
-<h2 id="公式"><a class="header-anchor" href="#公式"></a>公式</h2>
-<p>行间公式：</p>
+<h1 id="数学"><a href="#数学" class="headerlink" title="数学"></a>数学</h1><h2 id="公式"><a href="#公式" class="headerlink" title="公式"></a>公式</h2><p>行间公式：</p>
 <ul>
 <li>独占一行（单行公式）或多行（多行公式）</li>
 <li>行间公式可以编号，也可以不编号</li>
@@ -3918,19 +3873,12 @@ $$P_{\lambda, \gamma}(\beta) = \sum_{j=1}^p \rho(\parallel\beta_j\parallel_2; \s
 </ul>
 <p>单行公式</p>
 <ol>
-<li>不带编号：</li>
-</ol>
-<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="tag">\<span class="name">begin</span><span class="string">&#123;displaymath&#125;</span></span></span><br><span class="line">...</span><br><span class="line"><span class="tag">\<span class="name">end</span><span class="string">&#123;displaymath&#125;</span></span></span><br></pre></td></tr></table></figure>
-<ol start="2">
+<li>不带编号：<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="tag">\<span class="name">begin</span><span class="string">&#123;displaymath&#125;</span></span></span><br><span class="line">...</span><br><span class="line"><span class="tag">\<span class="name">end</span><span class="string">&#123;displaymath&#125;</span></span></span><br></pre></td></tr></table></figure></li>
 <li>上面的简化形式：<code>\[...\]</code></li>
-<li>自动编号：</li>
+<li>自动编号：<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="tag">\<span class="name">begin</span><span class="string">&#123;equation&#125;</span></span></span><br><span class="line">...</span><br><span class="line"><span class="tag">\<span class="name">end</span><span class="string">&#123;equation&#125;</span></span></span><br></pre></td></tr></table></figure></li>
+<li>不自动编号：$$$…$$$；可使用<code>\eqno</code>或<code>leqno</code>人工编号</li>
 </ol>
-<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="tag">\<span class="name">begin</span><span class="string">&#123;equation&#125;</span></span></span><br><span class="line">...</span><br><span class="line"><span class="tag">\<span class="name">end</span><span class="string">&#123;equation&#125;</span></span></span><br></pre></td></tr></table></figure>
-<ol start="4">
-<li>不自动编号：<code>$$...$$</code>；可使用<code>\eqno</code>或<code>leqno</code>人工编号</li>
-</ol>
-<h3 id="equation环境"><a class="header-anchor" href="#equation环境"></a>equation环境</h3>
-<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="tag">\<span class="name">begin</span><span class="string">&#123;equation&#125;</span></span></span><br><span class="line">...</span><br><span class="line"><span class="tag">\<span class="name">end</span><span class="string">&#123;equation&#125;</span></span></span><br></pre></td></tr></table></figure>
+<h3 id="equation环境"><a href="#equation环境" class="headerlink" title="equation环境"></a>equation环境</h3><figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="tag">\<span class="name">begin</span><span class="string">&#123;equation&#125;</span></span></span><br><span class="line">...</span><br><span class="line"><span class="tag">\<span class="name">end</span><span class="string">&#123;equation&#125;</span></span></span><br></pre></td></tr></table></figure>
 <ul>
 <li>公式自动编号</li>
 <li>equation环境中的公式可以是普通的<strong>单行公式</strong>，也可以是作为一个整体处理的<strong>环境或盒子</strong></li>
@@ -3938,13 +3886,11 @@ $$P_{\lambda, \gamma}(\beta) = \sum_{j=1}^p \rho(\parallel\beta_j\parallel_2; \s
 <li>标记：<code>\label{公式标记}</code>，公式标志唯一</li>
 <li>引用：<code>\ref{公式标记}</code>和<code>\eqref{公式标记}</code></li>
 </ul>
-<h3 id="eqnarray环境"><a class="header-anchor" href="#eqnarray环境"></a>eqnarray环境</h3>
-<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="comment">%% 自动编号</span></span><br><span class="line"><span class="tag">\<span class="name">begin</span><span class="string">&#123;equation&#125;</span></span></span><br><span class="line">...</span><br><span class="line"><span class="tag">\<span class="name">end</span><span class="string">&#123;equation&#125;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">%% 不自动编号</span></span><br><span class="line"><span class="tag">\<span class="name">begin</span><span class="string">&#123;equation*&#125;</span></span></span><br><span class="line">...</span><br><span class="line"><span class="tag">\<span class="name">end</span><span class="string">&#123;equation*&#125;</span></span></span><br></pre></td></tr></table></figure>
+<h3 id="eqnarray环境"><a href="#eqnarray环境" class="headerlink" title="eqnarray环境"></a>eqnarray环境</h3><figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="comment">%% 自动编号</span></span><br><span class="line"><span class="tag">\<span class="name">begin</span><span class="string">&#123;equation&#125;</span></span></span><br><span class="line">...</span><br><span class="line"><span class="tag">\<span class="name">end</span><span class="string">&#123;equation&#125;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">%% 不自动编号</span></span><br><span class="line"><span class="tag">\<span class="name">begin</span><span class="string">&#123;equation*&#125;</span></span></span><br><span class="line">...</span><br><span class="line"><span class="tag">\<span class="name">end</span><span class="string">&#123;equation*&#125;</span></span></span><br></pre></td></tr></table></figure>
 <ul>
 <li>eqnarray环境中每行公式都自动编号</li>
 <li>若某行公式无需编号，可在该行公式后面的换行符前插入<code>\nonumber</code></li>
-<li>eqnarray环境中每行的格式为<code>左边公式 &amp; 中间公式 &amp; 右边公式</code>
-<ul>
+<li>eqnarray环境中每行的格式为<code>左边公式 &amp; 中间公式 &amp; 右边公式</code><ul>
 <li>总是按三列排版公式，每行至多三列</li>
 <li>三列的对齐方式分别为：左对齐，居中，右对齐</li>
 <li>同一行中各列之间用 &amp; 隔开</li>
@@ -3955,21 +3901,59 @@ $$P_{\lambda, \gamma}(\beta) = \sum_{j=1}^p \rho(\parallel\beta_j\parallel_2; \s
 <li>每行公式以 <code>\\</code> 结束（最后一行除外）</li>
 <li>修改单个行间距：<code>\\[高度]</code></li>
 </ul>
-<h2 id="角标"><a class="header-anchor" href="#角标"></a>角标</h2>
+<h2 id="角标"><a href="#角标" class="headerlink" title="角标"></a>角标</h2><ul>
+<li>：</li>
+<li>：</li>
+</ul>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">符号</th>
+<th style="text-align:left">TeX</th>
+<th style="text-align:center">样式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">上标</td>
+<td style="text-align:left"><code>^{...}</code></td>
+<td style="text-align:center"><script type="math/tex">x^2</script>即$x^2$</td>
+</tr>
+<tr>
+<td style="text-align:left">下标</td>
+<td style="text-align:left"><code>_{...}</code></td>
+<td style="text-align:center"><script type="math/tex">x_i</script>即 $x_i$</td>
+</tr>
+</tbody>
+</table>
+</div>
 <ul>
-<li>上标：<code>^{...}</code></li>
-<li>下标：<code>_{...}</code></li>
 <li>上标、小标角标命令必须在数学模式中使用</li>
 <li>多层角标需要使用分组符号</li>
 <li>一级角标字体大小约7pt，二级及以上角标字体大小约为5pt</li>
-<li><strong>中文角标</strong>要放入盒子，并指定字体大小<code>$x^{\mbox{\scriptsize 平方}}$</code></li>
+<li><strong>中文角标</strong>要放入盒子，并指定字体大小<script type="math/tex">x^{\mbox{\scriptsize 平方}}</script></li>
 <li>可以根据需要手工改变角标字体大小或层次</li>
 </ul>
-<h2 id="字体"><a class="header-anchor" href="#字体"></a>字体</h2>
-<ul>
-<li>实数R（空心）：<code>\mathbb{R}</code></li>
-</ul>
-<h2 id="几何符号"><a class="header-anchor" href="#几何符号"></a>几何符号</h2>
+<h2 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">符号</th>
+<th style="text-align:left">TeX</th>
+<th style="text-align:center">样式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">实数R（空心）</td>
+<td style="text-align:left"><code>\mathbb{R}</code></td>
+<td style="text-align:center">$\mathbb{R}$</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="几何符号"><a href="#几何符号" class="headerlink" title="几何符号"></a>几何符号</h2><div class="table-container">
 <table>
 <thead>
 <tr>
@@ -3986,7 +3970,8 @@ $$P_{\lambda, \gamma}(\beta) = \sum_{j=1}^p \rho(\parallel\beta_j\parallel_2; \s
 </tr>
 </tbody>
 </table>
-<h2 id="常用数学符号"><a class="header-anchor" href="#常用数学符号"></a>常用数学符号</h2>
+</div>
+<h2 id="常用数学符号"><a href="#常用数学符号" class="headerlink" title="常用数学符号"></a>常用数学符号</h2><div class="table-container">
 <table>
 <thead>
 <tr>
@@ -3998,14 +3983,14 @@ $$P_{\lambda, \gamma}(\beta) = \sum_{j=1}^p \rho(\parallel\beta_j\parallel_2; \s
 <tbody>
 <tr>
 <td style="text-align:left">导数符号</td>
-<td style="text-align:left">\prime 或 单引号</td>
+<td style="text-align:left"><code>\prime</code> 或 单引号<code>&#39;</code></td>
 <td style="text-align:center">$f^\prime(x)$</td>
 </tr>
 </tbody>
 </table>
+</div>
 <ul>
-<li>求和：
-<ul>
+<li>求和：<ul>
 <li>带上下限：位于符号右侧，或符号头顶和脚下</li>
 <li>在行内公式和行间公式中取不同的尺寸</li>
 <li><code>\sum_{ }^{ }</code>，求和上下标在右边。如：<code>\sum_{i=1}^{100}</code>即$\sum_{i=1}^{100}$</li>
@@ -4014,9 +3999,8 @@ $$P_{\lambda, \gamma}(\beta) = \sum_{j=1}^p \rho(\parallel\beta_j\parallel_2; \s
 </ul>
 </li>
 </ul>
-<h1 id="其他"><a class="header-anchor" href="#其他"></a>其他</h1>
-<h2 id="长度单位"><a class="header-anchor" href="#长度单位"></a>长度单位</h2>
-<p>常用的长度单位：</p>
+<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><h2 id="长度单位"><a href="#长度单位" class="headerlink" title="长度单位"></a>长度单位</h2><p>常用的长度单位：</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -4051,14 +4035,13 @@ $$P_{\lambda, \gamma}(\beta) = \sum_{j=1}^p \rho(\parallel\beta_j\parallel_2; \s
 </tr>
 </tbody>
 </table>
+</div>
 <ul>
 <li>TeX长度由十进制小数加长度单位表示</li>
 <li>em、ex与当前字体尺寸相关</li>
 <li>1 in = 2.54 cm = 72.27 pt</li>
 </ul>
-<h1 id="资源"><a class="header-anchor" href="#资源"></a>资源</h1>
-<h2 id="字体-2"><a class="header-anchor" href="#字体-2"></a>字体</h2>
-<ul>
+<h1 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h1><h2 id="字体-1"><a href="#字体-1" class="headerlink" title="字体"></a>字体</h2><ul>
 <li><a href="https://tug.org/FontCatalogue/" target="_blank" rel="noopener">LaTex Font Catalogue</a></li>
 </ul>
 <figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
@@ -4067,8 +4050,7 @@ $$P_{\lambda, \gamma}(\beta) = \sum_{j=1}^p \rho(\parallel\beta_j\parallel_2; \s
 <figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h1 id="参考资料"><a class="header-anchor" href="#参考资料"></a>参考资料</h1>
-]]></content>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1>]]></content>
       <categories>
         <category>Everything</category>
       </categories>
@@ -5295,26 +5277,18 @@ $$派生/衍生指标 = 原子指标 + 时间周期 + 其他修饰词$$</li>
   <entry>
     <title>数据分析 | 因果推断</title>
     <url>/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-%E5%9B%A0%E6%9E%9C%E6%8E%A8%E6%96%AD.html</url>
-    <content><![CDATA[<center>未完待续</center>
-<a id="more"></a>
-<h1 id="因果推断"><a class="header-anchor" href="#因果推断"></a>因果推断</h1>
-<p>关联——&gt;干预——&gt;反事实</p>
+    <content><![CDATA[<p><center>未完待续</center><br><a id="more"></a></p>
+<h1 id="因果推断"><a href="#因果推断" class="headerlink" title="因果推断"></a>因果推断</h1><p>关联——&gt;干预——&gt;反事实</p>
 <ul>
 <li>核心思想：寻找合适的对照组</li>
 </ul>
-<h1 id="研究方法"><a class="header-anchor" href="#研究方法"></a>研究方法</h1>
-<h2 id="实验性研究Field-experiment"><a class="header-anchor" href="#实验性研究Field-experiment"></a>实验性研究Field experiment</h2>
-<p>分配机制已知<br>
-eg：AB实验</p>
-<h2 id="观测性研究Observation-studies"><a class="header-anchor" href="#观测性研究Observation-studies"></a>观测性研究Observation studies</h2>
-<p>分配机制未知</p>
+<h1 id="研究方法"><a href="#研究方法" class="headerlink" title="研究方法"></a>研究方法</h1><h2 id="实验性研究Field-experiment"><a href="#实验性研究Field-experiment" class="headerlink" title="实验性研究Field experiment"></a>实验性研究Field experiment</h2><p>分配机制已知<br>eg：AB实验</p>
+<h2 id="观测性研究Observation-studies"><a href="#观测性研究Observation-studies" class="headerlink" title="观测性研究Observation studies"></a>观测性研究Observation studies</h2><p>分配机制未知</p>
 <ul>
 <li>因果图模型</li>
 <li>潜在结果框架</li>
 </ul>
-<h1 id="潜在结果框架"><a class="header-anchor" href="#潜在结果框架"></a>潜在结果框架</h1>
-<h2 id="基本概念"><a class="header-anchor" href="#基本概念"></a>基本概念</h2>
-<ul>
+<h1 id="潜在结果框架"><a href="#潜在结果框架" class="headerlink" title="潜在结果框架"></a>潜在结果框架</h1><h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><ul>
 <li>单元：</li>
 <li>处理Treatment</li>
 <li>结果</li>
@@ -5322,18 +5296,13 @@ eg：AB实验</p>
 <li>反事实</li>
 </ul>
 <p>Rubin’s potential outcome framework：个体$i$的因果效应$\tau_i=Y_i(1)-Y_i(0)$，其中只有$Y_i(1)$或$Y_i(0)$可以被观测到。</p>
-<h2 id="处理效应Treatment-Effect"><a class="header-anchor" href="#处理效应Treatment-Effect"></a>处理效应Treatment Effect</h2>
-<p>平均处理效应（ATE，Average Treatment Effect）<br>
-（ATT，Average Treatment Effect on the Treated）<br>
-（ATC，）</p>
-<h2 id="假设条件"><a class="header-anchor" href="#假设条件"></a>假设条件</h2>
-<ul>
+<h2 id="处理效应Treatment-Effect"><a href="#处理效应Treatment-Effect" class="headerlink" title="处理效应Treatment Effect"></a>处理效应Treatment Effect</h2><p>平均处理效应（ATE，Average Treatment Effect）<br>（ATT，Average Treatment Effect on the Treated）<br>（ATC，）</p>
+<h2 id="假设条件"><a href="#假设条件" class="headerlink" title="假设条件"></a>假设条件</h2><ul>
 <li>个体处理稳定性假设</li>
 <li>分配机制与潜在结果无关</li>
 <li>正值假设</li>
 </ul>
-<h1 id="断点回归"><a class="header-anchor" href="#断点回归"></a>断点回归</h1>
-<p>断点回归/断点回归设计（RDD，Regression Discontinuity Design）的一般步骤：</p>
+<h1 id="断点回归"><a href="#断点回归" class="headerlink" title="断点回归"></a>断点回归</h1><p>断点回归/断点回归设计（RDD，Regression Discontinuity Design）的一般步骤：</p>
 <ol>
 <li>图形分析</li>
 <li>因果效应分析</li>
@@ -5344,15 +5313,12 @@ eg：AB实验</p>
 <li>精确断点回归：断点x=c处，个体得到处理的概率从0跳跃到1</li>
 <li>模糊断点回归：断点x=c处，个体得到处理的概率从a跳跃到b，其中$0 &lt; a &lt; b &lt; 1$。</li>
 </ol>
-<h2 id="精确断点回归"><a class="header-anchor" href="#精确断点回归"></a>精确断点回归</h2>
-<p>精确断点回归（SRD，Sharp Regression Discontinuity）</p>
+<h2 id="精确断点回归"><a href="#精确断点回归" class="headerlink" title="精确断点回归"></a>精确断点回归</h2><p>精确断点回归（SRD，Sharp Regression Discontinuity）</p>
 <p>局部平均处理效应（LATE，Local Average Treatment Effect）</p>
-<h2 id="模糊断点回归"><a class="header-anchor" href="#模糊断点回归"></a>模糊断点回归</h2>
-<div class="note warning">
+<h2 id="模糊断点回归"><a href="#模糊断点回归" class="headerlink" title="模糊断点回归"></a>模糊断点回归</h2><div class="note warning">
             <p><strong>协变量</strong>：在实验的设计中，协变量是一个独立变量（解释变量），不为实验者所操纵，但仍影响实验结果。 协变量（Covariate）在心理学、行为科学中，是指与因变量有线性相关并在探讨自变量与因变量关系时通过统计技术加以控制的变量。常用的协变量包括因变量的前测分数、人口统计学指标以及与因变量明显不同的个人特征等。</p>
           </div>
-<h1 id="双重差分"><a class="header-anchor" href="#双重差分"></a>双重差分</h1>
-<p>双重差分法（DID，Difference in Difference）</p>
+<h1 id="双重差分"><a href="#双重差分" class="headerlink" title="双重差分"></a>双重差分</h1><p>双重差分法（DID，Difference in Difference）</p>
 <ul>
 <li>解决内生性问题的因果分析方法</li>
 <li>政策干预发生与否的虚拟变量+前后两个时间段的面板数据+不可观测的个体固定效应</li>
@@ -5362,35 +5328,20 @@ eg：AB实验</p>
 <li>共同趋势假设/平行趋势假定</li>
 <li></li>
 </ol>
-<p>$$Y_{it}=\alpha_i + \lambda_t + D_{it}\beta + \varepsilon_{it}$$<br>
-其中，</p>
+<script type="math/tex; mode=display">Y_{it}=\alpha_i + \lambda_t + D_{it}\beta + \varepsilon_{it}</script><p>其中，</p>
 <ul>
 <li>$\alpha_i$：不可观测的个体固定效应</li>
-<li>$D_{it}$：干预是否发生的虚拟变量<br>
-\begin{equation}<br>
-D_{it}= \left{<br>
-\begin{array}{ll}<br>
-1, &amp; 干预发生\<br>
-0, &amp; 干预不发生<br>
-\end{array}<br>
-\right.<br>
-\end{equation}</li>
-<li>通过差分消除固定效应$\hat{\beta}$<br>
-$$\hat{\beta} = \hat{Y}<em>{post}^{treatment}-<br>
-\hat{Y}</em>{pre}^{treatment} - \left(\hat{Y}<em>{post}^{control} - \hat{Y}</em>{pre}^{control} \right)$$</li>
+<li>$D_{it}$：干预是否发生的虚拟变量<br>\begin{equation}<br>D_{it}= \left\{<br>\begin{array}{ll}<br>1, &amp; 干预发生\\<br>0, &amp; 干预不发生<br>\end{array}<br>\right.<br>\end{equation}</li>
+<li>通过差分消除固定效应$\hat{\beta}$<script type="math/tex; mode=display">\hat{\beta} = \hat{Y}_{post}^{treatment}-
+\hat{Y}_{pre}^{treatment} - \left(\hat{Y}_{post}^{control} - \hat{Y}_{pre}^{control} \right)</script></li>
 </ul>
-<h1 id="工具变量"><a class="header-anchor" href="#工具变量"></a>工具变量</h1>
-<p>工具变量（IV，Instrumental Variable）</p>
-<h1 id="重加权算法"><a class="header-anchor" href="#重加权算法"></a>重加权算法</h1>
-<p>避免“辛普森悖论”</p>
-<h1 id="分层算法"><a class="header-anchor" href="#分层算法"></a>分层算法</h1>
-<h1 id="匹配法"><a class="header-anchor" href="#匹配法"></a>匹配法</h1>
-<ul>
+<h1 id="工具变量"><a href="#工具变量" class="headerlink" title="工具变量"></a>工具变量</h1><p>工具变量（IV，Instrumental Variable）</p>
+<h1 id="重加权算法"><a href="#重加权算法" class="headerlink" title="重加权算法"></a>重加权算法</h1><p>避免“辛普森悖论”</p>
+<h1 id="分层算法"><a href="#分层算法" class="headerlink" title="分层算法"></a>分层算法</h1><h1 id="匹配法"><a href="#匹配法" class="headerlink" title="匹配法"></a>匹配法</h1><ul>
 <li>去除隐藏变量造成的选择性偏差，使得实验组和对照组进行更合理的比较</li>
 <li>适合一些特殊场景（如：渗透率低的场景）的因果分析</li>
 </ul>
-<h2 id="倾向评分匹配PSM"><a class="header-anchor" href="#倾向评分匹配PSM"></a>倾向评分匹配PSM</h2>
-<p>倾向评分匹配/倾向性得分匹配（PSM，Propensity Score Matching）</p>
+<h2 id="倾向评分匹配PSM"><a href="#倾向评分匹配PSM" class="headerlink" title="倾向评分匹配PSM"></a>倾向评分匹配PSM</h2><p>倾向评分匹配/倾向性得分匹配（PSM，Propensity Score Matching）</p>
 <ul>
 <li>通过观测变量对实验组的预测概率进行匹配</li>
 <li>处理观察性研究（observational study）的经典方法</li>
@@ -5406,15 +5357,21 @@ $$\hat{\beta} = \hat{Y}<em>{post}^{treatment}-<br>
 <li>观测结果$Y$</li>
 </ul>
 <div class="note warning">
-            <p><strong>倾向性得分</strong>：一个用户/样本属于实验组的“倾向性”。<br>$$e(x)=P\left(T=1|X=x\right)$$</p>
+            <p><strong>倾向性得分</strong>：一个用户/样本属于实验组的“倾向性”。</p><script type="math/tex; mode=display">e(x)=P\left(T=1|X=x\right)</script>
+          </div>
+<div class="note success">
+            <p><strong>Theorem 1: 平衡性质（Balancing Property）</strong>:</p><script type="math/tex; mode=display">T_i \perp X_i \mid e(X_i)</script>
+          </div>
+<div class="note success">
+            <p><strong>Theorem 2: 无混淆（Unconfoundedness）</strong>$$：</p><script type="math/tex; mode=display">T_i \perp Y_{i0}, Y_{i1} \mid e(X_i)</script>
           </div>
 <blockquote>
 <ul>
 <li>倾向性得分是一种“Balancing score”</li>
+<li>对于倾向性得分$e(X_i)$相同的一群用户$i$，干预$T_i$和特征是独立的</li>
 </ul>
 </blockquote>
-<h3 id="软件"><a class="header-anchor" href="#软件"></a>软件</h3>
-<ul>
+<h3 id="软件"><a href="#软件" class="headerlink" title="软件"></a>软件</h3><ul>
 <li>R：<code>MatchIt</code>包</li>
 </ul>
 <figure class="highlight r"><table><tr><td class="code"><pre><span class="line">install.packages(<span class="string">'MatchIt'</span>)  <span class="comment">## 安装包</span></span><br><span class="line"><span class="keyword">library</span>(<span class="string">'MatchIt'</span>)  <span class="comment">## 加载包</span></span><br><span class="line"></span><br><span class="line">data(<span class="string">'lalonde'</span>)  <span class="comment">## 加载数据集lalonde</span></span><br><span class="line">head(lalonde)  <span class="comment">## 预览数据集</span></span><br><span class="line"><span class="comment">#      treat age educ   race married nodegree re74 re75       re78</span></span><br><span class="line"><span class="comment"># NSW1     1  37   11  black       1        1    0    0  9930.0460</span></span><br><span class="line"><span class="comment"># NSW2     1  22    9 hispan       0        1    0    0  3595.8940</span></span><br><span class="line"><span class="comment"># NSW3     1  30   12  black       0        0    0    0 24909.4500</span></span><br><span class="line"><span class="comment"># NSW4     1  27   11  black       0        1    0    0  7506.1460</span></span><br><span class="line"><span class="comment"># NSW5     1  33    8  black       0        1    0    0   289.7899</span></span><br><span class="line"><span class="comment"># NSW6     1  22    9  black       0        1    0    0  4056.4940</span></span><br><span class="line"><span class="comment">## 在RStudio的help框输入"MatchIt"即可查看该Package的说明文档</span></span><br></pre></td></tr></table></figure>
@@ -5429,74 +5386,49 @@ $$\hat{\beta} = \hat{Y}<em>{post}^{treatment}-<br>
 <ul>
 <li><a href="https://onlinelibrary.wiley.com/doi/10.1111/j.1467-6419.2007.00527.x" target="_blank" rel="noopener">Caliendo M, Kopeinig S. Some practical guidance for the implementation of propensity score matching[J]. Journal of economic surveys, 2008, 22(1): 31-72.</a></li>
 </ul>
-<h2 id="广义精确匹配CEM"><a class="header-anchor" href="#广义精确匹配CEM"></a>广义精确匹配CEM</h2>
-<p>广义精确匹配（CEM，Coarsened Exact Matching）：通过给特征分桶进行匹配</p>
-<h1 id="合成控制法"><a class="header-anchor" href="#合成控制法"></a>合成控制法</h1>
-<p>合成控制法（SCM，Synthetic Control Method）</p>
+<h2 id="广义精确匹配CEM"><a href="#广义精确匹配CEM" class="headerlink" title="广义精确匹配CEM"></a>广义精确匹配CEM</h2><p>广义精确匹配（CEM，Coarsened Exact Matching）：通过给特征分桶进行匹配</p>
+<h1 id="合成控制法"><a href="#合成控制法" class="headerlink" title="合成控制法"></a>合成控制法</h1><p>合成控制法（SCM，Synthetic Control Method）</p>
 <ul>
 <li>当某个干预施加在某一类群体（或地区）上，虽然找不到单一的最佳对照组，但是可以构造一个虚拟的对照组</li>
 </ul>
-<h1 id="固定效应模型"><a class="header-anchor" href="#固定效应模型"></a>固定效应模型</h1>
-<ul>
+<h1 id="固定效应模型"><a href="#固定效应模型" class="headerlink" title="固定效应模型"></a>固定效应模型</h1><ul>
 <li>适用于面板数据</li>
 </ul>
-<p>模型为：<br>
-$$y_{it} = \alpha_i + x_{it}^T\beta + \varepsilon_{it}$$<br>
-或<br>
-$$y_{it} = \alpha_i + x_{it}^T\beta + d_t + \varepsilon_{it}$$<br>
-其中，$i=1,2,\cdots,N$，$t=1,2,\cdots,T$。</p>
-<h1 id="矩阵补全"><a class="header-anchor" href="#矩阵补全"></a>矩阵补全</h1>
-<ul>
+<p>模型为：</p>
+<script type="math/tex; mode=display">y_{it} = \alpha_i + x_{it}^T\beta + \varepsilon_{it}</script><p>或</p>
+<script type="math/tex; mode=display">y_{it} = \alpha_i + x_{it}^T\beta + d_t + \varepsilon_{it}</script><p>其中，$i=1,2,\cdots,N$，$t=1,2,\cdots,T$。</p>
+<h1 id="矩阵补全"><a href="#矩阵补全" class="headerlink" title="矩阵补全"></a>矩阵补全</h1><ul>
 <li>合成控制法的扩展</li>
 <li>合成控制法（SCM）的局限性：只有一个实验干预组（政策干预开始时间是在某个统一的时间段）</li>
-<li>矩阵补全<strong>适用于</strong>：多个实验干预，干预时间不一致。如：
-<ul>
+<li>矩阵补全<strong>适用于</strong>：多个实验干预，干预时间不一致。如：<ul>
 <li>一个AB实验下的策略是逐渐放量的过程，如何评估策略对用户的影响？</li>
 <li>产品新版本更新了UI界面，但是用户更新版本的时间不一致，如何评估新界面对用户使用时长的影响？</li>
 </ul>
 </li>
 <li>矩阵补全法：通过一定的方法将一个含有缺失值的矩阵恢复为一个完全的矩阵（通过求解一个凸优化问题，实现将一个低秩矩阵恢复），从而估计因果效应</li>
 </ul>
-<p>\begin{equation}<br>
-Y(0)=\left(<br>
-\begin{array}{ccccc}<br>
-? &amp; ? &amp; \Checkmark &amp; \cdots &amp; ? \<br>
-\Checkmark &amp; ? &amp; \Checkmark &amp; \cdots &amp; \Checkmark \<br>
-\vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \<br>
-? &amp; \Checkmark &amp; \Checkmark &amp; \cdots &amp; \Checkmark<br>
-\end{array}<br>
-\right)<br>
-\end{equation}</p>
-<p>$$<br>
-Y(1)=\left(<br>
-\begin{array}{ccccc}<br>
-\Checkmark &amp; \Checkmark &amp; ? &amp; \cdots &amp; \Checkmark \<br>
-? &amp; \Checkmark &amp; ? &amp; \cdots &amp; ? \<br>
-\vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \<br>
-\Checkmark &amp; ? &amp; ? &amp; \cdots &amp; ?<br>
-\end{array}<br>
-\right)<br>
-$$<br>
-且<br>
-$$W_{it}=\left{<br>
-\begin{array}{ll}<br>
-0, &amp; Y_{it}(0)被观察到\<br>
-1, &amp; Y_{it}(1)被观察到<br>
-\end{array}<br>
-\right.$$<br>
-则因果效应为<br>
-$$\tau = \frac{\sum_{i,t}W_{it}\left(Y_{it}(1)-Y_{it}(0) \right)}{\sum_{i,t}W_{it}}$$</p>
-<h1 id="混淆变量"><a class="header-anchor" href="#混淆变量"></a>混淆变量</h1>
-<h2 id="双重选择Double-Selection"><a class="header-anchor" href="#双重选择Double-Selection"></a>双重选择Double Selection</h2>
-<h2 id="双重机器学习DML"><a class="header-anchor" href="#双重机器学习DML"></a>双重机器学习DML</h2>
-<h1 id="参考资料"><a class="header-anchor" href="#参考资料"></a>参考资料</h1>
-<ul>
+<p>\begin{equation}<br>Y(0)=\left(<br>\begin{array}{ccccc}<br>? &amp; ? &amp; \Checkmark &amp; \cdots &amp; ? \\<br>\Checkmark &amp; ? &amp; \Checkmark &amp; \cdots &amp; \Checkmark \\<br>\vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\<br>? &amp; \Checkmark &amp; \Checkmark &amp; \cdots &amp; \Checkmark<br>\end{array}<br>\right)<br>\end{equation}</p>
+<script type="math/tex; mode=display">
+Y(1)=\left(
+\begin{array}{ccccc}
+\Checkmark & \Checkmark & ? & \cdots & \Checkmark \\
+? & \Checkmark & ? & \cdots & ? \\
+\vdots & \vdots & \vdots & \ddots & \vdots \\
+\Checkmark & ? & ? & \cdots & ?
+\end{array}
+\right)</script><p>且</p>
+<script type="math/tex; mode=display">W_{it}=\left\{
+\begin{array}{ll}
+0, & Y_{it}(0)被观察到\\
+1, & Y_{it}(1)被观察到
+\end{array}
+  \right.</script><p>则因果效应为</p>
+<script type="math/tex; mode=display">\tau = \frac{\sum_{i,t}W_{it}\left(Y_{it}(1)-Y_{it}(0) \right)}{\sum_{i,t}W_{it}}</script><h1 id="混淆变量"><a href="#混淆变量" class="headerlink" title="混淆变量"></a>混淆变量</h1><h2 id="双重选择Double-Selection"><a href="#双重选择Double-Selection" class="headerlink" title="双重选择Double Selection"></a>双重选择Double Selection</h2><h2 id="双重机器学习DML"><a href="#双重机器学习DML" class="headerlink" title="双重机器学习DML"></a>双重机器学习DML</h2><h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
 <li><a href="http://bayes.cs.ucla.edu/BOOK-2K/" target="_blank" rel="noopener">Judea Pearl: Causality</a></li>
 <li><a href="https://www.douban.com/group/topic/138765167/" target="_blank" rel="noopener">断点回归设计RDD分类与操作案例</a></li>
 <li><a href="https://cosx.org/2013/08/causality6-instrumental-variable/" target="_blank" rel="noopener">因果推断简介之六：工具变量（instrumental variable）</a></li>
 <li><a href="https://dango.rocks/blog/2019/01/20/Causal-Inference-Introduction2-Propensity-Score-Matching/" target="_blank" rel="noopener">因果推断漫谈（二）：倾向性得分匹配介绍</a></li>
-<li><a href="https://mp.weixin.qq.com/s?t=pages/video_detail_new&amp;scene=1&amp;vid=wxv_1670066067622199305&amp;__biz=Mzg3NzUxMjUyMQ==&amp;mid=2247492966&amp;idx=1&amp;sn=13dc5964de23ff43c9994b0788afe7fe&amp;vidsn=&amp;key=734336bd97b20ca726a8dcbad2455e5477a0f2d609b6b35a29f2c418f4c438b67b7c34571e81dee060f26cd7f1bf7db31dc40559014ac19aef1a10d7a70f9cdcbaff4765ac1f9033c089495f6ab5cdc1de9fa5cf0eda0c80b53db3853cf9a81e8ff93b92e6a38dc2a79d8ee4a6e4b87aa7ecf8b1e07bed5da05f8ed79a7b07c1&amp;ascene=1&amp;uin=Mjk4NDY5NTQ4&amp;devicetype=Windows+10+x64&amp;version=6300002f&amp;lang=zh_CN&amp;exportkey=AQ4nRk5qBTXgmnHtUOo%2FpWc%3D&amp;pass_ticket=LCBT0Lt4dWW6xAtluQSk5SCaP6e1U7FD%2BwUktAuHYAqLXxZmVITup4Jw748qaYRF&amp;wx_header=0" target="_blank" rel="noopener">因果推断工具在快手的应用</a>
-<ul>
+<li><a href="https://mp.weixin.qq.com/s?t=pages/video_detail_new&amp;scene=1&amp;vid=wxv_1670066067622199305&amp;__biz=Mzg3NzUxMjUyMQ==&amp;mid=2247492966&amp;idx=1&amp;sn=13dc5964de23ff43c9994b0788afe7fe&amp;vidsn=&amp;key=734336bd97b20ca726a8dcbad2455e5477a0f2d609b6b35a29f2c418f4c438b67b7c34571e81dee060f26cd7f1bf7db31dc40559014ac19aef1a10d7a70f9cdcbaff4765ac1f9033c089495f6ab5cdc1de9fa5cf0eda0c80b53db3853cf9a81e8ff93b92e6a38dc2a79d8ee4a6e4b87aa7ecf8b1e07bed5da05f8ed79a7b07c1&amp;ascene=1&amp;uin=Mjk4NDY5NTQ4&amp;devicetype=Windows+10+x64&amp;version=6300002f&amp;lang=zh_CN&amp;exportkey=AQ4nRk5qBTXgmnHtUOo%2FpWc%3D&amp;pass_ticket=LCBT0Lt4dWW6xAtluQSk5SCaP6e1U7FD%2BwUktAuHYAqLXxZmVITup4Jw748qaYRF&amp;wx_header=0" target="_blank" rel="noopener">因果推断工具在快手的应用</a><ul>
 <li>将机器学习与因果分析结合：双重机器学习、基于决策树/随机森林的异质性的因果效应估计</li>
 </ul>
 </li>
