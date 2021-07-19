@@ -15024,7 +15024,7 @@ $$\hat{\beta} = \hat{Y}<em>{post}^{treatment}-<br>
             <p><strong>Theorem 1: 平衡性质（Balancing Property）</strong>:<br>$$T_i \perp X_i \mid e(X_i)$$</p>
           </div>
 <div class="note success">
-            <p><strong>Theorem 2: 无混淆（Unconfoundedness）</strong>$$：<br>$$T_i \perp Y_{i0}, Y_{i1} \mid e(X_i)$$</p>
+            <p><strong>Theorem 2: 无混淆（Unconfoundedness）</strong>$$：<br>$$ T_i \perp Y_{i0}, Y_{i1} \mid e(X_i)$$</p>
           </div>
 <blockquote>
 <ul>
