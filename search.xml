@@ -3969,18 +3969,37 @@ $$P_{\lambda, \gamma}(\beta) = \sum_{j=1}^p \rho(\parallel\beta_j\parallel_2; \s
 <ul>
 <li>实数R（空心）：<code>\mathbb{R}</code></li>
 </ul>
+<h2 id="几何符号"><a class="header-anchor" href="#几何符号"></a>几何符号</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">符号</th>
+<th style="text-align:left">TeX</th>
+<th style="text-align:center">样式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">垂直</td>
+<td style="text-align:left"><code>\perp</code></td>
+<td style="text-align:center">$x\perp y$</td>
+</tr>
+</tbody>
+</table>
 <h2 id="常用数学符号"><a class="header-anchor" href="#常用数学符号"></a>常用数学符号</h2>
 <table>
 <thead>
 <tr>
 <th style="text-align:left">符号</th>
 <th style="text-align:left">TeX</th>
+<th style="text-align:center">样式</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td style="text-align:left">导数符号</td>
 <td style="text-align:left">\prime 或 单引号</td>
+<td style="text-align:center">$f^\prime(x)$</td>
 </tr>
 </tbody>
 </table>
@@ -5389,6 +5408,11 @@ $$\hat{\beta} = \hat{Y}<em>{post}^{treatment}-<br>
 <div class="note warning">
             <p><strong>倾向性得分</strong>：一个用户/样本属于实验组的“倾向性”。<br>$$e(x)=P\left(T=1|X=x\right)$$</p>
           </div>
+<blockquote>
+<ul>
+<li>倾向性得分是一种“Balancing score”</li>
+</ul>
+</blockquote>
 <h3 id="软件"><a class="header-anchor" href="#软件"></a>软件</h3>
 <ul>
 <li>R：<code>MatchIt</code>包</li>
@@ -5467,6 +5491,7 @@ $$\tau = \frac{\sum_{i,t}W_{it}\left(Y_{it}(1)-Y_{it}(0) \right)}{\sum_{i,t}W_{i
 <h2 id="双重机器学习DML"><a class="header-anchor" href="#双重机器学习DML"></a>双重机器学习DML</h2>
 <h1 id="参考资料"><a class="header-anchor" href="#参考资料"></a>参考资料</h1>
 <ul>
+<li><a href="http://bayes.cs.ucla.edu/BOOK-2K/" target="_blank" rel="noopener">Judea Pearl: Causality</a></li>
 <li><a href="https://www.douban.com/group/topic/138765167/" target="_blank" rel="noopener">断点回归设计RDD分类与操作案例</a></li>
 <li><a href="https://cosx.org/2013/08/causality6-instrumental-variable/" target="_blank" rel="noopener">因果推断简介之六：工具变量（instrumental variable）</a></li>
 <li><a href="https://dango.rocks/blog/2019/01/20/Causal-Inference-Introduction2-Propensity-Score-Matching/" target="_blank" rel="noopener">因果推断漫谈（二）：倾向性得分匹配介绍</a></li>
