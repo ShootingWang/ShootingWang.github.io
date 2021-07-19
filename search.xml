@@ -5457,7 +5457,7 @@ $$派生/衍生指标 = 原子指标 + 时间周期 + 其他修饰词$$</li>
 </li>
 <li>矩阵补全法：通过一定的方法将一个含有缺失值的矩阵恢复为一个完全的矩阵（通过求解一个凸优化问题，实现将一个低秩矩阵恢复），从而估计因果效应</li>
 </ul>
-<p>\begin{equation}<br>Y(0)=\left(<br>\begin{array}{ccccc}<br>? &amp; ? &amp; \Checkmark &amp; \cdots &amp; ? \\<br>\Checkmark &amp; ? &amp; \Checkmark &amp; \cdots &amp; \Checkmark \\<br>\vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\<br>? &amp; \Checkmark &amp; \Checkmark &amp; \cdots &amp; \Checkmark \\<br>\end{array}<br>\right)<br>\end{equation}</p>
+<p>\begin{equation}<br>Y(0)=\left(<br>\begin{array}{ccccc}<br>? &amp; ? &amp; $\Checkmark$ &amp; \cdots &amp; ? \\<br>\Checkmark &amp; ? &amp; \Checkmark &amp; \cdots &amp; \Checkmark \\<br>\vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\<br>? &amp; \Checkmark &amp; \Checkmark &amp; \cdots &amp; \Checkmark \\<br>\end{array}<br>\right)<br>\end{equation}</p>
 <script type="math/tex; mode=display">
 Y(1)=\left(
 \begin{array}{ccccc}
