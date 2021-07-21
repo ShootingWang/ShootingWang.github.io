@@ -33,7 +33,7 @@
 <meta property="og:description" content="未完待续">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-11-05T14:42:34.000Z">
-<meta property="article:modified_time" content="2021-07-19T17:15:44.515Z">
+<meta property="article:modified_time" content="2021-07-19T17:20:50.004Z">
 <meta property="article:author" content="Skye">
 <meta property="article:tag" content="数据分析">
 <meta name="twitter:card" content="summary">
@@ -261,7 +261,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-07-20 01:15:44" itemprop="dateModified" datetime="2021-07-20T01:15:44+08:00">2021-07-20</time>
+                <time title="修改时间：2021-07-20 01:20:50" itemprop="dateModified" datetime="2021-07-20T01:20:50+08:00">2021-07-20</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -305,26 +305,18 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <center>未完待续</center>
-<a id="more"></a>
-<h1 id="因果推断"><a class="header-anchor" href="#因果推断"></a>因果推断</h1>
-<p>关联——&gt;干预——&gt;反事实</p>
+        <p><center>未完待续</center><br><a id="more"></a></p>
+<h1 id="因果推断"><a href="#因果推断" class="headerlink" title="因果推断"></a>因果推断</h1><p>关联——&gt;干预——&gt;反事实</p>
 <ul>
 <li>核心思想：寻找合适的对照组</li>
 </ul>
-<h1 id="研究方法"><a class="header-anchor" href="#研究方法"></a>研究方法</h1>
-<h2 id="实验性研究Field-experiment"><a class="header-anchor" href="#实验性研究Field-experiment"></a>实验性研究Field experiment</h2>
-<p>分配机制已知<br>
-eg：AB实验</p>
-<h2 id="观测性研究Observation-studies"><a class="header-anchor" href="#观测性研究Observation-studies"></a>观测性研究Observation studies</h2>
-<p>分配机制未知</p>
+<h1 id="研究方法"><a href="#研究方法" class="headerlink" title="研究方法"></a>研究方法</h1><h2 id="实验性研究Field-experiment"><a href="#实验性研究Field-experiment" class="headerlink" title="实验性研究Field experiment"></a>实验性研究Field experiment</h2><p>分配机制已知<br>eg：AB实验</p>
+<h2 id="观测性研究Observation-studies"><a href="#观测性研究Observation-studies" class="headerlink" title="观测性研究Observation studies"></a>观测性研究Observation studies</h2><p>分配机制未知</p>
 <ul>
 <li>因果图模型</li>
 <li>潜在结果框架</li>
 </ul>
-<h1 id="潜在结果框架"><a class="header-anchor" href="#潜在结果框架"></a>潜在结果框架</h1>
-<h2 id="基本概念"><a class="header-anchor" href="#基本概念"></a>基本概念</h2>
-<ul>
+<h1 id="潜在结果框架"><a href="#潜在结果框架" class="headerlink" title="潜在结果框架"></a>潜在结果框架</h1><h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><ul>
 <li>单元：</li>
 <li>处理Treatment</li>
 <li>结果</li>
@@ -332,18 +324,13 @@ eg：AB实验</p>
 <li>反事实</li>
 </ul>
 <p>Rubin’s potential outcome framework：个体$i$的因果效应$\tau_i=Y_i(1)-Y_i(0)$，其中只有$Y_i(1)$或$Y_i(0)$可以被观测到。</p>
-<h2 id="处理效应Treatment-Effect"><a class="header-anchor" href="#处理效应Treatment-Effect"></a>处理效应Treatment Effect</h2>
-<p>平均处理效应（ATE，Average Treatment Effect）<br>
-（ATT，Average Treatment Effect on the Treated）<br>
-（ATC，）</p>
-<h2 id="假设条件"><a class="header-anchor" href="#假设条件"></a>假设条件</h2>
-<ul>
+<h2 id="处理效应Treatment-Effect"><a href="#处理效应Treatment-Effect" class="headerlink" title="处理效应Treatment Effect"></a>处理效应Treatment Effect</h2><p>平均处理效应（ATE，Average Treatment Effect）<br>（ATT，Average Treatment Effect on the Treated）<br>（ATC，）</p>
+<h2 id="假设条件"><a href="#假设条件" class="headerlink" title="假设条件"></a>假设条件</h2><ul>
 <li>个体处理稳定性假设</li>
 <li>分配机制与潜在结果无关</li>
 <li>正值假设</li>
 </ul>
-<h1 id="断点回归"><a class="header-anchor" href="#断点回归"></a>断点回归</h1>
-<p>断点回归/断点回归设计（RDD，Regression Discontinuity Design）的一般步骤：</p>
+<h1 id="断点回归"><a href="#断点回归" class="headerlink" title="断点回归"></a>断点回归</h1><p>断点回归/断点回归设计（RDD，Regression Discontinuity Design）的一般步骤：</p>
 <ol>
 <li>图形分析</li>
 <li>因果效应分析</li>
@@ -354,15 +341,12 @@ eg：AB实验</p>
 <li>精确断点回归：断点x=c处，个体得到处理的概率从0跳跃到1</li>
 <li>模糊断点回归：断点x=c处，个体得到处理的概率从a跳跃到b，其中$0 &lt; a &lt; b &lt; 1$。</li>
 </ol>
-<h2 id="精确断点回归"><a class="header-anchor" href="#精确断点回归"></a>精确断点回归</h2>
-<p>精确断点回归（SRD，Sharp Regression Discontinuity）</p>
+<h2 id="精确断点回归"><a href="#精确断点回归" class="headerlink" title="精确断点回归"></a>精确断点回归</h2><p>精确断点回归（SRD，Sharp Regression Discontinuity）</p>
 <p>局部平均处理效应（LATE，Local Average Treatment Effect）</p>
-<h2 id="模糊断点回归"><a class="header-anchor" href="#模糊断点回归"></a>模糊断点回归</h2>
-<div class="note warning">
+<h2 id="模糊断点回归"><a href="#模糊断点回归" class="headerlink" title="模糊断点回归"></a>模糊断点回归</h2><div class="note warning">
             <p><strong>协变量</strong>：在实验的设计中，协变量是一个独立变量（解释变量），不为实验者所操纵，但仍影响实验结果。 协变量（Covariate）在心理学、行为科学中，是指与因变量有线性相关并在探讨自变量与因变量关系时通过统计技术加以控制的变量。常用的协变量包括因变量的前测分数、人口统计学指标以及与因变量明显不同的个人特征等。</p>
           </div>
-<h1 id="双重差分"><a class="header-anchor" href="#双重差分"></a>双重差分</h1>
-<p>双重差分法（DID，Difference in Difference）</p>
+<h1 id="双重差分"><a href="#双重差分" class="headerlink" title="双重差分"></a>双重差分</h1><p>双重差分法（DID，Difference in Difference）</p>
 <ul>
 <li>解决内生性问题的因果分析方法</li>
 <li>政策干预发生与否的虚拟变量+前后两个时间段的面板数据+不可观测的个体固定效应</li>
@@ -372,35 +356,20 @@ eg：AB实验</p>
 <li>共同趋势假设/平行趋势假定</li>
 <li></li>
 </ol>
-<p>$$Y_{it}=\alpha_i + \lambda_t + D_{it}\beta + \varepsilon_{it}$$<br>
-其中，</p>
+<script type="math/tex; mode=display">Y_{it}=\alpha_i + \lambda_t + D_{it}\beta + \varepsilon_{it}</script><p>其中，</p>
 <ul>
 <li>$\alpha_i$：不可观测的个体固定效应</li>
-<li>$D_{it}$：干预是否发生的虚拟变量<br>
-\begin{equation}<br>
-D_{it}= \left{<br>
-\begin{array}{ll}<br>
-1, &amp; 干预发生\<br>
-0, &amp; 干预不发生<br>
-\end{array}<br>
-\right.<br>
-\end{equation}</li>
-<li>通过差分消除固定效应$\hat{\beta}$<br>
-$$\hat{\beta} = \hat{Y}<em>{post}^{treatment}-<br>
-\hat{Y}</em>{pre}^{treatment} - \left(\hat{Y}<em>{post}^{control} - \hat{Y}</em>{pre}^{control} \right)$$</li>
+<li>$D_{it}$：干预是否发生的虚拟变量<br>\begin{equation}<br>D_{it}= \left\{<br>\begin{array}{ll}<br>1, &amp; 干预发生\\<br>0, &amp; 干预不发生<br>\end{array}<br>\right.<br>\end{equation}</li>
+<li>通过差分消除固定效应$\hat{\beta}$<script type="math/tex; mode=display">\hat{\beta} = \hat{Y}_{post}^{treatment}-
+\hat{Y}_{pre}^{treatment} - \left(\hat{Y}_{post}^{control} - \hat{Y}_{pre}^{control} \right)</script></li>
 </ul>
-<h1 id="工具变量"><a class="header-anchor" href="#工具变量"></a>工具变量</h1>
-<p>工具变量（IV，Instrumental Variable）</p>
-<h1 id="重加权算法"><a class="header-anchor" href="#重加权算法"></a>重加权算法</h1>
-<p>避免“辛普森悖论”</p>
-<h1 id="分层算法"><a class="header-anchor" href="#分层算法"></a>分层算法</h1>
-<h1 id="匹配法"><a class="header-anchor" href="#匹配法"></a>匹配法</h1>
-<ul>
+<h1 id="工具变量"><a href="#工具变量" class="headerlink" title="工具变量"></a>工具变量</h1><p>工具变量（IV，Instrumental Variable）</p>
+<h1 id="重加权算法"><a href="#重加权算法" class="headerlink" title="重加权算法"></a>重加权算法</h1><p>避免“辛普森悖论”</p>
+<h1 id="分层算法"><a href="#分层算法" class="headerlink" title="分层算法"></a>分层算法</h1><h1 id="匹配法"><a href="#匹配法" class="headerlink" title="匹配法"></a>匹配法</h1><ul>
 <li>去除隐藏变量造成的选择性偏差，使得实验组和对照组进行更合理的比较</li>
 <li>适合一些特殊场景（如：渗透率低的场景）的因果分析</li>
 </ul>
-<h2 id="倾向评分匹配PSM"><a class="header-anchor" href="#倾向评分匹配PSM"></a>倾向评分匹配PSM</h2>
-<p>倾向评分匹配/倾向性得分匹配（PSM，Propensity Score Matching）</p>
+<h2 id="倾向评分匹配PSM"><a href="#倾向评分匹配PSM" class="headerlink" title="倾向评分匹配PSM"></a>倾向评分匹配PSM</h2><p>倾向评分匹配/倾向性得分匹配（PSM，Propensity Score Matching）</p>
 <ul>
 <li>通过观测变量对实验组的预测概率进行匹配</li>
 <li>处理观察性研究（observational study）的经典方法</li>
@@ -416,27 +385,25 @@ $$\hat{\beta} = \hat{Y}<em>{post}^{treatment}-<br>
 <li>观测结果$Y$</li>
 </ul>
 <div class="note warning">
-            <p><strong>倾向性得分</strong>：一个用户/样本属于实验组的“倾向性”。<br>$$e(x)=P\left(T=1|X=x\right)$$</p>
+            <p><strong>倾向性得分</strong>：一个用户/样本属于实验组的“倾向性”。</p><script type="math/tex; mode=display">e(x)=P\left(T=1|X=x\right)</script>
           </div>
 <div class="note success">
-            <p><strong>Theorem 1: 平衡性质（Balancing Property）</strong>:<br>$$T_i \perp X_i \mid e(X_i)$$</p>
+            <p><strong>Theorem 1: 平衡性质（Balancing Property）</strong>:</p><script type="math/tex; mode=display">T_i \perp X_i \mid e(X_i)</script>
           </div>
 <div class="note success">
-            <p><strong>Theorem 2: 无混淆（Unconfoundedness）</strong>：<br>$$ T_i \perp Y_{i0}, Y_{i1} \mid e(X_i)$$</p>
+            <p><strong>Theorem 2: 无混淆（Unconfoundedness）</strong>：</p><script type="math/tex; mode=display">T_i \perp Y_{i0}, Y_{i1} \mid e(X_i)</script>
           </div>
 <blockquote>
 <ul>
 <li>倾向性得分是一种“Balancing score”</li>
-<li>对于倾向性得分$e(X_i)$相同的一群用户$i$：
-<ul>
+<li>对于倾向性得分$e(X_i)$相同的一群用户$i$：<ul>
 <li>干预$T_i$和特征是独立的</li>
 <li>干预$T_i$和潜在结果$Y_{i0}, Y_{i1} $是独立的</li>
 </ul>
 </li>
 </ul>
 </blockquote>
-<h3 id="软件"><a class="header-anchor" href="#软件"></a>软件</h3>
-<ul>
+<h3 id="软件"><a href="#软件" class="headerlink" title="软件"></a>软件</h3><ul>
 <li>R：<code>MatchIt</code>包</li>
 </ul>
 <figure class="highlight r"><table><tr><td class="code"><pre><span class="line">install.packages(<span class="string">'MatchIt'</span>)  <span class="comment">## 安装包</span></span><br><span class="line"><span class="keyword">library</span>(<span class="string">'MatchIt'</span>)  <span class="comment">## 加载包</span></span><br><span class="line"></span><br><span class="line">data(<span class="string">'lalonde'</span>)  <span class="comment">## 加载数据集lalonde</span></span><br><span class="line">head(lalonde)  <span class="comment">## 预览数据集</span></span><br><span class="line"><span class="comment">#      treat age educ   race married nodegree re74 re75       re78</span></span><br><span class="line"><span class="comment"># NSW1     1  37   11  black       1        1    0    0  9930.0460</span></span><br><span class="line"><span class="comment"># NSW2     1  22    9 hispan       0        1    0    0  3595.8940</span></span><br><span class="line"><span class="comment"># NSW3     1  30   12  black       0        0    0    0 24909.4500</span></span><br><span class="line"><span class="comment"># NSW4     1  27   11  black       0        1    0    0  7506.1460</span></span><br><span class="line"><span class="comment"># NSW5     1  33    8  black       0        1    0    0   289.7899</span></span><br><span class="line"><span class="comment"># NSW6     1  22    9  black       0        1    0    0  4056.4940</span></span><br><span class="line"><span class="comment">## 在RStudio的help框输入"MatchIt"即可查看该Package的说明文档</span></span><br></pre></td></tr></table></figure>
@@ -451,76 +418,36 @@ $$\hat{\beta} = \hat{Y}<em>{post}^{treatment}-<br>
 <ul>
 <li><a href="https://onlinelibrary.wiley.com/doi/10.1111/j.1467-6419.2007.00527.x" target="_blank" rel="noopener">Caliendo M, Kopeinig S. Some practical guidance for the implementation of propensity score matching[J]. Journal of economic surveys, 2008, 22(1): 31-72.</a></li>
 </ul>
-<h2 id="广义精确匹配CEM"><a class="header-anchor" href="#广义精确匹配CEM"></a>广义精确匹配CEM</h2>
-<p>广义精确匹配（CEM，Coarsened Exact Matching）：通过给特征分桶进行匹配</p>
-<h1 id="合成控制法"><a class="header-anchor" href="#合成控制法"></a>合成控制法</h1>
-<p>合成控制法（SCM，Synthetic Control Method）</p>
+<h2 id="广义精确匹配CEM"><a href="#广义精确匹配CEM" class="headerlink" title="广义精确匹配CEM"></a>广义精确匹配CEM</h2><p>广义精确匹配（CEM，Coarsened Exact Matching）：通过给特征分桶进行匹配</p>
+<h1 id="合成控制法"><a href="#合成控制法" class="headerlink" title="合成控制法"></a>合成控制法</h1><p>合成控制法（SCM，Synthetic Control Method）</p>
 <ul>
 <li>当某个干预施加在某一类群体（或地区）上，虽然找不到单一的最佳对照组，但是可以构造一个虚拟的对照组</li>
 </ul>
-<h1 id="固定效应模型"><a class="header-anchor" href="#固定效应模型"></a>固定效应模型</h1>
-<ul>
+<h1 id="固定效应模型"><a href="#固定效应模型" class="headerlink" title="固定效应模型"></a>固定效应模型</h1><ul>
 <li>适用于面板数据</li>
 </ul>
-<p>模型为：<br>
-$$y_{it} = \alpha_i + x_{it}^T\beta + \varepsilon_{it}$$<br>
-或<br>
-$$y_{it} = \alpha_i + x_{it}^T\beta + d_t + \varepsilon_{it}$$<br>
-其中，$i=1,2,\cdots,N$，$t=1,2,\cdots,T$。</p>
-<h1 id="矩阵补全"><a class="header-anchor" href="#矩阵补全"></a>矩阵补全</h1>
-<ul>
+<p>模型为：</p>
+<script type="math/tex; mode=display">y_{it} = \alpha_i + x_{it}^T\beta + \varepsilon_{it}</script><p>或</p>
+<script type="math/tex; mode=display">y_{it} = \alpha_i + x_{it}^T\beta + d_t + \varepsilon_{it}</script><p>其中，$i=1,2,\cdots,N$，$t=1,2,\cdots,T$。</p>
+<h1 id="矩阵补全"><a href="#矩阵补全" class="headerlink" title="矩阵补全"></a>矩阵补全</h1><ul>
 <li>合成控制法的扩展</li>
 <li>合成控制法（SCM）的局限性：只有一个实验干预组（政策干预开始时间是在某个统一的时间段）</li>
-<li>矩阵补全<strong>适用于</strong>：多个实验干预，干预时间不一致。如：
-<ul>
+<li>矩阵补全<strong>适用于</strong>：多个实验干预，干预时间不一致。如：<ul>
 <li>一个AB实验下的策略是逐渐放量的过程，如何评估策略对用户的影响？</li>
 <li>产品新版本更新了UI界面，但是用户更新版本的时间不一致，如何评估新界面对用户使用时长的影响？</li>
 </ul>
 </li>
 <li>矩阵补全法：通过一定的方法将一个含有缺失值的矩阵恢复为一个完全的矩阵（通过求解一个凸优化问题，实现将一个低秩矩阵恢复），从而估计因果效应</li>
 </ul>
-<p>\begin{equation}<br>
-Y(0)=\left(<br>
-\begin{array}{ccccc}<br>
-? &amp; ? &amp; \checkmark &amp; \cdots &amp; ? \<br>
-\checkmark &amp; ? &amp; \checkmark &amp; \cdots &amp; \checkmark \<br>
-\vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \<br>
-? &amp; \checkmark &amp; \checkmark &amp; \cdots &amp; \checkmark \<br>
-\end{array}<br>
-\right)<br>
-\end{equation}</p>
-<p>\begin{equation}<br>
-Y(1)=\left(<br>
-\begin{array}{ccccc}<br>
-\checkmark &amp; \checkmark &amp; ? &amp; \cdots &amp; \checkmark \<br>
-? &amp; \checkmark &amp; ? &amp; \cdots &amp; ? \<br>
-\vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \<br>
-\checkmark &amp; ? &amp; ? &amp; \cdots &amp; ?<br>
-\end{array}<br>
-\right)<br>
-\end{equation}</p>
-<p>且<br>
-\begin{equation}<br>
-W_{it}=\left{<br>
-\begin{array}{ll}<br>
-0, &amp; Y_{it}(0)被观察到\<br>
-1, &amp; Y_{it}(1)被观察到<br>
-\end{array}<br>
-\right.<br>
-\end{equation}<br>
-则因果效应为<br>
-$$\tau = \frac{ \sum_{i,t} W_{it} \left( Y_{it}(1)-Y_{it}(0) \right) }{ \sum_{i,t} W_{it} }$$</p>
-<h1 id="混淆变量"><a class="header-anchor" href="#混淆变量"></a>混淆变量</h1>
-<h2 id="双重选择Double-Selection"><a class="header-anchor" href="#双重选择Double-Selection"></a>双重选择Double Selection</h2>
-<h2 id="双重机器学习DML"><a class="header-anchor" href="#双重机器学习DML"></a>双重机器学习DML</h2>
-<h1 id="参考资料"><a class="header-anchor" href="#参考资料"></a>参考资料</h1>
-<ul>
+<p>\begin{equation}<br>Y(0)=\left(<br>\begin{array}{ccccc}<br>? &amp; ? &amp; \checkmark &amp; \cdots &amp; ? \\<br>\checkmark &amp; ? &amp; \checkmark &amp; \cdots &amp; \checkmark \\<br>\vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\<br>? &amp; \checkmark &amp; \checkmark &amp; \cdots &amp; \checkmark<br>\end{array}<br>\right)<br>\end{equation}</p>
+<p>\begin{equation}<br>Y(1)=\left(<br>\begin{array}{ccccc}<br>\checkmark &amp; \checkmark &amp; ? &amp; \cdots &amp; \checkmark \\<br>? &amp; \checkmark &amp; ? &amp; \cdots &amp; ? \\<br>\vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\<br>\checkmark &amp; ? &amp; ? &amp; \cdots &amp; ?<br>\end{array}<br>\right)<br>\end{equation}</p>
+<p>且<br>\begin{equation}<br>W_{it} = \left\{<br>\begin{array}{ll}<br>0, &amp; Y_{it} (0)被观察到\\<br>1, &amp; Y_{it} (1)被观察到<br>\end{array}<br>\right.<br>\end{equation}<br>则因果效应为</p>
+<script type="math/tex; mode=display">\tau = \frac{ \sum_{i,t} W_{it} \left( Y_{it}(1)-Y_{it}(0) \right) }{ \sum_{i,t} W_{it} }</script><h1 id="混淆变量"><a href="#混淆变量" class="headerlink" title="混淆变量"></a>混淆变量</h1><h2 id="双重选择Double-Selection"><a href="#双重选择Double-Selection" class="headerlink" title="双重选择Double Selection"></a>双重选择Double Selection</h2><h2 id="双重机器学习DML"><a href="#双重机器学习DML" class="headerlink" title="双重机器学习DML"></a>双重机器学习DML</h2><h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
 <li><a href="http://bayes.cs.ucla.edu/BOOK-2K/" target="_blank" rel="noopener">Judea Pearl: Causality</a></li>
 <li><a href="https://www.douban.com/group/topic/138765167/" target="_blank" rel="noopener">断点回归设计RDD分类与操作案例</a></li>
 <li><a href="https://cosx.org/2013/08/causality6-instrumental-variable/" target="_blank" rel="noopener">因果推断简介之六：工具变量（instrumental variable）</a></li>
 <li><a href="https://dango.rocks/blog/2019/01/20/Causal-Inference-Introduction2-Propensity-Score-Matching/" target="_blank" rel="noopener">因果推断漫谈（二）：倾向性得分匹配介绍</a></li>
-<li><a href="https://mp.weixin.qq.com/s?t=pages/video_detail_new&amp;scene=1&amp;vid=wxv_1670066067622199305&amp;__biz=Mzg3NzUxMjUyMQ==&amp;mid=2247492966&amp;idx=1&amp;sn=13dc5964de23ff43c9994b0788afe7fe&amp;vidsn=&amp;key=734336bd97b20ca726a8dcbad2455e5477a0f2d609b6b35a29f2c418f4c438b67b7c34571e81dee060f26cd7f1bf7db31dc40559014ac19aef1a10d7a70f9cdcbaff4765ac1f9033c089495f6ab5cdc1de9fa5cf0eda0c80b53db3853cf9a81e8ff93b92e6a38dc2a79d8ee4a6e4b87aa7ecf8b1e07bed5da05f8ed79a7b07c1&amp;ascene=1&amp;uin=Mjk4NDY5NTQ4&amp;devicetype=Windows+10+x64&amp;version=6300002f&amp;lang=zh_CN&amp;exportkey=AQ4nRk5qBTXgmnHtUOo%2FpWc%3D&amp;pass_ticket=LCBT0Lt4dWW6xAtluQSk5SCaP6e1U7FD%2BwUktAuHYAqLXxZmVITup4Jw748qaYRF&amp;wx_header=0" target="_blank" rel="noopener">因果推断工具在快手的应用</a>
-<ul>
+<li><a href="https://mp.weixin.qq.com/s?t=pages/video_detail_new&amp;scene=1&amp;vid=wxv_1670066067622199305&amp;__biz=Mzg3NzUxMjUyMQ==&amp;mid=2247492966&amp;idx=1&amp;sn=13dc5964de23ff43c9994b0788afe7fe&amp;vidsn=&amp;key=734336bd97b20ca726a8dcbad2455e5477a0f2d609b6b35a29f2c418f4c438b67b7c34571e81dee060f26cd7f1bf7db31dc40559014ac19aef1a10d7a70f9cdcbaff4765ac1f9033c089495f6ab5cdc1de9fa5cf0eda0c80b53db3853cf9a81e8ff93b92e6a38dc2a79d8ee4a6e4b87aa7ecf8b1e07bed5da05f8ed79a7b07c1&amp;ascene=1&amp;uin=Mjk4NDY5NTQ4&amp;devicetype=Windows+10+x64&amp;version=6300002f&amp;lang=zh_CN&amp;exportkey=AQ4nRk5qBTXgmnHtUOo%2FpWc%3D&amp;pass_ticket=LCBT0Lt4dWW6xAtluQSk5SCaP6e1U7FD%2BwUktAuHYAqLXxZmVITup4Jw748qaYRF&amp;wx_header=0" target="_blank" rel="noopener">因果推断工具在快手的应用</a><ul>
 <li>将机器学习与因果分析结合：双重机器学习、基于决策树/随机森林的异质性的因果效应估计</li>
 </ul>
 </li>
