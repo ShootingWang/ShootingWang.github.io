@@ -27943,7 +27943,21 @@ $$\mathbf{\sum_{i=1}<sup>n(y_i-\bar{y})</sup>2}$$</li>
 <h1 id="Matplotlib"><a href="#Matplotlib" class="headerlink" title="Matplotlib"></a>Matplotlib</h1><blockquote>
 <p><a href="https://matplotlib.org/stable/tutorials/index.html" target="_blank" rel="noopener">Matplotlib Tutorials</a></p>
 </blockquote>
-<h1 id="添加文本"><a href="#添加文本" class="headerlink" title="添加文本"></a>添加文本</h1><h2 id="set-title"><a href="#set-title" class="headerlink" title=".set_title()"></a>.set_title()</h2><p>设置图表标题</p>
+<h1 id="axes-Axes"><a href="#axes-Axes" class="headerlink" title=".axes.Axes"></a>.axes.Axes</h1><h2 id="set-ticks"><a href="#set-ticks" class="headerlink" title=".set_ticks()"></a>.set_ticks()</h2><p>设置轴的刻度线</p>
+<ul>
+<li><code>.xaxis.set_ticks()</code>：设置x轴刻度线</li>
+<li><code>.yaxis.set_ticks()</code>：设置y轴刻度线</li>
+</ul>
+<h2 id="set-title"><a href="#set-title" class="headerlink" title=".set_title()"></a>.set_title()</h2><p>设置图表标题</p>
+<ul>
+<li>参数<code>loc</code>：标题位置<ul>
+<li><code>left</code>：靠左</li>
+<li><code>center</code>：居中</li>
+<li><code>right</code>：靠右</li>
+</ul>
+</li>
+<li>参数<code>pad</code>：标题相对图表偏移（默认为6）</li>
+</ul>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">fig, axs = plt.subplots(<span class="number">3</span>, <span class="number">1</span>, figsize=(<span class="number">5</span>, <span class="number">6</span>), tight_layout=<span class="literal">True</span>)</span><br><span class="line">locs = [<span class="string">'center'</span>, <span class="string">'left'</span>, <span class="string">'right'</span>]</span><br><span class="line"><span class="keyword">for</span> ax, loc <span class="keyword">in</span> zip(axs, locs):</span><br><span class="line">    ax.plot(x1, y1)</span><br><span class="line">    ax.set_title(<span class="string">'Title with loc at '</span>+loc, loc=loc)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
 <img src="/python-matplotlib/%E4%BF%AE%E6%94%B9%E5%9B%BE%E8%A1%A8%E6%A0%87%E9%A2%98.png" class title="修改图表标题">
 <h2 id="set-xlabel"><a href="#set-xlabel" class="headerlink" title=".set_xlabel()"></a>.set_xlabel()</h2><p>修改$x$轴标签</p>
