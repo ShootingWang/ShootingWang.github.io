@@ -36,7 +36,7 @@
 <meta property="og:image" content="https://github.com/python-matplotlib/%E4%BF%AE%E6%94%B9xy%E8%BD%B4%E6%A0%87%E7%AD%BE%E6%96%87%E5%AD%97%EF%BC%88%E5%AD%97%E4%BD%93%E6%A0%BC%E5%BC%8F%EF%BC%89.png">
 <meta property="og:image" content="https://github.com/python-matplotlib/%E4%BF%AE%E6%94%B9xy%E8%BD%B4%E6%A0%87%E7%AD%BE%E6%96%87%E5%AD%97%EF%BC%88%E6%8D%A2%E8%A1%8C+%E5%90%AB%E5%85%AC%E5%BC%8F%EF%BC%89.png">
 <meta property="article:published_time" content="2021-07-24T14:01:01.000Z">
-<meta property="article:modified_time" content="2021-07-24T15:40:35.934Z">
+<meta property="article:modified_time" content="2021-07-24T15:55:30.260Z">
 <meta property="article:author" content="Skye">
 <meta property="article:tag" content="Python">
 <meta property="article:tag" content="可视化">
@@ -258,7 +258,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2021-07-24 22:01:01 / 修改时间：23:40:35" itemprop="dateCreated datePublished" datetime="2021-07-24T22:01:01+08:00">2021-07-24</time>
+              <time title="创建时间：2021-07-24 22:01:01 / 修改时间：23:55:30" itemprop="dateCreated datePublished" datetime="2021-07-24T22:01:01+08:00">2021-07-24</time>
             </span>
 
           
@@ -310,11 +310,16 @@
 <h1 id="Matplotlib"><a href="#Matplotlib" class="headerlink" title="Matplotlib"></a>Matplotlib</h1><blockquote>
 <p><a href="https://matplotlib.org/stable/tutorials/index.html" target="_blank" rel="noopener">Matplotlib Tutorials</a></p>
 </blockquote>
-<h1 id="axes-Axes"><a href="#axes-Axes" class="headerlink" title=".axes.Axes"></a>.axes.Axes</h1><h2 id="set-ticks"><a href="#set-ticks" class="headerlink" title=".set_ticks()"></a>.set_ticks()</h2><p>设置轴的刻度线</p>
+<h1 id="axes-Axes-轴格式"><a href="#axes-Axes-轴格式" class="headerlink" title=".axes.Axes 轴格式"></a>.axes.Axes 轴格式</h1><h2 id="set-major-formatter"><a href="#set-major-formatter" class="headerlink" title=".set_major_formatter()"></a>.set_major_formatter()</h2><p>设置数据标签的显示的文本格式</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">ticks = np.arange(<span class="number">0.</span>, <span class="number">8.1</span>, <span class="number">2.</span>)</span><br><span class="line">ax.xaxis.set_ticks(ticks)</span><br><span class="line">ax.xaxis.set_major_formatter(<span class="string">'&#123;x:1.1f&#125;'</span>)  <span class="comment">## 显示为1位小数</span></span><br><span class="line"></span><br><span class="line">ax.xaxis.set_major_formatter(<span class="string">'±&#123;x&#125;°'</span>) <span class="comment">## 数字前带±号、数字后带°</span></span><br></pre></td></tr></table></figure>
+<h2 id="set-xlim"><a href="#set-xlim" class="headerlink" title=".set_xlim()"></a>.set_xlim()</h2><p>设置x轴的数据范围</p>
+<h2 id="set-ticks"><a href="#set-ticks" class="headerlink" title=".set_ticks()"></a>.set_ticks()</h2><p>设置轴的刻度线</p>
 <ul>
 <li><code>.xaxis.set_ticks()</code>：设置x轴刻度线</li>
 <li><code>.yaxis.set_ticks()</code>：设置y轴刻度线</li>
 </ul>
+<h2 id="set-ticklabels"><a href="#set-ticklabels" class="headerlink" title=".set_ticklabels()"></a>.set_ticklabels()</h2><p>设置轴的数据标签格式</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">ticks = np.arange(<span class="number">0.</span>, <span class="number">8.1</span>, <span class="number">2.</span>)</span><br><span class="line">ax.xaxis.set_ticks(ticks)</span><br><span class="line">ax.xaxis.set_ticklabels([<span class="string">f'<span class="subst">&#123;tick:<span class="number">1.2</span>f&#125;</span>'</span> <span class="keyword">for</span> tick <span class="keyword">in</span> ticks])</span><br></pre></td></tr></table></figure>
 <h2 id="set-title"><a href="#set-title" class="headerlink" title=".set_title()"></a>.set_title()</h2><p>设置图表标题</p>
 <ul>
 <li>参数<code>loc</code>：标题位置<ul>
@@ -481,7 +486,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Matplotlib"><span class="nav-number">1.</span> <span class="nav-text">Matplotlib</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#axes-Axes"><span class="nav-number">2.</span> <span class="nav-text">.axes.Axes</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#set-ticks"><span class="nav-number">2.1.</span> <span class="nav-text">.set_ticks()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#set-title"><span class="nav-number">2.2.</span> <span class="nav-text">.set_title()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#set-xlabel"><span class="nav-number">2.3.</span> <span class="nav-text">.set_xlabel()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#set-ylabel"><span class="nav-number">2.4.</span> <span class="nav-text">.set_ylabel()</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料"><span class="nav-number">3.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Matplotlib"><span class="nav-number">1.</span> <span class="nav-text">Matplotlib</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#axes-Axes-轴格式"><span class="nav-number">2.</span> <span class="nav-text">.axes.Axes 轴格式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#set-major-formatter"><span class="nav-number">2.1.</span> <span class="nav-text">.set_major_formatter()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#set-xlim"><span class="nav-number">2.2.</span> <span class="nav-text">.set_xlim()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#set-ticks"><span class="nav-number">2.3.</span> <span class="nav-text">.set_ticks()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#set-ticklabels"><span class="nav-number">2.4.</span> <span class="nav-text">.set_ticklabels()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#set-title"><span class="nav-number">2.5.</span> <span class="nav-text">.set_title()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#set-xlabel"><span class="nav-number">2.6.</span> <span class="nav-text">.set_xlabel()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#set-ylabel"><span class="nav-number">2.7.</span> <span class="nav-text">.set_ylabel()</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料"><span class="nav-number">3.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
