@@ -321,6 +321,12 @@
 <a href="/python-keras.html" title="Keras">Keras</a>
 </li>
 <li>
+<a href="/python-matplotlib.html" title="matplotlib">matplotlib</a>
+<ul>
+<li>绘图</li>
+</ul>
+</li>
+<li>
 <a href="/python-missingno.html" title="missingno">missingno</a>
 <ul>
 <li>可视化缺失值</li>
