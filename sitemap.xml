@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://github.com/ShootingWang/ShootingWang.github.io/%E5%8F%AF%E8%A7%86%E5%8C%96-Echarts.html</loc>
+    
+    <lastmod>2021-07-24</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://github.com/ShootingWang/ShootingWang.github.io/python-matplotlib.html</loc>
     
     <lastmod>2021-07-24</lastmod>
@@ -1412,6 +1419,13 @@
   
   <url>
     <loc>https://github.com/ShootingWang/ShootingWang.github.io/tags/Endnote/</loc>
+    <lastmod>2021-07-24</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://github.com/ShootingWang/ShootingWang.github.io/tags/Echarts/</loc>
     <lastmod>2021-07-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
