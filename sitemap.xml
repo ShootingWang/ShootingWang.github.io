@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://github.com/ShootingWang/ShootingWang.github.io/Spark-%E6%95%B0%E6%8D%AE%E6%BA%90.html</loc>
+    
+    <lastmod>2021-07-31</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://github.com/ShootingWang/ShootingWang.github.io/Spark-Learning.html</loc>
+    
+    <lastmod>2021-07-31</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://github.com/ShootingWang/ShootingWang.github.io/%E5%8F%AF%E8%A7%86%E5%8C%96-Echarts.html</loc>
     
     <lastmod>2021-07-24</lastmod>
@@ -611,13 +625,6 @@
   </url>
   
   <url>
-    <loc>https://github.com/ShootingWang/ShootingWang.github.io/Spark-Learning.html</loc>
-    
-    <lastmod>2020-10-18</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://github.com/ShootingWang/ShootingWang.github.io/sql-%E8%8C%83%E5%BC%8F.html</loc>
     
     <lastmod>2020-10-18</lastmod>
@@ -663,13 +670,6 @@
     <loc>https://github.com/ShootingWang/ShootingWang.github.io/%E6%A6%82%E7%8E%87%E8%AE%BA%E5%9F%BA%E7%A1%80.html</loc>
     
     <lastmod>2020-09-12</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://github.com/ShootingWang/ShootingWang.github.io/Spark-%E6%95%B0%E6%8D%AE%E6%BA%90.html</loc>
-    
-    <lastmod>2020-09-01</lastmod>
     
   </url>
   
@@ -1426,6 +1426,13 @@
   
   <url>
     <loc>https://github.com/ShootingWang/ShootingWang.github.io/tags/Echarts/</loc>
+    <lastmod>2021-07-31</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://github.com/ShootingWang/ShootingWang.github.io/tags/Spark/</loc>
     <lastmod>2021-07-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
