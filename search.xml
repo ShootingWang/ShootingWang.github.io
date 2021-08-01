@@ -1779,14 +1779,16 @@
   <entry>
     <title>Python | Altair</title>
     <url>/python-altair.html</url>
-    <content><![CDATA[<p><center>A Grammar of Interactive Graphics</center><br><a id="more"></a></p>
+    <content><![CDATA[<center>A Grammar of Interactive Graphics</center>
+<a id="more"></a>
 <meta name="referrer" content="no-referrer">
-
-<h1 id="Altair"><a href="#Altair" class="headerlink" title="Altair"></a>Altair</h1><p>Altair是Python的一个可视化库，由华盛顿大学的数据科学家Jake Vanderplas编写。</p>
+<h1 id="Altair"><a class="header-anchor" href="#Altair"></a>Altair</h1>
+<p>Altair是Python的一个可视化库，由华盛顿大学的数据科学家Jake Vanderplas编写。</p>
 <blockquote>
 <p>官网：<a href="https://altair-viz.github.io/" target="_blank" rel="noopener">https://altair-viz.github.io/</a></p>
 </blockquote>
-<p>安装：<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">pip install -U altair</span><br></pre></td></tr></table></figure></p>
+<p>安装：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">pip install -U altair</span><br></pre></td></tr></table></figure>
 <p>Altair中的基本对象是 Chart，它将数据框（DataFrame）作为单个参数。</p>
 <p>Chart有三个基本方法：</p>
 <ul>
@@ -1808,18 +1810,24 @@
 <li><code>row</code>：按行分布图片</li>
 <li><code>column</code>：按列分布图片</li>
 </ul>
-<h1 id="绘图"><a href="#绘图" class="headerlink" title="绘图"></a>绘图</h1><h2 id="条形图"><a href="#条形图" class="headerlink" title="条形图"></a>条形图</h2><h2 id="散点图-mark-point"><a href="#散点图-mark-point" class="headerlink" title="散点图 mark_point()"></a>散点图 mark_point()</h2><p><code>mark_point()</code> ：绘制散点图</p>
+<h1 id="绘图"><a class="header-anchor" href="#绘图"></a>绘图</h1>
+<h2 id="条形图"><a class="header-anchor" href="#条形图"></a>条形图</h2>
+<h2 id="散点图-mark-point"><a class="header-anchor" href="#散点图-mark-point"></a>散点图 mark_point()</h2>
+<p><code>mark_point()</code> ：绘制散点图</p>
 <ul>
 <li>如果只指定<code>mark_point()</code>，则画出来的只有一个点</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line">data = pd.DataFrame(&#123;</span><br><span class="line">    <span class="string">'a'</span>: list(<span class="string">'AAABBBBDDDDEE'</span>),</span><br><span class="line">    <span class="string">'b'</span>: [<span class="number">2</span>, <span class="number">7</span>, <span class="number">4</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">6</span>, <span class="number">8</span>, <span class="number">4</span>, <span class="number">7</span>, <span class="number">5</span>, <span class="number">12</span>, <span class="number">11</span>, <span class="number">10</span>]</span><br><span class="line">&#125;)  <span class="comment">## 创建一个数据框</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> altair <span class="keyword">as</span> alt</span><br><span class="line">chart = alt.Chart(data)  <span class="comment">## 定义Chart对象</span></span><br><span class="line"></span><br><span class="line">alt.Chart(data).mark_point()  <span class="comment">## 画点图（没有指定x轴、y轴）</span></span><br><span class="line"><span class="comment">## 得到的图片仅一个点</span></span><br><span class="line"></span><br><span class="line">alt.Chart(data).mark_point().encode(</span><br><span class="line">    x=<span class="string">'a'</span> <span class="comment">##指定x轴</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
 <img src="/python-altair/210801%E6%95%A3%E7%82%B9%E5%9B%BE%EF%BC%88%E4%BB%85%E6%8C%87%E5%AE%9Ax%E8%BD%B4%EF%BC%89.png" class title="散点图（仅指定x轴）">
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">alt.Chart(data).mark_point().encode(</span><br><span class="line">    x=<span class="string">'a'</span>,  <span class="comment">##指定x轴为变量a</span></span><br><span class="line">    y=<span class="string">'b'</span>  <span class="comment">##指定y轴为变量b</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<img src="/python-altair/210801%E6%95%A3%E7%82%B9%E5%9B%BE%EF%BC%88%E6%8C%87%E5%AE%9Axy%E8%BD%B4%EF%BC%89.png" class title="散点图（指定xy轴）">
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 参考：https://github.com/altair-viz/altair_notebooks</span></span><br><span class="line"><span class="keyword">import</span> altair <span class="keyword">as</span> alt</span><br><span class="line"><span class="keyword">from</span> vega_datasets <span class="keyword">import</span> data</span><br><span class="line"></span><br><span class="line">cars = data.cars()  <span class="comment">## 载入汽车数据集cars</span></span><br><span class="line"></span><br><span class="line">alt.Chart(cars).mark_point().encode(</span><br><span class="line">    x=<span class="string">'Horsepower'</span>,  <span class="comment">## Horsepower作为x轴数据</span></span><br><span class="line">    y=<span class="string">'Miles_per_Gallon'</span>,  <span class="comment">## Miles_per_Gallon作为y轴数据</span></span><br><span class="line">    color=<span class="string">'Origin'</span>,  <span class="comment">## 以变量Origin（原产国）作为第三维度-颜色</span></span><br><span class="line">).interactive()</span><br></pre></td></tr></table></figure>
 <img src="/python-altair/210801%E6%95%A3%E7%82%B9%E5%9B%BE.png" class title="散点图">
 <p>点击“…”可选择将图片保存为PNG图片格式；鼠标移至图片区域，向下滑动鼠标可缩小数据点，向上滑动鼠标可放大数据点。</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1>]]></content>
+<h1 id="参考资料"><a class="header-anchor" href="#参考资料"></a>参考资料</h1>
+]]></content>
       <categories>
         <category>Python</category>
       </categories>
