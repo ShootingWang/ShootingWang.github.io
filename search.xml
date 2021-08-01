@@ -1779,14 +1779,19 @@
   <entry>
     <title>Python | Altair</title>
     <url>/python-altair.html</url>
-    <content><![CDATA[<p><center>A Grammar of Interactive Graphics</center><br><a id="more"></a></p>
+    <content><![CDATA[<center>A Grammar of Interactive Graphics</center>
+<a id="more"></a>
 <meta name="referrer" content="no-referrer">
-
-<h1 id="Altair"><a href="#Altair" class="headerlink" title="Altair"></a>Altair</h1><p>Altair是Python的一个可视化库，由华盛顿大学的数据科学家Jake Vanderplas编写。</p>
+<h1 id="Altair"><a class="header-anchor" href="#Altair"></a>Altair</h1>
+<p>Altair是Python的一个可视化库，由华盛顿大学的数据科学家Jake Vanderplas编写。</p>
 <blockquote>
-<p>官网：<a href="https://altair-viz.github.io/" target="_blank" rel="noopener">https://altair-viz.github.io/</a></p>
+<ul>
+<li>官网：<a href="https://altair-viz.github.io/" target="_blank" rel="noopener">https://altair-viz.github.io/</a></li>
+<li>Example Gallery：<a href="https://altair-viz.github.io/gallery/index.html" target="_blank" rel="noopener">https://altair-viz.github.io/gallery/index.html</a></li>
+</ul>
 </blockquote>
-<p>安装：<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">pip install -U altair</span><br></pre></td></tr></table></figure></p>
+<p>安装：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">pip install -U altair</span><br></pre></td></tr></table></figure>
 <p>Altair中的基本对象是 Chart，它将数据框（DataFrame）作为单个参数。</p>
 <p>Chart有三个基本方法：</p>
 <ul>
@@ -1808,7 +1813,18 @@
 <li><code>row</code>：按行分布图片</li>
 <li><code>column</code>：按列分布图片</li>
 </ul>
-<h1 id="绘图"><a href="#绘图" class="headerlink" title="绘图"></a>绘图</h1><h2 id="条形图"><a href="#条形图" class="headerlink" title="条形图"></a>条形图</h2><h2 id="散点图-mark-point"><a href="#散点图-mark-point" class="headerlink" title="散点图 mark_point()"></a>散点图 mark_point()</h2><p><code>mark_point()</code> ：绘制散点图</p>
+<h1 id="绘图"><a class="header-anchor" href="#绘图"></a>绘图</h1>
+<h2 id="面积图-mark-area"><a class="header-anchor" href="#面积图-mark-area"></a>面积图 mark_area()</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> altair <span class="keyword">as</span> alt</span><br><span class="line"><span class="keyword">from</span> vega_datasets <span class="keyword">import</span> data</span><br><span class="line"></span><br><span class="line">source = data.iowa_electricity()  <span class="comment">## 导入数据</span></span><br><span class="line"></span><br><span class="line">alt.Chart(source).mark_area().encode(</span><br><span class="line">    x=<span class="string">"year:T"</span>,  <span class="comment">## T是指数据类型为Temporal，表示时间或日期数据</span></span><br><span class="line">    y=<span class="string">"net_generation:Q"</span>,  <span class="comment">## Q是指数据类型为Quantitative，表示连续/实数数据</span></span><br><span class="line">    color=<span class="string">"source:N"</span>  <span class="comment">## N是指数据类型为Nominal，表示定性数据（离散、无序）</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<img src="/python-altair/210802%E9%9D%A2%E7%A7%AF%E5%9B%BE.png" class title="面积图">
+<h2 id="条形图-mark-bar"><a class="header-anchor" href="#条形图-mark-bar"></a>条形图 mark_bar()</h2>
+<p>mark_bar() ：绘制条形图</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line">data = pd.DataFrame(&#123;</span><br><span class="line">    <span class="string">'a'</span>: list(<span class="string">'AAABBBBDDDDEE'</span>),</span><br><span class="line">    <span class="string">'b'</span>: [<span class="number">2</span>, <span class="number">7</span>, <span class="number">4</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">6</span>, <span class="number">8</span>, <span class="number">4</span>, <span class="number">7</span>, <span class="number">5</span>, <span class="number">12</span>, <span class="number">11</span>, <span class="number">10</span>]</span><br><span class="line">&#125;)  <span class="comment">## 创建一个数据框</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> altair <span class="keyword">as</span> alt</span><br><span class="line">alt.Chart(data).mark_bar().encode(</span><br><span class="line">    x=<span class="string">'a'</span>,</span><br><span class="line">    y=<span class="string">'average(b)'</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<img src="/python-altair/210802%E6%9D%A1%E5%BD%A2%E5%9B%BE.png" class title="条形图">
+<h2 id="地图-mark-geoshape"><a class="header-anchor" href="#地图-mark-geoshape"></a>地图 mark_geoshape()</h2>
+<p>mark_geoshape() ：地理形状图</p>
+<h2 id="散点图-mark-point"><a class="header-anchor" href="#散点图-mark-point"></a>散点图 mark_point()</h2>
+<p><code>mark_point()</code> ：绘制散点图</p>
 <ul>
 <li>如果只指定<code>mark_point()</code>，则画出来的只有一个点</li>
 </ul>
@@ -1823,7 +1839,8 @@
 <p>点击“…”可选择将图片保存为PNG图片格式；鼠标移至图片区域，向下滑动鼠标可缩小数据点，向上滑动鼠标可放大数据点。</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1>]]></content>
+<h1 id="参考资料"><a class="header-anchor" href="#参考资料"></a>参考资料</h1>
+]]></content>
       <categories>
         <category>Python</category>
       </categories>
