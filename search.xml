@@ -1777,6 +1777,37 @@
       </tags>
   </entry>
   <entry>
+    <title>Python | Altair</title>
+    <url>/python-altair.html</url>
+    <content><![CDATA[<center>A Grammar of Interactive Graphics</center>
+<a id="more"></a>
+<meta name="referrer" content="no-referrer">
+<h1 id="Altair"><a class="header-anchor" href="#Altair"></a>Altair</h1>
+<p>Altair是Python的一个可视化库，由华盛顿大学的数据科学家Jake Vanderplas编写。</p>
+<blockquote>
+<p>官网：<a href="https://altair-viz.github.io/" target="_blank" rel="noopener">https://altair-viz.github.io/</a></p>
+</blockquote>
+<p>安装：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">pip install -U altair</span><br></pre></td></tr></table></figure>
+<h1 id="绘图"><a class="header-anchor" href="#绘图"></a>绘图</h1>
+<h2 id="条形图"><a class="header-anchor" href="#条形图"></a>条形图</h2>
+<h2 id="散点图"><a class="header-anchor" href="#散点图"></a>散点图</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 参考：https://github.com/altair-viz/altair_notebooks</span></span><br><span class="line"><span class="keyword">import</span> altair <span class="keyword">as</span> alt</span><br><span class="line"><span class="keyword">from</span> vega_datasets <span class="keyword">import</span> data</span><br><span class="line"></span><br><span class="line">cars = data.cars()  <span class="comment">## 载入汽车数据集cars</span></span><br><span class="line"></span><br><span class="line">alt.Chart(cars).mark_point().encode(</span><br><span class="line">    x=<span class="string">'Horsepower'</span>,  <span class="comment">## Horsepower作为x轴数据</span></span><br><span class="line">    y=<span class="string">'Miles_per_Gallon'</span>,  <span class="comment">## Miles_per_Gallon作为y轴数据</span></span><br><span class="line">    color=<span class="string">'Origin'</span>,  <span class="comment">## 以变量Origin（原产国）作为第三维度-颜色</span></span><br><span class="line">).interactive()</span><br></pre></td></tr></table></figure>
+<img src="/python-altair/210801%E6%95%A3%E7%82%B9%E5%9B%BE.png" class title="散点图">
+<p>点击“…”可选择将图片保存为PNG图片格式；鼠标移至图片区域，向下滑动鼠标可缩小数据点，向上滑动鼠标可放大数据点。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="参考资料"><a class="header-anchor" href="#参考资料"></a>参考资料</h1>
+]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>可视化</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Spark | PySpark</title>
     <url>/Spark-PySpark.html</url>
     <content><![CDATA[<center></center>
