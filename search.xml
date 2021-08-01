@@ -1883,6 +1883,57 @@ window.onresize=function(){
 </script>
 <h1 id="样例"><a class="header-anchor" href="#样例"></a>样例</h1>
 <h2 id="饼图"><a class="header-anchor" href="#饼图"></a>饼图</h2>
+<div id="echarts6381" style="width: 85%;height: 800px;margin: 0 auto"></div>
+<script src="https://echarts.baidu.com/dist/echarts.common.min.js"></script>
+<script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('echarts6381'));
+        // 指定图表的配置项和数据
+        var option = // 800表示图表展示的高度为800px
+// '85%'表示图表展示的宽度为85%
+{
+    title: {
+        text: '天气情况统计',   // 主标题
+        subtext: '虚构数据',    // 副标题 
+        left: 'center'
+    },
+    tooltip: {
+        trigger: 'item', 
+        formatter: "{a} <br/>{b}：{c}（{d}%）"
+    },
+    legend: { // 图例
+        // orient: 'vertical',
+        // top: 'middle',
+        bottom: 10,
+        left: 'center', 
+        data: ['西凉', '益州', '成都', '杭州']
+    },
+    series: [ // 序列/数据
+        {
+            name: '天气数据',
+            type: 'pie',    //  饼图
+            radius: '75%',
+            center: ['50%', '50%'],
+            selectedMode: 'single',
+            data: [
+                {value:520, name:'西凉'},
+                {value:510, name:'益州'},
+                {value:627, name:'成都'},
+                {value:826, name:'杭州'}
+            ],
+            itemStyle: {
+                emphasis: {
+                    shadowBlur: 10,
+                    shadowOffsetX: 0,
+                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+                }
+            }
+        }
+    ]
+}
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+</script>
 <h2 id="折线图"><a class="header-anchor" href="#折线图"></a>折线图</h2>
 <h2 id="柱状图"><a class="header-anchor" href="#柱状图"></a>柱状图</h2>
 <h1 id="参考资料"><a class="header-anchor" href="#参考资料"></a>参考资料</h1>
