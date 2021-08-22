@@ -1892,13 +1892,20 @@
 <p><code>split_hist()</code>：快速绘制分组直方图</p>
 <h1 id="nominal"><a class="header-anchor" href="#nominal"></a>nominal</h1>
 <h2 id="associations"><a class="header-anchor" href="#associations"></a>associations()</h2>
-<p>计算数据集中变量的相关系数。包括：</p>
+<p>计算数据集中变量的相关系数。</p>
+<ul>
+<li>相关系数包括：
 <ul>
 <li><code>Pearson</code></li>
 <li><code>Cramer's V</code></li>
 <li><code>Theil's U</code></li>
 <li>条件熵</li>
 </ul>
+</li>
+<li>参数<code>nom_nom_assoc='cramer'</code>：名义变量之间的相关系数计算方法，默认为<code>cramer</code></li>
+<li>参数<code>num_num_assoc='pearson'</code>：数值变量之间的相关系数计算方法，默认为Pearson相关系数</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> dython.nominal <span class="keyword">import</span> associations</span><br><span class="line">associations(df)</span><br></pre></td></tr></table></figure>
 <h2 id="cluster-correlations"><a class="header-anchor" href="#cluster-correlations"></a>cluster_correlations()</h2>
 <p>绘制基于层次聚类的相关系数矩阵图（热力图）</p>
 <h1 id="model-utils"><a class="header-anchor" href="#model-utils"></a>model_utils</h1>
