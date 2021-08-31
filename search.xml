@@ -25302,7 +25302,7 @@ $$H_0:\theta\geq\theta_0\quad \mathrm{vs} \quad H_1:\theta&lt;\theta_0$$</li>
 <p>显然有<br>
 $$g(\theta)=\left{<br>
 \begin{array}{ll}<br>
-\alpha(\theta),&amp;\quad \theta\in \Theta_0\<br>
+\alpha(\theta),&amp;\quad \theta\in \Theta_0 \<br>
 1-\beta(\theta), &amp; \quad \theta\in\Theta_1<br>
 \end{array}<br>
 \right.$$</p>
