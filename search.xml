@@ -12016,6 +12016,8 @@ $$f^2 = \frac{R^2}{ 1 - R^2}$$</li>
   </tr></tbody>
 </table>
 </div>
+<p>效应量为<br>
+$$\mbox{Effect Size} = \frac{ad}{bc} $$</p>
 <h3 id="相关系数"><a class="header-anchor" href="#相关系数"></a>相关系数</h3>
 <p>Pearson $R$ 相关系数：</p>
 <h2 id="显著性检验"><a class="header-anchor" href="#显著性检验"></a>显著性检验</h2>
