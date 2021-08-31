@@ -2385,6 +2385,18 @@ $$F(3,4)=3500$$</li>
 <h2 id="cast-…-as-…"><a class="header-anchor" href="#cast-…-as-…"></a>cast(… as …)</h2>
 <p><code>CAST(&lt;expr&gt; AS &lt;type&gt;)</code>：将expr转换成type类型；如果转换过程失败，则会返回NULL</p>
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">CAST(col_1 AS INT) <span class="comment">-- 将col_1列转换为INT类型</span></span><br><span class="line">CAST(col_2 AS FLOAT)  <span class="comment">-- 将字段的类型转换为FLOAT</span></span><br><span class="line"><span class="comment">-- 将字段的类型转换为FLOAT，推荐使用ROUND()或FLOOR()，而不是CAST(... AS FLOAT)</span></span><br><span class="line">CAST(col_3 AS STRING)</span><br><span class="line">CAST(col_4 AS DOUBLE)</span><br></pre></td></tr></table></figure>
+<h2 id="collect-list"><a class="header-anchor" href="#collect-list"></a>collect_list()</h2>
+<p>将多个数据聚合成列表存在一个字段里</p>
+<ul>
+<li>不去重</li>
+<li>需要与<code>group by</code>结合使用</li>
+</ul>
+<h2 id="collect-set"><a class="header-anchor" href="#collect-set"></a>collect_set()</h2>
+<p>将多个数据聚合成集合存在一个字段里</p>
+<ul>
+<li>去重</li>
+<li>需要与<code>group by</code>结合使用</li>
+</ul>
 <h2 id="concat"><a class="header-anchor" href="#concat"></a>concat()</h2>
 <p>将多个字符串拼接成一个字符串</p>
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">CONCAT('abc', 'defg')</span><br><span class="line"><span class="comment">-- 结果为 abcdefg</span></span><br></pre></td></tr></table></figure>
