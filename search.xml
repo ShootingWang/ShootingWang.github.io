@@ -25297,7 +25297,7 @@ $$H_0:\theta\geq\theta_0\quad \mathrm{vs} \quad H_1:\theta&lt;\theta_0$$</li>
           </div>
 <p>无法找到一个检验使得犯两类错误的概率都尽可能地小。</p>
 <div class="note warning">
-            <h2 id="势函数"><a class="header-anchor" href="#势函数"></a>势函数</h2><p>检验问题<br>$$H_0:\theta\in \Theta_0\quad \mathrm{vs} \quad H_1:\theta\in \Theta_1$$<br>的拒绝域为$W$，则样本观测值$X$落在拒绝域内的概率称为该检验的<strong>势函数</strong>或<strong>功效函数</strong>（power function）<br>$$g(\theta)=P_\theta(X\in W)$$<br>其中$\theta\in\Theta=\Theta_0\cup\Theta_1$。</p>
+            <h2 id="势函数-功效（power）"><a class="header-anchor" href="#势函数-功效（power）"></a>势函数/功效（power）</h2><p>检验问题<br>$$H_0:\theta\in \Theta_0\quad \mathrm{vs} \quad H_1:\theta\in \Theta_1$$<br>的拒绝域为$W$，则样本观测值$X$落在拒绝域内的概率称为该检验的<strong>势函数</strong>或<strong>功效函数</strong>（power function）<br>$$g(\theta)=P_\theta(X\in W)$$<br>其中$\theta\in\Theta=\Theta_0\cup\Theta_1$。</p>
           </div>
 <p>显然有<br>
 $$g(\theta)=\left{<br>
@@ -25310,6 +25310,54 @@ $$g(\theta)=\left{<br>
 <div class="note default">
             <ul><li>在样本量给定的条件下，$\alpha$与$\beta$中一个减小必导致另一个增大</li><li>不可能同时控制一个检验的犯第一类错误、犯第二类错误的概率</li></ul>
           </div>
+<p>假设检验的功效受以下因素的影响：</p>
+<ul>
+<li>样本量$n$：其他条件保持不变，样本量越大，功效就越大</li>
+<li>显著性水平$\alpha$：其他条件保持不变，显著性水平越低，功效就越大</li>
+<li>两总体之间的差异：其他条件不变，总体参数的真实值和估计值之间的差异越大，功效就越大。也即，效应量（effect size）越大，功效就越大</li>
+</ul>
+<div class="note warning">
+            <h2 id="效应量（effect-size）"><a class="header-anchor" href="#效应量（effect-size）"></a>效应量（effect size）</h2><p>样本间差异或相关程度的量化指标</p>
+          </div>
+<p>常用的衡量方式：</p>
+<ol>
+<li>标准均差（standardized mean difference）</li>
+<li>几率（odd ratio）</li>
+<li>相关系数（correlation coefficient）</li>
+</ol>
+<ul>
+<li>事后检验（post hoc）：根据显著性水平（$\alpha$）、功效和样本量$n$，计算效应量</li>
+<li>事前检验（prior）：根据显著性水平（$\alpha$）、功效和效应量，计算样本量$n$</li>
+</ul>
+<h3 id="标准均差"><a class="header-anchor" href="#标准均差"></a>标准均差</h3>
+<p>主要指标：</p>
+<ol>
+<li>Cohen’s d：两总体均值之间的标准差异。适用于两组样本的样本量和方差相似的情况
+<ul>
+<li>是一种标准的平均数差异的估计，与当前样本无关<br>
+$$d=\frac{\bar{x}<em>1 - \bar{x}<em>2 }{s</em>{pooled}}$$<br>
+其中，<br>
+$$s</em>{pooled} = \sqrt{ \frac{ (n_1-1)s_1^2 + (n_2 -1)s_2^2 }{ n_1 + n_2 } } $$</li>
+</ul>
+</li>
+<li>Hedges’s g：是Cohen’s d方法的改进，适用于两组样本的样本量不同的情况
+<ul>
+<li>小样本情况，使用该方法</li>
+</ul>
+</li>
+<li>Glass’s delta（$\Delta$）：和Cohen的方法类似，分母不同。适用于两组样本的方差不同的情况
+<ul>
+<li>两组样本方差不同情况，使用该方法</li>
+</ul>
+</li>
+<li>Cramer’s Phi ($\Phi$) or V：适用于变量是类别型变量的情况
+<ul>
+<li>当类别型变量包含2个类别时，使用Cramer’s Phi</li>
+<li>当类别型变量超过2个类别时，使用Cramer’s V</li>
+</ul>
+</li>
+<li>Cohen’s f2：用于测算方差分析、多元回归之类的效应量</li>
+</ol>
 <h2 id="显著性检验"><a class="header-anchor" href="#显著性检验"></a>显著性检验</h2>
 <p><strong>Fisher的显著性检验</strong>：仅限制犯第一类错误的概率。</p>
 <div class="note warning">
@@ -25411,6 +25459,8 @@ $$g(\theta)=\left{<br>
 <li><a href="https://www.skillsyouneed.com/num/statistics-identifying-patterns.html" target="_blank" rel="noopener">Statistical Analysis: Identifying Patterns</a></li>
 <li><a href="https://zhuanlan.zhihu.com/p/68736699" target="_blank" rel="noopener">三种T检验的详细区分</a></li>
 <li><a href="https://book.douban.com/subject/5998092/" target="_blank" rel="noopener">概率论与数理统计教程</a></li>
+<li><a href="https://www.cnblogs.com/HuZihu/p/12009535.html" target="_blank" rel="noopener">如何计算假设检验的功效和效应量</a></li>
+<li><a href="https://www.statisticssolutions.com/statistical-analyses-effect-size/" target="_blank" rel="noopener">Effect Size - Statistics Solutions</a></li>
 </ul>
 ]]></content>
       <categories>
