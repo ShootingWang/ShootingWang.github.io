@@ -2428,15 +2428,15 @@ $$F(3,4)=3500$$</li>
 <ul>
 <li>可以识别到“年”、“月”等一级的时间</li>
 </ul>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">DATE_FORMAT('2020-09-01 15:34:03', 'y')</span><br><span class="line"><span class="comment">-- 2020</span></span><br><span class="line"></span><br><span class="line">DATE_FORMAT('2020-09-01 15:34:03', 'yyyy-MM')</span><br><span class="line"><span class="comment">-- 2020-09</span></span><br><span class="line"></span><br><span class="line">DATE_FORMAT('2020-09-01', 'yyyy-MM')</span><br><span class="line"><span class="comment">-- 2020-09</span></span><br><span class="line"></span><br><span class="line">DATE_FORMAT('2020-09-01 15:34:03', 'yyyy-MM-dd')</span><br><span class="line"><span class="comment">--2020-09-01</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">DATE_FORMAT('2020-09-01 15:34:03', 'y')</span><br><span class="line"><span class="comment">-- 2020</span></span><br><span class="line"></span><br><span class="line">DATE_FORMAT('2020-09-01 15:34:03', 'yyyy-MM')</span><br><span class="line"><span class="comment">-- 2020-09</span></span><br><span class="line"></span><br><span class="line">DATE_FORMAT('2020-09-01', 'yyyy-MM')</span><br><span class="line"><span class="comment">-- 2020-09</span></span><br><span class="line"></span><br><span class="line">DATE_FORMAT('2020-09-01 15:34:03', 'yyyy-MM-dd')</span><br><span class="line"><span class="comment">--2020-09-01</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 当月第一天</span></span><br><span class="line">date_format('2021-08-28', 'yyyy-MM-01')</span><br><span class="line"><span class="comment">-- 2021-08-01</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 上个月最后一天</span></span><br><span class="line">date_sub(date_format('2021-08-28', 'yyyy-MM-01'), 1)</span><br></pre></td></tr></table></figure>
 <h2 id="date-sub"><a class="header-anchor" href="#date-sub"></a>date_sub</h2>
 <p><code>DATE_SUB(STRING startdate, INT days)</code>：从开始时间<code>startdate</code>增加<code>days</code>天</p>
 <ul>
 <li>返回值是STRING</li>
 </ul>
 <h2 id="day"><a class="header-anchor" href="#day"></a>day</h2>
-<p><code>DAY(STRING date)</code>：提取时间字符串中的天<br>
-<code>DAYOFMONTH(STRING date)</code>：返回当月第几天</p>
+<p><code>day(STRING date)</code>：提取时间字符串中的天<br>
+<code>dayofmonth(STRING date)</code>：返回当月第几天</p>
 <ul>
 <li>返回值是INT</li>
 </ul>
