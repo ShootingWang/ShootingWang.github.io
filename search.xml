@@ -15127,40 +15127,56 @@ $$VIP顾客销售额占比=\frac{会员顾客消费金额}{总销售额}\times10
 <p>The Ladder of Causation</p>
 </blockquote>
 <p>关联——&gt;干预——&gt;反事实</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">层级</th>
-<th style="text-align:center">梯</th>
-<th style="text-align:left">活动</th>
-<th style="text-align:left">问题</th>
-<th style="text-align:left">例子</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">观察</td>
-<td style="text-align:center">关联</td>
-<td style="text-align:left">看、观察</td>
-<td style="text-align:left">如果我观察到xxx会怎样？\ 变量之间的关联是怎样的？\ 观察到$X$会怎样改变我对$Y$的看法？</td>
-<td style="text-align:left">某一调研高速了我们关于选举结果的什么信息？</td>
-</tr>
-<tr>
-<td style="text-align:center">行动</td>
-<td style="text-align:center">干预</td>
-<td style="text-align:left">行动、干预</td>
-<td style="text-align:left"></td>
-<td style="text-align:left"></td>
-</tr>
-<tr>
-<td style="text-align:center">想象</td>
-<td style="text-align:center">反事实</td>
-<td style="text-align:left">想象、反思、理解</td>
-<td style="text-align:left">假如我当时做了xxx会怎样？为什么？</td>
-<td style="text-align:left"></td>
-</tr>
-</tbody>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: center;
+}
+</code></pre>
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: center;">
+      <th>层级</th>
+      <th>梯</th>
+      <th>活动</th>
+      <th>问题</th>
+      <th>例子</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>观察</th>
+      <td>关联</td>
+      <td>看、观察</td>
+      <td>如果我观察到xxx会怎样？\\ 变量之间的关联是怎样的？\\ 观察到$X$会怎样改变我对$Y$的看法？</td>
+      <td>某一调研高速了我们关于选举结果的什么信息？</td>
+    </tr>
+    <tr>
+      <th>行动</th>
+      <td>干预</td>
+      <td>行动、干预</td>
+      <td>如果我实施$X$行动，那么$Y$会怎样？\\ 怎样让$Y$发生？</td>
+      <td>如果我们禁止吸烟将会发生什么？</td>
+    </tr>
+    <tr>
+      <th>想象</th>
+      <td>反事实</td>
+      <td>想象、反思、理解</td>
+      <td>假如我当时做了xxx会怎样？为什么？\\ 是$X$引起了$Y$吗？假如$X$没有发生会如何？假如我之前采取了不同的行动呢？</td>
+      <td>假如在过去的两年里我没有吸烟会怎样？</td>
+    </tr>
+    <tr>
+  </tr></tbody>
 </table>
+</div>
 <h1 id="研究方法"><a class="header-anchor" href="#研究方法"></a>研究方法</h1>
 <h2 id="实验性研究Field-experiment"><a class="header-anchor" href="#实验性研究Field-experiment"></a>实验性研究Field experiment</h2>
 <p>分配机制已知<br>
