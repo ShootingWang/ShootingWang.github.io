@@ -28482,45 +28482,6 @@ window.onresize=function(){
       </tags>
   </entry>
   <entry>
-    <title>python-altair/chart</title>
-    <url>/python-altair/chart.html</url>
-    <content><![CDATA[<!DOCTYPE html>
-<html>
-<head>
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><style>
-    .error {
-        color: red;
-    }
-  </style>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega@5"></script>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-lite@4.0.2"></script>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-embed@6"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-</head>
-<body>
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="vis"></div>
-  <script>
-    (function(vegaEmbed) {
-      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"name": "data-f1e68a455420a2e3bea861e0a72caf7d"}, "mark": "bar", "encoding": {"x": {"type": "nominal", "field": "a"}, "y": {"type": "quantitative", "aggregate": "average", "field": "b"}}, "$schema": "https://vega.github.io/schema/vega-lite/v4.0.2.json", "datasets": {"data-f1e68a455420a2e3bea861e0a72caf7d": [{"a": "A", "b": 2}, {"a": "A", "b": 7}, {"a": "A", "b": 4}, {"a": "B", "b": 1}, {"a": "B", "b": 2}, {"a": "B", "b": 6}, {"a": "B", "b": 8}, {"a": "D", "b": 4}, {"a": "D", "b": 7}, {"a": "D", "b": 5}, {"a": "D", "b": 12}, {"a": "E", "b": 11}, {"a": "E", "b": 10}]}};
-      var embedOpt = {"mode": "vega-lite"};
-
-      function showError(el, error){
-          el.innerHTML = ('<div class="error" style="color:red;">'
-                          + '<p>JavaScript Error: ' + error.message + '</p>'
-                          + "<p>This usually means there's a typo in your chart specification. "
-                          + "See the javascript console for the full traceback.</p>"
-                          + '</div>');
-          throw error;
-      }
-      const el = document.getElementById('vis');
-      vegaEmbed("#vis", spec, embedOpt)
-        .catch(error => showError(el, error));
-    })(vegaEmbed);
-
-  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-</body>
-</html>]]></content>
-  </entry>
-  <entry>
     <title>Python | Dython</title>
     <url>/python-dython.html</url>
     <content><![CDATA[<center></center>
