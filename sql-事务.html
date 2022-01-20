@@ -307,44 +307,34 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <center>Transaction</center>
-<a id="more"></a>
-<h1 id="事务"><a class="header-anchor" href="#事务"></a>事务</h1>
-<ul>
+        <p><center>Transaction</center><br><a id="more"></a></p>
+<h1 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h1><ul>
 <li>一个数据库事务可以包含多个查询、修改、删除、插入等数据库动作，它们要么作为一个整体完全得到确认，要么完全失败（原子性）</li>
 <li>事务提交（commit）之后就不能回滚了</li>
 <li>一个事务只能包含对一个数据库实例的数据操作，不允许跨多个数据库实例，跨多个数据库实例需要分布式事务支持</li>
 <li>数据库事务会给数据库带来并发操作带来一定影响，会降低系统的并发能力</li>
 </ul>
-<h1 id="特性"><a class="header-anchor" href="#特性"></a>特性</h1>
-<p>数据库事务的四大特性（简称<strong>ACID</strong>）：</p>
+<h1 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h1><p>数据库事务的四大特性（简称<strong>ACID</strong>）：</p>
 <ol>
-<li><a href="#%E5%8E%9F%E5%AD%90%E6%80%A7">原子性</a>（Atomicity）</li>
-<li><a href="#%E4%B8%80%E8%87%B4%E6%80%A7">一致性</a>（Consistency）</li>
-<li><a href="#%E9%9A%94%E7%A6%BB%E6%80%A7">隔离性</a>（Isolation）</li>
-<li><a href="#%E6%8C%81%E4%B9%85%E6%80%A7">持久性</a>（Durability）</li>
+<li><a href="#原子性">原子性</a>（Atomicity）</li>
+<li><a href="#一致性">一致性</a>（Consistency）</li>
+<li><a href="#隔离性">隔离性</a>（Isolation）</li>
+<li><a href="#持久性">持久性</a>（Durability）</li>
 </ol>
-<h2 id="原子性"><a class="header-anchor" href="#原子性"></a>原子性</h2>
-<p>不可分割的操作单元，事务中的所有操作，要么全部完成，要么全部不完成；不可能停滞在中间某个环节。</p>
+<h2 id="原子性"><a href="#原子性" class="headerlink" title="原子性"></a>原子性</h2><p>不可分割的操作单元，事务中的所有操作，要么全部完成，要么全部不完成；不可能停滞在中间某个环节。</p>
 <ul>
 <li>事务在执行过程中若发生错误，会被回滚（rollback）到事务开始前的状态。</li>
 </ul>
-<h2 id="一致性"><a class="header-anchor" href="#一致性"></a>一致性</h2>
-<p>在事务开始之前和结束之后，数据库的完整性约束没有被破坏。<br>
-或：如果在执行事务之前数据库是一致的，那么在执行事务之后数据库也还是一致的。</p>
+<h2 id="一致性"><a href="#一致性" class="headerlink" title="一致性"></a>一致性</h2><p>在事务开始之前和结束之后，数据库的完整性约束没有被破坏。<br>或：如果在执行事务之前数据库是一致的，那么在执行事务之后数据库也还是一致的。</p>
 <ul>
 <li>进行数据库提交操作时使用事务（Transaction）是为了保证数据一致性</li>
 </ul>
-<h2 id="隔离性"><a class="header-anchor" href="#隔离性"></a>隔离性</h2>
-<p>事务操作之间彼此独立和透明，互不影响；事务独立运行；通常使用锁来实现。一个事务处理后的结果，影响了其他事务，那么其他事务会撤回。</p>
-<h2 id="持久性"><a class="header-anchor" href="#持久性"></a>持久性</h2>
-<p>事务一旦提交，其结果就是永久的；即使发生系统故障，也能恢复。<br>
-或：在事务完成后，该事务对数据库所作的更改便持久地保存在数据库中，并不会被回滚。</p>
+<h2 id="隔离性"><a href="#隔离性" class="headerlink" title="隔离性"></a>隔离性</h2><p>事务操作之间彼此独立和透明，互不影响；事务独立运行；通常使用锁来实现。一个事务处理后的结果，影响了其他事务，那么其他事务会撤回。</p>
+<h2 id="持久性"><a href="#持久性" class="headerlink" title="持久性"></a>持久性</h2><p>事务一旦提交，其结果就是永久的；即使发生系统故障，也能恢复。<br>或：在事务完成后，该事务对数据库所作的更改便持久地保存在数据库中，并不会被回滚。</p>
 <ul>
 <li>持久性通过数据库备份和恢复来保证</li>
 </ul>
-<h1 id="隔离级别"><a class="header-anchor" href="#隔离级别"></a>隔离级别</h1>
-<ol>
+<h1 id="隔离级别"><a href="#隔离级别" class="headerlink" title="隔离级别"></a>隔离级别</h1><ol>
 <li>Read Uncommitted（未提交读）</li>
 <li>Read Committed（提交读）</li>
 <li>Repeatable Read（可重复读）</li>
@@ -355,33 +345,28 @@
 <li>并发性能依次降低</li>
 <li>随着隔离级别的增高，并发性能降低</li>
 </ul>
-<h2 id="Read-Uncommitted"><a class="header-anchor" href="#Read-Uncommitted"></a>Read Uncommitted</h2>
-<p>可以读取其他事务修改但未提交的数据</p>
+<h2 id="Read-Uncommitted"><a href="#Read-Uncommitted" class="headerlink" title="Read Uncommitted"></a>Read Uncommitted</h2><p>可以读取其他事务修改但未提交的数据</p>
 <ul>
 <li>会导致“脏读”、“幻读”和“不可重复读取”</li>
 </ul>
-<h2 id="Read-Committed"><a class="header-anchor" href="#Read-Committed"></a>Read Committed</h2>
-<p>只能读取其他事务修改并已经提交的数据</p>
+<h2 id="Read-Committed"><a href="#Read-Committed" class="headerlink" title="Read Committed"></a>Read Committed</h2><p>只能读取其他事务修改并已经提交的数据</p>
 <ul>
 <li>避免了“脏读”</li>
 <li>不能避免“幻读”、“不可重复读取”</li>
 <li>提交读是大多数主流数据库的默认事务等级</li>
 </ul>
-<h2 id="Repeatable-Read"><a class="header-anchor" href="#Repeatable-Read"></a>Repeatable Read</h2>
-<p>锁定已经读取的数据，当前事务提前其他事务不允许修改。</p>
+<h2 id="Repeatable-Read"><a href="#Repeatable-Read" class="headerlink" title="Repeatable Read"></a>Repeatable Read</h2><p>锁定已经读取的数据，当前事务提前其他事务不允许修改。</p>
 <ul>
 <li>避免了“脏读”、“不可重复读取”</li>
 <li>不能避免“幻读”</li>
 <li>带来了更多的性能损失</li>
 </ul>
-<h2 id="Serializable"><a class="header-anchor" href="#Serializable"></a>Serializable</h2>
-<p>读取前锁定所有要读取的数据，当前事务提交前，其他事务不允许修改</p>
+<h2 id="Serializable"><a href="#Serializable" class="headerlink" title="Serializable"></a>Serializable</h2><p>读取前锁定所有要读取的数据，当前事务提交前，其他事务不允许修改</p>
 <ul>
 <li>最严格的级别</li>
 <li>事务串行执行，资源消耗最大</li>
 </ul>
-<h1 id="参考资料"><a class="header-anchor" href="#参考资料"></a>参考资料</h1>
-<ul>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
 <li><a href="https://www.cnblogs.com/badboy200800/p/12860162.html" target="_blank" rel="noopener">SQL标准定义的四个事务隔离级别</a></li>
 </ul>
 
@@ -572,13 +557,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">401k</span>
+    <span title="站点总字数">392k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">6:05</span>
+    <span title="站点阅读时长">5:56</span>
 </div>
 
 
