@@ -306,15 +306,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><center>分词</center><br><a id="more"></a></p>
-<h1 id="jieba"><a href="#jieba" class="headerlink" title="jieba"></a>jieba</h1><p>jieba支持三种分词模式：</p>
+        <center>分词</center>
+<a id="more"></a>
+<h1 id="jieba"><a class="header-anchor" href="#jieba"></a>jieba</h1>
+<p>jieba支持三种分词模式：</p>
 <ul>
 <li>精确模式：试图将句子最精确地切开，适合文本分析</li>
-<li>全模式：把句子中所有的可以成词的词语都扫描出来<ul>
+<li>全模式：把句子中所有的可以成词的词语都扫描出来</li>
 <li>速度非常快</li>
 <li>但是不能解决歧义</li>
-</ul>
-</li>
 <li>搜索引擎模式：在精确模式的基础上，对长词再次切分，提高召回率，适合用于搜索引擎分词</li>
 </ul>
 <p>此外，jieba还支持</p>
@@ -323,61 +323,78 @@
 <li>自定义词典</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 安装</span></span><br><span class="line">pip install jieba</span><br></pre></td></tr></table></figure>
-<h2 id="analyse"><a href="#analyse" class="headerlink" title=".analyse"></a>.analyse</h2><h3 id="extract-tags"><a href="#extract-tags" class="headerlink" title="extract_tags()"></a>extract_tags()</h3><p><code>jieba.analyse.extract_tags(sentence, topK=20, withWeight=False, allowPOS=())</code>：基于TF-IDF算法的关键词抽取</p>
+<h2 id="analyse"><a class="header-anchor" href="#analyse"></a>.analyse</h2>
+<h3 id="extract-tags"><a class="header-anchor" href="#extract-tags"></a>extract_tags()</h3>
+<p><code>jieba.analyse.extract_tags(sentence, topK=20, withWeight=False, allowPOS=())</code>：基于TF-IDF算法的关键词抽取</p>
 <ul>
 <li><code>sentence</code>：待提取的文本</li>
 <li><code>topK</code>：返回K个TF-IDF权重最大的关键词</li>
 <li><code>withWeight</code>：是否一并返回关键词权重值</li>
 <li><code>allowPOS</code>：仅包括指定词性的词。默认为空，表示不筛选</li>
 </ul>
-<h3 id="set-idf-path"><a href="#set-idf-path" class="headerlink" title="set_idf_path()"></a>set_idf_path()</h3><p>可以将关键词提取所使用逆向文本频率（IDF）文本语料库切换成自定义语料库的路径</p>
-<h3 id="set-stop-words"><a href="#set-stop-words" class="headerlink" title="set_stop_words()"></a>set_stop_words()</h3><p>可以将关键词提取所使用停用词（stop words）文本语料库切换成自定义语料库的路径</p>
-<h3 id="textrank"><a href="#textrank" class="headerlink" title="textrank()"></a>textrank()</h3><p>基于TextRank算法的关键词提取</p>
-<h3 id="TextRank"><a href="#TextRank" class="headerlink" title="TextRank()"></a>TextRank()</h3><p>新建自定义TextRank实例</p>
-<h3 id="TFIDF"><a href="#TFIDF" class="headerlink" title="TFIDF()"></a>TFIDF()</h3><p>新建TFIDF实例</p>
-<h2 id="cut"><a href="#cut" class="headerlink" title="cut()"></a>cut()</h2><p>分词</p>
+<h3 id="set-idf-path"><a class="header-anchor" href="#set-idf-path"></a>set_idf_path()</h3>
+<p>可以将关键词提取所使用逆向文本频率（IDF）文本语料库切换成自定义语料库的路径</p>
+<h3 id="set-stop-words"><a class="header-anchor" href="#set-stop-words"></a>set_stop_words()</h3>
+<p>可以将关键词提取所使用停用词（stop words）文本语料库切换成自定义语料库的路径</p>
+<h3 id="textrank"><a class="header-anchor" href="#textrank"></a>textrank()</h3>
+<p>基于TextRank算法的关键词提取</p>
+<h3 id="TextRank"><a class="header-anchor" href="#TextRank"></a>TextRank()</h3>
+<p>新建自定义TextRank实例</p>
+<h3 id="TFIDF"><a class="header-anchor" href="#TFIDF"></a>TFIDF()</h3>
+<p>新建TFIDF实例</p>
+<h2 id="cut"><a class="header-anchor" href="#cut"></a>cut()</h2>
+<p>分词</p>
 <ul>
 <li><code>cut_all</code>：是否采用全模式</li>
 <li><code>HMM</code>：是否使用HMM模型</li>
 <li>返回的结构都是一个可迭代的generator，可以使用<code>for</code>循环来获得分词后得到的每一个词语</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> jieba</span><br><span class="line"></span><br><span class="line">df[<span class="string">'cut'</span>] = df[<span class="string">'comment'</span>].apply(<span class="keyword">lambda</span> x: list(jieba.cut(x)))</span><br><span class="line"><span class="comment">## 若要将字符串中的符号去除再分词</span></span><br><span class="line">df[<span class="string">'cut'</span>] = df[<span class="string">'name'</span>].apply(<span class="keyword">lambda</span> x: list(jieba.cut(re.sub(<span class="string">r"[0-9\s+\.\!\/_,$%^*()?;；:-【】+\"\']+|[+——！，;:。？、~@#￥%……&amp;*（）]+"</span>, <span class="string">""</span>, <span class="string">" "</span>.join(x)))))</span><br></pre></td></tr></table></figure>
-<h2 id="cut-for-search"><a href="#cut-for-search" class="headerlink" title="cut_for_search()"></a>cut_for_search()</h2><ul>
+<h2 id="cut-for-search"><a class="header-anchor" href="#cut-for-search"></a>cut_for_search()</h2>
+<ul>
 <li><code>HMM</code>：是否使用HMM模型</li>
 <li>适合用于搜索引擎构建倒排索引的分词，粒度比较细</li>
 <li>返回的结构都是一个可迭代的generator，可以使用<code>for</code>循环来获得分词后得到的每一个词语</li>
 </ul>
-<h2 id="disable-parallel"><a href="#disable-parallel" class="headerlink" title="disable_parallel()"></a>disable_parallel()</h2><p>关闭并行分词模式</p>
-<h2 id="enable-parallel"><a href="#enable-parallel" class="headerlink" title="enable_parallel()"></a>enable_parallel()</h2><p>开启并行分词模式，参数为并行进程数</p>
-<h2 id="lcut"><a href="#lcut" class="headerlink" title="lcut()"></a>lcut()</h2><p>分词</p>
+<h2 id="disable-parallel"><a class="header-anchor" href="#disable-parallel"></a>disable_parallel()</h2>
+<p>关闭并行分词模式</p>
+<h2 id="enable-parallel"><a class="header-anchor" href="#enable-parallel"></a>enable_parallel()</h2>
+<p>开启并行分词模式，参数为并行进程数</p>
+<h2 id="lcut"><a class="header-anchor" href="#lcut"></a>lcut()</h2>
+<p>分词</p>
 <ul>
 <li>返回结果是列表</li>
 </ul>
-<h2 id="lcut-for-search"><a href="#lcut-for-search" class="headerlink" title="lcut_for_search()"></a>lcut_for_search()</h2><ul>
+<h2 id="lcut-for-search"><a class="header-anchor" href="#lcut-for-search"></a>lcut_for_search()</h2>
+<ul>
 <li>返回结果是列表</li>
 </ul>
-<h2 id="load-userdict"><a href="#load-userdict" class="headerlink" title="load_userdict()"></a>load_userdict()</h2><p><code>load_userdict(file_name)</code>：添加自定义词典，载入词典</p>
+<h2 id="load-userdict"><a class="header-anchor" href="#load-userdict"></a>load_userdict()</h2>
+<p><code>load_userdict(file_name)</code>：添加自定义词典，载入词典</p>
 <ul>
 <li><code>file_name</code>：文件类对象或自定义词典的路径。若为路径或二进制方式打开的文件，则文件必须为UTF-8编码</li>
-<li>词典格式：<ul>
+<li>词典格式：</li>
 <li>一个词占一行</li>
 <li>每一行分三部分：词语、词频（可省略）、词性（可省略）。用空格隔开，顺序不可颠倒</li>
 </ul>
-</li>
-</ul>
-<h2 id="posseg"><a href="#posseg" class="headerlink" title=".posseg"></a>.posseg</h2><h3 id="dt"><a href="#dt" class="headerlink" title="dt()"></a>dt()</h3><p>默认词性标注分词器</p>
-<h3 id="POSTokenizer"><a href="#POSTokenizer" class="headerlink" title="POSTokenizer()"></a>POSTokenizer()</h3><p><code>jieba.posseg.POSTokenizer(tokenizer=None)</code>：新建自定义分词器</p>
+<h2 id="posseg"><a class="header-anchor" href="#posseg"></a>.posseg</h2>
+<h3 id="dt"><a class="header-anchor" href="#dt"></a>dt()</h3>
+<p>默认词性标注分词器</p>
+<h3 id="POSTokenizer"><a class="header-anchor" href="#POSTokenizer"></a>POSTokenizer()</h3>
+<p><code>jieba.posseg.POSTokenizer(tokenizer=None)</code>：新建自定义分词器</p>
 <ul>
 <li><code>tokenizer</code>可以指定为内部使用的<code>jieba.Tokenizer</code>分词器</li>
 </ul>
-<h2 id="tokenize"><a href="#tokenize" class="headerlink" title="tokenize()"></a>tokenize()</h2><p>返回词语在原文的起止位置</p>
+<h2 id="tokenize"><a class="header-anchor" href="#tokenize"></a>tokenize()</h2>
+<p>返回词语在原文的起止位置</p>
 <ul>
 <li>输入参数只接受unicode</li>
 <li><code>mode</code>：可选值有<code>search</code>（搜索模式）</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> jieba</span><br><span class="line">result = jieba.tokenize(<span class="string">u'数据结构与算法'</span>)  <span class="comment">## 默认模式</span></span><br><span class="line"><span class="keyword">for</span> tk <span class="keyword">in</span> result:</span><br><span class="line"> print(<span class="string">"word %s \t\t start: %d \t\t end: %d"</span> %(tk[<span class="number">0</span>], tk[<span class="number">1</span>], tk[<span class="number">2</span>]))</span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
+<h1 id="参考资料"><a class="header-anchor" href="#参考资料"></a>参考资料</h1>
+<ul>
 <li><a href="https://www.jianshu.com/p/7ad0cd33005e" target="_blank" rel="noopener">Python中文分词及词频统计</a></li>
 <li><a href="https://www.cnblogs.com/jackchen-net/p/8207009.html" target="_blank" rel="noopener">python 结巴分词(jieba)详解</a></li>
 </ul>
@@ -397,11 +414,6 @@
       <div style="display: inline-block;">
         <img src="/images/reward2021.png" alt="Skye 微信支付">
         <p>微信支付</p>
-      </div>
-      
-      <div style="display: inline-block;">
-        <img src="/images/alipay.jpg" alt="Skye 支付宝">
-        <p>支付宝</p>
       </div>
 
   </div>
@@ -573,13 +585,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">392k</span>
+    <span title="站点总字数">401k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">5:56</span>
+    <span title="站点阅读时长">6:05</span>
 </div>
 
 

@@ -299,8 +299,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><center></center><br><a id="more"></a></p>
-<h1 id="SQL语句执行顺序"><a href="#SQL语句执行顺序" class="headerlink" title="SQL语句执行顺序"></a>SQL语句执行顺序</h1><pre class="mermaid">graph TB;
+        <center></center>
+<a id="more"></a>
+<h1 id="SQL语句执行顺序"><a class="header-anchor" href="#SQL语句执行顺序"></a>SQL语句执行顺序</h1>
+<pre class="mermaid">graph TB;
     id0(FROM)-->id1(JOIN);
     id1-->id2(ON);
     id2-->id3(WHERE);
@@ -310,7 +312,6 @@
     id6-->id7(SELECT);
     id7-->id8(DISTINCT);
     id8-->id9(ORDER BY);</pre>
-
 <ul>
 <li>所有的查询语句都是从<code>FROM</code>开始执行的</li>
 <li>在执行过程中，每个步骤都会为下一个步骤生成一个虚拟表，该虚拟表将作为下一个执行步骤的输入</li>
@@ -318,52 +319,63 @@
 <ol>
 <li>执行<code>FROM</code>子句，生成虚拟表<code>vt1</code>(选择相对小的表做基础表)</li>
 <li>应用<code>ON</code>筛选器，<code>ON</code>中的逻辑表达式将应用到<code>vt1</code>中的各个行，筛选出符合条件的行，生成虚拟表<code>vt2</code></li>
-<li><p>执行<code>JOIN</code>语句，添加</p>
+<li>执行<code>JOIN</code>语句，添加</li>
+</ol>
 <ul>
 <li>如果是<code>OUTER JOIN</code>，则添加外部行</li>
 <li>如果是<code>LEFT OUTER JOIN</code>，则添加左表在第二步中过滤后得到的行</li>
 <li>如果是<code>RIGHT OUTER JOIN</code>，则添加右表在第二步中过滤后得到的行</li>
 </ul>
-<p>生成虚拟表<code>vt3</code></p>
-</li>
-<li>如果<code>FROM</code>子句中的表数目多于2个表，则将<code>vt3</code>和第三个表重复1~3的步骤，得到的虚拟表记为<code>vt3</code>；将<code>vt3</code>和第四个表重复1~3的步骤，得到的虚拟表记为<code>vt3</code>；……直到处理完<code>FROM</code>子句中的所有的表</li>
-<li>对虚拟表<code>vt3</code>应用<code>WHERE</code>筛选器，生成虚拟表<code>vt4</code></li>
-<li><code>GROUP BY col_name</code>子句按<code>col_name</code>列聚合（<code>col_name</code>相同值为一组），得到虚拟<code>vt5</code>表<ul>
+<p>生成虚拟表<code>vt3</code><br>
+4. 如果<code>FROM</code>子句中的表数目多于2个表，则将<code>vt3</code>和第三个表重复1<sub>3的步骤，得到的虚拟表记为`vt3`；将`vt3`和第四个表重复1</sub>3的步骤，得到的虚拟表记为<code>vt3</code>；……直到处理完<code>FROM</code>子句中的所有的表<br>
+5. 对虚拟表<code>vt3</code>应用<code>WHERE</code>筛选器，生成虚拟表<code>vt4</code><br>
+6. <code>GROUP BY col_name</code>子句按<code>col_name</code>列聚合（<code>col_name</code>相同值为一组），得到虚拟<code>vt5</code>表</p>
+<ul>
 <li>如果应用了<code>GROUP BY</code>，则后面的步骤都只能得到<code>vt5</code>表的列或使用关于<code>vt5</code>表的列的聚合函数（<code>COUNT</code>,<code>SUM</code>,<code>AVG</code>等）</li>
 <li><code>GROUP BY</code>将列中唯一的值分成一组，同时只为每一组返回一行记录</li>
 </ul>
-</li>
+<ol start="7">
 <li>Oracle特有：应用<code>CUBE</code>或<code>ROLLUP</code>选项，为<code>vt5</code>生成超组，得到虚拟表<code>vt6</code></li>
-<li>应用<code>HAVING</code>筛选器，生成虚拟表<code>vt7</code><ul>
+<li>应用<code>HAVING</code>筛选器，生成虚拟表<code>vt7</code></li>
+</ol>
+<ul>
 <li><code>HAVING</code>是第一个也是唯一一个应用到已分组数据的筛选器</li>
 </ul>
-</li>
+<ol start="9">
 <li>处理<code>SELECT</code>子句，将虚拟表<code>vt7</code>中出现的列筛选出来，生成虚拟表<code>vt8</code></li>
-<li>应用<code>DISTINCT</code>子句，移除<code>vt8</code>中相同的行，生成虚拟表<code>vt9</code><ul>
+<li>应用<code>DISTINCT</code>子句，移除<code>vt8</code>中相同的行，生成虚拟表<code>vt9</code></li>
+</ol>
+<ul>
 <li>如果应用了<code>GROUP BY</code>子句，则<code>DISTINCT</code>子句是多余的</li>
 <li><code>GROUP BY</code>的效率比<code>DISTINCT</code>高</li>
 </ul>
-</li>
-<li>应用<code>ORDER BY</code>子句，返回一个游标，而不是虚拟表<ul>
+<ol start="11">
+<li>应用<code>ORDER BY</code>子句，返回一个游标，而不是虚拟表</li>
+</ol>
+<ul>
 <li>是第一个也是唯一一个可以使用<code>SELECT</code>列表中别名的步骤</li>
 </ul>
-</li>
+<ol start="12">
 <li>应用<code>TOP</code>，将返回结果给请求者</li>
 </ol>
 <div class="note default">
             <p>以MySQL为例，写的SQL语句顺序为</p><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">SELECT ... </span><br><span class="line">FROM ... JOIN ... ON ...</span><br><span class="line">WHERE ...</span><br><span class="line">GROUP BY ...</span><br><span class="line">HAVING ...</span><br><span class="line">ORDER BY ... </span><br><span class="line">LIMIT ... [OFFSET ...]</span><br></pre></td></tr></table></figure>执行顺序<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">FROM ... JOIN ... ON ...</span><br><span class="line">WHERE ... </span><br><span class="line">GROUP BY ...</span><br><span class="line">HAVING ...</span><br><span class="line"><span class="keyword">SELECT</span> ...</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> ...</span><br><span class="line"><span class="keyword">LIMIT</span> ... [<span class="keyword">OFFSET</span> ...]</span><br></pre></td></tr></table></figure>
           </div>
-<h2 id="Oracle"><a href="#Oracle" class="headerlink" title="Oracle"></a>Oracle</h2><p>Oracle中，在进行多列分组统计时，如果直接使用<code>GROUP BY</code>子句指定分组列，则只能生成基于所有分组列的统计结果。</p>
+<h2 id="Oracle"><a class="header-anchor" href="#Oracle"></a>Oracle</h2>
+<p>Oracle中，在进行多列分组统计时，如果直接使用<code>GROUP BY</code>子句指定分组列，则只能生成基于所有分组列的统计结果。</p>
 <p>如果在<code>GROUP BY</code>子句中使用<code>ROLLUP</code>语句或<code>CUBE</code>语句，除了生成基于所有指定列的分组统计外，还可以生成基于指定列不同子集的统计结果。</p>
-<h3 id="CUBE"><a href="#CUBE" class="headerlink" title="CUBE"></a>CUBE</h3><p>使用<code>CUBE</code>选项，除了生成基于所有指定列的分组统计外，还对指定分组列的所有子集进行统计</p>
+<h3 id="CUBE"><a class="header-anchor" href="#CUBE"></a>CUBE</h3>
+<p>使用<code>CUBE</code>选项，除了生成基于所有指定列的分组统计外，还对指定分组列的所有子集进行统计</p>
 <div class="note default">
             <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">GROUP BY CUBE(A,B,C)</span><br></pre></td></tr></table></figure><p>形成的统计包括以下内容：</p><ul><li><code>GROUP BY</code>：不基于任何列的整个查询结果的统计</li><li><code>GROUP BY A</code>：基于A列的分组统计</li><li><code>GROUP BY B</code>：基于B列的分组统计</li><li><code>GROUP BY C</code>：基于C列的分组统计</li><li><code>GROUP BY A,B</code>：基于A、B两列的分组统计</li><li><code>GROUP BY A,C</code>：基于A、C两列的分组统计</li><li><code>GROUP BY B,C</code>：基于B、C两列的分组统计</li><li><code>GROUP BY A,B,C</code>：基于A、B、C三列的分组统计</li></ul>
           </div>
-<h3 id="ROLLUP"><a href="#ROLLUP" class="headerlink" title="ROLLUP"></a>ROLLUP</h3><p>使用<code>ROLLUP</code>选项，除了生成基于所有指定列的分组统计外，还对指定的分组列从左开始的每个子集进行统计。</p>
+<h3 id="ROLLUP"><a class="header-anchor" href="#ROLLUP"></a>ROLLUP</h3>
+<p>使用<code>ROLLUP</code>选项，除了生成基于所有指定列的分组统计外，还对指定的分组列从左开始的每个子集进行统计。</p>
 <div class="note default">
             <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">GROUP BY ROLLUP(A,B,C)</span><br></pre></td></tr></table></figure><p>形成的统计包括以下内容：</p><ul><li><code>GROUP BY</code>：不基于任何列的整个查询结果的统计</li><li><code>GROUP BY A</code>：基于A列的分组统计</li><li><code>GROUP BY A,B</code>：基于A、B两列的分组统计</li><li><code>GROUP BY A,B,C</code>：基于A、B、C三列的分组统计</li></ul>
           </div>
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
+<h1 id="参考资料"><a class="header-anchor" href="#参考资料"></a>参考资料</h1>
+<ul>
 <li><a href="https://www.cnblogs.com/yyjie/p/7788428.html" target="_blank" rel="noopener">关于sql和MySQL的语句执行顺序</a></li>
 <li><a href="https://www.cnblogs.com/wangyonglong/p/5140728.html" target="_blank" rel="noopener">oracle中分组中的ROLLUP和CUBE选项</a></li>
 </ul>
@@ -383,11 +395,6 @@
       <div style="display: inline-block;">
         <img src="/images/reward2021.png" alt="Skye 微信支付">
         <p>微信支付</p>
-      </div>
-      
-      <div style="display: inline-block;">
-        <img src="/images/alipay.jpg" alt="Skye 支付宝">
-        <p>支付宝</p>
       </div>
 
   </div>
@@ -560,13 +567,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">392k</span>
+    <span title="站点总字数">401k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">5:56</span>
+    <span title="站点阅读时长">6:05</span>
 </div>
 
 
