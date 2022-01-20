@@ -41,8 +41,8 @@
 <meta property="article:tag" content="机器学习">
 <meta property="article:tag" content="分类">
 <meta property="article:tag" content="集成学习">
-<meta property="article:tag" content="Boosting">
 <meta property="article:tag" content="回归">
+<meta property="article:tag" content="Boosting">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://github.com/%E7%AE%97%E6%B3%95-GBDT/GBDT.png">
 
@@ -313,8 +313,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <center>Gradient Boosting Decision Tree</center>
-<a id="more"></a>
+        <p><center>Gradient Boosting Decision Tree</center><br><a id="more"></a></p>
 <p>梯度提升树</p>
 <p>不同简称：</p>
 <ul>
@@ -324,98 +323,78 @@
 <li><strong>GBRT</strong> (Gradient Boosting Regression Tree)</li>
 <li><strong>MART</strong> (Multiple Additive Regression Tree)</li>
 </ul>
-<h1 id="GBDT"><a class="header-anchor" href="#GBDT"></a>GBDT</h1>
-<div class="note default">
-            <p>Breiman, L. (June 1997). “<a href="https://statistics.berkeley.edu/sites/default/files/tech-reports/486.pdf" target="_blank" rel="noopener">Arcing The Edge</a>”. Technical Report 486. Statistics Department, University of California, Berkeley.</p>
+<h1 id="GBDT"><a href="#GBDT" class="headerlink" title="GBDT"></a>GBDT</h1><div class="note default">
+            <p>Breiman, L. (June 1997). “<a href="https://statistics.berkeley.edu/sites/default/files/tech-reports/486.pdf" target="_blank" rel="noopener">Arcing The Edge</a>“. Technical Report 486. Statistics Department, University of California, Berkeley.</p>
           </div>
-<meta name="referrer" content="no-referrer">
-<img src="/%E7%AE%97%E6%B3%95-GBDT/GBDT.png" class title="GBDT训练过程(图片来自:Boosting框架)">
-<h2 id="原理"><a class="header-anchor" href="#原理"></a>原理</h2>
-<p>GBDT进行$T$次迭代，第$t$次（$t=1,\cdots,T$）迭代产生一个弱分类器$h_t(x)$；下一次迭代时，会根据上一次迭代计算得到的残差进行学习，并生成一个弱分类器。</p>
-<p>最终得到的强分类器为<br>
-$$H(x)=\sum_{t=1}^Th_t(x)$$</p>
-<p>在GBDT的第$t$次迭代，假设在前一轮迭代得到的组合强学习器是$H_{t-1}(x)$，损失函数是$L(y,H_{t-1}(x))$</p>
-<p>本轮迭代的目标是找到一个CART回归树模型的弱学习器$h_t(x)$使得本轮的损失函数最小<br>
-$$L\left(y, H_{t}(x) \right)=L\left(y, H_{t-1}(x)+h_t(x) \right)$$</p>
-<ul>
+<p><meta name="referrer" content="no-referrer"><br><img src="/%E7%AE%97%E6%B3%95-GBDT/GBDT.png" class title="GBDT训练过程(图片来自:Boosting框架)"></p>
+<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>GBDT进行$T$次迭代，第$t$次（$t=1,\cdots,T$）迭代产生一个弱分类器$h_t(x)$；下一次迭代时，会根据上一次迭代计算得到的残差进行学习，并生成一个弱分类器。</p>
+<p>最终得到的强分类器为</p>
+<script type="math/tex; mode=display">H(x)=\sum_{t=1}^Th_t(x)</script><p>在GBDT的第$t$次迭代，假设在前一轮迭代得到的组合强学习器是$H_{t-1}(x)$，损失函数是$L(y,H_{t-1}(x))$</p>
+<p>本轮迭代的目标是找到一个CART回归树模型的弱学习器$h_t(x)$使得本轮的损失函数最小</p>
+<script type="math/tex; mode=display">L\left(y, H_{t}(x) \right)=L\left(y, H_{t-1}(x)+h_t(x) \right)</script><ul>
 <li>GBDT通过经验风险最小化来确定下一个弱分类器的参数</li>
-<li>损失函数$L$的选择有多种</li>
+<li><p>损失函数$L$的选择有多种</p>
+<ul>
 <li>平方损失函数</li>
 <li>0-1损失函数</li>
 <li>对数损失函数</li>
 <li>……</li>
 </ul>
 <p>通常使用平方损失函数（即残差）</p>
+</li>
+</ul>
 <p>到目前为止，上述方法描述的是<a href="/%E7%AE%97%E6%B3%95-BoostingTree.html" title="提升树(Boosting Tree)">提升树(Boosting Tree)</a>。</p>
 <p>当损失函数为平方损失函数时，每一步优化的实现较为简单，当损失函数为一般损失函数时，每一步优化的实现较为困难。</p>
 <p>针对该问题，Freidman提出了梯度提升（Gradient Boosting）算法——用损失函数的负梯度来拟合本轮迭代（优化）的近似值，进而拟合一棵CART回归树。</p>
-<p>第$t$轮迭代的第$i$个样本的损失函数的负梯度为<br>
-$$r_i^{(t)}=-\left[\frac{\partial{L(y_i,f(x_i))}}{\partial{f(x_i)}} \right]<em>{f(x)=H</em>{t-1}(x)}$$</p>
-<div class="note danger">
-            <h2 id="GBDT回归算法"><a class="header-anchor" href="#GBDT回归算法"></a>GBDT回归算法</h2><p><strong>输入</strong>：训练数据集${(x_1,y_1),\cdots, (x_N,y_N)}$</p><p>$x_i\in X\subseteq \mathbb{R}^p,\quad y_i\in Y\subseteq \mathbb{R}$</p><p><strong>输出</strong>：提升树<br>$$H(x)=H_0(x)+\sum_{t=1}<sup>T\sum_{j=1}</sup>Jc_j^{(t)}\mathbf{I}\left(x\in R_j^{(t)} \right)$$</p><ol><li>初始化<br>$$H_0(x)=\arg{\min_c{\sum_{i=1}^NL(y_i, c)}}$$</li><li>对于$t=1,\cdots, T$，<ol><li>对$i=1,\cdots,N$，计算<br>$$r_i^{(t)}=-\left[\frac{\partial{L(y_i,f(x_i))}}{\partial{f(x_i)}} \right]<em>{f(x)=H</em>{t-1}(x)}$$</li><li>对$r_i<sup>{(t)}$拟合一棵回归树，得到第$t$棵树的叶结点区域$R_j</sup>{(t)}\quad(j=1,\cdots,J)$，其中$J$为叶结点的个数</li><li>对$j=1,\cdots,J$，计算<br>$$c_j^{(t)}=\arg{\min_c{\sum_{x_i\in R_j^{(t)}}L\left(y_i, H_{t-1}(x_i)+c \right)}}$$</li><li>更新<br>$$H_t(x)=H_{t-1}(x)+\sum_{j=1}<sup>Jc_j</sup>{(t)}\mathbf{I}\left(x\in R_j^{(t)} \right)$$</li></ol></li></ol>
+<p>第$t$轮迭代的第$i$个样本的损失函数的负梯度为</p>
+<script type="math/tex; mode=display">r_i^{(t)}=-\left[\frac{\partial{L(y_i,f(x_i))}}{\partial{f(x_i)}} \right]_{f(x)=H_{t-1}(x)}</script><div class="note danger">
+            <h2 id="GBDT回归算法"><a href="#GBDT回归算法" class="headerlink" title="GBDT回归算法"></a>GBDT回归算法</h2><p><strong>输入</strong>：训练数据集$\{(x_1,y_1),\cdots, (x_N,y_N)\}$</p><p>  $x_i\in X\subseteq \mathbb{R}^p,\quad y_i\in Y\subseteq \mathbb{R}$</p><p><strong>输出</strong>：提升树</p><script type="math/tex; mode=display">H(x)=H_0(x)+\sum_{t=1}^T\sum_{j=1}^Jc_j^{(t)}\mathbf{I}\left(x\in R_j^{(t)} \right)</script><ol><li>初始化 <script type="math/tex; mode=display">H_0(x)=\arg{\min_c{\sum_{i=1}^NL(y_i, c)}}</script></li><li>对于$t=1,\cdots, T$，<ol><li>对$i=1,\cdots,N$，计算<script type="math/tex; mode=display">r_i^{(t)}=-\left[\frac{\partial{L(y_i,f(x_i))}}{\partial{f(x_i)}} \right]_{f(x)=H_{t-1}(x)}</script></li><li>对$r_i^{(t)}$拟合一棵回归树，得到第$t$棵树的叶结点区域$R_j^{(t)}\quad(j=1,\cdots,J)$，其中$J$为叶结点的个数</li><li>对$j=1,\cdots,J$，计算<script type="math/tex; mode=display">c_j^{(t)}=\arg{\min_c{\sum_{x_i\in R_j^{(t)}}L\left(y_i, H_{t-1}(x_i)+c \right)}}</script></li><li>更新<script type="math/tex; mode=display">H_t(x)=H_{t-1}(x)+\sum_{j=1}^Jc_j^{(t)}\mathbf{I}\left(x\in R_j^{(t)} \right)</script></li></ol></li></ol>
           </div>
 <p>再看GBDT分类算法。</p>
 <p>当损失函数为指数损失函数时，此时二分类GBDT退化为<a href="/%E7%AE%97%E6%B3%95-AdaBoost.html" title="AdaBoost算法">AdaBoost算法</a>。</p>
 <p>下面讨论对数似然损失函数的情况。</p>
-<p>损失函数为<br>
-$$L(y, H(x))=\log\left(1+\exp{\left(-yH(x) \right)} \right)$$</p>
-<div class="note danger">
-            <h2 id="GBDT二分类算法"><a class="header-anchor" href="#GBDT二分类算法"></a>GBDT二分类算法</h2><p><strong>输入</strong>：训练数据集${(x_1,y_1),\cdots, (x_N,y_N)}$</p><p>$x_i\in X\subseteq \mathbb{R}^p,\quad y_i\in {-1,+1}$</p><p><strong>输出</strong>：提升树<br>$$H(x)=H_0(x)+\sum_{t=1}<sup>T\sum_{j=1}</sup>Jc_j^{(t)}\mathbf{I}\left(x\in R_j^{(t)} \right)$$</p><ol><li>初始化<br>$$H_0(x)=\arg{\min_c{\sum_{i=1}^NL(y_i, c)}}$$</li><li>对于$t=1,\cdots, T$，<ol><li>对$i=1,\cdots,N$，计算<br>$$r_i^{(t)}=-\left[\frac{\partial{L(y_i,f(x_i))}}{\partial{f(x_i)}} \right]<em>{f(x)=H</em>{t-1}(x)}=\frac{y_i}{1+\exp\left(y_iH_{t-1}(x_i) \right)}$$</li><li>对$r_i<sup>{(t)}$拟合一棵决策树，得到第$t$棵树的叶结点区域$R_j</sup>{(t)}\quad(j=1,\cdots,J)$，其中$J$为叶结点的个数</li><li>对$j=1,\cdots,J$，计算<br>$$c_j^{(t)}=\arg{\min_c{\sum_{x_i\in R_j^{(t)}}\log{\left{1+\exp{\left[-y_i \left(H_{t-1}(x_i)+c \right)\right]} \right}}}}$$<br>一般使用下面这个近似值代替<br>$$c_j^{(t)}=\frac{\sum_{x_i\in R_j<sup>{(t)}}r_i</sup>{(t)}}{\sum_{x_i\in R_j<sup>{(t)}}|r_i</sup>{(t)}|\left(1- |r_i^{(t)}|\right)}$$</li><li>更新<br>$$H_t(x)=H_{t-1}(x)+\sum_{j=1}<sup>Jc_j</sup>{(t)}\mathbf{I}\left(x\in R_j^{(t)} \right)$$</li></ol></li></ol>
+<p>损失函数为</p>
+<script type="math/tex; mode=display">L(y, H(x))=\log\left(1+\exp{\left(-yH(x) \right)} \right)</script><div class="note danger">
+            <h2 id="GBDT二分类算法"><a href="#GBDT二分类算法" class="headerlink" title="GBDT二分类算法"></a>GBDT二分类算法</h2><p><strong>输入</strong>：训练数据集$\{(x_1,y_1),\cdots, (x_N,y_N)\}$</p><p>  $x_i\in X\subseteq \mathbb{R}^p,\quad y_i\in \{-1,+1\}$</p><p><strong>输出</strong>：提升树</p><script type="math/tex; mode=display">H(x)=H_0(x)+\sum_{t=1}^T\sum_{j=1}^Jc_j^{(t)}\mathbf{I}\left(x\in R_j^{(t)} \right)</script><ol><li>初始化 <script type="math/tex; mode=display">H_0(x)=\arg{\min_c{\sum_{i=1}^NL(y_i, c)}}</script></li><li>对于$t=1,\cdots, T$，<ol><li>对$i=1,\cdots,N$，计算<script type="math/tex; mode=display">r_i^{(t)}=-\left[\frac{\partial{L(y_i,f(x_i))}}{\partial{f(x_i)}} \right]_{f(x)=H_{t-1}(x)}=\frac{y_i}{1+\exp\left(y_iH_{t-1}(x_i) \right)}</script></li><li>对$r_i^{(t)}$拟合一棵决策树，得到第$t$棵树的叶结点区域$R_j^{(t)}\quad(j=1,\cdots,J)$，其中$J$为叶结点的个数</li><li>对$j=1,\cdots,J$，计算<script type="math/tex; mode=display">c_j^{(t)}=\arg{\min_c{\sum_{x_i\in R_j^{(t)}}\log{\left\{1+\exp{\left[-y_i \left(H_{t-1}(x_i)+c \right)\right]} \right\}}}}</script>一般使用下面这个近似值代替<script type="math/tex; mode=display">c_j^{(t)}=\frac{\sum_{x_i\in R_j^{(t)}}r_i^{(t)}}{\sum_{x_i\in R_j^{(t)}}|r_i^{(t)}|\left(1- |r_i^{(t)}|\right)}</script></li><li>更新<script type="math/tex; mode=display">H_t(x)=H_{t-1}(x)+\sum_{j=1}^Jc_j^{(t)}\mathbf{I}\left(x\in R_j^{(t)} \right)</script></li></ol></li></ol>
           </div>
 <p>考虑多元GBDT分类。</p>
-<p>假设类别数为$K$，对应的对数似然函数为<br>
-$$L(y, f(x))=-\sum_{k=1}^Ky_k\log{p_k(x)}$$<br>
-其中<br>
-$$y_k=\left{<br>
-\begin{array}{ll}<br>
-1,&amp;样本输出类别为k\<br>
-0,&amp;否则<br>
-\end{array}<br>
-\right.$$<br>
-第$k$类的概率$p_k(x)$<br>
-$$p_k(x)=P(y=k|x)=\frac{\exp{f_k(x)}}{\sum_{l=1}^K\exp{f_l(x)}}$$<br>
-其中$f_1,\cdots,f_K$是$K$个不同的CART回归树。</p>
-<div class="note default">
+<p>假设类别数为$K$，对应的对数似然函数为</p>
+<script type="math/tex; mode=display">L(y, f(x))=-\sum_{k=1}^Ky_k\log{p_k(x)}</script><p>其中</p>
+<script type="math/tex; mode=display">y_k=\left\{
+  \begin{array}{ll}
+  1,&样本输出类别为k\\
+  0,&否则
+  \end{array}
+  \right.</script><p>第$k$类的概率$p_k(x)$</p>
+<script type="math/tex; mode=display">p_k(x)=P(y=k|x)=\frac{\exp\{f_k(x)\}}{\sum_{l=1}^K\exp\{f_l(x)\}}</script><p>其中$f_1,\cdots,f_K$是$K$个不同的CART回归树。<br><div class="note default">
             <p>每一轮的训练，实际上是训练了$K$棵树，去拟合Softmax的每一个分支模型的负梯度。</p>
-          </div>
-<p>单个样本的损失函数为<br>
-$$L(y,x)=-\sum_{k=1}<sup>Ky_k\log{\frac{\exp{f_k(x)}}{\sum_{l=1}</sup>K\exp{f_l(x)}}}$$</p>
-<p>负梯度为<br>
-$$-\frac{\partial{L}}{\partial{f_k(x)}}=y_k-\frac{\exp{f_k(x)}}{\sum_{l=1}^K\exp{f_l(x)}}=y_k-p_k(x)$$</p>
-<blockquote>
+          </div></p>
+<p>单个样本的损失函数为</p>
+<script type="math/tex; mode=display">L(y,x)=-\sum_{k=1}^Ky_k\log{\frac{\exp\{f_k(x)\}}{\sum_{l=1}^K\exp\{f_l(x)\}}}</script><p>负梯度为</p>
+<script type="math/tex; mode=display">-\frac{\partial{L}}{\partial{f_k(x)}}=y_k-\frac{\exp\{f_k(x)\}}{\sum_{l=1}^K\exp\{f_l(x)\}}=y_k-p_k(x)</script><blockquote>
 <p>Python中<code>sklearn</code>的GBDT不支持多因变量，可以针对每个因变量单独运行GBDT，建立多个GBDT模型</p>
 </blockquote>
 <div class="note danger">
-            <h2 id="GBDT多分类算法"><a class="header-anchor" href="#GBDT多分类算法"></a>GBDT多分类算法</h2><p><strong>输入</strong>：训练数据集${(x_1,y_1),\cdots, (x_N,y_N)}$</p><p>$x_i\in X\subseteq \mathbb{R}^p,\quad y_i\in Y\subseteq \mathbb{R}^K$<br>$$y_i=(y_{i1},\cdots,y_{iK})^T, \quad y_{ij}=\left{\begin{array}{ll}<br>1, &amp; 如果第i个样本属于第k个类别\<br>0, &amp; j\neq k<br>\end{array} \right.$$</p><p><strong>输出</strong>：提升树<br>$$H(x)=\left(f_1(x),\cdots,f_K(x) \right)$$<br>其中<br>$$f_k(x)=\sum_{t=1}<sup>T\sum_{j=1}</sup>Jc_{jk}^{(t)}\mathbf{I}\left(x\in R_{jk}^{(t)} \right)$$</p><ol><li><p>初始化<br>$$H_0(x)=\left(f_1<sup>{(0)}(x),\cdots,f_K</sup>{(0)}(x) \right)^T, 其中f_j^{(0)}(x)=0(j=1,\cdots,K)$$</p></li><li><p>对$t=1,\cdots,T$，</p></li><li><p>对$k=1,\cdots,K$，计算<br>$$p_k<sup>{(t)}(x)=\frac{\exp{f_k</sup>{(t)}(x)}}{\sum_{l=1}<sup>K\exp{f_l</sup>{(t)}(x)}}$$<br>1. 对$i=1,\cdots,N$，计算<br>$$r_{ik}<sup>{(t)}=y_{ik}-p_k</sup>{(t)}(x_i)$$<br>2. 对$r_{ik}<sup>{(t)}$拟合一棵回归树，得到第$t$次迭代的第$k$棵树的叶结点区域$R_{jk}</sup>{(t)}\quad(j=1,\cdots,J)$，其中$J$为叶结点的个数<br>3. 对$j=1,\cdots,J$，计算<br>$$c_{jk}^{(t)}=\frac{K-1}{K}\frac{\sum_{x_i\in R_{jk}<sup>{(t)}}r_{ik}</sup>{(t)}}{\sum_{x_i\in R_{jk}<sup>{(t)}}|r_{ik}</sup>{(t)}|(1-|r_{ik}^{(t)}|)}$$<br>4. 更新<br>$$f_k<sup>{(t)}(x)=f_k</sup>{(t-1)}(x)+\sum_{j=1}<sup>Jc_{jk}</sup>{(t)}\mathbf{I}\left(x\in R_{jk}^{(t)} \right)$$</p></li></ol>
+            <h2 id="GBDT多分类算法"><a href="#GBDT多分类算法" class="headerlink" title="GBDT多分类算法"></a>GBDT多分类算法</h2><p><strong>输入</strong>：训练数据集$\{(x_1,y_1),\cdots, (x_N,y_N)\}$</p><p>  $x_i\in X\subseteq \mathbb{R}^p,\quad y_i\in Y\subseteq \mathbb{R}^K$</p><script type="math/tex; mode=display">y_i=(y_{i1},\cdots,y_{iK})^T, \quad y_{ij}=\left\{\begin{array}{ll}  1, & 如果第i个样本属于第k个类别\\  0, & j\neq k  \end{array} \right.</script><p><strong>输出</strong>：提升树</p><script type="math/tex; mode=display">H(x)=\left(f_1(x),\cdots,f_K(x) \right)</script><p>  其中</p><script type="math/tex; mode=display">f_k(x)=\sum_{t=1}^T\sum_{j=1}^Jc_{jk}^{(t)}\mathbf{I}\left(x\in R_{jk}^{(t)} \right)</script><ol><li>初始化 <script type="math/tex; mode=display">H_0(x)=\left(f_1^{(0)}(x),\cdots,f_K^{(0)}(x) \right)^T, 其中f_j^{(0)}(x)=0(j=1,\cdots,K)</script></li><li><p>对$t=1,\cdots,T$，</p><ol><li>对$k=1,\cdots,K$，计算<script type="math/tex; mode=display">p_k^{(t)}(x)=\frac{\exp{f_k^{(t)}(x)}}{\sum_{l=1}^K\exp{f_l^{(t)}(x)}}</script><ol><li>对$i=1,\cdots,N$，计算<script type="math/tex; mode=display">r_{ik}^{(t)}=y_{ik}-p_k^{(t)}(x_i)</script></li><li>对$r_{ik}^{(t)}$拟合一棵回归树，得到第$t$次迭代的第$k$棵树的叶结点区域$R_{jk}^{(t)}\quad(j=1,\cdots,J)$，其中$J$为叶结点的个数</li><li>对$j=1,\cdots,J$，计算<script type="math/tex; mode=display">c_{jk}^{(t)}=\frac{K-1}{K}\frac{\sum_{x_i\in R_{jk}^{(t)}}r_{ik}^{(t)}}{\sum_{x_i\in R_{jk}^{(t)}}|r_{ik}^{(t)}|(1-|r_{ik}^{(t)}|)}</script></li><li>更新<script type="math/tex; mode=display">f_k^{(t)}(x)=f_k^{(t-1)}(x)+\sum_{j=1}^Jc_{jk}^{(t)}\mathbf{I}\left(x\in R_{jk}^{(t)} \right)</script></li></ol></li></ol></li></ol>
           </div>
-<h2 id="正则化"><a class="header-anchor" href="#正则化"></a>正则化</h2>
-<p>为了防止过拟合，可以对GBDT进行正则化。</p>
+<h2 id="正则化"><a href="#正则化" class="headerlink" title="正则化"></a>正则化</h2><p>为了防止过拟合，可以对GBDT进行正则化。</p>
 <ol>
-<li>与<a href="/%E7%AE%97%E6%B3%95-AdaBoost.html" title="AdaBoost">AdaBoost</a>类似的正则化项，即<strong>步长</strong>（learning rate）$\nu$，在弱学习器的迭代<br>
-$$H_{t}(x)=H_{t-1}(x)+h_t(x)$$<br>
-中添加正则化项，即<br>
-$$H_{t}(x)=H_{t-1}(x)+\nu h_t(x)$$<br>
-其中$0&lt;\nu\leq1$</li>
-</ol>
-<ul>
+<li>与<a href="/%E7%AE%97%E6%B3%95-AdaBoost.html" title="AdaBoost">AdaBoost</a>类似的正则化项，即<strong>步长</strong>（learning rate）$\nu$，在弱学习器的迭代<script type="math/tex; mode=display">H_{t}(x)=H_{t-1}(x)+h_t(x)</script>中添加正则化项，即<script type="math/tex; mode=display">H_{t}(x)=H_{t-1}(x)+\nu h_t(x)</script>其中$0&lt;\nu\leq1$<ul>
 <li>对于同一训练集，较小的$\nu$意味着需要更多的弱学习器的迭代次数（$T$需要更大）。</li>
 <li>通常结合<strong>步长</strong>和<strong>迭代最大次数</strong>一起决定算法的拟合效果。</li>
 </ul>
-<ol start="2">
-<li>子采样比例（subsample），取值为$(0,1]$</li>
-</ol>
-<ul>
+</li>
+<li>子采样比例（subsample），取值为$(0,1]$<ul>
 <li>不放回抽样（而随机森林是有放回抽样）</li>
 <li>小于1的比例可以减少方差（防止过拟合），但是会增加样本拟合的偏差，因此取值不能太低</li>
 <li>推荐在$[0.5, 0.8]$之间</li>
 <li>程序可以通过采样分发到不同的任务去做Boosting的迭代过程，最后形成新树（减少弱学习器难以并行学习的弱点）</li>
 <li>采用了子采样的GBDT也称<strong>随机梯度提升树</strong>（SGBT，Stochastic Gradient Boosting Tree）</li>
 </ul>
-<ol start="3">
+</li>
 <li>对弱学习器（CART回归树）进行正则化剪枝</li>
 </ol>
-<h1 id="损失函数"><a class="header-anchor" href="#损失函数"></a>损失函数</h1>
-<p>分类算法：</p>
+<h1 id="损失函数"><a href="#损失函数" class="headerlink" title="损失函数"></a>损失函数</h1><p>分类算法：</p>
 <ul>
 <li>对数损失函数</li>
 <li>指数损失函数</li>
@@ -427,82 +406,62 @@ $$H_{t}(x)=H_{t-1}(x)+\nu h_t(x)$$<br>
 <li>Huber损失</li>
 <li>Quantile损失（分位数损失）</li>
 </ul>
-<h2 id="对数损失"><a class="header-anchor" href="#对数损失"></a>对数损失</h2>
-<p>二元<br>
-$$L(y, H(x))=\log\left{1+\exp{\left[-yH(x) \right]} \right}$$</p>
-<p>多元<br>
-$$L(y, H(x))=-\sum_{k=1}^Ky_k\log{p_k(x)}$$</p>
-<h2 id="指数损失"><a class="header-anchor" href="#指数损失"></a>指数损失</h2>
-<p>$$L(y, H(x))=\exp{\left[-yH(x) \right]}$$</p>
-<h2 id="平方损失"><a class="header-anchor" href="#平方损失"></a>平方损失</h2>
-<p>$$L(y, H(x))=\left(y-H(x) \right)^2$$</p>
-<h2 id="绝对损失"><a class="header-anchor" href="#绝对损失"></a>绝对损失</h2>
-<p>$$L(y, H(x))=|y-H(x)|$$<br>
-对应负梯度误差为<br>
-$$\mathrm{sign}\left(y_i-H(x_i) \right)$$</p>
-<h2 id="Huber损失"><a class="header-anchor" href="#Huber损失"></a>Huber损失</h2>
-<ul>
+<h2 id="对数损失"><a href="#对数损失" class="headerlink" title="对数损失"></a>对数损失</h2><p>二元</p>
+<script type="math/tex; mode=display">L(y, H(x))=\log\left\{1+\exp{\left[-yH(x) \right]} \right\}</script><p>多元</p>
+<script type="math/tex; mode=display">L(y, H(x))=-\sum_{k=1}^Ky_k\log{p_k(x)}</script><h2 id="指数损失"><a href="#指数损失" class="headerlink" title="指数损失"></a>指数损失</h2><script type="math/tex; mode=display">L(y, H(x))=\exp{\left[-yH(x) \right]}</script><h2 id="平方损失"><a href="#平方损失" class="headerlink" title="平方损失"></a>平方损失</h2><script type="math/tex; mode=display">L(y, H(x))=\left(y-H(x) \right)^2</script><h2 id="绝对损失"><a href="#绝对损失" class="headerlink" title="绝对损失"></a>绝对损失</h2><script type="math/tex; mode=display">L(y, H(x))=|y-H(x)|</script><p>对应负梯度误差为</p>
+<script type="math/tex; mode=display">\mathrm{sign}\left(y_i-H(x_i) \right)</script><h2 id="Huber损失"><a href="#Huber损失" class="headerlink" title="Huber损失"></a>Huber损失</h2><ul>
 <li>对于远离中心的异常点，采用绝对损失</li>
 <li>中心附近的点，采用平方损失</li>
 <li>这个界限一般用分位数点度量</li>
 </ul>
-<p>$$L(y, H(x))=\left{<br>
-\begin{array}{ll}<br>
-\frac{1}{2}(y-H(x))^2 ,&amp; |y-H(x)|\leq \delta\<br>
-\delta \left(|y-H(x)|-\frac{\delta}{2} \right), &amp; |y-H(x)|&gt; \delta<br>
-\end{array}<br>
-\right.$$</p>
-<p>对应的负梯度误差为<br>
-$$r(y_i, H(x_i))=\left{<br>
-\begin{array}{ll}<br>
-y_i-H(x_i), &amp; |y_i-H(x_i)|\leq \delta\<br>
-\delta\mathrm{sign}\left(y_i-H(x_i) \right), &amp; |y_i-H(x_i)|&gt; \delta<br>
-\end{array}<br>
-\right.$$</p>
-<h2 id="分位数损失"><a class="header-anchor" href="#分位数损失"></a>分位数损失</h2>
-<p>对应的是分位数回归的损失函数<br>
-$$L(y,H(x))=\sum_{y\geq H(x)}\theta|y-H(x)|+\sum_{y&lt; H(x)}(1-\theta)|y-H(x)|$$<br>
-其中$\theta$是分位数，需要提前指定。</p>
-<p>对应的负梯度误差为<br>
-$$r(y_i, H(x_i))=\left{<br>
-\begin{array}{ll}<br>
-\theta, &amp; y_i\geq H(x_i)\<br>
-\theta-1, &amp; y_i&lt; H(x_i)<br>
-\end{array}<br>
-\right.$$</p>
-<h1 id="总结"><a class="header-anchor" href="#总结"></a>总结</h1>
-<h2 id="优点"><a class="header-anchor" href="#优点"></a>优点</h2>
-<ul>
-<li>可以灵活处理各种类型的数据</li>
+<script type="math/tex; mode=display">L(y, H(x))=\left\{
+  \begin{array}{ll}
+  \frac{1}{2}(y-H(x))^2 ,& |y-H(x)|\leq \delta\\
+  \delta \left(|y-H(x)|-\frac{\delta}{2} \right), & |y-H(x)|> \delta 
+  \end{array}
+  \right.</script><p>对应的负梯度误差为</p>
+<script type="math/tex; mode=display">r(y_i, H(x_i))=\left\{
+  \begin{array}{ll}
+  y_i-H(x_i), & |y_i-H(x_i)|\leq \delta\\
+  \delta\mathrm{sign}\left(y_i-H(x_i) \right), & |y_i-H(x_i)|> \delta
+  \end{array}
+  \right.</script><h2 id="分位数损失"><a href="#分位数损失" class="headerlink" title="分位数损失"></a>分位数损失</h2><p>对应的是分位数回归的损失函数</p>
+<script type="math/tex; mode=display">L(y,H(x))=\sum_{y\geq H(x)}\theta|y-H(x)|+\sum_{y< H(x)}(1-\theta)|y-H(x)|</script><p>其中$\theta$是分位数，需要提前指定。</p>
+<p>对应的负梯度误差为</p>
+<script type="math/tex; mode=display">r(y_i, H(x_i))=\left\{
+  \begin{array}{ll}
+  \theta, & y_i\geq H(x_i)\\
+  \theta-1, & y_i< H(x_i)
+  \end{array}
+  \right.</script><h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><h2 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h2><ul>
+<li>可以灵活处理各种类型的数据<ul>
 <li>连续值</li>
 <li>离散值</li>
+</ul>
+</li>
 <li>使用Huber损失函数、Quantile损失函数，对异常值不敏感</li>
 <li>（相对<a href="/%E7%AE%97%E6%B3%95-SVM.html" title="SVM">SVM</a>来说）在相对少的调参时间情况下，预测的准确率也可以比较高</li>
 </ul>
-<h2 id="缺点"><a class="header-anchor" href="#缺点"></a>缺点</h2>
-<ul>
-<li>弱学习器之间存在依赖关系，难以并行训练数据
-<ul>
+<h2 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h2><ul>
+<li>弱学习器之间存在依赖关系，难以并行训练数据<ul>
 <li>可通过自采样的SGBT来达到部分并行</li>
 </ul>
 </li>
 </ul>
-<h1 id="比较"><a class="header-anchor" href="#比较"></a>比较</h1>
-<h2 id="GBDT-vs-RF"><a class="header-anchor" href="#GBDT-vs-RF"></a>GBDT vs RF</h2>
-<p>GBDT vs <a href="/%E7%AE%97%E6%B3%95-%E9%9A%8F%E6%9C%BA%E6%A3%AE%E6%9E%97.html" title="随机森林">随机森林</a></p>
+<h1 id="比较"><a href="#比较" class="headerlink" title="比较"></a>比较</h1><h2 id="GBDT-vs-RF"><a href="#GBDT-vs-RF" class="headerlink" title="GBDT vs RF"></a>GBDT vs RF</h2><p>GBDT vs <a href="/%E7%AE%97%E6%B3%95-%E9%9A%8F%E6%9C%BA%E6%A3%AE%E6%9E%97.html" title="随机森林">随机森林</a></p>
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
-<pre><code>.dataframe tbody tr th {
-    vertical-align: top;
-}
 
-.dataframe thead th {
-    text-align: center;
-}
-</code></pre>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: center;
+    }
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -552,8 +511,9 @@ $$r(y_i, H(x_i))=\left{<br>
   </tr></tbody>
 </table>
 </div>
-<h2 id="GBDT-vs-XGBoost"><a class="header-anchor" href="#GBDT-vs-XGBoost"></a>GBDT vs XGBoost</h2>
-<p>GBDT vs <a href="/%E7%AE%97%E6%B3%95-XGBoost.html" title="XGBoost">XGBoost</a></p>
+
+<h2 id="GBDT-vs-XGBoost"><a href="#GBDT-vs-XGBoost" class="headerlink" title="GBDT vs XGBoost"></a>GBDT vs XGBoost</h2><p>GBDT vs <a href="/%E7%AE%97%E6%B3%95-XGBoost.html" title="XGBoost">XGBoost</a></p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -570,11 +530,11 @@ $$r(y_i, H(x_i))=\left{<br>
 </tr>
 <tr>
 <td style="text-align:center"><strong>优化</strong></td>
-<td style="text-align:center">梯度下降法<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></td>
-<td style="text-align:center">牛顿法<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></td>
+<td style="text-align:center">梯度下降法<sup><a href="#fn_1" id="reffn_1">1</a></sup></td>
+<td style="text-align:center">牛顿法<sup><a href="#fn_2" id="reffn_2">2</a></sup></td>
 </tr>
 <tr>
-<td style="text-align:center"><strong>正则项</strong><sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup></td>
+<td style="text-align:center"><strong>正则项</strong><sup><a href="#fn_3" id="reffn_3">3</a></sup></td>
 <td style="text-align:center">没有</td>
 <td style="text-align:center">有</td>
 </tr>
@@ -586,7 +546,7 @@ $$r(y_i, H(x_i))=\left{<br>
 <tr>
 <td style="text-align:center"><strong>列抽样</strong></td>
 <td style="text-align:center"></td>
-<td style="text-align:center">支持列抽样<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup></td>
+<td style="text-align:center">支持列抽样<sup><a href="#fn_4" id="reffn_4">4</a></sup></td>
 </tr>
 <tr>
 <td style="text-align:center"><strong>缺失值</strong></td>
@@ -595,21 +555,33 @@ $$r(y_i, H(x_i))=\left{<br>
 </tr>
 </tbody>
 </table>
-<h2 id="GBDT-vs-AdaBoost"><a class="header-anchor" href="#GBDT-vs-AdaBoost"></a>GBDT vs AdaBoost</h2>
-<p>GBDT vs <a href="/%E7%AE%97%E6%B3%95-AdaBoost.html" title="AdaBoost">AdaBoost</a></p>
+</div>
+<blockquote id="fn_1">
+<sup>1</sup>. 在优化时只用到一阶导数信息<a href="#reffn_1" title="Jump back to footnote [1] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_2">
+<sup>2</sup>. XGBoost对代价函数进行了二阶泰勒展开，同时使用了一阶导数和二阶导数的信息；XGBoost还支持自定义代价函数<a href="#reffn_2" title="Jump back to footnote [2] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_3">
+<sup>3</sup>. 正则项降低了模型的Variance，学习得到的模型复杂度更低（防止过拟合）<a href="#reffn_3" title="Jump back to footnote [3] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_4">
+<sup>4</sup>. XGBoost借鉴了随机森林的做法，支持列抽样（column sampling），既能降低过拟合，还能减少计算<a href="#reffn_4" title="Jump back to footnote [4] in the text."> &#8617;</a>
+</blockquote>
+<h2 id="GBDT-vs-AdaBoost"><a href="#GBDT-vs-AdaBoost" class="headerlink" title="GBDT vs AdaBoost"></a>GBDT vs AdaBoost</h2><p>GBDT vs <a href="/%E7%AE%97%E6%B3%95-AdaBoost.html" title="AdaBoost">AdaBoost</a></p>
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
-<pre><code>.dataframe tbody tr th {
-    vertical-align: top;
-}
 
-.dataframe thead th {
-    text-align: center;
-}
-</code></pre>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: center;
+    }
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -643,8 +615,10 @@ $$r(y_i, H(x_i))=\left{<br>
   </tr></tbody>
 </table>
 </div>
-<h1 id="参考资料"><a class="header-anchor" href="#参考资料"></a>参考资料</h1>
-<ul>
+
+
+
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
 <li><a href="https://blog.csdn.net/suranxu007/article/details/49910323" target="_blank" rel="noopener">GBDT（MART） 迭代决策树入门教程 | 简介</a></li>
 <li><a href="https://www.cnblogs.com/pinard/p/6140514.html" target="_blank" rel="noopener">刘建平Pinard-梯度提升树(GBDT)原理小结</a></li>
 <li><a href="http://www.17bigdata.com/%e9%9a%8f%e6%9c%ba%e6%a3%ae%e6%9e%97%e5%92%8cgbdt%e7%9a%84%e5%8c%ba%e5%88%ab/" target="_blank" rel="noopener">随机森林和GBDT的区别</a></li>
@@ -652,19 +626,6 @@ $$r(y_i, H(x_i))=\left{<br>
 <li><a href="https://book.douban.com/subject/10590856/" target="_blank" rel="noopener">李航-统计学习方法</a></li>
 <li><a href="https://zhuanlan.zhihu.com/p/91652813?utm_source=wechat_session" target="_blank" rel="noopener">深入理解GBDT多分类算法</a></li>
 </ul>
-<hr class="footnotes-sep">
-<section class="footnotes">
-<ol class="footnotes-list">
-<li id="fn1" class="footnote-item"><p>在优化时只用到一阶导数信息 <a href="#fnref1" class="footnote-backref">↩︎</a></p>
-</li>
-<li id="fn2" class="footnote-item"><p>XGBoost对代价函数进行了二阶泰勒展开，同时使用了一阶导数和二阶导数的信息；XGBoost还支持自定义代价函数 <a href="#fnref2" class="footnote-backref">↩︎</a></p>
-</li>
-<li id="fn3" class="footnote-item"><p>正则项降低了模型的Variance，学习得到的模型复杂度更低（防止过拟合） <a href="#fnref3" class="footnote-backref">↩︎</a></p>
-</li>
-<li id="fn4" class="footnote-item"><p>XGBoost借鉴了随机森林的做法，支持列抽样（column sampling），既能降低过拟合，还能减少计算 <a href="#fnref4" class="footnote-backref">↩︎</a></p>
-</li>
-</ol>
-</section>
 
     </div>
 
@@ -712,8 +673,8 @@ $$r(y_i, H(x_i))=\left{<br>
               <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" rel="tag"># 机器学习</a>
               <a href="/tags/%E5%88%86%E7%B1%BB/" rel="tag"># 分类</a>
               <a href="/tags/%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0/" rel="tag"># 集成学习</a>
-              <a href="/tags/Boosting/" rel="tag"># Boosting</a>
               <a href="/tags/%E5%9B%9E%E5%BD%92/" rel="tag"># 回归</a>
+              <a href="/tags/Boosting/" rel="tag"># Boosting</a>
           </div>
 
         
@@ -857,13 +818,13 @@ $$r(y_i, H(x_i))=\left{<br>
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">401k</span>
+    <span title="站点总字数">392k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">6:05</span>
+    <span title="站点阅读时长">5:56</span>
 </div>
 
 
@@ -945,8 +906,6 @@ $$r(y_i, H(x_i))=\left{<br>
 
 
 
-
-  
 
 
 
