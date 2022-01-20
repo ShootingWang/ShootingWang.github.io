@@ -1868,15 +1868,44 @@
       </tags>
   </entry>
   <entry>
+    <title>数据分析 | 数据分析十条</title>
+    <url>/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%8D%81%E6%9D%A1.html</url>
+    <content><![CDATA[<center></center>
+<a id="more"></a>
+<p>数据科学大佬宋世君曾总结过的<strong>数据分析十条</strong>，</p>
+<ol>
+<li>分析师的核心能力是思辨</li>
+<li>对讲真话负责，保持中立</li>
+<li>论据充分，论证严谨，观点简明</li>
+<li>数据先于观点，而不是观点先于数据</li>
+<li>不要把问题复杂化，也不要惧怕复杂度</li>
+<li>分析什么问题，往往比用什么方法更重要</li>
+<li>好的分析师给别人输入，而不只是帮别人输出</li>
+<li>分析没有什么价值，除非洞见改变了什么其他的东西</li>
+<li>如果可能应该基于问题收集数据，而不只是基于数据来问问题</li>
+<li>不是所有问题都可以分析出答案，以开放的心态采纳其他观点</li>
+</ol>
+<h1 id="参考资料"><a class="header-anchor" href="#参考资料"></a>参考资料</h1>
+<ul>
+<li><a href="https://mp.weixin.qq.com/s/-MXgwn-BEU62E0Tnm91ylg" target="_blank" rel="noopener">滴滴宋世君：数据分析师究竟是做什么的？</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>数据分析</category>
+      </categories>
+      <tags>
+        <tag>数据分析</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>数据分析 | 数据驱动</title>
     <url>/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-%E6%95%B0%E6%8D%AE%E9%A9%B1%E5%8A%A8.html</url>
     <content><![CDATA[<center></center>
 <a id="more"></a>
-<p>数据分析师，总会被问到“你怎么理解数据驱动？”<br>
-什么是数据驱动呢？</p>
+<p>每一位数据分析师，可能都被问过“你怎么理解数据驱动？”这个问题与“数据科学家主要做什么工作”有点相近。</p>
 <blockquote>
 <p><a href="https://wiki.mbalib.com/wiki/%E6%95%B0%E6%8D%AE%E9%A9%B1%E5%8A%A8" target="_blank" rel="noopener">MBA智库百科</a>：<br>
-数据驱动，是通过移动互联网或者其他的相关软件作为手段采集海量的数据，将数据进行组织形成信息，之后对相关的信息进行整合和提炼，在数据的技术上经过训练和拟合形成自动化的决策模型。简单来说，就是<strong>以数据为中心依据进行决策和行动</strong>。</p>
+<strong>数据驱动</strong>，是通过移动互联网或者其他的相关软件作为手段采集海量的数据，将数据进行组织形成信息，之后对相关的信息进行整合和提炼，在数据的技术上经过训练和拟合形成自动化的决策模型。简单来说，就是<strong>以数据为中心依据进行决策和行动</strong>。</p>
 </blockquote>
 <h1 id="参考资料"><a class="header-anchor" href="#参考资料"></a>参考资料</h1>
 ]]></content>
