@@ -2320,11 +2320,11 @@ window.onresize=function(){
 </script>
 <h1 id="样例"><a class="header-anchor" href="#样例"></a>样例</h1>
 <h2 id="饼图"><a class="header-anchor" href="#饼图"></a>饼图</h2>
-<div id="echarts5900" style="width: 85%;height: 800px;margin: 0 auto"></div>
+<div id="echarts5163" style="width: 85%;height: 800px;margin: 0 auto"></div>
 <script src="https://cdn.bootcss.com/echarts/4.3.0/echarts.common.min.js"></script>
 <script type="text/javascript">
 	// 基于准备好的dom，初始化echarts实例
-	var myChart = echarts.init(document.getElementById('echarts5900'));
+	var myChart = echarts.init(document.getElementById('echarts5163'));
 	// 指定图表的配置项和数据
 	// 800表示图表展示的高度为800px
 // '85%'表示图表展示的宽度为85%
@@ -12344,8 +12344,8 @@ $$\chi<sup>2=\sum_{i=1}</sup>K\frac{(n_i-n\hat{p}_i)^2}{n\hat{p}_i}$$<br>
         <category>Statistics</category>
       </categories>
       <tags>
-        <tag>检验</tag>
         <tag>概率统计基础</tag>
+        <tag>检验</tag>
       </tags>
   </entry>
   <entry>
@@ -25363,8 +25363,8 @@ Var(U)&amp;=\frac{n_1n_2}{12}(n_1+n_2+1)<br>
         <category>Statistics</category>
       </categories>
       <tags>
-        <tag>检验</tag>
         <tag>概率统计基础</tag>
+        <tag>检验</tag>
       </tags>
   </entry>
   <entry>
@@ -25759,8 +25759,8 @@ $l$一般不为整数，可以取与$l$最接近的整数代替之。</li>
         <category>Statistics</category>
       </categories>
       <tags>
-        <tag>检验</tag>
         <tag>概率统计基础</tag>
+        <tag>检验</tag>
       </tags>
   </entry>
   <entry>
