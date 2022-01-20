@@ -2003,11 +2003,11 @@ window.onresize=function(){
 }
 </script>
 
-<h1 id="样例"><a href="#样例" class="headerlink" title="样例"></a>样例</h1><h2 id="饼图"><a href="#饼图" class="headerlink" title="饼图"></a>饼图</h2><div id="echarts4636" style="width: 85%;height: 800px;margin: 0 auto"></div>
+<h1 id="样例"><a href="#样例" class="headerlink" title="样例"></a>样例</h1><h2 id="饼图"><a href="#饼图" class="headerlink" title="饼图"></a>饼图</h2><div id="echarts9196" style="width: 85%;height: 800px;margin: 0 auto"></div>
 <script src="https://cdn.bootcss.com/echarts/4.3.0/echarts.common.min.js"></script>
 <script type="text/javascript">
 	// 基于准备好的dom，初始化echarts实例
-	var myChart = echarts.init(document.getElementById('echarts4636'));
+	var myChart = echarts.init(document.getElementById('echarts9196'));
 	// 指定图表的配置项和数据
 	// 800表示图表展示的高度为800px
 // '85%'表示图表展示的宽度为85%
@@ -20982,8 +20982,8 @@ E(X)&=\int_0^1 x\frac{1}{B(\alpha,\beta)}x^{\alpha-1}(1-x)^{\beta-1}\mathrm{d}x\
         <category>数据结构</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>数据结构</tag>
+        <tag>算法</tag>
       </tags>
   </entry>
   <entry>
