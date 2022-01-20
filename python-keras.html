@@ -304,103 +304,87 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <center></center>
-<a id="more"></a>
-<h1 id="keras"><a class="header-anchor" href="#keras"></a>keras</h1>
-<p>Keras 是一个用 Python 编写的高级神经网络 API，它能够以 TensorFlow, CNTK, 或者 Theano 作为后端运行。</p>
-<h2 id="安装"><a class="header-anchor" href="#安装"></a>安装</h2>
-<ul>
-<li>使用PyPI安装</li>
+        <p><center></center><br><a id="more"></a></p>
+<h1 id="keras"><a href="#keras" class="headerlink" title="keras"></a>keras</h1><p>Keras 是一个用 Python 编写的高级神经网络 API，它能够以 TensorFlow, CNTK, 或者 Theano 作为后端运行。</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><ul>
+<li>使用PyPI安装<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># Anaconda Prompt</span></span></span><br><span class="line">pip install keras</span><br></pre></td></tr></table></figure></li>
+<li>使用GitHub源码安装<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git clone https://github.com/keras-team/keras.git</span><br><span class="line">cd keras</span><br><span class="line">python setup.py install</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
- <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># Anaconda Prompt</span></span></span><br><span class="line">pip install keras</span><br></pre></td></tr></table></figure>
-<ul>
-<li>使用GitHub源码安装</li>
-</ul>
- <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git clone https://github.com/keras-team/keras.git</span><br><span class="line">cd keras</span><br><span class="line">python setup.py install</span><br></pre></td></tr></table></figure>
-<h2 id="后端"><a class="header-anchor" href="#后端"></a>后端</h2>
-<ul>
+<h2 id="后端"><a href="#后端" class="headerlink" title="后端"></a>后端</h2><ul>
 <li>Keras不处理如张量乘积、卷积等低级操作</li>
 <li>依赖于一个专门的、优化的张量操作库来完成这个操作，它可以作为 Keras 的「后端引擎」</li>
-<li>Keras 有三个后端实现可用:</li>
+<li>Keras 有三个后端实现可用: <ul>
 <li>TensorFlow 后端</li>
 <li>Theano 后端</li>
 <li>CNTK 后端</li>
 </ul>
+</li>
+</ul>
 <p>配置见：<a href="https://keras.io/zh/backend/" target="_blank" rel="noopener">Keras后端配置</a></p>
-<h2 id="Sequential顺序模型"><a class="header-anchor" href="#Sequential顺序模型"></a>Sequential顺序模型</h2>
-<ul>
+<h2 id="Sequential顺序模型"><a href="#Sequential顺序模型" class="headerlink" title="Sequential顺序模型"></a>Sequential顺序模型</h2><ul>
 <li>由多个网络层线性堆叠</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> keras.models <span class="keyword">import</span> Sequential</span><br><span class="line"></span><br><span class="line">model = Sequential()</span><br></pre></td></tr></table></figure>
-<h3 id="堆叠"><a class="header-anchor" href="#堆叠"></a>堆叠</h3>
-<p>可以使用<code>.add()</code>来堆叠模型：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> keras.models <span class="keyword">import</span> Sequential</span><br><span class="line"><span class="keyword">from</span> keras.layers <span class="keyword">import</span> Dense</span><br><span class="line"></span><br><span class="line">model.add(Dense(units=<span class="number">64</span>, activation=<span class="string">'relu'</span>, input_dim=<span class="number">100</span>))</span><br><span class="line">model.add(Dense(units=<span class="number">10</span>, activation=<span class="string">'softmax'</span>))</span><br></pre></td></tr></table></figure>
-<p>模型需要知道它所期望的输入的尺寸——因此，模型的第一层<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>需要接收关于其输入尺寸的信息。</p>
+<h3 id="堆叠"><a href="#堆叠" class="headerlink" title="堆叠"></a>堆叠</h3><p>可以使用<code>.add()</code>来堆叠模型：<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> keras.models <span class="keyword">import</span> Sequential</span><br><span class="line"><span class="keyword">from</span> keras.layers <span class="keyword">import</span> Dense</span><br><span class="line"></span><br><span class="line">model.add(Dense(units=<span class="number">64</span>, activation=<span class="string">'relu'</span>, input_dim=<span class="number">100</span>))</span><br><span class="line">model.add(Dense(units=<span class="number">10</span>, activation=<span class="string">'softmax'</span>))</span><br></pre></td></tr></table></figure></p>
+<p>模型需要知道它所期望的输入的尺寸——因此，模型的第一层<sup><a href="#fn_1" id="reffn_1">1</a></sup>需要接收关于其输入尺寸的信息。</p>
+<blockquote id="fn_1">
+<sup>1</sup>. 且只有第一层需要，下面的层可以自动地推断尺寸<a href="#reffn_1" title="Jump back to footnote [1] in the text."> &#8617;</a>
+</blockquote>
 <p>输入尺寸的方法：</p>
 <ul>
-<li>传递<code>input_shape</code>参数给第一层</li>
-<li><code>input_shape</code>是一个表示尺寸的元组<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></li>
+<li>传递<code>input_shape</code>参数给第一层<ul>
+<li><code>input_shape</code>是一个表示尺寸的元组<sup><a href="#fn_2" id="reffn_2">2</a></sup></li>
 <li><code>input_shape</code>中不包含数据的batch大小</li>
-<li>某些2D层（如<code>Dense</code>）支持通过参数<code>input_dim</code>指定输入尺寸；某些3D时序层支持<code>input_dim</code>和<code>input_length</code>参数</li>
-<li>如果需要为输入指定一个固定的<code>batch</code>大小，可以传递参数<code>batch_size</code>给一个层</li>
 </ul>
+</li>
+<li>某些2D层（如<code>Dense</code>）支持通过参数<code>input_dim</code>指定输入尺寸；某些3D时序层支持<code>input_dim</code>和<code>input_length</code>参数</li>
+<li><p>如果需要为输入指定一个固定的<code>batch</code>大小，可以传递参数<code>batch_size</code>给一个层</p>
 <blockquote>
 <p>如：同时将<code>batch_size=32</code>和<code>input_shape=(6,8)</code>传递给一个层，则每一批输入的尺寸为<code>(32, 6, 8)</code></p>
 </blockquote>
+</li>
+</ul>
+<blockquote id="fn_2">
+<sup>2</sup>. 一个由整数或<code>None</code>组成的元组，其中<code>None</code>表示可能为任何正整数。<a href="#reffn_2" title="Jump back to footnote [2] in the text."> &#8617;</a>
+</blockquote>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">model = Sequential()</span><br><span class="line">model.add(Dense(<span class="number">32</span>, input_shape=(<span class="number">784</span>,)))</span><br><span class="line"><span class="comment">## 等价于</span></span><br><span class="line">model = Sequential()</span><br><span class="line">model.add(Dense(<span class="number">32</span>, input_dim=<span class="number">784</span>))</span><br></pre></td></tr></table></figure>
-<h3 id="编译"><a class="header-anchor" href="#编译"></a>编译</h3>
-<p>构建模型之后，可以使用<code>.compile()</code>来配置学习过程。</p>
+<h3 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h3><p>构建模型之后，可以使用<code>.compile()</code>来配置学习过程。</p>
 <ul>
-<li>优化器<code>optimizer</code>：可以是现有优化器的字符串标识符，也可以是Optimizer类的实例。</li>
+<li>优化器<code>optimizer</code>：可以是现有优化器的字符串标识符，也可以是Optimizer类的实例。<ul>
 <li>现有优化器的字符串标识符：<code>rmsprop</code>、<code>adagrad</code></li>
 <li>Optimizer类的实例：<a href="https://keras.io/api/optimizers/sgd" target="_blank" rel="noopener">SGD</a>、<a href="https://keras.io/api/optimizers/rmsprop" target="_blank" rel="noopener">RMSprop</a>、<a href="https://keras.io/api/optimizers/adam" target="_blank" rel="noopener">Adam</a>、<a href="https://keras.io/api/optimizers/adadelta" target="_blank" rel="noopener">Adadelta</a>、<a href="https://keras.io/api/optimizers/adagrad" target="_blank" rel="noopener">Adagrad</a>、<a href="https://keras.io/api/optimizers/adamax" target="_blank" rel="noopener">Adamax</a>、<a href="https://keras.io/api/optimizers/Nadam" target="_blank" rel="noopener">Nadam</a>、<a href="https://keras.io/api/optimizers/ftrl" target="_blank" rel="noopener">Ftrl</a></li>
-<li>损失函数<code>loss</code>：模型试图最小化的目标函数；可以是现有损失函数的字符串标识符，也可以是一个目标函数。</li>
+</ul>
+</li>
+<li>损失函数<code>loss</code>：模型试图最小化的目标函数；可以是现有损失函数的字符串标识符，也可以是一个目标函数。<ul>
 <li>现有损失函数的字符串标识符：<code>categorical_crossentropy</code>、<code>mse</code></li>
 <li>目标函数：见<a href="https://keras.io/api/losses/" target="_blank" rel="noopener">losses</a></li>
-<li>评估标准<code>metrics</code>：可以是现有的标准的字符串标识符，也可以是自定义的评估标准函数。</li>
-<li><code>metrics=['accuracy']</code></li>
+</ul>
+</li>
+<li>评估标准<code>metrics</code>：可以是现有的标准的字符串标识符，也可以是自定义的评估标准函数。<ul>
+<li><code>metrics=[&#39;accuracy&#39;]</code></li>
+</ul>
+</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">model.compile(loss=<span class="string">'categorical_crossentropy'</span>,</span><br><span class="line">              optimizer=<span class="string">'sgd'</span>,</span><br><span class="line">              metrics=[<span class="string">'accuracy'</span>])</span><br><span class="line"><span class="comment">## 自定义评估标准函数</span></span><br><span class="line"><span class="keyword">import</span> keras.backend <span class="keyword">as</span> K  <span class="comment">## 加载后端</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">mean_pred</span><span class="params">(y_true, y_pred)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> K.mean(y_pred)</span><br><span class="line"></span><br><span class="line">model.compile(optimizer=<span class="string">'rmsprop'</span>,</span><br><span class="line">              loss=<span class="string">'binary_crossentropy'</span>,</span><br><span class="line">              metrics=[<span class="string">'accuracy'</span>, mean_pred])</span><br></pre></td></tr></table></figure>
 <ul>
-<li>多分类问题</li>
+<li>多分类问题<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">model.compile(optimizer=<span class="string">'rmsprop'</span>,</span><br><span class="line">             loss=<span class="string">'categorical_crossentropy'</span>,</span><br><span class="line">             metrics=[<span class="string">'accuracy'</span>])</span><br></pre></td></tr></table></figure></li>
+<li>二分类问题<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">model.compile(optimizer=<span class="string">'rmsprop'</span>,</span><br><span class="line">             loss=<span class="string">'binary_crossentropy'</span>,</span><br><span class="line">             metrics=[<span class="string">'accuracy'</span>])</span><br></pre></td></tr></table></figure></li>
+<li>回归问题<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">model.compile(optimizer=<span class="string">'rmsprop'</span>,</span><br><span class="line">             loss=<span class="string">'mse'</span>)</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
- <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">model.compile(optimizer=<span class="string">'rmsprop'</span>,</span><br><span class="line">             loss=<span class="string">'categorical_crossentropy'</span>,</span><br><span class="line">             metrics=[<span class="string">'accuracy'</span>])</span><br></pre></td></tr></table></figure>
-<ul>
-<li>二分类问题</li>
-</ul>
- <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">model.compile(optimizer=<span class="string">'rmsprop'</span>,</span><br><span class="line">             loss=<span class="string">'binary_crossentropy'</span>,</span><br><span class="line">             metrics=[<span class="string">'accuracy'</span>])</span><br></pre></td></tr></table></figure>
-<ul>
-<li>回归问题</li>
-</ul>
- <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">model.compile(optimizer=<span class="string">'rmsprop'</span>,</span><br><span class="line">             loss=<span class="string">'mse'</span>)</span><br></pre></td></tr></table></figure>
-<h3 id="训练"><a class="header-anchor" href="#训练"></a>训练</h3>
-<p>然后在训练集数据上进行迭代(<strong>训练</strong>)：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">model.fit(x_train, y_train, epochs=<span class="number">5</span>, batch_size=<span class="number">32</span>)</span><br></pre></td></tr></table></figure>
-<p><strong>评估</strong>模型性能:</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">loss_and_metrics = model.evaluate(x_test, y_test, batch_size=<span class="number">128</span>)</span><br></pre></td></tr></table></figure>
-<p>进行<strong>预测</strong>：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">pred_classes = model.predict(x_test, batch_size=<span class="number">128</span>)</span><br></pre></td></tr></table></figure>
-<h2 id="utils"><a class="header-anchor" href="#utils"></a>utils</h2>
-<h3 id="to-categorical"><a class="header-anchor" href="#to-categorical"></a>to_categorical()</h3>
-<p>进行One-Hot Encoding</p>
+<h3 id="训练"><a href="#训练" class="headerlink" title="训练"></a>训练</h3><p>然后在训练集数据上进行迭代(<strong>训练</strong>)：<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">model.fit(x_train, y_train, epochs=<span class="number">5</span>, batch_size=<span class="number">32</span>)</span><br></pre></td></tr></table></figure></p>
+<p><strong>评估</strong>模型性能:<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">loss_and_metrics = model.evaluate(x_test, y_test, batch_size=<span class="number">128</span>)</span><br></pre></td></tr></table></figure></p>
+<p>进行<strong>预测</strong>：<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">pred_classes = model.predict(x_test, batch_size=<span class="number">128</span>)</span><br></pre></td></tr></table></figure></p>
+<h2 id="utils"><a href="#utils" class="headerlink" title="utils"></a>utils</h2><h3 id="to-categorical"><a href="#to-categorical" class="headerlink" title="to_categorical()"></a>to_categorical()</h3><p>进行One-Hot Encoding</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> keras.utils <span class="keyword">import</span> to_categorical</span><br><span class="line">data = [<span class="number">1</span>, <span class="number">3</span>, <span class="number">2</span>, <span class="number">0</span>, <span class="number">3</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>]</span><br><span class="line">tc = to_categorical(data)</span><br><span class="line">tc</span><br><span class="line"><span class="comment">#array([[0., 1., 0., 0.],</span></span><br><span class="line"><span class="comment">#       [0., 0., 0., 1.],</span></span><br><span class="line"><span class="comment">#       [0., 0., 1., 0.],</span></span><br><span class="line"><span class="comment">#       [1., 0., 0., 0.],</span></span><br><span class="line"><span class="comment">#       [0., 0., 0., 1.],</span></span><br><span class="line"><span class="comment">#       [0., 0., 1., 0.],</span></span><br><span class="line"><span class="comment">#       [0., 0., 1., 0.],</span></span><br><span class="line"><span class="comment">#       [0., 1., 0., 0.],</span></span><br><span class="line"><span class="comment">#       [1., 0., 0., 0.],</span></span><br><span class="line"><span class="comment">#       [0., 1., 0., 0.]], dtype=float32)</span></span><br></pre></td></tr></table></figure>
 <p>共有{0,1,2,3}四个类别，所以是四维变量。</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h1 id="参考资料"><a class="header-anchor" href="#参考资料"></a>参考资料</h1>
-<ul>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
 <li><a href="https://keras.io/zh/" target="_blank" rel="noopener">Keras中文文档</a></li>
 </ul>
-<hr class="footnotes-sep">
-<section class="footnotes">
-<ol class="footnotes-list">
-<li id="fn1" class="footnote-item"><p>且只有第一层需要，下面的层可以自动地推断尺寸 <a href="#fnref1" class="footnote-backref">↩︎</a></p>
-</li>
-<li id="fn2" class="footnote-item"><p>一个由整数或<code>None</code>组成的元组，其中<code>None</code>表示可能为任何正整数。 <a href="#fnref2" class="footnote-backref">↩︎</a></p>
-</li>
-</ol>
-</section>
 
     </div>
 
@@ -593,13 +577,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">401k</span>
+    <span title="站点总字数">392k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">6:05</span>
+    <span title="站点阅读时长">5:56</span>
 </div>
 
 
