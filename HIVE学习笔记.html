@@ -306,10 +306,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <center></center>
-<a id="more"></a>
-<h1 id="HIVE"><a class="header-anchor" href="#HIVE"></a>HIVE</h1>
-<ul>
+        <p><center></center><br><a id="more"></a></p>
+<h1 id="HIVE"><a href="#HIVE" class="headerlink" title="HIVE"></a>HIVE</h1><ul>
 <li>HIVE最适合于数据仓库应用程序</li>
 <li>用户可以通过查询生成新表或将查询结果导入到文件中</li>
 </ul>
@@ -319,24 +317,24 @@
 <li>HIVE不支持记录级别的更新、插入或删除操作</li>
 <li>HIVE不支持事务</li>
 <li>HIVE不支持OLTP(联机事务处理，Online Transaction Processing)所需的关键功能，而更接近成为一个OLAP（联机分析处理，Online Analytical Processing）工具</li>
-<li>HiveQL不符合ANSI SQL标准，和Oracle、MySQL、SQL Server支持的常规SQL方言在很多方面存在差异</li>
+<li>HiveQL不符合ANSI SQL标准，和Oracle、MySQL、SQL Server支持的常规SQL方言在很多方面存在差异<ul>
 <li>HiveQL和MySQL提供的SQL方言最接近</li>
 </ul>
-<h1 id="基本"><a class="header-anchor" href="#基本"></a>基本</h1>
-<h2 id="命名空间"><a class="header-anchor" href="#命名空间"></a>命名空间</h2>
-<div>
+</li>
+</ul>
+<h1 id="基本"><a href="#基本" class="headerlink" title="基本"></a>基本</h1><h2 id="命名空间"><a href="#命名空间" class="headerlink" title="命名空间"></a>命名空间</h2><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
-<pre><code>.dataframe tbody tr th {
-    vertical-align: top;
-}
 
-.dataframe thead th {
-    text-align: center;
-}
-</code></pre>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: center;
+    }
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -371,24 +369,24 @@
   </tr></tbody>
 </table>
 </div>
+
 <ul>
 <li>用户可以在查询中引用变量。Hive会先使用变量值替换掉查询的变量引用，然后才会将查询语句提交给查询处理器</li>
 <li>和hivevar变量不同，用户必须使用 <code>system:</code>或<code>env:</code>前缀来指定系统属性和环境变量</li>
 </ul>
-<h2 id="数据类型"><a class="header-anchor" href="#数据类型"></a>数据类型</h2>
-<div>
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
-<pre><code>.dataframe tbody tr th {
-    vertical-align: top;
-}
 
-.dataframe thead th {
-    text-align: center;
-}
-</code></pre>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: center;
+    }
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -455,32 +453,25 @@
   </tr></tbody>
 </table>
 </div>
-<h3 id="INT"><a class="header-anchor" href="#INT"></a>INT</h3>
-<p><code>CAST(s AS INT)</code><br>
-将一个字符串的列转换为整型</p>
-<h3 id="TIMESTAMP"><a class="header-anchor" href="#TIMESTAMP"></a>TIMESTAMP</h3>
-<p>数据类型<code>TIMESTAMP</code>的值可以是整数，也可以是浮点数，也可以是字符串</p>
+
+<h3 id="INT"><a href="#INT" class="headerlink" title="INT"></a>INT</h3><p><code>CAST(s AS INT)</code><br>将一个字符串的列转换为整型</p>
+<h3 id="TIMESTAMP"><a href="#TIMESTAMP" class="headerlink" title="TIMESTAMP"></a>TIMESTAMP</h3><p>数据类型<code>TIMESTAMP</code>的值可以是整数，也可以是浮点数，也可以是字符串</p>
 <ul>
 <li>整数：距离UNIX新纪元时间（1970年1月1日午夜12点）的秒数</li>
 <li>浮点数：距离UNIX新纪元时间（1970年1月1日午夜12点）的秒数，精确到纳秒（小数点后保留9位小数）</li>
 <li>字符串：JDBC约定的时间字符串格式 <code>YYYY-MM-DD hh:mm:ss.fffffffff</code></li>
 </ul>
-<h3 id="TIMESTAMPS"><a class="header-anchor" href="#TIMESTAMPS"></a>TIMESTAMPS</h3>
-<p><code>TIMESTAMPS</code>表示的是UTC时间。</p>
-<h3 id="比较"><a class="header-anchor" href="#比较"></a>比较</h3>
-<p>如果用户在查询中将一种整型类型的值和另一种整型类型的值作对比，则HIVE会隐式地将类型转换未两个整型类型中值较大的那个类型。</p>
+<h3 id="TIMESTAMPS"><a href="#TIMESTAMPS" class="headerlink" title="TIMESTAMPS"></a>TIMESTAMPS</h3><p><code>TIMESTAMPS</code>表示的是UTC时间。</p>
+<h3 id="比较"><a href="#比较" class="headerlink" title="比较"></a>比较</h3><p>如果用户在查询中将一种整型类型的值和另一种整型类型的值作对比，则HIVE会隐式地将类型转换未两个整型类型中值较大的那个类型。</p>
 <ul>
-<li>如果用户在查询中将一个FLOAT类型的列与一个DOUBLE类型的列作对比，则HIVE会隐式地将FLOAT类型转换为DOUBLE类型然后进行比较。
-<ul>
+<li>如果用户在查询中将一个FLOAT类型的列与一个DOUBLE类型的列作对比，则HIVE会隐式地将FLOAT类型转换为DOUBLE类型然后进行比较。<ul>
 <li>FLOAT类型的0.2实际是0.2000001，而DOUBLE类型的0.2是0.200000000001</li>
 <li>在对数据进行比较时，可使用<code>CAST(data AS FLOAT)</code>指定数据类型，再进行比较，防止出错</li>
 <li>与钱相关的数都避免使用浮点数</li>
 </ul>
 </li>
 </ul>
-<h2 id="集合数据类型"><a class="header-anchor" href="#集合数据类型"></a>集合数据类型</h2>
-<h3 id="ARRAY"><a class="header-anchor" href="#ARRAY"></a>ARRAY</h3>
-<p>一组具有相同类型和名称的变量的集合。</p>
+<h2 id="集合数据类型"><a href="#集合数据类型" class="headerlink" title="集合数据类型"></a>集合数据类型</h2><h3 id="ARRAY"><a href="#ARRAY" class="headerlink" title="ARRAY"></a>ARRAY</h3><p>一组具有相同类型和名称的变量的集合。</p>
 <ul>
 <li>元素：这些变量称为数组的元素</li>
 <li>每个数组元素都有一个编号，编号从0开始</li>
@@ -488,44 +479,32 @@
 <li>提取出来的STRING数据类型的值不再加引号</li>
 </ul>
 <figure class="highlight"><table><tr><td class="code"><pre><span class="line">Array('John', 'Doe')</span><br></pre></td></tr></table></figure>
-<p>其中<code>'Doe'</code>的应用应为<code>数组名[1]</code>。</p>
-<h3 id="MAP"><a class="header-anchor" href="#MAP"></a>MAP</h3>
-<ul>
+<p>其中<code>&#39;Doe&#39;</code>的应用应为<code>数组名[1]</code>。</p>
+<h3 id="MAP"><a href="#MAP" class="headerlink" title="MAP"></a>MAP</h3><ul>
 <li>MAP是一组键值对元组集合，使用数组表示法访问元素（使用键值索引而不是整数索引）</li>
 </ul>
 <figure class="highlight"><table><tr><td class="code"><pre><span class="line">map('first', 'John', 'last', 'Doe')</span><br></pre></td></tr></table></figure>
 <p>键-&gt;值对的对应关系如：</p>
 <ul>
-<li>
-<p>‘first’ -&gt; ‘Jhon’</p>
+<li>‘first’ -&gt; ‘Jhon’</li>
+<li><p>‘last’ -&gt; ‘Doe’<br>通过<code>字段名[&#39;last&#39;]</code>可以获取元素<code>&#39;Doe&#39;</code></p>
 </li>
-<li>
-<p>‘last’ -&gt; ‘Doe’<br>
-通过<code>字段名['last']</code>可以获取元素<code>'Doe'</code></p>
-</li>
-<li>
-<p>HIVE中并没有键的概念（？？），但是用户可以对表建立索引</p>
+<li><p>HIVE中并没有键的概念（？？），但是用户可以对表建立索引</p>
 </li>
 </ul>
-<h3 id="STRUCT"><a class="header-anchor" href="#STRUCT"></a>STRUCT</h3>
-<p>和C语言中的struct或者“对象”类似，都可以通过“点”符号访问元素内容</p>
+<h3 id="STRUCT"><a href="#STRUCT" class="headerlink" title="STRUCT"></a>STRUCT</h3><p>和C语言中的struct或者“对象”类似，都可以通过“点”符号访问元素内容</p>
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> employees(</span><br><span class="line">  <span class="keyword">name</span> <span class="keyword">STRING</span>,</span><br><span class="line">  salary <span class="built_in">FLOAT</span>,</span><br><span class="line">  subordinates <span class="built_in">ARRAY</span>&lt;<span class="keyword">STRING</span>&gt;,</span><br><span class="line">  deductions <span class="keyword">MAP</span>&lt;<span class="keyword">STRING</span>, <span class="built_in">FLOAT</span>&gt;,</span><br><span class="line">  address <span class="keyword">STRUCT</span>&lt;street: <span class="keyword">STRING</span>, city: <span class="keyword">STRING</span>, state: <span class="keyword">STRING</span>, zip: <span class="built_in">INT</span>&gt;</span><br><span class="line">);</span><br><span class="line"><span class="comment">-- 若要访问address中的city字段，则应 address.city</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">'store'</span>: &#123;</span><br><span class="line">    <span class="string">'fruit'</span>: [</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="string">'weight'</span>: <span class="number">8</span>,</span><br><span class="line">        <span class="string">'type'</span>: <span class="string">'apple'</span></span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="string">'weight'</span>: <span class="number">9</span>,</span><br><span class="line">        <span class="string">'type'</span>: <span class="string">'pear'</span></span><br><span class="line">      &#125;</span><br><span class="line">    ],</span><br><span class="line">    <span class="string">'bicycle'</span>: &#123;</span><br><span class="line">      <span class="string">'price'</span>: <span class="number">19.95</span>,</span><br><span class="line">      <span class="string">'color'</span>: <span class="string">'red'</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="string">'email'</span>: <span class="string">'12345678@163.com'</span>,</span><br><span class="line">  <span class="string">'owner'</span>: <span class="string">'Jack'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>假设上述JSON数据存储在字段s中，则若要读取<code>apple</code>的<code>weight</code>，则应</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">GET_JSON_OBJECT(s, '$.store.fruit[0].weight')</span><br><span class="line"><span class="comment">-- 返回 8</span></span><br></pre></td></tr></table></figure>
-<h2 id="正则表达式"><a class="header-anchor" href="#正则表达式"></a>正则表达式</h2>
-<ul>
-<li>可以使用正则表达式来选择想要的列：</li>
+<p>假设上述JSON数据存储在字段s中，则若要读取<code>apple</code>的<code>weight</code>，则应<br><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">GET_JSON_OBJECT(s, '$.store.fruit[0].weight')</span><br><span class="line"><span class="comment">-- 返回 8</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h2><ul>
+<li>可以使用正则表达式来选择想要的列：<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 从stocks表中选择symbol列和所有列名以price作为前缀的列</span></span><br><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">  symbol</span><br><span class="line">  , <span class="string">`price.*`</span>  <span class="comment">-- 注意是反引号，不是普通的单引号</span></span><br><span class="line"><span class="keyword">FROM</span> stocks;</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 从stocks表中选择symbol列和所有列名以price作为前缀的列</span></span><br><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">  symbol</span><br><span class="line">  , <span class="string">`price.*`</span>  <span class="comment">-- 注意是反引号，不是普通的单引号</span></span><br><span class="line"><span class="keyword">FROM</span> stocks;</span><br></pre></td></tr></table></figure>
-<h2 id="字段分隔符"><a class="header-anchor" href="#字段分隔符"></a>字段分隔符</h2>
-<p>70页</p>
-<h2 id="数据库"><a class="header-anchor" href="#数据库"></a>数据库</h2>
-<ul>
+<h2 id="字段分隔符"><a href="#字段分隔符" class="headerlink" title="字段分隔符"></a>字段分隔符</h2><p>70页</p>
+<h2 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h2><ul>
 <li>如果没有显式指定数据库，则会使用默认的数据库default</li>
 </ul>
-<h2 id="表"><a class="header-anchor" href="#表"></a>表</h2>
-<p>HIVE中的表分为两种：</p>
+<h2 id="表"><a href="#表" class="headerlink" title="表"></a>表</h2><p>HIVE中的表分为两种：</p>
 <ol>
 <li>管理表，也称内部表</li>
 <li>外部表</li>
@@ -534,8 +513,7 @@
 <li>用户可在<code>DESCRIBE EXTENDED table_name</code>语句的输出中查看到该表的类型（管理表MANAGED_TABLE，外部表EXTERNAL_TABLE）</li>
 <li>Hive没有临时表的概念</li>
 </ul>
-<h3 id="管理表"><a class="header-anchor" href="#管理表"></a>管理表</h3>
-<ul>
+<h3 id="管理表"><a href="#管理表" class="headerlink" title="管理表"></a>管理表</h3><ul>
 <li>Hive默认将管理表的数据存储在由配置项<code>hive.metastore.warehouse.dir</code>所定义的目录的子目录下</li>
 <li>删除一个管理表时，会删除这个表中的数据</li>
 <li>管理表不方便和其他工作共享数据</li>
@@ -548,35 +526,29 @@
 <li>如果<code>EXTERNAL</code>关键词省略且源表是管理表，则生成的新表也为管理表</li>
 <li>如果有<code>EXTERNAL</code>关键词而源表是管理表，则生成的新表为外部表</li>
 </ul>
-<h3 id="外部表"><a class="header-anchor" href="#外部表"></a>外部表</h3>
-<ul>
+<h3 id="外部表"><a href="#外部表" class="headerlink" title="外部表"></a>外部表</h3><ul>
 <li>删除外部表，并不会删除掉该份数据，但是描述表的元数据信息会被删除掉</li>
 <li>有些HiveQL语法结构并不适用于外部表</li>
 </ul>
-<h3 id="分区表"><a class="header-anchor" href="#分区表"></a>分区表</h3>
-<ul>
+<h3 id="分区表"><a href="#分区表" class="headerlink" title="分区表"></a>分区表</h3><ul>
 <li>在WHERE子句中增加谓词来按照分区值进行过滤时，这些谓词被称为<strong>分区过滤器</strong></li>
 <li>内部表、外部表都可以使用分区</li>
 </ul>
-<h2 id="存储格式"><a class="header-anchor" href="#存储格式"></a>存储格式</h2>
-<ul>
-<li>Hive的默认存储格式是：文本文件格式</li>
+<h2 id="存储格式"><a href="#存储格式" class="headerlink" title="存储格式"></a>存储格式</h2><ul>
+<li>Hive的默认存储格式是：文本文件格式<ul>
 <li>这个可以通过可选的子句 <code>STORED AS TEXTFILE</code>显式指定</li>
 <li>也可以在创建表时指定各种各样的分隔符</li>
+</ul>
+</li>
 <li>除了TEXTFILE, SEQUENCEFILE, RCFILE外，用户还可以指定第三方的输入和输出格式以及SerDe——允许用户自定义Hive本身不支持的其他广泛的文件格式</li>
 </ul>
-<h3 id="TEXTFILE"><a class="header-anchor" href="#TEXTFILE"></a>TEXTFILE</h3>
-<ul>
+<h3 id="TEXTFILE"><a href="#TEXTFILE" class="headerlink" title="TEXTFILE"></a>TEXTFILE</h3><ul>
 <li>Hive的默认存储格式</li>
 </ul>
-<h3 id="SEQUENCEFILE"><a class="header-anchor" href="#SEQUENCEFILE"></a>SEQUENCEFILE</h3>
-<ul>
+<h3 id="SEQUENCEFILE"><a href="#SEQUENCEFILE" class="headerlink" title="SEQUENCEFILE"></a>SEQUENCEFILE</h3><ul>
 <li>SEQUENCEFILE和RCFILE都是使用二进制编码和压缩（可选）来优化磁盘空间使用及I/O带宽性能的</li>
 </ul>
-<h3 id="RCFILE"><a class="header-anchor" href="#RCFILE"></a>RCFILE</h3>
-<h1 id="运算符"><a class="header-anchor" href="#运算符"></a>运算符</h1>
-<h2 id="算术运算符"><a class="header-anchor" href="#算术运算符"></a>算术运算符</h2>
-<ul>
+<h3 id="RCFILE"><a href="#RCFILE" class="headerlink" title="RCFILE"></a>RCFILE</h3><h1 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h1><h2 id="算术运算符"><a href="#算术运算符" class="headerlink" title="算术运算符"></a>算术运算符</h2><ul>
 <li>Hive支持所有典型的算术运算符</li>
 <li>如果数据类型不同，则两种类型中值范围较小的那个数据类型将转换为其他范围更广的数据类型</li>
 <li>Hive遵循的是底层Java中数据类型的规则，当数据溢出或下溢发生时，计算结果不会自动转换为更广泛的数据类型</li>
@@ -586,14 +558,14 @@
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
-<pre><code>.dataframe tbody tr th {
-    vertical-align: top;
-}
 
-.dataframe thead th {
-    text-align: center;
-}
-</code></pre>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: center;
+    }
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -653,8 +625,9 @@
   </tr></tbody>
 </table>
 </div>
-<h2 id="谓词操作符"><a class="header-anchor" href="#谓词操作符"></a>谓词操作符</h2>
-<ul>
+
+
+<h2 id="谓词操作符"><a href="#谓词操作符" class="headerlink" title="谓词操作符"></a>谓词操作符</h2><ul>
 <li>可用于<code>JOIN ... ON</code>和<code>HAVING</code>语句中</li>
 </ul>
 <div>
@@ -662,14 +635,14 @@
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
-<pre><code>.dataframe tbody tr th {
-    vertical-align: top;
-}
 
-.dataframe thead th {
-    text-align: center;
-}
-</code></pre>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: center;
+    }
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -740,132 +713,100 @@
   </tr></tbody>
 </table>
 </div>
-<h1 id="语法"><a class="header-anchor" href="#语法"></a>语法</h1>
-<h2 id="S"><a class="header-anchor" href="#S"></a>-S</h2>
-<p>开启静默模式，可将输出结果中的<code>OK</code>和<code>Time taken</code>等行以及其他一些无关紧要的输出信息</p>
-<h2 id="alter"><a class="header-anchor" href="#alter"></a>alter</h2>
-<p>大多数的表属性可以通过<code>ALTER TABLE</code>语句进行修改。</p>
+
+
+<h1 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h1><h2 id="S"><a href="#S" class="headerlink" title="-S"></a>-S</h2><p>开启静默模式，可将输出结果中的<code>OK</code>和<code>Time taken</code>等行以及其他一些无关紧要的输出信息</p>
+<h2 id="alter"><a href="#alter" class="headerlink" title="alter"></a>alter</h2><p>大多数的表属性可以通过<code>ALTER TABLE</code>语句进行修改。</p>
 <ul>
 <li><code>ALTER TABLE</code>会修改元数据，但不会修改数据本身</li>
 </ul>
-<h3 id="重命名表"><a class="header-anchor" href="#重命名表"></a>重命名表</h3>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> table_old_name <span class="keyword">RENAME</span> <span class="keyword">TO</span> table_new_name;</span><br></pre></td></tr></table></figure>
-<h3 id="增加表分区"><a class="header-anchor" href="#增加表分区"></a>增加表分区</h3>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 增加表分区</span></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> table_name <span class="keyword">ADD</span> <span class="keyword">IF</span> <span class="keyword">NOT</span> <span class="keyword">EXISTS</span></span><br><span class="line"><span class="keyword">PARTITION</span> (<span class="keyword">year</span>=<span class="number">2020</span>, <span class="keyword">month</span>=<span class="number">7</span>, <span class="keyword">day</span>=<span class="number">15</span>) LOCATION <span class="string">'/logs/2020/07/15'</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="重命名表"><a href="#重命名表" class="headerlink" title="重命名表"></a>重命名表</h3><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> table_old_name <span class="keyword">RENAME</span> <span class="keyword">TO</span> table_new_name;</span><br></pre></td></tr></table></figure>
+<h3 id="增加表分区"><a href="#增加表分区" class="headerlink" title="增加表分区"></a>增加表分区</h3><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 增加表分区</span></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> table_name <span class="keyword">ADD</span> <span class="keyword">IF</span> <span class="keyword">NOT</span> <span class="keyword">EXISTS</span></span><br><span class="line"><span class="keyword">PARTITION</span> (<span class="keyword">year</span>=<span class="number">2020</span>, <span class="keyword">month</span>=<span class="number">7</span>, <span class="keyword">day</span>=<span class="number">15</span>) LOCATION <span class="string">'/logs/2020/07/15'</span>;</span><br></pre></td></tr></table></figure>
 <ul>
 <li>HIVE v0.8.0及以上版本，可在同一个查询中同时增加多个分区。</li>
 </ul>
-<h3 id="修改表分区"><a class="header-anchor" href="#修改表分区"></a>修改表分区</h3>
-<p>修改某个分区的路径：</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> table_name <span class="keyword">PARTITION</span>(<span class="keyword">year</span>=<span class="number">2020</span>, <span class="keyword">month</span>=<span class="number">7</span>, <span class="keyword">day</span>=<span class="number">15</span>) <span class="keyword">SET</span> LOCATION <span class="string">'s3n://ourbucket/logs/2020/07/15'</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="修改表分区"><a href="#修改表分区" class="headerlink" title="修改表分区"></a>修改表分区</h3><p>修改某个分区的路径：<br><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> table_name <span class="keyword">PARTITION</span>(<span class="keyword">year</span>=<span class="number">2020</span>, <span class="keyword">month</span>=<span class="number">7</span>, <span class="keyword">day</span>=<span class="number">15</span>) <span class="keyword">SET</span> LOCATION <span class="string">'s3n://ourbucket/logs/2020/07/15'</span>;</span><br></pre></td></tr></table></figure></p>
 <ul>
 <li>该命令不会将数据从旧的路径转移走，也不会删除旧的数据</li>
 </ul>
-<h3 id="删除表分区"><a class="header-anchor" href="#删除表分区"></a>删除表分区</h3>
-<p>删除某个表分区：</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> table_name <span class="keyword">DROP</span> <span class="keyword">IF</span> <span class="keyword">EXISTS</span> <span class="keyword">PARTITION</span>(<span class="keyword">year</span>=<span class="number">2020</span>, <span class="keyword">month</span>=<span class="number">7</span>, <span class="keyword">day</span>=<span class="number">15</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="删除表分区"><a href="#删除表分区" class="headerlink" title="删除表分区"></a>删除表分区</h3><p>删除某个表分区：<br><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> table_name <span class="keyword">DROP</span> <span class="keyword">IF</span> <span class="keyword">EXISTS</span> <span class="keyword">PARTITION</span>(<span class="keyword">year</span>=<span class="number">2020</span>, <span class="keyword">month</span>=<span class="number">7</span>, <span class="keyword">day</span>=<span class="number">15</span>);</span><br></pre></td></tr></table></figure></p>
 <ul>
 <li>对于管理表，即使是使用<code>ALTER TABLE ... ADD PARTITION</code>语句增加的分区，分区内的数据也会同时和元数据信息一起被删除</li>
 <li>对于外部表，分区内数据不会被删除</li>
 </ul>
-<h3 id="修改表属性"><a class="header-anchor" href="#修改表属性"></a>修改表属性</h3>
-<p><code>SET TBLPROPERTIES</code></p>
+<h3 id="修改表属性"><a href="#修改表属性" class="headerlink" title="修改表属性"></a>修改表属性</h3><p><code>SET TBLPROPERTIES</code></p>
 <ul>
 <li>用户可以增加附加的表属性或修改已经存在的属性</li>
 <li>但用户无法删除属性</li>
 </ul>
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> table_name <span class="keyword">SET</span> TBLPROPERTIES (</span><br><span class="line">  <span class="string">'notes'</span> = <span class="string">'The process id is no longer captured; this column is always NULL'</span></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
-<h3 id="修改列"><a class="header-anchor" href="#修改列"></a>修改列</h3>
-<p><code>CHANGE COLUMN</code></p>
-<p>对某个字段进行重命名，修改其位置、类型或注释：</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> table_name</span><br><span class="line"><span class="keyword">CHANGE</span> <span class="keyword">COLUMN</span> old_col_name new_col_name <span class="built_in">INT</span>  <span class="comment">-- 重命名old_col_name为new_col_name，且数据类型为INT</span></span><br><span class="line"><span class="keyword">COMMENT</span> <span class="string">'Comment for Column new_col_name'</span>  <span class="comment">-- 修改该列的注释</span></span><br><span class="line"><span class="keyword">AFTER</span> another_column;  <span class="comment">-- 将new_col_name的位置修改到another_column列的后面</span></span><br></pre></td></tr></table></figure>
-<h3 id="增加列"><a class="header-anchor" href="#增加列"></a>增加列</h3>
-<p><code>ADD COLUMNS</code></p>
-<p>在分区字段之前增加新的字段到已有的字段后：</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> table_name <span class="keyword">ADD</span> <span class="keyword">COLUMNS</span> (</span><br><span class="line">  col_name_1 <span class="keyword">STRING</span> <span class="keyword">COMMENT</span> <span class="string">'Application name'</span>,</span><br><span class="line">  col_name_2 <span class="keyword">LONG</span> <span class="keyword">COMMENT</span> <span class="string">'The current session id'</span></span><br><span class="line">);</span><br><span class="line"><span class="comment">-- 其中 COMMENT 子句是可选的</span></span><br></pre></td></tr></table></figure>
-<h3 id="删除-替换列"><a class="header-anchor" href="#删除-替换列"></a>删除/替换列</h3>
-<p><code>REPLACE COLUMNS</code></p>
+<h3 id="修改列"><a href="#修改列" class="headerlink" title="修改列"></a>修改列</h3><p><code>CHANGE COLUMN</code></p>
+<p>对某个字段进行重命名，修改其位置、类型或注释：<br><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> table_name</span><br><span class="line"><span class="keyword">CHANGE</span> <span class="keyword">COLUMN</span> old_col_name new_col_name <span class="built_in">INT</span>  <span class="comment">-- 重命名old_col_name为new_col_name，且数据类型为INT</span></span><br><span class="line"><span class="keyword">COMMENT</span> <span class="string">'Comment for Column new_col_name'</span>  <span class="comment">-- 修改该列的注释</span></span><br><span class="line"><span class="keyword">AFTER</span> another_column;  <span class="comment">-- 将new_col_name的位置修改到another_column列的后面</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="增加列"><a href="#增加列" class="headerlink" title="增加列"></a>增加列</h3><p><code>ADD COLUMNS</code></p>
+<p>在分区字段之前增加新的字段到已有的字段后：<br><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> table_name <span class="keyword">ADD</span> <span class="keyword">COLUMNS</span> (</span><br><span class="line">  col_name_1 <span class="keyword">STRING</span> <span class="keyword">COMMENT</span> <span class="string">'Application name'</span>,</span><br><span class="line">  col_name_2 <span class="keyword">LONG</span> <span class="keyword">COMMENT</span> <span class="string">'The current session id'</span></span><br><span class="line">);</span><br><span class="line"><span class="comment">-- 其中 COMMENT 子句是可选的</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="删除-替换列"><a href="#删除-替换列" class="headerlink" title="删除/替换列"></a>删除/替换列</h3><p><code>REPLACE COLUMNS</code></p>
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> table_name <span class="keyword">REPLACE</span> <span class="keyword">COLUMNS</span> (</span><br><span class="line">  col_name_1  <span class="built_in">INT</span>     <span class="keyword">COMMENT</span> <span class="string">'comment 1'</span>,</span><br><span class="line">  col_name_2  <span class="keyword">STRING</span>  <span class="keyword">COMMENT</span> <span class="string">'comment 2'</span>,</span><br><span class="line">  col_name_3  <span class="keyword">STRING</span>  <span class="keyword">COMMENT</span> <span class="string">'comment 3'</span></span><br><span class="line">);</span><br><span class="line"><span class="comment">-- 以上语句移除了表table_name的所有字段并重新制定了以上3个新的字段</span></span><br><span class="line"><span class="comment">-- 只有表的元数据信息改变了</span></span><br></pre></td></tr></table></figure>
 <ul>
-<li><code>REPLACE</code>语句只能用于使用了如下两种内置SerDe模块的表：
-<ul>
+<li><code>REPLACE</code>语句只能用于使用了如下两种内置SerDe模块的表：<ul>
 <li>DynamicSerDe</li>
 <li>MetadataTypedColumnsetSerDe</li>
 </ul>
 </li>
 </ul>
-<h3 id="修改存储属性"><a class="header-anchor" href="#修改存储属性"></a>修改存储属性</h3>
-<p><code>SET FILEFORMAT</code></p>
+<h3 id="修改存储属性"><a href="#修改存储属性" class="headerlink" title="修改存储属性"></a>修改存储属性</h3><p><code>SET FILEFORMAT</code></p>
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> table_name</span><br><span class="line"><span class="keyword">PARTITION</span> (<span class="keyword">year</span>=<span class="number">2020</span>, <span class="keyword">month</span>=<span class="number">7</span>, <span class="keyword">day</span>=<span class="number">15</span>)</span><br><span class="line"><span class="keyword">SET</span> FILEFORMAT SEQUENCEFILE;</span><br><span class="line"><span class="comment">-- 将存储格式修改为SEQUENCEFILE</span></span><br></pre></td></tr></table></figure>
-<h3 id="修改SerDe属性"><a class="header-anchor" href="#修改SerDe属性"></a>修改SerDe属性</h3>
-<p>用户可以指定一个新的SerDe，并为其指定SerDe属性，或修改已存在的SerDe的属性</p>
+<h3 id="修改SerDe属性"><a href="#修改SerDe属性" class="headerlink" title="修改SerDe属性"></a>修改SerDe属性</h3><p>用户可以指定一个新的SerDe，并为其指定SerDe属性，或修改已存在的SerDe的属性</p>
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> table_using_JSON_storage</span><br><span class="line"><span class="keyword">SET</span> SERDE <span class="string">'com.example.JSONSerDe'</span></span><br><span class="line"><span class="keyword">WITH</span> SERDEPROPERTIES (</span><br><span class="line">  <span class="string">'prop1'</span> = <span class="string">'value1'</span>,</span><br><span class="line">  <span class="string">'prop2'</span> = <span class="string">'value2'</span></span><br><span class="line">);</span><br><span class="line"><span class="comment">-- 使用一个名为com.example.JSONSerDe的Java类来处理记录使用JSON编码的文件</span></span><br><span class="line"><span class="comment">-- SERDEPROPERTIES中的属性会被传递给SerDe模块（即com.example.JSONSerDe这个Java类）</span></span><br><span class="line"><span class="comment">-- 属性名和属性值都应当是带引号的字符串</span></span><br></pre></td></tr></table></figure>
-<p>向已经存在着的SerDe增加新的SERDEPROPERTIES属性：</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> table_using_JSON_storage</span><br><span class="line"><span class="keyword">SET</span> SERDEPROPERTIES (</span><br><span class="line">  <span class="string">'prop3'</span> = <span class="string">'value3'</span>,</span><br><span class="line">  <span class="string">'prop4'</span> = <span class="string">'value4'</span></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
-<h2 id="as"><a class="header-anchor" href="#as"></a>as</h2>
-<p>给列起别名，或给中间表起别名</p>
-<h2 id="case…when…then"><a class="header-anchor" href="#case…when…then"></a>case…when…then</h2>
-<p><code>CASE ... WHEN ... THEN</code>语句与if条件语句类似，用于处理单个列的查询结果</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">  <span class="keyword">name</span>,</span><br><span class="line">  salary,</span><br><span class="line">  <span class="keyword">CASE</span></span><br><span class="line">    <span class="keyword">WHEN</span> salary &lt; <span class="number">50000.0</span> <span class="keyword">THEN</span> <span class="string">'low'</span></span><br><span class="line">    <span class="keyword">WHEN</span> salary &gt;= <span class="number">50000.0</span> <span class="keyword">AND</span> salary &lt; <span class="number">70000.0</span> <span class="keyword">THEN</span> <span class="string">'middle'</span></span><br><span class="line">    <span class="keyword">WHEN</span> salary &gt;= <span class="number">70000.0</span> <span class="keyword">AND</span> salary &lt; <span class="number">100000.0</span> <span class="keyword">THEN</span> <span class="string">'high'</span></span><br><span class="line">    <span class="keyword">ELSE</span> <span class="string">'very high'</span></span><br><span class="line">  <span class="keyword">END</span> <span class="keyword">AS</span> bracket</span><br><span class="line"><span class="keyword">FROM</span> employees;</span><br></pre></td></tr></table></figure>
-<h2 id="cluster-by"><a class="header-anchor" href="#cluster-by"></a>cluster by</h2>
-<ul>
+<p>向已经存在着的SerDe增加新的SERDEPROPERTIES属性：<br><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> table_using_JSON_storage</span><br><span class="line"><span class="keyword">SET</span> SERDEPROPERTIES (</span><br><span class="line">  <span class="string">'prop3'</span> = <span class="string">'value3'</span>,</span><br><span class="line">  <span class="string">'prop4'</span> = <span class="string">'value4'</span></span><br><span class="line">);</span><br></pre></td></tr></table></figure></p>
+<h2 id="as"><a href="#as" class="headerlink" title="as"></a>as</h2><p>给列起别名，或给中间表起别名</p>
+<h2 id="case…when…then"><a href="#case…when…then" class="headerlink" title="case…when…then"></a>case…when…then</h2><p><code>CASE ... WHEN ... THEN</code>语句与if条件语句类似，用于处理单个列的查询结果<br><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">  <span class="keyword">name</span>,</span><br><span class="line">  salary,</span><br><span class="line">  <span class="keyword">CASE</span></span><br><span class="line">    <span class="keyword">WHEN</span> salary &lt; <span class="number">50000.0</span> <span class="keyword">THEN</span> <span class="string">'low'</span></span><br><span class="line">    <span class="keyword">WHEN</span> salary &gt;= <span class="number">50000.0</span> <span class="keyword">AND</span> salary &lt; <span class="number">70000.0</span> <span class="keyword">THEN</span> <span class="string">'middle'</span></span><br><span class="line">    <span class="keyword">WHEN</span> salary &gt;= <span class="number">70000.0</span> <span class="keyword">AND</span> salary &lt; <span class="number">100000.0</span> <span class="keyword">THEN</span> <span class="string">'high'</span></span><br><span class="line">    <span class="keyword">ELSE</span> <span class="string">'very high'</span></span><br><span class="line">  <span class="keyword">END</span> <span class="keyword">AS</span> bracket</span><br><span class="line"><span class="keyword">FROM</span> employees;</span><br></pre></td></tr></table></figure></p>
+<h2 id="cluster-by"><a href="#cluster-by" class="headerlink" title="cluster by"></a>cluster by</h2><ul>
 <li><code>CLUSTER BY</code>语句剥夺了<code>SORT BY</code>的并行性，可以实现输出文件的数据是全局排序的</li>
 </ul>
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> s.ymd, s.symbol, s.price_close</span><br><span class="line"><span class="keyword">FROM</span> stocks s</span><br><span class="line"><span class="keyword">DISTRIBUTE</span> <span class="keyword">BY</span> s.symbol</span><br><span class="line"><span class="keyword">SORT</span> <span class="keyword">BY</span> s.symbol;</span><br><span class="line"><span class="comment">-- 等价于</span></span><br><span class="line"><span class="keyword">SELECT</span> s.ymd, s.symbol, s.price_close</span><br><span class="line"><span class="keyword">FROM</span> stocks s</span><br><span class="line">CLUSTER <span class="keyword">BY</span> s.symbol;</span><br></pre></td></tr></table></figure>
-<h2 id="comment"><a class="header-anchor" href="#comment"></a>comment</h2>
-<p>添加描述信息(备注).</p>
+<h2 id="comment"><a href="#comment" class="headerlink" title="comment"></a>comment</h2><p>添加描述信息(备注).</p>
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">DATABASE</span> db_name_1</span><br><span class="line"><span class="keyword">COMMENT</span> <span class="string">'Some comments for database db_name_1.'</span>;</span><br><span class="line"><span class="comment">-- 在创建数据库时添加备注，方便后续他人查看数据库的说明</span></span><br></pre></td></tr></table></figure>
-<h2 id="create"><a class="header-anchor" href="#create"></a>create</h2>
-<h3 id="create-database"><a class="header-anchor" href="#create-database"></a>create database</h3>
-<p>创建数据库：</p>
+<h2 id="create"><a href="#create" class="headerlink" title="create"></a>create</h2><h3 id="create-database"><a href="#create-database" class="headerlink" title="create database"></a>create database</h3><p>创建数据库：</p>
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> DATEABASE db_name;</span><br><span class="line"><span class="comment">-- 如果该数据库db_name已存在，则会报错</span></span><br><span class="line"><span class="comment">-- 避免报错：</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">DATABASE</span> <span class="keyword">IF</span> <span class="keyword">NOT</span> <span class="keyword">EXISTS</span> db_name;</span><br></pre></td></tr></table></figure>
-<h3 id="create-table"><a class="header-anchor" href="#create-table"></a>create table</h3>
-<ul>
+<h3 id="create-table"><a href="#create-table" class="headerlink" title="create table"></a>create table</h3><ul>
 <li>默认情况下，HIVE总是将创建的表的目录放置在这个表所属的数据库目录之后</li>
 <li>但default库在<code>/user/hive/warehouse</code>下没有对应一个数据库目录，default库中的表目录会直接位于<code>/user/hive/warehouse</code>目录之后（除了用户明确指定为其他路径）</li>
 </ul>
-<p>在创建表时，可以直接拷贝一张已经存在的表的表模式：</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="keyword">IF</span> <span class="keyword">NOT</span> <span class="keyword">EXISTS</span> db_name_1.tbl_2</span><br><span class="line"><span class="keyword">LIKE</span> db_name_1.tbl_1;</span><br></pre></td></tr></table></figure>
-<h2 id="describe"><a class="header-anchor" href="#describe"></a>describe</h2>
-<ul>
+<p>在创建表时，可以直接拷贝一张已经存在的表的表模式：<br><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="keyword">IF</span> <span class="keyword">NOT</span> <span class="keyword">EXISTS</span> db_name_1.tbl_2</span><br><span class="line"><span class="keyword">LIKE</span> db_name_1.tbl_1;</span><br></pre></td></tr></table></figure></p>
+<h2 id="describe"><a href="#describe" class="headerlink" title="describe"></a>describe</h2><ul>
 <li>查看数据库的描述信息：</li>
 </ul>
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">DESCRIBE</span> <span class="keyword">DATABASE</span> db_name_1;</span><br><span class="line"><span class="comment">-- 则会返回：</span></span><br><span class="line"><span class="comment">-- Some comments for database db_name_1.</span></span><br><span class="line"><span class="comment">-- 以及数据库所在的文件目录位置路径</span></span><br></pre></td></tr></table></figure>
 <ul>
-<li>查看某一列的信息：</li>
+<li>查看某一列的信息：<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">DESCRIBE</span> db_name.table_name.col_name;</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">DESCRIBE</span> db_name.table_name.col_name;</span><br></pre></td></tr></table></figure>
-<h3 id="extended"><a class="header-anchor" href="#extended"></a>extended</h3>
-<p>用户可以为数据库增加一些和其相关的键值对属性信息，通过下列语句可以显示出这些信息：</p>
+<h3 id="extended"><a href="#extended" class="headerlink" title="extended"></a>extended</h3><p>用户可以为数据库增加一些和其相关的键值对属性信息，通过下列语句可以显示出这些信息：</p>
 <figure class="highlight"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 创建数据库时增加一些和其相关的键值对属性信息</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">DATABASE</span> db_name_1</span><br><span class="line"><span class="keyword">WITH</span> DBPROPERTIES (<span class="string">'creator'</span> = <span class="string">'Mark Moneybags'</span>, <span class="string">'date'</span> = <span class="string">'2020-07-12'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 显示那些信息</span></span><br><span class="line"><span class="keyword">DESCRIBE</span> <span class="keyword">DATABASE</span> <span class="keyword">EXTENDED</span> db_name_1;</span><br><span class="line">db_name_1 hdfs://master-server/user/hive/warehouse/db_name_1.db</span><br><span class="line">&#123;date=2020-07-12, creator=Mark Moneybags&#125;;</span><br></pre></td></tr></table></figure>
 <p><code>DESRIBE EXTENDED table_name</code>也会显示出分区键。</p>
-<h3 id="formatted"><a class="header-anchor" href="#formatted"></a>formatted</h3>
-<p>显示数据库的信息，输出内容详细且可读性强</p>
+<h3 id="formatted"><a href="#formatted" class="headerlink" title="formatted"></a>formatted</h3><p>显示数据库的信息，输出内容详细且可读性强</p>
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">DESCRIBE</span> <span class="keyword">DATABASE</span> FORMATTED db_name_1;</span><br></pre></td></tr></table></figure>
-<h2 id="distinct"><a class="header-anchor" href="#distinct"></a>distinct</h2>
-<ul>
-<li>在Hive中可以实现<strong>去重</strong>的命令：
-<ul>
+<h2 id="distinct"><a href="#distinct" class="headerlink" title="distinct"></a>distinct</h2><ul>
+<li>在Hive中可以实现<strong>去重</strong>的命令：<ul>
 <li><code>DISTINCT</code></li>
 <li><code>GROUP BY</code></li>
 <li><code>ROW_NUMBER</code>：排序后再取topN</li>
 </ul>
 </li>
 </ul>
-<h2 id="distribute-by"><a class="header-anchor" href="#distribute-by"></a>distribute by</h2>
-<p><code>DISTRIBUTE BY</code>控制map的输出在reducer中是如何划分的</p>
+<h2 id="distribute-by"><a href="#distribute-by" class="headerlink" title="distribute by"></a>distribute by</h2><p><code>DISTRIBUTE BY</code>控制map的输出在reducer中是如何划分的</p>
 <ul>
 <li>默认情况下，MapReduce计算框架会依据map输入的键计算相应的哈希值，然后按照得到的哈希值将键-值对均匀分发到多个reducer中去</li>
 <li>Hive要求<code>DISTRIBUTE BY</code>语句要写在<code>SORT BY</code>语句之前</li>
 <li><code>DISTRIBUTE BY ... SORT BY</code>语句剥夺了<code>SORT BY</code>的并行性，可以实现输出文件的数据是全局排序的</li>
 </ul>
-<h2 id="drop"><a class="header-anchor" href="#drop"></a>drop</h2>
-<p>删除数据库：</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">DROP</span> <span class="keyword">DATABASE</span> <span class="keyword">IF</span> <span class="keyword">EXISTS</span> db_name_1;</span><br></pre></td></tr></table></figure>
+<h2 id="drop"><a href="#drop" class="headerlink" title="drop"></a>drop</h2><p>删除数据库：<br><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">DROP</span> <span class="keyword">DATABASE</span> <span class="keyword">IF</span> <span class="keyword">EXISTS</span> db_name_1;</span><br></pre></td></tr></table></figure></p>
 <ul>
-<li>HIVE不允许用户删除一个包含表的数据库</li>
+<li>HIVE不允许用户删除一个包含表的数据库<ul>
 <li>或，先删除数据库中的表，再删除数据库</li>
 <li>或，在删除命令的最后加上关键字<code>CASCADE</code>——可以使HIVE自行先删除数据库中的表</li>
+</ul>
+</li>
 </ul>
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">DROP</span> <span class="keyword">DATABASE</span> <span class="keyword">IF</span> <span class="keyword">EXISTS</span> db_name_1 <span class="keyword">CASCADE</span>;</span><br></pre></td></tr></table></figure>
 <p>删除数据表:</p>
@@ -873,58 +814,47 @@
 <ul>
 <li>若删除管理表，则表的元数据信息和表内的数据都会被删除。</li>
 <li>若删除外部表，则表的元数据信息会被删除，但是表中的数据不会被删除。</li>
-<li>如果用户开启了Hadoop回收站功能（默认是关闭的），则数据将会被转移到用户在分布式文件系统中的用户根目录下的.Trash目录（即HDFS中的<code>/user/$USER/.Trash</code>目录）</li>
+<li>如果用户开启了Hadoop回收站功能（默认是关闭的），则数据将会被转移到用户在分布式文件系统中的用户根目录下的.Trash目录（即HDFS中的<code>/user/$USER/.Trash</code>目录）<ul>
 <li>开启该功能，只需将配置属性<code>fs.trash.interval</code>的值（单位为分钟）设置为一个合理的正整数即可</li>
 </ul>
-<h2 id="group-by"><a class="header-anchor" href="#group-by"></a>group by</h2>
-<p>通常与聚合函数一起使用，按照一个或多个列对结果进行分组，然后对每个组进行聚合操作。</p>
-<h2 id="having"><a class="header-anchor" href="#having"></a>having</h2>
-<p>对<code>GROUP BY</code>语句产生的分组进行条件过滤</p>
-<h2 id="join"><a class="header-anchor" href="#join"></a>join</h2>
-<ul>
+</li>
+</ul>
+<h2 id="group-by"><a href="#group-by" class="headerlink" title="group by"></a>group by</h2><p>通常与聚合函数一起使用，按照一个或多个列对结果进行分组，然后对每个组进行聚合操作。</p>
+<h2 id="having"><a href="#having" class="headerlink" title="having"></a>having</h2><p>对<code>GROUP BY</code>语句产生的分组进行条件过滤</p>
+<h2 id="join"><a href="#join" class="headerlink" title="join"></a>join</h2><ul>
 <li>大多数情况下，Hive会对每对JOIN连接对象启动一个MapReduce任务</li>
 <li>Hive总是按照从左到右的顺序连接表</li>
 <li>对3个或者更多个表进行JOIN连接时，如果每个ON子句都使用相同的连接键，则只会产生一个MapReduce任务</li>
 <li>为了优化HiveQL执行性能，应保证连续查询中的表的大小从左到右是依次增加的</li>
 </ul>
-<h3 id="on"><a class="header-anchor" href="#on"></a>on</h3>
-<p><code>ON</code>子句指定两个表之间数据进行连接的条件</p>
+<h3 id="on"><a href="#on" class="headerlink" title="on"></a>on</h3><p><code>ON</code>子句指定两个表之间数据进行连接的条件</p>
 <ul>
 <li>标准SQL支持对连接关键词进行非等值连接</li>
 <li>Hive不支持连接关键词非等值连接</li>
 <li>Hive不支持在<code>ON</code>子句中使用<code>OR</code>谓词</li>
 </ul>
-<h3 id="inner-join"><a class="header-anchor" href="#inner-join"></a>inner join</h3>
-<p>只有进行连接的两个表中都存在与连接标准相匹配的数据才会被保留下来。</p>
-<h3 id="left-join"><a class="header-anchor" href="#left-join"></a>left join</h3>
-<p>左表中符合WHERE子句中的所有记录将会被返回；JOIN操作符右边表中如果没有符合ON后面连接条件的记录时，则从右边表指定选择的列的值将会是NULL</p>
-<h3 id="outer-join"><a class="header-anchor" href="#outer-join"></a>outer join</h3>
-<p>外连接</p>
+<h3 id="inner-join"><a href="#inner-join" class="headerlink" title="inner join"></a>inner join</h3><p>只有进行连接的两个表中都存在与连接标准相匹配的数据才会被保留下来。</p>
+<h3 id="left-join"><a href="#left-join" class="headerlink" title="left join"></a>left join</h3><p>左表中符合WHERE子句中的所有记录将会被返回；JOIN操作符右边表中如果没有符合ON后面连接条件的记录时，则从右边表指定选择的列的值将会是NULL</p>
+<h3 id="outer-join"><a href="#outer-join" class="headerlink" title="outer join"></a>outer join</h3><p>外连接</p>
 <ul>
 <li>外连接会忽略掉分区过滤条件</li>
 </ul>
-<h3 id="right-outer-join"><a class="header-anchor" href="#right-outer-join"></a>right outer join</h3>
-<p>右外连接，会返回右边表中符合WHERE语句的记录；左表中匹配不上的字段值用NULL代替</p>
-<h3 id="full-outer-join"><a class="header-anchor" href="#full-outer-join"></a>full outer join</h3>
-<p>完全外连接，将会返回所有表中符合WHERE语句条件的所有记录；如果任一表的指定字段没有符合条件的值的话，则使用NULL值替代</p>
-<h3 id="left-semi-join"><a class="header-anchor" href="#left-semi-join"></a>left semi join</h3>
-<p>左半开连接，返回左边表的记录且这些记录对于右边表满足ON语句中的判定条件。</p>
+<h3 id="right-outer-join"><a href="#right-outer-join" class="headerlink" title="right outer join"></a>right outer join</h3><p>右外连接，会返回右边表中符合WHERE语句的记录；左表中匹配不上的字段值用NULL代替</p>
+<h3 id="full-outer-join"><a href="#full-outer-join" class="headerlink" title="full outer join"></a>full outer join</h3><p>完全外连接，将会返回所有表中符合WHERE语句条件的所有记录；如果任一表的指定字段没有符合条件的值的话，则使用NULL值替代</p>
+<h3 id="left-semi-join"><a href="#left-semi-join" class="headerlink" title="left semi join"></a>left semi join</h3><p>左半开连接，返回左边表的记录且这些记录对于右边表满足ON语句中的判定条件。</p>
 <ul>
 <li><code>SELECT</code>和<code>WHERE</code>语句中不能引用到右边表中的字段</li>
 <li>Hive不支持右半开连接<code>RIGHT SEMI JOIN</code></li>
 <li><code>SEMI-JOIN</code>通常比<code>INNER JOIN</code>高效</li>
 </ul>
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- SQL支持，但Hive不支持：</span></span><br><span class="line"><span class="keyword">SELECT</span> s.ymd, s.price_close <span class="keyword">FROM</span> stocks s</span><br><span class="line"><span class="keyword">WHERE</span> s.yms, s.symbol <span class="keyword">IN</span> </span><br><span class="line">  (<span class="keyword">SELECT</span> d.ymd, d.symbol <span class="keyword">FROM</span> dividends d);</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 等价于Hive中的LEFT SEMI JOIN：</span></span><br><span class="line"><span class="keyword">SELECT</span> s.ymd, s.symbol, s.price_close</span><br><span class="line"><span class="keyword">FROM</span> stocks s</span><br><span class="line"><span class="keyword">LEFT</span> <span class="keyword">SEMI</span> <span class="keyword">JOIN</span> dividends d </span><br><span class="line"><span class="keyword">ON</span> s.ymd=d.ymd <span class="keyword">AND</span> s.symbol=d.symbol;</span><br></pre></td></tr></table></figure>
-<h3 id="map-side-join"><a class="header-anchor" href="#map-side-join"></a>map-side join</h3>
-<p>如果所有表中只有一张是小表，则可以在最大的表通过mapper的时候将小表完全放到内存中。</p>
+<h3 id="map-side-join"><a href="#map-side-join" class="headerlink" title="map-side join"></a>map-side join</h3><p>如果所有表中只有一张是小表，则可以在最大的表通过mapper的时候将小表完全放到内存中。</p>
 <ul>
 <li>Hive可以在map端执行连接过程（称为map-side JOIN）</li>
 </ul>
-<h2 id="like"><a class="header-anchor" href="#like"></a>like</h2>
-<p>使用正则表达式匹配字符串</p>
+<h2 id="like"><a href="#like" class="headerlink" title="like"></a>like</h2><p>使用正则表达式匹配字符串</p>
 <ul>
-<li><code>%</code>：匹配任意字符
-<ul>
+<li><code>%</code>：匹配任意字符<ul>
 <li><code>%x</code>：表示以x为结尾的字符串</li>
 <li><code>x%</code>：表示以x为开头的字符串</li>
 <li><code>%x%</code>：表示包含x的字符串，x可以位于开头、结尾或字符串中间</li>
@@ -932,32 +862,26 @@
 </li>
 <li><code>_</code>：下划线匹配单个字符</li>
 </ul>
-<h2 id="limit"><a class="header-anchor" href="#limit"></a>limit</h2>
-<p>限制返回的行数</p>
-<h2 id="location"><a class="header-anchor" href="#location"></a>location</h2>
-<p>创建数据库时修改数据库的存储位置</p>
+<h2 id="limit"><a href="#limit" class="headerlink" title="limit"></a>limit</h2><p>限制返回的行数</p>
+<h2 id="location"><a href="#location" class="headerlink" title="location"></a>location</h2><p>创建数据库时修改数据库的存储位置</p>
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">DATABASE</span> db_name1</span><br><span class="line">LOCATION <span class="string">'/my/preferred/directory'</span>;</span><br></pre></td></tr></table></figure>
-<h2 id="order-by"><a class="header-anchor" href="#order-by"></a>order by</h2>
-<p><code>ORDER BY</code>会对查询结果集执行一个全局排序</p>
+<h2 id="order-by"><a href="#order-by" class="headerlink" title="order by"></a>order by</h2><p><code>ORDER BY</code>会对查询结果集执行一个全局排序</p>
 <ul>
 <li>会有一个所有的数据都通过一个reducer进行处理的过程</li>
 <li>可以使用<code>SORT BY</code>在每个reducer中对数据进行排序（执行局部排序），可以保证每个reducer的输出数据都是（局部）有序的</li>
-<li>可以指定任意期望进行排序的字段
-<ul>
+<li>可以指定任意期望进行排序的字段<ul>
 <li>默认升序排列<code>ASC</code></li>
 <li>若要按降序排列，则应在字段后添加<code>DESC</code>关键字</li>
 </ul>
 </li>
 </ul>
-<h2 id="partitioned"><a class="header-anchor" href="#partitioned"></a>partitioned</h2>
-<p>一般按照分区存储、管理表</p>
+<h2 id="partitioned"><a href="#partitioned" class="headerlink" title="partitioned"></a>partitioned</h2><p>一般按照分区存储、管理表</p>
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> employees (</span><br><span class="line">  <span class="keyword">name</span>          <span class="keyword">STRING</span>,</span><br><span class="line">  salary        <span class="built_in">FLOAT</span>,</span><br><span class="line">  subordinates  <span class="built_in">ARRAY</span>&lt;<span class="keyword">STRING</span>&gt;,</span><br><span class="line">  deductions    <span class="keyword">MAP</span>&lt;<span class="keyword">STRING</span>, <span class="built_in">FLOAT</span>&gt;,</span><br><span class="line">  address       <span class="keyword">STRUCT</span>&lt;street: <span class="keyword">STRING</span>, city: <span class="keyword">STRING</span>, state: <span class="keyword">STRING</span>, zip: <span class="built_in">INT</span>&gt;</span><br><span class="line">)</span><br><span class="line">PARTITIONED <span class="keyword">BY</span> (country <span class="keyword">STRING</span>, state <span class="keyword">STRING</span>);</span><br><span class="line"><span class="comment">-- 按照country、state进行分区管理</span></span><br><span class="line"><span class="comment">-- country是第一级细分</span></span><br><span class="line"><span class="comment">-- state是第二级细分</span></span><br></pre></td></tr></table></figure>
 <p><code>SHOW PARTITIONS table_name</code>：查看数据表中存在的所有分区。</p>
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SHOW</span> <span class="keyword">PARTITIONS</span> employees;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- Country=CA/state=AB</span></span><br><span class="line"><span class="comment">-- Country=CA/state=BC</span></span><br><span class="line"><span class="comment">-- ...</span></span><br></pre></td></tr></table></figure>
-<p><code>SHOW PARTITIONS table_name PARTITION(country='US')</code>：查看数据表中的某个一级细分下的所有分区。</p>
+<p><code>SHOW PARTITIONS table_name PARTITION(country=&#39;US&#39;)</code>：查看数据表中的某个一级细分下的所有分区。</p>
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SHOW</span> <span class="keyword">PARTITIONS</span> employees <span class="keyword">PARTITION</span>(country=<span class="string">'US'</span>);</span><br><span class="line"><span class="keyword">SHOW</span> <span class="keyword">PARTITIONS</span> employees <span class="keyword">PARTITION</span>(country=<span class="string">'US'</span>, state=<span class="string">'AK'</span>);</span><br></pre></td></tr></table></figure>
-<h2 id="rlike"><a class="header-anchor" href="#rlike"></a>rlike</h2>
-<p>通过Java的正则表达式匹配字符串</p>
+<h2 id="rlike"><a href="#rlike" class="headerlink" title="rlike"></a>rlike</h2><p>通过Java的正则表达式匹配字符串</p>
 <ul>
 <li>字符串中的点号<code>.</code>表示和任意的字符匹配</li>
 <li>字符串中的星号<code>*</code>表示重复“左边的字符串”零次到无数次</li>
@@ -970,12 +894,10 @@
 <li><a href="https://tool.oschina.net/uploads/apidocs/jquery/regexp.html" target="_blank" rel="noopener">正则表达式手册</a></li>
 <li><a href="https://harttle.land/2016/07/18/intro-to-regexp.html" target="_blank" rel="noopener">正则表达式参考手册（JavaScript版本）</a></li>
 </ul>
-<h2 id="set"><a class="header-anchor" href="#set"></a>set</h2>
-<ul>
+<h2 id="set"><a href="#set" class="headerlink" title="set"></a>set</h2><ul>
 <li>可用于给变量赋新的值</li>
 </ul>
-<h2 id="show"><a class="header-anchor" href="#show"></a>show</h2>
-<ul>
+<h2 id="show"><a href="#show" class="headerlink" title="show"></a>show</h2><ul>
 <li>查看Hive中所包含的数据库：</li>
 </ul>
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SHOW</span> <span class="keyword">DATABASES</span>;</span><br></pre></td></tr></table></figure>
@@ -993,196 +915,153 @@
 <li>显示数据表中存在的所有分区</li>
 </ul>
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SHOW</span> <span class="keyword">PARTITIONS</span> table_name</span><br></pre></td></tr></table></figure>
-<h2 id="sort-by"><a class="header-anchor" href="#sort-by"></a>sort by</h2>
-<p>在每个reducer中对数据进行排序</p>
+<h2 id="sort-by"><a href="#sort-by" class="headerlink" title="sort by"></a>sort by</h2><p>在每个reducer中对数据进行排序</p>
 <ul>
 <li>排序结果是局部有序的</li>
 <li>Hive要求<code>DISTRIBUTE BY</code>语句要写在<code>SORT BY</code>语句之前</li>
 </ul>
-<h2 id="where"><a class="header-anchor" href="#where"></a>where</h2>
-<p>WHERE语句用于过滤条件</p>
+<h2 id="where"><a href="#where" class="headerlink" title="where"></a>where</h2><p>WHERE语句用于过滤条件</p>
 <ul>
 <li>不能在WHERE语句中使用列别名</li>
 </ul>
-<h2 id="union-all"><a class="header-anchor" href="#union-all"></a>union all</h2>
-<p>可以将2个或多个表进行合并。</p>
+<h2 id="union-all"><a href="#union-all" class="headerlink" title="union all"></a>union all</h2><p>可以将2个或多个表进行合并。</p>
 <ul>
 <li>每一个UNION子查询都必需具有相同的列，且对应的每个字段的字段类型必须一致</li>
 <li>也可用于同一个源表的数据合并</li>
 </ul>
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> log.ymd, log.level, log.message</span><br><span class="line"><span class="keyword">FROM</span> </span><br><span class="line">(</span><br><span class="line">  <span class="keyword">SELECT</span> l1.ymd, l1.level, l1.message, <span class="string">'Log1'</span> <span class="keyword">AS</span> <span class="keyword">source</span></span><br><span class="line">  <span class="keyword">FROM</span> log1 l1</span><br><span class="line"></span><br><span class="line">  <span class="keyword">UNION</span> <span class="keyword">ALL</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">SELECT</span> l2.ymd, l2.level, l2.message, <span class="string">'Log2'</span> <span class="keyword">AS</span> <span class="keyword">source</span></span><br><span class="line">  <span class="keyword">FROM</span> log1 l2</span><br><span class="line">) <span class="keyword">log</span></span><br><span class="line"><span class="keyword">SORT</span> <span class="keyword">BY</span> log.ymd <span class="keyword">ASC</span>;</span><br></pre></td></tr></table></figure>
-<h2 id="use"><a class="header-anchor" href="#use"></a>use</h2>
-<p>用于将某个数据库设置为用户当前的工作数据库</p>
+<h2 id="use"><a href="#use" class="headerlink" title="use"></a>use</h2><p>用于将某个数据库设置为用户当前的工作数据库</p>
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">USE</span> db_name_2;</span><br></pre></td></tr></table></figure>
-<h2 id="数据函数"><a class="header-anchor" href="#数据函数"></a>数据函数</h2>
-<p>82页</p>
-<h2 id="聚合函数"><a class="header-anchor" href="#聚合函数"></a>聚合函数</h2>
-<p>85页</p>
-<h2 id="表生成函数"><a class="header-anchor" href="#表生成函数"></a>表生成函数</h2>
-<p>86页</p>
-<h1 id="数据操作"><a class="header-anchor" href="#数据操作"></a>数据操作</h1>
-<ul>
+<h2 id="数据函数"><a href="#数据函数" class="headerlink" title="数据函数"></a>数据函数</h2><p>82页</p>
+<h2 id="聚合函数"><a href="#聚合函数" class="headerlink" title="聚合函数"></a>聚合函数</h2><p>85页</p>
+<h2 id="表生成函数"><a href="#表生成函数" class="headerlink" title="表生成函数"></a>表生成函数</h2><p>86页</p>
+<h1 id="数据操作"><a href="#数据操作" class="headerlink" title="数据操作"></a>数据操作</h1><ul>
 <li>Hive没有行级别的数据插入、数据更新和删除操作</li>
-<li>数据插入方式有：
-<ul>
+<li>数据插入方式有：<ul>
 <li>装载数据文件到目标目录</li>
 <li>INSERT INTO/OVERWRITE</li>
 <li>创建表并将查询结果载入该表</li>
 </ul>
 </li>
 </ul>
-<h2 id="数据插入"><a class="header-anchor" href="#数据插入"></a>数据插入</h2>
-<h3 id="load-data"><a class="header-anchor" href="#load-data"></a>load data</h3>
-<p>装载数据到管理表：</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">LOAD</span> <span class="keyword">DATA</span> <span class="keyword">LOCAL</span> INPATH <span class="string">'$&#123;env:HOME&#125;/california-employees'</span></span><br><span class="line">OVERWRITE <span class="keyword">INTO</span> <span class="keyword">TABLE</span> table_name</span><br><span class="line"><span class="keyword">PARTITION</span> (country = <span class="string">'US'</span>, state = <span class="string">'CA'</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="数据插入"><a href="#数据插入" class="headerlink" title="数据插入"></a>数据插入</h2><h3 id="load-data"><a href="#load-data" class="headerlink" title="load data"></a>load data</h3><p>装载数据到管理表：<br><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">LOAD</span> <span class="keyword">DATA</span> <span class="keyword">LOCAL</span> INPATH <span class="string">'$&#123;env:HOME&#125;/california-employees'</span></span><br><span class="line">OVERWRITE <span class="keyword">INTO</span> <span class="keyword">TABLE</span> table_name</span><br><span class="line"><span class="keyword">PARTITION</span> (country = <span class="string">'US'</span>, state = <span class="string">'CA'</span>);</span><br></pre></td></tr></table></figure></p>
 <ul>
 <li>如果分区目录不存在，则会先创建分区目录，再将数据拷贝到该目录下</li>
 <li>如果目标表是非分区表，则PARTITION子句被忽略</li>
 <li>通常情况下，指定的路径应该是一个目录，而不是单个独立的文件</li>
 <li><code>INPATH</code>子句中的文件路径下不可以包含任何文件夹</li>
 <li>Hive不会验证用户转载的数据和表的模式是否匹配</li>
-<li>Hive会验证文件格式是否与表结构定义一致
-<ul>
+<li>Hive会验证文件格式是否与表结构定义一致<ul>
 <li>如果表的存储格式是SEQUENCEFILE，则装载进去的文件也应该是SEQUENCEFILE格式</li>
 </ul>
 </li>
 </ul>
-<h4 id="local"><a class="header-anchor" href="#local"></a>local</h4>
-<ul>
+<h4 id="local"><a href="#local" class="headerlink" title="local"></a>local</h4><ul>
 <li>如果使用了<code>LOCAL</code>关键字，则这个路径应该为本地文件系统路径，数据将被拷贝到目标位置</li>
-<li>如果省略了<code>LOCAL</code>关键字，则这个路径应该是分布式文件系统中的路径，数据是从这个路径转移到目标位置的（因为用户在分布式文件系统中可能并不需要重复的多份数据文件拷贝）</li>
+<li>如果省略了<code>LOCAL</code>关键字，则这个路径应该是分布式文件系统中的路径，数据是从这个路径转移到目标位置的（因为用户在分布式文件系统中可能并不需要重复的多份数据文件拷贝）<ul>
 <li>此时要求源文件和目标文件以及目录应该在同一个文件系统中</li>
 <li>用户不可以使用<code>LOCAL DATA</code>语句将数据从一个集群的HDFS中转移到另一个集群的HDFS中</li>
 </ul>
-<h4 id="overwrite"><a class="header-anchor" href="#overwrite"></a>overwrite</h4>
-<ul>
+</li>
+</ul>
+<h4 id="overwrite"><a href="#overwrite" class="headerlink" title="overwrite"></a>overwrite</h4><ul>
 <li>如果用户指定了<code>OVERWRITE</code>关键字，则目标文件夹中之前的数据将会被先删除</li>
-<li>如果没有指定<code>OVERWRITE</code>关键字，则仅仅会把新增的文件增加到目标文件夹中而不会删除之前的数据
-<ul>
+<li>如果没有指定<code>OVERWRITE</code>关键字，则仅仅会把新增的文件增加到目标文件夹中而不会删除之前的数据<ul>
 <li>如果目标文件夹中已经存在和装载的文件同名的文件，则旧的同名文件将会被覆盖重写（“之前的文件名_序列号”）</li>
 </ul>
 </li>
 </ul>
-<h3 id="insert"><a class="header-anchor" href="#insert"></a>insert</h3>
-<p>通过查询语句向表中插入数据：</p>
+<h3 id="insert"><a href="#insert" class="headerlink" title="insert"></a>insert</h3><p>通过查询语句向表中插入数据：</p>
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> OVERWRITE <span class="keyword">TABLE</span> table_name</span><br><span class="line"><span class="keyword">PARTITION</span> (country = <span class="string">'US'</span>, state = <span class="string">'OR'</span>)</span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> another_table se</span><br><span class="line"><span class="keyword">WHERE</span> se.cnty = <span class="string">'US'</span> <span class="keyword">AND</span> se.et = <span class="string">'OR'</span>;</span><br></pre></td></tr></table></figure>
 <ul>
 <li>如果没有使用<code>OVERWRITE</code>关键字或<code>INTO</code>关键字，则将以追加的方式写入数据，而不会覆盖掉之前已经存在的内容</li>
 </ul>
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 为三个州创建表分区</span></span><br><span class="line"><span class="comment">-- 将数据写入目标表的多个分区</span></span><br><span class="line"><span class="comment">-- 静态分区</span></span><br><span class="line">FROM another_table se</span><br><span class="line"><span class="keyword">INSERT</span> OVERWRITE <span class="keyword">TABLE</span> table_name</span><br><span class="line">  <span class="keyword">PARTITION</span> (country = <span class="string">'US'</span>, state = <span class="string">'OR'</span>)</span><br><span class="line">  <span class="keyword">SELECT</span> * <span class="keyword">WHERE</span> se.cnty = <span class="string">'US'</span> <span class="keyword">AND</span> se.st = <span class="string">'OR'</span></span><br><span class="line"><span class="keyword">INSERT</span> OVERWRITE <span class="keyword">TABLE</span> table_name</span><br><span class="line">  <span class="keyword">PARTITION</span> (country = <span class="string">'US'</span>, state = <span class="string">'CA'</span>)</span><br><span class="line">  <span class="keyword">SELECT</span> * <span class="keyword">WHERE</span> se.cnty = <span class="string">'US'</span> <span class="keyword">AND</span> se.st = <span class="string">'CA'</span></span><br><span class="line"><span class="keyword">INSERT</span> OVERWRITE <span class="keyword">TABLE</span> table_name</span><br><span class="line">  <span class="keyword">PARTITION</span> (country = <span class="string">'US'</span>, state = <span class="string">'IL'</span>)</span><br><span class="line">  <span class="keyword">SELECT</span> * <span class="keyword">WHERE</span> se.cnty = <span class="string">'US'</span> <span class="keyword">AND</span> se.st = <span class="string">'IL'</span></span><br><span class="line"><span class="comment">-- 这里可以混用 INSERT OVERWRITE 句式和 INSERT INTO 句式</span></span><br></pre></td></tr></table></figure>
-<p>动态分区：</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> OVERWRITE <span class="keyword">TABLE</span> table_name</span><br><span class="line"><span class="keyword">PARTITION</span> (country, state)</span><br><span class="line"><span class="keyword">SELECT</span> ..., se.cnty, se.st</span><br><span class="line"><span class="keyword">FROM</span> another_table se;</span><br><span class="line"><span class="comment">-- Hive根据`SELECT`语句中最后2列来确定分区字段`country`和`state`的值</span></span><br></pre></td></tr></table></figure>
+<p>动态分区：<br><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> OVERWRITE <span class="keyword">TABLE</span> table_name</span><br><span class="line"><span class="keyword">PARTITION</span> (country, state)</span><br><span class="line"><span class="keyword">SELECT</span> ..., se.cnty, se.st</span><br><span class="line"><span class="keyword">FROM</span> another_table se;</span><br><span class="line"><span class="comment">-- Hive根据`SELECT`语句中最后2列来确定分区字段`country`和`state`的值</span></span><br></pre></td></tr></table></figure></p>
 <ul>
 <li>源表字段值和输出分区值之间是根据位置来匹配的，而不是根据字段命名</li>
-<li>可以混合使用动态分区和静态分区</li>
-</ul>
+<li><p>可以混合使用动态分区和静态分区</p>
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> OVERWRITE <span class="keyword">TABLE</span> table_name</span><br><span class="line"><span class="keyword">PARTITION</span> (country = <span class="string">'US'</span>, state)</span><br><span class="line"><span class="keyword">SELECT</span> ..., se.cnty, se.st</span><br><span class="line"><span class="keyword">FROM</span> another_table se</span><br><span class="line"><span class="keyword">WHERE</span> se.cnty = <span class="string">'US'</span>;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>静态分区键必须出现在动态分区键之前</li>
+</li>
+<li><p>静态分区键必须出现在动态分区键之前</p>
+</li>
 </ul>
-<h3 id="创建表并插入数据"><a class="header-anchor" href="#创建表并插入数据"></a>创建表并插入数据</h3>
-<p>在单个查询语句中创建表并载入数据：</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> table_name</span><br><span class="line"><span class="keyword">AS</span> </span><br><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">  <span class="keyword">name</span></span><br><span class="line">  , salary</span><br><span class="line">  , address</span><br><span class="line"><span class="keyword">FROM</span> employees se</span><br><span class="line"><span class="keyword">WHERE</span> se.state = <span class="string">'CA'</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="创建表并插入数据"><a href="#创建表并插入数据" class="headerlink" title="创建表并插入数据"></a>创建表并插入数据</h3><p>在单个查询语句中创建表并载入数据：<br><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> table_name</span><br><span class="line"><span class="keyword">AS</span> </span><br><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">  <span class="keyword">name</span></span><br><span class="line">  , salary</span><br><span class="line">  , address</span><br><span class="line"><span class="keyword">FROM</span> employees se</span><br><span class="line"><span class="keyword">WHERE</span> se.state = <span class="string">'CA'</span>;</span><br></pre></td></tr></table></figure></p>
 <ul>
 <li>该功能（在单个查询语句中创建表并载入数据）不适用于外部表</li>
 </ul>
-<h2 id="导出数据"><a class="header-anchor" href="#导出数据"></a>导出数据</h2>
-<ul>
-<li>如果不需要更改数据文件格式，则可简单地拷贝文件夹或文件即可</li>
-</ul>
+<h2 id="导出数据"><a href="#导出数据" class="headerlink" title="导出数据"></a>导出数据</h2><ul>
+<li><p>如果不需要更改数据文件格式，则可简单地拷贝文件夹或文件即可</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hadoop fs -cp source_path target_path</span><br></pre></td></tr></table></figure>
-<ul>
-<li>可用<code>INSERT ... DIRECTORY ...</code>导出数据:</li>
+</li>
+<li><p>可用<code>INSERT ... DIRECTORY ...</code>导出数据:</p>
+</li>
 </ul>
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> OVERWRITE <span class="keyword">LOCAL</span> <span class="keyword">DIRECTORY</span> <span class="string">'/tmp/ca_employees'</span></span><br><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">  <span class="keyword">name</span></span><br><span class="line">  , salary</span><br><span class="line">  , address</span><br><span class="line"><span class="keyword">FROM</span> employees</span><br><span class="line"><span class="keyword">WHERE</span> se.state = <span class="string">'CA'</span>;</span><br><span class="line"><span class="comment">-- 其中指定路径也可写成全URL路径（如hdfs://master-server/tmp/ca_employees</span></span><br></pre></td></tr></table></figure>
-<h1 id="其他内置函数"><a class="header-anchor" href="#其他内置函数"></a>其他内置函数</h1>
-<h2 id="ascii"><a class="header-anchor" href="#ascii"></a>ascii()</h2>
-<p><code>ASCII(STRING s)</code>：返回字符串s中首个ASCII字符的整数值</p>
+<h1 id="其他内置函数"><a href="#其他内置函数" class="headerlink" title="其他内置函数"></a>其他内置函数</h1><h2 id="ascii"><a href="#ascii" class="headerlink" title="ascii()"></a>ascii()</h2><p><code>ASCII(STRING s)</code>：返回字符串s中首个ASCII字符的整数值</p>
 <ul>
 <li>返回值是STRING</li>
 </ul>
-<h2 id="base64"><a class="header-anchor" href="#base64"></a>base64()</h2>
-<p><code>BASE64(BINARY bin)</code>：将二进制值bin转换为基于64位的字符串</p>
+<h2 id="base64"><a href="#base64" class="headerlink" title="base64()"></a>base64()</h2><p><code>BASE64(BINARY bin)</code>：将二进制值bin转换为基于64位的字符串</p>
 <ul>
 <li>BASE64字符表：ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/</li>
 <li>返回值是STRING</li>
 </ul>
-<h2 id="binary"><a class="header-anchor" href="#binary"></a>binary()</h2>
-<p>将输入的值转换成二进制值（Hive v0.12.0新增）</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">BINARY(STRING s)</span><br><span class="line">BINARY(BINARY b)</span><br></pre></td></tr></table></figure>
+<h2 id="binary"><a href="#binary" class="headerlink" title="binary()"></a>binary()</h2><p>将输入的值转换成二进制值（Hive v0.12.0新增）<br><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">BINARY(STRING s)</span><br><span class="line">BINARY(BINARY b)</span><br></pre></td></tr></table></figure></p>
 <ul>
 <li>返回值是BINARY</li>
 </ul>
-<h2 id="cast-…-as-…"><a class="header-anchor" href="#cast-…-as-…"></a>cast(… as …)</h2>
-<p><code>CAST(&lt;expr&gt; AS &lt;type&gt;)</code>：将expr转换成type类型；如果转换过程失败，则会返回NULL</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">CAST(col_1 AS INT) <span class="comment">-- 将col_1列转换为INT类型</span></span><br><span class="line">CAST(col_2 AS FLOAT)  <span class="comment">-- 将字段的类型转换为FLOAT</span></span><br><span class="line"><span class="comment">-- 将字段的类型转换为FLOAT，推荐使用ROUND()或FLOOR()，而不是CAST(... AS FLOAT)</span></span><br><span class="line">CAST(col_3 AS STRING)</span><br><span class="line">CAST(col_4 AS DOUBLE)</span><br></pre></td></tr></table></figure>
-<h2 id="collect-list"><a class="header-anchor" href="#collect-list"></a>collect_list()</h2>
-<p>将多个数据聚合成列表存在一个字段里</p>
+<h2 id="cast-…-as-…"><a href="#cast-…-as-…" class="headerlink" title="cast(… as …)"></a>cast(… as …)</h2><p><code>CAST(&lt;expr&gt; AS &lt;type&gt;)</code>：将expr转换成type类型；如果转换过程失败，则会返回NULL<br><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">CAST(col_1 AS INT) <span class="comment">-- 将col_1列转换为INT类型</span></span><br><span class="line">CAST(col_2 AS FLOAT)  <span class="comment">-- 将字段的类型转换为FLOAT</span></span><br><span class="line"><span class="comment">-- 将字段的类型转换为FLOAT，推荐使用ROUND()或FLOOR()，而不是CAST(... AS FLOAT)</span></span><br><span class="line">CAST(col_3 AS STRING)</span><br><span class="line">CAST(col_4 AS DOUBLE)</span><br></pre></td></tr></table></figure></p>
+<h2 id="collect-list"><a href="#collect-list" class="headerlink" title="collect_list()"></a>collect_list()</h2><p>将多个数据聚合成列表存在一个字段里</p>
 <ul>
 <li>不去重</li>
 <li>需要与<code>group by</code>结合使用</li>
 </ul>
-<h2 id="collect-set"><a class="header-anchor" href="#collect-set"></a>collect_set()</h2>
-<p>将多个数据聚合成集合存在一个字段里</p>
+<h2 id="collect-set"><a href="#collect-set" class="headerlink" title="collect_set()"></a>collect_set()</h2><p>将多个数据聚合成集合存在一个字段里</p>
 <ul>
 <li>去重</li>
 <li>需要与<code>group by</code>结合使用</li>
 </ul>
-<h2 id="concat"><a class="header-anchor" href="#concat"></a>concat()</h2>
-<p>将多个字符串拼接成一个字符串</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">CONCAT('abc', 'defg')</span><br><span class="line"><span class="comment">-- 结果为 abcdefg</span></span><br></pre></td></tr></table></figure>
+<h2 id="concat"><a href="#concat" class="headerlink" title="concat()"></a>concat()</h2><p>将多个字符串拼接成一个字符串<br><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">CONCAT('abc', 'defg')</span><br><span class="line"><span class="comment">-- 结果为 abcdefg</span></span><br></pre></td></tr></table></figure></p>
 <ul>
 <li>返回值是STRING</li>
 </ul>
-<h2 id="concat-ws"><a class="header-anchor" href="#concat-ws"></a>concat_ws</h2>
-<p>concat with sep，拼接字符串<br>
-<code>CONCAT_WS(STRING seperator, BINARY s1, STRING s2, ...)</code>：与<code>concat</code>类似，不过是使用指定的分隔符进行拼接</p>
+<h2 id="concat-ws"><a href="#concat-ws" class="headerlink" title="concat_ws"></a>concat_ws</h2><p>concat with sep，拼接字符串<br><code>CONCAT_WS(STRING seperator, BINARY s1, STRING s2, ...)</code>：与<code>concat</code>类似，不过是使用指定的分隔符进行拼接</p>
 <ul>
 <li>返回值是STRING</li>
 </ul>
-<h2 id="context-ngrams"><a class="header-anchor" href="#context-ngrams"></a>context_ngrams</h2>
-<p><code>CONTEXT_NGRAMS(ARRAY&lt;ARRAY&lt;STRING&gt;&gt;, ARRAY&lt;STRING&gt;, INT k, INT pf)</code>：和ngrams类似，从每个外层数组的第二个单词数组来查找前k个字尾<br>
-（不理解）</p>
-<h2 id="date-add"><a class="header-anchor" href="#date-add"></a>date_add</h2>
-<p><code>DATE_ADD(STRING startdate, INT days)</code>：为开始时间<code>startdate</code>增加<code>days</code>天</p>
+<h2 id="context-ngrams"><a href="#context-ngrams" class="headerlink" title="context_ngrams"></a>context_ngrams</h2><p><code>CONTEXT_NGRAMS(ARRAY&lt;ARRAY&lt;STRING&gt;&gt;, ARRAY&lt;STRING&gt;, INT k, INT pf)</code>：和ngrams类似，从每个外层数组的第二个单词数组来查找前k个字尾<br>（不理解）</p>
+<h2 id="date-add"><a href="#date-add" class="headerlink" title="date_add"></a>date_add</h2><p><code>DATE_ADD(STRING startdate, INT days)</code>：为开始时间<code>startdate</code>增加<code>days</code>天</p>
 <ul>
 <li>返回值是STRING</li>
 </ul>
-<h2 id="datediff"><a class="header-anchor" href="#datediff"></a>datediff</h2>
-<p><code>DATEDIFF(STRING enddate, STRING startdate)</code>：计算开始时间<code>startdate</code>到结束时间<code>enddate</code>相差的天数</p>
+<h2 id="datediff"><a href="#datediff" class="headerlink" title="datediff"></a>datediff</h2><p><code>DATEDIFF(STRING enddate, STRING startdate)</code>：计算开始时间<code>startdate</code>到结束时间<code>enddate</code>相差的天数</p>
 <ul>
-<li>返回值是INT</li>
+<li>返回值是INT<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">DATEDIFF('2020-03-03', '2020-01')</span><br><span class="line"><span class="comment">-- 2</span></span><br></pre></td></tr></table></figure>
+</li>
 </ul>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">DATEDIFF('2020-03-03', '2020-01')</span><br><span class="line"><span class="comment">-- 2</span></span><br></pre></td></tr></table></figure>
-<h2 id="date-format"><a class="header-anchor" href="#date-format"></a>date_format</h2>
-<p>将时间字符串转换为指定的日期格式</p>
+<h2 id="date-format"><a href="#date-format" class="headerlink" title="date_format"></a>date_format</h2><p>将时间字符串转换为指定的日期格式</p>
 <ul>
 <li>可以识别到“年”、“月”等一级的时间</li>
 </ul>
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">DATE_FORMAT('2020-09-01 15:34:03', 'y')</span><br><span class="line"><span class="comment">-- 2020</span></span><br><span class="line"></span><br><span class="line">DATE_FORMAT('2020-09-01 15:34:03', 'yyyy-MM')</span><br><span class="line"><span class="comment">-- 2020-09</span></span><br><span class="line"></span><br><span class="line">DATE_FORMAT('2020-09-01', 'yyyy-MM')</span><br><span class="line"><span class="comment">-- 2020-09</span></span><br><span class="line"></span><br><span class="line">DATE_FORMAT('2020-09-01 15:34:03', 'yyyy-MM-dd')</span><br><span class="line"><span class="comment">--2020-09-01</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 当月第一天</span></span><br><span class="line">date_format('2021-08-28', 'yyyy-MM-01')</span><br><span class="line"><span class="comment">-- 2021-08-01</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 上个月最后一天</span></span><br><span class="line">date_sub(date_format('2021-08-28', 'yyyy-MM-01'), 1)</span><br></pre></td></tr></table></figure>
-<h2 id="date-sub"><a class="header-anchor" href="#date-sub"></a>date_sub</h2>
-<p><code>DATE_SUB(STRING startdate, INT days)</code>：从开始时间<code>startdate</code>增加<code>days</code>天</p>
+<h2 id="date-sub"><a href="#date-sub" class="headerlink" title="date_sub"></a>date_sub</h2><p><code>DATE_SUB(STRING startdate, INT days)</code>：从开始时间<code>startdate</code>增加<code>days</code>天</p>
 <ul>
 <li>返回值是STRING</li>
 </ul>
-<h2 id="day"><a class="header-anchor" href="#day"></a>day</h2>
-<p><code>day(STRING date)</code>：提取时间字符串中的天<br>
-<code>dayofmonth(STRING date)</code>：返回当月第几天</p>
+<h2 id="day"><a href="#day" class="headerlink" title="day"></a>day</h2><p><code>day(STRING date)</code>：提取时间字符串中的天<br><code>dayofmonth(STRING date)</code>：返回当月第几天</p>
 <ul>
 <li>返回值是INT</li>
 </ul>
-<h2 id="dayofmonth"><a class="header-anchor" href="#dayofmonth"></a>dayofmonth</h2>
-<p><code>DAYOFMONTH(STRING date)</code>：返回当月第几天</p>
+<h2 id="dayofmonth"><a href="#dayofmonth" class="headerlink" title="dayofmonth"></a>dayofmonth</h2><p><code>DAYOFMONTH(STRING date)</code>：返回当月第几天</p>
 <ul>
 <li>返回值是INT</li>
 </ul>
-<h2 id="decode"><a class="header-anchor" href="#decode"></a>decode</h2>
-<p><code>DECODE(BINARY bin, STRING charset)</code>：使用指定的字符集charset将二进制值bin解码成字符串</p>
+<h2 id="decode"><a href="#decode" class="headerlink" title="decode"></a>decode</h2><p><code>DECODE(BINARY bin, STRING charset)</code>：使用指定的字符集charset将二进制值bin解码成字符串</p>
 <ul>
 <li>若任一输入参数为NULL，则结果为NULL</li>
 <li>返回值是STRING</li>
-<li>支持的字符集有：
-<ul>
+<li>支持的字符集有：<ul>
 <li>US_ASCII</li>
 <li>ISO-8859-1</li>
 <li>UTF-8</li>
@@ -1192,23 +1071,18 @@
 </ul>
 </li>
 </ul>
-<h2 id="dense-rank"><a class="header-anchor" href="#dense-rank"></a>dense_rank</h2>
-<p><code>DENSE_RANK()</code>：生成数据项在分组中的排名，排名相等的名次一样，序号<strong>不会</strong>在中间留下空白</p>
+<h2 id="dense-rank"><a href="#dense-rank" class="headerlink" title="dense_rank"></a>dense_rank</h2><p><code>DENSE_RANK()</code>：生成数据项在分组中的排名，排名相等的名次一样，序号<strong>不会</strong>在中间留下空白</p>
 <ul>
-<li>
-<p><a href="#rank">RANK</a>：生成数据项在分组中的排名，排名相等的名次一样，序号<strong>会</strong>在中间留下空白</p>
+<li><p><a href="#rank">RANK</a>：生成数据项在分组中的排名，排名相等的名次一样，序号<strong>会</strong>在中间留下空白</p>
 </li>
-<li>
-<p>其他窗口函数：<a href="#row-number">ROW_NUMBER</a>、<a href="#rank">RANK</a></p>
+<li><p>其他窗口函数：<a href="#row-number">ROW_NUMBER</a>、<a href="#rank">RANK</a></p>
 </li>
 </ul>
-<h2 id="encode"><a class="header-anchor" href="#encode"></a>encode</h2>
-<p><code>ENCODE(STRING str, STRING charset)</code>：使用指定的字符集charset将字符串str编码成二进制值</p>
+<h2 id="encode"><a href="#encode" class="headerlink" title="encode"></a>encode</h2><p><code>ENCODE(STRING str, STRING charset)</code>：使用指定的字符集charset将字符串str编码成二进制值</p>
 <ul>
 <li>若任一输入参数为NULL，则结果为NULL</li>
 <li>返回值是BINARY</li>
-<li>支持的字符集有：
-<ul>
+<li>支持的字符集有：<ul>
 <li>US_ASCII</li>
 <li>ISO-8859-1</li>
 <li>UTF-8</li>
@@ -1218,113 +1092,90 @@
 </ul>
 </li>
 </ul>
-<h2 id="find-in-set"><a class="header-anchor" href="#find-in-set"></a>find_in_set()</h2>
-<p><code>FIND_IN_SET(STRING s, STRING commaSeparatedString)</code>：返回在以逗号分隔的字符串commaSeparatedString中s出现的位置</p>
+<h2 id="find-in-set"><a href="#find-in-set" class="headerlink" title="find_in_set()"></a>find_in_set()</h2><p><code>FIND_IN_SET(STRING s, STRING commaSeparatedString)</code>：返回在以逗号分隔的字符串commaSeparatedString中s出现的位置</p>
 <ul>
 <li>返回值是INT</li>
 <li>如果没找到，则返回NULL</li>
 </ul>
-<h2 id="format-number"><a class="header-anchor" href="#format-number"></a>format_number</h2>
-<p><code>FORMAT_NUMBER(NUMBER x, INT d)</code>：将数值x转换成“#,###,###.##”格式字符串，并保留d位小数。</p>
+<h2 id="format-number"><a href="#format-number" class="headerlink" title="format_number"></a>format_number</h2><p><code>FORMAT_NUMBER(NUMBER x, INT d)</code>：将数值x转换成“#,###,###.##”格式字符串，并保留d位小数。</p>
 <ul>
 <li>返回值是STRING</li>
 <li>如果d为0，则输出整数字符串</li>
 </ul>
-<h2 id="from-unixtime"><a class="header-anchor" href="#from-unixtime"></a>from_unixtime</h2>
-<p><code>FROM_UNIXTIME(BIGINT unixtime[, STRING format])</code>：将时间戳秒数转换为UTC时间</p>
+<h2 id="from-unixtime"><a href="#from-unixtime" class="headerlink" title="from_unixtime"></a>from_unixtime</h2><p><code>FROM_UNIXTIME(BIGINT unixtime[, STRING format])</code>：将时间戳秒数转换为UTC时间</p>
 <ul>
 <li>返回值是STRING</li>
-<li>可以通过format指定输出的时间格式
-<ul>
+<li>可以通过format指定输出的时间格式<ul>
 <li>‘yyyyMMdd’</li>
 <li>‘yyyy-MM-dd’</li>
 </ul>
 </li>
 </ul>
-<h2 id="from-utc-timestamp"><a class="header-anchor" href="#from-utc-timestamp"></a>from_utc_timestamp</h2>
-<p><code>FROM_UTC_TIMESTAMP(TIMESTAMP timestamp, STRING timezone)</code>：如果给定的时间戳<code>timestamp</code>不是UTC，则将其转换成指定时区<code>timezone</code>下的时间戳</p>
+<h2 id="from-utc-timestamp"><a href="#from-utc-timestamp" class="headerlink" title="from_utc_timestamp"></a>from_utc_timestamp</h2><p><code>FROM_UTC_TIMESTAMP(TIMESTAMP timestamp, STRING timezone)</code>：如果给定的时间戳<code>timestamp</code>不是UTC，则将其转换成指定时区<code>timezone</code>下的时间戳</p>
 <ul>
 <li>返回值是TIMESTAMP</li>
 </ul>
-<h2 id="get-json-object"><a class="header-anchor" href="#get-json-object"></a>get_json_object</h2>
-<p><code>GET_JSON_OBJECCT(STRING json_string, STRING path)</code>：从给定路径上的JSON字符串中抽取出JSON对象，并返回这个对象的JSOM字符串形式</p>
+<h2 id="get-json-object"><a href="#get-json-object" class="headerlink" title="get_json_object"></a>get_json_object</h2><p><code>GET_JSON_OBJECCT(STRING json_string, STRING path)</code>：从给定路径上的JSON字符串中抽取出JSON对象，并返回这个对象的JSOM字符串形式</p>
 <ul>
 <li>返回值是STRING</li>
 <li>如果输入的JSON字符串是非法的，则返回NULL</li>
 </ul>
-<h2 id="hour"><a class="header-anchor" href="#hour"></a>hour</h2>
-<p><code>HOUR(STRING date)</code>：提取时间戳字符串中的小时</p>
+<h2 id="hour"><a href="#hour" class="headerlink" title="hour"></a>hour</h2><p><code>HOUR(STRING date)</code>：提取时间戳字符串中的小时</p>
 <ul>
 <li>返回值是INT</li>
 </ul>
-<h2 id="in"><a class="header-anchor" href="#in"></a>in</h2>
-<p><code>test IN (val1, val2, ...)</code>：判断test是否等于后面列表中的任一值，是的话返回true</p>
+<h2 id="in"><a href="#in" class="headerlink" title="in"></a>in</h2><p><code>test IN (val1, val2, ...)</code>：判断test是否等于后面列表中的任一值，是的话返回true</p>
 <ul>
 <li>返回值是BOOLEAN</li>
 </ul>
-<h2 id="in-file"><a class="header-anchor" href="#in-file"></a>in_file</h2>
-<p><code>IN_FILE(STRING s, STRING filename)</code>：如果文件名为filename的文件中有完整一行数据和字符串s完全匹配，则返回true</p>
+<h2 id="in-file"><a href="#in-file" class="headerlink" title="in_file"></a>in_file</h2><p><code>IN_FILE(STRING s, STRING filename)</code>：如果文件名为filename的文件中有完整一行数据和字符串s完全匹配，则返回true</p>
 <ul>
 <li>返回值是BOOLEAN</li>
 </ul>
-<h2 id="instr"><a class="header-anchor" href="#instr"></a>instr</h2>
-<p><code>INSTR(STRING str, STRING substr)</code>：查找字符串str中子字符串substr第一次出现的位置</p>
+<h2 id="instr"><a href="#instr" class="headerlink" title="instr"></a>instr</h2><p><code>INSTR(STRING str, STRING substr)</code>：查找字符串str中子字符串substr第一次出现的位置</p>
 <ul>
 <li>返回值是INT</li>
 </ul>
-<h2 id="length"><a class="header-anchor" href="#length"></a>length</h2>
-<p><code>LENGTH(STRING s)</code>：返回字符串s的长度</p>
+<h2 id="length"><a href="#length" class="headerlink" title="length"></a>length</h2><p><code>LENGTH(STRING s)</code>：返回字符串s的长度</p>
 <ul>
 <li>返回值是INT</li>
 </ul>
-<h2 id="locate"><a class="header-anchor" href="#locate"></a>locate</h2>
-<p><code>LOCATE(STRING substr, STRING str[, INT pos])</code>：查找在字符串str中的pos位置后字符串substr第一次出现的位置</p>
+<h2 id="locate"><a href="#locate" class="headerlink" title="locate"></a>locate</h2><p><code>LOCATE(STRING substr, STRING str[, INT pos])</code>：查找在字符串str中的pos位置后字符串substr第一次出现的位置</p>
 <ul>
 <li>返回值是INT</li>
 </ul>
-<h2 id="lower-lcase"><a class="header-anchor" href="#lower-lcase"></a>lower(), lcase()</h2>
-<p><code>LOWER(STRING s)</code> 或 <code>LCASE(STRING s)</code>：将字符串s中所有字母转换成小写字母</p>
+<h2 id="lower-lcase"><a href="#lower-lcase" class="headerlink" title="lower(), lcase()"></a>lower(), lcase()</h2><p><code>LOWER(STRING s)</code> 或 <code>LCASE(STRING s)</code>：将字符串s中所有字母转换成小写字母</p>
 <ul>
 <li>返回值是STRING</li>
 <li>与<code>LCASE()</code>一样</li>
 </ul>
-<h2 id="lpad"><a class="header-anchor" href="#lpad"></a>lpad</h2>
-<p><code>LPAD(STRING s, INT len, STRING pad)</code>：从左边开始对字符串s使用字符串pad进行填充，直到达到len长度为止</p>
+<h2 id="lpad"><a href="#lpad" class="headerlink" title="lpad"></a>lpad</h2><p><code>LPAD(STRING s, INT len, STRING pad)</code>：从左边开始对字符串s使用字符串pad进行填充，直到达到len长度为止</p>
 <ul>
 <li>如果s本身长度比len大，则多余的部分会被去除</li>
 <li>返回值是STRING</li>
 </ul>
-<h2 id="ltrim"><a class="header-anchor" href="#ltrim"></a>ltrim</h2>
-<p><code>LTRIM(STRING s)</code> ：将字符串s前面出现的空格全部去除</p>
-<h2 id="minuite"><a class="header-anchor" href="#minuite"></a>minuite</h2>
-<p><code>MINUTE(STRING date)</code>：提取时间字符串中的分钟数</p>
+<h2 id="ltrim"><a href="#ltrim" class="headerlink" title="ltrim"></a>ltrim</h2><p><code>LTRIM(STRING s)</code> ：将字符串s前面出现的空格全部去除</p>
+<h2 id="minuite"><a href="#minuite" class="headerlink" title="minuite"></a>minuite</h2><p><code>MINUTE(STRING date)</code>：提取时间字符串中的分钟数</p>
 <ul>
 <li>返回值是INT</li>
 </ul>
-<h2 id="month"><a class="header-anchor" href="#month"></a>month</h2>
-<p><code>MONTH(STRING date)</code>：提取时间字符串中的月份</p>
+<h2 id="month"><a href="#month" class="headerlink" title="month"></a>month</h2><p><code>MONTH(STRING date)</code>：提取时间字符串中的月份</p>
 <ul>
 <li>返回值是INT</li>
 </ul>
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">MONTH('2020-09-01 12:00:05')</span><br><span class="line"><span class="comment">-- 9</span></span><br><span class="line"></span><br><span class="line">MONTH('2020-09-02')</span><br><span class="line"><span class="comment">-- 9</span></span><br></pre></td></tr></table></figure>
-<h2 id="ngrams"><a class="header-anchor" href="#ngrams"></a>ngrams</h2>
-<p><code>NGRAMS(ARRAY&lt;ARRAY&lt;string&gt;&gt;, INT n, INT k, INT pf)</code>：估算文件前k个字尾</p>
+<h2 id="ngrams"><a href="#ngrams" class="headerlink" title="ngrams"></a>ngrams</h2><p><code>NGRAMS(ARRAY&lt;ARRAY&lt;string&gt;&gt;, INT n, INT k, INT pf)</code>：估算文件前k个字尾</p>
 <ul>
 <li>其中pf是精度系数</li>
-<li>返回值是<code>ARRAY&lt;STRUCT&lt;STRING, DOUBLE&gt;&gt;</code><br>
-（不理解）</li>
+<li>返回值是<code>ARRAY&lt;STRUCT&lt;STRING, DOUBLE&gt;&gt;</code><br>（不理解）</li>
 </ul>
-<h2 id="ntile"><a class="header-anchor" href="#ntile"></a>ntile()</h2>
-<p><code>NTILE(INT n)</code>：将分组数据按照顺序切分为n片；返回当前切片值<br>
-<code>NTILE(INT n) OVER(PARTITION BY col_1 ORDER BY col_2)</code></p>
+<h2 id="ntile"><a href="#ntile" class="headerlink" title="ntile()"></a>ntile()</h2><p><code>NTILE(INT n)</code>：将分组数据按照顺序切分为n片；返回当前切片值<br><code>NTILE(INT n) OVER(PARTITION BY col_1 ORDER BY col_2)</code></p>
 <ul>
 <li><code>NTILE()</code>不支持<code>ROWS BETWEEN</code></li>
 </ul>
-<h2 id="parse-url"><a class="header-anchor" href="#parse-url"></a>parse_url()</h2>
-<p><code>PARSE_URL(STRING url, STRING partname[, STRING key])</code>：从url中抽取指定部分的内容</p>
+<h2 id="parse-url"><a href="#parse-url" class="headerlink" title="parse_url()"></a>parse_url()</h2><p><code>PARSE_URL(STRING url, STRING partname[, STRING key])</code>：从url中抽取指定部分的内容</p>
 <ul>
-<li>参数<code>partname</code>：要抽取的部分名称（是大小写敏感的）；可选的值有：
-<ul>
+<li>参数<code>partname</code>：要抽取的部分名称（是大小写敏感的）；可选的值有：<ul>
 <li>HOST</li>
 <li>PATH</li>
 <li>QUERY</li>
@@ -1339,176 +1190,137 @@
 <li>如果partname是QUERY的话，则还需要指定第三个参数key</li>
 <li>返回值是STRING</li>
 </ul>
-<h2 id="printf"><a class="header-anchor" href="#printf"></a>printf()</h2>
-<p><code>PRINTF(STRING format, Obj ... args)</code>：按照printf风格格式化输出输入的字符串</p>
+<h2 id="printf"><a href="#printf" class="headerlink" title="printf()"></a>printf()</h2><p><code>PRINTF(STRING format, Obj ... args)</code>：按照printf风格格式化输出输入的字符串</p>
 <ul>
 <li>返回值是STRING</li>
 </ul>
-<h2 id="rand"><a class="header-anchor" href="#rand"></a>rand()</h2>
-<p>产生随机数</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 分桶抽样</span></span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> numbers</span><br><span class="line"><span class="keyword">TABLESAMPLE</span>(<span class="keyword">BUCKET</span> <span class="number">3</span> <span class="keyword">OUT</span> <span class="keyword">OF</span> <span class="number">10</span> <span class="keyword">ON</span> <span class="keyword">RAND</span>()) s;</span><br><span class="line"><span class="comment">-- 分母10表示的是数据将会被散列的桶的个数</span></span><br><span class="line"><span class="comment">-- 分子3表示的是将会选择的桶的个数</span></span><br></pre></td></tr></table></figure>
-<h2 id="rank"><a class="header-anchor" href="#rank"></a>rank</h2>
-<p><code>RANK()</code>：从1开始，按照顺序生成分组内记录的序列</p>
+<h2 id="rand"><a href="#rand" class="headerlink" title="rand()"></a>rand()</h2><p>产生随机数<br><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 分桶抽样</span></span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> numbers</span><br><span class="line"><span class="keyword">TABLESAMPLE</span>(<span class="keyword">BUCKET</span> <span class="number">3</span> <span class="keyword">OUT</span> <span class="keyword">OF</span> <span class="number">10</span> <span class="keyword">ON</span> <span class="keyword">RAND</span>()) s;</span><br><span class="line"><span class="comment">-- 分母10表示的是数据将会被散列的桶的个数</span></span><br><span class="line"><span class="comment">-- 分子3表示的是将会选择的桶的个数</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="rank"><a href="#rank" class="headerlink" title="rank"></a>rank</h2><p><code>RANK()</code>：从1开始，按照顺序生成分组内记录的序列</p>
 <ul>
-<li>
-<p>序号是连续的，且间隔为1</p>
+<li><p>序号是连续的，且间隔为1</p>
 </li>
-<li>
-<p>其他窗口函数：<a href="#row-number">ROW_NUMBER</a>、<a href="#dense-rank">DENSE_RANK</a></p>
+<li><p>其他窗口函数：<a href="#row-number">ROW_NUMBER</a>、<a href="#dense-rank">DENSE_RANK</a></p>
 </li>
 </ul>
-<h2 id="regexp-extract"><a class="header-anchor" href="#regexp-extract"></a>regexp_extract</h2>
-<p><code>REGEXP_EXTRACT(STRING s, STRING regex_pattern, STRING index)</code>：抽取字符串st中符合正则表达式regex_pattern的第index个部分的子字符串</p>
+<h2 id="regexp-extract"><a href="#regexp-extract" class="headerlink" title="regexp_extract"></a>regexp_extract</h2><p><code>REGEXP_EXTRACT(STRING s, STRING regex_pattern, STRING index)</code>：抽取字符串st中符合正则表达式regex_pattern的第index个部分的子字符串</p>
 <ul>
 <li>返回值是STRING</li>
 </ul>
-<h2 id="regexp-replace"><a class="header-anchor" href="#regexp-replace"></a>regexp_replace</h2>
-<p><code>REGEXP_REPLACE(STRING s, STRING regex, STRING replacement)</code>：按照Java正则表达式regex将字符串s中符合条件的部分替换成replacement所指定的字符串</p>
+<h2 id="regexp-replace"><a href="#regexp-replace" class="headerlink" title="regexp_replace"></a>regexp_replace</h2><p><code>REGEXP_REPLACE(STRING s, STRING regex, STRING replacement)</code>：按照Java正则表达式regex将字符串s中符合条件的部分替换成replacement所指定的字符串</p>
 <ul>
 <li>如果<code>replacement</code>为空，则将符合正则表达式的部分去掉</li>
 <li>返回值是STRING</li>
 </ul>
-<h2 id="repeat"><a class="header-anchor" href="#repeat"></a>repeat</h2>
-<p><code>REPEAT(STRING s, INT n)</code>：重复输出n次字符串s</p>
+<h2 id="repeat"><a href="#repeat" class="headerlink" title="repeat"></a>repeat</h2><p><code>REPEAT(STRING s, INT n)</code>：重复输出n次字符串s</p>
 <ul>
 <li>返回值是STRING</li>
 </ul>
-<h2 id="reverse"><a class="header-anchor" href="#reverse"></a>reverse</h2>
-<p><code>REVERSE(STRING s)</code>：反转字符串</p>
+<h2 id="reverse"><a href="#reverse" class="headerlink" title="reverse"></a>reverse</h2><p><code>REVERSE(STRING s)</code>：反转字符串</p>
 <ul>
 <li>返回值是STRING</li>
 </ul>
-<h2 id="row-number"><a class="header-anchor" href="#row-number"></a>row_number</h2>
-<h2 id="rpad"><a class="header-anchor" href="#rpad"></a>rpad</h2>
-<p><code>RPAD(STRING s, INT len, STRING pad)</code>：从右边开始对字符串s使用字符串pad进行填充，直到达到len长度为止</p>
+<h2 id="row-number"><a href="#row-number" class="headerlink" title="row_number"></a>row_number</h2><h2 id="rpad"><a href="#rpad" class="headerlink" title="rpad"></a>rpad</h2><p><code>RPAD(STRING s, INT len, STRING pad)</code>：从右边开始对字符串s使用字符串pad进行填充，直到达到len长度为止</p>
 <ul>
 <li>如果字符串s本身长度比len大，则多余的部分被去除</li>
 <li>返回值是STRING</li>
 </ul>
-<h2 id="rtrim"><a class="header-anchor" href="#rtrim"></a>rtrim</h2>
-<p><code>RTRIM(STRING s)</code>：将字符串s后面出现的空格全部去除</p>
+<h2 id="rtrim"><a href="#rtrim" class="headerlink" title="rtrim"></a>rtrim</h2><p><code>RTRIM(STRING s)</code>：将字符串s后面出现的空格全部去除</p>
 <ul>
 <li>返回值是STRING</li>
 </ul>
-<h2 id="second"><a class="header-anchor" href="#second"></a>second</h2>
-<p><code>SECOND(STRING date)</code>：提取时间字符串中的秒数</p>
+<h2 id="second"><a href="#second" class="headerlink" title="second"></a>second</h2><p><code>SECOND(STRING date)</code>：提取时间字符串中的秒数</p>
 <ul>
 <li>返回值是INT</li>
 </ul>
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">SECOND('2020-09-01 12:23:34')</span><br><span class="line"><span class="comment">-- 34</span></span><br></pre></td></tr></table></figure>
-<h2 id="sentences"><a class="header-anchor" href="#sentences"></a>sentences</h2>
-<p><code>SENTENCES(STRING s, STRING lang, STRING locale)</code>：将输入字符串s转换成句子数组，每个句子又由一个单词数组构成。</p>
+<h2 id="sentences"><a href="#sentences" class="headerlink" title="sentences"></a>sentences</h2><p><code>SENTENCES(STRING s, STRING lang, STRING locale)</code>：将输入字符串s转换成句子数组，每个句子又由一个单词数组构成。</p>
 <ul>
 <li>参数<code>lang</code>：可选</li>
 <li>参数<code>locale</code>：可选</li>
 <li>返回值是<code>ARRAY&lt;ARRAY&lt;STRING&gt;&gt;</code></li>
 </ul>
-<h2 id="size"><a class="header-anchor" href="#size"></a>size</h2>
-<p><code>SIZE(MAP&lt;key, value&gt;)</code>：返回MAP中元素的个数<br>
-<code>SIZE(ARRAY&lt;...&gt;)</code>：返回数组ARRAY的元素个数</p>
+<h2 id="size"><a href="#size" class="headerlink" title="size"></a>size</h2><p><code>SIZE(MAP&lt;key, value&gt;)</code>：返回MAP中元素的个数<br><code>SIZE(ARRAY&lt;...&gt;)</code>：返回数组ARRAY的元素个数</p>
 <ul>
 <li>返回值是INT</li>
 </ul>
-<h2 id="space"><a class="header-anchor" href="#space"></a>space()</h2>
-<p><code>SPACE(INT n)</code>：返回n个空格</p>
+<h2 id="space"><a href="#space" class="headerlink" title="space()"></a>space()</h2><p><code>SPACE(INT n)</code>：返回n个空格</p>
 <ul>
 <li>返回值是STRING</li>
 </ul>
-<h2 id="split"><a class="header-anchor" href="#split"></a>split</h2>
-<p><code>SPLIT(STRING s, STRING pattern)</code>：按照正则表达式pattern分割字符串s，并将分割后的部分以字符串数组的方式返回</p>
+<h2 id="split"><a href="#split" class="headerlink" title="split"></a>split</h2><p><code>SPLIT(STRING s, STRING pattern)</code>：按照正则表达式pattern分割字符串s，并将分割后的部分以字符串数组的方式返回</p>
 <ul>
 <li>返回值是<code>ARRAY&lt;STRING&gt;</code></li>
 </ul>
-<h2 id="str-to-map"><a class="header-anchor" href="#str-to-map"></a>str_to_map()</h2>
-<p><code>STRING_TO_MAP(STRING s, STRING delim1, STRING delim2)</code>：将字符串s按照指定分隔符转换成MAP</p>
+<h2 id="str-to-map"><a href="#str-to-map" class="headerlink" title="str_to_map()"></a>str_to_map()</h2><p><code>STRING_TO_MAP(STRING s, STRING delim1, STRING delim2)</code>：将字符串s按照指定分隔符转换成MAP</p>
 <ul>
 <li>delim1：键值对之间的分隔符（对与对之间）</li>
 <li>delim2：键和值之间的分隔符（对内的键和值之间）</li>
-<li>返回值是MAP&lt;STRING, STRING&gt;</li>
+<li>返回值是MAP<STRING, string></STRING,></li>
 </ul>
-<h2 id="substr-substring"><a class="header-anchor" href="#substr-substring"></a>substr(), substring()</h2>
-<p><code>SUBSTR(STRING s, INT start_index, INT length)</code> 或 <code>SUBSTRING(STRING s, INT start_index, INT length)</code>：截取字符串s的从start_index位置开始的、长度为length的子字符串<br>
-<code>SUBSTR(BINARY) s, INT start_index, INT length)</code> 或 <code>SUBSTRING(STRING s, INT start_index, INT length)</code>：截取二进制字节值s的从start_index位置开始的、长度为length的子字符串（Hive v0.12.0新增）</p>
+<h2 id="substr-substring"><a href="#substr-substring" class="headerlink" title="substr(), substring()"></a>substr(), substring()</h2><p><code>SUBSTR(STRING s, INT start_index, INT length)</code> 或 <code>SUBSTRING(STRING s, INT start_index, INT length)</code>：截取字符串s的从start_index位置开始的、长度为length的子字符串<br><code>SUBSTR(BINARY) s, INT start_index, INT length)</code> 或 <code>SUBSTRING(STRING s, INT start_index, INT length)</code>：截取二进制字节值s的从start_index位置开始的、长度为length的子字符串（Hive v0.12.0新增）</p>
 <ul>
 <li>包括start_index位置上的字符在内</li>
 <li>返回值是STRING</li>
 </ul>
-<h2 id="tablesample"><a class="header-anchor" href="#tablesample"></a>tablesample()</h2>
-<p>数据抽样</p>
+<h2 id="tablesample"><a href="#tablesample" class="headerlink" title="tablesample()"></a>tablesample()</h2><p>数据抽样</p>
 <ol>
-<li>分桶抽样</li>
+<li><p>分桶抽样</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 分桶抽样</span></span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> numbers</span><br><span class="line"><span class="keyword">TABLESAMPLE</span>(<span class="keyword">BUCKET</span> <span class="number">3</span> <span class="keyword">OUT</span> <span class="keyword">OF</span> <span class="number">10</span> <span class="keyword">ON</span> <span class="keyword">RAND</span>()) s;</span><br><span class="line"><span class="comment">-- 分母10表示的是数据将会被散列的桶的个数</span></span><br><span class="line"><span class="comment">-- 分子3表示的是将会选择的桶的个数</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> numbers</span><br><span class="line"><span class="keyword">TABLESAMPLE</span>(<span class="keyword">BUCKET</span> <span class="number">3</span> <span class="keyword">OUT</span> <span class="keyword">OF</span> <span class="number">10</span> <span class="keyword">ON</span> <span class="built_in">number</span>) s;</span><br><span class="line"><span class="comment">-- 根据number字段分桶</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>数据块抽样</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 基于行数按照数据块百分比进行抽样</span></span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> numbersflat</span><br><span class="line"><span class="keyword">TABLESAMPLE</span>(<span class="number">0.1</span> <span class="keyword">PERCENT</span>) s;</span><br><span class="line"><span class="comment">-- 数据块抽样（百分比抽样）的最小抽样单元是一个HDFS数据块</span></span><br><span class="line"><span class="comment">-- 如果表的数据大小小于普通的块大小（128MB），则将会返回所有行</span></span><br><span class="line"></span><br><span class="line">TABLESAMPLE(n M)  <span class="comment">-- 指定抽样数据的大小，单位为M</span></span><br><span class="line"></span><br><span class="line">TABLESAMPLE(n rows)  <span class="comment">-- 指定抽样数据的行数</span></span><br><span class="line"><span class="comment">-- n代表每个map任务均取n行数据</span></span><br><span class="line"><span class="comment">-- map梳理可以通过hive表的简单查询语句确认（number of mappers: x）</span></span><br></pre></td></tr></table></figure></li>
+<li>随机抽样<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> *</span><br><span class="line"><span class="keyword">FROM</span> table_name</span><br><span class="line"><span class="keyword">WHERE</span> <span class="keyword">col</span>=xxx </span><br><span class="line"><span class="keyword">DISTRIBUTE</span> <span class="keyword">BY</span> <span class="keyword">RAND</span>() </span><br><span class="line"><span class="keyword">SORT</span> <span class="keyword">BY</span> <span class="keyword">RAND</span>()</span><br><span class="line"><span class="keyword">LIMIT</span> <span class="keyword">num</span>;</span><br><span class="line"><span class="comment">-- 使用RAND()函数进行随机抽样</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> *</span><br><span class="line"><span class="keyword">FROM</span> table_name</span><br><span class="line"><span class="keyword">WHERE</span> <span class="keyword">col</span>=xxx</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> <span class="keyword">RAND</span>()</span><br><span class="line"><span class="keyword">LIMIT</span> <span class="keyword">num</span>;</span><br><span class="line"><span class="comment">-- ORDER BY方式耗时更长</span></span><br></pre></td></tr></table></figure>
+</li>
 </ol>
-  <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 分桶抽样</span></span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> numbers</span><br><span class="line"><span class="keyword">TABLESAMPLE</span>(<span class="keyword">BUCKET</span> <span class="number">3</span> <span class="keyword">OUT</span> <span class="keyword">OF</span> <span class="number">10</span> <span class="keyword">ON</span> <span class="keyword">RAND</span>()) s;</span><br><span class="line"><span class="comment">-- 分母10表示的是数据将会被散列的桶的个数</span></span><br><span class="line"><span class="comment">-- 分子3表示的是将会选择的桶的个数</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> numbers</span><br><span class="line"><span class="keyword">TABLESAMPLE</span>(<span class="keyword">BUCKET</span> <span class="number">3</span> <span class="keyword">OUT</span> <span class="keyword">OF</span> <span class="number">10</span> <span class="keyword">ON</span> <span class="built_in">number</span>) s;</span><br><span class="line"><span class="comment">-- 根据number字段分桶</span></span><br></pre></td></tr></table></figure>
-<ol start="2">
-<li>数据块抽样</li>
-</ol>
-  <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 基于行数按照数据块百分比进行抽样</span></span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> numbersflat</span><br><span class="line"><span class="keyword">TABLESAMPLE</span>(<span class="number">0.1</span> <span class="keyword">PERCENT</span>) s;</span><br><span class="line"><span class="comment">-- 数据块抽样（百分比抽样）的最小抽样单元是一个HDFS数据块</span></span><br><span class="line"><span class="comment">-- 如果表的数据大小小于普通的块大小（128MB），则将会返回所有行</span></span><br><span class="line"></span><br><span class="line">TABLESAMPLE(n M)  <span class="comment">-- 指定抽样数据的大小，单位为M</span></span><br><span class="line"></span><br><span class="line">TABLESAMPLE(n rows)  <span class="comment">-- 指定抽样数据的行数</span></span><br><span class="line"><span class="comment">-- n代表每个map任务均取n行数据</span></span><br><span class="line"><span class="comment">-- map梳理可以通过hive表的简单查询语句确认（number of mappers: x）</span></span><br></pre></td></tr></table></figure>
-<ol start="3">
-<li>随机抽样</li>
-</ol>
-  <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> *</span><br><span class="line"><span class="keyword">FROM</span> table_name</span><br><span class="line"><span class="keyword">WHERE</span> <span class="keyword">col</span>=xxx </span><br><span class="line"><span class="keyword">DISTRIBUTE</span> <span class="keyword">BY</span> <span class="keyword">RAND</span>() </span><br><span class="line"><span class="keyword">SORT</span> <span class="keyword">BY</span> <span class="keyword">RAND</span>()</span><br><span class="line"><span class="keyword">LIMIT</span> <span class="keyword">num</span>;</span><br><span class="line"><span class="comment">-- 使用RAND()函数进行随机抽样</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> *</span><br><span class="line"><span class="keyword">FROM</span> table_name</span><br><span class="line"><span class="keyword">WHERE</span> <span class="keyword">col</span>=xxx</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> <span class="keyword">RAND</span>()</span><br><span class="line"><span class="keyword">LIMIT</span> <span class="keyword">num</span>;</span><br><span class="line"><span class="comment">-- ORDER BY方式耗时更长</span></span><br></pre></td></tr></table></figure>
-<h2 id="to-date"><a class="header-anchor" href="#to-date"></a>to_date()</h2>
-<p><code>TO_DATE(STRING timestamp)</code>：返回时间字符串的日期部分</p>
+<h2 id="to-date"><a href="#to-date" class="headerlink" title="to_date()"></a>to_date()</h2><p><code>TO_DATE(STRING timestamp)</code>：返回时间字符串的日期部分</p>
 <ul>
 <li>返回值是STRING</li>
 <li>时间字符串的格式为“年-月-日”，不能为“年-月”</li>
 </ul>
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">TO_DATE('1970-01-01 00:00:00')</span><br><span class="line"><span class="comment">-- "1970-01-01"</span></span><br></pre></td></tr></table></figure>
-<h2 id="to-utc-timestamp"><a class="header-anchor" href="#to-utc-timestamp"></a>to_utc_timestamp()</h2>
-<p><code>TO_UTC_TIMESTAMP(TIMESTAMP timestamp, STRING timezone)</code>：如果给定的时间戳<code>timestamp</code>是指定时区<code>timezone</code>下的时间戳，则将其转化为UTC下的时间戳</p>
+<h2 id="to-utc-timestamp"><a href="#to-utc-timestamp" class="headerlink" title="to_utc_timestamp()"></a>to_utc_timestamp()</h2><p><code>TO_UTC_TIMESTAMP(TIMESTAMP timestamp, STRING timezone)</code>：如果给定的时间戳<code>timestamp</code>是指定时区<code>timezone</code>下的时间戳，则将其转化为UTC下的时间戳</p>
 <ul>
 <li>返回值是TIMESTAMP</li>
 </ul>
-<h2 id="translate"><a class="header-anchor" href="#translate"></a>translate()</h2>
-<p>？？？</p>
-<h2 id="trim"><a class="header-anchor" href="#trim"></a>trim()</h2>
-<p><code>TRIM(STRING s)</code>：将字符串s前后出现的空格全部去除掉</p>
+<h2 id="translate"><a href="#translate" class="headerlink" title="translate()"></a>translate()</h2><p>？？？</p>
+<h2 id="trim"><a href="#trim" class="headerlink" title="trim()"></a>trim()</h2><p><code>TRIM(STRING s)</code>：将字符串s前后出现的空格全部去除掉</p>
 <ul>
 <li>返回值是STRING</li>
 </ul>
-<h2 id="unbase64"><a class="header-anchor" href="#unbase64"></a>unbase64()</h2>
-<p><code>UNBASE64(STRING str)</code>：将基于64位的字符串str转换成二进制值</p>
+<h2 id="unbase64"><a href="#unbase64" class="headerlink" title="unbase64()"></a>unbase64()</h2><p><code>UNBASE64(STRING str)</code>：将基于64位的字符串str转换成二进制值</p>
 <ul>
 <li>BASE64字符表：ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/</li>
 <li>返回值是BINARY</li>
 </ul>
-<h2 id="unix-timestamp"><a class="header-anchor" href="#unix-timestamp"></a>unix_timestamp()</h2>
-<p><code>UNIX_TIMESTAMP()</code>：获取当前本地时区下的当前时间戳<br>
-<code>UNIX_TIMESTAMP(STRING date)</code>：输入的时间字符串格式必须是<code>yyyy-MM-dd HH:mm:ss</code>。如果不符合，则返回0；如果符合，则将此时间字符串转换成Unix时间戳<br>
-<code>UNIX_TIMESTAMP(STRING date, STRING pattern)</code>：将指定时间字符串格式字符串转换成Unix时间戳。如果格式不符合，则返回0。</p>
+<h2 id="unix-timestamp"><a href="#unix-timestamp" class="headerlink" title="unix_timestamp()"></a>unix_timestamp()</h2><p><code>UNIX_TIMESTAMP()</code>：获取当前本地时区下的当前时间戳<br><code>UNIX_TIMESTAMP(STRING date)</code>：输入的时间字符串格式必须是<code>yyyy-MM-dd HH:mm:ss</code>。如果不符合，则返回0；如果符合，则将此时间字符串转换成Unix时间戳<br><code>UNIX_TIMESTAMP(STRING date, STRING pattern)</code>：将指定时间字符串格式字符串转换成Unix时间戳。如果格式不符合，则返回0。</p>
 <ul>
 <li>返回值是BIGINT</li>
 </ul>
-<h2 id="upper-ucase"><a class="header-anchor" href="#upper-ucase"></a>upper(), ucase()</h2>
-<p><code>UPPER(STRING s)</code> 或 <code>UCASE(STRING s)</code>：将字符串s中所有字母转换成大写字母</p>
-<h2 id="weekofyear"><a class="header-anchor" href="#weekofyear"></a>weekofyear()</h2>
-<p><code>WEEKOFYEAR(STRING date)</code>：返回时间字符出位于一年中的第几周内</p>
+<h2 id="upper-ucase"><a href="#upper-ucase" class="headerlink" title="upper(), ucase()"></a>upper(), ucase()</h2><p><code>UPPER(STRING s)</code> 或 <code>UCASE(STRING s)</code>：将字符串s中所有字母转换成大写字母</p>
+<h2 id="weekofyear"><a href="#weekofyear" class="headerlink" title="weekofyear()"></a>weekofyear()</h2><p><code>WEEKOFYEAR(STRING date)</code>：返回时间字符出位于一年中的第几周内</p>
 <ul>
 <li>返回值是INT</li>
 </ul>
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">WEEKOFYEAR('2016-12-08 10:05:15')</span><br><span class="line"><span class="comment">-- 49</span></span><br></pre></td></tr></table></figure>
-<h2 id="year"><a class="header-anchor" href="#year"></a>year()</h2>
-<p><code>YEAR(STRING date)</code>：提取时间字符串中的年份</p>
+<h2 id="year"><a href="#year" class="headerlink" title="year()"></a>year()</h2><p><code>YEAR(STRING date)</code>：提取时间字符串中的年份</p>
 <ul>
 <li>返回值是INT</li>
 </ul>
-<h2 id><a class="header-anchor" href="#"></a></h2>
-<p>91页</p>
+<h2 id><a href="#" class="headerlink" title=" "></a> </h2><p>91页</p>
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h1 id="属性配置"><a class="header-anchor" href="#属性配置"></a>属性配置</h1>
-<div>
+<h1 id="属性配置"><a href="#属性配置" class="headerlink" title="属性配置"></a>属性配置</h1><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
-<pre><code>.dataframe tbody tr th {
-    vertical-align: top;
-}
 
-.dataframe thead th {
-    text-align: center;
-}
-</code></pre>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: center;
+    }
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -1583,33 +1395,30 @@
   </tr></tbody>
 </table>
 </div>
-<h2 id="hive-cli-print-header"><a class="header-anchor" href="#hive-cli-print-header"></a>hive.cli.print.header</h2>
-<p><code>hive.cli.print.header</code>：是否让CLI打印出字段名称</p>
+
+
+<h2 id="hive-cli-print-header"><a href="#hive-cli-print-header" class="headerlink" title="hive.cli.print.header"></a>hive.cli.print.header</h2><p><code>hive.cli.print.header</code>：是否让CLI打印出字段名称</p>
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 让CLI打印出字段名称</span></span><br><span class="line"><span class="keyword">SET</span> hive.cli.print.header=<span class="literal">true</span>;</span><br></pre></td></tr></table></figure>
 <p>如果要设置为默认选项，则需将第一行添加到<code>$HOME/.hiverc</code>文件中。</p>
-<h2 id="hive-mapred-mode"><a class="header-anchor" href="#hive-mapred-mode"></a>hive.mapred.mode</h2>
-<p><code>hive.mapred.mode=strict</code>：如果任务对分区表进行查询而WHERE子句没有加分区过滤，则会禁止提交这个任务。</p>
+<h2 id="hive-mapred-mode"><a href="#hive-mapred-mode" class="headerlink" title="hive.mapred.mode"></a>hive.mapred.mode</h2><p><code>hive.mapred.mode=strict</code>：如果任务对分区表进行查询而WHERE子句没有加分区过滤，则会禁止提交这个任务。</p>
 <ul>
 <li>防止触发一个巨大的MapReduce任务</li>
 </ul>
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SET</span> hive.mapred.mode=<span class="keyword">strict</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">  t.name</span><br><span class="line">  , t.salary</span><br><span class="line"><span class="keyword">FROM</span> </span><br><span class="line">  table_1</span><br><span class="line"><span class="keyword">LIMIT</span> <span class="number">10</span>;</span><br></pre></td></tr></table></figure>
 <p><code>hive.mapred.mode=nonstrict</code>：如果任务对分区表进行查询而WHERE子句没有加分区过滤，这个任务并不会被禁止。</p>
-<h1 id="视图"><a class="header-anchor" href="#视图"></a>视图</h1>
-<ul>
+<h1 id="视图"><a href="#视图" class="headerlink" title="视图"></a>视图</h1><ul>
 <li>视图是一个逻辑结构，不会存储数据</li>
 </ul>
 <p><strong>用途</strong>：</p>
 <ol>
-<li>降低查询复杂度</li>
+<li>降低查询复杂度<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">VIEW</span> shorter_join <span class="keyword">AS</span> </span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> people </span><br><span class="line"><span class="keyword">JOIN</span> cart</span><br><span class="line"><span class="keyword">ON</span> cart.people_id=people.id</span><br><span class="line"><span class="keyword">WHERE</span> first_name = <span class="string">'John'</span>;</span><br></pre></td></tr></table></figure>
+2.限制基于条件过滤的数据，保护信息不被随意查询<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">VIEW</span> temp_view <span class="keyword">AS</span> </span><br><span class="line"><span class="keyword">SELECT</span> first_name, last_name </span><br><span class="line"><span class="keyword">FROM</span> table_name</span><br><span class="line"><span class="keyword">WHERE</span> department=<span class="string">'dep_name'</span>;</span><br><span class="line"><span class="comment">-- 只提供特定部门的员工信息</span></span><br><span class="line"><span class="comment">-- 有效保护信息</span></span><br></pre></td></tr></table></figure>
+</li>
 </ol>
-  <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">VIEW</span> shorter_join <span class="keyword">AS</span> </span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> people </span><br><span class="line"><span class="keyword">JOIN</span> cart</span><br><span class="line"><span class="keyword">ON</span> cart.people_id=people.id</span><br><span class="line"><span class="keyword">WHERE</span> first_name = <span class="string">'John'</span>;</span><br></pre></td></tr></table></figure>
-<p>2.限制基于条件过滤的数据，保护信息不被随意查询</p>
-  <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">VIEW</span> temp_view <span class="keyword">AS</span> </span><br><span class="line"><span class="keyword">SELECT</span> first_name, last_name </span><br><span class="line"><span class="keyword">FROM</span> table_name</span><br><span class="line"><span class="keyword">WHERE</span> department=<span class="string">'dep_name'</span>;</span><br><span class="line"><span class="comment">-- 只提供特定部门的员工信息</span></span><br><span class="line"><span class="comment">-- 有效保护信息</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li>一个视图的名称要和这个视图所在的数据库下的其他表和视图的名称不同</li>
 </ul>
-<h1 id="参考资料"><a class="header-anchor" href="#参考资料"></a>参考资料</h1>
-<ul>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
 <li><a href>HIVE编程指南</a></li>
 <li><a href="https://blog.csdn.net/zylove2010/article/details/78290319" target="_blank" rel="noopener">Hive实现数据抽样的三种方法</a></li>
 </ul>
@@ -1738,7 +1547,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#HIVE"><span class="nav-number">1.</span> <span class="nav-text">HIVE</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#基本"><span class="nav-number">2.</span> <span class="nav-text">基本</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#命名空间"><span class="nav-number">2.1.</span> <span class="nav-text">命名空间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据类型"><span class="nav-number">2.2.</span> <span class="nav-text">数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#INT"><span class="nav-number">2.2.1.</span> <span class="nav-text">INT</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TIMESTAMP"><span class="nav-number">2.2.2.</span> <span class="nav-text">TIMESTAMP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TIMESTAMPS"><span class="nav-number">2.2.3.</span> <span class="nav-text">TIMESTAMPS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#比较"><span class="nav-number">2.2.4.</span> <span class="nav-text">比较</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#集合数据类型"><span class="nav-number">2.3.</span> <span class="nav-text">集合数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ARRAY"><span class="nav-number">2.3.1.</span> <span class="nav-text">ARRAY</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MAP"><span class="nav-number">2.3.2.</span> <span class="nav-text">MAP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#STRUCT"><span class="nav-number">2.3.3.</span> <span class="nav-text">STRUCT</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正则表达式"><span class="nav-number">2.4.</span> <span class="nav-text">正则表达式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字段分隔符"><span class="nav-number">2.5.</span> <span class="nav-text">字段分隔符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据库"><span class="nav-number">2.6.</span> <span class="nav-text">数据库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#表"><span class="nav-number">2.7.</span> <span class="nav-text">表</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#管理表"><span class="nav-number">2.7.1.</span> <span class="nav-text">管理表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#外部表"><span class="nav-number">2.7.2.</span> <span class="nav-text">外部表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分区表"><span class="nav-number">2.7.3.</span> <span class="nav-text">分区表</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#存储格式"><span class="nav-number">2.8.</span> <span class="nav-text">存储格式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#TEXTFILE"><span class="nav-number">2.8.1.</span> <span class="nav-text">TEXTFILE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SEQUENCEFILE"><span class="nav-number">2.8.2.</span> <span class="nav-text">SEQUENCEFILE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RCFILE"><span class="nav-number">2.8.3.</span> <span class="nav-text">RCFILE</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#运算符"><span class="nav-number">3.</span> <span class="nav-text">运算符</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#算术运算符"><span class="nav-number">3.1.</span> <span class="nav-text">算术运算符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#谓词操作符"><span class="nav-number">3.2.</span> <span class="nav-text">谓词操作符</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#语法"><span class="nav-number">4.</span> <span class="nav-text">语法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#S"><span class="nav-number">4.1.</span> <span class="nav-text">-S</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#alter"><span class="nav-number">4.2.</span> <span class="nav-text">alter</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#重命名表"><span class="nav-number">4.2.1.</span> <span class="nav-text">重命名表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#增加表分区"><span class="nav-number">4.2.2.</span> <span class="nav-text">增加表分区</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改表分区"><span class="nav-number">4.2.3.</span> <span class="nav-text">修改表分区</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除表分区"><span class="nav-number">4.2.4.</span> <span class="nav-text">删除表分区</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改表属性"><span class="nav-number">4.2.5.</span> <span class="nav-text">修改表属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改列"><span class="nav-number">4.2.6.</span> <span class="nav-text">修改列</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#增加列"><span class="nav-number">4.2.7.</span> <span class="nav-text">增加列</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除-替换列"><span class="nav-number">4.2.8.</span> <span class="nav-text">删除&#x2F;替换列</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改存储属性"><span class="nav-number">4.2.9.</span> <span class="nav-text">修改存储属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改SerDe属性"><span class="nav-number">4.2.10.</span> <span class="nav-text">修改SerDe属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#as"><span class="nav-number">4.3.</span> <span class="nav-text">as</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#case…when…then"><span class="nav-number">4.4.</span> <span class="nav-text">case…when…then</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cluster-by"><span class="nav-number">4.5.</span> <span class="nav-text">cluster by</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#comment"><span class="nav-number">4.6.</span> <span class="nav-text">comment</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#create"><span class="nav-number">4.7.</span> <span class="nav-text">create</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#create-database"><span class="nav-number">4.7.1.</span> <span class="nav-text">create database</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#create-table"><span class="nav-number">4.7.2.</span> <span class="nav-text">create table</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#describe"><span class="nav-number">4.8.</span> <span class="nav-text">describe</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#extended"><span class="nav-number">4.8.1.</span> <span class="nav-text">extended</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#formatted"><span class="nav-number">4.8.2.</span> <span class="nav-text">formatted</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#distinct"><span class="nav-number">4.9.</span> <span class="nav-text">distinct</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#distribute-by"><span class="nav-number">4.10.</span> <span class="nav-text">distribute by</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#drop"><span class="nav-number">4.11.</span> <span class="nav-text">drop</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#group-by"><span class="nav-number">4.12.</span> <span class="nav-text">group by</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#having"><span class="nav-number">4.13.</span> <span class="nav-text">having</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#join"><span class="nav-number">4.14.</span> <span class="nav-text">join</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#on"><span class="nav-number">4.14.1.</span> <span class="nav-text">on</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#inner-join"><span class="nav-number">4.14.2.</span> <span class="nav-text">inner join</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#left-join"><span class="nav-number">4.14.3.</span> <span class="nav-text">left join</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#outer-join"><span class="nav-number">4.14.4.</span> <span class="nav-text">outer join</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#right-outer-join"><span class="nav-number">4.14.5.</span> <span class="nav-text">right outer join</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#full-outer-join"><span class="nav-number">4.14.6.</span> <span class="nav-text">full outer join</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#left-semi-join"><span class="nav-number">4.14.7.</span> <span class="nav-text">left semi join</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#map-side-join"><span class="nav-number">4.14.8.</span> <span class="nav-text">map-side join</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#like"><span class="nav-number">4.15.</span> <span class="nav-text">like</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#limit"><span class="nav-number">4.16.</span> <span class="nav-text">limit</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#location"><span class="nav-number">4.17.</span> <span class="nav-text">location</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#order-by"><span class="nav-number">4.18.</span> <span class="nav-text">order by</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#partitioned"><span class="nav-number">4.19.</span> <span class="nav-text">partitioned</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#rlike"><span class="nav-number">4.20.</span> <span class="nav-text">rlike</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#set"><span class="nav-number">4.21.</span> <span class="nav-text">set</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#show"><span class="nav-number">4.22.</span> <span class="nav-text">show</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sort-by"><span class="nav-number">4.23.</span> <span class="nav-text">sort by</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#where"><span class="nav-number">4.24.</span> <span class="nav-text">where</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#union-all"><span class="nav-number">4.25.</span> <span class="nav-text">union all</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#use"><span class="nav-number">4.26.</span> <span class="nav-text">use</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据函数"><span class="nav-number">4.27.</span> <span class="nav-text">数据函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#聚合函数"><span class="nav-number">4.28.</span> <span class="nav-text">聚合函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#表生成函数"><span class="nav-number">4.29.</span> <span class="nav-text">表生成函数</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据操作"><span class="nav-number">5.</span> <span class="nav-text">数据操作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据插入"><span class="nav-number">5.1.</span> <span class="nav-text">数据插入</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#load-data"><span class="nav-number">5.1.1.</span> <span class="nav-text">load data</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#local"><span class="nav-number">5.1.1.1.</span> <span class="nav-text">local</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#overwrite"><span class="nav-number">5.1.1.2.</span> <span class="nav-text">overwrite</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#insert"><span class="nav-number">5.1.2.</span> <span class="nav-text">insert</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建表并插入数据"><span class="nav-number">5.1.3.</span> <span class="nav-text">创建表并插入数据</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#导出数据"><span class="nav-number">5.2.</span> <span class="nav-text">导出数据</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#其他内置函数"><span class="nav-number">6.</span> <span class="nav-text">其他内置函数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#ascii"><span class="nav-number">6.1.</span> <span class="nav-text">ascii()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#base64"><span class="nav-number">6.2.</span> <span class="nav-text">base64()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#binary"><span class="nav-number">6.3.</span> <span class="nav-text">binary()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cast-…-as-…"><span class="nav-number">6.4.</span> <span class="nav-text">cast(… as …)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#collect-list"><span class="nav-number">6.5.</span> <span class="nav-text">collect_list()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#collect-set"><span class="nav-number">6.6.</span> <span class="nav-text">collect_set()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#concat"><span class="nav-number">6.7.</span> <span class="nav-text">concat()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#concat-ws"><span class="nav-number">6.8.</span> <span class="nav-text">concat_ws</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#context-ngrams"><span class="nav-number">6.9.</span> <span class="nav-text">context_ngrams</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#date-add"><span class="nav-number">6.10.</span> <span class="nav-text">date_add</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#datediff"><span class="nav-number">6.11.</span> <span class="nav-text">datediff</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#date-format"><span class="nav-number">6.12.</span> <span class="nav-text">date_format</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#date-sub"><span class="nav-number">6.13.</span> <span class="nav-text">date_sub</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#day"><span class="nav-number">6.14.</span> <span class="nav-text">day</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dayofmonth"><span class="nav-number">6.15.</span> <span class="nav-text">dayofmonth</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#decode"><span class="nav-number">6.16.</span> <span class="nav-text">decode</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dense-rank"><span class="nav-number">6.17.</span> <span class="nav-text">dense_rank</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#encode"><span class="nav-number">6.18.</span> <span class="nav-text">encode</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#find-in-set"><span class="nav-number">6.19.</span> <span class="nav-text">find_in_set()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#format-number"><span class="nav-number">6.20.</span> <span class="nav-text">format_number</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#from-unixtime"><span class="nav-number">6.21.</span> <span class="nav-text">from_unixtime</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#from-utc-timestamp"><span class="nav-number">6.22.</span> <span class="nav-text">from_utc_timestamp</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#get-json-object"><span class="nav-number">6.23.</span> <span class="nav-text">get_json_object</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hour"><span class="nav-number">6.24.</span> <span class="nav-text">hour</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#in"><span class="nav-number">6.25.</span> <span class="nav-text">in</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#in-file"><span class="nav-number">6.26.</span> <span class="nav-text">in_file</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#instr"><span class="nav-number">6.27.</span> <span class="nav-text">instr</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#length"><span class="nav-number">6.28.</span> <span class="nav-text">length</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#locate"><span class="nav-number">6.29.</span> <span class="nav-text">locate</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lower-lcase"><span class="nav-number">6.30.</span> <span class="nav-text">lower(), lcase()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lpad"><span class="nav-number">6.31.</span> <span class="nav-text">lpad</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ltrim"><span class="nav-number">6.32.</span> <span class="nav-text">ltrim</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#minuite"><span class="nav-number">6.33.</span> <span class="nav-text">minuite</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#month"><span class="nav-number">6.34.</span> <span class="nav-text">month</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ngrams"><span class="nav-number">6.35.</span> <span class="nav-text">ngrams</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ntile"><span class="nav-number">6.36.</span> <span class="nav-text">ntile()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#parse-url"><span class="nav-number">6.37.</span> <span class="nav-text">parse_url()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#printf"><span class="nav-number">6.38.</span> <span class="nav-text">printf()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#rand"><span class="nav-number">6.39.</span> <span class="nav-text">rand()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#rank"><span class="nav-number">6.40.</span> <span class="nav-text">rank</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#regexp-extract"><span class="nav-number">6.41.</span> <span class="nav-text">regexp_extract</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#regexp-replace"><span class="nav-number">6.42.</span> <span class="nav-text">regexp_replace</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#repeat"><span class="nav-number">6.43.</span> <span class="nav-text">repeat</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#reverse"><span class="nav-number">6.44.</span> <span class="nav-text">reverse</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#row-number"><span class="nav-number">6.45.</span> <span class="nav-text">row_number</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#rpad"><span class="nav-number">6.46.</span> <span class="nav-text">rpad</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#rtrim"><span class="nav-number">6.47.</span> <span class="nav-text">rtrim</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#second"><span class="nav-number">6.48.</span> <span class="nav-text">second</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sentences"><span class="nav-number">6.49.</span> <span class="nav-text">sentences</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#size"><span class="nav-number">6.50.</span> <span class="nav-text">size</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#space"><span class="nav-number">6.51.</span> <span class="nav-text">space()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#split"><span class="nav-number">6.52.</span> <span class="nav-text">split</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#str-to-map"><span class="nav-number">6.53.</span> <span class="nav-text">str_to_map()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#substr-substring"><span class="nav-number">6.54.</span> <span class="nav-text">substr(), substring()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tablesample"><span class="nav-number">6.55.</span> <span class="nav-text">tablesample()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#to-date"><span class="nav-number">6.56.</span> <span class="nav-text">to_date()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#to-utc-timestamp"><span class="nav-number">6.57.</span> <span class="nav-text">to_utc_timestamp()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#translate"><span class="nav-number">6.58.</span> <span class="nav-text">translate()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#trim"><span class="nav-number">6.59.</span> <span class="nav-text">trim()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#unbase64"><span class="nav-number">6.60.</span> <span class="nav-text">unbase64()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#unix-timestamp"><span class="nav-number">6.61.</span> <span class="nav-text">unix_timestamp()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#upper-ucase"><span class="nav-number">6.62.</span> <span class="nav-text">upper(), ucase()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#weekofyear"><span class="nav-number">6.63.</span> <span class="nav-text">weekofyear()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#year"><span class="nav-number">6.64.</span> <span class="nav-text">year()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">6.65.</span> <span class="nav-text"></span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#属性配置"><span class="nav-number">7.</span> <span class="nav-text">属性配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#hive-cli-print-header"><span class="nav-number">7.1.</span> <span class="nav-text">hive.cli.print.header</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hive-mapred-mode"><span class="nav-number">7.2.</span> <span class="nav-text">hive.mapred.mode</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#视图"><span class="nav-number">8.</span> <span class="nav-text">视图</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料"><span class="nav-number">9.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#HIVE"><span class="nav-number">1.</span> <span class="nav-text">HIVE</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#基本"><span class="nav-number">2.</span> <span class="nav-text">基本</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#命名空间"><span class="nav-number">2.1.</span> <span class="nav-text">命名空间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据类型"><span class="nav-number">2.2.</span> <span class="nav-text">数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#INT"><span class="nav-number">2.2.1.</span> <span class="nav-text">INT</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TIMESTAMP"><span class="nav-number">2.2.2.</span> <span class="nav-text">TIMESTAMP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TIMESTAMPS"><span class="nav-number">2.2.3.</span> <span class="nav-text">TIMESTAMPS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#比较"><span class="nav-number">2.2.4.</span> <span class="nav-text">比较</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#集合数据类型"><span class="nav-number">2.3.</span> <span class="nav-text">集合数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ARRAY"><span class="nav-number">2.3.1.</span> <span class="nav-text">ARRAY</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MAP"><span class="nav-number">2.3.2.</span> <span class="nav-text">MAP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#STRUCT"><span class="nav-number">2.3.3.</span> <span class="nav-text">STRUCT</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正则表达式"><span class="nav-number">2.4.</span> <span class="nav-text">正则表达式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字段分隔符"><span class="nav-number">2.5.</span> <span class="nav-text">字段分隔符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据库"><span class="nav-number">2.6.</span> <span class="nav-text">数据库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#表"><span class="nav-number">2.7.</span> <span class="nav-text">表</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#管理表"><span class="nav-number">2.7.1.</span> <span class="nav-text">管理表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#外部表"><span class="nav-number">2.7.2.</span> <span class="nav-text">外部表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分区表"><span class="nav-number">2.7.3.</span> <span class="nav-text">分区表</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#存储格式"><span class="nav-number">2.8.</span> <span class="nav-text">存储格式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#TEXTFILE"><span class="nav-number">2.8.1.</span> <span class="nav-text">TEXTFILE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SEQUENCEFILE"><span class="nav-number">2.8.2.</span> <span class="nav-text">SEQUENCEFILE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RCFILE"><span class="nav-number">2.8.3.</span> <span class="nav-text">RCFILE</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#运算符"><span class="nav-number">3.</span> <span class="nav-text">运算符</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#算术运算符"><span class="nav-number">3.1.</span> <span class="nav-text">算术运算符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#谓词操作符"><span class="nav-number">3.2.</span> <span class="nav-text">谓词操作符</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#语法"><span class="nav-number">4.</span> <span class="nav-text">语法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#S"><span class="nav-number">4.1.</span> <span class="nav-text">-S</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#alter"><span class="nav-number">4.2.</span> <span class="nav-text">alter</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#重命名表"><span class="nav-number">4.2.1.</span> <span class="nav-text">重命名表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#增加表分区"><span class="nav-number">4.2.2.</span> <span class="nav-text">增加表分区</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改表分区"><span class="nav-number">4.2.3.</span> <span class="nav-text">修改表分区</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除表分区"><span class="nav-number">4.2.4.</span> <span class="nav-text">删除表分区</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改表属性"><span class="nav-number">4.2.5.</span> <span class="nav-text">修改表属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改列"><span class="nav-number">4.2.6.</span> <span class="nav-text">修改列</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#增加列"><span class="nav-number">4.2.7.</span> <span class="nav-text">增加列</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除-替换列"><span class="nav-number">4.2.8.</span> <span class="nav-text">删除&#x2F;替换列</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改存储属性"><span class="nav-number">4.2.9.</span> <span class="nav-text">修改存储属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改SerDe属性"><span class="nav-number">4.2.10.</span> <span class="nav-text">修改SerDe属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#as"><span class="nav-number">4.3.</span> <span class="nav-text">as</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#case…when…then"><span class="nav-number">4.4.</span> <span class="nav-text">case…when…then</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cluster-by"><span class="nav-number">4.5.</span> <span class="nav-text">cluster by</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#comment"><span class="nav-number">4.6.</span> <span class="nav-text">comment</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#create"><span class="nav-number">4.7.</span> <span class="nav-text">create</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#create-database"><span class="nav-number">4.7.1.</span> <span class="nav-text">create database</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#create-table"><span class="nav-number">4.7.2.</span> <span class="nav-text">create table</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#describe"><span class="nav-number">4.8.</span> <span class="nav-text">describe</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#extended"><span class="nav-number">4.8.1.</span> <span class="nav-text">extended</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#formatted"><span class="nav-number">4.8.2.</span> <span class="nav-text">formatted</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#distinct"><span class="nav-number">4.9.</span> <span class="nav-text">distinct</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#distribute-by"><span class="nav-number">4.10.</span> <span class="nav-text">distribute by</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#drop"><span class="nav-number">4.11.</span> <span class="nav-text">drop</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#group-by"><span class="nav-number">4.12.</span> <span class="nav-text">group by</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#having"><span class="nav-number">4.13.</span> <span class="nav-text">having</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#join"><span class="nav-number">4.14.</span> <span class="nav-text">join</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#on"><span class="nav-number">4.14.1.</span> <span class="nav-text">on</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#inner-join"><span class="nav-number">4.14.2.</span> <span class="nav-text">inner join</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#left-join"><span class="nav-number">4.14.3.</span> <span class="nav-text">left join</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#outer-join"><span class="nav-number">4.14.4.</span> <span class="nav-text">outer join</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#right-outer-join"><span class="nav-number">4.14.5.</span> <span class="nav-text">right outer join</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#full-outer-join"><span class="nav-number">4.14.6.</span> <span class="nav-text">full outer join</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#left-semi-join"><span class="nav-number">4.14.7.</span> <span class="nav-text">left semi join</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#map-side-join"><span class="nav-number">4.14.8.</span> <span class="nav-text">map-side join</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#like"><span class="nav-number">4.15.</span> <span class="nav-text">like</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#limit"><span class="nav-number">4.16.</span> <span class="nav-text">limit</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#location"><span class="nav-number">4.17.</span> <span class="nav-text">location</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#order-by"><span class="nav-number">4.18.</span> <span class="nav-text">order by</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#partitioned"><span class="nav-number">4.19.</span> <span class="nav-text">partitioned</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#rlike"><span class="nav-number">4.20.</span> <span class="nav-text">rlike</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#set"><span class="nav-number">4.21.</span> <span class="nav-text">set</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#show"><span class="nav-number">4.22.</span> <span class="nav-text">show</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sort-by"><span class="nav-number">4.23.</span> <span class="nav-text">sort by</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#where"><span class="nav-number">4.24.</span> <span class="nav-text">where</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#union-all"><span class="nav-number">4.25.</span> <span class="nav-text">union all</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#use"><span class="nav-number">4.26.</span> <span class="nav-text">use</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据函数"><span class="nav-number">4.27.</span> <span class="nav-text">数据函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#聚合函数"><span class="nav-number">4.28.</span> <span class="nav-text">聚合函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#表生成函数"><span class="nav-number">4.29.</span> <span class="nav-text">表生成函数</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据操作"><span class="nav-number">5.</span> <span class="nav-text">数据操作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据插入"><span class="nav-number">5.1.</span> <span class="nav-text">数据插入</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#load-data"><span class="nav-number">5.1.1.</span> <span class="nav-text">load data</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#local"><span class="nav-number">5.1.1.1.</span> <span class="nav-text">local</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#overwrite"><span class="nav-number">5.1.1.2.</span> <span class="nav-text">overwrite</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#insert"><span class="nav-number">5.1.2.</span> <span class="nav-text">insert</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建表并插入数据"><span class="nav-number">5.1.3.</span> <span class="nav-text">创建表并插入数据</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#导出数据"><span class="nav-number">5.2.</span> <span class="nav-text">导出数据</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#其他内置函数"><span class="nav-number">6.</span> <span class="nav-text">其他内置函数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#ascii"><span class="nav-number">6.1.</span> <span class="nav-text">ascii()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#base64"><span class="nav-number">6.2.</span> <span class="nav-text">base64()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#binary"><span class="nav-number">6.3.</span> <span class="nav-text">binary()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cast-…-as-…"><span class="nav-number">6.4.</span> <span class="nav-text">cast(… as …)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#collect-list"><span class="nav-number">6.5.</span> <span class="nav-text">collect_list()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#collect-set"><span class="nav-number">6.6.</span> <span class="nav-text">collect_set()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#concat"><span class="nav-number">6.7.</span> <span class="nav-text">concat()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#concat-ws"><span class="nav-number">6.8.</span> <span class="nav-text">concat_ws</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#context-ngrams"><span class="nav-number">6.9.</span> <span class="nav-text">context_ngrams</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#date-add"><span class="nav-number">6.10.</span> <span class="nav-text">date_add</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#datediff"><span class="nav-number">6.11.</span> <span class="nav-text">datediff</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#date-format"><span class="nav-number">6.12.</span> <span class="nav-text">date_format</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#date-sub"><span class="nav-number">6.13.</span> <span class="nav-text">date_sub</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#day"><span class="nav-number">6.14.</span> <span class="nav-text">day</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dayofmonth"><span class="nav-number">6.15.</span> <span class="nav-text">dayofmonth</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#decode"><span class="nav-number">6.16.</span> <span class="nav-text">decode</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dense-rank"><span class="nav-number">6.17.</span> <span class="nav-text">dense_rank</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#encode"><span class="nav-number">6.18.</span> <span class="nav-text">encode</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#find-in-set"><span class="nav-number">6.19.</span> <span class="nav-text">find_in_set()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#format-number"><span class="nav-number">6.20.</span> <span class="nav-text">format_number</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#from-unixtime"><span class="nav-number">6.21.</span> <span class="nav-text">from_unixtime</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#from-utc-timestamp"><span class="nav-number">6.22.</span> <span class="nav-text">from_utc_timestamp</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#get-json-object"><span class="nav-number">6.23.</span> <span class="nav-text">get_json_object</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hour"><span class="nav-number">6.24.</span> <span class="nav-text">hour</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#in"><span class="nav-number">6.25.</span> <span class="nav-text">in</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#in-file"><span class="nav-number">6.26.</span> <span class="nav-text">in_file</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#instr"><span class="nav-number">6.27.</span> <span class="nav-text">instr</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#length"><span class="nav-number">6.28.</span> <span class="nav-text">length</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#locate"><span class="nav-number">6.29.</span> <span class="nav-text">locate</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lower-lcase"><span class="nav-number">6.30.</span> <span class="nav-text">lower(), lcase()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lpad"><span class="nav-number">6.31.</span> <span class="nav-text">lpad</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ltrim"><span class="nav-number">6.32.</span> <span class="nav-text">ltrim</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#minuite"><span class="nav-number">6.33.</span> <span class="nav-text">minuite</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#month"><span class="nav-number">6.34.</span> <span class="nav-text">month</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ngrams"><span class="nav-number">6.35.</span> <span class="nav-text">ngrams</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ntile"><span class="nav-number">6.36.</span> <span class="nav-text">ntile()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#parse-url"><span class="nav-number">6.37.</span> <span class="nav-text">parse_url()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#printf"><span class="nav-number">6.38.</span> <span class="nav-text">printf()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#rand"><span class="nav-number">6.39.</span> <span class="nav-text">rand()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#rank"><span class="nav-number">6.40.</span> <span class="nav-text">rank</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#regexp-extract"><span class="nav-number">6.41.</span> <span class="nav-text">regexp_extract</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#regexp-replace"><span class="nav-number">6.42.</span> <span class="nav-text">regexp_replace</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#repeat"><span class="nav-number">6.43.</span> <span class="nav-text">repeat</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#reverse"><span class="nav-number">6.44.</span> <span class="nav-text">reverse</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#row-number"><span class="nav-number">6.45.</span> <span class="nav-text">row_number</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#rpad"><span class="nav-number">6.46.</span> <span class="nav-text">rpad</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#rtrim"><span class="nav-number">6.47.</span> <span class="nav-text">rtrim</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#second"><span class="nav-number">6.48.</span> <span class="nav-text">second</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sentences"><span class="nav-number">6.49.</span> <span class="nav-text">sentences</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#size"><span class="nav-number">6.50.</span> <span class="nav-text">size</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#space"><span class="nav-number">6.51.</span> <span class="nav-text">space()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#split"><span class="nav-number">6.52.</span> <span class="nav-text">split</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#str-to-map"><span class="nav-number">6.53.</span> <span class="nav-text">str_to_map()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#substr-substring"><span class="nav-number">6.54.</span> <span class="nav-text">substr(), substring()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tablesample"><span class="nav-number">6.55.</span> <span class="nav-text">tablesample()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#to-date"><span class="nav-number">6.56.</span> <span class="nav-text">to_date()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#to-utc-timestamp"><span class="nav-number">6.57.</span> <span class="nav-text">to_utc_timestamp()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#translate"><span class="nav-number">6.58.</span> <span class="nav-text">translate()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#trim"><span class="nav-number">6.59.</span> <span class="nav-text">trim()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#unbase64"><span class="nav-number">6.60.</span> <span class="nav-text">unbase64()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#unix-timestamp"><span class="nav-number">6.61.</span> <span class="nav-text">unix_timestamp()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#upper-ucase"><span class="nav-number">6.62.</span> <span class="nav-text">upper(), ucase()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#weekofyear"><span class="nav-number">6.63.</span> <span class="nav-text">weekofyear()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#year"><span class="nav-number">6.64.</span> <span class="nav-text">year()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">6.65.</span> <span class="nav-text"> </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#属性配置"><span class="nav-number">7.</span> <span class="nav-text">属性配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#hive-cli-print-header"><span class="nav-number">7.1.</span> <span class="nav-text">hive.cli.print.header</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hive-mapred-mode"><span class="nav-number">7.2.</span> <span class="nav-text">hive.mapred.mode</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#视图"><span class="nav-number">8.</span> <span class="nav-text">视图</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料"><span class="nav-number">9.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -1807,13 +1616,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">401k</span>
+    <span title="站点总字数">392k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">6:05</span>
+    <span title="站点阅读时长">5:56</span>
 </div>
 
 
