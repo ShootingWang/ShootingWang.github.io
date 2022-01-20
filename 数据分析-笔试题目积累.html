@@ -304,29 +304,32 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><center> </center><br><a id="more"></a></p>
-<h1 id="概率统计"><a href="#概率统计" class="headerlink" title="概率统计"></a>概率统计</h1><div class="note default">
+        <center> </center>
+<a id="more"></a>
+<h1 id="概率统计"><a class="header-anchor" href="#概率统计"></a>概率统计</h1>
+<div class="note default">
             <p>反映<strong>数据离散程度</strong>的有：</p><ul><li>方差</li><li>标准差</li><li>极差</li></ul><p>[<font face="宋体" color="grey">来自：<a href="https://www.nowcoder.com/test/23567918/summary" target="_blank" rel="noopener">小红书2020校招数据分析笔试题卷一</a></font>]</p>
           </div>
 <div class="note default">
             <p>关于正态分布的说法正确的是</p><ul><li>正态分布具有集中性和对称性</li><li>正态分布的均值和方差能够决定正态分布的位置和形态</li><li>标准正态分布的均值为0，方差为1</li><li>正态分布的偏度为0，峰度为3</li></ul><p>[<font face="宋体" color="grey">来自：<a href="https://www.nowcoder.com/test/23567918/summary" target="_blank" rel="noopener">小红书2020校招数据分析笔试题卷一</a></font>]</p>
           </div>
 <div class="note default">
-            <p>老王有两个孩子，已知至少有一个孩子是在星期二出生的男孩。问：两个孩子都是男孩的概率是多大？</p><ul><li>星期二出生的男孩的概率=$\frac{1}{2}\times\frac{1}{7}=\frac{1}{14}$</li><li>星期二出生的女孩的概率=$\frac{1}{2}\times\frac{1}{7}=\frac{1}{14}$</li><li>非星期二出生的男孩的概率=$\frac{1}{2}\times\frac{6}{7}=\frac{6}{14}$</li><li>非星期二出生的女孩的概率=$\frac{1}{2}\times\frac{6}{7}=\frac{6}{14}$</li></ul><p>记</p><ul><li>事件A=两个孩子至少有一个孩子是星期二出生的男孩</li><li>事件B=两个孩子都是男孩<br>\begin{aligned}<br>P(A)&amp;=1-P(两个孩子都不是星期二出生的男孩)\\<br>&amp;= 1-(1-\frac{1}{14})(1-\frac{1}{14})\\<br>&amp;= \frac{27}{196}\\<br>P(AB)&amp;=P(两个都是男孩且至少有一个是在星期二出生的男孩)\\<br>&amp;=P(两个孩子都是星期二出生的男孩)+P(一个男孩是星期二出生的，另一个不是星期二出生的男孩)\\<br>&amp;=\frac{1}{14}\cdot\frac{1}{14}+2\cdot\frac{1}{14}\cdot\frac{6}{14}\\<br>&amp;=\frac{13}{196}<br>\end{aligned}<br>则要求的概率为<br>\begin{aligned}<br>P(B|A)&amp;=\frac{P(AB)}{P(A)}\\<br>&amp;=\frac{13}{196}/\frac{27}{196}\\<br>&amp;=\frac{13}{27}<br>\end{aligned}<br>[<font face="宋体" color="grey">来自：<a href="https://www.nowcoder.com/questionTerminal/030b183f37fd41f7ad4486f56f5ec355" target="_blank" rel="noopener">小红书2020校招数据分析笔试题卷一</a></font>]</li></ul>
+            <p>老王有两个孩子，已知至少有一个孩子是在星期二出生的男孩。问：两个孩子都是男孩的概率是多大？</p><ul><li>星期二出生的男孩的概率=$\frac{1}{2}\times\frac{1}{7}=\frac{1}{14}$</li><li>星期二出生的女孩的概率=$\frac{1}{2}\times\frac{1}{7}=\frac{1}{14}$</li><li>非星期二出生的男孩的概率=$\frac{1}{2}\times\frac{6}{7}=\frac{6}{14}$</li><li>非星期二出生的女孩的概率=$\frac{1}{2}\times\frac{6}{7}=\frac{6}{14}$</li></ul><p>记</p><ul><li>事件A=两个孩子至少有一个孩子是星期二出生的男孩</li><li>事件B=两个孩子都是男孩<br>\begin{aligned}<br>P(A)&amp;=1-P(两个孩子都不是星期二出生的男孩)\<br>&amp;= 1-(1-\frac{1}{14})(1-\frac{1}{14})\<br>&amp;= \frac{27}{196}\<br>P(AB)&amp;=P(两个都是男孩且至少有一个是在星期二出生的男孩)\<br>&amp;=P(两个孩子都是星期二出生的男孩)+P(一个男孩是星期二出生的，另一个不是星期二出生的男孩)\<br>&amp;=\frac{1}{14}\cdot\frac{1}{14}+2\cdot\frac{1}{14}\cdot\frac{6}{14}\<br>&amp;=\frac{13}{196}<br>\end{aligned}<br>则要求的概率为<br>\begin{aligned}<br>P(B|A)&amp;=\frac{P(AB)}{P(A)}\<br>&amp;=\frac{13}{196}/\frac{27}{196}\<br>&amp;=\frac{13}{27}<br>\end{aligned}<br>[<font face="宋体" color="grey">来自：<a href="https://www.nowcoder.com/questionTerminal/030b183f37fd41f7ad4486f56f5ec355" target="_blank" rel="noopener">小红书2020校招数据分析笔试题卷一</a></font>]</li></ul>
           </div>
 <div class="note default">
-            <p>假设有三个人同时参加这场笔试，假设满分为1，三个人的得分符合分布U（0，1）。那么三个人最低分的期望为？</p><p>假设三人的的成绩分别为$X_1,X_2,X_3$，则三人的最低分为$Y=\min\{X_1,X_2,X_3\}$。<br>\begin{equation}<br>\begin{aligned}<br>F_Y(y)&amp;=P(Y\leq y)=1-P(Y&gt;y)\\<br>&amp;=1-P(X_1&gt;y)P(X_2&gt;y)\cdots P(X_n&gt;y)\\<br>&amp;=1-\left[1-F_X(y) \right]^n<br>\end{aligned}<br>\end{equation}<br>求导得到</p><script type="math/tex; mode=display">f_Y(y)=f_X(y)\left[1-F_X(y) \right]^{n-1}=n(1-y)^{n-1}</script><p>所以期望为<br>\begin{equation}<br>\begin{aligned}<br>E(Y)&amp;=\int_0^1 yf_Y(y)\mathrm{d}y\\<br>&amp;= -\left[y(1-y)^n|_0^1-\int_0^1(1-y)^n\mathrm{d}y \right]\\<br>&amp;= -\frac{1}{1+n}(1-y)^{n+1}|_0^1=\frac{1}{1+n}<br>\end{aligned}<br>\end{equation}<br>所以三个人最低分的期望为$\frac{1}{4}$。</p><p>[<font face="宋体" color="grey">来自：<a href="https://www.nowcoder.com/questionTerminal/4654695df1dc4e1685d702f9a83d9fe0" target="_blank" rel="noopener">小红书2020校招数据分析笔试题卷一</a></font>]</p>
+            <p>假设有三个人同时参加这场笔试，假设满分为1，三个人的得分符合分布U（0，1）。那么三个人最低分的期望为？</p><p>假设三人的的成绩分别为$X_1,X_2,X_3$，则三人的最低分为$Y=\min{X_1,X_2,X_3}$。<br>\begin{equation}<br>\begin{aligned}<br>F_Y(y)&amp;=P(Y\leq y)=1-P(Y&gt;y)\<br>&amp;=1-P(X_1&gt;y)P(X_2&gt;y)\cdots P(X_n&gt;y)\<br>&amp;=1-\left[1-F_X(y) \right]^n<br>\end{aligned}<br>\end{equation}<br>求导得到<br>$$f_Y(y)=f_X(y)\left[1-F_X(y) \right]<sup>{n-1}=n(1-y)</sup>{n-1}$$<br>所以期望为<br>\begin{equation}<br>\begin{aligned}<br>E(Y)&amp;=\int_0^1 yf_Y(y)\mathrm{d}y\<br>&amp;= -\left[y(1-y)<sup>n|_0</sup>1-\int_0<sup>1(1-y)</sup>n\mathrm{d}y \right]\<br>&amp;= -\frac{1}{1+n}(1-y)<sup>{n+1}|_0</sup>1=\frac{1}{1+n}<br>\end{aligned}<br>\end{equation}<br>所以三个人最低分的期望为$\frac{1}{4}$。</p><p>[<font face="宋体" color="grey">来自：<a href="https://www.nowcoder.com/questionTerminal/4654695df1dc4e1685d702f9a83d9fe0" target="_blank" rel="noopener">小红书2020校招数据分析笔试题卷一</a></font>]</p>
           </div>
 <div class="note default">
-            <p>通常可以通过<strong>关联规则</strong>挖掘来发现啤酒和尿布的关系， 那么如果对于一条规则A →B, 如果同时购买A和B的顾客比例是4/7, 而购买A的顾客当中也购买了B的顾客比例是1/2, 而购买B的顾客当中也购买了A的顾客比例是1/3,则以下对于规则A →B的支持度(support)和置信度(confidence)分别是多少？</p><p>由已知条件可知</p><script type="math/tex; mode=display">P(A\cap B)=\frac{4}{7},\quad P(B|A)=\frac{1}{2},\quad P(A|B)=\frac{1}{3}</script><p>则支持度support$(A\rightarrow B)=P(A\cap B)=\frac{4}{7}$，置信度Confidence$(A\rightarrow B)=P(B|A)=\frac{1}{2}$。</p><p>[<font face="宋体" color="grey">来自：<a href="https://www.nowcoder.com/questionTerminal/3e854987c6e64b9c8b26880b48f09062" target="_blank" rel="noopener">网易2018校招数据分析师笔试卷</a></font>]</p>
+            <p>通常可以通过<strong>关联规则</strong>挖掘来发现啤酒和尿布的关系， 那么如果对于一条规则A →B, 如果同时购买A和B的顾客比例是4/7, 而购买A的顾客当中也购买了B的顾客比例是1/2, 而购买B的顾客当中也购买了A的顾客比例是1/3,则以下对于规则A →B的支持度(support)和置信度(confidence)分别是多少？</p><p>由已知条件可知<br>$$P(A\cap B)=\frac{4}{7},\quad P(B|A)=\frac{1}{2},\quad P(A|B)=\frac{1}{3}$$<br>则支持度support$(A\rightarrow B)=P(A\cap B)=\frac{4}{7}$，置信度Confidence$(A\rightarrow B)=P(B|A)=\frac{1}{2}$。</p><p>[<font face="宋体" color="grey">来自：<a href="https://www.nowcoder.com/questionTerminal/3e854987c6e64b9c8b26880b48f09062" target="_blank" rel="noopener">网易2018校招数据分析师笔试卷</a></font>]</p>
           </div>
 <div class="note default">
-            <p>从数字集合$\{1,2,3,4,… ,20\}$中选出4个数字的子集，如果不允许两个相连的数字出现在同一集合中，那么能够形成多少个这种子集？<br>答案：2380</p><p><strong>插空法</strong>：把4个数插到16个数形成的17个空格中</p><script type="math/tex; mode=display">C_{17}^4=2380</script><p>[<font face="宋体" color="grey">来自：<a href="https://www.nowcoder.com/questionTerminal/3e854987c6e64b9c8b26880b48f09062" target="_blank" rel="noopener">网易2018校招数据分析师笔试卷</a></font>]</p>
+            <p>从数字集合${1,2,3,4,… ,20}$中选出4个数字的子集，如果不允许两个相连的数字出现在同一集合中，那么能够形成多少个这种子集？<br>答案：2380</p><p><strong>插空法</strong>：把4个数插到16个数形成的17个空格中<br>$$C_{17}^4=2380$$</p><p>[<font face="宋体" color="grey">来自：<a href="https://www.nowcoder.com/questionTerminal/3e854987c6e64b9c8b26880b48f09062" target="_blank" rel="noopener">网易2018校招数据分析师笔试卷</a></font>]</p>
           </div>
 <div class="note default">
-            <p>将4个不一样的球随机放入5个杯子中，则杯子中球的最大个数为3的概率是?<br>答案：$\frac{16}{125}$</p><ul><li>总体情况：每个球都可以任选一个杯子，共$5^4$种可能结果</li><li>杯子中球的最大个数为3，则任选一个杯子装3个球$C_5^1$，再从剩下的4个杯子中选一个（$C_4^1$）放剩下的那个球（因为4个球都不一样，所以这个球有$C_4^1$种可能）。<script type="math/tex; mode=display">\frac{C_5^1C_4^1C_4^1}{5^4}=\frac{16}{125}</script></li></ul><p>[<font face="宋体" color="grey">来自：<a href="https://www.nowcoder.com/questionTerminal/3e854987c6e64b9c8b26880b48f09062" target="_blank" rel="noopener">网易2018校招数据分析师笔试卷</a></font>]</p>
+            <p>将4个不一样的球随机放入5个杯子中，则杯子中球的最大个数为3的概率是?<br>答案：$\frac{16}{125}$</p><ul><li>总体情况：每个球都可以任选一个杯子，共$5^4$种可能结果</li><li>杯子中球的最大个数为3，则任选一个杯子装3个球$C_5<sup>1$，再从剩下的4个杯子中选一个（$C_4</sup>1$）放剩下的那个球（因为4个球都不一样，所以这个球有$C_4^1$种可能）。<br>$$\frac{C_5<sup>1C_4</sup>1C_4<sup>1}{5</sup>4}=\frac{16}{125}$$</li></ul><p>[<font face="宋体" color="grey">来自：<a href="https://www.nowcoder.com/questionTerminal/3e854987c6e64b9c8b26880b48f09062" target="_blank" rel="noopener">网易2018校招数据分析师笔试卷</a></font>]</p>
           </div>
-<h1 id="抽样调查"><a href="#抽样调查" class="headerlink" title="抽样调查"></a>抽样调查</h1><div class="note default">
+<h1 id="抽样调查"><a class="header-anchor" href="#抽样调查"></a>抽样调查</h1>
+<div class="note default">
             <p>抽样调查遵循的<strong>原则</strong>是：<u>随机原则</u></p><p>[<font face="宋体" color="grey">来自：<a href="https://www.nowcoder.com/test/23567918/summary" target="_blank" rel="noopener">小红书2020校招数据分析笔试题卷一</a></font>]</p>
           </div>
 <div class="note default">
@@ -338,28 +341,33 @@
 <div class="note default">
             <p>抽样调查的<strong>特点</strong>：</p><ul><li>经济性</li><li>时效性强</li><li>适应面光</li><li>准确性高</li></ul>
           </div>
-<h1 id="机器学习"><a href="#机器学习" class="headerlink" title="机器学习"></a>机器学习</h1><div class="note default">
+<h1 id="机器学习"><a class="header-anchor" href="#机器学习"></a>机器学习</h1>
+<div class="note default">
             <p>常用的<strong>最优模型选择方法</strong>是哪些？</p><ul><li>增加正则化项</li><li>交叉验证</li><li>增加罚项</li></ul><p>[<font face="宋体" color="grey">来自：<a href="https://www.nowcoder.com/test/23567918/summary" target="_blank" rel="noopener">小红书2020校招数据分析笔试题卷一</a></font>]</p>
           </div>
 <div class="note default">
-            <p>三种常见的<strong>聚类算法</strong>:</p><ul><li>K-means聚类、K-中心点聚类、CLARANS算法、DIANA算法、BIRCH算法、Chameleon算法</li><li>EM算法</li><li>OPTICS算法、DBSCAN算法</li></ul><p>[<font face="宋体" color="grey">来自：<a href="https://www.nowcoder.com/questionTerminal/e4614b62c2bd471198d7491ff027a8a6" target="_blank" rel="noopener">小红书2020校招数据分析笔试题卷一</a></font>] </p>
+            <p>三种常见的<strong>聚类算法</strong>:</p><ul><li>K-means聚类、K-中心点聚类、CLARANS算法、DIANA算法、BIRCH算法、Chameleon算法</li><li>EM算法</li><li>OPTICS算法、DBSCAN算法</li></ul><p>[<font face="宋体" color="grey">来自：<a href="https://www.nowcoder.com/questionTerminal/e4614b62c2bd471198d7491ff027a8a6" target="_blank" rel="noopener">小红书2020校招数据分析笔试题卷一</a></font>]</p>
           </div>
 <div class="note default">
             <p>在数理统计中，一般通过增加抽样次数取平均来使得预估误差减小，在机器学习中也有类似的模型处理，如随机森林，通过引入随机样本并且增加决策树的数据，对于随机森林主要降低预估的哪个方面值</p><p>答案：预估方差。</p><ul><li>降低偏差：在一棵树数上增加深度，增加叶子节点个数（增加模型的复杂度）</li><li>降低方差：提高模型的泛化能力；增加数据</li></ul><p>[<font face="宋体" color="grey">来自：<a href="https://www.nowcoder.com/test/question/done?tid=33791867&amp;qid=167736#summary" target="_blank" rel="noopener">网易2018校招数据分析师笔试卷</a></font>]</p>
           </div>
-<h1 id="时间序列"><a href="#时间序列" class="headerlink" title="时间序列"></a>时间序列</h1><div class="note default">
+<h1 id="时间序列"><a class="header-anchor" href="#时间序列"></a>时间序列</h1>
+<div class="note default">
             <p>影响<strong>时间序列</strong>的因素：</p><ul><li>长期趋势</li><li>季节变动</li><li>循环波动</li><li>不规则波动</li></ul><p>[<font face="宋体" color="grey">来自：<a href="https://www.nowcoder.com/test/23567918/summary" target="_blank" rel="noopener">小红书2020校招数据分析笔试题卷一</a></font>]</p>
           </div>
-<h1 id="SQL"><a href="#SQL" class="headerlink" title="SQL"></a>SQL</h1><div class="note default">
-            <p>某电商有100家店铺，每家店铺每天销售商品和销售额gmv的数据存放在purchase表中，现需统计5月和6月，总gmv中，两个月分别的贡献前50% gmv的店铺名</p><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">CONCAT</span>(<span class="string">'2019M'</span>, <span class="keyword">month</span>), seller_name</span><br><span class="line"><span class="keyword">FROM</span> (<span class="keyword">SELECT</span> <span class="keyword">MONTH</span>(dt) <span class="keyword">AS</span> <span class="keyword">month</span>, seller_name, <span class="keyword">SUM</span>(gmv) <span class="keyword">AS</span> total_gmv </span><br><span class="line">      <span class="keyword">FROM</span> purchase <span class="keyword">WHERE</span> <span class="keyword">MONTH</span>(dt) <span class="keyword">IN</span> (<span class="string">'5'</span>, <span class="string">'6'</span>)</span><br><span class="line">      <span class="keyword">GROUP</span> <span class="keyword">BY</span> <span class="keyword">MONTH</span>(dt), seller_name) <span class="keyword">AS</span> tb_a</span><br><span class="line"><span class="keyword">JOIN</span> (<span class="keyword">SELECT</span> <span class="keyword">month</span>, seller_name, PERCENTILE(total_gmv, <span class="number">0.5</span>) <span class="keyword">AS</span> <span class="keyword">mid</span> </span><br><span class="line">      <span class="keyword">FROM</span></span><br><span class="line">          (<span class="keyword">SELECT</span> <span class="keyword">MONTH</span>(dt) <span class="keyword">AS</span> <span class="keyword">month</span>, seller_name, <span class="keyword">SUM</span>(gmv) <span class="keyword">AS</span> total_gmv</span><br><span class="line">          <span class="keyword">FROM</span> purchase <span class="keyword">WHERE</span> <span class="keyword">MONTH</span>(dt) <span class="keyword">IN</span> (<span class="string">'5'</span>, <span class="string">'6'</span>) </span><br><span class="line">          <span class="keyword">GROUP</span> <span class="keyword">BY</span> <span class="keyword">MONTH</span>(dt), seller_name) <span class="keyword">AS</span> tb_c</span><br><span class="line">      <span class="keyword">GROUP</span> <span class="keyword">BY</span> <span class="keyword">month</span>, seller_name) <span class="keyword">AS</span> tb_b</span><br><span class="line"><span class="keyword">ON</span> tb_a.month=tb_b.month <span class="keyword">AND</span> tb_a.seller_name=tb_b.seller_name</span><br><span class="line"><span class="keyword">WHERE</span> total_gmv &gt; <span class="keyword">mid</span>;</span><br></pre></td></tr></table></figure><p>[<font face="宋体" color="grey">来自：<a href="https://www.nowcoder.com/questionTerminal/be517fb03c854905be5acb706b680199" target="_blank" rel="noopener">小红书2020校招数据分析笔试题卷一</a></font>]</p>
+<h1 id="SQL"><a class="header-anchor" href="#SQL"></a>SQL</h1>
+<div class="note default">
+            <p>某电商有100家店铺，每家店铺每天销售商品和销售额gmv的数据存放在purchase表中，现需统计5月和6月，总gmv中，两个月分别的贡献前50% gmv的店铺名</p><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">CONCAT</span>(<span class="string">'2019M'</span>, <span class="keyword">month</span>), seller_name</span><br><span class="line"><span class="keyword">FROM</span> (<span class="keyword">SELECT</span> <span class="keyword">MONTH</span>(dt) <span class="keyword">AS</span> <span class="keyword">month</span>, seller_name, <span class="keyword">SUM</span>(gmv) <span class="keyword">AS</span> total_gmv </span><br><span class="line">	  <span class="keyword">FROM</span> purchase <span class="keyword">WHERE</span> <span class="keyword">MONTH</span>(dt) <span class="keyword">IN</span> (<span class="string">'5'</span>, <span class="string">'6'</span>)</span><br><span class="line">	  <span class="keyword">GROUP</span> <span class="keyword">BY</span> <span class="keyword">MONTH</span>(dt), seller_name) <span class="keyword">AS</span> tb_a</span><br><span class="line"><span class="keyword">JOIN</span> (<span class="keyword">SELECT</span> <span class="keyword">month</span>, seller_name, PERCENTILE(total_gmv, <span class="number">0.5</span>) <span class="keyword">AS</span> <span class="keyword">mid</span> </span><br><span class="line">	  <span class="keyword">FROM</span></span><br><span class="line">	      (<span class="keyword">SELECT</span> <span class="keyword">MONTH</span>(dt) <span class="keyword">AS</span> <span class="keyword">month</span>, seller_name, <span class="keyword">SUM</span>(gmv) <span class="keyword">AS</span> total_gmv</span><br><span class="line">          <span class="keyword">FROM</span> purchase <span class="keyword">WHERE</span> <span class="keyword">MONTH</span>(dt) <span class="keyword">IN</span> (<span class="string">'5'</span>, <span class="string">'6'</span>) </span><br><span class="line">          <span class="keyword">GROUP</span> <span class="keyword">BY</span> <span class="keyword">MONTH</span>(dt), seller_name) <span class="keyword">AS</span> tb_c</span><br><span class="line">      <span class="keyword">GROUP</span> <span class="keyword">BY</span> <span class="keyword">month</span>, seller_name) <span class="keyword">AS</span> tb_b</span><br><span class="line"><span class="keyword">ON</span> tb_a.month=tb_b.month <span class="keyword">AND</span> tb_a.seller_name=tb_b.seller_name</span><br><span class="line"><span class="keyword">WHERE</span> total_gmv &gt; <span class="keyword">mid</span>;</span><br></pre></td></tr></table></figure><p>[<font face="宋体" color="grey">来自：<a href="https://www.nowcoder.com/questionTerminal/be517fb03c854905be5acb706b680199" target="_blank" rel="noopener">小红书2020校招数据分析笔试题卷一</a></font>]</p>
           </div>
-<h1 id="基础算法"><a href="#基础算法" class="headerlink" title="基础算法"></a>基础算法</h1><div class="note default">
+<h1 id="基础算法"><a class="header-anchor" href="#基础算法"></a>基础算法</h1>
+<div class="note default">
             <p>将一个整数序列整理为升序，两趟处理后序列变为10,12,21,9,7,3,4,25，则采用的排序算法可能是</p><p>答案：A.插入排序。</p><ul><li>插入排序：第n趟前n+1个有序</li><li>选择排序：第n趟前n个位置正确</li><li>快速排序：第n趟有n个元素位置正确</li><li>堆排序：第n趟前或后n个位置正确</li></ul><p>[<font face="宋体" color="grey">来自：<a href="https://www.nowcoder.com/test/question/done?tid=33791867&amp;qid=167735#summary" target="_blank" rel="noopener">网易2018校招数据分析师笔试卷</a></font>]</p>
           </div>
 <div class="note default">
             <p>[<font face="宋体" color="grey">来自：<a href></a></font>]</p>
           </div>
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1>
+<h1 id="参考资料"><a class="header-anchor" href="#参考资料"></a>参考资料</h1>
+
     </div>
 
     
@@ -546,13 +554,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">392k</span>
+    <span title="站点总字数">401k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">5:56</span>
+    <span title="站点阅读时长">6:05</span>
 </div>
 
 

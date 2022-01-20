@@ -307,40 +307,56 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><center>$\chi^2$-test</center><br><a id="more"></a></p>
-<h1 id="卡方检验"><a href="#卡方检验" class="headerlink" title="卡方检验"></a>卡方检验</h1><ul>
+        <center>$\chi^2$-test</center>
+<a id="more"></a>
+<h1 id="卡方检验"><a class="header-anchor" href="#卡方检验"></a>卡方检验</h1>
+<ul>
 <li>用于检验单个正态总体方差</li>
 </ul>
 <p>假设$x_1,\cdots,x_n$是来自正态总体$N(\mu,\sigma^2)$的样本，对方差考虑如下三个检验问题：</p>
 <ol>
-<li><script type="math/tex; mode=display">H_0:\sigma^2 \leq \sigma_0^2 \quad \mathrm{vs} \quad H_1:\sigma^2 > \sigma^2_0</script></li>
-<li><script type="math/tex; mode=display">H_0:\sigma^2 \geq \sigma_0^2 \quad \mathrm{vs} \quad H_1:\sigma^2 < \sigma^2_0</script></li>
-<li><script type="math/tex; mode=display">H_0:\sigma^2 = \sigma_0^2 \quad \mathrm{vs} \quad H_1:\sigma^2 \neq \sigma^2_0</script></li>
+<li>$$H_0:\sigma^2 \leq \sigma_0^2 \quad \mathrm{vs} \quad H_1:\sigma^2 &gt; \sigma^2_0$$</li>
+<li>$$H_0:\sigma^2 \geq \sigma_0^2 \quad \mathrm{vs} \quad H_1:\sigma^2 &lt; \sigma^2_0$$</li>
+<li>$$H_0:\sigma^2 = \sigma_0^2 \quad \mathrm{vs} \quad H_1:\sigma^2 \neq \sigma^2_0$$</li>
 </ol>
 <p>其中$\sigma_0^2$是已知常数。通常假定$\mu$未知。</p>
-<p>以上假设检验采用的<strong>检验统计量</strong>为</p>
-<script type="math/tex; mode=display">\chi^2=(n-1)\frac{s^2}{\sigma_0^2}</script><p>当$\sigma^2=\sigma_0^2$时，有$\chi^2\sim \chi^2(n-1)$。</p>
-<p>若取显著性水平为$\alpha$，则对应三个检验问题的拒绝域分别为</p>
-<script type="math/tex; mode=display">W_1=\{\chi^2\geq \chi^2_{1-\alpha}(n-1)\}</script><script type="math/tex; mode=display">W_2=\{\chi^2\leq \chi^2_\alpha(n-1)\}</script><script type="math/tex; mode=display">W_3=\{\chi^2 \leq \chi^2_{\frac{\alpha}{2}}(n-1)\}或\{\chi^2 \geq \chi_{1-\frac{\alpha}{2}}(n-1)\}</script><ul>
+<p>以上假设检验采用的<strong>检验统计量</strong>为<br>
+$$\chi<sup>2=(n-1)\frac{s</sup>2}{\sigma_0^2}$$</p>
+<p>当$\sigma<sup>2=\sigma_0</sup>2$时，有$\chi^2\sim \chi^2(n-1)$。</p>
+<p>若取显著性水平为$\alpha$，则对应三个检验问题的拒绝域分别为<br>
+$$W_1={\chi^2\geq \chi^2_{1-\alpha}(n-1)}$$<br>
+$$W_2={\chi^2\leq \chi^2_\alpha(n-1)}$$<br>
+$$W_3={\chi^2 \leq \chi<sup>2_{\frac{\alpha}{2}}(n-1)}或{\chi</sup>2 \geq \chi_{1-\frac{\alpha}{2}}(n-1)}$$</p>
+<ul>
 <li>$\chi^2$分布是偏态分布</li>
 </ul>
-<p>三个检验问题的p值分别为</p>
-<script type="math/tex; mode=display">p_1=P(\chi^2\geq \chi_0^2)</script><script type="math/tex; mode=display">p_2=P(\chi^2\leq \chi_0^2)</script><script type="math/tex; mode=display">p_3=2\min\left\{P(\chi\geq \chi^2_0), P(\chi^2\leq \chi^2_0) \right\}</script><h1 id="chi-2-拟合优度检验"><a href="#chi-2-拟合优度检验" class="headerlink" title="$\chi^2$拟合优度检验"></a>$\chi^2$拟合优度检验</h1><p>分类数据的$\chi^2$拟合优度检验</p>
-<p>根据某项指标，总体被分为$K$类：$A_1,A_2,\cdots,A_K$。关心各类元素在总体中所占的比率：</p>
-<script type="math/tex; mode=display">H_0:A_i所占的比率是$p_{i0},\quad i=1,\cdots,K.</script><p>其中，$p_{i0}$已知且满足$\sum_{i=1}^Kp_{i0}=1$。</p>
+<p>三个检验问题的p值分别为<br>
+$$p_1=P(\chi^2\geq \chi_0^2)$$<br>
+$$p_2=P(\chi^2\leq \chi_0^2)$$<br>
+$$p_3=2\min\left{P(\chi\geq \chi^2_0), P(\chi^2\leq \chi^2_0) \right}$$</p>
+<h1 id="chi-2-拟合优度检验"><a class="header-anchor" href="#chi-2-拟合优度检验"></a>$\chi^2$拟合优度检验</h1>
+<p>分类数据的$\chi^2$拟合优度检验</p>
+<p>根据某项指标，总体被分为$K$类：$A_1,A_2,\cdots,A_K$。关心各类元素在总体中所占的比率：<br>
+$$H_0:A_i所占的比率是$p_{i0},\quad i=1,\cdots,K.$$<br>
+其中，$p_{i0}$已知且满足$\sum_{i=1}^Kp_{i0}=1$。</p>
 <p>记$x_1,\cdots,x_n$是从该总体抽出的样本，且其中属于$A_i$类别的样本数为$n_i$。</p>
-<p>当零假设$H_0$成立时，在$n$个样本中属于$A_i$类的“理论个数”/“期望个数”为$np_{i0}$，而实际观测得到的值是$n_i$，当$H_0$成立时，$n_i$与$np_{i0}$应相差不大。因此，使用统计量（Pearson提出的）</p>
-<script type="math/tex; mode=display">\chi^2=\sum_{i=1}^K\frac{(n_i-np_{i0})^2}{np_{i0}}</script><p>来衡量“理论个数”$np_{i0}$与实际个数$n_i$间的差异。</p>
-<p>当$H_0$为真时，该统计量的值应该比较小。因此，拒绝域为</p>
-<script type="math/tex; mode=display">\{\chi^2\geq c\}</script><p>其中$c$为待确定的临界值。</p>
+<p>当零假设$H_0$成立时，在$n$个样本中属于$A_i$类的“理论个数”/“期望个数”为$np_{i0}$，而实际观测得到的值是$n_i$，当$H_0$成立时，$n_i$与$np_{i0}$应相差不大。因此，使用统计量（Pearson提出的）<br>
+$$\chi<sup>2=\sum_{i=1}</sup>K\frac{(n_i-np_{i0})^2}{np_{i0}}$$<br>
+来衡量“理论个数”$np_{i0}$与实际个数$n_i$间的差异。</p>
+<p>当$H_0$为真时，该统计量的值应该比较小。因此，拒绝域为<br>
+$${\chi^2\geq c}$$<br>
+其中$c$为待确定的临界值。</p>
 <div class="note success">
-            <p><strong>定理*</strong></p><p>在前述各项假定下，在$H_0$成立时，检验统计量$\chi^2=\sum_{i=1}^K\frac{(n_i-np_{i0})^2}{np_{i0}}$有</p><script type="math/tex; mode=display">\chi^2\stackrel{L}{\longrightarrow} \chi^2(K-1)</script>
+            <p><strong>定理</strong>*</p><p>在前述各项假定下，在$H_0$成立时，检验统计量$\chi<sup>2=\sum_{i=1}</sup>K\frac{(n_i-np_{i0})^2}{np_{i0}}$有<br>$$\chi^2\stackrel{L}{\longrightarrow} \chi^2(K-1)$$</p>
           </div>
-<p>显著性水平为$\alpha$时检验的拒绝域为</p>
-<script type="math/tex; mode=display">W=\{\chi^2\geq \chi^2_{1-\alpha}(K-1)\}</script><p>在实际问题中，第$i$类$A_i$出现的概率$p_{i}$并不一定已知，可以先用最大似然估计方法估计出$p_{i}$依赖的参数（$r$个），然后再算出$p_{i}$的估计值$\hat{p}_i$，则统计量为</p>
-<script type="math/tex; mode=display">\chi^2=\sum_{i=1}^K\frac{(n_i-n\hat{p}_i)^2}{n\hat{p}_i}</script><p>当$n\rightarrow \infty$时，该统计量渐近服从自由度为$K-r-1$的$\chi^2$分布。</p>
+<p>显著性水平为$\alpha$时检验的拒绝域为<br>
+$$W={\chi^2\geq \chi^2_{1-\alpha}(K-1)}$$</p>
+<p>在实际问题中，第$i$类$A_i$出现的概率$p_{i}$并不一定已知，可以先用最大似然估计方法估计出$p_{i}$依赖的参数（$r$个），然后再算出$p_{i}$的估计值$\hat{p}_i$，则统计量为<br>
+$$\chi<sup>2=\sum_{i=1}</sup>K\frac{(n_i-n\hat{p}_i)^2}{n\hat{p}_i}$$<br>
+当$n\rightarrow \infty$时，该统计量渐近服从自由度为$K-r-1$的$\chi^2$分布。</p>
 <p>上述两个检验统计量主要用于大样本场合，在实际应用中，一般要求各类的观测数均不小于5。当有些类的样本数不满足要求时，需要将一些相邻的类合并以达到要求。</p>
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
+<h1 id="参考资料"><a class="header-anchor" href="#参考资料"></a>参考资料</h1>
+<ul>
 <li><a href="https://book.douban.com/subject/5998092/" target="_blank" rel="noopener">概率论与数理统计教程</a></li>
 </ul>
 
@@ -531,13 +547,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">392k</span>
+    <span title="站点总字数">401k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">5:56</span>
+    <span title="站点阅读时长">6:05</span>
 </div>
 
 
