@@ -300,25 +300,39 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><center>SQL时间相关处理~</center><br><a id="more"></a></p>
-<h1 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h1><h2 id="年"><a href="#年" class="headerlink" title="年"></a>年</h2><p><code>YEAR()</code>：取日期中的年份</p>
+        <center>SQL时间相关处理~</center>
+<a id="more"></a>
+<h1 id="基本语法"><a class="header-anchor" href="#基本语法"></a>基本语法</h1>
+<h2 id="年"><a class="header-anchor" href="#年"></a>年</h2>
+<p><code>YEAR()</code>：取日期中的年份</p>
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">year('2021-12-31')</span><br><span class="line"><span class="comment">-- 2021</span></span><br></pre></td></tr></table></figure>
-<p>去年同一天：<br><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">add_months(current_date, -12)</span><br></pre></td></tr></table></figure></p>
-<h2 id="月"><a href="#月" class="headerlink" title="月"></a>月</h2><p><code>MONTH()</code>：取日期中的月份</p>
-<p>当月第一天：<br><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">date_format(current_date, 'yyyy-MM-01')</span><br></pre></td></tr></table></figure></p>
-<p>当月最后一天：<br><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">last_day(current_day)</span><br></pre></td></tr></table></figure></p>
-<p>上个月末：<br><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">date_sub(date_format(current_date, 'yyyy-MM-01'), 1)</span><br></pre></td></tr></table></figure></p>
-<p>上个月同一天：<br><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">add_months(current_date, -1)</span><br></pre></td></tr></table></figure></p>
-<h2 id="周"><a href="#周" class="headerlink" title="周"></a>周</h2><p><code>WEEKOFYEAR(STRING date)</code>：返回时间字符出位于一年中的第几周内</p>
+<p>去年同一天：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">add_months(current_date, -12)</span><br></pre></td></tr></table></figure>
+<h2 id="月"><a class="header-anchor" href="#月"></a>月</h2>
+<p><code>MONTH()</code>：取日期中的月份</p>
+<p>当月第一天：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">date_format(current_date, 'yyyy-MM-01')</span><br></pre></td></tr></table></figure>
+<p>当月最后一天：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">last_day(current_day)</span><br></pre></td></tr></table></figure>
+<p>上个月末：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">date_sub(date_format(current_date, 'yyyy-MM-01'), 1)</span><br></pre></td></tr></table></figure>
+<p>上个月同一天：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">add_months(current_date, -1)</span><br></pre></td></tr></table></figure>
+<h2 id="周"><a class="header-anchor" href="#周"></a>周</h2>
+<p><code>WEEKOFYEAR(STRING date)</code>：返回时间字符出位于一年中的第几周内</p>
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">weekofyear('2016-12-08 10:05:15')</span><br><span class="line"><span class="comment">-- 49</span></span><br></pre></td></tr></table></figure>
 <p>周几/星期几：</p>
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">case    when cast(pmod(datediff(pt, '1900-01-07'), 7) as int) = 0 then 7 </span><br><span class="line">        else cast(pmod(datediff(pt, '1900-01-07'), 7) </span><br><span class="line"><span class="keyword">end</span> <span class="keyword">as</span> weekdays</span><br><span class="line"><span class="comment">-- cast(pmod(datediff(pt, '1900-01-07'), 7)取值范围0-6</span></span><br><span class="line"><span class="comment">-- 或</span></span><br><span class="line"><span class="keyword">cast</span>(<span class="keyword">date_format</span>(pt, <span class="string">'u'</span>) <span class="keyword">as</span> <span class="built_in">int</span>)  <span class="comment">-- 取值范围1-7</span></span><br></pre></td></tr></table></figure>
-<p>当周的周一：<br><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">date_sub(current_date, cast(date_format(current_date, 'u') as int) - 1)</span><br></pre></td></tr></table></figure></p>
-<p>最近一个周日：<br><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">date_sub(current_date, cast(date_format(current_date, 'u') as int))</span><br></pre></td></tr></table></figure></p>
-<h2 id="格式转换"><a href="#格式转换" class="headerlink" title="格式转换"></a>格式转换</h2><p>将<code>yyyy/MM/dd</code>格式的日期转换为<code>yyyy-MM-dd</code>格式：</p>
+<p>当周的周一：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">date_sub(current_date, cast(date_format(current_date, 'u') as int) - 1)</span><br></pre></td></tr></table></figure>
+<p>最近一个周日：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">date_sub(current_date, cast(date_format(current_date, 'u') as int))</span><br></pre></td></tr></table></figure>
+<h2 id="格式转换"><a class="header-anchor" href="#格式转换"></a>格式转换</h2>
+<p>将<code>yyyy/MM/dd</code>格式的日期转换为<code>yyyy-MM-dd</code>格式：</p>
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">concat_ws('-', split(date, '/')[0], lpad(split(date, '/')[1], 2, '0'), lpad(split(date, '/')[2], 2, '0'))</span><br></pre></td></tr></table></figure>
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1>
+<h1 id="参考资料"><a class="header-anchor" href="#参考资料"></a>参考资料</h1>
+
     </div>
 
     
@@ -505,13 +519,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">392k</span>
+    <span title="站点总字数">401k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">5:56</span>
+    <span title="站点阅读时长">6:05</span>
 </div>
 
 
@@ -593,8 +607,6 @@
 
 
 
-
-  
 
 
 

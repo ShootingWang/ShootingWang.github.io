@@ -306,8 +306,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><center>DEA</center><br><a id="more"></a></p>
-<h1 id="数据包络分析"><a href="#数据包络分析" class="headerlink" title="数据包络分析"></a>数据包络分析</h1><p>数据包络分析是针对多投入和多产出的问题，利用线性规划的方法，对具有可比性的同类型单位进行相对有效性评价的一种数量分析方法。是A.Charnes，W.W.Copper和E.Rhodes在1978年提出的评价多指标输入输出、衡量系统有效性的方法。</p>
+        <center>DEA</center>
+<a id="more"></a>
+<h1 id="数据包络分析"><a class="header-anchor" href="#数据包络分析"></a>数据包络分析</h1>
+<p>数据包络分析是针对多投入和多产出的问题，利用线性规划的方法，对具有可比性的同类型单位进行相对有效性评价的一种数量分析方法。是A.Charnes，W.W.Copper和E.Rhodes在1978年提出的评价多指标输入输出、衡量系统有效性的方法。</p>
 <ul>
 <li>数据包络分析（DEA）可以用于解决<strong>多指标问题</strong>。</li>
 </ul>
@@ -315,27 +317,32 @@
 <ul>
 <li>决策单元（DMU）：效率评价的对象，可以理解为一个将一定“投入”转化为一定“产出”的实体</li>
 <li>技术效率：在保持决策单元投入不变的情况下，实际产出同理想产出的比值</li>
-<li>规模报酬：<ul>
+<li>规模报酬：
+<ul>
 <li>规模报酬不变（-）：生产要素同时增加一倍，产量的增加也正好是一倍</li>
 <li>规模报酬递增（irs）：生产要素同时增加一倍，产量的增加多于一倍</li>
 <li>规模报酬递减（drs）：生产要素同时增加一倍，产品的增加少于一倍</li>
 </ul>
 </li>
-<li><strong>DEA强有效</strong>：<ul>
+<li><strong>DEA强有效</strong>：
+<ul>
 <li>任何一项投入的数量都无法减少，除非减少产出的数量或增加其他至少一种投入的数量</li>
 <li>任何一项产出的数量都无法增加，除非增加投入的数量或减少其他至少一种产出的数量</li>
 </ul>
 </li>
-<li><strong>DEA弱有效</strong>：<ul>
+<li><strong>DEA弱有效</strong>：
+<ul>
 <li>无法等比例减少各项投入的数量，除非减少产出的数量</li>
 <li>无法等比例增加各项产出的数量，除非增加投入的数量</li>
 <li>这种情况下，虽然不能等比例减少投入或增加产出，但某一项或某几项（非全部）投入可能减少</li>
 </ul>
 </li>
-<li>生产前沿面：对于给定的生产要素和产出价格，选择要素投入的最优组合和产出的最优组合，即投入成本最小、产出收益最大的组合，其所对应的生产函数所描述的生产可能性边界就是生产前沿面<blockquote>
-<p>设 $\omega&gt;0, \mu&gt;0, L= \left\{ (X,Y)| \mu^TX- \omega^T Y=0  \right\}$满足$T \subset \left\{ (X,Y)|\mu^TX-\omega^T Y \geq 0 \right\}$，$L \cap T\neq \emptyset$，则称$L$为生产可能集$T$的有效面，称$L\cap T$为生产前沿面。</p>
+<li>生产前沿面：对于给定的生产要素和产出价格，选择要素投入的最优组合和产出的最优组合，即投入成本最小、产出收益最大的组合，其所对应的生产函数所描述的生产可能性边界就是生产前沿面</li>
+</ul>
+<blockquote>
+<p>设 $\omega&gt;0, \mu&gt;0, L= \left{ (X,Y)| \mu^TX- \omega^T Y=0  \right}$满足$T \subset \left{ (X,Y)|\mu<sup>TX-\omega</sup>T Y \geq 0 \right}$，$L \cap T\neq \emptyset$，则称$L$为生产可能集$T$的有效面，称$L\cap T$为生产前沿面。</p>
 </blockquote>
-</li>
+<ul>
 <li>$T$不一定等于$L$，$T\leq L$</li>
 </ul>
 <p>假设共有$n$个决策单元（DMU），每个决策单元都有$m$种输入和$r$种输出。</p>
@@ -352,55 +359,134 @@
 <li>交叉模式</li>
 <li>A&amp;P模式</li>
 </ul>
-<h2 id="效益分析"><a href="#效益分析" class="headerlink" title="效益分析"></a>效益分析</h2><ul>
-<li><strong>综合技术效益</strong>（OE，Overall Efficiency）：反映决策单元在一定投入要素的生产效率，是对决策单元的资源配置能力、资源使用效率等多方面能力的综合衡量与评价<ul>
+<h2 id="效益分析"><a class="header-anchor" href="#效益分析"></a>效益分析</h2>
+<ul>
+<li><strong>综合技术效益</strong>（OE，Overall Efficiency）：反映决策单元在一定投入要素的生产效率，是对决策单元的资源配置能力、资源使用效率等多方面能力的综合衡量与评价
+<ul>
 <li>OE = 1：表示该决策单元的投入产出是综合有效的，即同时技术有效和规模有效</li>
 </ul>
 </li>
 <li><strong>技术效益</strong>（TE，Technical Efficiency）：企业由于管理和技术等因素影响的生产效率</li>
-<li><strong>规模效益</strong>（SE，Scale Efficiency）：由于企业规模因素影响的生产效率<ul>
+<li><strong>规模效益</strong>（SE，Scale Efficiency）：由于企业规模因素影响的生产效率
+<ul>
 <li>TE = 1 且 SE &lt; 1：表示在目前的技术水平上，其投入资源的使用是有效的，未能达到综合有效的根本原因在于其规模无效，因此其改革的重点在于如何更好地发挥其规模效益</li>
 </ul>
 </li>
 </ul>
-<p>三者满足以下关系：</p>
-<script type="math/tex; mode=display">OE = TE \times SE</script><ul>
+<p>三者满足以下关系：<br>
+$$OE = TE \times SE$$</p>
+<ul>
 <li>CCR模式得到的是OE</li>
 <li>BCC模式得到的是TE</li>
 </ul>
-<h1 id="CCR模型"><a href="#CCR模型" class="headerlink" title="CCR模型"></a>CCR模型</h1><p>CCR模型是最早被提出来的数据包络分析方法</p>
+<h1 id="CCR模型"><a class="header-anchor" href="#CCR模型"></a>CCR模型</h1>
+<p>CCR模型是最早被提出来的数据包络分析方法</p>
 <ul>
 <li>本质：线性规划</li>
 <li>CCR分别代表三个作者的名字首字母</li>
-<li><p>CCR模式下DEA效率评估模型所得到的最优解$OE_k$是第$k$个决策单元的“综合技术效益”</p>
-<div class="note warning">
-            <p>定义：第$k$个决策单元的效益评价指数为</p><script type="math/tex; mode=display">e_k=\frac{u^TX_k}{v^TY_k}</script><p>$k = 1, 2, \cdots, n$.</p>
-          </div>
-</li>
+<li>CCR模式下DEA效率评估模型所得到的最优解$OE_k$是第$k$个决策单元的“综合技术效益”</li>
 </ul>
+ <div class="note warning">
+            <p>定义：第$k$个决策单元的效益评价指数为<br>$$e_k=\frac{u<sup>TX_k}{v</sup>TY_k}$$<br>$k = 1, 2, \cdots, n$.</p>
+          </div>
 <p>从投入资源的角度来看，在当前产出的水准下，比较投入资源的使用情况，以此作为效益评价的依据，此种模式称为<strong>投入导向模式</strong>。</p>
-<p>CCR模式的数学模型可表示为：对$k=1,2,\cdots,n$，有<br>\begin{equation}<br>\begin{aligned}<br>\max &amp;\quad \frac{v^TY_k}{u^TX_k} \\<br>s.t. &amp; \quad \left\{<br>\begin{array}{ll}<br>\frac{v^TY_j}{u^TX_j} \leq 1 &amp; ,\quad j=1,2,\cdots,n.\\<br>u&gt;0,v&gt;0 &amp;<br>\end{array}<br>\right.<br>\end{aligned}<br>\end{equation}</p>
+<p>CCR模式的数学模型可表示为：对$k=1,2,\cdots,n$，有<br>
+\begin{equation}<br>
+\begin{aligned}<br>
+\max &amp;\quad \frac{v<sup>TY_k}{u</sup>TX_k} \<br>
+s.t. &amp; \quad \left{<br>
+\begin{array}{ll}<br>
+\frac{v<sup>TY_j}{u</sup>TX_j} \leq 1 &amp; ,\quad j=1,2,\cdots,n.\<br>
+u&gt;0,v&gt;0 &amp;<br>
+\end{array}<br>
+\right.<br>
+\end{aligned}<br>
+\end{equation}</p>
 <ul>
 <li>因为现实中的任何一项技术都不能使得输入全部转化为输出，所以$\frac{ v^T Y_j }{ u^T X_j } \leq 1$</li>
-<li>分式规划的缺点：解释不唯一——如果$u,v$是解，则$ku,kv$也是解（$k$是任意非零常数）<ul>
+<li>分式规划的缺点：解释不唯一——如果$u,v$是解，则$ku,kv$也是解（$k$是任意非零常数）</li>
 <li>为了解决这个问题，通常令目标函数的分母$u^T X_k=1$或者通过Charnes-Cooper变换将分式规划变为线性规划</li>
 </ul>
-</li>
-</ul>
-<p>Charnes-Cooper变换：<br>令$ \mu = tu, \omega = tv, t = \frac{1}{u^T X_k}$，则上述数学模型变为：<br>\begin{equation}<br>\begin{aligned}<br>\max &amp; \quad \omega^T Y_k \\<br>s.t. &amp; \quad \left\{<br>\begin{array}{ll}<br>\mu^T X_k - \omega^T Y_k \geq 0 &amp; ,\quad j=1,2,\cdots,n.\\<br>\mu^T X_k = 1 &amp; \\<br>\mu &gt; 0, \omega &gt; 0 &amp;<br>\end{array}<br>\right.<br>\end{aligned}<br>\end{equation}</p>
+<p>Charnes-Cooper变换：<br>
+令$ \mu = tu, \omega = tv, t = \frac{1}{u^T X_k}$，则上述数学模型变为：<br>
+\begin{equation}<br>
+\begin{aligned}<br>
+\max &amp; \quad \omega^T Y_k \<br>
+s.t. &amp; \quad \left{<br>
+\begin{array}{ll}<br>
+\mu^T X_k - \omega^T Y_k \geq 0 &amp; ,\quad j=1,2,\cdots,n.\<br>
+\mu^T X_k = 1 &amp; \<br>
+\mu &gt; 0, \omega &gt; 0 &amp;<br>
+\end{array}<br>
+\right.<br>
+\end{aligned}<br>
+\end{equation}</p>
 <blockquote>
-<p>详细过程如下：<br>因为$\mu = tu &gt; 0, \omega = tv &gt; 0, t = \frac{1}{u^TX_k} \Rightarrow \mu^T = tu^T, \omega^T = tv^T, tu^TX_k = 1$，则</p>
-<script type="math/tex; mode=display">\max\quad \frac{v^TY_k}{u^TX_k} \Rightarrow \max \quad \frac{tv^TY_k}{tu^TX_k} \Rightarrow \max \quad \omega^TY_k</script><p>\begin{aligned}<br>&amp; \quad \frac{v^TY_k}{u^TX_k}\leq 1\\<br>\Rightarrow &amp; \quad u^TX_k - v^TY_k \geq 0\\<br>\Rightarrow &amp; \quad \frac{1}{t}\mu^TX_k - \frac{1}{t}\omega^TY_K \geq 0\\<br>\Rightarrow &amp; \quad \mu^TX_k - \omega^TY_k \geq 0<br>\end{aligned}<br>因为$t=\frac{1}{u^TX_k}$，则</p>
-<script type="math/tex; mode=display">t=\frac{1}{u^TX_k} \Rightarrow tu^TX_k = 1 \Rightarrow \mu^TX_k = 1</script></blockquote>
+<p>详细过程如下：<br>
+因为$\mu = tu &gt; 0, \omega = tv &gt; 0, t = \frac{1}{u^TX_k} \Rightarrow \mu^T = tu^T, \omega^T = tv^T, tu^TX_k = 1$，则<br>
+$$\max\quad \frac{v<sup>TY_k}{u</sup>TX_k} \Rightarrow \max \quad \frac{tv<sup>TY_k}{tu</sup>TX_k} \Rightarrow \max \quad \omega^TY_k$$<br>
+\begin{aligned}<br>
+&amp; \quad \frac{v<sup>TY_k}{u</sup>TX_k}\leq 1\<br>
+\Rightarrow &amp; \quad u^TX_k - v^TY_k \geq 0\<br>
+\Rightarrow &amp; \quad \frac{1}{t}\mu^TX_k - \frac{1}{t}\omega^TY_K \geq 0\<br>
+\Rightarrow &amp; \quad \mu^TX_k - \omega^TY_k \geq 0<br>
+\end{aligned}<br>
+因为$t=\frac{1}{u^TX_k}$，则<br>
+$$t=\frac{1}{u^TX_k} \Rightarrow tu^TX_k = 1 \Rightarrow \mu^TX_k = 1$$</p>
+</blockquote>
 <div class="note default">
-            <p>对于任何一个线性规划模型，都存在一个等价的对偶模型。<br>原始模型：<br>\begin{equation}<br>\begin{aligned}<br>\max &amp; \quad c^Tx^\prime\\<br>s.t. &amp; \quad \left\{<br>\begin{array}{l}<br>Ax^\prime\leq b\\<br>x^\prime \geq 0<br>\end{array}<br>\right.<br>\end{aligned}<br>\end{equation}<br>对偶模型：<br>\begin{equation}<br>\begin{aligned}<br>\min &amp; \quad b^Ty^\prime\\<br>s.t. &amp; \quad \left\{<br>\begin{array}{l}<br>A^Ty^\prime \geq c\\<br>y^\prime \geq 0<br>\end{array}<br>\right.<br>\end{aligned}<br>\end{equation}</p>
+            <p>对于任何一个线性规划模型，都存在一个等价的对偶模型。<br>原始模型：<br>\begin{equation}<br>\begin{aligned}<br>\max &amp; \quad c<sup>Tx</sup>\prime\<br>s.t. &amp; \quad \left{<br>\begin{array}{l}<br>Ax^\prime\leq b\<br>x^\prime \geq 0<br>\end{array}<br>\right.<br>\end{aligned}<br>\end{equation}<br>对偶模型：<br>\begin{equation}<br>\begin{aligned}<br>\min &amp; \quad b<sup>Ty</sup>\prime\<br>s.t. &amp; \quad \left{<br>\begin{array}{l}<br>A<sup>Ty</sup>\prime \geq c\<br>y^\prime \geq 0<br>\end{array}<br>\right.<br>\end{aligned}<br>\end{equation}</p>
           </div>
-<p>记<br>\begin{equation}<br>\begin{aligned}<br>c_{(m+r)\times1} &amp;= \left(0,\cdots,0, y_{k1}, \cdots, y_{kr} \right)^T \\<br>x^\prime_{(m+r)\times1} &amp;= \left(\mu_1,\cdots,\mu_m, \omega_1,\cdots,\omega_r \right)^T\\<br>A_{(n+1)\times(m+r)} &amp;= \left(<br>\begin{array}{cccccc}<br>-x_{11} &amp; \cdots &amp; -x_{1m} &amp; y_{11} &amp; \cdots &amp; y_{1r} \\<br>\vdots &amp; \ddots &amp; \vdots &amp; \vdots  &amp; \ddots &amp; \vdots  \\<br>-x_{n1} &amp; \cdots &amp; -x_{nm} &amp; y_{n1} &amp; \cdots &amp; y_{nr} \\<br>x_{k1}&amp; \cdots &amp; x_{km}&amp; 0       &amp; \cdots &amp; 0<br>\end{array}<br>\right) \\<br>b_{(n+1)\times1} &amp;= \left(0,\cdots,0,1\right)^T \\<br>y^\prime &amp;= \left(\lambda_1,\cdots,\lambda_n, \theta \right)^T<br>\end{aligned}<br>\end{equation}</p>
-<p>则</p>
-<script type="math/tex; mode=display">\max \quad c^Tx^\prime \Rightarrow \max \quad \omega^TY_k</script><script type="math/tex; mode=display">Ax^\prime \leq b \Rightarrow -\mu^TX_k + \omega^TY_k \leq 0, \mu^TX_k = 1</script><script type="math/tex; mode=display">\min \quad b^Ty^\prime \Rightarrow \min\quad \theta</script><p>\begin{aligned}<br>&amp; \quad A^Ty^\prime \geq c \\<br>\Rightarrow &amp; \quad \left\{<br>\begin{array}{l}<br>\lambda_1x_{11} + \lambda_2x_{21} + \cdots + \lambda_nx_{n1} \leq \theta x_{k1}\\<br>\vdots\\<br>\lambda_1x_{1m} + \lambda_2x_{2m} + \cdots + \lambda_nx_{nm} \leq \theta x_{km}\\<br>\lambda_1y_{11} + \lambda_2y_{21} + \cdots + \lambda_ny_{n1} \geq y_{k1}\\<br>\vdots\\<br>\lambda_1y_{1r} + \lambda_2y_{2r} + \cdots + \lambda_ny_{nr} \geq y_{kr}<br>\end{array}<br>\right.<br>\end{aligned}</p>
-<p>则CCR模式的数学模型的对偶形式如下：<br>\begin{aligned}<br>\min &amp; \quad \theta \\<br>s.t. &amp; \left\{<br>\begin{array}{l}<br>\sum_{j=1}^n \lambda_jX_j \leq \theta X_k\\<br>\sum_{j=1}^n \lambda_jY_j \leq Y_k\\<br>\lambda_j \geq 0, \quad j = 1,2,\cdots,n.<br>\end{array}<br>\right.<br>\end{aligned}</p>
-<h1 id="BCC模式"><a href="#BCC模式" class="headerlink" title="BCC模式"></a>BCC模式</h1><h1 id="交叉模式"><a href="#交叉模式" class="headerlink" title="交叉模式"></a>交叉模式</h1><h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
-<li><a href="https://blog.csdn.net/qq_41228463/article/details/108310361" target="_blank" rel="noopener">数据包络分析—CCR模型</a></li>
+<p>记<br>
+\begin{equation}<br>
+\begin{aligned}<br>
+c_{(m+r)\times1} &amp;= \left(0,\cdots,0, y_{k1}, \cdots, y_{kr} \right)^T \<br>
+x^\prime_{(m+r)\times1} &amp;= \left(\mu_1,\cdots,\mu_m, \omega_1,\cdots,\omega_r \right)^T\<br>
+A_{(n+1)\times(m+r)} &amp;= \left(<br>
+\begin{array}{cccccc}<br>
+-x_{11} &amp; \cdots &amp; -x_{1m} &amp; y_{11} &amp; \cdots &amp; y_{1r} \<br>
+\vdots &amp; \ddots &amp; \vdots &amp; \vdots  &amp; \ddots &amp; \vdots  \<br>
+-x_{n1} &amp; \cdots &amp; -x_{nm} &amp; y_{n1} &amp; \cdots &amp; y_{nr} \<br>
+x_{k1}&amp; \cdots &amp; x_{km}&amp; 0       &amp; \cdots &amp; 0<br>
+\end{array}<br>
+\right) \<br>
+b_{(n+1)\times1} &amp;= \left(0,\cdots,0,1\right)^T \<br>
+y^\prime &amp;= \left(\lambda_1,\cdots,\lambda_n, \theta \right)^T<br>
+\end{aligned}<br>
+\end{equation}</p>
+<p>则<br>
+$$\max \quad c<sup>Tx</sup>\prime \Rightarrow \max \quad \omega^TY_k$$<br>
+$$Ax^\prime \leq b \Rightarrow -\mu^TX_k + \omega^TY_k \leq 0, \mu^TX_k = 1$$<br>
+$$\min \quad b<sup>Ty</sup>\prime \Rightarrow \min\quad \theta$$<br>
+\begin{aligned}<br>
+&amp; \quad A<sup>Ty</sup>\prime \geq c \<br>
+\Rightarrow &amp; \quad \left{<br>
+\begin{array}{l}<br>
+\lambda_1x_{11} + \lambda_2x_{21} + \cdots + \lambda_nx_{n1} \leq \theta x_{k1}\<br>
+\vdots\<br>
+\lambda_1x_{1m} + \lambda_2x_{2m} + \cdots + \lambda_nx_{nm} \leq \theta x_{km}\<br>
+\lambda_1y_{11} + \lambda_2y_{21} + \cdots + \lambda_ny_{n1} \geq y_{k1}\<br>
+\vdots\<br>
+\lambda_1y_{1r} + \lambda_2y_{2r} + \cdots + \lambda_ny_{nr} \geq y_{kr}<br>
+\end{array}<br>
+\right.<br>
+\end{aligned}</p>
+<p>则CCR模式的数学模型的对偶形式如下：<br>
+\begin{aligned}<br>
+\min &amp; \quad \theta \<br>
+s.t. &amp; \left{<br>
+\begin{array}{l}<br>
+\sum_{j=1}^n \lambda_jX_j \leq \theta X_k\<br>
+\sum_{j=1}^n \lambda_jY_j \leq Y_k\<br>
+\lambda_j \geq 0, \quad j = 1,2,\cdots,n.<br>
+\end{array}<br>
+\right.<br>
+\end{aligned}</p>
+<h1 id="BCC模式"><a class="header-anchor" href="#BCC模式"></a>BCC模式</h1>
+<h1 id="交叉模式"><a class="header-anchor" href="#交叉模式"></a>交叉模式</h1>
+<h1 id="参考资料"><a class="header-anchor" href="#参考资料"></a>参考资料</h1>
+<ul>
+<li><a href="https://blog.csdn.net/qq_41228463/article/details/108310361" target="_blank" rel="noopener">数据包络分析–CCR模型</a></li>
 <li><a href="https://zhuanlan.zhihu.com/p/73096903" target="_blank" rel="noopener">数据包络分析法（DEA）——CCR</a></li>
 <li><a href="https://zhuanlan.zhihu.com/p/60853027" target="_blank" rel="noopener">DEA (数据包络分析)介绍及 python3 实现</a></li>
 </ul>
@@ -591,13 +677,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">392k</span>
+    <span title="站点总字数">401k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">5:56</span>
+    <span title="站点阅读时长">6:05</span>
 </div>
 
 
@@ -679,8 +765,6 @@
 
 
 
-
-  
 
 
 

@@ -317,17 +317,19 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><center>A Grammar of Interactive Graphics</center><br><a id="more"></a></p>
+        <center>A Grammar of Interactive Graphics</center>
+<a id="more"></a>
 <meta name="referrer" content="no-referrer">
-
-<h1 id="Altair"><a href="#Altair" class="headerlink" title="Altair"></a>Altair</h1><p>Altair是Python的一个可视化库，由华盛顿大学的数据科学家Jake Vanderplas编写。</p>
+<h1 id="Altair"><a class="header-anchor" href="#Altair"></a>Altair</h1>
+<p>Altair是Python的一个可视化库，由华盛顿大学的数据科学家Jake Vanderplas编写。</p>
 <blockquote>
 <ul>
 <li>官网：<a href="https://altair-viz.github.io/" target="_blank" rel="noopener">https://altair-viz.github.io/</a></li>
 <li>Example Gallery：<a href="https://altair-viz.github.io/gallery/index.html" target="_blank" rel="noopener">https://altair-viz.github.io/gallery/index.html</a></li>
 </ul>
 </blockquote>
-<p>安装：<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">pip install -U altair</span><br></pre></td></tr></table></figure></p>
+<p>安装：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">pip install -U altair</span><br></pre></td></tr></table></figure>
 <p>Altair中的基本对象是 Chart，它将数据框（DataFrame）作为单个参数。</p>
 <p>Chart有三个基本方法：</p>
 <ul>
@@ -349,16 +351,23 @@
 <li><code>row</code>：按行分布图片</li>
 <li><code>column</code>：按列分布图片</li>
 </ul>
-<h1 id="绘图"><a href="#绘图" class="headerlink" title="绘图"></a>绘图</h1><h2 id="面积图-mark-area"><a href="#面积图-mark-area" class="headerlink" title="面积图 mark_area()"></a>面积图 mark_area()</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> altair <span class="keyword">as</span> alt</span><br><span class="line"><span class="keyword">from</span> vega_datasets <span class="keyword">import</span> data</span><br><span class="line"></span><br><span class="line">source = data.iowa_electricity()  <span class="comment">## 导入数据</span></span><br><span class="line"></span><br><span class="line">alt.Chart(source).mark_area().encode(</span><br><span class="line">    x=<span class="string">"year:T"</span>,  <span class="comment">## T是指数据类型为Temporal，表示时间或日期数据</span></span><br><span class="line">    y=<span class="string">"net_generation:Q"</span>,  <span class="comment">## Q是指数据类型为Quantitative，表示连续/实数数据</span></span><br><span class="line">    color=<span class="string">"source:N"</span>  <span class="comment">## N是指数据类型为Nominal，表示定性数据（离散、无序）</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<h1 id="绘图"><a class="header-anchor" href="#绘图"></a>绘图</h1>
+<h2 id="面积图-mark-area"><a class="header-anchor" href="#面积图-mark-area"></a>面积图 mark_area()</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> altair <span class="keyword">as</span> alt</span><br><span class="line"><span class="keyword">from</span> vega_datasets <span class="keyword">import</span> data</span><br><span class="line"></span><br><span class="line">source = data.iowa_electricity()  <span class="comment">## 导入数据</span></span><br><span class="line"></span><br><span class="line">alt.Chart(source).mark_area().encode(</span><br><span class="line">    x=<span class="string">"year:T"</span>,  <span class="comment">## T是指数据类型为Temporal，表示时间或日期数据</span></span><br><span class="line">    y=<span class="string">"net_generation:Q"</span>,  <span class="comment">## Q是指数据类型为Quantitative，表示连续/实数数据</span></span><br><span class="line">    color=<span class="string">"source:N"</span>  <span class="comment">## N是指数据类型为Nominal，表示定性数据（离散、无序）</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
 <img src="/python-altair/210802%E9%9D%A2%E7%A7%AF%E5%9B%BE.png" class title="面积图">
-<h2 id="条形图-mark-bar"><a href="#条形图-mark-bar" class="headerlink" title="条形图 mark_bar()"></a>条形图 mark_bar()</h2><p>mark_bar() ：绘制条形图</p>
+<h2 id="条形图-mark-bar"><a class="header-anchor" href="#条形图-mark-bar"></a>条形图 mark_bar()</h2>
+<p>mark_bar() ：绘制条形图</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line">data = pd.DataFrame(&#123;</span><br><span class="line">    <span class="string">'a'</span>: list(<span class="string">'AAABBBBDDDDEE'</span>),</span><br><span class="line">    <span class="string">'b'</span>: [<span class="number">2</span>, <span class="number">7</span>, <span class="number">4</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">6</span>, <span class="number">8</span>, <span class="number">4</span>, <span class="number">7</span>, <span class="number">5</span>, <span class="number">12</span>, <span class="number">11</span>, <span class="number">10</span>]</span><br><span class="line">&#125;)  <span class="comment">## 创建一个数据框</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> altair <span class="keyword">as</span> alt</span><br><span class="line">alt.Chart(data).mark_bar().encode(</span><br><span class="line">    x=<span class="string">'a'</span>,</span><br><span class="line">    y=<span class="string">'average(b)'</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
 <img src="/python-altair/210802%E6%9D%A1%E5%BD%A2%E5%9B%BE.png" class title="条形图">
-<h2 id="地图-mark-geoshape"><a href="#地图-mark-geoshape" class="headerlink" title="地图 mark_geoshape()"></a>地图 mark_geoshape()</h2><p>mark_geoshape() ：地理形状图</p>
-<h2 id="mark-image"><a href="#mark-image" class="headerlink" title="mark_image()"></a>mark_image()</h2><p>mark_image() ：将图片绘制在坐标系中</p>
-<h2 id="线图-mark-line"><a href="#线图-mark-line" class="headerlink" title="线图 mark_line()"></a>线图 mark_line()</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> altair <span class="keyword">as</span> alt</span><br><span class="line"><span class="keyword">from</span> vega_datasets <span class="keyword">import</span> data</span><br><span class="line"></span><br><span class="line">source = data.stocks()</span><br><span class="line"></span><br><span class="line">alt.Chart(source).mark_line().encode(</span><br><span class="line">    x=<span class="string">'date'</span>,</span><br><span class="line">    y=<span class="string">'price'</span>,</span><br><span class="line">    color=<span class="string">'symbol'</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<h2 id="地图-mark-geoshape"><a class="header-anchor" href="#地图-mark-geoshape"></a>地图 mark_geoshape()</h2>
+<p>mark_geoshape() ：地理形状图</p>
+<h2 id="mark-image"><a class="header-anchor" href="#mark-image"></a>mark_image()</h2>
+<p>mark_image() ：将图片绘制在坐标系中</p>
+<h2 id="线图-mark-line"><a class="header-anchor" href="#线图-mark-line"></a>线图 mark_line()</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> altair <span class="keyword">as</span> alt</span><br><span class="line"><span class="keyword">from</span> vega_datasets <span class="keyword">import</span> data</span><br><span class="line"></span><br><span class="line">source = data.stocks()</span><br><span class="line"></span><br><span class="line">alt.Chart(source).mark_line().encode(</span><br><span class="line">    x=<span class="string">'date'</span>,</span><br><span class="line">    y=<span class="string">'price'</span>,</span><br><span class="line">    color=<span class="string">'symbol'</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
 <img src="/python-altair/210802%E7%BA%BF%E5%9B%BE.png" class title="线图">
-<h2 id="散点图-mark-point"><a href="#散点图-mark-point" class="headerlink" title="散点图 mark_point()"></a>散点图 mark_point()</h2><p><code>mark_point()</code> ：绘制散点图</p>
+<h2 id="散点图-mark-point"><a class="header-anchor" href="#散点图-mark-point"></a>散点图 mark_point()</h2>
+<p><code>mark_point()</code> ：绘制散点图</p>
 <ul>
 <li>如果只指定<code>mark_point()</code>，则画出来的只有一个点</li>
 </ul>
@@ -371,14 +380,18 @@
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 参考：https://github.com/altair-viz/altair_notebooks</span></span><br><span class="line"><span class="keyword">import</span> altair <span class="keyword">as</span> alt</span><br><span class="line"><span class="keyword">from</span> vega_datasets <span class="keyword">import</span> data</span><br><span class="line"></span><br><span class="line">cars = data.cars()  <span class="comment">## 载入汽车数据集cars</span></span><br><span class="line"></span><br><span class="line">alt.Chart(cars).mark_point().encode(</span><br><span class="line">    x=<span class="string">'Horsepower'</span>,  <span class="comment">## Horsepower作为x轴数据</span></span><br><span class="line">    y=<span class="string">'Miles_per_Gallon'</span>,  <span class="comment">## Miles_per_Gallon作为y轴数据</span></span><br><span class="line">    color=<span class="string">'Origin'</span>,  <span class="comment">## 以变量Origin（原产国）作为第三维度-颜色</span></span><br><span class="line">).interactive()</span><br></pre></td></tr></table></figure>
 <img src="/python-altair/210801%E6%95%A3%E7%82%B9%E5%9B%BE.png" class title="散点图">
 <p>点击“…”可选择将图片保存为PNG图片格式；鼠标移至图片区域，向下滑动鼠标可缩小数据点，向上滑动鼠标可放大数据点。</p>
-<h2 id="save"><a href="#save" class="headerlink" title="save()"></a>save()</h2><p>save() ：将图片保存为指定格式</p>
+<h2 id="save"><a class="header-anchor" href="#save"></a>save()</h2>
+<p>save() ：将图片保存为指定格式</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 将图片保存为html文件</span></span><br><span class="line">chart = alt.Chart(data).mark_bar().encode(</span><br><span class="line">    x=<span class="string">'a'</span>,</span><br><span class="line">    y=<span class="string">'average(b)'</span>,</span><br><span class="line">)</span><br><span class="line">chart.save(<span class="string">'chart.html'</span>)</span><br></pre></td></tr></table></figure>
-<h2 id="to-json"><a href="#to-json" class="headerlink" title="to_json()"></a>to_json()</h2><p>to_json() ：输出为JSON格式</p>
+<h2 id="to-json"><a class="header-anchor" href="#to-json"></a>to_json()</h2>
+<p>to_json() ：输出为JSON格式</p>
 <ul>
 <li>可使用该函数将图表输出为JSON格式，再结合Echarts在博客上绘制动态图表（Echarts可参考<a href="/%E5%8F%AF%E8%A7%86%E5%8C%96-Echarts.html" title="可视化 | Echarts">可视化 | Echarts</a>）</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">chart = alt.Chart(data).mark_bar().encode(</span><br><span class="line">    x=<span class="string">'a'</span>,</span><br><span class="line">    y=<span class="string">'average(b)'</span>,</span><br><span class="line">)</span><br><span class="line">print(chart.to_json())</span><br><span class="line"><span class="comment"># &#123;</span></span><br><span class="line"><span class="comment">#   "$schema": "https://vega.github.io/schema/vega-lite/v4.0.2.json",</span></span><br><span class="line"><span class="comment">#   "config": &#123;</span></span><br><span class="line"><span class="comment">#     "view": &#123;</span></span><br><span class="line"><span class="comment">#       "continuousHeight": 300,</span></span><br><span class="line"><span class="comment">#       "continuousWidth": 400</span></span><br><span class="line"><span class="comment">#     &#125;</span></span><br><span class="line"><span class="comment">#   &#125;,</span></span><br><span class="line"><span class="comment">#   "data": &#123;</span></span><br><span class="line"><span class="comment">#     "name": "data-f1e68a455420a2e3bea861e0a72caf7d"</span></span><br><span class="line"><span class="comment">#   &#125;,</span></span><br><span class="line"><span class="comment">#   "datasets": &#123;</span></span><br><span class="line"><span class="comment">#     "data-f1e68a455420a2e3bea861e0a72caf7d": [</span></span><br><span class="line"><span class="comment">#       &#123;</span></span><br><span class="line"><span class="comment">#         "a": "A",</span></span><br><span class="line"><span class="comment">#         "b": 2</span></span><br><span class="line"><span class="comment">#       &#125;,</span></span><br><span class="line"><span class="comment">#       &#123;</span></span><br><span class="line"><span class="comment">#         "a": "A",</span></span><br><span class="line"><span class="comment">#         "b": 7</span></span><br><span class="line"><span class="comment">#       &#125;,</span></span><br><span class="line"><span class="comment">#       &#123;</span></span><br><span class="line"><span class="comment">#         "a": "A",</span></span><br><span class="line"><span class="comment">#         "b": 4</span></span><br><span class="line"><span class="comment">#       &#125;,</span></span><br><span class="line"><span class="comment">#       &#123;</span></span><br><span class="line"><span class="comment">#         "a": "B",</span></span><br><span class="line"><span class="comment">#         "b": 1</span></span><br><span class="line"><span class="comment">#       &#125;,</span></span><br><span class="line"><span class="comment">#       &#123;</span></span><br><span class="line"><span class="comment">#         "a": "B",</span></span><br><span class="line"><span class="comment">#         "b": 2</span></span><br><span class="line"><span class="comment">#       &#125;,</span></span><br><span class="line"><span class="comment">#       &#123;</span></span><br><span class="line"><span class="comment">#         "a": "B",</span></span><br><span class="line"><span class="comment">#         "b": 6</span></span><br><span class="line"><span class="comment">#       &#125;,</span></span><br><span class="line"><span class="comment">#       &#123;</span></span><br><span class="line"><span class="comment">#         "a": "B",</span></span><br><span class="line"><span class="comment">#         "b": 8</span></span><br><span class="line"><span class="comment">#       &#125;,</span></span><br><span class="line"><span class="comment">#       &#123;</span></span><br><span class="line"><span class="comment">#         "a": "D",</span></span><br><span class="line"><span class="comment">#         "b": 4</span></span><br><span class="line"><span class="comment">#       &#125;,</span></span><br><span class="line"><span class="comment">#       &#123;</span></span><br><span class="line"><span class="comment">#         "a": "D",</span></span><br><span class="line"><span class="comment">#         "b": 7</span></span><br><span class="line"><span class="comment">#       &#125;,</span></span><br><span class="line"><span class="comment">#       &#123;</span></span><br><span class="line"><span class="comment">#         "a": "D",</span></span><br><span class="line"><span class="comment">#         "b": 5</span></span><br><span class="line"><span class="comment">#       &#125;,</span></span><br><span class="line"><span class="comment">#       &#123;</span></span><br><span class="line"><span class="comment">#         "a": "D",</span></span><br><span class="line"><span class="comment">#         "b": 12</span></span><br><span class="line"><span class="comment">#       &#125;,</span></span><br><span class="line"><span class="comment">#       &#123;</span></span><br><span class="line"><span class="comment">#         "a": "E",</span></span><br><span class="line"><span class="comment">#         "b": 11</span></span><br><span class="line"><span class="comment">#       &#125;,</span></span><br><span class="line"><span class="comment">#       &#123;</span></span><br><span class="line"><span class="comment">#         "a": "E",</span></span><br><span class="line"><span class="comment">#         "b": 10</span></span><br><span class="line"><span class="comment">#       &#125;</span></span><br><span class="line"><span class="comment">#     ]</span></span><br><span class="line"><span class="comment">#   &#125;,</span></span><br><span class="line"><span class="comment">#   "encoding": &#123;</span></span><br><span class="line"><span class="comment">#     "x": &#123;</span></span><br><span class="line"><span class="comment">#       "field": "a",</span></span><br><span class="line"><span class="comment">#       "type": "nominal"</span></span><br><span class="line"><span class="comment">#     &#125;,</span></span><br><span class="line"><span class="comment">#     "y": &#123;</span></span><br><span class="line"><span class="comment">#       "aggregate": "average",</span></span><br><span class="line"><span class="comment">#       "field": "b",</span></span><br><span class="line"><span class="comment">#       "type": "quantitative"</span></span><br><span class="line"><span class="comment">#     &#125;</span></span><br><span class="line"><span class="comment">#   &#125;,</span></span><br><span class="line"><span class="comment">#   "mark": "bar"</span></span><br><span class="line"><span class="comment"># &#125;</span></span><br></pre></td></tr></table></figure>
-<h2 id="X-Y"><a href="#X-Y" class="headerlink" title="X(), Y()"></a>X(), Y()</h2><p><code>X()</code> ：设置x轴的聚合函数aggregate、field、数据类型type<br><code>Y()</code> ：设置y轴的聚合函数aggregate、field、数据类型type</p>
+<h2 id="X-Y"><a class="header-anchor" href="#X-Y"></a>X(), Y()</h2>
+<p><code>X()</code> ：设置x轴的聚合函数aggregate、field、数据类型type<br>
+<code>Y()</code> ：设置y轴的聚合函数aggregate、field、数据类型type</p>
 <ul>
 <li>参数<code>aggregate</code>：设置聚合函数</li>
 <li>参数<code>type</code>：轴数据类型</li>
@@ -388,7 +401,8 @@
 <img src="/python-altair/210802%E8%AE%BE%E7%BD%AE%E8%BD%B4.png" class title="设置轴">
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line">data = pd.DataFrame(&#123;</span><br><span class="line">    <span class="string">'a'</span>: list(<span class="string">'AAABBBBDDDDEE'</span>),</span><br><span class="line">    <span class="string">'b'</span>: [<span class="number">2</span>, <span class="number">7</span>, <span class="number">4</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">6</span>, <span class="number">8</span>, <span class="number">4</span>, <span class="number">7</span>, <span class="number">5</span>, <span class="number">12</span>, <span class="number">11</span>, <span class="number">10</span>]</span><br><span class="line">&#125;)  <span class="comment">## 创建一个数据框</span></span><br><span class="line"></span><br><span class="line">alt.Chart(data).mark_bar(color=<span class="string">'firebrick'</span>).encode(</span><br><span class="line">    alt.Y(<span class="string">'a'</span>, title=<span class="string">'category'</span>),</span><br><span class="line">    alt.X(<span class="string">'average(b)'</span>, title=<span class="string">'avg(b) by category'</span>)  </span><br><span class="line">)</span><br><span class="line"><span class="comment">## 设置条形图颜色为firebrick</span></span><br><span class="line"><span class="comment">## 设置y轴标题为category</span></span><br><span class="line"><span class="comment">## 设置x轴标题为“avg(b) by category”</span></span><br></pre></td></tr></table></figure>
 <img src="/python-altair/210802%E8%AE%BE%E7%BD%AE%E8%BD%B42.png" class title="设置轴">
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
+<h1 id="参考资料"><a class="header-anchor" href="#参考资料"></a>参考资料</h1>
+<ul>
 <li><a href="https://altair-viz.github.io/" target="_blank" rel="noopener">Altair官网</a></li>
 <li><a href="https://mp.weixin.qq.com/s?__biz=MzIzNjc1NzUzMw==&amp;mid=2247512075&amp;idx=3&amp;sn=bcd88ceeaad7a89a4895982b1b61fb9f&amp;chksm=e8d00779dfa78e6fb71c176dce490b4a69f85458d4d2eb0ed781749cc833c926aa2b98f8cdfd&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">比Excel制图更强大，Python可视化工具Altair入门教程</a></li>
 </ul>
@@ -580,13 +594,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">392k</span>
+    <span title="站点总字数">401k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">5:56</span>
+    <span title="站点阅读时长">6:05</span>
 </div>
 
 
@@ -668,8 +682,6 @@
 
 
 
-
-  
 
 
 

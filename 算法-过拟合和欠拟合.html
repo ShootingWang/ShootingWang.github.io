@@ -307,28 +307,33 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><center>Overfitting & Underfitting</center><br><a id="more"></a></p>
+        <center>Overfitting & Underfitting</center>
+<a id="more"></a>
 <ul>
 <li><strong>过拟合 / 过配</strong>（overfitting）：学习器把训练样本自身的一些特点当作所有潜在样本都会具有的一般性质</li>
 <li><strong>欠拟合 / 欠配</strong>（underfitting）：学习器对训练样本的一般性质尚未学好</li>
 </ul>
-<h1 id="过拟合"><a href="#过拟合" class="headerlink" title="过拟合"></a>过拟合</h1><p>随着模型训练的进行，模型的复杂度增加，模型在训练数据集上的训练误差（training error）逐渐减小，但是在模型的复杂度达到一定程度时，模型在验证数据集上的误差反而随着模型的复杂度增加而增大，此时便发生了<strong>过拟合</strong>。</p>
-<h2 id="防止过拟合"><a href="#防止过拟合" class="headerlink" title="防止过拟合"></a>防止过拟合</h2><ul>
+<h1 id="过拟合"><a class="header-anchor" href="#过拟合"></a>过拟合</h1>
+<p>随着模型训练的进行，模型的复杂度增加，模型在训练数据集上的训练误差（training error）逐渐减小，但是在模型的复杂度达到一定程度时，模型在验证数据集上的误差反而随着模型的复杂度增加而增大，此时便发生了<strong>过拟合</strong>。</p>
+<h2 id="防止过拟合"><a class="header-anchor" href="#防止过拟合"></a>防止过拟合</h2>
+<ul>
 <li>early stopping</li>
 <li>Data augmentation</li>
 <li>Regularization</li>
 <li>Dropout</li>
 </ul>
-<h3 id="Early-Stopping"><a href="#Early-Stopping" class="headerlink" title="Early Stopping"></a>Early Stopping</h3><p>迭代次数截断，在模型对训练数据集迭代收敛之前停止迭代来防止过拟合。</p>
-<p>具体做法：<br>在每一个Epoch<sup><a href="#fn_1" id="reffn_1">1</a></sup>结束时，计算验证数据集的准确率（accuracy），当准确率不再提高时，就停止训练。</p>
+<h3 id="Early-Stopping"><a class="header-anchor" href="#Early-Stopping"></a>Early Stopping</h3>
+<p>迭代次数截断，在模型对训练数据集迭代收敛之前停止迭代来防止过拟合。</p>
+<p>具体做法：<br>
+在每一个Epoch<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>结束时，计算验证数据集的准确率（accuracy），当准确率不再提高时，就停止训练。</p>
 <blockquote>
-<p>一般的做法：在训练的过程中，记录到目前为止最好的验证集准确率，当连续n次Epoch没有达到最佳准确率时，则可认为准确率不再提高了，此时便可停止迭代。<br>即：</p>
-<script type="math/tex; mode=display">No-improvement-in-n</script><p>$n$是Epoch的次数，根据实际情况选取。</p>
+<p>一般的做法：在训练的过程中，记录到目前为止最好的验证集准确率，当连续n次Epoch没有达到最佳准确率时，则可认为准确率不再提高了，此时便可停止迭代。<br>
+即：<br>
+$$No-improvement-in-n$$<br>
+$n$是Epoch的次数，根据实际情况选取。</p>
 </blockquote>
-<blockquote id="fn_1">
-<sup>1</sup>. 一个Epoch集：对所有的训练数据的一轮遍历<a href="#reffn_1" title="Jump back to footnote [1] in the text."> &#8617;</a>
-</blockquote>
-<h3 id="扩增数据集"><a href="#扩增数据集" class="headerlink" title="扩增数据集"></a>扩增数据集</h3><p>获得更多的符合要求的数据</p>
+<h3 id="扩增数据集"><a class="header-anchor" href="#扩增数据集"></a>扩增数据集</h3>
+<p>获得更多的符合要求的数据</p>
 <p>获取方法：</p>
 <ul>
 <li>从数据源头采集更多数据</li>
@@ -336,27 +341,37 @@
 <li>重采样（Bootstrap）</li>
 <li>根据当前数据集估计数据分布参数，使用该分布生成更多数据</li>
 </ul>
-<h3 id="正则化"><a href="#正则化" class="headerlink" title="正则化"></a>正则化</h3><p>在对目标函数/代价函数优化时，在目标函数/代价函数后添加一个正则项（惩罚项）——降低模型的复杂度</p>
+<h3 id="正则化"><a class="header-anchor" href="#正则化"></a>正则化</h3>
+<p>在对目标函数/代价函数优化时，在目标函数/代价函数后添加一个正则项（惩罚项）——降低模型的复杂度</p>
 <ul>
-<li>$l1$正则<ul>
+<li>$l1$正则</li>
 <li>使用$l1$正则可以得到稀疏的权值</li>
-</ul>
-</li>
-<li>$l2$正则<ul>
+<li>$l2$正则</li>
 <li>使用$l2$正则可以得到平滑的权值</li>
 </ul>
-</li>
-</ul>
-<h4 id="l1-正则"><a href="#l1-正则" class="headerlink" title="$l1$正则"></a>$l1$正则</h4><h4 id="l2-正则"><a href="#l2-正则" class="headerlink" title="$l2$正则"></a>$l2$正则</h4><h3 id="Dropout"><a href="#Dropout" class="headerlink" title="Dropout"></a>Dropout</h3><p>通过修改ANN（人工神经网络）中隐藏层的神经元个数来防止ANN的过拟合</p>
-<h1 id="欠拟合"><a href="#欠拟合" class="headerlink" title="欠拟合"></a>欠拟合</h1><h2 id="如何克服欠拟合"><a href="#如何克服欠拟合" class="headerlink" title="如何克服欠拟合"></a>如何克服欠拟合</h2><ul>
+<h4 id="l1-正则"><a class="header-anchor" href="#l1-正则"></a>$l1$正则</h4>
+<h4 id="l2-正则"><a class="header-anchor" href="#l2-正则"></a>$l2$正则</h4>
+<h3 id="Dropout"><a class="header-anchor" href="#Dropout"></a>Dropout</h3>
+<p>通过修改ANN（人工神经网络）中隐藏层的神经元个数来防止ANN的过拟合</p>
+<h1 id="欠拟合"><a class="header-anchor" href="#欠拟合"></a>欠拟合</h1>
+<h2 id="如何克服欠拟合"><a class="header-anchor" href="#如何克服欠拟合"></a>如何克服欠拟合</h2>
+<ul>
 <li>决策树：扩展分支</li>
 <li>神经网络：增加训练轮数</li>
 </ul>
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
+<h1 id="参考资料"><a class="header-anchor" href="#参考资料"></a>参考资料</h1>
+<ul>
 <li><a href="https://blog.csdn.net/heyongluoyao8/article/details/49429629" target="_blank" rel="noopener">机器学习中防止过拟合的处理方法</a></li>
 <li><a href="https://juejin.im/post/5b441583f265da0fb01854c4" target="_blank" rel="noopener">机器学习中用来防止过拟合的方法有哪些？</a></li>
 <li><a href="https://book.douban.com/subject/26708119/" target="_blank" rel="noopener">周志华《机器学习》</a></li>
 </ul>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>一个Epoch集：对所有的训练数据的一轮遍历 <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
 
     </div>
 
@@ -545,13 +560,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">392k</span>
+    <span title="站点总字数">401k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">5:56</span>
+    <span title="站点阅读时长">6:05</span>
 </div>
 
 
@@ -633,8 +648,6 @@
 
 
 
-
-  
 
 
 

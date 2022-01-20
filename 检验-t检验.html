@@ -307,108 +307,143 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><center>t-test</center><br><a id="more"></a></p>
+        <center>t-test</center>
+<a id="more"></a>
 <ul>
 <li>适用于样本量小、总体方差未知的样本</li>
 <li>研究两组数据是否存在差异</li>
 </ul>
-<h1 id="t-分布"><a href="#t-分布" class="headerlink" title="$t$分布"></a>$t$分布</h1><p>Student’s t-distribution<sup><a href="#fn_1" id="reffn_1">1</a></sup></p>
+<h1 id="t-分布"><a class="header-anchor" href="#t-分布"></a>$t$分布</h1>
+<p>Student’s t-distribution<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
 <p>从均值为$\mu$、方差为$\sigma^2$的正态总体种抽取容量为$n$的随机样本，随机样本的</p>
 <ul>
 <li>均值：$\bar{x}$</li>
-<li>方差：$s^2=\frac{1}{n-1}\sum_{i=1}^n(x_i-\bar{x})^2$</li>
+<li>方差：$s<sup>2=\frac{1}{n-1}\sum_{i=1}</sup>n(x_i-\bar{x})^2$</li>
 </ul>
-<p>则随机变量T</p>
-<script type="math/tex; mode=display">T=\frac{\bar{x}-\mu}{s/\sqrt{n}}</script><p>服从自由度为$n-1$的$t$分布，即$T\sim t(n-1)$。</p>
+<p>则随机变量T<br>
+$$T=\frac{\bar{x}-\mu}{s/\sqrt{n}}$$<br>
+服从自由度为$n-1$的$t$分布，即$T\sim t(n-1)$。</p>
 <ul>
 <li>$t$分布是一种典型的长尾分布</li>
 </ul>
-<blockquote id="fn_1">
-<sup>1</sup>. ‘Student’是William Sealy Gosset的笔名<a href="#reffn_1" title="Jump back to footnote [1] in the text."> &#8617;</a>
-</blockquote>
-<h1 id="t-检验"><a href="#t-检验" class="headerlink" title="$t$检验"></a>$t$检验</h1><h2 id="单样本-t-检验"><a href="#单样本-t-检验" class="headerlink" title="单样本$t$检验"></a>单样本$t$检验</h2><p>设$x_1,\cdots,x_n$是来自$N(\mu,\sigma^2)$的样本，考虑如下三种关于$\mu$的检验问题：</p>
+<h1 id="t-检验"><a class="header-anchor" href="#t-检验"></a>$t$检验</h1>
+<h2 id="单样本-t-检验"><a class="header-anchor" href="#单样本-t-检验"></a>单样本$t$检验</h2>
+<p>设$x_1,\cdots,x_n$是来自$N(\mu,\sigma^2)$的样本，考虑如下三种关于$\mu$的检验问题：</p>
 <ol>
-<li><script type="math/tex; mode=display">H_0:\mu\leq\mu_0\quad vs \quad H_1:\mu>\mu_0</script></li>
-<li><script type="math/tex; mode=display">H_0:\mu\geq\mu_0\quad vs \quad H_1:\mu<\mu_0</script></li>
-<li><script type="math/tex; mode=display">H_0:\mu=\mu_0\quad vs \quad H_1:\mu\neq\mu_0</script></li>
+<li>$$H_0:\mu\leq\mu_0\quad vs \quad H_1:\mu&gt;\mu_0$$</li>
+<li>$$H_0:\mu\geq\mu_0\quad vs \quad H_1:\mu&lt;\mu_0$$</li>
+<li>$$H_0:\mu=\mu_0\quad vs \quad H_1:\mu\neq\mu_0$$</li>
 </ol>
-<p>对于上述检验问题.,若$\sigma$未知，则可用$t$检验统计量</p>
-<script type="math/tex; mode=display">t=\frac{\bar{x}-\mu_0}{s/\sqrt{n}}=\frac{\sqrt{n}(\bar{x}-\mu_0)}{s}</script><p>来进行检验。</p>
-<p>其中$s$为样本标准差</p>
-<script type="math/tex; mode=display">s^2=\frac{1}{n-1}\sum_{i=1}^n(x_i-\bar{x})^2</script><p>对于给定的样本观测值计算得到的检验统计量$t$的值为</p>
-<script type="math/tex; mode=display">t_0=\frac{\sqrt{n}(\bar{x}-\mu_0)}{s}</script><p>在零假设$H_0:\mu=\mu_0$下，有<br>$t\sim t(n-1)$</p>
+<p>对于上述检验问题.,若$\sigma$未知，则可用$t$检验统计量<br>
+$$t=\frac{\bar{x}-\mu_0}{s/\sqrt{n}}=\frac{\sqrt{n}(\bar{x}-\mu_0)}{s}$$<br>
+来进行检验。</p>
+<p>其中$s$为样本标准差<br>
+$$s<sup>2=\frac{1}{n-1}\sum_{i=1}</sup>n(x_i-\bar{x})^2$$</p>
+<p>对于给定的样本观测值计算得到的检验统计量$t$的值为<br>
+$$t_0=\frac{\sqrt{n}(\bar{x}-\mu_0)}{s}$$</p>
+<p>在零假设$H_0:\mu=\mu_0$下，有<br>
+$t\sim t(n-1)$</p>
 <p>在显著性水平为$\alpha$的情况下：</p>
 <ul>
-<li>检验问题1：$H_0:\mu\leq\mu_0\quad vs \quad H_1:\mu&gt;\mu_0$<ul>
-<li>拒绝域为<script type="math/tex; mode=display">C_1=\{t\geq t_{1-\alpha}(n-1)\}</script></li>
-<li>$p$值为<script type="math/tex; mode=display">p_1=P(t\geq t_0)</script>其中$t$是服从自由度为$n-1$的$t$分布的随机变量</li>
+<li>检验问题1：$H_0:\mu\leq\mu_0\quad vs \quad H_1:\mu&gt;\mu_0$</li>
+<li>拒绝域为<br>
+$$C_1={t\geq t_{1-\alpha}(n-1)}$$</li>
+<li>$p$值为<br>
+$$p_1=P(t\geq t_0)$$<br>
+其中$t$是服从自由度为$n-1$的$t$分布的随机变量</li>
+<li>检验问题2：$H_0:\mu\geq\mu_0\quad vs \quad H_1:\mu&lt;\mu_0$</li>
+<li>拒绝域为<br>
+$$C_2={t\leq t_{\alpha}(n-1)}$$</li>
+<li>$p$值为<br>
+$$p_2=P(t\leq t_0)$$<br>
+其中$t$是服从自由度为$n-1$的$t$分布的随机变量</li>
+<li>检验问题3：$H_0:\mu=\mu_0\quad vs \quad H_1:\mu\neq\mu_0$</li>
+<li>拒绝域为<br>
+$$C_3={|t|\geq t_{1-\alpha/2}(n-1)}$$</li>
+<li>$p$值为<br>
+$$p_3=P(|t|\geq |t_0|)$$<br>
+其中$t$是服从自由度为$n-1$的$t$分布的随机变量</li>
 </ul>
-</li>
-<li>检验问题2：$H_0:\mu\geq\mu_0\quad vs \quad H_1:\mu&lt;\mu_0$<ul>
-<li>拒绝域为<script type="math/tex; mode=display">C_2=\{t\leq t_{\alpha}(n-1)\}</script></li>
-<li>$p$值为<script type="math/tex; mode=display">p_2=P(t\leq t_0)</script>其中$t$是服从自由度为$n-1$的$t$分布的随机变量</li>
-</ul>
-</li>
-<li>检验问题3：$H_0:\mu=\mu_0\quad vs \quad H_1:\mu\neq\mu_0$<ul>
-<li>拒绝域为<script type="math/tex; mode=display">C_3=\{|t|\geq t_{1-\alpha/2}(n-1)\}</script></li>
-<li>$p$值为<script type="math/tex; mode=display">p_3=P(|t|\geq |t_0|)</script>其中$t$是服从自由度为$n-1$的$t$分布的随机变量</li>
-</ul>
-</li>
-</ul>
-<h2 id="独立样本-t-检验"><a href="#独立样本-t-检验" class="headerlink" title="独立样本$t$检验"></a>独立样本$t$检验</h2><p>设$x_1,\cdots,x_m$是来自正态总体$N(\mu_1,\sigma_1^2)$的样本，$y_1,y_2,\cdots,y_n$是来自另一个正态总体$N(\mu_2,\sigma_2^2)$的样本，两个样本相互独立，其中</p>
-<script type="math/tex; mode=display">\sigma_1=\sigma_2=\sigma但未知</script><p>考虑如下三类检验问题：</p>
+<h2 id="独立样本-t-检验"><a class="header-anchor" href="#独立样本-t-检验"></a>独立样本$t$检验</h2>
+<p>设$x_1,\cdots,x_m$是来自正态总体$N(\mu_1,\sigma_1<sup>2)$的样本，$y_1,y_2,\cdots,y_n$是来自另一个正态总体$N(\mu_2,\sigma_2</sup>2)$的样本，两个样本相互独立，其中<br>
+$$\sigma_1=\sigma_2=\sigma但未知$$<br>
+考虑如下三类检验问题：</p>
 <ol>
-<li><script type="math/tex; mode=display">H_0:\mu_1-\mu_2 \leq 0 \quad vs \quad H_1:\mu_1-\mu_2 > 0</script></li>
-<li><script type="math/tex; mode=display">H_0:\mu_1-\mu_2 \geq 0 \quad vs \quad H_1:\mu_1-\mu_2 < 0</script></li>
-<li><script type="math/tex; mode=display">H_0:\mu_1-\mu_2 = 0 \quad vs \quad H_1:\mu_1-\mu_2 \neq 0</script></li>
+<li>$$H_0:\mu_1-\mu_2 \leq 0 \quad vs \quad H_1:\mu_1-\mu_2 &gt; 0$$</li>
+<li>$$H_0:\mu_1-\mu_2 \geq 0 \quad vs \quad H_1:\mu_1-\mu_2 &lt; 0$$</li>
+<li>$$H_0:\mu_1-\mu_2 = 0 \quad vs \quad H_1:\mu_1-\mu_2 \neq 0$$</li>
 </ol>
-<p>已知$\bar{x}\sim N(\mu_1,\frac{1}{m}\sigma^2)$,$\bar{y}\sim N(\mu_2,\frac{1}{n}\sigma^2)$，且两个样本相互独立，则有</p>
-<script type="math/tex; mode=display">\bar{x}-\bar{y}\sim N\left(\mu_1-\mu_2, \left(\frac{1}{m}+\frac{1}{n} \right)\sigma^2\right)</script><p>所以有</p>
-<script type="math/tex; mode=display">\frac{(\bar{x}-\bar{y})-(\mu_1-\mu_2)}{\sqrt{\frac{1}{m}+\frac{1}{n}}\sigma}\sim N(0,1)</script><p>因为</p>
-<script type="math/tex; mode=display">\frac{(m-1)}{\sigma^2}s_x^2=\frac{1}{\sigma^2}\sum_{i=1}^m(x_i-\bar{x})^2\sim\chi^2(m-1)</script><script type="math/tex; mode=display">\frac{(n-1)}{\sigma^2}s_y^2=\frac{1}{\sigma^2}\sum_{i=1}^n(y_i-\bar{y})^2\sim\chi^2(n-1)</script><p>所以有</p>
-<script type="math/tex; mode=display">\frac{(m+n-2)}{\sigma^2}s_w^2=\frac{1}{\sigma^2}\left(\sum_{i=1}^m(x_i-\bar{x})^2+\sum_{j=1}^n(y_j-\bar{y})^2 \right)\sim\chi^2(m+n-2)</script><p>其中</p>
-<script type="math/tex; mode=display">s_w^2=\frac{1}{m+n-2}\left(\sum_{i=1}^m(x_i-\bar{x})^2+\sum_{j=1}^n(y_j-\bar{y})^2 \right)</script><p>所以<br>\begin{aligned}<br>t&amp;=\frac{N(0,1)}{\sqrt{\frac{\chi^2(m+n-2)}{m+n-2}}}\sim t(m+n-2)\\<br>&amp;=\frac{\frac{(\bar{x}-\bar{y})-(\mu_1-\mu_2)}{\sqrt{\frac{1}{m}+\frac{1}{n}}\sigma}}{\sqrt{\frac{(m+n-2)}{\sigma^2}s_w^2/(m+n-2)}}\\<br>&amp;=\frac{(\bar{x}-\bar{y})-(\mu_1-\mu_2)}{s_w\sqrt{\frac{1}{m}+\frac{1}{n}}} \sim t(m+n-2)<br>\end{aligned}</p>
-<p>配对样本$t$检验的统计量为</p>
-<script type="math/tex; mode=display">t=\frac{\bar{x}-\bar{y}}{s_w\sqrt{\frac{1}{m}+\frac{1}{n}}} \sim t(m+n-2)</script><p>对给定样本，计算得到统计量的值为</p>
-<script type="math/tex; mode=display">t_0=\frac{\bar{x}-\bar{y}}{s_w\sqrt{\frac{1}{m}+\frac{1}{n}}}</script><p>在显著性水平为$\alpha$的情况下：</p>
+<p>已知$\bar{x}\sim N(\mu_1,\frac{1}{m}\sigma^2)$,$\bar{y}\sim N(\mu_2,\frac{1}{n}\sigma^2)$，且两个样本相互独立，则有<br>
+$$\bar{x}-\bar{y}\sim N\left(\mu_1-\mu_2, \left(\frac{1}{m}+\frac{1}{n} \right)\sigma^2\right)$$<br>
+所以有<br>
+$$\frac{(\bar{x}-\bar{y})-(\mu_1-\mu_2)}{\sqrt{\frac{1}{m}+\frac{1}{n}}\sigma}\sim N(0,1)$$</p>
+<p>因为<br>
+$$\frac{(m-1)}{\sigma<sup>2}s_x</sup>2=\frac{1}{\sigma<sup>2}\sum_{i=1}</sup>m(x_i-\bar{x})<sup>2\sim\chi</sup>2(m-1)$$<br>
+$$\frac{(n-1)}{\sigma<sup>2}s_y</sup>2=\frac{1}{\sigma<sup>2}\sum_{i=1}</sup>n(y_i-\bar{y})<sup>2\sim\chi</sup>2(n-1)$$<br>
+所以有<br>
+$$\frac{(m+n-2)}{\sigma<sup>2}s_w</sup>2=\frac{1}{\sigma<sup>2}\left(\sum_{i=1}</sup>m(x_i-\bar{x})<sup>2+\sum_{j=1}</sup>n(y_j-\bar{y})^2 \right)\sim\chi^2(m+n-2)$$<br>
+其中<br>
+$$s_w<sup>2=\frac{1}{m+n-2}\left(\sum_{i=1}</sup>m(x_i-\bar{x})<sup>2+\sum_{j=1}</sup>n(y_j-\bar{y})^2 \right)$$</p>
+<p>所以<br>
+\begin{aligned}<br>
+t&amp;=\frac{N(0,1)}{\sqrt{\frac{\chi^2(m+n-2)}{m+n-2}}}\sim t(m+n-2)\<br>
+&amp;=\frac{\frac{(\bar{x}-\bar{y})-(\mu_1-\mu_2)}{\sqrt{\frac{1}{m}+\frac{1}{n}}\sigma}}{\sqrt{\frac{(m+n-2)}{\sigma<sup>2}s_w</sup>2/(m+n-2)}}\<br>
+&amp;=\frac{(\bar{x}-\bar{y})-(\mu_1-\mu_2)}{s_w\sqrt{\frac{1}{m}+\frac{1}{n}}} \sim t(m+n-2)<br>
+\end{aligned}</p>
+<p>配对样本$t$检验的统计量为<br>
+$$t=\frac{\bar{x}-\bar{y}}{s_w\sqrt{\frac{1}{m}+\frac{1}{n}}} \sim t(m+n-2)$$</p>
+<p>对给定样本，计算得到统计量的值为<br>
+$$t_0=\frac{\bar{x}-\bar{y}}{s_w\sqrt{\frac{1}{m}+\frac{1}{n}}}$$</p>
+<p>在显著性水平为$\alpha$的情况下：</p>
 <ul>
-<li>检验问题1：$H_0:\mu_1-\mu_2 \leq 0 \quad vs \quad H_1:\mu_1-\mu_2 &gt; 0$<ul>
-<li>拒绝域为<script type="math/tex; mode=display">W_1=\{t\geq t_{1-\alpha(m+n-2)}\}</script></li>
-<li>$p$值为<script type="math/tex; mode=display">p_1=P(t\geq t_0)</script></li>
+<li>检验问题1：$H_0:\mu_1-\mu_2 \leq 0 \quad vs \quad H_1:\mu_1-\mu_2 &gt; 0$</li>
+<li>拒绝域为<br>
+$$W_1={t\geq t_{1-\alpha(m+n-2)}}$$</li>
+<li>$p$值为<br>
+$$p_1=P(t\geq t_0)$$</li>
+<li>$H_0:\mu_1-\mu_2 \geq 0 \quad vs \quad H_1:\mu_1-\mu_2 &lt; 0$</li>
+<li>拒绝域为<br>
+$$W_2={t\leq t_{\alpha}(m+n-2)}$$</li>
+<li>$p$值为<br>
+$$p_2=P(t\leq t_0)$$</li>
+<li>$H_0:\mu_1-\mu_2 = 0 \quad vs \quad H_1:\mu_1-\mu_2 \neq 0$</li>
+<li>拒绝域为<br>
+$$W_3={|t|\geq t_{1-\alpha/2}(m+n-2)}$$</li>
+<li>$p$值为<br>
+$$p_3=P(|t|\geq |t_0|)$$</li>
 </ul>
-</li>
-<li>$H_0:\mu_1-\mu_2 \geq 0 \quad vs \quad H_1:\mu_1-\mu_2 &lt; 0$<ul>
-<li>拒绝域为<script type="math/tex; mode=display">W_2=\{t\leq t_{\alpha}(m+n-2)\}</script></li>
-<li>$p$值为<script type="math/tex; mode=display">p_2=P(t\leq t_0)</script></li>
-</ul>
-</li>
-<li>$H_0:\mu_1-\mu_2 = 0 \quad vs \quad H_1:\mu_1-\mu_2 \neq 0$<ul>
-<li>拒绝域为<script type="math/tex; mode=display">W_3=\{|t|\geq t_{1-\alpha/2}(m+n-2)\}</script></li>
-<li>$p$值为<script type="math/tex; mode=display">p_3=P(|t|\geq |t_0|)</script></li>
-</ul>
-</li>
-</ul>
-<h2 id="配对样本"><a href="#配对样本" class="headerlink" title="配对样本"></a>配对样本</h2><p>设配对样本为</p>
-<script type="math/tex; mode=display">\mathbf{X}=\{X_1,X_2,\cdots,X_n\}</script><script type="math/tex; mode=display">\mathbf{Y}=\{Y_1,Y_2,\cdots,Y_n\}</script><p>令</p>
-<script type="math/tex; mode=display">\mathbf{Z}=\{Z_1,Z_2,\cdots,Z_n\}</script><p>其中</p>
-<script type="math/tex; mode=display">Z_i=X_i-Y_i</script><p>$i=1,2,\cdots,n$。</p>
-<p>$\mu$是$Z$的总体均值，设假设为</p>
-<script type="math/tex; mode=display">H_0:\mu=0\quad \mathrm{vs} \quad H_1:\mu\neq0</script><p>检验统计量为</p>
-<script type="math/tex; mode=display">T=\frac{\overline{Z}}{S_z/\sqrt{n}}\sim t(n-1)</script><p>拒绝域为</p>
-<script type="math/tex; mode=display">W=\left\{|T|\geq t_{1-\frac{\alpha}{2}}(n-1) \right\}</script><p>p值为</p>
-<script type="math/tex; mode=display">p=2\cdot t_{n-1}(|T|)</script><h1 id="t-检验-vs-u-检验"><a href="#t-检验-vs-u-检验" class="headerlink" title="$t$检验 vs $u$检验"></a>$t$检验 vs $u$检验</h1><h2 id="单样本"><a href="#单样本" class="headerlink" title="单样本"></a>单样本</h2><div>
+<h2 id="配对样本"><a class="header-anchor" href="#配对样本"></a>配对样本</h2>
+<p>设配对样本为<br>
+$$\mathbf{X}={X_1,X_2,\cdots,X_n}$$<br>
+$$\mathbf{Y}={Y_1,Y_2,\cdots,Y_n}$$<br>
+令<br>
+$$\mathbf{Z}={Z_1,Z_2,\cdots,Z_n}$$<br>
+其中<br>
+$$Z_i=X_i-Y_i$$<br>
+$i=1,2,\cdots,n$。</p>
+<p>$\mu$是$Z$的总体均值，设假设为<br>
+$$H_0:\mu=0\quad \mathrm{vs} \quad H_1:\mu\neq0$$</p>
+<p>检验统计量为<br>
+$$T=\frac{\overline{Z}}{S_z/\sqrt{n}}\sim t(n-1)$$<br>
+拒绝域为<br>
+$$W=\left{|T|\geq t_{1-\frac{\alpha}{2}}(n-1) \right}$$</p>
+<p>p值为<br>
+$$p=2\cdot t_{n-1}(|T|)$$</p>
+<h1 id="t-检验-vs-u-检验"><a class="header-anchor" href="#t-检验-vs-u-检验"></a>$t$检验 vs $u$检验</h1>
+<h2 id="单样本"><a class="header-anchor" href="#单样本"></a>单样本</h2>
+<div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: center;
-    }
+.dataframe thead th {
+    text-align: center;
+}
+</code></pre>
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -466,27 +501,29 @@
   </tr></tbody>
 </table>
 </div>
-
 <blockquote>
 <ul>
 <li>$u_0=\frac{\sqrt{n}(\bar{x}-\mu_0)}{\sigma}$</li>
+</ul>
+</blockquote>
+<ul>
 <li>$T$是服从自由度为$n-1$的$t$分布的随机变量</li>
 <li>$t_0=\frac{\sqrt{n}(\bar{x}-\mu_0)}{s}$</li>
 </ul>
-</blockquote>
-<h2 id="独立样本"><a href="#独立样本" class="headerlink" title="独立样本"></a>独立样本</h2><div>
+<h2 id="独立样本"><a class="header-anchor" href="#独立样本"></a>独立样本</h2>
+<div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: center;
-    }
+.dataframe thead th {
+    text-align: center;
+}
+</code></pre>
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -583,30 +620,34 @@
   </tr></tbody>
 </table>
 </div>
-
 <blockquote>
 <ul>
-<li>$u_1=\frac{\bar{x}-\bar{y}}{\sqrt{\frac{\sigma_1^2}{m}+\frac{\sigma_2^2}{n}}}$</li>
-<li>$t_1=\frac{\bar{x}-\bar{y}}{s_w\sqrt{\frac{1}{m}+\frac{1}{n}}}$</li>
-<li>$T_1$是服从自由度为$m+n-2$的$t$分布的随机变量</li>
-<li>$u_2=\frac{\bar{x}-\bar{y}}{\sqrt{\frac{s_x^2}{m}+\frac{s_y^2}{n}}}$</li>
-<li>$t_2=\frac{\bar{x}-\bar{y}}{\sqrt{\frac{s_x^2}{m}+\frac{s_y^2}{n}}}$</li>
-<li>$T_2$是服从自由度为$l$的$t$分布的随机变量，其中$l$为<script type="math/tex; mode=display">l=\frac{s_x^2/m+s_y^2/n}{\frac{s_x^2}{m^2(m-1)}+\frac{s_y^2}{n^2(n-1)}}</script>$l$一般不为整数，可以取与$l$最接近的整数代替之。</li>
+<li>$u_1=\frac{\bar{x}-\bar{y}}{\sqrt{\frac{\sigma_1<sup>2}{m}+\frac{\sigma_2</sup>2}{n}}}$</li>
 </ul>
 </blockquote>
-<h1 id="t-检验-vs-chi-2-检验"><a href="#t-检验-vs-chi-2-检验" class="headerlink" title="$t$检验 vs $\chi^2$检验"></a>$t$检验 vs $\chi^2$检验</h1><div>
+<ul>
+<li>$t_1=\frac{\bar{x}-\bar{y}}{s_w\sqrt{\frac{1}{m}+\frac{1}{n}}}$</li>
+<li>$T_1$是服从自由度为$m+n-2$的$t$分布的随机变量</li>
+<li>$u_2=\frac{\bar{x}-\bar{y}}{\sqrt{\frac{s_x<sup>2}{m}+\frac{s_y</sup>2}{n}}}$</li>
+<li>$t_2=\frac{\bar{x}-\bar{y}}{\sqrt{\frac{s_x<sup>2}{m}+\frac{s_y</sup>2}{n}}}$</li>
+<li>$T_2$是服从自由度为$l$的$t$分布的随机变量，其中$l$为<br>
+$$l=\frac{s_x<sup>2/m+s_y</sup>2/n}{\frac{s_x<sup>2}{m</sup>2(m-1)}+\frac{s_y<sup>2}{n</sup>2(n-1)}}$$<br>
+$l$一般不为整数，可以取与$l$最接近的整数代替之。</li>
+</ul>
+<h1 id="t-检验-vs-chi-2-检验"><a class="header-anchor" href="#t-检验-vs-chi-2-检验"></a>$t$检验 vs $\chi^2$检验</h1>
+<div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: center;
-    }
+.dataframe thead th {
+    text-align: center;
+}
+</code></pre>
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -636,15 +677,20 @@
   </tr></tbody>
 </table>
 </div>
-
-
-
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
+<h1 id="参考资料"><a class="header-anchor" href="#参考资料"></a>参考资料</h1>
+<ul>
 <li><a href="https://www.skillsyouneed.com/num/statistics-identifying-patterns.html" target="_blank" rel="noopener">Statistical Analysis: Identifying Patterns</a></li>
 <li><a href="https://book.douban.com/subject/5998092/" target="_blank" rel="noopener">概率论与数理统计教程</a></li>
 <li><a href="https://zhuanlan.zhihu.com/p/116002163" target="_blank" rel="noopener">数分面试-AB实验篇</a></li>
 <li><a href="https://pages.ucsd.edu/~lspangle/CourseDocs/Ttest-v-ChiSquare.pdf" target="_blank" rel="noopener">Differences between a T-Test and Chi Square</a></li>
 </ul>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>'Student’是William Sealy Gosset的笔名 <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
 
     </div>
 
@@ -833,13 +879,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">392k</span>
+    <span title="站点总字数">401k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">5:56</span>
+    <span title="站点阅读时长">6:05</span>
 </div>
 
 
@@ -921,8 +967,6 @@
 
 
 
-
-  
 
 
 
