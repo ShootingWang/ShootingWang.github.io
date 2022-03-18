@@ -1,0 +1,106 @@
+---
+title: TED | 5 Ways to Create Stronger Connections
+date: 2020-06-03 08:28:53
+categories: Everything
+tags: [TED,English]
+notshow: true
+hide: true
+---
+
+<center>Another New Week!</center>
+<!--more-->
+
+
+
+# 5 Ways to Create Stronger Connections
+- [5 Ways to Create Stronger Connections](https://www.ted.com/talks/robert_reffkin_5_ways_to_create_stronger_connections?referrer=playlist-how_to_sustain_meaningful_relationships_near_and_far#t-6045)
+- 2020.06.03
+
+**So when** was the last time you **worte a** handwritten notes? It's probably been a while.
+
+Technology ~~is changing~~ **has changed** the ways we communicate. You send emails, not letters, ~~take~~ **text** messages, not phone call**s**. ~~you~~ **We** order ~~a~~ delivery instead of cooking dinners in our kitchen. All in the name of efficiency. But here is the point, technology has made it easier to communicate, but it hasn't made it easier to connect with other human beings.
+
+I found **that** the secret to connecting in the high-tech, fast**-paced** ~~text~~ world that we~~'re living~~ **live in,** is doing a few small things the old-fashion**ed** ways.
+
+Write a letter. I **have** written thousands of handwritten notes. Thanking **people** for advice, thanking **them** for an interview **.** ~~,~~ **It just** ~~is~~ put**s** that extra effort to show somebody **that** you really care and **that** you **are willing** ~~won't~~ to go **above and** beyond. Some advices **for writing a** thank-you letter is  **to** really ~~making~~ **make** it clear **to the** person **that** you're writing to  the impact **that they have had** on your life. Talk about something specific, like "Thank you for the advice that you gave me**. It** is because of the advice you gave me, ~~then~~ **that** I am now doing ~~thing extra~~ **x**. People are looking to make a difference~~,~~ **And** so you can show someone **that they've really** ~~the~~ had **an** impact on the life you're living and the life you're pursuing, it **could have** ~~gets out~~ a huge impact.
+
+Pick up the phone and dial. We**'ve** hire**d** thousands of employees and I**'ve** personal**ly** called every single one of them to welcome them come to **the Compass** ~~this~~ family **. I'm able to set the tone of really** ~~and make people totally know~~ what I ~~really~~ want the company **to** be. ~~Well~~ **Where**, you know, people go **above and** beyond to make feel welcomed, and ~~make~~ **to give** people **a sense of** ~~feels~~ belonging. **And** sometimes I call~~ed~~ people on their last~~-year~~ **day of** ~~at~~ work. **When** people leave~~s~~, sometimes they**'re more** ~~move~~ transparent **than** they **ever** were **when they were still at the company.** ~~actually leaves the company.~~ **And so** it's a great opportunity to get ~~a kind of~~ feedback **that** ~~it~~ is very hard to get otherwise.
+
+Ask interesting meaningful questions when you get outside **of** the office. When I'm travelling the country very single night, I **will** have dinner with people **in the** company. **And I like to** ask questions, like, what is your underlying motivation, **what's something that is** ~~will something~~ happen**ed** this week **that meant a lot to you?**, and **when you** ~~we~~ go around the table, and people really open up, **and are able to** ~~people~~ engage**, it sets** a different tone. When people come back to the office, they can see each other and **they** know each other in a deep**er** way.
+
+Answet questions with honesty (rather than abstraction). And you know how **it feels when you go into an elevator and someone says,** ~~to go on to a letter, such as,~~  "How was your weekend?" it could**'ve been the** ~~be like, ~~ best weekend **ever, you could've met the love of your life,** ~~what you like,~~ and you will say, "Good, how was yours?" If you want to connect with people, then you have to open up, ~~I know~~ I am not always good at it, and I **imagine** most people ~~around~~ **aren't.** but that **is** why being open ~~send us~~ **stand out** so much because most people ~~want~~ **aren't**.
+
+Turn the video on. I would always recommend a ~~video~~ **videoconference** over **a** phone call, because **that's when** you can see **the** real personality **come out** ~~that they~~ , when you**'re** on video, you**'re forced to be present** , **it's almost a forcing mechanism** ~~if is also a force~~ to be **in the** ~~a~~ moment.
+
+Nobody succeed**s** ~~to~~ alone, the more you **can take time to develop genuine, authentic** ~~contact a~~ relationship**s**, the more you&&'re going to be able to** ~~can~~ realise your dreams. ~~Because~~ you're ~~gonna~~ **going to** be able to take ~~rest~~ **big risks** and vyou could never~~ **know that there's a network of people** to cheer you on and to ~~some~~ support your efforts.
+
+# 5 Ways to Kill Your Dreams
+- [5 Ways to Kill Your Dreams](https://www.ted.com/talks/bel_pesce_5_ways_to_kill_your_dreams)
+- 2020.06.05
+
+I dedicated **the past two years** to understanding how people **achieve** ~~kill~~ their dreams. When we think ~~of~~ **about** the dreams we have, and **the dent we want to leave** ~~what are living~~ in the universe, it is ~~trying~~ **striking** to seek how big **of an overlap there is** between the dreams we have and the projects that never happened. 
+
+So I'm here to talk to you about 5 ways how not to follow your dreams.
+
+One, believe in overnight success. **You know the** ~~in order~~ story, right? **The tech** ~~that take~~ guy **built** a mobile **app** ~~way~~ and **sold it** ~~saw a~~ very fast **for a** lot of money. You know, the story may seem~~ed~~ real, but I bet it is **incomplete** ~~incon~~. If you go investigate further, the guy has **done** ~~then 38~~ **30 apps** before and he **has done a** ~~is the~~ Master**'s on the topic,** ~~or~~ **a** PhD. He ~~is~~ **has** been working on ~~a~~ **the** topic for ~~a like~~ 20 years. 
+
+~~It~~ **This** is really interesting. I myself have a story **in Brazil** ~~involced you~~ that people think it's an overnight success. I ~~gone~~ **come** from ~~my~~ **a humble**(简陋的, 低劣的) family, and 2 weeks before **the deadline to apply for MIT,** ~~they land the flight I stucked at op processess~~ **I started the application process. And, volia!** ~~and~~ I got ~~it~~ **in**. People may think it's an overnight success, but that only ~~works~~ **worded** because for the 17 years **prior to that** ~~today~~, I took life **and** education seriously. Your overnight success **story** ~~, sorry, it~~ is always always **a** result~~s~~ of everything **you've done in** your life through that moment.
+
+
+Two, believe someone else has the answers for you. ~~Consequently~~ **Constantly**, people want to **help** out, right? All sorts of people, your family, your friends, your business partners, they all have opinions on which path you should take, "And let me tell you, go through ~~these b~~ **this pipe."** but **whenever** ~~if~~ you ~~never~~ go inside, there ~~is~~ **are** ~~always~~ **other** ways you have to pick as well. And you need to make those decisions yourself. No one else has the perfect answers for your life, and you need to keep picking those decisions, right? The ~~b~~ **pipes** are infinite, **and you** ~~they~~ are ~~gone~~ **going** to bump your head and **it's a part of** ~~spout to~~ the process.
+
+Three, ~~that's~~ **and it's** very **subtle** ~~that~~ **but** very **important**. Decide to settle when ~~girl~~ **growth** is ~~voluntee~~ **guaranteed.** so **when** your life is going ~~to~~ great, you have put together **a** great team and you have **growing revenue,** ~~go renew~~ and everything to ~~settle~~ **set-- time to settle**. When I **launched** my first book, I work**ed** really, really hard to **distribute it everywhere in Brazil.** ~~beauty every very , 2~~ **With that, over three** million people **downloaded it,** over 50,000 people ~~for~~ **bought** physical copies. When ~~they~~ **I** wrote ~~the~~ **a sequel**(续集), some impact was ~~volunteed~~ **guaranteed**. Even **if I did** little, **sales would** ~~will~~ be OK. But OK is never OK, when you're ~~going~~ **growing towards a** peak , you need to work hard**er than** ever and ~~found~~ **find yourself** ~~there is~~ another peak. Right, maybe **if I did** ~~for~~ little, a couple ~~of 500,000~~ **hundred thousand** people would read it, that **is great** ~~the~~ already. But if you work hard**er** ~~and~~ **than** ever, I ~~convince it is~~ **can bring this** number ~~per~~ **up tp** million**s**. That's why I decide**d,** **with** my new book, to ~~devote~~ **go to** every single ~~step~~ **state of Brazil.** And I can **already see a** higher peak. ~~it's~~ **There is** no time to settle down.
+
+Forth ~~thing~~ **tip**, ~~it's~~ **and that's** really important, believe ~~that~~ the fault is someone else**'s**. I **constantly** see people saying, "yes, I ~~have these~~ **had this** great idea~~s~~ but no **investor had the vision** ~~one has~~ to invest."  "it's a great product, but you know, the market is so bad, the sale**s** didn't go well." or "I can't found **good talent**, my team is so **below expectations.** " If you have dreams, it's your responsilbility to make them happen. Yes, it may be hard to find talent, yes, the market maybe be bad. But if no one invest**ed** in your idea, if no one your product~~s~~, for sure, there is something that is your fault.
+
+~~Definately~~ **Definitely**, you need to get your dreams and make them happen, and no one **achieved their goals** ~~are go along~~ **alone**. But if you didn't make them happen, it's your fault~~s~~, and no one ~~knows~~ **else's**. Be responsible ~~to~~ **for** your dreams.
+
+And one last tip, and this one is really important as well, believe that the only thing**s** that matter~~s~~ are the dreams themselves. ~~One says act~~ **Once I saw an ad,** and **it was a lot** ~~he talks to lots~~ of friends, they **were** going up ~~for~~ **a** mountain~~s~~ **,it was a** very high mountain, and **it was** a lot of work. **You can see that** they were sweaty and **this** was **tough.** And they were going ~~enough~~ **up**, and they finally ~~make~~ **made it** to the peak. ~~And~~ Of course, they decided to celebrate, and they celebrated, "Yes! We made it! We are at the top!" Two seconds later, one ~~looked~~ **looks** at **the** each other ~~,~~ **and syas** ~~said~~, "OK, let's go down." 
+
+Life is never about the ~~golden~~ **goals themselves** , life is about the ~~dreams~~ **journey**. Yes, you should~~n't drive~~ **enjoy** the ~~golden~~ **goals themselves** , but people think that you have dreams and whenever you get to reach**ing** one of those dreams**, it's a magical place where happiness will** ~~some magic placed would happen~~ all ~~over~~ around. But **achieving a** ~~I the~~ dream is a momentary **sentation,**(感悟) ~~section~~ and your life is not. The only way to really achieve all **of** your dreams is to fully enjoy every step of your **journey.** That's the best way. And your **journey** is simple, it is made **of** steps . Some steps will be right on. Sometimes ~~your~~ **you will** trip. If it is right on, celebrate. Because some people will **wait a lot** ~~lose~~ to celebrate, and if you trip**ped**, **turn that into** ~~there is~~ something to learn, if every step becomes something to learn~~,~~ **or** something to celebrate, you will for sure enjoy the journey. 
+
+So, 5 tips, believe in overnight success, believe someone else has the answers for you, believe ~~if if voluntee~~ **that when growth is guaranteed,** you should settle ~~all~~ down, believe ~~that~~ **the** fault someone else**'s** and believe that only the goals themselves matter. Believe me? ~~If~~ you do that, and you **will** destroy your dreams.
+
+# 5 Ways to Listen Better
+- [5 Ways to Listen Better](https://www.ted.com/talks/julian_treasure_5_ways_to_listen_better/up-next)
+- 2020.06.10
+
+We are ~~using~~ **losing** our listening, we spend roughly 60% of our communication time listening. But we're not **very** good at it, we retain just 25% **of** what we hear. Now, not you, not this talk, but that is generally true. 
+
+Let's define listening as making meaning from sound, it's a mental process, ~~as~~ **and it's** a process of extraction. 
+
+We use ~~pre~~ **pretty cool** technique**s** to do this, one of them is pattern recognition. **So in a cocktail** party like this, if I say, "David, **Sarah,** pay attention!" some of you just **sat** up. we recognise pattern**s** to distinguish noise from signal~~s~~, and ~~expressions our made~~ **especially our name**. ~~Different thing~~ **Differencing** is another technique we use while this ~~pic~~ **pink** noise **on for more than** ~~from~~ a couple of minutes, you ~~will li see~~ **would literally（adv. 逐字地; 照字面地；确实地, 真正地） cease (停止) to hear it**. We listen to ~~different~~ **differences** , we discount sounds that remain **the same**. 
+
+And then there is a whole **range of filters.** ~~brain of ,~~ These **filters** take ~~up~~ **us** from all **sound** down to what we pay attention to. Most of people ~~aren't~~ **entirely** ~~partly~~ unconscious of these ~~photos~~ **filters**. But they **actually** ~~action~~ they create reality **in a** way because they tell us what we**'re** pay**ing** attention to right now. **I will** give you one example **of** that. ~~attention~~ **Intention**(意向，意图) is very important **in sound,** ~~to~~ **in** listen**ing.** ~~sound and listening~~. When I married my wife, I promised **her** I ~~will~~ **would** listen to her every day ~~and~~ as if for the first time, now that's something I ~~to show~~ **fall short of** ~~off~~ on ~~the~~ **a** daily basis. 
+
+But it's great ~~attention~~ **intention** to have **in** a relationship. 
+
+But that's not all. Sound place**s** in space and in time. If you close your eyes right now in this room, you**'re** ~~won't~~ aware of the size of the room from the ~~rewavation~~ **reverberation**(反响，回响) and ~~they~~ **the** bouncing **of** the sound ~~of~~ **off the surfaces;** ~~And~~ you**'re** aware of how many people **are** around you, because of the micro-noise**s** you**'re** receiving. And sound places **us** in time as well, because sound always has time ~~and~~ **embedded in it** . In fact, I ~~will~~ **would** suggest **that** our listening is the main way that we~~'re experiencing~~ **experience** the flow of time from past to future. So, "sonority (响亮) is time and meaning"**--a great quote.** 
+
+I said at the beginning, we are losing our listening, why did I say that? **Well, there are a lot of reasons for this.** ~~Why do we lose for it?~~ First of all, we invented **ways of** recording, first, writing, then ~~ordinary~~ **audio** recording, and now video recording as well. The premium on ~~the~~ **accurate** and careful listening has simply disappeared. Secondly, the world is now so noisy **, with this cacophony**(杂音) ~~when this is~~ going on visually and auditorily, it's just hard to listen, **it's** tiring to listen. Many people take **refuge (庇护)in** headphones, but they turn big, public spaces like this, **shared soundscapes（音响范围,音景）,** ~~sound skipped~~ into millions of tiny, little personal sound bubbles. **In this scenario,** ~~and listen our area~~ nobody **is** listening to anybody. 
+
+We're becoming ~~inpatient~~ **impatient**. We don't want **oratory (辞藻华丽的言辞) anymore** , we want sound bites. And ~~they are~~ **the art of** conversation is being replaced -- **dangerously,** ~~dangerly~~ I think-- **by** personal broadcasting. I don't know how much listening ~~where~~ **there** is in this  **conversation,** ~~composation~~ which is sadly very common, especially in the UK. We're becoming **desensitized**(不敏感，脱敏) ~~dis~~. Our media have to **scream at us** ~~matters~~ with these kind**s** of headlines in order to get our attention. And that means **it** is hard for us to pay attention to the quiet **, the subtle**(敏感的, 敏锐的, 有辨别力的) ~~subtitle~~ **, the understated** . 
+
+This is a serious problem that we're losing our listening. This is not trivival, because listening is our **access** to understanding, conscious listening always creates understanding, and only ~~with our~~ **without** conscious ~~thing~~ **listening** can these things happen. ~~And what~~ **A world where** we don't listen to each other **at all** ~~that the~~ is a very scary place indeed. So I'd like to share with you 5 simple exercise**s,** tools you can take away with you, to improve your own conscious listening, would you like that? Good.
+
+The first one is silence. Just 3 minutes a day of silence is a wonderful exercise to reset your ears and to recalibrate(重新校准) it, so **that** you can hear the quiet ~~to get~~ **again**. If you can't get absolute silence, go ~~to~~ **for** quiet, that **is absolutely fine** ~~sounds very fun~~.
+
+Second, I call this, the mixer. So **even** if you**'re in a** noisy **environment** ~~and~~ like this, **and** we spend a lot of time in places like this, listen **in the coffee bar to** ~~and ,~~ how many channels of these sound can I hear? How many individual channels in that mix ~~you can hear~~ **am I listening to**? You can do **it in a beautiful** place **as** well, like **in** a lake, how many birds **am** I hearing? Where are they? Where ~~is their reports~~ **are those ripples**(起潺潺声;波纹，涟漪)? It's a great exercise for improving the quality of your listening.
+
+Third, this exercise I call , **"savoring,"**(仔细品味) and this is ~~I~~ **a** beutiful ~~exercising~~ **exercise. It's** about enjoying ~~Monday~~ **mundane**(世俗的，平凡的；世界的，宇宙的) sounds. This, for example, is my **tumble dryer**(滚筒式烘干机) ~~driver~~. It's a ~~worth~~ **waltz**, one two three, one two three, one two three, I love it! Or just try this one for **size.** ~~exercise~~, Wow! So ~~Monday~~ **mundane** sounds can be really interesting if you pay attention. I call that the **"hidden choir**(合唱队) ~~quiet,~~ it's around us all the time.
+
+The next exercise is probably the most important **of** all of these, **if you** just take one ~~single way~~ **thing away. This is** listening positions--The ~~ideal~~ **idea that** you can move ~~you~~ **your** listening position~~s~~ to ~~work~~ **whar's appropriate** to what you**'re** listening to. This is ~~a plan~~ **playing** with **those filters.** ~~to member~~ **Remenble** I ~~give~~ **gave you those filters?** ~~to giving something place~~ **It's starting to play** with them **as levers, to** get conscious about them and to move to different places. These are just some of **the** listening positions, **or scales** ~~we are scare~~ of listening positions**, that** you ~~could~~ **can** use. ~~they~~ **There** are many. Have fun with that**. It** is very exciting.
+
+And finally, ~~and I~~ **an acronym**(首字母缩略词) , you ~~could~~ **can** use this ~~thing~~ **in** listening **, in** ~~and~~ communication. If you **are in** ~~and~~ any one of those roles **--and** I think ~~might~~ **that** probably **is** everybody who **is** ~~listens~~ **listening** to this talk. The **acronym** is "RASA", which is **the Sanskrit** word~~s~~ for **"juice"** and **"essence** . And *RASA* stands for *Receive*, which means pay attention to **the** person; *Appreciate*, **making little** ~~that can ignore~~ noise**s like "hmm", "Oh", "OK";** *Summarise* **--the word**  ~~was~~ "so" is very important ~~to~~ **in communication;** and *Ask*, ask questions after**wards** .
+
+Now, sound is my passion **, it** is my ~~love~~ **life.**  I **wrote a whole book** about it. So I live to listen. **That's** too much to ask for most people. But I believe every human being ~~least~~ **needs to listen** conscious**ly** in order to live **fully** ~~for live,~~**--**connected in space, and in time to the ~~physics~~ **physical** world around us, connected **in** understanding to each other, not to mention **spiritually** ~~spirits~~ connecte,d because every ~~spirit~~ **spiritual path** I know **of has** ~~have~~ listening and ~~con~~ **contemplation**(沉思，意图，期望) ~~is hard~~ **at its heart**. 
+
+That is why we need to teach listening in our schools as a skill. Why is **it** not ~~talk~~ **taught?** **It** is crazy, and **if** we can teach listening in our schools, we can take our listening ~~or~~ **off slippery**(狡猾的，滑的) slope to ~~danger~~ **that dangerous,** scary world that I talk**ed** about, and move it to **a** place **where** everybody is consciously listening all the time, ~~please~~ **or at least** capable **of** doing **it** ~~that~~. 
+
+Now I don't know how to do that. But this is TED, and I think the TED community is capable of anything, so I invite you to connect with me, connect to each other, take this **mission out.** ~~air,~~ And **let's get** listening **in schools,** ~~to~~ and transform the ~~words~~ **world in** one generation to **a** conscious **, listening** world**--**a world of connection, a world of understanding, and a world of peace.
+
+Thank you for listening to me today.
+
+# 相关文章
+> - {% post_link TED-TrySomethingNewfor30days Try Something New for 30 days %} 
+> - {% post_link TED-WhyDoCatsActSoWeird Why Do Cats Act So Weird %}

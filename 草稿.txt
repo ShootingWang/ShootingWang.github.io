@@ -1,0 +1,15 @@
+    <% if(theme.post.toc.enable && page.toc != false){ %>
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <%- partial('_partial/toc') %>
+      </div>
+    <% } %>
+
+
+
+post.ejs中的内容
+
+
+
+index.njk
+{%- if post.notshow != true %}
+    {%- endif %}

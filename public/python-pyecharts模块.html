@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+<meta name="baidu-site-verification" content="GLZSr3LDqT" />
+<meta name="google-site-verification" content="fZvQBljM9I6UA4l4wwiA5wECEn7k0V4-DgCfWEPNtFc" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon2.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon2.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"github.com","root":"/","scheme":"Pisces","version":"8.0.0-rc.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"valine","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+<link rel="stylesheet" href="/js/prism/prism.css">
+
+<script src="http://echarts.baidu.com/dist/echarts.common.min.js"></script>
+  <meta property="og:type" content="article">
+<meta property="og:title" content="Python | pyecharts">
+<meta property="og:url" content="https://github.com/ShootingWang/ShootingWang.github.io/python-pyecharts%E6%A8%A1%E5%9D%97.html">
+<meta property="og:site_name" content="Skye">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://github.com/python-pyecharts%E6%A8%A1%E5%9D%97/oldedge.png">
+<meta property="og:image" content="https://github.com/python-pyecharts%E6%A8%A1%E5%9D%97/newedgev.png">
+<meta property="og:image" content="https://github.com/python-pyecharts%E6%A8%A1%E5%9D%97/newedge.png">
+<meta property="og:image" content="https://github.com/python-pyecharts%E6%A8%A1%E5%9D%97/code1.png">
+<meta property="og:image" content="https://github.com/python-pyecharts%E6%A8%A1%E5%9D%97/pic2.png">
+<meta property="og:image" content="https://github.com/python-pyecharts%E6%A8%A1%E5%9D%97/pic.png">
+<meta property="og:image" content="https://github.com/python-pyecharts%E6%A8%A1%E5%9D%97/pic3.png">
+<meta property="og:image" content="https://github.com/python-pyecharts%E6%A8%A1%E5%9D%97/pic4.png">
+<meta property="article:published_time" content="2020-05-08T01:40:20.000Z">
+<meta property="article:modified_time" content="2020-05-26T05:51:56.277Z">
+<meta property="article:author" content="Skye">
+<meta property="article:tag" content="Python">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://github.com/python-pyecharts%E6%A8%A1%E5%9D%97/oldedge.png">
+
+<link rel="canonical" href="https://github.com/ShootingWang/ShootingWang.github.io/python-pyecharts%E6%A8%A1%E5%9D%97.html">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Python | pyecharts | Skye</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><script type="text/javascript" color="0,0,0" opacity='0.5' zIndex="-1" count="99" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+  </script>
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+        <span class="toggle-line toggle-line-first"></span>
+        <span class="toggle-line toggle-line-middle"></span>
+        <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Skye</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-update">
+
+    <a href="/update/" rel="section"><i class="fa fa-list-ul fa-fw"></i>更新</a>
+
+  </li>
+        <li class="menu-item menu-item-tool">
+
+    <a href="/tools/" rel="section"><i class="fa fa-tools fa-fw"></i>工具</a>
+
+  </li>
+        <li class="menu-item menu-item-treasure">
+
+    <a href="/treasure/" rel="section"><i class="fa fa-gem fa-fw"></i>资源</a>
+
+  </li>
+        <li class="menu-item menu-item-pool">
+
+    <a href="/pool/" rel="section"><i class="fa fa-book fa-fw"></i>题库</a>
+
+  </li>
+        <li class="menu-item menu-item-links">
+
+    <a href="/links" rel="section"><i class="fa fa-link fa-fw"></i>友链</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/ShootingWang" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+    <!-- echarts -->
+    <script type="text/javascript" src="/js/src/echarts.common.js"></script>
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://github.com/ShootingWang/ShootingWang.github.io/python-pyecharts%E6%A8%A1%E5%9D%97.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Skye">
+      <meta itemprop="description" content="刻苦，沉着，精进不休">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Skye">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Python | pyecharts
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-05-08 09:40:20" itemprop="dateCreated datePublished" datetime="2020-05-08T09:40:20+08:00">2020-05-08</time>
+            </span>
+
+          
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-05-26 13:51:56" itemprop="dateModified" datetime="2020-05-26T13:51:56+08:00">2020-05-26</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/python-pyecharts%E6%A8%A1%E5%9D%97.html#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/python-pyecharts%E6%A8%A1%E5%9D%97.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <center></center>
+<a id="more"></a>
+<h1 id="pyecharts"><a class="header-anchor" href="#pyecharts"></a>pyecharts</h1>
+<ul>
+<li><a href="https://pyecharts.org/" target="_blank" rel="noopener">pyecharts官网</a></li>
+</ul>
+<h2 id="安装"><a class="header-anchor" href="#安装"></a>安装</h2>
+<p>在Anaconda Prompt中输入：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip install pyecharts</span><br></pre></td></tr></table></figure>
+<p>安装过程可能会出现多种问题：</p>
+<ol>
+<li>缺少相关的库</li>
+<li>安装MarkupSafe出错</li>
+<li>提示找不到相应版本</li>
+</ol>
+<p><a href="https://blog.csdn.net/qq_37954088/article/details/88876791" target="_blank" rel="noopener">解决方法</a></p>
+<h2 id="渲染图片"><a class="header-anchor" href="#渲染图片"></a>渲染图片</h2>
+<p>仅运行demo，并不能直接获得图片，要想获得图片输出（即使用pyecharts将输出渲染成图片），需要进行一点操作，根据官网的说明，共有3种方式：</p>
+<ul>
+<li><a href="https://pyecharts.org/#/zh-cn/render_images" target="_blank" rel="noopener">渲染图片</a></li>
+</ul>
+<ol>
+<li>selenium</li>
+<li>phantomjs</li>
+<li>pyppeteer</li>
+</ol>
+<h3 id="selenium"><a class="header-anchor" href="#selenium"></a>selenium</h3>
+<p>安装snapshot-selenium（在Anaconda Prompt中运行）：</p>
+<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">pip install snapshot-selenium</span><br></pre></td></tr></table></figure>
+<p>使用selenium<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>，需要配置browser driver（浏览器驱动程序），详情可参见:<br>
+<a href="https://selenium-python.readthedocs.io/installation.html#drivers" target="_blank" rel="noopener">https://selenium-python.readthedocs.io/installation.html#drivers</a></p>
+<p>选择浏览器对应的driver，下面以Edge浏览器<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>为例：<br>
+<a href="https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/" target="_blank" rel="noopener">Edge的WebDriver下载地址</a></p>
+<ol>
+<li>首先查看Edge的版本信息（version）：点击Edge浏览器右上角的“…”，选择“设置”，“常规”的最下方有Edge版本信息<br>
+<meta name="referrer" content="no-referrer"></li>
+</ol>
+ <img src="/python-pyecharts%E6%A8%A1%E5%9D%97/oldedge.png" class title="旧Edge版本信息">
+<ul>
+<li>查看全新Edge的版本信息：点击右上角的“…”，选择“帮助与反馈”中的“关于Microsoft Edge”，即可查看相应的版本信息<br>
+<meta name="referrer" content="no-referrer"></li>
+</ul>
+ <img src="/python-pyecharts%E6%A8%A1%E5%9D%97/newedgev.png" class title="新Edge版本信息">
+<ol start="2">
+<li>接着下载<a href="https://msedgewebdriverstorage.z22.web.core.windows.net/?prefix=79.0.309.68/" target="_blank" rel="noopener">版本79.0.309.68的Edge对应的WebDriver</a>，从<a href="https://msedgewebdriverstorage.z22.web.core.windows.net/" target="_blank" rel="noopener">各版本WebDriver</a>中找到相应版本</li>
+<li>下载后解压，将driver的路径添加到系统路径中：</li>
+</ol>
+<ul>
+<li>右键单击“此电脑/我的电脑”</li>
+<li>选择“属性”</li>
+<li>选择“高级系统设置”—“环境变量”</li>
+<li>在”系统变量“中的”Path“添加driver的路径</li>
+</ul>
+<img src="/python-pyecharts%E6%A8%A1%E5%9D%97/newedge.png" class title="全新Edge">
+<p>Chrome的Driver下载可见：<br>
+<a href="https://sites.google.com/a/chromium.org/chromedriver/home" target="_blank" rel="noopener">https://sites.google.com/a/chromium.org/chromedriver/home</a></p>
+<p>使用selenium渲染图片，需要在运行python代码时添加以下代码（举例）：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> pyecharts.render <span class="keyword">import</span> make_snapshot</span><br><span class="line"><span class="keyword">from</span> snapshot_selenium <span class="keyword">import</span> snapshot</span><br><span class="line"></span><br><span class="line">make_snapshot(snapshot, calendar_base().render(), <span class="string">"calendar0.png"</span>)</span><br></pre></td></tr></table></figure>
+<p>总是报错(ノへ￣、)</p>
+<p>将Chrome Driver应用程序直接放在项目文件所在的文件夹中即可正常运行（惊了</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> pyecharts <span class="keyword">import</span> options <span class="keyword">as</span> opts</span><br><span class="line"><span class="keyword">from</span> pyecharts.charts <span class="keyword">import</span> Calendar</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> pyecharts.render <span class="keyword">import</span> make_snapshot</span><br><span class="line"><span class="keyword">from</span> snapshot_selenium <span class="keyword">import</span> snapshot</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">calendar_base</span><span class="params">()</span> -&gt; Calendar:</span></span><br><span class="line">    begin = datetime.date(<span class="number">2019</span>, <span class="number">1</span>, <span class="number">1</span>)</span><br><span class="line">    end = datetime.date(<span class="number">2019</span>, <span class="number">12</span>, <span class="number">31</span>)</span><br><span class="line">    data = [</span><br><span class="line">        [str(begin + datetime.timedelta(days=i)), </span><br><span class="line">        random.randint(<span class="number">1000</span>, <span class="number">25000</span>)] </span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range((end - begin).days + <span class="number">1</span>)</span><br><span class="line">    ]</span><br><span class="line">    c = (</span><br><span class="line">        Calendar()</span><br><span class="line">        .add(<span class="string">""</span>, data, calendar_opts=opts.CalendarOpts(range_=<span class="string">"2019"</span>))</span><br><span class="line">        .set_global_opts(</span><br><span class="line">            title_opts=opts.TitleOpts(title=<span class="string">"Calendar-2019年每日步数情况"</span>),</span><br><span class="line">            visualmap_opts=opts.VisualMapOpts(</span><br><span class="line">                max_ = <span class="number">20000</span>,</span><br><span class="line">                min_ = <span class="number">500</span>,</span><br><span class="line">                orient = <span class="string">"horizontal"</span>,</span><br><span class="line">                is_piecewise = <span class="literal">True</span>,</span><br><span class="line">                pos_top = <span class="string">"230px"</span>,</span><br><span class="line">                pos_left = <span class="string">"100px"</span>,</span><br><span class="line">            ),</span><br><span class="line">        )</span><br><span class="line">    )</span><br><span class="line">    <span class="keyword">return</span> c</span><br><span class="line"></span><br><span class="line">make_snapshot(snapshot, calendar_base().render(), <span class="string">"calendar0.png"</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="phantomjs"><a class="header-anchor" href="#phantomjs"></a>phantomjs</h3>
+<p>安装snapshot-phantomjs（在Anaconda Prompt中运行）：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install snapshot-phantomjs</span><br></pre></td></tr></table></figure>
+<p>使用snapshot-phantomjs需要安装phantom.exe，<a href="https://phantomjs.org/download.html" target="_blank" rel="noopener">下载地址</a></p>
+<p>下载后解压即可（需要将phantomjs所在路径添加到系统变量的PATH中）</p>
+<p>仍是报错(ノへ￣、)</p>
+<p>将Phantom.exe直接放在项目文件所在的文件夹内即可正常运行</p>
+<blockquote>
+<p><a href="https://phantomjs.org/quick-start.html" target="_blank" rel="noopener">简单认识PhantomJS</a></p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> pyecharts <span class="keyword">import</span> options <span class="keyword">as</span> opts</span><br><span class="line"><span class="keyword">from</span> pyecharts.charts <span class="keyword">import</span> Bar</span><br><span class="line"><span class="keyword">from</span> pyecharts.render <span class="keyword">import</span> make_snapshot</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> snapshot_phantomjs <span class="keyword">import</span> snapshot</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">bar_chart</span><span class="params">()</span> -&gt; Bar:</span></span><br><span class="line">    c = (</span><br><span class="line">        Bar()</span><br><span class="line">        .add_xaxis([<span class="string">"衬衫"</span>, <span class="string">"毛衣"</span>, <span class="string">"领带"</span>, <span class="string">"裤子"</span>, <span class="string">"风衣"</span>, <span class="string">"高跟鞋"</span>, <span class="string">"袜子"</span>])</span><br><span class="line">        .add_yaxis(<span class="string">"商家A"</span>, [<span class="number">114</span>, <span class="number">55</span>, <span class="number">27</span>, <span class="number">101</span>, <span class="number">125</span>, <span class="number">27</span>, <span class="number">105</span>])</span><br><span class="line">        .add_yaxis(<span class="string">"商家B"</span>, [<span class="number">57</span>, <span class="number">134</span>, <span class="number">137</span>, <span class="number">129</span>, <span class="number">145</span>, <span class="number">60</span>, <span class="number">49</span>])</span><br><span class="line">        .reversal_axis()</span><br><span class="line">        .set_series_opts(label_opts=opts.LabelOpts(position=<span class="string">"right"</span>))</span><br><span class="line">        .set_global_opts(title_opts=opts.TitleOpts(title=<span class="string">"Bar-测试渲染图片"</span>))</span><br><span class="line">    )</span><br><span class="line">    <span class="keyword">return</span> c</span><br><span class="line"></span><br><span class="line">make_snapshot(snapshot, bar_chart().render(), <span class="string">"bar0.png"</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="pyppeteer"><a class="header-anchor" href="#pyppeteer"></a>pyppeteer</h3>
+<p>安装snapshot-pyppeteer（在Anaconda Prompt中运行）：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install snapshot-pyppeteer</span><br></pre></td></tr></table></figure>
+<p>并执行chromium安装命令（在Anaconda Prompt中运行）：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pyppeteer-install</span><br></pre></td></tr></table></figure>
+<h3 id="最直接的渲染方式"><a class="header-anchor" href="#最直接的渲染方式"></a>最直接的渲染方式</h3>
+<p>最简单直接的方式：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">xxx().render()</span><br></pre></td></tr></table></figure>
+<p>其中<code>xxx()</code>是相应的pyecharts对象的执行命令</p>
+<p>输出的对象为html文件，打开html文件，单击右键可保存图片</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> pyecharts <span class="keyword">import</span> options <span class="keyword">as</span> opts</span><br><span class="line"><span class="keyword">from</span> pyecharts.charts <span class="keyword">import</span> Graph, Page</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">graph_base</span><span class="params">()</span> -&gt; Graph:</span></span><br><span class="line">    nodes = [</span><br><span class="line">        &#123;<span class="string">"name"</span>: <span class="string">"结点1"</span>, <span class="string">"symbolSize"</span>: <span class="number">10</span>&#125;,</span><br><span class="line">        &#123;<span class="string">"name"</span>: <span class="string">"结点2"</span>, <span class="string">"symbolSize"</span>: <span class="number">20</span>&#125;,</span><br><span class="line">        &#123;<span class="string">"name"</span>: <span class="string">"结点3"</span>, <span class="string">"symbolSize"</span>: <span class="number">30</span>&#125;,</span><br><span class="line">        &#123;<span class="string">"name"</span>: <span class="string">"结点4"</span>, <span class="string">"symbolSize"</span>: <span class="number">40</span>&#125;,</span><br><span class="line">        &#123;<span class="string">"name"</span>: <span class="string">"结点5"</span>, <span class="string">"symbolSize"</span>: <span class="number">50</span>&#125;,</span><br><span class="line">        &#123;<span class="string">"name"</span>: <span class="string">"结点6"</span>, <span class="string">"symbolSize"</span>: <span class="number">40</span>&#125;,</span><br><span class="line">        &#123;<span class="string">"name"</span>: <span class="string">"结点7"</span>, <span class="string">"symbolSize"</span>: <span class="number">30</span>&#125;,</span><br><span class="line">        &#123;<span class="string">"name"</span>: <span class="string">"结点8"</span>, <span class="string">"symbolSize"</span>: <span class="number">20</span>&#125;,</span><br><span class="line">    ]</span><br><span class="line">    links = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> nodes:</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> nodes:</span><br><span class="line">            links.append(&#123;<span class="string">"source"</span>: i.get(<span class="string">"name"</span>), <span class="string">"target"</span>: j.get(<span class="string">"name"</span>)&#125;)</span><br><span class="line">    c = (</span><br><span class="line">        Graph()</span><br><span class="line">        .add(<span class="string">""</span>, nodes, links, repulsion=<span class="number">8000</span>)</span><br><span class="line">        .set_global_opts(title_opts=opts.TitleOpts(title=<span class="string">"Graph-基本示例"</span>))</span><br><span class="line">    )</span><br><span class="line">    <span class="keyword">return</span> c</span><br><span class="line"></span><br><span class="line">graph_base().render()</span><br></pre></td></tr></table></figure>
+<h1 id="图表类型"><a class="header-anchor" href="#图表类型"></a>图表类型</h1>
+<h1 id="其他"><a class="header-anchor" href="#其他"></a>其他</h1>
+<h2 id="将echart插入到PPT"><a class="header-anchor" href="#将echart插入到PPT"></a>将echart插入到PPT</h2>
+<ol>
+<li>使用pyecharts画图并生成html文件</li>
+<li>查看html的源代码</li>
+<li>把相关的源代码复制到PPT插件中，点击运行即可</li>
+</ol>
+<blockquote>
+<p>需要安装PPT插件<code>Office Apps Fiddle for PowerPoint</code></p>
+</blockquote>
+<p>参考<a href="http://gallery.pyecharts.org/#/Sankey/sankey_base" target="_blank" rel="noopener">官方源码</a>生成html文件：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> pyecharts <span class="keyword">import</span> options <span class="keyword">as</span> opts</span><br><span class="line"><span class="keyword">from</span> pyecharts.charts <span class="keyword">import</span> Sankey</span><br><span class="line"></span><br><span class="line">nodes = [</span><br><span class="line">    &#123;<span class="string">"name"</span>: <span class="string">"category1"</span>&#125;,</span><br><span class="line">    &#123;<span class="string">"name"</span>: <span class="string">"category2"</span>&#125;,</span><br><span class="line">    &#123;<span class="string">"name"</span>: <span class="string">"category3"</span>&#125;,</span><br><span class="line">    &#123;<span class="string">"name"</span>: <span class="string">"category4"</span>&#125;,</span><br><span class="line">    &#123;<span class="string">"name"</span>: <span class="string">"category5"</span>&#125;,</span><br><span class="line">    &#123;<span class="string">"name"</span>: <span class="string">"category6"</span>&#125;,</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">links = [</span><br><span class="line">    &#123;<span class="string">"source"</span>: <span class="string">"category1"</span>, <span class="string">"target"</span>: <span class="string">"category2"</span>, <span class="string">"value"</span>: <span class="number">10</span>&#125;,</span><br><span class="line">    &#123;<span class="string">"source"</span>: <span class="string">"category2"</span>, <span class="string">"target"</span>: <span class="string">"category3"</span>, <span class="string">"value"</span>: <span class="number">15</span>&#125;,</span><br><span class="line">    &#123;<span class="string">"source"</span>: <span class="string">"category3"</span>, <span class="string">"target"</span>: <span class="string">"category4"</span>, <span class="string">"value"</span>: <span class="number">20</span>&#125;,</span><br><span class="line">    &#123;<span class="string">"source"</span>: <span class="string">"category5"</span>, <span class="string">"target"</span>: <span class="string">"category6"</span>, <span class="string">"value"</span>: <span class="number">25</span>&#125;,</span><br><span class="line">]</span><br><span class="line">c = (</span><br><span class="line">    Sankey()</span><br><span class="line">    .add(</span><br><span class="line">        <span class="string">"sankey"</span>,</span><br><span class="line">        nodes,</span><br><span class="line">        links,</span><br><span class="line">        linestyle_opt=opts.LineStyleOpts(opacity=<span class="number">0.2</span>, curve=<span class="number">0.5</span>, color=<span class="string">"source"</span>),</span><br><span class="line">        label_opts=opts.LabelOpts(position=<span class="string">"right"</span>),</span><br><span class="line">    )</span><br><span class="line">    .set_global_opts(title_opts=opts.TitleOpts(title=<span class="string">"Sankey-基本示例"</span>))</span><br><span class="line">    .render(<span class="string">"sankey_base.html"</span>)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p><strong>查看html源代码</strong>：<br>
+二选一</p>
+<ol>
+<li>用浏览器打开<code>sankey_base.html</code>，右键选择“查看源代码”或<code>Ctrl+U</code></li>
+<li>用Visual Sudio Code打开<code>sankey_base.html</code><br>
+查看源代码<br>
+<meta name="referrer" content="no-referrer"></li>
+</ol>
+<img src="/python-pyecharts%E6%A8%A1%E5%9D%97/code1.png" class title="html源代码">
+<p><strong>安装PPT插件</strong>：<br>
+打开PowerPoint，选择“插入”——“获取加载项”——搜索“html”，添加“Office Apps Fiddle for PowerPoint”。<br>
+<meta name="referrer" content="no-referrer"></p>
+<img src="/python-pyecharts%E6%A8%A1%E5%9D%97/pic2.png" class title="安装PPT插件">
+<p>将html的源代码粘贴到该插件的“HTML”中<br>
+<meta name="referrer" content="no-referrer"></p>
+<img src="/python-pyecharts%E6%A8%A1%E5%9D%97/pic.png" class title="粘贴html源代码">
+<p>点击“Run Fiddle!”按钮，会报错</p>
+<meta name="referrer" content="no-referrer">
+<img src="/python-pyecharts%E6%A8%A1%E5%9D%97/pic3.png" class title="报错">
+<p>点击“×”，并点击齿轮“Setting”；再次点击“Run Fiddle!”按钮，即可成功生成交互式echarts。</p>
+<meta name="referrer" content="no-referrer">
+<img src="/python-pyecharts%E6%A8%A1%E5%9D%97/pic4.png" class title="成功的交互式桑基图">
+<p>非第一次使用该插件，可从“插入”——“我的加载项”中找到该插件。</p>
+<h1 id="参考资料"><a class="header-anchor" href="#参考资料"></a>参考资料</h1>
+<ul>
+<li><a href="https://pyecharts.org/#/" target="_blank" rel="noopener">pyecharts官方文档</a></li>
+<li><a href="http://gallery.pyecharts.org/#/" target="_blank" rel="noopener">Pyecharts-Gallary</a></li>
+<li><a href="https://campus.alibaba.com/traineePositions.htm?spm=a1z3e1.11874847.0.0.5d8d4928Tx32T7&amp;refno=12394" target="_blank" rel="noopener">如何把pyecharts的炫酷延续到PPT里？</a></li>
+<li><a href="https://echarts.apache.org/examples/zh/" target="_blank" rel="noopener">百度官方Echarts</a></li>
+</ul>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>selenium目前支持Chrome和Safari <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p>2020年01月16日，基于Chromium内核的全新Microsoft Edge正式上线微软官网，可自行下载进行更新。<a href="https://www.microsoft.com/en-us/edge" target="_blank" rel="noopener">全新Microsoft Edge</a><br>
+<meta name="referrer" content="no-referrer"> <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+
+    </div>
+
+    
+    
+    
+        <div class="reward-container">
+  <div></div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/reward2021.png" alt="Skye 微信支付">
+        <p>微信支付</p>
+      </div>
+
+  </div>
+</div>
+
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/images/wechat_qrcode.jpg">
+            <span class="icon">
+              <i class="fab fa-weixin"></i>
+            </span>
+
+            <span class="label">WeChat</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Python/" rel="tag"># Python</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-AARRR%E6%A8%A1%E5%9E%8B.html" rel="prev" title="数据分析 | AARRR模型">
+      <i class="fa fa-chevron-left"></i> 数据分析 | AARRR模型
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/python-pip.html" rel="next" title="Python | pip">
+      Python | pip <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#pyecharts"><span class="nav-number">1.</span> <span class="nav-text">pyecharts</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">1.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#渲染图片"><span class="nav-number">1.2.</span> <span class="nav-text">渲染图片</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#selenium"><span class="nav-number">1.2.1.</span> <span class="nav-text">selenium</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#phantomjs"><span class="nav-number">1.2.2.</span> <span class="nav-text">phantomjs</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pyppeteer"><span class="nav-number">1.2.3.</span> <span class="nav-text">pyppeteer</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最直接的渲染方式"><span class="nav-number">1.2.4.</span> <span class="nav-text">最直接的渲染方式</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#图表类型"><span class="nav-number">2.</span> <span class="nav-text">图表类型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#其他"><span class="nav-number">3.</span> <span class="nav-text">其他</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#将echart插入到PPT"><span class="nav-number">3.1.</span> <span class="nav-text">将echart插入到PPT</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料"><span class="nav-number">4.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Skye</p>
+  <div class="site-description" itemprop="description">刻苦，沉着，精进不休</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">150</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">53</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/ShootingWang" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;ShootingWang"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2019 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-star"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Skye</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">401k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">6:05</span>
+</div>
+
+
+  <script src='https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js'></script>
+  <script>
+    if (window.mermaid) {
+      mermaid.initialize({theme: 'forest'});
+    }
+  </script>
+
+
+<script src="/js/prism/clipboard.js"></script>
+<script src="/js/prism/prism.js" async></script>
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+  <script defer src="/lib/three/three.min.js"></script>
+    <script defer src="/lib/three/canvas_lines.min.js"></script>
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js', () => {
+    new Valine(Object.assign({
+      el         : '#valine-comments',
+      path       : location.pathname,
+    }, {"enable":true,"appId":"yFKKmB84nH4WRrBC07BTRKLC-gzGzoHsz","appKey":"EFXmIM4ipk11GLk8Stx40FYk","notify":true,"verify":false,"placeholder":"记得填写邮箱哦~这样你就能及时收到我的回复了~","avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"language":null,"visitor":false,"comment_count":true,"recordIP":false,"serverURLs":null}
+    ));
+  }, window.Valine);
+});
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
+</html>

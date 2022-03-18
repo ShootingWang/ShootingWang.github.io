@@ -1,0 +1,81 @@
+# Header
+menu:
+  Home: / ||home
+  Archives: /archives/ || archive
+  Categories: /categories/ || th
+  tags: /tags/ || tags
+  message: /message/ || comment
+  about: /about/ ||user
+rss: /atom.xml
+
+#menu_icons:
+#  enable: true
+#  home: home
+#  about: user
+#  categories: th
+##  tags: tags
+ # archives: archive
+ # message: comment
+
+# Content
+excerpt_link: Read More
+fancybox: true
+
+# Sidebar
+sidebar: 
+  position: right
+  display: post
+widgets:
+- category
+- tag
+- tagcloud
+- archive
+- recent_posts
+
+# display widgets at the bottom of index pages (pagination == 2)
+index_widgets:
+ - category
+ - tagcloud
+ - archive
+
+# widget behavior
+archive_type: 'monthly'
+show_count: false
+
+# Miscellaneous
+google_analytics:
+gauges_analytics:
+favicon: /favicon.png
+twitter:
+google_plus:
+fb_admins:
+fb_app_id:
+
+font:  # 主题字体配置
+  font_size: 16px        # 全局字号
+  font-family: "Gill Sans", sans-serif;           # 全局字体族
+  code_font_size: 85%    # 代码的字号  
+
+ math:
+  enable: true
+  specific: false
+  engine: mathjax
+  mathjax:
+    enable: true
+    src: custom_mathjax_source
+    per_page: true
+    cdn: //cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+
+footer:
+  ## visitor count
+  counter: true
+
+busuanzi:
+  enable: true
+
+highlight:
+  enable: true
+  style: 'Github Gist'
+  bg_color: false
+  copy_btn: true
+highlight-theme: night bright

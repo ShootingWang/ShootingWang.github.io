@@ -1,0 +1,1316 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+<meta name="baidu-site-verification" content="GLZSr3LDqT" />
+<meta name="google-site-verification" content="fZvQBljM9I6UA4l4wwiA5wECEn7k0V4-DgCfWEPNtFc" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon2.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon2.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"github.com","root":"/","scheme":"Pisces","version":"8.0.0-rc.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"valine","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+<link rel="stylesheet" href="/js/prism/prism.css">
+
+<script src="http://echarts.baidu.com/dist/echarts.common.min.js"></script>
+  <meta property="og:type" content="article">
+<meta property="og:title" content="Data Scientist | 数据埋点">
+<meta property="og:url" content="https://github.com/ShootingWang/ShootingWang.github.io/%E6%95%B0%E6%8D%AE-%E6%95%B0%E6%8D%AE%E5%9F%8B%E7%82%B9.html">
+<meta property="og:site_name" content="Skye">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-07-29T16:02:06.000Z">
+<meta property="article:modified_time" content="2020-08-13T13:44:07.239Z">
+<meta property="article:author" content="Skye">
+<meta property="article:tag" content="Data Scientist">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://github.com/ShootingWang/ShootingWang.github.io/%E6%95%B0%E6%8D%AE-%E6%95%B0%E6%8D%AE%E5%9F%8B%E7%82%B9.html">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Data Scientist | 数据埋点 | Skye</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><script type="text/javascript" color="0,0,0" opacity='0.5' zIndex="-1" count="99" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+  </script>
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+        <span class="toggle-line toggle-line-first"></span>
+        <span class="toggle-line toggle-line-middle"></span>
+        <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Skye</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-update">
+
+    <a href="/update/" rel="section"><i class="fa fa-list-ul fa-fw"></i>更新</a>
+
+  </li>
+        <li class="menu-item menu-item-tool">
+
+    <a href="/tools/" rel="section"><i class="fa fa-tools fa-fw"></i>工具</a>
+
+  </li>
+        <li class="menu-item menu-item-treasure">
+
+    <a href="/treasure/" rel="section"><i class="fa fa-gem fa-fw"></i>资源</a>
+
+  </li>
+        <li class="menu-item menu-item-pool">
+
+    <a href="/pool/" rel="section"><i class="fa fa-book fa-fw"></i>题库</a>
+
+  </li>
+        <li class="menu-item menu-item-links">
+
+    <a href="/links" rel="section"><i class="fa fa-link fa-fw"></i>友链</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/ShootingWang" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+    <!-- echarts -->
+    <script type="text/javascript" src="/js/src/echarts.common.js"></script>
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://github.com/ShootingWang/ShootingWang.github.io/%E6%95%B0%E6%8D%AE-%E6%95%B0%E6%8D%AE%E5%9F%8B%E7%82%B9.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Skye">
+      <meta itemprop="description" content="刻苦，沉着，精进不休">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Skye">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Data Scientist | 数据埋点
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-07-30 00:02:06" itemprop="dateCreated datePublished" datetime="2020-07-30T00:02:06+08:00">2020-07-30</time>
+            </span>
+
+          
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-13 21:44:07" itemprop="dateModified" datetime="2020-08-13T21:44:07+08:00">2020-08-13</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Data-Scientist/" itemprop="url" rel="index"><span itemprop="name">Data Scientist</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/%E6%95%B0%E6%8D%AE-%E6%95%B0%E6%8D%AE%E5%9F%8B%E7%82%B9.html#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/%E6%95%B0%E6%8D%AE-%E6%95%B0%E6%8D%AE%E5%9F%8B%E7%82%B9.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <center></center>
+<a id="more"></a>
+<h1 id="数据流程"><a class="header-anchor" href="#数据流程"></a>数据流程</h1>
+<h1 id="用户行为模型"><a class="header-anchor" href="#用户行为模型"></a>用户行为模型</h1>
+<p><strong>4W1H</strong>用户行为模型：</p>
+<ul>
+<li><strong>WHO</strong>：用户属性
+<ul>
+<li>用户属性本身不随行为的发生而改变，可不在埋点中体现，可user_id将用户行为与用户属性宽表关联</li>
+</ul>
+</li>
+<li><strong>WHEN</strong>：行为发生的时间（不是上报时间）
+<ul>
+<li>一般上报时间比行为时间晚</li>
+</ul>
+</li>
+<li><strong>WHERE</strong>：行为发生的地点</li>
+<li><strong>HOW</strong>：发生行为时的一些状态
+<ul>
+<li>操作系统</li>
+<li>网络状态</li>
+<li>屏幕比例</li>
+<li>分辨率等</li>
+</ul>
+</li>
+<li><strong>WHAT</strong>：具体发生的行为
+<ul>
+<li>点击</li>
+<li>曝光</li>
+<li>浏览</li>
+<li>……</li>
+</ul>
+</li>
+</ul>
+<h1 id="事件"><a class="header-anchor" href="#事件"></a>事件</h1>
+<p><strong>什么是事件？</strong><br>
+追踪或记录的用户行为或业务过程</p>
+<blockquote>
+<ul>
+<li>注册账号</li>
+</ul>
+</blockquote>
+<ul>
+<li>登录</li>
+<li>观看视频</li>
+<li>点赞</li>
+<li>评论</li>
+<li>关注</li>
+<li>……</li>
+</ul>
+<p>事件通常包括曝光（expose）、点击（click）、浏览（view）。</p>
+<h2 id="事件三要素"><a class="header-anchor" href="#事件三要素"></a>事件三要素</h2>
+<ul>
+<li><strong>操作</strong>（action）：定义一个操作动作（点击、拖拽等）</li>
+<li><strong>参数/属性</strong>：参数可以是任何与该事件相关的属性，包括触发这个事件的人、时间、地点、设备、操作的业务信息</li>
+<li><strong>属性值</strong>：参数/属性的值参；参数和值以kv（key-value）形式存储在JSON串中</li>
+</ul>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: center;
+}
+</code></pre>
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: center;">
+      <th>事件类型</th>
+      <th>事件名称</th>
+      <th>事件显示名</th>
+      <th>参数名</th>
+      <th>参数显示名</th>
+      <th>参数值类型</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="15">电商行为类</th>
+      <td rowspan="6">order</td>
+      <td rowspan="6">购买</td>
+      <td>order_id</td>
+      <td>订单编号</td>
+      <td>STRING</td>
+    </tr>
+    <tr>
+      <td>sku_name</td>
+      <td>商品名称</td>
+      <td>STRING</td>
+    </tr>
+    <tr>
+      <td>sku_type</td>
+      <td>商品类型</td>
+      <td>STRING</td>
+    </tr>
+    <tr>
+      <td>sku_num</td>
+      <td>购买数量</td>
+      <td>NUMBER</td>
+    </tr>
+    <tr>
+      <td>order_amt</td>
+      <td>购买金额</td>
+      <td>NUMBER</td>
+    </tr>
+    <tr>
+      <td>order_type</td>
+      <td>购买方式</td>
+      <td>STRING</td>
+    </tr>
+    <tr>
+      <td rowspan="5">complaint</td>
+      <td rowspan="5">用户投诉</td>
+      <td>user_id</td>
+      <td>用户id</td>
+      <td>STRING</td>
+    </tr>
+    <tr>
+      <td>comp_contents</td>
+      <td>投诉内容</td>
+      <td>STRING</td>
+    </tr>
+    <tr>
+      <td>comp_object</td>
+      <td>投诉对象</td>
+      <td>STRING</td>
+    </tr>
+    <tr>
+      <td>comp_channel</td>
+      <td>投诉渠道</td>
+      <td>STRING</td>
+    </tr>
+    <tr>
+      <td>comp_type</td>
+      <td>投诉方式</td>
+      <td>STRING</td>
+    </tr>
+    <tr>
+      <td rowspan="4">order_return</td>
+      <td rowspan="4">退货</td>
+      <td>order_id</td>
+      <td>订单编号</td>
+      <td>STRING</td>
+    </tr>
+    <tr>
+      <td>return_amt</td>
+      <td>退货金额</td>
+      <td>NUMBER</td>
+    </tr>
+    <tr>
+      <td>return_reason</td>
+      <td>退货原因</td>
+      <td>STRING</td>
+    </tr>
+    <tr>
+      <td>return_type</td>
+      <td>退货方式</td>
+      <td>STRING</td>
+    </tr>
+    <tr>
+      <th rowspan="2">通用功能类</th>
+      <td rowspan="2">search</td>
+      <td rowspan="2">搜索</td>
+      <td>search_keyword</td>
+      <td>搜索关键词</td>
+      <td>STRING</td>
+    </tr>
+    <tr>
+      <td>search_type</td>
+      <td>搜索类型</td>
+      <td>STRING</td>
+    </tr>
+    <tr>
+  </tr></tbody>
+</table>
+</div>
+<h1 id="数据埋点"><a class="header-anchor" href="#数据埋点"></a>数据埋点</h1>
+<blockquote>
+<p>数据埋点是数据产品经理、数据运营以及数据分析师，基于业务需求或产品需求对用户在应用内产生行为的每一个事件对应的页面和位置植入相关代码，并通过采集工具上报统计数据，以便相关人员追踪用户行为，推动产品优化或知道运营的一项工程。 ——<a href="http://www.woshipm.com/pd/3261924.html" target="_blank" rel="noopener">产品埋点答疑指南</a></p>
+</blockquote>
+<h2 id="平台"><a class="header-anchor" href="#平台"></a>平台</h2>
+<ul>
+<li><strong>移动产品</strong>：经常称之为<strong>移动端</strong>、<strong>M端</strong>
+<ul>
+<li>手机APP</li>
+<li>内嵌H5页面</li>
+<li>小程序</li>
+<li>WQ页面</li>
+<li>……</li>
+</ul>
+</li>
+<li><strong>网页产品</strong>：经常称之为<strong>PC端</strong>
+<ul>
+<li>WEB页面</li>
+<li>PC客户端</li>
+</ul>
+</li>
+<li><strong>移动设备</strong>：智能手环、POS机等各种智能设备、掌上电脑</li>
+<li><strong>服务端</strong>：一般是指服务端服务器资源</li>
+</ul>
+<p>各种平台的埋点手段：</p>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: center;
+}
+</code></pre>
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: center;">
+      <th>设备类型</th>
+      <th>展现形式</th>
+      <th>展示形式</th>
+      <th>采集工具</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="2">PC设备</th>
+      <td>PC站</td>
+      <td>WEB页面</td>
+      <td>JS</td>
+    </tr>
+    <tr>
+      <td>PC客户端</td>
+      <td>客户端</td>
+      <td>JS</td>
+    </tr>
+    <tr>
+      <th rowspan="5">移动设备</th>
+      <td>手机App</td>
+      <td>移动应用</td>
+      <td>SDK、http</td>
+    </tr>
+    <tr>
+      <td>App内嵌</td>
+      <td>App内嵌H5页面</td>
+      <td>JS</td>
+    </tr>
+    <tr>
+      <td>M站</td>
+      <td>WEB页面</td>
+      <td>JS</td>
+    </tr>
+    <tr>
+      <td>微信</td>
+      <td>WEB页面</td>
+      <td>JS</td>
+    </tr>
+    <tr>
+      <td>微信小程序</td>
+      <td>WEB页面</td>
+      <td>JS</td>
+    </tr>
+    <tr>
+      <th>服务端</th>
+      <td>服务接口</td>
+      <td>服务接口</td>
+      <td>http</td>
+    </tr>
+    <tr>
+      <th rowspan="2">移动终端</th>
+      <td>智能设备</td>
+      <td>移动应用</td>
+      <td>SDL、http</td>
+    </tr>
+    <tr>
+      <td>掌上电脑</td>
+      <td>硬件服务</td>
+      <td>http</td>
+    </tr>
+    <tr>
+  </tr></tbody>
+</table>
+</div>
+<h2 id="分类"><a class="header-anchor" href="#分类"></a>分类</h2>
+<p>按照<u>获取数据的类型</u>以及<u>用户触发行为</u>的不同，可将埋点分为以下几种：</p>
+<ul>
+<li>点击事件</li>
+<li>曝光事件</li>
+<li>浏览事件</li>
+</ul>
+<h3 id="点击事件"><a class="header-anchor" href="#点击事件"></a>点击事件</h3>
+<p>用户在应用内的每一次点击行为，都可以记为一次点击事件。</p>
+<p>一般通过点击事件，可以统计得到点击PV、点击UV</p>
+<h3 id="曝光事件"><a class="header-anchor" href="#曝光事件"></a>曝光事件</h3>
+<p>曝光事件是为了统计应用内的某些局部区域是否被用户有效浏览。</p>
+<blockquote>
+<p>eg：推荐区域、某个按钮</p>
+</blockquote>
+<p>做曝光埋点的时候应该注意：</p>
+<ol>
+<li>要科学、合理地定义有效曝光</li>
+<li>为了不影响页面性能和用户体验，不能在应用内的所有区域都加曝光埋点</li>
+</ol>
+<h3 id="页面浏览事件"><a class="header-anchor" href="#页面浏览事件"></a>页面浏览事件</h3>
+<p>页面浏览事件通常是指页面的各种维度信息的统计</p>
+<blockquote>
+<p>eg：页面流量PV、页面流量UV</p>
+</blockquote>
+<p>页面事件通常统计的信息包括：</p>
+<ul>
+<li><strong>浏览器信息</strong>：浏览器版本、浏览器语言、浏览器编码、屏幕分辨率等</li>
+<li><strong>访问信息</strong>：用户账号、当前页面URL、上次访问时间、访问时长、页面停留时间等</li>
+<li><strong>来源信息</strong>：</li>
+<li><strong>物品信息</strong></li>
+</ul>
+<h2 id="方式"><a class="header-anchor" href="#方式"></a>方式</h2>
+<p>数据埋点方式主要有两种：</p>
+<ol>
+<li>公司研发在自己的产品当中注入统计代码</li>
+<li>集成第三方统计的SDK，如友盟、百度移动统计、Sensors Data、GrowingIO、Talking Data等</li>
+</ol>
+<p>按照<u>埋点工具</u>可分为：</p>
+<ol>
+<li>代码埋点（客户端）</li>
+</ol>
+<blockquote>
+<p>Talking Data、Google Analytics</p>
+</blockquote>
+<ol start="2">
+<li>可视化埋点（客户端）</li>
+</ol>
+<blockquote>
+<p>诸葛IO、神策数据、MixPanel</p>
+</blockquote>
+<ol start="3">
+<li>无埋点/全埋点（客户端）
+<blockquote>
+<p>Heap Analytics、Growing IO</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="类别"><a class="header-anchor" href="#类别"></a>类别</h2>
+<h3 id="通用埋点"><a class="header-anchor" href="#通用埋点"></a>通用埋点</h3>
+<p>通用规范事件</p>
+<h3 id="自定义埋点"><a class="header-anchor" href="#自定义埋点"></a>自定义埋点</h3>
+<ul>
+<li>需求名称</li>
+<li>采集端</li>
+<li>页面名称/模块名称</li>
+<li>自定义事件名</li>
+<li>自定义事件用途
+<ul>
+<li>仅用于内部测试</li>
+<li>用于统计</li>
+<li>用于推荐/画像</li>
+<li>同时用于统计和推荐/画像</li>
+</ul>
+</li>
+<li>需求备注</li>
+<li>事件其他隐私说明</li>
+<li>同时提交隐私审核申请</li>
+</ul>
+<h1 id="思路"><a class="header-anchor" href="#思路"></a>思路</h1>
+<ol>
+<li>梳理业务流程</li>
+<li>确定关键指标</li>
+<li>细化各流程影响因素</li>
+<li>评估对老业务的影响</li>
+</ol>
+<h1 id="设计原则"><a class="header-anchor" href="#设计原则"></a>设计原则</h1>
+<p>埋点设计原则：</p>
+<ol>
+<li>唯一原则
+<ul>
+<li>埋点字段相互独立</li>
+</ul>
+</li>
+<li>枚举原则
+<ul>
+<li>将所有可能需要的数据涉及的埋点一一枚举</li>
+<li>可以根据页面穷举或根据流程穷举</li>
+</ul>
+</li>
+<li>精确描述
+<ul>
+<li>描述包括：采集逻辑、数据结构、特殊情况处理</li>
+</ul>
+</li>
+</ol>
+<h1 id="埋点流程"><a class="header-anchor" href="#埋点流程"></a>埋点流程</h1>
+<p>埋点的基本流程：</p>
+<ol>
+<li>整理埋点方案</li>
+<li>采集工具植入</li>
+<li>埋点测试</li>
+<li>线上数据跟踪</li>
+</ol>
+<p>或为：</p>
+<ol>
+<li>业务需求梳理
+<ul>
+<li>需求背景：该打点是为了什么场景/活动/页面</li>
+<li>需求提出方：产品、运营、研发等</li>
+<li>衡量指标：根据以上需求背景，明确需要量化的指标</li>
+<li>其他信息：对以上信息的补充</li>
+</ul>
+</li>
+<li>埋点设计
+<ul>
+<li>根据业务需求，将指标进行拆解，拆解出原子指标及维度，罗列出需要埋点的具体点位，设计出每个埋点的点位应该用什么事件，需要带哪些参数、每个参数的类型、填什么取值</li>
+</ul>
+</li>
+<li>埋点需求评审：对埋点设计进行评审，对不合理的设计进行调整，剔除不可实现或过于复杂的埋点或寻求其他方案</li>
+<li>埋点开发：研发按照评审后的埋点需求文档进行开发</li>
+<li>埋点测试</li>
+<li>上线校验</li>
+</ol>
+<h2 id="整理埋点方案"><a class="header-anchor" href="#整理埋点方案"></a>整理埋点方案</h2>
+<p>通常至少要包含以下几点内容：</p>
+<ul>
+<li><strong>埋点位置</strong>：需要添加埋点相关信息的位置</li>
+<li><strong>埋点标识</strong>：每一个位置上需要设置一个埋点的标识来代表这个点击位
+<ul>
+<li>必须全站唯一，不能出现重复</li>
+</ul>
+</li>
+<li><strong>埋点参数</strong>：除了正常的流量数据（UV、PV）外，还想看到的数据</li>
+<li><strong>页面名称</strong>：当前埋点所属的页面</li>
+<li><strong>应用标识</strong>：当前应用的唯一标识，也叫站点；用来进行数据归属划分</li>
+</ul>
+<h2 id="采集工具植入"><a class="header-anchor" href="#采集工具植入"></a>采集工具植入</h2>
+<ul>
+<li>数据的采集工具通常为埋点代码</li>
+<li>不同的产品形态采取不同的埋点代码植入</li>
+</ul>
+<p>通常有3种：</p>
+<ul>
+<li>JS文件</li>
+<li>SDK</li>
+<li>http请求</li>
+</ul>
+<h2 id="埋点测试"><a class="header-anchor" href="#埋点测试"></a>埋点测试</h2>
+<p><strong>埋点测试</strong>是指完成埋点代码植入后，需要对埋点的有效性进行测试</p>
+<p>通常关注以下内容：</p>
+<ul>
+<li>埋点代码是否引入</li>
+<li>点击位以及相关事件参数是否正常加入埋点</li>
+<li>数据能否正常上报</li>
+</ul>
+<h2 id="线上数据跟踪"><a class="header-anchor" href="#线上数据跟踪"></a>线上数据跟踪</h2>
+<p>埋点上线后，可用对应的数据可视化产品进行产品数据展示，或使用SQL提数看数据。</p>
+<h1 id="用户唯一标识"><a class="header-anchor" href="#用户唯一标识"></a>用户唯一标识</h1>
+<p>用户唯一标识：是用户唯一的身份ID；包括设备ID和用户ID。</p>
+<h2 id="设备ID"><a class="header-anchor" href="#设备ID"></a>设备ID</h2>
+<p>使用相应的算法，生成一个设备ID，以唯一识别用户的终端设备。</p>
+<h3 id="Android系统"><a class="header-anchor" href="#Android系统"></a>Android系统</h3>
+<p><strong>Android系统</strong>适合做设备唯一标识符的几种标识符及其特性：</p>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: center;
+}
+</code></pre>
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: center;">
+      <th>标识符</th>
+      <th>安卓版本/权限特性</th>
+      <th>重置特性</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>OAID</th>
+      <td>1. Android 10及以上版本支持<br>2. 需要获取OAID的权限</td>
+      <td>1. 用户可手动重置<br>2. 恢复出厂可重置<br>3. 用户可关闭OAID的获取权限</td>
+    </tr>
+    <tr>
+      <th>Android_id</th>
+      <td>1. 不需要权限<br>2. Android 8.0之后，Android_ID将不再适合唯一设备标识符</td>
+      <td>刷机、root、恢复出厂设置会重置</td>
+    </tr>
+    <tr>
+      <th>IMEI</th>
+      <td>1. 获取IMEI需要READ_PHONE_STATE权限<br>2. Android 6.0之后，这类权限需要动态申请<br>3. Android 10之后，禁止获取手机IMEI号</td>
+      <td>具备唯一性，恢复出厂设置不会重置</td>
+    </tr>
+    <tr>
+  </tr></tbody>
+</table>
+</div>
+<p>因此，IMEI是最适合做设备唯一标识符的，但是获取IMEI需要授予权限且Android 10之后不再开放IMEI的权限</p>
+<p>因此，在Android系统中，应按</p>
+<p>$$IMEI \rightarrow OAID \rightarrow Android_ID$$</p>
+<p>的顺序生成设备ID</p>
+<blockquote>
+<p>先获取IMEI号；获取不到IMEI时获取OAID；获取不到OAID时，再获取Android_ID；然后使用相关算法生成设备ID。</p>
+</blockquote>
+<h3 id="IOS系统"><a class="header-anchor" href="#IOS系统"></a>IOS系统</h3>
+<p><strong>IOS系统</strong>的可用于生成设备ID的标识符：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">标识符</th>
+<th style="text-align:center">说明</th>
+<th style="text-align:center">IOS版本/权限特性</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">IDFA</td>
+<td style="text-align:center">广告标识符</td>
+<td style="text-align:center">IOS 10之后，用户修改后或关闭后无法确定用户的唯一性</td>
+</tr>
+<tr>
+<td style="text-align:center">IDFV</td>
+<td style="text-align:center">应用开发商标识符</td>
+<td style="text-align:center">统一开发商下的不同App的IDFV相同</td>
+</tr>
+<tr>
+<td style="text-align:center">UDID</td>
+<td style="text-align:center">IOS设备的唯一标识码</td>
+<td style="text-align:center">IOS 6及以前系统是可以获取到设备的UDID，IOS 7中已经完全禁用</td>
+</tr>
+</tbody>
+</table>
+<p>苹果系统生成设备ID的标识符顺序应该是<br>
+$$IDFA\rightarrow IDFV\rightarrow UDID$$</p>
+<blockquote>
+<p>先获取IDFA；获取不到IDFA时获取IDFV；获取不到IDFV时，再获取UDID；然后使用相关算法生成设备ID。</p>
+</blockquote>
+<h3 id="Web网站"><a class="header-anchor" href="#Web网站"></a>Web网站</h3>
+<p>使用cookie_id作为设备ID，并存储在浏览器的cookie中</p>
+<h3 id="小程序"><a class="header-anchor" href="#小程序"></a>小程序</h3>
+<p>微信小程序通常使用openid作为设备ID，也可自己生产一个ID作为设备ID。</p>
+<h2 id="用户ID"><a class="header-anchor" href="#用户ID"></a>用户ID</h2>
+<p>用户ID：用户在业务产品注册的用户账号</p>
+<h1 id="意义"><a class="header-anchor" href="#意义"></a>意义</h1>
+<ul>
+<li><strong>了解用户行为</strong>
+<ul>
+<li>用户的使用习惯</li>
+<li>用户的决策路径</li>
+<li>用户的注意力分布</li>
+</ul>
+</li>
+<li><strong>掌握产品动向</strong>
+<ul>
+<li>产品用户量</li>
+<li>产品所处的生命周期</li>
+<li>目前的数据表现</li>
+</ul>
+</li>
+<li><strong>支持产品决策</strong>
+<ul>
+<li>新功能的上线</li>
+<li>旧功能的迭代优化</li>
+</ul>
+</li>
+</ul>
+<h1 id="注意事项"><a class="header-anchor" href="#注意事项"></a>注意事项</h1>
+<ul>
+<li>
+<p>埋点方案的梳理要越早越好，并且与开发同步，以防止相关的埋点参数接口取不到</p>
+</li>
+<li>
+<p>埋点一定要测试</p>
+</li>
+<li>
+<p>埋点标识要唯一</p>
+</li>
+<li>
+<p>埋点方案发生变动要及时同步到各方</p>
+</li>
+<li>
+<p><strong>引</strong>：埋点代码是否引入，引入的代码是否与当前产品形态吻合</p>
+</li>
+<li>
+<p><strong>埋</strong>：是否产品的所有模块都添加了埋点</p>
+</li>
+<li>
+<p><strong>报</strong>：埋点之后数据是否能够正常上报</p>
+</li>
+<li>
+<p><strong>落</strong>：上报的数据最后是否落到了对应的表里面</p>
+</li>
+</ul>
+<h1 id="一些埋点管理系统"><a class="header-anchor" href="#一些埋点管理系统"></a>一些埋点管理系统</h1>
+<h2 id="网易HubbleData"><a class="header-anchor" href="#网易HubbleData"></a>网易HubbleData</h2>
+<p>网易HubbleData是一个洞察用户行为的数据分析系统，提供一套完整的数据解决方案。</p>
+<p>平台工作流程：</p>
+<figure class="highlight abnf"><table><tr><td class="code"><pre><span class="line">graph TB<span class="comment">;</span></span><br><span class="line">    数据采集---&gt;数据上报<span class="comment">;</span></span><br><span class="line">    数据上报---&gt;数据存储<span class="comment">;</span></span><br><span class="line">    数据存储---&gt;数据分析<span class="comment">;</span></span><br><span class="line">    数据分析---&gt;数据展示<span class="comment">;</span></span><br></pre></td></tr></table></figure>
+<p>平台包括的应用有：</p>
+<ul>
+<li>事件分析</li>
+<li>漏斗转化</li>
+<li>用户路径分析</li>
+<li>用户分群构建</li>
+</ul>
+<p>HubbleData平台用户分为两类：</p>
+<ol>
+<li>
+<p>匿名用户：SDK内部自动依据某个算法生成的唯一id，且只生成一次，该id同时</p>
+</li>
+<li>
+<p>真实用户</p>
+</li>
+</ol>
+<h1 id="参考资料"><a class="header-anchor" href="#参考资料"></a>参考资料</h1>
+<ul>
+<li><a href="http://www.woshipm.com/pd/3261924.html" target="_blank" rel="noopener">产品埋点答疑指南</a></li>
+<li><a href="http://www.woshipm.com/data-analysis/3887258.html" target="_blank" rel="noopener">数据埋点：用户唯一标识</a></li>
+<li><a href="http://www.woshipm.com/pmd/3523904.html" target="_blank" rel="noopener">从业务视角，分析埋点思路</a></li>
+<li><a href="http://www.woshipm.com/data-analysis/3405281.html" target="_blank" rel="noopener">如何做好数据埋点？</a></li>
+<li><a href="https://hubble.netease.com/help/_book/behaviorAnalysis/eventManagement.html" target="_blank" rel="noopener">HubbleData事件管理</a></li>
+<li><a href="https://blog.csdn.net/ihaveahappyfamily/article/details/80071384" target="_blank" rel="noopener">网易HubbleData之web端js-sdk数据采集库讲解</a></li>
+<li><a href="https://medium.com/@allaboutdataanalysis/%E4%B8%80%E9%80%B1%E6%95%B8%E6%93%9A%E5%9F%8B%E9%BB%9E%E4%B9%8B%E6%97%85-%E7%AC%AC%E4%B8%80%E5%A4%A9-%E5%88%9D%E8%AD%98%E5%9F%8B%E9%BB%9E-9c6a7b1c211" target="_blank" rel="noopener">一周数据埋点之旅</a></li>
+<li><a href="https://www.jianshu.com/p/d45235b51601" target="_blank" rel="noopener">用户行为的深度追踪——事件与埋点</a></li>
+</ul>
+
+    </div>
+
+    
+    
+    
+        <div class="reward-container">
+  <div></div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/reward2021.png" alt="Skye 微信支付">
+        <p>微信支付</p>
+      </div>
+
+  </div>
+</div>
+
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/images/wechat_qrcode.jpg">
+            <span class="icon">
+              <i class="fab fa-weixin"></i>
+            </span>
+
+            <span class="label">WeChat</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Data-Scientist/" rel="tag"># Data Scientist</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/%E6%95%B0%E6%8D%AE-%E6%95%B0%E6%8D%AE%E4%BB%93%E5%BA%93.html" rel="prev" title="Data Scientist | 数据仓库">
+      <i class="fa fa-chevron-left"></i> Data Scientist | 数据仓库
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-%E7%94%A8%E6%88%B7%E8%A1%8C%E4%B8%BA%E5%88%86%E6%9E%90.html" rel="next" title="数据分析 | 用户行为分析">
+      数据分析 | 用户行为分析 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#数据流程"><span class="nav-number">1.</span> <span class="nav-text">数据流程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#用户行为模型"><span class="nav-number">2.</span> <span class="nav-text">用户行为模型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#事件"><span class="nav-number">3.</span> <span class="nav-text">事件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#事件三要素"><span class="nav-number">3.1.</span> <span class="nav-text">事件三要素</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据埋点"><span class="nav-number">4.</span> <span class="nav-text">数据埋点</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#平台"><span class="nav-number">4.1.</span> <span class="nav-text">平台</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分类"><span class="nav-number">4.2.</span> <span class="nav-text">分类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#点击事件"><span class="nav-number">4.2.1.</span> <span class="nav-text">点击事件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#曝光事件"><span class="nav-number">4.2.2.</span> <span class="nav-text">曝光事件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#页面浏览事件"><span class="nav-number">4.2.3.</span> <span class="nav-text">页面浏览事件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方式"><span class="nav-number">4.3.</span> <span class="nav-text">方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类别"><span class="nav-number">4.4.</span> <span class="nav-text">类别</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#通用埋点"><span class="nav-number">4.4.1.</span> <span class="nav-text">通用埋点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自定义埋点"><span class="nav-number">4.4.2.</span> <span class="nav-text">自定义埋点</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#思路"><span class="nav-number">5.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设计原则"><span class="nav-number">6.</span> <span class="nav-text">设计原则</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#埋点流程"><span class="nav-number">7.</span> <span class="nav-text">埋点流程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#整理埋点方案"><span class="nav-number">7.1.</span> <span class="nav-text">整理埋点方案</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#采集工具植入"><span class="nav-number">7.2.</span> <span class="nav-text">采集工具植入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#埋点测试"><span class="nav-number">7.3.</span> <span class="nav-text">埋点测试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线上数据跟踪"><span class="nav-number">7.4.</span> <span class="nav-text">线上数据跟踪</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#用户唯一标识"><span class="nav-number">8.</span> <span class="nav-text">用户唯一标识</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#设备ID"><span class="nav-number">8.1.</span> <span class="nav-text">设备ID</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Android系统"><span class="nav-number">8.1.1.</span> <span class="nav-text">Android系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IOS系统"><span class="nav-number">8.1.2.</span> <span class="nav-text">IOS系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Web网站"><span class="nav-number">8.1.3.</span> <span class="nav-text">Web网站</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#小程序"><span class="nav-number">8.1.4.</span> <span class="nav-text">小程序</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用户ID"><span class="nav-number">8.2.</span> <span class="nav-text">用户ID</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#意义"><span class="nav-number">9.</span> <span class="nav-text">意义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#注意事项"><span class="nav-number">10.</span> <span class="nav-text">注意事项</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#一些埋点管理系统"><span class="nav-number">11.</span> <span class="nav-text">一些埋点管理系统</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#网易HubbleData"><span class="nav-number">11.1.</span> <span class="nav-text">网易HubbleData</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料"><span class="nav-number">12.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Skye</p>
+  <div class="site-description" itemprop="description">刻苦，沉着，精进不休</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">150</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">53</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/ShootingWang" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;ShootingWang"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2019 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-star"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Skye</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">401k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">6:05</span>
+</div>
+
+
+  <script src='https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js'></script>
+  <script>
+    if (window.mermaid) {
+      mermaid.initialize({theme: 'forest'});
+    }
+  </script>
+
+
+<script src="/js/prism/clipboard.js"></script>
+<script src="/js/prism/prism.js" async></script>
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+  <script defer src="/lib/three/three.min.js"></script>
+    <script defer src="/lib/three/canvas_lines.min.js"></script>
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js', () => {
+    new Valine(Object.assign({
+      el         : '#valine-comments',
+      path       : location.pathname,
+    }, {"enable":true,"appId":"yFKKmB84nH4WRrBC07BTRKLC-gzGzoHsz","appKey":"EFXmIM4ipk11GLk8Stx40FYk","notify":true,"verify":false,"placeholder":"记得填写邮箱哦~这样你就能及时收到我的回复了~","avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"language":null,"visitor":false,"comment_count":true,"recordIP":false,"serverURLs":null}
+    ));
+  }, window.Valine);
+});
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
+</html>
