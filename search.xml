@@ -26279,12 +26279,14 @@ $$<br>
 \right)<br>
 $$</p>
 <p>$$<br>
-\mathbf{ \beta } = \left( \begin{array}{c}<br>
+\mathbf{ \beta } = \left(<br>
+\begin{array}{c}<br>
 \beta_0 \<br>
 \beta_1 \<br>
 \vdots \<br>
 \beta_p<br>
-\end{array} \right) ,\qquad \mathbf{\varepsilon}= \left( \begin{array}{c}<br>
+\end{array} \right) ,\qquad \mathbf{\varepsilon}= \left(<br>
+\begin{array}{c}<br>
 \varepsilon_1 \<br>
 \varepsilon_2 \<br>
 \vdots \<br>
