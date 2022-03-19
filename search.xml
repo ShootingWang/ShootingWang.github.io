@@ -12334,7 +12334,7 @@ $$W_3={\chi^2 \leq \chi^2_{ \frac{ \alpha }{2} }(n-1) }或{ \chi^2 \geq \chi_{ 1
 <p>三个检验问题的p值分别为<br>
 $$p_1=P(\chi^2\geq \chi_0^2)$$<br>
 $$p_2=P(\chi^2\leq \chi_0^2)$$<br>
-$$p_3=2 \min \left{ P( \chi \geq \chi^2_0 ), P( \chi^2 \leq \chi^2_0 ) \right}$$</p>
+$$p_3=2 \min \left{ P(\chi\geq \chi^2_0 ), P( \chi^2 \leq \chi^2_0 ) \right}$$</p>
 <h1 id="chi-2-拟合优度检验"><a class="header-anchor" href="#chi-2-拟合优度检验"></a>$\chi^2$拟合优度检验</h1>
 <p>分类数据的$\chi^2$拟合优度检验</p>
 <p>根据某项指标，总体被分为$K$类：$A_1,A_2,\cdots,A_K$。关心各类元素在总体中所占的比率：<br>
