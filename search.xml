@@ -2340,11 +2340,11 @@ window.onresize=function(){
 </script>
 <h1 id="样例"><a class="header-anchor" href="#样例"></a>样例</h1>
 <h2 id="饼图"><a class="header-anchor" href="#饼图"></a>饼图</h2>
-<div id="echarts4638" style="width: 85%;height: 800px;margin: 0 auto"></div>
+<div id="echarts2622" style="width: 85%;height: 800px;margin: 0 auto"></div>
 <script src="https://cdn.bootcss.com/echarts/4.3.0/echarts.common.min.js"></script>
 <script type="text/javascript">
 	// 基于准备好的dom，初始化echarts实例
-	var myChart = echarts.init(document.getElementById('echarts4638'));
+	var myChart = echarts.init(document.getElementById('echarts2622'));
 	// 指定图表的配置项和数据
 	// 800表示图表展示的高度为800px
 // '85%'表示图表展示的宽度为85%
@@ -17289,8 +17289,8 @@ $$a^*=\arg\max_{a\in A} g(D,a)$$</li>
         <tag>算法</tag>
         <tag>机器学习</tag>
         <tag>分类</tag>
-        <tag>回归</tag>
         <tag>有监督学习</tag>
+        <tag>回归</tag>
       </tags>
   </entry>
   <entry>
@@ -24709,8 +24709,8 @@ $$cell[i][j]=cell[i-1][j-1]+1$$</li>
         <category>数据结构</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>数据结构</tag>
+        <tag>算法</tag>
       </tags>
   </entry>
   <entry>
@@ -28529,8 +28529,8 @@ $$Random Forest=Bagging+Decision Tree$$</li>
         <tag>算法</tag>
         <tag>机器学习</tag>
         <tag>分类</tag>
-        <tag>集成学习</tag>
         <tag>有监督学习</tag>
+        <tag>集成学习</tag>
         <tag>判别式模型</tag>
         <tag>Bagging</tag>
       </tags>
@@ -29073,8 +29073,8 @@ $$ w_i^T x - w_k^T x \geq 1 \quad \forall \quad k\neq i $$</li>
         <tag>算法</tag>
         <tag>机器学习</tag>
         <tag>分类</tag>
-        <tag>回归</tag>
         <tag>有监督学习</tag>
+        <tag>回归</tag>
         <tag>判别式模型</tag>
       </tags>
   </entry>
