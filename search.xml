@@ -21441,6 +21441,9 @@ _var 53963204.0
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 访问DataFrame的某一列（2种方法）：（访问df1的“Age”列）</span></span><br><span class="line">df1[<span class="string">'Age'</span>]</span><br><span class="line"><span class="comment">#0    18</span></span><br><span class="line"><span class="comment">#1    19</span></span><br><span class="line"><span class="comment">#2    21</span></span><br><span class="line"><span class="comment">#3    17</span></span><br><span class="line"><span class="comment">#Name: Age, dtype: int64</span></span><br><span class="line"></span><br><span class="line">df1.Age <span class="comment">## 结果同上</span></span><br></pre></td></tr></table></figure>
 <p>访问某几列：</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 访问DataFrame的某几列：</span></span><br><span class="line">df1[[<span class="string">'Name'</span>, <span class="string">'Age'</span>, <span class="string">'Gender'</span>]]</span><br></pre></td></tr></table></figure>
+<h2 id="astype"><a class="header-anchor" href="#astype"></a>astype()</h2>
+<p>转换列格式</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># int转object因子类型（离散）</span></span><br><span class="line"><span class="comment">## 含非数字的字符串不能通过astype转换</span></span><br><span class="line">df[col] = df[col].astype(<span class="string">'object'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">## int转category</span></span><br><span class="line">df[col] = df[col].astype(<span class="string">'category'</span>)</span><br></pre></td></tr></table></figure>
 <h2 id="at"><a class="header-anchor" href="#at"></a>at[]</h2>
 <p>通过<strong>行标签</strong>和<strong>列标签</strong>，选取DataFrame中的某个元素</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">dict1 = &#123;<span class="string">'Name'</span>:[<span class="string">'Mike'</span>, <span class="string">'John'</span>, <span class="string">'Maria'</span>, <span class="string">'Jack'</span>],</span><br><span class="line">        <span class="string">'Gender'</span>:[<span class="string">'M'</span>, <span class="string">'M'</span>, <span class="string">'F'</span>, <span class="string">'M'</span>],</span><br><span class="line">        <span class="string">'Age'</span>:[<span class="number">21</span>, <span class="number">19</span>, <span class="number">24</span>, <span class="number">18</span>]&#125;</span><br><span class="line">df1 = DataFrame(data=dict1)</span><br><span class="line">df1.at[<span class="number">2</span>, <span class="string">'Name'</span>]</span><br><span class="line"><span class="comment">#'Maria'</span></span><br></pre></td></tr></table></figure>
@@ -21562,6 +21565,22 @@ _var 53963204.0
 <li>可以通过赋值<code>df.tail(n)</code>中n来调整预览的行数</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">df.tail()</span><br></pre></td></tr></table></figure>
+<h2 id="to-csv"><a class="header-anchor" href="#to-csv"></a>to_csv()</h2>
+<p>将DataFrame保存（输出）为csv文件<br>
+<code>df.to_csv(&quot;filename.csv&quot;, index=False, encoding='utf_8_sig')</code></p>
+<ul>
+<li><code>index=False</code>：不输出索引（默认为<code>true</code>）</li>
+<li><code>encoding</code>：编码
+<ul>
+<li><code>utf_8_sig</code></li>
+<li><code>utf-8</code></li>
+<li><code>gbk</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="to-excel"><a class="header-anchor" href="#to-excel"></a>to_excel()</h2>
+<p>将DataFrame保存（输出）为Excel文件<br>
+<code>df.to_excel(&quot;filename.xlsx&quot;, index=False, sheet_name=&quot;sheet_name&quot;)</code></p>
 <h2 id="to-numpy"><a class="header-anchor" href="#to-numpy"></a>to_numpy()</h2>
 <p>将DataFrame转换为数组Array</p>
 <ul>
