@@ -12306,7 +12306,7 @@ $$IDFA\rightarrow IDFV\rightarrow UDID$$</p>
   </entry>
   <entry>
     <title>检验 | 卡方检验</title>
-    <url>/%E6%A3%80%E9%AA%8C-%E5%8D%A1%E6%96%B9%E6%A3%80%E9%AA%8C.html</url>
+    <url>/%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C-%E5%8D%A1%E6%96%B9%E6%A3%80%E9%AA%8C.html</url>
     <content><![CDATA[<center>$\chi^2$-test</center>
 <a id="more"></a>
 <h1 id="卡方检验"><a class="header-anchor" href="#卡方检验"></a>卡方检验</h1>
@@ -12364,8 +12364,8 @@ $$\chi<sup>2=\sum_{i=1}</sup>K\frac{(n_i-n\hat{p}_i)^2}{n\hat{p}_i}$$<br>
         <category>Statistics</category>
       </categories>
       <tags>
-        <tag>检验</tag>
         <tag>概率统计基础</tag>
+        <tag>假设检验</tag>
       </tags>
   </entry>
   <entry>
@@ -25267,7 +25267,7 @@ $$cell[i][j]=cell[i-1][j-1]+1$$</li>
   </entry>
   <entry>
     <title>检验 | Mann-Whitney U检验</title>
-    <url>/%E6%A3%80%E9%AA%8C-U%E6%A3%80%E9%AA%8C.html</url>
+    <url>/%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C-U%E6%A3%80%E9%AA%8C.html</url>
     <content><![CDATA[<center></center>
 <a id="more"></a>
 <h1 id="Mann-Whitney-U-检验"><a class="header-anchor" href="#Mann-Whitney-U-检验"></a>Mann-Whitney U 检验</h1>
@@ -25383,13 +25383,13 @@ Var(U)&amp;=\frac{n_1n_2}{12}(n_1+n_2+1)<br>
         <category>Statistics</category>
       </categories>
       <tags>
-        <tag>检验</tag>
         <tag>概率统计基础</tag>
+        <tag>假设检验</tag>
       </tags>
   </entry>
   <entry>
     <title>检验 | t检验</title>
-    <url>/%E6%A3%80%E9%AA%8C-t%E6%A3%80%E9%AA%8C.html</url>
+    <url>/%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C-t%E6%A3%80%E9%AA%8C.html</url>
     <content><![CDATA[<center>t-test</center>
 <a id="more"></a>
 <ul>
@@ -25779,8 +25779,8 @@ $l$一般不为整数，可以取与$l$最接近的整数代替之。</li>
         <category>Statistics</category>
       </categories>
       <tags>
-        <tag>检验</tag>
         <tag>概率统计基础</tag>
+        <tag>假设检验</tag>
       </tags>
   </entry>
   <entry>
@@ -26016,7 +26016,7 @@ $$\mbox{Effect Size} = \frac{ad}{bc}$$</p>
 </blockquote>
 </li>
 <li>
-<a href="/%E6%A3%80%E9%AA%8C-t%E6%A3%80%E9%AA%8C.html" title="t检验">t检验</a>
+<a href="/%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C-t%E6%A3%80%E9%AA%8C.html" title="t检验">t检验</a>
 <blockquote>
 <p>适用于样本量小、总体方差未知的样本</p>
 </blockquote>
@@ -26029,7 +26029,7 @@ $$\mbox{Effect Size} = \frac{ad}{bc}$$</p>
 <li>两均值对比
 <ul>
 <li>
-<a href="/%E6%A3%80%E9%AA%8C-U%E6%A3%80%E9%AA%8C.html" title="Mann-Whitney U检验">Mann-Whitney U检验</a>
+<a href="/%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C-U%E6%A3%80%E9%AA%8C.html" title="Mann-Whitney U检验">Mann-Whitney U检验</a>
 </li>
 </ul>
 </li>
@@ -26088,7 +26088,7 @@ $$\mbox{Effect Size} = \frac{ad}{bc}$$</p>
         <category>Statistics</category>
       </categories>
       <tags>
-        <tag>检验</tag>
+        <tag>假设检验</tag>
       </tags>
   </entry>
   <entry>
