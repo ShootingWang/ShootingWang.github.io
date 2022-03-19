@@ -386,13 +386,13 @@ window.onresize=function(){
 </script>
 <h1 id="样例"><a class="header-anchor" href="#样例"></a>样例</h1>
 <h2 id="饼图"><a class="header-anchor" href="#饼图"></a>饼图</h2>
-<div id="echarts9202" style="width: 85%;height: 800px;margin: 0 auto"></div>
-<script src="https://cdn.bootcss.com/echarts/4.3.0/echarts.common.min.js"></script>
+<div id="echarts7147" style="width: 85%;height: 800px;margin: 0 auto"></div>
 <script type="text/javascript">
-	// 基于准备好的dom，初始化echarts实例
-	var myChart = echarts.init(document.getElementById('echarts9202'));
-	// 指定图表的配置项和数据
-	// 800表示图表展示的高度为800px
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('echarts7147'));
+
+        // 指定图表的配置项和数据
+        var option = // 800表示图表展示的高度为800px
 // '85%'表示图表展示的宽度为85%
 {
     title: {
@@ -434,8 +434,9 @@ window.onresize=function(){
         }
     ]
 }
-	// 使用刚指定的配置项和数据显示图表。
-	myChart.setOption(option);
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
 </script>
 <h2 id="折线图"><a class="header-anchor" href="#折线图"></a>折线图</h2>
 <h2 id="柱状图"><a class="header-anchor" href="#柱状图"></a>柱状图</h2>
