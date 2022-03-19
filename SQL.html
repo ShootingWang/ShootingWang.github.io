@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+<meta name="baidu-site-verification" content="GLZSr3LDqT" />
+<meta name="google-site-verification" content="fZvQBljM9I6UA4l4wwiA5wECEn7k0V4-DgCfWEPNtFc" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon2.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon2.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"github.com","root":"/","scheme":"Pisces","version":"8.0.0-rc.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"valine","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+<link rel="stylesheet" href="/js/prism/prism.css">
+
+<script src="http://echarts.baidu.com/dist/echarts.common.min.js"></script>
+  <meta name="description" content="SQL相关知识积累~">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SQL">
+<meta property="og:url" content="https://github.com/ShootingWang/ShootingWang.github.io/SQL.html">
+<meta property="og:site_name" content="Skye">
+<meta property="og:description" content="SQL相关知识积累~">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-04-29T16:58:41.000Z">
+<meta property="article:modified_time" content="2021-02-13T01:27:47.880Z">
+<meta property="article:author" content="Skye">
+<meta property="article:tag" content="SQL">
+<meta property="article:tag" content="MySQL">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://github.com/ShootingWang/ShootingWang.github.io/SQL.html">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>SQL | Skye</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><script type="text/javascript" color="0,0,0" opacity='0.5' zIndex="-1" count="99" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+  </script>
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+        <span class="toggle-line toggle-line-first"></span>
+        <span class="toggle-line toggle-line-middle"></span>
+        <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Skye</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-update">
+
+    <a href="/update/" rel="section"><i class="fa fa-list-ul fa-fw"></i>更新</a>
+
+  </li>
+        <li class="menu-item menu-item-tool">
+
+    <a href="/tools/" rel="section"><i class="fa fa-tools fa-fw"></i>工具</a>
+
+  </li>
+        <li class="menu-item menu-item-treasure">
+
+    <a href="/treasure/" rel="section"><i class="fa fa-gem fa-fw"></i>资源</a>
+
+  </li>
+        <li class="menu-item menu-item-pool">
+
+    <a href="/pool/" rel="section"><i class="fa fa-book fa-fw"></i>题库</a>
+
+  </li>
+        <li class="menu-item menu-item-links">
+
+    <a href="/links" rel="section"><i class="fa fa-link fa-fw"></i>友链</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/ShootingWang" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+    <!-- echarts -->
+    <script type="text/javascript" src="/js/src/echarts.common.js"></script>
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://github.com/ShootingWang/ShootingWang.github.io/SQL.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Skye">
+      <meta itemprop="description" content="刻苦，沉着，精进不休">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Skye">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          SQL
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-30 00:58:41" itemprop="dateCreated datePublished" datetime="2020-04-30T00:58:41+08:00">2020-04-30</time>
+            </span>
+
+          
+            <i class="fa fa-thumb-tack"></i>
+            <font color=7D26CD>置顶</font>
+            <span class="post-meta-divider">|</span>
+          
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-02-13 09:27:47" itemprop="dateModified" datetime="2021-02-13T09:27:47+08:00">2021-02-13</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">数据库</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/SQL.html#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/SQL.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <center>SQL相关知识积累~</center>
+<a id="more"></a>
+<h1 id="SQL"><a class="header-anchor" href="#SQL"></a>SQL</h1>
+<p>SQL语言具有两种<strong>使用方式</strong>，分别为</p>
+<ol>
+<li><strong>交互式SQL</strong>：在终端交互方式下使用</li>
+<li><strong>嵌入式SQL</strong>：嵌入在高级语言的程序中使用；这些高级语言可以是C语言、PASCAL、COBOL等，被称为宿主语言</li>
+</ol>
+<h2 id="交互式SQL"><a class="header-anchor" href="#交互式SQL"></a>交互式SQL</h2>
+<h3 id="MySQL"><a class="header-anchor" href="#MySQL"></a>MySQL</h3>
+<a href="/MySQL.html" title="MySQL">MySQL</a>
+<h3 id="MS-SQL-Server"><a class="header-anchor" href="#MS-SQL-Server"></a>MS SQL Server</h3>
+<a href="/SQL-Server.html" title="SQL Server">SQL Server</a>
+<h3 id="ACCESS"><a class="header-anchor" href="#ACCESS"></a>ACCESS</h3>
+<a href="/ACCESS.html" title="ACCESS">ACCESS</a>
+<h2 id="嵌入式SQL"><a class="header-anchor" href="#嵌入式SQL"></a>嵌入式SQL</h2>
+<h3 id="嵌入C语言程序"><a class="header-anchor" href="#嵌入C语言程序"></a>嵌入C语言程序</h3>
+<ul>
+<li>SQL 与 C 语言处理记录的方式是不同的。当将 SQL 语句嵌入到 C 语言程序时，为协调两者而引入<strong>游标</strong>（<a href="https://www.nowcoder.com/questionTerminal/56131e315f2d4071847d6a052b47260d" target="_blank" rel="noopener">题目来源</a>）</li>
+</ul>
+<h1 id="SQL标准"><a class="header-anchor" href="#SQL标准"></a>SQL标准</h1>
+<ul>
+<li>SQL92标准定义的最严格事务级别是：Serializable（可串行化）</li>
+</ul>
+<h1 id="SQL语言"><a class="header-anchor" href="#SQL语言"></a>SQL语言</h1>
+<p>SQL有四种语言（也有的说法将TCL考虑为第五种）：</p>
+<ul>
+<li>DDL  数据定义语言</li>
+<li>DQL  数据查询语言</li>
+<li>DML  数据库操纵语言</li>
+<li>DCL  数据库控制语言</li>
+<li>TCL  事务控制语言</li>
+</ul>
+<p>详情请见《<a href="/sql-sql%E8%AF%AD%E8%A8%80%E7%B1%BB%E5%9E%8B.html" title="SQL语言类型">SQL语言类型</a>》</p>
+<h1 id="相关书籍"><a class="header-anchor" href="#相关书籍"></a>相关书籍</h1>
+<ul>
+<li>
+<a href="/sql-sql%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A.html" title="《SQL必知必会》">《SQL必知必会》</a> 
+</li>
+<li>
+<a href="/sql-SQL%E8%BF%9B%E9%98%B6%E6%95%99%E7%A8%8B.html" title="《SQL进阶教程》">《SQL进阶教程》</a>
+</li>
+<li>
+<a href="/sql-sql%E8%A7%A3%E6%83%91.html" title="《SQL解惑》">《SQL解惑》</a>
+</li>
+</ul>
+<h1 id="数据设计"><a class="header-anchor" href="#数据设计"></a>数据设计</h1>
+<ul>
+<li>在关系数据库设计中，关系模式是用来记录用户数据的<strong>二维表</strong></li>
+</ul>
+<h2 id="概念结构设计"><a class="header-anchor" href="#概念结构设计"></a>概念结构设计</h2>
+<p>数据设计中的E-R模型设计是<strong>概念结构设计</strong>阶段的主要工作之一</p>
+<ul>
+<li>数据库的概念独立于具体的机器和DBMS</li>
+</ul>
+<h3 id="E-R方法"><a class="header-anchor" href="#E-R方法"></a>E-R方法</h3>
+<p>实体-联系方法（E-R，Entity-Relationship Approach），是描述现实世界概念结构模型的有效方法。</p>
+<ul>
+<li><strong>矩形</strong>：实体型</li>
+<li><strong>椭圆</strong>：实体的属性</li>
+<li><strong>菱形</strong>：实体型之间的联系</li>
+</ul>
+<h2 id="逻辑结构设计"><a class="header-anchor" href="#逻辑结构设计"></a>逻辑结构设计</h2>
+<ul>
+<li>在数据库设计中，将ER图转换为关系数据模型的过程属于<strong>逻辑设计阶段</strong></li>
+</ul>
+<h2 id="物理结构设计"><a class="header-anchor" href="#物理结构设计"></a>物理结构设计</h2>
+<h1 id="键（码）"><a class="header-anchor" href="#键（码）"></a>键（码）</h1>
+<p>数据库中的<strong>键</strong>（key）也可以称为<strong>码</strong>，是关系模型中的一个重要概念，它是逻辑结构，不是数据库的物理部分。</p>
+<ul>
+<li><strong>候选键（码）</strong>：如果关系中的某一属性组的值能唯一地标识一个元组，则称该属性组为候选码</li>
+<li><strong>主键（码）</strong>：如果一个关系有多个候选码，则选定其中一个为主码</li>
+<li><strong>主属性</strong>：候选码的诸属性</li>
+<li><strong>非主属性</strong>：不包含在任何候选码中的属性</li>
+</ul>
+<h2 id="超键（码）"><a class="header-anchor" href="#超键（码）"></a>超键（码）</h2>
+<p>能唯一标识元组的属性集中的其中一个属性可以作为一个超键，多个属性组合也可以作为一个超键（Super Key）。</p>
+<ul>
+<li>在关系中能唯一标识元组的属性集称为关系模式的超键</li>
+</ul>
+<h2 id="候选键（码）"><a class="header-anchor" href="#候选键（码）"></a>候选键（码）</h2>
+<p>候选键（码）（Candidate Key）有2个要求：</p>
+<ol>
+<li>始终能够唯一地标识一个元组</li>
+<li>在属性集中找不出真子集能够满足条件</li>
+</ol>
+<ul>
+<li>可以将“候选键（码）”理解为不能再“缩小”的超键（不含有多余属性的超键）</li>
+</ul>
+<h2 id="主键（码）"><a class="header-anchor" href="#主键（码）"></a>主键（码）</h2>
+<p>如果一个关系有多个候选键（码），则选定其中一个为主键（码）（Primary Key）</p>
+<ul>
+<li>在关系模式中，对应关系的主键必须是能唯一确定元组的一组属性</li>
+<li>主键是唯一、不为空值的列</li>
+</ul>
+<h2 id="外键（码）"><a class="header-anchor" href="#外键（码）"></a>外键（码）</h2>
+<ul>
+<li>在一个关系A中，有一个属性b不是关系A的主键（码）或候选键（码），但是是另一个关系B的主键，则关系A中的属性b是关系A中的外键（码）</li>
+<li>在SQL语言中使用<code>FOREIGN KEY</code>时，与之配合的语句是<code>REFERENCES</code></li>
+</ul>
+<h2 id="全键（码）"><a class="header-anchor" href="#全键（码）"></a>全键（码）</h2>
+<ul>
+<li>是候选键（码）的一种特殊情况</li>
+<li>如果关系中只有一个候选键（码），且这个候选键（码）中包含了全部属性，那么称这个候选码为全键（码）</li>
+</ul>
+<h1 id="事务"><a class="header-anchor" href="#事务"></a>事务</h1>
+<p>详情请见《<a href="/sql-%E4%BA%8B%E5%8A%A1.html" title="SQL事务">SQL事务</a>》</p>
+<h2 id="特性"><a class="header-anchor" href="#特性"></a>特性</h2>
+<p>数据库事务的四大特性（简称<strong>ACID</strong>）：</p>
+<ol>
+<li>原子性（Atomicity）</li>
+<li>一致性（Consistency）</li>
+<li>隔离性（Isolation）</li>
+<li>持久性（Durability）</li>
+</ol>
+<h2 id="事务隔离级别"><a class="header-anchor" href="#事务隔离级别"></a>事务隔离级别</h2>
+<ol>
+<li>Read Uncommitted（未提交读）</li>
+<li>Read Committed（提交读）</li>
+<li>Repeatable Read（可重复读）</li>
+<li>Serializable（可串行化）</li>
+</ol>
+<ul>
+<li>隔离级别依次增加</li>
+<li>并发性能依次降低</li>
+<li>随着隔离级别的增高，并发性能降低</li>
+</ul>
+<h1 id="视图"><a class="header-anchor" href="#视图"></a>视图</h1>
+<ul>
+<li>在视图上能够完成的操作：
+<ul>
+<li>更新视图</li>
+<li>查询</li>
+<li>在视图上定义新的视图</li>
+</ul>
+</li>
+<li>在视图上<strong>不能</strong>完成的操作是：在视图上定义新的表</li>
+</ul>
+<h1 id="数据类型"><a class="header-anchor" href="#数据类型"></a>数据类型</h1>
+<h1 id="通用"><a class="header-anchor" href="#通用"></a>通用</h1>
+<ul>
+<li>
+<a href="/sql-%E8%8C%83%E5%BC%8F.html" title="范式">范式</a>
+</li>
+<li>
+<a href="/sql-2-%E6%A8%A1%E5%BC%8F.html" title="模式">模式</a>
+</li>
+<li>
+
+</li>
+<li>
+<a href="/sql-sql%E8%AF%AD%E5%8F%A5%E6%89%A7%E8%A1%8C%E9%A1%BA%E5%BA%8F.html" title="SQL语句执行顺序">SQL语句执行顺序</a>
+</li>
+</ul>
+<h2 id="COALESCE"><a class="header-anchor" href="#COALESCE"></a>COALESCE()</h2>
+<p><code>COALESCE(expression1, expression2, expression3, ...)</code>：接收一系列表达式或列，返回第一个非空的值。</p>
+<ul>
+<li>如果都是空值（NULL），则会报错</li>
+</ul>
+<h2 id="CREATE"><a class="header-anchor" href="#CREATE"></a>CREATE</h2>
+<h3 id="CREATE-FUNCTION"><a class="header-anchor" href="#CREATE-FUNCTION"></a>CREATE FUNCTION</h3>
+<p>编写函数：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 某电器商品海关进口税征收办法，起征点为500元，超出部分按以下2级计算：</span></span><br><span class="line"><span class="comment">-- 1 、超过0至150， 税率3%</span></span><br><span class="line"><span class="comment">-- 2、 超过150元以上 ，税率10%</span></span><br><span class="line"><span class="comment">-- 商品进口税=(商品总额-500)*税率</span></span><br><span class="line"><span class="comment">-- 编写一个函数，实现输入商品的总额，返回该商品的进口税</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">FUNCTION</span> goods(@total <span class="keyword">AS</span> money)</span><br><span class="line"><span class="keyword">RETURNS</span> money <span class="keyword">AS</span></span><br><span class="line"><span class="keyword">BEGIN</span></span><br><span class="line">  <span class="keyword">declare</span> @income money</span><br><span class="line">  <span class="keyword">declare</span> @tax money</span><br><span class="line"><span class="keyword">SELECT</span> @income = @total - <span class="number">500</span></span><br><span class="line"><span class="keyword">IF</span> @income &lt;= <span class="number">0</span> <span class="keyword">SET</span> @tax = <span class="number">0</span></span><br><span class="line"><span class="keyword">ELSE</span> </span><br><span class="line">  <span class="keyword">BEGIN</span></span><br><span class="line">    <span class="keyword">IF</span>(<span class="number">0</span> &lt; @income <span class="keyword">AND</span> @income &lt;= <span class="number">150</span>)</span><br><span class="line">      <span class="keyword">SELECT</span> @tax = @income * <span class="number">0.03</span></span><br><span class="line">    <span class="keyword">IF</span>(@income &gt; <span class="number">150</span>)</span><br><span class="line">      <span class="keyword">SELECT</span> @tax = @income * <span class="number">0.1</span></span><br><span class="line">    <span class="keyword">END</span></span><br><span class="line"><span class="keyword">RETURN</span> @tax</span><br><span class="line"><span class="keyword">END</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 或</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">FUNCTION</span> goods(@total <span class="keyword">AS</span> money)</span><br><span class="line"><span class="keyword">RETURNS</span> money <span class="keyword">AS</span> </span><br><span class="line"><span class="keyword">BEGIN</span> </span><br><span class="line">  <span class="keyword">declare</span> @income money</span><br><span class="line">  <span class="keyword">declare</span> @tax money</span><br><span class="line"><span class="keyword">SET</span> @income = @total - <span class="number">500</span></span><br><span class="line"><span class="keyword">IF</span> @income &lt;= <span class="number">0</span> <span class="keyword">SET</span> @tax = <span class="number">0</span></span><br><span class="line"><span class="keyword">ELSE</span> </span><br><span class="line">  <span class="keyword">BEGIN</span> </span><br><span class="line">    <span class="keyword">IF</span>(<span class="number">0</span> &lt; @income <span class="keyword">AND</span> @income &lt;= <span class="number">150</span>)</span><br><span class="line">      <span class="keyword">SET</span> @tax = @income * <span class="number">0.03</span></span><br><span class="line">    <span class="keyword">IF</span>(@income &gt; <span class="number">150</span>)</span><br><span class="line">      <span class="keyword">SET</span> @tax = @income * <span class="number">0.1</span></span><br><span class="line">    <span class="keyword">END</span></span><br><span class="line"><span class="keyword">RETURN</span> @tax</span><br><span class="line"><span class="keyword">END</span></span><br></pre></td></tr></table></figure>
+<h2 id="DATEDIFF"><a class="header-anchor" href="#DATEDIFF"></a>DATEDIFF()</h2>
+<p><code>DATEDIFF(string enddate, string startdate)</code>：返回结束日期减去开始日期的天数</p>
+<ul>
+<li>返回值：<code>int</code></li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 计算0701-0715的区间三日留存率</span></span><br><span class="line"><span class="comment">-- 区间三日留存率：t+1、t+2、t+3任意一天有回访即算留存</span></span><br><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">	  t1.aday</span><br><span class="line">    , <span class="keyword">ROUND</span>(<span class="keyword">COUNT</span>(<span class="keyword">DISTINCT</span> t2.id) / <span class="keyword">COUNT</span>(<span class="keyword">DISTINCT</span> t1.id) ,<span class="number">4</span>)<span class="keyword">AS</span> cohort_rate</span><br><span class="line"><span class="keyword">FROM</span> cust t1 </span><br><span class="line"><span class="keyword">LEFT</span> <span class="keyword">JOIN</span> cust t2</span><br><span class="line"><span class="keyword">ON</span> t1.id = t2.id</span><br><span class="line"><span class="keyword">AND</span> (<span class="keyword">DATEDIFF</span>(t2.aday, t1.aday) =<span class="number">1</span> <span class="keyword">OR</span> <span class="keyword">DATEDIFF</span>(t2.aday, t1.aday) =<span class="number">2</span> <span class="keyword">OR</span> <span class="keyword">DATEDIFF</span>(t2.aday, t1.aday) =<span class="number">3</span>)</span><br><span class="line"><span class="keyword">WHERE</span> t1.aday <span class="keyword">BETWEEN</span> <span class="string">'2020-07-01'</span> <span class="keyword">AND</span> <span class="string">'2020-07-15'</span></span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> </span><br><span class="line">	t1.aday;</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 计算次日、2日、3日留存率</span></span><br><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">    tt1.date</span><br><span class="line">    , tt2.gap</span><br><span class="line">    , tt2.retention_num</span><br><span class="line">    , tt2.retention_num / tt1.uv_day0 <span class="keyword">AS</span> cohort_rate</span><br><span class="line"><span class="keyword">FROM</span> </span><br><span class="line">(</span><br><span class="line">    <span class="keyword">SELECT</span> </span><br><span class="line">        <span class="built_in">date</span></span><br><span class="line">        , <span class="keyword">COUNT</span>(<span class="keyword">DISTINCT</span> user_id) <span class="keyword">AS</span> uv_day0</span><br><span class="line">    <span class="keyword">FROM</span> tbl_new_users</span><br><span class="line">    <span class="keyword">WHERE</span> <span class="built_in">date</span> = <span class="string">'2020-07-01'</span></span><br><span class="line">    <span class="keyword">GROUP</span> <span class="keyword">BY</span> <span class="built_in">date</span></span><br><span class="line">) <span class="keyword">AS</span> tt1</span><br><span class="line"></span><br><span class="line"><span class="keyword">LEFT</span> <span class="keyword">JOIN</span></span><br><span class="line">(</span><br><span class="line">    <span class="keyword">SELECT</span></span><br><span class="line">        t1.date</span><br><span class="line">        , gap</span><br><span class="line">        , <span class="keyword">COUNT</span>(*) <span class="keyword">AS</span> retention_num</span><br><span class="line">    <span class="keyword">FROM</span> </span><br><span class="line">    (</span><br><span class="line">        <span class="keyword">SELECT</span> </span><br><span class="line">            <span class="built_in">date</span></span><br><span class="line">            , user_id <span class="keyword">AS</span> uid1</span><br><span class="line">        <span class="keyword">FROM</span> tbl_new_users</span><br><span class="line">        <span class="keyword">WHERE</span> <span class="built_in">date</span> = <span class="string">'2020-07-01'</span></span><br><span class="line">    ) <span class="keyword">AS</span> t1</span><br><span class="line">    <span class="keyword">LEFT</span> <span class="keyword">JOIN</span> </span><br><span class="line">    (</span><br><span class="line">        <span class="keyword">SELECT</span></span><br><span class="line">            user_id <span class="keyword">AS</span> uid2</span><br><span class="line">            , <span class="keyword">DATEDIFF</span>(<span class="built_in">date</span>, <span class="string">'2020-07-01'</span>) <span class="keyword">AS</span> gap</span><br><span class="line">        <span class="keyword">FROM</span> tbl_active_users</span><br><span class="line">        <span class="keyword">WHERE</span> <span class="built_in">date</span> <span class="keyword">BETWEEN</span> <span class="string">'2020-07-01'</span> <span class="keyword">AND</span> <span class="string">'2020-07-03'</span></span><br><span class="line">    ) <span class="keyword">AS</span> t2</span><br><span class="line">    <span class="keyword">ON</span> t1.uid1 = t2.uid2</span><br><span class="line">    <span class="keyword">GROUP</span> <span class="keyword">BY</span> </span><br><span class="line">        <span class="built_in">date</span></span><br><span class="line">        , gap</span><br><span class="line">) tt2</span><br><span class="line"><span class="keyword">ON</span> tt1.date = tt2.date</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> </span><br><span class="line">    tt1.date</span><br><span class="line">    , tt2.gap;</span><br></pre></td></tr></table></figure>
+<h2 id="DATE-FORMAT"><a class="header-anchor" href="#DATE-FORMAT"></a>DATE_FORMAT()</h2>
+<p>以不同的格式显示日期/时间数据</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 当月的第一天</span></span><br><span class="line">DATE_FORMAT('$&#123;date&#125;', 'yyyy-MM-01')</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 每月1号调度任务，任务涉及前一个月的所有数据</span></span><br><span class="line">pt between date_format(date_sub('$&#123;date&#125;', 1), 'yyyy-MM-01') and date_sub('$&#123;date&#125;', 1) -- 其中 $&#123;date&#125;是某月1号</span><br><span class="line"><span class="comment">-- 上上个自然月</span></span><br><span class="line">pt between date_format(date_sub(date_format(date_sub('$&#123;date&#125;', 1), 'yyyy-MM-01'), 1), 'yyyy-MM-01') and date_sub(date_format(date_sub('$&#123;date&#125;', 1), 'yyyy-MM-01'), 1)</span><br></pre></td></tr></table></figure>
+<h2 id="DELETE"><a class="header-anchor" href="#DELETE"></a>DELETE</h2>
+<p>删除表中数据：<code>DELETE TABLE table_name</code></p>
+<ul>
+<li><a href="#TRUNCATE">TRUNCATE</a>也是删除表中数据的语句
+<ul>
+<li><code>TRUNCATE</code>比<code>DELETE</code>的速度快</li>
+<li><code>TRUNCATE</code>是删除表的所有行；而<code>DELETE</code>是删除表的一行或多行（除非没有<code>WHERE</code>子句）</li>
+<li>在删除时，如果遇到任何一行违反约束（主要是外键约束），则<code>TRUNCATE</code>仍然删除表中数据，但是表的结构、列、约束、索引等保持不变，而<code>DELETE</code>直接返回错误</li>
+<li>对于被外键约束的表，不能使用<code>TRUNCATE</code>，而应该使用不带<code>WHERE</code>子句的<code>DELETE</code></li>
+<li>如果想保留标识计数值，要用<code>DELETE</code>；因为<code>TRUNCATE</code>会对新行标识所用的计数值重置为该列的种子</li>
+</ul>
+</li>
+</ul>
+<h2 id="DROP"><a class="header-anchor" href="#DROP"></a>DROP</h2>
+<p>删除表：<code>DROP TABLE table_name</code></p>
+<h2 id="grouping-sets"><a class="header-anchor" href="#grouping-sets"></a>grouping sets</h2>
+<p>分组集（Grouping Sets）是多个分组的并集，用于在一个查询中，按照不同的分组列对集合进行聚合运算，等价于对单个分组使用“union all”，计算多个结果集的并集。</p>
+<ul>
+<li>在单个分组中缺失的分组列，返回<code>null</code></li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span>  a</span><br><span class="line">        , b</span><br><span class="line">        , c</span><br><span class="line">        , <span class="keyword">count</span>(<span class="number">1</span>) <span class="keyword">as</span> cnt </span><br><span class="line">        , <span class="keyword">sum</span>(d) <span class="keyword">as</span> total_d</span><br><span class="line"><span class="keyword">from</span>    tbl</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span>  a</span><br><span class="line">          , b</span><br><span class="line">          , c</span><br><span class="line"><span class="keyword">grouping</span> <span class="keyword">sets</span> (a, (a, b), (a, b, c))</span><br><span class="line">;</span><br><span class="line"><span class="comment">-- 等价于</span></span><br><span class="line"><span class="keyword">select</span>  a</span><br><span class="line">        , <span class="literal">null</span></span><br><span class="line">        , <span class="literal">null</span></span><br><span class="line">        , <span class="keyword">count</span>(<span class="number">1</span>) <span class="keyword">as</span> cnt </span><br><span class="line">        , <span class="keyword">sum</span>(d) <span class="keyword">as</span> total_d</span><br><span class="line"><span class="keyword">from</span>    tbl</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> a</span><br><span class="line"></span><br><span class="line"><span class="keyword">union</span> <span class="keyword">all</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span>  a</span><br><span class="line">        , b</span><br><span class="line">        , <span class="literal">null</span> </span><br><span class="line">        , <span class="keyword">count</span>(<span class="number">1</span>) <span class="keyword">as</span> cnt </span><br><span class="line">        , <span class="keyword">sum</span>(d) <span class="keyword">as</span> total_d</span><br><span class="line"><span class="keyword">from</span>    tbl</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span>  a, b</span><br><span class="line"></span><br><span class="line"><span class="keyword">union</span> <span class="keyword">all</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span>  a</span><br><span class="line">        , b</span><br><span class="line">        , c</span><br><span class="line">        , <span class="keyword">count</span>(<span class="number">1</span>) <span class="keyword">as</span> cnt </span><br><span class="line">        , <span class="keyword">sum</span>(d) <span class="keyword">as</span> total_d</span><br><span class="line"><span class="keyword">from</span>    tbl</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span>  a, b, c;</span><br></pre></td></tr></table></figure>
+<h2 id="IIF"><a class="header-anchor" href="#IIF"></a>IIF()</h2>
+<p><code>IIF(boolean_expression, valueForTrue, valueForFalse)</code>：如果<code>boolean_expression</code>为真，则返回<code>valueForTrue</code>；否则返回<code>valueForFalse</code>。</p>
+<h2 id="INTO"><a class="header-anchor" href="#INTO"></a>INTO</h2>
+<h2 id="ISNULL"><a class="header-anchor" href="#ISNULL"></a>ISNULL()</h2>
+<p><code>ISNULL(expression1, expression2)</code>：如果第一个参数为<code>NULL</code>，则返回第二个参数expression2；否则，返回第一个参数expression1。等价于<code>CASE WHEN expression1 IS NULL THEN expression2 ELSE expression1 END</code>。</p>
+<h2 id="LAG"><a class="header-anchor" href="#LAG"></a>LAG()</h2>
+<p>滞后若干项</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 表login_log记录用户的登录行为：uid（用户id）、login_date（登陆日期）</span></span><br><span class="line"><span class="comment">-- 求连续登陆5天的用户id</span></span><br><span class="line"><span class="keyword">select</span> uid</span><br><span class="line"><span class="keyword">from</span>  </span><br><span class="line">(</span><br><span class="line">    <span class="keyword">select</span>  uid</span><br><span class="line">            , login_date <span class="comment">-- 登陆日期</span></span><br><span class="line">            , lag(login_date, <span class="number">4</span>) <span class="keyword">over</span>(<span class="keyword">partition</span> <span class="keyword">by</span> uid <span class="keyword">order</span> <span class="keyword">by</span> login_date <span class="keyword">asc</span>) <span class="keyword">as</span> pre_5_date <span class="comment">-- 登陆日期往前4个记录</span></span><br><span class="line">    <span class="keyword">from</span>    login_log</span><br><span class="line">) a </span><br><span class="line"><span class="keyword">where</span>  date_diff(login_date, pre_5_date) = <span class="number">4</span>;</span><br></pre></td></tr></table></figure>
+<h2 id="last-day"><a class="header-anchor" href="#last-day"></a>last_day()</h2>
+<p>取某月的最后一天</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span>  <span class="keyword">last_day</span>(<span class="string">'2020-11-06'</span>);</span><br><span class="line"><span class="comment">-- 即 2020-11-30</span></span><br></pre></td></tr></table></figure>
+<h2 id="locate"><a class="header-anchor" href="#locate"></a>locate()</h2>
+<p><code>LOCATE(substr, str)</code>：返回字符串str第一次出现子串substr的位置。</p>
+<ul>
+<li>如果substr不在str中，则返回0</li>
+</ul>
+<p><code>LOCATE(substr, str, pos)</code>：返回第一次出现在字符串str的子串substr的位置，从位置pos开始。</p>
+<ul>
+<li>如果substr不在str中，则返回0</li>
+</ul>
+<h2 id="MAX"><a class="header-anchor" href="#MAX"></a>MAX()</h2>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 用户最近登录的日期</span></span><br><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">    <span class="built_in">date</span> <span class="keyword">AS</span> d</span><br><span class="line"><span class="keyword">FROM</span> </span><br><span class="line">(</span><br><span class="line">    <span class="keyword">SELECT</span></span><br><span class="line">        user_id</span><br><span class="line">        , <span class="built_in">date</span></span><br><span class="line">        , ROW_NUMBER() <span class="keyword">OVER</span>(<span class="keyword">PARTITION</span> <span class="keyword">BY</span> user_id <span class="keyword">ORDER</span> <span class="keyword">BY</span> <span class="built_in">date</span> <span class="keyword">DESC</span>) <span class="keyword">AS</span> r_num</span><br><span class="line">    <span class="keyword">FROM</span> login</span><br><span class="line">) <span class="keyword">AS</span> t</span><br><span class="line"><span class="keyword">WHERE</span> r_num = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 或</span></span><br><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">    <span class="keyword">MAX</span>(<span class="built_in">date</span>)</span><br><span class="line"><span class="keyword">FROM</span> login</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> user_id</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> user_id;</span><br></pre></td></tr></table></figure>
+<h2 id="MIN"><a class="header-anchor" href="#MIN"></a>MIN</h2>
+<ul>
+<li><a href="https://www.nowcoder.com/practice/16d41af206cd4066a06a3a0aa585ad3d?tpId=82&amp;&amp;tqId=35086&amp;rp=1&amp;ru=/ta/sql&amp;qru=/ta/sql/question-ranking" target="_blank" rel="noopener">题源</a>：</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 新登录用户的次日登录成功的留存率</span></span><br><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">    <span class="keyword">ROUND</span>(<span class="number">1.0</span> * <span class="keyword">COUNT</span>(<span class="keyword">DISTINCT</span> l1.user_id) / (<span class="keyword">SELECT</span> <span class="keyword">COUNT</span>(<span class="keyword">DISTINCT</span> user_id) <span class="keyword">FROM</span> login), <span class="number">3</span>)</span><br><span class="line"><span class="keyword">FROM</span> login l1, login l2</span><br><span class="line"><span class="keyword">ON</span> l1.user_id = l2.user_id</span><br><span class="line"><span class="keyword">AND</span> <span class="built_in">DATE</span>(l1.date, <span class="string">'+1 day'</span>) = l2.date</span><br><span class="line"><span class="keyword">AND</span> l1.date = (<span class="keyword">SELECT</span> <span class="keyword">MIN</span>(<span class="built_in">date</span>) <span class="keyword">FROM</span> login <span class="keyword">WHERE</span> user_id = l1.user_id);</span><br></pre></td></tr></table></figure>
+<h2 id="NULLIF"><a class="header-anchor" href="#NULLIF"></a>NULLIF()</h2>
+<p><code>NULLIF(expression1, expression2)</code>：如果两个参数相等，则返回<code>NULL</code>；否则，返回第一个参数。等价于<code>CASE WHEN expression1 = expression2 THEN NULL ELSE expression1 END</code>。</p>
+<ul>
+<li>可用于防止分母中出现0而报错</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">a/NULLIF(b, 0)</span><br><span class="line"><span class="comment">-- 当b为0时，该式直接返回NULL</span></span><br></pre></td></tr></table></figure>
+<h2 id="ORDER-BY"><a class="header-anchor" href="#ORDER-BY"></a>ORDER BY</h2>
+<ul>
+<li>用于排序</li>
+<li>默认升序<code>ASC</code>；降序需要在列名后加<code>DESC</code></li>
+<li>对带有排序作用的<code>ORDER BY</code>子句的查询，<code>ORDER BY</code>返回的是一个对象，其中的行按特定的顺序组织在一起，这种对象被称为<strong>游标</strong></li>
+<li><code>ORDER BY</code>子句是唯一能重用列别名的子句
+<ul>
+<li>这是因为<code>ORDER BY</code>子句是在<code>SELECT</code>子句之后才执行的</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">(8)<span class="keyword">SELECT</span> (<span class="number">9</span>)<span class="keyword">DISTINCT</span> (<span class="number">11</span>) &lt;TOP <span class="keyword">num</span>&gt;&lt;<span class="keyword">SELECT</span> <span class="keyword">list</span>&gt;</span><br><span class="line">(<span class="number">1</span>)<span class="keyword">FROM</span> [left_table]</span><br><span class="line">(<span class="number">3</span>)&lt;JOIN_type&gt; <span class="keyword">JOIN</span> &lt;right_table&gt;</span><br><span class="line">(<span class="number">2</span>)<span class="keyword">ON</span> &lt;join_condition&gt;</span><br><span class="line">(<span class="number">4</span>)<span class="keyword">WHERE</span> &lt;where_condition&gt;</span><br><span class="line">(<span class="number">5</span>)<span class="keyword">GROUP</span> <span class="keyword">BY</span> &lt;group_by_list&gt;</span><br><span class="line">(<span class="number">6</span>)<span class="keyword">WITH</span> &lt;<span class="keyword">CUBE</span> | <span class="keyword">ROLLUP</span>&gt;</span><br><span class="line">(<span class="number">7</span>)<span class="keyword">HAVING</span> &lt;having_condition&gt;</span><br><span class="line">(<span class="number">10</span>)<span class="keyword">ORDER</span> <span class="keyword">BY</span> &lt;order_by_list&gt;;</span><br></pre></td></tr></table></figure>
+</li>
+<li>谨慎使用<code>ORDER BY</code>后面接数字的方式来进行排序，尽量使用<code>ORDER BY+列名</code>或<code>ORDER BY+列别名</code><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">  col_a,</span><br><span class="line">  col_b,</span><br><span class="line">  col_c</span><br><span class="line"><span class="keyword">FROM</span> table_1</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>; </span><br><span class="line"><span class="comment">-- 实际按照SELECT后的字段顺序col_a, col_b, col_c进行排序</span></span><br><span class="line"><span class="comment">-- 当查询的列发生改变时，而忘了修改ORDER BY后的数字时，可能会获得错误的查询结果</span></span><br></pre></td></tr></table></figure>
+</li>
+<li>表表达式不能使用<code>ORDER BY</code>进行排序
+<ul>
+<li><strong>表表达式</strong>包括：
+<ul>
+<li>视图（VIEW）</li>
+<li>内联表值函数</li>
+<li>派生表（子查询）</li>
+<li>公用表表达式（CTE）</li>
+</ul>
+</li>
+<li>表表达式加了<code>TOP</code>可以使用<code>ORDER BY</code></li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">  col_a</span><br><span class="line">  , col_b</span><br><span class="line"><span class="keyword">FROM</span> </span><br><span class="line">(</span><br><span class="line">    <span class="keyword">SELECT</span> TOP <span class="number">5</span> *</span><br><span class="line">    <span class="keyword">FROM</span> table_1</span><br><span class="line">    <span class="keyword">ORDER</span> <span class="keyword">BY</span> col_c</span><br><span class="line">) <span class="keyword">AS</span> t1  <span class="comment">-- 实际返回的是没有固定顺序的表</span></span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> col_a, col_b <span class="keyword">DESC</span>;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="REGEXP-REPLACE"><a class="header-anchor" href="#REGEXP-REPLACE"></a>REGEXP_REPLACE()</h2>
+<p>正则替换</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 如何统计表tbl的字段comments中出现了多少次“何时下班”？</span></span><br><span class="line"><span class="comment">-- 同一个句话中可能会出现多个“何时下班”</span></span><br><span class="line"><span class="keyword">select</span>  <span class="keyword">sum</span>(len_1 - len_2)</span><br><span class="line"><span class="keyword">from</span></span><br><span class="line">(</span><br><span class="line">    <span class="keyword">select</span>  comments</span><br><span class="line">            , <span class="keyword">len</span>(comments) <span class="keyword">as</span> len_1</span><br><span class="line">            , <span class="keyword">len</span>(regexp_replace(comments, <span class="string">'何时下班'</span>, <span class="string">'何时下'</span>)) <span class="keyword">as</span> len_2</span><br><span class="line">    <span class="keyword">from</span>    tbl</span><br><span class="line">) a;</span><br></pre></td></tr></table></figure>
+<h2 id="ROW-NUMBER"><a class="header-anchor" href="#ROW-NUMBER"></a>ROW_NUMBER()</h2>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 给定表table_a（包含user_id, login_date），计算连续3天登录的用户id</span></span><br><span class="line"><span class="keyword">SELECT</span>  user_id</span><br><span class="line"><span class="keyword">FROM</span> </span><br><span class="line">(</span><br><span class="line">    <span class="keyword">SELECT</span>  user_id</span><br><span class="line">            , <span class="keyword">COUNT</span>(<span class="number">1</span>) <span class="keyword">AS</span> cnt</span><br><span class="line">            , <span class="keyword">DATE_SUB</span>(login_date, t.rn) flag_dt</span><br><span class="line">    <span class="keyword">FROM</span> </span><br><span class="line">    (</span><br><span class="line">        <span class="keyword">SELECT</span>  user_id</span><br><span class="line">                , login_date</span><br><span class="line">                , ROW_NUMBER() <span class="keyword">OVER</span>(<span class="keyword">PARTITION</span> <span class="keyword">BY</span> user_id <span class="keyword">ORDER</span> <span class="keyword">BY</span> login_date) <span class="keyword">AS</span> rn</span><br><span class="line">        <span class="keyword">FROM</span>    table_a</span><br><span class="line">    ) t</span><br><span class="line">    <span class="keyword">GROUP</span> <span class="keyword">BY</span>  user_id</span><br><span class="line">              , <span class="keyword">DATE_SUB</span>(login_date, t.rn)</span><br><span class="line">    <span class="keyword">HAVING</span> <span class="keyword">COUNT</span>(<span class="number">1</span>) &gt;= <span class="number">3</span></span><br><span class="line">);</span><br><span class="line"><span class="comment">-- 参考：https://www.jianshu.com/p/9a803a61a145</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 给定表table_a（包含user_id, login_date），计算最近30天内，曾连续3天登录的用户数</span></span><br><span class="line"><span class="keyword">SELECT</span>  <span class="keyword">COUNT</span>(<span class="keyword">DISTINCT</span> user_id)</span><br><span class="line"><span class="keyword">FROM</span> </span><br><span class="line">(</span><br><span class="line">    <span class="keyword">SELECT</span>  user_id</span><br><span class="line">            , <span class="keyword">DATE_SUB</span>(login_date, t.rn) <span class="keyword">AS</span> flag_dt</span><br><span class="line">            , <span class="keyword">COUNT</span>(<span class="number">1</span>) <span class="keyword">AS</span> cnt</span><br><span class="line">    <span class="keyword">FROM</span> </span><br><span class="line">    (</span><br><span class="line">        <span class="keyword">SELECT</span>  user_id</span><br><span class="line">                , login_date</span><br><span class="line">                , ROW_NUMBER() <span class="keyword">OVER</span>(<span class="keyword">PARTITION</span> <span class="keyword">BY</span> user_id <span class="keyword">ORDER</span> <span class="keyword">BY</span> login_date) <span class="keyword">AS</span> rn</span><br><span class="line">        <span class="keyword">FROM</span>    table_a</span><br><span class="line">        <span class="keyword">WHERE</span>   login_date <span class="keyword">BETWEEN</span> $&#123;<span class="built_in">date</span><span class="number">-30</span>&#125; <span class="keyword">AND</span> $&#123;<span class="built_in">date</span><span class="number">-1</span>&#125;</span><br><span class="line">    ) t</span><br><span class="line">    <span class="keyword">GROUP</span> <span class="keyword">BY</span>  user_id</span><br><span class="line">              , <span class="keyword">DATE_SUB</span>(login_date, t.rn)</span><br><span class="line">    <span class="keyword">HAVING</span>    <span class="keyword">COUNT</span>(<span class="number">1</span>) &gt;= <span class="number">3</span></span><br><span class="line">) tt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 表login_log记录用户每天的登陆情况：uid（用户id）、date_dy（日期）、is_login（用户是否登陆，1表示当天有登陆，0表示当天未登陆）</span></span><br><span class="line"><span class="comment">-- 求用户的最大连续登陆天数</span></span><br><span class="line"><span class="keyword">select</span>  uid</span><br><span class="line">        , <span class="keyword">max</span>(cnt) <span class="keyword">as</span> max_con_login_days <span class="comment">-- 最大连续登陆天数</span></span><br><span class="line"><span class="keyword">from</span> </span><br><span class="line">(</span><br><span class="line">    <span class="keyword">select</span>  uid</span><br><span class="line">            , date_diff</span><br><span class="line">            , <span class="keyword">count</span>(<span class="number">1</span>) <span class="keyword">as</span> cnt </span><br><span class="line">    <span class="keyword">from</span>  </span><br><span class="line">    (</span><br><span class="line">        <span class="keyword">select</span>  uid</span><br><span class="line">          , date_dy</span><br><span class="line">          , <span class="keyword">datediff</span>(date_dy, <span class="keyword">num</span>) <span class="keyword">as</span> date_diff </span><br><span class="line">        <span class="keyword">from</span> </span><br><span class="line">        (</span><br><span class="line">            <span class="keyword">select</span>  uid</span><br><span class="line">                    , date_dy</span><br><span class="line">                    , row_number() <span class="keyword">over</span>(<span class="keyword">partition</span> <span class="keyword">by</span> uid <span class="keyword">order</span> <span class="keyword">by</span> date_dy <span class="keyword">asc</span>) <span class="keyword">as</span> <span class="keyword">num</span> </span><br><span class="line">            <span class="keyword">from</span>    login_log</span><br><span class="line">            <span class="keyword">where</span>   is_login = <span class="number">1</span></span><br><span class="line">        ) a </span><br><span class="line">    ) b</span><br><span class="line">    <span class="keyword">group</span> <span class="keyword">by</span>  uid</span><br><span class="line">              , daet_diff </span><br><span class="line">) c </span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> uid;</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 连续四天看相同类别的视频的用户id及视频id</span></span><br><span class="line"><span class="keyword">SELECT</span>  user_id</span><br><span class="line">        , video_id</span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">(</span><br><span class="line">    <span class="keyword">SELECT</span>  user_id</span><br><span class="line">            , video_id</span><br><span class="line">            , video_category</span><br><span class="line">            , rn_2 - rn_1 <span class="keyword">AS</span> rn</span><br><span class="line">    <span class="keyword">FROM</span> </span><br><span class="line">    (</span><br><span class="line">        <span class="keyword">SELECT</span>  user_id</span><br><span class="line">                , video_id</span><br><span class="line">                , video_category</span><br><span class="line">                , ROW_NUMBER() <span class="keyword">OVER</span>(<span class="keyword">PARTITION</span> <span class="keyword">BY</span> user_id, video_category <span class="keyword">ORDER</span> <span class="keyword">BY</span> <span class="built_in">time</span>) <span class="keyword">AS</span> rn_1</span><br><span class="line">                , ROW_NUMBER() <span class="keyword">OVER</span>(<span class="keyword">PARTITION</span> <span class="keyword">BY</span> user_id <span class="keyword">ORDER</span> <span class="keyword">BY</span> <span class="built_in">time</span>) <span class="keyword">AS</span> rn_2</span><br><span class="line">        <span class="keyword">FROM</span>    table_a</span><br><span class="line">    ) <span class="keyword">AS</span> t1</span><br><span class="line">    <span class="keyword">GROUP</span> <span class="keyword">BY</span>  user_id</span><br><span class="line">              , video_category</span><br><span class="line">    <span class="keyword">HAVING</span> <span class="keyword">COUNT</span>(<span class="number">1</span>) &gt;= <span class="number">4</span></span><br><span class="line">) <span class="keyword">AS</span> t2;</span><br><span class="line"><span class="comment">-- 如果连续时间看的视频类别一样，rn_2 - rn_1的差值一样</span></span><br></pre></td></tr></table></figure>
+<h2 id="SUM"><a class="header-anchor" href="#SUM"></a>SUM</h2>
+<p>求和</p>
+<ul>
+<li>聚合函数之一</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 求累计薪资和</span></span><br><span class="line"><span class="keyword">SELECT</span>  emp_no</span><br><span class="line">        , salary</span><br><span class="line">        , <span class="keyword">SUM</span>(salary) <span class="keyword">OVER</span>(<span class="keyword">ORDER</span> <span class="keyword">BY</span> emp_no) <span class="keyword">AS</span> running_total</span><br><span class="line"><span class="keyword">FROM</span>    salaries</span><br><span class="line"><span class="keyword">WHERE</span>   <span class="keyword">to_date</span> = <span class="string">'9999-01-01'</span></span><br><span class="line">;</span><br></pre></td></tr></table></figure>
+<p><a href="https://www.nowcoder.com/practice/e524dc7450234395aa21c75303a42b0a?tpId=82&amp;&amp;tqId=35087&amp;rp=1&amp;ru=/ta/sql&amp;qru=/ta/sql/question-ranking" target="_blank" rel="noopener">题源</a>：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 统计每天的新用户</span></span><br><span class="line"><span class="keyword">SELECT</span>  <span class="built_in">date</span></span><br><span class="line">        , <span class="keyword">SUM</span>(<span class="keyword">CASE</span> <span class="keyword">WHEN</span> r_num = <span class="number">1</span> <span class="keyword">THEN</span> <span class="number">1</span> <span class="keyword">ELSE</span> <span class="number">0</span> <span class="keyword">END</span>) <span class="keyword">AS</span> <span class="keyword">new</span></span><br><span class="line"><span class="keyword">FROM</span> </span><br><span class="line">(</span><br><span class="line">    <span class="keyword">SELECT</span>  <span class="built_in">date</span></span><br><span class="line">            , ROW_NUMBER() <span class="keyword">OVER</span>(<span class="keyword">PARTITION</span> <span class="keyword">BY</span> user_id <span class="keyword">ORDER</span> <span class="keyword">BY</span> <span class="built_in">date</span> <span class="keyword">ASC</span>) <span class="keyword">AS</span> r_num</span><br><span class="line">    <span class="keyword">FROM</span>    login</span><br><span class="line">) t1</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> <span class="built_in">date</span>;</span><br></pre></td></tr></table></figure>
+<h1 id="参考资料"><a class="header-anchor" href="#参考资料"></a>参考资料</h1>
+<ul>
+<li><a href="https://mp.weixin.qq.com/s/5iv1z6SCf0nMyIEWavlyRQ" target="_blank" rel="noopener">ORDER BY的用法</a></li>
+<li><a href="https://blog.csdn.net/xyzyhs/article/details/99438912" target="_blank" rel="noopener">数据库中的键（码）</a></li>
+<li><a href="https://www.cnblogs.com/ljhdo/p/5056757.html" target="_blank" rel="noopener">TSQL 分组集（Grouping Sets）</a></li>
+<li><a href="http://lxw1234.com/archives/2015/04/193.htm" target="_blank" rel="noopener">Hive分析窗口函数(五) GROUPING SETS,GROUPING__ID,CUBE,ROLLUP</a></li>
+</ul>
+
+    </div>
+
+    
+    
+    
+        <div class="reward-container">
+  <div></div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/reward2021.png" alt="Skye 微信支付">
+        <p>微信支付</p>
+      </div>
+
+  </div>
+</div>
+
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/images/wechat_qrcode.jpg">
+            <span class="icon">
+              <i class="fab fa-weixin"></i>
+            </span>
+
+            <span class="label">WeChat</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/SQL/" rel="tag"># SQL</a>
+              <a href="/tags/MySQL/" rel="tag"># MySQL</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/Leetcode%E5%88%B7%E9%A2%98.html" rel="prev" title="Leetcode刷题">
+      <i class="fa fa-chevron-left"></i> Leetcode刷题
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/Jupyter-Notebook%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7.html" rel="next" title="Jupyter Notebook使用技巧">
+      Jupyter Notebook使用技巧 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#SQL"><span class="nav-number">1.</span> <span class="nav-text">SQL</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#交互式SQL"><span class="nav-number">1.1.</span> <span class="nav-text">交互式SQL</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#MySQL"><span class="nav-number">1.1.1.</span> <span class="nav-text">MySQL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MS-SQL-Server"><span class="nav-number">1.1.2.</span> <span class="nav-text">MS SQL Server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ACCESS"><span class="nav-number">1.1.3.</span> <span class="nav-text">ACCESS</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#嵌入式SQL"><span class="nav-number">1.2.</span> <span class="nav-text">嵌入式SQL</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#嵌入C语言程序"><span class="nav-number">1.2.1.</span> <span class="nav-text">嵌入C语言程序</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SQL标准"><span class="nav-number">2.</span> <span class="nav-text">SQL标准</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SQL语言"><span class="nav-number">3.</span> <span class="nav-text">SQL语言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#相关书籍"><span class="nav-number">4.</span> <span class="nav-text">相关书籍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据设计"><span class="nav-number">5.</span> <span class="nav-text">数据设计</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#概念结构设计"><span class="nav-number">5.1.</span> <span class="nav-text">概念结构设计</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#E-R方法"><span class="nav-number">5.1.1.</span> <span class="nav-text">E-R方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#逻辑结构设计"><span class="nav-number">5.2.</span> <span class="nav-text">逻辑结构设计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#物理结构设计"><span class="nav-number">5.3.</span> <span class="nav-text">物理结构设计</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#键（码）"><span class="nav-number">6.</span> <span class="nav-text">键（码）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#超键（码）"><span class="nav-number">6.1.</span> <span class="nav-text">超键（码）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#候选键（码）"><span class="nav-number">6.2.</span> <span class="nav-text">候选键（码）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#主键（码）"><span class="nav-number">6.3.</span> <span class="nav-text">主键（码）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#外键（码）"><span class="nav-number">6.4.</span> <span class="nav-text">外键（码）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#全键（码）"><span class="nav-number">6.5.</span> <span class="nav-text">全键（码）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#事务"><span class="nav-number">7.</span> <span class="nav-text">事务</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#特性"><span class="nav-number">7.1.</span> <span class="nav-text">特性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#事务隔离级别"><span class="nav-number">7.2.</span> <span class="nav-text">事务隔离级别</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#视图"><span class="nav-number">8.</span> <span class="nav-text">视图</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据类型"><span class="nav-number">9.</span> <span class="nav-text">数据类型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#通用"><span class="nav-number">10.</span> <span class="nav-text">通用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#COALESCE"><span class="nav-number">10.1.</span> <span class="nav-text">COALESCE()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CREATE"><span class="nav-number">10.2.</span> <span class="nav-text">CREATE</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#CREATE-FUNCTION"><span class="nav-number">10.2.1.</span> <span class="nav-text">CREATE FUNCTION</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DATEDIFF"><span class="nav-number">10.3.</span> <span class="nav-text">DATEDIFF()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DATE-FORMAT"><span class="nav-number">10.4.</span> <span class="nav-text">DATE_FORMAT()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DELETE"><span class="nav-number">10.5.</span> <span class="nav-text">DELETE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DROP"><span class="nav-number">10.6.</span> <span class="nav-text">DROP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#grouping-sets"><span class="nav-number">10.7.</span> <span class="nav-text">grouping sets</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IIF"><span class="nav-number">10.8.</span> <span class="nav-text">IIF()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#INTO"><span class="nav-number">10.9.</span> <span class="nav-text">INTO</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ISNULL"><span class="nav-number">10.10.</span> <span class="nav-text">ISNULL()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LAG"><span class="nav-number">10.11.</span> <span class="nav-text">LAG()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#last-day"><span class="nav-number">10.12.</span> <span class="nav-text">last_day()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#locate"><span class="nav-number">10.13.</span> <span class="nav-text">locate()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MAX"><span class="nav-number">10.14.</span> <span class="nav-text">MAX()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MIN"><span class="nav-number">10.15.</span> <span class="nav-text">MIN</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NULLIF"><span class="nav-number">10.16.</span> <span class="nav-text">NULLIF()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ORDER-BY"><span class="nav-number">10.17.</span> <span class="nav-text">ORDER BY</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#REGEXP-REPLACE"><span class="nav-number">10.18.</span> <span class="nav-text">REGEXP_REPLACE()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ROW-NUMBER"><span class="nav-number">10.19.</span> <span class="nav-text">ROW_NUMBER()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SUM"><span class="nav-number">10.20.</span> <span class="nav-text">SUM</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料"><span class="nav-number">11.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Skye</p>
+  <div class="site-description" itemprop="description">刻苦，沉着，精进不休</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">151</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">53</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/ShootingWang" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;ShootingWang"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2019 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-star"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Skye</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">401k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">6:05</span>
+</div>
+
+
+  <script src='https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js'></script>
+  <script>
+    if (window.mermaid) {
+      mermaid.initialize({theme: 'forest'});
+    }
+  </script>
+
+
+<script src="/js/prism/clipboard.js"></script>
+<script src="/js/prism/prism.js" async></script>
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+  <script defer src="/lib/three/three.min.js"></script>
+    <script defer src="/lib/three/canvas_lines.min.js"></script>
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js', () => {
+    new Valine(Object.assign({
+      el         : '#valine-comments',
+      path       : location.pathname,
+    }, {"enable":true,"appId":"yFKKmB84nH4WRrBC07BTRKLC-gzGzoHsz","appKey":"EFXmIM4ipk11GLk8Stx40FYk","notify":true,"verify":false,"placeholder":"记得填写邮箱哦~这样你就能及时收到我的回复了~","avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"language":null,"visitor":false,"comment_count":true,"recordIP":false,"serverURLs":null}
+    ));
+  }, window.Valine);
+});
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
+</html>

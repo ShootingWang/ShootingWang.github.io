@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+<meta name="baidu-site-verification" content="GLZSr3LDqT" />
+<meta name="google-site-verification" content="fZvQBljM9I6UA4l4wwiA5wECEn7k0V4-DgCfWEPNtFc" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon2.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon2.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"github.com","root":"/","scheme":"Pisces","version":"8.0.0-rc.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"valine","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+<link rel="stylesheet" href="/js/prism/prism.css">
+
+<script src="http://echarts.baidu.com/dist/echarts.common.min.js"></script>
+  <meta name="description" content="Machine Learning 算法汇总">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Machine Learning | 汇总">
+<meta property="og:url" content="https://github.com/ShootingWang/ShootingWang.github.io/Machine-Learning-%E6%B1%87%E6%80%BB.html">
+<meta property="og:site_name" content="Skye">
+<meta property="og:description" content="Machine Learning 算法汇总">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-05-02T03:00:00.000Z">
+<meta property="article:modified_time" content="2021-05-10T13:27:51.175Z">
+<meta property="article:author" content="Skye">
+<meta property="article:tag" content="算法">
+<meta property="article:tag" content="机器学习">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://github.com/ShootingWang/ShootingWang.github.io/Machine-Learning-%E6%B1%87%E6%80%BB.html">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Machine Learning | 汇总 | Skye</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><script type="text/javascript" color="0,0,0" opacity='0.5' zIndex="-1" count="99" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+  </script>
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+        <span class="toggle-line toggle-line-first"></span>
+        <span class="toggle-line toggle-line-middle"></span>
+        <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Skye</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-update">
+
+    <a href="/update/" rel="section"><i class="fa fa-list-ul fa-fw"></i>更新</a>
+
+  </li>
+        <li class="menu-item menu-item-tool">
+
+    <a href="/tools/" rel="section"><i class="fa fa-tools fa-fw"></i>工具</a>
+
+  </li>
+        <li class="menu-item menu-item-treasure">
+
+    <a href="/treasure/" rel="section"><i class="fa fa-gem fa-fw"></i>资源</a>
+
+  </li>
+        <li class="menu-item menu-item-pool">
+
+    <a href="/pool/" rel="section"><i class="fa fa-book fa-fw"></i>题库</a>
+
+  </li>
+        <li class="menu-item menu-item-links">
+
+    <a href="/links" rel="section"><i class="fa fa-link fa-fw"></i>友链</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/ShootingWang" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+    <!-- echarts -->
+    <script type="text/javascript" src="/js/src/echarts.common.js"></script>
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://github.com/ShootingWang/ShootingWang.github.io/Machine-Learning-%E6%B1%87%E6%80%BB.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Skye">
+      <meta itemprop="description" content="刻苦，沉着，精进不休">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Skye">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Machine Learning | 汇总
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-05-02 11:00:00" itemprop="dateCreated datePublished" datetime="2020-05-02T11:00:00+08:00">2020-05-02</time>
+            </span>
+
+          
+            <i class="fa fa-thumb-tack"></i>
+            <font color=7D26CD>置顶</font>
+            <span class="post-meta-divider">|</span>
+          
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-05-10 21:27:51" itemprop="dateModified" datetime="2021-05-10T21:27:51+08:00">2021-05-10</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">机器学习</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/Machine-Learning-%E6%B1%87%E6%80%BB.html#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/Machine-Learning-%E6%B1%87%E6%80%BB.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <center>Machine Learning 算法汇总</center>
+<a id="more"></a>
+<h1 id="基础"><a class="header-anchor" href="#基础"></a>基础</h1>
+<ul>
+<li>
+<a href="/Machine-Learning-%E5%88%86%E7%B1%BB%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0.html" title="分类模型评估">分类模型评估</a>
+</li>
+<li>
+<a href="/Machine-Learning-%E8%81%9A%E7%B1%BB%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0.html" title="聚类模型评估">聚类模型评估</a>
+</li>
+<li>
+<a href="/%E7%AE%97%E6%B3%95-%E8%BF%87%E6%8B%9F%E5%90%88%E5%92%8C%E6%AC%A0%E6%8B%9F%E5%90%88.html" title="过拟合和欠拟合">过拟合和欠拟合</a>
+</li>
+<li>
+<a href="/Machine-Learning-%E7%86%B5.html" title="熵">熵</a>
+</li>
+<li>
+<a href="/%E7%AE%97%E6%B3%95-%E7%89%B9%E5%BE%81%E5%BD%92%E4%B8%80%E5%8C%96.html" title="归一化、特征缩放">归一化、特征缩放</a>
+</li>
+</ul>
+<h1 id="Machine-Learning-机器学习"><a class="header-anchor" href="#Machine-Learning-机器学习"></a>Machine Learning 机器学习</h1>
+<ul>
+<li>Classical Learning</li>
+<li>Supervised Learning</li>
+<li>Unsupervised Learning</li>
+<li>Ensemble Methods</li>
+<li>Bagging</li>
+<li>Boosting</li>
+<li>Stacking</li>
+<li>Reinforcement Learning</li>
+<li>Neural Networks and Deep Learning</li>
+</ul>
+<h2 id="Classical-Learning-分类"><a class="header-anchor" href="#Classical-Learning-分类"></a>Classical Learning 分类</h2>
+<ul>
+<li>
+<a href="/%E7%AE%97%E6%B3%95-SupervisedLearning.html" title="Supervised Learning">Supervised Learning</a>
+</li>
+<li>Classification</li>
+<li>Regression</li>
+<li>Unsupervised Learning</li>
+<li>Clustering</li>
+<li>Pattern Search</li>
+<li>Dimension Reduction</li>
+</ul>
+<h3 id="Supervised-Learning-有监督学习"><a class="header-anchor" href="#Supervised-Learning-有监督学习"></a>Supervised Learning 有监督学习</h3>
+<h4 id="Classification"><a class="header-anchor" href="#Classification"></a>Classification</h4>
+<p>主要分类算法：</p>
+<ul>
+<li>
+<a href="/%E7%AE%97%E6%B3%95-KNN.html" title="KNN">KNN</a>
+</li>
+<li>
+<a href="/%E7%AE%97%E6%B3%95-%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF.html" title="Naive Bayes 朴素贝叶斯">Naive Bayes 朴素贝叶斯</a>
+</li>
+<li>
+<a href="/%E7%AE%97%E6%B3%95-SVM.html" title="SVM 支持向量机">SVM 支持向量机</a>
+</li>
+<li>
+<a href="/%E7%AE%97%E6%B3%95-DecisionTree.html" title="Decision Tree 决策树">Decision Tree 决策树</a>
+</li>
+<li>
+<a href="/%E7%AE%97%E6%B3%95-LogisticRegression.html" title="Logistic Regression 逻辑回归">Logistic Regression 逻辑回归</a>
+</li>
+</ul>
+<p>相关文章：</p>
+<ul>
+<li>
+<a href="/Machine-Learning-%E5%88%86%E7%B1%BB%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0.html" title="分类模型评估">分类模型评估</a>
+</li>
+</ul>
+<p>从<strong>使用的主要技术</strong>上看，可以把分类方法归结为4种类型：</p>
+<ol>
+<li>基于距离的分类方法
+<ul>
+<li>最邻近方法</li>
+</ul>
+</li>
+<li>决策树分类方法
+<ul>
+<li>ID3</li>
+<li>C4.5</li>
+<li>VFDT</li>
+</ul>
+</li>
+<li>贝叶斯分类方法
+<ul>
+<li>朴素贝叶斯</li>
+<li>EM算法</li>
+</ul>
+</li>
+<li>规则归纳方法
+<ul>
+<li>AQ算法</li>
+<li>CN2算法</li>
+<li>FOIL算法</li>
+</ul>
+</li>
+</ol>
+<h4 id="Regression"><a class="header-anchor" href="#Regression"></a>Regression</h4>
+<p>主要回归算法：</p>
+<ul>
+<li>
+<a href="/%E7%AE%97%E6%B3%95-%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92.html" title="Linear Regression 线性回归">Linear Regression 线性回归</a>
+</li>
+<li>Ridge Regression 岭回归</li>
+<li>Lasso Regression</li>
+</ul>
+<h3 id="Unsupervised-Learning"><a class="header-anchor" href="#Unsupervised-Learning"></a>Unsupervised Learning</h3>
+<h4 id="Clustering"><a class="header-anchor" href="#Clustering"></a>Clustering</h4>
+<ul>
+<li>分割聚类算法：</li>
+<li>
+<a href="/%E7%AE%97%E6%B3%95-K-Means.html" title="K-Means K均值聚类">K-Means K均值聚类</a>
+</li>
+<li>K-Medoids</li>
+<li>
+
+</li>
+<li>层次聚类算法：</li>
+<li>
+<a href="/%E7%AE%97%E6%B3%95-DBSCAN.html" title="DBSCAN">DBSCAN</a>
+</li>
+<li>OPTICS</li>
+<li>
+<a href="/%E7%AE%97%E6%B3%95-BIRCH.html" title="BIRCH">BIRCH</a>
+</li>
+<li>CURE</li>
+<li>Mean-Shift</li>
+<li>Agglomerative</li>
+<li>Fuzzy C-Means</li>
+</ul>
+<p>相关文章：</p>
+<ul>
+<li>
+<a href="/Machine-Learning-%E8%81%9A%E7%B1%BB%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0.html" title="聚类模型评估">聚类模型评估</a>
+</li>
+<li>
+
+</li>
+</ul>
+<p><u>表：各种聚类算法对比</u></p>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: center;
+}
+</code></pre>
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: center;">
+      <th>算法</th>
+      <th>算法效率</th>
+      <th>适合的数据类型</th>
+      <th>能够发现的聚类类型</th>
+      <th>对异常值的敏感性</th>
+      <th>对数据输入顺序的敏感性</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>CLARANS</th>
+      <td>较低</td>
+      <td>数值</td>
+      <td>凸形/球形</td>
+      <td>不敏感</td>
+      <td>非常敏感</td>
+    </tr>
+    <tr>
+      <th>BIRCH</th>
+      <td>高</td>
+      <td>数值</td>
+      <td>凸形/球形</td>
+      <td>不敏感</td>
+      <td>不太敏感</td>
+    </tr>
+    <tr>
+      <th>DBSCAN</th>
+      <td>一般</td>
+      <td>数值</td>
+      <td>任意形状</td>
+      <td>敏感</td>
+      <td>敏感</td>
+    </tr>
+    <tr>
+      <th>CURE</th>
+      <td>较高</td>
+      <td>数值</td>
+      <td>任意形状</td>
+      <td>不敏感</td>
+      <td>不太敏感</td>
+    </tr>
+    <tr>
+      <th>K-poto</th>
+      <td>一般</td>
+      <td>数值/符号</td>
+      <td>凸形/球形</td>
+      <td>敏感</td>
+      <td>一般</td>
+    </tr>
+    <tr>
+      <th>CUQUE</th>
+      <td>较低</td>
+      <td>数值</td>
+      <td>凸形/球形</td>
+      <td>一般</td>
+      <td>不敏感</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<h4 id="Pattern-Search"><a class="header-anchor" href="#Pattern-Search"></a>Pattern Search</h4>
+<ul>
+<li>Euclat</li>
+<li>
+<a href="/%E7%AE%97%E6%B3%95-Apriori.html" title="Apriori">Apriori</a>
+</li>
+<li>FP-Growth</li>
+</ul>
+<h4 id="Dimension-Reduction"><a class="header-anchor" href="#Dimension-Reduction"></a>Dimension Reduction</h4>
+<ul>
+<li>
+
+</li>
+<li>PCA</li>
+<li>LSA</li>
+<li>SVD</li>
+<li>LDA</li>
+</ul>
+<h2 id="Ensemble-Methods"><a class="header-anchor" href="#Ensemble-Methods"></a>Ensemble Methods</h2>
+<a href="/%E7%AE%97%E6%B3%95-%E9%9B%86%E6%88%90%E6%96%B9%E6%B3%95.html" title="集成方法">集成方法</a>
+<ul>
+<li>Bagging</li>
+<li>Boosting</li>
+<li>Stacking</li>
+</ul>
+<h3 id="Bagging"><a class="header-anchor" href="#Bagging"></a>Bagging</h3>
+<ul>
+<li>
+<a href="/%E7%AE%97%E6%B3%95-%E9%9A%8F%E6%9C%BA%E6%A3%AE%E6%9E%97.html" title="Random Forest 随机森林">Random Forest 随机森林</a>
+</li>
+</ul>
+<h3 id="Boosting"><a class="header-anchor" href="#Boosting"></a>Boosting</h3>
+<ul>
+<li>
+<a href="/%E7%AE%97%E6%B3%95-AdaBoost.html" title="AdaBoost">AdaBoost</a>
+</li>
+<li>
+<a href="/%E7%AE%97%E6%B3%95-XGBoost.html" title="XGBoost">XGBoost</a>
+</li>
+<li>LightGBM</li>
+<li>CatBoost</li>
+<li>
+<a href="/%E7%AE%97%E6%B3%95-BoostingTree.html" title="Boosting Tree 提升树">Boosting Tree 提升树</a>
+</li>
+</ul>
+<div class="note default">
+            <p>Boosting is a method of converting a set of weak learners into strong learners.</p>
+          </div>
+<p>Boosting是一种将弱学习器转化成强学习器的方法。</p>
+<p>假设进行的是二分类任务：</p>
+<ul>
+<li>弱学习器的分类错误率仅略小于0.5（分类效果只比扔硬币好一点）</li>
+<li>强学习器的分类错误率接近0<br>
+将弱学习器转化为强学习器——将多个弱学习器<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>联合起来，通过投票得到最后分类结果</li>
+</ul>
+<div class="note primary">
+            <p>为实现弱学习器互补，则需要解决两个问题：</p><ol><li>怎样获得不同的弱学习器？</li><li>怎样组合弱学习器？</li></ol>
+          </div>
+<h3 id="Stacking"><a class="header-anchor" href="#Stacking"></a>Stacking</h3>
+<h2 id="Reinforcement-Learning"><a class="header-anchor" href="#Reinforcement-Learning"></a>Reinforcement Learning</h2>
+<ul>
+<li>Genetic Algorithm</li>
+<li>A3C</li>
+<li>SARSA</li>
+<li>Q-Learning</li>
+<li>DQN</li>
+</ul>
+<h2 id="Neural-Nets-and-Deep-Learning"><a class="header-anchor" href="#Neural-Nets-and-Deep-Learning"></a>Neural Nets and Deep Learning</h2>
+<ul>
+<li>CNN</li>
+<li>RNN</li>
+<li>GAN</li>
+<li>Autoencoders</li>
+<li>MLP</li>
+</ul>
+<p>其他:</p>
+<ul>
+<li>
+
+</li>
+<li>
+<a href="/%E7%AE%97%E6%B3%95-%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C.html" title="神经网络的激活函数">神经网络的激活函数</a>
+</li>
+</ul>
+<h3 id="CNN"><a class="header-anchor" href="#CNN"></a>CNN</h3>
+<h3 id="RNN"><a class="header-anchor" href="#RNN"></a>RNN</h3>
+<ul>
+<li>LSM</li>
+<li>LSTM</li>
+<li>GRU</li>
+</ul>
+<h4 id="LSM"><a class="header-anchor" href="#LSM"></a>LSM</h4>
+<h4 id="LSTM"><a class="header-anchor" href="#LSTM"></a>LSTM</h4>
+<h4 id="GRU"><a class="header-anchor" href="#GRU"></a>GRU</h4>
+<ul>
+<li>GAN</li>
+<li>Autoencoders</li>
+<li>Perceptrons (MLP)</li>
+</ul>
+<h3 id="GAN"><a class="header-anchor" href="#GAN"></a>GAN</h3>
+<p>Generative Adversarial Nerworks</p>
+<h3 id="Autoencoders"><a class="header-anchor" href="#Autoencoders"></a>Autoencoders</h3>
+<p>seq2seq</p>
+<h3 id="Perceptrons-MLP"><a class="header-anchor" href="#Perceptrons-MLP"></a>Perceptrons (MLP)</h3>
+<h1 id="参考资料"><a class="header-anchor" href="#参考资料"></a>参考资料</h1>
+<ul>
+<li><a href="https://cn.bing.com/images/search?view=detailV2&amp;ccid=k5LiTi5l&amp;id=95DF77DEC29B1CD7083F9435F1AE55043B0C0081&amp;thid=OIP.k5LiTi5lt_ND02kaBT_SAAHaE7&amp;mediaurl=https%3a%2f%2fwww.smartdatacollective.com%2fwp-content%2fuploads%2f2018%2f11%2fMachine-learning-1024x682.jpg&amp;exph=682&amp;expw=1024&amp;q=machine+learning&amp;simid=608018054240865990&amp;selectedIndex=3" target="_blank" rel="noopener">首页缩略图</a></li>
+<li><a href="http://cda.pinggu.org/view/20203.html" target="_blank" rel="noopener">聚类分析中几种算法的比较</a></li>
+</ul>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>这里的弱学习器之间相关性要小 <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+
+    </div>
+
+    
+    
+    
+        <div class="reward-container">
+  <div></div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/reward2021.png" alt="Skye 微信支付">
+        <p>微信支付</p>
+      </div>
+
+  </div>
+</div>
+
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/images/wechat_qrcode.jpg">
+            <span class="icon">
+              <i class="fab fa-weixin"></i>
+            </span>
+
+            <span class="label">WeChat</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"># 算法</a>
+              <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" rel="tag"># 机器学习</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-%E6%8C%87%E6%A0%87%E5%BC%82%E5%8A%A8%E7%B1%BB%E9%97%AE%E9%A2%98.html" rel="prev" title="数据分析 | 指标异动类问题">
+      <i class="fa fa-chevron-left"></i> 数据分析 | 指标异动类问题
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/python-4-%E8%BF%90%E7%AE%97%E7%AC%A6%E4%BC%98%E5%85%88%E7%BA%A7.html" rel="next" title="Python | 运算符">
+      Python | 运算符 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基础"><span class="nav-number">1.</span> <span class="nav-text">基础</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Machine-Learning-机器学习"><span class="nav-number">2.</span> <span class="nav-text">Machine Learning 机器学习</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Classical-Learning-分类"><span class="nav-number">2.1.</span> <span class="nav-text">Classical Learning 分类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Supervised-Learning-有监督学习"><span class="nav-number">2.1.1.</span> <span class="nav-text">Supervised Learning 有监督学习</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Classification"><span class="nav-number">2.1.1.1.</span> <span class="nav-text">Classification</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Regression"><span class="nav-number">2.1.1.2.</span> <span class="nav-text">Regression</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Unsupervised-Learning"><span class="nav-number">2.1.2.</span> <span class="nav-text">Unsupervised Learning</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Clustering"><span class="nav-number">2.1.2.1.</span> <span class="nav-text">Clustering</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Pattern-Search"><span class="nav-number">2.1.2.2.</span> <span class="nav-text">Pattern Search</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Dimension-Reduction"><span class="nav-number">2.1.2.3.</span> <span class="nav-text">Dimension Reduction</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ensemble-Methods"><span class="nav-number">2.2.</span> <span class="nav-text">Ensemble Methods</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Bagging"><span class="nav-number">2.2.1.</span> <span class="nav-text">Bagging</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Boosting"><span class="nav-number">2.2.2.</span> <span class="nav-text">Boosting</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Stacking"><span class="nav-number">2.2.3.</span> <span class="nav-text">Stacking</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reinforcement-Learning"><span class="nav-number">2.3.</span> <span class="nav-text">Reinforcement Learning</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Neural-Nets-and-Deep-Learning"><span class="nav-number">2.4.</span> <span class="nav-text">Neural Nets and Deep Learning</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#CNN"><span class="nav-number">2.4.1.</span> <span class="nav-text">CNN</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RNN"><span class="nav-number">2.4.2.</span> <span class="nav-text">RNN</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#LSM"><span class="nav-number">2.4.2.1.</span> <span class="nav-text">LSM</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#LSTM"><span class="nav-number">2.4.2.2.</span> <span class="nav-text">LSTM</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#GRU"><span class="nav-number">2.4.2.3.</span> <span class="nav-text">GRU</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GAN"><span class="nav-number">2.4.3.</span> <span class="nav-text">GAN</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Autoencoders"><span class="nav-number">2.4.4.</span> <span class="nav-text">Autoencoders</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Perceptrons-MLP"><span class="nav-number">2.4.5.</span> <span class="nav-text">Perceptrons (MLP)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料"><span class="nav-number">3.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Skye</p>
+  <div class="site-description" itemprop="description">刻苦，沉着，精进不休</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">151</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">53</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/ShootingWang" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;ShootingWang"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2019 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-star"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Skye</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">401k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">6:05</span>
+</div>
+
+
+  <script src='https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js'></script>
+  <script>
+    if (window.mermaid) {
+      mermaid.initialize({theme: 'forest'});
+    }
+  </script>
+
+
+<script src="/js/prism/clipboard.js"></script>
+<script src="/js/prism/prism.js" async></script>
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+  <script defer src="/lib/three/three.min.js"></script>
+    <script defer src="/lib/three/canvas_lines.min.js"></script>
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js', () => {
+    new Valine(Object.assign({
+      el         : '#valine-comments',
+      path       : location.pathname,
+    }, {"enable":true,"appId":"yFKKmB84nH4WRrBC07BTRKLC-gzGzoHsz","appKey":"EFXmIM4ipk11GLk8Stx40FYk","notify":true,"verify":false,"placeholder":"记得填写邮箱哦~这样你就能及时收到我的回复了~","avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"language":null,"visitor":false,"comment_count":true,"recordIP":false,"serverURLs":null}
+    ));
+  }, window.Valine);
+});
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
+</html>

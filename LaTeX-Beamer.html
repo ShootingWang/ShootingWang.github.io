@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+<meta name="baidu-site-verification" content="GLZSr3LDqT" />
+<meta name="google-site-verification" content="fZvQBljM9I6UA4l4wwiA5wECEn7k0V4-DgCfWEPNtFc" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon2.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon2.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"github.com","root":"/","scheme":"Pisces","version":"8.0.0-rc.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"valine","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+<link rel="stylesheet" href="/js/prism/prism.css">
+
+<script src="http://echarts.baidu.com/dist/echarts.common.min.js"></script>
+  <meta name="description" content="使用LaTeX制作幻灯片">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LaTeX | Beamer幻灯片">
+<meta property="og:url" content="https://github.com/ShootingWang/ShootingWang.github.io/LaTeX-Beamer.html">
+<meta property="og:site_name" content="Skye">
+<meta property="og:description" content="使用LaTeX制作幻灯片">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-04-18T15:03:20.000Z">
+<meta property="article:modified_time" content="2021-05-29T14:08:34.703Z">
+<meta property="article:author" content="Skye">
+<meta property="article:tag" content="LaTeX">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://github.com/ShootingWang/ShootingWang.github.io/LaTeX-Beamer.html">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>LaTeX | Beamer幻灯片 | Skye</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><script type="text/javascript" color="0,0,0" opacity='0.5' zIndex="-1" count="99" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+  </script>
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+        <span class="toggle-line toggle-line-first"></span>
+        <span class="toggle-line toggle-line-middle"></span>
+        <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Skye</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-update">
+
+    <a href="/update/" rel="section"><i class="fa fa-list-ul fa-fw"></i>更新</a>
+
+  </li>
+        <li class="menu-item menu-item-tool">
+
+    <a href="/tools/" rel="section"><i class="fa fa-tools fa-fw"></i>工具</a>
+
+  </li>
+        <li class="menu-item menu-item-treasure">
+
+    <a href="/treasure/" rel="section"><i class="fa fa-gem fa-fw"></i>资源</a>
+
+  </li>
+        <li class="menu-item menu-item-pool">
+
+    <a href="/pool/" rel="section"><i class="fa fa-book fa-fw"></i>题库</a>
+
+  </li>
+        <li class="menu-item menu-item-links">
+
+    <a href="/links" rel="section"><i class="fa fa-link fa-fw"></i>友链</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/ShootingWang" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+    <!-- echarts -->
+    <script type="text/javascript" src="/js/src/echarts.common.js"></script>
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://github.com/ShootingWang/ShootingWang.github.io/LaTeX-Beamer.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Skye">
+      <meta itemprop="description" content="刻苦，沉着，精进不休">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Skye">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          LaTeX | Beamer幻灯片
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-04-18 23:03:20" itemprop="dateCreated datePublished" datetime="2021-04-18T23:03:20+08:00">2021-04-18</time>
+            </span>
+
+          
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-05-29 22:08:34" itemprop="dateModified" datetime="2021-05-29T22:08:34+08:00">2021-05-29</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Everything/" itemprop="url" rel="index"><span itemprop="name">Everything</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/LaTeX-Beamer.html#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/LaTeX-Beamer.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <center>使用LaTeX制作幻灯片</center>
+<a id="more"></a>
+<h1 id="基本"><a class="header-anchor" href="#基本"></a>基本</h1>
+<h2 id="编译"><a class="header-anchor" href="#编译"></a>编译</h2>
+<p>使用<code>XeLaTeX</code>程序编译</p>
+<h2 id="中文"><a class="header-anchor" href="#中文"></a>中文</h2>
+<p>使用<code>ctex</code>宏包</p>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="tag">\<span class="name">usepackage</span><span class="string">[UTF8]</span><span class="string">&#123;ctex&#125;</span></span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>可以在载入<code>ctex</code>宏包时加上<code>noindent</code>选项，取消段落的缩进</li>
+<li>在WinEdt编辑器中，对中文默认不是<code>UTF8</code>编码，需要在新建文件后，在第一行写上<code>% -*- coding: utf-8 -*-</code>，保存并关闭文件，再打开文件</li>
+</ul>
+<h2 id="主体结构"><a class="header-anchor" href="#主体结构"></a>主体结构</h2>
+<p>幻灯片主体结构：</p>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="tag">\<span class="name">section</span><span class="string">&#123;章名&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">subsection</span><span class="string">&#123;节名&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">begin</span><span class="string">&#123;frame&#125;</span><span class="string">[选项]</span></span></span><br><span class="line"><span class="tag">\<span class="name">frametitle</span><span class="string">&#123;幻灯片标题&#125;</span></span></span><br><span class="line">幻灯片内容</span><br><span class="line"><span class="tag">\<span class="name">end</span><span class="string">&#123;frame&#125;</span></span></span><br></pre></td></tr></table></figure>
+<h2 id="对齐"><a class="header-anchor" href="#对齐"></a>对齐</h2>
+<p>在Beamer的每张幻灯片中，正文内容（不包括幻灯片标题）默认为“竖直居中”的</p>
+<ul>
+<li><code>t</code>：竖直居上（top）</li>
+<li><code>c</code>：竖直居中（center）</li>
+<li><code>b</code>：竖直居下（bottom）</li>
+</ul>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="comment">% 将全局对齐格式改为“竖直居上”</span></span><br><span class="line"><span class="tag">\<span class="name">documentclass</span><span class="string">[t]</span><span class="string">&#123;beamer&#125;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">% 将某张幻灯片的正文内容修改为竖直居下</span></span><br><span class="line"><span class="tag">\<span class="name">begin</span><span class="string">&#123;frame&#125;</span><span class="string">[b]</span></span></span><br><span class="line">幻灯片内容</span><br><span class="line"><span class="tag">\<span class="name">end</span><span class="string">&#123;frame&#125;</span></span></span><br></pre></td></tr></table></figure>
+<h1 id="主题"><a class="header-anchor" href="#主题"></a>主题</h1>
+<blockquote>
+<ul>
+<li><a href="https://deic-web.uab.cat/~iblanes/beamer_gallery/" target="_blank" rel="noopener">Beamer主题Gallery</a></li>
+</ul>
+</blockquote>
+<h2 id="演示主题"><a class="header-anchor" href="#演示主题"></a>演示主题</h2>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="tag">\<span class="name">usetheme</span><span class="string">&#123;theme name&#125;</span></span></span><br></pre></td></tr></table></figure>
+<p><code>theme name</code>可以在<a href="https://deic-web.uab.cat/~iblanes/beamer_gallery/index_by_theme.html" target="_blank" rel="noopener">https://deic-web.uab.cat/~iblanes/beamer_gallery/index_by_theme.html</a>上查看各主题风格预览，选择你想要的主题名称填入</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">类别</th>
+<th style="text-align:left">theme name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">无导航栏</td>
+<td style="text-align:left"><code>default</code>、<code>boxes</code>、<code>Bergen</code>、<code>Pittsburgh</code>、<code>Rochester</code></td>
+</tr>
+<tr>
+<td style="text-align:left">带顶部导航栏</td>
+<td style="text-align:left"><code>Antibes</code>、<code>Darmstadt</code>、<code>Frankfurt</code>、<code>JuanLesPins</code>、<code>Montpellier</code>、<code>Singapore</code></td>
+</tr>
+<tr>
+<td style="text-align:left">带底部导航栏</td>
+<td style="text-align:left"><code>Boadilla</code>、<code>Madrid</code></td>
+</tr>
+<tr>
+<td style="text-align:left">带顶部&amp;底部导航栏</td>
+<td style="text-align:left"><code>AnnArbor</code>、<code>Berlin</code>、<code>CambridgeUS</code>、<code>Copenhagen</code>、<code>Dresden</code>、<code>Ilmenau</code>、<code>Luebeck</code>、<code>Malmoe</code>、<code>Szeged</code>、<code>Warsaw</code></td>
+</tr>
+<tr>
+<td style="text-align:left">带侧边栏</td>
+<td style="text-align:left"><code>Berkeley</code>、<code>Goettingen</code>、<code>Hannover</code>、<code>Marburg</code>、<code>PaloAlto</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="色彩主题"><a class="header-anchor" href="#色彩主题"></a>色彩主题</h2>
+<p>设置幻灯片各部分、各结构、各元素的配色</p>
+<ul>
+<li><a href="https://deic-web.uab.cat/~iblanes/beamer_gallery/index_by_color.html" target="_blank" rel="noopener">Beamer color theme gallery</a>（预览各颜色主题样式）</li>
+</ul>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="tag">\<span class="name">usecolortheme</span><span class="string">&#123;color theme name&#125;</span></span></span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">类别</th>
+<th style="text-align:left">color theme name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">基本颜色</td>
+<td style="text-align:left"><code>default</code>、<code>sidebartab</code>、<code>structure</code></td>
+</tr>
+<tr>
+<td style="text-align:left">完整颜色</td>
+<td style="text-align:left"><code>albatross</code>、<code>beaver</code>、<code>beetle</code>、<code>crane</code>、<code>dove</code>、<code>fly</code>、<code>seagull</code>、<code>wolverine</code></td>
+</tr>
+<tr>
+<td style="text-align:left">内部颜色</td>
+<td style="text-align:left"><code>lily</code>、<code>orchid</code>、<code>rose</code></td>
+</tr>
+<tr>
+<td style="text-align:left">外部颜色</td>
+<td style="text-align:left"><code>dolphin</code>、<code>seahorse</code>、<code>whale</code></td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="comment">%% 设置Beamer元素的颜色</span></span><br><span class="line"><span class="tag">\<span class="name">setbeamercolor</span><span class="string">&#123;Beamer_element&#125;</span><span class="string">&#123;color&#125;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">%% 例：</span></span><br><span class="line"><span class="tag">\<span class="name">setbeamercolor</span><span class="string">&#123;frametitle&#125;</span><span class="string">&#123;fg=blue,bg=yellow&#125;</span></span>     <span class="comment">% 修改幻灯片标题颜色</span></span><br><span class="line"><span class="tag">\<span class="name">setbeamercolor*</span><span class="string">&#123;item projected&#125;</span><span class="string">&#123;fg=white, bg=itemizecolor&#125;</span></span>    <span class="comment">% 目录中编号字体颜色为fg，编号图标颜色为bg</span></span><br><span class="line"><span class="tag">\<span class="name">setbeamercolor</span><span class="string">&#123;itemize item&#125;</span><span class="string">&#123;fg=itemizecolor&#125;</span></span>  	<span class="comment">% 修改无序列表颜色</span></span><br><span class="line"><span class="tag">\<span class="name">setbeamercolor</span><span class="string">&#123;enumerate item&#125;</span><span class="string">&#123;fg=itemizecolor&#125;</span></span>  	<span class="comment">% 修改有序列表颜色</span></span><br><span class="line"><span class="tag">\<span class="name">setbeamercolor</span><span class="string">&#123;description item&#125;</span><span class="string">&#123;fg=itemizecolor&#125;</span></span>  		<span class="comment">% 修改描述列表“描述项”颜色</span></span><br><span class="line"><span class="tag">\<span class="name">setbeamercolor</span><span class="string">&#123;section in toc&#125;</span><span class="string">&#123;fg=black&#125;</span></span>		<span class="comment">% 设置目录中标题的颜色</span></span><br></pre></td></tr></table></figure>
+<h2 id="字体主题"><a class="header-anchor" href="#字体主题"></a>字体主题</h2>
+<p>设置幻灯片的字体</p>
+<ul>
+<li><a href="https://deic-web.uab.cat/~iblanes/beamer_gallery/index_by_font.html" target="_blank" rel="noopener">Beamer font theme gallery</a>（预览各字体主题样式）</li>
+</ul>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="tag">\<span class="name">usefonttheme</span><span class="string">&#123;font theme name&#125;</span></span></span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">font theme name</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>default</code></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>serif</code></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>structurebold</code></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>structureitalicserif</code></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>structuresmallcapsserif</code></td>
+<td style="text-align:left"></td>
+</tr>
+</tbody>
+</table>
+<h2 id="内部主题"><a class="header-anchor" href="#内部主题"></a>内部主题</h2>
+<p>设置幻灯片正文内容（标题、列表、定理等）的样式</p>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="tag">\<span class="name">useinnertheme</span><span class="string">&#123;inner theme name&#125;</span></span></span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">inner theme name</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>default</code></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>circles</code></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>rectangles</code></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>rounded</code></td>
+<td style="text-align:left"></td>
+</tr>
+</tbody>
+</table>
+<h2 id="外部主题"><a class="header-anchor" href="#外部主题"></a>外部主题</h2>
+<p>设置幻灯片是否有顶部导航栏、底部导航栏、侧边栏，以及他们的结构</p>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="tag">\<span class="name">useoutertheme</span><span class="string">&#123;outer theme name&#125;</span></span></span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">outer theme name</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>default</code></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>infolines</code></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>miniframes</code></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>sidebar</code></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>smoothbars</code></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>smoothtree</code></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>split</code></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>shadow</code></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>tree</code></td>
+<td style="text-align:left"></td>
+</tr>
+</tbody>
+</table>
+<h1 id="封面-标题页"><a class="header-anchor" href="#封面-标题页"></a>封面/标题页</h1>
+<h2 id="封面信息"><a class="header-anchor" href="#封面信息"></a>封面信息</h2>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="tag">\<span class="name">title</span><span class="string">[导航区报告标题]</span><span class="string">&#123;封面报告标题&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">author</span><span class="string">[导航区作者名]</span><span class="string">&#123;封面作者名&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">institute</span><span class="string">[导航区院系]</span><span class="string">&#123;封面院系&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">date</span><span class="string">&#123;日期&#125;</span></span></span><br><span class="line"><span class="comment">% \date&#123;\today&#125;：今天</span></span><br><span class="line"><span class="comment">% 例：\date&#123;\small \vskip -10pt \today&#125; 或 \date&#123;2021年04月&#125;</span></span><br></pre></td></tr></table></figure>
+<h2 id="标题页"><a class="header-anchor" href="#标题页"></a>标题页</h2>
+<ul>
+<li>用<code>\titlepage</code>生成标题页</li>
+<li>一般是第一张幻灯片</li>
+</ul>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="tag">\<span class="name">begin</span><span class="string">&#123;frame&#125;</span><span class="string">[plain]</span></span></span><br><span class="line">    <span class="tag">\<span class="name">titlepage</span></span></span><br><span class="line"><span class="tag">\<span class="name">end</span><span class="string">&#123;frame&#125;</span></span></span><br><span class="line"><span class="comment">% plain：不显示顶部导航区、侧边栏、底部导航区等外部元素</span></span><br></pre></td></tr></table></figure>
+<h1 id="目录"><a class="header-anchor" href="#目录"></a>目录</h1>
+<p>使用<code>\tableofcontents</code>生成目录页：</p>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="tag">\<span class="name">section*</span><span class="string">&#123;目录&#125;</span></span>  <span class="comment">% *表示章“目录”不出现在目录中</span></span><br><span class="line"><span class="tag">\<span class="name">frame</span><span class="string">&#123;</span></span></span><br><span class="line"><span class="tag"><span class="string">    \frametitle&#123;\secname&#125;</span></span>  <span class="comment">% 幻灯片标题</span></span><br><span class="line">    <span class="comment">% \secname：与章（section）同名</span></span><br><span class="line">    <span class="tag">\<span class="name">tableofcontents</span><span class="string">[hideallsubsection]</span></span>  <span class="comment">% 目录</span></span><br><span class="line">    <span class="comment">% hideallsubsection：隐藏所有子标题（节）</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="tag">\<span class="name">setbeamertemplate</span><span class="string">&#123;section in toc&#125;</span><span class="string">[sections numbered]</span></span>  	<span class="comment">% 目录显示标题的编号</span></span><br><span class="line"><span class="tag">\<span class="name">setbeamertemplate</span><span class="string">&#123;section in toc&#125;</span><span class="string">[square]</span></span>   	<span class="comment">% 标题前图标为square（方块）</span></span><br></pre></td></tr></table></figure>
+<h1 id="正文"><a class="header-anchor" href="#正文"></a>正文</h1>
+<h2 id="新建幻灯片"><a class="header-anchor" href="#新建幻灯片"></a>新建幻灯片</h2>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="comment">% 方式一：</span></span><br><span class="line"><span class="tag">\<span class="name">begin</span><span class="string">&#123;frame&#125;</span><span class="string">&#123;幻灯片主题&#125;</span><span class="string">&#123;幻灯片副标题&#125;</span></span></span><br><span class="line">幻灯片内容</span><br><span class="line"><span class="tag">\<span class="name">end</span><span class="string">&#123;frame&#125;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">% 方式二：</span></span><br><span class="line"><span class="tag">\<span class="name">frame</span><span class="string">&#123;</span></span></span><br><span class="line"><span class="tag"><span class="string">    \frametitle&#123;幻灯片主题&#125;</span></span></span><br><span class="line">    <span class="tag">\<span class="name">framesubtitle</span><span class="string">&#123;幻灯片副标题&#125;</span></span></span><br><span class="line">    幻灯片内容</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">% 方式三：</span></span><br><span class="line"><span class="tag">\<span class="name">begin</span><span class="string">&#123;frame&#125;</span></span></span><br><span class="line">    <span class="tag">\<span class="name">frametitle</span><span class="string">&#123;幻灯片主题&#125;</span></span></span><br><span class="line">    <span class="tag">\<span class="name">framesubtitle</span><span class="string">&#123;幻灯片副标题&#125;</span></span></span><br><span class="line">    幻灯片内容</span><br><span class="line"><span class="tag">\<span class="name">end</span><span class="string">&#123;frame&#125;</span></span></span><br></pre></td></tr></table></figure>
+<h2 id="列表-list"><a class="header-anchor" href="#列表-list"></a>列表 list</h2>
+<h3 id="无序列表"><a class="header-anchor" href="#无序列表"></a>无序列表</h3>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="tag">\<span class="name">begin</span><span class="string">&#123;itemize&#125;</span></span></span><br><span class="line">    <span class="tag">\<span class="name">item</span></span> 项</span><br><span class="line">    <span class="tag">\<span class="name">item</span></span> 项</span><br><span class="line"><span class="tag">\<span class="name">end</span><span class="string">&#123;itemize&#125;</span></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="tag">\<span class="name">setbeamertemplate</span><span class="string">&#123;itemize item&#125;</span><span class="string">[triangle]</span></span>  		<span class="comment">% 修改无序列表图标</span></span><br><span class="line"><span class="tag">\<span class="name">setbeamercolor</span><span class="string">&#123;itemize item&#125;</span><span class="string">&#123;fg=itemizecolor&#125;</span></span>  	<span class="comment">% 修改无序列表颜色</span></span><br><span class="line"><span class="comment">% default</span></span><br><span class="line"><span class="comment">% triangle：三角形</span></span><br><span class="line"><span class="comment">% circle：小圆点</span></span><br><span class="line"><span class="comment">% square：正方形</span></span><br><span class="line"><span class="comment">% ball：球形</span></span><br></pre></td></tr></table></figure>
+<h3 id="有序列表"><a class="header-anchor" href="#有序列表"></a>有序列表</h3>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="tag">\<span class="name">begin</span><span class="string">&#123;enumerate&#125;</span></span></span><br><span class="line">    <span class="tag">\<span class="name">item</span></span> 第一项</span><br><span class="line">    <span class="tag">\<span class="name">item</span></span> 第二项</span><br><span class="line">    <span class="tag">\<span class="name">item</span></span> 第三项</span><br><span class="line"><span class="tag">\<span class="name">end</span><span class="string">&#123;enumerate&#125;</span></span></span><br></pre></td></tr></table></figure>
+<h2 id="描述列表-description"><a class="header-anchor" href="#描述列表-description"></a>描述列表 description</h2>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="tag">\<span class="name">begin</span><span class="string">&#123;description&#125;</span></span></span><br><span class="line">    <span class="tag">\<span class="name">item</span><span class="string">[红色]</span></span> 热情、活泼、温暖、幸福</span><br><span class="line">    <span class="tag">\<span class="name">item</span><span class="string">[绿色]</span></span> 新鲜、平静、安逸、柔和</span><br><span class="line"><span class="tag">\<span class="name">end</span><span class="string">&#123;description&#125;</span></span></span><br></pre></td></tr></table></figure>
+<h2 id="区块环境-block"><a class="header-anchor" href="#区块环境-block"></a>区块环境 block</h2>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="tag">\<span class="name">begin</span><span class="string">&#123;block&#125;</span><span class="string">&#123;重要内容&#125;</span></span></span><br><span class="line">内容</span><br><span class="line"><span class="tag">\<span class="name">end</span><span class="string">&#123;block&#125;</span></span></span><br></pre></td></tr></table></figure>
+<h2 id="提醒环境-alertblock"><a class="header-anchor" href="#提醒环境-alertblock"></a>提醒环境 alertblock</h2>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="tag">\<span class="name">begin</span><span class="string">&#123;alertblock&#125;</span><span class="string">&#123;重要提醒&#125;</span></span></span><br><span class="line">内容</span><br><span class="line"><span class="tag">\<span class="name">end</span><span class="string">&#123;alertblock&#125;</span></span></span><br></pre></td></tr></table></figure>
+<h2 id="例子环境-exampleblock"><a class="header-anchor" href="#例子环境-exampleblock"></a>例子环境 exampleblock</h2>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="tag">\<span class="name">begin</span><span class="string">&#123;exampleblock&#125;</span><span class="string">&#123;重要例子&#125;</span></span></span><br><span class="line">内容</span><br><span class="line"><span class="tag">\<span class="name">end</span><span class="string">&#123;exampleblock&#125;</span></span></span><br></pre></td></tr></table></figure>
+<h2 id="定理环境"><a class="header-anchor" href="#定理环境"></a>定理环境</h2>
+<h2 id="图片-figure"><a class="header-anchor" href="#图片-figure"></a>图片 figure</h2>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="tag">\<span class="name">begin</span><span class="string">&#123;figure&#125;</span></span></span><br><span class="line">    <span class="tag">\<span class="name">includegraphics</span><span class="string">[width=0.6\linewidth]</span><span class="string">&#123;图片名称&#125;</span></span></span><br><span class="line">    <span class="tag">\<span class="name">caption</span><span class="string">&#123;图片标题&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">end</span><span class="string">&#123;figure&#125;</span></span></span><br></pre></td></tr></table></figure>
+<h1 id="汇总"><a class="header-anchor" href="#汇总"></a>汇总</h1>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="comment">% 设置文档类别为 beamer</span></span><br><span class="line"><span class="tag">\<span class="name">documentclass</span><span class="string">[16pt]</span><span class="string">&#123;beamer&#125;</span></span> </span><br><span class="line"><span class="comment">%\\\ []中选项：</span></span><br><span class="line"><span class="comment">% 16pt：全局字体大小</span></span><br><span class="line"><span class="comment">% compress：尽量压缩导航栏</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">% ----------------- 主题 ------------------- %</span></span><br><span class="line"><span class="tag">\<span class="name">usetheme</span><span class="string">&#123;theme name&#125;</span></span>   <span class="comment">% 幻灯片主题</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">% ------------------ 主体 ------------------- %</span></span><br><span class="line"><span class="comment">% 开始写文章</span></span><br><span class="line"><span class="tag">\<span class="name">begin</span><span class="string">&#123;document&#125;</span></span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">% ----------------- 封面信息 ------------------- %</span></span><br><span class="line"><span class="tag">\<span class="name">title</span><span class="string">[导航区报告标题]</span><span class="string">&#123;封面报告标题&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">author</span><span class="string">[导航区作者名]</span><span class="string">&#123;封面作者名&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">institute</span><span class="string">[导航区院系]</span><span class="string">&#123;封面院系&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">date</span><span class="string">&#123;日期&#125;</span></span></span><br><span class="line"><span class="comment">% \date&#123;\today&#125;：今天</span></span><br><span class="line"><span class="comment">% 例：\date&#123;\small \vskip -10pt \today&#125;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">% ----- 封面 ----- %</span></span><br><span class="line"><span class="tag">\<span class="name">begin</span><span class="string">&#123;frame&#125;</span></span></span><br><span class="line">    <span class="tag">\<span class="name">maketitle</span></span>  <span class="comment">% 或 \titlepage</span></span><br><span class="line"><span class="tag">\<span class="name">end</span><span class="string">&#123;frame&#125;</span></span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">% ----------------- 目录页 ------------------- %</span></span><br><span class="line"><span class="tag">\<span class="name">section*</span><span class="string">&#123;目录&#125;</span></span>  <span class="comment">% *表示章“目录”不出现在目录中</span></span><br><span class="line"><span class="tag">\<span class="name">frame</span><span class="string">&#123;</span></span></span><br><span class="line"><span class="tag"><span class="string">    \frametitle&#123;\secname&#125;</span></span>  <span class="comment">% 幻灯片标题</span></span><br><span class="line">    <span class="comment">% \secname：与章（section）同名</span></span><br><span class="line">    <span class="tag">\<span class="name">tableofcontents</span><span class="string">[hideallsubsection]</span></span>  <span class="comment">% 目录</span></span><br><span class="line">    <span class="comment">% hideallsubsection：隐藏所有子标题（节）</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">% ----------------- 正文 ------------------- %</span></span><br><span class="line"><span class="tag">\<span class="name">section</span><span class="string">&#123;绪论&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">subsection</span><span class="string">&#123;研究背景和意义&#125;</span></span></span><br><span class="line"></span><br><span class="line"><span class="tag">\<span class="name">begin</span><span class="string">&#123;frame&#125;</span><span class="string">&#123;幻灯片标题&#125;</span></span></span><br><span class="line">    内容</span><br><span class="line"><span class="tag">\<span class="name">end</span><span class="string">&#123;frame&#125;</span></span></span><br><span class="line"></span><br><span class="line"><span class="tag">\<span class="name">begin</span><span class="string">&#123;frame&#125;</span><span class="string">&#123;幻灯片标题2&#125;</span></span></span><br><span class="line">    <span class="tag">\<span class="name">begin</span><span class="string">&#123;figure&#125;</span></span></span><br><span class="line">        <span class="tag">\<span class="name">includegraphics</span><span class="string">[width=0.6\linewidth]</span><span class="string">&#123;图片名称&#125;</span></span></span><br><span class="line">        <span class="tag">\<span class="name">caption</span><span class="string">&#123;图片标题&#125;</span></span></span><br><span class="line">    <span class="tag">\<span class="name">end</span><span class="string">&#123;figure&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">end</span><span class="string">&#123;frame&#125;</span></span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="tag">\<span class="name">end</span><span class="string">&#123;document&#125;</span></span></span><br></pre></td></tr></table></figure>
+<h1 id="参考资料"><a class="header-anchor" href="#参考资料"></a>参考资料</h1>
+<ul>
+<li><a href="https://mirror.las.iastate.edu/tex-archive/macros/latex/contrib/beamer-contrib/themes/hitszbeamer/hitszbeamer.pdf" target="_blank" rel="noopener">HitSzBeamer</a></li>
+<li><a href="https://bbs.pku.edu.cn/attach/cb/40/cb401e254626b3f9/beamerlog-1112.pdf" target="_blank" rel="noopener">Beamer演示学习笔记</a></li>
+<li><a href="http://static.latexstudio.net/article/2019/0623/beamer_guide-zh-cn-byl00l.pdf" target="_blank" rel="noopener">Beamer v3.0 指南</a></li>
+</ul>
+
+    </div>
+
+    
+    
+    
+        <div class="reward-container">
+  <div></div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/reward2021.png" alt="Skye 微信支付">
+        <p>微信支付</p>
+      </div>
+
+  </div>
+</div>
+
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/images/wechat_qrcode.jpg">
+            <span class="icon">
+              <i class="fab fa-weixin"></i>
+            </span>
+
+            <span class="label">WeChat</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/LaTeX/" rel="tag"># LaTeX</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-SMART%E5%8E%9F%E5%88%99.html" rel="prev" title="数据分析 | SMART原则">
+      <i class="fa fa-chevron-left"></i> 数据分析 | SMART原则
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-%E9%A9%AC%E5%A4%AA%E6%95%88%E5%BA%94.html" rel="next" title="数据分析 | 马太效应">
+      数据分析 | 马太效应 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本"><span class="nav-number">1.</span> <span class="nav-text">基本</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#编译"><span class="nav-number">1.1.</span> <span class="nav-text">编译</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#中文"><span class="nav-number">1.2.</span> <span class="nav-text">中文</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#主体结构"><span class="nav-number">1.3.</span> <span class="nav-text">主体结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对齐"><span class="nav-number">1.4.</span> <span class="nav-text">对齐</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#主题"><span class="nav-number">2.</span> <span class="nav-text">主题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#演示主题"><span class="nav-number">2.1.</span> <span class="nav-text">演示主题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#色彩主题"><span class="nav-number">2.2.</span> <span class="nav-text">色彩主题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字体主题"><span class="nav-number">2.3.</span> <span class="nav-text">字体主题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内部主题"><span class="nav-number">2.4.</span> <span class="nav-text">内部主题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#外部主题"><span class="nav-number">2.5.</span> <span class="nav-text">外部主题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#封面-标题页"><span class="nav-number">3.</span> <span class="nav-text">封面&#x2F;标题页</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#封面信息"><span class="nav-number">3.1.</span> <span class="nav-text">封面信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#标题页"><span class="nav-number">3.2.</span> <span class="nav-text">标题页</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#目录"><span class="nav-number">4.</span> <span class="nav-text">目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#正文"><span class="nav-number">5.</span> <span class="nav-text">正文</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#新建幻灯片"><span class="nav-number">5.1.</span> <span class="nav-text">新建幻灯片</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#列表-list"><span class="nav-number">5.2.</span> <span class="nav-text">列表 list</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#无序列表"><span class="nav-number">5.2.1.</span> <span class="nav-text">无序列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#有序列表"><span class="nav-number">5.2.2.</span> <span class="nav-text">有序列表</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#描述列表-description"><span class="nav-number">5.3.</span> <span class="nav-text">描述列表 description</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#区块环境-block"><span class="nav-number">5.4.</span> <span class="nav-text">区块环境 block</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#提醒环境-alertblock"><span class="nav-number">5.5.</span> <span class="nav-text">提醒环境 alertblock</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#例子环境-exampleblock"><span class="nav-number">5.6.</span> <span class="nav-text">例子环境 exampleblock</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#定理环境"><span class="nav-number">5.7.</span> <span class="nav-text">定理环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图片-figure"><span class="nav-number">5.8.</span> <span class="nav-text">图片 figure</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#汇总"><span class="nav-number">6.</span> <span class="nav-text">汇总</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料"><span class="nav-number">7.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Skye</p>
+  <div class="site-description" itemprop="description">刻苦，沉着，精进不休</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">151</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">53</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/ShootingWang" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;ShootingWang"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2019 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-star"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Skye</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">401k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">6:05</span>
+</div>
+
+
+  <script src='https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js'></script>
+  <script>
+    if (window.mermaid) {
+      mermaid.initialize({theme: 'forest'});
+    }
+  </script>
+
+
+<script src="/js/prism/clipboard.js"></script>
+<script src="/js/prism/prism.js" async></script>
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+  <script defer src="/lib/three/three.min.js"></script>
+    <script defer src="/lib/three/canvas_lines.min.js"></script>
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js', () => {
+    new Valine(Object.assign({
+      el         : '#valine-comments',
+      path       : location.pathname,
+    }, {"enable":true,"appId":"yFKKmB84nH4WRrBC07BTRKLC-gzGzoHsz","appKey":"EFXmIM4ipk11GLk8Stx40FYk","notify":true,"verify":false,"placeholder":"记得填写邮箱哦~这样你就能及时收到我的回复了~","avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"language":null,"visitor":false,"comment_count":true,"recordIP":false,"serverURLs":null}
+    ));
+  }, window.Valine);
+});
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
+</html>
