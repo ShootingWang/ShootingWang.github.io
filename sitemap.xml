@@ -1187,13 +1187,6 @@
   </url>
   
   <url>
-    <loc>https://github.com/ShootingWang/ShootingWang.github.io/tags/Jupyter/</loc>
-    <lastmod>2022-03-19</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://github.com/ShootingWang/ShootingWang.github.io/tags/Hexo/</loc>
     <lastmod>2022-03-19</lastmod>
     <changefreq>daily</changefreq>
@@ -1215,13 +1208,6 @@
   </url>
   
   <url>
-    <loc>https://github.com/ShootingWang/ShootingWang.github.io/tags/LaTeX/</loc>
-    <lastmod>2022-03-19</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://github.com/ShootingWang/ShootingWang.github.io/tags/HIVE/</loc>
     <lastmod>2022-03-19</lastmod>
     <changefreq>daily</changefreq>
@@ -1230,6 +1216,20 @@
   
   <url>
     <loc>https://github.com/ShootingWang/ShootingWang.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/</loc>
+    <lastmod>2022-03-19</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://github.com/ShootingWang/ShootingWang.github.io/tags/LaTeX/</loc>
+    <lastmod>2022-03-19</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://github.com/ShootingWang/ShootingWang.github.io/tags/Jupyter/</loc>
     <lastmod>2022-03-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1334,13 +1334,6 @@
   </url>
   
   <url>
-    <loc>https://github.com/ShootingWang/ShootingWang.github.io/tags/Tableau/</loc>
-    <lastmod>2022-03-19</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://github.com/ShootingWang/ShootingWang.github.io/tags/Word/</loc>
     <lastmod>2022-03-19</lastmod>
     <changefreq>daily</changefreq>
@@ -1349,6 +1342,13 @@
   
   <url>
     <loc>https://github.com/ShootingWang/ShootingWang.github.io/tags/Endnote/</loc>
+    <lastmod>2022-03-19</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://github.com/ShootingWang/ShootingWang.github.io/tags/Tableau/</loc>
     <lastmod>2022-03-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1397,6 +1397,13 @@
   </url>
   
   <url>
+    <loc>https://github.com/ShootingWang/ShootingWang.github.io/tags/%E5%9B%A0%E6%9E%9C%E6%8E%A8%E6%96%AD/</loc>
+    <lastmod>2022-03-19</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://github.com/ShootingWang/ShootingWang.github.io/tags/AB%E5%AE%9E%E9%AA%8C/</loc>
     <lastmod>2022-03-19</lastmod>
     <changefreq>daily</changefreq>
@@ -1405,13 +1412,6 @@
   
   <url>
     <loc>https://github.com/ShootingWang/ShootingWang.github.io/tags/%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F/</loc>
-    <lastmod>2022-03-19</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://github.com/ShootingWang/ShootingWang.github.io/tags/%E5%9B%A0%E6%9E%9C%E6%8E%A8%E6%96%AD/</loc>
     <lastmod>2022-03-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1474,6 +1474,13 @@
   </url>
   
   <url>
+    <loc>https://github.com/ShootingWang/ShootingWang.github.io/tags/%E7%89%B9%E5%BE%81/</loc>
+    <lastmod>2022-03-19</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://github.com/ShootingWang/ShootingWang.github.io/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/</loc>
     <lastmod>2022-03-19</lastmod>
     <changefreq>daily</changefreq>
@@ -1482,13 +1489,6 @@
   
   <url>
     <loc>https://github.com/ShootingWang/ShootingWang.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/</loc>
-    <lastmod>2022-03-19</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://github.com/ShootingWang/ShootingWang.github.io/tags/%E7%89%B9%E5%BE%81/</loc>
     <lastmod>2022-03-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1525,14 +1525,14 @@
   </url>
   
   <url>
-    <loc>https://github.com/ShootingWang/ShootingWang.github.io/categories/Python/</loc>
+    <loc>https://github.com/ShootingWang/ShootingWang.github.io/categories/Everything/</loc>
     <lastmod>2022-03-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://github.com/ShootingWang/ShootingWang.github.io/categories/Everything/</loc>
+    <loc>https://github.com/ShootingWang/ShootingWang.github.io/categories/Python/</loc>
     <lastmod>2022-03-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
