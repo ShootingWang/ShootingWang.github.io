@@ -12322,11 +12322,11 @@ $$IDFA\rightarrow IDFV\rightarrow UDID$$</p>
 <p>以上假设检验采用的<strong>检验统计量</strong>为</p>
 <script type="math/tex; mode=display">\chi^ = (n-1) \frac{s^2}{ \sigma_0^2 }</script><p>当$ \sigma^2 = \sigma_0^2 $时，有$ \chi^2 \sim \chi^2(n-1)$。</p>
 <p>若取显著性水平为$\alpha$，则对应三个检验问题的拒绝域分别为</p>
-<script type="math/tex; mode=display">W_1=\{\chi^2 \geq \chi^2_{ 1-\alpha }(n-1) \}</script><script type="math/tex; mode=display">W_2=\{\chi^2 \leq \chi^2_\alpha(n-1) \}</script><script type="math/tex; mode=display">W_3=\{\chi^2 \leq \chi^2_{ \frac{ \alpha }{2} }(n-1) \}或\{ \chi^2 \geq \chi_{ 1-\frac{ \alpha }{2} }(n-1) \}</script><ul>
+<script type="math/tex; mode=display">W_1=\{\chi^2 \geq \chi^2_{ 1-\alpha }(n-1) \}</script><script type="math/tex; mode=display">W_2=\{\chi^2 \leq \chi^2_\alpha(n-1) \}</script><script type="math/tex; mode=display">W_3=\{\chi^2 \leq \chi^2_{ \frac{ \alpha }{2} }(n-1) \} \mbox{或} \{ \chi^2 \geq \chi_{ 1-\frac{ \alpha }{2} }(n-1) \}</script><ul>
 <li>$\chi^2$分布是偏态分布</li>
 </ul>
 <p>三个检验问题的p值分别为</p>
-<script type="math/tex; mode=display">p_1=P(\chi^2\geq \chi_0^2)</script><script type="math/tex; mode=display">p_2=P(\chi^2\leq \chi_0^2)</script><script type="math/tex; mode=display">p_3=2 \min \left\{ P(\chi\geq\chi^2_0), P(\chi^2\leq \chi^2_0) \right\}</script><h1 id="chi-2-拟合优度检验"><a href="#chi-2-拟合优度检验" class="headerlink" title="$\chi^2$拟合优度检验"></a>$\chi^2$拟合优度检验</h1><p>分类数据的$\chi^2$拟合优度检验</p>
+<script type="math/tex; mode=display">p_1=P(\chi^2 \geq \chi_0^2)</script><script type="math/tex; mode=display">p_2=P(\chi^2 \leq \chi_0^2)</script><script type="math/tex; mode=display">p_3=2 \min \left\{ P(\chi\geq\chi^2_0), P(\chi^2 \leq \chi^2_0) \right\}</script><h1 id="chi-2-拟合优度检验"><a href="#chi-2-拟合优度检验" class="headerlink" title="$\chi^2$拟合优度检验"></a>$\chi^2$拟合优度检验</h1><p>分类数据的$\chi^2$拟合优度检验</p>
 <p>根据某项指标，总体被分为$K$类：$A_1,A_2,\cdots,A_K$。关心各类元素在总体中所占的比率：</p>
 <script type="math/tex; mode=display">H_0:A_i所占的比率是$p_{i0},\quad i=1,\cdots,K.</script><p>其中，$p_{i0}$已知且满足$\sum_{i=1}^Kp_{i0}=1$。</p>
 <p>记$x_1,\cdots,x_n$是从该总体抽出的样本，且其中属于$A_i$类别的样本数为$n_i$。</p>
