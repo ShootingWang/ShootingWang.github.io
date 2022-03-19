@@ -26739,7 +26739,8 @@ to predict trends and future values</li>
 \end{equation}</p>
 <p>其中<br>
 $$<br>
-\mathbf{X} = ( \mathbf{1}, \mathbf{X}<em>1, \mathbf{X}<em>2, \cdots, \mathbf{X}<em>p ) = \left(<br>
+\mathbf{X} = (\mathbf{1},\mathbf{X}<em>1,\mathbf{X}<em>2,\cdots,\mathbf{X}<em>p) =<br>
+\left(<br>
 \begin{array}{cccc}<br>
 1 &amp; X</em>{11} &amp; \cdots &amp; X</em>{1p}\<br>
 1 &amp; X</em>{21} &amp; \cdots &amp; X_{2p}\<br>
@@ -26756,8 +26757,8 @@ $$</p>
 \vdots \<br>
 \beta_p<br>
 \end{array}<br>
-\right) ,<br>
-\qquad \mathbf{ \varepsilon }=<br>
+\right) ,</p>
+<p>\qquad \mathbf{\varepsilon}=<br>
 \left(<br>
 \begin{array}{c}<br>
 \varepsilon_1 \<br>
