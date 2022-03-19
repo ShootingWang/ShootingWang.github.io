@@ -1402,7 +1402,7 @@
 <a href="/sql-%E8%8C%83%E5%BC%8F.html" title="范式">范式</a>
 </li>
 <li>
-<a href="/sql-2-%E6%A8%A1%E5%BC%8F.html" title="模式">模式</a>
+
 </li>
 <li>
 
@@ -1957,11 +1957,13 @@
   <entry>
     <title>数据分析 | 如何成为一名合格的数据分析师</title>
     <url>/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-%E5%A6%82%E4%BD%95%E6%88%90%E4%B8%BA%E4%B8%80%E5%90%8D%E5%90%88%E6%A0%BC%E7%9A%84%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88.html</url>
-    <content><![CDATA[<p><center></center><br><a id="more"></a></p>
+    <content><![CDATA[<center></center>
+<a id="more"></a>
 <blockquote>
 <p>积累一些“成为一名合格的数据分析师”的TIPS</p>
 </blockquote>
-<h1 id="宋世君：数据分析十条"><a href="#宋世君：数据分析十条" class="headerlink" title="宋世君：数据分析十条"></a>宋世君：数据分析十条</h1><p>数据科学大佬宋世君曾总结过的<strong>数据分析十条</strong>，适合作为新人数据分析师的职场成长教条：</p>
+<h1 id="宋世君：数据分析十条"><a class="header-anchor" href="#宋世君：数据分析十条"></a>宋世君：数据分析十条</h1>
+<p>数据科学大佬宋世君曾总结过的<strong>数据分析十条</strong>，适合作为新人数据分析师的职场成长教条：</p>
 <ol>
 <li>分析师的核心能力是思辨</li>
 <li>对讲真话负责，保持中立</li>
@@ -1974,7 +1976,8 @@
 <li>如果可能应该基于问题收集数据，而不只是基于数据来问问题</li>
 <li>不是所有问题都可以分析出答案，以开放的心态采纳其他观点</li>
 </ol>
-<h1 id="李伟建：两个关键词"><a href="#李伟建：两个关键词" class="headerlink" title="李伟建：两个关键词"></a>李伟建：两个关键词</h1><ol>
+<h1 id="李伟建：两个关键词"><a class="header-anchor" href="#李伟建：两个关键词"></a>李伟建：两个关键词</h1>
+<ol>
 <li>主动思考</li>
 <li>怎么去理解商业需求</li>
 </ol>
@@ -1982,7 +1985,8 @@
 <li>分析师的使命：让决策更科学</li>
 <li>分析师的核心价值是发现，而不是解决</li>
 </ul>
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
+<h1 id="参考资料"><a class="header-anchor" href="#参考资料"></a>参考资料</h1>
+<ul>
 <li><a href="https://mp.weixin.qq.com/s/-MXgwn-BEU62E0Tnm91ylg" target="_blank" rel="noopener">滴滴宋世君：数据分析师究竟是做什么的？</a></li>
 </ul>
 ]]></content>
@@ -2336,13 +2340,13 @@ window.onresize=function(){
 </script>
 <h1 id="样例"><a class="header-anchor" href="#样例"></a>样例</h1>
 <h2 id="饼图"><a class="header-anchor" href="#饼图"></a>饼图</h2>
-<div id="echarts2468" style="width: 85%;height: 800px;margin: 0 auto"></div>
+<div id="echarts4638" style="width: 85%;height: 800px;margin: 0 auto"></div>
+<script src="https://cdn.bootcss.com/echarts/4.3.0/echarts.common.min.js"></script>
 <script type="text/javascript">
-        // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts2468'));
-
-        // 指定图表的配置项和数据
-        var option = // 800表示图表展示的高度为800px
+	// 基于准备好的dom，初始化echarts实例
+	var myChart = echarts.init(document.getElementById('echarts4638'));
+	// 指定图表的配置项和数据
+	// 800表示图表展示的高度为800px
 // '85%'表示图表展示的宽度为85%
 {
     title: {
@@ -2384,9 +2388,8 @@ window.onresize=function(){
         }
     ]
 }
-
-        // 使用刚指定的配置项和数据显示图表。
-        myChart.setOption(option);
+	// 使用刚指定的配置项和数据显示图表。
+	myChart.setOption(option);
 </script>
 <h2 id="折线图"><a class="header-anchor" href="#折线图"></a>折线图</h2>
 <h2 id="柱状图"><a class="header-anchor" href="#柱状图"></a>柱状图</h2>
@@ -13404,8 +13407,8 @@ $$r(y_i, H(x_i))=\left{<br>
         <tag>机器学习</tag>
         <tag>分类</tag>
         <tag>集成学习</tag>
-        <tag>Boosting</tag>
         <tag>回归</tag>
+        <tag>Boosting</tag>
       </tags>
   </entry>
   <entry>
@@ -14395,8 +14398,8 @@ $$H_t(x)=H_{t-1}(x)+\nu \alpha_t h_t(x)$$<br>
         <tag>机器学习</tag>
         <tag>分类</tag>
         <tag>集成学习</tag>
-        <tag>Boosting</tag>
         <tag>回归</tag>
+        <tag>Boosting</tag>
       </tags>
   </entry>
   <entry>
@@ -17787,8 +17790,8 @@ $$l(y_i,\hat{y}_i)=y_i\ln{(1+e<sup>{-\hat{y}_i})}+(1-y_i)\ln{(1+e</sup>{\hat{y}_
         <tag>机器学习</tag>
         <tag>分类</tag>
         <tag>集成学习</tag>
-        <tag>Boosting</tag>
         <tag>回归</tag>
+        <tag>Boosting</tag>
       </tags>
   </entry>
   <entry>
