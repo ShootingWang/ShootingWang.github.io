@@ -312,18 +312,14 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <center>《SQL解惑（第二版）》学习笔记</center>
-<a id="more"></a>
-<h1 id="财政年度表"><a class="header-anchor" href="#财政年度表"></a>财政年度表</h1>
-<ul>
+        <p><center>《SQL解惑（第二版）》学习笔记</center><br><a id="more"></a></p>
+<h1 id="财政年度表"><a href="#财政年度表" class="headerlink" title="财政年度表"></a>财政年度表</h1><ul>
 <li>创建表格时需要添加约束，保证表格的正确性</li>
 </ul>
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> FiscalYears</span><br><span class="line">(fiscal_year <span class="built_in">INTEGER</span> <span class="keyword">NOT</span> <span class="literal">NULL</span> PRIMARY <span class="keyword">KEY</span>,   <span class="comment">-- 主键约束</span></span><br><span class="line">start_date <span class="built_in">DATE</span> <span class="keyword">NOT</span> <span class="literal">NULL</span>,</span><br><span class="line"><span class="keyword">CONSTRAINT</span> valid_start_date  <span class="comment">-- 判断start_date是否符合会计年度规定</span></span><br><span class="line">			<span class="keyword">CHECK</span> ( (<span class="keyword">EXTRACT</span>(<span class="keyword">YEAR</span> <span class="keyword">FROM</span> start_date)  = fiscal_year - <span class="number">1</span>)  <span class="comment">-- EXTRACT()从start_date中提取年份</span></span><br><span class="line">				 <span class="keyword">AND</span> (<span class="keyword">EXTRACT</span>(<span class="keyword">MONTH</span> <span class="keyword">FROM</span> start_date) = <span class="number">10</span>)</span><br><span class="line">                 <span class="keyword">AND</span> (<span class="keyword">EXTRACT</span>(<span class="keyword">DAY</span> <span class="keyword">FROM</span> start_date) = <span class="number">01</span>) ),</span><br><span class="line">end_date <span class="built_in">DATE</span> <span class="keyword">NOT</span> <span class="literal">NULL</span>,</span><br><span class="line"><span class="keyword">CONSTRAINT</span> valid_end_date  <span class="comment">-- 判断end_date是否符合会计年度规定</span></span><br><span class="line">			<span class="keyword">CHECK</span> ((<span class="keyword">EXTRACT</span>(<span class="keyword">YEAR</span> <span class="keyword">FROM</span> end_date) = fiscal_year)</span><br><span class="line">				<span class="keyword">AND</span> (<span class="keyword">EXTRACT</span>(<span class="keyword">MONTH</span> <span class="keyword">FROM</span> end_date) = <span class="number">09</span>)</span><br><span class="line">                <span class="keyword">AND</span> (<span class="keyword">EXTRACT</span>(<span class="keyword">DAY</span> <span class="keyword">FROM</span> end_date) = <span class="number">30</span>)));</span><br></pre></td></tr></table></figure>
-<p>但是……错误的语句竟然成功插入了？？</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">mysql&gt; INSERT INTO FiscalYears VALUES</span><br><span class="line">    -&gt; (1996, '1995-10-01', '1996-08-30');</span><br><span class="line">Query OK, 1 row affected (0.00 sec)</span><br><span class="line"></span><br><span class="line">mysql&gt; SELECT * FROM FiscalYears;</span><br><span class="line">+<span class="comment">-------------+------------+------------+</span></span><br><span class="line">| fiscal_year | start_date | end_date   |</span><br><span class="line">+<span class="comment">-------------+------------+------------+</span></span><br><span class="line">|        1996 | 1995-10-01 | 1996-08-30 |</span><br><span class="line">+<span class="comment">-------------+------------+------------+</span></span><br><span class="line">1 row in <span class="keyword">set</span> (<span class="number">0.00</span> sec)</span><br></pre></td></tr></table></figure>
+<p>但是……错误的语句竟然成功插入了？？<br><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">mysql&gt; INSERT INTO FiscalYears VALUES</span><br><span class="line">    -&gt; (1996, '1995-10-01', '1996-08-30');</span><br><span class="line">Query OK, 1 row affected (0.00 sec)</span><br><span class="line"></span><br><span class="line">mysql&gt; SELECT * FROM FiscalYears;</span><br><span class="line">+<span class="comment">-------------+------------+------------+</span></span><br><span class="line">| fiscal_year | start_date | end_date   |</span><br><span class="line">+<span class="comment">-------------+------------+------------+</span></span><br><span class="line">|        1996 | 1995-10-01 | 1996-08-30 |</span><br><span class="line">+<span class="comment">-------------+------------+------------+</span></span><br><span class="line">1 row in <span class="keyword">set</span> (<span class="number">0.00</span> sec)</span><br></pre></td></tr></table></figure></p>
 <p>bug待解决……</p>
-<h1 id="缺勤者"><a class="header-anchor" href="#缺勤者"></a>缺勤者</h1>
-
+<h1 id="缺勤者"><a href="#缺勤者" class="headerlink" title="缺勤者"></a>缺勤者</h1>
     </div>
 
     
@@ -337,8 +333,8 @@
   <div id="qr" style="display: none;">
       
       <div style="display: inline-block;">
-        <img src="/images/reward2021.png" alt="Skye WeChat Pay">
-        <p>WeChat Pay</p>
+        <img src="/images/reward2021.png" alt="Skye WeChat Bezahlung">
+        <p>WeChat Bezahlung</p>
       </div>
       
       <div style="display: inline-block;">
@@ -468,7 +464,7 @@
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-count">11</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -516,13 +512,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">402k</span>
+    <span title="站点总字数">392k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">6:05</span>
+    <span title="站点阅读时长">5:56</span>
 </div>
 
 

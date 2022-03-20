@@ -318,15 +318,11 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <center></center>
-<a id="more"></a>
-<h1 id="pyecharts"><a class="header-anchor" href="#pyecharts"></a>pyecharts</h1>
-<ul>
+        <p><center></center><br><a id="more"></a></p>
+<h1 id="pyecharts"><a href="#pyecharts" class="headerlink" title="pyecharts"></a>pyecharts</h1><ul>
 <li><a href="https://pyecharts.org/" target="_blank" rel="noopener">pyecharts官网</a></li>
 </ul>
-<h2 id="安装"><a class="header-anchor" href="#安装"></a>安装</h2>
-<p>在Anaconda Prompt中输入：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip install pyecharts</span><br></pre></td></tr></table></figure>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>在Anaconda Prompt中输入：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip install pyecharts</span><br></pre></td></tr></table></figure></p>
 <p>安装过程可能会出现多种问题：</p>
 <ol>
 <li>缺少相关的库</li>
@@ -334,8 +330,7 @@
 <li>提示找不到相应版本</li>
 </ol>
 <p><a href="https://blog.csdn.net/qq_37954088/article/details/88876791" target="_blank" rel="noopener">解决方法</a></p>
-<h2 id="渲染图片"><a class="header-anchor" href="#渲染图片"></a>渲染图片</h2>
-<p>仅运行demo，并不能直接获得图片，要想获得图片输出（即使用pyecharts将输出渲染成图片），需要进行一点操作，根据官网的说明，共有3种方式：</p>
+<h2 id="渲染图片"><a href="#渲染图片" class="headerlink" title="渲染图片"></a>渲染图片</h2><p>仅运行demo，并不能直接获得图片，要想获得图片输出（即使用pyecharts将输出渲染成图片），需要进行一点操作，根据官网的说明，共有3种方式：</p>
 <ul>
 <li><a href="https://pyecharts.org/#/zh-cn/render_images" target="_blank" rel="noopener">渲染图片</a></li>
 </ul>
@@ -344,44 +339,36 @@
 <li>phantomjs</li>
 <li>pyppeteer</li>
 </ol>
-<h3 id="selenium"><a class="header-anchor" href="#selenium"></a>selenium</h3>
-<p>安装snapshot-selenium（在Anaconda Prompt中运行）：</p>
-<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">pip install snapshot-selenium</span><br></pre></td></tr></table></figure>
-<p>使用selenium<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>，需要配置browser driver（浏览器驱动程序），详情可参见:<br>
-<a href="https://selenium-python.readthedocs.io/installation.html#drivers" target="_blank" rel="noopener">https://selenium-python.readthedocs.io/installation.html#drivers</a></p>
-<p>选择浏览器对应的driver，下面以Edge浏览器<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>为例：<br>
-<a href="https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/" target="_blank" rel="noopener">Edge的WebDriver下载地址</a></p>
+<h3 id="selenium"><a href="#selenium" class="headerlink" title="selenium"></a>selenium</h3><p>安装snapshot-selenium（在Anaconda Prompt中运行）：<br><figure class="highlight md"><table><tr><td class="code"><pre><span class="line">pip install snapshot-selenium</span><br></pre></td></tr></table></figure></p>
+<p>使用selenium<sup><a href="#fn_2" id="reffn_2">2</a></sup>，需要配置browser driver（浏览器驱动程序），详情可参见:<br><a href="https://selenium-python.readthedocs.io/installation.html#drivers" target="_blank" rel="noopener">https://selenium-python.readthedocs.io/installation.html#drivers</a></p>
+<p>选择浏览器对应的driver，下面以Edge浏览器<sup><a href="#fn_1" id="reffn_1">1</a></sup>为例：<br><a href="https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/" target="_blank" rel="noopener">Edge的WebDriver下载地址</a></p>
 <ol>
-<li>首先查看Edge的版本信息（version）：点击Edge浏览器右上角的“…”，选择“设置”，“常规”的最下方有Edge版本信息<br>
-<meta name="referrer" content="no-referrer"></li>
-</ol>
- <img src="/python-pyecharts%E6%A8%A1%E5%9D%97/oldedge.png" class title="旧Edge版本信息">
+<li>首先查看Edge的版本信息（version）：点击Edge浏览器右上角的“…”，选择“设置”，“常规”的最下方有Edge版本信息<br><meta name="referrer" content="no-referrer"><img src="/python-pyecharts%E6%A8%A1%E5%9D%97/oldedge.png" class title="旧Edge版本信息">
 <ul>
-<li>查看全新Edge的版本信息：点击右上角的“…”，选择“帮助与反馈”中的“关于Microsoft Edge”，即可查看相应的版本信息<br>
-<meta name="referrer" content="no-referrer"></li>
+<li>查看全新Edge的版本信息：点击右上角的“…”，选择“帮助与反馈”中的“关于Microsoft Edge”，即可查看相应的版本信息<br><meta name="referrer" content="no-referrer"><img src="/python-pyecharts%E6%A8%A1%E5%9D%97/newedgev.png" class title="新Edge版本信息"></li>
 </ul>
- <img src="/python-pyecharts%E6%A8%A1%E5%9D%97/newedgev.png" class title="新Edge版本信息">
-<ol start="2">
+</li>
 <li>接着下载<a href="https://msedgewebdriverstorage.z22.web.core.windows.net/?prefix=79.0.309.68/" target="_blank" rel="noopener">版本79.0.309.68的Edge对应的WebDriver</a>，从<a href="https://msedgewebdriverstorage.z22.web.core.windows.net/" target="_blank" rel="noopener">各版本WebDriver</a>中找到相应版本</li>
-<li>下载后解压，将driver的路径添加到系统路径中：</li>
-</ol>
-<ul>
+<li>下载后解压，将driver的路径添加到系统路径中：<ul>
 <li>右键单击“此电脑/我的电脑”</li>
 <li>选择“属性”</li>
 <li>选择“高级系统设置”—“环境变量”</li>
 <li>在”系统变量“中的”Path“添加driver的路径</li>
 </ul>
-<img src="/python-pyecharts%E6%A8%A1%E5%9D%97/newedge.png" class title="全新Edge">
-<p>Chrome的Driver下载可见：<br>
-<a href="https://sites.google.com/a/chromium.org/chromedriver/home" target="_blank" rel="noopener">https://sites.google.com/a/chromium.org/chromedriver/home</a></p>
-<p>使用selenium渲染图片，需要在运行python代码时添加以下代码（举例）：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> pyecharts.render <span class="keyword">import</span> make_snapshot</span><br><span class="line"><span class="keyword">from</span> snapshot_selenium <span class="keyword">import</span> snapshot</span><br><span class="line"></span><br><span class="line">make_snapshot(snapshot, calendar_base().render(), <span class="string">"calendar0.png"</span>)</span><br></pre></td></tr></table></figure>
-<p>总是报错(ノへ￣、)</p>
+</li>
+</ol>
+<blockquote id="fn_1">
+<sup>1</sup>. 2020年01月16日，基于Chromium内核的全新Microsoft Edge正式上线微软官网，可自行下载进行更新。<a href="https://www.microsoft.com/en-us/edge" target="_blank" rel="noopener">全新Microsoft Edge</a><a href="#reffn_1" title="Jump back to footnote [1] in the text."> &#8617;</a>
+</blockquote>
+<p><meta name="referrer" content="no-referrer"><br><img src="/python-pyecharts%E6%A8%A1%E5%9D%97/newedge.png" class title="全新Edge"></p>
+<blockquote id="fn_2">
+<sup>2</sup>. selenium目前支持Chrome和Safari<a href="#reffn_2" title="Jump back to footnote [2] in the text."> &#8617;</a>
+</blockquote>
+<p>Chrome的Driver下载可见：<br><a href="https://sites.google.com/a/chromium.org/chromedriver/home" target="_blank" rel="noopener">https://sites.google.com/a/chromium.org/chromedriver/home</a></p>
+<p>使用selenium渲染图片，需要在运行python代码时添加以下代码（举例）：<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> pyecharts.render <span class="keyword">import</span> make_snapshot</span><br><span class="line"><span class="keyword">from</span> snapshot_selenium <span class="keyword">import</span> snapshot</span><br><span class="line"></span><br><span class="line">make_snapshot(snapshot, calendar_base().render(), <span class="string">"calendar0.png"</span>)</span><br></pre></td></tr></table></figure><br>总是报错(ノへ￣、)</p>
 <p>将Chrome Driver应用程序直接放在项目文件所在的文件夹中即可正常运行（惊了</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> pyecharts <span class="keyword">import</span> options <span class="keyword">as</span> opts</span><br><span class="line"><span class="keyword">from</span> pyecharts.charts <span class="keyword">import</span> Calendar</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> pyecharts.render <span class="keyword">import</span> make_snapshot</span><br><span class="line"><span class="keyword">from</span> snapshot_selenium <span class="keyword">import</span> snapshot</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">calendar_base</span><span class="params">()</span> -&gt; Calendar:</span></span><br><span class="line">    begin = datetime.date(<span class="number">2019</span>, <span class="number">1</span>, <span class="number">1</span>)</span><br><span class="line">    end = datetime.date(<span class="number">2019</span>, <span class="number">12</span>, <span class="number">31</span>)</span><br><span class="line">    data = [</span><br><span class="line">        [str(begin + datetime.timedelta(days=i)), </span><br><span class="line">        random.randint(<span class="number">1000</span>, <span class="number">25000</span>)] </span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range((end - begin).days + <span class="number">1</span>)</span><br><span class="line">    ]</span><br><span class="line">    c = (</span><br><span class="line">        Calendar()</span><br><span class="line">        .add(<span class="string">""</span>, data, calendar_opts=opts.CalendarOpts(range_=<span class="string">"2019"</span>))</span><br><span class="line">        .set_global_opts(</span><br><span class="line">            title_opts=opts.TitleOpts(title=<span class="string">"Calendar-2019年每日步数情况"</span>),</span><br><span class="line">            visualmap_opts=opts.VisualMapOpts(</span><br><span class="line">                max_ = <span class="number">20000</span>,</span><br><span class="line">                min_ = <span class="number">500</span>,</span><br><span class="line">                orient = <span class="string">"horizontal"</span>,</span><br><span class="line">                is_piecewise = <span class="literal">True</span>,</span><br><span class="line">                pos_top = <span class="string">"230px"</span>,</span><br><span class="line">                pos_left = <span class="string">"100px"</span>,</span><br><span class="line">            ),</span><br><span class="line">        )</span><br><span class="line">    )</span><br><span class="line">    <span class="keyword">return</span> c</span><br><span class="line"></span><br><span class="line">make_snapshot(snapshot, calendar_base().render(), <span class="string">"calendar0.png"</span>)</span><br></pre></td></tr></table></figure>
-<h3 id="phantomjs"><a class="header-anchor" href="#phantomjs"></a>phantomjs</h3>
-<p>安装snapshot-phantomjs（在Anaconda Prompt中运行）：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install snapshot-phantomjs</span><br></pre></td></tr></table></figure>
+<h3 id="phantomjs"><a href="#phantomjs" class="headerlink" title="phantomjs"></a>phantomjs</h3><p>安装snapshot-phantomjs（在Anaconda Prompt中运行）：<br><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install snapshot-phantomjs</span><br></pre></td></tr></table></figure></p>
 <p>使用snapshot-phantomjs需要安装phantom.exe，<a href="https://phantomjs.org/download.html" target="_blank" rel="noopener">下载地址</a></p>
 <p>下载后解压即可（需要将phantomjs所在路径添加到系统变量的PATH中）</p>
 <p>仍是报错(ノへ￣、)</p>
@@ -390,21 +377,12 @@
 <p><a href="https://phantomjs.org/quick-start.html" target="_blank" rel="noopener">简单认识PhantomJS</a></p>
 </blockquote>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> pyecharts <span class="keyword">import</span> options <span class="keyword">as</span> opts</span><br><span class="line"><span class="keyword">from</span> pyecharts.charts <span class="keyword">import</span> Bar</span><br><span class="line"><span class="keyword">from</span> pyecharts.render <span class="keyword">import</span> make_snapshot</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> snapshot_phantomjs <span class="keyword">import</span> snapshot</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">bar_chart</span><span class="params">()</span> -&gt; Bar:</span></span><br><span class="line">    c = (</span><br><span class="line">        Bar()</span><br><span class="line">        .add_xaxis([<span class="string">"衬衫"</span>, <span class="string">"毛衣"</span>, <span class="string">"领带"</span>, <span class="string">"裤子"</span>, <span class="string">"风衣"</span>, <span class="string">"高跟鞋"</span>, <span class="string">"袜子"</span>])</span><br><span class="line">        .add_yaxis(<span class="string">"商家A"</span>, [<span class="number">114</span>, <span class="number">55</span>, <span class="number">27</span>, <span class="number">101</span>, <span class="number">125</span>, <span class="number">27</span>, <span class="number">105</span>])</span><br><span class="line">        .add_yaxis(<span class="string">"商家B"</span>, [<span class="number">57</span>, <span class="number">134</span>, <span class="number">137</span>, <span class="number">129</span>, <span class="number">145</span>, <span class="number">60</span>, <span class="number">49</span>])</span><br><span class="line">        .reversal_axis()</span><br><span class="line">        .set_series_opts(label_opts=opts.LabelOpts(position=<span class="string">"right"</span>))</span><br><span class="line">        .set_global_opts(title_opts=opts.TitleOpts(title=<span class="string">"Bar-测试渲染图片"</span>))</span><br><span class="line">    )</span><br><span class="line">    <span class="keyword">return</span> c</span><br><span class="line"></span><br><span class="line">make_snapshot(snapshot, bar_chart().render(), <span class="string">"bar0.png"</span>)</span><br></pre></td></tr></table></figure>
-<h3 id="pyppeteer"><a class="header-anchor" href="#pyppeteer"></a>pyppeteer</h3>
-<p>安装snapshot-pyppeteer（在Anaconda Prompt中运行）：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install snapshot-pyppeteer</span><br></pre></td></tr></table></figure>
-<p>并执行chromium安装命令（在Anaconda Prompt中运行）：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pyppeteer-install</span><br></pre></td></tr></table></figure>
-<h3 id="最直接的渲染方式"><a class="header-anchor" href="#最直接的渲染方式"></a>最直接的渲染方式</h3>
-<p>最简单直接的方式：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">xxx().render()</span><br></pre></td></tr></table></figure>
-<p>其中<code>xxx()</code>是相应的pyecharts对象的执行命令</p>
+<h3 id="pyppeteer"><a href="#pyppeteer" class="headerlink" title="pyppeteer"></a>pyppeteer</h3><p>安装snapshot-pyppeteer（在Anaconda Prompt中运行）：<br><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install snapshot-pyppeteer</span><br></pre></td></tr></table></figure></p>
+<p>并执行chromium安装命令（在Anaconda Prompt中运行）：<br><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pyppeteer-install</span><br></pre></td></tr></table></figure></p>
+<h3 id="最直接的渲染方式"><a href="#最直接的渲染方式" class="headerlink" title="最直接的渲染方式"></a>最直接的渲染方式</h3><p>最简单直接的方式：<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">xxx().render()</span><br></pre></td></tr></table></figure><br>其中<code>xxx()</code>是相应的pyecharts对象的执行命令</p>
 <p>输出的对象为html文件，打开html文件，单击右键可保存图片</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> pyecharts <span class="keyword">import</span> options <span class="keyword">as</span> opts</span><br><span class="line"><span class="keyword">from</span> pyecharts.charts <span class="keyword">import</span> Graph, Page</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">graph_base</span><span class="params">()</span> -&gt; Graph:</span></span><br><span class="line">    nodes = [</span><br><span class="line">        &#123;<span class="string">"name"</span>: <span class="string">"结点1"</span>, <span class="string">"symbolSize"</span>: <span class="number">10</span>&#125;,</span><br><span class="line">        &#123;<span class="string">"name"</span>: <span class="string">"结点2"</span>, <span class="string">"symbolSize"</span>: <span class="number">20</span>&#125;,</span><br><span class="line">        &#123;<span class="string">"name"</span>: <span class="string">"结点3"</span>, <span class="string">"symbolSize"</span>: <span class="number">30</span>&#125;,</span><br><span class="line">        &#123;<span class="string">"name"</span>: <span class="string">"结点4"</span>, <span class="string">"symbolSize"</span>: <span class="number">40</span>&#125;,</span><br><span class="line">        &#123;<span class="string">"name"</span>: <span class="string">"结点5"</span>, <span class="string">"symbolSize"</span>: <span class="number">50</span>&#125;,</span><br><span class="line">        &#123;<span class="string">"name"</span>: <span class="string">"结点6"</span>, <span class="string">"symbolSize"</span>: <span class="number">40</span>&#125;,</span><br><span class="line">        &#123;<span class="string">"name"</span>: <span class="string">"结点7"</span>, <span class="string">"symbolSize"</span>: <span class="number">30</span>&#125;,</span><br><span class="line">        &#123;<span class="string">"name"</span>: <span class="string">"结点8"</span>, <span class="string">"symbolSize"</span>: <span class="number">20</span>&#125;,</span><br><span class="line">    ]</span><br><span class="line">    links = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> nodes:</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> nodes:</span><br><span class="line">            links.append(&#123;<span class="string">"source"</span>: i.get(<span class="string">"name"</span>), <span class="string">"target"</span>: j.get(<span class="string">"name"</span>)&#125;)</span><br><span class="line">    c = (</span><br><span class="line">        Graph()</span><br><span class="line">        .add(<span class="string">""</span>, nodes, links, repulsion=<span class="number">8000</span>)</span><br><span class="line">        .set_global_opts(title_opts=opts.TitleOpts(title=<span class="string">"Graph-基本示例"</span>))</span><br><span class="line">    )</span><br><span class="line">    <span class="keyword">return</span> c</span><br><span class="line"></span><br><span class="line">graph_base().render()</span><br></pre></td></tr></table></figure>
-<h1 id="图表类型"><a class="header-anchor" href="#图表类型"></a>图表类型</h1>
-<h1 id="其他"><a class="header-anchor" href="#其他"></a>其他</h1>
-<h2 id="将echart插入到PPT"><a class="header-anchor" href="#将echart插入到PPT"></a>将echart插入到PPT</h2>
-<ol>
+<h1 id="图表类型"><a href="#图表类型" class="headerlink" title="图表类型"></a>图表类型</h1><h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><h2 id="将echart插入到PPT"><a href="#将echart插入到PPT" class="headerlink" title="将echart插入到PPT"></a>将echart插入到PPT</h2><ol>
 <li>使用pyecharts画图并生成html文件</li>
 <li>查看html的源代码</li>
 <li>把相关的源代码复制到PPT插件中，点击运行即可</li>
@@ -412,48 +390,27 @@
 <blockquote>
 <p>需要安装PPT插件<code>Office Apps Fiddle for PowerPoint</code></p>
 </blockquote>
-<p>参考<a href="http://gallery.pyecharts.org/#/Sankey/sankey_base" target="_blank" rel="noopener">官方源码</a>生成html文件：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> pyecharts <span class="keyword">import</span> options <span class="keyword">as</span> opts</span><br><span class="line"><span class="keyword">from</span> pyecharts.charts <span class="keyword">import</span> Sankey</span><br><span class="line"></span><br><span class="line">nodes = [</span><br><span class="line">    &#123;<span class="string">"name"</span>: <span class="string">"category1"</span>&#125;,</span><br><span class="line">    &#123;<span class="string">"name"</span>: <span class="string">"category2"</span>&#125;,</span><br><span class="line">    &#123;<span class="string">"name"</span>: <span class="string">"category3"</span>&#125;,</span><br><span class="line">    &#123;<span class="string">"name"</span>: <span class="string">"category4"</span>&#125;,</span><br><span class="line">    &#123;<span class="string">"name"</span>: <span class="string">"category5"</span>&#125;,</span><br><span class="line">    &#123;<span class="string">"name"</span>: <span class="string">"category6"</span>&#125;,</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">links = [</span><br><span class="line">    &#123;<span class="string">"source"</span>: <span class="string">"category1"</span>, <span class="string">"target"</span>: <span class="string">"category2"</span>, <span class="string">"value"</span>: <span class="number">10</span>&#125;,</span><br><span class="line">    &#123;<span class="string">"source"</span>: <span class="string">"category2"</span>, <span class="string">"target"</span>: <span class="string">"category3"</span>, <span class="string">"value"</span>: <span class="number">15</span>&#125;,</span><br><span class="line">    &#123;<span class="string">"source"</span>: <span class="string">"category3"</span>, <span class="string">"target"</span>: <span class="string">"category4"</span>, <span class="string">"value"</span>: <span class="number">20</span>&#125;,</span><br><span class="line">    &#123;<span class="string">"source"</span>: <span class="string">"category5"</span>, <span class="string">"target"</span>: <span class="string">"category6"</span>, <span class="string">"value"</span>: <span class="number">25</span>&#125;,</span><br><span class="line">]</span><br><span class="line">c = (</span><br><span class="line">    Sankey()</span><br><span class="line">    .add(</span><br><span class="line">        <span class="string">"sankey"</span>,</span><br><span class="line">        nodes,</span><br><span class="line">        links,</span><br><span class="line">        linestyle_opt=opts.LineStyleOpts(opacity=<span class="number">0.2</span>, curve=<span class="number">0.5</span>, color=<span class="string">"source"</span>),</span><br><span class="line">        label_opts=opts.LabelOpts(position=<span class="string">"right"</span>),</span><br><span class="line">    )</span><br><span class="line">    .set_global_opts(title_opts=opts.TitleOpts(title=<span class="string">"Sankey-基本示例"</span>))</span><br><span class="line">    .render(<span class="string">"sankey_base.html"</span>)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-<p><strong>查看html源代码</strong>：<br>
-二选一</p>
+<p>参考<a href="http://gallery.pyecharts.org/#/Sankey/sankey_base" target="_blank" rel="noopener">官方源码</a>生成html文件：<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> pyecharts <span class="keyword">import</span> options <span class="keyword">as</span> opts</span><br><span class="line"><span class="keyword">from</span> pyecharts.charts <span class="keyword">import</span> Sankey</span><br><span class="line"></span><br><span class="line">nodes = [</span><br><span class="line">    &#123;<span class="string">"name"</span>: <span class="string">"category1"</span>&#125;,</span><br><span class="line">    &#123;<span class="string">"name"</span>: <span class="string">"category2"</span>&#125;,</span><br><span class="line">    &#123;<span class="string">"name"</span>: <span class="string">"category3"</span>&#125;,</span><br><span class="line">    &#123;<span class="string">"name"</span>: <span class="string">"category4"</span>&#125;,</span><br><span class="line">    &#123;<span class="string">"name"</span>: <span class="string">"category5"</span>&#125;,</span><br><span class="line">    &#123;<span class="string">"name"</span>: <span class="string">"category6"</span>&#125;,</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">links = [</span><br><span class="line">    &#123;<span class="string">"source"</span>: <span class="string">"category1"</span>, <span class="string">"target"</span>: <span class="string">"category2"</span>, <span class="string">"value"</span>: <span class="number">10</span>&#125;,</span><br><span class="line">    &#123;<span class="string">"source"</span>: <span class="string">"category2"</span>, <span class="string">"target"</span>: <span class="string">"category3"</span>, <span class="string">"value"</span>: <span class="number">15</span>&#125;,</span><br><span class="line">    &#123;<span class="string">"source"</span>: <span class="string">"category3"</span>, <span class="string">"target"</span>: <span class="string">"category4"</span>, <span class="string">"value"</span>: <span class="number">20</span>&#125;,</span><br><span class="line">    &#123;<span class="string">"source"</span>: <span class="string">"category5"</span>, <span class="string">"target"</span>: <span class="string">"category6"</span>, <span class="string">"value"</span>: <span class="number">25</span>&#125;,</span><br><span class="line">]</span><br><span class="line">c = (</span><br><span class="line">    Sankey()</span><br><span class="line">    .add(</span><br><span class="line">        <span class="string">"sankey"</span>,</span><br><span class="line">        nodes,</span><br><span class="line">        links,</span><br><span class="line">        linestyle_opt=opts.LineStyleOpts(opacity=<span class="number">0.2</span>, curve=<span class="number">0.5</span>, color=<span class="string">"source"</span>),</span><br><span class="line">        label_opts=opts.LabelOpts(position=<span class="string">"right"</span>),</span><br><span class="line">    )</span><br><span class="line">    .set_global_opts(title_opts=opts.TitleOpts(title=<span class="string">"Sankey-基本示例"</span>))</span><br><span class="line">    .render(<span class="string">"sankey_base.html"</span>)</span><br><span class="line">)</span><br></pre></td></tr></table></figure><br><strong>查看html源代码</strong>：<br>二选一</p>
 <ol>
 <li>用浏览器打开<code>sankey_base.html</code>，右键选择“查看源代码”或<code>Ctrl+U</code></li>
-<li>用Visual Sudio Code打开<code>sankey_base.html</code><br>
-查看源代码<br>
-<meta name="referrer" content="no-referrer"></li>
+<li>用Visual Sudio Code打开<code>sankey_base.html</code><br>查看源代码<br><meta name="referrer" content="no-referrer"><img src="/python-pyecharts%E6%A8%A1%E5%9D%97/code1.png" class title="html源代码">
+</li>
 </ol>
-<img src="/python-pyecharts%E6%A8%A1%E5%9D%97/code1.png" class title="html源代码">
-<p><strong>安装PPT插件</strong>：<br>
-打开PowerPoint，选择“插入”——“获取加载项”——搜索“html”，添加“Office Apps Fiddle for PowerPoint”。<br>
-<meta name="referrer" content="no-referrer"></p>
-<img src="/python-pyecharts%E6%A8%A1%E5%9D%97/pic2.png" class title="安装PPT插件">
-<p>将html的源代码粘贴到该插件的“HTML”中<br>
-<meta name="referrer" content="no-referrer"></p>
-<img src="/python-pyecharts%E6%A8%A1%E5%9D%97/pic.png" class title="粘贴html源代码">
+<p><strong>安装PPT插件</strong>：<br>打开PowerPoint，选择“插入”——“获取加载项”——搜索“html”，添加“Office Apps Fiddle for PowerPoint”。</p>
+<p><meta name="referrer" content="no-referrer"><br><img src="/python-pyecharts%E6%A8%A1%E5%9D%97/pic2.png" class title="安装PPT插件"></p>
+<p>将html的源代码粘贴到该插件的“HTML”中</p>
+<p><meta name="referrer" content="no-referrer"><br><img src="/python-pyecharts%E6%A8%A1%E5%9D%97/pic.png" class title="粘贴html源代码"></p>
 <p>点击“Run Fiddle!”按钮，会报错</p>
-<meta name="referrer" content="no-referrer">
-<img src="/python-pyecharts%E6%A8%A1%E5%9D%97/pic3.png" class title="报错">
+<p><meta name="referrer" content="no-referrer"><br><img src="/python-pyecharts%E6%A8%A1%E5%9D%97/pic3.png" class title="报错"></p>
 <p>点击“×”，并点击齿轮“Setting”；再次点击“Run Fiddle!”按钮，即可成功生成交互式echarts。</p>
-<meta name="referrer" content="no-referrer">
-<img src="/python-pyecharts%E6%A8%A1%E5%9D%97/pic4.png" class title="成功的交互式桑基图">
+<p><meta name="referrer" content="no-referrer"><br><img src="/python-pyecharts%E6%A8%A1%E5%9D%97/pic4.png" class title="成功的交互式桑基图"></p>
 <p>非第一次使用该插件，可从“插入”——“我的加载项”中找到该插件。</p>
-<h1 id="参考资料"><a class="header-anchor" href="#参考资料"></a>参考资料</h1>
-<ul>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
 <li><a href="https://pyecharts.org/#/" target="_blank" rel="noopener">pyecharts官方文档</a></li>
 <li><a href="http://gallery.pyecharts.org/#/" target="_blank" rel="noopener">Pyecharts-Gallary</a></li>
 <li><a href="https://campus.alibaba.com/traineePositions.htm?spm=a1z3e1.11874847.0.0.5d8d4928Tx32T7&amp;refno=12394" target="_blank" rel="noopener">如何把pyecharts的炫酷延续到PPT里？</a></li>
 <li><a href="https://echarts.apache.org/examples/zh/" target="_blank" rel="noopener">百度官方Echarts</a></li>
 </ul>
-<hr class="footnotes-sep">
-<section class="footnotes">
-<ol class="footnotes-list">
-<li id="fn1" class="footnote-item"><p>selenium目前支持Chrome和Safari <a href="#fnref1" class="footnote-backref">↩︎</a></p>
-</li>
-<li id="fn2" class="footnote-item"><p>2020年01月16日，基于Chromium内核的全新Microsoft Edge正式上线微软官网，可自行下载进行更新。<a href="https://www.microsoft.com/en-us/edge" target="_blank" rel="noopener">全新Microsoft Edge</a><br>
-<meta name="referrer" content="no-referrer"> <a href="#fnref2" class="footnote-backref">↩︎</a></p>
-</li>
-</ol>
-</section>
 
     </div>
 
@@ -468,8 +425,8 @@
   <div id="qr" style="display: none;">
       
       <div style="display: inline-block;">
-        <img src="/images/reward2021.png" alt="Skye WeChat Pay">
-        <p>WeChat Pay</p>
+        <img src="/images/reward2021.png" alt="Skye WeChat Bezahlung">
+        <p>WeChat Bezahlung</p>
       </div>
       
       <div style="display: inline-block;">
@@ -598,7 +555,7 @@
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-count">11</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -646,13 +603,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">402k</span>
+    <span title="站点总字数">392k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">6:05</span>
+    <span title="站点阅读时长">5:56</span>
 </div>
 
 
