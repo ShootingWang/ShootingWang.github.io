@@ -339,11 +339,11 @@
 </section>
 ]]></content>
       <categories>
-        <category>机器学习</category>
+        <category>Machine Learning / 机器学习</category>
       </categories>
       <tags>
         <tag>算法</tag>
-        <tag>机器学习</tag>
+        <tag>Machine Learning / 机器学习</tag>
       </tags>
   </entry>
   <entry>
@@ -2346,11 +2346,11 @@ window.onresize=function(){
 </script>
 <h1 id="样例"><a class="header-anchor" href="#样例"></a>样例</h1>
 <h2 id="饼图"><a class="header-anchor" href="#饼图"></a>饼图</h2>
-<div id="echarts5793" style="width: 85%;height: 800px;margin: 0 auto"></div>
+<div id="echarts5399" style="width: 85%;height: 800px;margin: 0 auto"></div>
 <script src="https://cdn.bootcss.com/echarts/4.3.0/echarts.common.min.js"></script>
 <script type="text/javascript">
 	// 基于准备好的dom，初始化echarts实例
-	var myChart = echarts.init(document.getElementById('echarts5793'));
+	var myChart = echarts.init(document.getElementById('echarts5399'));
 	// 指定图表的配置项和数据
 	// 800表示图表展示的高度为800px
 // '85%'表示图表展示的宽度为85%
@@ -4141,7 +4141,7 @@ $$P_{\lambda, \gamma}(\beta) = \sum_{j=1}^p \rho(\parallel\beta_j\parallel_2; \s
 </ul>
 ]]></content>
       <categories>
-        <category>机器学习</category>
+        <category>Machine Learning / 机器学习</category>
       </categories>
       <tags>
         <tag>变量选择</tag>
@@ -6906,10 +6906,10 @@ $$x^* = a + \frac{x-x_{min}}{x_{max}-x_{min}}\times(b-a)$$<br>
             <p>归一化对决策树模型并不适用。<br>以C4.5为例，决策树在进行节点分裂时，主要依据数据集D关于特征a的信息增益比，而信息增益比跟特征是否经过归一化是无关的，因为归一化并不会改变样本在特征a上的信息增益。</p>
           </div>]]></content>
       <categories>
-        <category>机器学习</category>
+        <category>Machine Learning / 机器学习</category>
       </categories>
       <tags>
-        <tag>机器学习</tag>
+        <tag>Machine Learning / 机器学习</tag>
         <tag>特征</tag>
       </tags>
   </entry>
@@ -12474,7 +12474,7 @@ $$P(B|A)=P(B)$$</li>
 </ul>
 ]]></content>
       <categories>
-        <category>机器学习</category>
+        <category>Machine Learning / 机器学习</category>
       </categories>
       <tags>
         <tag>算法</tag>
@@ -12672,11 +12672,11 @@ $${(O_1),(O_2),\cdots,(O_D)}$$</p>
 </ul>
 ]]></content>
       <categories>
-        <category>机器学习</category>
+        <category>Machine Learning / 机器学习</category>
       </categories>
       <tags>
         <tag>算法</tag>
-        <tag>机器学习</tag>
+        <tag>Machine Learning / 机器学习</tag>
         <tag>生成式模型</tag>
       </tags>
   </entry>
@@ -12737,11 +12737,11 @@ $$D_0=\sqrt{\frac{\sum_{i=1}<sup>{N_1}\sum_{j=N_1+1}</sup>{N_1+N_2}\left(\mathbf
 </ul>
 ]]></content>
       <categories>
-        <category>机器学习</category>
+        <category>Machine Learning / 机器学习</category>
       </categories>
       <tags>
         <tag>算法</tag>
-        <tag>机器学习</tag>
+        <tag>Machine Learning / 机器学习</tag>
         <tag>聚类</tag>
       </tags>
   </entry>
@@ -13040,11 +13040,11 @@ $$D_0=\sqrt{\frac{\sum_{i=1}<sup>{N_1}\sum_{j=N_1+1}</sup>{N_1+N_2}\left(\mathbf
 </ul>
 ]]></content>
       <categories>
-        <category>机器学习</category>
+        <category>Machine Learning / 机器学习</category>
       </categories>
       <tags>
         <tag>算法</tag>
-        <tag>机器学习</tag>
+        <tag>Machine Learning / 机器学习</tag>
         <tag>数据不平衡</tag>
       </tags>
   </entry>
@@ -13428,11 +13428,11 @@ $$r(y_i, H(x_i))=\left{<br>
 </section>
 ]]></content>
       <categories>
-        <category>机器学习</category>
+        <category>Machine Learning / 机器学习</category>
       </categories>
       <tags>
         <tag>算法</tag>
-        <tag>机器学习</tag>
+        <tag>Machine Learning / 机器学习</tag>
         <tag>分类</tag>
         <tag>集成学习</tag>
         <tag>回归</tag>
@@ -14419,11 +14419,11 @@ $$H_t(x)=H_{t-1}(x)+\nu \alpha_t h_t(x)$$<br>
 </ul>
 ]]></content>
       <categories>
-        <category>机器学习</category>
+        <category>Machine Learning / 机器学习</category>
       </categories>
       <tags>
         <tag>算法</tag>
-        <tag>机器学习</tag>
+        <tag>Machine Learning / 机器学习</tag>
         <tag>分类</tag>
         <tag>集成学习</tag>
         <tag>回归</tag>
@@ -15879,11 +15879,11 @@ u^{k+1} &amp;= u<sup>k+D\beta</sup>{k+1}-\alpha^{k+1}<br>
 </section>
 ]]></content>
       <categories>
-        <category>机器学习</category>
+        <category>Machine Learning / 机器学习</category>
       </categories>
       <tags>
         <tag>算法</tag>
-        <tag>机器学习</tag>
+        <tag>Machine Learning / 机器学习</tag>
       </tags>
   </entry>
   <entry>
@@ -16833,10 +16833,10 @@ $$w_{ij}=w_{ij}-\eta_1\cdot \delta_{ij}\cdot x_i+\alpha \Delta w_{ij}$$</li>
 </ul>
 ]]></content>
       <categories>
-        <category>机器学习</category>
+        <category>Machine Learning / 机器学习</category>
       </categories>
       <tags>
-        <tag>机器学习</tag>
+        <tag>Machine Learning / 机器学习</tag>
         <tag>神经网络</tag>
         <tag>深度学习</tag>
       </tags>
@@ -16875,11 +16875,11 @@ $$w_{ij}=w_{ij}-\eta_1\cdot \delta_{ij}\cdot x_i+\alpha \Delta w_{ij}$$</li>
 </ul>
 ]]></content>
       <categories>
-        <category>机器学习</category>
+        <category>Machine Learning / 机器学习</category>
       </categories>
       <tags>
         <tag>算法</tag>
-        <tag>机器学习</tag>
+        <tag>Machine Learning / 机器学习</tag>
         <tag>聚类</tag>
       </tags>
   </entry>
@@ -16903,11 +16903,11 @@ $$w_{ij}=w_{ij}-\eta_1\cdot \delta_{ij}\cdot x_i+\alpha \Delta w_{ij}$$</li>
 </ul>
 ]]></content>
       <categories>
-        <category>机器学习</category>
+        <category>Machine Learning / 机器学习</category>
       </categories>
       <tags>
         <tag>算法</tag>
-        <tag>机器学习</tag>
+        <tag>Machine Learning / 机器学习</tag>
       </tags>
   </entry>
   <entry>
@@ -17110,11 +17110,11 @@ $$\log{\frac{p(x,y)}{p(x)p(y)}}=\log1=0$$</p>
 </ul>
 ]]></content>
       <categories>
-        <category>机器学习</category>
+        <category>Machine Learning / 机器学习</category>
       </categories>
       <tags>
         <tag>算法</tag>
-        <tag>机器学习</tag>
+        <tag>Machine Learning / 机器学习</tag>
       </tags>
   </entry>
   <entry>
@@ -17315,11 +17315,11 @@ $$a^*=\arg\max_{a\in A} g(D,a)$$</li>
 </ul>
 ]]></content>
       <categories>
-        <category>机器学习</category>
+        <category>Machine Learning / 机器学习</category>
       </categories>
       <tags>
         <tag>算法</tag>
-        <tag>机器学习</tag>
+        <tag>Machine Learning / 机器学习</tag>
         <tag>分类</tag>
         <tag>有监督学习</tag>
         <tag>回归</tag>
@@ -17633,11 +17633,11 @@ $$\theta<sup>{new}=\left(\mathbf{X}</sup>T\mathbf{W}\mathbf{X}\right)<sup>{-1}\m
 </ul>
 ]]></content>
       <categories>
-        <category>机器学习</category>
+        <category>Machine Learning / 机器学习</category>
       </categories>
       <tags>
         <tag>算法</tag>
-        <tag>机器学习</tag>
+        <tag>Machine Learning / 机器学习</tag>
         <tag>回归</tag>
         <tag>判别式模型</tag>
       </tags>
@@ -17710,11 +17710,11 @@ $$\Omega(\omega)=\lambda||w||^2$$</li>
 </section>
 ]]></content>
       <categories>
-        <category>机器学习</category>
+        <category>Machine Learning / 机器学习</category>
       </categories>
       <tags>
         <tag>算法</tag>
-        <tag>机器学习</tag>
+        <tag>Machine Learning / 机器学习</tag>
       </tags>
   </entry>
   <entry>
@@ -17815,11 +17815,11 @@ $$l(y_i,\hat{y}_i)=y_i\ln{(1+e<sup>{-\hat{y}_i})}+(1-y_i)\ln{(1+e</sup>{\hat{y}_
 </section>
 ]]></content>
       <categories>
-        <category>机器学习</category>
+        <category>Machine Learning / 机器学习</category>
       </categories>
       <tags>
         <tag>算法</tag>
-        <tag>机器学习</tag>
+        <tag>Machine Learning / 机器学习</tag>
         <tag>分类</tag>
         <tag>集成学习</tag>
         <tag>回归</tag>
@@ -17906,11 +17906,11 @@ $$l(y_i,\hat{y}_i)=y_i\ln{(1+e<sup>{-\hat{y}_i})}+(1-y_i)\ln{(1+e</sup>{\hat{y}_
 </section>
 ]]></content>
       <categories>
-        <category>机器学习</category>
+        <category>Machine Learning / 机器学习</category>
       </categories>
       <tags>
         <tag>算法</tag>
-        <tag>机器学习</tag>
+        <tag>Machine Learning / 机器学习</tag>
         <tag>集成学习</tag>
         <tag>Boosting</tag>
       </tags>
@@ -19025,11 +19025,11 @@ $n$是Epoch的次数，根据实际情况选取。</p>
 </section>
 ]]></content>
       <categories>
-        <category>机器学习</category>
+        <category>Machine Learning / 机器学习</category>
       </categories>
       <tags>
         <tag>算法</tag>
-        <tag>机器学习</tag>
+        <tag>Machine Learning / 机器学习</tag>
       </tags>
   </entry>
   <entry>
@@ -19452,11 +19452,11 @@ $$\min_{ c^{(1)}, \cdots, c^{(n)} \atop \mu_1, \cdots, \mu_K } J \left( c^{(1)},
 </ul>
 ]]></content>
       <categories>
-        <category>机器学习</category>
+        <category>Machine Learning / 机器学习</category>
       </categories>
       <tags>
         <tag>算法</tag>
-        <tag>机器学习</tag>
+        <tag>Machine Learning / 机器学习</tag>
         <tag>聚类</tag>
       </tags>
   </entry>
@@ -21943,11 +21943,11 @@ $$AUC=P\left{P(Positive)&gt;P(Negative)\right}$$</p>
 </ul>
 ]]></content>
       <categories>
-        <category>机器学习</category>
+        <category>Machine Learning / 机器学习</category>
       </categories>
       <tags>
         <tag>算法</tag>
-        <tag>机器学习</tag>
+        <tag>Machine Learning / 机器学习</tag>
         <tag>分类</tag>
       </tags>
   </entry>
@@ -22228,11 +22228,11 @@ $$H(x)=\frac{1}{T}\sum_{i=1}^Th_i(x)$$</p>
 </ul>
 ]]></content>
       <categories>
-        <category>机器学习</category>
+        <category>Machine Learning / 机器学习</category>
       </categories>
       <tags>
         <tag>算法</tag>
-        <tag>机器学习</tag>
+        <tag>Machine Learning / 机器学习</tag>
       </tags>
   </entry>
   <entry>
@@ -22306,8 +22306,8 @@ y^*&amp;=\arg{\max_{y_i}p(y_i|x)}\<br>
       </categories>
       <tags>
         <tag>算法</tag>
-        <tag>机器学习</tag>
         <tag>分类</tag>
+        <tag>机器学习</tag>
         <tag>有监督学习</tag>
       </tags>
   </entry>
@@ -22457,11 +22457,11 @@ $$\phi_j=\frac{\sum_{i=1}<sup>n\mathbb{1}{z</sup>{(i)}=j}+1}{n+k}$$</p>
 </ul>
 ]]></content>
       <categories>
-        <category>机器学习</category>
+        <category>Machine Learning / 机器学习</category>
       </categories>
       <tags>
         <tag>算法</tag>
-        <tag>机器学习</tag>
+        <tag>Machine Learning / 机器学习</tag>
         <tag>分类</tag>
         <tag>有监督学习</tag>
       </tags>
@@ -22817,11 +22817,11 @@ $$TSS=\sum_{i=1}<sup>n(x_i-\bar{x})</sup>2$$</li>
 </ul>
 ]]></content>
       <categories>
-        <category>机器学习</category>
+        <category>Machine Learning / 机器学习</category>
       </categories>
       <tags>
         <tag>算法</tag>
-        <tag>机器学习</tag>
+        <tag>Machine Learning / 机器学习</tag>
         <tag>聚类</tag>
       </tags>
   </entry>
@@ -24109,11 +24109,11 @@ scikit-learn库中有若干个数据集Toy datasets。</p>
 </section>
 ]]></content>
       <categories>
-        <category>机器学习</category>
+        <category>Machine Learning / 机器学习</category>
       </categories>
       <tags>
         <tag>算法</tag>
-        <tag>机器学习</tag>
+        <tag>Machine Learning / 机器学习</tag>
         <tag>分类</tag>
         <tag>生成式模型</tag>
       </tags>
@@ -26620,11 +26620,11 @@ $$\mathbf{\sum_{i=1}<sup>n(y_i-\bar{y})</sup>2}$$</li>
 </section>
 ]]></content>
       <categories>
-        <category>机器学习</category>
+        <category>Machine Learning / 机器学习</category>
       </categories>
       <tags>
         <tag>算法</tag>
-        <tag>机器学习</tag>
+        <tag>Machine Learning / 机器学习</tag>
         <tag>回归</tag>
         <tag>判别式模型</tag>
       </tags>
@@ -28636,11 +28636,11 @@ $$Random Forest=Bagging+Decision Tree$$</li>
 <h1 id="参考资料"><a class="header-anchor" href="#参考资料"></a>参考资料</h1>
 ]]></content>
       <categories>
-        <category>机器学习</category>
+        <category>Machine Learning / 机器学习</category>
       </categories>
       <tags>
         <tag>算法</tag>
-        <tag>机器学习</tag>
+        <tag>Machine Learning / 机器学习</tag>
         <tag>分类</tag>
         <tag>有监督学习</tag>
         <tag>集成学习</tag>
@@ -29180,11 +29180,11 @@ $$ w_i^T x - w_k^T x \geq 1 \quad \forall \quad k\neq i $$</li>
 </ul>
 ]]></content>
       <categories>
-        <category>机器学习</category>
+        <category>Machine Learning / 机器学习</category>
       </categories>
       <tags>
         <tag>算法</tag>
-        <tag>机器学习</tag>
+        <tag>Machine Learning / 机器学习</tag>
         <tag>分类</tag>
         <tag>有监督学习</tag>
         <tag>回归</tag>
