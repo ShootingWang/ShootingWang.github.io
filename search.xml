@@ -4549,92 +4549,59 @@ $$P_{\lambda, \gamma}(\beta) = \sum_{j=1}^p \rho(\parallel\beta_j\parallel_2; \s
   <entry>
     <title>LaTeX</title>
     <url>/LaTeX.html</url>
-    <content><![CDATA[<center></center>
-<a id="more"></a>
-<h1 id="安装"><a class="header-anchor" href="#安装"></a>安装</h1>
-<h2 id="MacOS"><a class="header-anchor" href="#MacOS"></a>MacOS</h2>
-<p>在MacOS可以安装MacTeX，但是完整版较大，安装后显示为TeXShop；可以安装较小的<a href="http://www.tug.org/mactex/morepackages.html" target="_blank" rel="noopener">BasicTeX</a>，并安装编辑器TeXStudio（博主打不开官网）。</p>
+    <content><![CDATA[<p><center></center><br><a id="more"></a></p>
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><h2 id="MacOS"><a href="#MacOS" class="headerlink" title="MacOS"></a>MacOS</h2><p>在MacOS可以安装MacTeX，但是完整版较大，安装后显示为TeXShop；可以安装较小的<a href="http://www.tug.org/mactex/morepackages.html" target="_blank" rel="noopener">BasicTeX</a>，并安装编辑器TeXStudio（博主打不开官网）。</p>
 <ul>
 <li>TeXShop默认编码不是Unicode，需点击TeXShop——偏好设置，将编码改为“Unicode（UTF-8）”，以便能够支持中文编译。</li>
 </ul>
-<h2 id="Windows"><a class="header-anchor" href="#Windows"></a>Windows</h2>
-<p>安装<a href="http://www.ctex.org/HomePage" target="_blank" rel="noopener">CTEX</a>，Windows对应的是<a href="https://miktex.org/" target="_blank" rel="noopener">MiKTeX</a>。</p>
-<h1 id="自定义命令"><a class="header-anchor" href="#自定义命令"></a>自定义命令</h1>
-<ul>
-<li>
-<p><code>\newcommand{新命令}[参数个数]{原命令}</code></p>
+<h2 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h2><p>安装<a href="http://www.ctex.org/HomePage" target="_blank" rel="noopener">CTEX</a>，Windows对应的是<a href="https://miktex.org/" target="_blank" rel="noopener">MiKTeX</a>。</p>
+<h1 id="自定义命令"><a href="#自定义命令" class="headerlink" title="自定义命令"></a>自定义命令</h1><ul>
+<li><code>\newcommand{新命令}[参数个数]{原命令}</code></li>
+<li><code>\newcommand*{新命令}[参数个数]{原命令}</code></li>
+<li><code>\renewcommand{新命令}[参数个数]{原命令}</code></li>
+<li><p><code>\renewcommand*{新命令}[参数个数]{原命令}</code></p>
 </li>
-<li>
-<p><code>\newcommand*{新命令}[参数个数]{原命令}</code></p>
+<li><p>参数个数不能超过9个</p>
 </li>
-<li>
-<p><code>\renewcommand{新命令}[参数个数]{原命令}</code></p>
-</li>
-<li>
-<p><code>\renewcommand*{新命令}[参数个数]{原命令}</code></p>
-</li>
-<li>
-<p>参数个数不能超过9个</p>
-</li>
-<li>
-<p>带星号的称为“短命令”（不能出现段落）</p>
-</li>
-<li>
-<p>LATEX编译时用原命令内容替换新命令，同时将相应的参数代入</p>
-</li>
-<li>
-<p>自定义命令本质上就是命令替换</p>
-</li>
+<li>带星号的称为“短命令”（不能出现段落）</li>
+<li>LATEX编译时用原命令内容替换新命令，同时将相应的参数代入</li>
+<li>自定义命令本质上就是命令替换</li>
 </ul>
 <p>自定义命令的作用范围：</p>
 <ol>
 <li>如果放在导言区，则全局有效</li>
 <li>如果放在正文中的某个环境或分组中定义，则仅在其所在环境或分组内部有效</li>
 </ol>
-<h1 id="表格tabular"><a class="header-anchor" href="#表格tabular"></a>表格tabular</h1>
-<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="tag">\<span class="name">begin</span><span class="string">&#123;tabular&#125;</span><span class="string">[竖向位置]</span><span class="string">&#123;列格式&#125;</span></span></span><br><span class="line">第一行 <span class="tag">\<span class="name">\</span></span></span><br><span class="line">... <span class="tag">\<span class="name">\</span></span></span><br><span class="line">第末行 <span class="tag">\<span class="name">\</span></span></span><br><span class="line"><span class="tag">\<span class="name">end</span><span class="string">&#123;tabular&#125;</span></span></span><br></pre></td></tr></table></figure>
+<h1 id="表格tabular"><a href="#表格tabular" class="headerlink" title="表格tabular"></a>表格tabular</h1><figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="tag">\<span class="name">begin</span><span class="string">&#123;tabular&#125;</span><span class="string">[竖向位置]</span><span class="string">&#123;列格式&#125;</span></span></span><br><span class="line">第一行 <span class="tag">\<span class="name">\</span></span></span><br><span class="line">... <span class="tag">\<span class="name">\</span></span></span><br><span class="line">第末行 <span class="tag">\<span class="name">\</span></span></span><br><span class="line"><span class="tag">\<span class="name">end</span><span class="string">&#123;tabular&#125;</span></span></span><br></pre></td></tr></table></figure>
 <ul>
-<li>
-<p>竖向位置：表格在竖直方向与外部文本行的相对位置，取值可以是t或b，缺省为居中</p>
-</li>
-<li>
-<p>表格每行由若干列组成，列与列之间用&amp;分隔，每行必须用 <code>\\</code> 结束</p>
-</li>
-<li>
-<p>列格式：由若干项组成，用于指定各列的格式，如<code>\begin{tabular}{|c|c|c|}</code></p>
-<ul>
+<li>竖向位置：表格在竖直方向与外部文本行的相对位置，取值可以是t或b，缺省为居中</li>
+<li>表格每行由若干列组成，列与列之间用&amp;分隔，每行必须用 <code>\\</code> 结束</li>
+<li>列格式：由若干项组成，用于指定各列的格式，如<code>\begin{tabular}{|c|c|c|}</code><ul>
 <li><code>l</code>：左对齐</li>
 <li><code>c</code>：居中</li>
 <li><code>r</code>：右对齐</li>
 <li><code>|</code>：边界线</li>
 </ul>
 </li>
-<li>
-<p>横线：</p>
-<ul>
+<li>横线：<ul>
 <li><code>\hline</code>：与表格同宽的水平线</li>
 <li><code>\cline{m-n}</code>：从第m列开始到第n列结束的水平线</li>
 </ul>
 </li>
-<li>
-<p>竖线：</p>
-<ul>
+<li>竖线：<ul>
 <li><code>\vline</code>：在当前位置画一与行等高的竖线</li>
 </ul>
 </li>
-<li>
-<p>合并相邻多列：<code>\multicolumn{列数}{列格式}{文本内容}</code></p>
-<ul>
+<li>合并相邻多列：<code>\multicolumn{列数}{列格式}{文本内容}</code><ul>
 <li>当列数=1时，可以改变当前列的对齐方式</li>
 <li>改变各行之间的间隔（改变行高）：<code>\\[长度]</code></li>
 </ul>
 </li>
-<li>
-<p><a href="https://www.tablesgenerator.com/latex_tables" target="_blank" rel="noopener">Tables Generator</a>：在线编辑表格，生成LaTex语法，可直接复制</p>
-</li>
 </ul>
-<h1 id="幻灯片Beamer"><a class="header-anchor" href="#幻灯片Beamer"></a>幻灯片Beamer</h1>
-<blockquote>
+<ul>
+<li><a href="https://www.tablesgenerator.com/latex_tables" target="_blank" rel="noopener">Tables Generator</a>：在线编辑表格，生成LaTex语法，可直接复制</li>
+</ul>
+<h1 id="幻灯片Beamer"><a href="#幻灯片Beamer" class="headerlink" title="幻灯片Beamer"></a>幻灯片Beamer</h1><blockquote>
 <a href="/LaTeX-Beamer.html" title="LaTeX | Beamer幻灯片">LaTeX | Beamer幻灯片</a>
 </blockquote>
 <p>MacOS可以从“文件”中的“从模板新建”中选择“Beamer”新建幻灯片模板。</p>
@@ -4643,14 +4610,11 @@ $$P_{\lambda, \gamma}(\beta) = \sum_{j=1}^p \rho(\parallel\beta_j\parallel_2; \s
 <li><a href="https://deic-web.uab.cat/~iblanes/beamer_gallery/" target="_blank" rel="noopener">Beamer theme gallery</a></li>
 <li><a href="https://www.overleaf.com/gallery/tagged/presentation#.Wv7RVIiFPIU" target="_blank" rel="noopener">OverLeaf Beamer主题Gallery</a></li>
 </ul>
-<h1 id="文档"><a class="header-anchor" href="#文档"></a>文档</h1>
-<h2 id="摘要Abstract"><a class="header-anchor" href="#摘要Abstract"></a>摘要Abstract</h2>
-<ul>
+<h1 id="文档"><a href="#文档" class="headerlink" title="文档"></a>文档</h1><h2 id="摘要Abstract"><a href="#摘要Abstract" class="headerlink" title="摘要Abstract"></a>摘要Abstract</h2><ul>
 <li>在 <code>\maketitle</code> 之后用 <code>abstract</code> 环境生成</li>
 </ul>
 <figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="tag">\<span class="name">begin</span><span class="string">&#123;abstract&#125;</span></span></span><br><span class="line">摘要内容</span><br><span class="line"><span class="tag">\<span class="name">end</span><span class="string">&#123;abstract&#125;</span></span></span><br></pre></td></tr></table></figure>
-<h2 id="目录"><a class="header-anchor" href="#目录"></a>目录</h2>
-<h3 id="导引线"><a class="header-anchor" href="#导引线"></a>导引线</h3>
+<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><h3 id="导引线"><a href="#导引线" class="headerlink" title="导引线"></a>导引线</h3><div class="table-container">
 <table>
 <thead>
 <tr>
@@ -4672,8 +4636,8 @@ $$P_{\lambda, \gamma}(\beta) = \sum_{j=1}^p \rho(\parallel\beta_j\parallel_2; \s
 </tr>
 </tbody>
 </table>
-<h2 id="脚注footnote"><a class="header-anchor" href="#脚注footnote"></a>脚注footnote</h2>
-<p><code>\footnote{脚注内容}</code></p>
+</div>
+<h2 id="脚注footnote"><a href="#脚注footnote" class="headerlink" title="脚注footnote"></a>脚注footnote</h2><p><code>\footnote{脚注内容}</code></p>
 <ul>
 <li>该脚注命令应紧接在需要注释的文字后面，排版后会在所在处显示一个脚注标记，并将脚注内容显示在当前页的底部，并带有相同的脚注标记</li>
 <li>脚注标记是上标形式的数字，并自动编号</li>
@@ -4681,28 +4645,21 @@ $$P_{\lambda, \gamma}(\beta) = \sum_{j=1}^p \rho(\parallel\beta_j\parallel_2; \s
 <li>在<code>book</code>和<code>report</code>文档类中，每章的脚注统一编号</li>
 <li>脚注只能位于普通文本中，不能位于数学模式，表格，LR盒子等中</li>
 </ul>
-<h1 id="页面布局"><a class="header-anchor" href="#页面布局"></a>页面布局</h1>
-<h2 id="页高度"><a class="header-anchor" href="#页高度"></a>页高度</h2>
-<p>增加当前页高度：有时可以避免难看的分页</p>
+<h1 id="页面布局"><a href="#页面布局" class="headerlink" title="页面布局"></a>页面布局</h1><h2 id="页高度"><a href="#页高度" class="headerlink" title="页高度"></a>页高度</h2><p>增加当前页高度：有时可以避免难看的分页</p>
 <ol>
 <li><code>\enlargethispage{尺寸}</code> ：可增加的最大高度</li>
 <li><code>\enlargethispage*{尺寸}</code> ：严格指定增加高度</li>
 </ol>
-<h2 id="分段"><a class="header-anchor" href="#分段"></a>分段</h2>
-<h2 id="分页"><a class="header-anchor" href="#分页"></a>分页</h2>
-<ul>
+<h2 id="分段"><a href="#分段" class="headerlink" title="分段"></a>分段</h2><h2 id="分页"><a href="#分页" class="headerlink" title="分页"></a>分页</h2><ul>
 <li>自动分页</li>
 <li>强制分页：<code>\newpage</code></li>
-<li>建议分页：
-<ul>
+<li>建议分页：<ul>
 <li><code>\pagebreak[n]</code></li>
 <li><code>\nopagebreak[n]</code></li>
 </ul>
 </li>
 </ul>
-<h1 id="数学"><a class="header-anchor" href="#数学"></a>数学</h1>
-<h2 id="公式"><a class="header-anchor" href="#公式"></a>公式</h2>
-<p>行间公式：</p>
+<h1 id="数学"><a href="#数学" class="headerlink" title="数学"></a>数学</h1><h2 id="公式"><a href="#公式" class="headerlink" title="公式"></a>公式</h2><p>行间公式：</p>
 <ul>
 <li>独占一行（单行公式）或多行（多行公式）</li>
 <li>行间公式可以编号，也可以不编号</li>
@@ -4711,19 +4668,12 @@ $$P_{\lambda, \gamma}(\beta) = \sum_{j=1}^p \rho(\parallel\beta_j\parallel_2; \s
 </ul>
 <p>单行公式</p>
 <ol>
-<li>不带编号：</li>
-</ol>
-<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="tag">\<span class="name">begin</span><span class="string">&#123;displaymath&#125;</span></span></span><br><span class="line">...</span><br><span class="line"><span class="tag">\<span class="name">end</span><span class="string">&#123;displaymath&#125;</span></span></span><br></pre></td></tr></table></figure>
-<ol start="2">
+<li>不带编号：<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="tag">\<span class="name">begin</span><span class="string">&#123;displaymath&#125;</span></span></span><br><span class="line">...</span><br><span class="line"><span class="tag">\<span class="name">end</span><span class="string">&#123;displaymath&#125;</span></span></span><br></pre></td></tr></table></figure></li>
 <li>上面的简化形式：<code>\[...\]</code></li>
-<li>自动编号：</li>
+<li>自动编号：<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="tag">\<span class="name">begin</span><span class="string">&#123;equation&#125;</span></span></span><br><span class="line">...</span><br><span class="line"><span class="tag">\<span class="name">end</span><span class="string">&#123;equation&#125;</span></span></span><br></pre></td></tr></table></figure></li>
+<li>不自动编号：$$$…$$$；可使用<code>\eqno</code>或<code>leqno</code>人工编号</li>
 </ol>
-<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="tag">\<span class="name">begin</span><span class="string">&#123;equation&#125;</span></span></span><br><span class="line">...</span><br><span class="line"><span class="tag">\<span class="name">end</span><span class="string">&#123;equation&#125;</span></span></span><br></pre></td></tr></table></figure>
-<ol start="4">
-<li>不自动编号：<code>$$...$$</code>；可使用<code>\eqno</code>或<code>leqno</code>人工编号</li>
-</ol>
-<h3 id="equation环境"><a class="header-anchor" href="#equation环境"></a>equation环境</h3>
-<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="tag">\<span class="name">begin</span><span class="string">&#123;equation&#125;</span></span></span><br><span class="line">...</span><br><span class="line"><span class="tag">\<span class="name">end</span><span class="string">&#123;equation&#125;</span></span></span><br></pre></td></tr></table></figure>
+<h3 id="equation环境"><a href="#equation环境" class="headerlink" title="equation环境"></a>equation环境</h3><figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="tag">\<span class="name">begin</span><span class="string">&#123;equation&#125;</span></span></span><br><span class="line">...</span><br><span class="line"><span class="tag">\<span class="name">end</span><span class="string">&#123;equation&#125;</span></span></span><br></pre></td></tr></table></figure>
 <ul>
 <li>公式自动编号</li>
 <li>equation环境中的公式可以是普通的<strong>单行公式</strong>，也可以是作为一个整体处理的<strong>环境或盒子</strong></li>
@@ -4731,13 +4681,11 @@ $$P_{\lambda, \gamma}(\beta) = \sum_{j=1}^p \rho(\parallel\beta_j\parallel_2; \s
 <li>标记：<code>\label{公式标记}</code>，公式标志唯一</li>
 <li>引用：<code>\ref{公式标记}</code>和<code>\eqref{公式标记}</code></li>
 </ul>
-<h3 id="eqnarray环境"><a class="header-anchor" href="#eqnarray环境"></a>eqnarray环境</h3>
-<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="comment">%% 自动编号</span></span><br><span class="line"><span class="tag">\<span class="name">begin</span><span class="string">&#123;equation&#125;</span></span></span><br><span class="line">...</span><br><span class="line"><span class="tag">\<span class="name">end</span><span class="string">&#123;equation&#125;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">%% 不自动编号</span></span><br><span class="line"><span class="tag">\<span class="name">begin</span><span class="string">&#123;equation*&#125;</span></span></span><br><span class="line">...</span><br><span class="line"><span class="tag">\<span class="name">end</span><span class="string">&#123;equation*&#125;</span></span></span><br></pre></td></tr></table></figure>
+<h3 id="eqnarray环境"><a href="#eqnarray环境" class="headerlink" title="eqnarray环境"></a>eqnarray环境</h3><figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="comment">%% 自动编号</span></span><br><span class="line"><span class="tag">\<span class="name">begin</span><span class="string">&#123;equation&#125;</span></span></span><br><span class="line">...</span><br><span class="line"><span class="tag">\<span class="name">end</span><span class="string">&#123;equation&#125;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">%% 不自动编号</span></span><br><span class="line"><span class="tag">\<span class="name">begin</span><span class="string">&#123;equation*&#125;</span></span></span><br><span class="line">...</span><br><span class="line"><span class="tag">\<span class="name">end</span><span class="string">&#123;equation*&#125;</span></span></span><br></pre></td></tr></table></figure>
 <ul>
 <li>eqnarray环境中每行公式都自动编号</li>
 <li>若某行公式无需编号，可在该行公式后面的换行符前插入<code>\nonumber</code></li>
-<li>eqnarray环境中每行的格式为<code>左边公式 &amp; 中间公式 &amp; 右边公式</code>
-<ul>
+<li>eqnarray环境中每行的格式为<code>左边公式 &amp; 中间公式 &amp; 右边公式</code><ul>
 <li>总是按三列排版公式，每行至多三列</li>
 <li>三列的对齐方式分别为：左对齐，居中，右对齐</li>
 <li>同一行中各列之间用 &amp; 隔开</li>
@@ -4748,7 +4696,7 @@ $$P_{\lambda, \gamma}(\beta) = \sum_{j=1}^p \rho(\parallel\beta_j\parallel_2; \s
 <li>每行公式以 <code>\\</code> 结束（最后一行除外）</li>
 <li>修改单个行间距：<code>\\[高度]</code></li>
 </ul>
-<h2 id="角标"><a class="header-anchor" href="#角标"></a>角标</h2>
+<h2 id="角标"><a href="#角标" class="headerlink" title="角标"></a>角标</h2><div class="table-container">
 <table>
 <thead>
 <tr>
@@ -4761,23 +4709,24 @@ $$P_{\lambda, \gamma}(\beta) = \sum_{j=1}^p \rho(\parallel\beta_j\parallel_2; \s
 <tr>
 <td style="text-align:left">上标</td>
 <td style="text-align:left"><code>^{...}</code></td>
-<td style="text-align:center"><code>$x^2$</code>即$x^2$</td>
+<td style="text-align:center"><script type="math/tex">x^2</script>即$x^2$</td>
 </tr>
 <tr>
 <td style="text-align:left">下标</td>
 <td style="text-align:left"><code>_{...}</code></td>
-<td style="text-align:center"><code>$x_i$</code>即 $x_i$</td>
+<td style="text-align:center"><script type="math/tex">x_i</script>即 $x_i$</td>
 </tr>
 </tbody>
 </table>
+</div>
 <ul>
 <li>上标、小标角标命令必须在数学模式中使用</li>
 <li>多层角标需要使用分组符号</li>
 <li>一级角标字体大小约7pt，二级及以上角标字体大小约为5pt</li>
-<li><strong>中文角标</strong>要放入盒子，并指定字体大小<code>$x^{\mbox{\scriptsize 平方}}$</code></li>
+<li><strong>中文角标</strong>要放入盒子，并指定字体大小<script type="math/tex">x^{\mbox{\scriptsize 平方}}</script></li>
 <li>可以根据需要手工改变角标字体大小或层次</li>
 </ul>
-<h2 id="字体"><a class="header-anchor" href="#字体"></a>字体</h2>
+<h2 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h2><div class="table-container">
 <table>
 <thead>
 <tr>
@@ -4794,7 +4743,8 @@ $$P_{\lambda, \gamma}(\beta) = \sum_{j=1}^p \rho(\parallel\beta_j\parallel_2; \s
 </tr>
 </tbody>
 </table>
-<h2 id="运算符号"><a class="header-anchor" href="#运算符号"></a>运算符号</h2>
+</div>
+<h2 id="运算符号"><a href="#运算符号" class="headerlink" title="运算符号"></a>运算符号</h2><div class="table-container">
 <table>
 <thead>
 <tr>
@@ -4817,11 +4767,12 @@ $$P_{\lambda, \gamma}(\beta) = \sum_{j=1}^p \rho(\parallel\beta_j\parallel_2; \s
 <tr>
 <td style="text-align:left">求和（上下标在求和符号上下方）</td>
 <td style="text-align:left"><code>\sum\nolimits{ }\limits{ }</code></td>
-<td style="text-align:center"><code>\sum\nolimits{i=1}\limits{n}</code> 即 $\sum\nolimits{i=1}\limits{n}$</td>
+<td style="text-align:center"><code>\sum\nolimits{i=1}\limits{n}</code> 即 $\sum \nolimits{i=1} \limits{n}$</td>
 </tr>
 </tbody>
 </table>
-<h2 id="几何符号"><a class="header-anchor" href="#几何符号"></a>几何符号</h2>
+</div>
+<h2 id="几何符号"><a href="#几何符号" class="headerlink" title="几何符号"></a>几何符号</h2><div class="table-container">
 <table>
 <thead>
 <tr>
@@ -4848,7 +4799,8 @@ $$P_{\lambda, \gamma}(\beta) = \sum_{j=1}^p \rho(\parallel\beta_j\parallel_2; \s
 </tr>
 </tbody>
 </table>
-<h2 id="常用数学符号"><a class="header-anchor" href="#常用数学符号"></a>常用数学符号</h2>
+</div>
+<h2 id="常用数学符号"><a href="#常用数学符号" class="headerlink" title="常用数学符号"></a>常用数学符号</h2><div class="table-container">
 <table>
 <thead>
 <tr>
@@ -4860,17 +4812,17 @@ $$P_{\lambda, \gamma}(\beta) = \sum_{j=1}^p \rho(\parallel\beta_j\parallel_2; \s
 <tbody>
 <tr>
 <td style="text-align:left">导数符号</td>
-<td style="text-align:left"><code>\prime</code> 或 单引号<code>'</code></td>
-<td style="text-align:center"><code>$f^\prime(x)$</code> 即 $f^\prime(x)$</td>
+<td style="text-align:left"><code>\prime</code> 或 单引号<code>&#39;</code></td>
+<td style="text-align:center"><script type="math/tex">f^\prime(x)</script> 即 $f^\prime(x)$</td>
 </tr>
 </tbody>
 </table>
+</div>
 <ul>
 <li>：</li>
 </ul>
-<h1 id="其他"><a class="header-anchor" href="#其他"></a>其他</h1>
-<h2 id="长度单位"><a class="header-anchor" href="#长度单位"></a>长度单位</h2>
-<p>常用的长度单位：</p>
+<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><h2 id="长度单位"><a href="#长度单位" class="headerlink" title="长度单位"></a>长度单位</h2><p>常用的长度单位：</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -4905,14 +4857,13 @@ $$P_{\lambda, \gamma}(\beta) = \sum_{j=1}^p \rho(\parallel\beta_j\parallel_2; \s
 </tr>
 </tbody>
 </table>
+</div>
 <ul>
 <li>TeX长度由十进制小数加长度单位表示</li>
 <li>em、ex与当前字体尺寸相关</li>
 <li>1 in = 2.54 cm = 72.27 pt</li>
 </ul>
-<h1 id="资源"><a class="header-anchor" href="#资源"></a>资源</h1>
-<h2 id="字体-2"><a class="header-anchor" href="#字体-2"></a>字体</h2>
-<ul>
+<h1 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h1><h2 id="字体-1"><a href="#字体-1" class="headerlink" title="字体"></a>字体</h2><ul>
 <li><a href="https://tug.org/FontCatalogue/" target="_blank" rel="noopener">LaTex Font Catalogue</a></li>
 </ul>
 <figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
@@ -4921,8 +4872,7 @@ $$P_{\lambda, \gamma}(\beta) = \sum_{j=1}^p \rho(\parallel\beta_j\parallel_2; \s
 <figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h1 id="参考资料"><a class="header-anchor" href="#参考资料"></a>参考资料</h1>
-]]></content>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1>]]></content>
       <categories>
         <category>Everything</category>
       </categories>
