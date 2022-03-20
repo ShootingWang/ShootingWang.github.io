@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://github.com/ShootingWang/ShootingWang.github.io/Leetcode%E5%88%B7%E9%A2%98.html</loc>
+    <lastmod>2022-03-20</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/ShootingWang/ShootingWang.github.io/%E7%BC%96%E7%A8%8B%E9%A2%98%E5%BA%93.html</loc>
+    <lastmod>2022-03-20</lastmod>
+  </url>
+  <url>
     <loc>https://github.com/ShootingWang/ShootingWang.github.io/Word%E8%AE%BA%E6%96%87%E6%8E%92%E7%89%88.html</loc>
     <lastmod>2022-03-20</lastmod>
   </url>
@@ -445,10 +453,6 @@
     <lastmod>2020-11-14</lastmod>
   </url>
   <url>
-    <loc>https://github.com/ShootingWang/ShootingWang.github.io/%E7%BC%96%E7%A8%8B%E9%A2%98%E5%BA%93.html</loc>
-    <lastmod>2020-10-31</lastmod>
-  </url>
-  <url>
     <loc>https://github.com/ShootingWang/ShootingWang.github.io/MySQL.html</loc>
     <lastmod>2020-10-18</lastmod>
   </url>
@@ -555,10 +559,6 @@
   <url>
     <loc>https://github.com/ShootingWang/ShootingWang.github.io/Algo-%E4%BA%8C%E5%8F%89%E6%8E%92%E5%BA%8F%E6%A0%91.html</loc>
     <lastmod>2020-08-12</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/ShootingWang/ShootingWang.github.io/Leetcode%E5%88%B7%E9%A2%98.html</loc>
-    <lastmod>2020-07-25</lastmod>
   </url>
   <url>
     <loc>https://github.com/ShootingWang/ShootingWang.github.io/python-categorical-encoders.html</loc>
