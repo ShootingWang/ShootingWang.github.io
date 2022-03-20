@@ -309,11 +309,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <center></center>
-<a id="more"></a>
-<h1 id="Echarts"><a class="header-anchor" href="#Echarts"></a>Echarts</h1>
-<h1 id="安装方式"><a class="header-anchor" href="#安装方式"></a>安装方式</h1>
-<p>尝试了两种方法：</p>
+        <p><center></center><br><a id="more"></a></p>
+<h1 id="Echarts"><a href="#Echarts" class="headerlink" title="Echarts"></a>Echarts</h1><h1 id="安装方式"><a href="#安装方式" class="headerlink" title="安装方式"></a>安装方式</h1><p>尝试了两种方法：</p>
 <ol>
 <li>安装插件<code>hexo-tag-echarts</code></li>
 <li>下载相关js文件</li>
@@ -321,15 +318,11 @@
 <blockquote>
 <p>方式一并未成功，方式二成功在博客展示动态图</p>
 </blockquote>
-<h2 id="安装插件"><a class="header-anchor" href="#安装插件"></a>安装插件</h2>
-<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">npm install hexo-tag-echarts --save</span><br></pre></td></tr></table></figure>
-<p>并在markdown文中写：</p>
-<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">&#123;% echarts 800 '85%' %&#125;</span><br><span class="line">// 800表示图表展示的高度为800px</span><br><span class="line">// '85%'表示图表展示的宽度为85%</span><br><span class="line">&#123;</span><br><span class="line"><span class="code">    title: &#123;</span></span><br><span class="line"><span class="code">        text: '天气情况统计',   // 主标题</span></span><br><span class="line"><span class="code">        subtext: '虚构数据',    // 副标题 </span></span><br><span class="line"><span class="code">        left: 'center'</span></span><br><span class="line"><span class="code">    &#125;,</span></span><br><span class="line"><span class="code">    tooltip: &#123;</span></span><br><span class="line"><span class="code">        trigger: 'item', </span></span><br><span class="line"><span class="code">        formatter: "&#123;a&#125; &lt;br/&gt;&#123;b&#125;：&#123;c&#125;（&#123;d&#125;%）"</span></span><br><span class="line"><span class="code">    &#125;,</span></span><br><span class="line"><span class="code">    legend: &#123; // 图例</span></span><br><span class="line"><span class="code">        // orient: 'vertical',</span></span><br><span class="line"><span class="code">        // top: 'middle',</span></span><br><span class="line"><span class="code">        bottom: 10,</span></span><br><span class="line"><span class="code">        left: 'center', </span></span><br><span class="line"><span class="code">        data: ['西凉', '益州', '成都', '杭州']</span></span><br><span class="line"><span class="code">    &#125;,</span></span><br><span class="line"><span class="code">    series: [ // 序列/数据</span></span><br><span class="line"><span class="code">        &#123;</span></span><br><span class="line"><span class="code">            name: '天气数据',</span></span><br><span class="line"><span class="code">            type: 'pie',    //  饼图</span></span><br><span class="line"><span class="code">            radius: '75%',</span></span><br><span class="line"><span class="code">            center: ['50%', '50%'],</span></span><br><span class="line"><span class="code">            selectedMode: 'single',</span></span><br><span class="line"><span class="code">            data: [</span></span><br><span class="line"><span class="code">                &#123;value:520, name:'西凉'&#125;,</span></span><br><span class="line"><span class="code">                &#123;value:510, name:'益州'&#125;,</span></span><br><span class="line"><span class="code">                &#123;value:627, name:'成都'&#125;,</span></span><br><span class="line"><span class="code">                &#123;value:826, name:'杭州'&#125;</span></span><br><span class="line"><span class="code">            ],</span></span><br><span class="line"><span class="code">            itemStyle: &#123;</span></span><br><span class="line"><span class="code">                emphasis: &#123;</span></span><br><span class="line"><span class="code">                    shadowBlur: 10,</span></span><br><span class="line"><span class="code">                    shadowOffsetX: 0,</span></span><br><span class="line"><span class="code">                    shadowColor: 'rgba(0, 0, 0, 0.5)'</span></span><br><span class="line"><span class="code">                &#125;</span></span><br><span class="line"><span class="code">            &#125;</span></span><br><span class="line"><span class="code">        &#125;</span></span><br><span class="line"><span class="code">    ]</span></span><br><span class="line">&#125;</span><br><span class="line">&#123;% endecharts %&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h2><figure class="highlight md"><table><tr><td class="code"><pre><span class="line">npm install hexo-tag-echarts --save</span><br></pre></td></tr></table></figure>
+<p>并在markdown文中写：<br><figure class="highlight md"><table><tr><td class="code"><pre><span class="line">&#123;% echarts 800 '85%' %&#125;</span><br><span class="line">// 800表示图表展示的高度为800px</span><br><span class="line">// '85%'表示图表展示的宽度为85%</span><br><span class="line">&#123;</span><br><span class="line"><span class="code">    title: &#123;</span></span><br><span class="line"><span class="code">        text: '天气情况统计',   // 主标题</span></span><br><span class="line"><span class="code">        subtext: '虚构数据',    // 副标题 </span></span><br><span class="line"><span class="code">        left: 'center'</span></span><br><span class="line"><span class="code">    &#125;,</span></span><br><span class="line"><span class="code">    tooltip: &#123;</span></span><br><span class="line"><span class="code">        trigger: 'item', </span></span><br><span class="line"><span class="code">        formatter: "&#123;a&#125; &lt;br/&gt;&#123;b&#125;：&#123;c&#125;（&#123;d&#125;%）"</span></span><br><span class="line"><span class="code">    &#125;,</span></span><br><span class="line"><span class="code">    legend: &#123; // 图例</span></span><br><span class="line"><span class="code">        // orient: 'vertical',</span></span><br><span class="line"><span class="code">        // top: 'middle',</span></span><br><span class="line"><span class="code">        bottom: 10,</span></span><br><span class="line"><span class="code">        left: 'center', </span></span><br><span class="line"><span class="code">        data: ['西凉', '益州', '成都', '杭州']</span></span><br><span class="line"><span class="code">    &#125;,</span></span><br><span class="line"><span class="code">    series: [ // 序列/数据</span></span><br><span class="line"><span class="code">        &#123;</span></span><br><span class="line"><span class="code">            name: '天气数据',</span></span><br><span class="line"><span class="code">            type: 'pie',    //  饼图</span></span><br><span class="line"><span class="code">            radius: '75%',</span></span><br><span class="line"><span class="code">            center: ['50%', '50%'],</span></span><br><span class="line"><span class="code">            selectedMode: 'single',</span></span><br><span class="line"><span class="code">            data: [</span></span><br><span class="line"><span class="code">                &#123;value:520, name:'西凉'&#125;,</span></span><br><span class="line"><span class="code">                &#123;value:510, name:'益州'&#125;,</span></span><br><span class="line"><span class="code">                &#123;value:627, name:'成都'&#125;,</span></span><br><span class="line"><span class="code">                &#123;value:826, name:'杭州'&#125;</span></span><br><span class="line"><span class="code">            ],</span></span><br><span class="line"><span class="code">            itemStyle: &#123;</span></span><br><span class="line"><span class="code">                emphasis: &#123;</span></span><br><span class="line"><span class="code">                    shadowBlur: 10,</span></span><br><span class="line"><span class="code">                    shadowOffsetX: 0,</span></span><br><span class="line"><span class="code">                    shadowColor: 'rgba(0, 0, 0, 0.5)'</span></span><br><span class="line"><span class="code">                &#125;</span></span><br><span class="line"><span class="code">            &#125;</span></span><br><span class="line"><span class="code">        &#125;</span></span><br><span class="line"><span class="code">    ]</span></span><br><span class="line">&#125;</span><br><span class="line">&#123;% endecharts %&#125;</span><br></pre></td></tr></table></figure></p>
 <p>但并未成功在博客展示动图。</p>
-<h2 id="下载相关js文件"><a class="header-anchor" href="#下载相关js文件"></a>下载相关js文件</h2>
-<ol>
-<li>下载<code>echarts.min.js</code>和<code>jquery.js</code>文件
-<ul>
+<h2 id="下载相关js文件"><a href="#下载相关js文件" class="headerlink" title="下载相关js文件"></a>下载相关js文件</h2><ol>
+<li>下载<code>echarts.min.js</code>和<code>jquery.js</code>文件<ul>
 <li>在<a href="https://github.com/apache/echarts/tree/4.6.0/dist">echarts.min.js下载地址</a>中找到<code>echarts.min.js</code>，右键点击“将链接另存为”将文件保存到本地</li>
 <li>在<a href="https://jquery.com/download/" target="_blank" rel="noopener">jquery官网</a>找到“Download the uncompressed, development jQuery 3.6.0”，打开，将文本复制粘贴到js文件中，保存为“jquery.js”文件</li>
 </ul>
@@ -339,7 +332,7 @@
 </ol>
 <figure class="highlight md"><table><tr><td class="code"><pre><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"test1"</span> <span class="attr">style</span>=<span class="string">"width:100%;height:500px;"</span>&gt;</span></span><span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span><span class="attr">src</span>=<span class="string">"/js/echarts.min.js"</span>&gt;</span></span><span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span><span class="attr">src</span>=<span class="string">"/js/jquery.js"</span>&gt;</span></span><span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span></span></span><br><span class="line">var myChart1 = echarts.init(document.getElementById("test1"));</span><br><span class="line">option1 = &#123;</span><br><span class="line"><span class="code">    title: &#123;</span></span><br><span class="line"><span class="code">        text: '天气情况统计',   // 主标题</span></span><br><span class="line"><span class="code">        subtext: '虚构数据',    // 副标题 </span></span><br><span class="line"><span class="code">        left: 'center'</span></span><br><span class="line"><span class="code">    &#125;,</span></span><br><span class="line"><span class="code">    tooltip: &#123;</span></span><br><span class="line"><span class="code">        trigger: 'item', </span></span><br><span class="line"><span class="code">        formatter: "&#123;a&#125; &lt;br/&gt;&#123;b&#125;：&#123;c&#125;（&#123;d&#125;%）"</span></span><br><span class="line"><span class="code">    &#125;,</span></span><br><span class="line"><span class="code">    legend: &#123; // 图例</span></span><br><span class="line"><span class="code">        // orient: 'vertical',</span></span><br><span class="line"><span class="code">        // top: 'middle',</span></span><br><span class="line"><span class="code">        bottom: 10,</span></span><br><span class="line"><span class="code">        left: 'center', </span></span><br><span class="line"><span class="code">        data: ['西凉', '益州', '成都', '杭州']</span></span><br><span class="line"><span class="code">    &#125;,</span></span><br><span class="line"><span class="code">    series: [ // 序列/数据</span></span><br><span class="line"><span class="code">        &#123;</span></span><br><span class="line"><span class="code">            name: '天气数据',</span></span><br><span class="line"><span class="code">            type: 'pie',    //  饼图</span></span><br><span class="line"><span class="code">            radius: '75%',</span></span><br><span class="line"><span class="code">            center: ['50%', '50%'],</span></span><br><span class="line"><span class="code">            selectedMode: 'single',</span></span><br><span class="line"><span class="code">            data: [</span></span><br><span class="line"><span class="code">                &#123;value:520, name:'西凉'&#125;,</span></span><br><span class="line"><span class="code">                &#123;value:510, name:'益州'&#125;,</span></span><br><span class="line"><span class="code">                &#123;value:627, name:'成都'&#125;,</span></span><br><span class="line"><span class="code">                &#123;value:826, name:'杭州'&#125;</span></span><br><span class="line"><span class="code">            ],</span></span><br><span class="line"><span class="code">            itemStyle: &#123;</span></span><br><span class="line"><span class="code">                emphasis: &#123;</span></span><br><span class="line"><span class="code">                    shadowBlur: 10,</span></span><br><span class="line"><span class="code">                    shadowOffsetX: 0,</span></span><br><span class="line"><span class="code">                    shadowColor: 'rgba(0, 0, 0, 0.5)'</span></span><br><span class="line"><span class="code">                &#125;</span></span><br><span class="line"><span class="code">            &#125;</span></span><br><span class="line"><span class="code">        &#125;</span></span><br><span class="line"><span class="code">    ]</span></span><br><span class="line">&#125;;</span><br><span class="line">myChart1.setOption(option1);</span><br><span class="line">window.onresize=function()&#123;</span><br><span class="line"><span class="code">    myChart1.resize();</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
 <p>动态饼图效果如下：</p>
-<div id="test1" style="width:100%;height:500px;"></div>
+<p><div id="test1" style="width:100%;height:500px;"></div></p>
 <script type="text/javascript" src="/js/echarts.min.js"></script>
 <script type="text/javascript" src="/js/jquery.js"></script>
 <script type="text/javascript">
@@ -389,13 +382,12 @@ window.onresize=function(){
     myChart1.resize();
 }
 </script>
-<h1 id="样例"><a class="header-anchor" href="#样例"></a>样例</h1>
-<h2 id="饼图"><a class="header-anchor" href="#饼图"></a>饼图</h2>
-<div id="echarts3611" style="width: 85%;height: 800px;margin: 0 auto"></div>
+
+<h1 id="样例"><a href="#样例" class="headerlink" title="样例"></a>样例</h1><h2 id="饼图"><a href="#饼图" class="headerlink" title="饼图"></a>饼图</h2><div id="echarts8001" style="width: 85%;height: 800px;margin: 0 auto"></div>
 <script src="https://cdn.bootcss.com/echarts/4.3.0/echarts.common.min.js"></script>
 <script type="text/javascript">
 	// 基于准备好的dom，初始化echarts实例
-	var myChart = echarts.init(document.getElementById('echarts3611'));
+	var myChart = echarts.init(document.getElementById('echarts8001'));
 	// 指定图表的配置项和数据
 	// 800表示图表展示的高度为800px
 // '85%'表示图表展示的宽度为85%
@@ -442,10 +434,7 @@ window.onresize=function(){
 	// 使用刚指定的配置项和数据显示图表。
 	myChart.setOption(option);
 </script>
-<h2 id="折线图"><a class="header-anchor" href="#折线图"></a>折线图</h2>
-<h2 id="柱状图"><a class="header-anchor" href="#柱状图"></a>柱状图</h2>
-<h1 id="参考资料"><a class="header-anchor" href="#参考资料"></a>参考资料</h1>
-<ul>
+<h2 id="折线图"><a href="#折线图" class="headerlink" title="折线图"></a>折线图</h2><h2 id="柱状图"><a href="#柱状图" class="headerlink" title="柱状图"></a>柱状图</h2><h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
 <li><a href="https://underdream.github.io/post/writing/hexo/embed-echarts-in-hexo/" target="_blank" rel="noopener">在Hexo博客中使用ECharts来画图</a></li>
 <li><a href="https://blog.csdn.net/qq_41426117/article/details/105416911" target="_blank" rel="noopener">如何在hexo主题里用echarts写思维导图</a></li>
 </ul>
@@ -599,7 +588,7 @@ window.onresize=function(){
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">53</span>
+        <span class="site-state-item-count">56</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -641,13 +630,13 @@ window.onresize=function(){
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">402k</span>
+    <span title="站点总字数">392k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">6:05</span>
+    <span title="站点阅读时长">5:56</span>
 </div>
 
 
@@ -729,8 +718,6 @@ window.onresize=function(){
 
 
 
-
-  
 
 
 

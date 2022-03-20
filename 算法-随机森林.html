@@ -317,42 +317,36 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <center>Random Forest</center>
-<a id="more"></a>
-<h1 id="随机森林"><a class="header-anchor" href="#随机森林"></a>随机森林</h1>
-<ul>
+        <p><center>Random Forest</center><br><a id="more"></a></p>
+<h1 id="随机森林"><a href="#随机森林" class="headerlink" title="随机森林"></a>随机森林</h1><ul>
 <li>随机森林是一种<u>判别分类方法</u></li>
 <li>随机森林是建立在基础上的集成学习器(一个包含多个决策树的分类器；输出结果由各个树的输出结果的众数决定)</li>
 <li>是bagging的一个特殊进阶版</li>
-<li>随机森林=Bagging+随机选择特征<br>
-$$Random Forest=Bagging+Decision Tree$$</li>
+<li>随机森林=Bagging+随机选择特征<script type="math/tex; mode=display">Random Forest=Bagging+Decision Tree</script></li>
 <li>随机森林的弱学习器都是决策树（CART）</li>
-<li>如何产生不同的决策树（Decision Tree，DT）？</li>
+<li>如何产生不同的决策树（Decision Tree，DT）？<ul>
 <li>每棵决策树使用训练集的Bootstrap随机采样样本</li>
 <li>每个根节点（node）使用不同的特征子集</li>
+</ul>
+</li>
 <li>树的数目通常不少于500棵</li>
 <li>不需要剪枝；在构建决策树时，RF的每棵决策树都最大可能地进行生长而不进行剪枝</li>
-<li>概括RF包括4部分：</li>
-</ul>
-<ol>
+<li>概括RF包括4部分：<ol>
 <li>随机选择样本</li>
 <li>随机选择特征</li>
 <li>构建决策树</li>
 <li>随机森林投票（平均）</li>
 </ol>
-<ul>
-<li>
-<p>每个基学习器只使用了训练集中约63.2%的样本，剩下约36.8%的样本可用作验证集来对其泛化性能进行“包外（Out of Bag）估计”</p>
 </li>
-<li>
-<p>随机森林不需要归一化/标准化</p>
+<li><p>每个基学习器只使用了训练集中约63.2%的样本，剩下约36.8%的样本可用作验证集来对其泛化性能进行“包外（Out of Bag）估计”</p>
 </li>
-</ul>
+<li><p>随机森林不需要归一化/标准化</p>
 <blockquote>
 <p>概率模型（树形模型）不需要归一化。因为它们不关心变量的值，而是关心变量的分布和变量之间的条件概率，如决策树、随机森林</p>
 </blockquote>
-<h2 id="RF-vs-GBDT"><a class="header-anchor" href="#RF-vs-GBDT"></a>RF vs GBDT</h2>
-<table>
+</li>
+</ul>
+<h2 id="RF-vs-GBDT"><a href="#RF-vs-GBDT" class="headerlink" title="RF vs GBDT"></a>RF vs GBDT</h2><table>
   <tr>
     <td></td>
     <td>随机森林RF</td>
@@ -397,8 +391,12 @@ $$Random Forest=Bagging+Decision Tree$$</li>
     <td></td>
   </tr> 
 </table>
-<h1 id="参考资料"><a class="header-anchor" href="#参考资料"></a>参考资料</h1>
 
+
+
+
+
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1>
     </div>
 
     
@@ -554,7 +552,7 @@ $$Random Forest=Bagging+Decision Tree$$</li>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">53</span>
+        <span class="site-state-item-count">56</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -596,13 +594,13 @@ $$Random Forest=Bagging+Decision Tree$$</li>
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">402k</span>
+    <span title="站点总字数">392k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">6:05</span>
+    <span title="站点阅读时长">5:56</span>
 </div>
 
 
@@ -684,8 +682,6 @@ $$Random Forest=Bagging+Decision Tree$$</li>
 
 
 
-
-  
 
 
 

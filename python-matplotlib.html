@@ -311,33 +311,25 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <center></center>
-<a id="more"></a>
+        <p><center></center><br><a id="more"></a></p>
 <meta name="referrer" content="no-referrer">
-<h1 id="Matplotlib"><a class="header-anchor" href="#Matplotlib"></a>Matplotlib</h1>
-<blockquote>
+
+<h1 id="Matplotlib"><a href="#Matplotlib" class="headerlink" title="Matplotlib"></a>Matplotlib</h1><blockquote>
 <p><a href="https://matplotlib.org/stable/tutorials/index.html" target="_blank" rel="noopener">Matplotlib Tutorials</a></p>
 </blockquote>
-<h1 id="axes-Axes-轴格式"><a class="header-anchor" href="#axes-Axes-轴格式"></a>.axes.Axes 轴格式</h1>
-<h2 id="set-major-formatter"><a class="header-anchor" href="#set-major-formatter"></a>.set_major_formatter()</h2>
-<p>设置数据标签的显示的文本格式</p>
+<h1 id="axes-Axes-轴格式"><a href="#axes-Axes-轴格式" class="headerlink" title=".axes.Axes 轴格式"></a>.axes.Axes 轴格式</h1><h2 id="set-major-formatter"><a href="#set-major-formatter" class="headerlink" title=".set_major_formatter()"></a>.set_major_formatter()</h2><p>设置数据标签的显示的文本格式</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">ticks = np.arange(<span class="number">0.</span>, <span class="number">8.1</span>, <span class="number">2.</span>)</span><br><span class="line">ax.xaxis.set_ticks(ticks)</span><br><span class="line">ax.xaxis.set_major_formatter(<span class="string">'&#123;x:1.1f&#125;'</span>)  <span class="comment">## 显示为1位小数</span></span><br><span class="line"></span><br><span class="line">ax.xaxis.set_major_formatter(<span class="string">'±&#123;x&#125;°'</span>) <span class="comment">## 数字前带±号、数字后带°</span></span><br></pre></td></tr></table></figure>
-<h2 id="set-xlim"><a class="header-anchor" href="#set-xlim"></a>.set_xlim()</h2>
-<p>设置x轴的数据范围</p>
-<h2 id="set-ticks"><a class="header-anchor" href="#set-ticks"></a>.set_ticks()</h2>
-<p>设置轴的刻度线</p>
+<h2 id="set-xlim"><a href="#set-xlim" class="headerlink" title=".set_xlim()"></a>.set_xlim()</h2><p>设置x轴的数据范围</p>
+<h2 id="set-ticks"><a href="#set-ticks" class="headerlink" title=".set_ticks()"></a>.set_ticks()</h2><p>设置轴的刻度线</p>
 <ul>
 <li><code>.xaxis.set_ticks()</code>：设置x轴刻度线</li>
 <li><code>.yaxis.set_ticks()</code>：设置y轴刻度线</li>
 </ul>
-<h2 id="set-ticklabels"><a class="header-anchor" href="#set-ticklabels"></a>.set_ticklabels()</h2>
-<p>设置轴的数据标签格式</p>
+<h2 id="set-ticklabels"><a href="#set-ticklabels" class="headerlink" title=".set_ticklabels()"></a>.set_ticklabels()</h2><p>设置轴的数据标签格式</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">ticks = np.arange(<span class="number">0.</span>, <span class="number">8.1</span>, <span class="number">2.</span>)</span><br><span class="line">ax.xaxis.set_ticks(ticks)</span><br><span class="line">ax.xaxis.set_ticklabels([<span class="string">f'<span class="subst">&#123;tick:<span class="number">1.2</span>f&#125;</span>'</span> <span class="keyword">for</span> tick <span class="keyword">in</span> ticks])</span><br></pre></td></tr></table></figure>
-<h2 id="set-title"><a class="header-anchor" href="#set-title"></a>.set_title()</h2>
-<p>设置图表标题</p>
+<h2 id="set-title"><a href="#set-title" class="headerlink" title=".set_title()"></a>.set_title()</h2><p>设置图表标题</p>
 <ul>
-<li>参数<code>loc</code>：标题位置
-<ul>
+<li>参数<code>loc</code>：标题位置<ul>
 <li><code>left</code>：靠左</li>
 <li><code>center</code>：居中</li>
 <li><code>right</code>：靠右</li>
@@ -347,33 +339,29 @@
 </ul>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">fig, axs = plt.subplots(<span class="number">3</span>, <span class="number">1</span>, figsize=(<span class="number">5</span>, <span class="number">6</span>), tight_layout=<span class="literal">True</span>)</span><br><span class="line">locs = [<span class="string">'center'</span>, <span class="string">'left'</span>, <span class="string">'right'</span>]</span><br><span class="line"><span class="keyword">for</span> ax, loc <span class="keyword">in</span> zip(axs, locs):</span><br><span class="line">    ax.plot(x1, y1)</span><br><span class="line">    ax.set_title(<span class="string">'Title with loc at '</span>+loc, loc=loc)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
 <img src="/python-matplotlib/%E4%BF%AE%E6%94%B9%E5%9B%BE%E8%A1%A8%E6%A0%87%E9%A2%98.png" class title="修改图表标题">
-<h2 id="set-xlabel"><a class="header-anchor" href="#set-xlabel"></a>.set_xlabel()</h2>
-<p>修改$x$轴标签</p>
+<h2 id="set-xlabel"><a href="#set-xlabel" class="headerlink" title=".set_xlabel()"></a>.set_xlabel()</h2><p>修改$x$轴标签</p>
 <blockquote>
 <p><a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.set_xlabel.html#matplotlib.axes.Axes.set_xlabel" target="_blank" rel="noopener">matplotlib.axes.Axes.set_xlabel</a></p>
 </blockquote>
 <ul>
 <li>参数<code>fontsize</code>：设置标签字体大小</li>
-<li>参数<code>fontweight</code>：设备标签字体粗细
-<ul>
-<li><code>fontweight='bold'</code>：粗体</li>
+<li>参数<code>fontweight</code>：设备标签字体粗细<ul>
+<li><code>fontweight=&#39;bold&#39;</code>：粗体</li>
 </ul>
 </li>
 <li>参数<code>fontproperties</code>：设置字体</li>
-<li>参数<code>horizontalalignment</code>：设置标签水平对齐位置
-<ul>
+<li>参数<code>horizontalalignment</code>：设置标签水平对齐位置<ul>
 <li><code>horizontalalignment=left</code>：水平向左对齐</li>
 </ul>
 </li>
 <li>参数<code>labelpad</code>：标签相对轴偏移</li>
-<li>参数<code>position=(a, b)</code>：标签位置
-<ul>
+<li>参数<code>position=(a, b)</code>：标签位置<ul>
 <li>在<code>.set_xlabel()</code>中，仅<code>a</code>起作用，<code>b</code>随便赋值</li>
 <li>在<code>.set_ylabel()</code>中，仅<code>b</code>起作用，<code>a</code>随便赋值</li>
 </ul>
 </li>
 <li>标签换行：<code>\n</code></li>
-<li>标签含公式：<code>r'$公式内容$'</code></li>
+<li>标签含公式：<code>r&#39;$公式内容$&#39;</code></li>
 </ul>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">%matplotlib inline</span><br><span class="line"></span><br><span class="line">x1 = np.linspace(<span class="number">0.0</span>, <span class="number">5.0</span>, <span class="number">100</span>)</span><br><span class="line">y1 = np.cos(<span class="number">2</span> * np.pi * x1) * np.exp(-x1)</span><br><span class="line"></span><br><span class="line">fig, ax = plt.subplots(figsize=(<span class="number">5</span>, <span class="number">3</span>))</span><br><span class="line">fig.subplots_adjust(bottom=<span class="number">0.15</span>, left=<span class="number">0.2</span>)</span><br><span class="line">ax.plot(x1, y1)</span><br><span class="line">ax.set_xlabel(<span class="string">'time [s]'</span>)</span><br><span class="line">ax.set_ylabel(<span class="string">'Damped oscillation [V]'</span>)</span><br><span class="line"></span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
 <img src="/python-matplotlib/%E4%BF%AE%E6%94%B9xy%E8%BD%B4%E6%A0%87%E7%AD%BE%E6%96%87%E5%AD%97.png" class title="修改xy轴标签文字">
@@ -383,13 +371,11 @@
 <img src="/python-matplotlib/%E4%BF%AE%E6%94%B9xy%E8%BD%B4%E6%A0%87%E7%AD%BE%E6%96%87%E5%AD%97%EF%BC%88%E5%AD%97%E4%BD%93%E6%A0%BC%E5%BC%8F%EF%BC%89.png" class title="修改xy轴标签文字（字体格式）">
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">fig, ax = plt.subplots(figsize=(<span class="number">5</span>, <span class="number">3</span>))</span><br><span class="line">fig.subplots_adjust(bottom=<span class="number">0.2</span>, left=<span class="number">0.2</span>)</span><br><span class="line">ax.plot(x1, np.cumsum(y1**<span class="number">2</span>))</span><br><span class="line">ax.set_xlabel(<span class="string">'time [s] \n This was a long experiment'</span>)</span><br><span class="line">ax.set_ylabel(<span class="string">r'$\int\ Y^2\ dt\ \ [V^2 s]$'</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
 <img src="/python-matplotlib/%E4%BF%AE%E6%94%B9xy%E8%BD%B4%E6%A0%87%E7%AD%BE%E6%96%87%E5%AD%97%EF%BC%88%E6%8D%A2%E8%A1%8C+%E5%90%AB%E5%85%AC%E5%BC%8F%EF%BC%89.png" class title="修改xy轴标签文字（换行+含公式）">
-<h2 id="set-ylabel"><a class="header-anchor" href="#set-ylabel"></a>.set_ylabel()</h2>
-<p>修改$y$轴标签</p>
+<h2 id="set-ylabel"><a href="#set-ylabel" class="headerlink" title=".set_ylabel()"></a>.set_ylabel()</h2><p>修改$y$轴标签</p>
 <blockquote>
 <p>例子见<code>.set_xlabel()</code></p>
 </blockquote>
-<h2 id="tick-params"><a class="header-anchor" href="#tick-params"></a>.tick_params()</h2>
-<p>旋转刻度线标签，使得文本之间互相重叠</p>
+<h2 id="tick-params"><a href="#tick-params" class="headerlink" title=".tick_params()"></a>.tick_params()</h2><p>旋转刻度线标签，使得文本之间互相重叠</p>
 <ul>
 <li>参数<code>rotation</code>：逆时针旋转的度数</li>
 </ul>
@@ -397,8 +383,7 @@
 <img src="/python-matplotlib/%E6%97%8B%E8%BD%AC%E5%88%BB%E5%BA%A6%E7%BA%BF%E6%A0%87%E7%AD%BE.png" class title="旋转刻度线标签">
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h1 id="参考资料"><a class="header-anchor" href="#参考资料"></a>参考资料</h1>
-
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1>
     </div>
 
     
@@ -549,7 +534,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">53</span>
+        <span class="site-state-item-count">56</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -591,13 +576,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">402k</span>
+    <span title="站点总字数">392k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">6:05</span>
+    <span title="站点阅读时长">5:56</span>
 </div>
 
 
@@ -679,8 +664,6 @@
 
 
 
-
-  
 
 
 
