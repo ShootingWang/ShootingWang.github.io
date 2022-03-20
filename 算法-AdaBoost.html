@@ -316,10 +316,12 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><center>Adaptive Boosting</center><br><a id="more"></a></p>
+        <center>Adaptive Boosting</center>
+<a id="more"></a>
 <p>自适应增强</p>
 <p><strong>自适应</strong>在于：前一个分类器分错的样本会被用来训练下一个分类器——AdaBoost能够适应弱分类器各自的训练误差率</p>
-<h1 id="AdaBoost"><a href="#AdaBoost" class="headerlink" title="AdaBoost"></a>AdaBoost</h1><p>由Yoav Freund和Robert Schapire提出</p>
+<h1 id="AdaBoost"><a class="header-anchor" href="#AdaBoost"></a>AdaBoost</h1>
+<p>由Yoav Freund和Robert Schapire提出</p>
 <div class="note default">
             <p>Freund, Yoav , and R. E. Schapire . “<a href="https://www.cis.upenn.edu/~mkearns/teaching/COLT/adaboost.pdf" target="_blank" rel="noopener">A Decision-Theoretic Generalization of On-Line Learning and an Application to Boosting</a>.” <em>Proceedings of the Second European Conference on Computational Learning Theory</em>, 1995, pp. 23-37.</p>
           </div>
@@ -329,109 +331,133 @@
 <li>学习算法：前向分步算法的二分类学习算法</li>
 <li>可用于分类，也可用于回归</li>
 </ul>
-<h2 id="基学习器"><a href="#基学习器" class="headerlink" title="基学习器"></a>基学习器</h2><p>在分类模型中称为<strong>基分类器</strong>（classifier）</p>
+<h2 id="基学习器"><a class="header-anchor" href="#基学习器"></a>基学习器</h2>
+<p>在分类模型中称为<strong>基分类器</strong>（classifier）</p>
 <p>可以是</p>
 <ul>
-<li>决策树<ul>
+<li>决策树</li>
 <li>AdaBoost分类用CART分类树</li>
 <li>AdaBoost回归用CART回归树</li>
-</ul>
-</li>
 <li>神经网络（neural networks）</li>
 <li>线性判别（linear discriminants）</li>
 <li>……</li>
 </ul>
 <p>其中使用最广泛的是决策树和神经网络。</p>
-<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><ul>
+<h2 id="原理"><a class="header-anchor" href="#原理"></a>原理</h2>
+<ul>
 <li>训练数据集特征$x_i\ (x_i\in \mathbb{R}^p;\ i=1,\cdots,N)$</li>
-<li>训练数据集标签$y_i=\{-1,+1\}$</li>
+<li>训练数据集标签$y_i={-1,+1}$</li>
 </ul>
 <p>在第$t$次迭代时，前面已经训练得到$t-1$个弱分类器$h_j(x)\quad(j=1,\cdots,t-1)$，且对应的重要性为$\alpha_j$。</p>
-<p>此时已得到$t-1$个弱分类器的组合分类器</p>
-<script type="math/tex; mode=display">H_{t-1}(x_i)=\alpha_1 h_1(x_i)+\alpha_2 h_2(x_i)+\cdots+\alpha_{t-1} h_{t-1}(x_i)</script><p>想要将该组合分类器继续扩展成</p>
-<script type="math/tex; mode=display">H_{t}(x_i)=H_{t-1}(x_i)+\alpha_th_t(x_i)</script><p>AdaBoost的损失函数是指数损失：</p>
+<p>此时已得到$t-1$个弱分类器的组合分类器<br>
+$$H_{t-1}(x_i)=\alpha_1 h_1(x_i)+\alpha_2 h_2(x_i)+\cdots+\alpha_{t-1} h_{t-1}(x_i)$$<br>
+想要将该组合分类器继续扩展成<br>
+$$H_{t}(x_i)=H_{t-1}(x_i)+\alpha_th_t(x_i)$$</p>
+<p>AdaBoost的损失函数是指数损失：</p>
 <ul>
-<li>若分类器$h(\cdot)$将第$i$个样本正确分类（即$h(x_i)=y_i$），则损失为<script type="math/tex; mode=display">e^{-\alpha}</script></li>
-<li>若分类器$h(\cdot)$将第$i$个样本错误分类（即$h(x_i)\neq y_i$），则损失为<script type="math/tex; mode=display">e^{\alpha}</script></li>
+<li>若分类器$h(\cdot)$将第$i$个样本正确分类（即$h(x_i)=y_i$），则损失为<br>
+$$e^{-\alpha}$$</li>
+<li>若分类器$h(\cdot)$将第$i$个样本错误分类（即$h(x_i)\neq y_i$），则损失为<br>
+$$e^{\alpha}$$</li>
 </ul>
-<p>即</p>
-<script type="math/tex; mode=display">e^{-\alpha y_ih(x_i)}</script><p>其中$\alpha&gt;0$保证“错误分类”的样本受到的“惩罚”更重。</p>
-<p>则$H_{t}(x_i)$的损失函数为<br>\begin{aligned}<br>\mathrm{Loss}&amp;=\sum_{i=1}^Ne^{-y_iH_t(x_i)}\\<br>&amp;= \sum_{i=1}^N\exp\left\{-y_i\left(H_{t-1}(x_i)+\alpha_th_t(x_i) \right) \right\}\\<br>&amp;= \sum_{i=1}^N\exp\left\{-y_iH_{t-1}(x_i)\right\}\exp\left\{-y_i\alpha_th_t(x_i)\right\}\\<br>&amp;=\sum_{i=1}^N w_i^{(t)}\exp\left\{-y_i\alpha_th_t(x_i)\right\}\\<br>&amp;= \sum_{y_i=h_t(x_i)}w_i^{(t)}e^{-\alpha_t}+\sum_{y_i\neq h_t(x_i)}w_i^{(t)}e^{\alpha_t}\\<br>&amp;= \sum_{i=1}^Nw_i^{(t)}\left(\frac{\sum_{y_i=h_t(x_i)}w_i^{(t)}}{\sum_{i=1}^Nw_i^{(t)}}e^{-\alpha_t}+\frac{\sum_{y_i\neq h_t(x_i)}w_i^{(t)}}{\sum_{i=1}^Nw_i^{(t)}}e^{\alpha_t} \right)\\<br>&amp;= \sum_{i=1}^Nw_i^{(t)}\left((1-e_t)e^{-\alpha_t}+e_te^{\alpha_t}\right)<br>\end{aligned}<br>其中</p>
+<p>即<br>
+$$e^{-\alpha y_ih(x_i)}$$<br>
+其中$\alpha&gt;0$保证“错误分类”的样本受到的“惩罚”更重。</p>
+<p>则$H_{t}(x_i)$的损失函数为<br>
+\begin{aligned}<br>
+\mathrm{Loss}&amp;=\sum_{i=1}<sup>Ne</sup>{-y_iH_t(x_i)}\<br>
+&amp;= \sum_{i=1}^N\exp\left{-y_i\left(H_{t-1}(x_i)+\alpha_th_t(x_i) \right) \right}\<br>
+&amp;= \sum_{i=1}^N\exp\left{-y_iH_{t-1}(x_i)\right}\exp\left{-y_i\alpha_th_t(x_i)\right}\<br>
+&amp;=\sum_{i=1}^N w_i^{(t)}\exp\left{-y_i\alpha_th_t(x_i)\right}\<br>
+&amp;= \sum_{y_i=h_t(x_i)}w_i<sup>{(t)}e</sup>{-\alpha_t}+\sum_{y_i\neq h_t(x_i)}w_i<sup>{(t)}e</sup>{\alpha_t}\<br>
+&amp;= \sum_{i=1}<sup>Nw_i</sup>{(t)}\left(\frac{\sum_{y_i=h_t(x_i)}w_i<sup>{(t)}}{\sum_{i=1}</sup>Nw_i<sup>{(t)}}e</sup>{-\alpha_t}+\frac{\sum_{y_i\neq h_t(x_i)}w_i<sup>{(t)}}{\sum_{i=1}</sup>Nw_i<sup>{(t)}}e</sup>{\alpha_t} \right)\<br>
+&amp;= \sum_{i=1}<sup>Nw_i</sup>{(t)}\left((1-e_t)e<sup>{-\alpha_t}+e_te</sup>{\alpha_t}\right)<br>
+\end{aligned}<br>
+其中</p>
 <ul>
-<li>$w_i^{(t)}=e^{-y_iH_{t-1}(x_i)}$为第$t$次迭代中样本的权重，依赖于前一轮的迭代重分配</li>
-<li>$\frac{\sum_{y_i\neq h_t(x_i)}w_i^{(t)}}{\sum_{i=1}^Nw_i^{(t)}}$为分类误差率$e_t$</li>
+<li>$w_i<sup>{(t)}=e</sup>{-y_iH_{t-1}(x_i)}$为第$t$次迭代中样本的权重，依赖于前一轮的迭代重分配</li>
+<li>$\frac{\sum_{y_i\neq h_t(x_i)}w_i<sup>{(t)}}{\sum_{i=1}</sup>Nw_i^{(t)}}$为分类误差率$e_t$</li>
 </ul>
-<p>损失函数Loss关于$\alpha_t$求偏导并令导数为零，即$\frac{\partial{\mathrm{Loss}}}{\partial{\alpha_t}}=0$，得</p>
-<script type="math/tex; mode=display">\alpha_t=\frac{1}{2}\ln\frac{1-e_t}{e_t}</script><div class="note default">
-            <p>\begin{aligned}<br>\frac{\partial{\mathrm{Loss}}}{\partial{\alpha_t}}&amp;=0\\<br>\sum_{i=1}^Nw_i^{(t)}\left((e_t-1)e^{-\alpha_t}+e_te^{\alpha_t} \right)&amp;=0\\<br>(e_t-1)e^{-\alpha_t}+e_te^{\alpha_t}&amp;=0\\<br>e_t-1+e_te^{2\alpha_t}&amp;=0\\<br>e^{2\alpha_t}&amp;=\frac{1-e_t}{e_t}\\<br>\alpha_t&amp;=\frac{1}{2}\ln\frac{1-e_t}{e_t}<br>\end{aligned}</p>
+<p>损失函数Loss关于$\alpha_t$求偏导并令导数为零，即$\frac{\partial{\mathrm{Loss}}}{\partial{\alpha_t}}=0$，得<br>
+$$\alpha_t=\frac{1}{2}\ln\frac{1-e_t}{e_t}$$</p>
+<div class="note default">
+            <p>\begin{aligned}<br>\frac{\partial{\mathrm{Loss}}}{\partial{\alpha_t}}&amp;=0\<br>\sum_{i=1}<sup>Nw_i</sup>{(t)}\left((e_t-1)e<sup>{-\alpha_t}+e_te</sup>{\alpha_t} \right)&amp;=0\<br>(e_t-1)e<sup>{-\alpha_t}+e_te</sup>{\alpha_t}&amp;=0\<br>e_t-1+e_te^{2\alpha_t}&amp;=0\<br>e^{2\alpha_t}&amp;=\frac{1-e_t}{e_t}\<br>\alpha_t&amp;=\frac{1}{2}\ln\frac{1-e_t}{e_t}<br>\end{aligned}</p>
           </div>
 <div class="note danger">
-            <h2 id="AdaBoost算法"><a href="#AdaBoost算法" class="headerlink" title="AdaBoost算法"></a>AdaBoost算法</h2><p><strong>输入</strong>：</p><ul><li><p>训练数据集$D=\{(x_1,y_1),\cdots,(x_N,y_N)\}$</p><p>其中$x_i\in X\subseteq \mathbb{R}^p,\quad y_i\in Y=\{-1,+1\}$</p></li><li>迭代次数$T$</li><li>初始化训练样本的权值分布<script type="math/tex; mode=display">D_1=(w_1^{(1)},w_2^{(1)},\cdots, w_N^{(1)})</script>其中$w_i^{(1)}=\frac{1}{N},\quad i=1,2,\cdots,N$。</li></ul><p><strong>输出</strong>：最终（强）分类器</p><script type="math/tex; mode=display">H(x)=\mathrm{sign}\left(\sum_{t=1}^T\alpha_t h_t(x)\right)</script><p>对于$t=1,\cdots,T$:</p><ol><li>使用具有权值分布$D_t$的训练数据集进行学习，得到弱分类器$h_t(x)$</li><li>计算$h_t(x)$在训练集上的分类误差率<script type="math/tex; mode=display">e_t=\sum_{i=1}^Nw_i^{(t)}\cdot \mathbf{I}\left(h_t(x_i)\neq y_i \right)=\sum_{h_t(x_i)\neq y_i}w_i^{(t)}</script></li><li>计算$h_t(x)$在强分类器中所占的比重<script type="math/tex; mode=display">\alpha_t=\frac{1}{2}\ln{\frac{1-e_t}{e_t}}</script></li><li>更新训练数据集的权值分布$w_i^{(t+1)}$<br>\begin{aligned}<br>w_i^{(t+1)}&amp;=\frac{w_i^{(t)}}{Z_t}e^{-\alpha_t y_i h_t(x_i)}\\<br>&amp;=\left\{\begin{array}{ll}<br>\frac{w_i^{(t)}}{Z_t}e^{-\alpha_t} &amp; \mathrm{if} \quad h_t(x_i)=y_i\\<br>\frac{w_i^{(t)}}{Z_t}e^{\alpha_t} &amp; \mathrm{if} \quad h_t(x_i)\neq y_i<br>\end{array}\right.\\<br>&amp;=\left\{\begin{array}{ll}<br>\frac{w_i^{(t)}}{Z_t}\sqrt{\frac{e_t}{1-e_t}} &amp; \mathrm{if} \quad h_t(x_i)=y_i\\<br>\frac{w_i^{(t)}}{Z_t}\sqrt{\frac{1-e_t}{e_t}} &amp; \mathrm{if} \quad h_t(x_i)\neq y_i<br>\end{array}\right.<br>\end{aligned}<br>其中$Z_t$是归一化因子（为了使样本的概率分布和为1）<script type="math/tex; mode=display">Z_t=\sum_{i=1}^Nw_i^{(t)}e^{-\alpha_t y_i h_t(x_i)}</script><script type="math/tex; mode=display">\sum_{i=1}^Nw_i^{(t+1)}=1</script></li></ol>
+            <h2 id="AdaBoost算法"><a class="header-anchor" href="#AdaBoost算法"></a>AdaBoost算法</h2><p><strong>输入</strong>：</p><ul><li>训练数据集$D={(x_1,y_1),\cdots,(x_N,y_N)}$</li></ul><p>其中$x_i\in X\subseteq \mathbb{R}^p,\quad y_i\in Y={-1,+1}$</p><ul><li>迭代次数$T$</li><li>初始化训练样本的权值分布<br>$$D_1=(w_1<sup>{(1)},w_2</sup>{(1)},\cdots, w_N^{(1)})$$<br>其中$w_i^{(1)}=\frac{1}{N},\quad i=1,2,\cdots,N$。</li></ul><p><strong>输出</strong>：最终（强）分类器<br>$$H(x)=\mathrm{sign}\left(\sum_{t=1}^T\alpha_t h_t(x)\right)$$</p><p>对于$t=1,\cdots,T$:</p><ol><li>使用具有权值分布$D_t$的训练数据集进行学习，得到弱分类器$h_t(x)$</li><li>计算$h_t(x)$在训练集上的分类误差率<br>$$e_t=\sum_{i=1}<sup>Nw_i</sup>{(t)}\cdot \mathbf{I}\left(h_t(x_i)\neq y_i \right)=\sum_{h_t(x_i)\neq y_i}w_i^{(t)}$$</li><li>计算$h_t(x)$在强分类器中所占的比重<br>$$\alpha_t=\frac{1}{2}\ln{\frac{1-e_t}{e_t}}$$</li><li>更新训练数据集的权值分布$w_i^{(t+1)}$<br>\begin{aligned}<br>w_i<sup>{(t+1)}&amp;=\frac{w_i</sup>{(t)}}{Z_t}e^{-\alpha_t y_i h_t(x_i)}\<br>&amp;=\left{\begin{array}{ll}<br>\frac{w_i<sup>{(t)}}{Z_t}e</sup>{-\alpha_t} &amp; \mathrm{if} \quad h_t(x_i)=y_i\<br>\frac{w_i<sup>{(t)}}{Z_t}e</sup>{\alpha_t} &amp; \mathrm{if} \quad h_t(x_i)\neq y_i<br>\end{array}\right.\<br>&amp;=\left{\begin{array}{ll}<br>\frac{w_i^{(t)}}{Z_t}\sqrt{\frac{e_t}{1-e_t}} &amp; \mathrm{if} \quad h_t(x_i)=y_i\<br>\frac{w_i^{(t)}}{Z_t}\sqrt{\frac{1-e_t}{e_t}} &amp; \mathrm{if} \quad h_t(x_i)\neq y_i<br>\end{array}\right.<br>\end{aligned}<br>其中$Z_t$是归一化因子（为了使样本的概率分布和为1）<br>$$Z_t=\sum_{i=1}<sup>Nw_i</sup>{(t)}e^{-\alpha_t y_i h_t(x_i)}$$<br>$$\sum_{i=1}<sup>Nw_i</sup>{(t+1)}=1$$</li></ol>
           </div>
 <ul>
 <li>$e_t=0$：完美分类器，分类器的权重为正无穷大</li>
 <li>$e_t=\frac{1}{2}$：比随机猜的分类效果还差的分类器，分类器的权重为0</li>
 <li>$e_t=1$：完美骗子（perfect liar），分类器的权重为负无穷大</li>
 </ul>
-<h2 id="正则化"><a href="#正则化" class="headerlink" title="正则化"></a>正则化</h2><p>为了防止AdaBoost过拟合，通常会在迭代过程中加入正则化项，称之为步长（learning rate）。</p>
-<p>在前面的第$t$次迭代中，得到的组合学习器为</p>
-<script type="math/tex; mode=display">H_t(x)=H_{t-1}(x)+\alpha_t h_t(x)</script><p>加入正则化项，为</p>
-<script type="math/tex; mode=display">H_t(x)=H_{t-1}(x)+\nu \alpha_t h_t(x)</script><p>其中$0&lt; \nu \leq 1$为步长。</p>
+<h2 id="正则化"><a class="header-anchor" href="#正则化"></a>正则化</h2>
+<p>为了防止AdaBoost过拟合，通常会在迭代过程中加入正则化项，称之为步长（learning rate）。</p>
+<p>在前面的第$t$次迭代中，得到的组合学习器为<br>
+$$H_t(x)=H_{t-1}(x)+\alpha_t h_t(x)$$<br>
+加入正则化项，为<br>
+$$H_t(x)=H_{t-1}(x)+\nu \alpha_t h_t(x)$$<br>
+其中$0&lt; \nu \leq 1$为步长。</p>
 <p>对于同一训练集，较小的$\nu$意味着需要更多的弱学习器的迭代次数（$T$需要更大）。</p>
 <p>通常结合<strong>步长</strong>和<strong>迭代最大次数</strong>一起决定算法的拟合效果。</p>
-<h1 id="训练误差分析"><a href="#训练误差分析" class="headerlink" title="训练误差分析"></a>训练误差分析</h1><div class="note success">
-            <p>AdaBoost算法最终分类器的训练误差界为</p><script type="math/tex; mode=display">\frac{1}{N}\sum_{i=1}^N\mathbf{I}\left(H(x_i)\neq y_i \right)\leq \frac{1}{N}\sum_{i=1}^N \exp\left\{-y_i\sum_{t=1}^T\alpha_th_t(x_i) \right\}=\prod_{t=1}^TZ_t</script>
+<h1 id="训练误差分析"><a class="header-anchor" href="#训练误差分析"></a>训练误差分析</h1>
+<div class="note success">
+            <p>AdaBoost算法最终分类器的训练误差界为<br>$$\frac{1}{N}\sum_{i=1}^N\mathbf{I}\left(H(x_i)\neq y_i \right)\leq \frac{1}{N}\sum_{i=1}^N \exp\left{-y_i\sum_{t=1}^T\alpha_th_t(x_i) \right}=\prod_{t=1}^TZ_t$$</p>
           </div>
 <div class="note default">
-            <p><strong>证明</strong>：<br>\begin{aligned}<br>\frac{1}{N}\sum_{i=1}^N \exp\left\{-y_i\sum_{t=1}^T\alpha_th_t(x_i) \right\} &amp;= \frac{1}{N}\sum_{i=1}^N\prod_{t=1}^T\exp\left\{-\alpha_ty_ih_t(x_i)\right\}\\<br>&amp;= \sum_{i=1}^N w_i^{(1)}\prod_{t=1}^T\exp\left\{-\alpha_ty_ih_t(x_i)\right\} \quad (w_1^{(1)}=\frac{1}{N})\\<br>&amp;= Z_1 \sum_{i=1}^N w_i^{(2)}\prod_{t=2}^T\exp\left\{-\alpha_ty_ih_t(x_i)\right\}\quad (Z_tw_i^{(t+1)}=w_i^{(t)}e^{-\alpha_ty_ih_t(x_i)})\\<br>&amp;= Z_1Z_2 \sum_{i=1}^N w_i^{(3)}\prod_{t=3}^T\exp\left\{-\alpha_ty_ih_t(x_i)\right\}\\<br>&amp;=\cdots\\<br>&amp;= Z_1Z_2\cdots Z_{T-1}\sum_{i=1}^N w_i^{(T)}e^{-\alpha_Ty_ih_T(x_i)}\\<br>&amp;=\prod_{t=1}^T Z_t<br>\end{aligned}</p>
+            <p><strong>证明</strong>：<br>\begin{aligned}<br>\frac{1}{N}\sum_{i=1}^N \exp\left{-y_i\sum_{t=1}^T\alpha_th_t(x_i) \right} &amp;= \frac{1}{N}\sum_{i=1}<sup>N\prod_{t=1}</sup>T\exp\left{-\alpha_ty_ih_t(x_i)\right}\<br>&amp;= \sum_{i=1}^N w_i<sup>{(1)}\prod_{t=1}</sup>T\exp\left{-\alpha_ty_ih_t(x_i)\right} \quad (w_1^{(1)}=\frac{1}{N})\<br>&amp;= Z_1 \sum_{i=1}^N w_i<sup>{(2)}\prod_{t=2}</sup>T\exp\left{-\alpha_ty_ih_t(x_i)\right}\quad (Z_tw_i<sup>{(t+1)}=w_i</sup>{(t)}e^{-\alpha_ty_ih_t(x_i)})\<br>&amp;= Z_1Z_2 \sum_{i=1}^N w_i<sup>{(3)}\prod_{t=3}</sup>T\exp\left{-\alpha_ty_ih_t(x_i)\right}\<br>&amp;=\cdots\<br>&amp;= Z_1Z_2\cdots Z_{T-1}\sum_{i=1}^N w_i<sup>{(T)}e</sup>{-\alpha_Ty_ih_T(x_i)}\<br>&amp;=\prod_{t=1}^T Z_t<br>\end{aligned}</p>
           </div>
 <div class="note success">
-            <p>二分类问题AdaBoost的训练误差界为：</p><script type="math/tex; mode=display">\prod_{t=1}^T Z_t=\prod_{t=1}^T \left[2\sqrt{e_t(1-e_t)} \right]=\prod_{t=1}^T \sqrt{1-4\gamma_t^2}\leq \exp\left(-2\sum_{t=1}^T \gamma_t^2 \right)</script><p>其中$\gamma_t=\frac{1}{2}-e_t$</p>
+            <p>二分类问题AdaBoost的训练误差界为：<br>$$\prod_{t=1}^T Z_t=\prod_{t=1}^T \left[2\sqrt{e_t(1-e_t)} \right]=\prod_{t=1}^T \sqrt{1-4\gamma_t^2}\leq \exp\left(-2\sum_{t=1}^T \gamma_t^2 \right)$$<br>其中$\gamma_t=\frac{1}{2}-e_t$</p>
           </div>
 <div class="note default">
-            <p><strong>证明</strong>：<br>因为$\alpha_t=\frac{1}{2}\ln{\frac{1-e_t}{e_t}}$，所以</p><script type="math/tex; mode=display">e^{\alpha_t}=\sqrt{\frac{1-e_t}{e_t}}</script><script type="math/tex; mode=display">e^{-\alpha_t}=\sqrt{\frac{e_t}{1-e_t}}</script><p>\begin{aligned}<br>Z_t &amp;= \sum_{i=1}^N w_i^{(t)}e^{-\alpha_ty_ih_t(x_i)}\\<br>&amp;= \sum_{y_i=h_t(x_i)}w_i^{(t)}e^{-\alpha_t}+\sum_{y_i\neq h_t(x_i)}w_i^{(t)}e^{\alpha_t}\\<br>&amp;= (1-e_t)e^{-\alpha_t}+e_te^{\alpha_t}\\<br>&amp;= 2\sqrt{e_t(1-e_t)}\\<br>&amp;= \sqrt{1-4\gamma_t^2}<br>\end{aligned}</p><p>$\sqrt{1-2x}$在$x=0$的泰勒展开为</p><script type="math/tex; mode=display">\sqrt{1-2x}=1-x-x^2+o(x^3)</script><p>$e^{-x}$在$x=0$的泰勒展开为</p><script type="math/tex; mode=display">e^{-x}=1-x+\frac{1}{2}x^2+o(x^3)</script><p>所以有$\sqrt{1-2x}\leq e^{-x}$。令这里$x=2\gamma_t^2$，则有</p><script type="math/tex; mode=display">\sqrt{1-4\gamma_t^2}\leq \exp(-2\gamma_t^2)</script>
+            <p><strong>证明</strong>：<br>因为$\alpha_t=\frac{1}{2}\ln{\frac{1-e_t}{e_t}}$，所以<br>$$e^{\alpha_t}=\sqrt{\frac{1-e_t}{e_t}}$$<br>$$e^{-\alpha_t}=\sqrt{\frac{e_t}{1-e_t}}$$</p><p>\begin{aligned}<br>Z_t &amp;= \sum_{i=1}^N w_i<sup>{(t)}e</sup>{-\alpha_ty_ih_t(x_i)}\<br>&amp;= \sum_{y_i=h_t(x_i)}w_i<sup>{(t)}e</sup>{-\alpha_t}+\sum_{y_i\neq h_t(x_i)}w_i<sup>{(t)}e</sup>{\alpha_t}\<br>&amp;= (1-e_t)e<sup>{-\alpha_t}+e_te</sup>{\alpha_t}\<br>&amp;= 2\sqrt{e_t(1-e_t)}\<br>&amp;= \sqrt{1-4\gamma_t^2}<br>\end{aligned}</p><p>$\sqrt{1-2x}$在$x=0$的泰勒展开为<br>$$\sqrt{1-2x}=1-x-x<sup>2+o(x</sup>3)$$</p><p>$e^{-x}$在$x=0$的泰勒展开为<br>$$e<sup>{-x}=1-x+\frac{1}{2}x</sup>2+o(x^3)$$<br>所以有$\sqrt{1-2x}\leq e<sup>{-x}$。令这里$x=2\gamma_t</sup>2$，则有<br>$$\sqrt{1-4\gamma_t^2}\leq \exp(-2\gamma_t^2)$$</p>
           </div>
 <div class="note success">
-            <p><strong>训练误差指数下降</strong></p><p>如果存在$\gamma&gt;0$，对所有的$t$有$\gamma_t\geq \gamma$，则</p><script type="math/tex; mode=display">\frac{1}{N}\sum_{i=1}^N\mathbf{I}\left(H(x_i)\neq y_i \right)\leq \exp\left(-2T\gamma^2 \right)</script><p>AdaBoost算法不需要知道下界$\gamma$。</p>
+            <p><strong>训练误差指数下降</strong></p><p>如果存在$\gamma&gt;0$，对所有的$t$有$\gamma_t\geq \gamma$，则<br>$$\frac{1}{N}\sum_{i=1}^N\mathbf{I}\left(H(x_i)\neq y_i \right)\leq \exp\left(-2T\gamma^2 \right)$$<br>AdaBoost算法不需要知道下界$\gamma$。</p>
           </div>
-<h1 id="Python实现"><a href="#Python实现" class="headerlink" title="Python实现"></a>Python实现</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.ensemble <span class="keyword">import</span> AdaBoostClassifier</span><br><span class="line"></span><br><span class="line">clf = AdaBoostClassifier()</span><br><span class="line"><span class="comment">## n_estimators = 50 (默认)</span></span><br><span class="line"><span class="comment">## base_estimator = DecisionTreeClassifier  (默认)</span></span><br><span class="line">clf.fit(X_train, y_train)  <span class="comment">## 训练</span></span><br><span class="line">clf.predict(X_test)  <span class="comment">## 预测</span></span><br></pre></td></tr></table></figure>
-<h1 id="Problems"><a href="#Problems" class="headerlink" title="Problems"></a>Problems</h1><div class="note primary">
-            <h2 id="过拟合？"><a href="#过拟合？" class="headerlink" title="过拟合？"></a>过拟合？</h2><p>AdaBoost算法会尝试尽量拟合好每一点，这样不会导致过拟合吗？<br>The algorithm tries to fit every point, doesn’t it overfit?</p>
+<h1 id="Python实现"><a class="header-anchor" href="#Python实现"></a>Python实现</h1>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.ensemble <span class="keyword">import</span> AdaBoostClassifier</span><br><span class="line"></span><br><span class="line">clf = AdaBoostClassifier()</span><br><span class="line"><span class="comment">## n_estimators = 50 (默认)</span></span><br><span class="line"><span class="comment">## base_estimator = DecisionTreeClassifier  (默认)</span></span><br><span class="line">clf.fit(X_train, y_train)  <span class="comment">## 训练</span></span><br><span class="line">clf.predict(X_test)  <span class="comment">## 预测</span></span><br></pre></td></tr></table></figure>
+<h1 id="Problems"><a class="header-anchor" href="#Problems"></a>Problems</h1>
+<div class="note primary">
+            <h2 id="过拟合？"><a class="header-anchor" href="#过拟合？"></a>过拟合？</h2><p>AdaBoost算法会尝试尽量拟合好每一点，这样不会导致过拟合吗？<br>The algorithm tries to fit every point, doesn’t it overfit?</p>
           </div>
 <div class="note default">
             <p>No, it does not. The answer has been found out through experimental results, there has been speculations but no concrete reasoning available.</p><p>From: <em><a href="https://hackernoon.com/boosting-algorithms-adaboost-gradient-boosting-and-xgboost-f74991cad38c" target="_blank" rel="noopener">Boosting Algorithms: AdaBoost, Gradient Boosting and XGBoost</a></em></p>
           </div>
 <div class="note primary">
-            <h2 id="抗噪能力？"><a href="#抗噪能力？" class="headerlink" title="抗噪能力？"></a>抗噪能力？</h2><p>AdaBoost等几种基本机器学习算法哪个抗噪能力最强，哪个对重采样不敏感？</p>
+            <h2 id="抗噪能力？"><a class="header-anchor" href="#抗噪能力？"></a>抗噪能力？</h2><p>AdaBoost等几种基本机器学习算法哪个抗噪能力最强，哪个对重采样不敏感？</p>
           </div>
 <div class="note default">
             <ol><li>抗噪能力强——对异常点不敏感</li><li>对重采样不敏感——对数据不均衡不敏感</li></ol><ul><li>聚类算法一般抗噪能力强；集成算法对重采样不敏感</li><li>AdaBoost对异常点敏感</li><li>K-Means对异常点敏感</li></ul>
           </div>
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><h2 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h2><ul>
+<h1 id="总结"><a class="header-anchor" href="#总结"></a>总结</h1>
+<h2 id="优点"><a class="header-anchor" href="#优点"></a>优点</h2>
+<ul>
 <li>AdaBoost作为分类器时，分类精度很高</li>
 <li>在AdaBoost的框架下，可以使用各种回归分类模型来构建弱学习器，非常灵活</li>
 <li>作为简单的二分类器时，构造简单，结果可理解</li>
 <li>不容易发生过拟合</li>
 </ul>
-<h2 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h2><ul>
-<li>对异常样本敏感<ul>
+<h2 id="缺点"><a class="header-anchor" href="#缺点"></a>缺点</h2>
+<ul>
+<li>对异常样本敏感</li>
 <li>异常样本在迭代中可能会获得较高的权重，影响最终的强学习器的预测准确性</li>
 </ul>
-</li>
-</ul>
-<h1 id="AdaBoost-vs-GBDT"><a href="#AdaBoost-vs-GBDT" class="headerlink" title="AdaBoost vs GBDT"></a>AdaBoost vs GBDT</h1><div>
+<h1 id="AdaBoost-vs-GBDT"><a class="header-anchor" href="#AdaBoost-vs-GBDT"></a>AdaBoost vs GBDT</h1>
+<div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: center;
-    }
+.dataframe thead th {
+    text-align: center;
+}
+</code></pre>
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -465,9 +491,8 @@
   </tr></tbody>
 </table>
 </div>
-
-
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
+<h1 id="参考资料"><a class="header-anchor" href="#参考资料"></a>参考资料</h1>
+<ul>
 <li><a href="https://zh.wikipedia.org/wiki/AdaBoost" target="_blank" rel="noopener">维基百科-AdaBoost</a></li>
 <li><a href="https://louisscorpio.github.io/2017/11/28/AdaBoost%E5%85%A5%E9%97%A8%E8%AF%A6%E8%A7%A3/" target="_blank" rel="noopener">AdaBoost入门详解</a></li>
 <li><a href="http://www.inf.fu-berlin.de/inst/ag-ki/adaboost4.pdf" target="_blank" rel="noopener">AdaBoost and the Super Bowl of Classifiers A Tutorial Introduction to Adaptive Boosting</a></li>
@@ -492,8 +517,8 @@
   <div id="qr" style="display: none;">
       
       <div style="display: inline-block;">
-        <img src="/images/reward2021.png" alt="Skye WeChat Bezahlung">
-        <p>WeChat Bezahlung</p>
+        <img src="/images/reward2021.png" alt="Skye WeChat Pay">
+        <p>WeChat Pay</p>
       </div>
       
       <div style="display: inline-block;">
@@ -627,13 +652,13 @@
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-count">13</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">56</span>
+        <span class="site-state-item-count">58</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -675,13 +700,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">392k</span>
+    <span title="站点总字数">402k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">5:56</span>
+    <span title="站点阅读时长">6:05</span>
 </div>
 
 

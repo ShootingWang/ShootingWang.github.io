@@ -34,9 +34,10 @@
 <meta property="og:description" content="Let&#39;s Playing Games!">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-05-15T05:40:22.000Z">
-<meta property="article:modified_time" content="2021-03-17T15:07:04.000Z">
+<meta property="article:modified_time" content="2022-03-20T08:51:44.599Z">
 <meta property="article:author" content="Skye">
 <meta property="article:tag" content="数据分析">
+<meta property="article:tag" content="Data Analysis">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="https://github.com/ShootingWang/ShootingWang.github.io/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-%E6%B8%B8%E6%88%8F%E7%B1%BB%E5%90%8D%E8%AF%8D%E5%92%8C%E6%8C%87%E6%A0%87.html">
@@ -267,7 +268,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-03-17 23:07:04" itemprop="dateModified" datetime="2021-03-17T23:07:04+08:00">2021-03-17</time>
+                <time title="修改时间：2022-03-20 16:51:44" itemprop="dateModified" datetime="2022-03-20T16:51:44+08:00">2022-03-20</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -275,7 +276,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/" itemprop="url" rel="index"><span itemprop="name">数据分析</span></a>
+                  <a href="/categories/Data-Analysis-%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/" itemprop="url" rel="index"><span itemprop="name">Data Analysis / 数据分析</span></a>
                 </span>
             </span>
 
@@ -311,298 +312,426 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><center>Let's Playing Games!</center><br><a id="more"></a></p>
-<h1 id="游戏数据名词"><a href="#游戏数据名词" class="headerlink" title="游戏数据名词"></a>游戏数据名词</h1><h2 id="A"><a href="#A" class="headerlink" title="A"></a>A</h2><h3 id="ACU"><a href="#ACU" class="headerlink" title="ACU"></a>ACU</h3><p>Average Concurrent Users<br>平均同时在线用户数</p>
-<h3 id="APA"><a href="#APA" class="headerlink" title="APA"></a>APA</h3><p>Active Payment Account<br>活跃付费用户数</p>
-<h3 id="ARPU"><a href="#ARPU" class="headerlink" title="ARPU"></a>ARPU</h3><p>Average Revenue Per User<br>平均每用户收入</p>
-<script type="math/tex; mode=display">ARPU=\frac{总收入}{活跃用户AU}</script><h3 id="ARPPU"><a href="#ARPPU" class="headerlink" title="ARPPU"></a>ARPPU</h3><p>Average Revenue Per Paying User<br>平均每付费用户收入</p>
-<script type="math/tex; mode=display">ARPPU=\frac{总收入}{活跃付费用户数APA}</script><h3 id="AU"><a href="#AU" class="headerlink" title="AU"></a>AU</h3><p>Active Users<br>活跃用户</p>
+        <center>Let's Playing Games!</center>
+<a id="more"></a>
+<h1 id="游戏数据名词"><a class="header-anchor" href="#游戏数据名词"></a>游戏数据名词</h1>
+<h2 id="A"><a class="header-anchor" href="#A"></a>A</h2>
+<h3 id="ACU"><a class="header-anchor" href="#ACU"></a>ACU</h3>
+<p>Average Concurrent Users<br>
+平均同时在线用户数</p>
+<h3 id="APA"><a class="header-anchor" href="#APA"></a>APA</h3>
+<p>Active Payment Account<br>
+活跃付费用户数</p>
+<h3 id="ARPU"><a class="header-anchor" href="#ARPU"></a>ARPU</h3>
+<p>Average Revenue Per User<br>
+平均每用户收入<br>
+$$ARPU=\frac{总收入}{活跃用户AU}$$</p>
+<h3 id="ARPPU"><a class="header-anchor" href="#ARPPU"></a>ARPPU</h3>
+<p>Average Revenue Per Paying User<br>
+平均每付费用户收入<br>
+$$ARPPU=\frac{总收入}{活跃付费用户数APA}$$</p>
+<h3 id="AU"><a class="header-anchor" href="#AU"></a>AU</h3>
+<p>Active Users<br>
+活跃用户</p>
 <ul>
 <li>日活跃用户（DAU）</li>
 <li>周活跃用户（WAU）</li>
 <li>月活跃用户（MAU）</li>
 </ul>
-<h2 id="D"><a href="#D" class="headerlink" title="D"></a>D</h2><h3 id="DNU"><a href="#DNU" class="headerlink" title="DNU"></a>DNU</h3><p>Daily New Users<br>每日游戏中的新登入用户数量</p>
-<h2 id="L"><a href="#L" class="headerlink" title="L"></a>L</h2><h3 id="LTV"><a href="#LTV" class="headerlink" title="LTV"></a>LTV</h3><p>Life Time Value<br>生命周期价值<br>平均一个用户在首次登录游戏到最后一个登录游戏期间内，为该游戏创造的收入总计</p>
-<h2 id="P"><a href="#P" class="headerlink" title="P"></a>P</h2><h3 id="PU"><a href="#PU" class="headerlink" title="PU"></a>PU</h3><p>Paying User<br>付费用户</p>
-<h3 id="PUR"><a href="#PUR" class="headerlink" title="PUR"></a>PUR</h3><p>Pay User Rate<br>付费比率</p>
-<script type="math/tex; mode=display">PUR=\frac{活跃付费用户数APA}{活跃用户数AU}</script><h3 id="PCU"><a href="#PCU" class="headerlink" title="PCU"></a>PCU</h3><p>Peak Concurrent Users<br>最高同时在线玩家人数</p>
-<h1 id="游戏类型"><a href="#游戏类型" class="headerlink" title="游戏类型"></a>游戏类型</h1><h2 id="ABA"><a href="#ABA" class="headerlink" title="ABA"></a>ABA</h2><p>Asymmetrical Battle Arena<br>非对称性对抗竞技类</p>
+<h2 id="D"><a class="header-anchor" href="#D"></a>D</h2>
+<h3 id="DNU"><a class="header-anchor" href="#DNU"></a>DNU</h3>
+<p>Daily New Users<br>
+每日游戏中的新登入用户数量</p>
+<h2 id="L"><a class="header-anchor" href="#L"></a>L</h2>
+<h3 id="LTV"><a class="header-anchor" href="#LTV"></a>LTV</h3>
+<p>Life Time Value<br>
+生命周期价值<br>
+平均一个用户在首次登录游戏到最后一个登录游戏期间内，为该游戏创造的收入总计</p>
+<h2 id="P"><a class="header-anchor" href="#P"></a>P</h2>
+<h3 id="PU"><a class="header-anchor" href="#PU"></a>PU</h3>
+<p>Paying User<br>
+付费用户</p>
+<h3 id="PUR"><a class="header-anchor" href="#PUR"></a>PUR</h3>
+<p>Pay User Rate<br>
+付费比率<br>
+$$PUR=\frac{活跃付费用户数APA}{活跃用户数AU}$$</p>
+<h3 id="PCU"><a class="header-anchor" href="#PCU"></a>PCU</h3>
+<p>Peak Concurrent Users<br>
+最高同时在线玩家人数</p>
+<h1 id="游戏类型"><a class="header-anchor" href="#游戏类型"></a>游戏类型</h1>
+<h2 id="ABA"><a class="header-anchor" href="#ABA"></a>ABA</h2>
+<p>Asymmetrical Battle Arena<br>
+非对称性对抗竞技类</p>
 <blockquote>
 <p>第五人格（网易）</p>
 </blockquote>
-<h2 id="ACT"><a href="#ACT" class="headerlink" title="ACT"></a>ACT</h2><p>Action Game<br>动作游戏</p>
+<h2 id="ACT"><a class="header-anchor" href="#ACT"></a>ACT</h2>
+<p>Action Game<br>
+动作游戏</p>
 <blockquote>
 <ul>
 <li>战神</li>
-<li>鬼泣</li>
 </ul>
 </blockquote>
-<h2 id="A-RPG"><a href="#A-RPG" class="headerlink" title="A-RPG"></a>A-RPG</h2><p>Action Role Playing Game<br>动作角色扮演游戏</p>
+<ul>
+<li>鬼泣</li>
+</ul>
+<h2 id="A-RPG"><a class="header-anchor" href="#A-RPG"></a>A-RPG</h2>
+<p>Action Role Playing Game<br>
+动作角色扮演游戏</p>
 <blockquote>
 <ul>
 <li>真三国无双</li>
+</ul>
+</blockquote>
+<ul>
 <li>剑灵</li>
 <li>贪玩蓝月</li>
 </ul>
-</blockquote>
-<h2 id="AVG"><a href="#AVG" class="headerlink" title="AVG"></a>AVG</h2><p>Adventure Game<br>冒险游戏、解谜游戏</p>
+<h2 id="AVG"><a class="header-anchor" href="#AVG"></a>AVG</h2>
+<p>Adventure Game<br>
+冒险游戏、解谜游戏</p>
 <blockquote>
 <ul>
 <li>纪念碑谷</li>
+</ul>
+</blockquote>
+<ul>
 <li>机械迷城</li>
 <li>饥荒</li>
 <li>热血无赖</li>
 </ul>
-</blockquote>
-<h2 id="A-AVG"><a href="#A-AVG" class="headerlink" title="A-AVG"></a>A-AVG</h2><p>Action Adventure Game<br>动作冒险游戏</p>
+<h2 id="A-AVG"><a class="header-anchor" href="#A-AVG"></a>A-AVG</h2>
+<p>Action Adventure Game<br>
+动作冒险游戏</p>
 <blockquote>
 <ul>
 <li>古墓丽影</li>
-<li>生化危机</li>
 </ul>
 </blockquote>
-<h2 id="EDU"><a href="#EDU" class="headerlink" title="EDU"></a>EDU</h2><p>Education<br>养成类游戏</p>
+<ul>
+<li>生化危机</li>
+</ul>
+<h2 id="EDU"><a class="header-anchor" href="#EDU"></a>EDU</h2>
+<p>Education<br>
+养成类游戏</p>
 <blockquote>
 <ul>
 <li>美少女梦工厂</li>
+</ul>
+</blockquote>
+<ul>
 <li>明星志愿</li>
 <li>奇迹暖暖</li>
 </ul>
-</blockquote>
-<h2 id="ETC"><a href="#ETC" class="headerlink" title="ETC"></a>ETC</h2><p>Et Cetra<br>其他类型游戏；无法归入类型的游戏、玩家互动内容较少的游戏、作品类型不明了的游戏</p>
+<h2 id="ETC"><a class="header-anchor" href="#ETC"></a>ETC</h2>
+<p>Et Cetra<br>
+其他类型游戏；无法归入类型的游戏、玩家互动内容较少的游戏、作品类型不明了的游戏</p>
 <blockquote>
 <ul>
 <li>恐怖惊魂夜</li>
-<li>潘多拉魔盒</li>
 </ul>
 </blockquote>
-<h2 id="FLY"><a href="#FLY" class="headerlink" title="FLY"></a>FLY</h2><p>模拟飞行</p>
+<ul>
+<li>潘多拉魔盒</li>
+</ul>
+<h2 id="FLY"><a class="header-anchor" href="#FLY"></a>FLY</h2>
+<p>模拟飞行</p>
 <blockquote>
 <ul>
 <li>微软模拟飞行</li>
-<li>飞行俱乐部</li>
 </ul>
 </blockquote>
-<h2 id="FPS"><a href="#FPS" class="headerlink" title="FPS"></a>FPS</h2><p>First-person Shooter<br>第一人称视角射击游戏</p>
+<ul>
+<li>飞行俱乐部</li>
+</ul>
+<h2 id="FPS"><a class="header-anchor" href="#FPS"></a>FPS</h2>
+<p>First-person Shooter<br>
+第一人称视角射击游戏</p>
 <blockquote>
 <ul>
 <li>CS</li>
+</ul>
+</blockquote>
+<ul>
 <li>绝地求生（吃鸡）</li>
 <li>守望先锋（网易代理）</li>
 <li>使命召唤</li>
 <li>荒野行动（网易研发；射击求生手游）</li>
 </ul>
-</blockquote>
-<h2 id="FTG"><a href="#FTG" class="headerlink" title="FTG"></a>FTG</h2><p>Fighting Game<br>格斗游戏</p>
+<h2 id="FTG"><a class="header-anchor" href="#FTG"></a>FTG</h2>
+<p>Fighting Game<br>
+格斗游戏</p>
 <blockquote>
 <ul>
 <li>拳皇</li>
+</ul>
+</blockquote>
+<ul>
 <li>街霸</li>
 <li>双截龙</li>
 </ul>
-</blockquote>
-<h2 id="LVG"><a href="#LVG" class="headerlink" title="LVG"></a>LVG</h2><p>Love Game<br>恋爱游戏</p>
+<h2 id="LVG"><a class="header-anchor" href="#LVG"></a>LVG</h2>
+<p>Love Game<br>
+恋爱游戏</p>
 <blockquote>
 <ul>
 <li>恋与制作人</li>
 </ul>
 </blockquote>
-<h2 id="MMORPG"><a href="#MMORPG" class="headerlink" title="MMORPG"></a>MMORPG</h2><p>Massive Multiplayer Online Role-playing Game<br>大型多人在线角色扮演游戏</p>
+<h2 id="MMORPG"><a class="header-anchor" href="#MMORPG"></a>MMORPG</h2>
+<p>Massive Multiplayer Online Role-playing Game<br>
+大型多人在线角色扮演游戏</p>
 <blockquote>
 <ul>
 <li>魔兽世界（网易独家代理）</li>
+</ul>
+</blockquote>
+<ul>
 <li>剑网3（西山居）</li>
 <li>天下3</li>
 <li>上古世纪</li>
 <li>逆水寒（扮演类、角色类；网易开发）</li>
 <li>梦幻西游（网易自行开发并营运）</li>
 </ul>
-</blockquote>
-<h2 id="MMOARPG"><a href="#MMOARPG" class="headerlink" title="MMOARPG"></a>MMOARPG</h2><p>大型多人在线动作角色扮演游戏</p>
-<h2 id="MOBA"><a href="#MOBA" class="headerlink" title="MOBA"></a>MOBA</h2><p>Multiplayer Online Battle Arena<br>多人联机在线竞技游戏；也可叫ARTS或类dota游戏</p>
-<blockquote>
+<h2 id="MMOARPG"><a class="header-anchor" href="#MMOARPG"></a>MMOARPG</h2>
+<p>大型多人在线动作角色扮演游戏</p>
+<h2 id="MOBA"><a class="header-anchor" href="#MOBA"></a>MOBA</h2>
+<p>Multiplayer Online Battle Arena<br>
+多人联机在线竞技游戏；也可叫ARTS或类dota游戏</p>
+<blockquote></blockquote>
 <ul>
-<li><a href="http://dz.blizzard.cn/" target="_blank" rel="noopener">魔兽争霸</a><ul>
+<li><a href="http://dz.blizzard.cn/" target="_blank" rel="noopener">魔兽争霸</a></li>
 <li>暴雪娱乐开发</li>
 <li><a href="http://dz.blizzard.cn/" target="_blank" rel="noopener">魔兽争霸官方对战平台</a>：网易研发运营，暴雪官方正式授权；平台提供1v1,2v2,Dota,RPG地图等游戏方式</li>
-</ul>
-</li>
-<li>英雄联盟<ul>
+<li>英雄联盟</li>
 <li>简称LOL（League of Legends）</li>
 <li>美国拳头游戏开发</li>
 <li>中国大陆地区腾讯游戏代理运营</li>
-</ul>
-</li>
-<li>王者荣耀<ul>
+<li>王者荣耀
+<ul>
 <li>腾讯</li>
 <li>腾讯第一5v5团队公平竞技手游</li>
 </ul>
 </li>
-<li>决战！平安京<ul>
+<li>决战！平安京</li>
 <li>网易首款MOBA手游</li>
 <li>杭州网易雷火科技有限公司</li>
 <li>2018年1月12日公测</li>
 </ul>
-</li>
-</ul>
-</blockquote>
-<h2 id="MUD"><a href="#MUD" class="headerlink" title="MUD"></a>MUD</h2><p>Multiple User Domain<br>多用户虚拟空间游戏；文字网游的统称；没有图形</p>
+<h2 id="MUD"><a class="header-anchor" href="#MUD"></a>MUD</h2>
+<p>Multiple User Domain<br>
+多用户虚拟空间游戏；文字网游的统称；没有图形</p>
 <blockquote>
 <ul>
 <li>风云</li>
+</ul>
+</blockquote>
+<ul>
 <li>书剑</li>
 <li>英雄坛</li>
 </ul>
-</blockquote>
-<h2 id="MUG"><a href="#MUG" class="headerlink" title="MUG"></a>MUG</h2><p>Music Game<br>音乐游戏</p>
+<h2 id="MUG"><a class="header-anchor" href="#MUG"></a>MUG</h2>
+<p>Music Game<br>
+音乐游戏</p>
 <blockquote>
 <ul>
 <li>节奏大师</li>
+</ul>
+</blockquote>
+<ul>
 <li>初音未来歌姬</li>
 <li>古树旋律</li>
 </ul>
-</blockquote>
-<h2 id="RAC"><a href="#RAC" class="headerlink" title="RAC"></a>RAC</h2><p>Race Game<br>赛车游戏、竞速游戏</p>
+<h2 id="RAC"><a class="header-anchor" href="#RAC"></a>RAC</h2>
+<p>Race Game<br>
+赛车游戏、竞速游戏</p>
 <blockquote>
 <ul>
 <li>极品飞车</li>
+</ul>
+</blockquote>
+<ul>
 <li>狂野飙车</li>
 <li>QQ跑跑卡丁车</li>
 </ul>
-</blockquote>
-<h2 id="RPG"><a href="#RPG" class="headerlink" title="RPG"></a>RPG</h2><p>Role-Playing Game<br>角色扮演游戏</p>
+<h2 id="RPG"><a class="header-anchor" href="#RPG"></a>RPG</h2>
+<p>Role-Playing Game<br>
+角色扮演游戏</p>
 <blockquote>
 <ul>
 <li>天下3</li>
+</ul>
+</blockquote>
+<ul>
 <li>永恒之塔</li>
 <li>魔兽世界</li>
 <li>激战2</li>
-<li>阴阳师<ul>
+<li>阴阳师</li>
 <li>RPG、卡牌类、即时类、扮演类、角色类</li>
 <li>网易自主研发</li>
 <li>2016年6月1日11:00开放Android首测；9月9日全平台公测</li>
 </ul>
-</li>
-</ul>
-</blockquote>
-<h2 id="RTS"><a href="#RTS" class="headerlink" title="RTS"></a>RTS</h2><p>Real-Time Strategy Game<br>即时战略游戏；难度高，注意力集中</p>
+<h2 id="RTS"><a class="header-anchor" href="#RTS"></a>RTS</h2>
+<p>Real-Time Strategy Game<br>
+即时战略游戏；难度高，注意力集中</p>
 <blockquote>
 <ul>
 <li>红色警戒</li>
+</ul>
+</blockquote>
+<ul>
 <li>星际争霸</li>
 <li>魔兽争霸</li>
 <li>三国群英传</li>
 <li>红警</li>
 </ul>
-</blockquote>
-<h2 id="PUZ"><a href="#PUZ" class="headerlink" title="PUZ"></a>PUZ</h2><p>Puzzle Game<br>益智类游戏</p>
+<h2 id="PUZ"><a class="header-anchor" href="#PUZ"></a>PUZ</h2>
+<p>Puzzle Game<br>
+益智类游戏</p>
 <blockquote>
 <ul>
 <li>俄罗斯方块</li>
-<li>天天爱消除</li>
 </ul>
 </blockquote>
-<h2 id="SIM"><a href="#SIM" class="headerlink" title="SIM"></a>SIM</h2><p>Simulation Game<br>模拟经营</p>
+<ul>
+<li>天天爱消除</li>
+</ul>
+<h2 id="SIM"><a class="header-anchor" href="#SIM"></a>SIM</h2>
+<p>Simulation Game<br>
+模拟经营</p>
 <blockquote>
 <ul>
 <li>模拟人生</li>
-<li>模拟城市</li>
 </ul>
 </blockquote>
-<h2 id="SLG"><a href="#SLG" class="headerlink" title="SLG"></a>SLG</h2><p>Strategy Game<br>策略游戏</p>
+<ul>
+<li>模拟城市</li>
+</ul>
+<h2 id="SLG"><a class="header-anchor" href="#SLG"></a>SLG</h2>
+<p>Strategy Game<br>
+策略游戏</p>
 <blockquote>
 <ul>
 <li>汉王纷争</li>
+</ul>
+</blockquote>
+<ul>
 <li>三国志</li>
 <li>部落冲突</li>
 <li>植物大战僵尸</li>
 <li>保卫萝卜</li>
 </ul>
-</blockquote>
-<h2 id="SPG"><a href="#SPG" class="headerlink" title="SPG"></a>SPG</h2><p>Sports Game<br>体育运动类游戏；也叫做SPT</p>
+<h2 id="SPG"><a class="header-anchor" href="#SPG"></a>SPG</h2>
+<p>Sports Game<br>
+体育运动类游戏；也叫做SPT</p>
 <blockquote>
 <ul>
 <li>热血篮球</li>
+</ul>
+</blockquote>
+<ul>
 <li>热血足球</li>
 <li>实况足球</li>
 </ul>
-</blockquote>
-<h2 id="STG"><a href="#STG" class="headerlink" title="STG"></a>STG</h2><p>Shooting Game<br>射击游戏</p>
+<h2 id="STG"><a class="header-anchor" href="#STG"></a>STG</h2>
+<p>Shooting Game<br>
+射击游戏</p>
 <blockquote>
 <ul>
 <li>求生之路</li>
-<li>狙击英雄</li>
 </ul>
 </blockquote>
-<h2 id="TAB"><a href="#TAB" class="headerlink" title="TAB"></a>TAB</h2><p>Table Game<br>桌面游戏、卡牌游戏</p>
+<ul>
+<li>狙击英雄</li>
+</ul>
+<h2 id="TAB"><a class="header-anchor" href="#TAB"></a>TAB</h2>
+<p>Table Game<br>
+桌面游戏、卡牌游戏</p>
 <blockquote>
 <ul>
 <li>三国杀</li>
+</ul>
+</blockquote>
+<ul>
 <li>游戏王</li>
 <li>麻将</li>
 <li>斗地主</li>
 <li>大富翁</li>
 <li>飞行棋</li>
 </ul>
-</blockquote>
-<h2 id="TCG"><a href="#TCG" class="headerlink" title="TCG"></a>TCG</h2><p>Trading Card Game<br>集换式卡牌游戏</p>
+<h2 id="TCG"><a class="header-anchor" href="#TCG"></a>TCG</h2>
+<p>Trading Card Game<br>
+集换式卡牌游戏</p>
 <blockquote>
 <ul>
 <li>万智牌</li>
-<li>炉石传说<ul>
-<li>网易独家代理</li>
-</ul>
-</li>
 </ul>
 </blockquote>
-<h2 id="TD"><a href="#TD" class="headerlink" title="TD"></a>TD</h2><p>Tower Defence<br>塔防游戏</p>
+<ul>
+<li>炉石传说</li>
+<li>网易独家代理</li>
+</ul>
+<h2 id="TD"><a class="header-anchor" href="#TD"></a>TD</h2>
+<p>Tower Defence<br>
+塔防游戏</p>
 <blockquote>
 <ul>
 <li>梦塔防</li>
-<li>植物大战僵尸</li>
 </ul>
 </blockquote>
-<h2 id="TPS"><a href="#TPS" class="headerlink" title="TPS"></a>TPS</h2><p>Third-person Shooter<br>第三人称射击游戏</p>
+<ul>
+<li>植物大战僵尸</li>
+</ul>
+<h2 id="TPS"><a class="header-anchor" href="#TPS"></a>TPS</h2>
+<p>Third-person Shooter<br>
+第三人称射击游戏</p>
 <blockquote>
 <ul>
-<li>绝地求生<ul>
+<li>绝地求生</li>
+</ul>
+</blockquote>
+<ul>
 <li>韩国蓝洞开发</li>
 <li>中国区<a href="https://pubg.qq.com/#section1" target="_blank" rel="noopener">腾讯</a>独家代理</li>
 <li>战术竞技、沙盒、生存</li>
-</ul>
-</li>
 <li>全球使命</li>
 </ul>
-</blockquote>
-<h2 id="回合制"><a href="#回合制" class="headerlink" title="回合制"></a>回合制</h2><p>以回合算，轮流出招</p>
+<h2 id="回合制"><a class="header-anchor" href="#回合制"></a>回合制</h2>
+<p>以回合算，轮流出招</p>
 <blockquote>
 <ul>
 <li>梦幻西游</li>
-<li>阴阳师</li>
 </ul>
 </blockquote>
-<h2 id="挂机游戏、放置类游戏"><a href="#挂机游戏、放置类游戏" class="headerlink" title="挂机游戏、放置类游戏"></a>挂机游戏、放置类游戏</h2><blockquote>
+<ul>
+<li>阴阳师</li>
+</ul>
+<h2 id="挂机游戏、放置类游戏"><a class="header-anchor" href="#挂机游戏、放置类游戏"></a>挂机游戏、放置类游戏</h2>
+<blockquote>
 <ul>
 <li>旅行青蛙</li>
 </ul>
 </blockquote>
-<h2 id="沙盒游戏"><a href="#沙盒游戏" class="headerlink" title="沙盒游戏"></a>沙盒游戏</h2><p>自由度高、随机时间多、创造性强</p>
+<h2 id="沙盒游戏"><a class="header-anchor" href="#沙盒游戏"></a>沙盒游戏</h2>
+<p>自由度高、随机时间多、创造性强</p>
 <blockquote>
 <ul>
-<li>我的世界<ul>
-<li>网易代理</li>
-</ul>
-</li>
+<li>我的世界</li>
 </ul>
 </blockquote>
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
+<ul>
+<li>网易代理</li>
+</ul>
+<h1 id="参考资料"><a class="header-anchor" href="#参考资料"></a>参考资料</h1>
+<ul>
 <li><a href="https://www.nowcoder.com/questionTerminal/c2922a68c6814e908a5a9a6c6c2c2e39" target="_blank" rel="noopener">对游戏数据名词“ACU”的正确解释</a></li>
 <li><a href="https://www.cnblogs.com/batsing/p/8945299.html" target="_blank" rel="noopener">游戏类型术语</a></li>
 <li><a href="https://baijiahao.baidu.com/s?id=1590728706876159827&amp;wfr=spider&amp;for=pc" target="_blank" rel="noopener">涨知识！游戏分类简称大全，你能说出几个？</a></li>
 <li><a href="http://m.shouji.tgbus.com/view/167479/" target="_blank" rel="noopener">ARPU ARPPU傻傻分不清楚？手游收入指标名词解释</a></li>
 </ul>
-<h1 id="推荐阅读"><a href="#推荐阅读" class="headerlink" title="推荐阅读"></a>推荐阅读</h1><ul>
+<h1 id="推荐阅读"><a class="header-anchor" href="#推荐阅读"></a>推荐阅读</h1>
+<ul>
 <li><a href="https://mp.weixin.qq.com/s?__biz=MzUwOTg5MzE4OA==&amp;mid=2247488312&amp;idx=1&amp;sn=15cead99527e08af918f73a32c316d52&amp;chksm=f90a1c13ce7d95059d476d01dd8253fb3c1d434b46df724e02503fb1f2e5ff26809d3c524105&amp;scene=126&amp;sessionid=1590376367&amp;key=e224f213fcbe8475be62c0fcaeb46d561705d9b3b2b96aec55e6951c968a4144d43ade7fcd8c26ed6f649963fdb7075f37a80b2637f8f03a8eed837d1f0393e643f225279c447ef816eea9250b3a3734&amp;ascene=1&amp;uin=MjAwNDUzMjgxNw%3D%3D&amp;devicetype=Windows+10+x64&amp;version=62090070&amp;lang=zh_CN&amp;exportkey=AUNNELfk9ZRH2RYlfDCiNh4%3D&amp;pass_ticket=dumMe3Tdy3VO0qIoGgtupqmfKcMRb2kALcjVjgyoVh5XRcrNH2drjEVDLTpmJT%2Fl" target="_blank" rel="noopener">业务数据分析实战思路 —— 网络游戏</a></li>
 </ul>
 
@@ -619,8 +748,8 @@
   <div id="qr" style="display: none;">
       
       <div style="display: inline-block;">
-        <img src="/images/reward2021.png" alt="Skye WeChat Bezahlung">
-        <p>WeChat Bezahlung</p>
+        <img src="/images/reward2021.png" alt="Skye WeChat Pay">
+        <p>WeChat Pay</p>
       </div>
       
       <div style="display: inline-block;">
@@ -654,6 +783,7 @@
       <footer class="post-footer">
           <div class="post-tags">
               <a href="/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/" rel="tag"># 数据分析</a>
+              <a href="/tags/Data-Analysis/" rel="tag"># Data Analysis</a>
           </div>
 
         
@@ -749,13 +879,13 @@
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-count">13</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">56</span>
+        <span class="site-state-item-count">58</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -797,13 +927,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">392k</span>
+    <span title="站点总字数">402k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">5:56</span>
+    <span title="站点阅读时长">6:05</span>
 </div>
 
 

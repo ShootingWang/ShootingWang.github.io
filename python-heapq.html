@@ -303,28 +303,45 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><center></center><br><a id="more"></a></p>
-<h1 id="堆队列"><a href="#堆队列" class="headerlink" title="堆队列"></a>堆队列</h1><p>堆队列，也称为优先级队列。</p>
+        <center></center>
+<a id="more"></a>
+<h1 id="堆队列"><a class="header-anchor" href="#堆队列"></a>堆队列</h1>
+<p>堆队列，也称为优先级队列。</p>
 <p>堆是一个二叉树，它的每个父节点的值都只会小于或大于所有孩子节点（的值），原理与<a href="/Algo-%E5%A0%86%E6%8E%92%E5%BA%8F.html" title="Algorithm | 堆排序">Algorithm | 堆排序</a>极为相似。</p>
-<h2 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h2><ul>
-<li>最小的元素总是在根结点。<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">nums = [<span class="number">2</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">1</span>, <span class="number">54</span>, <span class="number">23</span>, <span class="number">132</span>]</span><br><span class="line">heap = []</span><br><span class="line"><span class="keyword">for</span> num <span class="keyword">in</span> nums:</span><br><span class="line">    heapq.heappush(heap, num)  <span class="comment"># 加入堆</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">heap[<span class="number">0</span>]  <span class="comment">## 获取最小值</span></span><br><span class="line"><span class="comment"># 1</span></span><br></pre></td></tr></table></figure></li>
-<li>堆的值也可以是元组，可以实现对带权值的元素进行排序<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">h = []</span><br><span class="line">heapq.heappush(h, (<span class="number">5</span>, <span class="string">'write code'</span>))</span><br><span class="line">heapq.heappush(h, (<span class="number">7</span>, <span class="string">'release product'</span>))</span><br><span class="line">heapq.heappush(h, (<span class="number">1</span>, <span class="string">'write spec'</span>))</span><br><span class="line">heapq.heappush(h, (<span class="number">3</span>, <span class="string">'create tests'</span>))</span><br><span class="line">h</span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">[(1, 'write spec'),</span></span><br><span class="line"><span class="string"> (3, 'create tests'),</span></span><br><span class="line"><span class="string"> (5, 'write code'),</span></span><br><span class="line"><span class="string"> (7, 'release product')]</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line">heapq.heappop(h)</span><br><span class="line"><span class="comment"># (1, 'write spec')</span></span><br></pre></td></tr></table></figure>
-</li>
+<h2 id="特点"><a class="header-anchor" href="#特点"></a>特点</h2>
+<ul>
+<li>最小的元素总是在根结点。</li>
 </ul>
-<h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><h2 id="heapify"><a href="#heapify" class="headerlink" title="heapify()"></a>heapify()</h2><p>将列表转换为堆结构<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">nums = [<span class="number">2</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">1</span>, <span class="number">54</span>, <span class="number">23</span>, <span class="number">132</span>]</span><br><span class="line">heapq.heapify(nums)</span><br><span class="line">nums</span><br><span class="line"><span class="comment"># [1, 2, 5, 3, 54, 23, 132]</span></span><br></pre></td></tr></table></figure></p>
-<h2 id="heapmerge"><a href="#heapmerge" class="headerlink" title="heapmerge()"></a>heapmerge()</h2><p>合并多个排序后的序列成为一个排序后的序列，返回排序后的值的迭代器。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">nums = [<span class="number">2</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">1</span>, <span class="number">54</span>, <span class="number">23</span>, <span class="number">132</span>]</span><br><span class="line">heap = []</span><br><span class="line"><span class="keyword">for</span> num <span class="keyword">in</span> nums:</span><br><span class="line">    heapq.heappush(heap, num)  <span class="comment"># 加入堆</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">heap[<span class="number">0</span>]  <span class="comment">## 获取最小值</span></span><br><span class="line"><span class="comment"># 1</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>堆的值也可以是元组，可以实现对带权值的元素进行排序</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">h = []</span><br><span class="line">heapq.heappush(h, (<span class="number">5</span>, <span class="string">'write code'</span>))</span><br><span class="line">heapq.heappush(h, (<span class="number">7</span>, <span class="string">'release product'</span>))</span><br><span class="line">heapq.heappush(h, (<span class="number">1</span>, <span class="string">'write spec'</span>))</span><br><span class="line">heapq.heappush(h, (<span class="number">3</span>, <span class="string">'create tests'</span>))</span><br><span class="line">h</span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">[(1, 'write spec'),</span></span><br><span class="line"><span class="string"> (3, 'create tests'),</span></span><br><span class="line"><span class="string"> (5, 'write code'),</span></span><br><span class="line"><span class="string"> (7, 'release product')]</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line">heapq.heappop(h)</span><br><span class="line"><span class="comment"># (1, 'write spec')</span></span><br></pre></td></tr></table></figure>
+<h1 id="函数"><a class="header-anchor" href="#函数"></a>函数</h1>
+<h2 id="heapify"><a class="header-anchor" href="#heapify"></a>heapify()</h2>
+<p>将列表转换为堆结构</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">nums = [<span class="number">2</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">1</span>, <span class="number">54</span>, <span class="number">23</span>, <span class="number">132</span>]</span><br><span class="line">heapq.heapify(nums)</span><br><span class="line">nums</span><br><span class="line"><span class="comment"># [1, 2, 5, 3, 54, 23, 132]</span></span><br></pre></td></tr></table></figure>
+<h2 id="heapmerge"><a class="header-anchor" href="#heapmerge"></a>heapmerge()</h2>
+<p>合并多个排序后的序列成为一个排序后的序列，返回排序后的值的迭代器。</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">num1 = [<span class="number">32</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">34</span>, <span class="number">54</span>, <span class="number">23</span>, <span class="number">132</span>]</span><br><span class="line">num2 = [<span class="number">23</span>, <span class="number">2</span>, <span class="number">12</span>, <span class="number">656</span>, <span class="number">324</span>, <span class="number">23</span>, <span class="number">54</span>]</span><br><span class="line">num1 = sorted(num1)</span><br><span class="line">num2 = sorted(num2)</span><br><span class="line"></span><br><span class="line">res = heapq.merge(num1, num2)</span><br><span class="line">print(list(res))</span><br><span class="line"><span class="comment"># [2, 3, 5, 12, 23, 23, 23, 32, 34, 54, 54, 132, 324, 656]</span></span><br></pre></td></tr></table></figure>
-<h2 id="heappop"><a href="#heappop" class="headerlink" title="heappop()"></a>heappop()</h2><p>将最小值弹出</p>
+<h2 id="heappop"><a class="header-anchor" href="#heappop"></a>heappop()</h2>
+<p>将最小值弹出</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">print([heapq.heappop(nums) <span class="keyword">for</span> _ <span class="keyword">in</span> range(len(nums))])  <span class="comment"># 堆排序结果</span></span><br><span class="line"><span class="comment"># [1, 2, 3, 5, 23, 54, 132]</span></span><br><span class="line"></span><br><span class="line">nums = [<span class="number">2</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">1</span>, <span class="number">54</span>, <span class="number">23</span>, <span class="number">132</span>]</span><br><span class="line">heapq.heapify(nums)  <span class="comment">## 将列表转换为堆结构</span></span><br><span class="line">heapq.heappop(nums)  <span class="comment">## 将堆结构的最小值弹出</span></span><br><span class="line"><span class="comment"># 1</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 实现堆排序</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">heapsort</span><span class="params">(iterable)</span>:</span></span><br><span class="line">    h = []</span><br><span class="line">    <span class="keyword">for</span> value <span class="keyword">in</span> iterable:</span><br><span class="line">        heappush(h, value)</span><br><span class="line">    <span class="keyword">return</span> [heappop(h) <span class="keyword">for</span> i <span class="keyword">in</span> range(len(h))]</span><br><span class="line"></span><br><span class="line">heapsort([<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">9</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">6</span>, <span class="number">8</span>, <span class="number">0</span>])</span><br><span class="line"><span class="comment"># [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]</span></span><br></pre></td></tr></table></figure>
-<h2 id="heappush"><a href="#heappush" class="headerlink" title="heappush()"></a>heappush()</h2><p>将值加入堆中<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">nums = [<span class="number">2</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">1</span>, <span class="number">54</span>, <span class="number">23</span>, <span class="number">132</span>]</span><br><span class="line">heap = []</span><br><span class="line"><span class="keyword">for</span> num <span class="keyword">in</span> nums:</span><br><span class="line">    heapq.heappush(heap, num)  <span class="comment"># 加入堆</span></span><br><span class="line"></span><br><span class="line">heap</span><br><span class="line"><span class="comment"># [1, 2, 5, 3, 54, 23, 132]</span></span><br></pre></td></tr></table></figure></p>
-<h2 id="heapreplace"><a href="#heapreplace" class="headerlink" title="heapreplace()"></a>heapreplace()</h2><p>删除堆中的最小元素并加入一个元素</p>
+<h2 id="heappush"><a class="header-anchor" href="#heappush"></a>heappush()</h2>
+<p>将值加入堆中</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">nums = [<span class="number">2</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">1</span>, <span class="number">54</span>, <span class="number">23</span>, <span class="number">132</span>]</span><br><span class="line">heap = []</span><br><span class="line"><span class="keyword">for</span> num <span class="keyword">in</span> nums:</span><br><span class="line">    heapq.heappush(heap, num)  <span class="comment"># 加入堆</span></span><br><span class="line"></span><br><span class="line">heap</span><br><span class="line"><span class="comment"># [1, 2, 5, 3, 54, 23, 132]</span></span><br></pre></td></tr></table></figure>
+<h2 id="heapreplace"><a class="header-anchor" href="#heapreplace"></a>heapreplace()</h2>
+<p>删除堆中的最小元素并加入一个元素</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">nums = [<span class="number">2</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">1</span>, <span class="number">54</span>, <span class="number">23</span>, <span class="number">132</span>]</span><br><span class="line">heapq.heapify(nums)  <span class="comment">## 将列表转换为堆结构</span></span><br><span class="line">heapq.heapreplace(nums, <span class="number">55</span>)  <span class="comment">## 删除最小元素，并加入55</span></span><br><span class="line"><span class="comment"># 1</span></span><br><span class="line"></span><br><span class="line">nums</span><br><span class="line"><span class="comment"># [2, 3, 5, 55, 54, 23, 132]</span></span><br></pre></td></tr></table></figure>
-<h2 id="nlargest"><a href="#nlargest" class="headerlink" title="nlargest()"></a>nlargest()</h2><p><code>nlargest(n, lst)</code>：返回列表lst中前n个最大元素</p>
+<h2 id="nlargest"><a class="header-anchor" href="#nlargest"></a>nlargest()</h2>
+<p><code>nlargest(n, lst)</code>：返回列表lst中前n个最大元素</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">lst = [<span class="number">3</span>, <span class="number">42</span>, <span class="number">34</span>, <span class="number">12</span>, <span class="number">2</span>, <span class="number">1</span>, <span class="number">5</span>]</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> heapq</span><br><span class="line"></span><br><span class="line">heapq.nlargest(<span class="number">3</span>, lst)</span><br><span class="line"><span class="comment"># [42, 34, 12]</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> heapq</span><br><span class="line"><span class="keyword">from</span> pprint <span class="keyword">import</span> pprint</span><br><span class="line">portfolio = [</span><br><span class="line">    &#123;<span class="string">'name'</span>: <span class="string">'IBM'</span>, <span class="string">'shares'</span>: <span class="number">100</span>, <span class="string">'price'</span>: <span class="number">91.1</span>&#125;,</span><br><span class="line">    &#123;<span class="string">'name'</span>: <span class="string">'AAPL'</span>, <span class="string">'shares'</span>: <span class="number">50</span>, <span class="string">'price'</span>: <span class="number">543.22</span>&#125;,</span><br><span class="line">    &#123;<span class="string">'name'</span>: <span class="string">'FB'</span>, <span class="string">'shares'</span>: <span class="number">200</span>, <span class="string">'price'</span>: <span class="number">21.09</span>&#125;,</span><br><span class="line">    &#123;<span class="string">'name'</span>: <span class="string">'HPQ'</span>, <span class="string">'shares'</span>: <span class="number">35</span>, <span class="string">'price'</span>: <span class="number">31.75</span>&#125;,</span><br><span class="line">    &#123;<span class="string">'name'</span>: <span class="string">'YHOO'</span>, <span class="string">'shares'</span>: <span class="number">45</span>, <span class="string">'price'</span>: <span class="number">16.35</span>&#125;,</span><br><span class="line">    &#123;<span class="string">'name'</span>: <span class="string">'ACME'</span>, <span class="string">'shares'</span>: <span class="number">75</span>, <span class="string">'price'</span>: <span class="number">115.65</span>&#125;</span><br><span class="line">]</span><br><span class="line">cheap = heapq.nsmallest(<span class="number">3</span>, portfolio, key=<span class="keyword">lambda</span> s: s[<span class="string">'price'</span>])</span><br><span class="line">expensive = heapq.nlargest(<span class="number">3</span>, portfolio, key=<span class="keyword">lambda</span> s: s[<span class="string">'price'</span>])</span><br><span class="line">pprint(cheap)</span><br><span class="line">pprint(expensive)</span><br><span class="line"></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">输出：</span></span><br><span class="line"><span class="string">[&#123;'name': 'YHOO', 'price': 16.35, 'shares': 45&#125;,</span></span><br><span class="line"><span class="string"> &#123;'name': 'FB', 'price': 21.09, 'shares': 200&#125;,</span></span><br><span class="line"><span class="string"> &#123;'name': 'HPQ', 'price': 31.75, 'shares': 35&#125;]</span></span><br><span class="line"><span class="string">[&#123;'name': 'AAPL', 'price': 543.22, 'shares': 50&#125;,</span></span><br><span class="line"><span class="string"> &#123;'name': 'ACME', 'price': 115.65, 'shares': 75&#125;,</span></span><br><span class="line"><span class="string"> &#123;'name': 'IBM', 'price': 91.1, 'shares': 100&#125;]</span></span><br><span class="line"><span class="string">"""</span></span><br></pre></td></tr></table></figure>
-<h2 id="nsmallest"><a href="#nsmallest" class="headerlink" title="nsmallest()"></a>nsmallest()</h2><p><code>heapq.nsmallest(n, lst)</code>：返回列表lst中前n个最小元素</p>
+<h2 id="nsmallest"><a class="header-anchor" href="#nsmallest"></a>nsmallest()</h2>
+<p><code>heapq.nsmallest(n, lst)</code>：返回列表lst中前n个最小元素</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">lst = [<span class="number">3</span>, <span class="number">42</span>, <span class="number">34</span>, <span class="number">12</span>, <span class="number">2</span>, <span class="number">1</span>, <span class="number">5</span>]</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> heapq</span><br><span class="line"></span><br><span class="line">heapq.nsmallest(<span class="number">4</span>, lst)</span><br><span class="line"><span class="comment"># [1, 2, 3, 5]</span></span><br></pre></td></tr></table></figure>
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
+<h1 id="参考资料"><a class="header-anchor" href="#参考资料"></a>参考资料</h1>
+<ul>
 <li><a href="https://mp.weixin.qq.com/s/tMok3YAKvMWnI3eW46OYlg" target="_blank" rel="noopener">Python 优先级队列</a></li>
 <li><a href="https://www.jianshu.com/p/801318c77ab5" target="_blank" rel="noopener">Python标准库模块之heapq</a></li>
 </ul>
@@ -342,8 +359,8 @@
   <div id="qr" style="display: none;">
       
       <div style="display: inline-block;">
-        <img src="/images/reward2021.png" alt="Skye WeChat Bezahlung">
-        <p>WeChat Bezahlung</p>
+        <img src="/images/reward2021.png" alt="Skye WeChat Pay">
+        <p>WeChat Pay</p>
       </div>
       
       <div style="display: inline-block;">
@@ -472,13 +489,13 @@
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-count">13</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">56</span>
+        <span class="site-state-item-count">58</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -520,13 +537,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">392k</span>
+    <span title="站点总字数">402k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">5:56</span>
+    <span title="站点阅读时长">6:05</span>
 </div>
 
 

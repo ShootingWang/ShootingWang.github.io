@@ -34,7 +34,7 @@
 <meta property="og:description" content="Normal Form">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-05-03T02:18:37.000Z">
-<meta property="article:modified_time" content="2020-10-18T03:03:36.000Z">
+<meta property="article:modified_time" content="2022-03-20T08:55:00.790Z">
 <meta property="article:author" content="Skye">
 <meta property="article:tag" content="SQL">
 <meta property="article:tag" content="数据库">
@@ -268,7 +268,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-10-18 11:03:36" itemprop="dateModified" datetime="2020-10-18T11:03:36+08:00">2020-10-18</time>
+                <time title="修改时间：2022-03-20 16:55:00" itemprop="dateModified" datetime="2022-03-20T16:55:00+08:00">2022-03-20</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -276,7 +276,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">数据库</span></a>
+                  <a href="/categories/SQL-%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">SQL / 数据库</span></a>
                 </span>
             </span>
 
@@ -312,8 +312,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><center>Normal Form</center><br><a id="more"></a></p>
-<h1 id="范式"><a href="#范式" class="headerlink" title="范式"></a>范式</h1><p>数据库范式：</p>
+        <center>Normal Form</center>
+<a id="more"></a>
+<h1 id="范式"><a class="header-anchor" href="#范式"></a>范式</h1>
+<p>数据库范式：</p>
 <ol>
 <li>第一范式 1NF：无重复的列</li>
 <li>第二范式 2NF：消除部分函数依赖</li>
@@ -331,19 +333,22 @@
 <li>若关系模式$R\in 1NF$（R符合第一范式），并且每一个非主属性都完全依赖于R的键（码），则$R\in 2NF$（R符合第二范式）</li>
 <li>若关系模式R每一个非主属性既不部分依赖于键（码）也不传递依赖于键（码），则$R\in 3NF$（R符合第三范式）</li>
 </ol>
-<h2 id="第一范式-1NF"><a href="#第一范式-1NF" class="headerlink" title="第一范式 1NF"></a>第一范式 1NF</h2><p>字段具有原子性，不可再分。</p>
+<h2 id="第一范式-1NF"><a class="header-anchor" href="#第一范式-1NF"></a>第一范式 1NF</h2>
+<p>字段具有原子性，不可再分。</p>
 <blockquote>
 <p>无重复的列</p>
+</blockquote>
 <ul>
 <li>所有关系型数据库系统都满足第一范式，数据库表中的字段都是单一属性的，不可再分</li>
 <li>在这种范式下，一个数据列只能有一个值</li>
 <li>一个表满足1NF，如果表的每一行都是唯一的并且任何行都没有包含多个值的列</li>
 <li>在任何一个关系型数据库中，第一范式是对关系模式的基本要求，不满足第一范式的数据库就不是关系型数据库</li>
 </ul>
-</blockquote>
-<h1 id="第二范式-2NF"><a href="#第二范式-2NF" class="headerlink" title="第二范式 2NF"></a>第二范式 2NF</h1><p>要求数据库表中的每个实例（instance）或行必须可以被唯一地区分。</p>
+<h1 id="第二范式-2NF"><a class="header-anchor" href="#第二范式-2NF"></a>第二范式 2NF</h1>
+<p>要求数据库表中的每个实例（instance）或行必须可以被唯一地区分。</p>
 <blockquote>
 <p>非主属性<u>部分依赖</u>于主关键字</p>
+</blockquote>
 <ul>
 <li>满足第二范式必须先满足第一范式</li>
 <li><u>部分依赖</u>是指组合主码的一部分可以函数确定关系的一列</li>
@@ -351,17 +356,17 @@
 <li>通常要含有一个唯一属性列，该列被称为主键（主关键字）</li>
 <li>第二范式要求实体（instance）的属性完全依赖于主关键字</li>
 </ul>
-</blockquote>
-<h2 id="第三范式"><a href="#第三范式" class="headerlink" title="第三范式"></a>第三范式</h2><p>要求一个数据库表中不包含已在其他表中已包含的非主关键字信息</p>
+<h2 id="第三范式"><a class="header-anchor" href="#第三范式"></a>第三范式</h2>
+<p>要求一个数据库表中不包含已在其他表中已包含的非主关键字信息</p>
 <blockquote>
 <p>消除冗余</p>
+</blockquote>
 <ul>
 <li>非主关键字段不能出现<u>传递依赖</u></li>
 <li><u>传递依赖</u>是指一个关系的非码列确定另一个非码列</li>
 <li>如果一个关系有传递依赖，那么它不满足3NF，需要被规范化到3NF</li>
 <li>满足第四范式必然满足第三范式，满足第三范式必然满足第二范式</li>
 </ul>
-</blockquote>
 <div class="note default">
             <p>如：存在一个部门信息表tbl_dept，其中每个部门有部门编号dept_id（主键）、部门名称dept_name、部门简介dept_desc等信息，那么在员工信息表employees中列出部门编号dept_id后就不能再将表tbl_dept中的非主关键字部门名称、部门简介等加入到表employees中。如果不存在部门信息表，则根据第三范式应该构建部门信息表，否则会有大量的信息冗余。</p>
           </div>
@@ -371,13 +376,17 @@
 <li>每一行都能被区分</li>
 <li>每一个表都不包含其他表已包含的非主关键字信息</li>
 </ul>
-<h2 id="巴斯-科德范式-BCNF"><a href="#巴斯-科德范式-BCNF" class="headerlink" title="巴斯-科德范式 BCNF"></a>巴斯-科德范式 BCNF</h2><p>BCNF在3NF的基础上消除对主码子集的依赖。</p>
+<h2 id="巴斯-科德范式-BCNF"><a class="header-anchor" href="#巴斯-科德范式-BCNF"></a>巴斯-科德范式 BCNF</h2>
+<p>BCNF在3NF的基础上消除对主码子集的依赖。</p>
 <ul>
 <li>BCNF是3NF的一个子集，即满足BCNF必须满足3NF</li>
 <li>消除了删除异常、插入异常、更新异常</li>
 <li>BCNF实际是对3NF的修正，使数据库冗余度更小</li>
 </ul>
-<h2 id="第四范式-4NF"><a href="#第四范式-4NF" class="headerlink" title="第四范式 4NF"></a>第四范式 4NF</h2><h2 id="第五范式-5NF"><a href="#第五范式-5NF" class="headerlink" title="第五范式 5NF"></a>第五范式 5NF</h2><h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
+<h2 id="第四范式-4NF"><a class="header-anchor" href="#第四范式-4NF"></a>第四范式 4NF</h2>
+<h2 id="第五范式-5NF"><a class="header-anchor" href="#第五范式-5NF"></a>第五范式 5NF</h2>
+<h1 id="参考资料"><a class="header-anchor" href="#参考资料"></a>参考资料</h1>
+<ul>
 <li><a href="https://mp.weixin.qq.com/s?__biz=MzU5NzkxODMxOA==&amp;tempkey=MTA1OV84Y1hhdGQ4czVBNkVGOEhMMWQ1aXA0VW95VG14UjRKYWhpeUwzZm4yUnYyV0loMU9nekN6cmp6TTQ0LTdpeXNfempxSTlKSktSU2ZKdlBTM2w4REhBdGRQVXBXcDJzZW5XQnJrS3A4a0hpX3Q2ejRXMXV4eS1EOTFMSFIxTDhHa2s1aUp2QTdDWHgzTi1yZ21NS2toR2lLSVo4OGhrVHhObXRnOVZRfn4%3D&amp;chksm=7e4d524e493adb5865db235ecd5b893bf9916fb11b6c00e5ee583c6c70add792cafe9c81c76f#rd" target="_blank" rel="noopener">数据库三范式</a></li>
 <li><a href="https://www.cnblogs.com/ktao/p/7775100.html" target="_blank" rel="noopener">第一、第二、第三范式之间的理解和比较</a></li>
 </ul>
@@ -395,8 +404,8 @@
   <div id="qr" style="display: none;">
       
       <div style="display: inline-block;">
-        <img src="/images/reward2021.png" alt="Skye WeChat Bezahlung">
-        <p>WeChat Bezahlung</p>
+        <img src="/images/reward2021.png" alt="Skye WeChat Pay">
+        <p>WeChat Pay</p>
       </div>
       
       <div style="display: inline-block;">
@@ -526,13 +535,13 @@
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-count">13</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">56</span>
+        <span class="site-state-item-count">58</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -574,13 +583,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">392k</span>
+    <span title="站点总字数">402k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">5:56</span>
+    <span title="站点阅读时长">6:05</span>
 </div>
 
 
