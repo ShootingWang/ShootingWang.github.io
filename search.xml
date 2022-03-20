@@ -2341,13 +2341,13 @@ window.onresize=function(){
 </script>
 <h1 id="样例"><a class="header-anchor" href="#样例"></a>样例</h1>
 <h2 id="饼图"><a class="header-anchor" href="#饼图"></a>饼图</h2>
-<div id="echarts7147" style="width: 85%;height: 800px;margin: 0 auto"></div>
+<div id="echarts3696" style="width: 85%;height: 800px;margin: 0 auto"></div>
+<script src="https://cdn.bootcss.com/echarts/4.3.0/echarts.common.min.js"></script>
 <script type="text/javascript">
-        // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts7147'));
-
-        // 指定图表的配置项和数据
-        var option = // 800表示图表展示的高度为800px
+	// 基于准备好的dom，初始化echarts实例
+	var myChart = echarts.init(document.getElementById('echarts3696'));
+	// 指定图表的配置项和数据
+	// 800表示图表展示的高度为800px
 // '85%'表示图表展示的宽度为85%
 {
     title: {
@@ -2389,9 +2389,8 @@ window.onresize=function(){
         }
     ]
 }
-
-        // 使用刚指定的配置项和数据显示图表。
-        myChart.setOption(option);
+	// 使用刚指定的配置项和数据显示图表。
+	myChart.setOption(option);
 </script>
 <h2 id="折线图"><a class="header-anchor" href="#折线图"></a>折线图</h2>
 <h2 id="柱状图"><a class="header-anchor" href="#柱状图"></a>柱状图</h2>
@@ -12309,41 +12308,60 @@ $$IDFA\rightarrow IDFV\rightarrow UDID$$</p>
   <entry>
     <title>假设检验 | 卡方检验</title>
     <url>/%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C-%E5%8D%A1%E6%96%B9%E6%A3%80%E9%AA%8C.html</url>
-    <content><![CDATA[<p><center>$\chi^2$-test</center><br><a id="more"></a></p>
-<h1 id="卡方检验"><a href="#卡方检验" class="headerlink" title="卡方检验"></a>卡方检验</h1><ul>
+    <content><![CDATA[<center>$\chi^2$-test</center>
+<a id="more"></a>
+<h1 id="卡方检验"><a class="header-anchor" href="#卡方检验"></a>卡方检验</h1>
+<ul>
 <li>用于检验单个正态总体方差</li>
 </ul>
 <p>假设$x_1,\cdots,x_n$是来自正态总体$N(\mu,\sigma^2)$的样本，对方差考虑如下三个检验问题：</p>
 <ol>
-<li><script type="math/tex; mode=display">H_0:\sigma^2 \leq \sigma_0^2 \quad \mathrm{vs} \quad H_1:\sigma^2 > \sigma^2_0</script></li>
-<li><script type="math/tex; mode=display">H_0:\sigma^2 \geq \sigma_0^2 \quad \mathrm{vs} \quad H_1:\sigma^2 < \sigma^2_0</script></li>
-<li><script type="math/tex; mode=display">H_0:\sigma^2 = \sigma_0^2 \quad \mathrm{vs} \quad H_1:\sigma^2 \neq \sigma^2_0</script></li>
+<li>$$H_0:\sigma^2 \leq \sigma_0^2 \quad \mathrm{vs} \quad H_1:\sigma^2 &gt; \sigma^2_0$$</li>
+<li>$$H_0:\sigma^2 \geq \sigma_0^2 \quad \mathrm{vs} \quad H_1:\sigma^2 &lt; \sigma^2_0$$</li>
+<li>$$H_0:\sigma^2 = \sigma_0^2 \quad \mathrm{vs} \quad H_1:\sigma^2 \neq \sigma^2_0$$</li>
 </ol>
 <p>其中$\sigma_0^2$是已知常数。通常假定$\mu$未知。</p>
-<p>以上假设检验采用的<strong>检验统计量</strong>为</p>
-<script type="math/tex; mode=display">\chi^ = (n-1) \frac{s^2}{ \sigma_0^2 }</script><p>当$ \sigma^2 = \sigma_0^2 $时，有$ \chi^2 \sim \chi^2(n-1)$。</p>
-<p>若取显著性水平为$\alpha$，则对应三个检验问题的拒绝域分别为</p>
-<script type="math/tex; mode=display">W_1=\{\chi^2 \geq \chi^2_{ 1-\alpha }(n-1) \}</script><script type="math/tex; mode=display">W_2=\{\chi^2 \leq \chi^2_\alpha(n-1) \}</script><script type="math/tex; mode=display">W_3=\{\chi^2 \leq \chi^2_{ \frac{ \alpha }{2} }(n-1) \} \mbox{或} \{ \chi^2 \geq \chi_{ 1-\frac{\alpha}{2} }(n-1) \}</script><ul>
+<p>以上假设检验采用的<strong>检验统计量</strong>为<br>
+$$ \chi^ = (n-1) \frac{s^2}{ \sigma_0^2 }$$</p>
+<p>当$ \sigma^2 = \sigma_0^2 $时，有$ \chi^2 \sim \chi^2(n-1)$。</p>
+<p>若取显著性水平为$\alpha$，则对应三个检验问题的拒绝域分别为<br>
+$$W_1={\chi^2 \geq \chi^2_{ 1-\alpha }(n-1) }$$<br>
+$$W_2={\chi^2 \leq \chi^2_\alpha(n-1) }$$<br>
+$$W_3={\chi^2 \leq \chi^2_{ \frac{ \alpha }{2} }(n-1) } \mbox{或} { \chi^2 \geq \chi_{ 1-\frac{\alpha}{2} }(n-1) }$$</p>
+<ul>
 <li>$\chi^2$分布是偏态分布</li>
 </ul>
-<p>三个检验问题的p值分别为</p>
-<script type="math/tex; mode=display">p_1=P(\chi^2 \geq \chi_0^2)</script><script type="math/tex; mode=display">p_2=P(\chi^2 \leq \chi_0^2)</script><script type="math/tex; mode=display">p_3=2 \min \left\{ P(\chi\geq\chi^2_0),P(\chi^2\leq\chi^2_0) \right\}</script><h1 id="chi-2-拟合优度检验"><a href="#chi-2-拟合优度检验" class="headerlink" title="$\chi^2$拟合优度检验"></a>$\chi^2$拟合优度检验</h1><p>分类数据的$\chi^2$拟合优度检验</p>
-<p>根据某项指标，总体被分为$K$类：$A_1,A_2,\cdots,A_K$。关心各类元素在总体中所占的比率：</p>
-<script type="math/tex; mode=display">H_0:A_i \mbox{所占的比率是} p_{i0}, \quad i=1,\cdots,K.</script><p>其中，$p_{i0}$已知且满足$\sum_{i=1}^Kp_{i0}=1$。</p>
+<p>三个检验问题的p值分别为<br>
+$$p_1=P(\chi^2 \geq \chi_0^2)$$<br>
+$$p_2=P(\chi^2 \leq \chi_0^2)$$<br>
+$$p_3=2 \min \left{ P(\chi\geq\chi<sup>2_0),P(\chi</sup>2\leq\chi^2_0) \right} $$</p>
+<h1 id="chi-2-拟合优度检验"><a class="header-anchor" href="#chi-2-拟合优度检验"></a>$\chi^2$拟合优度检验</h1>
+<p>分类数据的$\chi^2$拟合优度检验</p>
+<p>根据某项指标，总体被分为$K$类：$A_1,A_2,\cdots,A_K$。关心各类元素在总体中所占的比率：<br>
+$$H_0:A_i \mbox{所占的比率是} p_{i0}, \quad i=1,\cdots,K.$$<br>
+其中，$p_{i0}$已知且满足$\sum_{i=1}^Kp_{i0}=1$。</p>
 <p>记$x_1,\cdots,x_n$是从该总体抽出的样本，且其中属于$A_i$类别的样本数为$n_i$。</p>
-<p>当零假设$H_0$成立时，在$n$个样本中属于$A_i$类的“理论个数”/“期望个数”为$np_{i0}$，而实际观测得到的值是$n_i$，当$H_0$成立时，$n_i$与$np_{i0}$应相差不大。因此，使用统计量（Pearson提出的）</p>
-<script type="math/tex; mode=display">\chi^2 = \sum_{i=1}^K \frac{(n_i-np_{i0})^2}{np_{i0}}</script><p>来衡量“理论个数”$np_{i0}$与实际个数$n_i$间的差异。</p>
-<p>当$H_0$为真时，该统计量的值应该比较小。因此，拒绝域为</p>
-<script type="math/tex; mode=display">\{\chi^2\geq c\}</script><p>其中$c$为待确定的临界值。</p>
+<p>当零假设$H_0$成立时，在$n$个样本中属于$A_i$类的“理论个数”/“期望个数”为$np_{i0}$，而实际观测得到的值是$n_i$，当$H_0$成立时，$n_i$与$np_{i0}$应相差不大。因此，使用统计量（Pearson提出的）<br>
+$$\chi^2 = \sum_{i=1}^K \frac{(n_i-np_{i0})^2}{np_{i0}} $$<br>
+来衡量“理论个数”$np_{i0}$与实际个数$n_i$间的差异。</p>
+<p>当$H_0$为真时，该统计量的值应该比较小。因此，拒绝域为<br>
+$${\chi^2\geq c}$$<br>
+其中$c$为待确定的临界值。</p>
 <div class="note success">
-            <p><strong>定理*</strong></p><p>在前述各项假定下，在$H_0$成立时，检验统计量$\chi^2 = \sum_{i=1}^K \frac{(n_i-np_{i0})^2}{np_{i0}}$有</p><script type="math/tex; mode=display">\chi^2\stackrel{L}{\longrightarrow} \chi^2(K-1)</script>
+            <p><strong>定理</strong>*</p><p>在前述各项假定下，在$H_0$成立时，检验统计量$\chi^2 = \sum_{i=1}^K \frac{(n_i-np_{i0})^2}{np_{i0}}$有<br>$$\chi^2\stackrel{L}{\longrightarrow} \chi^2(K-1)$$</p>
           </div>
-<p>显著性水平为$\alpha$时检验的拒绝域为</p>
-<script type="math/tex; mode=display">W=\{ \chi^2 \geq \chi^2_{1-\alpha} (K-1) \}</script><p>在实际问题中，第$i$类$A_i$出现的概率$p_{i}$并不一定已知，可以先用最大似然估计方法估计出$p_i$依赖的参数（$r$个），然后再算出$p_i$的估计值<br>$\hat{p}_i$，则统计量为</p>
-<script type="math/tex; mode=display">\chi^2 = \sum_{i=1}^K \frac{(n_i - n \hat{p}_i )^2}{n \hat{p}_i}</script><p>当$n\rightarrow \infty$时，该统计量渐近服从自由度为$K-r-1$的$\chi^2$分布。</p>
+<p>显著性水平为$\alpha$时检验的拒绝域为<br>
+$$W={ \chi^2 \geq \chi^2_{1-\alpha} (K-1) }$$</p>
+<p>在实际问题中，第$i$类$A_i$出现的概率$p_{i}$并不一定已知，可以先用最大似然估计方法估计出$p_i$依赖的参数（$r$个），然后再算出$p_i$的估计值<br>
+$\hat{p}<em>i$，则统计量为<br>
+$$ \chi^2 = \sum</em>{i=1}^K \frac{(n_i - n \hat{p}_i )^2}{n \hat{p}_i}$$<br>
+当$n\rightarrow \infty$时，该统计量渐近服从自由度为$K-r-1$的$\chi^2$分布。</p>
 <p>上述两个检验统计量主要用于大样本场合，在实际应用中，一般要求各类的观测数均不小于5。当有些类的样本数不满足要求时，需要将一些相邻的类合并以达到要求。</p>
-<h1 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h1><h2 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> scipy.stats <span class="keyword">import</span> chi2_contingency</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">chi2_test</span><span class="params">(df1, df2, col)</span>:</span></span><br><span class="line">     <span class="string">'''</span></span><br><span class="line"><span class="string">     ### input ###</span></span><br><span class="line"><span class="string">     df1, df2: 待检验的两组样本（DataFrame）</span></span><br><span class="line"><span class="string">     col: 待检验的指标（列名）</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">     ### output ###</span></span><br><span class="line"><span class="string">     stat: 检验统计量</span></span><br><span class="line"><span class="string">     pval: 检验p值</span></span><br><span class="line"><span class="string">     d_f: 统计量分布的自由度</span></span><br><span class="line"><span class="string">     expected: 统计量的期望值</span></span><br><span class="line"><span class="string">     '''</span></span><br><span class="line">     n_table = []</span><br><span class="line"></span><br><span class="line">     vals1 = df1[col].unique().to_list()</span><br><span class="line">     vals2 = df2[col].unique().to_list()</span><br><span class="line">     col_vals = set(vals1 + vals2)  <span class="comment">## 待检验指标的类别枚举值</span></span><br><span class="line"></span><br><span class="line">     <span class="keyword">for</span> val <span class="keyword">in</span> col_vals:</span><br><span class="line">          <span class="keyword">if</span> val <span class="keyword">in</span> vals1:</span><br><span class="line">               a = len(df1[df1[col] == val])</span><br><span class="line">          <span class="keyword">else</span>:</span><br><span class="line">               a = <span class="number">0</span></span><br><span class="line">          <span class="keyword">if</span> val <span class="keyword">in</span> vals2:</span><br><span class="line">               b = len(df2[df2[col] == val])</span><br><span class="line">          <span class="keyword">else</span>:</span><br><span class="line">               b = <span class="number">0</span></span><br><span class="line">          n_table.append([a, b])</span><br><span class="line">     </span><br><span class="line">     stat, pval, d_f, expected = chi2_contingency(n_table)</span><br><span class="line">     <span class="keyword">return</span> pval</span><br></pre></td></tr></table></figure>
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
+<h1 id="实现代码"><a class="header-anchor" href="#实现代码"></a>实现代码</h1>
+<h2 id="Python"><a class="header-anchor" href="#Python"></a>Python</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> scipy.stats <span class="keyword">import</span> chi2_contingency</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">chi2_test</span><span class="params">(df1, df2, col)</span>:</span></span><br><span class="line">     <span class="string">'''</span></span><br><span class="line"><span class="string">     ### input ###</span></span><br><span class="line"><span class="string">     df1, df2: 待检验的两组样本（DataFrame）</span></span><br><span class="line"><span class="string">     col: 待检验的指标（列名）</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">     ### output ###</span></span><br><span class="line"><span class="string">     stat: 检验统计量</span></span><br><span class="line"><span class="string">     pval: 检验p值</span></span><br><span class="line"><span class="string">     d_f: 统计量分布的自由度</span></span><br><span class="line"><span class="string">     expected: 统计量的期望值</span></span><br><span class="line"><span class="string">     '''</span></span><br><span class="line">     n_table = []</span><br><span class="line"></span><br><span class="line">     vals1 = df1[col].unique().to_list()</span><br><span class="line">     vals2 = df2[col].unique().to_list()</span><br><span class="line">     col_vals = set(vals1 + vals2)  <span class="comment">## 待检验指标的类别枚举值</span></span><br><span class="line"></span><br><span class="line">     <span class="keyword">for</span> val <span class="keyword">in</span> col_vals:</span><br><span class="line">          <span class="keyword">if</span> val <span class="keyword">in</span> vals1:</span><br><span class="line">               a = len(df1[df1[col] == val])</span><br><span class="line">          <span class="keyword">else</span>:</span><br><span class="line">               a = <span class="number">0</span></span><br><span class="line">          <span class="keyword">if</span> val <span class="keyword">in</span> vals2:</span><br><span class="line">               b = len(df2[df2[col] == val])</span><br><span class="line">          <span class="keyword">else</span>:</span><br><span class="line">               b = <span class="number">0</span></span><br><span class="line">          n_table.append([a, b])</span><br><span class="line">     </span><br><span class="line">     stat, pval, d_f, expected = chi2_contingency(n_table)</span><br><span class="line">     <span class="keyword">return</span> pval</span><br></pre></td></tr></table></figure>
+<h1 id="参考资料"><a class="header-anchor" href="#参考资料"></a>参考资料</h1>
+<ul>
 <li><a href="https://book.douban.com/subject/5998092/" target="_blank" rel="noopener">概率论与数理统计教程</a></li>
 </ul>
 ]]></content>
@@ -17276,8 +17294,8 @@ $$a^*=\arg\max_{a\in A} g(D,a)$$</li>
         <tag>算法</tag>
         <tag>机器学习</tag>
         <tag>分类</tag>
-        <tag>有监督学习</tag>
         <tag>回归</tag>
+        <tag>有监督学习</tag>
       </tags>
   </entry>
   <entry>
@@ -25274,8 +25292,10 @@ $$cell[i][j]=cell[i-1][j-1]+1$$</li>
   <entry>
     <title>假设检验 | Mann-Whitney U检验</title>
     <url>/%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C-U%E6%A3%80%E9%AA%8C.html</url>
-    <content><![CDATA[<p><center></center><br><a id="more"></a></p>
-<h1 id="Mann-Whitney-U-检验"><a href="#Mann-Whitney-U-检验" class="headerlink" title="Mann-Whitney U 检验"></a>Mann-Whitney U 检验</h1><ul>
+    <content><![CDATA[<center></center>
+<a id="more"></a>
+<h1 id="Mann-Whitney-U-检验"><a class="header-anchor" href="#Mann-Whitney-U-检验"></a>Mann-Whitney U 检验</h1>
+<ul>
 <li>非参数检验方法</li>
 <li>Mann-Whitney U 检验是用得最广泛的两独立样本秩和检验，是与独立样本t检验相对应的方法，当样本数据的正态性、方差齐性等不能达到t检验的要求时，可使用该检验</li>
 <li>该检验的原假设假设从一个总体中随机选择的值小于或大于另一个总体中随机选择的值的可能性相同</li>
@@ -25292,70 +25312,89 @@ $$cell[i][j]=cell[i-1][j-1]+1$$</li>
 <li><a href="http://ocw.umb.edu/psychology/psych-270/other-materials/RelativeResourceManager.pdf" target="_blank" rel="noopener">Critical Values of the Mann-Whitney Test (Two-Tailed Testing)</a></li>
 <li><a href="http://www.real-statistics.com/statistics-tables/mann-whitney-table/" target="_blank" rel="noopener">Mann-Whitney Table</a></li>
 </ul>
-<p>检验两组样本$\{X_1,X_2,\cdots,X_{n_1}\}$，$\{Y_1,Y_2,\cdots,Y_{n_2}\}$的均值是否有显著差别（假设这两组样本分别来自除了总体均值以外完全相同的两个总体）。</p>
+<p>检验两组样本${X_1,X_2,\cdots,X_{n_1}}$，${Y_1,Y_2,\cdots,Y_{n_2}}$的均值是否有显著差别（假设这两组样本分别来自除了总体均值以外完全相同的两个总体）。</p>
 <ul>
 <li>原假设下，$P(X_i&gt;Y_j)=\frac{1}{2}$</li>
 <li>备择假设下，$P(X_i&gt;Y_j)\neq \frac{1}{2}$</li>
 </ul>
 <ol>
-<li>将两组数据混合，并求出每个数据的秩（按大小顺序排列）<blockquote>
-<p>序列$\{ 3,5,2,4,5,8,9 \}$<br>  排序得到$\{2,3,4,5,5,8,9\}$，则数字2的秩为1，数字3的秩为2，数字4的秩为3；数字5排序有“第4”和第“5”，则数字5的秩为$\frac{4+5}{2}=4.5$；数字8的秩为6，数字9的秩为7。<br>  所以序列$\{3,5,2,4,5,8,9\}$的秩对应为$\{2,4.5,1,3,4.5,6,7\}$</p>
-</blockquote>
-</li>
-<li>分别求出两组样本的秩和$R_x$、$R_y$<blockquote>
-<p>$R_x+R_y=\frac{N(N+1)}{2}=n_1n_2+\frac{n_1(n_1+1)}{2}+\frac{n_2(n_2+1)}{2}$<br>  其中$N=n_1+n_2$</p>
-<ul>
-<li>两组数据分别为$\{ 13,7,8,4,5 \}$和$\{3,9,2,12,4,10\}$</li>
-<li>混合排序后为$\{2,3,4,4,5,7,8,9,10,12,13\}$</li>
-<li>排序后的序列对应的秩为$\{1,2,3.5,3.5,5,6,7,8,9,10,11\}$</li>
-<li>原序列$\{13,7,8,4,5\}$在混合序列中的秩为$\{11,6,7,3.5,5\}$，秩和$R_x=11+6+7+3.5+5=32.5$</li>
-<li>原序列$\{3,9,2,12,4,10\}$在混合序列中的秩为$\{2,8,1,10,3.5,9\}$，秩和$R_y=2+8+1+10+3.5+9=33.5$</li>
-</ul>
-</blockquote>
-</li>
-<li><p>计算Mann-Whitney U检验统计量</p>
-<script type="math/tex; mode=display">U_x= \sharp \left\{ X_i > Y_j \right\} = R_x- \frac{ n_1(n_1+1) }{2}= n_1 n_2 + \frac{ n_2(n_2+1) }{2}-R_y</script><script type="math/tex; mode=display">U_y=\sharp \{ X_i < Y_j \}=R_y-\frac{n_2(n_2+1)}{2}=n_1n_2+\frac{n_1(n_1+1)}{2}-R_x</script><p>其中$n_1$是第一组样本的样本量，$n_2$是第二组样本的样本量。<br>取$U=\min\{W_1,W_2\}$；与临界值$U_\alpha$进行比较。当$U &lt; U_\alpha$时，拒绝原假设$H_0$；否则，接受$H_0$。</p>
+<li>将两组数据混合，并求出每个数据的秩（按大小顺序排列）
 <blockquote>
-<ul>
-<li>当样本量足够大时（$n_1$和$n_2$都不小于10 时，或者$n_1n_2&gt;20$时），随机变量$U$近似服从正态分布<ul>
-<li>$E(U)=\frac{n_1n_2}{2}$, $D(U)=\frac{n_1n_2(n_1+n_2+1)}{12}$</li>
-<li>$U_x=32.5-\frac{5*6}{2}=17.5$</li>
-<li>$U_y=33.5-\frac{6*7}{2}=14.5$</li>
-<li>$U=\min\{17.5,14.5\}=14.5$</li>
-</ul>
-</li>
-</ul>
+<p>序列${ 3,5,2,4,5,8,9 }$<br>
+排序得到${2,3,4,5,5,8,9}$，则数字2的秩为1，数字3的秩为2，数字4的秩为3；数字5排序有“第4”和第“5”，则数字5的秩为$\frac{4+5}{2}=4.5$；数字8的秩为6，数字9的秩为7。<br>
+所以序列${3,5,2,4,5,8,9}$的秩对应为${2,4.5,1,3,4.5,6,7}$</p>
 </blockquote>
 </li>
-<li>假设第一个总体的均值为$\mu_1$，第二个总体的均值为$\mu_2$，临界值$U_\alpha$，则<ol>
-<li>$H_0:\mu_1\leq \mu_2,\quad H_1:\mu_1&gt;\mu_2$<br>如果$U&lt;-U_\alpha$，则拒绝$H_0$</li>
-<li>$H_0:\mu_1\geq \mu_2,\quad H_1:\mu_1&lt;\mu_2$<br>如果$U&gt;U_\alpha$，则拒绝$H_0$</li>
-<li>$H_0:\mu_1\geq \mu_2,\quad H_1:\mu_1&lt;\mu_2$<br>如果$U&gt;U_\alpha$，则拒绝$H_0$</li>
-</ol>
+<li>分别求出两组样本的秩和$R_x$、$R_y$
+<blockquote>
+<p>$R_x+R_y=\frac{N(N+1)}{2}=n_1n_2+\frac{n_1(n_1+1)}{2}+\frac{n_2(n_2+1)}{2}$<br>
+其中$N=n_1+n_2$</p>
+</blockquote>
+<ul>
+<li>两组数据分别为${ 13,7,8,4,5 }$和${3,9,2,12,4,10}$</li>
+<li>混合排序后为${2,3,4,4,5,7,8,9,10,12,13}$</li>
+<li>排序后的序列对应的秩为${1,2,3.5,3.5,5,6,7,8,9,10,11}$</li>
+<li>原序列${13,7,8,4,5}$在混合序列中的秩为${11,6,7,3.5,5}$，秩和$R_x=11+6+7+3.5+5=32.5$</li>
+<li>原序列${3,9,2,12,4,10}$在混合序列中的秩为${2,8,1,10,3.5,9}$，秩和$R_y=2+8+1+10+3.5+9=33.5$</li>
+</ul>
 </li>
+<li>计算Mann-Whitney U检验统计量<br>
+$$U_x= \sharp \left{ X_i &gt; Y_j \right} = R_x- \frac{ n_1(n_1+1) }{2}= n_1 n_2 + \frac{ n_2(n_2+1) }{2}-R_y$$</li>
 </ol>
-<h2 id="性质"><a href="#性质" class="headerlink" title="性质"></a>性质</h2><script type="math/tex; mode=display">E(U)=\frac{n_1n_2}{2},\quad D(U)=\frac{n_1n_2(n_1+n_2+1)}{12}</script><p>证明：<br>定义$x_i$为$X_i\in\{X_1,X_2,\cdots,X_{n_1}\}$ 在序列$\{X_1,X_2,\cdots,X_{n_1},Y_1,Y_2,\cdots,Y_{n_2}\}$中的秩（$i=1,\cdots,n_1$;$N=n_1+n_2$），则有</p>
-<script type="math/tex; mode=display">
-\begin{aligned}
-E(x_i)&=\frac{1}{N}\sum_{i=1}^{N}i=\frac{1}{N}\frac{N(N+1)}{2}=\frac{N+1}{2}=\frac{n_1+n_2+1}{2}\\
-\sum_{i=1}^Ni^2&=\frac{N(N+1)(2N+1)}{6}\\
-\sum_{i=1}^N\sum_{j=1}^Nij&=\left(\sum_{i=1}^Ni\right)\left(\sum_{j=1}^Nj\right)=\frac{N^2(N+1)^2}{4}\\
-\sum_{i\neq j}^Nij&=\sum_{i=1}^N\sum_{j=1}^Nij-\sum_{i=1}^Ni^2=\frac{N^2(N+1)^2}{4}-\frac{N(N+1)(2N+1)}{6}\\
-E(x_i^2)&=\frac{1}{N}\sum_{i=1}^Ni^2=\frac{(N+1)(2N+1)}{6}\\
-E(x_ix_j)&=\frac{1}{N(N-1)}\sum_{i\neq j}ij\\
-&=\frac{N(N+1)^2}{4(N-1)}-\frac{(N+1)(2N+1)}{6(N-1)} \quad (\mathrm{for}\ i\neq j)\\
-\mu_x=E(R_x)&=E\left(\sum_{i=1}^{n_1}x_i\right)=\sum_{i=1}^{n_1}E(x_i)=\frac{n_1(n_1+n_2+1)}{2}\\
-Var(x_i)&=E(x_i^2)-E^2(x_i)\\
-&=\frac{(N+1)(2N+1)}{6}-\left(\frac{N+1}{2}\right)^2=\frac{N^2-1}{12}\\
-Cov(x_i,x_j)&=E(x_ix_j)-E(x_i)E(x_j)\\
-&=\frac{N(N+1)^2}{4(N-1)}-\frac{(N+1)(2N+1)}{6(N-1)}-\left(\frac{N+1}{2}\right)^2=-\frac{N+1}{12}\\
-\sigma^2_x=Var(R_x)&=Var\left(\sum_{i=1}^{n_1}x_i\right)=\sum_{i=1}^{n_1}Var(x_i)+\sum_{i\neq j}^{n_1}Cov(x_i,x_j)\\
-&=\sum_{i=1}^{n_1}\frac{N^2-1}{12}+2\sum_{i<j}^{n_1}\left(-\frac{N+1}{12}\right)\\
-&=n_1\frac{N^2-1}{12}+n_1(n_1-1)\left(-\frac{N+1}{12}\right)\\
-&=\frac{n_1n_2}{12}(n_1+n_2+1) \\ 
-\end{aligned}</script><p>同理，有</p>
-<script type="math/tex; mode=display">\mu_y=E(R_y)=\frac{n_2(n_1+n_2+1)}{2},\quad \sigma_y^2=Var(R_y)=\frac{n_1n_2}{12}(n_1+n_2+1)</script><p>那么<br>\begin{equation}<br>  \begin{aligned}<br>E(U_1)&amp;=E\left(R_x-\frac{n_1(n_1+1)}{2}\right)=\frac{n_1n_2}{2}\\<br>E(U_2)&amp;=E\left(R_y-\frac{n_2(n_2+1)}{2}\right)=\frac{n_1n_2}{2}\\<br>Var(U_1)&amp;=Var\left(R_x-\frac{n_1(n_1+1)}{2}\right)=Var(R_x)\\<br>Var(U_2)&amp;=Var\left(R_y-\frac{n_2(n_2+1)}{2}\right)=Var(R_y)\\<br>E(U)&amp;=E\left(\min\{U_1,U_2\}\right)=\frac{n_1n_2}{2}\\<br>Var(U)&amp;=\frac{n_1n_2}{12}(n_1+n_2+1)<br>\end{aligned}<br>\end{equation}</p>
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
+<p>$$U_y=\sharp { X_i &lt; Y_j }=R_y-\frac{n_2(n_2+1)}{2}=n_1n_2+\frac{n_1(n_1+1)}{2}-R_x$$<br>
+其中$n_1$是第一组样本的样本量，$n_2$是第二组样本的样本量。<br>
+取$U=\min{W_1,W_2}$；与临界值$U_\alpha$进行比较。当$U &lt; U_\alpha$时，拒绝原假设$H_0$；否则，接受$H_0$。<br>
+&gt; - 当样本量足够大时（$n_1$和$n_2$都不小于10 时，或者$n_1n_2&gt;20$时），随机变量$U$近似服从正态分布<br>
+- $E(U)=\frac{n_1n_2}{2}$, $D(U)=\frac{n_1n_2(n_1+n_2+1)}{12}$<br>
+- $U_x=32.5-\frac{5<em>6}{2}=17.5$<br>
+- $U_y=33.5-\frac{6</em>7}{2}=14.5$<br>
+- $U=\min{17.5,14.5}=14.5$<br>
+4. 假设第一个总体的均值为$\mu_1$，第二个总体的均值为$\mu_2$，临界值$U_\alpha$，则<br>
+1. $H_0:\mu_1\leq \mu_2,\quad H_1:\mu_1&gt;\mu_2$<br>
+如果$U&lt;-U_\alpha$，则拒绝$H_0$<br>
+2. $H_0:\mu_1\geq \mu_2,\quad H_1:\mu_1&lt;\mu_2$<br>
+如果$U&gt;U_\alpha$，则拒绝$H_0$<br>
+3. $H_0:\mu_1\geq \mu_2,\quad H_1:\mu_1&lt;\mu_2$<br>
+如果$U&gt;U_\alpha$，则拒绝$H_0$</p>
+<h2 id="性质"><a class="header-anchor" href="#性质"></a>性质</h2>
+<p>$$E(U)=\frac{n_1n_2}{2},\quad D(U)=\frac{n_1n_2(n_1+n_2+1)}{12}$$<br>
+证明：<br>
+定义$x_i$为$X_i\in{X_1,X_2,\cdots,X_{n_1}}$ 在序列${X_1,X_2,\cdots,X_{n_1},Y_1,Y_2,\cdots,Y_{n_2}}$中的秩（$i=1,\cdots,n_1$;$N=n_1+n_2$），则有</p>
+<p>$$<br>
+\begin{aligned}<br>
+E(x_i)&amp;=\frac{1}{N}\sum_{i=1}^{N}i=\frac{1}{N}\frac{N(N+1)}{2}=\frac{N+1}{2}=\frac{n_1+n_2+1}{2}\<br>
+\sum_{i=1}<sup>Ni</sup>2&amp;=\frac{N(N+1)(2N+1)}{6}\<br>
+\sum_{i=1}<sup>N\sum_{j=1}</sup>Nij&amp;=\left(\sum_{i=1}<sup>Ni\right)\left(\sum_{j=1}</sup>Nj\right)=\frac{N<sup>2(N+1)</sup>2}{4}\<br>
+\sum_{i\neq j}<sup>Nij&amp;=\sum_{i=1}</sup>N\sum_{j=1}<sup>Nij-\sum_{i=1}</sup>Ni<sup>2=\frac{N</sup>2(N+1)^2}{4}-\frac{N(N+1)(2N+1)}{6}\<br>
+E(x_i<sup>2)&amp;=\frac{1}{N}\sum_{i=1}</sup>Ni^2=\frac{(N+1)(2N+1)}{6}\<br>
+E(x_ix_j)&amp;=\frac{1}{N(N-1)}\sum_{i\neq j}ij\<br>
+&amp;=\frac{N(N+1)^2}{4(N-1)}-\frac{(N+1)(2N+1)}{6(N-1)} \quad (\mathrm{for}\ i\neq j)\<br>
+\mu_x=E(R_x)&amp;=E\left(\sum_{i=1}<sup>{n_1}x_i\right)=\sum_{i=1}</sup>{n_1}E(x_i)=\frac{n_1(n_1+n_2+1)}{2}\<br>
+Var(x_i)&amp;=E(x_i<sup>2)-E</sup>2(x_i)\<br>
+&amp;=\frac{(N+1)(2N+1)}{6}-\left(\frac{N+1}{2}\right)<sup>2=\frac{N</sup>2-1}{12}\<br>
+Cov(x_i,x_j)&amp;=E(x_ix_j)-E(x_i)E(x_j)\<br>
+&amp;=\frac{N(N+1)<sup>2}{4(N-1)}-\frac{(N+1)(2N+1)}{6(N-1)}-\left(\frac{N+1}{2}\right)</sup>2=-\frac{N+1}{12}\<br>
+\sigma<sup>2_x=Var(R_x)&amp;=Var\left(\sum_{i=1}</sup>{n_1}x_i\right)=\sum_{i=1}^{n_1}Var(x_i)+\sum_{i\neq j}^{n_1}Cov(x_i,x_j)\<br>
+&amp;=\sum_{i=1}<sup>{n_1}\frac{N</sup>2-1}{12}+2\sum_{i&lt;j}^{n_1}\left(-\frac{N+1}{12}\right)\<br>
+&amp;=n_1\frac{N^2-1}{12}+n_1(n_1-1)\left(-\frac{N+1}{12}\right)\<br>
+&amp;=\frac{n_1n_2}{12}(n_1+n_2+1) \<br>
+\end{aligned}<br>
+$$</p>
+<p>同理，有<br>
+$$\mu_y=E(R_y)=\frac{n_2(n_1+n_2+1)}{2},\quad \sigma_y^2=Var(R_y)=\frac{n_1n_2}{12}(n_1+n_2+1)$$<br>
+那么<br>
+\begin{equation}<br>
+\begin{aligned}<br>
+E(U_1)&amp;=E\left(R_x-\frac{n_1(n_1+1)}{2}\right)=\frac{n_1n_2}{2}\<br>
+E(U_2)&amp;=E\left(R_y-\frac{n_2(n_2+1)}{2}\right)=\frac{n_1n_2}{2}\<br>
+Var(U_1)&amp;=Var\left(R_x-\frac{n_1(n_1+1)}{2}\right)=Var(R_x)\<br>
+Var(U_2)&amp;=Var\left(R_y-\frac{n_2(n_2+1)}{2}\right)=Var(R_y)\<br>
+E(U)&amp;=E\left(\min{U_1,U_2}\right)=\frac{n_1n_2}{2}\<br>
+Var(U)&amp;=\frac{n_1n_2}{12}(n_1+n_2+1)<br>
+\end{aligned}<br>
+\end{equation}</p>
+<h1 id="参考资料"><a class="header-anchor" href="#参考资料"></a>参考资料</h1>
+<ul>
 <li><a href="https://www.skillsyouneed.com/num/statistics-identifying-patterns.html" target="_blank" rel="noopener">Statistical Analysis: Identifying Patterns</a></li>
 <li><a href="https://en.wikipedia.org/wiki/Mann%E2%80%93Whitney_U_test" target="_blank" rel="noopener">Wiki: Mann–Whitney U test</a></li>
 <li><a href="http://www.statstutor.ac.uk/resources/uploaded/mannwhitney.pdf" target="_blank" rel="noopener">The Mann-Whitney U Test</a></li>
@@ -25375,108 +25414,143 @@ Cov(x_i,x_j)&=E(x_ix_j)-E(x_i)E(x_j)\\
   <entry>
     <title>假设检验 | t检验</title>
     <url>/%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C-t%E6%A3%80%E9%AA%8C.html</url>
-    <content><![CDATA[<p><center>t-test</center><br><a id="more"></a></p>
+    <content><![CDATA[<center>t-test</center>
+<a id="more"></a>
 <ul>
 <li>适用于样本量小、总体方差未知的样本</li>
 <li>研究两组数据是否存在差异</li>
 </ul>
-<h1 id="t-分布"><a href="#t-分布" class="headerlink" title="$t$分布"></a>$t$分布</h1><p>Student’s t-distribution<sup><a href="#fn_1" id="reffn_1">1</a></sup></p>
+<h1 id="t-分布"><a class="header-anchor" href="#t-分布"></a>$t$分布</h1>
+<p>Student’s t-distribution<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
 <p>从均值为$\mu$、方差为$\sigma^2$的正态总体种抽取容量为$n$的随机样本，随机样本的</p>
 <ul>
 <li>均值：$\bar{x}$</li>
-<li>方差：$s^2=\frac{1}{n-1}\sum_{i=1}^n(x_i-\bar{x})^2$</li>
+<li>方差：$s<sup>2=\frac{1}{n-1}\sum_{i=1}</sup>n(x_i-\bar{x})^2$</li>
 </ul>
-<p>则随机变量T</p>
-<script type="math/tex; mode=display">T=\frac{\bar{x}-\mu}{s/\sqrt{n}}</script><p>服从自由度为$n-1$的$t$分布，即$T\sim t(n-1)$。</p>
+<p>则随机变量T<br>
+$$T=\frac{\bar{x}-\mu}{s/\sqrt{n}}$$<br>
+服从自由度为$n-1$的$t$分布，即$T\sim t(n-1)$。</p>
 <ul>
 <li>$t$分布是一种典型的长尾分布</li>
 </ul>
-<blockquote id="fn_1">
-<sup>1</sup>. ‘Student’是William Sealy Gosset的笔名<a href="#reffn_1" title="Jump back to footnote [1] in the text."> &#8617;</a>
-</blockquote>
-<h1 id="t-检验"><a href="#t-检验" class="headerlink" title="$t$检验"></a>$t$检验</h1><h2 id="单样本-t-检验"><a href="#单样本-t-检验" class="headerlink" title="单样本$t$检验"></a>单样本$t$检验</h2><p>设$x_1,\cdots,x_n$是来自$N(\mu,\sigma^2)$的样本，考虑如下三种关于$\mu$的检验问题：</p>
+<h1 id="t-检验"><a class="header-anchor" href="#t-检验"></a>$t$检验</h1>
+<h2 id="单样本-t-检验"><a class="header-anchor" href="#单样本-t-检验"></a>单样本$t$检验</h2>
+<p>设$x_1,\cdots,x_n$是来自$N(\mu,\sigma^2)$的样本，考虑如下三种关于$\mu$的检验问题：</p>
 <ol>
-<li><script type="math/tex; mode=display">H_0:\mu\leq\mu_0\quad vs \quad H_1:\mu>\mu_0</script></li>
-<li><script type="math/tex; mode=display">H_0:\mu\geq\mu_0\quad vs \quad H_1:\mu<\mu_0</script></li>
-<li><script type="math/tex; mode=display">H_0:\mu=\mu_0\quad vs \quad H_1:\mu\neq\mu_0</script></li>
+<li>$$H_0:\mu\leq\mu_0\quad vs \quad H_1:\mu&gt;\mu_0$$</li>
+<li>$$H_0:\mu\geq\mu_0\quad vs \quad H_1:\mu&lt;\mu_0$$</li>
+<li>$$H_0:\mu=\mu_0\quad vs \quad H_1:\mu\neq\mu_0$$</li>
 </ol>
-<p>对于上述检验问题.,若$\sigma$未知，则可用$t$检验统计量</p>
-<script type="math/tex; mode=display">t=\frac{\bar{x}-\mu_0}{s/\sqrt{n}}=\frac{\sqrt{n}(\bar{x}-\mu_0)}{s}</script><p>来进行检验。</p>
-<p>其中$s$为样本标准差</p>
-<script type="math/tex; mode=display">s^2=\frac{1}{n-1}\sum_{i=1}^n(x_i-\bar{x})^2</script><p>对于给定的样本观测值计算得到的检验统计量$t$的值为</p>
-<script type="math/tex; mode=display">t_0=\frac{\sqrt{n}(\bar{x}-\mu_0)}{s}</script><p>在零假设$H_0:\mu=\mu_0$下，有<br>$t\sim t(n-1)$</p>
+<p>对于上述检验问题.,若$\sigma$未知，则可用$t$检验统计量<br>
+$$t=\frac{\bar{x}-\mu_0}{s/\sqrt{n}}=\frac{\sqrt{n}(\bar{x}-\mu_0)}{s}$$<br>
+来进行检验。</p>
+<p>其中$s$为样本标准差<br>
+$$s<sup>2=\frac{1}{n-1}\sum_{i=1}</sup>n(x_i-\bar{x})^2$$</p>
+<p>对于给定的样本观测值计算得到的检验统计量$t$的值为<br>
+$$t_0=\frac{\sqrt{n}(\bar{x}-\mu_0)}{s}$$</p>
+<p>在零假设$H_0:\mu=\mu_0$下，有<br>
+$t\sim t(n-1)$</p>
 <p>在显著性水平为$\alpha$的情况下：</p>
 <ul>
-<li>检验问题1：$H_0:\mu\leq\mu_0\quad vs \quad H_1:\mu&gt;\mu_0$<ul>
-<li>拒绝域为<script type="math/tex; mode=display">C_1=\{t\geq t_{1-\alpha}(n-1)\}</script></li>
-<li>$p$值为<script type="math/tex; mode=display">p_1=P(t\geq t_0)</script>其中$t$是服从自由度为$n-1$的$t$分布的随机变量</li>
+<li>检验问题1：$H_0:\mu\leq\mu_0\quad vs \quad H_1:\mu&gt;\mu_0$</li>
+<li>拒绝域为<br>
+$$C_1={t\geq t_{1-\alpha}(n-1)}$$</li>
+<li>$p$值为<br>
+$$p_1=P(t\geq t_0)$$<br>
+其中$t$是服从自由度为$n-1$的$t$分布的随机变量</li>
+<li>检验问题2：$H_0:\mu\geq\mu_0\quad vs \quad H_1:\mu&lt;\mu_0$</li>
+<li>拒绝域为<br>
+$$C_2={t\leq t_{\alpha}(n-1)}$$</li>
+<li>$p$值为<br>
+$$p_2=P(t\leq t_0)$$<br>
+其中$t$是服从自由度为$n-1$的$t$分布的随机变量</li>
+<li>检验问题3：$H_0:\mu=\mu_0\quad vs \quad H_1:\mu\neq\mu_0$</li>
+<li>拒绝域为<br>
+$$C_3={|t|\geq t_{1-\alpha/2}(n-1)}$$</li>
+<li>$p$值为<br>
+$$p_3=P(|t|\geq |t_0|)$$<br>
+其中$t$是服从自由度为$n-1$的$t$分布的随机变量</li>
 </ul>
-</li>
-<li>检验问题2：$H_0:\mu\geq\mu_0\quad vs \quad H_1:\mu&lt;\mu_0$<ul>
-<li>拒绝域为<script type="math/tex; mode=display">C_2=\{t\leq t_{\alpha}(n-1)\}</script></li>
-<li>$p$值为<script type="math/tex; mode=display">p_2=P(t\leq t_0)</script>其中$t$是服从自由度为$n-1$的$t$分布的随机变量</li>
-</ul>
-</li>
-<li>检验问题3：$H_0:\mu=\mu_0\quad vs \quad H_1:\mu\neq\mu_0$<ul>
-<li>拒绝域为<script type="math/tex; mode=display">C_3=\{|t|\geq t_{1-\alpha/2}(n-1)\}</script></li>
-<li>$p$值为<script type="math/tex; mode=display">p_3=P(|t|\geq |t_0|)</script>其中$t$是服从自由度为$n-1$的$t$分布的随机变量</li>
-</ul>
-</li>
-</ul>
-<h2 id="独立样本-t-检验"><a href="#独立样本-t-检验" class="headerlink" title="独立样本$t$检验"></a>独立样本$t$检验</h2><p>设$x_1,\cdots,x_m$是来自正态总体$N(\mu_1,\sigma_1^2)$的样本，$y_1,y_2,\cdots,y_n$是来自另一个正态总体$N(\mu_2,\sigma_2^2)$的样本，两个样本相互独立，其中</p>
-<script type="math/tex; mode=display">\sigma_1=\sigma_2=\sigma但未知</script><p>考虑如下三类检验问题：</p>
+<h2 id="独立样本-t-检验"><a class="header-anchor" href="#独立样本-t-检验"></a>独立样本$t$检验</h2>
+<p>设$x_1,\cdots,x_m$是来自正态总体$N(\mu_1,\sigma_1<sup>2)$的样本，$y_1,y_2,\cdots,y_n$是来自另一个正态总体$N(\mu_2,\sigma_2</sup>2)$的样本，两个样本相互独立，其中<br>
+$$\sigma_1=\sigma_2=\sigma但未知$$<br>
+考虑如下三类检验问题：</p>
 <ol>
-<li><script type="math/tex; mode=display">H_0:\mu_1-\mu_2 \leq 0 \quad vs \quad H_1:\mu_1-\mu_2 > 0</script></li>
-<li><script type="math/tex; mode=display">H_0:\mu_1-\mu_2 \geq 0 \quad vs \quad H_1:\mu_1-\mu_2 < 0</script></li>
-<li><script type="math/tex; mode=display">H_0:\mu_1-\mu_2 = 0 \quad vs \quad H_1:\mu_1-\mu_2 \neq 0</script></li>
+<li>$$H_0:\mu_1-\mu_2 \leq 0 \quad vs \quad H_1:\mu_1-\mu_2 &gt; 0$$</li>
+<li>$$H_0:\mu_1-\mu_2 \geq 0 \quad vs \quad H_1:\mu_1-\mu_2 &lt; 0$$</li>
+<li>$$H_0:\mu_1-\mu_2 = 0 \quad vs \quad H_1:\mu_1-\mu_2 \neq 0$$</li>
 </ol>
-<p>已知$\bar{x}\sim N(\mu_1,\frac{1}{m}\sigma^2)$,$\bar{y}\sim N(\mu_2,\frac{1}{n}\sigma^2)$，且两个样本相互独立，则有</p>
-<script type="math/tex; mode=display">\bar{x}-\bar{y}\sim N\left(\mu_1-\mu_2, \left(\frac{1}{m}+\frac{1}{n} \right)\sigma^2\right)</script><p>所以有</p>
-<script type="math/tex; mode=display">\frac{(\bar{x}-\bar{y})-(\mu_1-\mu_2)}{\sqrt{\frac{1}{m}+\frac{1}{n}}\sigma}\sim N(0,1)</script><p>因为</p>
-<script type="math/tex; mode=display">\frac{(m-1)}{\sigma^2}s_x^2=\frac{1}{\sigma^2}\sum_{i=1}^m(x_i-\bar{x})^2\sim\chi^2(m-1)</script><script type="math/tex; mode=display">\frac{(n-1)}{\sigma^2}s_y^2=\frac{1}{\sigma^2}\sum_{i=1}^n(y_i-\bar{y})^2\sim\chi^2(n-1)</script><p>所以有</p>
-<script type="math/tex; mode=display">\frac{(m+n-2)}{\sigma^2}s_w^2=\frac{1}{\sigma^2}\left(\sum_{i=1}^m(x_i-\bar{x})^2+\sum_{j=1}^n(y_j-\bar{y})^2 \right)\sim\chi^2(m+n-2)</script><p>其中</p>
-<script type="math/tex; mode=display">s_w^2=\frac{1}{m+n-2}\left(\sum_{i=1}^m(x_i-\bar{x})^2+\sum_{j=1}^n(y_j-\bar{y})^2 \right)</script><p>所以<br>\begin{aligned}<br>t&amp;=\frac{N(0,1)}{\sqrt{\frac{\chi^2(m+n-2)}{m+n-2}}}\sim t(m+n-2)\\<br>&amp;=\frac{\frac{(\bar{x}-\bar{y})-(\mu_1-\mu_2)}{\sqrt{\frac{1}{m}+\frac{1}{n}}\sigma}}{\sqrt{\frac{(m+n-2)}{\sigma^2}s_w^2/(m+n-2)}}\\<br>&amp;=\frac{(\bar{x}-\bar{y})-(\mu_1-\mu_2)}{s_w\sqrt{\frac{1}{m}+\frac{1}{n}}} \sim t(m+n-2)<br>\end{aligned}</p>
-<p>配对样本$t$检验的统计量为</p>
-<script type="math/tex; mode=display">t=\frac{\bar{x}-\bar{y}}{s_w\sqrt{\frac{1}{m}+\frac{1}{n}}} \sim t(m+n-2)</script><p>对给定样本，计算得到统计量的值为</p>
-<script type="math/tex; mode=display">t_0=\frac{\bar{x}-\bar{y}}{s_w\sqrt{\frac{1}{m}+\frac{1}{n}}}</script><p>在显著性水平为$\alpha$的情况下：</p>
+<p>已知$\bar{x}\sim N(\mu_1,\frac{1}{m}\sigma^2)$,$\bar{y}\sim N(\mu_2,\frac{1}{n}\sigma^2)$，且两个样本相互独立，则有<br>
+$$\bar{x}-\bar{y}\sim N\left(\mu_1-\mu_2, \left(\frac{1}{m}+\frac{1}{n} \right)\sigma^2\right)$$<br>
+所以有<br>
+$$\frac{(\bar{x}-\bar{y})-(\mu_1-\mu_2)}{\sqrt{\frac{1}{m}+\frac{1}{n}}\sigma}\sim N(0,1)$$</p>
+<p>因为<br>
+$$\frac{(m-1)}{\sigma<sup>2}s_x</sup>2=\frac{1}{\sigma<sup>2}\sum_{i=1}</sup>m(x_i-\bar{x})<sup>2\sim\chi</sup>2(m-1)$$<br>
+$$\frac{(n-1)}{\sigma<sup>2}s_y</sup>2=\frac{1}{\sigma<sup>2}\sum_{i=1}</sup>n(y_i-\bar{y})<sup>2\sim\chi</sup>2(n-1)$$<br>
+所以有<br>
+$$\frac{(m+n-2)}{\sigma<sup>2}s_w</sup>2=\frac{1}{\sigma<sup>2}\left(\sum_{i=1}</sup>m(x_i-\bar{x})<sup>2+\sum_{j=1}</sup>n(y_j-\bar{y})^2 \right)\sim\chi^2(m+n-2)$$<br>
+其中<br>
+$$s_w<sup>2=\frac{1}{m+n-2}\left(\sum_{i=1}</sup>m(x_i-\bar{x})<sup>2+\sum_{j=1}</sup>n(y_j-\bar{y})^2 \right)$$</p>
+<p>所以<br>
+\begin{aligned}<br>
+t&amp;=\frac{N(0,1)}{\sqrt{\frac{\chi^2(m+n-2)}{m+n-2}}}\sim t(m+n-2)\<br>
+&amp;=\frac{\frac{(\bar{x}-\bar{y})-(\mu_1-\mu_2)}{\sqrt{\frac{1}{m}+\frac{1}{n}}\sigma}}{\sqrt{\frac{(m+n-2)}{\sigma<sup>2}s_w</sup>2/(m+n-2)}}\<br>
+&amp;=\frac{(\bar{x}-\bar{y})-(\mu_1-\mu_2)}{s_w\sqrt{\frac{1}{m}+\frac{1}{n}}} \sim t(m+n-2)<br>
+\end{aligned}</p>
+<p>配对样本$t$检验的统计量为<br>
+$$t=\frac{\bar{x}-\bar{y}}{s_w\sqrt{\frac{1}{m}+\frac{1}{n}}} \sim t(m+n-2)$$</p>
+<p>对给定样本，计算得到统计量的值为<br>
+$$t_0=\frac{\bar{x}-\bar{y}}{s_w\sqrt{\frac{1}{m}+\frac{1}{n}}}$$</p>
+<p>在显著性水平为$\alpha$的情况下：</p>
 <ul>
-<li>检验问题1：$H_0:\mu_1-\mu_2 \leq 0 \quad vs \quad H_1:\mu_1-\mu_2 &gt; 0$<ul>
-<li>拒绝域为<script type="math/tex; mode=display">W_1=\{t\geq t_{1-\alpha(m+n-2)}\}</script></li>
-<li>$p$值为<script type="math/tex; mode=display">p_1=P(t\geq t_0)</script></li>
+<li>检验问题1：$H_0:\mu_1-\mu_2 \leq 0 \quad vs \quad H_1:\mu_1-\mu_2 &gt; 0$</li>
+<li>拒绝域为<br>
+$$W_1={t\geq t_{1-\alpha(m+n-2)}}$$</li>
+<li>$p$值为<br>
+$$p_1=P(t\geq t_0)$$</li>
+<li>$H_0:\mu_1-\mu_2 \geq 0 \quad vs \quad H_1:\mu_1-\mu_2 &lt; 0$</li>
+<li>拒绝域为<br>
+$$W_2={t\leq t_{\alpha}(m+n-2)}$$</li>
+<li>$p$值为<br>
+$$p_2=P(t\leq t_0)$$</li>
+<li>$H_0:\mu_1-\mu_2 = 0 \quad vs \quad H_1:\mu_1-\mu_2 \neq 0$</li>
+<li>拒绝域为<br>
+$$W_3={|t|\geq t_{1-\alpha/2}(m+n-2)}$$</li>
+<li>$p$值为<br>
+$$p_3=P(|t|\geq |t_0|)$$</li>
 </ul>
-</li>
-<li>$H_0:\mu_1-\mu_2 \geq 0 \quad vs \quad H_1:\mu_1-\mu_2 &lt; 0$<ul>
-<li>拒绝域为<script type="math/tex; mode=display">W_2=\{t\leq t_{\alpha}(m+n-2)\}</script></li>
-<li>$p$值为<script type="math/tex; mode=display">p_2=P(t\leq t_0)</script></li>
-</ul>
-</li>
-<li>$H_0:\mu_1-\mu_2 = 0 \quad vs \quad H_1:\mu_1-\mu_2 \neq 0$<ul>
-<li>拒绝域为<script type="math/tex; mode=display">W_3=\{|t|\geq t_{1-\alpha/2}(m+n-2)\}</script></li>
-<li>$p$值为<script type="math/tex; mode=display">p_3=P(|t|\geq |t_0|)</script></li>
-</ul>
-</li>
-</ul>
-<h2 id="配对样本"><a href="#配对样本" class="headerlink" title="配对样本"></a>配对样本</h2><p>设配对样本为</p>
-<script type="math/tex; mode=display">\mathbf{X}=\{X_1,X_2,\cdots,X_n\}</script><script type="math/tex; mode=display">\mathbf{Y}=\{Y_1,Y_2,\cdots,Y_n\}</script><p>令</p>
-<script type="math/tex; mode=display">\mathbf{Z}=\{Z_1,Z_2,\cdots,Z_n\}</script><p>其中</p>
-<script type="math/tex; mode=display">Z_i=X_i-Y_i</script><p>$i=1,2,\cdots,n$。</p>
-<p>$\mu$是$Z$的总体均值，设假设为</p>
-<script type="math/tex; mode=display">H_0:\mu=0\quad \mathrm{vs} \quad H_1:\mu\neq0</script><p>检验统计量为</p>
-<script type="math/tex; mode=display">T=\frac{\overline{Z}}{S_z/\sqrt{n}}\sim t(n-1)</script><p>拒绝域为</p>
-<script type="math/tex; mode=display">W=\left\{|T|\geq t_{1-\frac{\alpha}{2}}(n-1) \right\}</script><p>p值为</p>
-<script type="math/tex; mode=display">p=2\cdot t_{n-1}(|T|)</script><h1 id="t-检验-vs-u-检验"><a href="#t-检验-vs-u-检验" class="headerlink" title="$t$检验 vs $u$检验"></a>$t$检验 vs $u$检验</h1><h2 id="单样本"><a href="#单样本" class="headerlink" title="单样本"></a>单样本</h2><div>
+<h2 id="配对样本"><a class="header-anchor" href="#配对样本"></a>配对样本</h2>
+<p>设配对样本为<br>
+$$\mathbf{X}={X_1,X_2,\cdots,X_n}$$<br>
+$$\mathbf{Y}={Y_1,Y_2,\cdots,Y_n}$$<br>
+令<br>
+$$\mathbf{Z}={Z_1,Z_2,\cdots,Z_n}$$<br>
+其中<br>
+$$Z_i=X_i-Y_i$$<br>
+$i=1,2,\cdots,n$。</p>
+<p>$\mu$是$Z$的总体均值，设假设为<br>
+$$H_0:\mu=0\quad \mathrm{vs} \quad H_1:\mu\neq0$$</p>
+<p>检验统计量为<br>
+$$T=\frac{\overline{Z}}{S_z/\sqrt{n}}\sim t(n-1)$$<br>
+拒绝域为<br>
+$$W=\left{|T|\geq t_{1-\frac{\alpha}{2}}(n-1) \right}$$</p>
+<p>p值为<br>
+$$p=2\cdot t_{n-1}(|T|)$$</p>
+<h1 id="t-检验-vs-u-检验"><a class="header-anchor" href="#t-检验-vs-u-检验"></a>$t$检验 vs $u$检验</h1>
+<h2 id="单样本"><a class="header-anchor" href="#单样本"></a>单样本</h2>
+<div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: center;
-    }
+.dataframe thead th {
+    text-align: center;
+}
+</code></pre>
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -25534,27 +25608,29 @@ Cov(x_i,x_j)&=E(x_ix_j)-E(x_i)E(x_j)\\
   </tr></tbody>
 </table>
 </div>
-
 <blockquote>
 <ul>
 <li>$u_0=\frac{\sqrt{n}(\bar{x}-\mu_0)}{\sigma}$</li>
+</ul>
+</blockquote>
+<ul>
 <li>$T$是服从自由度为$n-1$的$t$分布的随机变量</li>
 <li>$t_0=\frac{\sqrt{n}(\bar{x}-\mu_0)}{s}$</li>
 </ul>
-</blockquote>
-<h2 id="独立样本"><a href="#独立样本" class="headerlink" title="独立样本"></a>独立样本</h2><div>
+<h2 id="独立样本"><a class="header-anchor" href="#独立样本"></a>独立样本</h2>
+<div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: center;
-    }
+.dataframe thead th {
+    text-align: center;
+}
+</code></pre>
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -25651,30 +25727,34 @@ Cov(x_i,x_j)&=E(x_ix_j)-E(x_i)E(x_j)\\
   </tr></tbody>
 </table>
 </div>
-
 <blockquote>
 <ul>
-<li>$u_1=\frac{\bar{x}-\bar{y}}{\sqrt{\frac{\sigma_1^2}{m}+\frac{\sigma_2^2}{n}}}$</li>
-<li>$t_1=\frac{\bar{x}-\bar{y}}{s_w\sqrt{\frac{1}{m}+\frac{1}{n}}}$</li>
-<li>$T_1$是服从自由度为$m+n-2$的$t$分布的随机变量</li>
-<li>$u_2=\frac{\bar{x}-\bar{y}}{\sqrt{\frac{s_x^2}{m}+\frac{s_y^2}{n}}}$</li>
-<li>$t_2=\frac{\bar{x}-\bar{y}}{\sqrt{\frac{s_x^2}{m}+\frac{s_y^2}{n}}}$</li>
-<li>$T_2$是服从自由度为$l$的$t$分布的随机变量，其中$l$为<script type="math/tex; mode=display">l=\frac{s_x^2/m+s_y^2/n}{\frac{s_x^2}{m^2(m-1)}+\frac{s_y^2}{n^2(n-1)}}</script>$l$一般不为整数，可以取与$l$最接近的整数代替之。</li>
+<li>$u_1=\frac{\bar{x}-\bar{y}}{\sqrt{\frac{\sigma_1<sup>2}{m}+\frac{\sigma_2</sup>2}{n}}}$</li>
 </ul>
 </blockquote>
-<h1 id="t-检验-vs-chi-2-检验"><a href="#t-检验-vs-chi-2-检验" class="headerlink" title="$t$检验 vs $\chi^2$检验"></a>$t$检验 vs $\chi^2$检验</h1><div>
+<ul>
+<li>$t_1=\frac{\bar{x}-\bar{y}}{s_w\sqrt{\frac{1}{m}+\frac{1}{n}}}$</li>
+<li>$T_1$是服从自由度为$m+n-2$的$t$分布的随机变量</li>
+<li>$u_2=\frac{\bar{x}-\bar{y}}{\sqrt{\frac{s_x<sup>2}{m}+\frac{s_y</sup>2}{n}}}$</li>
+<li>$t_2=\frac{\bar{x}-\bar{y}}{\sqrt{\frac{s_x<sup>2}{m}+\frac{s_y</sup>2}{n}}}$</li>
+<li>$T_2$是服从自由度为$l$的$t$分布的随机变量，其中$l$为<br>
+$$l=\frac{s_x<sup>2/m+s_y</sup>2/n}{\frac{s_x<sup>2}{m</sup>2(m-1)}+\frac{s_y<sup>2}{n</sup>2(n-1)}}$$<br>
+$l$一般不为整数，可以取与$l$最接近的整数代替之。</li>
+</ul>
+<h1 id="t-检验-vs-chi-2-检验"><a class="header-anchor" href="#t-检验-vs-chi-2-检验"></a>$t$检验 vs $\chi^2$检验</h1>
+<div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: center;
-    }
+.dataframe thead th {
+    text-align: center;
+}
+</code></pre>
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -25704,14 +25784,23 @@ Cov(x_i,x_j)&=E(x_ix_j)-E(x_i)E(x_j)\\
   </tr></tbody>
 </table>
 </div>
-
-<h1 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h1><h2 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> scipy <span class="keyword">import</span> stats</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">ab_test</span><span class="params">(df_test, df_contrl, col)</span>:</span></span><br><span class="line">	<span class="string">'''</span></span><br><span class="line"><span class="string">	t检验 或 非参数检验</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">	输出：p值、检验方法</span></span><br><span class="line"><span class="string">	'''</span></span><br><span class="line">	result = []</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> len(df_test[col] &lt; <span class="number">30</span>) <span class="keyword">or</span> len(df_contrl[col] &lt; <span class="number">30</span>):</span><br><span class="line">		result = [<span class="number">-1.0</span>, <span class="string">"样本量过少"</span>]</span><br><span class="line">	<span class="keyword">else</span>:</span><br><span class="line">		<span class="comment">## 正态性检验</span></span><br><span class="line">		norm_stat_test, norm_pval_test = stats.sharpiro(df_test[col])</span><br><span class="line">		norm_stat_contrl, norm_pval_contrl = stats.shapiro(df_contrl[col])</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> norm_pval_test &gt; <span class="number">0.05</span> <span class="keyword">and</span> norm_pval_contrl &gt; <span class="number">0.05</span>:</span><br><span class="line">			<span class="comment">## 正态性检验通过，进行方差齐性检验</span></span><br><span class="line">			F = df_test[col].var() / df_contrl[col].var()</span><br><span class="line">			n = len(df_test[col]) - <span class="number">1</span></span><br><span class="line">			m = len(df_contrl[col]) - <span class="number">1</span></span><br><span class="line">			F_pval = <span class="number">1</span> - stats.f.cdf(F, n, m)</span><br><span class="line"></span><br><span class="line">			<span class="keyword">if</span> F_pval &lt; <span class="number">0.05</span>:</span><br><span class="line">				<span class="comment">## 方差齐性检验不通过，使用不等方差T检验（Welch T检验）</span></span><br><span class="line">				stat, pval = stats.ttest_ind(df_test[col], df_contrl[col], equal_val=<span class="literal">False</span>)</span><br><span class="line">				test_method = <span class="string">"Welch-t检验"</span></span><br><span class="line">			<span class="keyword">else</span>:</span><br><span class="line">				<span class="comment">## 使用等方差T检验（Student T检验）</span></span><br><span class="line">				stat, pval = stats.ttest_ind(df_test[col], df_contrl[col], equal_val=<span class="literal">True</span>)</span><br><span class="line">				test_method = <span class="string">"Student-t检验"</span></span><br><span class="line">		<span class="keyword">else</span>:</span><br><span class="line">			<span class="comment">## 使用非参数检验</span></span><br><span class="line">			stat, pval = stats.stats.mannwhitneyu(df_test[col], df_contrl[col], alternative=<span class="string">"two-sided"</span>)</span><br><span class="line">			test_method = <span class="string">"Mann-Whiteny-U检验"</span></span><br><span class="line">		result = [pval, test_method]</span><br><span class="line">	<span class="keyword">return</span> result</span><br></pre></td></tr></table></figure>
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
+<h1 id="实现代码"><a class="header-anchor" href="#实现代码"></a>实现代码</h1>
+<h2 id="Python"><a class="header-anchor" href="#Python"></a>Python</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> scipy <span class="keyword">import</span> stats</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">ab_test</span><span class="params">(df_test, df_contrl, col)</span>:</span></span><br><span class="line">	<span class="string">'''</span></span><br><span class="line"><span class="string">	t检验 或 非参数检验</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">	输出：p值、检验方法</span></span><br><span class="line"><span class="string">	'''</span></span><br><span class="line">	result = []</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> len(df_test[col] &lt; <span class="number">30</span>) <span class="keyword">or</span> len(df_contrl[col] &lt; <span class="number">30</span>):</span><br><span class="line">		result = [<span class="number">-1.0</span>, <span class="string">"样本量过少"</span>]</span><br><span class="line">	<span class="keyword">else</span>:</span><br><span class="line">		<span class="comment">## 正态性检验</span></span><br><span class="line">		norm_stat_test, norm_pval_test = stats.sharpiro(df_test[col])</span><br><span class="line">		norm_stat_contrl, norm_pval_contrl = stats.shapiro(df_contrl[col])</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> norm_pval_test &gt; <span class="number">0.05</span> <span class="keyword">and</span> norm_pval_contrl &gt; <span class="number">0.05</span>:</span><br><span class="line">			<span class="comment">## 正态性检验通过，进行方差齐性检验</span></span><br><span class="line">			F = df_test[col].var() / df_contrl[col].var()</span><br><span class="line">			n = len(df_test[col]) - <span class="number">1</span></span><br><span class="line">			m = len(df_contrl[col]) - <span class="number">1</span></span><br><span class="line">			F_pval = <span class="number">1</span> - stats.f.cdf(F, n, m)</span><br><span class="line"></span><br><span class="line">			<span class="keyword">if</span> F_pval &lt; <span class="number">0.05</span>:</span><br><span class="line">				<span class="comment">## 方差齐性检验不通过，使用不等方差T检验（Welch T检验）</span></span><br><span class="line">				stat, pval = stats.ttest_ind(df_test[col], df_contrl[col], equal_val=<span class="literal">False</span>)</span><br><span class="line">				test_method = <span class="string">"Welch-t检验"</span></span><br><span class="line">			<span class="keyword">else</span>:</span><br><span class="line">				<span class="comment">## 使用等方差T检验（Student T检验）</span></span><br><span class="line">				stat, pval = stats.ttest_ind(df_test[col], df_contrl[col], equal_val=<span class="literal">True</span>)</span><br><span class="line">				test_method = <span class="string">"Student-t检验"</span></span><br><span class="line">		<span class="keyword">else</span>:</span><br><span class="line">			<span class="comment">## 使用非参数检验</span></span><br><span class="line">			stat, pval = stats.stats.mannwhitneyu(df_test[col], df_contrl[col], alternative=<span class="string">"two-sided"</span>)</span><br><span class="line">			test_method = <span class="string">"Mann-Whiteny-U检验"</span></span><br><span class="line">		result = [pval, test_method]</span><br><span class="line">	<span class="keyword">return</span> result</span><br></pre></td></tr></table></figure>
+<h1 id="参考资料"><a class="header-anchor" href="#参考资料"></a>参考资料</h1>
+<ul>
 <li><a href="https://www.skillsyouneed.com/num/statistics-identifying-patterns.html" target="_blank" rel="noopener">Statistical Analysis: Identifying Patterns</a></li>
 <li><a href="https://book.douban.com/subject/5998092/" target="_blank" rel="noopener">概率论与数理统计教程</a></li>
 <li><a href="https://zhuanlan.zhihu.com/p/116002163" target="_blank" rel="noopener">数分面试-AB实验篇</a></li>
 <li><a href="https://pages.ucsd.edu/~lspangle/CourseDocs/Ttest-v-ChiSquare.pdf" target="_blank" rel="noopener">Differences between a T-Test and Chi Square</a></li>
 </ul>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>'Student’是William Sealy Gosset的笔名 <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
 ]]></content>
       <categories>
         <category>Statistics</category>
@@ -26032,13 +26121,16 @@ $$\mbox{Effect Size} = \frac{ad}{bc}$$</p>
   <entry>
     <title>Machine Learning | 线性回归</title>
     <url>/%E7%AE%97%E6%B3%95-%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92.html</url>
-    <content><![CDATA[<p><center>Linear Regression</center><br><a id="more"></a></p>
-<h1 id="线性回归"><a href="#线性回归" class="headerlink" title="线性回归"></a>线性回归</h1><p>自变量$x$和因变量$y$之间存在线性相关关系</p>
+    <content><![CDATA[<center>Linear Regression</center>
+<a id="more"></a>
+<h1 id="线性回归"><a class="header-anchor" href="#线性回归"></a>线性回归</h1>
+<p>自变量$x$和因变量$y$之间存在线性相关关系</p>
 <ul>
-<li><a href="/%E7%94%9F%E6%88%90%E5%BC%8F%E6%A8%A1%E5%9E%8B-%E5%88%A4%E5%88%AB%E5%BC%8F%E6%A8%A1%E5%9E%8B.html" title="判别式模型">判别式模型</a>
+<li>
+<a href="/%E7%94%9F%E6%88%90%E5%BC%8F%E6%A8%A1%E5%9E%8B-%E5%88%A4%E5%88%AB%E5%BC%8F%E6%A8%A1%E5%9E%8B.html" title="判别式模型">判别式模型</a>
 </li>
 </ul>
-<h2 id="变量别名"><a href="#变量别名" class="headerlink" title="变量别名"></a>变量别名</h2><div class="table-container">
+<h2 id="变量别名"><a class="header-anchor" href="#变量别名"></a>变量别名</h2>
 <table>
 <thead>
 <tr>
@@ -26081,17 +26173,20 @@ $$\mbox{Effect Size} = \frac{ad}{bc}$$</p>
 </tr>
 </tbody>
 </table>
-</div>
-<h2 id="用途"><a href="#用途" class="headerlink" title="用途"></a>用途</h2><ul>
-<li>确定自变量对因变量影响的强度<br>to identify the strength of the effect that the independent variable(s) have on a dependent variable</li>
-<li>预测效应<br>to forecast effects or impact of changes</li>
-<li>预测趋势<br>to predict trends and future values</li>
+<h2 id="用途"><a class="header-anchor" href="#用途"></a>用途</h2>
+<ul>
+<li>确定自变量对因变量影响的强度<br>
+to identify the strength of the effect that the independent variable(s) have on a dependent variable</li>
+<li>预测效应<br>
+to forecast effects or impact of changes</li>
+<li>预测趋势<br>
+to predict trends and future values</li>
 </ul>
-<h2 id="类型"><a href="#类型" class="headerlink" title="类型"></a>类型</h2><p>线性回归的类型有：</p>
+<h2 id="类型"><a class="header-anchor" href="#类型"></a>类型</h2>
+<p>线性回归的类型有：</p>
 <ul>
 <li><strong>Simple linear regression</strong></li>
 </ul>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -26109,18 +26204,13 @@ $$\mbox{Effect Size} = \frac{ad}{bc}$$</p>
 <tr>
 <td style="text-align:center">type</td>
 <td style="text-align:center">interval / ratio</td>
-<td style="text-align:center">interval / ratio / dichotomous<sup><a href="#fn_1" id="reffn_1">1</a></sup></td>
+<td style="text-align:center">interval / ratio / dichotomous<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></td>
 </tr>
 </tbody>
 </table>
-</div>
-<blockquote id="fn_1">
-<sup>1</sup>. dichotomous：二分类<a href="#reffn_1" title="Jump back to footnote [1] in the text."> &#8617;</a>
-</blockquote>
 <ul>
 <li><strong>Multiple linear regression</strong></li>
 </ul>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -26142,11 +26232,9 @@ $$\mbox{Effect Size} = \frac{ad}{bc}$$</p>
 </tr>
 </tbody>
 </table>
-</div>
 <ul>
 <li><strong>Logistic regression</strong></li>
 </ul>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -26168,11 +26256,9 @@ $$\mbox{Effect Size} = \frac{ad}{bc}$$</p>
 </tr>
 </tbody>
 </table>
-</div>
 <ul>
 <li><strong>Ordinal regression</strong></li>
 </ul>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -26189,22 +26275,24 @@ $$\mbox{Effect Size} = \frac{ad}{bc}$$</p>
 </tr>
 <tr>
 <td style="text-align:center">type</td>
-<td style="text-align:center">ordinal<sup><a href="#fn_2" id="reffn_2">2</a></sup></td>
-<td style="text-align:center">nominal<sup><a href="#fn_3" id="reffn_3">3</a></sup> or dichotomous</td>
+<td style="text-align:center">ordinal[^2]</td>
+<td style="text-align:center">nominal[^3] or dichotomous</td>
+</tr>
+<tr>
+<td style="text-align:center">[^2]: ordinal：有序，序数</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">[^3]: nominal：名义</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
 </tr>
 </tbody>
 </table>
-</div>
-<blockquote id="fn_2">
-<sup>2</sup>. ordinal：有序，序数<a href="#reffn_2" title="Jump back to footnote [2] in the text."> &#8617;</a>
-</blockquote>
-<blockquote id="fn_3">
-<sup>3</sup>. nominal：名义<a href="#reffn_3" title="Jump back to footnote [3] in the text."> &#8617;</a>
-</blockquote>
 <ul>
 <li><strong>Multinominal regression</strong></li>
 </ul>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -26226,11 +26314,10 @@ $$\mbox{Effect Size} = \frac{ad}{bc}$$</p>
 </tr>
 </tbody>
 </table>
-</div>
 <ul>
-<li><strong>Discriminant analysis</strong><br>判别分析</li>
+<li><strong>Discriminant analysis</strong><br>
+判别分析</li>
 </ul>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -26252,11 +26339,13 @@ $$\mbox{Effect Size} = \frac{ad}{bc}$$</p>
 </tr>
 </tbody>
 </table>
-</div>
-<h2 id="基本模型"><a href="#基本模型" class="headerlink" title="基本模型"></a>基本模型</h2><script type="math/tex; mode=display">y=\beta_0+\beta_1x_1+\beta_2x_2+\cdots+\beta_px_p+\varepsilon</script><ul>
+<h2 id="基本模型"><a class="header-anchor" href="#基本模型"></a>基本模型</h2>
+<p>$$y=\beta_0+\beta_1x_1+\beta_2x_2+\cdots+\beta_px_p+\varepsilon$$</p>
+<ul>
 <li>因变量（regressand）：$y$</li>
-<li>自变量（regressor）：$x_1,\cdots,x_p$<ul>
-<li>是确定性变量，不是随机变量 </li>
+<li>自变量（regressor）：$x_1,\cdots,x_p$
+<ul>
+<li>是确定性变量，不是随机变量</li>
 </ul>
 </li>
 <li>随机误差项：$\varepsilon$</li>
@@ -26264,34 +26353,54 @@ $$\mbox{Effect Size} = \frac{ad}{bc}$$</p>
 <li>回归系数（regression coefficient）</li>
 </ul>
 <p>考虑$n$个样本、$p$个自变量$(\mathbf{X}_1,\mathbf{X}_2,\cdots, \mathbf{X}_p)$</p>
-<p>\begin{equation}<br>\textbf{y}=\textbf{X} \mathbf{\beta} + \mathbf{\varepsilon}, \qquad \mathbf{\varepsilon} \sim \mathcal{N}(\mathbf{0},\sigma^2\mathbf{I})<br>\end{equation}</p>
-<p>其中<br>\begin{equation}<br>\mathbf{X} = (\mathbf{1}, \mathbf{X}_1, \mathbf{X}_2, \cdots, \mathbf{X}_p) = \left(<br>\begin{array}{cccc}<br>1 &amp; X_{11} &amp; \cdots &amp; X_{1p} \\<br>1 &amp; X_{21} &amp; \cdots &amp; X_{2p} \\<br>\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\<br>1 &amp; X_{n1} &amp; \cdots &amp; X_{np}<br>\end{array}<br>\right)<br>\end{equation}</p>
-<script type="math/tex; mode=display">
-\mathbf{\beta} = \left( \begin{array}{c}
-\beta_0 \\
-\beta_1 \\
-\vdots \\
-\beta_p
-\end{array} \right) ,\qquad \mathbf{\varepsilon}= \left( 
-\begin{array}{c}
-\varepsilon_1 \\ 
-\varepsilon_2 \\ 
-\vdots \\ 
-\varepsilon_n
-\end{array} \right)</script><h2 id="基本假设"><a href="#基本假设" class="headerlink" title="基本假设"></a>基本假设</h2><ol>
+<p>\begin{equation}<br>
+\textbf{y}=\textbf{X} \mathbf{\beta} + \mathbf{\varepsilon}, \qquad \mathbf{\varepsilon} \sim \mathcal{N}(\mathbf{0},\sigma^2\mathbf{I})<br>
+\end{equation}</p>
+<p>其中<br>
+\begin{equation}<br>
+\mathbf{X} = (\mathbf{1}, \mathbf{X}<em>1, \mathbf{X}<em>2, \cdots, \mathbf{X}<em>p) = \left(<br>
+\begin{array}{cccc}<br>
+1 &amp; X</em>{11} &amp; \cdots &amp; X</em>{1p} \<br>
+1 &amp; X</em>{21} &amp; \cdots &amp; X_{2p} \<br>
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \<br>
+1 &amp; X_{n1} &amp; \cdots &amp; X_{np}<br>
+\end{array}<br>
+\right)<br>
+\end{equation}</p>
+<p>$$<br>
+\mathbf{\beta} = \left( \begin{array}{c}<br>
+\beta_0 \<br>
+\beta_1 \<br>
+\vdots \<br>
+\beta_p<br>
+\end{array} \right) ,\qquad \mathbf{\varepsilon}= \left(<br>
+\begin{array}{c}<br>
+\varepsilon_1 \<br>
+\varepsilon_2 \<br>
+\vdots \<br>
+\varepsilon_n<br>
+\end{array} \right)<br>
+$$</p>
+<h2 id="基本假设"><a class="header-anchor" href="#基本假设"></a>基本假设</h2>
+<ol>
 <li>自变量和因变量线性相关</li>
-<li>自变量之间相互独立<ul>
-<li>解释变量之间不存在（完全的）线性关系<script type="math/tex; mode=display">\mathrm{rank}(X)=p</script></li>
+<li>自变量之间相互独立
+<ul>
+<li>解释变量之间不存在（完全的）线性关系<br>
+$$\mathrm{rank}(X)=p$$</li>
 <li>若不满足，则模型具有<strong>多重共线性</strong>（Multicollinearity）</li>
 </ul>
 </li>
-<li>随机误差项相互独立<ul>
+<li>随机误差项相互独立
+<ul>
 <li>若不满足，则模型具有<strong>自相关性</strong>（Autocorrelation）</li>
 </ul>
 </li>
-<li>$\varepsilon\sim i.i.d. N(0,\sigma^2)$<ul>
+<li>$\varepsilon\sim i.i.d. N(0,\sigma^2)$
+<ul>
 <li>随机误差项服从均值为零、方差为常数的正态分布</li>
-<li>随机误差项独立同分布（i.i.d.，independent and identical distribution）<ul>
+<li>随机误差项独立同分布（i.i.d.，independent and identical distribution）
+<ul>
 <li>随机误差项<strong>同方差</strong>（Homoskedasticity）；若不满足，则存在<strong>异方差性</strong>（Heteroskedasticity）</li>
 </ul>
 </li>
@@ -26299,15 +26408,26 @@ $$\mbox{Effect Size} = \frac{ad}{bc}$$</p>
 </li>
 <li>自变量和误差项之间相互独立</li>
 </ol>
-<h2 id="参数估计"><a href="#参数估计" class="headerlink" title="参数估计"></a>参数估计</h2><p>Linear regression:</p>
-<script type="math/tex; mode=display">h_\beta(x)=\sum_{j=0}^p\beta_jx_j</script><p>where $x_0=1$.</p>
-<p>Cost function:</p>
-<script type="math/tex; mode=display">J( \beta ) = \frac{1}{2n} \sum_{i=1}^n \left( h_\beta(x^{(i)})- y^{(i)} \right)^2</script><p>Objective function:</p>
-<script type="math/tex; mode=display">\min_\beta J(\beta)</script><h3 id="Batch-Gradient-Descent"><a href="#Batch-Gradient-Descent" class="headerlink" title="(Batch) Gradient Descent"></a>(Batch) Gradient Descent</h3><p>（全批量）梯度下降法<br>Linear Regression with <strong>(Batch) Gradient Descent</strong>：<br>repeat until convergence $\{$</p>
-<script type="math/tex; mode=display">\beta_j := \beta_j - \alpha \frac{1}{n} \sum_{i=1}^n \left( h_\beta(x^{(i)} ) - y^{(i)} \right) x_j^{(i)}</script><p>for $\forall$ $j=0,1,\cdots,p$.<br>$\}$</p>
-<p>其中<br>$\alpha$为<strong>学习率/学习步长</strong>（learning rate）：</p>
+<h2 id="参数估计"><a class="header-anchor" href="#参数估计"></a>参数估计</h2>
+<p>Linear regression:<br>
+$$h_\beta(x)=\sum_{j=0}^p\beta_jx_j$$<br>
+where $x_0=1$.</p>
+<p>Cost function:<br>
+$$ J( \beta ) = \frac{1}{2n} \sum_{i=1}^n \left( h_\beta(x^{(i)})- y^{(i)} \right)^2$$</p>
+<p>Objective function:<br>
+$$\min_\beta J(\beta)$$</p>
+<h3 id="Batch-Gradient-Descent"><a class="header-anchor" href="#Batch-Gradient-Descent"></a>(Batch) Gradient Descent</h3>
+<p>（全批量）梯度下降法<br>
+Linear Regression with <strong>(Batch) Gradient Descent</strong>：<br>
+repeat until convergence ${$<br>
+$$ \beta_j := \beta_j - \alpha \frac{1}{n} \sum_{i=1}^n \left( h_\beta(x^{(i)} ) - y^{(i)} \right) x_j^{(i)} $$<br>
+for $\forall$ $j=0,1,\cdots,p$.<br>
+$}$</p>
+<p>其中<br>
+$\alpha$为<strong>学习率/学习步长</strong>（learning rate）：</p>
 <ul>
-<li>决定了在每一步梯度下降迭代过程中，<ul>
+<li>决定了在每一步梯度下降迭代过程中，
+<ul>
 <li>每一步沿梯度负方向前进的长度（如果是最小化目标函数）</li>
 <li>每一步沿梯度正方向前进的长度（如果是最大化目标函数）</li>
 </ul>
@@ -26319,82 +26439,128 @@ $$\mbox{Effect Size} = \frac{ad}{bc}$$</p>
 <blockquote>
 <p>learning rate, $\alpha$, basically controls how big step we take downhill with gradient descent. If $\alpha$ is large, then that corresponds to a very aggressive gradient descent procedure, where we’re trying to take huge steps downhill. And if $\alpha$ is very small, then we’re taking little, little baby steps downhill.——吴恩达-机器学习</p>
 </blockquote>
-<h2 id="正则化"><a href="#正则化" class="headerlink" title="正则化"></a>正则化</h2><p>若训练模型过于复杂，容易出现<strong>过拟合</strong>（overfitting）问题。</p>
+<h2 id="正则化"><a class="header-anchor" href="#正则化"></a>正则化</h2>
+<p>若训练模型过于复杂，容易出现<strong>过拟合</strong>（overfitting）问题。</p>
 <p>解决方法：</p>
 <ol>
 <li>减少特征的数量</li>
 <li>降低特征的权重，即正则化</li>
 </ol>
-<p><strong>正则化</strong>（Regularization）：<br>原目标函数为</p>
-<script type="math/tex; mode=display">\hat{\beta}=\arg\min_\beta\left\{\sum_{i=1}^n(y_i-\sum_{j=0}^p\beta_jx_{ij})^2\right\}</script><p>在原始目标函数上添加惩罚项（penalty term）</p>
-<script type="math/tex; mode=display">\hat{\beta}=\arg\min_\beta\left\{\sum_{i=1}^n(y_i-\sum_{j=0}^p\beta_jx_{ij})^2+\lambda g(\beta)\right\}</script><h3 id="岭回归"><a href="#岭回归" class="headerlink" title="岭回归"></a>岭回归</h3><p>Ridge regression</p>
-<script type="math/tex; mode=display">\hat{\beta}^{ridge}={\arg\min}_\beta\left\{\sum_{i=1}^n(y_i-\sum_{j=0}^p\beta_jx_{ij})^2+\lambda \sum_{j=1}^p\beta_j^2\right\}</script><ul>
+<p><strong>正则化</strong>（Regularization）：<br>
+原目标函数为<br>
+$$\hat{\beta}=\arg\min_\beta\left{\sum_{i=1}<sup>n(y_i-\sum_{j=0}</sup>p\beta_jx_{ij})^2\right}$$<br>
+在原始目标函数上添加惩罚项（penalty term）<br>
+$$\hat{\beta}=\arg\min_\beta\left{\sum_{i=1}<sup>n(y_i-\sum_{j=0}</sup>p\beta_jx_{ij})^2+\lambda g(\beta)\right}$$</p>
+<h3 id="岭回归"><a class="header-anchor" href="#岭回归"></a>岭回归</h3>
+<p>Ridge regression<br>
+$$\hat{\beta}<sup>{ridge}={\arg\min}_\beta\left{\sum_{i=1}</sup>n(y_i-\sum_{j=0}<sup>p\beta_jx_{ij})</sup>2+\lambda \sum_{j=1}<sup>p\beta_j</sup>2\right}$$</p>
+<ul>
 <li>若自变量间存在严重的共线性问题，普通最小二乘法并不适用，可以选用岭回归方法</li>
 </ul>
-<h3 id="Lasso"><a href="#Lasso" class="headerlink" title="Lasso"></a>Lasso</h3><script type="math/tex; mode=display">\hat{\beta}^{lasso}=\arg\min_\beta\left\{\sum_{i=1}^n(y_i-\sum_{j=0}^p\beta_jx_{ij})^2+\lambda \sum_{j=1}^p|\beta_j|\right\}</script><h3 id="Elastic-Net"><a href="#Elastic-Net" class="headerlink" title="Elastic Net"></a>Elastic Net</h3><script type="math/tex; mode=display">\hat{\beta}^{EN}=\arg\min_\beta\left\{\sum_{i=1}^n(y_i-\sum_{j=0}^p\beta_jx_{ij})^2+\lambda_2 \sum_{j=1}^p\beta_j^2+\lambda_1 \sum_{j=1}^p|\beta_j|\right\}</script><h2 id="残差"><a href="#残差" class="headerlink" title="残差"></a>残差</h2><script type="math/tex; mode=display">e_i=y_i-\hat{y}_i</script><h2 id="相关检验"><a href="#相关检验" class="headerlink" title="相关检验"></a>相关检验</h2><h3 id="DW检验"><a href="#DW检验" class="headerlink" title="DW检验"></a>DW检验</h3><p>用于检验残差是否具有自相关性<br>Durbin-Watson统计量</p>
-<script type="math/tex; mode=display">DW=\frac{\sum_{i=2}^n(e_i-e_{i-1})^2}{\sum_{i=1}^ne_i^2}</script><h3 id="残差检验"><a href="#残差检验" class="headerlink" title="残差检验"></a>残差检验</h3><h2 id="平方和"><a href="#平方和" class="headerlink" title="平方和"></a>平方和</h2><h3 id="1-总平方和"><a href="#1-总平方和" class="headerlink" title="1. 总平方和"></a>1. 总平方和</h3><ul>
+<h3 id="Lasso"><a class="header-anchor" href="#Lasso"></a>Lasso</h3>
+<p>$$\hat{\beta}<sup>{lasso}=\arg\min_\beta\left{\sum_{i=1}</sup>n(y_i-\sum_{j=0}<sup>p\beta_jx_{ij})</sup>2+\lambda \sum_{j=1}^p|\beta_j|\right}$$</p>
+<h3 id="Elastic-Net"><a class="header-anchor" href="#Elastic-Net"></a>Elastic Net</h3>
+<p>$$\hat{\beta}<sup>{EN}=\arg\min_\beta\left{\sum_{i=1}</sup>n(y_i-\sum_{j=0}<sup>p\beta_jx_{ij})</sup>2+\lambda_2 \sum_{j=1}<sup>p\beta_j</sup>2+\lambda_1 \sum_{j=1}^p|\beta_j|\right}$$</p>
+<h2 id="残差"><a class="header-anchor" href="#残差"></a>残差</h2>
+<p>$$e_i=y_i-\hat{y}_i$$</p>
+<h2 id="相关检验"><a class="header-anchor" href="#相关检验"></a>相关检验</h2>
+<h3 id="DW检验"><a class="header-anchor" href="#DW检验"></a>DW检验</h3>
+<p>用于检验残差是否具有自相关性<br>
+Durbin-Watson统计量<br>
+$$DW=\frac{\sum_{i=2}<sup>n(e_i-e_{i-1})</sup>2}{\sum_{i=1}<sup>ne_i</sup>2}$$</p>
+<h3 id="残差检验"><a class="header-anchor" href="#残差检验"></a>残差检验</h3>
+<h2 id="平方和"><a class="header-anchor" href="#平方和"></a>平方和</h2>
+<h3 id="1-总平方和"><a class="header-anchor" href="#1-总平方和"></a>1. 总平方和</h3>
+<ul>
 <li>总平方和</li>
 <li>总离差平方和</li>
 <li>SST (Sum of Squares Total)</li>
-<li>TSS (Total Sum of Squares)<script type="math/tex; mode=display">\mathbf{\sum_{i=1}^n(y_i-\bar{y})^2}</script></li>
+<li>TSS (Total Sum of Squares)<br>
+$$\mathbf{\sum_{i=1}<sup>n(y_i-\bar{y})</sup>2}$$</li>
 </ul>
-<h3 id="2-回归平方和"><a href="#2-回归平方和" class="headerlink" title="2. 回归平方和"></a>2. 回归平方和</h3><ul>
+<h3 id="2-回归平方和"><a class="header-anchor" href="#2-回归平方和"></a>2. 回归平方和</h3>
+<ul>
 <li>回归平方和</li>
 <li>解释平方和</li>
 <li>SSR (Sum of Squares Regression)</li>
 <li>ESS (Explained Sum of Squares)</li>
 </ul>
-<script type="math/tex; mode=display">\mathbf{\sum_{i=1}^n(\hat{y}_i-\bar{y})^2}</script><h3 id="3-残差平方和"><a href="#3-残差平方和" class="headerlink" title="3. 残差平方和"></a>3. 残差平方和</h3><ul>
+<p>$$\mathbf{\sum_{i=1}<sup>n(\hat{y}_i-\bar{y})</sup>2}$$</p>
+<h3 id="3-残差平方和"><a class="header-anchor" href="#3-残差平方和"></a>3. 残差平方和</h3>
+<ul>
 <li>残差平方和</li>
 <li>SSE (Sum of Squared estimate of Errors/ Sum of Squares Error)</li>
 <li>RSS (Residual Sum of Squares)</li>
 <li>SSR (Sum of Squared Residuals)</li>
 </ul>
-<script type="math/tex; mode=display">\mathbf{\sum_{i=1}^n(y_i-\hat{y}_i)^2}</script><h3 id="SST-SSR-SSE"><a href="#SST-SSR-SSE" class="headerlink" title="SST=SSR+SSE"></a>SST=SSR+SSE</h3><div class="note success">
-            <script type="math/tex; mode=display">SST=SSR+SSE</script>
+<p>$$\mathbf{\sum_{i=1}<sup>n(y_i-\hat{y}_i)</sup>2}$$</p>
+<h3 id="SST-SSR-SSE"><a class="header-anchor" href="#SST-SSR-SSE"></a>SST=SSR+SSE</h3>
+<div class="note success">
+            <p>$$SST=SSR+SSE$$</p>
           </div>
 <div class="note default">
-            <ul><li><p><strong>Simple linear regression</strong>情况</p><script type="math/tex; mode=display">y_i=\beta_0 +\beta_1 x_i+\varepsilon_i</script><p>\begin{aligned}<br>  SST&amp;=SSR+SSE\\<br>  SST&amp;=\sum_{i=1}^n(y_i-\bar{y})^2\\<br>  &amp;= \sum_{i=1}^n(y_i-\hat{y}_i+\hat{y}_i-\bar{y})^2\\<br>  &amp;= \sum_{i=1}^n(y_i-\hat{y}_i)^2 + 2\sum_{i=1}^n (y_i-\hat{y}_i)(\hat{y}_i-\bar{y})+ \sum_{i=1}^n(\hat{y}_i-\bar{y})^2\\<br>  &amp;= \sum_{i=1}^n(y_i-\hat{y}_i)^2 + \sum_{i=1}^n(\hat{y}_i-\bar{y})^2\\<br>  &amp;= SSR + SSE<br>\end{aligned}<br>下面证明</p><script type="math/tex; mode=display">\sum_{i=1}^n (y_i-\hat{y}_i)(\hat{y}_i-\bar{y})=0</script><p>在最小二乘法中，最小化$SSE$</p><script type="math/tex; mode=display">(\hat{\beta}_0,\hat{\beta}_1)=\arg \min_{\beta_0,\beta_1}\sum_{i=1}^n(y_i-\beta_0-\beta_1x_i)^2</script><p>$SSE$分别关于$\beta_0,\beta_1$求偏导<br>\begin{aligned}<br>  \frac{\partial{SSE}}{\partial{\beta_0}}&amp;=\sum_{i=1}^n2(y_i-\beta_0-\beta_1x_i)(-1)=0\\<br>  \frac{\partial{SSE}}{\partial{\beta_1}}&amp;=\sum_{i=1}^n2(y_i-\beta_0-\beta_1x_i)(-x_i)=0<br>\end{aligned}<br>所以有</p><script type="math/tex; mode=display">\sum_{i=1}^n(y_i-\hat{\beta}_0-\hat{\beta}_1x_i)=0</script><script type="math/tex; mode=display">\sum_{i=1}^n(y_i-\hat{\beta}_0-\hat{\beta}_1x_i)x_i=0</script><p>因此<br>\begin{aligned}<br>  \sum_{i=1}^n (y_i-\hat{y}_i)(\hat{y}_i-\bar{y})&amp;=\sum_{i=1}^n(y-\hat{\beta}_0-\hat{\beta}_1x_i)(\hat{\beta}_0+\hat{\beta}_1x_i-\bar{y})\\<br>  &amp;=(\hat{\beta}_0-\bar{y})\underline{\sum_{i=1}^n(y-\hat{\beta}_0-\hat{\beta}_1x_i)}+\hat{\beta}_1\underline{\sum_{i=1}^n(y-\hat{\beta}_0-\hat{\beta}_1x_i)x_i}\\<br>  &amp;=0<br>\end{aligned}</p></li><li><p><strong>Multiple linear regression</strong>情况<br>考虑$p$个自变量$({X}_1,{X}_2,\cdots, {X}_p)$</p><script type="math/tex; mode=display">\mathbf{y}=\mathbf{X}{\beta} + {\varepsilon}, \qquad {\varepsilon} \sim \mathcal{N}(\mathbf{0},\sigma^2\mathbf{I})</script><p>由最小二乘法得到的$\hat{\mathbf{\beta}}$满足</p><script type="math/tex; mode=display">\hat{\mathbf{\beta}}=\arg \min_{\mathbf{\beta}} \hat{\mathbf{\varepsilon}}^\prime \hat{\mathbf{\varepsilon}}=\arg \min_{\mathbf{\beta}} (\mathbf{y}-\mathbf{X}\mathbf{\beta})^\prime(\mathbf{y}-\mathbf{X}\mathbf{\beta})</script></li></ul><script type="math/tex; mode=display">\frac{\partial{\hat{\varepsilon}^\prime \hat{\varepsilon}}}{\partial{\beta}}=-2\mathbf{X}^\prime \mathbf{y}+2\mathbf{X}^\prime \mathbf{X}\mathbf{\beta}=\mathbf{0}</script><p>$\Longrightarrow$</p><script type="math/tex; mode=display">\hat{\beta}=(\mathbf{X}^\prime\mathbf{X})^{-1}\mathbf{X}^\prime \mathbf{y}</script><p>因此</p><script type="math/tex; mode=display">\hat{\mathbf{y}}=\mathbf{X}\hat{\mathbf{\beta}}=\mathbf{X}(\mathbf{X}^\prime\mathbf{X})^{-1}\mathbf{X}^\prime \mathbf{y}\triangleq \mathbf{H}\mathbf{y}</script><p>其中<br>$\mathbf{H}=\mathbf{X}(\mathbf{X}^\prime\mathbf{X})^{-1}\mathbf{X}^\prime$ 对称幂等，且$\mathbf{I}-\mathbf{H}$对称幂等。</p><p>\begin{aligned}<br>    SST&amp;=(\textbf{y}-\bar{\textbf{y}})^\prime(\textbf{y}-\bar{\textbf{y}})\\<br>    SSR&amp;=(\hat{\textbf{y}}-\bar{\textbf{y}})^\prime(\hat{\textbf{y}}-\bar{\textbf{y}})\\<br>    SSE&amp;=(\textbf{y}-\hat{\textbf{y}})^\prime(\textbf{y}-\hat{\textbf{y}})<br>  \end{aligned}</p><p>定义$\textbf{1}_n=(1,1,\cdots,1)^\prime$为元素全是1的 $n$ 维列向量，则均值算子为$\frac{\textbf{1}_n\textbf{1}_n^\prime}{n}$ （全是$\frac{1}{n}$ 的$n\times n$方阵），$\textbf{1}_n^\prime\textbf{1}_n=n$，且</p><script type="math/tex; mode=display">\left(\textbf{I}-\frac{\textbf{1}_n\textbf{1}_n^\prime}{n}\right)^\prime = \left(\textbf{I}-\frac{\textbf{1}_n\textbf{1}_n^\prime}{n}\right)</script><script type="math/tex; mode=display">\left(\textbf{I}-\frac{\textbf{1}_n\textbf{1}_n^\prime}{n}\right)^\prime\left(\textbf{I}-\frac{\textbf{1}_n\textbf{1}_n^\prime}{n}\right)=\textbf{I}-\frac{\textbf{1}_n\underline{\textbf{1}_n^\prime\textbf{1}_n}\textbf{1}_n^\prime}{n^2}=\left(\textbf{I}-\frac{\textbf{1}_n\textbf{1}_n^\prime}{n}\right)</script><p>即$\left(\textbf{I}-\frac{\textbf{1}_n\textbf{1}_n^\prime}{n}\right)$ 是对称幂等阵。则有</p><p>\begin{aligned}<br>    \textbf{y}-\bar{\textbf{y}}&amp;=\left(\textbf{I}-\frac{\textbf{1}_n\textbf{1}_n^\prime}{n}\right)\textbf{y}\\<br>    \hat{\mathbf{y}}-\bar{\mathbf{y}}&amp;=\left(\mathbf{H}-\frac{\textbf{1}_n\textbf{1}_n^\prime}{n}\right)\mathbf{y}\\<br>    \textbf{y}-\hat{\textbf{y}}&amp;=(\mathbf{I}-\mathbf{H})\mathbf{y}\\<br>    SST&amp;=\textbf{y}^\prime\left(\textbf{I}-\frac{\textbf{1}_n\textbf{1}_n^\prime}{n}\right)^\prime \left(\textbf{I}-\frac{\textbf{1}_n\textbf{1}_n^\prime}{n}\right) \textbf{y}=\textbf{y}^\prime \left(\textbf{I}-\frac{\textbf{1}_n\textbf{1}_n^\prime}{n}\right) \textbf{y}\\<br>    SSR&amp;=\mathbf{y}^\prime\left(\mathbf{H}-\frac{\textbf{1}_n\textbf{1}_n^\prime}{n}\right)^\prime\left(\mathbf{H}-\frac{\textbf{1}_n\textbf{1}_n^\prime}{n}\right)\mathbf{y}=\mathbf{y}^\prime\left(\mathbf{H}-\frac{\textbf{1}_n\textbf{1}_n^\prime}{n}\right)\mathbf{y}\\<br>    SSE&amp;=\mathbf{y}^\prime (\mathbf{I}-\mathbf{H})^\prime (\mathbf{I}-\mathbf{H}) \mathbf{y}=\mathbf{y}^\prime (\mathbf{I}-\mathbf{H}) \mathbf{y}<br>\end{aligned}<br>所以 <script type="math/tex">SST=SSR+SSE</script></p>
+            <ul><li><p><strong>Simple linear regression</strong>情况<br>$$y_i=\beta_0 +\beta_1 x_i+\varepsilon_i$$<br>\begin{aligned}<br>SST&amp;=SSR+SSE\<br>SST&amp;=\sum_{i=1}<sup>n(y_i-\bar{y})</sup>2\<br>&amp;= \sum_{i=1}<sup>n(y_i-\hat{y}_i+\hat{y}_i-\bar{y})</sup>2\<br>&amp;= \sum_{i=1}<sup>n(y_i-\hat{y}_i)</sup>2 + 2\sum_{i=1}^n (y_i-\hat{y}<em>i)(\hat{y}<em>i-\bar{y})+ \sum</em>{i=1}<sup>n(\hat{y}_i-\bar{y})</sup>2\<br>&amp;= \sum</em>{i=1}<sup>n(y_i-\hat{y}_i)</sup>2 + \sum_{i=1}<sup>n(\hat{y}_i-\bar{y})</sup>2\<br>&amp;= SSR + SSE<br>\end{aligned}<br>下面证明<br>$$\sum_{i=1}^n (y_i-\hat{y}<em>i)(\hat{y}<em>i-\bar{y})=0$$<br>在最小二乘法中，最小化$SSE$<br>$$(\hat{\beta}<em>0,\hat{\beta}<em>1)=\arg \min</em>{\beta_0,\beta_1}\sum</em>{i=1}<sup>n(y_i-\beta_0-\beta_1x_i)</sup>2$$<br>$SSE$分别关于$\beta_0,\beta_1$求偏导<br>\begin{aligned}<br>\frac{\partial{SSE}}{\partial{\beta_0}}&amp;=\sum</em>{i=1}^n2(y_i-\beta_0-\beta_1x_i)(-1)=0\<br>\frac{\partial{SSE}}{\partial{\beta_1}}&amp;=\sum</em>{i=1}^n2(y_i-\beta_0-\beta_1x_i)(-x_i)=0<br>\end{aligned}<br>所以有<br>$$\sum_{i=1}^n(y_i-\hat{\beta}_0-\hat{\beta}<em>1x_i)=0$$<br>$$\sum</em>{i=1}^n(y_i-\hat{\beta}_0-\hat{\beta}<em>1x_i)x_i=0$$<br>因此<br>\begin{aligned}<br>\sum</em>{i=1}^n (y_i-\hat{y}_i)(\hat{y}<em>i-\bar{y})&amp;=\sum</em>{i=1}^n(y-\hat{\beta}_0-\hat{\beta}_1x_i)(\hat{\beta}_0+\hat{\beta}_1x_i-\bar{y})\<br>&amp;=(\hat{\beta}<em>0-\bar{y})\underline{\sum</em>{i=1}<sup>n(y-\hat{\beta}_0-\hat{\beta}_1x_i)}+\hat{\beta}_1\underline{\sum_{i=1}</sup>n(y-\hat{\beta}_0-\hat{\beta}_1x_i)x_i}\<br>&amp;=0<br>\end{aligned}</p></li><li><p><strong>Multiple linear regression</strong>情况<br>考虑$p$个自变量$({X}_1,{X}<em>2,\cdots, {X}<em>p)$<br>$$<br>\mathbf{y}=\mathbf{X}{\beta} + {\varepsilon}, \qquad {\varepsilon} \sim \mathcal{N}(\mathbf{0},\sigma^2\mathbf{I})<br>$$<br>由最小二乘法得到的$\hat{\mathbf{\beta}}$满足<br>$$\hat{\mathbf{\beta}}=\arg \min</em>{\mathbf{\beta}} \hat{\mathbf{\varepsilon}}^\prime \hat{\mathbf{\varepsilon}}=\arg \min</em>{\mathbf{\beta}} (\mathbf{y}-\mathbf{X}\mathbf{\beta})^\prime(\mathbf{y}-\mathbf{X}\mathbf{\beta}) $$</p></li></ul><p>$$\frac{\partial{\hat{\varepsilon}^\prime \hat{\varepsilon}}}{\partial{\beta}}=-2\mathbf{X}^\prime \mathbf{y}+2\mathbf{X}^\prime \mathbf{X}\mathbf{\beta}=\mathbf{0}$$<br>$\Longrightarrow$<br>$$\hat{\beta}=(\mathbf{X}<sup>\prime\mathbf{X})</sup>{-1}\mathbf{X}^\prime \mathbf{y}$$<br>因此<br>$$\hat{\mathbf{y}}=\mathbf{X}\hat{\mathbf{\beta}}=\mathbf{X}(\mathbf{X}<sup>\prime\mathbf{X})</sup>{-1}\mathbf{X}^\prime \mathbf{y}\triangleq \mathbf{H}\mathbf{y}$$<br>其中<br>$\mathbf{H}=\mathbf{X}(\mathbf{X}<sup>\prime\mathbf{X})</sup>{-1}\mathbf{X}^\prime$ 对称幂等，且$\mathbf{I}-\mathbf{H}$对称幂等。</p><p>\begin{aligned}<br>SST&amp;=(\textbf{y}-\bar{\textbf{y}})^\prime(\textbf{y}-\bar{\textbf{y}})\<br>SSR&amp;=(\hat{\textbf{y}}-\bar{\textbf{y}})^\prime(\hat{\textbf{y}}-\bar{\textbf{y}})\<br>SSE&amp;=(\textbf{y}-\hat{\textbf{y}})^\prime(\textbf{y}-\hat{\textbf{y}})<br>\end{aligned}</p><p>定义$\textbf{1}_n=(1,1,\cdots,1)^\prime$为元素全是1的 $n$ 维列向量，则均值算子为$\frac{\textbf{1}_n\textbf{1}_n^\prime}{n}$ （全是$\frac{1}{n}$ 的$n\times n$方阵），$\textbf{1}_n^\prime\textbf{1}_n=n$，且<br>$$\left(\textbf{I}-\frac{\textbf{1}_n\textbf{1}_n<sup>\prime}{n}\right)</sup>\prime = \left(\textbf{I}-\frac{\textbf{1}_n\textbf{1}_n^\prime}{n}\right)$$<br>$$\left(\textbf{I}-\frac{\textbf{1}_n\textbf{1}_n<sup>\prime}{n}\right)</sup>\prime\left(\textbf{I}-\frac{\textbf{1}_n\textbf{1}_n<sup>\prime}{n}\right)=\textbf{I}-\frac{\textbf{1}_n\underline{\textbf{1}_n</sup>\prime\textbf{1}_n}\textbf{1}_n<sup>\prime}{n</sup>2}=\left(\textbf{I}-\frac{\textbf{1}_n\textbf{1}_n^\prime}{n}\right)$$<br>即$\left(\textbf{I}-\frac{\textbf{1}_n\textbf{1}_n^\prime}{n}\right)$ 是对称幂等阵。则有</p><p>\begin{aligned}<br>\textbf{y}-\bar{\textbf{y}}&amp;=\left(\textbf{I}-\frac{\textbf{1}_n\textbf{1}_n^\prime}{n}\right)\textbf{y}\<br>\hat{\mathbf{y}}-\bar{\mathbf{y}}&amp;=\left(\mathbf{H}-\frac{\textbf{1}_n\textbf{1}_n^\prime}{n}\right)\mathbf{y}\<br>\textbf{y}-\hat{\textbf{y}}&amp;=(\mathbf{I}-\mathbf{H})\mathbf{y}\<br>SST&amp;=\textbf{y}<sup>\prime\left(\textbf{I}-\frac{\textbf{1}_n\textbf{1}_n</sup>\prime}{n}\right)^\prime \left(\textbf{I}-\frac{\textbf{1}_n\textbf{1}_n^\prime}{n}\right) \textbf{y}=\textbf{y}^\prime \left(\textbf{I}-\frac{\textbf{1}_n\textbf{1}_n^\prime}{n}\right) \textbf{y}\<br>SSR&amp;=\mathbf{y}<sup>\prime\left(\mathbf{H}-\frac{\textbf{1}_n\textbf{1}_n</sup>\prime}{n}\right)<sup>\prime\left(\mathbf{H}-\frac{\textbf{1}_n\textbf{1}_n</sup>\prime}{n}\right)\mathbf{y}=\mathbf{y}<sup>\prime\left(\mathbf{H}-\frac{\textbf{1}_n\textbf{1}_n</sup>\prime}{n}\right)\mathbf{y}\<br>SSE&amp;=\mathbf{y}^\prime (\mathbf{I}-\mathbf{H})^\prime (\mathbf{I}-\mathbf{H}) \mathbf{y}=\mathbf{y}^\prime (\mathbf{I}-\mathbf{H}) \mathbf{y}<br>\end{aligned}<br>所以 $$SST=SSR+SSE$$</p>
           </div>
-<h1 id="与其他方法比较"><a href="#与其他方法比较" class="headerlink" title="与其他方法比较"></a>与其他方法比较</h1><h2 id="线性回归-vs-逻辑回归"><a href="#线性回归-vs-逻辑回归" class="headerlink" title="线性回归 vs 逻辑回归"></a>线性回归 vs 逻辑回归</h2><div class="note default">
+<h1 id="与其他方法比较"><a class="header-anchor" href="#与其他方法比较"></a>与其他方法比较</h1>
+<h2 id="线性回归-vs-逻辑回归"><a class="header-anchor" href="#线性回归-vs-逻辑回归"></a>线性回归 vs 逻辑回归</h2>
+<div class="note default">
             <p>见<a href="/%E7%AE%97%E6%B3%95-LogisticRegression.html" title="Machine Learning | Logistic Regression">Machine Learning | Logistic Regression</a></p>
           </div>
-<h1 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h1><h2 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> statsmodels.api <span class="keyword">as</span> sm</span><br><span class="line"></span><br><span class="line">sm_model = sm.OLS(y, X).fit()</span><br><span class="line"></span><br><span class="line"><span class="comment">## 回归系数</span></span><br><span class="line">sm_model.params</span><br><span class="line">sm_model.params.to_list()</span><br><span class="line"></span><br><span class="line"><span class="comment">## 回归系数的p值</span></span><br><span class="line">sm_model.pvalues</span><br><span class="line">sm_model.pvalues.to_list()</span><br><span class="line"></span><br><span class="line"><span class="comment">## R方</span></span><br><span class="line">sm_model.rsquared</span><br><span class="line"></span><br><span class="line"><span class="comment">## 模型总结</span></span><br><span class="line">sm_model.summary()</span><br><span class="line">print(sm_model.summary())</span><br><span class="line"></span><br><span class="line"><span class="comment"># 其他</span></span><br><span class="line"><span class="comment">## 数据标准化</span></span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">from</span> sklearn.preprocessing <span class="keyword">import</span> MinMaxScaler</span><br><span class="line"></span><br><span class="line">X = df[[cols]]</span><br><span class="line">y = df[label]</span><br><span class="line">X1 = X[[cols2]]  <span class="comment">## 需要标准化的指标</span></span><br><span class="line">min_max_scaler = MinMaxScaler()</span><br><span class="line">X_std = min_max_scaler.fit_transform(X1)</span><br><span class="line">X_std = pd.DataFrame(X_std)</span><br><span class="line">X_std.columns = X1.columns</span><br><span class="line">X = pd.merge(X[[cols3]], X_std, left_index=<span class="literal">True</span>, right_index=<span class="literal">True</span>)  <span class="comment">## 与不需要标准化的指标合并</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 添加常数项</span></span><br><span class="line">X = sm.add_constant(X)</span><br></pre></td></tr></table></figure>
+<h1 id="实现代码"><a class="header-anchor" href="#实现代码"></a>实现代码</h1>
+<h2 id="Python"><a class="header-anchor" href="#Python"></a>Python</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> statsmodels.api <span class="keyword">as</span> sm</span><br><span class="line"></span><br><span class="line">sm_model = sm.OLS(y, X).fit()</span><br><span class="line"></span><br><span class="line"><span class="comment">## 回归系数</span></span><br><span class="line">sm_model.params</span><br><span class="line">sm_model.params.to_list()</span><br><span class="line"></span><br><span class="line"><span class="comment">## 回归系数的p值</span></span><br><span class="line">sm_model.pvalues</span><br><span class="line">sm_model.pvalues.to_list()</span><br><span class="line"></span><br><span class="line"><span class="comment">## R方</span></span><br><span class="line">sm_model.rsquared</span><br><span class="line"></span><br><span class="line"><span class="comment">## 模型总结</span></span><br><span class="line">sm_model.summary()</span><br><span class="line">print(sm_model.summary())</span><br><span class="line"></span><br><span class="line"><span class="comment"># 其他</span></span><br><span class="line"><span class="comment">## 数据标准化</span></span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">from</span> sklearn.preprocessing <span class="keyword">import</span> MinMaxScaler</span><br><span class="line"></span><br><span class="line">X = df[[cols]]</span><br><span class="line">y = df[label]</span><br><span class="line">X1 = X[[cols2]]  <span class="comment">## 需要标准化的指标</span></span><br><span class="line">min_max_scaler = MinMaxScaler()</span><br><span class="line">X_std = min_max_scaler.fit_transform(X1)</span><br><span class="line">X_std = pd.DataFrame(X_std)</span><br><span class="line">X_std.columns = X1.columns</span><br><span class="line">X = pd.merge(X[[cols3]], X_std, left_index=<span class="literal">True</span>, right_index=<span class="literal">True</span>)  <span class="comment">## 与不需要标准化的指标合并</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 添加常数项</span></span><br><span class="line">X = sm.add_constant(X)</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>推荐阅读：《<a href="/%E7%AE%97%E6%B3%95-%E7%89%B9%E5%BE%81%E5%BD%92%E4%B8%80%E5%8C%96.html" title="Feature Engineering | 特征缩放">Feature Engineering | 特征缩放</a>》</p>
 </blockquote>
-<h1 id="面试题"><a href="#面试题" class="headerlink" title="面试题"></a>面试题</h1><ul>
-<li>State the <strong>assumptions</strong> in linear regression model<blockquote>
+<h1 id="面试题"><a class="header-anchor" href="#面试题"></a>面试题</h1>
 <ul>
-<li>自变量和因变量线性相关<ul>
+<li>State the <strong>assumptions</strong> in linear regression model
+<blockquote>
+<ul>
+<li>自变量和因变量线性相关</li>
+</ul>
+</blockquote>
+<ul>
 <li>自变量间相互独立</li>
 <li>误差项间相互独立</li>
 <li>误差项服从均值为零、方差为常数的比正态分布</li>
 <li>自变量和误差项相互独立</li>
 </ul>
 </li>
+<li>How to avoid <strong>overfitting</strong> in linear regression?</li>
 </ul>
-</blockquote>
-</li>
-<li>How to avoid <strong>overfitting</strong> in linear regression?<blockquote>
+<blockquote>
 <ul>
 <li>减少特征的数量</li>
-<li>减少自变量的权重，控制模型的复杂度。即，进行正则化<strong>Regularization</strong></li>
 </ul>
 </blockquote>
+<ul>
+<li>
+<p>减少自变量的权重，控制模型的复杂度。即，进行正则化<strong>Regularization</strong></p>
 </li>
-<li><p>Explain <strong>gradient descent</strong> with respect to linear regression</p>
+<li>
+<p>Explain <strong>gradient descent</strong> with respect to linear regression</p>
 </li>
-<li><p>How to choose the value of the parameter <strong>learning rate</strong> $\alpha$?</p>
+<li>
+<p>How to choose the value of the parameter <strong>learning rate</strong> $\alpha$?</p>
 </li>
-<li><p>How to choose the <strong>regularization parameter</strong>?</p>
+<li>
+<p>How to choose the <strong>regularization parameter</strong>?</p>
 </li>
 </ul>
 <p>未完</p>
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
+<h1 id="参考资料"><a class="header-anchor" href="#参考资料"></a>参考资料</h1>
+<ul>
 <li><a href="https://www.statisticssolutions.com/what-is-linear-regression/" target="_blank" rel="noopener">What is Linear Regression?</a></li>
 <li><a href="https://www.dataapplab.com/linear-regression-5-quiz/" target="_blank" rel="noopener">Linear regression 5道经典必考题自测</a></li>
 </ul>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>dichotomous：二分类 <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
 ]]></content>
       <categories>
         <category>机器学习</category>
@@ -27784,8 +27950,8 @@ $$1→2→3→4→5→6→7$$
         <category>Data Scientist</category>
       </categories>
       <tags>
-        <tag>Python</tag>
         <tag>Data</tag>
+        <tag>Python</tag>
         <tag>R</tag>
         <tag>Projects</tag>
       </tags>
@@ -27863,8 +28029,8 @@ $$1→2→3→4→5→6→7$$
         <category>Python</category>
       </categories>
       <tags>
-        <tag>Jupyter</tag>
         <tag>Python</tag>
+        <tag>Jupyter</tag>
       </tags>
   </entry>
   <entry>
@@ -28413,8 +28579,8 @@ $$Random Forest=Bagging+Decision Tree$$</li>
         <tag>算法</tag>
         <tag>机器学习</tag>
         <tag>分类</tag>
-        <tag>有监督学习</tag>
         <tag>集成学习</tag>
+        <tag>有监督学习</tag>
         <tag>判别式模型</tag>
         <tag>Bagging</tag>
       </tags>
@@ -28957,8 +29123,8 @@ $$ w_i^T x - w_k^T x \geq 1 \quad \forall \quad k\neq i $$</li>
         <tag>算法</tag>
         <tag>机器学习</tag>
         <tag>分类</tag>
-        <tag>有监督学习</tag>
         <tag>回归</tag>
+        <tag>有监督学习</tag>
         <tag>判别式模型</tag>
       </tags>
   </entry>
