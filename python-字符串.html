@@ -303,15 +303,28 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><center></center><br><a id="more"></a></p>
-<h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><h2 id="center"><a href="#center" class="headerlink" title=".center()"></a>.center()</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">width = <span class="number">20</span></span><br><span class="line">print(<span class="string">'HackerRank'</span>.center(width,<span class="string">'-'</span>))</span><br><span class="line"><span class="comment">#-----HackerRank-----</span></span><br></pre></td></tr></table></figure>
-<h2 id="endswith"><a href="#endswith" class="headerlink" title=".endswith()"></a>.endswith()</h2><p>判断字符串是否以指定字符或子字符串结尾，常用于判断文件类型<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">str1 = <span class="string">'Hello, world'</span></span><br><span class="line">str2 = <span class="string">'rld'</span></span><br><span class="line">str1.endswith(str2)  <span class="comment">## str1是否以str2结尾</span></span><br><span class="line"><span class="comment"># True</span></span><br><span class="line"></span><br><span class="line">str1.endswith(<span class="string">'wor'</span>, <span class="number">3</span>)  <span class="comment">## （从左数）从索引为3的字符开始检测是否以"wor"结尾</span></span><br><span class="line"><span class="comment"># False</span></span><br><span class="line"></span><br><span class="line">str1.endswith(<span class="string">'wor'</span>, <span class="number">3</span>, <span class="number">10</span>)  </span><br><span class="line"><span class="comment">## （从左数）从索引为3的字符开始、到索引为10(不包括10)检测是否以"wor"结尾</span></span><br><span class="line"><span class="comment">## str1中逗号后含空格（算一个字符）</span></span><br><span class="line"><span class="comment"># True</span></span><br><span class="line"></span><br><span class="line">str1.endswith((<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'d'</span>))  <span class="comment">## 匹配元组，只要有一个满足就行</span></span><br><span class="line"><span class="comment"># True</span></span><br></pre></td></tr></table></figure></p>
-<h2 id="islower"><a href="#islower" class="headerlink" title=".islower()"></a>.islower()</h2><p>字符串是否都是小写字母</p>
-<h2 id="isupper"><a href="#isupper" class="headerlink" title=".isupper()"></a>.isupper()</h2><p>字符串是否都是大写字母</p>
-<h2 id="ljust"><a href="#ljust" class="headerlink" title=".ljust()"></a>.ljust()</h2><p>将字符串按左对齐并填充字符直到字符串达到目标长度<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">width = <span class="number">20</span></span><br><span class="line">print(<span class="string">'HackerRank'</span>.ljust(width,<span class="string">'-'</span>))</span><br><span class="line"><span class="comment">#HackerRank----------</span></span><br></pre></td></tr></table></figure></p>
-<h2 id="lower"><a href="#lower" class="headerlink" title=".lower()"></a>.lower()</h2><p>将字符转换为小写</p>
-<h2 id="rjust"><a href="#rjust" class="headerlink" title=".rjust()"></a>.rjust()</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">width = <span class="number">20</span></span><br><span class="line">print(<span class="string">'HackerRank'</span>.rjust(width,<span class="string">'-'</span>))</span><br><span class="line"><span class="comment">#----------HackerRank</span></span><br></pre></td></tr></table></figure>
-<h2 id="str"><a href="#str" class="headerlink" title="str()"></a>str()</h2><h2 id="upper"><a href="#upper" class="headerlink" title=".upper()"></a>.upper()</h2><p>将字符转换为大写</p>
+        <center></center>
+<a id="more"></a>
+<h1 id="函数"><a class="header-anchor" href="#函数"></a>函数</h1>
+<h2 id="center"><a class="header-anchor" href="#center"></a>.center()</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">width = <span class="number">20</span></span><br><span class="line">print(<span class="string">'HackerRank'</span>.center(width,<span class="string">'-'</span>))</span><br><span class="line"><span class="comment">#-----HackerRank-----</span></span><br></pre></td></tr></table></figure>
+<h2 id="endswith"><a class="header-anchor" href="#endswith"></a>.endswith()</h2>
+<p>判断字符串是否以指定字符或子字符串结尾，常用于判断文件类型</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">str1 = <span class="string">'Hello, world'</span></span><br><span class="line">str2 = <span class="string">'rld'</span></span><br><span class="line">str1.endswith(str2)  <span class="comment">## str1是否以str2结尾</span></span><br><span class="line"><span class="comment"># True</span></span><br><span class="line"></span><br><span class="line">str1.endswith(<span class="string">'wor'</span>, <span class="number">3</span>)  <span class="comment">## （从左数）从索引为3的字符开始检测是否以"wor"结尾</span></span><br><span class="line"><span class="comment"># False</span></span><br><span class="line"></span><br><span class="line">str1.endswith(<span class="string">'wor'</span>, <span class="number">3</span>, <span class="number">10</span>)  </span><br><span class="line"><span class="comment">## （从左数）从索引为3的字符开始、到索引为10(不包括10)检测是否以"wor"结尾</span></span><br><span class="line"><span class="comment">## str1中逗号后含空格（算一个字符）</span></span><br><span class="line"><span class="comment"># True</span></span><br><span class="line"></span><br><span class="line">str1.endswith((<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'d'</span>))  <span class="comment">## 匹配元组，只要有一个满足就行</span></span><br><span class="line"><span class="comment"># True</span></span><br></pre></td></tr></table></figure>
+<h2 id="islower"><a class="header-anchor" href="#islower"></a>.islower()</h2>
+<p>字符串是否都是小写字母</p>
+<h2 id="isupper"><a class="header-anchor" href="#isupper"></a>.isupper()</h2>
+<p>字符串是否都是大写字母</p>
+<h2 id="ljust"><a class="header-anchor" href="#ljust"></a>.ljust()</h2>
+<p>将字符串按左对齐并填充字符直到字符串达到目标长度</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">width = <span class="number">20</span></span><br><span class="line">print(<span class="string">'HackerRank'</span>.ljust(width,<span class="string">'-'</span>))</span><br><span class="line"><span class="comment">#HackerRank----------</span></span><br></pre></td></tr></table></figure>
+<h2 id="lower"><a class="header-anchor" href="#lower"></a>.lower()</h2>
+<p>将字符转换为小写</p>
+<h2 id="rjust"><a class="header-anchor" href="#rjust"></a>.rjust()</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">width = <span class="number">20</span></span><br><span class="line">print(<span class="string">'HackerRank'</span>.rjust(width,<span class="string">'-'</span>))</span><br><span class="line"><span class="comment">#----------HackerRank</span></span><br></pre></td></tr></table></figure>
+<h2 id="str"><a class="header-anchor" href="#str"></a>str()</h2>
+<h2 id="upper"><a class="header-anchor" href="#upper"></a>.upper()</h2>
+<p>将字符转换为大写</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 将字符串s中的字母大小写互换</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">swap_case</span><span class="params">(s)</span>:</span></span><br><span class="line">    s1 = [i.upper() <span class="keyword">if</span> i.islower() <span class="keyword">else</span> i.lower() <span class="keyword">for</span> i <span class="keyword">in</span> s]</span><br><span class="line">    <span class="keyword">return</span> <span class="string">""</span>.join(s1)</span><br></pre></td></tr></table></figure>
 
     </div>
@@ -327,8 +340,8 @@
   <div id="qr" style="display: none;">
       
       <div style="display: inline-block;">
-        <img src="/images/reward2021.png" alt="Skye WeChat Bezahlung">
-        <p>WeChat Bezahlung</p>
+        <img src="/images/reward2021.png" alt="Skye WeChat Pay">
+        <p>WeChat Pay</p>
       </div>
       
       <div style="display: inline-block;">
@@ -457,7 +470,7 @@
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-count">10</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -505,13 +518,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">392k</span>
+    <span title="站点总字数">402k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">5:56</span>
+    <span title="站点阅读时长">6:05</span>
 </div>
 
 

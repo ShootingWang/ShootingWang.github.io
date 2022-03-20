@@ -315,15 +315,18 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><center>Scikit-learn</center><br><a id="more"></a></p>
-<h1 id="Scikit-learn"><a href="#Scikit-learn" class="headerlink" title="Scikit-learn"></a>Scikit-learn</h1><blockquote>
+        <center>Scikit-learn</center>
+<a id="more"></a>
+<h1 id="Scikit-learn"><a class="header-anchor" href="#Scikit-learn"></a>Scikit-learn</h1>
+<blockquote>
 <p>常用使用手册：</p>
 <ul>
 <li><a href="https://scikit-learn.org/stable/user_guide.html" target="_blank" rel="noopener">Scikit-Learn User Guide</a></li>
 </ul>
 </blockquote>
-<h1 id="datasets"><a href="#datasets" class="headerlink" title="datasets"></a>datasets</h1><h2 id="fetch"><a href="#fetch" class="headerlink" title="fetch_()"></a>fetch_<name>()</name></h2><p>获取较大型的数据集</p>
-<div class="table-container">
+<h1 id="datasets"><a class="header-anchor" href="#datasets"></a>datasets</h1>
+<h2 id="fetch-name"><a class="header-anchor" href="#fetch-name"></a>fetch_<name>()</name></h2>
+<p>获取较大型的数据集</p>
 <table>
 <thead>
 <tr>
@@ -380,12 +383,11 @@
 </tr>
 </tbody>
 </table>
-</div>
-<h2 id="load"><a href="#load" class="headerlink" title="load_()"></a>load_<name>()</name></h2><p><code>datasets</code>含有若干自带的小数据集，使用<code>load_&lt;name&gt;</code>可以载入名称为name的数据集</p>
+<h2 id="load-name"><a class="header-anchor" href="#load-name"></a>load_<name>()</name></h2>
+<p><code>datasets</code>含有若干自带的小数据集，使用<code>load_&lt;name&gt;</code>可以载入名称为name的数据集</p>
 <ul>
 <li>数据集列表及信息：<a href="https://scikit-learn.org/stable/datasets/toy_dataset.html#toy-datasets" target="_blank" rel="noopener">https://scikit-learn.org/stable/datasets/toy_dataset.html#toy-datasets</a></li>
 </ul>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -432,11 +434,14 @@
 </tr>
 </tbody>
 </table>
-</div>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.datasets <span class="keyword">import</span> load_boston</span><br><span class="line"></span><br><span class="line">X, y = load_boston(return_X_y=<span class="literal">True</span>)</span><br><span class="line">print(X.shape)</span><br><span class="line"><span class="comment"># (506, 13)</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> datasets</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line">dat = dataset.load_iris()  <span class="comment">## 载入鸢尾花数据集</span></span><br><span class="line">print(<span class="string">" "</span>.join(dat.keys()))     <span class="comment">## 数据集包含的信息项</span></span><br><span class="line">print(dat[<span class="string">'DESCR'</span>])         <span class="comment">## 数据集描述信息</span></span><br><span class="line">dat.sample(<span class="number">8</span>)   <span class="comment">## 随机抽取8行数据</span></span><br><span class="line">dat.describe()  <span class="comment">## 数据集特征描述信息</span></span><br></pre></td></tr></table></figure>
-<h2 id="make-blobs"><a href="#make-blobs" class="headerlink" title="make_blobs"></a>make_blobs</h2><p>生成多类单标签数据集，为每个类分配一个或多个正态分布的点集</p>
-<h2 id="make-classification"><a href="#make-classification" class="headerlink" title="make_classification"></a>make_classification</h2><p>生成多类单标签数据集，为每个类分配一个或多个正态分布的点集</p>
-<h1 id="liner-model"><a href="#liner-model" class="headerlink" title="liner_model"></a>liner_model</h1><h2 id="LinearRegression"><a href="#LinearRegression" class="headerlink" title="LinearRegression()"></a>LinearRegression()</h2><p>LinearRegression()：用于拟合线性回归模型。在sklearn库中的linear_model模块中。</p>
+<h2 id="make-blobs"><a class="header-anchor" href="#make-blobs"></a>make_blobs</h2>
+<p>生成多类单标签数据集，为每个类分配一个或多个正态分布的点集</p>
+<h2 id="make-classification"><a class="header-anchor" href="#make-classification"></a>make_classification</h2>
+<p>生成多类单标签数据集，为每个类分配一个或多个正态分布的点集</p>
+<h1 id="liner-model"><a class="header-anchor" href="#liner-model"></a>liner_model</h1>
+<h2 id="LinearRegression"><a class="header-anchor" href="#LinearRegression"></a>LinearRegression()</h2>
+<p>LinearRegression()：用于拟合线性回归模型。在sklearn库中的linear_model模块中。</p>
 <ul>
 <li><code>.fit()</code>：拟合模型</li>
 <li><code>.predict()</code>：预测结果</li>
@@ -446,35 +451,44 @@
 <li><code>.score()</code>：看测试集的表现得分</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">###导入线性回归模型</span></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">from</span> sklearn.linear_model <span class="keyword">import</span> LinearRegression</span><br><span class="line"></span><br><span class="line">%matplotlib inline</span><br><span class="line"></span><br><span class="line">X = [[<span class="number">1</span>], [<span class="number">4</span>]]   <span class="comment">###两个点的横坐标</span></span><br><span class="line">y = [<span class="number">3</span>, <span class="number">5</span>]   <span class="comment">###两个点的纵坐标</span></span><br><span class="line"></span><br><span class="line">lr = LinearRegression().fit(X, y)</span><br><span class="line">z = np.linspace(<span class="number">0</span>, <span class="number">5</span>, <span class="number">20</span>)</span><br><span class="line">plt.scatter(X, y, s= <span class="number">50</span>)   <span class="comment">###参数s设置点的大小</span></span><br><span class="line">plt.plot(z, lr.predict(z.reshape(<span class="number">-1</span>, <span class="number">1</span>)), c=<span class="string">'green'</span>)</span><br><span class="line">plt.title(<span class="string">"Straight Line"</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
-<p><meta name="referrer" content="no-referrer"><br><img src="/python-sklearn/output_0_0.png" class></p>
+<meta name="referrer" content="no-referrer">
+<img src="/python-sklearn/output_0_0.png" class>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">print(<span class="string">"y = &#123;:.4f&#125;"</span>.format(lr.coef_[<span class="number">0</span>]),<span class="string">"x"</span>,<span class="string">"+&#123;:.4f&#125;"</span>.format(lr.intercept_))</span><br></pre></td></tr></table></figure>
 <pre><code>y = 0.6667 x +2.3333
-</code></pre><p>考虑多个数据点的线性回归：</p>
+</code></pre>
+<p>考虑多个数据点的线性回归：</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line"><span class="comment">###首先生成数据集</span></span><br><span class="line"><span class="keyword">from</span> sklearn.datasets <span class="keyword">import</span> make_regression</span><br><span class="line"></span><br><span class="line">X ,y = make_regression(n_samples=<span class="number">100</span>, n_features=<span class="number">1</span>, </span><br><span class="line">                      n_informative=<span class="number">1</span>, noise=<span class="number">50</span>, random_state=<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> sklearn.linear_model <span class="keyword">import</span> LinearRegression</span><br><span class="line"><span class="comment">###拟合</span></span><br><span class="line">reg = LinearRegression()</span><br><span class="line">reg.fit(X, y)</span><br><span class="line">z = np.linspace(<span class="number">-3</span>, <span class="number">3</span>, <span class="number">200</span>).reshape(<span class="number">-1</span>, <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">plt.scatter(X, y, c=<span class="string">'blue'</span>, s=<span class="number">50</span>)</span><br><span class="line">plt.plot(z, reg.predict(z), c=<span class="string">'k'</span>)</span><br><span class="line">plt.title(<span class="string">"Linear Regression"</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
-<p><meta name="referrer" content="no-referrer"><br><img src="/python-sklearn/output_2_0.png" class></p>
+<meta name="referrer" content="no-referrer">
+<img src="/python-sklearn/output_2_0.png" class>
 <p>糖尿病数据，线性回归：</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">###加载糖尿病数据集</span></span><br><span class="line"><span class="keyword">from</span> sklearn.datasets <span class="keyword">import</span> load_diabetes</span><br><span class="line"></span><br><span class="line">X, y = load_diabetes().data, load_diabetes().target</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> train_test_split</span><br><span class="line">X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=<span class="number">8</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> sklearn.linear_model <span class="keyword">import</span> LinearRegression</span><br><span class="line">lr = LinearRegression().fit(X_train, y_train)</span><br><span class="line"></span><br><span class="line">print(<span class="string">"训练数据集得分：&#123;:.3f&#125;"</span>.format(lr.score(X_train, y_train)))</span><br><span class="line">print(<span class="string">"测试数据集得分：&#123;:.3f&#125;"</span>.format(lr.score(X_test, y_test)))</span><br></pre></td></tr></table></figure>
 <pre><code>训练数据集得分：0.530
 测试数据集得分：0.459
-</code></pre><ul>
+</code></pre>
+<ul>
 <li><strong>损失函数</strong>（Loss Function），也称<strong>成本函数</strong>（Cost Function），用于定义模型预测值与观测值的误差。</li>
 <li><strong>残差</strong>（residuals）/<strong>训练误差</strong>（training errors）：模型预测值与训练集数据的差异。</li>
 <li><strong>预测误差</strong>（prediction errors）/<strong>测试误差</strong>（test errors）：模型预测值与测试集数据的差异。</li>
 </ul>
 <p>考虑带损失函数的模型拟合结果评估（标注残差、计算残差平方和）：</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">X = [[<span class="number">6</span>], [<span class="number">8</span>], [<span class="number">10</span>], [<span class="number">14</span>], [<span class="number">18</span>]]</span><br><span class="line">y = [[<span class="number">7</span>], [<span class="number">9</span>], [<span class="number">13</span>], [<span class="number">17.5</span>], [<span class="number">18</span>]]</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> sklearn.linear_model <span class="keyword">import</span> LinearRegression</span><br><span class="line">model = LinearRegression()</span><br><span class="line">model.fit(X, y)</span><br><span class="line">X2 = [[<span class="number">0</span>], [<span class="number">10</span>], [<span class="number">14</span>], [<span class="number">25</span>]]</span><br><span class="line">y2 = model.predict(X2)</span><br><span class="line"></span><br><span class="line"><span class="comment">###残差</span></span><br><span class="line">yr = model.predict(X)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">%matplotlib inline</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line">plt.plot(X, y, <span class="string">'k.'</span>)</span><br><span class="line">plt.plot(X2, y2, <span class="string">'g-'</span>)</span><br><span class="line"><span class="keyword">for</span> idx, x <span class="keyword">in</span> enumerate(X):</span><br><span class="line">    plt.plot([x, x], [y[idx], yr[idx]], <span class="string">'r-'</span>)</span><br><span class="line"></span><br><span class="line">plt.xlabel(<span class="string">"X"</span>)</span><br><span class="line">plt.ylabel(<span class="string">"y"</span>)</span><br><span class="line">plt.axis([<span class="number">0</span>, <span class="number">25</span>, <span class="number">0</span>, <span class="number">25</span>])</span><br><span class="line">plt.grid(<span class="literal">True</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
-<p><meta name="referrer" content="no-referrer"><br><img src="/python-sklearn/output_4_0.png" class></p>
-<h1 id="preprocessing"><a href="#preprocessing" class="headerlink" title="preprocessing"></a>preprocessing</h1><p>sklearn模块中的preprocessing包含许多用于encoding的函数。</p>
-<h2 id="LabelBinarizer"><a href="#LabelBinarizer" class="headerlink" title="LabelBinarizer()"></a>LabelBinarizer()</h2><p>使用One-Hot Encoding将类别数据二进制化</p>
+<meta name="referrer" content="no-referrer">
+<img src="/python-sklearn/output_4_0.png" class>
+<h1 id="preprocessing"><a class="header-anchor" href="#preprocessing"></a>preprocessing</h1>
+<p>sklearn模块中的preprocessing包含许多用于encoding的函数。</p>
+<h2 id="LabelBinarizer"><a class="header-anchor" href="#LabelBinarizer"></a>LabelBinarizer()</h2>
+<p>使用One-Hot Encoding将类别数据二进制化</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> preprocessing</span><br><span class="line">lb = preprocessing.LabelBinarizer()</span><br><span class="line"></span><br><span class="line">c_list = [<span class="string">'Quanzhou'</span>, <span class="string">'Xiamen'</span>, <span class="string">'Zhangzhou'</span>, <span class="string">'Quanzhou'</span>]</span><br><span class="line"></span><br><span class="line">lb.fit(c_list)</span><br><span class="line">lb.classes_</span><br><span class="line"><span class="comment">#array(['Quanzhou', 'Xiamen', 'Zhangzhou'], dtype='&lt;U9')</span></span><br><span class="line"></span><br><span class="line">c_list_lb = lb.transform(c_list)  <span class="comment">##Encoding</span></span><br><span class="line">c_list_lb</span><br><span class="line"><span class="comment">#array([[1, 0, 0],</span></span><br><span class="line"><span class="comment">#       [0, 1, 0],</span></span><br><span class="line"><span class="comment">#       [0, 0, 1],</span></span><br><span class="line"><span class="comment">#       [1, 0, 0]])</span></span><br><span class="line"></span><br><span class="line">c_list_new = lb.inverse_transform(c_list_lb)  <span class="comment">##Decoding</span></span><br><span class="line">c_list_new</span><br><span class="line"><span class="comment">#array(['Quanzhou', 'Xiamen', 'Zhangzhou', 'Quanzhou'], dtype='&lt;U9')</span></span><br></pre></td></tr></table></figure>
-<h2 id="LabelEncoder"><a href="#LabelEncoder" class="headerlink" title="LabelEncoder()"></a>LabelEncoder()</h2><p>进行Label encoding。</p>
+<h2 id="LabelEncoder"><a class="header-anchor" href="#LabelEncoder"></a>LabelEncoder()</h2>
+<p>进行Label encoding。</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> preprocessing</span><br><span class="line">le = preprocessing.LabelEncoder()</span><br><span class="line">le.fit([<span class="string">"paris"</span>, <span class="string">"paris"</span>, <span class="string">"tokyo"</span>, <span class="string">"amsterdam"</span>])  <span class="comment">##进行编码</span></span><br><span class="line"><span class="comment"># LabelEncoder()</span></span><br><span class="line"></span><br><span class="line">list(le.classes_)  <span class="comment">##编码类别；paris重复；</span></span><br><span class="line"><span class="comment"># ['amsterdam', 'paris', 'tokyo']</span></span><br><span class="line"></span><br><span class="line">le.transform([<span class="string">"tokyo"</span>, <span class="string">"tokyo"</span>, <span class="string">"paris"</span>])</span><br><span class="line"><span class="comment"># array([2, 2, 1], dtype=int64)</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.preprocessing <span class="keyword">import</span> LabelEncoder</span><br><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> defaultdict</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line">d = defaultdict(LabelEncoder)</span><br><span class="line"></span><br><span class="line">df = pd.DataFrame(&#123;</span><br><span class="line">    <span class="string">'pets'</span>:[<span class="string">'cat'</span>, <span class="string">'dog'</span>, <span class="string">'cat'</span>, <span class="string">'monkey'</span>, <span class="string">'dog'</span>, <span class="string">'cat'</span>],</span><br><span class="line">    <span class="string">'owner'</span>:[<span class="string">'Champ'</span>, <span class="string">'Ron'</span>, <span class="string">'Jane'</span>, <span class="string">'Champ'</span>, <span class="string">'Veronica'</span>, <span class="string">'Ron'</span>],</span><br><span class="line">    <span class="string">'location'</span>:[<span class="string">'San_Diego'</span>, <span class="string">'New_York'</span>, <span class="string">'New_York'</span>, <span class="string">'San_Diego'</span>, <span class="string">'San_Diego'</span>, <span class="string">'New_York'</span>]</span><br><span class="line">&#125;)</span><br><span class="line">df</span><br><span class="line"><span class="comment">#     pets     owner   location</span></span><br><span class="line"><span class="comment">#0     cat     Champ  San_Diego</span></span><br><span class="line"><span class="comment">#1     dog       Ron   New_York</span></span><br><span class="line"><span class="comment">#2     cat      Jane   New_York</span></span><br><span class="line"><span class="comment">#3  monkey     Champ  San_Diego</span></span><br><span class="line"><span class="comment">#4     dog  Veronica  San_Diego</span></span><br><span class="line"><span class="comment">#5     cat       Ron   New_York</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## Encoding</span></span><br><span class="line">fit = df.apply(<span class="keyword">lambda</span> x: d[x.name].fit_transform(x))  <span class="comment">##按列操作</span></span><br><span class="line">fit</span><br><span class="line"><span class="comment">#   pets  owner  location</span></span><br><span class="line"><span class="comment">#0     0      0         1</span></span><br><span class="line"><span class="comment">#1     1      2         0</span></span><br><span class="line"><span class="comment">#2     0      1         0</span></span><br><span class="line"><span class="comment">#3     2      0         1</span></span><br><span class="line"><span class="comment">#4     1      3         1</span></span><br><span class="line"><span class="comment">#5     0      2         0</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## Decoding </span></span><br><span class="line">dec = fit.apply(<span class="keyword">lambda</span> x: d[x.name].inverse_transform(x))</span><br><span class="line">dec</span><br><span class="line"><span class="comment">#     pets     owner   location</span></span><br><span class="line"><span class="comment">#0     cat     Champ  San_Diego</span></span><br><span class="line"><span class="comment">#1     dog       Ron   New_York</span></span><br><span class="line"><span class="comment">#2     cat      Jane   New_York</span></span><br><span class="line"><span class="comment">#3  monkey     Champ  San_Diego</span></span><br><span class="line"><span class="comment">#4     dog  Veronica  San_Diego</span></span><br><span class="line"><span class="comment">#5     cat       Ron   New_York</span></span><br><span class="line"></span><br><span class="line"><span class="comment">### Using the dictionary to label future data</span></span><br><span class="line">df.apply(<span class="keyword">lambda</span> x: d[x.name].transform(x))</span><br></pre></td></tr></table></figure>
-<h3 id="inverse-transform"><a href="#inverse-transform" class="headerlink" title="inverse_transform()"></a>inverse_transform()</h3><p>对LabelEncoder()进行解码</p>
+<h3 id="inverse-transform"><a class="header-anchor" href="#inverse-transform"></a>inverse_transform()</h3>
+<p>对LabelEncoder()进行解码</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">##解码decode</span></span><br><span class="line">list(le.inverse_transform([<span class="number">2</span>, <span class="number">2</span>, <span class="number">1</span>]))</span><br><span class="line"><span class="comment"># ['tokyo', 'tokyo', 'paris']</span></span><br></pre></td></tr></table></figure>
-<h2 id="OneHotEncoder"><a href="#OneHotEncoder" class="headerlink" title="OneHotEncoder()"></a>OneHotEncoder()</h2><p>One-Hot Encoding（独热编码）<br><code>OneHotEncoder(n_values=None, categorical_features=None, 
-    categories=None, sparse=True, dtype=&lt;class &#39;numpy.float64&#39;&gt;, 
-    handle_unknown=&#39;error&#39;)</code></p>
+<h2 id="OneHotEncoder"><a class="header-anchor" href="#OneHotEncoder"></a>OneHotEncoder()</h2>
+<p>One-Hot Encoding（独热编码）<br>
+<code>OneHotEncoder(n_values=None, categorical_features=None,      categories=None, sparse=True, dtype=&lt;class 'numpy.float64'&gt;,      handle_unknown='error')</code></p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> preprocessing</span><br><span class="line">ohe = preprocessing.OneHotEncoder()</span><br><span class="line">ohe.fit([[<span class="number">0</span>, <span class="number">0</span>, <span class="number">3</span>],</span><br><span class="line">        [<span class="number">1</span>, <span class="number">1</span>, <span class="number">0</span>],</span><br><span class="line">        [<span class="number">0</span>, <span class="number">2</span>, <span class="number">1</span>],</span><br><span class="line">        [<span class="number">1</span>, <span class="number">0</span>, <span class="number">2</span>]])  <span class="comment">##学习Encoding</span></span><br><span class="line">ohe.transform([[<span class="number">0</span>, <span class="number">1</span>, <span class="number">3</span>]]).toarray()  <span class="comment">## Encoding</span></span><br><span class="line"><span class="comment">#array([[1., 0., 0., 1., 0., 0., 0., 0., 1.]])</span></span><br></pre></td></tr></table></figure>
 <p>观察学习的4×3数据矩阵，共有4个数据，3个特征。</p>
 <ul>
@@ -488,7 +502,8 @@
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
+<h1 id="参考资料"><a class="header-anchor" href="#参考资料"></a>参考资料</h1>
+<ul>
 <li><a href="https://mp.weixin.qq.com/s?__biz=MzU5NzkxODMxOA==&amp;mid=2247484190&amp;idx=1&amp;sn=e7484e733ae84785a8940270cdf289b1&amp;chksm=fe4d541fc93add09a7d2730ec0ec9aeb04bc1d1fe38e9c662087e368b20bb20c087611191956&amp;token=1683818096&amp;lang=zh_CN#rd" target="_blank" rel="noopener">Sklearn学习：线性回归、岭回归、Lasso、Elastic Net</a></li>
 </ul>
 
@@ -505,8 +520,8 @@
   <div id="qr" style="display: none;">
       
       <div style="display: inline-block;">
-        <img src="/images/reward2021.png" alt="Skye WeChat Bezahlung">
-        <p>WeChat Bezahlung</p>
+        <img src="/images/reward2021.png" alt="Skye WeChat Pay">
+        <p>WeChat Pay</p>
       </div>
       
       <div style="display: inline-block;">
@@ -614,7 +629,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Scikit-learn"><span class="nav-number">1.</span> <span class="nav-text">Scikit-learn</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#datasets"><span class="nav-number">2.</span> <span class="nav-text">datasets</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#fetch"><span class="nav-number">2.1.</span> <span class="nav-text">fetch_()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#load"><span class="nav-number">2.2.</span> <span class="nav-text">load_()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#make-blobs"><span class="nav-number">2.3.</span> <span class="nav-text">make_blobs</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#make-classification"><span class="nav-number">2.4.</span> <span class="nav-text">make_classification</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#liner-model"><span class="nav-number">3.</span> <span class="nav-text">liner_model</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#LinearRegression"><span class="nav-number">3.1.</span> <span class="nav-text">LinearRegression()</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#preprocessing"><span class="nav-number">4.</span> <span class="nav-text">preprocessing</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#LabelBinarizer"><span class="nav-number">4.1.</span> <span class="nav-text">LabelBinarizer()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LabelEncoder"><span class="nav-number">4.2.</span> <span class="nav-text">LabelEncoder()</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#inverse-transform"><span class="nav-number">4.2.1.</span> <span class="nav-text">inverse_transform()</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#OneHotEncoder"><span class="nav-number">4.3.</span> <span class="nav-text">OneHotEncoder()</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料"><span class="nav-number">5.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Scikit-learn"><span class="nav-number">1.</span> <span class="nav-text">Scikit-learn</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#datasets"><span class="nav-number">2.</span> <span class="nav-text">datasets</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#fetch-name"><span class="nav-number">2.1.</span> <span class="nav-text">fetch_()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#load-name"><span class="nav-number">2.2.</span> <span class="nav-text">load_()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#make-blobs"><span class="nav-number">2.3.</span> <span class="nav-text">make_blobs</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#make-classification"><span class="nav-number">2.4.</span> <span class="nav-text">make_classification</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#liner-model"><span class="nav-number">3.</span> <span class="nav-text">liner_model</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#LinearRegression"><span class="nav-number">3.1.</span> <span class="nav-text">LinearRegression()</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#preprocessing"><span class="nav-number">4.</span> <span class="nav-text">preprocessing</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#LabelBinarizer"><span class="nav-number">4.1.</span> <span class="nav-text">LabelBinarizer()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LabelEncoder"><span class="nav-number">4.2.</span> <span class="nav-text">LabelEncoder()</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#inverse-transform"><span class="nav-number">4.2.1.</span> <span class="nav-text">inverse_transform()</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#OneHotEncoder"><span class="nav-number">4.3.</span> <span class="nav-text">OneHotEncoder()</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料"><span class="nav-number">5.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -635,7 +650,7 @@
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-count">10</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -683,13 +698,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">392k</span>
+    <span title="站点总字数">402k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">5:56</span>
+    <span title="站点阅读时长">6:05</span>
 </div>
 
 
