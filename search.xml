@@ -1932,8 +1932,8 @@
         <category>Data Analysis / 数据分析</category>
       </categories>
       <tags>
-        <tag>Data Analysis</tag>
         <tag>数据分析</tag>
+        <tag>Data Analysis</tag>
       </tags>
   </entry>
   <entry>
@@ -1976,7 +1976,7 @@ $$\hat{\beta} = \hat{Y}<em>{post}^{treatment} -<br>
 </ul>
 ]]></content>
       <categories>
-        <category>因果推断</category>
+        <category>Casual Inference / 因果推断</category>
       </categories>
       <tags>
         <tag>因果推断</tag>
@@ -2042,8 +2042,8 @@ $$\hat{\beta} = \hat{Y}<em>{post}^{treatment} -<br>
         <category>Data Analysis / 数据分析</category>
       </categories>
       <tags>
-        <tag>Data Analysis</tag>
         <tag>数据分析</tag>
+        <tag>Data Analysis</tag>
       </tags>
   </entry>
   <entry>
@@ -2062,8 +2062,8 @@ $$\hat{\beta} = \hat{Y}<em>{post}^{treatment} -<br>
         <category>Data Analysis / 数据分析</category>
       </categories>
       <tags>
-        <tag>Data Analysis</tag>
         <tag>数据分析</tag>
+        <tag>Data Analysis</tag>
       </tags>
   </entry>
   <entry>
@@ -2392,11 +2392,11 @@ window.onresize=function(){
 </script>
 <h1 id="样例"><a class="header-anchor" href="#样例"></a>样例</h1>
 <h2 id="饼图"><a class="header-anchor" href="#饼图"></a>饼图</h2>
-<div id="echarts2190" style="width: 85%;height: 800px;margin: 0 auto"></div>
+<div id="echarts1049" style="width: 85%;height: 800px;margin: 0 auto"></div>
 <script src="https://cdn.bootcss.com/echarts/4.3.0/echarts.common.min.js"></script>
 <script type="text/javascript">
 	// 基于准备好的dom，初始化echarts实例
-	var myChart = echarts.init(document.getElementById('echarts2190'));
+	var myChart = echarts.init(document.getElementById('echarts1049'));
 	// 指定图表的配置项和数据
 	// 800表示图表展示的高度为800px
 // '85%'表示图表展示的宽度为85%
@@ -2907,8 +2907,8 @@ window.onresize=function(){
         <category>Data Analysis / 数据分析</category>
       </categories>
       <tags>
-        <tag>Data Analysis</tag>
         <tag>数据分析</tag>
+        <tag>Data Analysis</tag>
       </tags>
   </entry>
   <entry>
@@ -3221,8 +3221,8 @@ eg2：可以使用“今天的体重与昨天的体重的差值/目标值”作�
         <category>Data Analysis / 数据分析</category>
       </categories>
       <tags>
-        <tag>Data Analysis</tag>
         <tag>数据分析</tag>
+        <tag>Data Analysis</tag>
       </tags>
   </entry>
   <entry>
@@ -5886,8 +5886,8 @@ s.t. &amp; \left{<br>
         <category>Data Analysis / 数据分析</category>
       </categories>
       <tags>
-        <tag>Data Analysis</tag>
         <tag>数据分析</tag>
+        <tag>Data Analysis</tag>
       </tags>
   </entry>
   <entry>
@@ -6099,8 +6099,8 @@ $$派生/衍生指标 = 原子指标 + 时间周期 + 其他修饰词$$</li>
         <category>Data Analysis / 数据分析</category>
       </categories>
       <tags>
-        <tag>Data Analysis</tag>
         <tag>数据分析</tag>
+        <tag>Data Analysis</tag>
       </tags>
   </entry>
   <entry>
@@ -6505,9 +6505,9 @@ $$\tau = \frac{ \sum_{i,t} W_{it} \left( Y_{it}(1)-Y_{it}(0) \right) }{ \sum_{i,
         <category>Data Analysis / 数据分析</category>
       </categories>
       <tags>
-        <tag>Data Analysis</tag>
-        <tag>数据分析</tag>
         <tag>因果推断</tag>
+        <tag>数据分析</tag>
+        <tag>Data Analysis</tag>
       </tags>
   </entry>
   <entry>
@@ -9276,8 +9276,8 @@ $$x^* = a + \frac{x-x_{min}}{x_{max}-x_{min}}\times(b-a)$$<br>
         <category>Data Analysis / 数据分析</category>
       </categories>
       <tags>
-        <tag>Data Analysis</tag>
         <tag>数据分析</tag>
+        <tag>Data Analysis</tag>
         <tag>推荐系统</tag>
       </tags>
   </entry>
@@ -9743,8 +9743,8 @@ LSB和排期<br>
         <category>Data Analysis / 数据分析</category>
       </categories>
       <tags>
-        <tag>Data Analysis</tag>
         <tag>数据分析</tag>
+        <tag>Data Analysis</tag>
       </tags>
   </entry>
   <entry>
@@ -9977,8 +9977,8 @@ RARRA模型突出用户留存的重要性，通过用户留存来关注增长。
         <category>Data Analysis / 数据分析</category>
       </categories>
       <tags>
-        <tag>Data Analysis</tag>
         <tag>数据分析</tag>
+        <tag>Data Analysis</tag>
       </tags>
   </entry>
   <entry>
@@ -10622,8 +10622,8 @@ $$IDFA\rightarrow IDFV\rightarrow UDID$$</p>
         <category>Data Analysis / 数据分析</category>
       </categories>
       <tags>
-        <tag>Data Analysis</tag>
         <tag>数据分析</tag>
+        <tag>Data Analysis</tag>
         <tag>埋点</tag>
       </tags>
   </entry>
@@ -10761,8 +10761,8 @@ $$IDFA\rightarrow IDFV\rightarrow UDID$$</p>
         <category>Data Analysis / 数据分析</category>
       </categories>
       <tags>
-        <tag>Data Analysis</tag>
         <tag>数据分析</tag>
+        <tag>Data Analysis</tag>
         <tag>数据开发</tag>
       </tags>
   </entry>
@@ -10895,8 +10895,8 @@ $$IDFA\rightarrow IDFV\rightarrow UDID$$</p>
         <category>Data Analysis / 数据分析</category>
       </categories>
       <tags>
-        <tag>Data Analysis</tag>
         <tag>数据分析</tag>
+        <tag>Data Analysis</tag>
       </tags>
   </entry>
   <entry>
@@ -11021,8 +11021,8 @@ $$IDFA\rightarrow IDFV\rightarrow UDID$$</p>
         <category>Data Analysis / 数据分析</category>
       </categories>
       <tags>
-        <tag>Data Analysis</tag>
         <tag>数据分析</tag>
+        <tag>Data Analysis</tag>
       </tags>
   </entry>
   <entry>
@@ -13018,8 +13018,8 @@ $$D_0=\sqrt{\frac{\sum_{i=1}<sup>{N_1}\sum_{j=N_1+1}</sup>{N_1+N_2}\left(\mathbf
         <category>Data Analysis / 数据分析</category>
       </categories>
       <tags>
-        <tag>Data Analysis</tag>
         <tag>数据分析</tag>
+        <tag>Data Analysis</tag>
       </tags>
   </entry>
   <entry>
@@ -16459,8 +16459,8 @@ $$Z= \frac{ p_B - p_A }{ \sqrt{ \frac{ p_A (1 - p_A ) }{n_A}+\frac{ p_B ( 1 - p_
         <category>Data Analysis / 数据分析</category>
       </categories>
       <tags>
-        <tag>Data Analysis</tag>
         <tag>数据分析</tag>
+        <tag>Data Analysis</tag>
         <tag>AB实验</tag>
       </tags>
   </entry>
@@ -16590,8 +16590,8 @@ $$Z= \frac{ p_B - p_A }{ \sqrt{ \frac{ p_A (1 - p_A ) }{n_A}+\frac{ p_B ( 1 - p_
         <category>Data Analysis / 数据分析</category>
       </categories>
       <tags>
-        <tag>Data Analysis</tag>
         <tag>数据分析</tag>
+        <tag>Data Analysis</tag>
       </tags>
   </entry>
   <entry>
@@ -18395,8 +18395,8 @@ $$PUR=\frac{活跃付费用户数APA}{活跃用户数AU}$$</p>
         <category>Data Analysis / 数据分析</category>
       </categories>
       <tags>
-        <tag>Data Analysis</tag>
         <tag>数据分析</tag>
+        <tag>Data Analysis</tag>
       </tags>
   </entry>
   <entry>
@@ -19001,8 +19001,8 @@ $$VIP顾客销售额占比=\frac{会员顾客消费金额}{总销售额}\times10
         <category>Data Analysis / 数据分析</category>
       </categories>
       <tags>
-        <tag>Data Analysis</tag>
         <tag>数据分析</tag>
+        <tag>Data Analysis</tag>
       </tags>
   </entry>
   <entry>
@@ -23778,8 +23778,8 @@ $$K因子=每个用户向他人发出邀请的数量\times 接收到邀请的人
         <category>Data Analysis / 数据分析</category>
       </categories>
       <tags>
-        <tag>Data Analysis</tag>
         <tag>数据分析</tag>
+        <tag>Data Analysis</tag>
       </tags>
   </entry>
   <entry>
@@ -27338,8 +27338,8 @@ $$次日留存率=\sum\frac{次日留存数}{今日获客人数}$$</li>
         <category>Data Analysis / 数据分析</category>
       </categories>
       <tags>
-        <tag>Data Analysis</tag>
         <tag>数据分析</tag>
+        <tag>Data Analysis</tag>
       </tags>
   </entry>
   <entry>
@@ -27676,8 +27676,8 @@ $$\frac{3万辆}{1 % }\times 25 % =75万辆$$</li>
         <category>Data Analysis / 数据分析</category>
       </categories>
       <tags>
-        <tag>Data Analysis</tag>
         <tag>数据分析</tag>
+        <tag>Data Analysis</tag>
       </tags>
   </entry>
   <entry>
