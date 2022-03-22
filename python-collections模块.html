@@ -309,36 +309,56 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><center></center><br><a id="more"></a></p>
-<h1 id="collections"><a href="#collections" class="headerlink" title="collections"></a>collections</h1><h2 id="Counter"><a href="#Counter" class="headerlink" title="Counter()"></a>Counter()</h2><p>统计列表中重复项出现的次数</p>
+        <center></center>
+<a id="more"></a>
+<h1 id="collections"><a class="header-anchor" href="#collections"></a>collections</h1>
+<h2 id="Counter"><a class="header-anchor" href="#Counter"></a>Counter()</h2>
+<p>统计列表中重复项出现的次数</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> Counter</span><br><span class="line"></span><br><span class="line">lst = [<span class="string">'a'</span>, <span class="string">'a'</span>, <span class="string">'v'</span>, <span class="string">'c'</span>, <span class="string">'b'</span>, <span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'b'</span>]</span><br><span class="line">Counter(lst)</span><br><span class="line"><span class="comment"># Counter(&#123;'a': 3, 'v': 1, 'c': 2, 'b': 3&#125;)</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">lst = [<span class="string">'a'</span>, <span class="string">'a'</span>, <span class="string">'v'</span>, <span class="string">'c'</span>, <span class="string">'b'</span>, <span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'b'</span>]</span><br><span class="line"><span class="keyword">for</span> item <span class="keyword">in</span> set(lst):</span><br><span class="line">    print(<span class="string">'the %s appears %d times'</span> %(item, lst.count(item)))</span><br><span class="line"><span class="comment">#the c appears 2 times</span></span><br><span class="line"><span class="comment">#the v appears 1 times</span></span><br><span class="line"><span class="comment">#the a appears 3 times</span></span><br><span class="line"><span class="comment">#the b appears 3 times</span></span><br></pre></td></tr></table></figure>
-<h2 id="deque"><a href="#deque" class="headerlink" title="deque"></a>deque</h2><p><strong>双边队列</strong>（double-ended queue），具有队列和栈的性质，在列表（list）的基础上增加了移动、旋转和增删等</p>
+<h2 id="deque"><a class="header-anchor" href="#deque"></a>deque</h2>
+<p><strong>双边队列</strong>（double-ended queue），具有队列和栈的性质，在列表（list）的基础上增加了移动、旋转和增删等</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> deque</span><br><span class="line"></span><br><span class="line">d = deque()  <span class="comment">## 创建一个队列</span></span><br><span class="line">print(d)</span><br><span class="line"><span class="comment"># deque([])</span></span><br><span class="line"></span><br><span class="line">d1 = deque(range(<span class="number">10</span>))</span><br><span class="line">print(d1)</span><br><span class="line"><span class="comment"># deque([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])</span></span><br></pre></td></tr></table></figure>
 <p>如果指定了参数<code>maxlen</code>，则会生成固定长度的队列；插入元素时，若队列已满，</p>
 <ul>
 <li>从右侧插入，会“挤掉”最左侧的元素</li>
-<li>从左侧插入，会“挤掉”最右侧的元素<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">d = deque(maxlen=<span class="number">3</span>)</span><br><span class="line">d.append(<span class="number">1</span>)</span><br><span class="line">d.append(<span class="number">2</span>)</span><br><span class="line">d.append(<span class="number">3</span>)</span><br><span class="line">d</span><br><span class="line"><span class="comment"># deque([1, 2, 3])</span></span><br><span class="line">d.append(<span class="number">4</span>)</span><br><span class="line">d</span><br><span class="line"><span class="comment"># deque([2, 3, 4])</span></span><br><span class="line">d.appendleft(<span class="number">5</span>)</span><br><span class="line">d</span><br><span class="line"><span class="comment"># deque([5, 2, 3])</span></span><br></pre></td></tr></table></figure>
-</li>
+<li>从左侧插入，会“挤掉”最右侧的元素</li>
 </ul>
-<h3 id="append"><a href="#append" class="headerlink" title=".append()"></a>.append()</h3><p>在队列右侧添加元素</p>
-<h3 id="appendleft"><a href="#appendleft" class="headerlink" title=".appendleft()"></a>.appendleft()</h3><p>在队列左侧添加元素<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
-<h3 id="count"><a href="#count" class="headerlink" title=".count()"></a>.count()</h3><p>统计队列中某元素的个数</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">d = deque(maxlen=<span class="number">3</span>)</span><br><span class="line">d.append(<span class="number">1</span>)</span><br><span class="line">d.append(<span class="number">2</span>)</span><br><span class="line">d.append(<span class="number">3</span>)</span><br><span class="line">d</span><br><span class="line"><span class="comment"># deque([1, 2, 3])</span></span><br><span class="line">d.append(<span class="number">4</span>)</span><br><span class="line">d</span><br><span class="line"><span class="comment"># deque([2, 3, 4])</span></span><br><span class="line">d.appendleft(<span class="number">5</span>)</span><br><span class="line">d</span><br><span class="line"><span class="comment"># deque([5, 2, 3])</span></span><br></pre></td></tr></table></figure>
+<h3 id="append"><a class="header-anchor" href="#append"></a>.append()</h3>
+<p>在队列右侧添加元素</p>
+<h3 id="appendleft"><a class="header-anchor" href="#appendleft"></a>.appendleft()</h3>
+<p>在队列左侧添加元素</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h3 id="extend"><a href="#extend" class="headerlink" title=".extend()"></a>.extend()</h3><p>在队列右边依次添加所有元素<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
-<h3 id="extendleft"><a href="#extendleft" class="headerlink" title=".extendleft()"></a>.extendleft()</h3><p>在队列左侧依次添加所有元素</p>
+<h3 id="count"><a class="header-anchor" href="#count"></a>.count()</h3>
+<p>统计队列中某元素的个数</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="extend"><a class="header-anchor" href="#extend"></a>.extend()</h3>
+<p>在队列右边依次添加所有元素</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="extendleft"><a class="header-anchor" href="#extendleft"></a>.extendleft()</h3>
+<p>在队列左侧依次添加所有元素</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">d = deque([<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>])</span><br><span class="line"></span><br><span class="line">d</span><br><span class="line"><span class="comment">#  deque(['a', 'b', 'c'])</span></span><br><span class="line"></span><br><span class="line">d.extendleft([<span class="string">'d'</span>, <span class="string">'e'</span>, <span class="string">'f'</span>])</span><br><span class="line"></span><br><span class="line">d</span><br><span class="line"><span class="comment"># deque(['f', 'e', 'd', 'a', 'b', 'c'])</span></span><br></pre></td></tr></table></figure>
-<h3 id="pop"><a href="#pop" class="headerlink" title=".pop()"></a>.pop()</h3><p>从队列的右侧删除（取出）一个元素</p>
+<h3 id="pop"><a class="header-anchor" href="#pop"></a>.pop()</h3>
+<p>从队列的右侧删除（取出）一个元素</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h3 id="popleft"><a href="#popleft" class="headerlink" title=".popleft()"></a>.popleft()</h3><p>从队列的左侧删除（取出）一个元素<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
-<h3 id="remove"><a href="#remove" class="headerlink" title=".remove()"></a>.remove()</h3><p>将队列中的某元素删除<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
-<h3 id="reverse"><a href="#reverse" class="headerlink" title=".reverse()"></a>.reverse()</h3><p>将队列倒序<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
-<h3 id="rotate"><a href="#rotate" class="headerlink" title=".rotate()"></a>.rotate()</h3><p><code>.rotate(n)</code></p>
+<h3 id="popleft"><a class="header-anchor" href="#popleft"></a>.popleft()</h3>
+<p>从队列的左侧删除（取出）一个元素</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="remove"><a class="header-anchor" href="#remove"></a>.remove()</h3>
+<p>将队列中的某元素删除</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="reverse"><a class="header-anchor" href="#reverse"></a>.reverse()</h3>
+<p>将队列倒序</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="rotate"><a class="header-anchor" href="#rotate"></a>.rotate()</h3>
+<p><code>.rotate(n)</code></p>
 <ul>
 <li>$n &gt; 0$：将队列最右边的n个数据，移到队列的左边</li>
 <li>$n &lt; 0$：将队列最左边的n个数据，移到队列的右边</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">d = deque(range(<span class="number">10</span>))</span><br><span class="line">d</span><br><span class="line"><span class="comment"># deque([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])</span></span><br><span class="line"></span><br><span class="line">d.rotate(<span class="number">3</span>)</span><br><span class="line">d</span><br><span class="line"><span class="comment">#  deque([7, 8, 9, 0, 1, 2, 3, 4, 5, 6])</span></span><br><span class="line"></span><br><span class="line">d = deque(range(<span class="number">10</span>))</span><br><span class="line">d</span><br><span class="line"><span class="comment"># deque([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])</span></span><br><span class="line"></span><br><span class="line">d.rotate(<span class="number">-3</span>)</span><br><span class="line">d</span><br><span class="line"><span class="comment"># deque([3, 4, 5, 6, 7, 8, 9, 0, 1, 2])</span></span><br></pre></td></tr></table></figure>
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
+<h1 id="参考资料"><a class="header-anchor" href="#参考资料"></a>参考资料</h1>
+<ul>
 <li><a href="https://blog.csdn.net/happyrocking/article/details/80058623" target="_blank" rel="noopener">collections.deque介绍</a></li>
 <li><a href="https://www.cnblogs.com/LouisZJ/p/8118637.html" target="_blank" rel="noopener">deque 双向队列</a></li>
 </ul>
@@ -534,13 +554,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">393k</span>
+    <span title="站点总字数">403k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">5:57</span>
+    <span title="站点阅读时长">6:06</span>
 </div>
 
 

@@ -314,76 +314,92 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><center>K最近邻算法</center><br><a id="more"></a></p>
+        <center>K最近邻算法</center>
+<a id="more"></a>
 <p>KNN</p>
 <p>K-nearest neighbours</p>
-<h1 id="KNN"><a href="#KNN" class="headerlink" title="KNN"></a>KNN</h1><p><strong>k最邻近算法</strong>（kNN, k-Nearest Neighbors Algorithm），是一种<u>lazy learning</u>（消极学习法）</p>
+<h1 id="KNN"><a class="header-anchor" href="#KNN"></a>KNN</h1>
+<p><strong>k最邻近算法</strong>（kNN, k-Nearest Neighbors Algorithm），是一种<u>lazy learning</u>（消极学习法）</p>
 <ul>
 <li>不需要使用训练集进行训练，训练的时间复杂度为0</li>
 <li>kNN分类的计算复杂度和训练集中的样本数目成正比</li>
 <li>kNN是一种可用于分类和回归的方法</li>
 </ul>
 <blockquote>
-<p>In machine learning, <strong>lazy learning</strong> is a learning method in which generalization of the training data is, in theory, delayed until a query is made to the system, as opposed to in eager learning, where the system tries to generalize the training data before receiving queries.<br><strong>维基百科：Lazy Learning</strong></p>
-<p>In AI, <strong>eager learning</strong> is a learning method in which the system tries to construct a general, input-independent target function during training of the system, as opposed to lazy learning, where generalization beyond the training data is delayed until a query is made to the system.<br><strong>维基百科：Eager Learning</strong></p>
+<p>In machine learning, <strong>lazy learning</strong> is a learning method in which generalization of the training data is, in theory, delayed until a query is made to the system, as opposed to in eager learning, where the system tries to generalize the training data before receiving queries.<br>
+<strong>维基百科：Lazy Learning</strong></p>
 </blockquote>
-<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>假设有$m$类不同的样本数据，要判断某个待分类点A属于哪个类别，计算这个待分类点A与其他所有已知分类的样本点的距离（一般是计算<u>欧式距离</u>或<u>曼哈顿距离</u>）；距离点A最近的k个样本点中，属于同一类别的样本点数最多的那个类别记为 $i$ ，则待分类点A从属于类别 $i$ 。</p>
+<blockquote>
+<p>In AI, <strong>eager learning</strong> is a learning method in which the system tries to construct a general, input-independent target function during training of the system, as opposed to lazy learning, where generalization beyond the training data is delayed until a query is made to the system.<br>
+<strong>维基百科：Eager Learning</strong></p>
+</blockquote>
+<h2 id="原理"><a class="header-anchor" href="#原理"></a>原理</h2>
+<p>假设有$m$类不同的样本数据，要判断某个待分类点A属于哪个类别，计算这个待分类点A与其他所有已知分类的样本点的距离（一般是计算<u>欧式距离</u>或<u>曼哈顿距离</u>）；距离点A最近的k个样本点中，属于同一类别的样本点数最多的那个类别记为 $i$ ，则待分类点A从属于类别 $i$ 。</p>
 <p>考虑点$(x_i,y_i)$和$(x_j,y_j)$</p>
 <ul>
-<li><strong>欧氏距离</strong><script type="math/tex; mode=display">d=\sqrt{(x_i-x_j)^2+(y_i-y_j)^2}</script></li>
-<li><strong>曼哈顿距离</strong><script type="math/tex; mode=display">d=|x_i-x_j|+|y_i-y_j|</script></li>
+<li><strong>欧氏距离</strong><br>
+$$d=\sqrt{(x_i-x_j)<sup>2+(y_i-y_j)</sup>2}$$</li>
+<li><strong>曼哈顿距离</strong><br>
+$$d=|x_i-x_j|+|y_i-y_j|$$</li>
 </ul>
-<h3 id="K"><a href="#K" class="headerlink" title="K"></a>K</h3><ul>
-<li>k值的选取非常重要<ul>
+<h3 id="K"><a class="header-anchor" href="#K"></a>K</h3>
+<ul>
+<li>k值的选取非常重要</li>
 <li>如果k值太小，则该分类器容易受到训练数据的噪声而产生过拟合影响</li>
 <li>如果k值太大，则分类器容易欠拟合；最邻近列表中可能包含远离其近邻的数据点</li>
-</ul>
-</li>
 <li>k值一般选取1，3，5，7等较小的值</li>
 <li>可以通过交叉验证来选取最优的k值</li>
 </ul>
 <div class="note default">
             <p>在large-scale且sparse的数据分析中，KNN的k个最近邻应该如何选择？<br>A. 随机选择<br>B. L1-norm最近的<br>C. L2-norm最近的<br>D.不用KNN</p><p>答案：D. 不用KNN</p><ul><li>KNN需要存储所有的样本</li><li>KNN需要进行繁重的距离计算量</li></ul><p>所以不适合大规模的稀疏的数据<br><a href="https://www.nowcoder.com/questionTerminal/e744eccb59194771916a15b772851d73?source=relative" target="_blank" rel="noopener">题目来源</a></p>
           </div>
-<h2 id="用途"><a href="#用途" class="headerlink" title="用途"></a>用途</h2><ul>
+<h2 id="用途"><a class="header-anchor" href="#用途"></a>用途</h2>
+<ul>
 <li>分类</li>
 <li>回归</li>
 </ul>
 <p>应用：</p>
 <ul>
 <li>创建推荐系统</li>
-<li>光学字符识别（OCR，Optical Character Recognition）：自动识别图片中的文字<ul>
+<li>光学字符识别（OCR，Optical Character Recognition）：自动识别图片中的文字</li>
 <li>OCR算法提取线段、点和曲线等特征</li>
-</ul>
-</li>
 <li>创建垃圾邮件（spam）分类器</li>
 </ul>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>适用数据：</p>
+<h2 id="总结"><a class="header-anchor" href="#总结"></a>总结</h2>
+<p>适用数据：</p>
 <ul>
 <li>数值型</li>
 <li>标称型</li>
 </ul>
-<h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><ul>
+<h3 id="优点"><a class="header-anchor" href="#优点"></a>优点</h3>
+<ul>
 <li>精度高</li>
 <li>对异常值不敏感</li>
 <li>无数据输入假定</li>
 </ul>
-<h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><ul>
+<h3 id="缺点"><a class="header-anchor" href="#缺点"></a>缺点</h3>
+<ul>
 <li>时间复杂度高</li>
 <li>空间复杂度高</li>
 </ul>
-<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><h3 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h3><p>使用Python的<code>scikit-learn</code>库。<br>scikit-learn库中有若干个数据集Toy datasets。</p>
-<h4 id="二分类"><a href="#二分类" class="headerlink" title="二分类"></a>二分类</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">##导入数据集生成器</span></span><br><span class="line"><span class="keyword">from</span> sklearn.datasets <span class="keyword">import</span> make_blobs</span><br><span class="line"><span class="comment">##导入kNN分类器</span></span><br><span class="line"><span class="keyword">from</span> sklearn.neighbors <span class="keyword">import</span> KNeighborsClassifier</span><br><span class="line"></span><br><span class="line"><span class="comment">##导入绘图工具</span></span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="comment">###为了在Jupyter Notebook显示图片，加入以下代码行</span></span><br><span class="line">%matplotlib inline</span><br><span class="line"></span><br><span class="line"><span class="comment">##导入数据集拆分工具</span></span><br><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> train_test_split</span><br><span class="line"></span><br><span class="line"><span class="comment">##生成样本数n=200，分类为2的数据集</span></span><br><span class="line">data = make_blobs(n_samples=<span class="number">200</span>, centers=<span class="number">2</span>, random_state=<span class="number">8</span>)</span><br><span class="line">X, y = data</span><br><span class="line"></span><br><span class="line"><span class="comment">##可视化</span></span><br><span class="line">plt.scatter(X[:, <span class="number">0</span>], X[:, <span class="number">1</span>], c=y, cmap=plt.cm.spring, edgecolors=<span class="string">'k'</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<h2 id="实现"><a class="header-anchor" href="#实现"></a>实现</h2>
+<h3 id="Python"><a class="header-anchor" href="#Python"></a>Python</h3>
+<p>使用Python的<code>scikit-learn</code>库。<br>
+scikit-learn库中有若干个数据集Toy datasets。</p>
+<h4 id="二分类"><a class="header-anchor" href="#二分类"></a>二分类</h4>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">##导入数据集生成器</span></span><br><span class="line"><span class="keyword">from</span> sklearn.datasets <span class="keyword">import</span> make_blobs</span><br><span class="line"><span class="comment">##导入kNN分类器</span></span><br><span class="line"><span class="keyword">from</span> sklearn.neighbors <span class="keyword">import</span> KNeighborsClassifier</span><br><span class="line"></span><br><span class="line"><span class="comment">##导入绘图工具</span></span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="comment">###为了在Jupyter Notebook显示图片，加入以下代码行</span></span><br><span class="line">%matplotlib inline</span><br><span class="line"></span><br><span class="line"><span class="comment">##导入数据集拆分工具</span></span><br><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> train_test_split</span><br><span class="line"></span><br><span class="line"><span class="comment">##生成样本数n=200，分类为2的数据集</span></span><br><span class="line">data = make_blobs(n_samples=<span class="number">200</span>, centers=<span class="number">2</span>, random_state=<span class="number">8</span>)</span><br><span class="line">X, y = data</span><br><span class="line"></span><br><span class="line"><span class="comment">##可视化</span></span><br><span class="line">plt.scatter(X[:, <span class="number">0</span>], X[:, <span class="number">1</span>], c=y, cmap=plt.cm.spring, edgecolors=<span class="string">'k'</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
 <p>补充图片</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 用kNN进行二分类</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">kclassifier = KNeighborsClassifier()</span><br><span class="line">kclassifier.fit(X, y)</span><br><span class="line">%matplotlib inline</span><br><span class="line"><span class="comment">##横纵轴坐标范围</span></span><br><span class="line">x_min, x_max = X[:, <span class="number">0</span>].min() - <span class="number">1</span>, X[:, <span class="number">0</span>].max() + <span class="number">1</span></span><br><span class="line">y_min, y_max = X[:, <span class="number">1</span>].min() - <span class="number">1</span>, X[:, <span class="number">1</span>].max() + <span class="number">1</span></span><br><span class="line">xx, yy = np.meshgrid(np.arange(x_min, x_max, <span class="number">.02</span>),</span><br><span class="line">                    np.arange(y_min, y_max, <span class="number">.02</span>))</span><br><span class="line">Z = kclassifier.predict(np.c_[xx.ravel(), yy.ravel()])</span><br><span class="line">Z = Z.reshape(xx.shape)</span><br><span class="line">plt.pcolormesh(xx, yy, Z, cmap=plt.cm.Pastel1)</span><br><span class="line">plt.scatter(X[:, <span class="number">0</span>], X[:, <span class="number">1</span>], c=y, cmap=plt.cm.spring, edgecolors=<span class="string">'k'</span>)</span><br><span class="line">plt.xlim(xx.min(), xx.max())</span><br><span class="line">plt.ylim(yy.min(), yy.max())</span><br><span class="line">plt.title(<span class="string">"Classifier:kNN"</span>)</span><br><span class="line"></span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
 <p>补充图片</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">##对新数据点分类进行判断</span></span><br><span class="line">print(<span class="string">"新数据点的分类是："</span>, kclassifier.predict([[<span class="number">6.75</span>, <span class="number">4.82</span>]]))</span><br><span class="line"><span class="comment">#新数据点的分类是： [1]</span></span><br></pre></td></tr></table></figure>
-<h4 id="多分类"><a href="#多分类" class="headerlink" title="多分类"></a>多分类</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.datasets <span class="keyword">import</span> make_blobs</span><br><span class="line"><span class="keyword">from</span> sklearn.neighbors <span class="keyword">import</span> KNeighborsClassifier</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line"><span class="comment">##生成样本数为500，分类数为5的数据集</span></span><br><span class="line">data2 = make_blobs(n_samples=<span class="number">500</span>, centers=<span class="number">5</span>, random_state=<span class="number">8</span>)</span><br><span class="line">X2, y2 = data2</span><br><span class="line"></span><br><span class="line">%matplotlib inline</span><br><span class="line"></span><br><span class="line">plt.scatter(X2[:, <span class="number">0</span>], X2[:,<span class="number">1</span>], c=y2, cmap=plt.cm.spring, edgecolors=<span class="string">'k'</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<h4 id="多分类"><a class="header-anchor" href="#多分类"></a>多分类</h4>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.datasets <span class="keyword">import</span> make_blobs</span><br><span class="line"><span class="keyword">from</span> sklearn.neighbors <span class="keyword">import</span> KNeighborsClassifier</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line"><span class="comment">##生成样本数为500，分类数为5的数据集</span></span><br><span class="line">data2 = make_blobs(n_samples=<span class="number">500</span>, centers=<span class="number">5</span>, random_state=<span class="number">8</span>)</span><br><span class="line">X2, y2 = data2</span><br><span class="line"></span><br><span class="line">%matplotlib inline</span><br><span class="line"></span><br><span class="line">plt.scatter(X2[:, <span class="number">0</span>], X2[:,<span class="number">1</span>], c=y2, cmap=plt.cm.spring, edgecolors=<span class="string">'k'</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
 <p>补充图片</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">clf = KNeighborsClassifier()</span><br><span class="line">clf.fit(X2, y2)</span><br><span class="line"></span><br><span class="line">x_min, x_max = X2[:, <span class="number">0</span>].min() - <span class="number">1</span>, X2[:, <span class="number">0</span>].max() + <span class="number">1</span></span><br><span class="line">y_min, y_max = X2[:, <span class="number">1</span>].min() - <span class="number">1</span>, X2[:, <span class="number">1</span>].max() + <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">%matplotlib inline</span><br><span class="line"></span><br><span class="line">xx, yy = np.meshgrid(np.arange(x_min, x_max, <span class="number">.02</span>),</span><br><span class="line">                    np.arange(y_min, y_max, <span class="number">.02</span>))</span><br><span class="line">Z = clf.predict(np.c_[xx.ravel(), yy.ravel()])</span><br><span class="line">Z = Z.reshape(xx.shape)</span><br><span class="line"></span><br><span class="line">plt.pcolormesh(xx, yy, Z, cmap = plt.cm.Pastel1)</span><br><span class="line">plt.scatter(X2[:, <span class="number">0</span>], X2[:, <span class="number">1</span>], c=y2, cmap=plt.cm.spring, edgecolors=<span class="string">'k'</span>)</span><br><span class="line">plt.xlim(xx.min(), xx.max())</span><br><span class="line">plt.ylim(yy.min(), yy.max())</span><br><span class="line">plt.title(<span class="string">"Classifier:kNN"</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
 <p>补充图片</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">##模型的评分</span></span><br><span class="line">print(<span class="string">"模型正确率：&#123;:.2f&#125;"</span>.format(clf.score(X2, y2)))</span><br><span class="line"><span class="comment">#模型正确率：0.96</span></span><br></pre></td></tr></table></figure>
-<h4 id="回归"><a href="#回归" class="headerlink" title="回归"></a>回归</h4><p>kNN的n_neighbors默认为5。</p>
+<h4 id="回归"><a class="header-anchor" href="#回归"></a>回归</h4>
+<p>kNN的n_neighbors默认为5。</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">##导入数据生成器make_regression</span></span><br><span class="line"><span class="keyword">from</span> sklearn.datasets <span class="keyword">import</span> make_regression</span><br><span class="line"></span><br><span class="line"><span class="comment">##生成特征数量为1，噪音为50的数据集</span></span><br><span class="line">X, y = make_regression(n_features=<span class="number">1</span>, n_informative=<span class="number">1</span>, noise=<span class="number">50</span>, random_state=<span class="number">8</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">##可视化</span></span><br><span class="line">%matplotlib inline</span><br><span class="line">plt.scatter(X, y, c=<span class="string">'orange'</span>, edgecolors=<span class="string">'k'</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
 <p>补充图片</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">##导入用于回归分析的kNN模型</span></span><br><span class="line"><span class="keyword">from</span> sklearn.neighbors <span class="keyword">import</span> KNeighborsRegressor</span><br><span class="line">reg = KNeighborsRegressor()</span><br><span class="line"></span><br><span class="line"><span class="comment">##用kNN模型拟合数据</span></span><br><span class="line">reg.fit(X, y)</span><br><span class="line"></span><br><span class="line"><span class="comment">##可视化预测结果</span></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">z = np.linspace(<span class="number">-3</span>, <span class="number">3</span>, <span class="number">200</span>).reshape(<span class="number">-1</span>, <span class="number">1</span>)</span><br><span class="line">%matplotlib inline</span><br><span class="line">plt.scatter(X, y, c=<span class="string">'orange'</span>, edgecolors=<span class="string">'k'</span>)</span><br><span class="line">plt.plot(z, reg.predict(z), c=<span class="string">'k'</span>, linewidth=<span class="number">3</span>)</span><br><span class="line">plt.title(<span class="string">"kNN Regressor"</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
@@ -394,17 +410,20 @@
 <p>补充图片</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">print(<span class="string">"模型评分为：&#123;:.2f&#125;"</span>.format(reg2.score(X, y)))</span><br><span class="line"><span class="comment">#模型评分为：0.86</span></span><br></pre></td></tr></table></figure>
 <p>模型评分从0.77提升到0.86，有显著的提升。</p>
-<h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><h3 id="酒的分类"><a href="#酒的分类" class="headerlink" title="酒的分类"></a>酒的分类</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">##导入数据集</span></span><br><span class="line"><span class="keyword">from</span> sklearn.datasets <span class="keyword">import</span> load_wine</span><br><span class="line">wine_dataset = load_wine()</span><br><span class="line"><span class="comment">###使用load_wine()导入的酒数据集，是一种Bunch对象，包括键（keys）和数值（values）</span></span><br><span class="line"></span><br><span class="line"><span class="comment">###查看该数据集里的键</span></span><br><span class="line">print(<span class="string">"红酒数据集中的键：\n&#123;&#125;"</span>.format(wine_dataset.keys()))</span><br></pre></td></tr></table></figure>
+<h2 id="实例"><a class="header-anchor" href="#实例"></a>实例</h2>
+<h3 id="酒的分类"><a class="header-anchor" href="#酒的分类"></a>酒的分类</h3>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">##导入数据集</span></span><br><span class="line"><span class="keyword">from</span> sklearn.datasets <span class="keyword">import</span> load_wine</span><br><span class="line">wine_dataset = load_wine()</span><br><span class="line"><span class="comment">###使用load_wine()导入的酒数据集，是一种Bunch对象，包括键（keys）和数值（values）</span></span><br><span class="line"></span><br><span class="line"><span class="comment">###查看该数据集里的键</span></span><br><span class="line">print(<span class="string">"红酒数据集中的键：\n&#123;&#125;"</span>.format(wine_dataset.keys()))</span><br></pre></td></tr></table></figure>
 <pre><code> 红酒数据集中的键：
- dict_keys([&#39;data&#39;, &#39;target&#39;, &#39;target_names&#39;, &#39;DESCR&#39;, &#39;feature_names&#39;])
-</code></pre><p>数据集中包括数据data、目标分类target、目标分类名称target_names、数据描述DESCR和特征变量的名称features_names。</p>
+ dict_keys(['data', 'target', 'target_names', 'DESCR', 'feature_names'])
+</code></pre>
+<p>数据集中包括数据data、目标分类target、目标分类名称target_names、数据描述DESCR和特征变量的名称features_names。</p>
 <p>下面查看数据的样本量和变量数目：</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">print(<span class="string">"数据概况：&#123;&#125;"</span>.format(wine_dataset[<span class="string">'data'</span>].shape))</span><br><span class="line"><span class="comment">#数据概况：(178, 13)</span></span><br></pre></td></tr></table></figure>
 <p>共有178个样本，每个样本有13个特征变量。</p>
 <p>下面查看该数据集的描述（超长）：</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">print(wine_dataset[<span class="string">'DESCR'</span>])</span><br></pre></td></tr></table></figure>
 <pre><code> .. _wine_dataset:
-
+  
  Wine recognition dataset
  ------------------------
 
@@ -498,24 +517,30 @@
  Tech. Rep. no. 92-01, (1992), Dept. of Computer Science and Dept. of 
  Mathematics and Statistics, James Cook University of North Queensland. 
  (Also submitted to Journal of Chemometrics).
-</code></pre><p>划分训练集和测试集（使用scikit-learn中的train_test_split函数）：</p>
+</code></pre>
+<p>划分训练集和测试集（使用scikit-learn中的train_test_split函数）：</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">##导入数据拆分工具</span></span><br><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> train_test_split</span><br><span class="line"></span><br><span class="line">X_train, X_test, y_train, y_test = train_test_split(wine_dataset[<span class="string">'data'</span>],</span><br><span class="line">                                                   wine_dataset[<span class="string">'target'</span>],</span><br><span class="line">                                                   random_state=<span class="number">0</span>)</span><br><span class="line"><span class="comment">###这里random_state即设置seed，固定seed则能保证每次产生的伪随机数不变；</span></span><br><span class="line"><span class="comment">###若random_state设置为0或者缺省时，则每次生成的伪随机数不同。</span></span><br><span class="line"></span><br><span class="line">print(<span class="string">"X_train shape:&#123;&#125;"</span>.format(X_train.shape))</span><br><span class="line">print(<span class="string">"X_test shape:&#123;&#125;"</span>.format(X_test.shape))</span><br><span class="line">print(<span class="string">"y_train shape:&#123;&#125;"</span>.format(y_train.shape))</span><br><span class="line">print(<span class="string">"y_test shape:&#123;&#125;"</span>.format(y_test.shape))</span><br></pre></td></tr></table></figure>
 <pre><code> X_train shape:(133, 13)
  X_test shape:(45, 13)
  y_train shape:(133,)
  y_test shape:(45,)
-</code></pre><p>训练集样本数为133个，测试集样本数为45个。</p>
+</code></pre>
+<p>训练集样本数为133个，测试集样本数为45个。</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">##导入kNN分类器</span></span><br><span class="line"><span class="keyword">from</span> sklearn.neighbors <span class="keyword">import</span> KNeighborsClassifier</span><br><span class="line"></span><br><span class="line"><span class="comment">##指定模型的n_neighbors参数为1</span></span><br><span class="line">knn = KNeighborsClassifier(n_neighbors=<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">knn.fit(X_train, y_train)</span><br><span class="line">print(knn)</span><br></pre></td></tr></table></figure>
 <p>score()：计算模型的得分（得分越高，则表示吻合度越高，模型表现越好）：</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">knn.score(X_test, y_test)</span><br></pre></td></tr></table></figure>
 <pre><code> 0.7555555555555555
-</code></pre><p>模型对新的样本数据做出正确分类预测的概率为76%。</p>
+</code></pre>
+<p>模型对新的样本数据做出正确分类预测的概率为76%。</p>
 <p>对新的红酒分类：</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">X_new = np.array([[<span class="number">13.2</span>, <span class="number">2.77</span>, <span class="number">2.51</span>, <span class="number">18.5</span>, <span class="number">96.6</span>, <span class="number">1.04</span>,<span class="number">2.55</span>, <span class="number">0.57</span>, <span class="number">1.47</span>, <span class="number">6.2</span>, <span class="number">1.05</span>, <span class="number">3.33</span>, <span class="number">820</span>]])</span><br><span class="line"></span><br><span class="line"><span class="comment">##对新的数据点进行预测</span></span><br><span class="line">prediction = knn.predict(X_new)</span><br><span class="line">print(<span class="string">"预测新红酒的分类为：&#123;&#125;"</span>.format(wine_dataset[<span class="string">'target_names'</span>][prediction]))</span><br></pre></td></tr></table></figure>
-<pre><code> 预测新红酒的分类为：[&#39;class_2&#39;]
-</code></pre><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h2 id="KNN-vs-K-Means"><a href="#KNN-vs-K-Means" class="headerlink" title="KNN vs K-Means"></a>KNN vs K-Means</h2><ul>
-<li><a href="/%E7%AE%97%E6%B3%95-K-Means.html" title="K-Means算法">K-Means算法</a>
+<pre><code> 预测新红酒的分类为：['class_2']
+</code></pre>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="KNN-vs-K-Means"><a class="header-anchor" href="#KNN-vs-K-Means"></a>KNN vs K-Means</h2>
+<ul>
+<li>
+<a href="/%E7%AE%97%E6%B3%95-K-Means.html" title="K-Means算法">K-Means算法</a>
 </li>
 </ul>
 <div>
@@ -523,14 +548,14 @@
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: center;
-    }
+.dataframe thead th {
+    text-align: center;
+}
+</code></pre>
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -564,25 +589,24 @@
   </tr></tbody>
 </table>
 </div>
-
-<h1 id="kNN图"><a href="#kNN图" class="headerlink" title="kNN图"></a>kNN图</h1><p>k-Nearest Neighbour Graph</p>
-<p>假设空间中有$n$个节点，对任一节点$v_i$，找出距离<sup><a href="#fn_1" id="reffn_1">1</a></sup>它最近的$k$个邻点$v_1,\cdots,v_k$，分别将$v_i$与这$k$个邻点连结起来，形成$k$条有向边。</p>
+<h1 id="kNN图"><a class="header-anchor" href="#kNN图"></a>kNN图</h1>
+<p>k-Nearest Neighbour Graph</p>
+<p>假设空间中有$n$个节点，对任一节点$v_i$，找出距离<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>它最近的$k$个邻点$v_1,\cdots,v_k$，分别将$v_i$与这$k$个邻点连结起来，形成$k$条有向边。</p>
 <p>对空间中的所有顶点都按此方法进行，最后得到的图便是kNN图。</p>
-<blockquote id="fn_1">
-<sup>1</sup>. 欧氏距离、马氏距离、……<a href="#reffn_1" title="Jump back to footnote [1] in the text."> &#8617;</a>
-</blockquote>
 <ul>
-<li>可用于<strong>异常点检测</strong><blockquote>
+<li>可用于<strong>异常点检测</strong></li>
+</ul>
+<blockquote>
 <p>在大量高维数据点中，一般正常的数据点会聚集成一个个簇，而异常数据点与正常数据点的簇距离较远</p>
 </blockquote>
-</li>
-</ul>
-<h2 id="构建kNN图"><a href="#构建kNN图" class="headerlink" title="构建kNN图"></a>构建kNN图</h2><ol>
+<h2 id="构建kNN图"><a class="header-anchor" href="#构建kNN图"></a>构建kNN图</h2>
+<ol>
 <li>空间分割树算法（Space-Partitioning Trees）</li>
 <li>局部敏感哈希算法（Locality Sensitive Hashing）</li>
 <li>邻居搜索算法（Neighbor Exploring Techniques)</li>
 </ol>
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
+<h1 id="参考资料"><a class="header-anchor" href="#参考资料"></a>参考资料</h1>
+<ul>
 <li><a href="https://book.douban.com/subject/26979890/" target="_blank" rel="noopener">图解算法</a></li>
 <li><a href="https://en.wikipedia.org/wiki/Lazy_learning" target="_blank" rel="noopener">维基百科-Lazy Learning</a></li>
 <li><a href="https://en.wikipedia.org/wiki/Eager_learning" target="_blank" rel="noopener">维基百科-Eager Learning</a></li>
@@ -591,6 +615,13 @@
 <li><a href="https://www.cnblogs.com/ybjourney/p/4702562.html" target="_blank" rel="noopener">机器学习（一）——K-近邻（KNN）算法</a></li>
 <li><a href="http://bindog.github.io/blog/2016/06/04/from-sne-to-tsne-to-largevis/" target="_blank" rel="noopener">从SNE到t-SNE再到LargeVis</a></li>
 </ul>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>欧氏距离、马氏距离、…… <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
 
     </div>
 
@@ -786,13 +817,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">393k</span>
+    <span title="站点总字数">403k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">5:57</span>
+    <span title="站点阅读时长">6:06</span>
 </div>
 
 

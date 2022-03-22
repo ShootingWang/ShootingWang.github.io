@@ -315,9 +315,9 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><center>Alternating Direction Method of Multipliers</center><br><a id="more"></a></p>
+        <center>Alternating Direction Method of Multipliers</center>
+<a id="more"></a>
 <meta name="referrer" content="no-referrer">
-
 <p>ADMM</p>
 <p>交替方向乘子法</p>
 <ul>
@@ -328,181 +328,407 @@
 <blockquote>
 <p>原文：Boyd S, Parikh N, Chu E, et al. <a href="http://web.stanford.edu/~boyd/papers/pdf/admm_distr_stats.pdf" target="_blank" rel="noopener">Distributed optimization and statistical learning via the alternating direction method of multipliers</a>[J]. Foundations and Trends® in Machine learning, 2011, 3(1): 1-122.</p>
 </blockquote>
-<h1 id="Basic"><a href="#Basic" class="headerlink" title="Basic"></a>Basic</h1><h2 id="共轭函数"><a href="#共轭函数" class="headerlink" title="共轭函数"></a>共轭函数</h2><p>Fenchel conjugate function</p>
-<p>函数$f(x)$的共轭函数定义为</p>
-<script type="math/tex; mode=display">f^*(y)=\max_x\left\{y^Tx-f(x)\right\}</script><ul>
-<li>几何意义：共轭函数是切线簇的截距的负值簇<ul>
-<li>如果$f(x)$是凸（convex）的：<br>考虑$f(x)$上的点$(x^*,f(x^*))$处的斜率为$y^T$的切线<script type="math/tex; mode=display">z=y^T(x-x^*)+f(x^*)</script>该切线的截距项（$x=0$）为<script type="math/tex; mode=display">-y^Tx^*+f(x^*)</script>截距项的负数就是$f(x)$的共轭。</li>
-<li>如果$f(x)$不是凸（convex）的：<br>则切线可能会对应多个截距项</li>
-</ul>
-</li>
+<h1 id="Basic"><a class="header-anchor" href="#Basic"></a>Basic</h1>
+<h2 id="共轭函数"><a class="header-anchor" href="#共轭函数"></a>共轭函数</h2>
+<p>Fenchel conjugate function</p>
+<p>函数$f(x)$的共轭函数定义为<br>
+$$f<sup>*(y)=\max_x\left{y</sup>Tx-f(x)\right}$$</p>
+<ul>
+<li>几何意义：共轭函数是切线簇的截距的负值簇</li>
+<li>如果$f(x)$是凸（convex）的：<br>
+考虑$f(x)$上的点$(x<sup>*,f(x</sup>*))$处的斜率为$y^T$的切线<br>
+$$z=y<sup>T(x-x</sup><em>)+f(x^</em>)$$<br>
+该切线的截距项（$x=0$）为<br>
+$$-y<sup>Tx</sup><em>+f(x^</em>)$$<br>
+截距项的负数就是$f(x)$的共轭。</li>
+<li>如果$f(x)$不是凸（convex）的：<br>
+则切线可能会对应多个截距项</li>
 </ul>
 <img src="/%E7%AE%97%E6%B3%95-ADMM/conjugate1.jpg" class title="来自：最强Fenchel对偶解读">
 <img src="/%E7%AE%97%E6%B3%95-ADMM/conjugate2.jpg" class title="来自：最强Fenchel对偶解读">
-<p>当$f(x)$是严格凸的时，取$z=\arg \max_x { \{y^Tx-f(x) \} }$，则有</p>
-<script type="math/tex; mode=display">f^*(y)=\max_x{ \{ y^T x-f(x) \} }=y^Tz-f(z)</script><p>因此</p>
-<script type="math/tex; mode=display">\nabla f^*(y)=z=\arg\max_x \{ y^Tx-f(x) \}}=\arg\min_x{ \{f(x)-y^Tx \}</script><h2 id="带线性约束的优化问题"><a href="#带线性约束的优化问题" class="headerlink" title="带线性约束的优化问题"></a>带线性约束的优化问题</h2><p>考虑带线性约束的优化问题<br>\begin{equation}<br>\begin{aligned}<br>\min &amp; \quad f(x)\\<br>\mathrm{s.t.} &amp; \quad Ax=b<br>\end{aligned}<br>\end{equation}<br>其中$f(x)$是严格凸函数（strictly convex function）。</p>
-<p>构造该优化问题的拉格朗日函数</p>
-<script type="math/tex; mode=display">L(x,y)=f(x)+y^T(Ax-b)</script><p>这里$y$是拉格朗日乘子（Lagrangian multiplier）。</p>
-<p>求解原优化问题等价于求解</p>
-<script type="math/tex; mode=display">\min_x\max_y{L(x,y)}</script><ul>
+<p>当$f(x)$是严格凸的时，取$z=\arg \max_x { {y^Tx-f(x) } }$，则有<br>
+$$f^<em>(y)=\max_x{ { y^T x-f(x) } }=y^Tz-f(z)$$<br>
+因此<br>
+$$\nabla f^</em>(y)=z=\arg\max_x { y^Tx-f(x) }}=\arg\min_x{ {f(x)-y^Tx } $$</p>
+<h2 id="带线性约束的优化问题"><a class="header-anchor" href="#带线性约束的优化问题"></a>带线性约束的优化问题</h2>
+<p>考虑带线性约束的优化问题<br>
+\begin{equation}<br>
+\begin{aligned}<br>
+\min &amp; \quad f(x)\<br>
+\mathrm{s.t.} &amp; \quad Ax=b<br>
+\end{aligned}<br>
+\end{equation}<br>
+其中$f(x)$是严格凸函数（strictly convex function）。</p>
+<p>构造该优化问题的拉格朗日函数<br>
+$$L(x,y)=f(x)+y^T(Ax-b)$$<br>
+这里$y$是拉格朗日乘子（Lagrangian multiplier）。</p>
+<p>求解原优化问题等价于求解<br>
+$$\min_x\max_y{L(x,y)}$$</p>
+<ul>
 <li>当$Ax=b$不成立时，总可以找到$y$使得 $\max_y L(x,y)=\infty$</li>
 <li>当$Ax=b$成立时，$\min_x\max_y{L(x,y)}=\min_x f(x)$</li>
 </ul>
-<p>当$f(x)$可导（differentiable）时，$L(x,y)$分别关于$x,y$求偏导并令偏导数为零，得</p>
-<script type="math/tex; mode=display">\left\{
-    \begin{array}{l}
-    \nabla_x L(x,y) =\nabla f(x)+A^Ty=0\\
-    \nabla_y L(x,y) =Ax-b=0
-    \end{array}
-    \right.</script><blockquote>
+<p>当$f(x)$可导（differentiable）时，$L(x,y)$分别关于$x,y$求偏导并令偏导数为零，得<br>
+$$\left{<br>
+\begin{array}{l}<br>
+\nabla_x L(x,y) =\nabla f(x)+A^Ty=0\<br>
+\nabla_y L(x,y) =Ax-b=0<br>
+\end{array}<br>
+\right.$$</p>
+<blockquote>
 <p>$\frac{\mathrm{d}(\beta^Tx)}{\mathrm{d}x}=\beta$</p>
 </blockquote>
 <p>$\min_x\max_y{L(x,y)}$的对偶问题（dual problem）是$\max_y\min_x{L(x,y)}$。</p>
-<p>当强对偶性<sup><a href="#fn_1" id="reffn_1">1</a></sup>（duality）满足时，$\min_x\max_y{L(x,y)}$与$\max_y\min_x{L(x,y)}$有相同的解。</p>
-<blockquote id="fn_1">
-<sup>1</sup>. <a href="https://baike.baidu.com/item/%E5%BC%BA%E5%AF%B9%E5%81%B6%E6%80%A7/17194045?fr=aladdin" target="_blank" rel="noopener">强对偶性</a>：若原始问题（对偶问题）有一个确定的最优解，那么对偶问题（原始问题）也有一个确定的最优解，而且这两个最优解所对应的目标函数值相等。<a href="#reffn_1" title="Jump back to footnote [1] in the text."> &#8617;</a>
-</blockquote>
+<p>当强对偶性<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>（duality）满足时，$\min_x\max_y{L(x,y)}$与$\max_y\min_x{L(x,y)}$有相同的解。</p>
 <blockquote>
 <ul>
-<li><strong><a href="https://en.wikipedia.org/wiki/Strong_duality" target="_blank" rel="noopener">Strong duality</a></strong>: Strong duality holds if and only if the duality gap is equal to 0.<script type="math/tex; mode=display">p^*=d^*</script></li>
+<li><strong><a href="https://en.wikipedia.org/wiki/Strong_duality" target="_blank" rel="noopener">Strong duality</a></strong>: Strong duality holds if and only if the duality gap is equal to 0.<br>
+$$p<sup>*=d</sup>*$$</li>
+</ul>
+</blockquote>
+<ul>
 <li><strong><a href="https://en.wikipedia.org/wiki/Duality_gap" target="_blank" rel="noopener">Duality gap</a></strong>: 原始问题（primal problem）的最优解$p^*$与对偶问题（dual problem）的最优解$d^*$之间的差异。</li>
-<li>强对偶性的充分条件：<ul>
+<li>强对偶性的充分条件：</li>
 <li>原始问题是线性优化问题</li>
-<li>$F$是原始函数的<a href="https://en.wikipedia.org/wiki/Perturbation_function" target="_blank" rel="noopener">perturbation function</a>,$F^{**}$是$F$的<a href="https://en.wikipedia.org/wiki/Perturbation_function" target="_blank" rel="noopener">biconjugate</a><script type="math/tex; mode=display">F=F^{**}</script></li>
+<li>$F$是原始函数的<a href="https://en.wikipedia.org/wiki/Perturbation_function" target="_blank" rel="noopener">perturbation function</a>,$F^{**}$是$F$的<a href="https://en.wikipedia.org/wiki/Perturbation_function" target="_blank" rel="noopener">biconjugate</a><br>
+$$F=F^{**}$$</li>
 <li>$F$ is convex and lower semi-continuous</li>
 <li>凸优化问题的<a href="https://en.wikipedia.org/wiki/Perturbation_function" target="_blank" rel="noopener">Slater’s condition</a>成立</li>
 </ul>
-</li>
-</ul>
-</blockquote>
-<p>定义<br>\begin{equation}<br>\begin{aligned}<br>g(y) &amp;= \min_x L(x,y) \\<br>&amp;= \min_x\left\{f(x)+y^T(Ax-b)\right\}\\<br>&amp;= \min_x\left\{f(x)-(-A^Ty)^Tx-y^Tb \right\}\\<br>&amp;= \underline{\min_x\left\{f(x)-(-A^Ty)^Tx \right\}}-y^Tb\\<br>&amp;= \underline{-f^*(-A^Ty)}-y^Tb<br>\end{aligned}<br>\end{equation}</p>
-<p>由于$f^*(y)= \max_x { \{ y^Tx-f(x) \} }=-\min_x{ \{ f(x)-y^Tx \} }$。</p>
-<p>\begin{equation}<br>\begin{aligned}<br>\nabla g(y) &amp;= A\nabla f^*(-A^Ty)-b\\<br>&amp;= A\arg\min_x\left\{f(x)+y^TAx \right\}-b\\<br>&amp;= A\arg\min_x\left\{f(x)+y^T(Ax-b) \right\}-b\\<br>&amp;= A\arg\min_x L(x,y)-b<br>\end{aligned}<br>\end{equation}</p>
+<p>定义<br>
+\begin{equation}<br>
+\begin{aligned}<br>
+g(y) &amp;= \min_x L(x,y) \<br>
+&amp;= \min_x\left{f(x)+y^T(Ax-b)\right}\<br>
+&amp;= \min_x\left{f(x)-(-A<sup>Ty)</sup>Tx-y^Tb \right}\<br>
+&amp;= \underline{\min_x\left{f(x)-(-A<sup>Ty)</sup>Tx \right}}-y^Tb\<br>
+&amp;= \underline{-f<sup>*(-A</sup>Ty)}-y^Tb<br>
+\end{aligned}<br>
+\end{equation}</p>
+<p>由于$f^*(y)= \max_x { { y^Tx-f(x) } }=-\min_x{ { f(x)-y^Tx } }$。</p>
+<p>\begin{equation}<br>
+\begin{aligned}<br>
+\nabla g(y) &amp;= A\nabla f<sup>*(-A</sup>Ty)-b\<br>
+&amp;= A\arg\min_x\left{f(x)+y^TAx \right}-b\<br>
+&amp;= A\arg\min_x\left{f(x)+y^T(Ax-b) \right}-b\<br>
+&amp;= A\arg\min_x L(x,y)-b<br>
+\end{aligned}<br>
+\end{equation}</p>
 <blockquote>
 <p>$\frac{\mathrm{d}(x^T\beta)}{\mathrm{d}x}=\beta$</p>
 </blockquote>
-<h3 id="DAM"><a href="#DAM" class="headerlink" title="DAM"></a>DAM</h3><p>Dual Decomposition<br>Dual Ascent Algorithm<br>对偶上升算法</p>
+<h3 id="DAM"><a class="header-anchor" href="#DAM"></a>DAM</h3>
+<p>Dual Decomposition<br>
+Dual Ascent Algorithm<br>
+对偶上升算法</p>
 <p>算法的第$k+1$步迭代为</p>
-<p>\begin{equation}<br>\begin{aligned}<br>x^{k+1}&amp;=\arg\min_x L(x,y^k)\\<br>y^{k+1}&amp;=y^{k} + \alpha^k\nabla g(y^k) \quad \mathrm{(Gradient Ascent Update)}\\<br>&amp;= y^k + \alpha^k(Ax^{k+1}-b)<br>\end{aligned}<br>\end{equation}<br>其中</p>
+<p>\begin{equation}<br>
+\begin{aligned}<br>
+x^{k+1}&amp;=\arg\min_x L(x,y^k)\<br>
+y<sup>{k+1}&amp;=y</sup>{k} + \alpha^k\nabla g(y^k) \quad \mathrm{(Gradient Ascent Update)}\<br>
+&amp;= y^k + \alpha<sup>k(Ax</sup>{k+1}-b)<br>
+\end{aligned}<br>
+\end{equation}<br>
+其中</p>
 <ul>
 <li>$\alpha^k&gt;0$是步长</li>
 <li>$\nabla g(y^k)=A\arg\min_x L(x,y^k)-b$</li>
 </ul>
-<p>当$f(x)$可分时，即</p>
-<script type="math/tex; mode=display">f(x)=\sum_{i=1}^nf_i(x_i)</script><p>则<br>\begin{equation}<br>\begin{aligned}<br>L(x,y^k) &amp;= f(x)+y^T(Ax-b)\\<br>&amp;= \sum_{i=1}^nf_i(x) + y^T\left(\sum_{i=1}^nA_ix_i-b\right)\\<br>&amp;=\sum_{i=1}^n\left(f_i(x)+y^TA_ix_i-\frac{1}{n}y^Tb \right)\\<br>&amp;= \sum_{i=1}^nL_i(x_i,y^k)<br>\end{aligned}<br>\end{equation}</p>
-<p>则分成了$n$个平行计算</p>
-<script type="math/tex; mode=display">x_i^{k+1}=\arg\min_{x_i} L_i(x_i, y^k)</script><h3 id="ALM"><a href="#ALM" class="headerlink" title="ALM"></a>ALM</h3><p>Augmented Lagrangian Method<br>Method of Multipliers<br>增广的拉格朗日乘子法</p>
+<p>当$f(x)$可分时，即<br>
+$$f(x)=\sum_{i=1}^nf_i(x_i)$$<br>
+则<br>
+\begin{equation}<br>
+\begin{aligned}<br>
+L(x,y^k) &amp;= f(x)+y^T(Ax-b)\<br>
+&amp;= \sum_{i=1}^nf_i(x) + y<sup>T\left(\sum_{i=1}</sup>nA_ix_i-b\right)\<br>
+&amp;=\sum_{i=1}<sup>n\left(f_i(x)+y</sup>TA_ix_i-\frac{1}{n}y^Tb \right)\<br>
+&amp;= \sum_{i=1}<sup>nL_i(x_i,y</sup>k)<br>
+\end{aligned}<br>
+\end{equation}</p>
+<p>则分成了$n$个平行计算<br>
+$$x_i^{k+1}=\arg\min_{x_i} L_i(x_i, y^k)$$</p>
+<h3 id="ALM"><a class="header-anchor" href="#ALM"></a>ALM</h3>
+<p>Augmented Lagrangian Method<br>
+Method of Multipliers<br>
+增广的拉格朗日乘子法</p>
 <p>当$f(x)$不是严格凸时，Dual Ascent Algorithm不适用。</p>
-<p>增广的拉格朗日函数为</p>
-<script type="math/tex; mode=display">L_\rho(x,y)=f(x)+y^T(Ax-b)+\frac{\rho}{2}||Ax-b||^2</script><p>即解决优化问题<br>\begin{equation}<br>\begin{aligned}<br>\min &amp; \quad f(x)+\frac{\rho}{2}||Ax-b||^2\\<br>\mathrm{s.t.} &amp;\quad Ax=b<br>\end{aligned}<br>\end{equation}</p>
-<p>则<br>\begin{equation}<br>\begin{aligned}<br>x^{k+1} &amp;= \arg\min_x{L_\rho(x,y^k)}\\<br>y^{k+1} &amp;= y^k + \rho(Ax^{k+1}-b)<br>\end{aligned}<br>\end{equation}</p>
+<p>增广的拉格朗日函数为<br>
+$$L_\rho(x,y)=f(x)+y<sup>T(Ax-b)+\frac{\rho}{2}||Ax-b||</sup>2$$<br>
+即解决优化问题<br>
+\begin{equation}<br>
+\begin{aligned}<br>
+\min &amp; \quad f(x)+\frac{\rho}{2}||Ax-b||^2\<br>
+\mathrm{s.t.} &amp;\quad Ax=b<br>
+\end{aligned}<br>
+\end{equation}</p>
+<p>则<br>
+\begin{equation}<br>
+\begin{aligned}<br>
+x^{k+1} &amp;= \arg\min_x{L_\rho(x,y^k)}\<br>
+y^{k+1} &amp;= y^k + \rho(Ax^{k+1}-b)<br>
+\end{aligned}<br>
+\end{equation}</p>
 <blockquote>
-<p>为什么步长为$\rho$？<br>我们只考虑$f(x)$可导的特殊情况。<br>原始优化问题如果满足：<br>\begin{equation}<br>\begin{aligned}<br>\nabla_x L(x^*,y^*) &amp;= \nabla f(x^*)+A^Ty^*=0\\<br>\nabla_y L(x^*,y^*) &amp;= Ax^*-b=0<br>\end{aligned}<br>\end{equation}<br>则称为primal and dual feasibility。<br>因为$x^{k+1}=\arg\min_xL_\rho(x,y^k)$，所以<br>\begin{equation}<br>\begin{aligned}<br>0 &amp;= \nabla_x L_\rho(x^{k+1},y^k)\\<br>&amp;= \nabla_x f(x^{k+1})+A^T(y^k+\rho(Ax^{k+1}-b))<br>\end{aligned}<br>\end{equation}<br>如果取$y^{k+1}=y^k+\rho(Ax^{k+1}-b)$，则有</p>
-<script type="math/tex; mode=display">\nabla_xf(x^{k+1})+A^Ty^{k+1}=0</script><p>所以，如果取步长为$\rho$，则可以保证每一次迭代后的解都满足dual feasible.</p>
+<p>为什么步长为$\rho$？<br>
+我们只考虑$f(x)$可导的特殊情况。<br>
+原始优化问题如果满足：<br>
+\begin{equation}<br>
+\begin{aligned}<br>
+\nabla_x L(x<sup>*,y</sup>*) &amp;= \nabla f(x<sup>*)+A</sup>Ty^*=0\<br>
+\nabla_y L(x<sup>*,y</sup>*) &amp;= Ax^*-b=0<br>
+\end{aligned}<br>
+\end{equation}<br>
+则称为primal and dual feasibility。<br>
+因为$x<sup>{k+1}=\arg\min_xL_\rho(x,y</sup>k)$，所以<br>
+\begin{equation}<br>
+\begin{aligned}<br>
+0 &amp;= \nabla_x L_\rho(x<sup>{k+1},y</sup>k)\<br>
+&amp;= \nabla_x f(x<sup>{k+1})+A</sup>T(y<sup>k+\rho(Ax</sup>{k+1}-b))<br>
+\end{aligned}<br>
+\end{equation}<br>
+如果取$y<sup>{k+1}=y</sup>k+\rho(Ax^{k+1}-b)$，则有<br>
+$$\nabla_xf(x<sup>{k+1})+A</sup>Ty^{k+1}=0$$<br>
+所以，如果取步长为$\rho$，则可以保证每一次迭代后的解都满足dual feasible.</p>
 </blockquote>
 <p>与Dual Ascent Method相比，</p>
 <ul>
 <li>ALM需要的假设相对比较不严格，且有更好的收敛性</li>
 <li>但是ALM不能并行计算，即使$f(x)$可分</li>
 </ul>
-<h1 id="ADMM"><a href="#ADMM" class="headerlink" title="ADMM"></a>ADMM</h1><p>用于解决如下问题<br>\begin{equation}<br>\begin{aligned}<br>\min &amp; \quad f(x)+g(z)\\<br>\mathrm{s.t.} &amp; \quad Ax+Bz=c<br>\end{aligned}<br>\end{equation}</p>
-<p>该优化问题的扩展拉格朗日函数为</p>
-<script type="math/tex; mode=display">L_\rho(x,y,z)=f(x)+g(z)+y^T(Ax+Bz-c)+\frac{\rho}{2}||Ax+Bz-c||^2</script><p>其中$\frac{\rho}{2}||Ax+Bz-c||^2$是扩展项（augmented term）。</p>
-<p>使用ALM解上述问题：<br>\begin{equation}<br>\begin{aligned}<br>(x^{k+1},z^{k+1}) &amp;= \arg\min_{x,z} L_\rho (x,z,y^k)\\<br>y^{k+1} &amp;= y^k + \rho (Ax^{k+1}+Bz^{k+1}-c)<br>\end{aligned}<br>\end{equation}</p>
-<p>ADMM与ALM的区别：<br>ADMM将ALM中的$(x,z)-$最小化步骤拆分成两步：</p>
+<h1 id="ADMM"><a class="header-anchor" href="#ADMM"></a>ADMM</h1>
+<p>用于解决如下问题<br>
+\begin{equation}<br>
+\begin{aligned}<br>
+\min &amp; \quad f(x)+g(z)\<br>
+\mathrm{s.t.} &amp; \quad Ax+Bz=c<br>
+\end{aligned}<br>
+\end{equation}</p>
+<p>该优化问题的扩展拉格朗日函数为<br>
+$$L_\rho(x,y,z)=f(x)+g(z)+y<sup>T(Ax+Bz-c)+\frac{\rho}{2}||Ax+Bz-c||</sup>2$$<br>
+其中$\frac{\rho}{2}||Ax+Bz-c||^2$是扩展项（augmented term）。</p>
+<p>使用ALM解上述问题：<br>
+\begin{equation}<br>
+\begin{aligned}<br>
+(x<sup>{k+1},z</sup>{k+1}) &amp;= \arg\min_{x,z} L_\rho (x,z,y^k)\<br>
+y^{k+1} &amp;= y^k + \rho (Ax<sup>{k+1}+Bz</sup>{k+1}-c)<br>
+\end{aligned}<br>
+\end{equation}</p>
+<p>ADMM与ALM的区别：<br>
+ADMM将ALM中的$(x,z)-$最小化步骤拆分成两步：</p>
 <ul>
 <li>x-minimization</li>
-<li>z-minimization<br>\begin{equation}<br>\begin{aligned}<br>x^{k+1} &amp;= \arg\min_x L_\rho(x,z^k,y^k)\\<br>z^{k+1} &amp;= \arg\min_z L_\rho(x^{k+1}, z,y^k)\\<br>y^{k+1} &amp;= y^k+\rho(Ax^{k+1}+Bz^{k+1}-c)<br>\end{aligned}<br>\end{equation}</li>
+<li>z-minimization<br>
+\begin{equation}<br>
+\begin{aligned}<br>
+x^{k+1} &amp;= \arg\min_x L_\rho(x,z<sup>k,y</sup>k)\<br>
+z^{k+1} &amp;= \arg\min_z L_\rho(x^{k+1}, z,y^k)\<br>
+y^{k+1} &amp;= y<sup>k+\rho(Ax</sup>{k+1}+Bz^{k+1}-c)<br>
+\end{aligned}<br>
+\end{equation}</li>
 </ul>
-<p>定义残差项$r=Ax+Bz-c$，则$L_\rho(x,y,z)$可改写为<br>\begin{equation}<br>\begin{aligned}<br>L_\rho(x,y,z) &amp;= f(x)+g(z)+y^T(Ax+Bz-c)+\frac{\rho}{2}||Ax+Bz-c||^2\\<br>&amp;= f(x)+g(z)+y^Tr+\frac{\rho}{2}||r||^2\\<br>&amp;= f(x)+g(z)+\frac{\rho}{2}||r+\frac{1}{\rho}y||^2-\frac{1}{2\rho}||y||^2\\<br>&amp;= f(x)+g(z)+\frac{\rho}{2}||r+u||^2-\frac{\rho}{2}||u||^2<br>\end{aligned}<br>\end{equation}<br>其中</p>
+<p>定义残差项$r=Ax+Bz-c$，则$L_\rho(x,y,z)$可改写为<br>
+\begin{equation}<br>
+\begin{aligned}<br>
+L_\rho(x,y,z) &amp;= f(x)+g(z)+y<sup>T(Ax+Bz-c)+\frac{\rho}{2}||Ax+Bz-c||</sup>2\<br>
+&amp;= f(x)+g(z)+y<sup>Tr+\frac{\rho}{2}||r||</sup>2\<br>
+&amp;= f(x)+g(z)+\frac{\rho}{2}||r+\frac{1}{\rho}y||<sup>2-\frac{1}{2\rho}||y||</sup>2\<br>
+&amp;= f(x)+g(z)+\frac{\rho}{2}||r+u||<sup>2-\frac{\rho}{2}||u||</sup>2<br>
+\end{aligned}<br>
+\end{equation}<br>
+其中</p>
 <ul>
 <li>$u=\frac{1}{\rho}y$称为scaled dual variable</li>
-<li>\begin{aligned}<br>\frac{\rho}{2}||r+\frac{1}{\rho}y||^2 &amp;= \frac{\rho}{2}\left(||r||^2+\frac{2}{\rho}y^Tr+\frac{1}{\rho^2}||y||^2 \right)\\<br>&amp;= \frac{\rho}{2}||r||^2+y^Tr+\frac{1}{2\rho}||y||^2<br>\end{aligned}</li>
+<li>\begin{aligned}<br>
+\frac{\rho}{2}||r+\frac{1}{\rho}y||^2 &amp;= \frac{\rho}{2}\left(||r||<sup>2+\frac{2}{\rho}y</sup>Tr+\frac{1}{\rho<sup>2}||y||</sup>2 \right)\<br>
+&amp;= \frac{\rho}{2}||r||<sup>2+y</sup>Tr+\frac{1}{2\rho}||y||^2<br>
+\end{aligned}</li>
 </ul>
-<p>则ADMM的迭代步骤变为<br>\begin{aligned}<br>x^{k+1} &amp;= \arg\min_x \left\{f(x)+\frac{\rho}{2}||Ax+Bz^k-c+u^k||^2 \right\}\\<br>z^{k+1} &amp;= \arg\min_z \left\{g(z)+\frac{\rho}{2}||Ax^{k+1}+Bz-c+u^k||^2 \right\}\\<br>u^{k+1} &amp;= u^k+Ax^{k+1}+Bz^{k+1}-c<br>\end{aligned}</p>
-<h2 id="收敛性"><a href="#收敛性" class="headerlink" title="收敛性"></a>收敛性</h2><p>基于两个假设证明ADMM的收敛性</p>
+<p>则ADMM的迭代步骤变为<br>
+\begin{aligned}<br>
+x^{k+1} &amp;= \arg\min_x \left{f(x)+\frac{\rho}{2}||Ax+Bz<sup>k-c+u</sup>k||^2 \right}\<br>
+z^{k+1} &amp;= \arg\min_z \left{g(z)+\frac{\rho}{2}||Ax<sup>{k+1}+Bz-c+u</sup>k||^2 \right}\<br>
+u^{k+1} &amp;= u<sup>k+Ax</sup>{k+1}+Bz^{k+1}-c<br>
+\end{aligned}</p>
+<h2 id="收敛性"><a class="header-anchor" href="#收敛性"></a>收敛性</h2>
+<p>基于两个假设证明ADMM的收敛性</p>
 <ul>
-<li><strong>假设1</strong>：函数$f:\mathbb{R}^n\rightarrow \mathbb{R}\cup \{+\infty\}$和函数$g:\mathbb{R}^m\rightarrow\cup \{+\infty\}$是closed, proper and convex.<blockquote>
+<li><strong>假设1</strong>：函数$f:\mathbb{R}^n\rightarrow \mathbb{R}\cup {+\infty}$和函数$g:\mathbb{R}^m\rightarrow\cup {+\infty}$是closed, proper and convex.</li>
+</ul>
+<blockquote>
 <p>该假设保证了x-minimization step和z-minimization step有解</p>
 </blockquote>
-</li>
-<li><strong>假设2</strong>：非增广德拉格朗日函数$L_0$有一个鞍点（saddle point）<blockquote>
-<p>该假设意味着存在$(x^*,z^*,y^*)$（并不要求唯一）。</p>
-<script type="math/tex; mode=display">L_0(x^*,z^*,y)\leq L_0(x^*, z^*, y^*) \leq L_0(x, z, y^*)</script><p>对所有的$x,z,y$成立</p>
 <ul>
-<li>$y^*=\arg\max L_0(x^*,z^*,y)$</li>
-<li>$(x^*,z^*)=\arg\min L_0(x,z,y^*)$</li>
+<li><strong>假设2</strong>：非增广德拉格朗日函数$L_0$有一个鞍点（saddle point）</li>
 </ul>
+<blockquote>
+<p>该假设意味着存在$(x<sup>*,z</sup>*,y^*)$（并不要求唯一）。<br>
+$$L_0(x<sup>*,z</sup><em>,y)\leq L_0(x^</em>, z^<em>, y^</em>) \leq L_0(x, z, y^*)$$<br>
+对所有的$x,z,y$成立</p>
 </blockquote>
-</li>
+<ul>
+<li>$y^*=\arg\max L_0(x<sup>*,z</sup>*,y)$</li>
+<li>$(x<sup>*,z</sup>*)=\arg\min L_0(x,z,y^*)$</li>
 </ul>
 <p>基于上述两个假设，ADMM迭代满足：</p>
 <ul>
-<li>残差收敛：<script type="math/tex; mode=display">r^k\rightarrow 0\quad (k\rightarrow \infty)</script></li>
-<li>目标函数收敛：<script type="math/tex; mode=display">f(x^k)+g(x^k)\rightarrow p^* \quad (k\rightarrow\infty)</script></li>
-<li>对偶变量(Dual Variable)收敛：<script type="math/tex; mode=display">y^k\rightarrow y^* \quad (k\rightarrow \infty)</script></li>
+<li>残差收敛：<br>
+$$r^k\rightarrow 0\quad (k\rightarrow \infty)$$</li>
+<li>目标函数收敛：<br>
+$$f(x<sup>k)+g(x</sup>k)\rightarrow p^* \quad (k\rightarrow\infty)$$</li>
+<li>对偶变量(Dual Variable)收敛：<br>
+$$y^k\rightarrow y^* \quad (k\rightarrow \infty)$$</li>
 </ul>
-<h2 id="Optimality-Conditions"><a href="#Optimality-Conditions" class="headerlink" title="Optimality Conditions"></a>Optimality Conditions</h2><p>ADMM<strong>最优化的充要条件</strong>是primal feasibility</p>
-<script type="math/tex; mode=display">Ax^*+Bz^*-c=0</script><p>和dual feasibility</p>
-<script type="math/tex; mode=display">\nabla f(x^*)+A^Ty^*=0</script><script type="math/tex; mode=display">\nabla g(z^*)+B^Ty^*=0</script><blockquote>
-<script type="math/tex; mode=display">L_\rho(x,y,z) = f(x)+g(z)+y^T(Ax+Bz-c)+\frac{\rho}{2}||Ax+Bz-c||^2</script><ul>
-<li>因为$z^{k+1}=\arg\min_z L_\rho(x^{k+1}, z, y^k)$，所以有<br>\begin{aligned}<br>0 &amp;= \nabla_z L_\rho(x^{k+1}, z^{k+1}, y^k)\\<br>&amp;= \nabla g(z^{k+1})+B^Ty^k+\rho B^T(Ax^{k+1}+Bz^{k+1}-c)\\<br>&amp;= \nabla g(z^{k+1})+B^Ty^k+\rho B^Tr^{k+1}\\<br>&amp; \left(因为y^{k+1}=y^k+\rho(Ax^{k+1}+Bz^{k+1}-c)=y^k+\rho r^{k+1}\right)\\<br>&amp;= \nabla g(z^{k+1})+B^Ty^{k+1}<br>\end{aligned}<br>所以，每次迭代结束后总满足$\nabla g(z)+B^Ty=0$。</li>
-<li>因为$x^{k+1}=\arg\min_x L_\rho(x,z^k,y^k)$，所以有<br>\begin{aligned}<br>0 &amp;= \nabla_x L_\rho(x^{k+1},z^k,y^k)\\<br>&amp;= \nabla f(x^{k+1}) + A^Ty^k+\rho A^T(Ax^{k+1}+Bz^k-c)\\<br>&amp;= \nabla f(x^{k+1})+A^T(y^k+\rho r^{k+1}+\rho B(z^k-z^{k+1}))\\<br>&amp;= \nabla f(x^{k+1})+A^Ty^{k+1}+\rho A^TB(z^k-z^{k+1})<br>\end{aligned}<br>等价于<script type="math/tex; mode=display">\rho A^TB(z^{k+1}-z^k)=\nabla f(x^{k+1})+A^Ty^{k+1}</script></li>
-</ul>
+<h2 id="Optimality-Conditions"><a class="header-anchor" href="#Optimality-Conditions"></a>Optimality Conditions</h2>
+<p>ADMM<strong>最优化的充要条件</strong>是primal feasibility<br>
+$$Ax<sup>*+Bz</sup><em>-c=0$$<br>
+和dual feasibility<br>
+$$\nabla f(x<sup>*)+A</sup>Ty^</em>=0$$<br>
+$$\nabla g(z<sup>*)+B</sup>Ty^*=0$$</p>
+<blockquote>
+<p>$$L_\rho(x,y,z) = f(x)+g(z)+y<sup>T(Ax+Bz-c)+\frac{\rho}{2}||Ax+Bz-c||</sup>2$$</p>
 </blockquote>
-<h2 id="Stopping-Criterion"><a href="#Stopping-Criterion" class="headerlink" title="Stopping Criterion"></a>Stopping Criterion</h2><script type="math/tex; mode=display">||Ax^k+Bz^k-c||^2=||r^k||^2\leq \epsilon^{pri}</script><script type="math/tex; mode=display">||\rho A^TB(z^{k+1}-z^k)||^2=||s^k||^2\leq \epsilon^{dual}</script><p>其中$\epsilon^{pri}&gt;0$,$\epsilon^{dual}&gt;0$是feasibility tolerances。<br>可取<br>\begin{aligned}<br>\epsilon^{pri} &amp;= \sqrt{p}\epsilon^{abs}+\epsilon^{real}\max\{||Ax^k||^2, ||Bz^k||^2, ||c||^2 \}\\<br>\epsilon^{dual} &amp;= \sqrt{n}\epsilon^{abs}+\epsilon^{real}||A^Ty^k||^2<br>\end{aligned}<br>其中$\epsilon^{real}$可取$\epsilon^{real}=\frac{1}{10}$。</p>
-<h2 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h2><h3 id="求解LASSO"><a href="#求解LASSO" class="headerlink" title="求解LASSO"></a>求解LASSO</h3><p>给定$y\in \mathbb{R}^n,\mathbf{X}\in\mathbb{R}^{n\times p}$，LASSO问题为</p>
-<script type="math/tex; mode=display">\min \quad \frac{1}{2}||y-\mathbf{X}\beta||^2+\lambda||\beta||_1</script><p>可以写成<br>\begin{aligned}<br>\min &amp; \quad \frac{1}{2}||y-\mathbf{X}\beta||^2+\lambda||\alpha||_1\\<br>\mathrm{s.t.} &amp; \quad \beta-\alpha=0<br>\end{aligned}</p>
-<p>对应的拉格朗日函数为</p>
-<script type="math/tex; mode=display">L_\rho(\alpha,\beta,\phi)=\frac{1}{2}||y-\mathbf{X}\beta||^2+\lambda||\alpha||_1+\phi^T(\beta-\alpha)+\frac{\rho}{2}||\beta-\alpha||^2</script><p>其中$\phi$是拉格朗日乘子,$y$是response。</p>
-<p>增广的拉格朗日函数为</p>
-<script type="math/tex; mode=display">L_\rho(\alpha,\beta,u)=\frac{1}{2}||y-\mathbf{X}\beta||^2+\lambda||\alpha||_1+\phi^T(\beta-\alpha+u)-\frac{1}{2\rho}||u||^2</script><p>LASSO问题的ADMM为<br>\begin{aligned}<br>\beta^{k+1} &amp;= \arg\min_\beta\left\{\frac{1}{2}||y-\mathbf{X}\beta||^2+\frac{\rho}{2}||\beta-\alpha^k+u^k||^2\right\}\\<br>\alpha^{k+1} &amp;= \arg\min_\alpha\left\{\lambda||\alpha||_1+\frac{\rho}{2}||\beta^{k+1}-\alpha+u^k||^2\right\}\\<br>u^{k+1} &amp;= u^k+\beta^{k+1}-\alpha^{k+1}<br>\end{aligned}<br>其中$u^k=\frac{1}{\rho}\phi^k$。</p>
-<p>对于$\beta^{k+1} = \arg\min_\beta\left\{\frac{1}{2}||y-\mathbf{X}\beta||^2+\frac{\rho}{2}||\beta-\alpha^k+u^k||^2\right\}$有<br>\begin{aligned}<br>&amp; \frac{\partial{\left\{\frac{1}{2}||y-\mathbf{X}\beta||^2+\frac{\rho}{2}||\beta-\alpha^k+u^k||^2\right\}}}{\partial{\beta}}\\<br>= &amp; \mathbf{X}(\mathbf{X}\beta-y)+\rho(\beta-\alpha^k+u^k)\\<br>= &amp; (\mathbf{X}^T\mathbf{X}+\rho\mathbf{I} )\beta-\left[\mathbf{X}^Ty+\rho(\alpha^k-u^k) \right]\\<br>= &amp; 0<br>\end{aligned}<br>则有</p>
-<script type="math/tex; mode=display">\beta^{k+1}\triangleq(\mathbf{X}^T\mathbf{X}+\rho\mathbf{I})^{-1}\left(\mathbf{X}^Ty+\rho(\alpha^k-u^k) \right)</script><p>对于$\alpha^{k+1} = \arg\min_\alpha\left\{\lambda||\alpha||_1+\frac{\rho}{2}||\beta^{k+1}-\alpha+u^k||^2\right\}$有<br>\begin{aligned}<br>&amp; \frac{\partial{\lambda|\alpha_j|+\frac{\rho}{2}(\beta_j^{k+1}-\alpha_j+u_j^k)^2}}{\partial{\alpha_j}}\\<br>= &amp; \lambda \mathrm{sgn}(\alpha_j)-\rho(\beta_j^{k+1}+u_j^k-\alpha_j)<br>\end{aligned}</p>
 <ul>
-<li>当$\alpha_j&gt;0$时，如果有$\beta_j^{k+1}+u_j^k&gt;\frac{\lambda}{\rho}$，则有<script type="math/tex; mode=display">\alpha_j^{k+1}=\beta_j^{k+1}+u_j^k-\frac{\lambda}{\rho}</script></li>
-<li>当$\alpha_j=0$时，$\alpha_j^{k+1}=0$</li>
-<li>当$\alpha_j&lt;0$时，如果有$\beta_j^{k+1}+u_j^k+\frac{\lambda}{\rho}&lt;0$，则有<script type="math/tex; mode=display">\alpha_j^{k+1}=\beta_j^{k+1}+u_j^k+\frac{\lambda}{\rho}</script></li>
+<li>因为$z^{k+1}=\arg\min_z L_\rho(x^{k+1}, z, y^k)$，所以有<br>
+\begin{aligned}<br>
+0 &amp;= \nabla_z L_\rho(x^{k+1}, z^{k+1}, y^k)\<br>
+&amp;= \nabla g(z<sup>{k+1})+B</sup>Ty^k+\rho B<sup>T(Ax</sup>{k+1}+Bz^{k+1}-c)\<br>
+&amp;= \nabla g(z<sup>{k+1})+B</sup>Ty^k+\rho B<sup>Tr</sup>{k+1}\<br>
+&amp; \left(因为y<sup>{k+1}=y</sup>k+\rho(Ax<sup>{k+1}+Bz</sup>{k+1}-c)=y^k+\rho r^{k+1}\right)\<br>
+&amp;= \nabla g(z<sup>{k+1})+B</sup>Ty^{k+1}<br>
+\end{aligned}<br>
+所以，每次迭代结束后总满足$\nabla g(z)+B^Ty=0$。</li>
+<li>因为$x^{k+1}=\arg\min_x L_\rho(x,z<sup>k,y</sup>k)$，所以有<br>
+\begin{aligned}<br>
+0 &amp;= \nabla_x L_\rho(x<sup>{k+1},z</sup>k,y^k)\<br>
+&amp;= \nabla f(x^{k+1}) + A<sup>Ty</sup>k+\rho A<sup>T(Ax</sup>{k+1}+Bz^k-c)\<br>
+&amp;= \nabla f(x<sup>{k+1})+A</sup>T(y^k+\rho r^{k+1}+\rho B(z<sup>k-z</sup>{k+1}))\<br>
+&amp;= \nabla f(x<sup>{k+1})+A</sup>Ty^{k+1}+\rho A<sup>TB(z</sup>k-z^{k+1})<br>
+\end{aligned}<br>
+等价于<br>
+$$\rho A<sup>TB(z</sup>{k+1}-z^k)=\nabla f(x<sup>{k+1})+A</sup>Ty^{k+1}$$</li>
 </ul>
-<p>最后，有</p>
-<script type="math/tex; mode=display">\alpha_j^{k+1}=S_{\frac{\lambda}{\rho}}\left(\beta_j^{k+1}+u_j^k \right)</script><p>其中$S_{\frac{\lambda}{\rho}}$为soft thresholding function</p>
-<script type="math/tex; mode=display">S_{\kappa}(a)=\left\{
-  \begin{array}{ll}
-  a-\kappa & a>\kappa\\
-  0 & |a|\leq\kappa\\
-  a+\kappa & a<-\kappa
-  \end{array}
-  \right.</script><p>其中$\kappa=\frac{\lambda}{\rho}$。</p>
-<p>因此，LASSO问题的ADMM(显式)迭代过程为<br>\begin{aligned}<br>\beta^{k+1} &amp;= (\mathbf{X}^T\mathbf{X}+\rho\mathbf{I})^{-1}\left(\mathbf{X}^Ty+\rho(\alpha^k-u^k) \right)\\<br>\alpha^{k+1} &amp;= S_{\frac{\lambda}{\rho}}\left(\beta^{k+1}+u^k \right)\\<br>u^{k+1} &amp;= u^k+\beta^{k+1}-\alpha^{k+1}<br>\end{aligned}<br>Stopping Criterion可以为</p>
-<script type="math/tex; mode=display">||\beta^{k+1}-\alpha^{k+1}||<\epsilon</script><p>或</p>
-<script type="math/tex; mode=display">\rho ||\alpha^{k+1}-\alpha^k||<\epsilon</script><h3 id="求解Fused-LASSO"><a href="#求解Fused-LASSO" class="headerlink" title="求解Fused LASSO"></a>求解Fused LASSO</h3><p>Fused LASSO为</p>
-<script type="math/tex; mode=display">\min\quad \frac{1}{2}||y-\mathbf{X}\beta||^2+\lambda_1||\beta||_1+\lambda_2\sum_{i=2}^p|\beta_i-\beta_{i-1}|</script><p>是广义LASSO的一般形式。</p>
-<p>可以改写为</p>
-<script type="math/tex; mode=display">\min\quad \frac{1}{2}||y-\mathbf{X}\beta||^2+\lambda_1||D\beta||^2</script><p>其中</p>
-<script type="math/tex; mode=display">D=\left(
-  \begin{array}{c}
-  \mathbf{I}_p\\
-  B
-  \end{array}
-  \right)</script><script type="math/tex; mode=display">B=\frac{\lambda_2}{\lambda_1}\left(
-  \begin{array}{cccccc}
-  -1 & 1 & 0 & \cdots & 0 & 0\\
-  0 & -1 & 1 & \cdots & 0 & 0\\
-  0 & 0 & -1 & \cdots & 0 & 0\\
-  \vdots & \vdots & \vdots & \ddots & \vdots & \vdots\\
-  0 & 0 & 0 & \cdots & 1 & 0\\
-  0 & 0 & 0 & \cdots & -1 & 1
-  \end{array}
-  \right)</script><p>Fused LASSO可以进一步写为<br>\begin{aligned}<br>\min &amp; \quad \frac{1}{2}||y-\mathbf{X}\beta||^2+\lambda||\alpha||_1\\<br>\mathrm{s.t.} &amp; \quad D\beta-\alpha=0<br>\end{aligned}</p>
-<p>则Fused LASSO的ADMM迭代步骤为<br>\begin{aligned}<br>\beta^{k+1} &amp;= (\mathbf{X}^T\mathbf{X}+\rho D^TD)^{-1}\left(\mathbf{X}^Ty+\rho D^T(\alpha^k-u^k) \right)\\<br>\alpha^{k+1} &amp;= S_{\frac{\lambda}{\rho}}(D\beta^{k+1}+u^k)\\<br>u^{k+1} &amp;= u^k+D\beta^{k+1}-\alpha^{k+1}<br>\end{aligned}</p>
+<h2 id="Stopping-Criterion"><a class="header-anchor" href="#Stopping-Criterion"></a>Stopping Criterion</h2>
+<p>$$||Ax<sup>k+Bz</sup>k-c||<sup>2=||r</sup>k||^2\leq \epsilon^{pri}$$<br>
+$$||\rho A<sup>TB(z</sup>{k+1}-z<sup>k)||</sup>2=||s<sup>k||</sup>2\leq \epsilon^{dual}$$<br>
+其中$\epsilon<sup>{pri}&gt;0$,$\epsilon</sup>{dual}&gt;0$是feasibility tolerances。<br>
+可取<br>
+\begin{aligned}<br>
+\epsilon^{pri} &amp;= \sqrt{p}\epsilon<sup>{abs}+\epsilon</sup>{real}\max{||Ax<sup>k||</sup>2, ||Bz<sup>k||</sup>2, ||c||^2 }\<br>
+\epsilon^{dual} &amp;= \sqrt{n}\epsilon<sup>{abs}+\epsilon</sup>{real}||A<sup>Ty</sup>k||^2<br>
+\end{aligned}<br>
+其中$\epsilon<sup>{real}$可取$\epsilon</sup>{real}=\frac{1}{10}$。</p>
+<h2 id="应用"><a class="header-anchor" href="#应用"></a>应用</h2>
+<h3 id="求解LASSO"><a class="header-anchor" href="#求解LASSO"></a>求解LASSO</h3>
+<p>给定$y\in \mathbb{R}<sup>n,\mathbf{X}\in\mathbb{R}</sup>{n\times p}$，LASSO问题为<br>
+$$\min \quad \frac{1}{2}||y-\mathbf{X}\beta||^2+\lambda||\beta||_1$$<br>
+可以写成<br>
+\begin{aligned}<br>
+\min &amp; \quad \frac{1}{2}||y-\mathbf{X}\beta||^2+\lambda||\alpha||_1\<br>
+\mathrm{s.t.} &amp; \quad \beta-\alpha=0<br>
+\end{aligned}</p>
+<p>对应的拉格朗日函数为<br>
+$$L_\rho(\alpha,\beta,\phi)=\frac{1}{2}||y-\mathbf{X}\beta||<sup>2+\lambda||\alpha||_1+\phi</sup>T(\beta-\alpha)+\frac{\rho}{2}||\beta-\alpha||^2$$<br>
+其中$\phi$是拉格朗日乘子,$y$是response。</p>
+<p>增广的拉格朗日函数为<br>
+$$L_\rho(\alpha,\beta,u)=\frac{1}{2}||y-\mathbf{X}\beta||<sup>2+\lambda||\alpha||_1+\phi</sup>T(\beta-\alpha+u)-\frac{1}{2\rho}||u||^2$$</p>
+<p>LASSO问题的ADMM为<br>
+\begin{aligned}<br>
+\beta^{k+1} &amp;= \arg\min_\beta\left{\frac{1}{2}||y-\mathbf{X}\beta||<sup>2+\frac{\rho}{2}||\beta-\alpha</sup>k+u<sup>k||</sup>2\right}\<br>
+\alpha^{k+1} &amp;= \arg\min_\alpha\left{\lambda||\alpha||_1+\frac{\rho}{2}||\beta<sup>{k+1}-\alpha+u</sup>k||^2\right}\<br>
+u^{k+1} &amp;= u<sup>k+\beta</sup>{k+1}-\alpha^{k+1}<br>
+\end{aligned}<br>
+其中$u<sup>k=\frac{1}{\rho}\phi</sup>k$。</p>
+<p>对于$\beta^{k+1} = \arg\min_\beta\left{\frac{1}{2}||y-\mathbf{X}\beta||<sup>2+\frac{\rho}{2}||\beta-\alpha</sup>k+u<sup>k||</sup>2\right}$有<br>
+\begin{aligned}<br>
+&amp; \frac{\partial{\left{\frac{1}{2}||y-\mathbf{X}\beta||<sup>2+\frac{\rho}{2}||\beta-\alpha</sup>k+u<sup>k||</sup>2\right}}}{\partial{\beta}}\<br>
+= &amp; \mathbf{X}(\mathbf{X}\beta-y)+\rho(\beta-\alpha<sup>k+u</sup>k)\<br>
+= &amp; (\mathbf{X}^T\mathbf{X}+\rho\mathbf{I} )\beta-\left[\mathbf{X}<sup>Ty+\rho(\alpha</sup>k-u^k) \right]\<br>
+= &amp; 0<br>
+\end{aligned}<br>
+则有<br>
+$$\beta<sup>{k+1}\triangleq(\mathbf{X}</sup>T\mathbf{X}+\rho\mathbf{I})<sup>{-1}\left(\mathbf{X}</sup>Ty+\rho(\alpha<sup>k-u</sup>k) \right)$$</p>
+<p>对于$\alpha^{k+1} = \arg\min_\alpha\left{\lambda||\alpha||_1+\frac{\rho}{2}||\beta<sup>{k+1}-\alpha+u</sup>k||^2\right}$有<br>
+\begin{aligned}<br>
+&amp; \frac{\partial{\lambda|\alpha_j|+\frac{\rho}{2}(\beta_j<sup>{k+1}-\alpha_j+u_j</sup>k)^2}}{\partial{\alpha_j}}\<br>
+= &amp; \lambda \mathrm{sgn}(\alpha_j)-\rho(\beta_j<sup>{k+1}+u_j</sup>k-\alpha_j)<br>
+\end{aligned}</p>
+<ul>
+<li>当$\alpha_j&gt;0$时，如果有$\beta_j<sup>{k+1}+u_j</sup>k&gt;\frac{\lambda}{\rho}$，则有<br>
+$$\alpha_j<sup>{k+1}=\beta_j</sup>{k+1}+u_j^k-\frac{\lambda}{\rho}$$</li>
+<li>当$\alpha_j=0$时，$\alpha_j^{k+1}=0$</li>
+<li>当$\alpha_j&lt;0$时，如果有$\beta_j<sup>{k+1}+u_j</sup>k+\frac{\lambda}{\rho}&lt;0$，则有<br>
+$$\alpha_j<sup>{k+1}=\beta_j</sup>{k+1}+u_j^k+\frac{\lambda}{\rho}$$</li>
+</ul>
+<p>最后，有<br>
+$$\alpha_j<sup>{k+1}=S_{\frac{\lambda}{\rho}}\left(\beta_j</sup>{k+1}+u_j^k \right)$$<br>
+其中$S_{\frac{\lambda}{\rho}}$为soft thresholding function<br>
+$$S_{\kappa}(a)=\left{<br>
+\begin{array}{ll}<br>
+a-\kappa &amp; a&gt;\kappa\<br>
+0 &amp; |a|\leq\kappa\<br>
+a+\kappa &amp; a&lt;-\kappa<br>
+\end{array}<br>
+\right.$$<br>
+其中$\kappa=\frac{\lambda}{\rho}$。</p>
+<p>因此，LASSO问题的ADMM(显式)迭代过程为<br>
+\begin{aligned}<br>
+\beta^{k+1} &amp;= (\mathbf{X}<sup>T\mathbf{X}+\rho\mathbf{I})</sup>{-1}\left(\mathbf{X}<sup>Ty+\rho(\alpha</sup>k-u^k) \right)\<br>
+\alpha^{k+1} &amp;= S_{\frac{\lambda}{\rho}}\left(\beta<sup>{k+1}+u</sup>k \right)\<br>
+u^{k+1} &amp;= u<sup>k+\beta</sup>{k+1}-\alpha^{k+1}<br>
+\end{aligned}<br>
+Stopping Criterion可以为<br>
+$$||\beta<sup>{k+1}-\alpha</sup>{k+1}||&lt;\epsilon$$<br>
+或<br>
+$$\rho ||\alpha<sup>{k+1}-\alpha</sup>k||&lt;\epsilon$$</p>
+<h3 id="求解Fused-LASSO"><a class="header-anchor" href="#求解Fused-LASSO"></a>求解Fused LASSO</h3>
+<p>Fused LASSO为<br>
+$$\min\quad \frac{1}{2}||y-\mathbf{X}\beta||<sup>2+\lambda_1||\beta||_1+\lambda_2\sum_{i=2}</sup>p|\beta_i-\beta_{i-1}|$$<br>
+是广义LASSO的一般形式。</p>
+<p>可以改写为<br>
+$$\min\quad \frac{1}{2}||y-\mathbf{X}\beta||<sup>2+\lambda_1||D\beta||</sup>2$$<br>
+其中<br>
+$$D=\left(<br>
+\begin{array}{c}<br>
+\mathbf{I}_p\<br>
+B<br>
+\end{array}<br>
+\right)$$<br>
+$$B=\frac{\lambda_2}{\lambda_1}\left(<br>
+\begin{array}{cccccc}<br>
+-1 &amp; 1 &amp; 0 &amp; \cdots &amp; 0 &amp; 0\<br>
+0 &amp; -1 &amp; 1 &amp; \cdots &amp; 0 &amp; 0\<br>
+0 &amp; 0 &amp; -1 &amp; \cdots &amp; 0 &amp; 0\<br>
+\vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots &amp; \vdots\<br>
+0 &amp; 0 &amp; 0 &amp; \cdots &amp; 1 &amp; 0\<br>
+0 &amp; 0 &amp; 0 &amp; \cdots &amp; -1 &amp; 1<br>
+\end{array}<br>
+\right)$$</p>
+<p>Fused LASSO可以进一步写为<br>
+\begin{aligned}<br>
+\min &amp; \quad \frac{1}{2}||y-\mathbf{X}\beta||^2+\lambda||\alpha||_1\<br>
+\mathrm{s.t.} &amp; \quad D\beta-\alpha=0<br>
+\end{aligned}</p>
+<p>则Fused LASSO的ADMM迭代步骤为<br>
+\begin{aligned}<br>
+\beta^{k+1} &amp;= (\mathbf{X}^T\mathbf{X}+\rho D<sup>TD)</sup>{-1}\left(\mathbf{X}^Ty+\rho D<sup>T(\alpha</sup>k-u^k) \right)\<br>
+\alpha^{k+1} &amp;= S_{\frac{\lambda}{\rho}}(D\beta<sup>{k+1}+u</sup>k)\<br>
+u^{k+1} &amp;= u<sup>k+D\beta</sup>{k+1}-\alpha^{k+1}<br>
+\end{aligned}</p>
 <p>上述算法可以解决不同的广义LASSO问题（$D$不同）。</p>
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
+<h1 id="参考资料"><a class="header-anchor" href="#参考资料"></a>参考资料</h1>
+<ul>
 <li>W. Zhong, J. Lin - Statistical Data Analysis</li>
 <li><a href="https://zhuanlan.zhihu.com/p/32202419" target="_blank" rel="noopener">最强Fenchel对偶解读</a></li>
 <li><a href="https://www.cnblogs.com/wildkid1024/p/11041756.html" target="_blank" rel="noopener">[Algorithm]ADMM简明理解</a></li>
 <li><a href="https://www.zhihu.com/question/36566112" target="_blank" rel="noopener">交替方向乘子法（ADMM）算法的流程和原理是怎样的？</a></li>
 </ul>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p><a href="https://baike.baidu.com/item/%E5%BC%BA%E5%AF%B9%E5%81%B6%E6%80%A7/17194045?fr=aladdin" target="_blank" rel="noopener">强对偶性</a>：若原始问题（对偶问题）有一个确定的最优解，那么对偶问题（原始问题）也有一个确定的最优解，而且这两个最优解所对应的目标函数值相等。 <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
 
     </div>
 
@@ -696,13 +922,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">393k</span>
+    <span title="站点总字数">403k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">5:57</span>
+    <span title="站点阅读时长">6:06</span>
 </div>
 
 

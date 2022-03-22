@@ -312,21 +312,44 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><center>Poisson Distribution</center><br><a id="more"></a></p>
+        <center>Poisson Distribution</center>
+<a id="more"></a>
 <p>生活中大多数场景服从泊松分布，如奶茶店一天的顾客数、理发店一天的顾客数、馒头店一天卖出的馒头数等等。</p>
 <p>假设我经营着一家咖啡馆——SW Coffee。</p>
-<p>考虑长度为$T$的时间段内光顾的客人数量。将$T$时间切分为$n$份，每个时间段内只会发生“来了一位客人”或“没来客人”，即二项分布Binomial(p)</p>
-<script type="math/tex; mode=display">P(来了一位客人)=p</script><p>那么，$T$时间段内来的客人数量$X$服从$n$重Bernoulli分布B(n,p)</p>
-<script type="math/tex; mode=display">P(X=k)=\left(
-\begin{array}{c}
-n\\
-k
-\end{array}\right)
-p^k(1-p)^{n-k}</script><p>均值为</p>
-<script type="math/tex; mode=display">\lambda=E(X)=np</script><p>若将$T$时间段切分得足够小（$n\rightarrow\infty$），则$T$时间内来了$k$个客人的概率为<br>\begin{equation}<br>\begin{aligned}<br>&amp; \lim_{n\rightarrow \infty}\left(<br>\begin{array}{c}<br>n\\<br>k<br>\end{array}\right)<br>p^k(1-p)^{n-k}\\<br>=&amp; \lim_{n\rightarrow\infty}\frac{n(n-1)\cdots(n-k+1)}{k!}\left(\frac{\lambda}{n}\right)^k\left(1-\frac{\lambda}{n}\right)^{n-k}\\<br>=&amp; \lim_{n\rightarrow\infty}\frac{\lambda^k}{k!}\frac{n}{n}\frac{n-1}{n}\cdots\frac{n-k+1}{n}\left(1-\frac{\lambda}{n}\right)^{n-k}\\<br>=&amp; \lim_{n\rightarrow\infty}\frac{\lambda^k}{k!}1\cdot(1-\frac{1}{n})\cdot\cdots\cdot\left(1-\frac{k-1}{n}\right)\left(1-\frac{\lambda}{n}\right)^{-k}\left(1-\frac{\lambda}{n}\right)^{n}\\<br>=&amp; \frac{\lambda^k}{k!}e^{-\lambda}<br>\end{aligned}<br>\end{equation}<br>其中</p>
-<script type="math/tex; mode=display">\lim_{n\rightarrow\infty}1\cdot(1-\frac{1}{n})\cdot\cdots\cdot(1-\frac{k-1}{n})\left(1-\frac{\lambda}{n}\right)^{-k}=1</script><script type="math/tex; mode=display">\lim_{n\rightarrow\infty}\left(1-\frac{\lambda}{n}\right)^{n}=\lim_{n\rightarrow\infty}e^{\lambda}\left(1-\frac{\lambda}{n}\right)^{\frac{n}{\lambda}}=e^{\lambda}e^{-1}=e^{-\lambda}</script><p>强度为$\lambda$的泊松分布过程的点间间距服从参数为$\lambda$的指数分布（均值为$1/\lambda$）。</p>
+<p>考虑长度为$T$的时间段内光顾的客人数量。将$T$时间切分为$n$份，每个时间段内只会发生“来了一位客人”或“没来客人”，即二项分布Binomial§<br>
+$$P(来了一位客人)=p$$</p>
+<p>那么，$T$时间段内来的客人数量$X$服从$n$重Bernoulli分布B(n,p)<br>
+$$P(X=k)=\left(<br>
+\begin{array}{c}<br>
+n\<br>
+k<br>
+\end{array}\right)<br>
+p<sup>k(1-p)</sup>{n-k}<br>
+$$<br>
+均值为<br>
+$$\lambda=E(X)=np$$</p>
+<p>若将$T$时间段切分得足够小（$n\rightarrow\infty$），则$T$时间内来了$k$个客人的概率为<br>
+\begin{equation}<br>
+\begin{aligned}<br>
+&amp; \lim_{n\rightarrow \infty}\left(<br>
+\begin{array}{c}<br>
+n\<br>
+k<br>
+\end{array}\right)<br>
+p<sup>k(1-p)</sup>{n-k}\<br>
+=&amp; \lim_{n\rightarrow\infty}\frac{n(n-1)\cdots(n-k+1)}{k!}\left(\frac{\lambda}{n}\right)<sup>k\left(1-\frac{\lambda}{n}\right)</sup>{n-k}\<br>
+=&amp; \lim_{n\rightarrow\infty}\frac{\lambda<sup>k}{k!}\frac{n}{n}\frac{n-1}{n}\cdots\frac{n-k+1}{n}\left(1-\frac{\lambda}{n}\right)</sup>{n-k}\<br>
+=&amp; \lim_{n\rightarrow\infty}\frac{\lambda<sup>k}{k!}1\cdot(1-\frac{1}{n})\cdot\cdots\cdot\left(1-\frac{k-1}{n}\right)\left(1-\frac{\lambda}{n}\right)</sup>{-k}\left(1-\frac{\lambda}{n}\right)^{n}\<br>
+=&amp; \frac{\lambda<sup>k}{k!}e</sup>{-\lambda}<br>
+\end{aligned}<br>
+\end{equation}<br>
+其中<br>
+$$\lim_{n\rightarrow\infty}1\cdot(1-\frac{1}{n})\cdot\cdots\cdot(1-\frac{k-1}{n})\left(1-\frac{\lambda}{n}\right)^{-k}=1$$<br>
+$$\lim_{n\rightarrow\infty}\left(1-\frac{\lambda}{n}\right)<sup>{n}=\lim_{n\rightarrow\infty}e</sup>{\lambda}\left(1-\frac{\lambda}{n}\right)<sup>{\frac{n}{\lambda}}=e</sup>{\lambda}e<sup>{-1}=e</sup>{-\lambda}$$</p>
+<p>强度为$\lambda$的泊松分布过程的点间间距服从参数为$\lambda$的指数分布（均值为$1/\lambda$）。</p>
 <p>未完待续（表示本篇博客未写完~会继续更新）</p>
-<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul>
+<h2 id="参考资料"><a class="header-anchor" href="#参考资料"></a>参考资料</h2>
+<ul>
 <li><a href="https://www.zhihu.com/question/26441147" target="_blank" rel="noopener">泊松分布的现实意义是什么，为什么现实生活多数服从于泊松分布？</a></li>
 </ul>
 
@@ -522,13 +545,13 @@ p^k(1-p)^{n-k}</script><p>均值为</p>
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">393k</span>
+    <span title="站点总字数">403k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">5:57</span>
+    <span title="站点阅读时长">6:06</span>
 </div>
 
 
