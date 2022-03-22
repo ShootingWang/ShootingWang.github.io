@@ -2528,10 +2528,10 @@ window.onresize=function(){
 </ul>
 ]]></content>
       <categories>
-        <category>Statistics / 统计学</category>
+        <category>Statistics 统计学</category>
       </categories>
       <tags>
-        <tag>抽样调查</tag>
+        <tag>Survey Sampling 抽样调查</tag>
       </tags>
   </entry>
   <entry>
@@ -11078,11 +11078,11 @@ $$IDFA\rightarrow IDFV\rightarrow UDID$$</p>
 </ul>
 ]]></content>
       <categories>
-        <category>Statistics / 统计学</category>
+        <category>Statistics 统计学</category>
       </categories>
       <tags>
-        <tag>概率统计基础</tag>
-        <tag>假设检验</tag>
+        <tag>Statistics 统计学</tag>
+        <tag>Hypothesis Test 假设检验</tag>
       </tags>
   </entry>
   <entry>
@@ -20521,11 +20521,11 @@ E(X)&=\int_0^1 x\frac{1}{B(\alpha,\beta)}x^{\alpha-1}(1-x)^{\beta-1}\mathrm{d}x\
 </ul>
 ]]></content>
       <categories>
-        <category>Statistics / 统计学</category>
+        <category>Statistics 统计学</category>
       </categories>
       <tags>
-        <tag>概率统计基础</tag>
-        <tag>概率分布</tag>
+        <tag>Statistics 统计学</tag>
+        <tag>Probability Distribution 概率分布</tag>
       </tags>
   </entry>
   <entry>
@@ -22554,11 +22554,11 @@ Cov(x_i,x_j)&=E(x_ix_j)-E(x_i)E(x_j)\\
 </ul>
 ]]></content>
       <categories>
-        <category>Statistics / 统计学</category>
+        <category>Statistics 统计学</category>
       </categories>
       <tags>
-        <tag>概率统计基础</tag>
-        <tag>假设检验</tag>
+        <tag>Statistics 统计学</tag>
+        <tag>Hypothesis Test 假设检验</tag>
       </tags>
   </entry>
   <entry>
@@ -22903,11 +22903,11 @@ Cov(x_i,x_j)&=E(x_ix_j)-E(x_i)E(x_j)\\
 </ul>
 ]]></content>
       <categories>
-        <category>Statistics / 统计学</category>
+        <category>Statistics 统计学</category>
       </categories>
       <tags>
-        <tag>概率统计基础</tag>
-        <tag>假设检验</tag>
+        <tag>Statistics 统计学</tag>
+        <tag>Hypothesis Test 假设检验</tag>
       </tags>
   </entry>
   <entry>
@@ -23170,10 +23170,11 @@ g(\theta)= \left\{
 </ul>
 ]]></content>
       <categories>
-        <category>Statistics / 统计学</category>
+        <category>Statistics 统计学</category>
       </categories>
       <tags>
-        <tag>假设检验</tag>
+        <tag>Statistics 统计学</tag>
+        <tag>Hypothesis Test 假设检验</tag>
       </tags>
   </entry>
   <entry>
@@ -25647,11 +25648,11 @@ p^k(1-p)^{n-k}</script><p>均值为</p>
 </ul>
 ]]></content>
       <categories>
-        <category>Statistics / 统计学</category>
+        <category>Statistics 统计学</category>
       </categories>
       <tags>
-        <tag>概率统计基础</tag>
-        <tag>概率分布</tag>
+        <tag>Statistics 统计学</tag>
+        <tag>Probability Distribution 概率分布</tag>
       </tags>
   </entry>
   <entry>
