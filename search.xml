@@ -11653,7 +11653,34 @@ Cov(x_i,x_j)&=E(x_ix_j)-E(x_i)E(x_j)\\
 <ul>
 <li>解决内生性问题的因果分析方法</li>
 <li>政策干预发生与否的虚拟变量+前后两个时间段的面板数据+不可观测的个体固定效应</li>
+<li>常用于政策效应评估研究</li>
 </ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">变量</th>
+<th style="text-align:left">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">干预 Treated</td>
+<td style="text-align:left">控制组（无干预）、实验组（有干预）</td>
+</tr>
+<tr>
+<td style="text-align:left">时间 Time</td>
+<td style="text-align:left">$T_0$（策略实施前）、$T_1$（策略实施后）</td>
+</tr>
+<tr>
+<td style="text-align:left">因变量 $y$</td>
+<td style="text-align:left">关注的因变量/解释变量（如GDP等）</td>
+</tr>
+<tr>
+<td style="text-align:left">控制变量 $X$</td>
+<td style="text-align:left">需要控制的因素（除干预外，可能会影响因变量的因素）</td>
+</tr>
+</tbody>
+</table>
 <p><strong>基本假设</strong>：</p>
 <ol>
 <li>共同趋势假设/平行趋势假定</li>
@@ -11677,7 +11704,7 @@ D_{it} = \left{<br>
 <li>通过差分消除固定效应$\hat{\beta}$</li>
 </ul>
 <p>\begin{equation}<br>
-\hat{\beta} = \hat{Y}<em>{post}^{treatment} -<br>
+\hat{\beta}=\hat{Y}<em>{post}^{treatment}-<br>
 \hat{Y}</em>{pre}^{treatment} - \left( \hat{Y}<em>{post}^{control} - \hat{Y}</em>{pre}^{control} \right)<br>
 \end{equation}</p>
 <h1 id="案例-Cases"><a class="header-anchor" href="#案例-Cases"></a>案例 Cases</h1>
