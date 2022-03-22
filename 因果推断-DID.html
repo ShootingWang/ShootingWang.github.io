@@ -31,11 +31,13 @@
 <meta property="og:url" content="https://github.com/ShootingWang/ShootingWang.github.io/%E5%9B%A0%E6%9E%9C%E6%8E%A8%E6%96%AD-DID.html">
 <meta property="og:site_name" content="Skye">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://github.com/%E5%9B%A0%E6%9E%9C%E6%8E%A8%E6%96%AD-DID/Stylized-exposition-of-identification-in-the-DID-model.png">
 <meta property="article:published_time" content="2022-03-20T14:11:13.000Z">
-<meta property="article:modified_time" content="2022-03-22T12:00:00.508Z">
+<meta property="article:modified_time" content="2022-03-22T12:10:08.559Z">
 <meta property="article:author" content="Skye">
 <meta property="article:tag" content="因果推断">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://github.com/%E5%9B%A0%E6%9E%9C%E6%8E%A8%E6%96%AD-DID/Stylized-exposition-of-identification-in-the-DID-model.png">
 
 <link rel="canonical" href="https://github.com/ShootingWang/ShootingWang.github.io/%E5%9B%A0%E6%9E%9C%E6%8E%A8%E6%96%AD-DID.html">
 
@@ -265,7 +267,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-03-22 20:00:00" itemprop="dateModified" datetime="2022-03-22T20:00:00+08:00">2022-03-22</time>
+                <time title="修改时间：2022-03-22 20:10:08" itemprop="dateModified" datetime="2022-03-22T20:10:08+08:00">2022-03-22</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -309,11 +311,14 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><center></center><br><a id="more"></a></p>
+        <meta name="referrer" content="no-referrer">
+<center></center>
+<a id="more"></a>
 <blockquote>
 <p>推荐阅读：<a href="/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-%E5%9B%A0%E6%9E%9C%E6%8E%A8%E6%96%AD.html" title="数据分析 | 因果推断">数据分析 | 因果推断</a></p>
 </blockquote>
-<h1 id="双重差分"><a href="#双重差分" class="headerlink" title="双重差分"></a>双重差分</h1><p>双重差分法（DID，Difference in Difference）</p>
+<h1 id="双重差分"><a class="header-anchor" href="#双重差分"></a>双重差分</h1>
+<p>双重差分法（DID，Difference in Difference）</p>
 <ul>
 <li>解决内生性问题的因果分析方法</li>
 <li>政策干预发生与否的虚拟变量+前后两个时间段的面板数据+不可观测的个体固定效应</li>
@@ -323,17 +328,35 @@
 <li>共同趋势假设/平行趋势假定</li>
 <li></li>
 </ol>
-<script type="math/tex; mode=display">Y_{it}=\alpha_i + \lambda_t + D_{it}\beta + \varepsilon_{it}</script><p>其中，</p>
+<p>$$Y_{it}=\alpha_i + \lambda_t + D_{it}\beta + \varepsilon_{it}$$<br>
+其中，</p>
 <ul>
 <li>$\alpha_i$：不可观测的个体固定效应</li>
 <li>$D_{it}$：干预是否发生的虚拟变量</li>
 </ul>
-<p>\begin{equation}<br>D_{it} = \left\{<br>\begin{array}{ll}<br>1, &amp; 干预发生 \\\\<br>0, &amp; 干预不发生<br>\end{array}<br>\right.<br>\end{equation}</p>
+<p>\begin{equation}<br>
+D_{it} = \left{<br>
+\begin{array}{ll}<br>
+1, &amp; 干预发生 \\<br>
+0, &amp; 干预不发生<br>
+\end{array}<br>
+\right.<br>
+\end{equation}</p>
 <ul>
 <li>通过差分消除固定效应$\hat{\beta}$</li>
 </ul>
-<p>\begin{equation}<br>\hat{\beta} = \hat{Y}_{post}^{treatment} -<br>\hat{Y}_{pre}^{treatment} - \left( \hat{Y}_{post}^{control} - \hat{Y}_{pre}^{control} \right)<br>\end{equation}</p>
-<h1 id="案例-Cases"><a href="#案例-Cases" class="headerlink" title="案例 Cases"></a>案例 Cases</h1><h2 id="教育经济学"><a href="#教育经济学" class="headerlink" title="教育经济学"></a>教育经济学</h2><h1 id="参考资料-推荐阅读"><a href="#参考资料-推荐阅读" class="headerlink" title="参考资料/推荐阅读"></a>参考资料/推荐阅读</h1><ul>
+<p>\begin{equation}<br>
+\hat{\beta} = \hat{Y}<em>{post}^{treatment} -<br>
+\hat{Y}</em>{pre}^{treatment} - \left( \hat{Y}<em>{post}^{control} - \hat{Y}</em>{pre}^{control} \right)<br>
+\end{equation}</p>
+<h1 id="案例-Cases"><a class="header-anchor" href="#案例-Cases"></a>案例 Cases</h1>
+<h2 id="教育经济学"><a class="header-anchor" href="#教育经济学"></a>教育经济学</h2>
+<blockquote>
+<p><a href="https://www.sciencedirect.com/science/article/pii/B978012815391800001X" target="_blank" rel="noopener">The Economics of Education: Chapter 1 - Empirical methods in the economics of education</a></p>
+</blockquote>
+<img src="/%E5%9B%A0%E6%9E%9C%E6%8E%A8%E6%96%AD-DID/Stylized-exposition-of-identification-in-the-DID-model.png" class title="Stylized exposition of identification in the DID model">
+<h1 id="参考资料-推荐阅读"><a class="header-anchor" href="#参考资料-推荐阅读"></a>参考资料/推荐阅读</h1>
+<ul>
 <li><a href="https://www.sciencedirect.com/topics/economics-econometrics-and-finance/difference-in-differences" target="_blank" rel="noopener">ScienceDirect: Difference-in-Differences</a></li>
 <li><a href="https://www.sciencedirect.com/science/article/pii/B978012815391800001X" target="_blank" rel="noopener">The Economics of Education: Chapter 1 - Empirical methods in the economics of education</a></li>
 </ul>
@@ -351,8 +374,8 @@
   <div id="qr" style="display: none;">
       
       <div style="display: inline-block;">
-        <img src="/images/reward2021.png" alt="Skye WeChat Pay">
-        <p>WeChat Pay</p>
+        <img src="/images/reward2021.png" alt="Skye WeChat Bezahlung">
+        <p>WeChat Bezahlung</p>
       </div>
       
       <div style="display: inline-block;">
@@ -478,13 +501,13 @@
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-count">11</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">59</span>
+        <span class="site-state-item-count">58</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
