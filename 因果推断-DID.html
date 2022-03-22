@@ -34,7 +34,7 @@
 <meta property="og:image" content="https://github.com/%E5%9B%A0%E6%9E%9C%E6%8E%A8%E6%96%AD-DID/treat1.png">
 <meta property="og:image" content="https://github.com/%E5%9B%A0%E6%9E%9C%E6%8E%A8%E6%96%AD-DID/Stylized-exposition-of-identification-in-the-DID-model.png">
 <meta property="article:published_time" content="2022-03-20T14:11:13.000Z">
-<meta property="article:modified_time" content="2022-03-22T13:01:52.560Z">
+<meta property="article:modified_time" content="2022-03-22T13:07:17.973Z">
 <meta property="article:author" content="Skye">
 <meta property="article:tag" content="Casual Inference 因果推断">
 <meta name="twitter:card" content="summary">
@@ -268,7 +268,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-03-22 21:01:52" itemprop="dateModified" datetime="2022-03-22T21:01:52+08:00">2022-03-22</time>
+                <time title="修改时间：2022-03-22 21:07:17" itemprop="dateModified" datetime="2022-03-22T21:07:17+08:00">2022-03-22</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -330,34 +330,29 @@
 <tr>
 <th style="text-align:left">变量</th>
 <th style="text-align:left">含义</th>
-<th style="text-align:left">数据处理</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td style="text-align:left">干预 Treated</td>
 <td style="text-align:left">控制组（无干预）、实验组（有干预）</td>
-<td style="text-align:left">$T = 0$（无干预）、$T = 1$（有干预）</td>
 </tr>
 <tr>
 <td style="text-align:left">时间 Time</td>
 <td style="text-align:left">$T_0$（策略实施前）、$T_1$（策略实施后）</td>
-<td style="text-align:left">$t = 0$（策略实施前）、$t = 1$（策略实施后）</td>
 </tr>
 <tr>
 <td style="text-align:left">因变量 $Y$</td>
 <td style="text-align:left">关注的因变量/解释变量（如GDP等）</td>
-<td style="text-align:left"></td>
 </tr>
 <tr>
 <td style="text-align:left">控制变量 $X$</td>
 <td style="text-align:left">需要控制的因素（除干预外，可能会影响因变量的因素）</td>
-<td style="text-align:left"></td>
 </tr>
 </tbody>
 </table>
 <div class="note default">
-            <p>例：假设我们在A、B两城进行策略实验，A城不进行任何策略干预，$T_1$时刻在B城全量进行策略干预</p><img src="/%E5%9B%A0%E6%9E%9C%E6%8E%A8%E6%96%AD-DID/treat1.png" class title="分组策略示意图">
+            <p>例：假设我们在A、B两城进行策略实验，A城不进行任何策略干预，$t_1$时刻在B城全量进行策略干预</p><img src="/%E5%9B%A0%E6%9E%9C%E6%8E%A8%E6%96%AD-DID/treat1.png" class title="分组策略示意图">
           </div>
 <p><strong>基本假设</strong>：</p>
 <ol>
