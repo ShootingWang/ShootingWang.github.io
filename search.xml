@@ -13880,13 +13880,11 @@ $$\mbox{Effect Size} = \frac{ad}{bc}$$</p>
   <entry>
     <title>因果推断 | 双重差分法（DID）</title>
     <url>/%E5%9B%A0%E6%9E%9C%E6%8E%A8%E6%96%AD-DID.html</url>
-    <content><![CDATA[<center></center>
-<a id="more"></a>
+    <content><![CDATA[<p><center></center><br><a id="more"></a></p>
 <blockquote>
 <p>推荐阅读：<a href="/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-%E5%9B%A0%E6%9E%9C%E6%8E%A8%E6%96%AD.html" title="数据分析 | 因果推断">数据分析 | 因果推断</a></p>
 </blockquote>
-<h1 id="双重差分"><a class="header-anchor" href="#双重差分"></a>双重差分</h1>
-<p>双重差分法（DID，Difference in Difference）</p>
+<h1 id="双重差分"><a href="#双重差分" class="headerlink" title="双重差分"></a>双重差分</h1><p>双重差分法（DID，Difference in Difference）</p>
 <ul>
 <li>解决内生性问题的因果分析方法</li>
 <li>政策干预发生与否的虚拟变量+前后两个时间段的面板数据+不可观测的个体固定效应</li>
@@ -13896,25 +13894,16 @@ $$\mbox{Effect Size} = \frac{ad}{bc}$$</p>
 <li>共同趋势假设/平行趋势假定</li>
 <li></li>
 </ol>
-<p>$$Y_{it}=\alpha_i + \lambda_t + D_{it}\beta + \varepsilon_{it}$$<br>
-其中，</p>
+<script type="math/tex; mode=display">Y_{it}=\alpha_i + \lambda_t + D_{it}\beta + \varepsilon_{it}</script><p>其中，</p>
 <ul>
 <li>$\alpha_i$：不可观测的个体固定效应</li>
 <li>$D_{it}$：干预是否发生的虚拟变量</li>
 </ul>
-<p>\begin{equation}<br>
-D_{it} = \left{<br>
-\begin{array}{ll}<br>
-1, &amp; 干预发生 \\<br>
-0, &amp; 干预不发生<br>
-\end{array}<br>
-\right.<br>
-\end{equation}</p>
+<p>\begin{equation}<br>D_{it} = \left\{<br>\begin{array}{ll}<br>1, &amp; 干预发生 \\\\<br>0, &amp; 干预不发生<br>\end{array}<br>\right.<br>\end{equation}</p>
 <ul>
-<li>通过差分消除固定效应$\hat{\beta}$<br>
-$$\hat{\beta} = \hat{Y}<em>{post}^{treatment} -<br>
-\hat{Y}</em>{pre}^{treatment} - \left( \hat{Y}<em>{post}^{control} - \hat{Y}</em>{pre}^{control} \right)$$</li>
+<li>通过差分消除固定效应$\hat{\beta}$</li>
 </ul>
+<p>\begin{equation}<br>\hat{\beta} = \hat{Y}_{post}^{treatment} -<br>\hat{Y}_{pre}^{treatment} - \left( \hat{Y}_{post}^{control} - \hat{Y}_{pre}^{control} \right)<br>\end{equation}</p>
 ]]></content>
       <categories>
         <category>Casual Inference / 因果推断</category>
