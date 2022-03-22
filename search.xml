@@ -13565,20 +13565,14 @@ $$\lim_{n\rightarrow\infty}\left(1-\frac{\lambda}{n}\right)<sup>{n}=\lim_{n\righ
 <div class="note default">
             <p>两城在$T_0$时期满足<strong>平行趋势假设</strong>：<br><img src="/%E5%9B%A0%E6%9E%9C%E6%8E%A8%E6%96%AD-DID/treat2.png" class></p>
           </div>
-<h1 id="如何检验平行趋势"><a href="#如何检验平行趋势" class="headerlink" title="如何检验平行趋势"></a>如何检验平行趋势</h1><h2 id="t-检验"><a href="#t-检验" class="headerlink" title="$t$检验"></a>$t$检验</h2><p>运用线性回归模型，验证$T_0$时段（干预实施前），解释变量$Y$与分组（控制组/实验组）的回归系数，是否显著不为零。</p>
-<script type="math/tex; mode=display">Y = \alpha_i + \beta G_i + \varepsilon_i; \quad \mbox{其中} i\mbox{表示不同分组}</script><p>\begin{equation}<br>G_i = \left \{<br>\begin{array}{ll}</p>
-<p>\end{array}<br>\end{equation}</p>
-<ul>
-<li>如果回归系数</li>
-</ul>
-<h2 id="交叉项显著性检验法"><a href="#交叉项显著性检验法" class="headerlink" title="交叉项显著性检验法"></a>交叉项显著性检验法</h2><h2 id="F-统计量检验法"><a href="#F-统计量检验法" class="headerlink" title="$F$统计量检验法"></a>$F$统计量检验法</h2><h2 id="图示法"><a href="#图示法" class="headerlink" title="图示法"></a>图示法</h2><p>横坐标为时间、纵坐标为解释变量（因变量），观察$T_0$时段（干预实施前）数据的趋势，直观判断两组数据的趋势是否有明显差异（比较主观）。</p>
+<h1 id="如何检验平行趋势"><a href="#如何检验平行趋势" class="headerlink" title="如何检验平行趋势"></a>如何检验平行趋势</h1><h2 id="t-检验"><a href="#t-检验" class="headerlink" title="$t$检验"></a>$t$检验</h2><h2 id="交叉项显著性检验法"><a href="#交叉项显著性检验法" class="headerlink" title="交叉项显著性检验法"></a>交叉项显著性检验法</h2><h2 id="F-统计量检验法"><a href="#F-统计量检验法" class="headerlink" title="$F$统计量检验法"></a>$F$统计量检验法</h2><h2 id="图示法"><a href="#图示法" class="headerlink" title="图示法"></a>图示法</h2><p>横坐标为时间、纵坐标为解释变量（因变量），观察$T_0$时段（干预实施前）数据的趋势，直观判断两组数据的趋势是否有明显差异（比较主观）。</p>
 <h1 id="案例-Cases"><a href="#案例-Cases" class="headerlink" title="案例 Cases"></a>案例 Cases</h1><h2 id="教育经济学"><a href="#教育经济学" class="headerlink" title="教育经济学"></a>教育经济学</h2><blockquote>
 <p><a href="https://www.sciencedirect.com/science/article/pii/B978012815391800001X" target="_blank" rel="noopener">The Economics of Education: Chapter 1 - Empirical methods in the economics of education</a><br><img src="/%E5%9B%A0%E6%9E%9C%E6%8E%A8%E6%96%AD-DID/Stylized-exposition-of-identification-in-the-DID-model.png" class title="Stylized exposition of identification in the DID model"></p>
 </blockquote>
 <h1 id="参考资料-推荐阅读"><a href="#参考资料-推荐阅读" class="headerlink" title="参考资料/推荐阅读"></a>参考资料/推荐阅读</h1><ul>
 <li><a href="https://www.sciencedirect.com/topics/economics-econometrics-and-finance/difference-in-differences" target="_blank" rel="noopener">ScienceDirect: Difference-in-Differences</a></li>
 <li><a href="https://www.sciencedirect.com/science/article/pii/B978012815391800001X" target="_blank" rel="noopener">The Economics of Education: Chapter 1 - Empirical methods in the economics of education</a></li>
-<li><a href="https://www.jianshu.com/p/b76fac4ebfbd" target="_blank" rel="noopener">双重差分法入门</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/387732407" target="_blank" rel="noopener">双重差分法之平行趋势检验（含STATA代码）</a></li>
 </ul>
 ]]></content>
       <categories>
