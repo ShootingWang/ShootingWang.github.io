@@ -35,7 +35,7 @@
 <meta property="og:image" content="https://github.com/%E5%9B%A0%E6%9E%9C%E6%8E%A8%E6%96%AD-DID/treat2.png">
 <meta property="og:image" content="https://github.com/%E5%9B%A0%E6%9E%9C%E6%8E%A8%E6%96%AD-DID/Stylized-exposition-of-identification-in-the-DID-model.png">
 <meta property="article:published_time" content="2022-03-20T14:11:13.000Z">
-<meta property="article:modified_time" content="2022-03-22T14:54:24.665Z">
+<meta property="article:modified_time" content="2022-03-22T15:08:45.894Z">
 <meta property="article:author" content="Skye">
 <meta property="article:tag" content="Casual Inference 因果推断">
 <meta name="twitter:card" content="summary">
@@ -269,7 +269,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-03-22 22:54:24" itemprop="dateModified" datetime="2022-03-22T22:54:24+08:00">2022-03-22</time>
+                <time title="修改时间：2022-03-22 23:08:45" itemprop="dateModified" datetime="2022-03-22T23:08:45+08:00">2022-03-22</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -314,18 +314,18 @@
 
       
         <meta name="referrer" content="no-referrer">
-<center></center>
-<a id="more"></a>
+
+<p><center></center><br><a id="more"></a></p>
 <blockquote>
 <p>推荐阅读：<a href="/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-%E5%9B%A0%E6%9E%9C%E6%8E%A8%E6%96%AD.html" title="数据分析 | 因果推断">数据分析 | 因果推断</a></p>
 </blockquote>
-<h1 id="双重差分"><a class="header-anchor" href="#双重差分"></a>双重差分</h1>
-<p>双重差分法（DID，Difference in Difference）</p>
+<h1 id="双重差分"><a href="#双重差分" class="headerlink" title="双重差分"></a>双重差分</h1><p>双重差分法（DID，Difference in Difference）</p>
 <ul>
 <li>解决内生性问题的因果分析方法</li>
 <li>政策干预发生与否的虚拟变量+前后两个时间段的面板数据+不可观测的个体固定效应</li>
 <li>常用于政策效应评估研究</li>
 </ul>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -340,10 +340,10 @@
 </tr>
 <tr>
 <td style="text-align:left">时间 Time</td>
-<td style="text-align:left">$T_0$（策略实施前）、$T_1$（策略实施后）</td>
+<td style="text-align:left">$T_0$（干预实施前）、$T_1$（干预实施后）</td>
 </tr>
 <tr>
-<td style="text-align:left">因变量 $Y$</td>
+<td style="text-align:left">解释变量/因变量 $Y$</td>
 <td style="text-align:left">关注的因变量/解释变量（如GDP等）</td>
 </tr>
 <tr>
@@ -352,51 +352,42 @@
 </tr>
 </tbody>
 </table>
+</div>
 <div class="note default">
-            <p>例：假设我们在A、B两城进行策略实验，A城不进行任何策略干预，$t_1$时刻在B城全量进行策略干预</p><img src="/%E5%9B%A0%E6%9E%9C%E6%8E%A8%E6%96%AD-DID/treat1.png" class>
+            <p>例：假设我们在A、B两城进行策略实验，A城不进行任何策略干预，$t_1$时刻在B城全量进行策略干预</p><p><img src="/%E5%9B%A0%E6%9E%9C%E6%8E%A8%E6%96%AD-DID/treat1.png" class></p>
           </div>
 <p><strong>基本假设</strong>：</p>
 <ol>
-<li>共同趋势假设/平行趋势假定</li>
+<li>共同趋势假设/平行趋势假设</li>
 <li></li>
 </ol>
-<p>$$Y_{it}=\alpha_i + \lambda_t + D_{it}\beta + \varepsilon_{it}$$<br>
-其中，</p>
+<script type="math/tex; mode=display">Y_{it}=\alpha_i + \lambda_t + D_{it}\beta + \varepsilon_{it}</script><p>其中，</p>
 <ul>
 <li>$\alpha_i$：不可观测的个体固定效应</li>
 <li>$D_{it}$：干预是否发生的虚拟变量</li>
 </ul>
-<p>\begin{equation}<br>
-D_{it} = \left{<br>
-\begin{array}{ll}<br>
-1, &amp; 干预发生 \\<br>
-0, &amp; 干预不发生<br>
-\end{array}<br>
-\right.<br>
-\end{equation}</p>
+<p>\begin{equation}<br>D_{it} = \left \{<br>\begin{array}{ll}<br>1, &amp; 干预发生 \\\\<br>0, &amp; 干预不发生<br>\end{array}<br>\right.<br>\end{equation}</p>
 <ul>
 <li>通过差分消除固定效应$\hat{\beta}$</li>
 </ul>
-<p>\begin{equation}<br>
-\hat{\beta}=\hat{Y}<em>{post}^{treatment}-<br>
-\hat{Y}</em>{pre}^{treatment} - \left( \hat{Y}<em>{post}^{control} - \hat{Y}</em>{pre}^{control} \right)<br>
-\end{equation}</p>
-<img src="/%E5%9B%A0%E6%9E%9C%E6%8E%A8%E6%96%AD-DID/treat2.png" class>
-<h1 id="如何检验平行趋势"><a class="header-anchor" href="#如何检验平行趋势"></a>如何检验平行趋势</h1>
-<h2 id="t-检验"><a class="header-anchor" href="#t-检验"></a>$t$检验</h2>
-<h2 id="交叉项显著性检验法"><a class="header-anchor" href="#交叉项显著性检验法"></a>交叉项显著性检验法</h2>
-<h2 id="F-统计量检验法"><a class="header-anchor" href="#F-统计量检验法"></a>$F$统计量检验法</h2>
-<h2 id="图示法"><a class="header-anchor" href="#图示法"></a>图示法</h2>
-<h1 id="案例-Cases"><a class="header-anchor" href="#案例-Cases"></a>案例 Cases</h1>
-<h2 id="教育经济学"><a class="header-anchor" href="#教育经济学"></a>教育经济学</h2>
-<blockquote>
-<p><a href="https://www.sciencedirect.com/science/article/pii/B978012815391800001X" target="_blank" rel="noopener">The Economics of Education: Chapter 1 - Empirical methods in the economics of education</a></p>
-</blockquote>
-<img src="/%E5%9B%A0%E6%9E%9C%E6%8E%A8%E6%96%AD-DID/Stylized-exposition-of-identification-in-the-DID-model.png" class title="Stylized exposition of identification in the DID model">
-<h1 id="参考资料-推荐阅读"><a class="header-anchor" href="#参考资料-推荐阅读"></a>参考资料/推荐阅读</h1>
+<p>\begin{equation}<br>\hat{\beta}=\hat{Y}_{post}^{treatment}-<br>\hat{Y}_{pre}^{treatment} - \left( \hat{Y}_{post}^{control} - \hat{Y}_{pre}^{control} \right)<br>\end{equation}</p>
+<div class="note default">
+            <p>两城在$T_0$时期满足<strong>平行趋势假设</strong>：<br><img src="/%E5%9B%A0%E6%9E%9C%E6%8E%A8%E6%96%AD-DID/treat2.png" class></p>
+          </div>
+<h1 id="如何检验平行趋势"><a href="#如何检验平行趋势" class="headerlink" title="如何检验平行趋势"></a>如何检验平行趋势</h1><h2 id="t-检验"><a href="#t-检验" class="headerlink" title="$t$检验"></a>$t$检验</h2><p>运用线性回归模型，验证$T_0$时段（干预实施前），解释变量$Y$与分组（控制组/实验组）的回归系数，是否显著不为零。</p>
+<script type="math/tex; mode=display">Y = \alpha_i + \beta G_i + \varepsilon_i; \quad \mbox{其中} i\mbox{表示不同分组}</script><p>\begin{equation}<br>G_i = \left \{<br>\begin{array}{ll}</p>
+<p>\end{array}<br>\end{equation}</p>
 <ul>
+<li>如果回归系数</li>
+</ul>
+<h2 id="交叉项显著性检验法"><a href="#交叉项显著性检验法" class="headerlink" title="交叉项显著性检验法"></a>交叉项显著性检验法</h2><h2 id="F-统计量检验法"><a href="#F-统计量检验法" class="headerlink" title="$F$统计量检验法"></a>$F$统计量检验法</h2><h2 id="图示法"><a href="#图示法" class="headerlink" title="图示法"></a>图示法</h2><p>横坐标为时间、纵坐标为解释变量（因变量），观察$T_0$时段（干预实施前）数据的趋势，直观判断两组数据的趋势是否有明显差异（比较主观）。</p>
+<h1 id="案例-Cases"><a href="#案例-Cases" class="headerlink" title="案例 Cases"></a>案例 Cases</h1><h2 id="教育经济学"><a href="#教育经济学" class="headerlink" title="教育经济学"></a>教育经济学</h2><blockquote>
+<p><a href="https://www.sciencedirect.com/science/article/pii/B978012815391800001X" target="_blank" rel="noopener">The Economics of Education: Chapter 1 - Empirical methods in the economics of education</a><br><img src="/%E5%9B%A0%E6%9E%9C%E6%8E%A8%E6%96%AD-DID/Stylized-exposition-of-identification-in-the-DID-model.png" class title="Stylized exposition of identification in the DID model"></p>
+</blockquote>
+<h1 id="参考资料-推荐阅读"><a href="#参考资料-推荐阅读" class="headerlink" title="参考资料/推荐阅读"></a>参考资料/推荐阅读</h1><ul>
 <li><a href="https://www.sciencedirect.com/topics/economics-econometrics-and-finance/difference-in-differences" target="_blank" rel="noopener">ScienceDirect: Difference-in-Differences</a></li>
 <li><a href="https://www.sciencedirect.com/science/article/pii/B978012815391800001X" target="_blank" rel="noopener">The Economics of Education: Chapter 1 - Empirical methods in the economics of education</a></li>
+<li><a href="https://www.jianshu.com/p/b76fac4ebfbd" target="_blank" rel="noopener">双重差分法入门</a></li>
 </ul>
 
     </div>
@@ -593,7 +584,7 @@ D_{it} = \left{<br>
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">6:06</span>
+    <span title="站点阅读时长">6:07</span>
 </div>
 
 
