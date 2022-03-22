@@ -1754,7 +1754,7 @@
 <td style="text-align:left">$t = 0$（策略实施前）、$t = 1$（策略实施后）</td>
 </tr>
 <tr>
-<td style="text-align:left">因变量 $y$</td>
+<td style="text-align:left">因变量 $Y$</td>
 <td style="text-align:left">关注的因变量/解释变量（如GDP等）</td>
 <td style="text-align:left"></td>
 </tr>
@@ -1765,6 +1765,9 @@
 </tr>
 </tbody>
 </table>
+<div class="note default">
+            <p>例：假设我们在A、B两城进行策略实验，A城不进行任何策略干预，$T_1$时刻在B城全量进行策略干预</p><img src="/%E5%9B%A0%E6%9E%9C%E6%8E%A8%E6%96%AD-DID/treat1.png" class title="分组策略示意图">
+          </div>
 <p><strong>基本假设</strong>：</p>
 <ol>
 <li>共同趋势假设/平行趋势假定</li>
