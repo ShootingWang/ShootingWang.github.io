@@ -1936,6 +1936,56 @@
       </tags>
   </entry>
   <entry>
+    <title>因果推断 | 倾向得分匹配（PSM）</title>
+    <url>/%E5%9B%A0%E6%9E%9C%E6%8E%A8%E6%96%AD-PSM.html</url>
+    <content><![CDATA[<meta name="referrer" content="no-referrer">
+<center></center>
+<a id="more"></a>
+<h1 id="倾向评分匹配"><a class="header-anchor" href="#倾向评分匹配"></a>倾向评分匹配</h1>
+<p>倾向评分匹配/倾向性得分匹配（PSM，Propensity Score Matching）</p>
+<ul>
+<li>通过观测变量对实验组的预测概率进行匹配</li>
+<li>处理观察性研究（observational study）的经典方法</li>
+</ul>
+<p>适用情形：</p>
+<ol>
+<li>在观察研究中，对照组与实验组中可直接比较的个体数量很少</li>
+<li>由于衡量个体特征的参数很多，所以想从对照组中选出一个跟实验组在各项参数上都相同或相近的子集作对比变得非常困难</li>
+</ol>
+<div class="note warning">
+            <p><strong>倾向性得分</strong>：一个用户/样本属于实验组的“倾向性”。<br>$$e(x)=P\left(T=1|X=x\right)$$<br>其中，</p><ul><li>$T$：干预</li><li>$X$：样本属性</li><li>$Y$：观测结果</li></ul>
+          </div>
+<div class="note success">
+            <p><strong>Theorem 1: 平衡性质（Balancing Property）</strong>:<br>$$T_i \perp X_i \mid e(X_i)$$</p>
+          </div>
+<div class="note success">
+            <p><strong>Theorem 2: 无混淆（Unconfoundedness）</strong>：<br>$$ T_i \perp Y_{i0}, Y_{i1} \mid e(X_i)$$</p>
+          </div>
+<blockquote>
+<ul>
+<li>倾向性得分是一种“Balancing score”</li>
+<li>对于倾向性得分$e(X_i)$相同的一群用户$i$：
+<ul>
+<li>干预$T_i$和特征是独立的</li>
+<li>干预$T_i$和潜在结果$Y_{i0}, Y_{i1} $是独立的</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h1 id="参考资料-推荐阅读"><a class="header-anchor" href="#参考资料-推荐阅读"></a>参考资料/推荐阅读</h1>
+<ul>
+<li><a href="https://dango.rocks/blog/2019/01/20/Causal-Inference-Introduction2-Propensity-Score-Matching/" target="_blank" rel="noopener">因果推断漫谈（二）：倾向性得分匹配介绍</a></li>
+<li><a href="https://onlinelibrary.wiley.com/doi/10.1111/j.1467-6419.2007.00527.x" target="_blank" rel="noopener">Caliendo M, Kopeinig S. Some practical guidance for the implementation of propensity score matching[J]. Journal of economic surveys, 2008, 22(1): 31-72.</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Casual Inference 因果推断</category>
+      </categories>
+      <tags>
+        <tag>Casual Inference 因果推断</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>因果推断 | 双重差分法（DID）</title>
     <url>/%E5%9B%A0%E6%9E%9C%E6%8E%A8%E6%96%AD-DID.html</url>
     <content><![CDATA[<meta name="referrer" content="no-referrer">
