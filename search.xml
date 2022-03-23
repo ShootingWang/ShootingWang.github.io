@@ -2029,10 +2029,14 @@
 </tbody>
 </table>
 </div>
-<h2 id="最近邻匹配"><a href="#最近邻匹配" class="headerlink" title="最近邻匹配"></a>最近邻匹配</h2><p>选择控制组中倾向性得分最接近的样本作为匹配样本</p>
-<h2 id="半径匹配"><a href="#半径匹配" class="headerlink" title="半径匹配"></a>半径匹配</h2><h2 id="核匹配"><a href="#核匹配" class="headerlink" title="核匹配"></a>核匹配</h2><h2 id="卡尺匹配"><a href="#卡尺匹配" class="headerlink" title="卡尺匹配"></a>卡尺匹配</h2><h2 id="分块匹配法"><a href="#分块匹配法" class="headerlink" title="分块匹配法"></a>分块匹配法</h2><h1 id="参考资料-推荐阅读"><a href="#参考资料-推荐阅读" class="headerlink" title="参考资料/推荐阅读"></a>参考资料/推荐阅读</h1><ul>
+<h2 id="最近邻匹配"><a href="#最近邻匹配" class="headerlink" title="最近邻匹配"></a>最近邻匹配</h2><p>最近邻匹配（Nearest Neighbor）：选择控制组中倾向性得分最接近的样本作为匹配样本</p>
+<h2 id="半径匹配"><a href="#半径匹配" class="headerlink" title="半径匹配"></a>半径匹配</h2><p>半径匹配（Radius Matching）：</p>
+<h2 id="核匹配"><a href="#核匹配" class="headerlink" title="核匹配"></a>核匹配</h2><p>核匹配（Kernel Matching）</p>
+<h2 id="卡尺匹配"><a href="#卡尺匹配" class="headerlink" title="卡尺匹配"></a>卡尺匹配</h2><h2 id="分块匹配法"><a href="#分块匹配法" class="headerlink" title="分块匹配法"></a>分块匹配法</h2><p>分块匹配法（Stratification）</p>
+<h1 id="参考资料-推荐阅读"><a href="#参考资料-推荐阅读" class="headerlink" title="参考资料/推荐阅读"></a>参考资料/推荐阅读</h1><ul>
 <li><a href="https://dango.rocks/blog/2019/01/20/Causal-Inference-Introduction2-Propensity-Score-Matching/" target="_blank" rel="noopener">因果推断漫谈（二）：倾向性得分匹配介绍</a></li>
 <li><a href="https://zhuanlan.zhihu.com/p/90193649" target="_blank" rel="noopener">PSM的原理及STATA操作</a></li>
+<li><a href="https://liberalarts.utexas.edu/prc/_files/cs/Spring2013_Blanchard_Propensity%20Score%20Matching.pdf" target="_blank" rel="noopener">An Introduction to Propensity Score Matching</a></li>
 <li><a href="https://onlinelibrary.wiley.com/doi/10.1111/j.1467-6419.2007.00527.x" target="_blank" rel="noopener">Caliendo M, Kopeinig S. Some practical guidance for the implementation of propensity score matching[J]. Journal of economic surveys, 2008, 22(1): 31-72.</a></li>
 </ul>
 ]]></content>
