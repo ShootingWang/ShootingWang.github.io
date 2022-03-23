@@ -1990,6 +1990,8 @@
 <ul>
 <li>$\alpha_i$：不可观测的个体固定效应</li>
 <li>$D_{it}$：干预是否发生的虚拟变量</li>
+<li>$i=0$表示控制组（无干预）、$i=1$表示实验组（有干预）</li>
+<li>$t=0$表示干预实施前、$t=1$表示干预实施后</li>
 </ul>
 <p>\begin{equation}<br>
 D_{it} = \left {<br>
@@ -1999,6 +2001,27 @@ D_{it} = \left {<br>
 \end{array}<br>
 \right.<br>
 \end{equation}</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">$D_{it}$</th>
+<th style="text-align:center">$t=0$</th>
+<th style="text-align:center">$t=1$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">$i=0$</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+</tr>
+<tr>
+<td style="text-align:center">$i=1$</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+</tr>
+</tbody>
+</table>
 <ul>
 <li>通过差分消除固定效应$\hat{\beta}$</li>
 </ul>
@@ -2007,11 +2030,12 @@ D_{it} = \left {<br>
 \hat{Y}</em>{pre}^{treatment} - \left( \hat{Y}<em>{post}^{control} - \hat{Y}</em>{pre}^{control} \right)<br>
 \end{equation}</p>
 <div class="note default">
-            <p>两城在$T_0$时期满足<strong>平行趋势假设</strong>：<br><img src="/%E5%9B%A0%E6%9E%9C%E6%8E%A8%E6%96%AD-DID/treat2.png" class></p>
+            <p>两城在$T_0$时期满足<strong>平行趋势假设</strong>（$Y$有着相似的增长趋势）：<br><img src="/%E5%9B%A0%E6%9E%9C%E6%8E%A8%E6%96%AD-DID/treat2.png" class></p>
           </div>
 <h1 id="如何检验平行趋势"><a class="header-anchor" href="#如何检验平行趋势"></a>如何检验平行趋势</h1>
 <h2 id="t-检验"><a class="header-anchor" href="#t-检验"></a>$t$检验</h2>
-<h2 id="交叉项显著性检验法"><a class="header-anchor" href="#交叉项显著性检验法"></a>交叉项显著性检验法</h2>
+<h2 id="交叉项显著性检验法（事件研究法）"><a class="header-anchor" href="#交叉项显著性检验法（事件研究法）"></a>交叉项显著性检验法（事件研究法）</h2>
+<p>选择一个时间点为基期，</p>
 <h2 id="F-统计量检验法"><a class="header-anchor" href="#F-统计量检验法"></a>$F$统计量检验法</h2>
 <h2 id="图示法"><a class="header-anchor" href="#图示法"></a>图示法</h2>
 <p>横坐标为时间、纵坐标为解释变量（因变量），观察$T_0$时段（干预实施前）数据的趋势，直观判断两组数据的趋势是否有明显差异（比较主观）。</p>

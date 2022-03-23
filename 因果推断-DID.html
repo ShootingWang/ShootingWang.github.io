@@ -35,7 +35,7 @@
 <meta property="og:image" content="https://github.com/%E5%9B%A0%E6%9E%9C%E6%8E%A8%E6%96%AD-DID/treat2.png">
 <meta property="og:image" content="https://github.com/%E5%9B%A0%E6%9E%9C%E6%8E%A8%E6%96%AD-DID/Stylized-exposition-of-identification-in-the-DID-model.png">
 <meta property="article:published_time" content="2022-03-20T14:11:13.000Z">
-<meta property="article:modified_time" content="2022-03-22T15:27:00.714Z">
+<meta property="article:modified_time" content="2022-03-23T07:12:11.463Z">
 <meta property="article:author" content="Skye">
 <meta property="article:tag" content="Casual Inference 因果推断">
 <meta name="twitter:card" content="summary">
@@ -269,7 +269,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-03-22 23:27:00" itemprop="dateModified" datetime="2022-03-22T23:27:00+08:00">2022-03-22</time>
+                <time title="修改时间：2022-03-23 15:12:11" itemprop="dateModified" datetime="2022-03-23T15:12:11+08:00">2022-03-23</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -365,6 +365,8 @@
 <ul>
 <li>$\alpha_i$：不可观测的个体固定效应</li>
 <li>$D_{it}$：干预是否发生的虚拟变量</li>
+<li>$i=0$表示控制组（无干预）、$i=1$表示实验组（有干预）</li>
+<li>$t=0$表示干预实施前、$t=1$表示干预实施后</li>
 </ul>
 <p>\begin{equation}<br>
 D_{it} = \left {<br>
@@ -374,6 +376,27 @@ D_{it} = \left {<br>
 \end{array}<br>
 \right.<br>
 \end{equation}</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">$D_{it}$</th>
+<th style="text-align:center">$t=0$</th>
+<th style="text-align:center">$t=1$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">$i=0$</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+</tr>
+<tr>
+<td style="text-align:center">$i=1$</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+</tr>
+</tbody>
+</table>
 <ul>
 <li>通过差分消除固定效应$\hat{\beta}$</li>
 </ul>
@@ -382,11 +405,12 @@ D_{it} = \left {<br>
 \hat{Y}</em>{pre}^{treatment} - \left( \hat{Y}<em>{post}^{control} - \hat{Y}</em>{pre}^{control} \right)<br>
 \end{equation}</p>
 <div class="note default">
-            <p>两城在$T_0$时期满足<strong>平行趋势假设</strong>：<br><img src="/%E5%9B%A0%E6%9E%9C%E6%8E%A8%E6%96%AD-DID/treat2.png" class></p>
+            <p>两城在$T_0$时期满足<strong>平行趋势假设</strong>（$Y$有着相似的增长趋势）：<br><img src="/%E5%9B%A0%E6%9E%9C%E6%8E%A8%E6%96%AD-DID/treat2.png" class></p>
           </div>
 <h1 id="如何检验平行趋势"><a class="header-anchor" href="#如何检验平行趋势"></a>如何检验平行趋势</h1>
 <h2 id="t-检验"><a class="header-anchor" href="#t-检验"></a>$t$检验</h2>
-<h2 id="交叉项显著性检验法"><a class="header-anchor" href="#交叉项显著性检验法"></a>交叉项显著性检验法</h2>
+<h2 id="交叉项显著性检验法（事件研究法）"><a class="header-anchor" href="#交叉项显著性检验法（事件研究法）"></a>交叉项显著性检验法（事件研究法）</h2>
+<p>选择一个时间点为基期，</p>
 <h2 id="F-统计量检验法"><a class="header-anchor" href="#F-统计量检验法"></a>$F$统计量检验法</h2>
 <h2 id="图示法"><a class="header-anchor" href="#图示法"></a>图示法</h2>
 <p>横坐标为时间、纵坐标为解释变量（因变量），观察$T_0$时段（干预实施前）数据的趋势，直观判断两组数据的趋势是否有明显差异（比较主观）。</p>
@@ -522,7 +546,7 @@ D_{it} = \left {<br>
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#双重差分"><span class="nav-number">1.</span> <span class="nav-text">双重差分</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#如何检验平行趋势"><span class="nav-number">2.</span> <span class="nav-text">如何检验平行趋势</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#t-检验"><span class="nav-number">2.1.</span> <span class="nav-text">$t$检验</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#交叉项显著性检验法"><span class="nav-number">2.2.</span> <span class="nav-text">交叉项显著性检验法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#F-统计量检验法"><span class="nav-number">2.3.</span> <span class="nav-text">$F$统计量检验法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图示法"><span class="nav-number">2.4.</span> <span class="nav-text">图示法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#案例-Cases"><span class="nav-number">3.</span> <span class="nav-text">案例 Cases</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#教育经济学"><span class="nav-number">3.1.</span> <span class="nav-text">教育经济学</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料-推荐阅读"><span class="nav-number">4.</span> <span class="nav-text">参考资料&#x2F;推荐阅读</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#双重差分"><span class="nav-number">1.</span> <span class="nav-text">双重差分</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#如何检验平行趋势"><span class="nav-number">2.</span> <span class="nav-text">如何检验平行趋势</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#t-检验"><span class="nav-number">2.1.</span> <span class="nav-text">$t$检验</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#交叉项显著性检验法（事件研究法）"><span class="nav-number">2.2.</span> <span class="nav-text">交叉项显著性检验法（事件研究法）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#F-统计量检验法"><span class="nav-number">2.3.</span> <span class="nav-text">$F$统计量检验法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图示法"><span class="nav-number">2.4.</span> <span class="nav-text">图示法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#案例-Cases"><span class="nav-number">3.</span> <span class="nav-text">案例 Cases</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#教育经济学"><span class="nav-number">3.1.</span> <span class="nav-text">教育经济学</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料-推荐阅读"><span class="nav-number">4.</span> <span class="nav-text">参考资料&#x2F;推荐阅读</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
