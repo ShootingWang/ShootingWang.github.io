@@ -35,7 +35,7 @@
 <meta property="og:image" content="https://github.com/%E5%9B%A0%E6%9E%9C%E6%8E%A8%E6%96%AD-DID/treat2.png">
 <meta property="og:image" content="https://github.com/%E5%9B%A0%E6%9E%9C%E6%8E%A8%E6%96%AD-DID/Stylized-exposition-of-identification-in-the-DID-model.png">
 <meta property="article:published_time" content="2022-03-20T14:11:13.000Z">
-<meta property="article:modified_time" content="2022-03-23T07:37:15.707Z">
+<meta property="article:modified_time" content="2022-03-23T07:52:07.107Z">
 <meta property="article:author" content="Skye">
 <meta property="article:tag" content="Casual Inference 因果推断">
 <meta name="twitter:card" content="summary">
@@ -269,7 +269,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-03-23 15:37:15" itemprop="dateModified" datetime="2022-03-23T15:37:15+08:00">2022-03-23</time>
+                <time title="修改时间：2022-03-23 15:52:07" itemprop="dateModified" datetime="2022-03-23T15:52:07+08:00">2022-03-23</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -407,13 +407,37 @@ D_{it} = \left {<br>
 <div class="note default">
             <p>两城在$T_0$时期满足<strong>平行趋势假设</strong>（$Y$有着相似的增长趋势）：<br><img src="/%E5%9B%A0%E6%9E%9C%E6%8E%A8%E6%96%AD-DID/treat2.png" class></p><ul><li>第一次差分：$Y_{B1} - Y_{B0}$、$Y_{A1} - Y_{A0}$表示各组$Y$的增长</li><li>第二次差分：</li></ul>
           </div>
-<h1 id="如何检验平行趋势"><a class="header-anchor" href="#如何检验平行趋势"></a>如何检验平行趋势</h1>
+<h1 id="平行趋势检验（Parallel-Trend-Test）"><a class="header-anchor" href="#平行趋势检验（Parallel-Trend-Test）"></a>平行趋势检验（Parallel Trend Test）</h1>
+<p>检验平行趋势的方法有：</p>
+<ul>
+<li>$t$检验</li>
+<li>交叉项显著性检验法（事件研究法）</li>
+<li>$F$统计量检验法</li>
+<li>图示法</li>
+</ul>
 <h2 id="t-检验"><a class="header-anchor" href="#t-检验"></a>$t$检验</h2>
 <h2 id="交叉项显著性检验法（事件研究法）"><a class="header-anchor" href="#交叉项显著性检验法（事件研究法）"></a>交叉项显著性检验法（事件研究法）</h2>
 <p>选择一个时间点为基期，</p>
 <h2 id="F-统计量检验法"><a class="header-anchor" href="#F-统计量检验法"></a>$F$统计量检验法</h2>
 <h2 id="图示法"><a class="header-anchor" href="#图示法"></a>图示法</h2>
 <p>横坐标为时间、纵坐标为解释变量（因变量），观察$T_0$时段（干预实施前）数据的趋势，直观判断两组数据的趋势是否有明显差异（比较主观）。</p>
+<h2 id="安慰剂检验（Placebo-Test）"><a class="header-anchor" href="#安慰剂检验（Placebo-Test）"></a>安慰剂检验（Placebo Test）</h2>
+<p>安慰剂检验方法：</p>
+<ol>
+<li>改变政策发生时点
+<ul>
+<li>前置处理组的政策发生时点（此时等同于平行趋势检验）</li>
+<li>将政策发生时点随机化（将时点前置或后置）</li>
+</ul>
+</li>
+<li>将处理组随机化：对处理组变量进行一定次数的随机抽样，然后再观测随机化后的DID项系数或观测值的核密度图是否集中分布于0附近，以及是否显著偏离其真实值</li>
+</ol>
+<blockquote>
+<ul>
+<li>方法二更为常见</li>
+<li>方法一存在不足：如果样本期间较短，导致随机抽样的时段区间过短，得出的结论不一定真实</li>
+</ul>
+</blockquote>
 <h1 id="案例-Cases"><a class="header-anchor" href="#案例-Cases"></a>案例 Cases</h1>
 <h2 id="教育经济学"><a class="header-anchor" href="#教育经济学"></a>教育经济学</h2>
 <blockquote>
@@ -425,6 +449,9 @@ D_{it} = \left {<br>
 <li><a href="https://www.sciencedirect.com/topics/economics-econometrics-and-finance/difference-in-differences" target="_blank" rel="noopener">ScienceDirect: Difference-in-Differences</a></li>
 <li><a href="https://www.sciencedirect.com/science/article/pii/B978012815391800001X" target="_blank" rel="noopener">The Economics of Education: Chapter 1 - Empirical methods in the economics of education</a></li>
 <li><a href="https://zhuanlan.zhihu.com/p/387732407" target="_blank" rel="noopener">双重差分法之平行趋势检验（含STATA代码）</a></li>
+<li><a href="https://cloud.tencent.com/developer/article/1869023" target="_blank" rel="noopener">DID：安慰剂检验</a></li>
+<li><a href="http://ciejournal.ajcass.org/UploadFile/Issue/20210120084110WU_FILE_0.pdf" target="_blank" rel="noopener">陆菁, 鄢云, 王韬璇. 绿色信贷政策的微观效应研究——基于技术创新与资源再配置的视角[J]. 中国工业经济, 2021(1):19.</a></li>
+<li><a href="http://ciejournal.ajcass.org/UploadFile/Issue/201606280001/2021/5//20210520094439WU_FILE_0.pdf" target="_blank" rel="noopener">李青原, 章尹赛楠. 金融开放与资源配置效率——来自外资银行进入中国的证据[J]. 中国工业经济, 2021(5):19.</a></li>
 </ul>
 
     </div>
@@ -546,7 +573,7 @@ D_{it} = \left {<br>
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#双重差分"><span class="nav-number">1.</span> <span class="nav-text">双重差分</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#如何检验平行趋势"><span class="nav-number">2.</span> <span class="nav-text">如何检验平行趋势</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#t-检验"><span class="nav-number">2.1.</span> <span class="nav-text">$t$检验</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#交叉项显著性检验法（事件研究法）"><span class="nav-number">2.2.</span> <span class="nav-text">交叉项显著性检验法（事件研究法）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#F-统计量检验法"><span class="nav-number">2.3.</span> <span class="nav-text">$F$统计量检验法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图示法"><span class="nav-number">2.4.</span> <span class="nav-text">图示法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#案例-Cases"><span class="nav-number">3.</span> <span class="nav-text">案例 Cases</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#教育经济学"><span class="nav-number">3.1.</span> <span class="nav-text">教育经济学</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料-推荐阅读"><span class="nav-number">4.</span> <span class="nav-text">参考资料&#x2F;推荐阅读</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#双重差分"><span class="nav-number">1.</span> <span class="nav-text">双重差分</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#平行趋势检验（Parallel-Trend-Test）"><span class="nav-number">2.</span> <span class="nav-text">平行趋势检验（Parallel Trend Test）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#t-检验"><span class="nav-number">2.1.</span> <span class="nav-text">$t$检验</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#交叉项显著性检验法（事件研究法）"><span class="nav-number">2.2.</span> <span class="nav-text">交叉项显著性检验法（事件研究法）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#F-统计量检验法"><span class="nav-number">2.3.</span> <span class="nav-text">$F$统计量检验法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图示法"><span class="nav-number">2.4.</span> <span class="nav-text">图示法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安慰剂检验（Placebo-Test）"><span class="nav-number">2.5.</span> <span class="nav-text">安慰剂检验（Placebo Test）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#案例-Cases"><span class="nav-number">3.</span> <span class="nav-text">案例 Cases</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#教育经济学"><span class="nav-number">3.1.</span> <span class="nav-text">教育经济学</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料-推荐阅读"><span class="nav-number">4.</span> <span class="nav-text">参考资料&#x2F;推荐阅读</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -615,7 +642,7 @@ D_{it} = \left {<br>
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">403k</span>
+    <span title="站点总字数">404k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
