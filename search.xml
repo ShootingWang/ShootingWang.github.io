@@ -1951,6 +1951,7 @@
 <ol>
 <li>在观察研究中，对照组与实验组中可直接比较的个体数量很少</li>
 <li>由于衡量个体特征的参数很多，所以想从对照组中选出一个跟实验组在各项参数上都相同或相近的子集作对比变得非常困难</li>
+<li>对照组和实验组之间的差异可能是选择性偏差导致的，不一定是干预策略导致的</li>
 </ol>
 <div class="note warning">
             <p><strong>倾向性得分</strong>：一个用户/样本属于实验组的“倾向性”。</p><script type="math/tex; mode=display">e(x)=P\left(T=1|X=x\right)</script><p>其中，</p><ul><li>$T$：干预</li><li>$X$：样本属性</li><li>$Y$：观测结果</li></ul>
@@ -2038,6 +2039,7 @@
 <li><a href="https://zhuanlan.zhihu.com/p/90193649" target="_blank" rel="noopener">PSM的原理及STATA操作</a></li>
 <li><a href="https://liberalarts.utexas.edu/prc/_files/cs/Spring2013_Blanchard_Propensity%20Score%20Matching.pdf" target="_blank" rel="noopener">An Introduction to Propensity Score Matching</a></li>
 <li><a href="https://onlinelibrary.wiley.com/doi/10.1111/j.1467-6419.2007.00527.x" target="_blank" rel="noopener">Caliendo M, Kopeinig S. Some practical guidance for the implementation of propensity score matching[J]. Journal of economic surveys, 2008, 22(1): 31-72.</a></li>
+<li><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3144483/" target="_blank" rel="noopener">Austin, Peter C . An Introduction to Propensity Score Methods for Reducing the Effects of Confounding in Observational Studies.[J]. Multivariate Behav Res, 2011, 46(3):399-424.</a></li>
 </ul>
 ]]></content>
       <categories>
