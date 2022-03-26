@@ -28809,7 +28809,7 @@ $$1→2→3→4→5→6→7$$
 <div class="note default">
             <p>证明 或 推荐 或 引用 或 示例</p>
           </div>
-<h3 id="icons"><a class="header-anchor" href="#icons"></a>icons</h3>
+<h3 id="图标icons"><a class="header-anchor" href="#图标icons"></a>图标icons</h3>
 <p>使用<a href="https://github.com/hexojs/hexo-fontawesome#-fa_css-">hexo-fontawesome</a>插件实现在博客正文插入icons：</p>
 <blockquote>
 <p>FontAwesome网站：<a href="https://fontawesome.com/icons" target="_blank" rel="noopener">https://fontawesome.com/icons</a></p>
