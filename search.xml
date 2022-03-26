@@ -1939,9 +1939,10 @@
     <title>因果推断 | 倾向得分匹配（PSM）</title>
     <url>/%E5%9B%A0%E6%9E%9C%E6%8E%A8%E6%96%AD-PSM.html</url>
     <content><![CDATA[<meta name="referrer" content="no-referrer">
-
-<p><center></center><br><a id="more"></a></p>
-<h1 id="倾向评分匹配"><a href="#倾向评分匹配" class="headerlink" title="倾向评分匹配"></a>倾向评分匹配</h1><p>倾向评分匹配/倾向性得分匹配（PSM，Propensity Score Matching）</p>
+<center></center>
+<a id="more"></a>
+<h1 id="倾向评分匹配"><a class="header-anchor" href="#倾向评分匹配"></a>倾向评分匹配</h1>
+<p>倾向评分匹配/倾向性得分匹配（PSM，Propensity Score Matching）</p>
 <ul>
 <li>通过观测变量对实验组的预测概率进行匹配</li>
 <li>处理观察性研究（observational study）的经典方法</li>
@@ -1954,18 +1955,19 @@
 <li>对照组和实验组之间的差异可能是选择性偏差导致的，不一定是干预策略导致的</li>
 </ol>
 <div class="note warning">
-            <p><strong>倾向性得分</strong>：一个用户/样本属于实验组的“倾向性”（给定$x$的情况下，样本进入实验组的条件概率）。</p><script type="math/tex; mode=display">e(x)=P\left(T=1|X=x\right)</script><p>其中，</p><ul><li>$T$：干预</li><li>$X$：样本属性/协变量</li><li>$Y$：观测结果/结果变量</li></ul>
+            <p><strong>倾向性得分</strong>：一个用户/样本属于实验组的“倾向性”（给定$x$的情况下，样本进入实验组的条件概率）。<br>$$e(x)=P\left(T=1|X=x\right)$$<br>其中，</p><ul><li>$T$：干预</li><li>$X$：样本属性/协变量</li><li>$Y$：观测结果/结果变量</li></ul>
           </div>
 <div class="note success">
-            <p><strong>Theorem 1: 平衡性质（Balancing Property）</strong>:</p><script type="math/tex; mode=display">T_i \perp X_i \mid e(X_i)</script>
+            <p><strong>Theorem 1: 平衡性质（Balancing Property）</strong>:<br>$$T_i \perp X_i \mid e(X_i)$$</p>
           </div>
 <div class="note success">
-            <p><strong>Theorem 2: 无混淆（Unconfoundedness）</strong>：</p><script type="math/tex; mode=display">T_i \perp Y_{i0}, Y_{i1} \mid e(X_i)</script>
+            <p><strong>Theorem 2: 无混淆（Unconfoundedness）</strong>：<br>$$ T_i \perp Y_{i0}, Y_{i1} \mid e(X_i)$$</p>
           </div>
 <blockquote>
 <ul>
 <li>倾向性得分是一种“Balancing score”</li>
-<li>对于倾向性得分$e(X_i)$相同的一群用户$i$：<ul>
+<li>对于倾向性得分$e(X_i)$相同的一群用户$i$：
+<ul>
 <li>干预$T_i$和特征$X_i$是独立的</li>
 <li>干预$T_i$和潜在结果$Y_{i0}, Y_{i1} $是独立的</li>
 </ul>
@@ -1976,14 +1978,18 @@
 <li>当协变量$X$不影响干预变量$T$、但影响结果变量$Y$时，引入协变量可以提高干预精度</li>
 <li>当遗漏了重要的协变量时，会导致偏差</li>
 </ul>
-<h1 id="匹配方法"><a href="#匹配方法" class="headerlink" title="匹配方法"></a>匹配方法</h1><p>PSM通过统计模型对每个样本计算倾向性得分，再按照倾向得分是否接近进行匹配。<br>以分组变量为解释变量（分类变量），样本属性（可能会影响到结果的变量）作为被解释变量，进行<a href="/%E7%AE%97%E6%B3%95-LogisticRegression.html" title="逻辑回归（Logistic Regression）">逻辑回归（Logistic Regression）</a>，从而计算每个样本的倾向性得分。</p>
+<h1 id="匹配方法"><a class="header-anchor" href="#匹配方法"></a>匹配方法</h1>
+<p>PSM通过统计模型对每个样本计算倾向性得分，再按照倾向得分是否接近进行匹配。<br>
+以分组变量为解释变量（分类变量），样本属性（可能会影响到结果的变量）作为被解释变量，进行<a href="/%E7%AE%97%E6%B3%95-LogisticRegression.html" title="逻辑回归（Logistic Regression）">逻辑回归（Logistic Regression）</a>，从而计算每个样本的倾向性得分。</p>
 <ul>
-<li>一对一匹配：在控制组中选择与实验组样本最相近的<strong>单个</strong>样本进行匹配<ul>
+<li>一对一匹配：在控制组中选择与实验组样本最相近的<strong>单个</strong>样本进行匹配
+<ul>
 <li>优点：匹配的样本之间较为相近，偏差较小</li>
 <li>缺点：样本匹配量小、估计的方差较大</li>
 </ul>
 </li>
-<li>一对多匹配：在控制组中选择<strong>多个</strong>与实验组样本相近的样本进行匹配<ul>
+<li>一对多匹配：在控制组中选择<strong>多个</strong>与实验组样本相近的样本进行匹配
+<ul>
 <li>缺点：在控制组中找到的第2个、第3个、……样本与实验组样本的近似性会减弱，会增大估计的偏差</li>
 </ul>
 </li>
@@ -1991,7 +1997,6 @@
 <blockquote>
 <p>控制组样本量较多时，可以考虑使用一对多匹配</p>
 </blockquote>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -2030,33 +2035,44 @@
 <td style="text-align:left">分块匹配法</td>
 <td style="text-align:left"></td>
 <td style="text-align:center"></td>
+<td style="text-align:center"></td>
 </tr>
 </tbody>
 </table>
-</div>
-<h2 id="最近邻匹配"><a href="#最近邻匹配" class="headerlink" title="最近邻匹配"></a>最近邻匹配</h2><p>最近邻匹配（Nearest Neighbor）：选择控制组中倾向性得分最接近的样本作为匹配样本</p>
-<h2 id="半径匹配"><a href="#半径匹配" class="headerlink" title="半径匹配"></a>半径匹配</h2><p>半径匹配（Radius Matching）：</p>
-<h2 id="核匹配"><a href="#核匹配" class="headerlink" title="核匹配"></a>核匹配</h2><p>核匹配（Kernel Matching）</p>
-<h2 id="卡尺匹配"><a href="#卡尺匹配" class="headerlink" title="卡尺匹配"></a>卡尺匹配</h2><h2 id="分块匹配法"><a href="#分块匹配法" class="headerlink" title="分块匹配法"></a>分块匹配法</h2><p>分块匹配法（Stratification）</p>
-<h1 id="匹配效果检验"><a href="#匹配效果检验" class="headerlink" title="匹配效果检验"></a>匹配效果检验</h1><h2 id="共同支撑检验"><a href="#共同支撑检验" class="headerlink" title="共同支撑检验"></a>共同支撑检验</h2><p>为了提高匹配质量，仅保留倾向得分重叠部分的个体（会损失一定的样本量）。</p>
+<h2 id="最近邻匹配"><a class="header-anchor" href="#最近邻匹配"></a>最近邻匹配</h2>
+<p>最近邻匹配（Nearest Neighbor）：选择控制组中倾向性得分最接近的样本作为匹配样本</p>
+<h2 id="半径匹配"><a class="header-anchor" href="#半径匹配"></a>半径匹配</h2>
+<p>半径匹配（Radius Matching）：</p>
+<h2 id="核匹配"><a class="header-anchor" href="#核匹配"></a>核匹配</h2>
+<p>核匹配（Kernel Matching）</p>
+<h2 id="卡尺匹配"><a class="header-anchor" href="#卡尺匹配"></a>卡尺匹配</h2>
+<h2 id="分块匹配法"><a class="header-anchor" href="#分块匹配法"></a>分块匹配法</h2>
+<p>分块匹配法（Stratification）</p>
+<h1 id="匹配效果检验"><a class="header-anchor" href="#匹配效果检验"></a>匹配效果检验</h1>
+<h2 id="共同支撑检验"><a class="header-anchor" href="#共同支撑检验"></a>共同支撑检验</h2>
+<p>为了提高匹配质量，仅保留倾向得分重叠部分的个体（会损失一定的样本量）。</p>
 <p>方法：</p>
 <ul>
 <li>比较匹配前后的核密度图</li>
 <li>绘制条形图，显示倾向得分的共同取值范围</li>
 </ul>
-<h2 id="平衡性检验"><a href="#平衡性检验" class="headerlink" title="平衡性检验"></a>平衡性检验</h2><p>检验目的：观察匹配后的各个变量的均值是否有显著差异</p>
-<h1 id="Pros-amp-Cons"><a href="#Pros-amp-Cons" class="headerlink" title="Pros &amp; Cons"></a>Pros &amp; Cons</h1><h2 id="局限性"><a href="#局限性" class="headerlink" title="局限性"></a>局限性</h2><ul>
+<h2 id="平衡性检验"><a class="header-anchor" href="#平衡性检验"></a>平衡性检验</h2>
+<p>检验目的：观察匹配后的各个变量的均值是否有显著差异</p>
+<h1 id="Pros-Cons"><a class="header-anchor" href="#Pros-Cons"></a>Pros &amp; Cons</h1>
+<h2 id="局限性"><a class="header-anchor" href="#局限性"></a>局限性</h2>
+<ul>
 <li>需要大样本</li>
 <li>要求控制组和实验组有较大的共同取值范围</li>
 <li>要尽可能控制可观测的变量，如果存在不可观测的协变量，会导致“隐形偏差”</li>
 </ul>
-<h1 id="参考资料-推荐阅读"><a href="#参考资料-推荐阅读" class="headerlink" title="参考资料/推荐阅读"></a>参考资料/推荐阅读</h1><ul>
+<h1 id="参考资料-推荐阅读"><a class="header-anchor" href="#参考资料-推荐阅读"></a>参考资料/推荐阅读</h1>
+<ul>
 <li><a href="https://dango.rocks/blog/2019/01/20/Causal-Inference-Introduction2-Propensity-Score-Matching/" target="_blank" rel="noopener">【Blog】因果推断漫谈（二）：倾向性得分匹配介绍</a></li>
 <li><a href="https://zhuanlan.zhihu.com/p/90193649" target="_blank" rel="noopener">【ZhiHu】PSM的原理及STATA操作</a></li>
 <li><a href="https://www.jianshu.com/p/1a71fdff40d7" target="_blank" rel="noopener">【JianShu】PSM倾向得分匹配法学习指南</a></li>
 <li><a href="https://liberalarts.utexas.edu/prc/_files/cs/Spring2013_Blanchard_Propensity%20Score%20Matching.pdf" target="_blank" rel="noopener">An Introduction to Propensity Score Matching</a></li>
-<li><a href="https://onlinelibrary.wiley.com/doi/10.1111/j.1467-6419.2007.00527.x" target="_blank" rel="noopener">Caliendo M, Kopeinig S. Some practical guidance for the implementation of propensity score matching[J]. Journal of economic surveys, 2008, 22(1): 31-72.</a></li>
-<li><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3144483/" target="_blank" rel="noopener">Austin, Peter C . An Introduction to Propensity Score Methods for Reducing the Effects of Confounding in Observational Studies.[J]. Multivariate Behav Res, 2011, 46(3):399-424.</a></li>
+<li><a href="https://onlinelibrary.wiley.com/doi/10.1111/j.1467-6419.2007.00527.x" target="_blank" rel="noopener">Caliendo M, Kopeinig S. Some practical guidance for the implementation of propensity score matching [J]. Journal of economic surveys, 2008, 22(1): 31-72.</a></li>
+<li><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3144483/" target="_blank" rel="noopener">Austin, Peter C . An Introduction to Propensity Score Methods for Reducing the Effects of Confounding in Observational Studies [J]. Multivariate Behav Res, 2011, 46(3):399-424.</a></li>
 </ul>
 ]]></content>
       <categories>
