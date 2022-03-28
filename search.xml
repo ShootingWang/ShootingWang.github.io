@@ -1978,6 +1978,12 @@
 <li>当协变量$X$不影响干预变量$T$、但影响结果变量$Y$时，引入协变量可以提高干预精度</li>
 <li>当遗漏了重要的协变量时，会导致偏差</li>
 </ul>
+<h2 id="前提-假设"><a class="header-anchor" href="#前提-假设"></a>前提/假设</h2>
+<p>PSM需满足以下两个前提/假设：</p>
+<ol>
+<li>条件独立假设：控制了协变量后，样本是否接收干预与潜在结果相互独立</li>
+<li>共同支撑条件：若匹配结果较为理想，匹配后的两条核密度曲线较为相近</li>
+</ol>
 <h1 id="匹配方法"><a class="header-anchor" href="#匹配方法"></a>匹配方法</h1>
 <p>PSM通过统计模型对每个样本计算倾向性得分，再按照倾向得分是否接近进行匹配。<br>
 以分组变量为解释变量（分类变量），样本属性（可能会影响到结果的变量）作为被解释变量，进行<a href="/%E7%AE%97%E6%B3%95-LogisticRegression.html" title="逻辑回归（Logistic Regression）">逻辑回归（Logistic Regression）</a>，从而计算每个样本的倾向性得分。</p>
@@ -2059,20 +2065,28 @@
 <h2 id="平衡性检验"><a class="header-anchor" href="#平衡性检验"></a>平衡性检验</h2>
 <p>检验目的：观察匹配后的各个变量的均值是否有显著差异</p>
 <h1 id="Pros-Cons"><a class="header-anchor" href="#Pros-Cons"></a>Pros &amp; Cons</h1>
-<h2 id="局限性"><a class="header-anchor" href="#局限性"></a>局限性</h2>
+<h2 id="优势-Strengths"><a class="header-anchor" href="#优势-Strengths"></a>优势 Strengths</h2>
 <ul>
-<li>需要大样本</li>
-<li>要求控制组和实验组有较大的共同取值范围</li>
-<li>要尽可能控制可观测的变量，如果存在不可观测的协变量，会导致“隐形偏差”</li>
+<li>在计算倾向性得分时，考虑了交互项（interaction terms）</li>
+<li>可用于二分变量（dichotomous variables）和连续变量（continuous variables）</li>
+<li>较少依赖于p值或其他特定于模型的假设</li>
+</ul>
+<h2 id="局限性-Limitations"><a class="header-anchor" href="#局限性-Limitations"></a>局限性 Limitations</h2>
+<ul>
+<li>需要大样本（PSA works best in large samples to obtain a good balance of covariates.）</li>
+<li>要求控制组和实验组有较大的共同取值范围（Group overlap must be substantial to enable appropriate matching.）</li>
+<li>要尽可能控制可观测的变量，如果存在不可观测的协变量，会导致“隐形偏差”（The most serious limitation is that PSA only controls for measured covariates. Matching on observed covariates may open backdoor paths in unobserved covariates and exacerbate hidden bias.）</li>
+<li>没有考虑样本的聚集性，邻域层级的研究可能会存在问题（Does not take into account clustering (problematic for neighborhood-level research).）</li>
 </ul>
 <h1 id="参考资料-推荐阅读"><a class="header-anchor" href="#参考资料-推荐阅读"></a>参考资料/推荐阅读</h1>
 <ul>
-<li><a href="https://dango.rocks/blog/2019/01/20/Causal-Inference-Introduction2-Propensity-Score-Matching/" target="_blank" rel="noopener">Blog.因果推断漫谈（二）：倾向性得分匹配介绍</a></li>
-<li><a href="https://zhuanlan.zhihu.com/p/90193649" target="_blank" rel="noopener">ZhiHu.PSM的原理及STATA操作</a></li>
-<li><a href="https://www.jianshu.com/p/1a71fdff40d7" target="_blank" rel="noopener">JianShu.PSM倾向得分匹配法学习指南</a></li>
+<li><a href="https://dango.rocks/blog/2019/01/20/Causal-Inference-Introduction2-Propensity-Score-Matching/" target="_blank" rel="noopener">因果推断漫谈（二）：倾向性得分匹配介绍[Blog]</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/90193649" target="_blank" rel="noopener">PSM的原理及STATA操作[ZhiHu]</a></li>
+<li><a href="https://www.jianshu.com/p/1a71fdff40d7" target="_blank" rel="noopener">PSM倾向得分匹配法学习指南[JianShu]</a></li>
 <li><a href="https://liberalarts.utexas.edu/prc/_files/cs/Spring2013_Blanchard_Propensity%20Score%20Matching.pdf" target="_blank" rel="noopener">An Introduction to Propensity Score Matching</a></li>
 <li><a href="https://onlinelibrary.wiley.com/doi/10.1111/j.1467-6419.2007.00527.x" target="_blank" rel="noopener">Caliendo M, Kopeinig S. Some practical guidance for the implementation of propensity score matching [J]. Journal of economic surveys, 2008, 22(1): 31-72.</a></li>
 <li><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3144483/" target="_blank" rel="noopener">Austin, Peter C . An Introduction to Propensity Score Methods for Reducing the Effects of Confounding in Observational Studies [J]. Multivariate Behav Res, 2011, 46(3):399-424.</a></li>
+<li><a href="https://www.publichealth.columbia.edu/research/population-health-methods/propensity-score-analysis" target="_blank" rel="noopener">Propensity Score Analysis</a></li>
 </ul>
 ]]></content>
       <categories>
