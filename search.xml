@@ -2048,7 +2048,7 @@
 <h2 id="最近邻匹配"><a class="header-anchor" href="#最近邻匹配"></a>最近邻匹配</h2>
 <p>最近邻匹配（Nearest-neighbor Matching）：选择控制组中倾向性得分最接近的样本作为匹配样本</p>
 <p>干预样本$i$与无干预样本$j$进行匹配：<br>
-$$\mid p_i - p_j \mid = \min_{k\in T=0} \left{ \mid p_i - p_k \mid \right}$$</p>
+$$\mid p_i - p_j \mid = \min_{k\in T=0} \left { \mid p_i - p_k \mid \right}$$</p>
 <h2 id="半径匹配"><a class="header-anchor" href="#半径匹配"></a>半径匹配</h2>
 <p>半径匹配（Radius Matching）：</p>
 <h2 id="核匹配"><a class="header-anchor" href="#核匹配"></a>核匹配</h2>
