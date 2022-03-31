@@ -2049,8 +2049,9 @@
 <p>最近邻匹配（Nearest-neighbor Matching）：选择控制组中倾向性得分最接近的样本作为匹配样本</p>
 <p>干预样本$i$与无干预样本$j$相匹配：<br>
 \begin{equation}<br>
-\mid p_i - p_j \mid = \min_{k\in { T=0 } } \left{ \mid p_i - p_k \mid \right}<br>
+\mid p_i - p_j \mid = \min_{k\in { T=0 } } \left { \mid p_i - p_k \mid \right }<br>
 \end{equation}</p>
+<p>try</p>
 <h2 id="半径匹配"><a class="header-anchor" href="#半径匹配"></a>半径匹配</h2>
 <p>半径匹配（Radius Matching）：</p>
 <h2 id="核匹配"><a class="header-anchor" href="#核匹配"></a>核匹配</h2>
@@ -2058,7 +2059,7 @@
 <h2 id="卡尺匹配"><a class="header-anchor" href="#卡尺匹配"></a>卡尺匹配</h2>
 <p>卡尺匹配（Caliper Matching）：给定误差 $\delta &gt; 0$，干预样本$i$与无干预样本$j$相匹配<br>
 \begin{equation}<br>
-\delta &gt; \mid p_i - p_j \mid = \min_{k\in { T=0 } } \left{ \mid p_i - p_k \mid \right}<br>
+\delta &gt; \mid p_i - p_j \mid = \min_{k\in { T=0 } } \left { \mid p_i - p_k \mid \right }<br>
 \end{equation}</p>
 <ul>
 <li>可能会有样本找不到匹配对象</li>
