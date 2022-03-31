@@ -2046,12 +2046,15 @@
 </tbody>
 </table>
 <h2 id="最近邻匹配"><a class="header-anchor" href="#最近邻匹配"></a>最近邻匹配</h2>
-<p>最近邻匹配（Nearest Neighbor）：选择控制组中倾向性得分最接近的样本作为匹配样本</p>
+<p>最近邻匹配（Nearest-neighbor Matching）：选择控制组中倾向性得分最接近的样本作为匹配样本</p>
+<p>干预样本$i$与无干预样本$j$进行匹配：<br>
+$$\mid p_i - p_j \mid = \min_{k\in T=0} \left{ \mid p_i - p_k \mid \right}$$</p>
 <h2 id="半径匹配"><a class="header-anchor" href="#半径匹配"></a>半径匹配</h2>
 <p>半径匹配（Radius Matching）：</p>
 <h2 id="核匹配"><a class="header-anchor" href="#核匹配"></a>核匹配</h2>
 <p>核匹配（Kernel Matching）</p>
 <h2 id="卡尺匹配"><a class="header-anchor" href="#卡尺匹配"></a>卡尺匹配</h2>
+<p>卡尺匹配（Caliper Matching）：</p>
 <h2 id="分块匹配法"><a class="header-anchor" href="#分块匹配法"></a>分块匹配法</h2>
 <p>分块匹配法（Stratification）</p>
 <h1 id="匹配效果检验"><a class="header-anchor" href="#匹配效果检验"></a>匹配效果检验</h1>
@@ -2087,6 +2090,11 @@
 <li><a href="https://onlinelibrary.wiley.com/doi/10.1111/j.1467-6419.2007.00527.x" target="_blank" rel="noopener">Caliendo M, Kopeinig S. Some practical guidance for the implementation of propensity score matching [J]. Journal of economic surveys, 2008, 22(1): 31-72.</a></li>
 <li><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3144483/" target="_blank" rel="noopener">Austin, Peter C . An Introduction to Propensity Score Methods for Reducing the Effects of Confounding in Observational Studies [J]. Multivariate Behav Res, 2011, 46(3):399-424.</a></li>
 <li><a href="https://www.publichealth.columbia.edu/research/population-health-methods/propensity-score-analysis" target="_blank" rel="noopener">Propensity Score Analysis</a></li>
+</ul>
+<h2 id="软件实现"><a class="header-anchor" href="#软件实现"></a>软件实现</h2>
+<ul>
+<li><a href="http://fmwww.bc.edu/RePEc/usug2001/psmatch.pdf" target="_blank" rel="noopener">STATA: Implementing Propensity Score Matching Estimators with STATA</a></li>
+<li><a href="http://sekhon.berkeley.edu/matching/" target="_blank" rel="noopener">R: Multivariate and Propensity Score Matching Software for Causal Inference</a></li>
 </ul>
 ]]></content>
       <categories>
