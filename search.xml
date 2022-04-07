@@ -26330,18 +26330,18 @@ g(\theta)= \left{<br>
 <ul>
 <li>适用于两组样本的样本量和方差相似的情况</li>
 <li>是一种标准的平均数差异的估计，与当前样本无关<br>
-$$d=\frac{\bar{x}<em>1 - \bar{x}<em>2 }{s</em>{pooled}}$$<br>
+$$d=\frac{ \bar{x}<em>1 - \bar{x}<em>2 }{ s</em>{pooled} }$$<br>
 其中，<br>
-$$s</em>{pooled} = \sqrt{ \frac{ (n_1-1)s_1^2 + (n_2 -1)s_2^2 }{ n_1 + n_2 } } $$</li>
+$$s</em>{pooled} = \sqrt{ \frac{ (n_1-1) s_1^2 + (n_2 -1)s_2^2 }{ n_1 + n_2 } } $$</li>
 </ul>
 </li>
 <li>Hedges’s g：是Cohen’s d方法的改进
 <ul>
 <li>适用于两组样本的样本量不同的情况</li>
 <li>小样本情况，使用该方法<br>
-$$g = \frac{\bar{x}_1 - \bar{x}_2 }{s^<em>} $$<br>
+$$g = \frac{ \bar{x}_1 - \bar{x}_2 }{s^<em>} $$<br>
 其中，<br>
-$$s^</em> = \sqrt{ \frac{s_1^2(n_1-1) + s_2^2(n_2 - 1)}{n_1 + n_2 - 2} }$$</li>
+$$s^</em> = \sqrt{ \frac{s_1^2(n_1-1) + s_2^2(n_2 - 1) }{n_1 + n_2 - 2} }$$</li>
 </ul>
 </li>
 <li>Glass’s delta（$\Delta$）：和Cohen的方法类似，分母不同，分母是第二组样本的标准差。
