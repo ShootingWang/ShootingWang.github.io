@@ -26286,14 +26286,16 @@ $$H_0:\theta\geq\theta_0\quad \mathrm{vs} \quad H_1:\theta&lt;\theta_0$$</li>
             <h2 id="势函数-功效（power）"><a class="header-anchor" href="#势函数-功效（power）"></a>势函数/功效（power）</h2><p>检验问题<br>$$H_0:\theta\in \Theta_0\quad \mathrm{vs} \quad H_1:\theta\in \Theta_1$$<br>的拒绝域为$W$，则样本观测值$X$落在拒绝域内的概率称为该检验的<strong>势函数</strong>或<strong>功效函数</strong>（power function）<br>$$g(\theta)=P_\theta(X\in W)$$<br>其中$\theta\in\Theta=\Theta_0\cup\Theta_1$。</p>
           </div>
 <p>显然有</p>
-<p>\begin{equation}<br>
+<p>$$<br>
+\begin{equation}<br>
 g(\theta)= \left{<br>
 \begin{array}{ll}<br>
 \alpha ( \theta ),&amp; \quad \theta \in  \Theta_0 \<br>
 1- \beta ( \theta ), &amp; \quad \theta \in \Theta_1<br>
 \end{array}<br>
 \right.<br>
-\end{equation}</p>
+\end{equation}<br>
+$$</p>
 <p>$1-\beta$也称作<strong>统计功效</strong>（Statistical Power）（正确拒绝$H_0$的概率）。</p>
 <div class="note default">
             <ul><li>在样本量给定的条件下，$\alpha$与$\beta$中一个减小必导致另一个增大</li><li>不可能同时控制一个检验的犯第一类错误、犯第二类错误的概率</li></ul>
