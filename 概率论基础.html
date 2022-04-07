@@ -313,228 +313,157 @@
 
       
         <center>Probability Theory</center>
+
 <a id="more"></a>
-<h1 id="概率论基础"><a class="header-anchor" href="#概率论基础"></a>概率论基础</h1>
-<h2 id="随机事件与概率"><a class="header-anchor" href="#随机事件与概率"></a>随机事件与概率</h2>
-<ul>
-<li><strong>随机现象</strong>：在一定条件下，并不总是出现相同结果的现象</li>
+<h1 id="概率论基础"><a href="#概率论基础" class="headerlink" title="概率论基础"></a>概率论基础</h1><h2 id="随机事件与概率"><a href="#随机事件与概率" class="headerlink" title="随机事件与概率"></a>随机事件与概率</h2><ul>
+<li><strong>随机现象</strong>：在一定条件下，并不总是出现相同结果的现象<ul>
 <li>结果不止一个</li>
 <li>人们事先并不知道哪一个结果出现</li>
+</ul>
+</li>
 <li><strong>确定性现象</strong>：只有一个结果的现象</li>
-<li><strong>随机事件</strong>（简称<strong>事件</strong>）：随机现象的某些样本点组成的集合</li>
+<li><strong>随机事件</strong>（简称<strong>事件</strong>）：随机现象的某些样本点组成的集合<ul>
 <li>任一事件$A$是相应样本空间的一个子集</li>
 <li>样本空间$\Omega$</li>
 <li><strong>基本事件</strong>：由样本空间$\Omega$中的单个元素组成的子集</li>
 <li><strong>必然事件</strong>：样本空间$\Omega$的最大子集（$\Omega$本身）</li>
 <li><strong>不可能事件</strong>：样本空间$\Omega$的最小子集（即空集$\emptyset$）</li>
 </ul>
-<h3 id="事件间关系"><a class="header-anchor" href="#事件间关系"></a>事件间关系</h3>
-<ul>
-<li><strong>包含</strong>：如果属于$A$的样本点必属于$B$，则称$A$被包含在$B$中 或 $B$包含$A$<br>
-$$A\subset B 或 B \supset A$$</li>
+</li>
+</ul>
+<h3 id="事件间关系"><a href="#事件间关系" class="headerlink" title="事件间关系"></a>事件间关系</h3><ul>
+<li><strong>包含</strong>：如果属于$A$的样本点必属于$B$，则称$A$被包含在$B$中 或 $B$包含$A$<script type="math/tex; mode=display">A\subset B 或 B \supset A</script><ul>
 <li>对任一事件$A$，必有$\emptyset \subset A\subset \Omega$</li>
-<li><strong>相等</strong>：如果事件$A$和事件$B$满足——属于$A$的样本点必属于$B$，且属于$B$的样本点——则称事件$A$与事件$B$相等（$A=B$）<br>
-$$A\subset B 且 B\subset A$$</li>
+</ul>
+</li>
+<li><strong>相等</strong>：如果事件$A$和事件$B$满足——属于$A$的样本点必属于$B$，且属于$B$的样本点——则称事件$A$与事件$B$相等（$A=B$） <script type="math/tex; mode=display">A\subset B 且 B\subset A</script></li>
 <li><strong>互不相容</strong>：事件$A$和事件$B$没有相同的样本点（事件$A$与事件$B$不可能同时发生）</li>
 </ul>
-<h3 id="事件间运算"><a class="header-anchor" href="#事件间运算"></a>事件间运算</h3>
-<ul>
-<li><strong>并</strong>：由事件$A$与$B$中所有的样本点组成的新事件</li>
-<li>事件$A$与$B$中至少有一个发生<br>
-$$A\cup B$$</li>
-<li><strong>交</strong>：由事件$A$与$B$中公共的样本点组成的新事件</li>
-<li>事件$A$与$B$同时发生<br>
-$$A\cap B或 AB$$</li>
-<li><strong>差</strong>：由在事件$A$中而不在事件$B$中的样本点组成的新事件</li>
-<li>事件$A$发生而事件$B$不发生<br>
-$$A-B 或 A\cap B^c$$</li>
-<li><strong>对立事件</strong> 或 <strong>补</strong>：事件$A$的对立事件$\bar{A}$——由在$\Omega$中而不在$A$中的样本点组成的新事件</li>
-<li>$A$不发生<br>
-$$\bar{A}=A^c=\Omega-A$$</li>
-<li>对立事件是相互的<br>
-$$\overline{\overline{A}}=A$$</li>
+<h3 id="事件间运算"><a href="#事件间运算" class="headerlink" title="事件间运算"></a>事件间运算</h3><ul>
+<li><strong>并</strong>：由事件$A$与$B$中所有的样本点组成的新事件<ul>
+<li>事件$A$与$B$中至少有一个发生<script type="math/tex; mode=display">A\cup B</script></li>
+</ul>
+</li>
+<li><strong>交</strong>：由事件$A$与$B$中公共的样本点组成的新事件<ul>
+<li>事件$A$与$B$同时发生<script type="math/tex; mode=display">A\cap B或 AB</script></li>
+</ul>
+</li>
+<li><strong>差</strong>：由在事件$A$中而不在事件$B$中的样本点组成的新事件<ul>
+<li>事件$A$发生而事件$B$不发生<script type="math/tex; mode=display">A-B 或 A\cap B^c</script></li>
+</ul>
+</li>
+<li><strong>对立事件</strong> 或 <strong>补</strong>：事件$A$的对立事件$\bar{A}$——由在$\Omega$中而不在$A$中的样本点组成的新事件<ul>
+<li>$A$不发生<script type="math/tex; mode=display">\bar{A}=A^c=\Omega-A</script></li>
+<li>对立事件是相互的<script type="math/tex; mode=display">\overline{\overline{A}}=A</script></li>
 <li>$\overline{\Omega}=\emptyset$</li>
 <li>$\overline{\emptyset}=\Omega$</li>
 </ul>
-<h3 id="事件的运算性质"><a class="header-anchor" href="#事件的运算性质"></a>事件的运算性质</h3>
-<ul>
-<li><strong>交换律</strong><br>
-$$A\cup B=B\cup A$$<br>
-$$AB=BA$$</li>
-<li><strong>结合律</strong><br>
-$$(A\cup B)\cup C=A\cup (B\cup C)$$<br>
-$$(AB)C=A(BC)$$</li>
-<li><strong>分配律</strong><br>
-$$(A\cup B)\cap C=(A\cap C)\cup(B\cap C)$$<br>
-$$(A\cap B)\cup C=(A\cup C)\cap(B\cup C)$$</li>
-<li><strong>De Morgan</strong>(对偶律)</li>
-<li>事件并的对立等于对立的交<br>
-$$\overline{A\cup B}=\overline{A}\cap \overline{B}$$</li>
-<li>事件交的对立等于对立的并<br>
-$$\overline{A\cap B}=\overline{A}\cup\overline{B}$$<br>
-$$\overline{\bigcup_{i=1}<sup>nA_i}=\bigcap_{i=1}</sup>n\overline{A_i},\quad \overline{\bigcup_{i=1}^\infty A_i}=\bigcap_{i=1}^\infty \overline{A_i}$$<br>
-$$\overline{\bigcap_{i=1}<sup>nA_i}=\bigcup_{i=1}</sup>n\overline{A_i},\quad \overline{\bigcap_{i=1}^\infty A_i}=\bigcup_{i=1}^\infty \overline{A_i}$$</li>
+</li>
 </ul>
-<h3 id="分割"><a class="header-anchor" href="#分割"></a>分割</h3>
-<p>partition<br>
-将样本空间$\Omega$划分为$n$个<u>互不相容</u>的事件$D_1,\cdots,D_n$——${D_1,\cdots,D_n}$称为$\Omega$的一个分割<br>
-$$\mathscr{F}={D_1,\cdots,D_n}$$</p>
-<ul>
+<h3 id="事件的运算性质"><a href="#事件的运算性质" class="headerlink" title="事件的运算性质"></a>事件的运算性质</h3><ul>
+<li><strong>交换律</strong><script type="math/tex; mode=display">A\cup B=B\cup A</script><script type="math/tex; mode=display">AB=BA</script></li>
+<li><strong>结合律</strong><script type="math/tex; mode=display">(A\cup B)\cup C=A\cup (B\cup C)</script><script type="math/tex; mode=display">(AB)C=A(BC)</script></li>
+<li><strong>分配律</strong><script type="math/tex; mode=display">(A\cup B)\cap C=(A\cap C)\cup(B\cap C)</script><script type="math/tex; mode=display">(A\cap B)\cup C=(A\cup C)\cap(B\cup C)</script></li>
+<li><strong>De Morgan</strong>(对偶律)<ul>
+<li>事件并的对立等于对立的交 <script type="math/tex; mode=display">\overline{A\cup B}=\overline{A}\cap \overline{B}</script></li>
+<li>事件交的对立等于对立的并<script type="math/tex; mode=display">\overline{A\cap B}=\overline{A}\cup\overline{B}</script><script type="math/tex; mode=display">\overline{\bigcup_{i=1}^nA_i}=\bigcap_{i=1}^n\overline{A_i},\quad \overline{\bigcup_{i=1}^\infty A_i}=\bigcap_{i=1}^\infty \overline{A_i}</script><script type="math/tex; mode=display">\overline{\bigcap_{i=1}^nA_i}=\bigcup_{i=1}^n\overline{A_i},\quad \overline{\bigcap_{i=1}^\infty A_i}=\bigcup_{i=1}^\infty \overline{A_i}</script></li>
+</ul>
+</li>
+</ul>
+<h3 id="分割"><a href="#分割" class="headerlink" title="分割"></a>分割</h3><p>partition<br>将样本空间$\Omega$划分为$n$个<u>互不相容</u>的事件$D_1,\cdots,D_n$——$\{D_1,\cdots,D_n\}$称为$\Omega$的一个分割</p>
+<script type="math/tex; mode=display">\mathscr{F}=\{D_1,\cdots,D_n\}</script><ul>
 <li>对所有的$i,j=1,\cdots,n$且$i\neq j$，有$D_i\cap D_j=\emptyset$</li>
 <li>$\bigcup_{i=1}^n=\Omega$</li>
 </ul>
-<h2 id="函数"><a class="header-anchor" href="#函数"></a>函数</h2>
-<h3 id="Beta函数"><a class="header-anchor" href="#Beta函数"></a>Beta函数</h3>
-<p>$$B(\alpha, \beta)=\int_0^1 x<sup>{\alpha-1}(1-x)</sup>{\beta-1}\mathrm{d}x ,\quad \alpha,\beta&gt;0$$</p>
-<ul>
-<li>$B(\alpha,\beta)=\frac{\Gamma(\alpha)\Gamma(\beta)}{\Gamma(\alpha+\beta)}$<br>
-证明：</li>
+<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><h3 id="Beta函数"><a href="#Beta函数" class="headerlink" title="Beta函数"></a>Beta函数</h3><script type="math/tex; mode=display">B(\alpha, \beta)=\int_0^1 x^{\alpha-1}(1-x)^{\beta-1}\mathrm{d}x ,\quad \alpha,\beta>0</script><ul>
+<li>$B(\alpha,\beta)=\frac{\Gamma(\alpha)\Gamma(\beta)}{\Gamma(\alpha+\beta)}$<br>证明：</li>
 </ul>
-<h3 id="Gamma函数"><a class="header-anchor" href="#Gamma函数"></a>Gamma函数</h3>
-<p>$$\Gamma(\alpha)=\int_0<sup>{+\infty}x</sup>{\alpha-1}e^{-x}\mathrm{d}x ,\quad \alpha&gt;0$$</p>
-<ul>
+<h3 id="Gamma函数"><a href="#Gamma函数" class="headerlink" title="Gamma函数"></a>Gamma函数</h3><script type="math/tex; mode=display">\Gamma(\alpha)=\int_0^{+\infty}x^{\alpha-1}e^{-x}\mathrm{d}x ,\quad \alpha>0</script><ul>
 <li>$\Gamma(\alpha+1)=\alpha\Gamma(\alpha)$</li>
 <li>$\Gamma(n+1)=n!,\quad n\in \mathbb{N}$.</li>
 </ul>
-<h1 id="随机变量"><a class="header-anchor" href="#随机变量"></a>随机变量</h1>
-<p>用来表示随机现象结果的变量</p>
-<h2 id="概率"><a class="header-anchor" href="#概率"></a>概率</h2>
-<h3 id="条件概率"><a class="header-anchor" href="#条件概率"></a>条件概率</h3>
-<p>$X$ condition on $Y$<br>
-$$P(X|Y)=\frac{P(X,Y)}{P(Y)}=\frac{P(Y|X)P(X)}{P(Y)}$$</p>
-<h3 id="贝叶斯公式"><a class="header-anchor" href="#贝叶斯公式"></a>贝叶斯公式</h3>
-<ul>
-<li>如果${A_i:i=1,\cdots,k}$是一个分割(partition)，则有<br>
-$$P(A_j|B)=\frac{P(B|A_j)P(A_j)}{\sum_{i=1}^kP(B|A_i)P(A_i)}$$</li>
+<h1 id="随机变量"><a href="#随机变量" class="headerlink" title="随机变量"></a>随机变量</h1><p>用来表示随机现象结果的变量</p>
+<h2 id="概率"><a href="#概率" class="headerlink" title="概率"></a>概率</h2><h3 id="条件概率"><a href="#条件概率" class="headerlink" title="条件概率"></a>条件概率</h3><p>$X$ condition on $Y$</p>
+<script type="math/tex; mode=display">P(X|Y)=\frac{P(X,Y)}{P(Y)}=\frac{P(Y|X)P(X)}{P(Y)}</script><h3 id="贝叶斯公式"><a href="#贝叶斯公式" class="headerlink" title="贝叶斯公式"></a>贝叶斯公式</h3><ul>
+<li>如果$\{A_i:i=1,\cdots,k\}$是一个分割(partition)，则有<script type="math/tex; mode=display">P(A_j|B)=\frac{P(B|A_j)P(A_j)}{\sum_{i=1}^kP(B|A_i)P(A_i)}</script></li>
 </ul>
-<h2 id="期望"><a class="header-anchor" href="#期望"></a>期望</h2>
-<p>Expectation<br>
-$$E(X)=\int xf_X(x)\mathrm{d}x$$</p>
-<h3 id="条件期望"><a class="header-anchor" href="#条件期望"></a>条件期望</h3>
-<p>条件期望/条件均值（Conditional Mean）：<br>
-$$E\left(X|Y=y\right)=\int xf_{X|Y}(x|y)\mathrm{d}x$$</p>
-<h3 id="重期望"><a class="header-anchor" href="#重期望"></a>重期望</h3>
-<p>LIE(Law of Iterated Expectation)</p>
-<div class="note success">
-            <p>$$E(X)=E\left[E\left(X|Y\right) \right]$$<br>$$E\left[Z|X \right]=E\left[E\left(Z|Y,X\right)|X \right]$$</p><p>$$Var(X)=E\left[Var(X|Y) \right]+Var\left[E\left(X|Y \right)\right]$$</p>
-          </div>
+<h2 id="期望"><a href="#期望" class="headerlink" title="期望"></a>期望</h2><p>Expectation</p>
+<script type="math/tex; mode=display">E(X)=\int xf_X(x)\mathrm{d}x</script><h3 id="条件期望"><a href="#条件期望" class="headerlink" title="条件期望"></a>条件期望</h3><p>条件期望/条件均值（Conditional Mean）：</p>
+<script type="math/tex; mode=display">E\left(X|Y=y\right)=\int xf_{X|Y}(x|y)\mathrm{d}x</script><h3 id="重期望"><a href="#重期望" class="headerlink" title="重期望"></a>重期望</h3><p>LIE(Law of Iterated Expectation)<br><div class="note success">
+            <script type="math/tex; mode=display">E(X)=E\left[E\left(X|Y\right) \right]</script><script type="math/tex; mode=display">E\left[Z|X \right]=E\left[E\left(Z|Y,X\right)|X \right]</script><script type="math/tex; mode=display">Var(X)=E\left[Var(X|Y) \right]+Var\left[E\left(X|Y \right)\right]</script>
+          </div></p>
 <div class="note default">
             <p>证明：</p>
           </div>
-<h2 id="方差"><a class="header-anchor" href="#方差"></a>方差</h2>
-<h3 id="条件方差"><a class="header-anchor" href="#条件方差"></a>条件方差</h3>
-<p>$$Var\left(X|Y=y\right)=\int \left[x-E\left(X|Y=y \right)\right]^2f_{X|Y}(x|y)\mathrm{d}x$$</p>
-<h2 id="协方差"><a class="header-anchor" href="#协方差"></a>协方差</h2>
-<p>Covariance</p>
-<h3 id="条件协方差"><a class="header-anchor" href="#条件协方差"></a>条件协方差</h3>
-<p>Law of Total Conditional Variance：<br>
-$$Cov(Z|X)=Cov\left[E\left(Z|Y,X\right)|X \right]+E\left[Cov\left(Z|Y,X\right)|X \right]$$</p>
-<h1 id="分布"><a class="header-anchor" href="#分布"></a>分布</h1>
-<ul>
+<h2 id="方差"><a href="#方差" class="headerlink" title="方差"></a>方差</h2><h3 id="条件方差"><a href="#条件方差" class="headerlink" title="条件方差"></a>条件方差</h3><script type="math/tex; mode=display">Var\left(X|Y=y\right)=\int \left[x-E\left(X|Y=y \right)\right]^2f_{X|Y}(x|y)\mathrm{d}x</script><h2 id="协方差"><a href="#协方差" class="headerlink" title="协方差"></a>协方差</h2><p>Covariance</p>
+<h3 id="条件协方差"><a href="#条件协方差" class="headerlink" title="条件协方差"></a>条件协方差</h3><p>Law of Total Conditional Variance：</p>
+<script type="math/tex; mode=display">Cov(Z|X)=Cov\left[E\left(Z|Y,X\right)|X \right]+E\left[Cov\left(Z|Y,X\right)|X \right]</script><h1 id="分布"><a href="#分布" class="headerlink" title="分布"></a>分布</h1><ul>
 <li><strong>概率密度函数</strong>（pdf，probability density function）</li>
 </ul>
-<h2 id="常见离散分布"><a class="header-anchor" href="#常见离散分布"></a>常见离散分布</h2>
-<h3 id="伯努利分布"><a class="header-anchor" href="#伯努利分布"></a>伯努利分布</h3>
-<p>Bernoulli Distribution<br>
-$X\sim Bernoulli§$, $X$的可能取值只有0和1，且相应的概率为<br>
-$$P(X=1)=p,\quad P(X=0)=1-p\quad 0 &lt; p &lt;1$$<br>
-即<br>
-$$f(x|p)=\left{<br>
-\begin{array}{ll}<br>
-p<sup>x(1-p)</sup>{1-x}, &amp; x=0,1\<br>
-0, &amp; x\neq0,1<br>
-\end{array}<br>
-\right.$$</p>
-<ul>
-<li>$E(X)=p$<br>
-$$E(X)=1\cdot p+0\cdot (1-p)=p$$</li>
-<li>$Var(X)=p(1-p)$<br>
-$$E(X<sup>2)=1</sup>2\cdot p+0^2\cdot (1-p)=p$$<br>
-$$Var(X)=E(X<sup>2)-[E(X)]</sup>2=p-p^2=p(1-p)$$</li>
+<h2 id="常见离散分布"><a href="#常见离散分布" class="headerlink" title="常见离散分布"></a>常见离散分布</h2><h3 id="伯努利分布"><a href="#伯努利分布" class="headerlink" title="伯努利分布"></a>伯努利分布</h3><p>Bernoulli Distribution<br>$X\sim Bernoulli(p)$, $X$的可能取值只有0和1，且相应的概率为</p>
+<script type="math/tex; mode=display">P(X=1)=p,\quad P(X=0)=1-p\quad 0 < p <1</script><p>即</p>
+<script type="math/tex; mode=display">f(x|p)=\left\{
+    \begin{array}{ll}
+    p^x(1-p)^{1-x}, & x=0,1\\
+    0, & x\neq0,1
+    \end{array}
+    \right.</script><ul>
+<li>$E(X)=p$<script type="math/tex; mode=display">E(X)=1\cdot p+0\cdot (1-p)=p</script></li>
+<li>$Var(X)=p(1-p)$<script type="math/tex; mode=display">E(X^2)=1^2\cdot p+0^2\cdot (1-p)=p</script><script type="math/tex; mode=display">Var(X)=E(X^2)-[E(X)]^2=p-p^2=p(1-p)</script></li>
 </ul>
-<h3 id="泊松分布"><a class="header-anchor" href="#泊松分布"></a>泊松分布</h3>
-<ul>
-<li>
-<a href="/%E5%88%86%E5%B8%83-%E6%B3%8A%E6%9D%BE%E5%88%86%E5%B8%83.html" title="泊松分布">泊松分布</a>
+<h3 id="泊松分布"><a href="#泊松分布" class="headerlink" title="泊松分布"></a>泊松分布</h3><ul>
+<li><a href="/%E5%88%86%E5%B8%83-%E6%B3%8A%E6%9D%BE%E5%88%86%E5%B8%83.html" title="泊松分布">泊松分布</a>
 </li>
 </ul>
-<p>Poisson Distribution<br>
-参数为$\lambda$的泊松分布的概率密度函数为<br>
-$$P(X=k)=\frac{\lambda<sup>k}{k!}e</sup>{-\lambda},\quad k=0,1,\cdots.$$</p>
-<ul>
+<p>Poisson Distribution<br>参数为$\lambda$的泊松分布的概率密度函数为</p>
+<script type="math/tex; mode=display">P(X=k)=\frac{\lambda^k}{k!}e^{-\lambda},\quad k=0,1,\cdots.</script><ul>
 <li>$E(X)=\lambda$</li>
 <li>$Var(X)=\lambda$</li>
 </ul>
-<h2 id="常见连续分布"><a class="header-anchor" href="#常见连续分布"></a>常见连续分布</h2>
-<h3 id="贝塔分布"><a class="header-anchor" href="#贝塔分布"></a>贝塔分布</h3>
-<p>Beta Distribution<br>
-$X\sim B(\alpha, \beta)$, 则$X$的概率密度函数为<br>
-$$f_X(x)=\frac{1}{B(\alpha,\beta)}x<sup>{\alpha-1}(1-x)</sup>{\beta-1},\quad 0&lt; x &lt; 1$$</p>
-<ul>
-<li>
-<p>$E(X)=\frac{\alpha}{\alpha+\beta}$<br>
-<font face="仿宋"><br>
-\begin{equation}<br>
-\begin{aligned}<br>
-E(X)&amp;=\int_0^1 x\frac{1}{B(\alpha,\beta)}x<sup>{\alpha-1}(1-x)</sup>{\beta-1}\mathrm{d}x\<br>
-&amp;=<br>
-\end{aligned}<br>
-\end{equation}<br>
-</font></p>
+<h2 id="常见连续分布"><a href="#常见连续分布" class="headerlink" title="常见连续分布"></a>常见连续分布</h2><h3 id="贝塔分布"><a href="#贝塔分布" class="headerlink" title="贝塔分布"></a>贝塔分布</h3><p>Beta Distribution<br>$X\sim B(\alpha, \beta)$, 则$X$的概率密度函数为</p>
+<script type="math/tex; mode=display">f_X(x)=\frac{1}{B(\alpha,\beta)}x^{\alpha-1}(1-x)^{\beta-1},\quad 0< x < 1</script><ul>
+<li><p>$E(X)=\frac{\alpha}{\alpha+\beta}$</p>
+<font face="仿宋">
+\begin{equation}
+\begin{aligned}
+E(X)&=\int_0^1 x\frac{1}{B(\alpha,\beta)}x^{\alpha-1}(1-x)^{\beta-1}\mathrm{d}x\\
+&=
+\end{aligned}
+\end{equation}
+</font>
 </li>
-<li>
-<p>$Var(X)=\frac{\alpha\beta}{(\alpha+\beta)^2(\alpha+\beta+1)}$</p>
+<li><p>$Var(X)=\frac{\alpha\beta}{(\alpha+\beta)^2(\alpha+\beta+1)}$</p>
 </li>
 </ul>
-<h3 id="伽马分布"><a class="header-anchor" href="#伽马分布"></a>伽马分布</h3>
-<p>Gamma Distribution<br>
-$X\sim \Gamma(\alpha, \beta)$, 则$X$的概率密度函数为<br>
-$$f_X(x)=\frac{\beta<sup>{\alpha}}{\Gamma(\alpha)}x</sup>{\alpha-1}e^{-\beta x},\quad x&gt;0$$</p>
-<ul>
+<h3 id="伽马分布"><a href="#伽马分布" class="headerlink" title="伽马分布"></a>伽马分布</h3><p>Gamma Distribution<br>$X\sim \Gamma(\alpha, \beta)$, 则$X$的概率密度函数为</p>
+<script type="math/tex; mode=display">f_X(x)=\frac{\beta^{\alpha}}{\Gamma(\alpha)}x^{\alpha-1}e^{-\beta x},\quad x>0</script><ul>
 <li>$E(X)=\frac{\alpha}{\beta}$</li>
 <li>$Var(X)=\frac{\alpha}{\beta^2}$</li>
 </ul>
-<h3 id="逆伽马分布"><a class="header-anchor" href="#逆伽马分布"></a>逆伽马分布</h3>
-<p>Inverted Gamma Distribution<br>
-$X\sim \Gamma(\alpha, \beta)$，定义$Y=\frac{1}{X}$，则$Y$服从逆伽马分布，概率密度函数为<br>
-$$f_Y(y)=\frac{\beta<sup>{\alpha}}{\Gamma(\alpha)}y</sup>{-(\alpha+1)}e^{-\frac{\beta}{y}},\quad y&gt;0$$</p>
-<h3 id="正态分布"><a class="header-anchor" href="#正态分布"></a>正态分布</h3>
-<h3 id="t-分布"><a class="header-anchor" href="#t-分布"></a>$t$分布</h3>
-<p>Student’s t-distribution<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
+<h3 id="逆伽马分布"><a href="#逆伽马分布" class="headerlink" title="逆伽马分布"></a>逆伽马分布</h3><p>Inverted Gamma Distribution<br>$X\sim \Gamma(\alpha, \beta)$，定义$Y=\frac{1}{X}$，则$Y$服从逆伽马分布，概率密度函数为</p>
+<script type="math/tex; mode=display">f_Y(y)=\frac{\beta^{\alpha}}{\Gamma(\alpha)}y^{-(\alpha+1)}e^{-\frac{\beta}{y}},\quad y>0</script><h3 id="正态分布"><a href="#正态分布" class="headerlink" title="正态分布"></a>正态分布</h3><h3 id="t-分布"><a href="#t-分布" class="headerlink" title="$t$分布"></a>$t$分布</h3><p>Student’s t-distribution<sup><a href="#fn_1" id="reffn_1">1</a></sup></p>
 <p>从均值为$\mu$、方差为$\sigma^2$的正态总体种抽取容量为$n$的随机样本，随机样本的</p>
 <ul>
 <li>均值：$\bar{x}$</li>
-<li>方差：$s<sup>2=\frac{1}{n-1}\sum_{i=1}</sup>n(x_i-\bar{x})^2$</li>
+<li>方差：$s^2=\frac{1}{n-1}\sum_{i=1}^n(x_i-\bar{x})^2$</li>
 </ul>
-<p>则随机变量T<br>
-$$T=\frac{\bar{x}-\mu}{s/\sqrt{n}}$$<br>
-服从自由度为$n-1$的$t$分布，即$T\sim t(n-1)$。</p>
+<p>则随机变量T</p>
+<script type="math/tex; mode=display">T=\frac{\bar{x}-\mu}{s/\sqrt{n}}</script><p>服从自由度为$n-1$的$t$分布，即$T\sim t(n-1)$。</p>
 <ul>
 <li>$t$分布是一种典型的长尾分布</li>
 </ul>
-<h3 id="卡方分布"><a class="header-anchor" href="#卡方分布"></a>卡方分布</h3>
-<p>若$k$个随机变量$Z_1, Z_2, \cdots, Z_k$是相互独立、服从标准<a href="#%E6%AD%A3%E6%80%81%E5%88%86%E5%B8%83">正态分布</a>的随机变量，则随机变量Z的平方和<br>
-$$X = \sum_{i=1}<sup>kZ_i</sup>2$$<br>
-服从自由度为$k$的卡方分布。</p>
+<blockquote id="fn_1">
+<sup>1</sup>. ‘Student’是William Sealy Gosset的笔名<a href="#reffn_1" title="Jump back to footnote [1] in the text."> &#8617;</a>
+</blockquote>
+<h3 id="卡方分布"><a href="#卡方分布" class="headerlink" title="卡方分布"></a>卡方分布</h3><p>若$k$个随机变量$Z_1, Z_2, \cdots, Z_k$是相互独立、服从标准<a href="#正态分布">正态分布</a>的随机变量，则随机变量Z的平方和</p>
+<script type="math/tex; mode=display">X = \sum_{i=1}^kZ_i^2</script><p>服从自由度为$k$的卡方分布。</p>
 <ul>
 <li>$E(X)=$</li>
 </ul>
-<h2 id="分布的特征"><a class="header-anchor" href="#分布的特征"></a>分布的特征</h2>
-<h3 id="偏态"><a class="header-anchor" href="#偏态"></a>偏态</h3>
-<p>||左偏|正态|右偏|<br>
-|均值、中位数、众数|均值$&lt;$中位数$&lt;$众数|均值=中位数=众数|众数$&lt;$中位数$&lt;$均值|</p>
-<h3 id="峰度"><a class="header-anchor" href="#峰度"></a>峰度</h3>
-<h1 id="参考资料"><a class="header-anchor" href="#参考资料"></a>参考资料</h1>
-<ul>
+<h2 id="分布的特征"><a href="#分布的特征" class="headerlink" title="分布的特征"></a>分布的特征</h2><h3 id="偏态"><a href="#偏态" class="headerlink" title="偏态"></a>偏态</h3><p>||左偏|正态|右偏|<br>|均值、中位数、众数|均值$&lt;$中位数$&lt;$众数|均值=中位数=众数|众数$&lt;$中位数$&lt;$均值|</p>
+<h3 id="峰度"><a href="#峰度" class="headerlink" title="峰度"></a>峰度</h3><h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
 <li><a href="https://book.douban.com/subject/5998092/" target="_blank" rel="noopener">概率论与数理统计教程</a></li>
 </ul>
-<hr class="footnotes-sep">
-<section class="footnotes">
-<ol class="footnotes-list">
-<li id="fn1" class="footnote-item"><p>'Student’是William Sealy Gosset的笔名 <a href="#fnref1" class="footnote-backref">↩︎</a></p>
-</li>
-</ol>
-</section>
 
     </div>
 
@@ -549,8 +478,8 @@ $$X = \sum_{i=1}<sup>kZ_i</sup>2$$<br>
   <div id="qr" style="display: none;">
       
       <div style="display: inline-block;">
-        <img src="/images/reward2021.png" alt="Skye WeChat Pay">
-        <p>WeChat Pay</p>
+        <img src="/images/reward2021.png" alt="Skye WeChat Bezahlung">
+        <p>WeChat Bezahlung</p>
       </div>
       
       <div style="display: inline-block;">
@@ -728,13 +657,13 @@ $$X = \sum_{i=1}<sup>kZ_i</sup>2$$<br>
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">407k</span>
+    <span title="站点总字数">397k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">6:10</span>
+    <span title="站点阅读时长">6:01</span>
 </div>
 
 

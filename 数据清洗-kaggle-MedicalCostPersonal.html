@@ -310,33 +310,29 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <center></center>
-<a id="more"></a>
-<h1 id="数据说明"><a class="header-anchor" href="#数据说明"></a>数据说明</h1>
-<ul>
+        <p><center></center><br><a id="more"></a></p>
+<h1 id="数据说明"><a href="#数据说明" class="headerlink" title="数据说明"></a>数据说明</h1><ul>
 <li>数据来源：<a href="https://www.kaggle.com/mirichoi0218/insurance" target="_blank" rel="noopener">Kaggle</a></li>
 <li>可视化代码来源：<a href="https://www.kaggle.com/rockbt1189/eda-l-data-visualization?tdsourcetag=s_pctim_aiomsg" target="_blank" rel="noopener">EDA l Data Visualization</a></li>
 <li>使用Kaggle在线Jupyter Notebook实现</li>
 </ul>
-<h1 id="载入数据"><a class="header-anchor" href="#载入数据"></a>载入数据</h1>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># This Python 3 environment comes with many helpful analytics libraries installed</span></span><br><span class="line"><span class="comment"># It is defined by the kaggle/python Docker image: https://github.com/kaggle/docker-python</span></span><br><span class="line"><span class="comment"># For example, here's several helpful packages to load</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np <span class="comment"># linear algebra</span></span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd <span class="comment"># data processing, CSV file I/O (e.g. pd.read_csv)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Input data files are available in the read-only "../input/" directory</span></span><br><span class="line"><span class="comment"># For example, running this (by clicking run or pressing Shift+Enter) will list all files under the input directory</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line">print(os.listdir(<span class="string">"../input"</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># You can write up to 5GB to the current directory (/kaggle/working/) that gets preserved as output when you create a version using "Save &amp; Run All" </span></span><br><span class="line"><span class="comment"># You can also write temporary files to /kaggle/temp/, but they won't be saved outside of the current session</span></span><br></pre></td></tr></table></figure>
-<pre><code>['insurance']
-</code></pre>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns</span><br><span class="line"><span class="keyword">import</span> warnings</span><br><span class="line"></span><br><span class="line">warnings.filterwarnings(<span class="string">"ignore"</span>)</span><br></pre></td></tr></table></figure>
+<h1 id="载入数据"><a href="#载入数据" class="headerlink" title="载入数据"></a>载入数据</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># This Python 3 environment comes with many helpful analytics libraries installed</span></span><br><span class="line"><span class="comment"># It is defined by the kaggle/python Docker image: https://github.com/kaggle/docker-python</span></span><br><span class="line"><span class="comment"># For example, here's several helpful packages to load</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np <span class="comment"># linear algebra</span></span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd <span class="comment"># data processing, CSV file I/O (e.g. pd.read_csv)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Input data files are available in the read-only "../input/" directory</span></span><br><span class="line"><span class="comment"># For example, running this (by clicking run or pressing Shift+Enter) will list all files under the input directory</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line">print(os.listdir(<span class="string">"../input"</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># You can write up to 5GB to the current directory (/kaggle/working/) that gets preserved as output when you create a version using "Save &amp; Run All" </span></span><br><span class="line"><span class="comment"># You can also write temporary files to /kaggle/temp/, but they won't be saved outside of the current session</span></span><br></pre></td></tr></table></figure>
+<pre><code>[&#39;insurance&#39;]
+</code></pre><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns</span><br><span class="line"><span class="keyword">import</span> warnings</span><br><span class="line"></span><br><span class="line">warnings.filterwarnings(<span class="string">"ignore"</span>)</span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">df = pd.read_csv(<span class="string">"../input/insurance/insurance.csv"</span>)  <span class="comment">## 加载数据</span></span><br><span class="line">df.head()  <span class="comment">## 预览前5行</span></span><br></pre></td></tr></table></figure>
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
-<pre><code>.dataframe tbody tr th {
-    vertical-align: top;
-}
 
-.dataframe thead th {
-    text-align: right;
-}
-</code></pre>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -405,6 +401,8 @@
   </tbody>
 </table>
 </div>
+
+
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">print(df.shape)  <span class="comment">## 查看数据的维度</span></span><br><span class="line">print(df.describe())  <span class="comment">## 查看数据的描述统计</span></span><br><span class="line">print(<span class="string">"Total number of NULL value in the dataset:"</span>, df.isnull().sum())  <span class="comment">## 数据集中缺失数据的个数</span></span><br></pre></td></tr></table></figure>
 <pre><code>(1338, 7)
                age          bmi     children       charges
@@ -424,9 +422,7 @@ smoker      0
 region      0
 charges     0
 dtype: int64
-</code></pre>
-<h1 id="新建特征"><a class="header-anchor" href="#新建特征"></a>新建特征</h1>
-<p>BMI:</p>
+</code></pre><h1 id="新建特征"><a href="#新建特征" class="headerlink" title="新建特征"></a>新建特征</h1><p>BMI:</p>
 <ul>
 <li>Normal: bmi &lt;= 24</li>
 <li>OverWeight: 24 &lt; bmi &lt;30</li>
@@ -438,14 +434,14 @@ dtype: int64
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
-<pre><code>.dataframe tbody tr th {
-    vertical-align: top;
-}
 
-.dataframe thead th {
-    text-align: right;
-}
-</code></pre>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -526,15 +522,15 @@ dtype: int64
   </tbody>
 </table>
 </div>
+
+
+
 <p>也可应用Pandas模块中的<code>cut()</code>函数进行分组，具体可见<a href="/python-pandas%E6%A8%A1%E5%9D%97.html" title="Pandas模块">Pandas模块</a>。</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 分组也可按如下操作</span></span><br><span class="line">bins1 = [<span class="number">0</span>, <span class="number">24</span>, <span class="number">29.99</span>, <span class="number">100</span>]</span><br><span class="line">df[<span class="string">'risk_bins'</span>] = df.cut(df[<span class="string">'bmi'</span>], bins1, labels=[<span class="string">'Normal'</span>, <span class="string">'OverWeight'</span>, <span class="string">'Obese'</span>])</span><br><span class="line"></span><br><span class="line">bins2 = [<span class="number">0</span>, <span class="number">25</span>, <span class="number">35</span>, <span class="number">55</span>, <span class="number">75</span>, <span class="number">100</span>]</span><br><span class="line">df[<span class="string">'age_bins'</span>] = df.cut(df[<span class="string">'age'</span>], bins2, </span><br><span class="line">                        labels=[<span class="string">"Age below 25 year"</span>, <span class="string">"Age 25 to 34 year"</span>, <span class="string">"Age 35 to 54 year"</span>, </span><br><span class="line">                               <span class="string">"Age 55 to 74 year"</span>, <span class="string">"Age more than 75 year"</span>])</span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">df[<span class="string">"Charge"</span>] = df[<span class="string">"charges"</span>]/<span class="number">1000</span></span><br></pre></td></tr></table></figure>
-<h1 id="数据可视化"><a class="header-anchor" href="#数据可视化"></a>数据可视化</h1>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 相关图</span></span><br><span class="line">sns.pairplot(df, height=<span class="number">1.8</span>)</span><br></pre></td></tr></table></figure>
+<h1 id="数据可视化"><a href="#数据可视化" class="headerlink" title="数据可视化"></a>数据可视化</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 相关图</span></span><br><span class="line">sns.pairplot(df, height=<span class="number">1.8</span>)</span><br></pre></td></tr></table></figure>
 <pre><code>&lt;seaborn.axisgrid.PairGrid at 0x7f6074b5ced0&gt;
-</code></pre>
-<meta name="referrer" content="no-referrer">
-<img src="/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-MedicalCostPersonal/output_10_1.png" class title="相关图">
+</code></pre><p><meta name="referrer" content="no-referrer"><br><img src="/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-MedicalCostPersonal/output_10_1.png" class title="相关图"></p>
 <ul>
 <li>对角线上的是特征的样本数据直方图</li>
 <li>非对角线的是两两特征之间的相关图（以两特征分别为横纵轴）</li>
@@ -543,10 +539,8 @@ dtype: int64
 <li>不同<code>charges</code>区间中，<code>charges</code>以及<code>Charge</code>与<code>age</code>呈正相关</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">plt.rcParams[<span class="string">"figure.figsize"</span>] = (<span class="number">20</span>, <span class="number">14</span>)</span><br><span class="line">plt.subplot(<span class="number">421</span>)  <span class="comment">## 将画布裁成4行2列  ## 第1个子图</span></span><br><span class="line">df[<span class="string">'age'</span>].value_counts().sort_index().plot.line(color=<span class="string">"k"</span>)  <span class="comment">## 折线图</span></span><br><span class="line">plt.title(<span class="string">"Age distribution in the Data"</span>)  <span class="comment">## 标题</span></span><br><span class="line"></span><br><span class="line">plt.subplot(<span class="number">422</span>)  <span class="comment">## 第2个子图</span></span><br><span class="line">df[<span class="string">'bmi'</span>].sort_index().plot.hist(color=<span class="string">"g"</span>)  <span class="comment">## 直方图</span></span><br><span class="line">plt.title(<span class="string">"bmi distribution in the Data"</span>)</span><br><span class="line"></span><br><span class="line">plt.subplot(<span class="number">423</span>)  <span class="comment">## 第3个子图</span></span><br><span class="line">df[<span class="string">'children'</span>].value_counts().plot.line(color=<span class="string">"b"</span>)  <span class="comment">## 折线图</span></span><br><span class="line">plt.title(<span class="string">"child distribution in the Data"</span>)</span><br><span class="line"></span><br><span class="line">plt.subplot(<span class="number">424</span>)</span><br><span class="line">df[<span class="string">'charges'</span>].plot.hist(color=<span class="string">"c"</span>)</span><br><span class="line">plt.title(<span class="string">"charges distribution in the Data"</span>)</span><br><span class="line"></span><br><span class="line">plt.subplot(<span class="number">425</span>)</span><br><span class="line">df[<span class="string">"risk_type"</span>].value_counts().plot.bar()  <span class="comment">## 条形图</span></span><br><span class="line">plt.title(<span class="string">"risk_type distribution in the Data"</span>)</span><br><span class="line"></span><br><span class="line">plt.subplot(<span class="number">426</span>)</span><br><span class="line">df[<span class="string">'smoker'</span>].value_counts().plot.bar()</span><br><span class="line">plt.title(<span class="string">"smoker distribution in the data"</span>)</span><br><span class="line"></span><br><span class="line">plt.subplot(<span class="number">427</span>)</span><br><span class="line">df[<span class="string">'Age_group'</span>].value_counts().plot.bar()</span><br><span class="line">plt.title(<span class="string">"Age_group distribution in the Data"</span>)</span><br></pre></td></tr></table></figure>
-<pre><code>Text(0.5, 1.0, 'Age_group distribution in the Data')
-</code></pre>
-<meta name="referrer" content="no-referrer">
-<img src="/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-MedicalCostPersonal/output_12_1.png" class>
+<pre><code>Text(0.5, 1.0, &#39;Age_group distribution in the Data&#39;)
+</code></pre><p><meta name="referrer" content="no-referrer"><br><img src="/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-MedicalCostPersonal/output_12_1.png" class></p>
 <ul>
 <li>样本中的年龄主要集中分布在“小于20岁”区间</li>
 <li>样本中肥胖的样本较多</li>
@@ -554,47 +548,32 @@ dtype: int64
 </ul>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">plt.rcParams[<span class="string">'figure.figsize'</span>] = (<span class="number">18</span>, <span class="number">8</span>)</span><br><span class="line">plt.subplot(<span class="number">221</span>)  <span class="comment">## 将画布分成2行2列</span></span><br><span class="line">sns.lineplot(x=<span class="string">'age'</span>, y=<span class="string">'bmi'</span>, data=df, color=<span class="string">"b"</span>)</span><br><span class="line"></span><br><span class="line">plt.subplot(<span class="number">222</span>)</span><br><span class="line">sns.lineplot(x=<span class="string">'age'</span>, y=<span class="string">'Charge'</span>, data=df, color=<span class="string">"g"</span>)  <span class="comment">## 折线图</span></span><br><span class="line"></span><br><span class="line">plt.subplot(<span class="number">223</span>)</span><br><span class="line">sns.scatterplot(x=<span class="string">"Charge"</span>, y=<span class="string">"bmi"</span>, data=df, color=<span class="string">"k"</span>)  <span class="comment">## 散点图</span></span><br></pre></td></tr></table></figure>
 <pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f6069f93d90&gt;
-</code></pre>
-<meta name="referrer" content="no-referrer">
-<img src="/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-MedicalCostPersonal/output_13_1.png" class>
+</code></pre><p><meta name="referrer" content="no-referrer"><br><img src="/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-MedicalCostPersonal/output_13_1.png" class></p>
 <ul>
 <li><code>bmi</code>有随<code>age</code>上升而上升的趋势</li>
 <li><code>charges</code>有随<code>age</code>上升而上升的趋势</li>
 </ul>
-<p>下面按年龄段绘制<code>bmi</code>、<code>charges</code>与<code>age</code>的折线图：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">plt.rcParams[<span class="string">'figure.figsize'</span>] = (<span class="number">18</span>, <span class="number">8</span>)</span><br><span class="line">plt.subplot(<span class="number">221</span>)</span><br><span class="line"><span class="comment">## 横轴是age，纵轴是bmi，按Age_group分段绘制</span></span><br><span class="line">sns.lineplot(x=<span class="string">'age'</span>, y=<span class="string">'bmi'</span>, data=df, hue=<span class="string">"Age_group"</span>)</span><br><span class="line"></span><br><span class="line">plt.subplot(<span class="number">222</span>)</span><br><span class="line">sns.lineplot(x=<span class="string">'age'</span>, y=<span class="string">'Charge'</span>, data=df, hue=<span class="string">'Age_group'</span>)</span><br></pre></td></tr></table></figure>
+<p>下面按年龄段绘制<code>bmi</code>、<code>charges</code>与<code>age</code>的折线图：<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">plt.rcParams[<span class="string">'figure.figsize'</span>] = (<span class="number">18</span>, <span class="number">8</span>)</span><br><span class="line">plt.subplot(<span class="number">221</span>)</span><br><span class="line"><span class="comment">## 横轴是age，纵轴是bmi，按Age_group分段绘制</span></span><br><span class="line">sns.lineplot(x=<span class="string">'age'</span>, y=<span class="string">'bmi'</span>, data=df, hue=<span class="string">"Age_group"</span>)</span><br><span class="line"></span><br><span class="line">plt.subplot(<span class="number">222</span>)</span><br><span class="line">sns.lineplot(x=<span class="string">'age'</span>, y=<span class="string">'Charge'</span>, data=df, hue=<span class="string">'Age_group'</span>)</span><br></pre></td></tr></table></figure></p>
 <pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f6069d0fad0&gt;
-</code></pre>
-<meta name="referrer" content="no-referrer">
-<img src="/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-MedicalCostPersonal/output_14_1.png" class>
+</code></pre><p><meta name="referrer" content="no-referrer"><br><img src="/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-MedicalCostPersonal/output_14_1.png" class></p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">plt.rcParams[<span class="string">"figure.figsize"</span>]=(<span class="number">18</span>,<span class="number">8</span>)</span><br><span class="line">plt.subplot(<span class="number">221</span>)</span><br><span class="line">sns.lineplot(x=<span class="string">"age"</span>, y=<span class="string">"bmi"</span>, data=df, color=<span class="string">"b"</span>, hue=<span class="string">"smoker"</span>)</span><br><span class="line"></span><br><span class="line">plt.subplot(<span class="number">222</span>)</span><br><span class="line">sns.lineplot(x=<span class="string">"age"</span>, y=<span class="string">"Charge"</span>, data=df, color=<span class="string">"g"</span>, hue=<span class="string">"smoker"</span>)</span><br></pre></td></tr></table></figure>
 <pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f6069c22150&gt;
-</code></pre>
-<meta name="referrer" content="no-referrer">
-<img src="/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-MedicalCostPersonal/output_15_1.png" class>
+</code></pre><p><meta name="referrer" content="no-referrer"><br><img src="/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-MedicalCostPersonal/output_15_1.png" class></p>
 <ul>
 <li>不吸烟的人的<code>Charge</code>整体比吸烟的人低</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## region</span></span><br><span class="line">southwest = df[df[<span class="string">"region"</span>]==<span class="string">"southwest"</span>]</span><br><span class="line">southeast = df[df[<span class="string">"region"</span>]==<span class="string">"southeast"</span>]</span><br><span class="line">northwest = df[df[<span class="string">"region"</span>]==<span class="string">"northwest"</span>]</span><br><span class="line">northeast = df[df[<span class="string">"region"</span>]==<span class="string">"northeast"</span>]</span><br><span class="line"></span><br><span class="line">plt.rcParams[<span class="string">"figure.figsize"</span>]=(<span class="number">18</span>,<span class="number">8</span>)</span><br><span class="line">plt.subplot(<span class="number">421</span>)</span><br><span class="line">sns.lineplot(x=<span class="string">"age"</span>, y=<span class="string">"bmi"</span>, data=southwest, hue=<span class="string">"risk_type"</span>, hue_order=[<span class="string">"Normal"</span>,<span class="string">"OverWeight"</span>,<span class="string">"Obese"</span>])</span><br><span class="line">plt.title(<span class="string">"southwest region"</span>)</span><br><span class="line"></span><br><span class="line">plt.subplot(<span class="number">422</span>)</span><br><span class="line">sns.lineplot(x=<span class="string">"bmi"</span>, y=<span class="string">"Charge"</span>, data=southwest, hue=<span class="string">"risk_type"</span>, hue_order=[<span class="string">"Normal"</span>,<span class="string">"OverWeight"</span>,<span class="string">"Obese"</span>])</span><br><span class="line">plt.title(<span class="string">"southwest region"</span>)</span><br><span class="line"></span><br><span class="line">plt.subplot(<span class="number">423</span>)</span><br><span class="line">sns.lineplot(x=<span class="string">"age"</span>, y=<span class="string">"bmi"</span>, data=southeast, hue=<span class="string">"risk_type"</span>, hue_order=[<span class="string">"Normal"</span>,<span class="string">"OverWeight"</span>,<span class="string">"Obese"</span>])</span><br><span class="line">plt.title(<span class="string">"southeast region"</span>)</span><br><span class="line"></span><br><span class="line">plt.subplot(<span class="number">424</span>)</span><br><span class="line">sns.lineplot(x=<span class="string">"bmi"</span>, y=<span class="string">"Charge"</span>, data=southeast, hue=<span class="string">"risk_type"</span>, hue_order=[<span class="string">"Normal"</span>,<span class="string">"OverWeight"</span>,<span class="string">"Obese"</span>])</span><br><span class="line">plt.title(<span class="string">"southeast region"</span>)</span><br><span class="line"></span><br><span class="line">plt.subplot(<span class="number">425</span>)</span><br><span class="line">sns.lineplot(x=<span class="string">"age"</span>, y=<span class="string">"bmi"</span>, data=northwest, hue=<span class="string">"risk_type"</span>, hue_order=[<span class="string">"Normal"</span>,<span class="string">"OverWeight"</span>,<span class="string">"Obese"</span>])</span><br><span class="line">plt.title(<span class="string">"northwest region"</span>)</span><br><span class="line"></span><br><span class="line">plt.subplot(<span class="number">426</span>)</span><br><span class="line">sns.lineplot(x=<span class="string">"bmi"</span>, y=<span class="string">"Charge"</span>, data=northwest, hue=<span class="string">"risk_type"</span>, hue_order=[<span class="string">"Normal"</span>,<span class="string">"OverWeight"</span>,<span class="string">"Obese"</span>])</span><br><span class="line">plt.title(<span class="string">"northwest region"</span>)</span><br><span class="line"></span><br><span class="line">plt.subplot(<span class="number">427</span>)</span><br><span class="line">sns.lineplot(x=<span class="string">"age"</span>, y=<span class="string">"bmi"</span>, data=northeast, hue=<span class="string">"risk_type"</span>, hue_order=[<span class="string">"Normal"</span>,<span class="string">"OverWeight"</span>,<span class="string">"Obese"</span>])</span><br><span class="line">plt.title(<span class="string">"northeast region"</span>)</span><br><span class="line"></span><br><span class="line">plt.subplot(<span class="number">428</span>)</span><br><span class="line">sns.lineplot(x=<span class="string">"bmi"</span>, y=<span class="string">"Charge"</span>, data=northeast, hue=<span class="string">"risk_type"</span>, hue_order=[<span class="string">"Normal"</span>,<span class="string">"OverWeight"</span>,<span class="string">"Obese"</span>])</span><br><span class="line">plt.title(<span class="string">"northeast region"</span>)</span><br></pre></td></tr></table></figure>
-<pre><code>Text(0.5, 1.0, 'northeast region')
-</code></pre>
-<meta name="referrer" content="no-referrer">
-<img src="/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-MedicalCostPersonal/output_16_1.png" class>
+<pre><code>Text(0.5, 1.0, &#39;northeast region&#39;)
+</code></pre><p><meta name="referrer" content="no-referrer"><br><img src="/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-MedicalCostPersonal/output_16_1.png" class></p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">plt.rcParams[<span class="string">"figure.figsize"</span>]=(<span class="number">16</span>,<span class="number">6</span>)</span><br><span class="line">plt.subplot(<span class="number">2</span>,<span class="number">2</span>,<span class="number">1</span>)</span><br><span class="line">sns.violinplot(x=<span class="string">"sex"</span>, y=<span class="string">"bmi"</span>, data=df)  <span class="comment">## 小提琴图</span></span><br><span class="line"></span><br><span class="line">plt.subplot(<span class="number">2</span>,<span class="number">2</span>,<span class="number">2</span>)</span><br><span class="line">sns.violinplot(x=<span class="string">"smoker"</span>, y=<span class="string">"bmi"</span>, data=df)</span><br><span class="line"></span><br><span class="line">plt.subplot(<span class="number">2</span>,<span class="number">2</span>,<span class="number">3</span>)</span><br><span class="line">sns.violinplot(x=<span class="string">"risk_type"</span>, y=<span class="string">"bmi"</span>, data=df)</span><br><span class="line"></span><br><span class="line">plt.subplot(<span class="number">2</span>,<span class="number">2</span>,<span class="number">4</span>)</span><br><span class="line">sns.violinplot(x=<span class="string">"Age_group"</span>, y=<span class="string">"bmi"</span>, data=df)</span><br></pre></td></tr></table></figure>
 <pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f60692f6590&gt;
-</code></pre>
-<meta name="referrer" content="no-referrer">
-<img src="/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-MedicalCostPersonal/output_17_1.png" class>
+</code></pre><p><meta name="referrer" content="no-referrer"><br><img src="/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-MedicalCostPersonal/output_17_1.png" class></p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">plt.rcParams[<span class="string">"figure.figsize"</span>]=(<span class="number">16</span>,<span class="number">6</span>)</span><br><span class="line">plt.subplot(<span class="number">2</span>,<span class="number">2</span>,<span class="number">1</span>)</span><br><span class="line">sns.violinplot(x=<span class="string">"sex"</span>, y=<span class="string">"Charge"</span>, data=df)</span><br><span class="line"></span><br><span class="line">plt.subplot(<span class="number">2</span>,<span class="number">2</span>,<span class="number">2</span>)</span><br><span class="line">sns.violinplot(x=<span class="string">"smoker"</span>, y=<span class="string">"Charge"</span>, data=df)</span><br><span class="line"></span><br><span class="line">plt.subplot(<span class="number">2</span>,<span class="number">2</span>,<span class="number">3</span>)</span><br><span class="line">sns.violinplot(x=<span class="string">"risk_type"</span>, y=<span class="string">"Charge"</span>, data=df)</span><br><span class="line"></span><br><span class="line">plt.subplot(<span class="number">2</span>,<span class="number">2</span>,<span class="number">4</span>)</span><br><span class="line">sns.violinplot(x=<span class="string">"Age_group"</span>, y=<span class="string">"Charge"</span>, data=df)</span><br></pre></td></tr></table></figure>
 <pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f6069128bd0&gt;
-</code></pre>
-<meta name="referrer" content="no-referrer">
-<img src="/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-MedicalCostPersonal/output_18_1.png" class>
+</code></pre><p><meta name="referrer" content="no-referrer"><br><img src="/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-MedicalCostPersonal/output_18_1.png" class></p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">plt.rcParams[<span class="string">"figure.figsize"</span>]=(<span class="number">28</span>,<span class="number">10</span>)</span><br><span class="line">plt.subplot(<span class="number">2</span>,<span class="number">2</span>,<span class="number">1</span>)</span><br><span class="line">sns.violinplot(x=<span class="string">"children"</span>, y=<span class="string">"bmi"</span>, data=df, hue=<span class="string">"smoker"</span>)</span><br><span class="line"></span><br><span class="line">plt.rcParams[<span class="string">"figure.figsize"</span>]=(<span class="number">28</span>,<span class="number">10</span>)</span><br><span class="line">plt.subplot(<span class="number">2</span>,<span class="number">2</span>,<span class="number">3</span>)</span><br><span class="line">sns.violinplot(x=<span class="string">"children"</span>, y=<span class="string">"Charge"</span>, data=df, hue=<span class="string">"smoker"</span>)</span><br></pre></td></tr></table></figure>
 <pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f6069054ad0&gt;
-</code></pre>
-<meta name="referrer" content="no-referrer">
-<img src="/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-MedicalCostPersonal/output_19_1.png" class>
+</code></pre><p><meta name="referrer" content="no-referrer"><br><img src="/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-MedicalCostPersonal/output_19_1.png" class></p>
 
     </div>
 
@@ -609,8 +588,8 @@ dtype: int64
   <div id="qr" style="display: none;">
       
       <div style="display: inline-block;">
-        <img src="/images/reward2021.png" alt="Skye WeChat Pay">
-        <p>WeChat Pay</p>
+        <img src="/images/reward2021.png" alt="Skye WeChat Bezahlung">
+        <p>WeChat Bezahlung</p>
       </div>
       
       <div style="display: inline-block;">
@@ -787,13 +766,13 @@ dtype: int64
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">407k</span>
+    <span title="站点总字数">397k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">6:10</span>
+    <span title="站点阅读时长">6:01</span>
 </div>
 
 

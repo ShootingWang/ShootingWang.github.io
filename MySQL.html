@@ -311,81 +311,66 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <center></center>
-<a id="more"></a>
-<h1 id="存储引擎"><a class="header-anchor" href="#存储引擎"></a>存储引擎</h1>
-<p>MySQL在v5.1之前的默认存储引擎使MyISAM，在此之后的默认存储引擎是InnoDB</p>
-<h1 id="表的类型"><a class="header-anchor" href="#表的类型"></a>表的类型</h1>
-<ol>
-<li><strong>永久表</strong></li>
-</ol>
-<ul>
+        <p><center></center><br><a id="more"></a></p>
+<h1 id="存储引擎"><a href="#存储引擎" class="headerlink" title="存储引擎"></a>存储引擎</h1><p>MySQL在v5.1之前的默认存储引擎使MyISAM，在此之后的默认存储引擎是InnoDB</p>
+<h1 id="表的类型"><a href="#表的类型" class="headerlink" title="表的类型"></a>表的类型</h1><ol>
+<li><strong>永久表</strong><ul>
 <li>创建以后用于长期保存数据的表</li>
 </ul>
-<ol start="2">
-<li><strong>临时表</strong></li>
-</ol>
-<ul>
+</li>
+<li><strong>临时表</strong><ul>
 <li>只保存临时数据</li>
 <li>能够长久存在</li>
 </ul>
-<ol start="3">
-<li><strong>虚表/视图</strong></li>
+</li>
+<li><strong>虚表/视图</strong><h2 id="永久表"><a href="#永久表" class="headerlink" title="永久表"></a>永久表</h2></li>
 </ol>
-<h2 id="永久表"><a class="header-anchor" href="#永久表"></a>永久表</h2>
-<h2 id="临时表"><a class="header-anchor" href="#临时表"></a>临时表</h2>
-<h3 id="内存临时表"><a class="header-anchor" href="#内存临时表"></a>内存临时表</h3>
-<ul>
+<h2 id="临时表"><a href="#临时表" class="headerlink" title="临时表"></a>临时表</h2><h3 id="内存临时表"><a href="#内存临时表" class="headerlink" title="内存临时表"></a>内存临时表</h3><ul>
 <li>使用的是MEMORY存储引擎</li>
 </ul>
-<h3 id="磁盘临时表"><a class="header-anchor" href="#磁盘临时表"></a>磁盘临时表</h3>
-<h2 id="视图"><a class="header-anchor" href="#视图"></a>视图</h2>
-<h1 id="索引"><a class="header-anchor" href="#索引"></a>索引</h1>
-<p>索引是存储在一张表中特定列上的数据结构</p>
+<h3 id="磁盘临时表"><a href="#磁盘临时表" class="headerlink" title="磁盘临时表"></a>磁盘临时表</h3><h2 id="视图"><a href="#视图" class="headerlink" title="视图"></a>视图</h2><h1 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h1><p>索引是存储在一张表中特定列上的数据结构</p>
 <ul>
 <li>索引是在列上创建的</li>
 <li>索引是一种数据结构</li>
 </ul>
-<h2 id="全局索引"><a class="header-anchor" href="#全局索引"></a>全局索引</h2>
-<p>FULLTEXT</p>
+<h2 id="全局索引"><a href="#全局索引" class="headerlink" title="全局索引"></a>全局索引</h2><p>FULLTEXT</p>
 <ul>
 <li>目前只有MyISAM引擎支持全局索引</li>
 </ul>
-<h2 id="哈希索引"><a class="header-anchor" href="#哈希索引"></a>哈希索引</h2>
-<p>HASH</p>
+<h2 id="哈希索引"><a href="#哈希索引" class="headerlink" title="哈希索引"></a>哈希索引</h2><p>HASH</p>
 <ul>
 <li>是MySQL中用到的唯一键值对（key-value）的数据结构</li>
 <li>哈希索引适合应用于查找单个键的情况</li>
 <li>在范围查找中，哈希索引的性能很低</li>
 </ul>
-<h2 id="B-Tree索引"><a class="header-anchor" href="#B-Tree索引"></a>B-Tree索引</h2>
-<p>平衡树索引</p>
+<h2 id="B-Tree索引"><a href="#B-Tree索引" class="headerlink" title="B-Tree索引"></a>B-Tree索引</h2><p>平衡树索引</p>
 <ul>
-<li>存在很多变种</li>
+<li>存在很多变种<ul>
 <li>B+Tree</li>
 <li>……</li>
 </ul>
-<h2 id="R-Tree索引"><a class="header-anchor" href="#R-Tree索引"></a>R-Tree索引</h2>
-<ul>
+</li>
+</ul>
+<h2 id="R-Tree索引"><a href="#R-Tree索引" class="headerlink" title="R-Tree索引"></a>R-Tree索引</h2><ul>
 <li>在MySQL中较少使用</li>
 <li>仅支持geometry数据类型</li>
-<li>支持该类型的存储引擎有：</li>
+<li>支持该类型的存储引擎有：<ul>
 <li>MyISAM</li>
 <li>BDb</li>
 <li>InnoDb</li>
 <li>NDb</li>
 <li>Archive</li>
+</ul>
+</li>
 <li>相对于B-Tree来说，R-Tree的优势在于范围查找</li>
 </ul>
-<h1 id="MySQL自带数据库"><a class="header-anchor" href="#MySQL自带数据库"></a>MySQL自带数据库</h1>
-<p>MySQL自带三个数据库：</p>
+<h1 id="MySQL自带数据库"><a href="#MySQL自带数据库" class="headerlink" title="MySQL自带数据库"></a>MySQL自带数据库</h1><p>MySQL自带三个数据库：</p>
 <ul>
 <li>information_schema</li>
 <li>performance_schema</li>
 <li>mysql</li>
 </ul>
-<h2 id="information-schema"><a class="header-anchor" href="#information-schema"></a>information_schema</h2>
-<p>提供访问数据库元数据的方式；可称information_schema是一个元数据库。</p>
+<h2 id="information-schema"><a href="#information-schema" class="headerlink" title="information_schema"></a>information_schema</h2><p>提供访问数据库元数据的方式；可称information_schema是一个元数据库。</p>
 <p><strong>元数据</strong>（meta data）：关于数据的数据（data about data）。也可称为“数据词典”、“系统目录”</p>
 <ul>
 <li>数据库名</li>
@@ -400,14 +385,14 @@
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
-<pre><code>.dataframe tbody tr th {
-    vertical-align: top;
-}
 
-.dataframe thead th {
-    text-align: center;
-}
-</code></pre>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: center;
+    }
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -649,61 +634,50 @@
   </tr></tbody>
 </table>
 </div>
+
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">REPEAT</span>(<span class="string">'* '</span>, @<span class="built_in">NUMBER</span> := @<span class="built_in">NUMBER</span> - <span class="number">1</span>)</span><br><span class="line"><span class="keyword">FROM</span> information_schema.tables, </span><br><span class="line">(<span class="keyword">SELECT</span> @<span class="built_in">NUMBER</span>:= <span class="number">13</span>) t <span class="keyword">LIMIT</span> <span class="number">12</span>; </span><br><span class="line"><span class="comment">-- 输出：</span></span><br><span class="line">* * * * * * * * * * * * </span><br><span class="line">* * * * * * * * * * * </span><br><span class="line">* * * * * * * * * * </span><br><span class="line">* * * * * * * * * </span><br><span class="line">* * * * * * * * </span><br><span class="line">* * * * * * * </span><br><span class="line">* * * * * * </span><br><span class="line">* * * * * </span><br><span class="line">* * * * </span><br><span class="line">* * * </span><br><span class="line">* * </span><br><span class="line">* </span><br><span class="line"><span class="comment">-- from: https://www.hackerrank.com/challenges/draw-the-triangle-1/problem?h_r=profile</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 输出1000以内的所有素数</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">GROUP_CONCAT</span>(<span class="keyword">NUMB</span> SEPARATOR <span class="string">'&amp;'</span>)</span><br><span class="line"><span class="keyword">FROM</span> (</span><br><span class="line">    <span class="keyword">SELECT</span> @nun:=@<span class="keyword">num</span>+<span class="number">1</span> <span class="keyword">AS</span> <span class="keyword">NUMB</span> <span class="keyword">FROM</span></span><br><span class="line">    information_schema.tables t1,</span><br><span class="line">    information_schema.tables t2,</span><br><span class="line">    (<span class="keyword">SELECT</span> @<span class="keyword">num</span>:=<span class="number">1</span>) tmp</span><br><span class="line">) tempNum  <span class="comment">-- 所有的可能素数</span></span><br><span class="line"><span class="keyword">WHERE</span> <span class="keyword">NUMB</span> &lt;= <span class="number">1000</span> </span><br><span class="line"><span class="keyword">AND</span> <span class="keyword">NOT</span> <span class="keyword">EXISTS</span> (</span><br><span class="line">    <span class="keyword">SELECT</span> * <span class="keyword">FROM</span> </span><br><span class="line">    (</span><br><span class="line">        <span class="keyword">SELECT</span> @nu:=@nu+<span class="number">1</span> <span class="keyword">AS</span> NUMA <span class="keyword">FROM</span> </span><br><span class="line">        information_schema.tables t1,</span><br><span class="line">        information_schema.tables t2,</span><br><span class="line">        (<span class="keyword">SELECT</span> @nu:=<span class="number">1</span>) tmp1</span><br><span class="line">        <span class="keyword">LIMIT</span> <span class="number">1000</span></span><br><span class="line">    ) t  <span class="comment">-- NUMA是divisor</span></span><br><span class="line">    <span class="keyword">WHERE</span> <span class="keyword">FLOOR</span>(<span class="keyword">NUMB</span>/NUMA) = (<span class="keyword">NUMB</span>/NUMA)</span><br><span class="line">    <span class="keyword">AND</span> NUMA &lt; <span class="keyword">NUMB</span> </span><br><span class="line">    <span class="keyword">AND</span> NUMA &gt; <span class="number">1</span></span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 或</span></span><br><span class="line"><span class="keyword">SET</span> @potential_prime = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">SET</span> @divisor = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">GROUP_CONCAT</span>(POTENTIAL_PRIME SEPARATOR <span class="string">'&amp;'</span>) <span class="keyword">FROM</span></span><br><span class="line">(</span><br><span class="line">    <span class="keyword">SELECT</span> @potential_prime := @potential_prime + <span class="number">1</span> <span class="keyword">AS</span> POTENTIAL_PRIME </span><br><span class="line">    <span class="keyword">FROM</span> </span><br><span class="line">        information_schema.tables t1,</span><br><span class="line">        information_schema.tables t2</span><br><span class="line">    <span class="keyword">LIMIT</span> <span class="number">1000</span></span><br><span class="line">) list_of_potential_primes</span><br><span class="line"><span class="keyword">WHERE</span> <span class="keyword">NOT</span> <span class="keyword">EXISTS</span>(</span><br><span class="line">    <span class="keyword">SELECT</span> * <span class="keyword">FROM</span></span><br><span class="line">    (</span><br><span class="line">        <span class="keyword">SELECT</span> @divisor := @divisor + <span class="number">1</span> <span class="keyword">AS</span> DIVISOR </span><br><span class="line">        <span class="keyword">FROM</span> </span><br><span class="line">            information_schema.tables t3,</span><br><span class="line">            information_schema.tables t4</span><br><span class="line">        <span class="keyword">LIMIT</span> <span class="number">1000</span></span><br><span class="line">    ) list_of_divisors</span><br><span class="line">    <span class="keyword">WHERE</span> <span class="keyword">MOD</span>(POTENTIAL_PRIME, DIVISOR) = <span class="number">0</span></span><br><span class="line">    <span class="keyword">AND</span> POTENTIAL_PRIME &lt;&gt; DIVISOR</span><br><span class="line">    );</span><br><span class="line"><span class="comment">-- 参考：https://www.hackerrank.com/challenges/print-prime-numbers/forum</span></span><br></pre></td></tr></table></figure>
-<h1 id="触发器"><a class="header-anchor" href="#触发器"></a>触发器</h1>
-<p>允许用户定义一组操作，这些操作通过对指定的表进行删除、更新等命令来执行或激活</p>
-<h1 id="时间"><a class="header-anchor" href="#时间"></a>时间</h1>
-<ul>
-<li>时间不能写为<code>&lt;='2020-07-12'</code>的形式</li>
-<li><code>&lt;'2020-07-12'</code>是指2020年07月12日之前，不包括2020年07月12日</li>
-<li><code>&lt;='2020-07-12'</code>包含了2020年07月12日00时00分00秒，但不包含2020年07月12日一整天</li>
-<li>如果要包含2020年07月12日这一天，则应写为<code>&lt;'2020-07-13'</code></li>
+<h1 id="触发器"><a href="#触发器" class="headerlink" title="触发器"></a>触发器</h1><p>允许用户定义一组操作，这些操作通过对指定的表进行删除、更新等命令来执行或激活</p>
+<h1 id="时间"><a href="#时间" class="headerlink" title="时间"></a>时间</h1><ul>
+<li>时间不能写为<code>&lt;=&#39;2020-07-12&#39;</code>的形式<ul>
+<li><code>&lt;&#39;2020-07-12&#39;</code>是指2020年07月12日之前，不包括2020年07月12日</li>
+<li><code>&lt;=&#39;2020-07-12&#39;</code>包含了2020年07月12日00时00分00秒，但不包含2020年07月12日一整天</li>
+<li>如果要包含2020年07月12日这一天，则应写为<code>&lt;&#39;2020-07-13&#39;</code></li>
 </ul>
-<h1 id="运算"><a class="header-anchor" href="#运算"></a>运算</h1>
-<h2 id="不等于"><a class="header-anchor" href="#不等于"></a>不等于</h2>
-<ul>
+</li>
+</ul>
+<h1 id="运算"><a href="#运算" class="headerlink" title="运算"></a>运算</h1><h2 id="不等于"><a href="#不等于" class="headerlink" title="不等于"></a>不等于</h2><ul>
 <li>以不等于排除某些记录时，也会排除该字段为空的数据</li>
 </ul>
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> student</span><br><span class="line"><span class="keyword">WHERE</span> Sname != <span class="string">'王五'</span>;</span><br><span class="line"><span class="comment">-- 该查询语句的返回结果不包含包含Sname为空的记录</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 严谨的写法：</span></span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> student</span><br><span class="line"><span class="keyword">WHERE</span> Sname != <span class="string">'王五'</span> <span class="keyword">OR</span> Sname <span class="keyword">IS</span> <span class="literal">NULL</span>;</span><br><span class="line"><span class="comment">-- 返回结果不包括Sname为“王五”的记录，但包括Sname为空的记录</span></span><br></pre></td></tr></table></figure>
-<h1 id="字符串"><a class="header-anchor" href="#字符串"></a>字符串</h1>
-<h2 id="REPLACE"><a class="header-anchor" href="#REPLACE"></a>REPLACE()</h2>
-<ul>
+<h1 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h1><h2 id="REPLACE"><a href="#REPLACE" class="headerlink" title="REPLACE()"></a>REPLACE()</h2><ul>
 <li><code>LEFT</code>, <code>RIGHT</code>, <code>SUBSTRING</code>应习惯性与<code>REPLACE()</code>嵌套使用；因为有些数据中间可能含有意料之外的空格，导致字符串切片出错。</li>
 </ul>
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">SUBSTRING(<span class="keyword">REPLACE</span>(字段, <span class="string">' '</span>, <span class="string">''</span>), <span class="number">7</span>, <span class="number">4</span>)</span><br></pre></td></tr></table></figure>
-<h2 id="SUBTRING"><a class="header-anchor" href="#SUBTRING"></a>SUBTRING()</h2>
-<p>提取字符串的子串</p>
+<h2 id="SUBTRING"><a href="#SUBTRING" class="headerlink" title="SUBTRING()"></a>SUBTRING()</h2><p>提取字符串的子串</p>
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">SUBSTRING(S, 3, 5)  <span class="comment">-- 提取字符串S的从左数第3个字母起（包括第3个）的5个字母</span></span><br><span class="line">SUBSTRING(S, -3)  <span class="comment">-- 提取字符串S的从右倒数第3个字母起（包括第3个）、向右的所有的字母</span></span><br></pre></td></tr></table></figure>
 <div class="note default">
-            <p>相关在线练习：</p><ul><li><a href="https://www.hackerrank.com/challenges/weather-observation-station-6/problem" target="_blank" rel="noopener">HackerRank1</a></li><li><a href="https://www.hackerrank.com/challenges/weather-observation-station-7/problem" target="_blank" rel="noopener">HackerRank2</a></li><li>[HackerRank3]((<a href="https://www.hackerrank.com/challenges/weather-observation-station-8/problem" target="_blank" rel="noopener">https://www.hackerrank.com/challenges/weather-observation-station-8/problem</a>)</li><li><a href="https://www.hackerrank.com/challenges/weather-observation-station-9/problem" target="_blank" rel="noopener">HackerRank4</a></li><li><a href="https://www.hackerrank.com/challenges/weather-observation-station-10/problem" target="_blank" rel="noopener">HackerRank5</a></li><li><a href="https://www.hackerrank.com/challenges/weather-observation-station-11" target="_blank" rel="noopener">HackerRank6</a></li></ul>
+            <p>相关在线练习：</p><ul><li><a href="https://www.hackerrank.com/challenges/weather-observation-station-6/problem" target="_blank" rel="noopener">HackerRank1</a></li><li><a href="https://www.hackerrank.com/challenges/weather-observation-station-7/problem" target="_blank" rel="noopener">HackerRank2</a></li><li><a href="(https://www.hackerrank.com/challenges/weather-observation-station-8/problem">HackerRank3</a></li><li><a href="https://www.hackerrank.com/challenges/weather-observation-station-9/problem" target="_blank" rel="noopener">HackerRank4</a></li><li><a href="https://www.hackerrank.com/challenges/weather-observation-station-10/problem" target="_blank" rel="noopener">HackerRank5</a></li><li><a href="https://www.hackerrank.com/challenges/weather-observation-station-11" target="_blank" rel="noopener">HackerRank6</a></li></ul>
           </div>
-<h1 id="其他"><a class="header-anchor" href="#其他"></a>其他</h1>
-<h2 id="SET"><a class="header-anchor" href="#SET"></a>SET</h2>
-<p><code>SET @变量名称=变量值</code>：可以快速替换重复的代码</p>
+<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><h2 id="SET"><a href="#SET" class="headerlink" title="SET"></a>SET</h2><p><code>SET @变量名称=变量值</code>：可以快速替换重复的代码</p>
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SET</span> @DT=<span class="string">'2020-07-12'</span>;</span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> table_1 <span class="keyword">WHERE</span> <span class="built_in">date</span>&gt;@DT;</span><br></pre></td></tr></table></figure>
-<h2 id><a class="header-anchor" href="#"></a>@</h2>
-<p><code>SELECT (@i:=@i+1) AS num </code>生成一列递增序列</p>
-<h2 id="延时注入"><a class="header-anchor" href="#延时注入"></a>延时注入</h2>
-<p>MySQL中使用延时注入常用的语句：</p>
+<h2 id><a href="#" class="headerlink" title="@"></a>@</h2><p><code>SELECT (@i:=@i+1) AS num</code>生成一列递增序列 </p>
+<h2 id="延时注入"><a href="#延时注入" class="headerlink" title="延时注入"></a>延时注入</h2><p>MySQL中使用延时注入常用的语句：</p>
 <ul>
 <li><code>sleep(5)</code></li>
 <li><code>BENCHMARK(10000000, MDG(1))</code>：第一个参数是执行的次数，第二个参数是要执行的函数/表达式</li>
 </ul>
 <p>但是使用<code>BENCHMARK() (M)</code>会让MySQL停一下，会大量消耗web服务器资源</p>
-<h1 id="其他注意事项"><a class="header-anchor" href="#其他注意事项"></a>其他注意事项</h1>
-<ul>
+<h1 id="其他注意事项"><a href="#其他注意事项" class="headerlink" title="其他注意事项"></a>其他注意事项</h1><ul>
 <li>注意字段的格式，数字和字符串不会隐式转换</li>
-<li>以 MySQL 5.7 或更低版本为准的数据库中，如何正确选择和使用合适的数据类：
-<ul>
+<li>以 MySQL 5.7 或更低版本为准的数据库中，如何正确选择和使用合适的数据类：<ul>
 <li>更小通常更好</li>
 <li>尽量用最简单的数据类型</li>
 <li>尽量不适用NULL作为字段值</li>
 </ul>
 </li>
 </ul>
-<h1 id="参考资料"><a class="header-anchor" href="#参考资料"></a>参考资料</h1>
-<ul>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
 <li><a href="https://mp.weixin.qq.com/s?__biz=MzA3MTg4NjY4Mw==&amp;mid=2457305755&amp;idx=2&amp;sn=764158cf905b0622e1697f51baa718f2&amp;chksm=88a590afbfd219b98bd7d83c2f4ea4d572654b5889eff254bbbb60f2189f61aee393e1801510&amp;mpshare=1&amp;scene=1&amp;srcid=&amp;sharer_sharetime=1590150427096&amp;sharer_shareid=b539221659d6ecf12200314308b58dd3&amp;key=21ed68970b00e8fc75b1e914e6c754e962a5fcec08d9c1e0fb5bfcb82d495aac1ab014508f15a5ebb1eaf6e1c2a2036cecc7516e989e5f1bd3b3615846e67437d7d0ad461bc0ca4d28139dc860680c5b&amp;ascene=1&amp;uin=MjAwNDUzMjgxNw%3D%3D&amp;devicetype=Windows+10+x64&amp;version=62090070&amp;lang=zh_CN&amp;exportkey=AbupEngztSgB4dsmRHvGbpk%3D&amp;pass_ticket=iLa2XiZaCBS2XSrbXAnYFAIdgj9HEiggWqWDoDR8tX5Ckgf6sdWkU3%2BCxbmiJIYM" target="_blank" rel="noopener">9 道 MySQL 面试题</a></li>
 <li><a href="https://mp.weixin.qq.com/s?__biz=MzA3MTg4NjY4Mw==&amp;mid=2457307570&amp;idx=2&amp;sn=c8a3f3f45fa2ed9998be713528272ad9&amp;chksm=88a59b86bfd21290bf9dc79be9bebfe57bffcc1352682b152bb354c7177449021777f6fcb1ca&amp;mpshare=1&amp;scene=24&amp;srcid=&amp;sharer_sharetime=1592959329103&amp;sharer_shareid=b539221659d6ecf12200314308b58dd3&amp;key=41f971365debdfe9cf3f83cd39b1b1e3392a61f125626cee8d56db3cf1d9e8674ec2fb0399a4cedb0f3b12737250e9ccd8423a5f76c71a1e27a8026edf2de8c86538603ff9370d460020772e5dfff60d&amp;ascene=14&amp;uin=MjAwNDUzMjgxNw%3D%3D&amp;devicetype=Windows+10+x64&amp;version=62090529&amp;lang=zh_CN&amp;exportkey=AXttlvqiichHWPtD4HqdOrU%3D&amp;pass_ticket=ws7WEjys7meG8tQvR9%2BINrP5RKEp1Mus1mqNfeaPYCNHYnD2%2FhjK5ZF3mONasy7H" target="_blank" rel="noopener">那些SQL里面踩过的坑</a></li>
 <li><a href="https://www.jianshu.com/p/ea15158f39f7" target="_blank" rel="noopener">MySQL的information_schema库</a></li>
@@ -724,8 +698,8 @@
   <div id="qr" style="display: none;">
       
       <div style="display: inline-block;">
-        <img src="/images/reward2021.png" alt="Skye WeChat Pay">
-        <p>WeChat Pay</p>
+        <img src="/images/reward2021.png" alt="Skye WeChat Bezahlung">
+        <p>WeChat Bezahlung</p>
       </div>
       
       <div style="display: inline-block;">
@@ -904,13 +878,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">407k</span>
+    <span title="站点总字数">397k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">6:10</span>
+    <span title="站点阅读时长">6:01</span>
 </div>
 
 
