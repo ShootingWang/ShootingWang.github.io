@@ -32,7 +32,7 @@
 <meta property="og:site_name" content="Skye">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-03-23T07:54:29.000Z">
-<meta property="article:modified_time" content="2022-04-07T11:28:15.510Z">
+<meta property="article:modified_time" content="2022-04-07T11:30:33.811Z">
 <meta property="article:author" content="Skye">
 <meta property="article:tag" content="Casual Inference 因果推断">
 <meta name="twitter:card" content="summary">
@@ -265,7 +265,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-04-07 19:28:15" itemprop="dateModified" datetime="2022-04-07T19:28:15+08:00">2022-04-07</time>
+                <time title="修改时间：2022-04-07 19:30:33" itemprop="dateModified" datetime="2022-04-07T19:30:33+08:00">2022-04-07</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -310,9 +310,10 @@
 
       
         <meta name="referrer" content="no-referrer">
-
-<p><center></center><br><a id="more"></a></p>
-<h1 id="倾向评分匹配"><a href="#倾向评分匹配" class="headerlink" title="倾向评分匹配"></a>倾向评分匹配</h1><p>倾向评分匹配/倾向性得分匹配（PSM，Propensity Score Matching）</p>
+<center></center>
+<a id="more"></a>
+<h1 id="倾向评分匹配"><a class="header-anchor" href="#倾向评分匹配"></a>倾向评分匹配</h1>
+<p>倾向评分匹配/倾向性得分匹配（PSM，Propensity Score Matching）</p>
 <ul>
 <li>通过观测变量对实验组的预测概率进行匹配</li>
 <li>处理观察性研究（observational study）的经典方法</li>
@@ -325,18 +326,19 @@
 <li>对照组和实验组之间的差异可能是选择性偏差导致的，不一定是干预策略导致的</li>
 </ol>
 <div class="note warning">
-            <p><strong>倾向性得分</strong>：一个用户/样本属于实验组的“倾向性”（给定$x$的情况下，样本进入实验组的条件概率）。</p><script type="math/tex; mode=display">e(x)=P\left(T=1|X=x\right)</script><p>其中，</p><ul><li>$T$：干预</li><li>$X$：样本属性/协变量</li><li>$Y$：观测结果/结果变量</li></ul>
+            <p><strong>倾向性得分</strong>：一个用户/样本属于实验组的“倾向性”（给定$x$的情况下，样本进入实验组的条件概率）。<br>$$e(x)=P\left(T=1|X=x\right)$$<br>其中，</p><ul><li>$T$：干预</li><li>$X$：样本属性/协变量</li><li>$Y$：观测结果/结果变量</li></ul>
           </div>
 <div class="note success">
-            <p><strong>Theorem 1: 平衡性质（Balancing Property）</strong>:</p><script type="math/tex; mode=display">T_i \perp X_i \mid e(X_i)</script>
+            <p><strong>Theorem 1: 平衡性质（Balancing Property）</strong>:<br>$$T_i \perp X_i \mid e(X_i)$$</p>
           </div>
 <div class="note success">
-            <p><strong>Theorem 2: 无混淆（Unconfoundedness）</strong>：</p><script type="math/tex; mode=display">T_i \perp Y_{i0}, Y_{i1} \mid e(X_i)</script>
+            <p><strong>Theorem 2: 无混淆（Unconfoundedness）</strong>：<br>$$ T_i \perp Y_{i0}, Y_{i1} \mid e(X_i)$$</p>
           </div>
 <blockquote>
 <ul>
 <li>倾向性得分是一种“Balancing score”</li>
-<li>对于倾向性得分$e(X_i)$相同的一群用户$i$：<ul>
+<li>对于倾向性得分$e(X_i)$相同的一群用户$i$：
+<ul>
 <li>干预$T_i$和特征$X_i$是独立的</li>
 <li>干预$T_i$和潜在结果$Y_{i0}, Y_{i1} $是独立的</li>
 </ul>
@@ -347,19 +349,24 @@
 <li>当协变量$X$不影响干预变量$T$、但影响结果变量$Y$时，引入协变量可以提高干预精度</li>
 <li>当遗漏了重要的协变量时，会导致偏差</li>
 </ul>
-<h2 id="前提-假设"><a href="#前提-假设" class="headerlink" title="前提/假设"></a>前提/假设</h2><p>PSM需满足以下两个前提/假设：</p>
+<h2 id="前提-假设"><a class="header-anchor" href="#前提-假设"></a>前提/假设</h2>
+<p>PSM需满足以下两个前提/假设：</p>
 <ol>
 <li>条件独立假设：控制了协变量后，样本是否接收干预与潜在结果相互独立</li>
 <li>共同支撑条件：若匹配结果较为理想，匹配后的两条核密度曲线较为相近</li>
 </ol>
-<h1 id="匹配方法"><a href="#匹配方法" class="headerlink" title="匹配方法"></a>匹配方法</h1><p>PSM通过统计模型对每个样本计算倾向性得分，再按照倾向得分是否接近进行匹配。<br>以分组变量为解释变量（分类变量），样本属性（可能会影响到结果的变量）作为被解释变量，进行<a href="/%E7%AE%97%E6%B3%95-LogisticRegression.html" title="逻辑回归（Logistic Regression）">逻辑回归（Logistic Regression）</a>，从而计算每个样本的倾向性得分。</p>
+<h1 id="匹配方法"><a class="header-anchor" href="#匹配方法"></a>匹配方法</h1>
+<p>PSM通过统计模型对每个样本计算倾向性得分，再按照倾向得分是否接近进行匹配。<br>
+以分组变量为解释变量（分类变量），样本属性（可能会影响到结果的变量）作为被解释变量，进行<a href="/%E7%AE%97%E6%B3%95-LogisticRegression.html" title="逻辑回归（Logistic Regression）">逻辑回归（Logistic Regression）</a>，从而计算每个样本的倾向性得分。</p>
 <ul>
-<li>一对一匹配：在控制组中选择与实验组样本最相近的<strong>单个</strong>样本进行匹配<ul>
+<li>一对一匹配：在控制组中选择与实验组样本最相近的<strong>单个</strong>样本进行匹配
+<ul>
 <li>优点：匹配的样本之间较为相近，偏差较小</li>
 <li>缺点：样本匹配量小、估计的方差较大</li>
 </ul>
 </li>
-<li>一对多匹配：在控制组中选择<strong>多个</strong>与实验组样本相近的样本进行匹配<ul>
+<li>一对多匹配：在控制组中选择<strong>多个</strong>与实验组样本相近的样本进行匹配
+<ul>
 <li>缺点：在控制组中找到的第2个、第3个、……样本与实验组样本的近似性会减弱，会增大估计的偏差</li>
 </ul>
 </li>
@@ -367,7 +374,6 @@
 <blockquote>
 <p>控制组样本量较多时，可以考虑使用一对多匹配</p>
 </blockquote>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -406,46 +412,66 @@
 <td style="text-align:left">分块匹配法</td>
 <td style="text-align:left"></td>
 <td style="text-align:center"></td>
+<td style="text-align:center"></td>
 </tr>
 </tbody>
 </table>
-</div>
-<h2 id="最近邻匹配"><a href="#最近邻匹配" class="headerlink" title="最近邻匹配"></a>最近邻匹配</h2><p>最近邻匹配（Nearest-neighbor Matching）：选择控制组中倾向性得分最接近的样本作为匹配样本</p>
-<p>干预样本$i$与无干预样本$j$相匹配：<br>\begin{equation}<br>\mid p_i - p_j \mid = \min_{k \in \{ T=0 \} } \left\{ \mid p_i - p_k \mid \right\}<br>\end{equation}</p>
-<p>try</p>
-<h2 id="半径匹配"><a href="#半径匹配" class="headerlink" title="半径匹配"></a>半径匹配</h2><p>半径匹配（Radius Matching）：</p>
-<h2 id="核匹配"><a href="#核匹配" class="headerlink" title="核匹配"></a>核匹配</h2><p>核匹配（Kernel Matching）</p>
-<h2 id="卡尺匹配"><a href="#卡尺匹配" class="headerlink" title="卡尺匹配"></a>卡尺匹配</h2><p>卡尺匹配（Caliper Matching）：给定误差 $\delta &gt; 0$，干预样本$i$与无干预样本$j$相匹配<br>\begin{equation}<br>\delta &gt; \mid p_i - p_j \mid = \min_{k\in \{ T=0 \} } \left\{ \mid p_i - p_k \mid \right\}<br>\end{equation}</p>
+<h2 id="最近邻匹配"><a class="header-anchor" href="#最近邻匹配"></a>最近邻匹配</h2>
+<p>最近邻匹配（Nearest-neighbor Matching）：选择控制组中倾向性得分最接近的样本作为匹配样本</p>
+<p>干预样本$i$与无干预样本$j$相匹配：<br>
+\begin{equation}<br>
+\mid p_i - p_j \mid = \min_{k \in { T=0 } } \left{ \mid p_i - p_k \mid \right}<br>
+\end{equation}</p>
+<h2 id="半径匹配"><a class="header-anchor" href="#半径匹配"></a>半径匹配</h2>
+<p>半径匹配（Radius Matching）：</p>
+<h2 id="核匹配"><a class="header-anchor" href="#核匹配"></a>核匹配</h2>
+<p>核匹配（Kernel Matching）</p>
+<h2 id="卡尺匹配"><a class="header-anchor" href="#卡尺匹配"></a>卡尺匹配</h2>
+<p>卡尺匹配（Caliper Matching）：给定误差 $\delta &gt; 0$，干预样本$i$与无干预样本$j$相匹配<br>
+\begin{equation}<br>
+\delta &gt; \mid p_i - p_j \mid = \min_{k\in { T=0 } } \left{ \mid p_i - p_k \mid \right}<br>
+\end{equation}</p>
 <ul>
 <li>可能会有样本找不到匹配对象</li>
 </ul>
-<h2 id="分块匹配法"><a href="#分块匹配法" class="headerlink" title="分块匹配法"></a>分块匹配法</h2><p>分块匹配法（Stratification）</p>
-<h1 id="匹配效果检验"><a href="#匹配效果检验" class="headerlink" title="匹配效果检验"></a>匹配效果检验</h1><h2 id="共同支撑检验"><a href="#共同支撑检验" class="headerlink" title="共同支撑检验"></a>共同支撑检验</h2><p>为了提高匹配质量，仅保留倾向得分重叠部分的个体（会损失一定的样本量）。</p>
+<h2 id="分块匹配法"><a class="header-anchor" href="#分块匹配法"></a>分块匹配法</h2>
+<p>分块匹配法（Stratification）</p>
+<h1 id="匹配效果检验"><a class="header-anchor" href="#匹配效果检验"></a>匹配效果检验</h1>
+<h2 id="共同支撑检验"><a class="header-anchor" href="#共同支撑检验"></a>共同支撑检验</h2>
+<p>为了提高匹配质量，仅保留倾向得分重叠部分的个体（会损失一定的样本量）。</p>
 <p>方法：</p>
 <ul>
 <li>比较匹配前后的核密度图</li>
 <li>绘制条形图，显示倾向得分的共同取值范围</li>
 </ul>
-<h2 id="平衡性检验"><a href="#平衡性检验" class="headerlink" title="平衡性检验"></a>平衡性检验</h2><p>检验目的：观察匹配后的各个变量的均值是否有显著差异</p>
-<h1 id="Pros-amp-Cons"><a href="#Pros-amp-Cons" class="headerlink" title="Pros &amp; Cons"></a>Pros &amp; Cons</h1><h2 id="优势-Strengths"><a href="#优势-Strengths" class="headerlink" title="优势 Strengths"></a>优势 Strengths</h2><ul>
+<h2 id="平衡性检验"><a class="header-anchor" href="#平衡性检验"></a>平衡性检验</h2>
+<p>检验目的：观察匹配后的各个变量的均值是否有显著差异</p>
+<h1 id="Pros-Cons"><a class="header-anchor" href="#Pros-Cons"></a>Pros &amp; Cons</h1>
+<h2 id="优势-Strengths"><a class="header-anchor" href="#优势-Strengths"></a>优势 Strengths</h2>
+<ul>
 <li>在计算倾向性得分时，考虑了交互项（interaction terms）</li>
 <li>可用于二分变量（dichotomous variables）和连续变量（continuous variables）</li>
 <li>较少依赖于p值或其他特定于模型的假设</li>
 </ul>
-<h2 id="局限性-Limitations"><a href="#局限性-Limitations" class="headerlink" title="局限性 Limitations"></a>局限性 Limitations</h2><ul>
+<h2 id="局限性-Limitations"><a class="header-anchor" href="#局限性-Limitations"></a>局限性 Limitations</h2>
+<ul>
 <li>需要大样本（PSA works best in large samples to obtain a good balance of covariates.）</li>
 <li>要求控制组和实验组有较大的共同取值范围（Group overlap must be substantial to enable appropriate matching.）</li>
 <li>要尽可能控制可观测的变量，如果存在不可观测的协变量，会导致“隐形偏差”（The most serious limitation is that PSA only controls for measured covariates. Matching on observed covariates may open backdoor paths in unobserved covariates and exacerbate hidden bias.）</li>
 <li>没有考虑样本的聚集性，邻域层级的研究可能会存在问题（Does not take into account clustering (problematic for neighborhood-level research).）</li>
 </ul>
-<h1 id="参考资料-推荐阅读"><a href="#参考资料-推荐阅读" class="headerlink" title="参考资料/推荐阅读"></a>参考资料/推荐阅读</h1><ul>
+<h1 id="参考资料-推荐阅读"><a class="header-anchor" href="#参考资料-推荐阅读"></a>参考资料/推荐阅读</h1>
+<ul>
 <li><a href="https://dango.rocks/blog/2019/01/20/Causal-Inference-Introduction2-Propensity-Score-Matching/" target="_blank" rel="noopener">因果推断漫谈（二）：倾向性得分匹配介绍[Blog]</a></li>
 <li><a href="https://zhuanlan.zhihu.com/p/90193649" target="_blank" rel="noopener">PSM的原理及STATA操作[ZhiHu]</a></li>
 <li><a href="https://www.jianshu.com/p/1a71fdff40d7" target="_blank" rel="noopener">PSM倾向得分匹配法学习指南[JianShu]</a></li>
 <li><a href="https://liberalarts.utexas.edu/prc/_files/cs/Spring2013_Blanchard_Propensity%20Score%20Matching.pdf" target="_blank" rel="noopener">An Introduction to Propensity Score Matching</a></li>
 <li><a href="https://onlinelibrary.wiley.com/doi/10.1111/j.1467-6419.2007.00527.x" target="_blank" rel="noopener">Caliendo M, Kopeinig S. Some practical guidance for the implementation of propensity score matching [J]. Journal of economic surveys, 2008, 22(1): 31-72.</a></li>
 <li><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3144483/" target="_blank" rel="noopener">Austin, Peter C . An Introduction to Propensity Score Methods for Reducing the Effects of Confounding in Observational Studies [J]. Multivariate Behav Res, 2011, 46(3):399-424.</a></li>
-<li><a href="https://www.publichealth.columbia.edu/research/population-health-methods/propensity-score-analysis" target="_blank" rel="noopener">Propensity Score Analysis</a><h2 id="软件实现"><a href="#软件实现" class="headerlink" title="软件实现"></a>软件实现</h2></li>
+<li><a href="https://www.publichealth.columbia.edu/research/population-health-methods/propensity-score-analysis" target="_blank" rel="noopener">Propensity Score Analysis</a></li>
+</ul>
+<h2 id="软件实现"><a class="header-anchor" href="#软件实现"></a>软件实现</h2>
+<ul>
 <li><a href="http://fmwww.bc.edu/RePEc/usug2001/psmatch.pdf" target="_blank" rel="noopener">STATA: Implementing Propensity Score Matching Estimators with STATA</a></li>
 <li><a href="http://sekhon.berkeley.edu/matching/" target="_blank" rel="noopener">R: Multivariate and Propensity Score Matching Software for Causal Inference</a></li>
 <li><a href="http://sekhon.berkeley.edu/papers/MatchingJSS.pdf" target="_blank" rel="noopener">R: Sekhon J S . Multivariate and Propensity Score Matching Software with Automated Balance Optimization: The Matching package for R [J]. Journal of statistical software, 2011, 42(i07).</a></li>
@@ -570,7 +596,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#倾向评分匹配"><span class="nav-number">1.</span> <span class="nav-text">倾向评分匹配</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#前提-假设"><span class="nav-number">1.1.</span> <span class="nav-text">前提&#x2F;假设</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#匹配方法"><span class="nav-number">2.</span> <span class="nav-text">匹配方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#最近邻匹配"><span class="nav-number">2.1.</span> <span class="nav-text">最近邻匹配</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#半径匹配"><span class="nav-number">2.2.</span> <span class="nav-text">半径匹配</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#核匹配"><span class="nav-number">2.3.</span> <span class="nav-text">核匹配</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#卡尺匹配"><span class="nav-number">2.4.</span> <span class="nav-text">卡尺匹配</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分块匹配法"><span class="nav-number">2.5.</span> <span class="nav-text">分块匹配法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#匹配效果检验"><span class="nav-number">3.</span> <span class="nav-text">匹配效果检验</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#共同支撑检验"><span class="nav-number">3.1.</span> <span class="nav-text">共同支撑检验</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#平衡性检验"><span class="nav-number">3.2.</span> <span class="nav-text">平衡性检验</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Pros-amp-Cons"><span class="nav-number">4.</span> <span class="nav-text">Pros &amp; Cons</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#优势-Strengths"><span class="nav-number">4.1.</span> <span class="nav-text">优势 Strengths</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#局限性-Limitations"><span class="nav-number">4.2.</span> <span class="nav-text">局限性 Limitations</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料-推荐阅读"><span class="nav-number">5.</span> <span class="nav-text">参考资料&#x2F;推荐阅读</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#软件实现"><span class="nav-number">5.1.</span> <span class="nav-text">软件实现</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#倾向评分匹配"><span class="nav-number">1.</span> <span class="nav-text">倾向评分匹配</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#前提-假设"><span class="nav-number">1.1.</span> <span class="nav-text">前提&#x2F;假设</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#匹配方法"><span class="nav-number">2.</span> <span class="nav-text">匹配方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#最近邻匹配"><span class="nav-number">2.1.</span> <span class="nav-text">最近邻匹配</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#半径匹配"><span class="nav-number">2.2.</span> <span class="nav-text">半径匹配</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#核匹配"><span class="nav-number">2.3.</span> <span class="nav-text">核匹配</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#卡尺匹配"><span class="nav-number">2.4.</span> <span class="nav-text">卡尺匹配</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分块匹配法"><span class="nav-number">2.5.</span> <span class="nav-text">分块匹配法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#匹配效果检验"><span class="nav-number">3.</span> <span class="nav-text">匹配效果检验</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#共同支撑检验"><span class="nav-number">3.1.</span> <span class="nav-text">共同支撑检验</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#平衡性检验"><span class="nav-number">3.2.</span> <span class="nav-text">平衡性检验</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Pros-Cons"><span class="nav-number">4.</span> <span class="nav-text">Pros &amp; Cons</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#优势-Strengths"><span class="nav-number">4.1.</span> <span class="nav-text">优势 Strengths</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#局限性-Limitations"><span class="nav-number">4.2.</span> <span class="nav-text">局限性 Limitations</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料-推荐阅读"><span class="nav-number">5.</span> <span class="nav-text">参考资料&#x2F;推荐阅读</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#软件实现"><span class="nav-number">5.1.</span> <span class="nav-text">软件实现</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -727,8 +753,6 @@
 
 
 
-
-  
 
 
 
