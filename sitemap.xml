@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://github.com/ShootingWang/ShootingWang.github.io/Leetcode%E5%88%B7%E9%A2%98.html</loc>
+    
+    <lastmod>2022-04-07</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://github.com/ShootingWang/ShootingWang.github.io/sql-%E6%95%B0%E6%8D%AE%E5%BA%93.html</loc>
     
     <lastmod>2022-04-07</lastmod>
@@ -646,13 +653,6 @@
   </url>
   
   <url>
-    <loc>https://github.com/ShootingWang/ShootingWang.github.io/Leetcode%E5%88%B7%E9%A2%98.html</loc>
-    
-    <lastmod>2022-03-20</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://github.com/ShootingWang/ShootingWang.github.io/%E7%BC%96%E7%A8%8B%E9%A2%98%E5%BA%93.html</loc>
     
     <lastmod>2022-03-20</lastmod>
@@ -1251,13 +1251,6 @@
   
   <url>
     <loc>https://github.com/ShootingWang/ShootingWang.github.io/tags/%E7%BC%96%E7%A8%8B/</loc>
-    <lastmod>2022-04-07</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://github.com/ShootingWang/ShootingWang.github.io/tags/SQL/</loc>
     <lastmod>2022-04-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
