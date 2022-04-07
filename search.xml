@@ -1540,8 +1540,8 @@
         <category>SQL 数据库</category>
       </categories>
       <tags>
-        <tag>MySQL</tag>
         <tag>SQL 数据库</tag>
+        <tag>MySQL</tag>
       </tags>
   </entry>
   <entry>
@@ -2670,11 +2670,11 @@ window.onresize=function(){
 </script>
 <h1 id="样例"><a class="header-anchor" href="#样例"></a>样例</h1>
 <h2 id="饼图"><a class="header-anchor" href="#饼图"></a>饼图</h2>
-<div id="echarts2529" style="width: 85%;height: 800px;margin: 0 auto"></div>
+<div id="echarts8176" style="width: 85%;height: 800px;margin: 0 auto"></div>
 <script src="https://cdn.bootcss.com/echarts/4.3.0/echarts.common.min.js"></script>
 <script type="text/javascript">
 	// 基于准备好的dom，初始化echarts实例
-	var myChart = echarts.init(document.getElementById('echarts2529'));
+	var myChart = echarts.init(document.getElementById('echarts8176'));
 	// 指定图表的配置项和数据
 	// 800表示图表展示的高度为800px
 // '85%'表示图表展示的宽度为85%
@@ -13796,8 +13796,8 @@ $$r(y_i, H(x_i))=\left{<br>
         <tag>Machine Learning 机器学习</tag>
         <tag>分类</tag>
         <tag>集成学习</tag>
-        <tag>回归</tag>
         <tag>Boosting</tag>
+        <tag>回归</tag>
       </tags>
   </entry>
   <entry>
@@ -14786,8 +14786,8 @@ $$H_t(x)=H_{t-1}(x)+\nu \alpha_t h_t(x)$$<br>
         <tag>Machine Learning 机器学习</tag>
         <tag>分类</tag>
         <tag>集成学习</tag>
-        <tag>回归</tag>
         <tag>Boosting</tag>
+        <tag>回归</tag>
       </tags>
   </entry>
   <entry>
@@ -15814,8 +15814,8 @@ dtype: int64
         <category>SQL 数据库</category>
       </categories>
       <tags>
-        <tag>MySQL</tag>
         <tag>SQL 数据库</tag>
+        <tag>MySQL</tag>
       </tags>
   </entry>
   <entry>
@@ -18178,8 +18178,8 @@ $$l(y_i,\hat{y}_i)=y_i\ln{(1+e<sup>{-\hat{y}_i})}+(1-y_i)\ln{(1+e</sup>{\hat{y}_
         <tag>Machine Learning 机器学习</tag>
         <tag>分类</tag>
         <tag>集成学习</tag>
-        <tag>回归</tag>
         <tag>Boosting</tag>
+        <tag>回归</tag>
       </tags>
   </entry>
   <entry>
@@ -25121,8 +25121,8 @@ $$cell[i][j]=cell[i-1][j-1]+1$$</li>
         <category>Data Structure / 数据结构</category>
       </categories>
       <tags>
-        <tag>数据结构</tag>
         <tag>算法</tag>
+        <tag>数据结构</tag>
       </tags>
   </entry>
   <entry>
@@ -25593,9 +25593,9 @@ $$cell[i][j]=cell[i-1][j-1]+1$$</li>
         <category>Data Structure / 数据结构</category>
       </categories>
       <tags>
-        <tag>数据结构</tag>
         <tag>算法</tag>
         <tag>基础算法</tag>
+        <tag>数据结构</tag>
         <tag>Data Structure</tag>
       </tags>
   </entry>
@@ -28601,8 +28601,8 @@ $$1→2→3→4→5→6→7$$
         <tag>Python</tag>
         <tag>Leetcode</tag>
         <tag>编程</tag>
-        <tag>题库</tag>
         <tag>SQL 数据库</tag>
+        <tag>题库</tag>
       </tags>
   </entry>
   <entry>
