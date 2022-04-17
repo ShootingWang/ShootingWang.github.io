@@ -2684,11 +2684,11 @@ window.onresize=function(){
 </script>
 <h1 id="样例"><a class="header-anchor" href="#样例"></a>样例</h1>
 <h2 id="饼图"><a class="header-anchor" href="#饼图"></a>饼图</h2>
-<div id="echarts8119" style="width: 85%;height: 800px;margin: 0 auto"></div>
+<div id="echarts6052" style="width: 85%;height: 800px;margin: 0 auto"></div>
 <script src="https://cdn.bootcss.com/echarts/4.3.0/echarts.common.min.js"></script>
 <script type="text/javascript">
 	// 基于准备好的dom，初始化echarts实例
-	var myChart = echarts.init(document.getElementById('echarts8119'));
+	var myChart = echarts.init(document.getElementById('echarts6052'));
 	// 指定图表的配置项和数据
 	// 800表示图表展示的高度为800px
 // '85%'表示图表展示的宽度为85%
@@ -13810,8 +13810,8 @@ $$r(y_i, H(x_i))=\left{<br>
         <tag>Machine Learning 机器学习</tag>
         <tag>分类</tag>
         <tag>集成学习</tag>
-        <tag>回归</tag>
         <tag>Boosting</tag>
+        <tag>回归</tag>
       </tags>
   </entry>
   <entry>
@@ -14800,8 +14800,8 @@ $$H_t(x)=H_{t-1}(x)+\nu \alpha_t h_t(x)$$<br>
         <tag>Machine Learning 机器学习</tag>
         <tag>分类</tag>
         <tag>集成学习</tag>
-        <tag>回归</tag>
         <tag>Boosting</tag>
+        <tag>回归</tag>
       </tags>
   </entry>
   <entry>
@@ -18192,8 +18192,8 @@ $$l(y_i,\hat{y}_i)=y_i\ln{(1+e<sup>{-\hat{y}_i})}+(1-y_i)\ln{(1+e</sup>{\hat{y}_
         <tag>Machine Learning 机器学习</tag>
         <tag>分类</tag>
         <tag>集成学习</tag>
-        <tag>回归</tag>
         <tag>Boosting</tag>
+        <tag>回归</tag>
       </tags>
   </entry>
   <entry>
