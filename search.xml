@@ -26764,7 +26764,8 @@ to predict trends and future values</li>
 \end{equation}</p>
 <p>其中<br>
 \begin{equation}<br>
-\mathbf{X} = (\mathbf{1}, \mathbf{X}<em>1, \mathbf{X}<em>2, \cdots, \mathbf{X}<em>p) = \left(<br>
+\mathbf{X} = ( \mathbf{1}, \mathbf{X}<em>1, \mathbf{X}<em>2, \cdots, \mathbf{X}<em>p ) =<br>
+\left(<br>
 \begin{array}{cccc}<br>
 1 &amp; X</em>{11} &amp; \cdots &amp; X</em>{1p} \<br>
 1 &amp; X</em>{21} &amp; \cdots &amp; X_{2p} \<br>
@@ -26773,20 +26774,25 @@ to predict trends and future values</li>
 \end{array}<br>
 \right)<br>
 \end{equation}</p>
-<p>try</p>
 <p>$$<br>
-\mathbf{\beta} = \left( \begin{array}{c}<br>
+\mathbf{\beta} =<br>
+\left(<br>
+\begin{array}{c}<br>
 \beta_0 \<br>
 \beta_1 \<br>
 \vdots \<br>
 \beta_p<br>
-\end{array} \right) ,\qquad \mathbf{\varepsilon}= \left(<br>
+\end{array}<br>
+\right)<br>
+,\qquad \mathbf{\varepsilon}=<br>
+\left(<br>
 \begin{array}{c}<br>
 \varepsilon_1 \<br>
 \varepsilon_2 \<br>
 \vdots \<br>
 \varepsilon_n<br>
-\end{array} \right)<br>
+\end{array}<br>
+\right)<br>
 $$</p>
 <h2 id="基本假设"><a class="header-anchor" href="#基本假设"></a>基本假设</h2>
 <ol>
