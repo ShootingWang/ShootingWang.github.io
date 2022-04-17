@@ -26763,7 +26763,7 @@ to predict trends and future values</li>
 \textbf{y}=\textbf{X} \mathbf{\beta} + \mathbf{\varepsilon}, \qquad \mathbf{\varepsilon} \sim \mathcal{N}(\mathbf{0},\sigma^2\mathbf{I})<br>
 \end{equation}</p>
 <p>其中<br>
-\begin{equation}<br>
+$$<br>
 \mathbf{X} = ( \mathbf{1}, \mathbf{X}<em>1, \mathbf{X}<em>2, \cdots, \mathbf{X}<em>p ) =<br>
 \left(<br>
 \begin{array}{cccc}<br>
@@ -26773,7 +26773,8 @@ to predict trends and future values</li>
 1 &amp; X_{n1} &amp; \cdots &amp; X_{np}<br>
 \end{array}<br>
 \right)<br>
-\end{equation}</p>
+$$</p>
+<p>try</p>
 <p>$$<br>
 \mathbf{\beta} =<br>
 \left(<br>
