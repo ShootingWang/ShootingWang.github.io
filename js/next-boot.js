@@ -93,6 +93,7 @@ NexT.boot.refresh = function() {
   NexT.utils.registerSidebarTOC();
   NexT.utils.wrapTableWithBox();
   NexT.utils.registerVideoIframe();
+  // 2022.04.17 添加
   codeUnfold()
 };
 
