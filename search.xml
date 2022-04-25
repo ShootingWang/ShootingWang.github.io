@@ -3664,7 +3664,7 @@ window.onresize=function(){
       </tags>
   </entry>
   <entry>
-    <title>抽样调查</title>
+    <title>统计学 | 抽样调查 Survey Sampling</title>
     <url>/%E6%8A%BD%E6%A0%B7%E8%B0%83%E6%9F%A5.html</url>
     <content><![CDATA[<center></center>
 <a id="more"></a>
@@ -13475,7 +13475,7 @@ $$IDFA\rightarrow IDFV\rightarrow UDID$$</p>
       </tags>
   </entry>
   <entry>
-    <title>假设检验 | 卡方检验</title>
+    <title>假设检验 | 卡方检验 Chi-squared Test</title>
     <url>/%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C-%E5%8D%A1%E6%96%B9%E6%A3%80%E9%AA%8C.html</url>
     <content><![CDATA[<center>$\chi^2$-test</center>
 <a id="more"></a>
@@ -25883,7 +25883,7 @@ $$cell[i][j]=cell[i-1][j-1]+1$$</li>
       </tags>
   </entry>
   <entry>
-    <title>Data Structure | 队列</title>
+    <title>Data Structure | 队列 Queue</title>
     <url>/%E9%98%9F%E5%88%97.html</url>
     <content><![CDATA[<center>queue</center>
 <a id="more"></a>
@@ -27006,9 +27006,9 @@ $l$一般不为整数，可以取与$l$最接近的整数代替之。</li>
       </tags>
   </entry>
   <entry>
-    <title>假设检验</title>
+    <title>统计学 | 假设检验 Hypothesis Testing</title>
     <url>/%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C.html</url>
-    <content><![CDATA[<center>Hypothesis Testing</center>
+    <content><![CDATA[<center></center>
 <a id="more"></a>
 <h1 id="假设检验"><a class="header-anchor" href="#假设检验"></a>假设检验</h1>
 <p>什么是假设检验？</p>
@@ -27038,17 +27038,17 @@ $$H_0:\theta\geq\theta_0\quad \mathrm{vs} \quad H_1:\theta&lt;\theta_0$$</li>
 </ol>
 <p><strong>检验</strong>假设即给出一个法则，按照法则根据给定的样本，决定接受$H_0$还是拒绝$H_0$，等价于把样本空间划分为互不相交的部分</p>
 <ol>
-<li><strong>拒绝域</strong>：$W$</li>
-</ol>
+<li><strong>拒绝域</strong>：$W$
 <ul>
 <li>当样本属于$W$时，拒绝$H_0$</li>
 </ul>
-<ol start="2">
-<li><strong>接受域</strong>：$\bar{W}$</li>
-</ol>
+</li>
+<li><strong>接受域</strong>：$\bar{W}$
 <ul>
 <li>当样本属于$\bar{W}$时，接受$H_0$</li>
 </ul>
+</li>
+</ol>
 <p>通常通过<strong>检验统计量</strong>来判断样本所属的空间。</p>
 <div class="note default">
             <p>若以样本均值$\bar{x}$为检验统计量，则检验假设<br>$$H_0:\mu\geq 10\quad \mathrm{vs} \quad H_1:\mu&lt;10$$<br>的拒绝域为<br>$$W={(x_1,\cdots,x_n)|\bar{x}\leq c}={\overline{x}\leq c}$$<br>其中$c$为临界值（待定；根据检验统计量的分布、假设检验的置信水平确定）。</p>
@@ -30439,9 +30439,9 @@ $$ w_i^T x - w_k^T x \geq 1 \quad \forall \quad k\neq i $$</li>
       </tags>
   </entry>
   <entry>
-    <title>分布 | 泊松分布</title>
+    <title>统计学 | 泊松分布 Poisson Distribution</title>
     <url>/%E5%88%86%E5%B8%83-%E6%B3%8A%E6%9D%BE%E5%88%86%E5%B8%83.html</url>
-    <content><![CDATA[<center>Poisson Distribution</center>
+    <content><![CDATA[<center></center>
 <a id="more"></a>
 <p>生活中大多数场景服从泊松分布，如奶茶店一天的顾客数、理发店一天的顾客数、馒头店一天卖出的馒头数等等。</p>
 <p>假设我经营着一家咖啡馆——SW Coffee。</p>
