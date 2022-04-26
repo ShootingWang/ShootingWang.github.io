@@ -18525,7 +18525,7 @@ $$P(t)=\frac{1}{1+e^{-t}}$$</p>
 <p>Andrew Ng的CS229中的例子：根据肿瘤的大小（Tumor Size）$X$来判断肿瘤是否是恶性的（Malignant）$Y$。</p>
 <p>考虑构建线性回归模型$h_\theta(x)$，$h_\theta(x)\geq 0.5$ 为恶性肿瘤，$h_\theta(x)&lt;0.5$为良性肿瘤。</p>
 <p>\begin{equation}<br>
-Y= \left{<br>
+Y= \left\lbrace<br>
 \begin{array}{ll}<br>
 1, &amp; \mbox{如果} h_\theta(x) \geq 0.5\<br>
 0, &amp; \mbox{如果} h_\theta(x) &lt;0.5\<br>
@@ -18535,7 +18535,7 @@ Y= \left{<br>
 <meta name="referrer" content="no-referrer">
 <img src="/%E7%AE%97%E6%B3%95-LogisticRegression/LR-heart.png" class title="来自：机器之心-从原理到应用-简述Logistic回归算法">
 <p>令<br>
-$$h_\theta(x)=g(\theta^T x)=\frac{1}{1+e<sup>{-\theta</sup>T x}}=\frac{e<sup>{\theta</sup>T x}}{1+e<sup>{\theta</sup>T x}}$$<br>
+$$h_\theta(x)=g(\theta^T x)=\frac{1}{ 1+e<sup>{-\theta</sup>T x} }=\frac{ e<sup>{\theta</sup>T x} }{ 1+e<sup>{\theta</sup>T x} }$$<br>
 其中$z=\theta^Tx$（这里$x$包含截距项），Sigmoid函数为<br>
 $$g(z)=\frac{1}{1+e<sup>{-z}}=\frac{e</sup>z}{1+e^z}$$<br>
 Sigmoid保证$h_\theta(x)$取值在0和1之间（概率取值范围为$(0,1)$）。</p>
@@ -18553,9 +18553,9 @@ $$P(y|x;\theta)=\left[h_\theta(x) \right]^y\left[1-h_\theta(x) \right]^{1-y}$$<b
 <h3 id="损失函数"><a class="header-anchor" href="#损失函数"></a>损失函数</h3>
 <p>对于单个样本，其损失函数可以表示为</p>
 <p>\begin{equation}<br>
-\mathrm{Cost}(h_\theta(X),y)=\left{<br>
+\mathrm{Cost}(h_\theta(X),y)=\left\lbrace<br>
 \begin{array}{ll}<br>
--\log{h_\theta(X)},&amp; \mathrm{if}\quad y=1\<br>
+-\log{h_\theta(X)},&amp; \mathrm{if}\quad y=1 \<br>
 -\log{\left(1-h_\theta(X)\right)}, &amp; \mathrm{if }\quad y=0\end{array}<br>
 \right.<br>
 \end{equation}</p>
