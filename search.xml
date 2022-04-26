@@ -18527,7 +18527,7 @@ Y=<br>
 \begin{aligned}<br>
 h_\theta(x) &amp;= g(\theta^T x) \\<br>
 &amp;= \frac{1}{1+e<sup>{-\theta</sup>T x}} \\<br>
-&amp;= \frac{e<sup>{\theta</sup>T x}}{ 1+e<sup>{\theta</sup>T x}}<br>
+&amp;= \frac{e<sup>{\theta</sup>T x}}{ 1+e<sup>{\theta</sup>T x}}\\<br>
 \end{aligned}<br>
 \end{equation}</p>
 <p>其中$z=\theta^Tx$（这里$x$包含截距项），Sigmoid函数为<br>
