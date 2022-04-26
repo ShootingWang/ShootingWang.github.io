@@ -18522,10 +18522,12 @@ $$P(y|x;\theta)=\left[h_\theta(x) \right]^y\left[1-h_\theta(x) \right]^{1-y}$$<b
 <h3 id="损失函数"><a class="header-anchor" href="#损失函数"></a>损失函数</h3>
 <p>对于单个样本，其损失函数可以表示为</p>
 <p>\begin{equation}<br>
-\mathrm{Cost}(h_\theta(X),y)=\left\lbrace<br>
+\mathrm{Cost}(h_\theta(X),y)=<br>
+\left\lbrace<br>
 \begin{array}{ll}<br>
--\log{h_\theta(X)},&amp; \mathrm{if}\quad y=1 \<br>
--\log{\left(1-h_\theta(X)\right)}, &amp; \mathrm{if }\quad y=0\end{array}<br>
+-\log{h_\theta(X)},&amp; \mathrm{if} \quad y=1 \<br>
+-\log{\left(1-h_\theta(X)\right)}, &amp; \mathrm{if } \quad y=0<br>
+\end{array}<br>
 \right.<br>
 \end{equation}</p>
 <p>即<br>
