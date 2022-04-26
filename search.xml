@@ -18523,7 +18523,11 @@ Y= \left\lbrace<br>
 <img src="/%E7%AE%97%E6%B3%95-LogisticRegression/LR-heart.png" class title="来自：机器之心-从原理到应用-简述Logistic回归算法">
 <p>令<br>
 \begin{equation}<br>
-h_\theta(x) = g(\theta^T x) = \frac{1}{ 1+e<sup>{-\theta</sup>T x} } = \frac{ e<sup>{\theta</sup>T x} }{ 1+e<sup>{\theta</sup>T x} }<br>
+\begin{aligned}<br>
+h_\theta(x) &amp;= g(\theta^T x) \<br>
+&amp;= \frac{1}{1+e<sup>{-\theta</sup>T x}} \<br>
+&amp;= \frac{e<sup>{\theta</sup>T x}}{ 1+e<sup>{\theta</sup>T x}}<br>
+\end{aligned}<br>
 \end{equation}</p>
 <p>其中$z=\theta^Tx$（这里$x$包含截距项），Sigmoid函数为<br>
 $$g(z) = \frac{1}{1+e^{-z}} = \frac{e<sup>z}{1+e</sup>z}$$</p>
