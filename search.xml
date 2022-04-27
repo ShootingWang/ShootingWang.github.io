@@ -27548,12 +27548,12 @@ $\alpha$为<strong>学习率/学习步长</strong>（learning rate）：</p>
 </ol>
 <p><strong>正则化</strong>（Regularization）：<br>
 原目标函数为<br>
-$$\hat{\beta}=\arg\min_\beta \left\lbrace \sum_{i=1}^n( y_i- \sum_{j=0}^p \beta_j x_{ij})^2 \right\rbrace$$</p>
+$$\hat{\beta}=\arg\min_\beta \left\lbrace \sum_{i=1}^n( y_i - \sum_{j=0}^p \beta_j x_{ij})^2 \right\rbrace$$</p>
 <p>在原始目标函数上添加惩罚项（penalty term）<br>
-$$\hat{\beta}=\arg\min_\beta\left\lbrace\sum_{i=1}<sup>n(y_i-\sum_{j=0}</sup>p\beta_j x_{ij})^2+\lambda g(\beta)\right\rbrace$$</p>
+$$\hat{\beta}=\arg\min_\beta \left\lbrace \sum_{i=1}^n( y_i - \sum_{j=0}^p \beta_j x_{ij})^2 + \lambda g(\beta) \right\rbrace$$</p>
 <h3 id="岭回归"><a class="header-anchor" href="#岭回归"></a>岭回归</h3>
 <p>Ridge regression<br>
-$$\hat{\beta}<sup>{ridge}={\arg\min}_\beta\left\lbrace\sum_{i=1}</sup>n(y_i-\sum_{j=0}^p\beta_j x_{ij})^2+\lambda \sum_{j=1}<sup>p\beta_j</sup>2\right\rbrace$$</p>
+$$\hat{\beta}^{ridge}={\arg\min}<em>\beta \left\lbrace \sum</em>{i=1}^n (y_i-\sum_{j=0}^p \beta_j x_{ij})^2 + \lambda \sum_{j=1}^p \beta_j^2 \right\rbrace$$</p>
 <ul>
 <li>若自变量间存在严重的共线性问题，普通最小二乘法并不适用，可以选用岭回归方法</li>
 </ul>
