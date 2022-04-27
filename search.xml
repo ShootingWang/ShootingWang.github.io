@@ -27470,14 +27470,13 @@ to predict trends and future values</li>
 \mathbf{X} = ( \mathbf{1}, \mathbf{X}<em>1, \mathbf{X}<em>2, \cdots, \mathbf{X}<em>p ) =<br>
 \left(<br>
 \begin{array}{cccc}<br>
-1 &amp; X</em>{11} &amp; \cdots &amp; X</em>{1p} \\<br>
-1 &amp; X</em>{21} &amp; \cdots &amp; X_{2p} \\<br>
-\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\<br>
+1 &amp; X</em>{11} &amp; \cdots &amp; X</em>{1p} \<br>
+1 &amp; X</em>{21} &amp; \cdots &amp; X_{2p} \<br>
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \<br>
 1 &amp; X_{n1} &amp; \cdots &amp; X_{np}<br>
 \end{array}<br>
 \right)<br>
 \end{equation}</p>
-<p>try</p>
 <p>$$<br>
 \mathbf{\beta} =<br>
 \left(<br>
