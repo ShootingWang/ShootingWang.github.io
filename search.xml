@@ -23390,8 +23390,8 @@ $$P(Y_k|X)=\frac{P(X|Y_k)P(Y_k)}{\sum_{k}P(X|Y=Y_k)P(Y_k)}$$</li>
 <li>$n$个样本，每个样本有$p$个特征<br>
 $$x_i=(x_{i1},\cdots, x_{ip})^T$$<br>
 $i=1,\cdots,n$</li>
-<li>有$K$个类别$C={C_1,\cdots,C_K}$</li>
-<li>每个样本的类别标签为$y_i \in {C_1,\cdots,C_K}$</li>
+<li>有$K$个类别$C=\lbrace C_1,\cdots,C_K\rbrace$</li>
+<li>每个样本的类别标签为$y_i \in \brace C_1,\cdots,C_K\rbrace$</li>
 </ul>
 <p>从样本数据可以学习到朴素贝叶斯的先验分布$(k=1,\cdots,K)$<br>
 $$P(Y=C_k)$$<br>
@@ -23405,9 +23405,9 @@ P(X,Y=C_k)&amp;=P(Y=C_k)P(X=x|Y=C_k)\<br>
 \end{aligned}<br>
 \end{equation}</p>
 <p>由极大似然法可得$P(Y=C_k)$为类别$C_k$在训练集样本中出现的频数，即<br>
-$$P(Y=C_k)=\sum_{i=1}^n\frac{1}{n}I\left{y_i=C_k\right}$$<br>
+$$P(Y=C_k)=\sum_{i=1}^n\frac{1}{n}I\left\lbrace y_i=C_k\right\rbrace$$<br>
 其中<br>
-$$I\left{y_i=C_k\right}=\left{<br>
+$$I\left\lbrace y_i=C_k\right\rbrace=\left\lbrace<br>
 \begin{array}{ll}<br>
 1 &amp; \mbox{如果}y_i=C_k\<br>
 0 &amp; \mbox{如果}y_i\neq C_k<br>
@@ -23432,16 +23432,16 @@ $i=1,\cdots,p.$</li>
 </ul>
 <h3 id="连续型特征"><a class="header-anchor" href="#连续型特征"></a>连续型特征</h3>
 <p>当特征属性是<u>连续型</u>时，通常假设其服从<u>高斯分布</u>（即正态分布）<br>
-$$g(x;\mu,\sigma)=\frac{1}{\sqrt{2\pi\sigma}}exp{-\frac{(x-\mu)<sup>2}{2\sigma</sup>2}}$$<br>
+$$g(x;\mu,\sigma)=\frac{1}{\sqrt{2\pi\sigma}}exp\lbrace -\frac{(x-\mu)<sup>2}{2\sigma</sup>2}\rbrace$$<br>
 则有<br>
 $$P(X_j=x_j|y_i)=g(x_j;\mu_{y_i},\sigma_{y_i})$$</p>
 <h3 id="Laplace校准"><a class="header-anchor" href="#Laplace校准"></a>Laplace校准</h3>
 <p>Laplace校准 / 拉普拉斯平滑（Laplace Smoothing）：<br>
 可能会存在某个特征项划分没有出现的情况，即$P(x_j|y_i)=0$，这会导致分类器的质量降低——可使用<strong>Laplace校准</strong>改善</p>
-<p>假设随机特征$z$的可能取值有${1,\cdots,k}$，使用$\Phi_i=P(z=i)$参数化其分布。对于$n$个独立样本（观测集合）${z<sup>{(1)},\cdots,z</sup>{(n)}}$，参数$\Phi_j$的极大似然估计为<br>
-$$\phi_j=\frac{\sum_{i=1}<sup>n\mathbb{1}{z</sup>{(i)}=j}}{n}$$</p>
+<p>假设随机特征$z$的可能取值有$\lbrace 1,\cdots,k\rbrace$，使用$\Phi_i=P(z=i)$参数化其分布。对于$n$个独立样本（观测集合）$\lbrace z<sup>{(1)},\cdots,z</sup>{(n)}\rbrace$，参数$\Phi_j$的极大似然估计为<br>
+$$\phi_j=\frac{\sum_{i=1}^n\mathbb{1}\lbrace z^{(i)}=j\rbrace }{n}$$</p>
 <p>使用Laplace平滑进行修正：<br>
-$$\phi_j=\frac{\sum_{i=1}<sup>n\mathbb{1}{z</sup>{(i)}=j}+1}{n+k}$$</p>
+$$\phi_j=\frac{\sum_{i=1}^n\mathbb{1}\lbrace z^{(i)}=j\rbrace +1}{n+k}$$</p>
 <ul>
 <li>分子加1</li>
 <li>保证了$\Phi_j\neq0$对所有的$\Phi_j$都成立</li>
