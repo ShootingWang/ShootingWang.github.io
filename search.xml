@@ -23749,14 +23749,14 @@ E[\mathrm{MI} (U,V)]=&amp;\sum_{i=1}^R \sum_{j=1}^C \sum_{ n_{ij} = ( n_{i.} + n
 </ul>
 <p>$$h=1-\frac{H(U|V)}{H(U)}$$<br>
 其中</p>
-<p>$$H(U|V)=-\sum_{i=1}<sup>R\sum_{j=1}</sup>C\frac{n_{ij}}{n}\log{\left(\frac{n_{ij}}{n_{.j}}\right)}$$<br>
-$$H(U)=-\sum_{i=1}^R\frac{n_{i.}}{n}\log{\left(\frac{n_{i.}}{n}\right)}$$</p>
+<p>$$H(U|V) = -\sum_{i=1}^R \sum_{j=1}^C \frac{n_{ij}}{n} \log{ \left( \frac{n_{ij}}{n_{.j}} \right)}$$<br>
+$$H(U) = -\sum_{i=1}^R \frac{n_{i.}}{n} \log{ \left( \frac{n_{i.}}{n} \right) }$$</p>
 <h3 id="完整性"><a class="header-anchor" href="#完整性"></a>完整性</h3>
 <p>完整性（Completeness）：给定类的所有成员分配给同一簇类<br>
 $$c=1-\frac{H(V|U)}{H(V)}$$</p>
 <p>其中<br>
-$$H(V|U)=-\sum_{i=1}<sup>R\sum_{j=1}</sup>C\frac{n_{ij}}{n}\log{\left(\frac{n_{ij}}{n_{i.}}\right)}$$<br>
-$$H(V)=-\sum_{j=1}^C\frac{n_{.j}}{n}\log{\left(\frac{n_{.j}}{n}\right)}$$</p>
+$$H(V|U)=-\sum_{i=1}^R \sum_{j=1}^C \frac{n_{ij}}{n}\ log{ \left( \frac{n_{ij}}{n_{i.}} \right) }$$<br>
+$$H(V) = -\sum_{j=1}^C \frac{n_{.j}}{n} \log{ \left( \frac{n_{.j}}{n} \right) }$$</p>
 <h3 id="V-measure"><a class="header-anchor" href="#V-measure"></a>V-measure</h3>
 <p>V-measure是同质性和完整性的调和平均数，公式为<br>
 $$V=\frac{2\cdot h\cdot c}{h+c}$$</p>
