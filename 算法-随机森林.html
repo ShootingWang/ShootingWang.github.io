@@ -32,7 +32,7 @@
 <meta property="og:site_name" content="Skye">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-04-28T06:23:44.000Z">
-<meta property="article:modified_time" content="2022-04-25T11:00:29.038Z">
+<meta property="article:modified_time" content="2022-04-27T13:18:24.814Z">
 <meta property="article:author" content="Skye">
 <meta property="article:tag" content="算法">
 <meta property="article:tag" content="Machine Learning 机器学习">
@@ -271,7 +271,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-04-25 19:00:29" itemprop="dateModified" datetime="2022-04-25T19:00:29+08:00">2022-04-25</time>
+                <time title="修改时间：2022-04-27 21:18:24" itemprop="dateModified" datetime="2022-04-27T21:18:24+08:00">2022-04-27</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -413,6 +413,12 @@ $$Random Forest=Bagging+Decision Tree$$</p>
     <td></td>
   </tr> 
 </table>
+<h1 id="实现代码"><a class="header-anchor" href="#实现代码"></a>实现代码</h1>
+<h2 id="Python"><a class="header-anchor" href="#Python"></a>Python</h2>
+<ul>
+<li>使用<code>sklearn.ensemble</code>包中的<code>RnadomForestClassifier</code>函数</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.ensemble <span class="keyword">import</span> RandomForestClassifier</span><br><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> train_test_split</span><br><span class="line"><span class="keyword">from</span> sklearn.metrics <span class="keyword">import</span> roc_auc_score, accuracy_score, precision_score, recall_score, f1_score</span><br><span class="line"></span><br><span class="line">df <span class="comment">## 用于建模的数据DataFrame</span></span><br><span class="line">X = df[xCols]	<span class="comment">## xCols表示作为解释变量的列名列表</span></span><br><span class="line">y = df[yCol]   <span class="comment">## yCol表示作为被解释变量的列名</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 建模通用参数</span></span><br><span class="line">RandomState = <span class="number">2022</span> 	<span class="comment">## 便于数据分割复现</span></span><br><span class="line">TrainSize = <span class="number">0.7</span> 	<span class="comment">## 用于训练的数据集大小（0.7表示70%）</span></span><br><span class="line">F_RandomState = <span class="number">11</span>	<span class="comment">## 用于训练模型复现</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 分割数据集为训练集和测试集</span></span><br><span class="line">X_train, X_test, y_train, y_test = train_test_split(X, y, train_size=TrainSize, random_state=RandomState)</span><br><span class="line"></span><br><span class="line"><span class="comment">## 训练模型</span></span><br><span class="line">forest_model = RandomForestClassifier(n_estimators=<span class="number">1000</span>, random_state=F_RandomState, n_jobs=<span class="number">-1</span>)</span><br><span class="line">forest_model.fit(X_train, y_train)</span><br><span class="line"></span><br><span class="line"><span class="comment">## 预测</span></span><br><span class="line">y_pred = forest_model.predict(X_test)				<span class="comment">## 预测结果为离散值</span></span><br><span class="line">y_prob = forest_model.predict_proba(X_test)[:, <span class="number">1</span>]	<span class="comment">## 预测结果为概率值</span></span><br><span class="line">y_train_pred = forest_model.predict(X_train)</span><br><span class="line"></span><br><span class="line"><span class="comment">## 计算AUC值</span></span><br><span class="line">roc_auc_score(y_test, y_prob)</span><br><span class="line"></span><br><span class="line"><span class="comment">## 预测精度</span></span><br><span class="line">print(<span class="string">"训练数据集上的精度："</span>, accuracy_score(y_train, y_train_pred))</span><br><span class="line">print(<span class="string">"测试数据集上的精度："</span>, accuracy_score(y_test, y_pred))</span><br><span class="line"></span><br><span class="line"><span class="comment">## 假设被解释变量的枚举值为B、C</span></span><br><span class="line"><span class="comment">## 若B为正样本标签，计算精确度、召回率、f1值</span></span><br><span class="line">precision_score(y_test, y_pred, pos_label=<span class="string">'B'</span>) </span><br><span class="line">recall_score(y_test, y_pred, pos_label=<span class="string">'B'</span>) </span><br><span class="line">f1_score(y_test, y_pred, pos_label=<span class="string">'B'</span>) </span><br><span class="line"><span class="comment">## 若C为正样本标签，计算精确度、召回率、f1值</span></span><br><span class="line">precision_score(y_test, y_pred, pos_label=<span class="string">'C'</span>) </span><br><span class="line">recall_score(y_test, y_pred, pos_label=<span class="string">'C'</span>) </span><br><span class="line">f1_score(y_test, y_pred, pos_label=<span class="string">'C'</span>)</span><br></pre></td></tr></table></figure>
 <h1 id="参考资料"><a class="header-anchor" href="#参考资料"></a>参考资料</h1>
 
     </div>
@@ -548,7 +554,7 @@ $$Random Forest=Bagging+Decision Tree$$</p>
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#随机森林"><span class="nav-number">1.</span> <span class="nav-text">随机森林</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#RF-vs-GBDT"><span class="nav-number">1.1.</span> <span class="nav-text">RF vs GBDT</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料"><span class="nav-number">2.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#随机森林"><span class="nav-number">1.</span> <span class="nav-text">随机森林</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#RF-vs-GBDT"><span class="nav-number">1.1.</span> <span class="nav-text">RF vs GBDT</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实现代码"><span class="nav-number">2.</span> <span class="nav-text">实现代码</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Python"><span class="nav-number">2.1.</span> <span class="nav-text">Python</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料"><span class="nav-number">3.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -623,7 +629,7 @@ $$Random Forest=Bagging+Decision Tree$$</p>
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">6:22</span>
+    <span title="站点阅读时长">6:23</span>
 </div>
 
 
