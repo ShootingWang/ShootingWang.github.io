@@ -23434,7 +23434,7 @@ $i=1,\cdots,p.$</li>
 </ul>
 <h3 id="连续型特征"><a class="header-anchor" href="#连续型特征"></a>连续型特征</h3>
 <p>当特征属性是<u>连续型</u>时，通常假设其服从<u>高斯分布</u>（即正态分布）</p>
-<p>$$g(x;\mu,\sigma)=\frac{1}{\sqrt{2\pi\sigma}} \exp \left\lbrace - \frac{(x-\mu)<sup>2}{2\sigma</sup>2} \right\rbrace$$</p>
+<p>$$g(x;\mu,\sigma)=\frac{1}{\sqrt{2\pi\sigma}} \exp \left\lbrace - \frac{ (x-\mu)^2 }{ 2\sigma^2 } \right\rbrace$$</p>
 <p>则有<br>
 $$P(X_j=x_j|y_i)=g(x_j;\mu_{y_i},\sigma_{y_i})$$</p>
 <h3 id="Laplace校准"><a class="header-anchor" href="#Laplace校准"></a>Laplace校准</h3>
