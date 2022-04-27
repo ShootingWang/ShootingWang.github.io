@@ -23407,12 +23407,15 @@ P(X,Y=C_k)&amp;=P(Y=C_k)P(X=x|Y=C_k) \\<br>
 <p>由极大似然法可得$P(Y=C_k)$为类别$C_k$在训练集样本中出现的频数，即<br>
 $$P(Y=C_k)=\sum_{i=1}^n\frac{1}{n}I\left\lbrace y_i=C_k\right\rbrace$$<br>
 其中<br>
-$$I\left\lbrace y_i=C_k\right\rbrace=\left\lbrace<br>
+$$<br>
+I\left\lbrace y_i=C_k\right\rbrace =<br>
+\left\lbrace<br>
 \begin{array}{ll}<br>
-1 &amp; \mbox{如果}y_i=C_k\<br>
-0 &amp; \mbox{如果}y_i\neq C_k<br>
+1 &amp; \mbox{如果}y_i=C_k \\<br>
+0 &amp; \mbox{如果}y_i\neq C_k \\<br>
 \end{array}<br>
 \right.$$</p>
+<p>try</p>
 <p>为了降低$P(X_1=x_1,\cdots,X_p=x_p|Y=C_k)$的求解难度，朴素贝叶斯方法<u>假设$X$的$p$个维度之间相互独立</u>，则有<br>
 \begin{equation}<br>
 \begin{aligned}<br>
