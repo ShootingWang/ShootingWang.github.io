@@ -23538,9 +23538,9 @@ $$\phi_j=\frac{\sum_{i=1}^n\mathbb{1}\lbrace z^{(i)}=j\rbrace +1}{n+k}$$</p>
 </ul>
 </blockquote>
 <ul>
-<li>$n$个样本集合$S={x_1,\cdots,x_n}$</li>
-<li>样本集合的真实划分$U={u_1,\cdots,u_R}$</li>
-<li>样本集合的聚类结果$V={v_1,\cdots,v_C}$</li>
+<li>$n$个样本集合$S=\lbrace x_1,\cdots,x_n \rbrace$</li>
+<li>样本集合的真实划分$U=\lbrace u_1,\cdots,u_R \rbrace$</li>
+<li>样本集合的聚类结果$V=\lbrace v_1,\cdots,v_C \rbrace$</li>
 <li>$a$：在$U$中为同一类且在$V$中也为同一类别的数据点对数（即TP）</li>
 <li>$b$：在$U$中为同一类但在$V$中却是不同类别的数据点对数（即FN）</li>
 <li>$c$：在$U$中不是同一类但在$V$中却是同一类的数据点对数（即FP）</li>
@@ -23698,9 +23698,9 @@ $$\log{\frac{p(x,y)}{p(x)p(y)}}=\log1=0$$</li>
 </ul>
 </blockquote>
 <ul>
-<li>$n$个样本集合$S={x_1,\cdots,x_n}$</li>
-<li>样本集合的真实划分$U={u_1,\cdots,u_R}$</li>
-<li>样本集合的聚类结果$V={v_1,\cdots,v_C}$</li>
+<li>$n$个样本集合$S=\lbrace x_1,\cdots,x_n \rbrace$</li>
+<li>样本集合的真实划分$U=\lbrace u_1,\cdots,u_R\rbrace$</li>
+<li>样本集合的聚类结果$V=\lbrace v_1,\cdots,v_C\rbrace$</li>
 <li>$P(i)$为$u_i$在$U$中的概率（比率）<br>
 $$P(i)=\frac{||u_i||}{n}=\frac{n_{i.}}{n}$$</li>
 <li>$P^\prime(j)$为$v_j$在$V$中的概率（比率）<br>
@@ -23711,8 +23711,8 @@ $$H(U)=\sum_{i=1}^RP(i)\log{\left(P(i)\right)}$$</li>
 $$H(V)=\sum_{j=1}<sup>CP</sup>\prime(j)\log{\left(P^\prime(j)\right)}$$</li>
 </ul>
 <p>$U$和$V$之间的<strong>互信息</strong>（MI）为<br>
-$$\mathrm{MI}(U,V)=\sum_{i=1}<sup>R\sum_{j=1}</sup>CP(i,j)\log{\left(\frac{P(i,j)}{P(i)P^\prime(j)}\right)}$$<br>
-其中$P(i,j)=n_{ij}/n$。</p>
+$$\mathrm{MI}(U,V)= \sum_{i=1}^R \sum_{j=1}^C P(i,j) \log{ \left( \frac{P(i,j)}{P(i)P^\prime(j)} \right)}$$</p>
+<p>其中$P(i,j)=n_{ij}/n$。</p>
 <h3 id="标准化的互信息NMI"><a class="header-anchor" href="#标准化的互信息NMI"></a>标准化的互信息NMI</h3>
 <p><strong>标准化后的互信息</strong>（NMI，Normalized Mutual Information）为<br>
 $$\mathrm{NMI}(U,V)=\frac{\mathrm{MI}(U,V)}{\sqrt{H(U)H(V)}}$$</p>
@@ -23721,13 +23721,13 @@ $$\mathrm{NMI}(U,V)=\frac{\mathrm{MI}(U,V)}{\sqrt{H(U)H(V)}}$$</p>
 <p>$$\mathrm{AMI}=\frac{\mathrm{MI}-E[\mathrm{MI}]}{\max{\left(H(U),H(V)\right)}-E[\mathrm{MI}]}$$</p>
 <p>\begin{equation}<br>
 \begin{aligned}<br>
-E[\mathrm{MI}(U,V)]=&amp;\sum_{i=1}<sup>R\sum_{j=1}</sup>C\sum_{n_{ij}=(n_{i.}+n_{.j}-n)<sup>+}</sup>{\min{(n_{i.},n_{.j})}}\frac{n_{ij}}{n}<br>
-\log{\left(\frac{n\cdot n_{ij}}{n_{i.}n_{.j}}\right)}\times\<br>
-&amp;\frac{n_{i.}!n_{.j}(n-n_{i.})!(n-n_{.j})!}{n!n_{ij}!(n_{i.}-n_{ij})!(n_{.j-n_{ij}})!(n-n_{i.}-n_{.j}+n_{ij})!}<br>
+E[\mathrm{MI} (U,V)]=&amp;\sum_{i=1}^R \sum_{j=1}^C \sum_{ n_{ij} = ( n_{i.} + n_{.j}-n )^+ }^{\min{(n_{i.},n_{.j})}} \frac{ n_{ij} }{n}<br>
+\log{\left(\frac{n\cdot n_{ij}}{n_{i.}n_{.j}}\right)}\times\\<br>
+&amp;\frac{ n_{i.}! n_{.j} (n-n_{i.})! (n-n_{.j})!}{ n! n_{ij}! (n_{i.} - n_{ij})! (n_{.j-n_{ij}})! (n-n_{i.} - n_{.j} + n_{ij})!}<br>
 \end{aligned}<br>
 \end{equation}</p>
 <ul>
-<li>$(n_{i.}+n_{.j}-n)^+=\max{1, n_{i.}+n_{.j}-n}$</li>
+<li>$(n_{i.}+n_{.j}-n)^+=\max\lbrace 1, n_{i.}+n_{.j}-n\rbrace$</li>
 <li>$n_{i.}=\sum_{j=1}^Cn_{ij}$</li>
 <li>$n_{.j}=\sum_{i=1}^Rn_{ij}$</li>
 </ul>
@@ -23778,13 +23778,13 @@ $$\mathrm{FMI}=\sqrt{\mathrm{Precision\cdot Recall}}=\frac{TP}{\sqrt{(TP+FP)(TP+
 <p>计算单个样本的轮廓系数：</p>
 <ol>
 <li>计算样本$x_i$到同簇其他样本的平均距离$a_i$（$a_i$ 称为样本$x_i$的<strong>簇内不相似度</strong>）。 $a_i$ 越小，说明样本$x_i$ 越应该被聚类到该簇。</li>
-<li>计算样本$x_i$到其他簇$C_j$的所有样本的平均距离$b_{ij}$，称为样本$x_i$与簇$C_j$的不相似度。定义样本$x_i$的<strong>簇间不相似度</strong>为$b_i=\min{b_{ij},j\neq i}$。$b_i$越大，说明样本$x_i$越不属于其他簇。</li>
+<li>计算样本$x_i$到其他簇$C_j$的所有样本的平均距离$b_{ij}$，称为样本$x_i$与簇$C_j$的不相似度。定义样本$x_i$的<strong>簇间不相似度</strong>为$b_i=\min\lbrace b_{ij},j\neq i \rbrace$。$b_i$越大，说明样本$x_i$越不属于其他簇。</li>
 <li>根据样本$x_i$的簇内不相似度$a_i$和簇间不相似度$b_i$，定义样本$x_i$的<strong>轮廓系数</strong><br>
-$$s_i=\frac{b_i-a_i}{\max{a_i,b_i}}=\left{<br>
+$$s_i=\frac{b_i-a_i}{\max\lbrace a_i,b_i\rbrace}=\left\lbrace<br>
 \begin{array}{ll}<br>
-1-\frac{a_i}{b_i} &amp; a_i&lt;b_i\<br>
-0 &amp; a_i=b_i\<br>
-\frac{b_i}{a_i}-1 &amp; a_i&gt;b_i<br>
+1-\frac{a_i}{b_i} &amp; a_i &lt; b_i \\<br>
+0 &amp; a_i=b_i\\<br>
+\frac{b_i}{a_i} - 1 &amp; a_i &gt; b_i<br>
 \end{array}<br>
 \right.$$</li>
 <li>判断：</li>
