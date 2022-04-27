@@ -18648,29 +18648,32 @@ $$\Omega(\omega)=\lambda||w||^2$$</li>
   <entry>
     <title>Machine Learning | Boosting Tree</title>
     <url>/%E7%AE%97%E6%B3%95-BoostingTree.html</url>
-    <content><![CDATA[<center>提升树</center>
-<a id="more"></a>
+    <content><![CDATA[<p><center>提升树</center><br><a id="more"></a></p>
 <p>Tree Ensemble methods</p>
 <ul>
 <li>不需要归一化（normalization)</li>
 <li>能够学习到特征之间的高阶交互</li>
 <li>可用于分类、回归、排序、……</li>
 </ul>
-<h1 id="Boosting-Tree"><a class="header-anchor" href="#Boosting-Tree"></a>Boosting Tree</h1>
-<ul>
+<h1 id="Boosting-Tree"><a href="#Boosting-Tree" class="headerlink" title="Boosting Tree"></a>Boosting Tree</h1><ul>
 <li>提升树是以分类树或回归树为基本分类器的提升方法</li>
-<li>模型：加法模型<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>与前向分步算法</li>
-<li>基学习器：决策树，即决策树桩<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></li>
+<li>模型：加法模型<sup><a href="#fn_1" id="reffn_1">1</a></sup>与前向分步算法</li>
+<li>基学习器：决策树，即决策树桩<sup><a href="#fn_2" id="reffn_2">2</a></sup></li>
 </ul>
 <ol>
 <li><strong>二叉分类树</strong>：分类问题决策树</li>
 <li><strong>二叉回归树</strong>：回归问题决策树</li>
 </ol>
+<blockquote id="fn_1">
+<sup>1</sup>. 加法模型即基学习器的线性组合<a href="#reffn_1" title="Jump back to footnote [1] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_2">
+<sup>2</sup>. 决策树桩（decision stump）：由一个根结点直接连接两个叶节点的简单决策树<a href="#reffn_2" title="Jump back to footnote [2] in the text."> &#8617;</a>
+</blockquote>
 <div class="note danger">
-            <h2 id="前向分步算法"><a class="header-anchor" href="#前向分步算法"></a>前向分步算法</h2><p><strong>输入</strong>:</p><ul><li>样本特征数据$x_1,\cdots,x_N$</li><li>样本因变量数据$y_1,\cdots,y_N$</li><li>初始提升树$H_0(x)=h_0(x)=0$</li></ul><p><strong>输出</strong>： 提升树<br>$$H(x)=\sum_{t=1}^Th_t(x;\theta_t)$$</p><ul><li>对于$t=1,2,\cdots,T$，</li></ul><ol><li>要训练一棵决策树$h_t(x;\theta_t)$</li><li>提升树为<br>$$H_t(x)=H_{t-1}(x)+h_t(x;\theta_t)$$</li><li>通过经验风险最小化确定该棵决策树的参数$\theta_t$</li></ol><p>$$\hat{\theta}<em>t = \arg \min</em>{\theta_t} \sum_{i=1}^N L \left( y_i, H_{t-1} (x_i)+h_t(x_i;\theta_t) \right)$$</p>
+            <h2 id="前向分步算法"><a href="#前向分步算法" class="headerlink" title="前向分步算法"></a>前向分步算法</h2><p><strong>输入</strong>: </p><ul><li>样本特征数据$x_1,\cdots,x_N$</li><li>样本因变量数据$y_1,\cdots,y_N$</li><li>初始提升树$H_0(x)=h_0(x)=0$</li></ul><p><strong>输出</strong>： 提升树</p><script type="math/tex; mode=display">H(x)=\sum_{t=1}^Th_t(x;\theta_t)</script><ul><li>对于$t=1,2,\cdots,T$，<ol><li>要训练一棵决策树$h_t(x;\theta_t)$</li><li>提升树为<script type="math/tex; mode=display">H_t(x)=H_{t-1}(x)+h_t(x;\theta_t)</script></li><li>通过经验风险最小化确定该棵决策树的参数$\theta_t$</li></ol></li></ul><script type="math/tex; mode=display">\hat{\theta}_t = \arg \min_{\theta_t} \sum_{i=1}^N L \left( y_i, H_{t-1} (x_i) + h_t (x_i; \theta_t) \right)</script>
           </div>
-<h2 id="损失函数"><a class="header-anchor" href="#损失函数"></a>损失函数</h2>
-<p>针对不同问题的提升树学习算法，使用的损失函数不同</p>
+<h2 id="损失函数"><a href="#损失函数" class="headerlink" title="损失函数"></a>损失函数</h2><p>针对不同问题的提升树学习算法，使用的损失函数不同</p>
 <ul>
 <li>回归问题：平方误差损失函数</li>
 <li>分类问题：指数损失函数</li>
@@ -18680,67 +18683,39 @@ $$\Omega(\omega)=\lambda||w||^2$$</li>
             <p>对于二分类问题，若将<a href="/%E7%AE%97%E6%B3%95-AdaBoost.html" title="AdaBoost算法">AdaBoost算法</a>中的基分类器限定为<strong>二类决策树</strong>，则为提升树。<br>此时，Boosting Tree是AdaBoost的特殊情况。</p>
           </div>
 <div class="note danger">
-            <h2 id="回归提升树"><a class="header-anchor" href="#回归提升树"></a>回归提升树</h2><p><strong>输入</strong>：训练数据集${(x_1,y_1),\cdots, (x_N,y_N)}$<br>$x_i\in X\subseteq \mathbb{R}^p,\quad y_i\in Y\subseteq \mathbb{R}$</p><p><strong>输出</strong>：提升树<br>$$H(x)=\sum_{t=1}^Th_t(x)$$</p><ol><li>初始化提升树$H_0(x)=0$</li><li>对$t=1,\cdots,T$($T$为迭代次数)，</li><li>计算上一轮迭代的残差<br>$$r_i^{(t)}=y_i-H_{t-1}(x_i),\quad i=1,\cdots,N.$$</li><li>拟合残差$r_i^{(t)}$学习得到一棵回归树<br>$$h_t(x;\theta_t)$$</li><li>更新提升树<br>$$H_t(x)=H_{t-1}(x)+h_t(x;\theta_t)$$</li></ol>
+            <h2 id="回归提升树"><a href="#回归提升树" class="headerlink" title="回归提升树"></a>回归提升树</h2><p><strong>输入</strong>：训练数据集$\{(x_1,y_1),\cdots, (x_N,y_N)\}$<br>  $x_i\in X\subseteq \mathbb{R}^p,\quad y_i\in Y\subseteq \mathbb{R}$</p><p><strong>输出</strong>：提升树</p><script type="math/tex; mode=display">H(x)=\sum_{t=1}^Th_t(x)</script><ol><li>初始化提升树$H_0(x)=0$</li><li>对$t=1,\cdots,T$($T$为迭代次数)，<ol><li>计算上一轮迭代的残差<script type="math/tex; mode=display">r_i^{(t)}=y_i-H_{t-1}(x_i),\quad i=1,\cdots,N.</script></li><li>拟合残差$r_i^{(t)}$学习得到一棵回归树<script type="math/tex; mode=display">h_t(x;\theta_t)</script></li><li>更新提升树<script type="math/tex; mode=display">H_t(x)=H_{t-1}(x)+h_t(x;\theta_t)</script></li></ol></li></ol>
           </div>
-<h2 id="Objective"><a class="header-anchor" href="#Objective"></a>Objective</h2>
-<p>$$Obj= \sum_{i=1}^n l( y_i,\hat{y}<em>i ) + \sum</em>{k=1}^K \Omega (f_k)$$</p>
+<h2 id="Objective"><a href="#Objective" class="headerlink" title="Objective"></a>Objective</h2><script type="math/tex; mode=display">Obj= \sum_{i=1}^n l( y_i,\hat{y}_i ) + \sum_{k=1}^K \Omega (f_k)</script><ul>
+<li><p>如何定义树的复杂度$\Omega(f_k)$？</p>
 <ul>
-<li>
-<p>如何定义树的复杂度$\Omega(f_k)$？</p>
-</li>
-<li>
-<p>树的结点数、树的深度</p>
-</li>
-<li>
-<p>叶子权重的$l2$范数</p>
-</li>
-<li>
-<p>……</p>
-</li>
-<li>
-<p>信息增益information gain → 训练误差</p>
-</li>
-<li>
-<p>剪枝prunning → 由结点数定义的正则化</p>
-</li>
-<li>
-<p>最大深度max depth → 函数空间的约束</p>
-</li>
-<li>
-<p>smoothing leaf values → 叶子权重的$l2$正则</p>
-</li>
+<li>树的结点数、树的深度</li>
+<li>叶子权重的$l2$范数</li>
+<li>……</li>
 </ul>
-<h2 id="类别"><a class="header-anchor" href="#类别"></a>类别</h2>
-<ul>
+</li>
+<li><p>信息增益information gain → 训练误差</p>
+</li>
+<li>剪枝prunning → 由结点数定义的正则化</li>
+<li>最大深度max depth → 函数空间的约束</li>
+<li>smoothing leaf values → 叶子权重的$l2$正则</li>
+</ul>
+<h2 id="类别"><a href="#类别" class="headerlink" title="类别"></a>类别</h2><ul>
 <li><strong>Gradient Boosted Machine</strong>：使用平方损失$l(y_i,\hat{y}_i)=(y_i-\hat{y}_i)^2$</li>
-<li><strong>LogitBoost</strong>：使用Logistic损失<br>
-$$l(y_i, \hat{y}_i)= y_i \ln (1+e^{-\hat{y}_i}) +(1-y_i) \ln (1+e^{\hat{y}_i})$$</li>
+<li><strong>LogitBoost</strong>：使用Logistic损失<script type="math/tex; mode=display">l(y_i, \hat{y}_i)= y_i \ln (1+e^{-\hat{y}_i}) +(1-y_i) \ln (1+e^{\hat{y}_i})</script></li>
 </ul>
-<h2 id="Pre-stopping"><a class="header-anchor" href="#Pre-stopping"></a>Pre-stopping</h2>
-<ul>
+<h2 id="Pre-stopping"><a href="#Pre-stopping" class="headerlink" title="Pre-stopping"></a>Pre-stopping</h2><ul>
 <li>stop split if the best split have negative gain</li>
 <li>but maybe a split can benefit future splits</li>
 </ul>
-<h2 id="Post-Prunning"><a class="header-anchor" href="#Post-Prunning"></a>Post-Prunning</h2>
-<p>事后剪枝</p>
+<h2 id="Post-Prunning"><a href="#Post-Prunning" class="headerlink" title="Post-Prunning"></a>Post-Prunning</h2><p>事后剪枝</p>
 <ul>
 <li>grow a tree to maximum depth, recursively prune all the leaf splits with negative gain</li>
 </ul>
-<h1 id="参考资料"><a class="header-anchor" href="#参考资料"></a>参考资料</h1>
-<ul>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
 <li><a href="https://homes.cs.washington.edu/~tqchen/data/pdf/BoostedTree.pdf" target="_blank" rel="noopener">Tianqi Chen - Introduction to Boosted Trees</a></li>
 <li><a href="https://book.douban.com/subject/10590856/" target="_blank" rel="noopener">李航-统计学习方法</a></li>
 <li><a href></a></li>
 </ul>
-<hr class="footnotes-sep">
-<section class="footnotes">
-<ol class="footnotes-list">
-<li id="fn1" class="footnote-item"><p>加法模型即基学习器的线性组合 <a href="#fnref1" class="footnote-backref">↩︎</a></p>
-</li>
-<li id="fn2" class="footnote-item"><p>决策树桩（decision stump）：由一个根结点直接连接两个叶节点的简单决策树 <a href="#fnref2" class="footnote-backref">↩︎</a></p>
-</li>
-</ol>
-</section>
 ]]></content>
       <categories>
         <category>Machine Learning 机器学习</category>
