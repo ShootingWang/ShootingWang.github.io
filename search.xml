@@ -2182,62 +2182,47 @@
   <entry>
     <title>数据分析 | 层次分析法（APH）// Analytic Hierarchy Process</title>
     <url>/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-%E5%B1%82%E6%AC%A1%E5%88%86%E6%9E%90%E6%B3%95.html</url>
-    <content><![CDATA[<center></center>
-<a id="more"></a>
-<h1 id="层次分析法-APH"><a class="header-anchor" href="#层次分析法-APH"></a>层次分析法 APH</h1>
-<p><strong>层次分析法（APH，Analytic Hierarchy Process）</strong>，又名<strong>专家分析法</strong>，1971年由Thomas L. Saaty（匹兹堡大学教授）提出，主要应用在不确定情况下及具有多个评估准则的决策问题上。</p>
-<h2 id="本质-Essence"><a class="header-anchor" href="#本质-Essence"></a>本质 Essence</h2>
-<p>层次分析法的本质：</p>
+    <content><![CDATA[<p><center></center><br><a id="more"></a></p>
+<h1 id="层次分析法-APH"><a href="#层次分析法-APH" class="headerlink" title="层次分析法 APH"></a>层次分析法 APH</h1><p><strong>层次分析法（APH，Analytic Hierarchy Process）</strong>，又名<strong>专家分析法</strong>，1971年由Thomas L. Saaty（匹兹堡大学教授）提出，主要应用在不确定情况下及具有多个评估准则的决策问题上。</p>
+<h2 id="本质-Essence"><a href="#本质-Essence" class="headerlink" title="本质 Essence"></a>本质 Essence</h2><p>层次分析法的本质：</p>
 <ul>
 <li>分层</li>
 <li>分权</li>
 </ul>
 <p>整个过程可以由<strong>专家团</strong>参与完成。</p>
-<h3 id="分层-Hierarchy"><a class="header-anchor" href="#分层-Hierarchy"></a>分层 Hierarchy</h3>
-<p>分层，将一个复杂指标分解为若干子指标，每个子指标再各自分解为更小的子指标，逐层分解，直到可度量的末级指标。</p>
-<h3 id="分权-Weighting"><a class="header-anchor" href="#分权-Weighting"></a>分权 Weighting</h3>
-<p>分权，给同一层级的指标匹配权重，通过两两比较的方式降低比较难度。</p>
-<h1 id="步骤-Procedures"><a class="header-anchor" href="#步骤-Procedures"></a>步骤 Procedures</h1>
-<ol>
+<h3 id="分层-Hierarchy"><a href="#分层-Hierarchy" class="headerlink" title="分层 Hierarchy"></a>分层 Hierarchy</h3><p>分层，将一个复杂指标分解为若干子指标，每个子指标再各自分解为更小的子指标，逐层分解，直到可度量的末级指标。</p>
+<h3 id="分权-Weighting"><a href="#分权-Weighting" class="headerlink" title="分权 Weighting"></a>分权 Weighting</h3><p>分权，给同一层级的指标匹配权重，通过两两比较的方式降低比较难度。</p>
+<h1 id="步骤-Procedures"><a href="#步骤-Procedures" class="headerlink" title="步骤 Procedures"></a>步骤 Procedures</h1><ol>
 <li>建立层次结构模型</li>
 <li>构造指标的成对比较矩阵</li>
 <li>计算权向量并进行一致性检验</li>
 <li>计算组合权向量，并做组合一致性检验</li>
 </ol>
-<h2 id="建立层次结构模型"><a class="header-anchor" href="#建立层次结构模型"></a>建立层次结构模型</h2>
-<p>拆分为$n$个指标：$\lbrace x_1, x_2, \cdots, x_n \rbrace$</p>
+<h2 id="建立层次结构模型"><a href="#建立层次结构模型" class="headerlink" title="建立层次结构模型"></a>建立层次结构模型</h2><p>拆分为$n$个指标：$\lbrace x_1, x_2, \cdots, x_n \rbrace$</p>
 <div class="note default">
             <p>假设可拆解为3个指标/元素：$\lbrace x_1, x_2, x_3 \rbrace$</p>
           </div>
-<h2 id="构造指标成对比较矩阵"><a class="header-anchor" href="#构造指标成对比较矩阵"></a>构造指标成对比较矩阵</h2>
-<p>用相对权重$a_{ij}$表示第$i$个指标/元素与第$j$个指标/元素相对上一层某个元素的重要性，构成成对比较矩阵/判断矩阵$\mathbf{A}=\left(a_{ij}\right)_{n\times n}$。</p>
+<h2 id="构造指标成对比较矩阵"><a href="#构造指标成对比较矩阵" class="headerlink" title="构造指标成对比较矩阵"></a>构造指标成对比较矩阵</h2><p>用相对权重$a_{ij}$表示第$i$个指标/元素与第$j$个指标/元素相对上一层某个元素的重要性，构成成对比较矩阵/判断矩阵$\mathbf{A}=\left(a_{ij}\right)_{n\times n}$。</p>
 <ul>
 <li>其中$a_{ii}=1$（$i=1,\cdots, n$）</li>
 <li>$a_{ij}=\frac{1}{a_{ji}}$（$i,j=1,\cdots,n$）</li>
 </ul>
 <div class="note default">
-            <table><thead><tr><th style="text-align:center"></th><th style="text-align:center">$x_1$</th><th style="text-align:center">$x_2$</th><th style="text-align:center">$x_3$</th></tr></thead><tbody><tr><td style="text-align:center">$x_1$</td><td style="text-align:center">1</td><td style="text-align:center">1/3</td><td style="text-align:center">1</td></tr><tr><td style="text-align:center">$x_2$</td><td style="text-align:center">3</td><td style="text-align:center">1</td><td style="text-align:center">1/2</td></tr><tr><td style="text-align:center">$x_3$</td><td style="text-align:center">1</td><td style="text-align:center">2</td><td style="text-align:center">1</td></tr></tbody></table>
+            <div class="table-container"><table><thead><tr><th style="text-align:center"></th><th style="text-align:center">$x_1$</th><th style="text-align:center">$x_2$</th><th style="text-align:center">$x_3$</th></tr></thead><tbody><tr><td style="text-align:center">$x_1$</td><td style="text-align:center">1</td><td style="text-align:center">1/3</td><td style="text-align:center">1</td></tr><tr><td style="text-align:center">$x_2$</td><td style="text-align:center">3</td><td style="text-align:center">1</td><td style="text-align:center">1/2</td></tr><tr><td style="text-align:center">$x_3$</td><td style="text-align:center">1</td><td style="text-align:center">2</td><td style="text-align:center">1</td></tr></tbody></table></div>
           </div>
-<h2 id="一致性-Consistency"><a class="header-anchor" href="#一致性-Consistency"></a>一致性 Consistency</h2>
-<p>CI<br>
-$$CI=\frac{\lambda_{\max} - n}{ n - 1 }$$</p>
-<p>其中，</p>
+<h2 id="一致性-Consistency"><a href="#一致性-Consistency" class="headerlink" title="一致性 Consistency"></a>一致性 Consistency</h2><p>CI</p>
+<script type="math/tex; mode=display">CI=\frac{\lambda_{\max} - n}{ n - 1 }</script><p>其中，</p>
 <ul>
 <li>$\lambda_{\max}$：指标矩阵特征值的最大值</li>
 <li>$n$：指标个数</li>
 </ul>
 <div class="note default">
-            <p>矩阵$\mathbf{A}$的特征值即行列式（determinant）$\left| \lambda \mathbf{I} - \mathbf{A} \right| = 0$的解。<br>$$<br>\mathbf{A}=<br>\left(<br>\begin{array}{ccc}<br>1 &amp; \frac{1}{3} &amp; 1 \\<br>3 &amp; 1 &amp; \frac{1}{2} \\<br>1 &amp; 2 &amp; 1<br>\end{array}<br>\right)<br>$$</p><p>\begin{equation}<br>\begin{aligned}<br>\left| \lambda \mathbf{I} - \mathbf{A} \right| = 0<br>\iff &amp; \left|<br>\begin{array}{ccc}<br>\lambda - a_{11} &amp; -a_{12} &amp; -a_{13} \\<br>-a_{21} &amp; \lambda - a_{22} &amp; -a_{23} \\<br>-a_{31} &amp; -a_{32} &amp; \lambda - a_{33}<br>\end{array}<br>\right| = 0 \\<br>\iff &amp; (\lambda - a_{11}) (-1)^{1+1} \left| \begin{array}{cc} \lambda - a_{22} &amp; -a_{23} \\ -a_{32} &amp; \lambda - a_{33} \end{array} \right| \\<br>&amp; + (-a_{21})(-1)^{2+1} \left| \begin{array}{cc} -a_{12} &amp; -a_{13} \\ -a_{32} &amp; \lambda - a_{33} \end{array} \right| \\<br>&amp; + (-a_{31})(-1)^{3+1} \left| \begin{array}{cc} -a_{12} &amp; -a{13} \\ \lambda - a_{22} &amp; -a_{23} \end{array} \right|=0<br>\end{aligned}<br>\end{equation}</p>
+            <p>矩阵$\mathbf{A}$的特征值即行列式（determinant）$\left| \lambda \mathbf{I} - \mathbf{A} \right| = 0$的解。</p><script type="math/tex; mode=display">\mathbf{A}=\left(\begin{array}{ccc}1 & \frac{1}{3} & 1 \\\\3 & 1 & \frac{1}{2} \\\\1 & 2 & 1\end{array}\right)</script><p>\begin{equation}<br>\begin{aligned}<br>&amp; \left| \lambda \mathbf{I} - \mathbf{A} \right| = 0 \\\\<br>\iff &amp; \left|<br>    \begin{array}{ccc}<br>    \lambda - a_{11} &amp; -a_{12} &amp; -a_{13} \\\\<br>    -a_{21} &amp; \lambda - a_{22} &amp; -a_{23} \\\\<br>    -a_{31} &amp; -a_{32} &amp; \lambda - a_{33}<br>    \end{array}<br>    \right| = 0 \\\\<br>\iff &amp; (\lambda - a_{11}) (-1)^{1+1} \left| \begin{array}{cc} \lambda - a_{22} &amp; -a_{23} \\\\ -a_{32} &amp; \lambda - a_{33} \end{array} \right| \\\\<br>&amp; + (-a_{21})(-1)^{2+1} \left| \begin{array}{cc} -a_{12} &amp; -a_{13} \\\\ -a_{32} &amp; \lambda - a_{33} \end{array} \right| \\\\<br>&amp; + (-a_{31})(-1)^{3+1} \left| \begin{array}{cc} -a_{12} &amp; -a_{13} \\\\ \lambda - a_{22} &amp; -a_{23} \end{array} \right|=0 \\\\<br>\iff &amp; (\lambda - a_{11})\left[ (\lambda - a_{22})(\lambda - a_{33}) - a_{23}a_{32} \right]</p><ul><li>a_{21} \left[ a_{13}a_{32} - a_{12}(\lambda - a_{33}) \right] </li></ul><ul><li>a_{31} \left[ a_{12}a_{23} - a_{13}(\lambda - a_{22}) \right] = 0<br>\end{aligned}<br>\end{equation}</li></ul>
           </div>
-<h2 id="随机一致性-Random-Consistency"><a class="header-anchor" href="#随机一致性-Random-Consistency"></a>随机一致性 Random Consistency</h2>
-<p>随机构造$N$个判断矩阵，并计算一致性指标$CI$，则随机一致性指标为<br>
-$$RI = \frac{1}{N}\sum_{i=1}^N CI_i$$</p>
-<h2 id="一致性检验-Consistency-Check"><a class="header-anchor" href="#一致性检验-Consistency-Check"></a>一致性检验 Consistency Check</h2>
-<p>一致性比率$CR$：<br>
-$$CR = \frac{CI}{RI}$$</p>
-<p>一般认为，$CR&lt;0.1$为一致性检验通过。</p>
-<h1 id="参考资料-References"><a class="header-anchor" href="#参考资料-References"></a>参考资料 References</h1>
-<ul>
+<h2 id="随机一致性-Random-Consistency"><a href="#随机一致性-Random-Consistency" class="headerlink" title="随机一致性 Random Consistency"></a>随机一致性 Random Consistency</h2><p>随机构造$N$个判断矩阵，并计算一致性指标$CI$，则随机一致性指标为</p>
+<script type="math/tex; mode=display">RI = \frac{1}{N}\sum_{i=1}^N CI_i</script><h2 id="一致性检验-Consistency-Check"><a href="#一致性检验-Consistency-Check" class="headerlink" title="一致性检验 Consistency Check"></a>一致性检验 Consistency Check</h2><p>一致性比率$CR$：</p>
+<script type="math/tex; mode=display">CR = \frac{CI}{RI}</script><p>一般认为，$CR&lt;0.1$为一致性检验通过。</p>
+<h1 id="参考资料-References"><a href="#参考资料-References" class="headerlink" title="参考资料 References"></a>参考资料 References</h1><ul>
 <li><a href="cnblogs.com/yhll/p/9967726.html">[博客园] APH层次分析法（附Python示例代码）</a></li>
 </ul>
 ]]></content>
