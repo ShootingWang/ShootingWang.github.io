@@ -29791,6 +29791,7 @@ dtype: int64
 <script type="math/tex; mode=display">CR = \frac{CI}{RI}</script><p>一般认为，$CR&lt;0.1$为一致性检验通过。</p>
 <h1 id="参考资料-References"><a href="#参考资料-References" class="headerlink" title="参考资料 References"></a>参考资料 References</h1><ul>
 <li><a href="cnblogs.com/yhll/p/9967726.html">[博客园] APH层次分析法（附Python示例代码）</a></li>
+<li><a href="https://baijiahao.baidu.com/s?id=1651259201959322004" target="_blank" rel="noopener">[BaiJiaHao] 层次分析法（AHP）研究方法与步骤分解及案例详解</a></li>
 </ul>
 ]]></content>
       <categories>
