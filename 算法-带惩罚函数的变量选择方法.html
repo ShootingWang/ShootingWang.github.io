@@ -455,7 +455,7 @@ L_{Ridge}(\beta) &amp;= ||y-X\beta ||^2_2 + \lambda ||\beta||^2_2\<br>
 <li>注意：ridge regression假设自变量（predictors）是标准化的（standardized），且因变量是中心化的（centered）</li>
 </ul>
 <blockquote>
-<p>标准化、中心化见《<a href="/%E7%AE%97%E6%B3%95-%E7%89%B9%E5%BE%81%E5%BD%92%E4%B8%80%E5%8C%96.html" title="Feature Engineering | 特征缩放">Feature Engineering | 特征缩放</a>》</p>
+<p>标准化、中心化见《<a href="/%E7%AE%97%E6%B3%95-%E7%89%B9%E5%BE%81%E5%BD%92%E4%B8%80%E5%8C%96.html" title="Feature Engineering | 特征缩放 Feature Sacling">Feature Engineering | 特征缩放 Feature Sacling</a>》</p>
 </blockquote>
 <figure class="highlight r"><table><tr><td class="code"><pre><span class="line"><span class="keyword">library</span>(glmnet)  <span class="comment">## 用于岭回归</span></span><br><span class="line"><span class="keyword">library</span>(dplyr)  <span class="comment">## 用于数据清洗</span></span><br><span class="line"><span class="keyword">library</span>(psych)  <span class="comment">## 使用 tr() 计算矩阵的迹</span></span><br><span class="line"></span><br><span class="line">data(<span class="string">'mtcars'</span>)  <span class="comment">## 载入数据mtcars</span></span><br><span class="line"><span class="comment">## 将y中心化</span></span><br><span class="line">y &lt;- mtcars %&gt;% select(mpg) %&gt;% </span><br><span class="line">  scale(center = <span class="literal">TRUE</span>, scale = <span class="literal">FALSE</span>) %&gt;%</span><br><span class="line">  as.matrix()</span><br><span class="line"><span class="comment">## 将X中心化</span></span><br><span class="line">X &lt;- mtcars %&gt;% select(-mpg) %&gt;%</span><br><span class="line">  scale(center = <span class="literal">TRUE</span>, scale = <span class="literal">TRUE</span>) %&gt;%  </span><br><span class="line">  as.matrix()</span><br><span class="line"><span class="comment">## X的标准化可以省略，令cv.glmnet()或glmnet()中的参数standardize = TRUE来标准化X</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 使用10折交叉验证选择最优lambda</span></span><br><span class="line">lambdas_seq &lt;- <span class="number">10</span>^seq(-<span class="number">3</span>, <span class="number">5</span>, length.out = <span class="number">100</span>)</span><br><span class="line"><span class="comment">## alpha = 0表示岭回归</span></span><br><span class="line">ridge_cv &lt;- cv.glmnet(X, y, alpha = <span class="number">0</span>, lambda = lambdas_seq,</span><br><span class="line">                      nfolds = <span class="number">10</span>)</span><br><span class="line">plot(ridge_cv)</span><br></pre></td></tr></table></figure>
 <meta name="referrer" content="no-referrer">
@@ -1295,8 +1295,6 @@ $$P_{\lambda, \gamma}(\beta) = \sum_{j=1}^p \rho(\parallel\beta_j\parallel_2; \s
 
 
 
-
-  
 
 
 
