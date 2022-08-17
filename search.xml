@@ -1992,10 +1992,10 @@
 <h2 id="色系全集"><a class="header-anchor" href="#色系全集"></a>色系全集</h2>
 <table><tbody>
     <tr>
-        <th>色系</th>
-        <th>颜色名称</th>
-        <th>十六进制色值</th>
-        <th>颜色</th>
+        <th width="20%">色系</th>
+        <th width="20%">颜色名称</th>
+        <th width="20%">十六进制色值</th>
+        <th width="40%">颜色</th>
     </tr>
     <tr>
         <td>黑色 Black</td>
@@ -2069,7 +2069,12 @@
         <td>#F1F2E5</td>
         <td bgcolor="#F1F2E5"></td>
     </tr>
-</tbody></table>]]></content>
+</tbody></table>
+<h1 id="参考资料"><a class="header-anchor" href="#参考资料"></a>参考资料</h1>
+<ul>
+<li><a href="https://blog.csdn.net/wkd_007/article/details/124435722" target="_blank" rel="noopener">Markdown: 漂亮表格(表格背景色、跨行、跨列)</a></li>
+</ul>
+]]></content>
       <categories>
         <category>Everything</category>
       </categories>
