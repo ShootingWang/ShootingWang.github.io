@@ -1943,45 +1943,86 @@
 <a id="more"></a>
 <h1 id="色彩网站"><a class="header-anchor" href="#色彩网站"></a>色彩网站</h1>
 <h1 id="色彩搭配"><a class="header-anchor" href="#色彩搭配"></a>色彩搭配</h1>
+<h2 id="撞色"><a class="header-anchor" href="#撞色"></a>撞色</h2>
+<p>两色</p>
 <table><tbody>
     <tr>
-        <th>色系</th><th>颜色名称</th><th>颜色（16进制）</th>
+        <th>色系</th>
+        <th>颜色名称</th>
+        <th>颜色（16进制）</th>
+        <th>颜色</th>
     </tr>
     <tr>
-        <td>蓝色 Blue</td><td>克莱因蓝</td><td bgcolor="#002EA6"></td>
+        <td>蓝色 Blue</td>
+        <td>克莱因蓝</td>
+        <td>#002EA6</td>
+        <td bgcolor="#002EA6"></td>
     </tr>
     <tr>
-        <td>黄色 Yellow</td><td>拿坡里黄</td><td bgcolor="#FFE78F"></td>
+        <td>黄色 Yellow</td>
+        <td>拿坡里黄</td>
+        <td>#FFE78F</td>
+        <td bgcolor="#FFE78F"></td>
     </tr>
     <tr>
-        <td>红色 Red</td><td>中国红</td><td bgcolor="#D7000F"></td>
+        <td>红色 Red</td>
+        <td>中国红</td>
+        <td>#D7000F</td>
+        <td bgcolor="#D7000F"></td>
     </tr>
     <tr>
-        <td>白色 White</td><td>鱼肚白</td><td bgcolor="#F1F2E5"></td>
+        <td>白色 White</td>
+        <td>鱼肚白</td>
+        <td>#F1F2E5</td>
+        <td bgcolor="#F1F2E5"></td>
     </tr>
     <tr>
-        <td>橙色 Orange</td><td>爱马仕橙</td><td bgcolor="#FF770F"></td>
+        <td>橙色 Orange</td>
+        <td>爱马仕橙</td>
+        <td>#FF770F</td>
+        <td bgcolor="#FF770F"></td>
     </tr>
     <tr>
-        <td>黑色 Black</td><td>漆黑</td><td bgcolor="#000010"></td>
+        <td>黑色 Black</td>
+        <td>漆黑</td>
+        <td>#000010</td>
+        <td bgcolor="#000010"></td>
     </tr>
     <tr>
-        <td>绿色 Green</td><td>茶绿</td><td bgcolor="#91B822"></td>
+        <td>绿色 Green</td>
+        <td>茶绿</td>
+        <td>#91B822</td>
+        <td bgcolor="#91B822"></td>
     </tr>
     <tr>
-        <td>绿色 Green</td><td>松花</td><td bgcolor="#FFE76F"></td>
+        <td>绿色 Green</td>
+        <td>松花</td>
+        <td>#FFE76F</td>
+        <td bgcolor="#FFE76F"></td>
     </tr>
     <tr>
-        <td>蓝色 Blue</td><td>蒂芙尼蓝</td><td bgcolor="#80D1C8"></td>
+        <td>蓝色 Blue</td>
+        <td>蒂芙尼蓝</td>
+        <td>#80D1C8</td>
+        <td bgcolor="#80D1C8"></td>
     </tr>
     <tr>
-        <td>黄色 Yellow</td><td>浅驼色</td><td bgcolor="#FFD4A9"></td>
+        <td>黄色 Yellow</td>
+        <td>浅驼色</td>
+        <td>#FFD4A9</td>
+        <td bgcolor="#FFD4A9"></td>
     </tr>
     <tr>
-        <td>绿色 Green</td><td>莫兰迪绿</td><td bgcolor="#8BA583"></td>
+        <td>绿色 Green</td>
+        <td>莫兰迪绿</td>
+        <td>#8BA583</td>
+        <td bgcolor="#8BA583"></td>
     </tr>
     <tr>
-        <td>粉色 Pink</td><td>莫兰迪粉</td><td bgcolor="#CDA59E"></td>
+        <td>粉色 Pink</td>
+        <td>莫兰迪粉</td>
+        <td>#CDA59E</td>
+        <td bgcolor="#CDA59E"></td>
     </tr>
 </tbody></table>]]></content>
       <categories>
