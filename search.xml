@@ -1994,6 +1994,7 @@
     <tr>
         <th>色系</th>
         <th>颜色名称</th>
+        <th>十六进制色值</th>
         <th>颜色</th>
     </tr>
     <tr>
@@ -2052,15 +2053,15 @@
     </tr>
     <tr>
         <td>绿色 Green</td>
-        <td>松花</td>
-        <td>#FFE76F</td>
-        <td bgcolor="#FFE76F"></td>
-    </tr>
-    <tr>
-        <td>绿色 Green</td>
         <td>莫兰迪绿</td>
         <td>#8BA583</td>
         <td bgcolor="#8BA583"></td>
+    </tr>
+    <tr>
+        <td>绿色 Green</td>
+        <td>松花</td>
+        <td>#FFE76F</td>
+        <td bgcolor="#FFE76F"></td>
     </tr>
     <tr>
         <td>白色 White</td>
