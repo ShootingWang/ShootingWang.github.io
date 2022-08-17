@@ -1948,7 +1948,7 @@
 <table><tbody>
     <tr>
         <th>颜色名称A</th>
-        <th>颜色A（16进制）</th>
+        <th>颜色A</th>
         <th>颜色B</th>
         <th>颜色名称B</th>
     </tr>
@@ -1992,19 +1992,20 @@
 <h2 id="色系全集"><a class="header-anchor" href="#色系全集"></a>色系全集</h2>
 <table><tbody>
     <tr>
+        <th>色系</th>
+        <th>颜色名称</th>
+        <th>颜色</th>
+    </tr>
+    <tr>
         <td>黑色 Black</td>
         <td>漆黑</td>
         <td>#000010</td>
         <td bgcolor="#000010"></td>
     </tr>
     <tr>
-        <th>色系</th>
-        <th>颜色名称</th>
-        <th>颜色</th>
-    </tr>
-    <tr>
         <td>蓝色 Blue</td>
         <td>克莱因蓝</td>
+        <td>#002EA6</td>
         <td bgcolor="#002EA6"></td>
     </tr>
     <tr>
