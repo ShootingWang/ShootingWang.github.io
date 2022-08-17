@@ -1949,7 +1949,7 @@
     <tr>
         <th>颜色名称A</th>
         <th>颜色A</th>
-        <th>颜色B</th>
+        <th align="right">颜色B</th>
         <th>颜色名称B</th>
     </tr>
     <tr>
