@@ -2627,6 +2627,16 @@ $$CR = \frac{CI}{RI}$$</p>
 </ul>
 <h1 id="实现代码"><a class="header-anchor" href="#实现代码"></a>实现代码</h1>
 <h2 id="Python"><a class="header-anchor" href="#Python"></a>Python</h2>
+<h3 id="pymatch"><a class="header-anchor" href="#pymatch"></a>pymatch</h3>
+<ul>
+<li>GitHub地址：<a href="https://github.com/benmiroglio/pymatch">https://github.com/benmiroglio/pymatch</a>
+<ul>
+<li>不要使用<code>pip install pymatch</code>安装，应下载<a href="https://github.com/benmiroglio/pymatch/tree/master/pymatch">修正版</a>至<code>pymatch</code>同名文件夹，直接加载使用</li>
+</ul>
+</li>
+<li><code>compare_continuous</code>会报错，相应解决方案可参考https://github.com/benmiroglio/pymatch/issues/36</li>
+<li>可使用<code>causalinference</code>包计算ATE（参考<a href="https://matheusfacure.github.io/python-causality-handbook/11-Propensity-Score.html#propensity-score-matching" target="_blank" rel="noopener">Causal Inference fro the Brave and True - Propensity Score - Propensity Score matching</a>）</li>
+</ul>
 <h2 id="R"><a class="header-anchor" href="#R"></a>R</h2>
 <ul>
 <li>使用<code>Matching</code>包实现PSM</li>
@@ -2651,6 +2661,7 @@ $$CR = \frac{CI}{RI}$$</p>
 <li><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3144483/" target="_blank" rel="noopener">Austin, Peter C . An Introduction to Propensity Score Methods for Reducing the Effects of Confounding in Observational Studies [J]. Multivariate Behav Res, 2011, 46(3):399-424.</a></li>
 <li><a href="https://developer.aliyun.com/article/892427" target="_blank" rel="noopener">倾向得分匹配（PSM）的原理以及应用</a></li>
 <li><a href="https://stats.stackexchange.com/questions/308397/why-is-average-treatment-effect-different-from-average-treatment-effect-on-the-t" target="_blank" rel="noopener">Why is Average Treatment Effect different from Average Treatment effect on the Treated?</a></li>
+<li><a href="https://www.summitllc.us/propensity-score-matching" target="_blank" rel="noopener">PROPENSITY SCORE MATCHING（PSM图解）</a></li>
 </ul>
 <h2 id="软件实现"><a class="header-anchor" href="#软件实现"></a>软件实现</h2>
 <ul>
