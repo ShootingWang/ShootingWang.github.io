@@ -2648,6 +2648,8 @@ $$CR = \frac{CI}{RI}$$</p>
 <li><a href="https://liberalarts.utexas.edu/prc/_files/cs/Spring2013_Blanchard_Propensity%20Score%20Matching.pdf" target="_blank" rel="noopener">An Introduction to Propensity Score Matching</a></li>
 <li><a href="https://onlinelibrary.wiley.com/doi/10.1111/j.1467-6419.2007.00527.x" target="_blank" rel="noopener">Caliendo M, Kopeinig S. Some practical guidance for the implementation of propensity score matching [J]. Journal of economic surveys, 2008, 22(1): 31-72.</a></li>
 <li><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3144483/" target="_blank" rel="noopener">Austin, Peter C . An Introduction to Propensity Score Methods for Reducing the Effects of Confounding in Observational Studies [J]. Multivariate Behav Res, 2011, 46(3):399-424.</a></li>
+<li><a href="https://developer.aliyun.com/article/892427" target="_blank" rel="noopener">倾向得分匹配（PSM）的原理以及应用</a></li>
+<li><a href="https://stats.stackexchange.com/questions/308397/why-is-average-treatment-effect-different-from-average-treatment-effect-on-the-t" target="_blank" rel="noopener">Why is Average Treatment Effect different from Average Treatment effect on the Treated?</a></li>
 </ul>
 <h2 id="软件实现"><a class="header-anchor" href="#软件实现"></a>软件实现</h2>
 <ul>
