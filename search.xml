@@ -1334,6 +1334,8 @@ $$F(3,4)=3500$$</li>
 <h2 id="禁止输出警告（warnings）"><a class="header-anchor" href="#禁止输出警告（warnings）"></a>禁止输出警告（warnings）</h2>
 <p>运行以下代码：</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> warnings</span><br><span class="line">warnings.filterwarnings(<span class="string">"ignore"</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="for循环美观输出DataFrame"><a class="header-anchor" href="#for循环美观输出DataFrame"></a>for循环美观输出DataFrame</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> IPython.display <span class="keyword">import</span> display</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">5</span>):</span><br><span class="line">    df = pd.read_csv(<span class="string">'xxx.csv'</span>, encoding=<span class="string">'utf_8_sig'</span>)</span><br><span class="line">    display(df)</span><br></pre></td></tr></table></figure>
 <h1 id="Kernel"><a class="header-anchor" href="#Kernel"></a>Kernel</h1>
 <h2 id="安装R-kernel"><a class="header-anchor" href="#安装R-kernel"></a>安装R kernel</h2>
 <p>先在R中安装以下几个package：</p>
