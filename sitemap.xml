@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://github.com/ShootingWang/ShootingWang.github.io/python-pandas%E6%A8%A1%E5%9D%97.html</loc>
+    
+    <lastmod>2022-09-19</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://github.com/ShootingWang/ShootingWang.github.io/%E7%AE%97%E6%B3%95-XGBoost.html</loc>
     
     <lastmod>2022-09-19</lastmod>
@@ -1013,15 +1022,6 @@
     <loc>https://github.com/ShootingWang/ShootingWang.github.io/LaTeX.html</loc>
     
     <lastmod>2022-03-20</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://github.com/ShootingWang/ShootingWang.github.io/python-pandas%E6%A8%A1%E5%9D%97.html</loc>
-    
-    <lastmod>2022-03-19</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
