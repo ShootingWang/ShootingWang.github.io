@@ -11856,6 +11856,17 @@ $$C_i = \frac{\Delta Y_i}{\Delta Y} = \frac{Y_i^T - Y^{T-1} }{ Y^T - Y^{T-1} }$$
 $$\mathrm{GMV} = 老客\mathrm{GMV} + 新客\mathrm{GMV}$$</p>
 </blockquote>
 <h4 id="乘法指标"><a class="header-anchor" href="#乘法指标"></a>乘法指标</h4>
+<p>目标指标可以拆分为多个指标的<strong>乘积</strong>。</p>
+<p>\begin{equation}<br>
+Y = Y_1 \times Y_2 \times \cdots Y_m<br>
+\end{equation}</p>
+<h5 id="加法分解"><a class="header-anchor" href="#加法分解"></a>加法分解</h5>
+<p>对公式两端取对数$\ln$，<br>
+\begin{aligned}<br>
+\ln Y &amp;= \ln \left( Y_1 \cdot Y_2 \cdot \cdots Y_m \right) \\<br>
+&amp;= \ln Y_1 + \ln Y_2 + \cdots + \ln Y_m \\<br>
+\end{aligned}</p>
+<h5 id="LDMI"><a class="header-anchor" href="#LDMI"></a>LDMI</h5>
 <h4 id="除法指标"><a class="header-anchor" href="#除法指标"></a>除法指标</h4>
 <ul>
 <li>适用范围：分子分母可分别加和的除法指标</li>
