@@ -24556,7 +24556,7 @@ $$\mathrm{GMV} = 老客\mathrm{GMV} + 新客\mathrm{GMV}$$</p>
 <li>Xiang, X.; Ma, X.; Ma, Z.; Ma, M.; Cai, W. <a href="https://www.mdpi.com/2075-5309/12/1/83/htm">Python-LMDI: A Tool for Index Decomposition Analysis of Building Carbon Emissions</a>. Buildings 2022, 12, 83. <a href="https://doi.org/10.3390/buildings12010083">https://doi.org/10.3390/buildings12010083</a></li>
 </ul>
 <p>首先对目标指标进行结构拆解，以考虑到结构化变化对目标指标的影响（可以理解为维度拆解）。<br>
-$$Y = \sum_{i=1}^m Y_i =  Y_1 + Y_2 + \cdots + Y_m $$<br>
+$$ Y = \sum_{i=1}^m Y_i =  Y_1 + Y_2 + \cdots + Y_m $$<br>
 在每一个子类（sub-category）里，指标$Y_i$又受到$n$个因素的叠加影响。</p>
 <p>\begin{aligned}<br>
 Y &amp;= \sum_{i=1}^m Y_i = \sum_{i=1}^m \sum_{j=1}^n X_{j,i} \\<br>
