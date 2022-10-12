@@ -28797,17 +28797,17 @@ Y = X_1 \cdot X_2 \cdot \cdots \cdot X_m<br>
 </blockquote>
 <ol>
 <li>
-<p>加法分解：将目标指标的波动$\Delta Y$分解到各个因子上<br>
+<p>加法分解：将目标指标的波动$\Delta$分解到各个因子上<br>
 \begin{aligned}<br>
-\Delta Y &amp;= Y^T - Y^{T-1} \\<br>
-&amp;= \Delta_{X_1} + \Delta_{X_m} \\<br>
+\Delta &amp;= Y^T - Y^{T-1} \\<br>
+&amp;= \Delta_{1} + \Delta_2 +  \cdots + \Delta_{m} \\<br>
 \end{aligned}</p>
 </li>
 <li>
 <p>乘法分解：将目标指标的变化倍数$RATIO$分解到各个因子上<br>
 \begin{aligned}<br>
 RATIO &amp;= \frac{Y^T}{ Y^{T-1} } \\<br>
-&amp;= ratio_{X_1} \cdot ratio_{X_2} \cdot \cdots \cdot ratio_{X_m} \\<br>
+&amp;= ratio_{1} \cdot ratio_{2} \cdot \cdots \cdot ratio_{m} \\<br>
 \end{aligned}</p>
 </li>
 </ol>
