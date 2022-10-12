@@ -11754,25 +11754,33 @@ $$派生/衍生指标 = 原子指标 + 时间周期 + 其他修饰词$$</li>
   <entry>
     <title>数据分析 | 指标异动归因</title>
     <url>/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-%E6%8C%87%E6%A0%87%E5%BC%82%E5%8A%A8%E5%BD%92%E5%9B%A0.html</url>
-    <content><![CDATA[<p><center></center><br><span id="more"></span></p>
+    <content><![CDATA[<center></center>
+<span id="more"></span>
 <ul>
 <li>机票的成交转化率下降了，怎么分析？</li>
 <li>航班公司觉得自己的某个航线经营状况不好，怎么分析原因</li>
 <li>某个产品的销售量下降了，怎么分析？</li>
 <li>xxx转化率最近在下降，询盘量有点上升，请分析下是什么情况?</li>
 </ul>
-<h1 id="分析过程"><a href="#分析过程" class="headerlink" title="分析过程"></a>分析过程</h1><p>指标异动归因分析的基本流程：</p>
+<h1 id="分析过程"><a class="header-anchor" href="#分析过程"></a>分析过程</h1>
+<p>指标异动归因分析的基本流程：</p>
 <ol>
 <li>明确关注的核心指标，以及对应的业务目标</li>
 <li>梳理相关的业务流程，明确可拆解的纵向、横向维度</li>
 <li>纵向分析，定义异动，并发现异动</li>
 <li>横向分析，拆解维度，定位异动的主要原因，发现业务的可优化点</li>
 </ol>
-<h2 id="明确指标、业务目标"><a href="#明确指标、业务目标" class="headerlink" title="明确指标、业务目标"></a>明确指标、业务目标</h2><p>明确关注的核心指标，以及对应的业务目标</p>
-<h2 id="梳理流程，拆解维度"><a href="#梳理流程，拆解维度" class="headerlink" title="梳理流程，拆解维度"></a>梳理流程，拆解维度</h2><p>梳理相关的业务流程，明确可拆解的纵向、横向维度</p>
-<h3 id="常见纵向维度"><a href="#常见纵向维度" class="headerlink" title="常见纵向维度"></a>常见纵向维度</h3><h3 id="常见横向维度"><a href="#常见横向维度" class="headerlink" title="常见横向维度"></a>常见横向维度</h3><ul>
-<li>平台/版本<ul>
-<li>某产品列表页到详情页的转化提升<ul>
+<h2 id="明确指标、业务目标"><a class="header-anchor" href="#明确指标、业务目标"></a>明确指标、业务目标</h2>
+<p>明确关注的核心指标，以及对应的业务目标</p>
+<h2 id="梳理流程，拆解维度"><a class="header-anchor" href="#梳理流程，拆解维度"></a>梳理流程，拆解维度</h2>
+<p>梳理相关的业务流程，明确可拆解的纵向、横向维度</p>
+<h3 id="常见纵向维度"><a class="header-anchor" href="#常见纵向维度"></a>常见纵向维度</h3>
+<h3 id="常见横向维度"><a class="header-anchor" href="#常见横向维度"></a>常见横向维度</h3>
+<ul>
+<li>平台/版本
+<ul>
+<li>某产品列表页到详情页的转化提升
+<ul>
 <li>猜测是Android版本中优化列表布局方式</li>
 <li>则应分 IOS 、Android以及Android的新版、老版来对比转化数据，从而进一步验证前述猜测</li>
 </ul>
@@ -11783,10 +11791,12 @@ $$派生/衍生指标 = 原子指标 + 时间周期 + 其他修饰词$$</li>
 <li>用户群体</li>
 <li>类目</li>
 </ul>
-<h2 id="纵向分析，发现异动"><a href="#纵向分析，发现异动" class="headerlink" title="纵向分析，发现异动"></a>纵向分析，发现异动</h2><p>按照时间等纵向维度观察指标变化趋势，通过摸底分析定义指标异常波动；结合纵向分析，发现指标的异常波动。</p>
+<h2 id="纵向分析，发现异动"><a class="header-anchor" href="#纵向分析，发现异动"></a>纵向分析，发现异动</h2>
+<p>按照时间等纵向维度观察指标变化趋势，通过摸底分析定义指标异常波动；结合纵向分析，发现指标的异常波动。</p>
 <p>常用异动检测方法：</p>
 <ol>
-<li>算法：通过对时间序列形式的指标历史数据进行学习建模，预测指标的正常波动区间，超过区间的波动则视为异动。<ul>
+<li>算法：通过对时间序列形式的指标历史数据进行学习建模，预测指标的正常波动区间，超过区间的波动则视为异动。
+<ul>
 <li><a href="https://otexts.com/fppcn/holt-winters.html">Holt-winters算法</a>（三次指数滑动平均算法）</li>
 <li><a href="https://zhuanlan.zhihu.com/p/469807045">Prophet算法</a></li>
 </ul>
@@ -11794,86 +11804,146 @@ $$派生/衍生指标 = 原子指标 + 时间周期 + 其他修饰词$$</li>
 <li>规则：通过摸底分析，划定指标同环比的正常波动区间，超出区间的同环比波动则视为异动。</li>
 </ol>
 <blockquote>
-<p>什么是<strong>异常值</strong>？<br>异常值，也称为离群值（outlier），指数据统计中，偏离多数数据样本或不符合现有数据统计规律的数值。一般来说，异常值会明显大于或小于其他数据样本。</p>
+<p>什么是<strong>异常值</strong>？<br>
+异常值，也称为离群值（outlier），指数据统计中，偏离多数数据样本或不符合现有数据统计规律的数值。一般来说，异常值会明显大于或小于其他数据样本。</p>
+</blockquote>
 <ul>
-<li>作用：<ul>
+<li>作用：
+<ul>
 <li>监控告警</li>
 <li>数据分析前处理</li>
 </ul>
 </li>
 <li>可以使用变化率、距离、密度等指标设定阈值进行监控</li>
 </ul>
-</blockquote>
-<h2 id="横向分析，归因异动"><a href="#横向分析，归因异动" class="headerlink" title="横向分析，归因异动"></a>横向分析，归因异动</h2><p>发现指标异常波动后，拆解维度进行横向分析，结合贡献度等方法，定位异动的主要原因，发现存在的业务问题和可优化点。</p>
+<h2 id="横向分析，归因异动"><a class="header-anchor" href="#横向分析，归因异动"></a>横向分析，归因异动</h2>
+<p>发现指标异常波动后，拆解维度进行横向分析，结合贡献度等方法，定位异动的主要原因，发现存在的业务问题和可优化点。</p>
 <blockquote>
-<p>贡献度计算方法见<a href="#归因方法">归因方法</a></p>
+<p>贡献度计算方法见<a href="#%E5%BD%92%E5%9B%A0%E6%96%B9%E6%B3%95">归因方法</a></p>
 </blockquote>
-<h1 id="归因方法"><a href="#归因方法" class="headerlink" title="归因方法"></a>归因方法</h1><h2 id="维度归因"><a href="#维度归因" class="headerlink" title="维度归因"></a>维度归因</h2><p>将指标在各维度（因子）上进行拆解，计算各个维度（因子）对指标波动的贡献度，发现影响指标波动的主要原因（维度/因子）。</p>
+<h1 id="归因方法"><a class="header-anchor" href="#归因方法"></a>归因方法</h1>
+<h2 id="维度归因"><a class="header-anchor" href="#维度归因"></a>维度归因</h2>
+<p>将指标在各维度（因子）上进行拆解，计算各个维度（因子）对指标波动的贡献度，发现影响指标波动的主要原因（维度/因子）。</p>
 <ul>
 <li>同向影响因子：对目标指标同向变动做出贡献的因子（维度/因素）；贡献度为正的因子为同向影响因子</li>
 <li>反向影响因子：对目标指标反向变动做出贡献的因子（维度/因素）；贡献度为负的因子为反向影响因子</li>
 </ul>
-<h3 id="定基法"><a href="#定基法" class="headerlink" title="定基法"></a>定基法</h3><p>即定基替代法。针对各维度，用标准值替代实际值，以测定各维度因素对指标的影响。</p>
-<h4 id="加法指标"><a href="#加法指标" class="headerlink" title="加法指标"></a>加法指标</h4><p>即<strong>Delta法</strong>。<br>目标指标$Y$可拆分成多个维度指标的<strong>加和</strong>。</p>
-<p>\begin{aligned}<br>Y &amp;= Y_1 + Y_2 + \cdots + Y_m \\<br>\Delta Y &amp;= Y^T - Y^{T-1} \\<br>&amp;= \Delta Y_1 + \Delta Y_2 + \cdots + \Delta Y_m \\<br>\Delta Y_i &amp;= Y_i^T - Y_i^{T-1} \\<br>\end{aligned}</p>
+<h3 id="定基法"><a class="header-anchor" href="#定基法"></a>定基法</h3>
+<p>即定基替代法。针对各维度，用标准值替代实际值，以测定各维度因素对指标的影响。</p>
+<h4 id="加法指标"><a class="header-anchor" href="#加法指标"></a>加法指标</h4>
+<p>即<strong>Delta法</strong>。<br>
+目标指标$Y$可拆分成多个维度指标的<strong>加和</strong>。</p>
+<p>\begin{aligned}<br>
+Y &amp;= Y_1 + Y_2 + \cdots + Y_m \\<br>
+\Delta Y &amp;= Y^T - Y^{T-1} \\<br>
+&amp;= \Delta Y_1 + \Delta Y_2 + \cdots + \Delta Y_m \\<br>
+\Delta Y_i &amp;= Y_i^T - Y_i^{T-1} \\<br>
+\end{aligned}</p>
 <p>其中，</p>
 <ul>
 <li>$Y$为目标指标，关注该指标的波动，波动值为$\Delta Y$</li>
 <li>共可拆分为$m$个维度，维度之间满足<a href="/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-MECE%E5%8E%9F%E5%88%99.html" title="MECE原则">MECE原则</a></li>
 <li>$T$指代当期（本期，对比期），$T-1$指代上一期（基期）</li>
 </ul>
-<p>则第$i$个（$i=1,\cdots,m$）维度（因子Factor）$F_i$对波动$\Delta Y$的贡献度（Contribution）为</p>
-<script type="math/tex; mode=display">C_i = \frac{\Delta Y_i}{\Delta Y} = \frac{Y_i^T - Y^{T-1} }{ Y^T - Y^{T-1} }</script><ul>
+<p>则第$i$个（$i=1,\cdots,m$）维度（因子Factor）$F_i$对波动$\Delta Y$的贡献度（Contribution）为<br>
+$$C_i = \frac{\Delta Y_i}{\Delta Y} = \frac{Y_i^T - Y^{T-1} }{ Y^T - Y^{T-1} }$$</p>
+<ul>
 <li>若$C_i &gt; 0$，则因子$F_i$是指标$Y$的同向影响因子（同上涨或同下跌）</li>
 <li>若$C_i &lt; 0$，则因子$F_i$是指标$Y$的反向影响因子（一上涨一下跌）</li>
 </ul>
 <blockquote>
-<p>:chestnut: 以GMV为例：</p>
-<script type="math/tex; mode=display">\mathrm{GMV} = 老客\mathrm{GMV} + 新客\mathrm{GMV}</script></blockquote>
-<h4 id="乘法指标"><a href="#乘法指标" class="headerlink" title="乘法指标"></a>乘法指标</h4><p>目标指标$Y$受到多个因子（$X_1, \cdots, X_m$）的叠加影响。</p>
-<p>\begin{equation}<br>Y = X_1 \cdot X_2 \cdot \cdots \cdot X_m<br>\end{equation}</p>
-<p>下面将使用LDMI方法（指数分解方法），计算乘法指标中每个因子（维度）对目标指标的贡献度。<br>将分解的各个因子（因素）看成是时间$t$的连续可微函数，对时间$t$进行微分，分解出各个因子（因素）对目标指标的影响。为了便于理解，假设基期为时间$0$，对比期（当期）为时间$T$。</p>
-<blockquote>
-<p><strong>LMDI</strong>（Log Mean Divisia Index）</p>
-<ol>
-<li>加法分解：将目标指标的波动$\Delta$分解到各个因子上<br>\begin{aligned}<br>\Delta &amp;= Y^T - Y^{0} \\<br>&amp;= \Delta<em>{1} + \Delta_2 +  \cdots + \Delta</em>{m} \\<br>\end{aligned}</li>
-</ol>
+<p>🌰 以GMV为例：<br>
+$$\mathrm{GMV} = 老客\mathrm{GMV} + 新客\mathrm{GMV}$$</p>
 </blockquote>
+<h4 id="乘法指标"><a class="header-anchor" href="#乘法指标"></a>乘法指标</h4>
+<p>目标指标$Y$受到多个因子（$X_1, \cdots, X_m$）的叠加影响。</p>
+<p>\begin{equation}<br>
+Y = X_1 \cdot X_2 \cdot \cdots \cdot X_m<br>
+\end{equation}</p>
+<p>下面将使用LDMI方法（指数分解方法），计算乘法指标中每个因子（维度）对目标指标的贡献度。<br>
+将分解的各个因子（因素）看成是时间$t$的连续可微函数，对时间$t$进行微分，分解出各个因子（因素）对目标指标的影响。<br>
+为了便于理解，假设基期为时间$0$，对比期（当期）为时间$T$。</p>
+<p><strong>LMDI</strong>（Log Mean Divisia Index）：对数平均迪氏指数方法。</p>
 <ol>
-<li>乘法分解：将目标指标的变化倍数$RATIO$分解到各个因子上<br>\begin{aligned}<br>RATIO &amp;= \frac{Y^T}{ Y^{0} } \\<br>&amp;= ratio<em>{1} \cdot ratio</em>{2} \cdot \cdots \cdot ratio_{m} \\<br>\end{aligned}</li>
+<li>
+<p>加法分解：将目标指标的波动$\Delta$分解到各个因子上<br>
+\begin{aligned}<br>
+\Delta &amp;= Y^T - Y^{0} \\<br>
+&amp;= \Delta_{1} + \Delta_2 +  \cdots + \Delta_{m} \\<br>
+\end{aligned}</p>
+</li>
+<li>
+<p>乘法分解：将目标指标的变化倍数$RATIO$分解到各个因子上<br>
+\begin{aligned}<br>
+RATIO &amp;= \frac{Y^T}{ Y^{0} } \\<br>
+&amp;= ratio_{1} \cdot ratio_{2} \cdot \cdots \cdot ratio_{m} \\<br>
+\end{aligned}</p>
+</li>
 </ol>
-<h5 id="加法分解"><a href="#加法分解" class="headerlink" title="加法分解"></a>加法分解</h5><p>对公式两端取对数$\ln$，<br>\begin{aligned}<br>\ln Y &amp;= \ln \left( Y_1 \cdot Y_2 \cdot \cdots Y_m \right) \\<br>&amp;= \ln Y_1 + \ln Y_2 + \cdots + \ln Y_m \\<br>\end{aligned}</p>
-<p>令$Z=\ln Y$且$Z_i = \ln Y_i$，将公式变换为<strong>加法指标</strong><br>\begin{aligned}<br>Z &amp;= Z_1 + Z_2 + \cdots + Z_m \\<br>\\<br>\Delta Z &amp;= \Delta \ln Y = \ln Y^T - \ln Y^{T-1}  \\<br>\\<br>\Delta Z_i &amp;= \Delta \ln Y_i + \Delta \ln Y_2 + \cdots + \Delta \ln Y_m \\<br>\end{aligned}</p>
-<p>则指标$Y_i$对波动$\Delta Y$的贡献度为<br>\begin{aligned}<br>C_i &amp;= \frac{\Delta Z_i}{\Delta Z} \\<br>&amp;= \frac{ \Delta \ln Y_i }{ \Delta \ln Y } \\<br>&amp;= \frac{\ln Y_i ^T - \ln Y_i^{T-1} }{\ln Y^T - \ln Y^{T-1} } \\<br>\end{aligned}</p>
-<h5 id="乘法分解"><a href="#乘法分解" class="headerlink" title="乘法分解"></a>乘法分解</h5><h4 id="除法指标"><a href="#除法指标" class="headerlink" title="除法指标"></a>除法指标</h4><ul>
+<h5 id="加法分解"><a class="header-anchor" href="#加法分解"></a>加法分解</h5>
+<p>对公式两端取对数$\ln$，<br>
+\begin{aligned}<br>
+\ln Y &amp;= \ln \left( Y_1 \cdot Y_2 \cdot \cdots Y_m \right) \\<br>
+&amp;= \ln Y_1 + \ln Y_2 + \cdots + \ln Y_m \\<br>
+\end{aligned}</p>
+<p>令$Z=\ln Y$且$Z_i = \ln Y_i$，将公式变换为<strong>加法指标</strong><br>
+\begin{aligned}<br>
+Z &amp;= Z_1 + Z_2 + \cdots + Z_m \\<br>
+\\<br>
+\Delta Z &amp;= \Delta \ln Y = \ln Y^T - \ln Y^{T-1}  \\<br>
+\\<br>
+\Delta Z_i &amp;= \Delta \ln Y_i + \Delta \ln Y_2 + \cdots + \Delta \ln Y_m \\<br>
+\end{aligned}</p>
+<p>则指标$Y_i$对波动$\Delta Y$的贡献度为<br>
+\begin{aligned}<br>
+C_i &amp;= \frac{\Delta Z_i}{\Delta Z} \\<br>
+&amp;= \frac{ \Delta \ln Y_i }{ \Delta \ln Y } \\<br>
+&amp;= \frac{\ln Y_i ^T - \ln Y_i^{T-1} }{\ln Y^T - \ln Y^{T-1} } \\<br>
+\end{aligned}</p>
+<h5 id="乘法分解"><a class="header-anchor" href="#乘法分解"></a>乘法分解</h5>
+<h4 id="除法指标"><a class="header-anchor" href="#除法指标"></a>除法指标</h4>
+<ul>
 <li>适用范围：分子分母可分别加和的除法指标</li>
 </ul>
-<h3 id="剔除法"><a href="#剔除法" class="headerlink" title="剔除法"></a>剔除法</h3><h3 id="加权占比法"><a href="#加权占比法" class="headerlink" title="加权占比法"></a>加权占比法</h3><h3 id="根因定位算法"><a href="#根因定位算法" class="headerlink" title="根因定位算法"></a>根因定位算法</h3><h2 id="指标归因"><a href="#指标归因" class="headerlink" title="指标归因"></a>指标归因</h2><h1 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h1><h2 id="转化率与询盘量异常"><a href="#转化率与询盘量异常" class="headerlink" title="转化率与询盘量异常"></a>转化率与询盘量异常</h2><blockquote>
+<h3 id="剔除法"><a class="header-anchor" href="#剔除法"></a>剔除法</h3>
+<h3 id="加权占比法"><a class="header-anchor" href="#加权占比法"></a>加权占比法</h3>
+<h3 id="根因定位算法"><a class="header-anchor" href="#根因定位算法"></a>根因定位算法</h3>
+<h2 id="指标归因"><a class="header-anchor" href="#指标归因"></a>指标归因</h2>
+<h1 id="例子"><a class="header-anchor" href="#例子"></a>例子</h1>
+<h2 id="转化率与询盘量异常"><a class="header-anchor" href="#转化率与询盘量异常"></a>转化率与询盘量异常</h2>
+<blockquote>
 <p>xxx转化率最近在下降，询盘量有点上升，请分析下是什么情况?——来自<a href="https://mp.weixin.qq.com/s?__biz=MzIxNjA2ODUzNg==&amp;mid=2651440599&amp;idx=1&amp;sn=8faf27a155d144461b540dabe4d31260&amp;chksm=8c73dd00bb045416f137942afb2d35e36a87858c3453644a680a45140b5cb67c336d5d2758b0&amp;mpshare=1&amp;scene=24&amp;srcid=&amp;sharer_sharetime=1589157451953&amp;sharer_shareid=b539221659d6ecf12200314308b58dd3&amp;key=7813388b7074583853a1569b61fe6d4df6117bd6400a8cd3f226306ae46a8c728f41f75fbf88090ef2e59f4f1bf473ff1b5403c46ebed25f7a497fd77299f1d5c5b1b2a7d1160f8a5dda9cc908481d43&amp;ascene=14&amp;uin=MjAwNDUzMjgxNw%3D%3D&amp;devicetype=Windows+10+x64&amp;version=62090070&amp;lang=zh_CN&amp;exportkey=Ad2%2FlcnRfQtiskYNJjaBXFQ%3D&amp;pass_ticket=hGGS7EaUpIDlASL51iQWn3S1qU2l9x%2BRBIBXN3TjHYK2XsRZIXuz61NfsnX%2FuM4F">数据异常波动，应该如何分析？</a></p>
 </blockquote>
 <ol>
-<li>对数据波动进行界定<ul>
+<li>对数据波动进行界定
+<ul>
 <li>去除周期性、季节性后，判断数据波动是否为异常（对比前后一段时间内的变化情况</li>
 <li>确定异常发生的维度（主要从时间维度来看）</li>
 <li>波动的程度</li>
 <li>是否需要深入分析</li>
 </ul>
 </li>
-<li>拆解指标<ul>
-<li>根据<u>指标计算逻辑</u>来拆<pre class="mermaid">   graph TD;
-   询盘量转化率-->询盘量;
-   询盘量转化率-->会话量;
-   询盘量-----会话量;
-   会话量-->弹出会话量;
-   会话量-->非弹出会话量;
-   弹出会话量-----非弹出会话量;</pre></li>
-<li>根据<u>相关维度</u>来拆<ul>
+<li>拆解指标
+<ul>
+<li>根据<u>指标计算逻辑</u>来拆</li>
+</ul>
+<pre class="mermaid">   graph TD;
+     询盘量转化率-->询盘量;
+     询盘量转化率-->会话量;
+     询盘量-----会话量;
+     会话量-->弹出会话量;
+     会话量-->非弹出会话量;
+     弹出会话量-----非弹出会话量;</pre>
+<ul>
+<li>根据<u>相关维度</u>来拆
+<ul>
 <li>访问渠道：直接访问、自然搜索、付费搜索、…</li>
 <li>着陆页：着陆页1、着陆页2、着陆页3、…</li>
 <li>国家：国家1、国家2、国家3、…</li>
 </ul>
 </li>
-<li>从<u>产品、运营、技术及用户</u>四个角度来考虑原因<ul>
+<li>从<u>产品、运营、技术及用户</u>四个角度来考虑原因
+<ul>
 <li>产品：新版本上线（新功能、功能变更）、替代产品出现、…</li>
 <li>运营：促销活动、价格战减少、…</li>
 <li>技术：服务器瘫痪、系统故障、接口不稳定、…</li>
@@ -11885,20 +11955,24 @@ $$派生/衍生指标 = 原子指标 + 时间周期 + 其他修饰词$$</li>
 <li>用数据来验证假设</li>
 <li>提出切实可执行的方法——要落地到业务和产品上的具体建议，确保方案可执行，效果可评估</li>
 </ol>
-<h2 id="如何分析次日留存率下降的问题"><a href="#如何分析次日留存率下降的问题" class="headerlink" title="如何分析次日留存率下降的问题"></a>如何分析次日留存率下降的问题</h2><ol>
+<h2 id="如何分析次日留存率下降的问题"><a class="header-anchor" href="#如何分析次日留存率下降的问题"></a>如何分析次日留存率下降的问题</h2>
+<ol>
 <li>从用户画像、渠道、产品、行为环节等角度细分，明确是哪里的次日留存率下降了</li>
-<li>指标拆解<script type="math/tex; mode=display">次日留存率=\sum\frac{次日留存数}{今日获客人数}</script></li>
+<li>指标拆解<br>
+$$次日留存率=\sum\frac{次日留存数}{今日获客人数}$$</li>
 <li>原因分析</li>
 </ol>
 <ul>
-<li>内部<ul>
+<li>内部
+<ul>
 <li>运营活动</li>
 <li>产品变动</li>
 <li>技术故障</li>
 <li>设计漏洞</li>
 </ul>
 </li>
-<li>外部<ul>
+<li>外部
+<ul>
 <li>竞品</li>
 <li>用户偏好</li>
 <li>节假日</li>
@@ -11906,7 +11980,8 @@ $$派生/衍生指标 = 原子指标 + 时间周期 + 其他修饰词$$</li>
 </ul>
 </li>
 </ul>
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
+<h1 id="参考资料"><a class="header-anchor" href="#参考资料"></a>参考资料</h1>
+<ul>
 <li><a href="https://www.cnblogs.com/bellz/p/11448562.html">指标异动类问题分析框架 - 数据分析师面试题</a></li>
 <li><a href="https://mp.weixin.qq.com/s?__biz=MzIxNjA2ODUzNg==&amp;mid=2651440599&amp;idx=1&amp;sn=8faf27a155d144461b540dabe4d31260&amp;chksm=8c73dd00bb045416f137942afb2d35e36a87858c3453644a680a45140b5cb67c336d5d2758b0&amp;mpshare=1&amp;scene=24&amp;srcid=&amp;sharer_sharetime=1589157451953&amp;sharer_shareid=b539221659d6ecf12200314308b58dd3&amp;key=7813388b7074583853a1569b61fe6d4df6117bd6400a8cd3f226306ae46a8c728f41f75fbf88090ef2e59f4f1bf473ff1b5403c46ebed25f7a497fd77299f1d5c5b1b2a7d1160f8a5dda9cc908481d43&amp;ascene=14&amp;uin=MjAwNDUzMjgxNw%3D%3D&amp;devicetype=Windows+10+x64&amp;version=62090070&amp;lang=zh_CN&amp;exportkey=Ad2%2FlcnRfQtiskYNJjaBXFQ%3D&amp;pass_ticket=hGGS7EaUpIDlASL51iQWn3S1qU2l9x%2BRBIBXN3TjHYK2XsRZIXuz61NfsnX%2FuM4F">数据异常波动，应该如何分析？</a></li>
 <li><a href="https://mp.weixin.qq.com/s?__biz=MzUzODYwMDAzNA==&amp;mid=2247490797&amp;idx=2&amp;sn=e4488e6ae078fd04992ee19c3ea43e0d&amp;chksm=fad46be0cda3e2f606f3faffe800c819c2cacb5ded2c4bb6e1b0b061bc2c06d276bd18a4a9f4&amp;mpshare=1&amp;scene=24&amp;srcid=&amp;sharer_sharetime=1589846441823&amp;sharer_shareid=b539221659d6ecf12200314308b58dd3&amp;key=391433877af29848d80eb268dfdb67e70c94dbc8461e647ef4fd9cf863b97fcbf05fe3cc098469dd0eed236ecaa0ce9b4afa6518cb6c2e116156d348ec25c79484217b352893ff4b5a26e8f3fd8d7f35&amp;ascene=14&amp;uin=MjAwNDUzMjgxNw%3D%3D&amp;devicetype=Windows+10+x64&amp;version=62090070&amp;lang=zh_CN&amp;exportkey=AYJS0mHna0hF6l9GD1%2B%2BuCY%3D&amp;pass_ticket=hSPy%2FUU8oxUcSxTs%2F5nB1TD0Hf4oMyJJiFtHAk4RLQ6enp8U%2FMNrC0H1aJAXQF7t">24个「数据分析师」岗位面试题和答案解析</a></li>
