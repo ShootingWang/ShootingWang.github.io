@@ -32,7 +32,7 @@
 <meta property="og:site_name" content="Skye">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-05-02T01:20:29.000Z">
-<meta property="article:modified_time" content="2022-10-12T16:37:21.929Z">
+<meta property="article:modified_time" content="2022-10-12T16:42:57.669Z">
 <meta property="article:author" content="Skye">
 <meta property="article:tag" content="Data Analysis 数据分析">
 <meta name="twitter:card" content="summary">
@@ -266,7 +266,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-10-13 00:37:21" itemprop="dateModified" datetime="2022-10-13T00:37:21+08:00">2022-10-13</time>
+                <time title="修改时间：2022-10-13 00:42:57" itemprop="dateModified" datetime="2022-10-13T00:42:57+08:00">2022-10-13</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -411,12 +411,24 @@ $$C_i = \frac{\Delta Y_i}{\Delta Y} = \frac{Y_i^T - Y^{T-1} }{ Y^T - Y^{T-1} }$$
 <p>🌰 以GMV为例：<br>
 $$\mathrm{GMV} = 老客\mathrm{GMV} + 新客\mathrm{GMV}$$</p>
 </blockquote>
-<h4 id="乘法指标"><a class="header-anchor" href="#乘法指标"></a>乘法指标</h4>
-<p>目标指标$Y$受到多个因子（$X_1, \cdots, X_m$）的叠加影响。首先对目标指标进行结构拆解，以考虑到结构化变化对目标指标的影响。<br>
-$$Y = \sum_{i=1}^m Y_i =  Y_1 + Y_2 + \cdots + Y_m$$</p>
-<p>\begin{equation}<br>
-Y = X_1 \cdot X_2 \cdot \cdots \cdot X_m<br>
-\end{equation}</p>
+<h4 id="除法指标"><a class="header-anchor" href="#除法指标"></a>除法指标</h4>
+<ul>
+<li>适用范围：分子分母可分别加和的除法指标</li>
+</ul>
+<h3 id="剔除法"><a class="header-anchor" href="#剔除法"></a>剔除法</h3>
+<h3 id="加权占比法"><a class="header-anchor" href="#加权占比法"></a>加权占比法</h3>
+<h3 id="根因定位算法"><a class="header-anchor" href="#根因定位算法"></a>根因定位算法</h3>
+<h2 id="指标归因"><a class="header-anchor" href="#指标归因"></a>指标归因</h2>
+<h3 id="乘法指标（LMDI）"><a class="header-anchor" href="#乘法指标（LMDI）"></a>乘法指标（LMDI）</h3>
+<p>目标指标$Y$受到多个因子的叠加影响。<br>
+首先对目标指标进行结构拆解，以考虑到结构化变化对目标指标的影响（可以理解为维度拆解）。<br>
+$$Y = \sum_{i=1}^m Y_i =  Y_1 + Y_2 + \cdots + Y_m $$<br>
+在每一个子类（sub-category）里，指标$Y_i$又受到$n$个因素的叠加影响。</p>
+<p>\begin{aligned}<br>
+Y &amp;= \sum_{i=1}^m Y_i = \sum_{i=1}^m \sum_{j=1}^n X_{j,i} \\<br>
+&amp;= Y_1 + Y_2 + \cdots + Y_m \\<br>
+&amp;= \sum_{i=1}^m x_{1,i} \cdot x_{2,i} \cdot \cdots \cdot x_{n,i} \\<br>
+\end{aligned}</p>
 <p>下面将使用LDMI方法（指数分解方法），计算乘法指标中每个因子（维度）对目标指标的贡献度。<br>
 将分解的各个因子（因素）看成是时间$t$的连续可微函数，对时间$t$进行微分，分解出各个因子（因素）对目标指标的影响。<br>
 为了便于理解，假设基期为时间$0$，对比期（当期）为时间$T$。</p>
@@ -452,16 +464,8 @@ RATIO &amp;= \frac{Y^T}{ Y^{0} } \\<br>
 \end{aligned}</p>
 </li>
 </ol>
-<h5 id="加法分解"><a class="header-anchor" href="#加法分解"></a>加法分解</h5>
-<h5 id="乘法分解"><a class="header-anchor" href="#乘法分解"></a>乘法分解</h5>
-<h4 id="除法指标"><a class="header-anchor" href="#除法指标"></a>除法指标</h4>
-<ul>
-<li>适用范围：分子分母可分别加和的除法指标</li>
-</ul>
-<h3 id="剔除法"><a class="header-anchor" href="#剔除法"></a>剔除法</h3>
-<h3 id="加权占比法"><a class="header-anchor" href="#加权占比法"></a>加权占比法</h3>
-<h3 id="根因定位算法"><a class="header-anchor" href="#根因定位算法"></a>根因定位算法</h3>
-<h2 id="指标归因"><a class="header-anchor" href="#指标归因"></a>指标归因</h2>
+<h4 id="加法分解"><a class="header-anchor" href="#加法分解"></a>加法分解</h4>
+<h4 id="乘法分解"><a class="header-anchor" href="#乘法分解"></a>乘法分解</h4>
 <h1 id="例子"><a class="header-anchor" href="#例子"></a>例子</h1>
 <h2 id="转化率与询盘量异常"><a class="header-anchor" href="#转化率与询盘量异常"></a>转化率与询盘量异常</h2>
 <blockquote>
@@ -671,7 +675,7 @@ $$次日留存率=\sum\frac{次日留存数}{今日获客人数}$$</li>
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%86%E6%9E%90%E8%BF%87%E7%A8%8B"><span class="nav-number">1.</span> <span class="nav-text">分析过程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%98%8E%E7%A1%AE%E6%8C%87%E6%A0%87%E3%80%81%E4%B8%9A%E5%8A%A1%E7%9B%AE%E6%A0%87"><span class="nav-number">1.1.</span> <span class="nav-text">明确指标、业务目标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A2%B3%E7%90%86%E6%B5%81%E7%A8%8B%EF%BC%8C%E6%8B%86%E8%A7%A3%E7%BB%B4%E5%BA%A6"><span class="nav-number">1.2.</span> <span class="nav-text">梳理流程，拆解维度</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81%E7%BA%B5%E5%90%91%E7%BB%B4%E5%BA%A6"><span class="nav-number">1.2.1.</span> <span class="nav-text">常见纵向维度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81%E6%A8%AA%E5%90%91%E7%BB%B4%E5%BA%A6"><span class="nav-number">1.2.2.</span> <span class="nav-text">常见横向维度</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BA%B5%E5%90%91%E5%88%86%E6%9E%90%EF%BC%8C%E5%8F%91%E7%8E%B0%E5%BC%82%E5%8A%A8"><span class="nav-number">1.3.</span> <span class="nav-text">纵向分析，发现异动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A8%AA%E5%90%91%E5%88%86%E6%9E%90%EF%BC%8C%E5%BD%92%E5%9B%A0%E5%BC%82%E5%8A%A8"><span class="nav-number">1.4.</span> <span class="nav-text">横向分析，归因异动</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BD%92%E5%9B%A0%E6%96%B9%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text">归因方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%B4%E5%BA%A6%E5%BD%92%E5%9B%A0"><span class="nav-number">2.1.</span> <span class="nav-text">维度归因</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E5%9F%BA%E6%B3%95"><span class="nav-number">2.1.1.</span> <span class="nav-text">定基法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8A%A0%E6%B3%95%E6%8C%87%E6%A0%87"><span class="nav-number">2.1.1.1.</span> <span class="nav-text">加法指标</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B9%98%E6%B3%95%E6%8C%87%E6%A0%87"><span class="nav-number">2.1.1.2.</span> <span class="nav-text">乘法指标</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%8A%A0%E6%B3%95%E5%88%86%E8%A7%A3"><span class="nav-number">2.1.1.2.1.</span> <span class="nav-text">加法分解</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E4%B9%98%E6%B3%95%E5%88%86%E8%A7%A3"><span class="nav-number">2.1.1.2.2.</span> <span class="nav-text">乘法分解</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%99%A4%E6%B3%95%E6%8C%87%E6%A0%87"><span class="nav-number">2.1.1.3.</span> <span class="nav-text">除法指标</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%89%94%E9%99%A4%E6%B3%95"><span class="nav-number">2.1.2.</span> <span class="nav-text">剔除法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8A%A0%E6%9D%83%E5%8D%A0%E6%AF%94%E6%B3%95"><span class="nav-number">2.1.3.</span> <span class="nav-text">加权占比法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%B9%E5%9B%A0%E5%AE%9A%E4%BD%8D%E7%AE%97%E6%B3%95"><span class="nav-number">2.1.4.</span> <span class="nav-text">根因定位算法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8C%87%E6%A0%87%E5%BD%92%E5%9B%A0"><span class="nav-number">2.2.</span> <span class="nav-text">指标归因</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BE%8B%E5%AD%90"><span class="nav-number">3.</span> <span class="nav-text">例子</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BD%AC%E5%8C%96%E7%8E%87%E4%B8%8E%E8%AF%A2%E7%9B%98%E9%87%8F%E5%BC%82%E5%B8%B8"><span class="nav-number">3.1.</span> <span class="nav-text">转化率与询盘量异常</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E5%88%86%E6%9E%90%E6%AC%A1%E6%97%A5%E7%95%99%E5%AD%98%E7%8E%87%E4%B8%8B%E9%99%8D%E7%9A%84%E9%97%AE%E9%A2%98"><span class="nav-number">3.2.</span> <span class="nav-text">如何分析次日留存率下降的问题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="nav-number">4.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%86%E6%9E%90%E8%BF%87%E7%A8%8B"><span class="nav-number">1.</span> <span class="nav-text">分析过程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%98%8E%E7%A1%AE%E6%8C%87%E6%A0%87%E3%80%81%E4%B8%9A%E5%8A%A1%E7%9B%AE%E6%A0%87"><span class="nav-number">1.1.</span> <span class="nav-text">明确指标、业务目标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A2%B3%E7%90%86%E6%B5%81%E7%A8%8B%EF%BC%8C%E6%8B%86%E8%A7%A3%E7%BB%B4%E5%BA%A6"><span class="nav-number">1.2.</span> <span class="nav-text">梳理流程，拆解维度</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81%E7%BA%B5%E5%90%91%E7%BB%B4%E5%BA%A6"><span class="nav-number">1.2.1.</span> <span class="nav-text">常见纵向维度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81%E6%A8%AA%E5%90%91%E7%BB%B4%E5%BA%A6"><span class="nav-number">1.2.2.</span> <span class="nav-text">常见横向维度</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BA%B5%E5%90%91%E5%88%86%E6%9E%90%EF%BC%8C%E5%8F%91%E7%8E%B0%E5%BC%82%E5%8A%A8"><span class="nav-number">1.3.</span> <span class="nav-text">纵向分析，发现异动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A8%AA%E5%90%91%E5%88%86%E6%9E%90%EF%BC%8C%E5%BD%92%E5%9B%A0%E5%BC%82%E5%8A%A8"><span class="nav-number">1.4.</span> <span class="nav-text">横向分析，归因异动</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BD%92%E5%9B%A0%E6%96%B9%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text">归因方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%B4%E5%BA%A6%E5%BD%92%E5%9B%A0"><span class="nav-number">2.1.</span> <span class="nav-text">维度归因</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E5%9F%BA%E6%B3%95"><span class="nav-number">2.1.1.</span> <span class="nav-text">定基法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8A%A0%E6%B3%95%E6%8C%87%E6%A0%87"><span class="nav-number">2.1.1.1.</span> <span class="nav-text">加法指标</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%99%A4%E6%B3%95%E6%8C%87%E6%A0%87"><span class="nav-number">2.1.1.2.</span> <span class="nav-text">除法指标</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%89%94%E9%99%A4%E6%B3%95"><span class="nav-number">2.1.2.</span> <span class="nav-text">剔除法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8A%A0%E6%9D%83%E5%8D%A0%E6%AF%94%E6%B3%95"><span class="nav-number">2.1.3.</span> <span class="nav-text">加权占比法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%B9%E5%9B%A0%E5%AE%9A%E4%BD%8D%E7%AE%97%E6%B3%95"><span class="nav-number">2.1.4.</span> <span class="nav-text">根因定位算法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8C%87%E6%A0%87%E5%BD%92%E5%9B%A0"><span class="nav-number">2.2.</span> <span class="nav-text">指标归因</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B9%98%E6%B3%95%E6%8C%87%E6%A0%87%EF%BC%88LMDI%EF%BC%89"><span class="nav-number">2.2.1.</span> <span class="nav-text">乘法指标（LMDI）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8A%A0%E6%B3%95%E5%88%86%E8%A7%A3"><span class="nav-number">2.2.1.1.</span> <span class="nav-text">加法分解</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B9%98%E6%B3%95%E5%88%86%E8%A7%A3"><span class="nav-number">2.2.1.2.</span> <span class="nav-text">乘法分解</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BE%8B%E5%AD%90"><span class="nav-number">3.</span> <span class="nav-text">例子</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BD%AC%E5%8C%96%E7%8E%87%E4%B8%8E%E8%AF%A2%E7%9B%98%E9%87%8F%E5%BC%82%E5%B8%B8"><span class="nav-number">3.1.</span> <span class="nav-text">转化率与询盘量异常</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E5%88%86%E6%9E%90%E6%AC%A1%E6%97%A5%E7%95%99%E5%AD%98%E7%8E%87%E4%B8%8B%E9%99%8D%E7%9A%84%E9%97%AE%E9%A2%98"><span class="nav-number">3.2.</span> <span class="nav-text">如何分析次日留存率下降的问题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="nav-number">4.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
