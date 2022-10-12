@@ -28750,13 +28750,32 @@ $$not &gt; and &gt; or$$</li>
 <h2 id="横向分析，归因异动"><a class="header-anchor" href="#横向分析，归因异动"></a>横向分析，归因异动</h2>
 <p>发现指标异常波动后，拆解维度进行横向分析，结合贡献度等方法，定位异动的主要原因，发现存在的业务问题和可优化点。</p>
 <blockquote>
-<p>贡献度计算方法见</p>
+<p>贡献度计算方法见<a href="#%E5%BD%92%E5%9B%A0%E6%96%B9%E6%B3%95">归因方法</a></p>
 </blockquote>
 <h1 id="归因方法"><a class="header-anchor" href="#归因方法"></a>归因方法</h1>
 <h2 id="维度归因"><a class="header-anchor" href="#维度归因"></a>维度归因</h2>
+<p>将指标在各维度（因子）上进行拆解，计算各个维度（因子）对指标波动的贡献度，发现影响指标波动的主要原因（维度/因子）。</p>
+<ul>
+<li>同向影响因子：对目标指标同向变动做出贡献的因子（维度/因素）；贡献度为正的因子为同向影响因子</li>
+<li>反向影响因子：对目标指标反向变动做出贡献的因子（维度/因素）；贡献度为负的因子为反向影响因子</li>
+</ul>
 <h3 id="定基法"><a class="header-anchor" href="#定基法"></a>定基法</h3>
-<p>即定基替代法。针对各维度</p>
+<p>即定基替代法。针对各维度，用标准值替代实际值，以测定各维度因素对指标的影响。</p>
 <h4 id="加法指标"><a class="header-anchor" href="#加法指标"></a>加法指标</h4>
+<p>即<strong>Delta法</strong>。<br>
+目标指标$Y$可拆分成多个维度指标的<strong>加和</strong>。</p>
+<p>\begin{equation}<br>
+\begin{aligned}<br>
+Y &amp;= Y_1 + Y_2 + \cdots + Y_m \<br>
+\Delta Y &amp;= \Delta Y_1 + \Delta Y_2 + \cdots + \Delta Y_m<br>
+\end{aligned}<br>
+\end{equation}<br>
+其中，</p>
+<ul>
+<li>$Y$为目标指标，关注该指标的波动，波动值为$\Delta Y$</li>
+<li>共可拆分为$m$个维度，维度之间满足<a href="/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-MECE%E5%8E%9F%E5%88%99.html" title="MECE原则">MECE原则</a></li>
+<li>$T$指代当期（本期，对比期），$T-1$指代上一期（基期）</li>
+</ul>
 <h4 id="乘法指标"><a class="header-anchor" href="#乘法指标"></a>乘法指标</h4>
 <h4 id="除法指标"><a class="header-anchor" href="#除法指标"></a>除法指标</h4>
 <ul>
