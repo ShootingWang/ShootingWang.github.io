@@ -310,35 +310,30 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <center></center>
-<span id="more"></span>
-<h1 id="cmath"><a class="header-anchor" href="#cmath"></a>cmath</h1>
-<p>进行复数相关的计算</p>
-<p>复数：<br>
-$$z = x + y \mathrm{i}$$</p>
-<ul>
+        <p><center></center><br><span id="more"></span></p>
+<h1 id="cmath"><a href="#cmath" class="headerlink" title="cmath"></a>cmath</h1><p>进行复数相关的计算</p>
+<p>复数：</p>
+<script type="math/tex; mode=display">z = x + y \mathrm{i}</script><ul>
 <li>$x$：实部（real part）</li>
 <li>$y$：虚部（imaginary part）</li>
 </ul>
-<p>复数$z$可以写成：<br>
-$$z = r(\cos \phi+\mathrm{i}\sin \phi)$$</p>
-<ul>
+<p>复数$z$可以写成：</p>
+<script type="math/tex; mode=display">z = r(\cos \phi+\mathrm{i}\sin \phi)</script><ul>
 <li>模（modulus）$r = |z| = \sqrt{x^2 + y^2}$</li>
-<li>辐角$\phi$（记作$\mathrm{Arg}(z)$）</li>
+<li>辐角$\phi$（记作$\mathrm{Arg}(z)$）<ul>
 <li>任意一个不为零的复数$z = x + y \mathrm{i}$的辐角有无限多个值，且这些值相差$k\cdot 2\pi$（$k$为任意整数）</li>
-<li>辐角主值$\mathrm{arg}(z)$：在区间$[-\pi, \pi]$的辐角。</li>
+</ul>
+</li>
+<li>辐角主值$\mathrm{arg}(z)$：在区间$[-\pi, \pi]$的辐角。<ul>
 <li>辐角的主值是唯一的</li>
 </ul>
-<p>复数还可写为指数形式：<br>
-$$z = r(\cos \phi+\mathrm{i}\sin \phi) = re^{\mathrm{i}\phi}$$</p>
-<h2 id="abs"><a class="header-anchor" href="#abs"></a>abs()</h2>
-<p>计算复数的模</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">abs</span>(<span class="built_in">complex</span>(-<span class="number">1</span>, <span class="number">0</span>))</span><br><span class="line"><span class="comment">#1.0</span></span><br></pre></td></tr></table></figure>
-<h2 id="phase"><a class="header-anchor" href="#phase"></a>phase()</h2>
-<p>计算辐角</p>
+</li>
+</ul>
+<p>复数还可写为指数形式：</p>
+<script type="math/tex; mode=display">z = r(\cos \phi+\mathrm{i}\sin \phi) = re^{\mathrm{i}\phi}</script><h2 id="abs"><a href="#abs" class="headerlink" title="abs()"></a>abs()</h2><p>计算复数的模<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">abs</span>(<span class="built_in">complex</span>(-<span class="number">1</span>, <span class="number">0</span>))</span><br><span class="line"><span class="comment">#1.0</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="phase"><a href="#phase" class="headerlink" title="phase()"></a>phase()</h2><p>计算辐角</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> cmath</span><br><span class="line"></span><br><span class="line">cmath.phase(<span class="built_in">complex</span>(-<span class="number">1</span>, <span class="number">0</span>))  <span class="comment">## 辐角为pi</span></span><br><span class="line"><span class="comment">#3.141592653589793</span></span><br></pre></td></tr></table></figure>
-<h2 id="polar"><a class="header-anchor" href="#polar"></a>polar()</h2>
-<p>计算复数的模、辐角</p>
+<h2 id="polar"><a href="#polar" class="headerlink" title="polar()"></a>polar()</h2><p>计算复数的模、辐角</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> cmath</span><br><span class="line"></span><br><span class="line">cmath.polar(<span class="built_in">complex</span>(<span class="number">1</span>, <span class="number">2</span>))</span><br><span class="line"><span class="comment">#(2.23606797749979, 1.1071487177940904)</span></span><br><span class="line"><span class="built_in">print</span>(*cmath.polar(<span class="built_in">complex</span>(<span class="number">1</span>, <span class="number">2</span>)), sep=<span class="string">&#x27;\n&#x27;</span>)</span><br><span class="line"><span class="comment">#2.23606797749979</span></span><br><span class="line"><span class="comment">#1.1071487177940904</span></span><br></pre></td></tr></table></figure>
     </div>
 
@@ -536,13 +531,13 @@ $$z = r(\cos \phi+\mathrm{i}\sin \phi) = re^{\mathrm{i}\phi}$$</p>
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">431k</span>
+    <span title="站点总字数">419k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">6:32</span>
+    <span title="站点阅读时长">6:21</span>
 </div>
 
 

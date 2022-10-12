@@ -312,93 +312,47 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <center></center>
-<span id="more"></span>
-<p>假设有$n$个样本，$p$个自变量（predictor variables）。<br>
-考虑简单线性回归模型：<br>
-$$y = X\beta + \varepsilon, \qquad \varepsilon \sim N(0, \sigma^2)$$<br>
-其中，$y$是响应变量/因变量/被解释变量，$X$是$n\times p$维的样本（设计）矩阵，$\varepsilon$是服从方差为$\sigma^2$的正态分布的误差项。</p>
+        <p><center></center><br><span id="more"></span></p>
+<p>假设有$n$个样本，$p$个自变量（predictor variables）。<br>考虑简单线性回归模型：</p>
+<script type="math/tex; mode=display">y = X\beta + \varepsilon, \qquad \varepsilon \sim N(0, \sigma^2)</script><p>其中，$y$是响应变量/因变量/被解释变量，$X$是$n\times p$维的样本（设计）矩阵，$\varepsilon$是服从方差为$\sigma^2$的正态分布的误差项。</p>
 <p><strong>普通最小二乘</strong>（OLS，Ordinary Least Squares）:</p>
 <ul>
-<li>损失函数（Loss function）：<br>
-$$L(\beta) = ||y-X\beta||^2$$</li>
-<li>回归系数估计：<br>
-$$\hat{\beta}_{OLS} = \left(X^T X \right)^{-1} X^T y$$</li>
+<li>损失函数（Loss function）：<script type="math/tex; mode=display">L(\beta) = ||y-X\beta||^2</script></li>
+<li>回归系数估计：<script type="math/tex; mode=display">\hat{\beta}_{OLS} = \left(X^T X \right)^{-1} X^T y</script></li>
 </ul>
 <blockquote>
-<p>$L_p$范数（$L_p$-norm）：<br>
-$$L_p(\vec{x}) = \parallel \vec{x} \parallel_p = \left( \sum_{i=1}^n \mid x_i \mid^p \right)^{1/p}, \qquad p\geq 1$$<br>
-其中，$\vec{x} = ( x_1, x_2, \cdots, x_n )$。</p>
+<p>$L_p$范数（$L_p$-norm）：</p>
+<script type="math/tex; mode=display">L_p(\vec{x}) = \parallel \vec{x} \parallel_p = \left( \sum_{i=1}^n \mid x_i \mid^p \right)^{1/p}, \qquad p\geq 1</script><p>其中，$\vec{x} = ( x_1, x_2, \cdots, x_n )$。</p>
 <ul>
-<li>$p = -\infty$：<br>
-$$\parallel \vec{x} \parallel_{-\infty} = \lim_{p \rightarrow -\infty} \left( \sum_{i=1}^n \mid x_i \mid^p \right)^{1/p} = \min_i \mid x_i \mid $$</li>
-<li>$p = 0$：（严格说，不属于范数）<br>
-$$\parallel \vec{x} \parallel_0 = \sharp(i) \quad \mathrm{with} \quad x_i\neq 0 $$<br>
-表示向量$\vec{x}$中非零元素的个数</li>
-<li>$p = 1$：（也称<strong>曼哈顿距离</strong>）<br>
-$$\parallel \vec{x} \parallel_1 = \sum_{i=1}^n \mid x_i \mid$$</li>
-<li>$p = 2$：（也称<strong>欧氏距离</strong>）<br>
-$$\parallel \vec{x} \parallel_2 = \sqrt{\sum_{i=1}^n \mid x_i \mid^2}$$</li>
-<li>$p = +\infty$：（无穷范数/最大范数）<br>
-$$\parallel \vec{x} \parallel_{+\infty} = \lim_{p\rightarrow +\infty} \left( \sum_{i=1}^n \mid x_i \mid^p \right)^{1/p} = \max_i \mid x_i \mid$$</li>
+<li>$p = -\infty$：<script type="math/tex; mode=display">\parallel \vec{x} \parallel_{-\infty} = \lim_{p \rightarrow -\infty} \left( \sum_{i=1}^n \mid x_i \mid^p \right)^{1/p} = \min_i \mid x_i \mid</script></li>
+<li>$p = 0$：（严格说，不属于范数）<script type="math/tex; mode=display">\parallel \vec{x} \parallel_0 = \sharp(i) \quad \mathrm{with} \quad x_i\neq 0</script>表示向量$\vec{x}$中非零元素的个数</li>
+<li>$p = 1$：（也称<strong>曼哈顿距离</strong>）<script type="math/tex; mode=display">\parallel \vec{x} \parallel_1 = \sum_{i=1}^n \mid x_i \mid</script></li>
+<li>$p = 2$：（也称<strong>欧氏距离</strong>）<script type="math/tex; mode=display">\parallel \vec{x} \parallel_2 = \sqrt{\sum_{i=1}^n \mid x_i \mid^2}</script></li>
+<li>$p = +\infty$：（无穷范数/最大范数）<script type="math/tex; mode=display">\parallel \vec{x} \parallel_{+\infty} = \lim_{p\rightarrow +\infty} \left( \sum_{i=1}^n \mid x_i \mid^p \right)^{1/p} = \max_i \mid x_i \mid</script></li>
 </ul>
 </blockquote>
 <ul>
 <li>当$p&gt;n$时，OLS不适用（容易过拟合）</li>
 </ul>
-<h1 id="Penalized-Least-Squares"><a class="header-anchor" href="#Penalized-Least-Squares"></a>Penalized Least Squares</h1>
-<blockquote>
+<h1 id="Penalized-Least-Squares"><a href="#Penalized-Least-Squares" class="headerlink" title="Penalized Least Squares"></a>Penalized Least Squares</h1><blockquote>
 <p>Li F R . <a target="_blank" rel="noopener" href="https://escholarship.org/content/qt8j29393d/qt8j29393d.pdf">Variable Selection via Nonconcave Penalized Likelihood and its Oracle Properties</a>[J]. Publications of the American Statistical Association, 2001, 96(456):1348-1360.</p>
 </blockquote>
 <p>将设计矩阵标准化，即$X^TX = I_p$</p>
 <p>目标函数：</p>
-<p>\begin{equation}<br>
-\begin{aligned}<br>
-L(\beta) &amp;= \parallel y-X \beta \parallel_2^2 + \lambda J(\beta) \<br>
-&amp;= \parallel y-X \beta \parallel_2^2 + \lambda \sum_{j=1}^p p_j ( \mid \beta_j \mid ) \<br>
-&amp;= \sum_{i=1}^n \left( y_i - \sum_{j=1}^p x_{ij} \beta_j \right)^2 + \lambda \sum_{j=1}^p p_j ( \mid \beta_j \mid ) \<br>
-&amp;= \sum_{i=1}^n \left( y_i - \sum_{j=1}^p x_{ij} \beta_j \right)^2 + \sum_{j=1}^p p_\lambda( \mid \beta_j \mid ) \<br>
-&amp;= \parallel y-X \beta \parallel_2^2 + \sum_{j=1}^p p_{\lambda} ( \mid \beta_j \mid ) \<br>
-&amp;= \parallel y-X \hat{\beta}<em>{OLS}  \parallel_2^2  + \parallel  \hat{ \beta }</em>{OLS}  - \beta \parallel^2 +<br>
-\sum_{j=1}^p {p_\lambda}(\mid \beta_j \mid) \<br>
-&amp;= \parallel y-X \hat{\beta}<em>{OLS}  \parallel_2^2  + \sum</em>{j=1}^p \left{ (\hat{\beta}<em>{oj}  - {\beta_j} )^2 +  p</em>\lambda }( \mid {\beta_j} \mid) \right}  \<br>
-\end{aligned}<br>
-\end{equation}</p>
+<p>\begin{equation}<br>\begin{aligned}<br>L(\beta) &amp;= \parallel y-X \beta \parallel<em>2^2 + \lambda J(\beta) \<br>&amp;= \parallel y-X \beta \parallel_2^2 + \lambda \sum</em>{j=1}^p p<em>j ( \mid \beta_j \mid ) \<br>&amp;= \sum</em>{i=1}^n \left( y<em>i - \sum</em>{j=1}^p x<em>{ij} \beta_j \right)^2 + \lambda \sum</em>{j=1}^p p<em>j ( \mid \beta_j \mid ) \<br>&amp;= \sum</em>{i=1}^n \left( y<em>i - \sum</em>{j=1}^p x<em>{ij} \beta_j \right)^2 + \sum</em>{j=1}^p p<em>\lambda( \mid \beta_j \mid ) \<br>&amp;= \parallel y-X \beta \parallel_2^2 + \sum</em>{j=1}^p p<em>{\lambda} ( \mid \beta_j \mid ) \<br>&amp;= \parallel y-X \hat{\beta}</em>{OLS}  \parallel<em>2^2  + \parallel  \hat{ \beta }</em>{OLS}  - \beta \parallel^2 +<br>\sum<em>{j=1}^p {p</em>\lambda}(\mid \beta<em>j \mid) \<br>&amp;= \parallel y-X \hat{\beta}</em>{OLS}  \parallel<em>2^2  + \sum</em>{j=1}^p \left{ (\hat{\beta}<em>{oj}  - {\beta_j} )^2 +  p</em>\lambda }( \mid {\beta_j} \mid) \right}  \<br>\end{aligned}<br>\end{equation}</p>
 <ul>
 <li>假设惩罚函数对所有的系数都是一样的，即$p(\mid \cdot \mid)$</li>
 <li>进一步，将 $\lambda p(\mid \cdot \mid)$ 记为 $p_\lambda(\mid \cdot \mid)$</li>
-<li>$\hat{\beta}<em>{OLS}$是回归方程的普通最小二乘估计，$\hat{\beta}</em>{oj}$是$\hat{\beta}<em>{OLS}$的第$j$个元素<br>
-$$\hat{\beta}</em>{OLS} = \left( X^T X \right)^{-1} X^T y=X^Ty$$</li>
+<li>$\hat{\beta}<em>{OLS}$是回归方程的普通最小二乘估计，$\hat{\beta}</em>{oj}$是$\hat{\beta}_{OLS}$的第$j$个元素<script type="math/tex; mode=display">\hat{\beta}_{OLS} = \left( X^T X \right)^{-1} X^T y=X^Ty</script></li>
 </ul>
-<p>$\parallel y-X \hat{\beta}<em>{OLS} \parallel_2^2$对于$\beta$是常数，因此有<br>
-$$\arg\min</em>{\beta_j}  \parallel y-X\beta \parallel_2^2 + p_\lambda(\mid \beta_j \mid) \Leftrightarrow \arg\min_{\beta_j}  \left{ (\hat{\beta}<em>{oj} - \beta_j)^2 + p</em>\lambda(\mid \beta_j \mid) \right} $$</p>
-<p>$$\hat{\beta}<em>{j} = \arg \min</em>{\beta_j} \left{ (\hat{\beta}<em>{oj} - \beta_j)^2 + p</em>\lambda(\mid \beta_j \mid) \right}$$</p>
-<ul>
-<li>
-<p>对于岭回归（Ridge Regression），<br>
-\begin{equation}<br>
-\begin{aligned}<br>
-p_\lambda(\mid \beta_j \mid) &amp;= \lambda \mid\beta_j\mid^2 \<br>
-\hat{\beta}<em>{j}^{Ridge}<br>
-&amp;= \frac{1}{1 + \lambda}\hat{\beta}</em>{oj}<br>
-\end{aligned}<br>
-\end{equation}</p>
+<p>$\parallel y-X \hat{\beta}_{OLS} \parallel_2^2$对于$\beta$是常数，因此有</p>
+<script type="math/tex; mode=display">\arg\min_{\beta_j}  \parallel y-X\beta \parallel_2^2 + p_\lambda(\mid \beta_j \mid) \Leftrightarrow \arg\min_{\beta_j}  \left\{ (\hat{\beta}_{oj} - \beta_j)^2 + p_\lambda(\mid \beta_j \mid) \right\}</script><script type="math/tex; mode=display">\hat{\beta}_{j} = \arg \min_{\beta_j} \left\{ (\hat{\beta}_{oj} - \beta_j)^2 + p_\lambda(\mid \beta_j \mid) \right\}</script><ul>
+<li><p>对于岭回归（Ridge Regression），<br>\begin{equation}<br>\begin{aligned}<br>p<em>\lambda(\mid \beta_j \mid) &amp;= \lambda \mid\beta_j\mid^2 \<br>\hat{\beta}</em>{j}^{Ridge}<br>&amp;= \frac{1}{1 + \lambda}\hat{\beta}_{oj}<br>\end{aligned}<br>\end{equation}</p>
 </li>
-<li>
-<p>对于LASSO，<br>
-\begin{equation}<br>
-\begin{aligned}<br>
-p_\lambda(\mid \beta_j \mid) &amp;= \lambda \mid\beta_j\mid \<br>
-\hat{\beta}<em>{j}^{LASSO}<br>
-&amp;= \mathrm{sgn}(\hat{\beta}</em>{oj})<br>
-\left( \mid \hat{\beta}<em>{oj} \mid -<br>
-\frac{\lambda}{2} \right)</em>{+}<br>
-\end{aligned}<br>
-\end{equation}</p>
+<li><p>对于LASSO，<br>\begin{equation}<br>\begin{aligned}<br>p<em>\lambda(\mid \beta_j \mid) &amp;= \lambda \mid\beta_j\mid \<br>\hat{\beta}</em>{j}^{LASSO}<br>&amp;= \mathrm{sgn}(\hat{\beta}<em>{oj})<br>\left( \mid \hat{\beta}</em>{oj} \mid -<br>\frac{\lambda}{2} \right)_{+}<br>\end{aligned}<br>\end{equation}</p>
 </li>
 </ul>
-<h2 id="Rigde-Regression-岭回归"><a class="header-anchor" href="#Rigde-Regression-岭回归"></a>Rigde Regression 岭回归</h2>
-<p>当自变量个数超过样本个数 或 样本数据存在多重共线性（multicollinearity）时，使用岭回归（Ridge Regression）可以得到一个精简的模型。</p>
+<h2 id="Rigde-Regression-岭回归"><a href="#Rigde-Regression-岭回归" class="headerlink" title="Rigde Regression 岭回归"></a>Rigde Regression 岭回归</h2><p>当自变量个数超过样本个数 或 样本数据存在多重共线性（multicollinearity）时，使用岭回归（Ridge Regression）可以得到一个精简的模型。</p>
 <blockquote>
 <p>Hoerl, A., &amp; Kennard, R. (1970). <a target="_blank" rel="noopener" href="https://www.jstor.org/stable/1267352?seq=1">Ridge Regression: Applications to Nonorthogonal Problems</a>. Technometrics, 12(1), 69-82. doi:10.2307/1267352</p>
 </blockquote>
@@ -409,84 +363,49 @@ p_\lambda(\mid \beta_j \mid) &amp;= \lambda \mid\beta_j\mid \<br>
 <p><strong>Shrinkage estimators</strong> theoretically produce new estimators that are shrunk closer to the ‘true’ population parameters.</p>
 </blockquote>
 <ul>
-<li>
-<p>ridge regression是Tikhivov方法的其中一种</p>
+<li>ridge regression是Tikhivov方法的其中一种</li>
+<li><p>ridge regression使用L2正则化（L2 Regularization）</p>
 </li>
-<li>
-<p>ridge regression使用L2正则化（L2 Regularization）</p>
+<li><p>目标函数：<br>\begin{equation}<br>\begin{aligned}<br>L<em>{Ridge}(\beta) &amp;= ||y-X\beta ||^2_2 + \lambda ||\beta||^2_2\<br>&amp;= \sum</em>{i=1}^n \left(y<em>i - \sum</em>{j=1}^p x<em>{ij}\beta_j \right)^2 + \lambda \sum</em>{j=1}^p \beta_j^2<br>\end{aligned}<br>\end{equation}</p>
 </li>
-<li>
-<p>目标函数：<br>
-\begin{equation}<br>
-\begin{aligned}<br>
-L_{Ridge}(\beta) &amp;= ||y-X\beta ||^2_2 + \lambda ||\beta||^2_2\<br>
-&amp;= \sum_{i=1}^n \left(y_i - \sum_{j=1}^p x_{ij}\beta_j \right)^2 + \lambda \sum_{j=1}^p \beta_j^2<br>
-\end{aligned}<br>
-\end{equation}</p>
-</li>
-<li>
-<p>回归系数估计：</p>
+<li><p>回归系数估计：</p>
 </li>
 </ul>
-<p>\begin{equation}<br>
-\begin{aligned}<br>
-\hat{\beta}<em>{Ridge} &amp;= \arg \min</em>\beta \sum_{i=1}^n \left(y_i - \sum_{j=1}^p x_{ij}\beta_j \right)^2 \quad \mathrm{s.t.} \sum_{j=1}^p \beta_j^2 \leq s \<br>
-&amp;= \left( X^T X+\lambda I \right)^{-1} X^T y<br>
-\end{aligned}<br>
-\end{equation}<br>
-其中，$I$是单位矩阵，$\lambda$是正则惩罚参数。</p>
+<p>\begin{equation}<br>\begin{aligned}<br>\hat{\beta}<em>{Ridge} &amp;= \arg \min</em>\beta \sum<em>{i=1}^n \left(y_i - \sum</em>{j=1}^p x<em>{ij}\beta_j \right)^2 \quad \mathrm{s.t.} \sum</em>{j=1}^p \beta_j^2 \leq s \<br>&amp;= \left( X^T X+\lambda I \right)^{-1} X^T y<br>\end{aligned}<br>\end{equation}<br>其中，$I$是单位矩阵，$\lambda$是正则惩罚参数。</p>
 <ul>
 <li>当$\lambda \rightarrow 0$时，有 $\hat{\beta}<em>{Ridge} \rightarrow \hat{\beta}</em>{OLS}$</li>
 <li>当$\lambda \rightarrow \infty$时，有 $\hat{\beta}_{Ridge} \rightarrow 0$</li>
 </ul>
-<h3 id="Bias-Variance-Trade-off"><a class="header-anchor" href="#Bias-Variance-Trade-off"></a>Bias-Variance Trade-off</h3>
-<p>\begin{aligned}<br>
-\mathrm{Bias}(\hat{\beta}<em>{Ridge}) &amp;= -\lambda \left( X^T X+\lambda I \right)^{-1} \beta\<br>
-\mathrm{Var}(\hat{\beta}</em>{Ridge}) &amp;= \sigma^2 \left( X^T X+\lambda I \right)^{-1} X^T X \left( X^T X+\lambda I \right)^{-1}<br>
-\end{aligned}</p>
-<h3 id="如何选择-lambda"><a class="header-anchor" href="#如何选择-lambda"></a>如何选择$\lambda$</h3>
-<p>方法：</p>
+<h3 id="Bias-Variance-Trade-off"><a href="#Bias-Variance-Trade-off" class="headerlink" title="Bias-Variance Trade-off"></a>Bias-Variance Trade-off</h3><p>\begin{aligned}<br>\mathrm{Bias}(\hat{\beta}<em>{Ridge}) &amp;= -\lambda \left( X^T X+\lambda I \right)^{-1} \beta\<br>\mathrm{Var}(\hat{\beta}</em>{Ridge}) &amp;= \sigma^2 \left( X^T X+\lambda I \right)^{-1} X^T X \left( X^T X+\lambda I \right)^{-1}<br>\end{aligned}</p>
+<h3 id="如何选择-lambda"><a href="#如何选择-lambda" class="headerlink" title="如何选择$\lambda$"></a>如何选择$\lambda$</h3><p>方法：</p>
 <ol>
 <li>最小化信息准则（Minimizing Information Criteria）：</li>
 <li>交叉验证（cross-validation）</li>
 </ol>
-<h3 id="R实现"><a class="header-anchor" href="#R实现"></a>R实现</h3>
-<p>可使用R包<code>glmnet</code></p>
+<h3 id="R实现"><a href="#R实现" class="headerlink" title="R实现"></a>R实现</h3><p>可使用R包<code>glmnet</code></p>
 <ul>
-<li>注意：ridge regression假设自变量（predictors）是标准化的（standardized），且因变量是中心化的（centered）</li>
-</ul>
-<blockquote>
+<li>注意：ridge regression假设自变量（predictors）是标准化的（standardized），且因变量是中心化的（centered）<blockquote>
 <p>标准化、中心化见《<a href="/%E7%AE%97%E6%B3%95-%E7%89%B9%E5%BE%81%E5%BD%92%E4%B8%80%E5%8C%96.html" title="Feature Engineering | 特征缩放 Feature Sacling">Feature Engineering | 特征缩放 Feature Sacling</a>》</p>
 </blockquote>
+</li>
+</ul>
 <figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">library<span class="punctuation">(</span>glmnet<span class="punctuation">)</span>  <span class="comment">## 用于岭回归</span></span><br><span class="line">library<span class="punctuation">(</span>dplyr<span class="punctuation">)</span>  <span class="comment">## 用于数据清洗</span></span><br><span class="line">library<span class="punctuation">(</span>psych<span class="punctuation">)</span>  <span class="comment">## 使用 tr() 计算矩阵的迹</span></span><br><span class="line"></span><br><span class="line">data<span class="punctuation">(</span><span class="string">&#x27;mtcars&#x27;</span><span class="punctuation">)</span>  <span class="comment">## 载入数据mtcars</span></span><br><span class="line"><span class="comment">## 将y中心化</span></span><br><span class="line">y <span class="operator">&lt;-</span> mtcars <span class="operator">%&gt;%</span> select<span class="punctuation">(</span>mpg<span class="punctuation">)</span> <span class="operator">%&gt;%</span> </span><br><span class="line">  scale<span class="punctuation">(</span>center <span class="operator">=</span> <span class="literal">TRUE</span><span class="punctuation">,</span> scale <span class="operator">=</span> <span class="literal">FALSE</span><span class="punctuation">)</span> <span class="operator">%&gt;%</span></span><br><span class="line">  as.matrix<span class="punctuation">(</span><span class="punctuation">)</span></span><br><span class="line"><span class="comment">## 将X中心化</span></span><br><span class="line">X <span class="operator">&lt;-</span> mtcars <span class="operator">%&gt;%</span> select<span class="punctuation">(</span><span class="operator">-</span>mpg<span class="punctuation">)</span> <span class="operator">%&gt;%</span></span><br><span class="line">  scale<span class="punctuation">(</span>center <span class="operator">=</span> <span class="literal">TRUE</span><span class="punctuation">,</span> scale <span class="operator">=</span> <span class="literal">TRUE</span><span class="punctuation">)</span> <span class="operator">%&gt;%</span>  </span><br><span class="line">  as.matrix<span class="punctuation">(</span><span class="punctuation">)</span></span><br><span class="line"><span class="comment">## X的标准化可以省略，令cv.glmnet()或glmnet()中的参数standardize = TRUE来标准化X</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 使用10折交叉验证选择最优lambda</span></span><br><span class="line">lambdas_seq <span class="operator">&lt;-</span> 10<span class="operator">^</span>seq<span class="punctuation">(</span><span class="operator">-</span><span class="number">3</span><span class="punctuation">,</span> <span class="number">5</span><span class="punctuation">,</span> length.out <span class="operator">=</span> <span class="number">100</span><span class="punctuation">)</span></span><br><span class="line"><span class="comment">## alpha = 0表示岭回归</span></span><br><span class="line">ridge_cv <span class="operator">&lt;-</span> cv.glmnet<span class="punctuation">(</span>X<span class="punctuation">,</span> y<span class="punctuation">,</span> alpha <span class="operator">=</span> <span class="number">0</span><span class="punctuation">,</span> lambda <span class="operator">=</span> lambdas_seq<span class="punctuation">,</span></span><br><span class="line">                      nfolds <span class="operator">=</span> <span class="number">10</span><span class="punctuation">)</span></span><br><span class="line">plot<span class="punctuation">(</span>ridge_cv<span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
-<meta name="referrer" content="no-referrer">
-<img src="/ShootingWang/ShootingWang.github.io/%E7%AE%97%E6%B3%95-%E5%B8%A6%E6%83%A9%E7%BD%9A%E5%87%BD%E6%95%B0%E7%9A%84%E5%8F%98%E9%87%8F%E9%80%89%E6%8B%A9%E6%96%B9%E6%B3%95.htm/RidgeRegressionCV.png" class title="岭回归-10折交叉验证">
+<p><meta name="referrer" content="no-referrer"><br><img src="/ShootingWang/ShootingWang.github.io/%E7%AE%97%E6%B3%95-%E5%B8%A6%E6%83%A9%E7%BD%9A%E5%87%BD%E6%95%B0%E7%9A%84%E5%8F%98%E9%87%8F%E9%80%89%E6%8B%A9%E6%96%B9%E6%B3%95.htm/RidgeRegressionCV.png" class title="岭回归-10折交叉验证"></p>
 <figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 使用令交叉验证预测误差均值最小的lambda</span></span><br><span class="line">rr <span class="operator">&lt;-</span> glmnet<span class="punctuation">(</span>X<span class="punctuation">,</span> y<span class="punctuation">,</span> alpha <span class="operator">=</span> <span class="number">0</span><span class="punctuation">,</span> lambda <span class="operator">=</span> ridge_cv<span class="operator">$</span>lambda.min<span class="punctuation">)</span></span><br><span class="line">y_hat <span class="operator">&lt;-</span> predict<span class="punctuation">(</span>rr<span class="punctuation">,</span> X<span class="punctuation">)</span>  <span class="comment">## y的估计值</span></span><br><span class="line">ssr <span class="operator">&lt;-</span> t<span class="punctuation">(</span>y <span class="operator">-</span> y_hat<span class="punctuation">)</span> <span class="operator">%*%</span> <span class="punctuation">(</span>y <span class="operator">-</span> y_hat<span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
-<h3 id="Python实现"><a class="header-anchor" href="#Python实现"></a>Python实现</h3>
-<h2 id="LASSO"><a class="header-anchor" href="#LASSO"></a>LASSO</h2>
-<p>LASSO（Least Absolute Shrinkage and Selection Operator）</p>
+<h3 id="Python实现"><a href="#Python实现" class="headerlink" title="Python实现"></a>Python实现</h3><h2 id="LASSO"><a href="#LASSO" class="headerlink" title="LASSO"></a>LASSO</h2><p>LASSO（Least Absolute Shrinkage and Selection Operator）</p>
 <blockquote>
 <ul>
-<li>Tibshirani, Robert. “<a target="_blank" rel="noopener" href="https://www.jstor.org/stable/2346178?seq=1">Regression Shrinkage and Selection via the Lasso.</a>” Journal of the Royal Statistical Society. Series B (Methodological), vol. 58, no. 1, 1996, pp. 267–288. JSTOR, <a target="_blank" rel="noopener" href="http://www.jstor.org/stable/2346178">www.jstor.org/stable/2346178</a>. Accessed 11 Feb. 2021.</li>
+<li>Tibshirani, Robert. “<a target="_blank" rel="noopener" href="https://www.jstor.org/stable/2346178?seq=1">Regression Shrinkage and Selection via the Lasso.</a>” Journal of the Royal Statistical Society. Series B (Methodological), vol. 58, no. 1, 1996, pp. 267–288. JSTOR, www.jstor.org/stable/2346178. Accessed 11 Feb. 2021.</li>
 <li>Li, F. R. . (2001). <a target="_blank" rel="noopener" href="https://fan.princeton.edu/papers/01/penlike.pdf">Variable selection via nonconcave penalized likelihood and its oracle properties</a>. Publications of the American Statistical Association, 96(456), 1348-1360.</li>
 </ul>
 </blockquote>
 <ul>
-<li>
-<p>LASSO在损失函数中加上一个L1惩罚项（L1 penalty）</p>
+<li><p>LASSO在损失函数中加上一个L1惩罚项（L1 penalty）</p>
 </li>
-<li>
-<p>目标函数：<br>
-\begin{equation}<br>
-\begin{aligned}<br>
-L_{LASSO}(\beta) &amp;= ||y-X\beta ||^2_2 + \lambda ||\beta||<em>1 \<br>
-&amp;= \sum</em>{i=1}^n \left(y_i - \sum_{j=1}^p x_{ij}\beta_j \right)^2 + \lambda \sum_{j=1}^p \mid \beta_j \mid<br>
-\end{aligned}<br>
-\end{equation}</p>
+<li><p>目标函数：<br>\begin{equation}<br>\begin{aligned}<br>L<em>{LASSO}(\beta) &amp;= ||y-X\beta ||^2_2 + \lambda ||\beta||_1 \<br>&amp;= \sum</em>{i=1}^n \left(y<em>i - \sum</em>{j=1}^p x<em>{ij}\beta_j \right)^2 + \lambda \sum</em>{j=1}^p \mid \beta_j \mid<br>\end{aligned}<br>\end{equation}</p>
 </li>
 </ul>
-<p>$$\hat{\beta}<em>{LASSO} = \arg \min</em>{\beta} \left{ \sum_{i=1}^n\left( y_i - \sum_{j=1}^p x_{ij}\beta_j \right)^2 \right} \qquad \mbox{subject to } \sum_{j=1}^p |\beta_j| \leq s$$</p>
-<blockquote>
+<script type="math/tex; mode=display">\hat{\beta}_{LASSO} = \arg \min_{\beta} \left\{ \sum_{i=1}^n\left( y_i - \sum_{j=1}^p x_{ij}\beta_j \right)^2 \right\} \qquad \mbox{subject to } \sum_{j=1}^p |\beta_j| \leq s</script><blockquote>
 <ul>
 <li>标准LASSO过度惩罚了大系数（standard LASSO over-shrinks large coefficients due to the nature of $l_1$ penalty）。</li>
 <li><a target="_blank" rel="noopener" href="https://fan.princeton.edu/papers/01/penlike.pdf">Fan and Li, 2001</a>：在单数据集变量选择中，LASSO倾向于选择过多的变量，理论上不满足Oracle性质</li>
@@ -497,76 +416,57 @@ L_{LASSO}(\beta) &amp;= ||y-X\beta ||^2_2 + \lambda ||\beta||<em>1 \<br>
 <li>LASSO最终选择的变量个数$c$不会超过样本个数$n$（$c = \min{ n, p }$）</li>
 <li>LASSO在对高度相关的变量进行选择时，只选择其中一个，而不关心是哪一个</li>
 </ol>
-<h3 id="Fused-LASSO"><a class="header-anchor" href="#Fused-LASSO"></a>Fused LASSO</h3>
-<blockquote>
+<h3 id="Fused-LASSO"><a href="#Fused-LASSO" class="headerlink" title="Fused LASSO"></a>Fused LASSO</h3><blockquote>
 <p>Tibshirani, R., Saunders, M., Rosset, S., Zhu, J. and Knight, K. (2005), <a target="_blank" rel="noopener" href="https://web.stanford.edu/group/SOL/papers/fused-lasso-JRSSB.pdf">Sparsity and smoothness via the fused lasso</a>. Journal of the Royal Statistical Society: Series B (Statistical Methodology), 67: 91-108.</p>
 </blockquote>
-<p>$$\hat{\beta}<em>{fLASSO} = \arg \min</em>{\beta} \left{ \sum_{i=1}^n\left( y_i - \sum_{j=1}^p x_{ij}\beta_j \right)^2 \right} \qquad \mbox{subject to } \sum_{j=1}^p |\beta_j| \leq s_1 \mbox{ and } \sum_{j=2}^p |\beta_j - \beta_{j-1}| \leq s_2$$</p>
-<ul>
+<script type="math/tex; mode=display">\hat{\beta}_{fLASSO} = \arg \min_{\beta} \left\{ \sum_{i=1}^n\left( y_i - \sum_{j=1}^p x_{ij}\beta_j \right)^2 \right\} \qquad \mbox{subject to } \sum_{j=1}^p |\beta_j| \leq s_1 \mbox{ and } \sum_{j=2}^p |\beta_j - \beta_{j-1}| \leq s_2</script><ul>
 <li>$\sum_{j=1}^p |\beta_j| \leq s_1$鼓励回归系数的稀疏性</li>
-<li>$\sum_{j=2}^p |\beta_j - \beta_{j-1}| \leq s_2$鼓励回归系数差异上的稀疏性</li>
+<li>$\sum<em>{j=2}^p |\beta_j - \beta</em>{j-1}| \leq s_2$鼓励回归系数差异上的稀疏性</li>
 </ul>
-<h3 id="Adaptive-LASSO"><a class="header-anchor" href="#Adaptive-LASSO"></a>Adaptive LASSO</h3>
-<blockquote>
+<h3 id="Adaptive-LASSO"><a href="#Adaptive-LASSO" class="headerlink" title="Adaptive LASSO"></a>Adaptive LASSO</h3><blockquote>
 <p>Hui Zou (2006). <a target="_blank" rel="noopener" href="http://pages.cs.wisc.edu/~shao/stat992/zou2006.pdf">The Adaptive Lasso and Its Oracle Properties</a>, Journal of the American Statistical Association, 101:476, 1418-1429.</p>
 </blockquote>
-<p>考虑加权LASSO<br>
-$$\arg \min_{\beta} \parallel y - \sum_{j=1}^p x_j\beta_j \parallel^2_2 + \lambda \sum_{j=1}^p w_j|\beta_j|$$</p>
-<ul>
+<p>考虑加权LASSO</p>
+<script type="math/tex; mode=display">\arg \min_{\beta} \parallel y - \sum_{j=1}^p x_j\beta_j \parallel^2_2 + \lambda \sum_{j=1}^p w_j|\beta_j|</script><ul>
 <li>如果权重$w_j$是基于数据、且被正确选择，则加权LASSO具有Oracle性质，可称为自适应LASSO（Adaptive LASSO）</li>
 </ul>
-<p>定义$\hat{w}=\frac{1}{|\hat{\beta}|^{\gamma} }$自适应LASSO通过下式估计$\hat{\beta}^{<em>(n)}$<br>
-$$\hat{\beta}^{</em>(n)} = \arg \min_{\beta} \parallel y-\sum_{j=1}^p x_j\beta_j \parallel^2_2 + \lambda_n \sum_{j=1}^p \hat{w}_j |\beta_j|$$</p>
-<ul>
+<p>定义$\hat{w}=\frac{1}{|\hat{\beta}|^{\gamma} }$自适应LASSO通过下式估计$\hat{\beta}^{*(n)}$</p>
+<script type="math/tex; mode=display">\hat{\beta}^{*(n)} = \arg \min_{\beta} \parallel y-\sum_{j=1}^p x_j\beta_j \parallel^2_2 + \lambda_n \sum_{j=1}^p \hat{w}_j |\beta_j|</script><ul>
 <li>$\hat{\beta}$可取$\hat{\beta}_{OLS}$</li>
 </ul>
-<h3 id="post-LASSO"><a class="header-anchor" href="#post-LASSO"></a>post-LASSO</h3>
-<blockquote>
-<p>Belloni, Alexandre; Chernozhukov, Victor. <a target="_blank" rel="noopener" href="https://projecteuclid.org/download/pdfview_1/euclid.bj/1363192037">Least squares after model selection in high-dimensional sparse models</a>. Bernoulli 19 (2013), no. 2, 521–547. doi:10.3150/11-BEJ410.</p>
-</blockquote>
-<blockquote>
+<h3 id="post-LASSO"><a href="#post-LASSO" class="headerlink" title="post-LASSO"></a>post-LASSO</h3><blockquote>
+<p>Belloni, Alexandre; Chernozhukov, Victor. <a target="_blank" rel="noopener" href="https://projecteuclid.org/download/pdfview_1/euclid.bj/1363192037">Least squares after model selection in high-dimensional sparse models</a>. Bernoulli 19 (2013), no. 2, 521—547. doi:10.3150/11-BEJ410.</p>
 <ul>
 <li><a target="_blank" rel="noopener" href="https://projecteuclid.org/download/pdfview_1/euclid.bj/1363192037">Belloni and Chernozhukov (2013)</a>：post-LASSO在收敛速度上至少和LASSO一样好，且post-LASSO的偏差更小</li>
 </ul>
 </blockquote>
-<h2 id="Bridge"><a class="header-anchor" href="#Bridge"></a>Bridge</h2>
-<blockquote>
-<p>Frank L E , Friedman J H . <a target="_blank" rel="noopener" href="http://www.uwe-mortensen.de/FrankFriedmanStatViewChemometRegressionTools1993.pdf">A Statistical View of Some Chemometrics Regression Tools</a>[J]. Technometrics, 1993, 35(2):109-135.<br>
-Fu, Wenjiang J . <a target="_blank" rel="noopener" href="http://www.hpc.unm.edu/~andriese/doc/ref1_fu.pdf">Penalized Regressions: The Bridge versus the Lasso</a>[J]. Journal of Computational and Graphical Statistics, 1998, 7(3):397.</p>
+<h2 id="Bridge"><a href="#Bridge" class="headerlink" title="Bridge"></a>Bridge</h2><blockquote>
+<p>Frank L E , Friedman J H . <a target="_blank" rel="noopener" href="http://www.uwe-mortensen.de/FrankFriedmanStatViewChemometRegressionTools1993.pdf">A Statistical View of Some Chemometrics Regression Tools</a>[J]. Technometrics, 1993, 35(2):109-135.<br>Fu, Wenjiang J . <a target="_blank" rel="noopener" href="http://www.hpc.unm.edu/~andriese/doc/ref1_fu.pdf">Penalized Regressions: The Bridge versus the Lasso</a>[J]. Journal of Computational and Graphical Statistics, 1998, 7(3):397.</p>
 </blockquote>
 <ul>
-<li>目标函数：<br>
-$$L_{Bridge}(\beta) = \parallel y-X\beta \parallel_2 + \lambda \sum_{i=1}^p \mid \beta_i \mid^\gamma, \qquad \gamma &gt; 0 $$</li>
+<li>目标函数：<script type="math/tex; mode=display">L_{Bridge}(\beta) = \parallel y-X\beta \parallel_2 + \lambda \sum_{i=1}^p \mid \beta_i \mid^\gamma, \qquad \gamma > 0</script></li>
 </ul>
-<p>$$<br>
-\begin{aligned}<br>
-\hat{\beta}<em>{Bridge} &amp;= \arg \min</em>{\beta} \parallel y - X\beta \parallel_2^2 + \lambda J(\beta) \<br>
-&amp;= \arg \min_{\beta} \parallel y - X\beta \parallel_2^2 + \lambda \parallel \beta \parallel_{\gamma}^{\gamma} \<br>
-&amp;= \arg \min_{\beta} \parallel y - X\beta \parallel_2^2 + \lambda \sum_{j=1}^p \mid \beta_j\mid^{\gamma} \<br>
-\end{aligned}<br>
-$$</p>
-<blockquote>
-<p><a target="_blank" rel="noopener" href="https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.445.4562&amp;rep=rep1&amp;type=pdf">Zou and Hastie(2005)</a>：Bridge估计量可以看成是基于如下先验的贝叶斯后验模式（Bayes posterior mode）<br>
-$$p_{\lambda, \gamma}(\beta) = C(\lambda, \gamma)\exp{(-\lambda |\beta|_{\gamma}^{\gamma})} $$</p>
-</blockquote>
-<h2 id="SCAD"><a class="header-anchor" href="#SCAD"></a>SCAD</h2>
-<p>SCAD（Smoothly Clipped Absolute Deviation）</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\hat{\beta}_{Bridge} &= \arg \min_{\beta} \parallel y - X\beta \parallel_2^2 + \lambda J(\beta) \\
+&= \arg \min_{\beta} \parallel y - X\beta \parallel_2^2 + \lambda \parallel \beta \parallel_{\gamma}^{\gamma} \\
+&= \arg \min_{\beta} \parallel y - X\beta \parallel_2^2 + \lambda \sum_{j=1}^p \mid \beta_j\mid^{\gamma} \\
+\end{aligned}</script><blockquote>
+<p><a target="_blank" rel="noopener" href="https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.445.4562&amp;rep=rep1&amp;type=pdf">Zou and Hastie(2005)</a>：Bridge估计量可以看成是基于如下先验的贝叶斯后验模式（Bayes posterior mode）</p>
+<script type="math/tex; mode=display">p_{\lambda, \gamma}(\beta) = C(\lambda, \gamma)\exp{(-\lambda |\beta|_{\gamma}^{\gamma})}</script></blockquote>
+<h2 id="SCAD"><a href="#SCAD" class="headerlink" title="SCAD"></a>SCAD</h2><p>SCAD（Smoothly Clipped Absolute Deviation）</p>
 <blockquote>
 <p>Fan, J., &amp; Li, R. (2001). <a target="_blank" rel="noopener" href="https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.445.4562&amp;rep=rep1&amp;type=pdf">Variable Selection via Nonconcave Penalized Likelihood and Its Oracle Properties</a>. Journal of the American Statistical Association, 96(456), 1348-1360.</p>
 </blockquote>
-<p>目标函数：<br>
-$$ P_{\lambda}(|\beta_j|) = \left{<br>
-\begin{array}{ll}<br>
-{\lambda} |\beta_j|, &amp; 0\leq |\beta_j| \leq \lambda \<br>
--\frac{\left( |\beta_j|^2 - 2a\lambda |\beta_j| + \lambda^2 \right)}{2(a-1)}, &amp; \lambda &lt; |\beta_j| \leq a\lambda \<br>
-\frac{(a+1)\lambda^2}{2}, &amp; |\beta_j| &gt; a\lambda<br>
-\end{array}<br>
-\right.<br>
-$$</p>
-<p>$$ P_{\lambda}^{\prime} (|\beta_j|) = \lambda \left{ I(|\beta_j| \leq \lambda) + \frac{(a\lambda - |\beta_j|)_{+} }{(a-1)\lambda} I(|\beta_j| &gt; \lambda) \right}$$<br>
-其中$a&gt;2$。</p>
-<h2 id="Elastic-Net（Enet）"><a class="header-anchor" href="#Elastic-Net（Enet）"></a>Elastic Net（Enet）</h2>
-<ul>
+<p>目标函数：</p>
+<script type="math/tex; mode=display">P_{\lambda}(|\beta_j|) = \left\{
+\begin{array}{ll}
+  {\lambda} |\beta_j|, & 0\leq |\beta_j| \leq \lambda \\
+  -\frac{\left( |\beta_j|^2 - 2a\lambda |\beta_j| + \lambda^2 \right)}{2(a-1)}, & \lambda < |\beta_j| \leq a\lambda \\
+  \frac{(a+1)\lambda^2}{2}, & |\beta_j| > a\lambda
+\end{array}
+\right.</script><script type="math/tex; mode=display">P_{\lambda}^{\prime} (|\beta_j|) = \lambda \left\{ I(|\beta_j| \leq \lambda) + \frac{(a\lambda - |\beta_j|)_{+} }{(a-1)\lambda} I(|\beta_j| > \lambda) \right\}</script><p>其中$a&gt;2$。</p>
+<h2 id="Elastic-Net（Enet）"><a href="#Elastic-Net（Enet）" class="headerlink" title="Elastic Net（Enet）"></a>Elastic Net（Enet）</h2><ul>
 <li>EN是最早的具有群组变量选择功能的方法（王小燕等, 2015）</li>
 <li>惩罚函数是LASSO和岭回归的线性组合</li>
 <li>处理高度相关数据的组变量选择方法</li>
@@ -577,43 +477,30 @@ $$</p>
 <li>王小燕,谢邦昌,马双鸽,方匡南.高维数据下群组变量选择的惩罚方法综述[J].数理统计与管理,2015,34(06):978-988.</li>
 </ul>
 </blockquote>
-<p>目标函数：<br>
-\begin{aligned}<br>
-L(\lambda, \beta) &amp;= \parallel y-X\beta \parallel_2^2 + \lambda_2 \parallel \beta\parallel <em>2^2 + \lambda_1 \parallel \beta \parallel_1 \<br>
-&amp;= \parallel y-X\beta \parallel_2^2 + \lambda_2 \sum</em>{j=1}^p \beta_j^2 + \lambda_1 \sum_{j=1}^p |\beta_j|<br>
-\end{aligned}</p>
-<p>\begin{aligned}<br>
-\hat{\beta} &amp;= \arg\min_{\beta} { L(\lambda, \beta) } \<br>
-&amp;= \arg\min_{\beta} \parallel y-X\beta \parallel_2^2, \qquad \mbox{subject to } (1-\alpha)\mid\beta\mid_1+\alpha\parallel \beta\parallel^2_2 \leq t \mbox{ for some } t.\<br>
-\end{aligned}</p>
+<p>目标函数：<br>\begin{aligned}<br>L(\lambda, \beta) &amp;= \parallel y-X\beta \parallel<em>2^2 + \lambda_2 \parallel \beta\parallel _2^2 + \lambda_1 \parallel \beta \parallel_1 \<br>&amp;= \parallel y-X\beta \parallel_2^2 + \lambda_2 \sum</em>{j=1}^p \beta<em>j^2 + \lambda_1 \sum</em>{j=1}^p |\beta_j|<br>\end{aligned}</p>
+<p>\begin{aligned}<br>\hat{\beta} &amp;= \arg\min<em>{\beta} { L(\lambda, \beta) } \<br>&amp;= \arg\min</em>{\beta} \parallel y-X\beta \parallel_2^2, \qquad \mbox{subject to } (1-\alpha)\mid\beta\mid_1+\alpha\parallel \beta\parallel^2_2 \leq t \mbox{ for some } t.\<br>\end{aligned}</p>
 <ul>
 <li>当$\alpha = 1$时，朴素弹性网（naive elastic net）变为简单岭回归（simple ridge regression）</li>
 <li>当$\alpha = 0$时，朴素弹性网（naive elastic net）变为LASSO</li>
 </ul>
-<p>Elastic Net估计量可以看成是如下先验（介于Gaussian先验和Laplacian先验）的贝叶斯后验模式：<br>
-$$p_{\lambda, \alpha} = C(\lambda, \alpha) \exp{ -\lambda \left[ \alpha |\beta|^2 + (1-\alpha)|\beta|_1 \right] }$$</p>
-<blockquote>
+<p>Elastic Net估计量可以看成是如下先验（介于Gaussian先验和Laplacian先验）的贝叶斯后验模式：</p>
+<script type="math/tex; mode=display">p_{\lambda, \alpha} = C(\lambda, \alpha) \exp\{ -\lambda \left[ \alpha |\beta|^2 + (1-\alpha)|\beta|_1 \right] \}</script><blockquote>
 <ul>
-<li><a target="_blank" rel="noopener" href="https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.445.4562&amp;rep=rep1&amp;type=pdf">Zou and Hui (2015)</a>：Elastic Net 没有Oracle性质</li>
+<li><p><a target="_blank" rel="noopener" href="https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.445.4562&amp;rep=rep1&amp;type=pdf">Zou and Hui (2015)</a>：Elastic Net 没有Oracle性质</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="http://www.cnki.com.cn/Article/CJFDTotal-SLTJ201506005.htm">王小燕等(2015)</a>：弹性网的缺点之一是往往选择过多的变量组</p>
+</li>
 </ul>
 </blockquote>
-<blockquote>
-<ul>
-<li><a target="_blank" rel="noopener" href="http://www.cnki.com.cn/Article/CJFDTotal-SLTJ201506005.htm">王小燕等(2015)</a>：弹性网的缺点之一是往往选择过多的变量组</li>
-</ul>
-</blockquote>
-<h3 id="EN-vs-Bridge"><a class="header-anchor" href="#EN-vs-Bridge"></a>EN vs Bridge</h3>
-<ul>
+<h3 id="EN-vs-Bridge"><a href="#EN-vs-Bridge" class="headerlink" title="EN vs Bridge"></a>EN vs Bridge</h3><ul>
 <li>$1&lt; \gamma &lt; 2$的Bridge回归与Elastic Net有许多相似之处</li>
 <li>Elastic Net可以产生稀疏解，而Bridge Regression不能</li>
 </ul>
 <blockquote>
 <p><a target="_blank" rel="noopener" href="https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.445.4562&amp;rep=rep1&amp;type=pdf">Fan and Li (2001)</a>：在$L_q(q\geq 1)$的惩罚函数族中，只有LASSO惩罚函数（$q=1$）能够产生稀疏解（sparse solution）</p>
 </blockquote>
-<h3 id="Adaptive-Elastic-Net"><a class="header-anchor" href="#Adaptive-Elastic-Net"></a>Adaptive Elastic Net</h3>
-<p>结合Adaptive LASSO和$L_2$惩罚项</p>
-<h2 id="MCP"><a class="header-anchor" href="#MCP"></a>MCP</h2>
-<p>MCP（minimax concave penalty）</p>
+<h3 id="Adaptive-Elastic-Net"><a href="#Adaptive-Elastic-Net" class="headerlink" title="Adaptive Elastic Net"></a>Adaptive Elastic Net</h3><p>结合Adaptive LASSO和$L_2$惩罚项</p>
+<h2 id="MCP"><a href="#MCP" class="headerlink" title="MCP"></a>MCP</h2><p>MCP（minimax concave penalty）</p>
 <ul>
 <li>用于单一数据集的分析</li>
 </ul>
@@ -624,48 +511,39 @@ $$p_{\lambda, \alpha} = C(\lambda, \alpha) \exp{ -\lambda \left[ \alpha |\beta|^
 <li>Mazumder, R., Friedman, J. H., &amp; Hastie, T. (2011). <a target="_blank" rel="noopener" href="https://web.stanford.edu/~hastie/Papers/Sparsenet/jasa_MFH_final.pdf">SparseNet: Coordinate Descent With Nonconvex Penalties</a>. Journal of the American Statistical Association, 106(495), 1125–1138.</li>
 </ul>
 </blockquote>
-<p>MCP定义为：<br>
-$$<br>
-\begin{aligned}<br>
-\rho(t;\lambda,\gamma) &amp;= \lambda \int_{0}^{|t|} \left( 1-\frac{x}{\gamma \lambda} \right)<em>{+} \mathrm{d}x \<br>
-&amp;= \lambda \left( |t| - \frac{t^2}{2\gamma\lambda} \right)I(|t| &lt; \gamma\lambda) + \frac{\gamma\lambda^2}{2}I(|t| \geq \gamma\lambda) \<br>
-\end{aligned}<br>
-$$<br>
-即<br>
-$$ P</em>{MCP}(t;\lambda, \gamma) =<br>
-\left{<br>
-\begin{array}{ll}<br>
-\lambda|t| - \frac{t^2}{2\gamma}, &amp; |t| &lt; \gamma\lambda \<br>
-\frac{\gamma\lambda^2}{2}, &amp; |t| \geq \gamma \lambda<br>
-\end{array}<br>
-\right.<br>
-$$</p>
-<ul>
+<p>MCP定义为：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\rho(t;\lambda,\gamma) &= \lambda \int_{0}^{|t|} \left( 1-\frac{x}{\gamma \lambda} \right)_{+} \mathrm{d}x \\
+&= \lambda \left( |t| - \frac{t^2}{2\gamma\lambda} \right)I(|t| < \gamma\lambda) + \frac{\gamma\lambda^2}{2}I(|t| \geq \gamma\lambda) \\
+\end{aligned}</script><p>即</p>
+<script type="math/tex; mode=display">P_{MCP}(t;\lambda, \gamma) = 
+\left\{
+  \begin{array}{ll}
+  \lambda|t| - \frac{t^2}{2\gamma}, & |t| < \gamma\lambda \\
+  \frac{\gamma\lambda^2}{2}, & |t| \geq \gamma \lambda
+  \end{array}
+  \right.</script><ul>
 <li>正则化参数$\gamma &gt; 0$控制$\rho(\cdot)$的凹度（concavity）</li>
 <li>惩罚参数：$\lambda$</li>
 <li>$x_{+} = xI(x\geq 0)$</li>
 </ul>
-<p>导数为：<br>
-$$\rho^\prime(t;\lambda,\gamma) = \lambda\left( 1-\frac{|t|}{\gamma \lambda} \right)<em>{+}\mathrm{sgn}(t)$$<br>
-即<br>
-$$<br>
-P</em>{MCP}^{\prime}(t;\lambda,\gamma) = \left{<br>
-\begin{array}{ll}<br>
-\lambda - \frac{|t|}{\gamma}, &amp; |t| &lt; \gamma\lambda \<br>
-0, &amp; |t| \geq \gamma \lambda<br>
-\end{array}<br>
-\right.<br>
-$$</p>
-<p>其中<br>
-$$\mathrm{sgn}(t) = \left{<br>
-\begin{array}{ll}<br>
--1, &amp; t &lt; 0 \<br>
-0, &amp; t = 0\<br>
-1, &amp; t &gt; 0<br>
-\end{array}<br>
-\right.<br>
-$$</p>
-<ul>
+<p>导数为：</p>
+<script type="math/tex; mode=display">\rho^\prime(t;\lambda,\gamma) = \lambda\left( 1-\frac{|t|}{\gamma \lambda} \right)_{+}\mathrm{sgn}(t)</script><p>即</p>
+<script type="math/tex; mode=display">
+P_{MCP}^{\prime}(t;\lambda,\gamma) = \left\{
+\begin{array}{ll}
+\lambda - \frac{|t|}{\gamma}, & |t| < \gamma\lambda \\
+0, & |t| \geq \gamma \lambda
+\end{array}
+\right.</script><p>其中</p>
+<script type="math/tex; mode=display">\mathrm{sgn}(t) = \left\{
+\begin{array}{ll}
+-1, & t < 0 \\
+0, & t = 0\\
+1, & t > 0
+\end{array}
+\right.</script><ul>
 <li>当$\gamma \rightarrow +\infty$，有MCP penalty $\rightarrow$ LASSO penalty</li>
 <li>当$\gamma \rightarrow 1+$，有MCP penalty $\rightarrow$ hard-thresholding penalty</li>
 </ul>
@@ -675,18 +553,14 @@ $$</p>
 <li><a target="_blank" rel="noopener" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3933169/pdf/nihms470951.pdf">Liu等人(2014)</a></li>
 </ul>
 </blockquote>
-<h1 id="Group-Variable-Selection"><a class="header-anchor" href="#Group-Variable-Selection"></a>Group Variable Selection</h1>
-<h2 id="MNET"><a class="header-anchor" href="#MNET"></a>MNET</h2>
-<ul>
+<h1 id="Group-Variable-Selection"><a href="#Group-Variable-Selection" class="headerlink" title="Group Variable Selection"></a>Group Variable Selection</h1><h2 id="MNET"><a href="#MNET" class="headerlink" title="MNET"></a>MNET</h2><ul>
 <li>处理高度相关数据的组变量选择方法</li>
 </ul>
-<h2 id="L-2-SCAD"><a class="header-anchor" href="#L-2-SCAD"></a>$L_2$ SCAD</h2>
-<ul>
+<h2 id="L-2-SCAD"><a href="#L-2-SCAD" class="headerlink" title="$L_2$ SCAD"></a>$L_2$ SCAD</h2><ul>
 <li>组合SCAD函数和岭回归</li>
 <li>处理高度相关数据的组变量选择方法</li>
 </ul>
-<h2 id="Group-LASSO"><a class="header-anchor" href="#Group-LASSO"></a>Group LASSO</h2>
-<ul>
+<h2 id="Group-LASSO"><a href="#Group-LASSO" class="headerlink" title="Group LASSO"></a>Group LASSO</h2><ul>
 <li>仅能选择组变量</li>
 </ul>
 <blockquote>
@@ -696,14 +570,8 @@ $$</p>
 <li>Wei, F., &amp; Huang, J. (2010). <a target="_blank" rel="noopener" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3209717/pdf/nihms331983.pdf">Consistent group selection in high-dimensional linear regression</a>. Bernoulli : official journal of the Bernoulli Society for Mathematical Statistics and Probability, 16(4), 1369–1384.</li>
 </ul>
 </blockquote>
-<p>假设设计矩阵$X$可分为$J$个组$X_1, X_2, \cdots, X_J$，且$d_j$表示第$j$个组的大小（size），也即$\sum_{j=1}^Jd_j = p$。</p>
-<p>目标函数：<br>
-\begin{equation}<br>
-\begin{aligned}<br>
-Q(\beta | X,y) &amp;= L(\beta|X,y) + \sum_{j=1}^J \lambda_j {\parallel} \beta_j {\parallel_{K_j} } \qquad (\lambda \geq 0)\<br>
-&amp;= \parallel y - \sum_{j=1}^JX_j\beta_j {\parallel_2^2} + \lambda \sum_{j=1}^J \sqrt{d_j} \parallel \beta_j {\parallel_{K_j} }<br>
-\end{aligned}<br>
-\end{equation}</p>
+<p>假设设计矩阵$X$可分为$J$个组$X<em>1, X_2, \cdots, X_J$，且$d_j$表示第$j$个组的大小（size），也即$\sum</em>{j=1}^Jd_j = p$。</p>
+<p>目标函数：<br>\begin{equation}<br>\begin{aligned}<br>Q(\beta | X,y) &amp;= L(\beta|X,y) + \sum<em>{j=1}^J \lambda_j {\parallel} \beta_j {\parallel</em>{K<em>j} } \qquad (\lambda \geq 0)\<br>&amp;= \parallel y - \sum</em>{j=1}^JX<em>j\beta_j {\parallel_2^2} + \lambda \sum</em>{j=1}^J \sqrt{d<em>j} \parallel \beta_j {\parallel</em>{K_j} }<br>\end{aligned}<br>\end{equation}</p>
 <ul>
 <li>${\parallel}z{\parallel_{K_j} } = \left( z^TK_jz \right)^{1/2}$</li>
 <li>为了保证对大组、小组的惩罚力度一致，可取$\lambda_j = \lambda \sqrt{d_j}$</li>
@@ -717,35 +585,25 @@ Q(\beta | X,y) &amp;= L(\beta|X,y) + \sum_{j=1}^J \lambda_j {\parallel} \beta_j 
 <li><a target="_blank" rel="noopener" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3209717/pdf/nihms331983.pdf">Wei and Huang (2010)</a>：Group LASSO的选择没有一致性，且倾向于选取不重要的组</li>
 </ul>
 </blockquote>
-<h3 id="如何选择-K-j"><a class="header-anchor" href="#如何选择-K-j"></a>如何选择$K_j$</h3>
-<p>对于标准正交的$X_j$，有<br>
-$$\frac{1}{n}X_j^TX_j = I_{d_j}, \qquad j=1, 2, \cdots, J.$$</p>
-<ul>
-<li><a target="_blank" rel="noopener" href="http://www.columbia.edu/~my2550/papers/glasso.final.pdf">Yuan and Lin(2006)</a>建议取$K_j=I_{d_j}$</li>
+<h3 id="如何选择-K-j"><a href="#如何选择-K-j" class="headerlink" title="如何选择$K_j$"></a>如何选择$K_j$</h3><p>对于标准正交的$X_j$，有</p>
+<script type="math/tex; mode=display">\frac{1}{n}X_j^TX_j = I_{d_j}, \qquad j=1, 2, \cdots, J.</script><ul>
+<li><a target="_blank" rel="noopener" href="http://www.columbia.edu/~my2550/papers/glasso.final.pdf">Yuan and Lin(2006)</a>建议取$K<em>j=I</em>{d_j}$</li>
 </ul>
-<h3 id="求解"><a class="header-anchor" href="#求解"></a>求解</h3>
-<ul>
+<h3 id="求解"><a href="#求解" class="headerlink" title="求解"></a>求解</h3><ul>
 <li><a target="_blank" rel="noopener" href="http://www.columbia.edu/~my2550/papers/glasso.final.pdf">Yuan and Lin(2006)</a>：通过组坐标下降法（Group Coordinate Descent Algorithm）计算Group LASSO的解</li>
 </ul>
-<p>令$z=\frac{1}{n}X_j^T y$为$y=X\beta+\varepsilon$的最小二乘解，则有<br>
-$$\hat{\beta}<em>{LASSO}(z;\lambda) = S(z, \lambda) = \left( 1-\frac{\lambda}{\parallel z \parallel_2} \right)</em>{+} z$$</p>
-<h3 id="同构整合分析"><a class="header-anchor" href="#同构整合分析"></a>同构整合分析</h3>
-<p>Group LASSO可应用于同构整合分析</p>
+<p>令$z=\frac{1}{n}X_j^T y$为$y=X\beta+\varepsilon$的最小二乘解，则有</p>
+<script type="math/tex; mode=display">\hat{\beta}_{LASSO}(z;\lambda) = S(z, \lambda) = \left( 1-\frac{\lambda}{\parallel z \parallel_2} \right)_{+} z</script><h3 id="同构整合分析"><a href="#同构整合分析" class="headerlink" title="同构整合分析"></a>同构整合分析</h3><p>Group LASSO可应用于同构整合分析</p>
 <blockquote>
 <p>Zhang, Q. , Zhang, S. , Liu, J. , Huang, J. , &amp; Ma, S. . (2015). <a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1501.02458.pdf">Penalized integrative analysis under the accelerated failure time model</a>. Statistica Sinica, 26(2).</p>
 </blockquote>
-<p>目标函数：<br>
-\begin{aligned}<br>
-L(\beta) &amp;= \frac{1}{2n}\parallel y-X\beta \parallel_2^2 + \lambda \sum_{j=1}^p\parallel \beta_j \parallel_2 \<br>
-&amp;= \frac{1}{2n}\parallel y-X\beta \parallel_2^2 + \lambda \sum_{j=1}^p \left[ \sum_{k=1}^M (\beta_j<sup>k)</sup>2 \right]^{1/2} \<br>
-\end{aligned}</p>
+<p>目标函数：<br>\begin{aligned}<br>L(\beta) &amp;= \frac{1}{2n}\parallel y-X\beta \parallel<em>2^2 + \lambda \sum</em>{j=1}^p\parallel \beta<em>j \parallel_2 \<br>&amp;= \frac{1}{2n}\parallel y-X\beta \parallel_2^2 + \lambda \sum</em>{j=1}^p \left[ \sum_{k=1}^M (\beta_j^k)^2 \right]^{1/2} \<br>\end{aligned}</p>
 <ul>
-<li>$\parallel \beta_j \parallel_2 = \left[ \sum_{k=1}^M (\beta_j<sup>k)</sup>2 \right]^{1/2}$</li>
+<li>$\parallel \beta<em>j \parallel_2 = \left[ \sum</em>{k=1}^M (\beta_j^k)^2 \right]^{1/2}$</li>
 </ul>
 <blockquote>
 <ul>
-<li><a target="_blank" rel="noopener" href="https://core.ac.uk/download/pdf/41449289.pdf">马双鸽等人, 2015</a>：
-<ul>
+<li><a target="_blank" rel="noopener" href="https://core.ac.uk/download/pdf/41449289.pdf">马双鸽等人, 2015</a>：<ul>
 <li>同构模型的变量选择为整组选择</li>
 <li>同构数据的惩罚整合分析思想与单个数据集下的组变量选择类似</li>
 </ul>
@@ -753,16 +611,13 @@ L(\beta) &amp;= \frac{1}{2n}\parallel y-X\beta \parallel_2^2 + \lambda \sum_{j=1
 <li><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1501.02458.pdf">Zhang等人, 2015</a>：在一定条件下，Group LASSO、$L_2$ Group SCAD、$L_2$ Group MCP满足选择一致性</li>
 </ul>
 </blockquote>
-<h3 id="Adaptive-Group-LASSO"><a class="header-anchor" href="#Adaptive-Group-LASSO"></a>Adaptive Group LASSO</h3>
-<blockquote>
+<h3 id="Adaptive-Group-LASSO"><a href="#Adaptive-Group-LASSO" class="headerlink" title="Adaptive Group LASSO"></a>Adaptive Group LASSO</h3><blockquote>
 <p>Wang, H. , &amp; Leng, C. . (2008). <a target="_blank" rel="noopener" href="https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.494.4392&amp;rep=rep1&amp;type=pdf">A note on adaptive group lasso. Computational Statistics &amp; Data Analysis</a>, 52(12), 5277-5286.</p>
 </blockquote>
-<h2 id="Group-SCAD"><a class="header-anchor" href="#Group-SCAD"></a>Group SCAD</h2>
-<blockquote>
+<h2 id="Group-SCAD"><a href="#Group-SCAD" class="headerlink" title="Group SCAD"></a>Group SCAD</h2><blockquote>
 <p>Lifeng Wang, Guang Chen, Hongzhe Li, <a target="_blank" rel="noopener" href="https://academic.oup.com/bioinformatics/article/23/12/1486/223749">Group SCAD regression analysis for microarray time course gene expression data</a>, Bioinformatics, Volume 23, Issue 12, 15 June 2007, Pages 1486–1494</p>
 </blockquote>
-<h2 id="L-2-Group-Bridge"><a class="header-anchor" href="#L-2-Group-Bridge"></a>$L_2$ Group Bridge</h2>
-<blockquote>
+<h2 id="L-2-Group-Bridge"><a href="#L-2-Group-Bridge" class="headerlink" title="$L_2$ Group Bridge"></a>$L_2$ Group Bridge</h2><blockquote>
 <ul>
 <li>Ma, S., Huang, J., &amp; Song, X. (2011). <a target="_blank" rel="noopener" href="https://pubmed.ncbi.nlm.nih.gov/21415015/">Integrative analysis and variable selection with multiple high-dimensional data sets</a>. Biostatistics (Oxford, England), 12(4), 763–775.</li>
 <li>马双鸽, 王小燕, 方匡南. <a target="_blank" rel="noopener" href="https://core.ac.uk/download/pdf/41449289.pdf">大数据的整合分析方法</a>[J]. 统计研究, 2015, 32(011):3-11.</li>
@@ -771,15 +626,8 @@ L(\beta) &amp;= \frac{1}{2n}\parallel y-X\beta \parallel_2^2 + \lambda \sum_{j=1
 <ul>
 <li>用于同构数据的整合分析</li>
 </ul>
-<p>\begin{aligned}<br>
-\mbox{within-group selection} &amp;: \mbox{Ridge penalty} \<br>
-\mbox{group selection} &amp;: \mbox{Bridge } \mathrm{penalty} \<br>
-\end{aligned}</p>
-<p>考虑有$M$组研究数据的样本数据（每组都含$p$个解释变量），第$j$个变量的系数$\beta_j$的惩罚函数为：<br>
-\begin{aligned}<br>
-J(\beta_j) &amp;= \lambda \parallel \beta_j \parallel_2^{\gamma} \<br>
-&amp;= \lambda \sum_{j=1}^p \left{ \left[ \sum_{k=1}^M (\beta_j<sup>k)</sup>2 \right] \right}^{\gamma} \<br>
-\end{aligned}</p>
+<p>\begin{aligned}<br>\mbox{within-group selection} &amp;: \mbox{Ridge penalty} \<br>\mbox{group selection} &amp;: \mbox{Bridge } \mathrm{penalty} \<br>\end{aligned}</p>
+<p>考虑有$M$组研究数据的样本数据（每组都含$p$个解释变量），第$j$个变量的系数$\beta<em>j$的惩罚函数为：<br>\begin{aligned}<br>J(\beta_j) &amp;= \lambda \parallel \beta_j \parallel_2^{\gamma} \<br>&amp;= \lambda \sum</em>{j=1}^p \left{ \left[ \sum_{k=1}^M (\beta_j^k)^2 \right] \right}^{\gamma} \<br>\end{aligned}</p>
 <ul>
 <li>$\parallel \beta_j \parallel_2 = \left[ (\beta_j^1 )^2 + (\beta_j^2 )^2 + \cdots + (\beta_j^M )^2 \right]$</li>
 <li>$0 &lt; \gamma &lt; 1$是固定的bridge因子（bridge index）</li>
@@ -790,8 +638,7 @@ J(\beta_j) &amp;= \lambda \parallel \beta_j \parallel_2^{\gamma} \<br>
 <blockquote>
 <p><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1501.02458.pdf">Zhang等人, 2015</a>：在一定条件下，Group LASSO、$L_2$ Group SCAD、$L_2$ Group MCP满足选择一致性</p>
 </blockquote>
-<h2 id="L-2-Group-MCP"><a class="header-anchor" href="#L-2-Group-MCP"></a>$L_2$ Group MCP</h2>
-<ul>
+<h2 id="L-2-Group-MCP"><a href="#L-2-Group-MCP" class="headerlink" title="$L_2$ Group MCP"></a>$L_2$ Group MCP</h2><ul>
 <li>可用于进行组变量选择</li>
 <li>可用于同构数据的整合分析</li>
 </ul>
@@ -803,41 +650,29 @@ J(\beta_j) &amp;= \lambda \parallel \beta_j \parallel_2^{\gamma} \<br>
 <li>Liu, J., Huang, J., &amp; Ma, S. (2014). <a target="_blank" rel="noopener" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3933169/pdf/nihms470951.pdf">Integrative Analysis of Cancer Diagnosis Studies with Composite Penalization</a>. Scandinavian journal of statistics, theory and applications, 41(1), 87–103.</li>
 </ul>
 </blockquote>
-<p>\begin{aligned}<br>
-\mbox{within-group selection} &amp;: \mbox{Ridge penalty} \<br>
-\mbox{group selection} &amp;: \mathrm{MCP} \<br>
-\end{aligned}</p>
+<p>\begin{aligned}<br>\mbox{within-group selection} &amp;: \mbox{Ridge penalty} \<br>\mbox{group selection} &amp;: \mathrm{MCP} \<br>\end{aligned}</p>
 <blockquote>
 <p><a target="_blank" rel="noopener" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3399910/pdf/nihms390293.pdf">Ma等人, 2011</a>：首次将$L_2$ Group MCP应用到整合分析</p>
 </blockquote>
-<h2 id="CAP"><a class="header-anchor" href="#CAP"></a>CAP</h2>
-<ul>
+<h2 id="CAP"><a href="#CAP" class="headerlink" title="CAP"></a>CAP</h2><ul>
 <li>仅能选择组变量</li>
 </ul>
-<h1 id="Bi-Level-Variable-Selection-双层变量选择"><a class="header-anchor" href="#Bi-Level-Variable-Selection-双层变量选择"></a>Bi-Level Variable Selection 双层变量选择</h1>
-<h2 id="Composite-Penalization"><a class="header-anchor" href="#Composite-Penalization"></a>Composite Penalization</h2>
-<p>Composite Penalization应用于异构整合分析：<br>
-$$J(\beta) = \sum_{j=1}^p p_{O, \lambda_{O} }\left( \sum_{k=1}^M p_{I, \lambda_{I} }(|\beta_j^k|) \right)$$</p>
-<h3 id="L-1-Group-Bridge"><a class="header-anchor" href="#L-1-Group-Bridge"></a>$L_1$ Group Bridge</h3>
-<ul>
+<h1 id="Bi-Level-Variable-Selection-双层变量选择"><a href="#Bi-Level-Variable-Selection-双层变量选择" class="headerlink" title="Bi-Level Variable Selection 双层变量选择"></a>Bi-Level Variable Selection 双层变量选择</h1><h2 id="Composite-Penalization"><a href="#Composite-Penalization" class="headerlink" title="Composite Penalization"></a>Composite Penalization</h2><p>Composite Penalization应用于异构整合分析：</p>
+<script type="math/tex; mode=display">J(\beta) = \sum_{j=1}^p p_{O, \lambda_{O} }\left( \sum_{k=1}^M p_{I, \lambda_{I} }(|\beta_j^k|) \right)</script><h3 id="L-1-Group-Bridge"><a href="#L-1-Group-Bridge" class="headerlink" title="$L_1$ Group Bridge"></a>$L_1$ Group Bridge</h3><ul>
 <li>最早的双层变量选择方法</li>
 </ul>
 <blockquote>
 <ul>
-<li>Huang, J., Ma, S., Xie, H., &amp; Zhang, C. H. (2009). <a target="_blank" rel="noopener" href="https://www.researchgate.net/publication/40786418_A_Group_Bridge_Approach_for_Variable_Selection">A group bridge approach for variable selection</a>. Biometrika, 96(2), 339–355.</li>
+<li>Huang, J., Ma, S., Xie, H., &amp; Zhang, C. H. (2009). <a target="_blank" rel="noopener" href="https://www.researchgate.net/publication/40786418_A_Group_Bridge_Approach_for_Variable_Selection">A group bridge approach for variable selection</a>. Biometrika, 96(2), 339–355. </li>
 <li>王小燕,谢邦昌,马双鸽,方匡南.高维数据下群组变量选择的惩罚方法综述[J].数理统计与管理,2015,34(06):978-988.</li>
 </ul>
 </blockquote>
-<p>\begin{aligned}<br>
-\mbox{within-group selection} &amp;: \mbox{LASSO } \mathrm{penalty} \<br>
-\mbox{group selection} &amp;: \mbox{Bridge penalty} \<br>
-\end{aligned}</p>
-<p>目标函数：<br>
-$$Q(\beta|X, y) = \parallel y-\sum_{k=1}^p x_k \beta_k \parallel_2^2 + \lambda_n \sum_{j=1}^J c_j\parallel \beta_{A_j} \parallel_1^{\gamma}, \qquad \lambda_n &gt; 0$$</p>
-<ul>
+<p>\begin{aligned}<br>\mbox{within-group selection} &amp;: \mbox{LASSO } \mathrm{penalty} \<br>\mbox{group selection} &amp;: \mbox{Bridge penalty} \<br>\end{aligned}</p>
+<p>目标函数：</p>
+<script type="math/tex; mode=display">Q(\beta|X, y) = \parallel y-\sum_{k=1}^p x_k \beta_k \parallel_2^2 + \lambda_n \sum_{j=1}^J c_j\parallel \beta_{A_j} \parallel_1^{\gamma}, \qquad \lambda_n > 0</script><ul>
 <li>$A_j(j=1,2,\cdots,J)$是${1, 2, \cdots, p}$的任意子集</li>
 <li>$A_j(j=1,2,\cdots,J)$可以有交集</li>
-<li>允许$\cup_{j=1}^J A_j$是${1, 2, \cdots, p}$的真子集，不在$\cup_{j=1}^J A_j$中的变量不受惩罚</li>
+<li>允许$\cup<em>{j=1}^J A_j$是${1, 2, \cdots, p}$的真子集，不在$\cup</em>{j=1}^J A_j$中的变量不受惩罚</li>
 <li>Bridge惩罚项被应用到组系数的$L_1$范数中</li>
 <li>当$\mid A_j\mid = 1(j=1,2,\cdots,J)$时，Group Bridge简化为标准Bridge</li>
 <li>当$\gamma=1$，Group Bridge简化为标准LASSO，此时只能进行个体变量选择</li>
@@ -846,55 +681,43 @@ $$Q(\beta|X, y) = \parallel y-\sum_{k=1}^p x_k \beta_k \parallel_2^2 + \lambda_n
 </ul>
 <blockquote>
 <ul>
-<li><a target="_blank" rel="noopener" href="https://www.researchgate.net/publication/40786418_A_Group_Bridge_Approach_for_Variable_Selection">Huang等人(2009)</a>：
-<ul>
+<li><a target="_blank" rel="noopener" href="https://www.researchgate.net/publication/40786418_A_Group_Bridge_Approach_for_Variable_Selection">Huang等人(2009)</a>：<ul>
 <li>首次提出$L_1$ Group Bridge</li>
 <li>当$p\rightarrow \infty, n\rightarrow \infty$但$p &lt; n$时，在某些正则条件下，$L_1$ Group Bridge（$0 &lt; \gamma &lt; 1$）具有群组Oracle性质</li>
 </ul>
 </li>
 </ul>
 </blockquote>
-<h3 id="L-1-Group-MCP"><a class="header-anchor" href="#L-1-Group-MCP"></a>$L_1$ Group MCP</h3>
-<blockquote>
+<h3 id="L-1-Group-MCP"><a href="#L-1-Group-MCP" class="headerlink" title="$L_1$ Group MCP"></a>$L_1$ Group MCP</h3><blockquote>
 <p>Liu, J., Huang, J., &amp; Ma, S. (2014). <a target="_blank" rel="noopener" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3933169/pdf/nihms470951.pdf">Integrative Analysis of Cancer Diagnosis Studies with Composite Penalization</a>. Scandinavian journal of statistics, theory and applications, 41(1), 87–103.</p>
 </blockquote>
-<p>\begin{aligned}<br>
-\mbox{inner penalty} &amp;: \mathrm{LASSO} \<br>
-\mbox{outer penalty} &amp;: \mbox{MCP} \<br>
-\end{aligned}</p>
+<p>\begin{aligned}<br>\mbox{inner penalty} &amp;: \mathrm{LASSO} \<br>\mbox{outer penalty} &amp;: \mbox{MCP} \<br>\end{aligned}</p>
 <blockquote>
 <p><a target="_blank" rel="noopener" href="https://fan.princeton.edu/papers/01/penlike.pdf">Fan and Li, 2001</a>：在单数据集变量选择中，LASSO倾向于选择过多的变量，理论上不满足Oracle性质</p>
 </blockquote>
-<h3 id="Composite-MCP"><a class="header-anchor" href="#Composite-MCP"></a>Composite MCP</h3>
-<blockquote>
+<h3 id="Composite-MCP"><a href="#Composite-MCP" class="headerlink" title="Composite MCP"></a>Composite MCP</h3><blockquote>
 <ul>
 <li>Liu, J., Huang, J., &amp; Ma, S. (2014). <a target="_blank" rel="noopener" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3933169/pdf/nihms470951.pdf">Integrative Analysis of Cancer Diagnosis Studies with Composite Penalization</a>. Scandinavian journal of statistics, theory and applications, 41(1), 87–103.</li>
 <li>Zhang, Q. , Zhang, S. , Liu, J. , Huang, J. , &amp; Ma, S. . (2015). <a target="_blank" rel="noopener" href="http://www3.stat.sinica.edu.tw/statistica/oldpdf/A26n23.pdf">Penalized integrative analysis under the accelerated failure time model</a>. Statistica Sinica, 26(2).</li>
 </ul>
 </blockquote>
-<p>\begin{aligned}<br>
-\mbox{inner penalty} &amp;: \mathrm{MCP} \<br>
-\mbox{outer penalty} &amp;: \mbox{MCP} \<br>
-\end{aligned}</p>
+<p>\begin{aligned}<br>\mbox{inner penalty} &amp;: \mathrm{MCP} \<br>\mbox{outer penalty} &amp;: \mbox{MCP} \<br>\end{aligned}</p>
 <blockquote>
 <ul>
 <li><a target="_blank" rel="noopener" href="http://www3.stat.sinica.edu.tw/statistica/oldpdf/A26n23.pdf">Zhang等人(2015)</a>：在一定条件下，Composite MCP在组内和组间均满足选择一致性，而$L_1$ Group MCP只满足组选择一致性</li>
 </ul>
 </blockquote>
-<h2 id="Sparse-Group-Penalization"><a class="header-anchor" href="#Sparse-Group-Penalization"></a>Sparse Group Penalization</h2>
-<p>稀疏组惩罚是两个惩罚函数的线性组合：一个具有组选择功能，另一个具有单变量选择功能（<a target="_blank" rel="noopener" href="https://core.ac.uk/download/pdf/41449289.pdf">马双鸽等人, 2015</a>）。</p>
+<h2 id="Sparse-Group-Penalization"><a href="#Sparse-Group-Penalization" class="headerlink" title="Sparse Group Penalization"></a>Sparse Group Penalization</h2><p>稀疏组惩罚是两个惩罚函数的线性组合：一个具有组选择功能，另一个具有单变量选择功能（<a target="_blank" rel="noopener" href="https://core.ac.uk/download/pdf/41449289.pdf">马双鸽等人, 2015</a>）。</p>
 <ul>
 <li>可应用于异构整合分析</li>
 </ul>
-<p>惩罚函数的一般形式：<br>
-$$P(\beta;\lambda_1,\lambda_2) = \lambda_1 \sum_{j=1}^p P_1(\parallel\beta_j\parallel) + \lambda_2\sum_{j=1}<sup>{p}\sum_{k=1}</sup>M P_2(|\beta_j^k|)$$</p>
-<blockquote>
+<p>惩罚函数的一般形式：</p>
+<script type="math/tex; mode=display">P(\beta;\lambda_1,\lambda_2) = \lambda_1 \sum_{j=1}^p P_1(\parallel\beta_j\parallel) + \lambda_2\sum_{j=1}^{p}\sum_{k=1}^M P_2(|\beta_j^k|)</script><blockquote>
 <ul>
 <li><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1501.02458.pdf">Zhang等人(2015)</a>：证明了Sparse Group Penalization的选择一致性</li>
 </ul>
 </blockquote>
-<h3 id="SGL-Sparse-Group-LASSO"><a class="header-anchor" href="#SGL-Sparse-Group-LASSO"></a>SGL-Sparse Group LASSO</h3>
-<p>SGL（Sparse Group LASSO）是LASSO和Group LASSO的线性组合</p>
+<h3 id="SGL-Sparse-Group-LASSO"><a href="#SGL-Sparse-Group-LASSO" class="headerlink" title="SGL-Sparse Group LASSO"></a>SGL-Sparse Group LASSO</h3><p>SGL（Sparse Group LASSO）是LASSO和Group LASSO的线性组合</p>
 <blockquote>
 <ul>
 <li>J. Friedman and T. Hastie and R. Tibshirani. (2010).<a target="_blank" rel="noopener" href="http://statweb.stanford.edu/~tibs/ftp/sparse-grlasso.pdf">A note on the group lasso and a sparse group lasso</a>. arXiv e-prints.</li>
@@ -902,16 +725,13 @@ $$P(\beta;\lambda_1,\lambda_2) = \lambda_1 \sum_{j=1}^p P_1(\parallel\beta_j\par
 <li>Vincent, M. , &amp; Hansen, N. R. . (2014). <a target="_blank" rel="noopener" href="https://nrhstat.org/publication/2014-sparse-group-lasso/2014-sparse-group-lasso.pdf">Sparse group lasso and high dimensional multinomial classification</a>. Computational Statistics &amp; Data Analysis, 71(1), 771-786.</li>
 </ul>
 </blockquote>
-<p>惩罚函数：<br>
-$$P_{SGL}(\beta;\lambda_1,\lambda_2) = \lambda_1\sum_{j=1}^J \parallel\beta_j\parallel + \lambda_2 \parallel\beta\parallel_1$$</p>
-<p>$$\hat{\beta} = \arg \min_{\beta} \left{ \parallel y - \sum_{j=1}^J \mathbf{X_j} \beta_j \parallel^2_2 + \lambda_1 \sum_{j=1}^J \sqrt{p_j} \parallel \beta_j \parallel_2 + \lambda_2 \parallel \beta \parallel_1 \right}$$</p>
-<ul>
+<p>惩罚函数：</p>
+<script type="math/tex; mode=display">P_{SGL}(\beta;\lambda_1,\lambda_2) = \lambda_1\sum_{j=1}^J \parallel\beta_j\parallel + \lambda_2 \parallel\beta\parallel_1</script><script type="math/tex; mode=display">\hat{\beta} = \arg \min_{\beta} \left\{ \parallel y - \sum_{j=1}^J \mathbf{X_j} \beta_j \parallel^2_2 + \lambda_1 \sum_{j=1}^J \sqrt{p_j} \parallel \beta_j \parallel_2 + \lambda_2 \parallel \beta \parallel_1 \right\}</script><ul>
 <li>$\mathbf{X_j}$是第$j$组变量组成的样本矩阵，维度为$n\times p_j$</li>
 <li>$\sum_{j=1}^J p_j = p$</li>
 <li>当$\lambda_2 = 0$时，Sparse Group LASSO简化为Group LASSO</li>
 </ul>
-<h3 id="adSGL-Adaptive-Sparse-Group-LASSO"><a class="header-anchor" href="#adSGL-Adaptive-Sparse-Group-LASSO"></a>adSGL-Adaptive Sparse Group LASSO</h3>
-<ul>
+<h3 id="adSGL-Adaptive-Sparse-Group-LASSO"><a href="#adSGL-Adaptive-Sparse-Group-LASSO" class="headerlink" title="adSGL-Adaptive Sparse Group LASSO"></a>adSGL-Adaptive Sparse Group LASSO</h3><ul>
 <li>结合adaptive LASSO和adaptive group LASSO</li>
 <li>可以看作是SGL（Sparse Group LASSO）的改进版</li>
 <li>使用由数据决定的权重提升预测效果</li>
@@ -921,42 +741,35 @@ $$P_{SGL}(\beta;\lambda_1,\lambda_2) = \lambda_1\sum_{j=1}^J \parallel\beta_j\pa
 <li>Fang, K. , Wang, X. , Zhang, S. , Zhu, J. , &amp; Ma, S. . (2015). <a target="_blank" rel="noopener" href="https://www.tandfonline.com/doi/abs/10.1080/00949655.2014.938241">Bi-level variable selection via adaptive sparse group lasso</a>. Journal of Statistical Computation &amp; Simulation, 85(13-15), 2750-2760.</li>
 </ul>
 </blockquote>
-<p>惩罚函数：<br>
-$$P_{adSGL}(\beta;\lambda_1,\lambda_2) = \lambda_1 \sum_{j=1}^p w_j \parallel \beta_j \parallel_2 + \lambda_2 \xi^T \parallel \beta \parallel_1 $$</p>
-<h3 id="Sparse-Group-MCP"><a class="header-anchor" href="#Sparse-Group-MCP"></a>Sparse Group MCP</h3>
-<blockquote>
+<p>惩罚函数：</p>
+<script type="math/tex; mode=display">P_{adSGL}(\beta;\lambda_1,\lambda_2) = \lambda_1 \sum_{j=1}^p w_j \parallel \beta_j \parallel_2 + \lambda_2 \xi^T \parallel \beta \parallel_1</script><h3 id="Sparse-Group-MCP"><a href="#Sparse-Group-MCP" class="headerlink" title="Sparse Group MCP"></a>Sparse Group MCP</h3><blockquote>
 <ul>
 <li>Liu, J., Huang, J., Xie, Y., &amp; Ma, S. (2013). <a target="_blank" rel="noopener" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4090387/pdf/nihms594452.pdf">Sparse group penalized integrative analysis of multiple cancer prognosis datasets</a>. Genetics research, 95(2-3), 68–77.</li>
 <li>Zhang, Q. , Zhang, S. , Liu, J. , Huang, J. , &amp; Ma, S. . (2015). <a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1501.02458.pdf">Penalized integrative analysis under the accelerated failure time model</a>. Statistica Sinica, 26(2).</li>
 </ul>
 </blockquote>
-<h1 id="Network-based-penalization-网格结构惩罚"><a class="header-anchor" href="#Network-based-penalization-网格结构惩罚"></a>Network-based penalization 网格结构惩罚</h1>
-<blockquote>
+<h1 id="Network-based-penalization-网格结构惩罚"><a href="#Network-based-penalization-网格结构惩罚" class="headerlink" title="Network-based penalization 网格结构惩罚"></a>Network-based penalization 网格结构惩罚</h1><blockquote>
 <ul>
 <li>Caiyan Li, Hongzhe Li, <a target="_blank" rel="noopener" href="https://academic.oup.com/bioinformatics/article/24/9/1175/206444">Network-constrained regularization and variable selection for analysis of genomic data</a>, Bioinformatics, Volume 24, Issue 9, 1 May 2008, Pages 1175–1182.</li>
 <li>Li, C., &amp; Li, H. (2010). <a target="_blank" rel="noopener" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3423227/pdf/nihms396551.pdf">Variable Selection and Regression Analysis for Graph-Stuctured Covariates with an Application to Genomics</a>. The annals of applied statistics, 4(3), 1498–1516. <a target="_blank" rel="noopener" href="https://doi.org/10.1214/10-AOAS332">https://doi.org/10.1214/10-AOAS332</a></li>
 <li>Kim, S., Pan, W., &amp; Shen, X. (2013). <a target="_blank" rel="noopener" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4007772/">Network-based penalized regression with application to genomic data</a>. Biometrics, 69(3), 582–593.</li>
 </ul>
 </blockquote>
-<h2 id="SGLS-Sparse-Group-Laplacian-Shrinkage"><a class="header-anchor" href="#SGLS-Sparse-Group-Laplacian-Shrinkage"></a>SGLS-Sparse Group Laplacian Shrinkage</h2>
-<ul>
+<h2 id="SGLS-Sparse-Group-Laplacian-Shrinkage"><a href="#SGLS-Sparse-Group-Laplacian-Shrinkage" class="headerlink" title="SGLS-Sparse Group Laplacian Shrinkage"></a>SGLS-Sparse Group Laplacian Shrinkage</h2><ul>
 <li>用于多源数据的整合分析</li>
 </ul>
 <blockquote>
 <p>Liu, J., Huang, J., &amp; Ma, S. (2013). <a target="_blank" rel="noopener" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3909475/pdf/nihms-496945.pdf">Incorporating network structure in integrative analysis of cancer prognosis data</a>. Genetic epidemiology, 37(2), 173–183.</p>
 </blockquote>
-<p>$$\hat{\beta} = \arg \min_{\beta} \left{ \frac{1}{n}L(\beta) + P_{\lambda, \gamma}(\beta) \right}$$<br>
-其中，<br>
-$$P_{\lambda, \gamma}(\beta) = \sum_{j=1}^p \rho(\parallel\beta_j\parallel_2; \sqrt{M_j}\lambda_1, \gamma) + \frac{1}{2}\lambda_2 d\sum_{1\leq j &lt; k \leq p}a_{jk}\left( \frac{\parallel\beta_j\parallel_2}{\sqrt{M_j} } - \frac{\parallel\beta_k\parallel_2}{\sqrt{M_k} } \right)^2$$</p>
-<ul>
+<script type="math/tex; mode=display">\hat{\beta} = \arg \min_{\beta} \left\{ \frac{1}{n}L(\beta) + P_{\lambda, \gamma}(\beta) \right\}</script><p>其中，</p>
+<script type="math/tex; mode=display">P_{\lambda, \gamma}(\beta) = \sum_{j=1}^p \rho(\parallel\beta_j\parallel_2; \sqrt{M_j}\lambda_1, \gamma) + \frac{1}{2}\lambda_2 d\sum_{1\leq j < k \leq p}a_{jk}\left( \frac{\parallel\beta_j\parallel_2}{\sqrt{M_j} } - \frac{\parallel\beta_k\parallel_2}{\sqrt{M_k} } \right)^2</script><ul>
 <li>$\lambda = (\lambda_1, \lambda_2)$</li>
 <li>$\lambda_1 \geq 0$ 且 $\lambda_2 \geq 0$是调和参数（tuning parameter）</li>
 <li>$\gamma$是正则化参数</li>
 <li>$\rho(\cdot)$是MCP惩罚函数</li>
 <li>$M_j$是$\beta_j$的长度（size）</li>
 </ul>
-<h1 id="总结"><a class="header-anchor" href="#总结"></a>总结</h1>
-<h2 id="单变量选择方法"><a class="header-anchor" href="#单变量选择方法"></a>单变量选择方法</h2>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><h2 id="单变量选择方法"><a href="#单变量选择方法" class="headerlink" title="单变量选择方法"></a>单变量选择方法</h2><div class="table-container">
 <table>
 <thead>
 <tr>
@@ -994,20 +807,19 @@ $$P_{\lambda, \gamma}(\beta) = \sum_{j=1}^p \rho(\parallel\beta_j\parallel_2; \s
 <td style="text-align:left"></td>
 <td style="text-align:left"></td>
 <td style="text-align:left"></td>
-<td style="text-align:left"></td>
 </tr>
 </tbody>
 </table>
+</div>
 <figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
-<h1 id="参考资料"><a class="header-anchor" href="#参考资料"></a>参考资料</h1>
-<ul>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
 <li><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Lp%E8%8C%83%E6%95%B0">Wiki: Lp-norm</a></li>
 <li><a target="_blank" rel="noopener" href="https://www.statisticshowto.com/ridge-regression/">Ridge Regression: Simple Definition</a></li>
 <li><a target="_blank" rel="noopener" href="https://www.datacamp.com/community/tutorials/tutorial-ridge-lasso-elastic-net">Regularization: Ridge, Lasso and Elastic Net</a></li>
 <li><a target="_blank" rel="noopener" href="http://web.math.ku.dk/~richard/download/courses/stat_learn_2007/star3.pdf">LASSO and Bridge regression</a></li>
 <li><a target="_blank" rel="noopener" href="https://myweb.uiowa.edu/pbreheny/7600/s16/notes/4-27.pdf">Group lasso</a></li>
-<li><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Lasso_(statistics)#Group_lasso">Wiki: Group Lasso</a></li>
+<li><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Lasso_(statistics">Wiki: Group Lasso</a>#Group_lasso)</li>
 </ul>
 
     </div>
@@ -1206,13 +1018,13 @@ $$P_{\lambda, \gamma}(\beta) = \sum_{j=1}^p \rho(\parallel\beta_j\parallel_2; \s
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">431k</span>
+    <span title="站点总字数">419k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">6:32</span>
+    <span title="站点阅读时长">6:21</span>
 </div>
 
 
