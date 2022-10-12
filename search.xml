@@ -11856,10 +11856,26 @@ $$C_i = \frac{\Delta Y_i}{\Delta Y} = \frac{Y_i^T - Y^{T-1} }{ Y^T - Y^{T-1} }$$
 $$\mathrm{GMV} = 老客\mathrm{GMV} + 新客\mathrm{GMV}$$</p>
 </blockquote>
 <h4 id="乘法指标"><a class="header-anchor" href="#乘法指标"></a>乘法指标</h4>
-<p>目标指标可以拆分为多个指标的<strong>乘积</strong>。</p>
+<p>目标指标受到多个因子的叠加影响。</p>
 <p>\begin{equation}<br>
-Y = Y_1 \times Y_2 \times \cdots Y_m<br>
+Y = X_1 \cdot X_2 \cdot \cdots \cdot X_m<br>
 \end{equation}</p>
+<p>将使用LDMI方法（指数分解方法），计算乘法指标中每个因子（维度）对目标指标的贡献度。</p>
+<blockquote>
+<p><strong>LMDI</strong>（Log Mean Divisia Index）</p>
+</blockquote>
+<ol>
+<li>
+<p>加法分解：将目标指标的波动$\Delta Y$分解到各个因子上<br>
+\begin{aligned}<br>
+\Delta Y &amp;= Y^T - Y^{T-1} \\<br>
+&amp;= \Delta Y_{X_1} + \Delta Y_{X_m} \\<br>
+\end{aligned}</p>
+</li>
+<li>
+<p>乘法分解：将目标指标的变化倍数$RATIO$分解到各个因子上</p>
+</li>
+</ol>
 <h5 id="加法分解"><a class="header-anchor" href="#加法分解"></a>加法分解</h5>
 <p>对公式两端取对数$\ln$，<br>
 \begin{aligned}<br>
@@ -11879,7 +11895,7 @@ C_i &amp;= \frac{\Delta Z_i}{\Delta Z} \\<br>
 &amp;= \frac{ \Delta \ln Y_i }{ \Delta \ln Y } \\<br>
 &amp;= \frac{\ln Y_i ^T - \ln Y_i^{T-1} }{\ln Y^T - \ln Y^{T-1} } \\<br>
 \end{aligned}</p>
-<h5 id="LDMI"><a class="header-anchor" href="#LDMI"></a>LDMI</h5>
+<h5 id="乘法分解"><a class="header-anchor" href="#乘法分解"></a>乘法分解</h5>
 <h4 id="除法指标"><a class="header-anchor" href="#除法指标"></a>除法指标</h4>
 <ul>
 <li>适用范围：分子分母可分别加和的除法指标</li>
@@ -11966,6 +11982,7 @@ $$次日留存率=\sum\frac{次日留存数}{今日获客人数}$$</li>
 <li><a href="https://mp.weixin.qq.com/s?__biz=MzUzODYwMDAzNA==&amp;mid=2247490797&amp;idx=2&amp;sn=e4488e6ae078fd04992ee19c3ea43e0d&amp;chksm=fad46be0cda3e2f606f3faffe800c819c2cacb5ded2c4bb6e1b0b061bc2c06d276bd18a4a9f4&amp;mpshare=1&amp;scene=24&amp;srcid=&amp;sharer_sharetime=1589846441823&amp;sharer_shareid=b539221659d6ecf12200314308b58dd3&amp;key=391433877af29848d80eb268dfdb67e70c94dbc8461e647ef4fd9cf863b97fcbf05fe3cc098469dd0eed236ecaa0ce9b4afa6518cb6c2e116156d348ec25c79484217b352893ff4b5a26e8f3fd8d7f35&amp;ascene=14&amp;uin=MjAwNDUzMjgxNw%3D%3D&amp;devicetype=Windows+10+x64&amp;version=62090070&amp;lang=zh_CN&amp;exportkey=AYJS0mHna0hF6l9GD1%2B%2BuCY%3D&amp;pass_ticket=hSPy%2FUU8oxUcSxTs%2F5nB1TD0Hf4oMyJJiFtHAk4RLQ6enp8U%2FMNrC0H1aJAXQF7t">24个「数据分析师」岗位面试题和答案解析</a></li>
 <li><a href="https://zhuanlan.zhihu.com/p/526959429">（维度）归因分析中贡献度的计算方法</a></li>
 <li><a href="https://zhuanlan.zhihu.com/p/527037972">（指标）归因分析中贡献度的计算方法</a></li>
+<li><a href="https://blog.csdn.net/GODSuner/article/details/114375162">LMDI理论推导详解</a></li>
 </ul>
 ]]></content>
       <categories>
