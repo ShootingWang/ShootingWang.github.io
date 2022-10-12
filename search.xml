@@ -11895,8 +11895,9 @@ $$派生/衍生指标 = 原子指标 + 时间周期 + 其他修饰词$$</li>
 <p>\begin{equation}<br>
 \begin{aligned}<br>
 Y &amp;= Y_1 + Y_2 + \cdots + Y_m \\<br>
-\Delta Y &amp;= \Delta Y_1 + \Delta Y_2 + \cdots + \Delta Y_m<br>
-\end{aligned}<br>
+\Delta Y &amp;= Y^T - Y^{T-1} \\<br>
+&amp;= \Delta Y_1 + \Delta Y_2 + \cdots + \Delta Y_m \\</p>
+<p>\end{aligned}<br>
 \end{equation}</p>
 <p>其中，</p>
 <ul>
