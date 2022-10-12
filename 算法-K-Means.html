@@ -4,7 +4,7 @@
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.0">
+<meta name="generator" content="Hexo 6.0.0">
 <meta name="baidu-site-verification" content="GLZSr3LDqT" />
 <meta name="google-site-verification" content="fZvQBljM9I6UA4l4wwiA5wECEn7k0V4-DgCfWEPNtFc" />
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
@@ -34,7 +34,7 @@
 <meta property="og:description" content="K均值聚类">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-05-13T07:15:46.000Z">
-<meta property="article:modified_time" content="2022-03-22T12:03:37.263Z">
+<meta property="article:modified_time" content="2022-10-12T04:44:21.722Z">
 <meta property="article:author" content="Skye">
 <meta property="article:tag" content="算法">
 <meta property="article:tag" content="Machine Learning 机器学习">
@@ -269,7 +269,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-03-22 20:03:37" itemprop="dateModified" datetime="2022-03-22T20:03:37+08:00">2022-03-22</time>
+                <time title="修改时间：2022-10-12 12:44:21" itemprop="dateModified" datetime="2022-10-12T12:44:21+08:00">2022-10-12</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -314,7 +314,7 @@
 
       
         <center>K均值聚类</center>
-<a id="more"></a>
+<span id="more"></span>
 <h1 id="K-Means"><a class="header-anchor" href="#K-Means"></a>K-Means</h1>
 <ul>
 <li>无监督学习</li>
@@ -327,11 +327,11 @@
           </div>
 <h2 id="收敛-converge"><a class="header-anchor" href="#收敛-converge"></a>收敛 converge</h2>
 <p>记<br>
-$$\mu_{c^{(i)}} = \mbox{样本} x^{(i)} \mbox{被分配的簇的质心} $$</p>
+$$\mu_{c^{(i)} } = \mbox{样本} x^{(i)} \mbox{被分配的簇的质心} $$</p>
 <p>畸变函数/失真函数（distortion function）：<br>
-$$J(c, \mu)=\sum_{i=1}^n || x^{(i)} - \mu_{c^{(i)}} ||^2 $$</p>
+$$J(c, \mu)=\sum_{i=1}^n || x^{(i)} - \mu_{c^{(i)} } ||^2 $$</p>
 <p>目标函数（optimization objective）/ 代价函数（cost function）为：<br>
-$$J \left( c^{(1)}, \cdots, c^{(n)}; \mu_1, \cdots, \mu_K \right) = \frac{1}{n}\sum_{i=1}^n || x^{(i)} - \mu_{c^{(i)}} ||^2 $$<br>
+$$J \left( c^{(1)}, \cdots, c^{(n)}; \mu_1, \cdots, \mu_K \right) = \frac{1}{n}\sum_{i=1}^n || x^{(i)} - \mu_{c^{(i)} } ||^2 $$<br>
 $$\min_{ c^{(1)}, \cdots, c^{(n)} \atop \mu_1, \cdots, \mu_K } J \left( c^{(1)}, \cdots, c^{n}; \mu_1, \cdots, \mu_K \right) $$</p>
 <p>K-means聚类的内循环（inner loop，步骤2和3）重复最小化$J$</p>
 <ul>
@@ -407,13 +407,13 @@ $$\min_{ c^{(1)}, \cdots, c^{(n)} \atop \mu_1, \cdots, \mu_K } J \left( c^{(1)},
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
-<pre><code>.dataframe tbody tr th {
+<pre><code>.dataframe tbody tr th &#123;
     vertical-align: top;
-}
+&#125;
 
-.dataframe thead th {
+.dataframe thead th &#123;
     text-align: center;
-}
+&#125;
 </code></pre>
 </style>
 <table border="1" class="dataframe">
@@ -454,13 +454,13 @@ $$\min_{ c^{(1)}, \cdots, c^{(n)} \atop \mu_1, \cdots, \mu_K } J \left( c^{(1)},
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
-<pre><code>.dataframe tbody tr th {
+<pre><code>.dataframe tbody tr th &#123;
     vertical-align: top;
-}
+&#125;
 
-.dataframe thead th {
+.dataframe thead th &#123;
     text-align: center;
-}
+&#125;
 </code></pre>
 </style>
 <table border="1" class="dataframe">
@@ -521,10 +521,10 @@ $$\min_{ c^{(1)}, \cdots, c^{(n)} \atop \mu_1, \cdots, \mu_K } J \left( c^{(1)},
 </ul>
 <h1 id="参考资料"><a class="header-anchor" href="#参考资料"></a>参考资料</h1>
 <ul>
-<li><a href="https://blog.csdn.net/databatman/article/details/50445561" target="_blank" rel="noopener">机器学习：K-means和K-medoids对比</a></li>
-<li><a href="https://www.cnblogs.com/nucdy/p/6349172.html" target="_blank" rel="noopener">KNN与K-Means的区别</a></li>
-<li><a href="https://www.cnblogs.com/hugechuanqi/p/10509307.html" target="_blank" rel="noopener">机器学习 之k-means和DBSCAN的区别</a></li>
-<li><a href="http://cs229.stanford.edu/notes2020spring/cs229-notes7a.pdf" target="_blank" rel="noopener">CS229 Lecture Notes: K-Means Clustering Algorithm</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/databatman/article/details/50445561">机器学习：K-means和K-medoids对比</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/nucdy/p/6349172.html">KNN与K-Means的区别</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/hugechuanqi/p/10509307.html">机器学习 之k-means和DBSCAN的区别</a></li>
+<li><a target="_blank" rel="noopener" href="http://cs229.stanford.edu/notes2020spring/cs229-notes7a.pdf">CS229 Lecture Notes: K-Means Clustering Algorithm</a></li>
 </ul>
 
     </div>
@@ -540,11 +540,6 @@ $$\min_{ c^{(1)}, \cdots, c^{(n)} \atop \mu_1, \cdots, \mu_K } J \left( c^{(1)},
   <div id="qr" style="display: none;">
       
       <div style="display: inline-block;">
-        <img src="/images/reward2021.png" alt="Skye WeChat Bezahlung">
-        <p>WeChat Bezahlung</p>
-      </div>
-      
-      <div style="display: inline-block;">
         <img src="/images/alipay.jpg" alt="Skye 支付宝">
         <p>支付宝</p>
       </div>
@@ -552,6 +547,11 @@ $$\min_{ c^{(1)}, \cdots, c^{(n)} \atop \mu_1, \cdots, \mu_K } J \left( c^{(1)},
       <div style="display: inline-block;">
         <img src="/images/wechatpay.jpg" alt="Skye 微信支付">
         <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/reward2021.png" alt="Skye WeChat Pay">
+        <p>WeChat Pay</p>
       </div>
 
   </div>
@@ -656,7 +656,7 @@ $$\min_{ c^{(1)}, \cdots, c^{(n)} \atop \mu_1, \cdots, \mu_K } J \left( c^{(1)},
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#K-Means"><span class="nav-number">1.</span> <span class="nav-text">K-Means</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#算法"><span class="nav-number">1.1.</span> <span class="nav-text">算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#收敛-converge"><span class="nav-number">1.2.</span> <span class="nav-text">收敛 converge</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#确定K的方法"><span class="nav-number">2.</span> <span class="nav-text">确定K的方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#按需选择"><span class="nav-number">2.1.</span> <span class="nav-text">按需选择</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#观察法"><span class="nav-number">2.2.</span> <span class="nav-text">观察法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#肘部法"><span class="nav-number">2.3.</span> <span class="nav-text">肘部法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Gap-Statistics方法"><span class="nav-number">2.4.</span> <span class="nav-text">Gap Statistics方法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#对比"><span class="nav-number">3.</span> <span class="nav-text">对比</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#优点"><span class="nav-number">3.1.</span> <span class="nav-text">优点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#缺点"><span class="nav-number">3.2.</span> <span class="nav-text">缺点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#K-Means-vs-K-Medoids"><span class="nav-number">3.3.</span> <span class="nav-text">K-Means vs K-Medoids</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#K-Means-vs-KNN"><span class="nav-number">3.4.</span> <span class="nav-text">K-Means vs KNN</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#K-Means-vs-DBSCAN"><span class="nav-number">3.5.</span> <span class="nav-text">K-Means vs DBSCAN</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料"><span class="nav-number">4.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#K-Means"><span class="nav-number">1.</span> <span class="nav-text">K-Means</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%97%E6%B3%95"><span class="nav-number">1.1.</span> <span class="nav-text">算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%94%B6%E6%95%9B-converge"><span class="nav-number">1.2.</span> <span class="nav-text">收敛 converge</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%A1%AE%E5%AE%9AK%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text">确定K的方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8C%89%E9%9C%80%E9%80%89%E6%8B%A9"><span class="nav-number">2.1.</span> <span class="nav-text">按需选择</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%82%E5%AF%9F%E6%B3%95"><span class="nav-number">2.2.</span> <span class="nav-text">观察法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%82%98%E9%83%A8%E6%B3%95"><span class="nav-number">2.3.</span> <span class="nav-text">肘部法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Gap-Statistics%E6%96%B9%E6%B3%95"><span class="nav-number">2.4.</span> <span class="nav-text">Gap Statistics方法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AF%B9%E6%AF%94"><span class="nav-number">3.</span> <span class="nav-text">对比</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%98%E7%82%B9"><span class="nav-number">3.1.</span> <span class="nav-text">优点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BC%BA%E7%82%B9"><span class="nav-number">3.2.</span> <span class="nav-text">缺点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#K-Means-vs-K-Medoids"><span class="nav-number">3.3.</span> <span class="nav-text">K-Means vs K-Medoids</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#K-Means-vs-KNN"><span class="nav-number">3.4.</span> <span class="nav-text">K-Means vs KNN</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#K-Means-vs-DBSCAN"><span class="nav-number">3.5.</span> <span class="nav-text">K-Means vs DBSCAN</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="nav-number">4.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -725,17 +725,17 @@ $$\min_{ c^{(1)}, \cdots, c^{(n)} \atop \mu_1, \cdots, \mu_K } J \left( c^{(1)},
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">425k</span>
+    <span title="站点总字数">428k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">6:27</span>
+    <span title="站点阅读时长">6:29</span>
 </div>
 
 
-  <script src='https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js'></script>
+  <script src='https://unpkg.com/mermaid@/dist/mermaid.min.js'></script>
   <script>
     if (window.mermaid) {
       mermaid.initialize({theme: 'forest'});

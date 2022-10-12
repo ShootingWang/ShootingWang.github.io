@@ -4,7 +4,7 @@
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.0">
+<meta name="generator" content="Hexo 6.0.0">
 <meta name="baidu-site-verification" content="GLZSr3LDqT" />
 <meta name="google-site-verification" content="fZvQBljM9I6UA4l4wwiA5wECEn7k0V4-DgCfWEPNtFc" />
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
@@ -310,13 +310,13 @@
 
       
         <center></center>
-<a id="more"></a>
+<span id="more"></span>
 <p>统计列表中重复项出现的次数：</p>
 <ol>
 <li><code>collections.Counter()</code></li>
 <li><code>list.count()</code></li>
 </ol>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> Counter</span><br><span class="line"></span><br><span class="line">lst = [<span class="string">'a'</span>, <span class="string">'a'</span>, <span class="string">'v'</span>, <span class="string">'c'</span>, <span class="string">'b'</span>, <span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'b'</span>]</span><br><span class="line">Counter(lst)</span><br><span class="line"><span class="comment"># Counter(&#123;'a': 3, 'v': 1, 'c': 2, 'b': 3&#125;)</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">lst = [<span class="string">'a'</span>, <span class="string">'a'</span>, <span class="string">'v'</span>, <span class="string">'c'</span>, <span class="string">'b'</span>, <span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'b'</span>]</span><br><span class="line"><span class="keyword">for</span> item <span class="keyword">in</span> set(lst):</span><br><span class="line">    print(<span class="string">'the %s appears %d times'</span> %(item, lst.count(item)))</span><br><span class="line"><span class="comment">#the c appears 2 times</span></span><br><span class="line"><span class="comment">#the v appears 1 times</span></span><br><span class="line"><span class="comment">#the a appears 3 times</span></span><br><span class="line"><span class="comment">#the b appears 3 times</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> Counter</span><br><span class="line"></span><br><span class="line">lst = [<span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;v&#x27;</span>, <span class="string">&#x27;c&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;c&#x27;</span>, <span class="string">&#x27;b&#x27;</span>]</span><br><span class="line">Counter(lst)</span><br><span class="line"><span class="comment"># Counter(&#123;&#x27;a&#x27;: 3, &#x27;v&#x27;: 1, &#x27;c&#x27;: 2, &#x27;b&#x27;: 3&#125;)</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">lst = [<span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;v&#x27;</span>, <span class="string">&#x27;c&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;c&#x27;</span>, <span class="string">&#x27;b&#x27;</span>]</span><br><span class="line"><span class="keyword">for</span> item <span class="keyword">in</span> <span class="built_in">set</span>(lst):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;the %s appears %d times&#x27;</span> %(item, lst.count(item)))</span><br><span class="line"><span class="comment">#the c appears 2 times</span></span><br><span class="line"><span class="comment">#the v appears 1 times</span></span><br><span class="line"><span class="comment">#the a appears 3 times</span></span><br><span class="line"><span class="comment">#the b appears 3 times</span></span><br></pre></td></tr></table></figure>
     </div>
 
     
@@ -330,11 +330,6 @@
   <div id="qr" style="display: none;">
       
       <div style="display: inline-block;">
-        <img src="/images/reward2021.png" alt="Skye WeChat Bezahlung">
-        <p>WeChat Bezahlung</p>
-      </div>
-      
-      <div style="display: inline-block;">
         <img src="/images/alipay.jpg" alt="Skye 支付宝">
         <p>支付宝</p>
       </div>
@@ -342,6 +337,11 @@
       <div style="display: inline-block;">
         <img src="/images/wechatpay.jpg" alt="Skye 微信支付">
         <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/reward2021.png" alt="Skye WeChat Pay">
+        <p>WeChat Pay</p>
       </div>
 
   </div>
@@ -512,17 +512,17 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">425k</span>
+    <span title="站点总字数">428k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">6:27</span>
+    <span title="站点阅读时长">6:29</span>
 </div>
 
 
-  <script src='https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js'></script>
+  <script src='https://unpkg.com/mermaid@/dist/mermaid.min.js'></script>
   <script>
     if (window.mermaid) {
       mermaid.initialize({theme: 'forest'});

@@ -4,7 +4,7 @@
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.0">
+<meta name="generator" content="Hexo 6.0.0">
 <meta name="baidu-site-verification" content="GLZSr3LDqT" />
 <meta name="google-site-verification" content="fZvQBljM9I6UA4l4wwiA5wECEn7k0V4-DgCfWEPNtFc" />
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
@@ -26,20 +26,18 @@
 <link rel="stylesheet" href="/js/prism/prism.css">
 
 <script src="http://echarts.baidu.com/dist/echarts.common.min.js"></script>
-  <meta name="description" content="机票的成交转化率下降了，怎么分析？ 航班公司觉得自己的某个航线经营状况不好，怎么分析原因 某个产品的销售量下降了，怎么分析？ xxx转化率最近在下降，询盘量有点上升，请分析下是什么情况?">
-<meta property="og:type" content="article">
-<meta property="og:title" content="数据分析 | 指标异动类问题">
-<meta property="og:url" content="https://github.com/ShootingWang/ShootingWang.github.io/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-%E6%8C%87%E6%A0%87%E5%BC%82%E5%8A%A8%E7%B1%BB%E9%97%AE%E9%A2%98.html">
+  <meta property="og:type" content="article">
+<meta property="og:title" content="数据分析 | 指标异动归因">
+<meta property="og:url" content="https://github.com/ShootingWang/ShootingWang.github.io/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-%E6%8C%87%E6%A0%87%E5%BC%82%E5%8A%A8%E5%BD%92%E5%9B%A0.html">
 <meta property="og:site_name" content="Skye">
-<meta property="og:description" content="机票的成交转化率下降了，怎么分析？ 航班公司觉得自己的某个航线经营状况不好，怎么分析原因 某个产品的销售量下降了，怎么分析？ xxx转化率最近在下降，询盘量有点上升，请分析下是什么情况?">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-05-02T01:20:29.000Z">
-<meta property="article:modified_time" content="2022-03-22T12:12:51.012Z">
+<meta property="article:modified_time" content="2022-10-12T04:43:43.782Z">
 <meta property="article:author" content="Skye">
 <meta property="article:tag" content="Data Analysis 数据分析">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://github.com/ShootingWang/ShootingWang.github.io/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-%E6%8C%87%E6%A0%87%E5%BC%82%E5%8A%A8%E7%B1%BB%E9%97%AE%E9%A2%98.html">
+<link rel="canonical" href="https://github.com/ShootingWang/ShootingWang.github.io/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-%E6%8C%87%E6%A0%87%E5%BC%82%E5%8A%A8%E5%BD%92%E5%9B%A0.html">
 
 
 <script id="page-configurations">
@@ -52,7 +50,7 @@
   };
 </script>
 
-  <title>数据分析 | 指标异动类问题 | Skye</title>
+  <title>数据分析 | 指标异动归因 | Skye</title>
   
 
 
@@ -235,7 +233,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/ShootingWang/ShootingWang.github.io/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-%E6%8C%87%E6%A0%87%E5%BC%82%E5%8A%A8%E7%B1%BB%E9%97%AE%E9%A2%98.html">
+    <link itemprop="mainEntityOfPage" href="https://github.com/ShootingWang/ShootingWang.github.io/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-%E6%8C%87%E6%A0%87%E5%BC%82%E5%8A%A8%E5%BD%92%E5%9B%A0.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -248,7 +246,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          数据分析 | 指标异动类问题
+          数据分析 | 指标异动归因
         </h1>
 
         <div class="post-meta">
@@ -267,7 +265,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-03-22 20:12:51" itemprop="dateModified" datetime="2022-03-22T20:12:51+08:00">2022-03-22</time>
+                <time title="修改时间：2022-10-12 12:43:43" itemprop="dateModified" datetime="2022-10-12T12:43:43+08:00">2022-10-12</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -295,8 +293,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-%E6%8C%87%E6%A0%87%E5%BC%82%E5%8A%A8%E7%B1%BB%E9%97%AE%E9%A2%98.html#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-%E6%8C%87%E6%A0%87%E5%BC%82%E5%8A%A8%E7%B1%BB%E9%97%AE%E9%A2%98.html" itemprop="commentCount"></span>
+    <a title="valine" href="/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-%E6%8C%87%E6%A0%87%E5%BC%82%E5%8A%A8%E5%BD%92%E5%9B%A0.html#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-%E6%8C%87%E6%A0%87%E5%BC%82%E5%8A%A8%E5%BD%92%E5%9B%A0.html" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -311,29 +309,30 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <ul>
+        <center></center>
+<span id="more"></span>
+<ul>
 <li>机票的成交转化率下降了，怎么分析？</li>
 <li>航班公司觉得自己的某个航线经营状况不好，怎么分析原因</li>
 <li>某个产品的销售量下降了，怎么分析？</li>
 <li>xxx转化率最近在下降，询盘量有点上升，请分析下是什么情况?</li>
 </ul>
-<a id="more"></a>
-<p>什么是<strong>异常值</strong>？<br>
-异常值，也称为离群值（outlier），指数据统计中，偏离多数数据样本或不符合现有数据统计规律的数值。一般来说，异常值会明显大于或小于其他数据样本。</p>
-<p>作用：</p>
-<ul>
-<li>监控告警</li>
-<li>数据分析前处理</li>
-</ul>
-<p>可以使用变化率、距离、密度等指标设定阈值进行监控</p>
 <h1 id="分析过程"><a class="header-anchor" href="#分析过程"></a>分析过程</h1>
-<p>首先要对数据波动进行界定——<strong>明确定义</strong></p>
-<h2 id="明确定义"><a class="header-anchor" href="#明确定义"></a>明确定义</h2>
-<h2 id="问题定位"><a class="header-anchor" href="#问题定位"></a>问题定位</h2>
-<h2 id="指标拆解"><a class="header-anchor" href="#指标拆解"></a>指标拆解</h2>
-<h2 id="原因分析"><a class="header-anchor" href="#原因分析"></a>原因分析</h2>
-<h1 id="细分维度"><a class="header-anchor" href="#细分维度"></a>细分维度</h1>
-<h2 id="平台-版本"><a class="header-anchor" href="#平台-版本"></a>平台/版本</h2>
+<p>指标异动归因分析的基本流程：</p>
+<ol>
+<li>明确关注的核心指标，以及对应的业务目标</li>
+<li>梳理相关的业务流程，明确可拆解的纵向、横向维度</li>
+<li>纵向分析，定义异动，并发现异动</li>
+<li>横向分析，拆解维度，定位异动的主要原因，发现业务的可优化点</li>
+</ol>
+<h2 id="明确指标、业务目标"><a class="header-anchor" href="#明确指标、业务目标"></a>明确指标、业务目标</h2>
+<p>明确关注的核心指标，以及对应的业务目标</p>
+<h2 id="梳理流程，拆解维度"><a class="header-anchor" href="#梳理流程，拆解维度"></a>梳理流程，拆解维度</h2>
+<p>梳理相关的业务流程，明确可拆解的纵向、横向维度</p>
+<h3 id="常见纵向维度"><a class="header-anchor" href="#常见纵向维度"></a>常见纵向维度</h3>
+<h3 id="常见横向维度"><a class="header-anchor" href="#常见横向维度"></a>常见横向维度</h3>
+<ul>
+<li>平台/版本
 <ul>
 <li>某产品列表页到详情页的转化提升
 <ul>
@@ -342,13 +341,59 @@
 </ul>
 </li>
 </ul>
-<h2 id="区域-城市"><a class="header-anchor" href="#区域-城市"></a>区域/城市</h2>
-<h2 id="用户群体"><a class="header-anchor" href="#用户群体"></a>用户群体</h2>
-<h2 id="类目"><a class="header-anchor" href="#类目"></a>类目</h2>
+</li>
+<li>区域/城市</li>
+<li>用户群体</li>
+<li>类目</li>
+</ul>
+<h2 id="纵向分析，发现异动"><a class="header-anchor" href="#纵向分析，发现异动"></a>纵向分析，发现异动</h2>
+<p>按照时间等纵向维度观察指标变化趋势，通过摸底分析定义指标异常波动；结合纵向分析，发现指标的异常波动。</p>
+<p>常用异动检测方法：</p>
+<ol>
+<li>算法：通过对时间序列形式的指标历史数据进行学习建模，预测指标的正常波动区间，超过区间的波动则视为异动。
+<ul>
+<li><a target="_blank" rel="noopener" href="https://otexts.com/fppcn/holt-winters.html">Holt-winters算法</a>（三次指数滑动平均算法）</li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/469807045">Prophet算法</a></li>
+</ul>
+</li>
+<li>规则：通过摸底分析，划定指标同环比的正常波动区间，超出区间的同环比波动则视为异动。</li>
+</ol>
+<blockquote>
+<p>什么是<strong>异常值</strong>？<br>
+异常值，也称为离群值（outlier），指数据统计中，偏离多数数据样本或不符合现有数据统计规律的数值。一般来说，异常值会明显大于或小于其他数据样本。</p>
+</blockquote>
+<ul>
+<li>作用：
+<ul>
+<li>监控告警</li>
+<li>数据分析前处理</li>
+</ul>
+</li>
+<li>可以使用变化率、距离、密度等指标设定阈值进行监控</li>
+</ul>
+<h2 id="横向分析，归因异动"><a class="header-anchor" href="#横向分析，归因异动"></a>横向分析，归因异动</h2>
+<p>发现指标异常波动后，拆解维度进行横向分析，结合贡献度等方法，定位异动的主要原因，发现存在的业务问题和可优化点。</p>
+<blockquote>
+<p>贡献度计算方法见</p>
+</blockquote>
+<h1 id="归因方法"><a class="header-anchor" href="#归因方法"></a>归因方法</h1>
+<h2 id="维度归因"><a class="header-anchor" href="#维度归因"></a>维度归因</h2>
+<h3 id="定基法"><a class="header-anchor" href="#定基法"></a>定基法</h3>
+<p>即定基替代法。针对各维度</p>
+<h4 id="加法指标"><a class="header-anchor" href="#加法指标"></a>加法指标</h4>
+<h4 id="乘法指标"><a class="header-anchor" href="#乘法指标"></a>乘法指标</h4>
+<h4 id="除法指标"><a class="header-anchor" href="#除法指标"></a>除法指标</h4>
+<ul>
+<li>适用范围：分子分母可分别加和的除法指标</li>
+</ul>
+<h3 id="剔除法"><a class="header-anchor" href="#剔除法"></a>剔除法</h3>
+<h3 id="加权占比法"><a class="header-anchor" href="#加权占比法"></a>加权占比法</h3>
+<h3 id="根因定位算法"><a class="header-anchor" href="#根因定位算法"></a>根因定位算法</h3>
+<h2 id="指标归因"><a class="header-anchor" href="#指标归因"></a>指标归因</h2>
 <h1 id="例子"><a class="header-anchor" href="#例子"></a>例子</h1>
 <h2 id="转化率与询盘量异常"><a class="header-anchor" href="#转化率与询盘量异常"></a>转化率与询盘量异常</h2>
 <blockquote>
-<p>xxx转化率最近在下降，询盘量有点上升，请分析下是什么情况?——来自<a href="https://mp.weixin.qq.com/s?__biz=MzIxNjA2ODUzNg==&amp;mid=2651440599&amp;idx=1&amp;sn=8faf27a155d144461b540dabe4d31260&amp;chksm=8c73dd00bb045416f137942afb2d35e36a87858c3453644a680a45140b5cb67c336d5d2758b0&amp;mpshare=1&amp;scene=24&amp;srcid=&amp;sharer_sharetime=1589157451953&amp;sharer_shareid=b539221659d6ecf12200314308b58dd3&amp;key=7813388b7074583853a1569b61fe6d4df6117bd6400a8cd3f226306ae46a8c728f41f75fbf88090ef2e59f4f1bf473ff1b5403c46ebed25f7a497fd77299f1d5c5b1b2a7d1160f8a5dda9cc908481d43&amp;ascene=14&amp;uin=MjAwNDUzMjgxNw%3D%3D&amp;devicetype=Windows+10+x64&amp;version=62090070&amp;lang=zh_CN&amp;exportkey=Ad2%2FlcnRfQtiskYNJjaBXFQ%3D&amp;pass_ticket=hGGS7EaUpIDlASL51iQWn3S1qU2l9x%2BRBIBXN3TjHYK2XsRZIXuz61NfsnX%2FuM4F" target="_blank" rel="noopener">数据异常波动，应该如何分析？</a></p>
+<p>xxx转化率最近在下降，询盘量有点上升，请分析下是什么情况?——来自<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzIxNjA2ODUzNg==&amp;mid=2651440599&amp;idx=1&amp;sn=8faf27a155d144461b540dabe4d31260&amp;chksm=8c73dd00bb045416f137942afb2d35e36a87858c3453644a680a45140b5cb67c336d5d2758b0&amp;mpshare=1&amp;scene=24&amp;srcid=&amp;sharer_sharetime=1589157451953&amp;sharer_shareid=b539221659d6ecf12200314308b58dd3&amp;key=7813388b7074583853a1569b61fe6d4df6117bd6400a8cd3f226306ae46a8c728f41f75fbf88090ef2e59f4f1bf473ff1b5403c46ebed25f7a497fd77299f1d5c5b1b2a7d1160f8a5dda9cc908481d43&amp;ascene=14&amp;uin=MjAwNDUzMjgxNw%3D%3D&amp;devicetype=Windows+10+x64&amp;version=62090070&amp;lang=zh_CN&amp;exportkey=Ad2%2FlcnRfQtiskYNJjaBXFQ%3D&amp;pass_ticket=hGGS7EaUpIDlASL51iQWn3S1qU2l9x%2BRBIBXN3TjHYK2XsRZIXuz61NfsnX%2FuM4F">数据异常波动，应该如何分析？</a></p>
 </blockquote>
 <ol>
 <li>对数据波动进行界定
@@ -391,13 +436,13 @@
 <li>用数据来验证假设</li>
 <li>提出切实可执行的方法——要落地到业务和产品上的具体建议，确保方案可执行，效果可评估</li>
 </ol>
-<p>未完</p>
 <h2 id="如何分析次日留存率下降的问题"><a class="header-anchor" href="#如何分析次日留存率下降的问题"></a>如何分析次日留存率下降的问题</h2>
 <ol>
 <li>从用户画像、渠道、产品、行为环节等角度细分，明确是哪里的次日留存率下降了</li>
 <li>指标拆解<br>
 $$次日留存率=\sum\frac{次日留存数}{今日获客人数}$$</li>
-<li>原因分析
+<li>原因分析</li>
+</ol>
 <ul>
 <li>内部
 <ul>
@@ -416,13 +461,13 @@ $$次日留存率=\sum\frac{次日留存数}{今日获客人数}$$</li>
 </ul>
 </li>
 </ul>
-</li>
-</ol>
 <h1 id="参考资料"><a class="header-anchor" href="#参考资料"></a>参考资料</h1>
 <ul>
-<li><a href="https://www.cnblogs.com/bellz/p/11448562.html" target="_blank" rel="noopener">指标异动类问题分析框架 - 数据分析师面试题</a></li>
-<li><a href="https://mp.weixin.qq.com/s?__biz=MzIxNjA2ODUzNg==&amp;mid=2651440599&amp;idx=1&amp;sn=8faf27a155d144461b540dabe4d31260&amp;chksm=8c73dd00bb045416f137942afb2d35e36a87858c3453644a680a45140b5cb67c336d5d2758b0&amp;mpshare=1&amp;scene=24&amp;srcid=&amp;sharer_sharetime=1589157451953&amp;sharer_shareid=b539221659d6ecf12200314308b58dd3&amp;key=7813388b7074583853a1569b61fe6d4df6117bd6400a8cd3f226306ae46a8c728f41f75fbf88090ef2e59f4f1bf473ff1b5403c46ebed25f7a497fd77299f1d5c5b1b2a7d1160f8a5dda9cc908481d43&amp;ascene=14&amp;uin=MjAwNDUzMjgxNw%3D%3D&amp;devicetype=Windows+10+x64&amp;version=62090070&amp;lang=zh_CN&amp;exportkey=Ad2%2FlcnRfQtiskYNJjaBXFQ%3D&amp;pass_ticket=hGGS7EaUpIDlASL51iQWn3S1qU2l9x%2BRBIBXN3TjHYK2XsRZIXuz61NfsnX%2FuM4F" target="_blank" rel="noopener">数据异常波动，应该如何分析？</a></li>
-<li><a href="https://mp.weixin.qq.com/s?__biz=MzUzODYwMDAzNA==&amp;mid=2247490797&amp;idx=2&amp;sn=e4488e6ae078fd04992ee19c3ea43e0d&amp;chksm=fad46be0cda3e2f606f3faffe800c819c2cacb5ded2c4bb6e1b0b061bc2c06d276bd18a4a9f4&amp;mpshare=1&amp;scene=24&amp;srcid=&amp;sharer_sharetime=1589846441823&amp;sharer_shareid=b539221659d6ecf12200314308b58dd3&amp;key=391433877af29848d80eb268dfdb67e70c94dbc8461e647ef4fd9cf863b97fcbf05fe3cc098469dd0eed236ecaa0ce9b4afa6518cb6c2e116156d348ec25c79484217b352893ff4b5a26e8f3fd8d7f35&amp;ascene=14&amp;uin=MjAwNDUzMjgxNw%3D%3D&amp;devicetype=Windows+10+x64&amp;version=62090070&amp;lang=zh_CN&amp;exportkey=AYJS0mHna0hF6l9GD1%2B%2BuCY%3D&amp;pass_ticket=hSPy%2FUU8oxUcSxTs%2F5nB1TD0Hf4oMyJJiFtHAk4RLQ6enp8U%2FMNrC0H1aJAXQF7t" target="_blank" rel="noopener">24个「数据分析师」岗位面试题和答案解析</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/bellz/p/11448562.html">指标异动类问题分析框架 - 数据分析师面试题</a></li>
+<li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzIxNjA2ODUzNg==&amp;mid=2651440599&amp;idx=1&amp;sn=8faf27a155d144461b540dabe4d31260&amp;chksm=8c73dd00bb045416f137942afb2d35e36a87858c3453644a680a45140b5cb67c336d5d2758b0&amp;mpshare=1&amp;scene=24&amp;srcid=&amp;sharer_sharetime=1589157451953&amp;sharer_shareid=b539221659d6ecf12200314308b58dd3&amp;key=7813388b7074583853a1569b61fe6d4df6117bd6400a8cd3f226306ae46a8c728f41f75fbf88090ef2e59f4f1bf473ff1b5403c46ebed25f7a497fd77299f1d5c5b1b2a7d1160f8a5dda9cc908481d43&amp;ascene=14&amp;uin=MjAwNDUzMjgxNw%3D%3D&amp;devicetype=Windows+10+x64&amp;version=62090070&amp;lang=zh_CN&amp;exportkey=Ad2%2FlcnRfQtiskYNJjaBXFQ%3D&amp;pass_ticket=hGGS7EaUpIDlASL51iQWn3S1qU2l9x%2BRBIBXN3TjHYK2XsRZIXuz61NfsnX%2FuM4F">数据异常波动，应该如何分析？</a></li>
+<li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzUzODYwMDAzNA==&amp;mid=2247490797&amp;idx=2&amp;sn=e4488e6ae078fd04992ee19c3ea43e0d&amp;chksm=fad46be0cda3e2f606f3faffe800c819c2cacb5ded2c4bb6e1b0b061bc2c06d276bd18a4a9f4&amp;mpshare=1&amp;scene=24&amp;srcid=&amp;sharer_sharetime=1589846441823&amp;sharer_shareid=b539221659d6ecf12200314308b58dd3&amp;key=391433877af29848d80eb268dfdb67e70c94dbc8461e647ef4fd9cf863b97fcbf05fe3cc098469dd0eed236ecaa0ce9b4afa6518cb6c2e116156d348ec25c79484217b352893ff4b5a26e8f3fd8d7f35&amp;ascene=14&amp;uin=MjAwNDUzMjgxNw%3D%3D&amp;devicetype=Windows+10+x64&amp;version=62090070&amp;lang=zh_CN&amp;exportkey=AYJS0mHna0hF6l9GD1%2B%2BuCY%3D&amp;pass_ticket=hSPy%2FUU8oxUcSxTs%2F5nB1TD0Hf4oMyJJiFtHAk4RLQ6enp8U%2FMNrC0H1aJAXQF7t">24个「数据分析师」岗位面试题和答案解析</a></li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/526959429">（维度）归因分析中贡献度的计算方法</a></li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/527037972">（指标）归因分析中贡献度的计算方法</a></li>
 </ul>
 
     </div>
@@ -438,11 +483,6 @@ $$次日留存率=\sum\frac{次日留存数}{今日获客人数}$$</li>
   <div id="qr" style="display: none;">
       
       <div style="display: inline-block;">
-        <img src="/images/reward2021.png" alt="Skye WeChat Bezahlung">
-        <p>WeChat Bezahlung</p>
-      </div>
-      
-      <div style="display: inline-block;">
         <img src="/images/alipay.jpg" alt="Skye 支付宝">
         <p>支付宝</p>
       </div>
@@ -450,6 +490,11 @@ $$次日留存率=\sum\frac{次日留存数}{今日获客人数}$$</li>
       <div style="display: inline-block;">
         <img src="/images/wechatpay.jpg" alt="Skye 微信支付">
         <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/reward2021.png" alt="Skye WeChat Pay">
+        <p>WeChat Pay</p>
       </div>
 
   </div>
@@ -552,7 +597,7 @@ $$次日留存率=\sum\frac{次日留存数}{今日获客人数}$$</li>
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#分析过程"><span class="nav-number">1.</span> <span class="nav-text">分析过程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#明确定义"><span class="nav-number">1.1.</span> <span class="nav-text">明确定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#问题定位"><span class="nav-number">1.2.</span> <span class="nav-text">问题定位</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#指标拆解"><span class="nav-number">1.3.</span> <span class="nav-text">指标拆解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原因分析"><span class="nav-number">1.4.</span> <span class="nav-text">原因分析</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#细分维度"><span class="nav-number">2.</span> <span class="nav-text">细分维度</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#平台-版本"><span class="nav-number">2.1.</span> <span class="nav-text">平台&#x2F;版本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#区域-城市"><span class="nav-number">2.2.</span> <span class="nav-text">区域&#x2F;城市</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用户群体"><span class="nav-number">2.3.</span> <span class="nav-text">用户群体</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类目"><span class="nav-number">2.4.</span> <span class="nav-text">类目</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#例子"><span class="nav-number">3.</span> <span class="nav-text">例子</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#转化率与询盘量异常"><span class="nav-number">3.1.</span> <span class="nav-text">转化率与询盘量异常</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何分析次日留存率下降的问题"><span class="nav-number">3.2.</span> <span class="nav-text">如何分析次日留存率下降的问题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料"><span class="nav-number">4.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%86%E6%9E%90%E8%BF%87%E7%A8%8B"><span class="nav-number">1.</span> <span class="nav-text">分析过程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%98%8E%E7%A1%AE%E6%8C%87%E6%A0%87%E3%80%81%E4%B8%9A%E5%8A%A1%E7%9B%AE%E6%A0%87"><span class="nav-number">1.1.</span> <span class="nav-text">明确指标、业务目标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A2%B3%E7%90%86%E6%B5%81%E7%A8%8B%EF%BC%8C%E6%8B%86%E8%A7%A3%E7%BB%B4%E5%BA%A6"><span class="nav-number">1.2.</span> <span class="nav-text">梳理流程，拆解维度</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81%E7%BA%B5%E5%90%91%E7%BB%B4%E5%BA%A6"><span class="nav-number">1.2.1.</span> <span class="nav-text">常见纵向维度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81%E6%A8%AA%E5%90%91%E7%BB%B4%E5%BA%A6"><span class="nav-number">1.2.2.</span> <span class="nav-text">常见横向维度</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BA%B5%E5%90%91%E5%88%86%E6%9E%90%EF%BC%8C%E5%8F%91%E7%8E%B0%E5%BC%82%E5%8A%A8"><span class="nav-number">1.3.</span> <span class="nav-text">纵向分析，发现异动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A8%AA%E5%90%91%E5%88%86%E6%9E%90%EF%BC%8C%E5%BD%92%E5%9B%A0%E5%BC%82%E5%8A%A8"><span class="nav-number">1.4.</span> <span class="nav-text">横向分析，归因异动</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BD%92%E5%9B%A0%E6%96%B9%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text">归因方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%B4%E5%BA%A6%E5%BD%92%E5%9B%A0"><span class="nav-number">2.1.</span> <span class="nav-text">维度归因</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E5%9F%BA%E6%B3%95"><span class="nav-number">2.1.1.</span> <span class="nav-text">定基法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8A%A0%E6%B3%95%E6%8C%87%E6%A0%87"><span class="nav-number">2.1.1.1.</span> <span class="nav-text">加法指标</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B9%98%E6%B3%95%E6%8C%87%E6%A0%87"><span class="nav-number">2.1.1.2.</span> <span class="nav-text">乘法指标</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%99%A4%E6%B3%95%E6%8C%87%E6%A0%87"><span class="nav-number">2.1.1.3.</span> <span class="nav-text">除法指标</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%89%94%E9%99%A4%E6%B3%95"><span class="nav-number">2.1.2.</span> <span class="nav-text">剔除法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8A%A0%E6%9D%83%E5%8D%A0%E6%AF%94%E6%B3%95"><span class="nav-number">2.1.3.</span> <span class="nav-text">加权占比法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%B9%E5%9B%A0%E5%AE%9A%E4%BD%8D%E7%AE%97%E6%B3%95"><span class="nav-number">2.1.4.</span> <span class="nav-text">根因定位算法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8C%87%E6%A0%87%E5%BD%92%E5%9B%A0"><span class="nav-number">2.2.</span> <span class="nav-text">指标归因</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BE%8B%E5%AD%90"><span class="nav-number">3.</span> <span class="nav-text">例子</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BD%AC%E5%8C%96%E7%8E%87%E4%B8%8E%E8%AF%A2%E7%9B%98%E9%87%8F%E5%BC%82%E5%B8%B8"><span class="nav-number">3.1.</span> <span class="nav-text">转化率与询盘量异常</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E5%88%86%E6%9E%90%E6%AC%A1%E6%97%A5%E7%95%99%E5%AD%98%E7%8E%87%E4%B8%8B%E9%99%8D%E7%9A%84%E9%97%AE%E9%A2%98"><span class="nav-number">3.2.</span> <span class="nav-text">如何分析次日留存率下降的问题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="nav-number">4.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -621,17 +666,17 @@ $$次日留存率=\sum\frac{次日留存数}{今日获客人数}$$</li>
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">425k</span>
+    <span title="站点总字数">428k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">6:27</span>
+    <span title="站点阅读时长">6:29</span>
 </div>
 
 
-  <script src='https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js'></script>
+  <script src='https://unpkg.com/mermaid@/dist/mermaid.min.js'></script>
   <script>
     if (window.mermaid) {
       mermaid.initialize({theme: 'forest'});

@@ -4,7 +4,7 @@
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.0">
+<meta name="generator" content="Hexo 6.0.0">
 <meta name="baidu-site-verification" content="GLZSr3LDqT" />
 <meta name="google-site-verification" content="fZvQBljM9I6UA4l4wwiA5wECEn7k0V4-DgCfWEPNtFc" />
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
@@ -32,7 +32,7 @@
 <meta property="og:site_name" content="Skye">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-05-20T02:34:38.000Z">
-<meta property="article:modified_time" content="2022-09-19T05:18:13.318Z">
+<meta property="article:modified_time" content="2022-10-11T17:12:20.721Z">
 <meta property="article:author" content="Skye">
 <meta property="article:tag" content="Data Analysis 数据分析">
 <meta property="article:tag" content="AB Test AB实验">
@@ -266,7 +266,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-09-19 13:18:13" itemprop="dateModified" datetime="2022-09-19T13:18:13+08:00">2022-09-19</time>
+                <time title="修改时间：2022-10-12 01:12:20" itemprop="dateModified" datetime="2022-10-12T01:12:20+08:00">2022-10-12</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -310,47 +310,60 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><center></center><br><a id="more"></a></p>
-<h1 id="双盲测试"><a href="#双盲测试" class="headerlink" title="双盲测试"></a>双盲测试</h1><p>将病人随机分为两组，病人在不知情的情况下分别服用安慰剂和测试用药，经过一段时间的实验后，比较两组病人的表现是否具有显著差异，以确定测试用药是否具有疗效。</p>
-<h1 id="ABtest"><a href="#ABtest" class="headerlink" title="ABtest"></a>ABtest</h1><p>AB测试</p>
+        <center></center>
+<span id="more"></span>
+<h1 id="双盲测试"><a class="header-anchor" href="#双盲测试"></a>双盲测试</h1>
+<p>将病人随机分为两组，病人在不知情的情况下分别服用安慰剂和测试用药，经过一段时间的实验后，比较两组病人的表现是否具有显著差异，以确定测试用药是否具有疗效。</p>
+<h1 id="ABtest"><a class="header-anchor" href="#ABtest"></a>ABtest</h1>
+<p>AB测试</p>
 <p>将Web或App界面或流程的两个或多个版本，在同一时间维度，分别让两个或多个属性或组成成分相同（相似）的访客群组访问，收集各群组的用户体验数据和业务数据，最后分析评估出最好版本正式采用。</p>
-<p>一个简单的AB测试系统：<br>用户进入网站后，流量分配自同决定用户是否需要被进行AB测试，如果需要，流量分配系统会给用户打上在测试中属于什么分组的标签；然后用户浏览网页；用户在浏览网页时的行为都会被通过日志系统发回后台的日志数据库。</p>
+<p>一个简单的AB测试系统：<br>
+用户进入网站后，流量分配自同决定用户是否需要被进行AB测试，如果需要，流量分配系统会给用户打上在测试中属于什么分组的标签；然后用户浏览网页；用户在浏览网页时的行为都会被通过日志系统发回后台的日志数据库。</p>
 <p>实验人员的工作：</p>
 <ol>
 <li>配置流量分配系统，决定满足什么条件的用户参加什么样的测试</li>
 <li>需要统计日志数据库中的数据，通过测评系统生成不同分组用户的实验报告，并比较和评测实验结果</li>
 </ol>
-<h2 id="测试要点"><a href="#测试要点" class="headerlink" title="测试要点"></a>测试要点</h2><ul>
-<li>两个关键<ol>
+<h2 id="测试要点"><a class="header-anchor" href="#测试要点"></a>测试要点</h2>
+<ul>
+<li>两个关键
+<ol>
 <li>同一时间维度</li>
 <li>成分相同（相似）的访客群组</li>
 </ol>
 </li>
-<li>一个任务<ul>
+<li>一个任务
+<ul>
 <li>收集各群组的用户体验数据和业务数据</li>
 </ul>
 </li>
-<li>一个目标<ul>
+<li>一个目标
+<ul>
 <li>分析评估出最好版本正式采用</li>
 </ul>
 </li>
 </ul>
-<h2 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h2><p>ABtest的主要应用场景有两个：</p>
+<h2 id="应用场景"><a class="header-anchor" href="#应用场景"></a>应用场景</h2>
+<p>ABtest的主要应用场景有两个：</p>
 <ol>
-<li>界面设计<ul>
+<li>界面设计
+<ul>
 <li>调整界面颜色</li>
 <li>调整按钮颜色</li>
 <li>调整界面外观</li>
 <li>……</li>
 </ul>
 </li>
-<li>算法优化<br>重点针对页面中现实的元素进行优化<ul>
+<li>算法优化<br>
+重点针对页面中现实的元素进行优化
+<ul>
 <li>根据推荐算法向用户推荐一些高频搜索或关注的内容</li>
 <li>调整不同小版块的出现顺序或者所在位置，帮助用户在最短时间内到达自己需要的内容</li>
 </ul>
 </li>
 </ol>
-<h2 id="测试流程"><a href="#测试流程" class="headerlink" title="测试流程"></a>测试流程</h2><ol>
+<h2 id="测试流程"><a class="header-anchor" href="#测试流程"></a>测试流程</h2>
+<ol>
 <li>分析实际业务场景，明确改进关键点，制定优化建议</li>
 <li>与项目经历确定优化目标，设计优化方案</li>
 <li>根据优化目标及方案搭建数据分析指标体系，明确数据口径</li>
@@ -370,39 +383,44 @@
     id6 --> id7(确定版本<br>正式发布);
     id6 --优化方案<br>重新开始--> id1;
     id6 --调整流量<br>继续测试-->id5;</pre>
-
 <p><strong>灰度测试</strong>：调整版本对企业影响极大，设定目标中的两个版本可能都不是有效版本，故不能将所有用户直接一分为二全部进行AB测试，对此可以采用灰度发布的方式——只选择其中极小部分用户AB测试，并逐步推广到所有用户。</p>
-<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><ul>
+<h2 id="注意事项"><a class="header-anchor" href="#注意事项"></a>注意事项</h2>
+<ul>
 <li>AB测试需要分析参与测试用户的整体分布情况，而不仅是个别用户的情况</li>
-<li>数据的有效性<ul>
+<li>数据的有效性
+<ul>
 <li>正常情况下，在推进AB测试时，前三天的数据波动会比较大，不建议直接使用</li>
 <li>一般进行AB测试需要大约7~14天为周期进行推进</li>
 <li>需要注意工作日与节假日影响的不同</li>
 </ul>
 </li>
-<li>若AB测试开始后用户反馈反方向发展：<ul>
+<li>若AB测试开始后用户反馈反方向发展：
+<ul>
 <li>先缩小测试用的流量池，减少测试的用户数量</li>
 <li>同时分析目前的用户反馈情况，跟进反馈背后问题的真实原因，优化调整AB测试方案</li>
 <li>不要着急直接停止AB测试</li>
 </ul>
 </li>
 </ul>
-<h2 id="样本量"><a href="#样本量" class="headerlink" title="样本量"></a>样本量</h2><ul>
-<li><a href="https://abtestguide.com/abtestsize/" target="_blank" rel="noopener">AB测试样本量在线计算器</a></li>
-<li><a href="https://www.evanmiller.org/ab-testing/sample-size.html" target="_blank" rel="noopener">Evan’s Awesome Sample Size Calculator</a></li>
+<h2 id="样本量"><a class="header-anchor" href="#样本量"></a>样本量</h2>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://abtestguide.com/abtestsize/">AB测试样本量在线计算器</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.evanmiller.org/ab-testing/sample-size.html">Evan’s Awesome Sample Size Calculator</a></li>
 <li>使用Python的<code>statsmodels</code>库计算：</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> statsmodels.stats.power <span class="keyword">import</span> GofChisquarePower</span><br><span class="line"><span class="keyword">from</span> statsmodels.stats.proportion <span class="keyword">import</span> proportion_effectsize <span class="keyword">as</span> es</span><br><span class="line"></span><br><span class="line">GofChisquarePower().solve_power(</span><br><span class="line">	effect_size=es(prop1=prop1, prop2=prop2, method=<span class="string">'normal'</span>),</span><br><span class="line">	alpha=<span class="number">0.05</span>, power=<span class="number">0.8</span>, n_bins=<span class="number">2</span></span><br><span class="line">)</span><br><span class="line"><span class="comment">## prop1、prop2是两组样本的比率</span></span><br><span class="line"><span class="comment">## alpha是显著性水平；power是统计功效，一般取0.8</span></span><br></pre></td></tr></table></figure>
-<h1 id="其他AB测试"><a href="#其他AB测试" class="headerlink" title="其他AB测试"></a>其他AB测试</h1><h2 id="ABN-test"><a href="#ABN-test" class="headerlink" title="ABN test"></a>ABN test</h2><h2 id="ANB-test"><a href="#ANB-test" class="headerlink" title="ANB test"></a>ANB test</h2><h1 id="多维测试"><a href="#多维测试" class="headerlink" title="多维测试"></a>多维测试</h1><p>正常情况下，完成一个AB测试的整个周期为15天~1个月，这样一年内能完成的测试数目较为有限，为了保证高速迭代，可以在多个维度内同时推进AB测试</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> statsmodels.stats.power <span class="keyword">import</span> GofChisquarePower</span><br><span class="line"><span class="keyword">from</span> statsmodels.stats.proportion <span class="keyword">import</span> proportion_effectsize <span class="keyword">as</span> es</span><br><span class="line"></span><br><span class="line">GofChisquarePower().solve_power(</span><br><span class="line">	effect_size=es(prop1=prop1, prop2=prop2, method=<span class="string">&#x27;normal&#x27;</span>),</span><br><span class="line">	alpha=<span class="number">0.05</span>, power=<span class="number">0.8</span>, n_bins=<span class="number">2</span></span><br><span class="line">)</span><br><span class="line"><span class="comment">## prop1、prop2是两组样本的比率</span></span><br><span class="line"><span class="comment">## alpha是显著性水平；power是统计功效，一般取0.8</span></span><br></pre></td></tr></table></figure>
+<h1 id="其他AB测试"><a class="header-anchor" href="#其他AB测试"></a>其他AB测试</h1>
+<h2 id="ABN-test"><a class="header-anchor" href="#ABN-test"></a>ABN test</h2>
+<h2 id="ANB-test"><a class="header-anchor" href="#ANB-test"></a>ANB test</h2>
+<h1 id="多维测试"><a class="header-anchor" href="#多维测试"></a>多维测试</h1>
+<p>正常情况下，完成一个AB测试的整个周期为15天~1个月，这样一年内能完成的测试数目较为有限，为了保证高速迭代，可以在多个维度内同时推进AB测试</p>
 <ul>
 <li>一定要保证任意两个维度互不影响</li>
 </ul>
-<h1 id="辛普森悖论"><a href="#辛普森悖论" class="headerlink" title="辛普森悖论"></a>辛普森悖论</h1><p>辛普森悖论<sup><a href="#fn_1" id="reffn_1">1</a></sup>（Simpson’s Paradox）：在某个条件下的两组数据，分别讨论时都会满足某种性质，可是一旦合并考虑，可能导致相反的结论。</p>
-<blockquote id="fn_1">
-<sup>1</sup>. 辛普森悖论为英国统计学家E.H.Simpson于1951年提出的悖论<a href="#reffn_1" title="Jump back to footnote [1] in the text."> &#8617;</a>
-</blockquote>
+<h1 id="辛普森悖论"><a class="header-anchor" href="#辛普森悖论"></a>辛普森悖论</h1>
+<p>辛普森悖论<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>（Simpson’s Paradox）：在某个条件下的两组数据，分别讨论时都会满足某种性质，可是一旦合并考虑，可能导致相反的结论。</p>
 <div class="note default">
-            <h2 id="性别歧视问题"><a href="#性别歧视问题" class="headerlink" title="性别歧视问题"></a>性别歧视问题</h2><p>假设一所高校只有两个学院（法学院和商学院），两个学院某年的考研录取情况如下：</p><div><style scoped>    .dataframe tbody tr th:only-of-type {        vertical-align: middle;    }    .dataframe tbody tr th {        vertical-align: top;    }    .dataframe thead th {        text-align: center;    }</style><table border="1" class="dataframe">  <thead>    <tr style="text-align: center;">      <th></th>      <th colspan="2">法学院</th>      <th colspan="2">商学院</th>    </tr>    <tr style="text-align: center;">      <th></th>      <th>男生</th>      <th>女生</th>      <th>男生</th>      <th>女生</th>    </tr>  </thead>  <tbody>    <tr>      <th>录取</th>      <td>8</td>      <td>51</td>      <td>201</td>      <td>92</td>    </tr>    <tr>      <th>未录取</th>      <td>45</td>      <td>101</td>      <td>50</td>      <td>9</td>    </tr>    <tr>      <th>录取率</th>      <td>15.09%</td>      <td>33.55%</td>      <td>80.08%</td>      <td>91.09%</td>    </tr>    <tr>  </tr></tbody></table></div><p>单独看每个学院，都是女生的录取比例高于男生。但是如果看全校的录取情况：</p><div class="table-container"><table><thead><tr><th style="text-align:center"></th><th style="text-align:center">全校男生</th><th style="text-align:center">全校女生</th><th style="text-align:center">总人数</th></tr></thead><tbody><tr><td style="text-align:center">录取</td><td style="text-align:center">209</td><td style="text-align:center">143</td><td style="text-align:center">352</td></tr><tr><td style="text-align:center">未录取</td><td style="text-align:center">95</td><td style="text-align:center">110</td><td style="text-align:center">205</td></tr><tr><td style="text-align:center">总人数</td><td style="text-align:center">304</td><td style="text-align:center">253</td><td style="text-align:center">557</td></tr><tr><td style="text-align:center">录取率</td><td style="text-align:center">68.75%</td><td style="text-align:center">56.52%</td></tr></tbody></table></div><p>则会发现男生的录取比例高于女生。这就是辛普森悖论。</p>
+            <h2 id="性别歧视问题"><a class="header-anchor" href="#性别歧视问题"></a>性别歧视问题</h2><p>假设一所高校只有两个学院（法学院和商学院），两个学院某年的考研录取情况如下：</p><div><style scoped>    .dataframe tbody tr th:only-of-type {        vertical-align: middle;    }<pre><code>.dataframe tbody tr th {    vertical-align: top;}.dataframe thead th {    text-align: center;}</code></pre></style><table border="1" class="dataframe">  <thead>    <tr style="text-align: center;">      <th></th>      <th colspan="2">法学院</th>      <th colspan="2">商学院</th>    </tr>    <tr style="text-align: center;">      <th></th>      <th>男生</th>      <th>女生</th>      <th>男生</th>      <th>女生</th>    </tr>  </thead>  <tbody>    <tr>      <th>录取</th>      <td>8</td>      <td>51</td>      <td>201</td>      <td>92</td>    </tr>    <tr>      <th>未录取</th>      <td>45</td>      <td>101</td>      <td>50</td>      <td>9</td>    </tr>    <tr>      <th>录取率</th>      <td>15.09%</td>      <td>33.55%</td>      <td>80.08%</td>      <td>91.09%</td>    </tr>    <tr>  </tr></tbody></table></div><p>单独看每个学院，都是女生的录取比例高于男生。但是如果看全校的录取情况：</p><table><thead><tr><th style="text-align:center"></th><th style="text-align:center">全校男生</th><th style="text-align:center">全校女生</th><th style="text-align:center">总人数</th></tr></thead><tbody><tr><td style="text-align:center">录取</td><td style="text-align:center">209</td><td style="text-align:center">143</td><td style="text-align:center">352</td></tr><tr><td style="text-align:center">未录取</td><td style="text-align:center">95</td><td style="text-align:center">110</td><td style="text-align:center">205</td></tr><tr><td style="text-align:center">总人数</td><td style="text-align:center">304</td><td style="text-align:center">253</td><td style="text-align:center">557</td></tr><tr><td style="text-align:center">录取率</td><td style="text-align:center">68.75%</td><td style="text-align:center">56.52%</td><td style="text-align:center"></td></tr></tbody></table><p>则会发现男生的录取比例高于女生。这就是辛普森悖论。</p>
           </div>
 <p>误区产生的原因主要在于——将“值与量”两个维度的数据，归纳成了“值”一个维度的数据，并进行了合并。</p>
 <p>我们要避免辛普森悖论带来的误区，要斟酌个别分组的权重，以一定系数去消除分组资料基数差异带来的影响。</p>
@@ -413,10 +431,12 @@
 <p>《别拿相关当因果！》：要确定何时以及如何划分手中的数据，因为考察越来越细化的子数据集并不能解决所有问题。……要想找到作为区分条件的正确变量集，首先要对事件之间的因果结构有所了解。</p>
 </blockquote>
 <p>在工作中，进行AB实验、AB实验评估之前，DS/DA需要和PM、运营确认好策略目的、策略细节，就是为了对策略中事件之间的因果结构有所了解，便于进行正确的数据划分、实验评估。</p>
-<h1 id="数据分析师的任务与职责"><a href="#数据分析师的任务与职责" class="headerlink" title="数据分析师的任务与职责"></a>数据分析师的任务与职责</h1><ol>
+<h1 id="数据分析师的任务与职责"><a class="header-anchor" href="#数据分析师的任务与职责"></a>数据分析师的任务与职责</h1>
+<ol>
 <li>针对业务场景，制定专题分析，明确分析目标</li>
 <li>AB测试初期，分析业务场景，提出优化方向</li>
-<li>与产品经理沟通设计解决方案，制定数据分析体系，明确数据口径<ul>
+<li>与产品经理沟通设计解决方案，制定数据分析体系，明确数据口径
+<ul>
 <li>围绕核心目标，先行制定出最重要的指标</li>
 <li>指标体系需要由核心指标进行拆解，逐步到可落地实施</li>
 <li>在制定指标时，需要结合实际业务场景</li>
@@ -424,7 +444,8 @@
 </ul>
 </li>
 <li>与测试人员明确流量分配情况，确保流量分配方式有效</li>
-<li>及时收集数据，分析并对测试过程不断优化<ul>
+<li>及时收集数据，分析并对测试过程不断优化
+<ul>
 <li>加强注意数据的收集与整理，判断收集来的数据是否完整、能否支持分析</li>
 <li>对数据进行整理与分析，确定数据情况能否反映真实业务、与预期情况的匹配程度</li>
 <li>通过数据结果，判断是否需要对流量分配情况进行调整，是否需要加大测试量</li>
@@ -433,7 +454,9 @@
 </ul>
 </li>
 <li>跟进测试过程，了解测试用户的反馈情况，分析其他优化点</li>
-<li>完成测试后，撰写专题报告，整理测试方案、测试数据、测试报告等，完成文件归档<br>需要归档的文件：<ul>
+<li>完成测试后，撰写专题报告，整理测试方案、测试数据、测试报告等，完成文件归档<br>
+需要归档的文件：
+<ul>
 <li>测试启动会议记录</li>
 <li>测试方案研讨会会议记录</li>
 <li>测试实施方案及进度甘特图</li>
@@ -444,47 +467,59 @@
 </ul>
 </li>
 </ol>
-<h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><h2 id="实验有提升，上线无变化"><a href="#实验有提升，上线无变化" class="headerlink" title="实验有提升，上线无变化"></a>实验有提升，上线无变化</h2><p>可能原因：</p>
+<h1 id="问题"><a class="header-anchor" href="#问题"></a>问题</h1>
+<h2 id="实验有提升，上线无变化"><a class="header-anchor" href="#实验有提升，上线无变化"></a>实验有提升，上线无变化</h2>
+<p>可能原因：</p>
 <ul>
-<li>时效性<ul>
+<li>时效性
+<ul>
 <li>模型往往是有时效性的</li>
 </ul>
 </li>
-<li>用户偏差<ul>
+<li>用户偏差
+<ul>
 <li>实验时和实验后针对的人群不一定一样（eg：流量分流时是否过滤未登录的用户）</li>
 <li>未登录的用户没有用户相关的信息（缺失特征）——因此，有时候AB实验仅针对登录用户</li>
 <li>当模型全量上线时，可能会有大量未登录的流量混入，会影响模型整体的指标</li>
 </ul>
 </li>
-<li>大局影响<ul>
+<li>大局影响
+<ul>
 <li>可能单独看一个模块或某一个业务场景，指标确实有提升。但可能大局上某些领域之间存在竞争关系，一个变好了，会影响另一个的效果——上线后效果不明显，可能是其他业务上线了新功能，或者也做出了成绩，冲淡了效果</li>
 <li>搜索 &amp; 推荐：推荐效果提升了，用户就会较少使用搜索；搜索的质量提升了，也可能会影响推荐的效果</li>
 </ul>
 </li>
-<li>系统原因<ul>
+<li>系统原因
+<ul>
 <li>如：新上的模块需要用的资源较多，导致服务端的请求经常来不及响应，走了兜底策略</li>
 </ul>
 </li>
 </ul>
-<h2 id="有些指标提升，有些指标下降"><a href="#有些指标提升，有些指标下降" class="headerlink" title="有些指标提升，有些指标下降"></a>有些指标提升，有些指标下降</h2><ul>
-<li>CTR（点击率）提升但CVR（转化率）下降了<ul>
+<h2 id="有些指标提升，有些指标下降"><a class="header-anchor" href="#有些指标提升，有些指标下降"></a>有些指标提升，有些指标下降</h2>
+<ul>
+<li>CTR（点击率）提升但CVR（转化率）下降了
+<ul>
 <li>用户点击了更多的item，但用户潜在的购买力是固定的，所以转化率下降了</li>
 </ul>
 </li>
 <li>Cart（加购）提升但Order（订单）下降</li>
 </ul>
-<h2 id="短期和长期的冲突"><a href="#短期和长期的冲突" class="headerlink" title="短期和长期的冲突"></a>短期和长期的冲突</h2><ul>
+<h2 id="短期和长期的冲突"><a class="header-anchor" href="#短期和长期的冲突"></a>短期和长期的冲突</h2>
+<ul>
 <li>某些指标是越高越好吗？</li>
-<li>转化率是越高越好吗？<ul>
+<li>转化率是越高越好吗？
+<ul>
 <li>用户的消费力是有限的，现在多花了一些，未来可能就会少花一些</li>
 </ul>
 </li>
-<li>广告收入是越高越好吗？<ul>
+<li>广告收入是越高越好吗？
+<ul>
 <li>广告收入增加了，可能是向广告主的收费增加了→买广告的商家的收益可能就减少了→商家赚得少了→商家对平台的粘性降低→商家流失</li>
 </ul>
 </li>
 </ul>
-<h1 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h1><h2 id="转化率"><a href="#转化率" class="headerlink" title="转化率"></a>转化率</h2><div class="table-container">
+<h1 id="实例"><a class="header-anchor" href="#实例"></a>实例</h1>
+<h2 id="转化率"><a class="header-anchor" href="#转化率"></a>转化率</h2>
 <table>
 <thead>
 <tr>
@@ -506,24 +541,35 @@
 </tr>
 </tbody>
 </table>
-</div>
-<p>零假设为</p>
-<script type="math/tex; mode=display">H_0:p_A\leq p_B</script><p>备择假设为</p>
-<script type="math/tex; mode=display">H_1:p_A > p_B</script><p>则AB测试的$Z$值为</p>
-<script type="math/tex; mode=display">Z= \frac{ p_B - p_A }{ \sqrt{ \frac{ p_A (1 - p_A ) }{n_A}+\frac{ p_B ( 1 - p_B )}{ n_B }}}</script><h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><div class="note default">
-            <p><strong>题目</strong>：项目上线要AB测试(测试CTR是否大于原来的CTR)，假设每天测试有10000人，现在我只统计里面1000人的CTR，问我要连续测试多少天，才能让得到的结论有95%的置信度？</p><p><strong>参考答案</strong>：<a href="http://24xi.org/sofasofa/forum_main_post.php?postid=1007525" target="_blank" rel="noopener">SofaSofa-AB测试样本量的问题</a><br>根据以下公式计算：</p><script type="math/tex; mode=display">n = \frac{ \frac{ z^2 p ( 1-p ) }{ e^2 }}{ 1+ \frac{ z^2 p (1-p) }{ Ne^2 }}</script><p>其中</p><ul><li>$N$是样本总数，即10000</li><li>$z$是标准正态分布的$95\%$置信区间</li><li>$e$是边际误差，如1%</li><li>$p$是CTR，如0.05</li></ul><p>代入数值，求得$n\approx 1543&gt;1000$，则只测一天得话，数据量不够。如果连续测两天，则样本总数为20000，此时计算得到$n\approx 1672&lt;2000$。因此，测2天即可。</p>
+<p>零假设为<br>
+$$H_0:p_A\leq p_B$$<br>
+备择假设为<br>
+$$H_1:p_A &gt; p_B$$</p>
+<p>则AB测试的$Z$值为<br>
+$$Z= \frac{ p_B - p_A }{ \sqrt{ \frac{ p_A (1 - p_A ) }{n_A}+\frac{ p_B ( 1 - p_B )}{ n_B } } }$$</p>
+<h1 id="其他"><a class="header-anchor" href="#其他"></a>其他</h1>
+<div class="note default">
+            <p><strong>题目</strong>：项目上线要AB测试(测试CTR是否大于原来的CTR)，假设每天测试有10000人，现在我只统计里面1000人的CTR，问我要连续测试多少天，才能让得到的结论有95%的置信度？</p><p><strong>参考答案</strong>：<a target="_blank" rel="noopener" href="http://24xi.org/sofasofa/forum_main_post.php?postid=1007525">SofaSofa-AB测试样本量的问题</a><br>根据以下公式计算：<br>$$n = \frac{ \frac{ z^2 p ( 1-p ) }{ e^2 } }{ 1+ \frac{ z^2 p (1-p) }{ Ne^2 } }$$<br>其中</p><ul><li>$N$是样本总数，即10000</li><li>$z$是标准正态分布的$95%$置信区间</li><li>$e$是边际误差，如1%</li><li>$p$是CTR，如0.05</li></ul><p>代入数值，求得$n\approx 1543&gt;1000$，则只测一天得话，数据量不够。如果连续测两天，则样本总数为20000，此时计算得到$n\approx 1672&lt;2000$。因此，测2天即可。</p>
           </div>
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
-<li><a href="https://mp.weixin.qq.com/s?__biz=MzUzODYwMDAzNA==&amp;mid=2247490797&amp;idx=3&amp;sn=5eeb1eeac5facb704c77c21eb1c703a6&amp;chksm=fad46be0cda3e2f6738947f9ce7dca4f60796870453d1222f51ba44cecbb321e0cbcaa881289&amp;mpshare=1&amp;scene=24&amp;srcid=&amp;sharer_sharetime=1589846450651&amp;sharer_shareid=b539221659d6ecf12200314308b58dd3&amp;key=e224f213fcbe84759f79aacb516d4bf8e8fa647879ab62d1eb6fd667e362e3ab352226749e8c5a94c9d72a3123286a45310529e7ab57c50dbece5f0296aa536ff328b1637c3af7f351a13bd2c7e76b00&amp;ascene=14&amp;uin=MjAwNDUzMjgxNw%3D%3D&amp;devicetype=Windows+10+x64&amp;version=62090070&amp;lang=zh_CN&amp;exportkey=AT3GI1XwfMzd87mEXW7wlLk%3D&amp;pass_ticket=vCOnZ86B9zjbSGFnUl2pZh2C3sFfxo%2BAKXmGUdzX1teUg6KzXE86GrBP%2Fo1Z8BFC" target="_blank" rel="noopener">数据分析师必知必会：AB测试项目复盘</a></li>
-<li><a href="http://20bits.com/article/speed-vs-certainty-in-ab-testing" target="_blank" rel="noopener">Speed vs. Certainty in A/B Testing</a></li>
-<li><a href="http://20bits.com/article/statistical-analysis-and-ab-testing" target="_blank" rel="noopener">Statistical Analysis and A/B Testing</a></li>
-<li><a href="https://signalvnoise.com/posts/3004-ab-testing-tech-note-determining-sample-size" target="_blank" rel="noopener">A/B Testing Tech Note: determining sample size</a></li>
-<li><a href="https://www.evanmiller.org/how-not-to-run-an-ab-test.html" target="_blank" rel="noopener">How Not To Run an A/B Test</a></li>
-<li><a href="https://www.evanmiller.org/sequential-ab-testing.html" target="_blank" rel="noopener">Simple Sequential A/B Testing</a></li>
-<li><a href="http://www.woshipm.com/data-analysis/1061642.html" target="_blank" rel="noopener">数据分析必须警惕的坑：辛普森悖论</a></li>
-<li><a href="http://24xi.org/sofasofa/forum_main_post.php?postid=1007525" target="_blank" rel="noopener">SofaSofa-AB测试样本量的问题</a></li>
-<li><a href="https://mp.weixin.qq.com/s/_3_jU_-_utZp6bfxewf74Q" target="_blank" rel="noopener">做个ABtest还翻车了</a></li>
+<h1 id="参考资料"><a class="header-anchor" href="#参考资料"></a>参考资料</h1>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzUzODYwMDAzNA==&amp;mid=2247490797&amp;idx=3&amp;sn=5eeb1eeac5facb704c77c21eb1c703a6&amp;chksm=fad46be0cda3e2f6738947f9ce7dca4f60796870453d1222f51ba44cecbb321e0cbcaa881289&amp;mpshare=1&amp;scene=24&amp;srcid=&amp;sharer_sharetime=1589846450651&amp;sharer_shareid=b539221659d6ecf12200314308b58dd3&amp;key=e224f213fcbe84759f79aacb516d4bf8e8fa647879ab62d1eb6fd667e362e3ab352226749e8c5a94c9d72a3123286a45310529e7ab57c50dbece5f0296aa536ff328b1637c3af7f351a13bd2c7e76b00&amp;ascene=14&amp;uin=MjAwNDUzMjgxNw%3D%3D&amp;devicetype=Windows+10+x64&amp;version=62090070&amp;lang=zh_CN&amp;exportkey=AT3GI1XwfMzd87mEXW7wlLk%3D&amp;pass_ticket=vCOnZ86B9zjbSGFnUl2pZh2C3sFfxo%2BAKXmGUdzX1teUg6KzXE86GrBP%2Fo1Z8BFC">数据分析师必知必会：AB测试项目复盘</a></li>
+<li><a target="_blank" rel="noopener" href="http://20bits.com/article/speed-vs-certainty-in-ab-testing">Speed vs. Certainty in A/B Testing</a></li>
+<li><a target="_blank" rel="noopener" href="http://20bits.com/article/statistical-analysis-and-ab-testing">Statistical Analysis and A/B Testing</a></li>
+<li><a target="_blank" rel="noopener" href="https://signalvnoise.com/posts/3004-ab-testing-tech-note-determining-sample-size">A/B Testing Tech Note: determining sample size</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.evanmiller.org/how-not-to-run-an-ab-test.html">How Not To Run an A/B Test</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.evanmiller.org/sequential-ab-testing.html">Simple Sequential A/B Testing</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.woshipm.com/data-analysis/1061642.html">数据分析必须警惕的坑：辛普森悖论</a></li>
+<li><a target="_blank" rel="noopener" href="http://24xi.org/sofasofa/forum_main_post.php?postid=1007525">SofaSofa-AB测试样本量的问题</a></li>
+<li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/_3_jU_-_utZp6bfxewf74Q">做个ABtest还翻车了</a></li>
 </ul>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>辛普森悖论为英国统计学家E.H.Simpson于1951年提出的悖论 <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
 
     </div>
 
@@ -538,11 +584,6 @@
   <div id="qr" style="display: none;">
       
       <div style="display: inline-block;">
-        <img src="/images/reward2021.png" alt="Skye WeChat Bezahlung">
-        <p>WeChat Bezahlung</p>
-      </div>
-      
-      <div style="display: inline-block;">
         <img src="/images/alipay.jpg" alt="Skye 支付宝">
         <p>支付宝</p>
       </div>
@@ -550,6 +591,11 @@
       <div style="display: inline-block;">
         <img src="/images/wechatpay.jpg" alt="Skye 微信支付">
         <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/reward2021.png" alt="Skye WeChat Pay">
+        <p>WeChat Pay</p>
       </div>
 
   </div>
@@ -653,7 +699,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#双盲测试"><span class="nav-number">1.</span> <span class="nav-text">双盲测试</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ABtest"><span class="nav-number">2.</span> <span class="nav-text">ABtest</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#测试要点"><span class="nav-number">2.1.</span> <span class="nav-text">测试要点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#应用场景"><span class="nav-number">2.2.</span> <span class="nav-text">应用场景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#测试流程"><span class="nav-number">2.3.</span> <span class="nav-text">测试流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注意事项"><span class="nav-number">2.4.</span> <span class="nav-text">注意事项</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#样本量"><span class="nav-number">2.5.</span> <span class="nav-text">样本量</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#其他AB测试"><span class="nav-number">3.</span> <span class="nav-text">其他AB测试</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#ABN-test"><span class="nav-number">3.1.</span> <span class="nav-text">ABN test</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ANB-test"><span class="nav-number">3.2.</span> <span class="nav-text">ANB test</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#多维测试"><span class="nav-number">4.</span> <span class="nav-text">多维测试</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#辛普森悖论"><span class="nav-number">5.</span> <span class="nav-text">辛普森悖论</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#性别歧视问题"><span class="nav-number">5.1.</span> <span class="nav-text">性别歧视问题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据分析师的任务与职责"><span class="nav-number">6.</span> <span class="nav-text">数据分析师的任务与职责</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#问题"><span class="nav-number">7.</span> <span class="nav-text">问题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#实验有提升，上线无变化"><span class="nav-number">7.1.</span> <span class="nav-text">实验有提升，上线无变化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#有些指标提升，有些指标下降"><span class="nav-number">7.2.</span> <span class="nav-text">有些指标提升，有些指标下降</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#短期和长期的冲突"><span class="nav-number">7.3.</span> <span class="nav-text">短期和长期的冲突</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实例"><span class="nav-number">8.</span> <span class="nav-text">实例</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#转化率"><span class="nav-number">8.1.</span> <span class="nav-text">转化率</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#其他"><span class="nav-number">9.</span> <span class="nav-text">其他</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料"><span class="nav-number">10.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%8C%E7%9B%B2%E6%B5%8B%E8%AF%95"><span class="nav-number">1.</span> <span class="nav-text">双盲测试</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ABtest"><span class="nav-number">2.</span> <span class="nav-text">ABtest</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95%E8%A6%81%E7%82%B9"><span class="nav-number">2.1.</span> <span class="nav-text">测试要点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="nav-number">2.2.</span> <span class="nav-text">应用场景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95%E6%B5%81%E7%A8%8B"><span class="nav-number">2.3.</span> <span class="nav-text">测试流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="nav-number">2.4.</span> <span class="nav-text">注意事项</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%B7%E6%9C%AC%E9%87%8F"><span class="nav-number">2.5.</span> <span class="nav-text">样本量</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%B6%E4%BB%96AB%E6%B5%8B%E8%AF%95"><span class="nav-number">3.</span> <span class="nav-text">其他AB测试</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#ABN-test"><span class="nav-number">3.1.</span> <span class="nav-text">ABN test</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ANB-test"><span class="nav-number">3.2.</span> <span class="nav-text">ANB test</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A4%9A%E7%BB%B4%E6%B5%8B%E8%AF%95"><span class="nav-number">4.</span> <span class="nav-text">多维测试</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BE%9B%E6%99%AE%E6%A3%AE%E6%82%96%E8%AE%BA"><span class="nav-number">5.</span> <span class="nav-text">辛普森悖论</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%A7%E5%88%AB%E6%AD%A7%E8%A7%86%E9%97%AE%E9%A2%98"><span class="nav-number">5.1.</span> <span class="nav-text">性别歧视问题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88%E7%9A%84%E4%BB%BB%E5%8A%A1%E4%B8%8E%E8%81%8C%E8%B4%A3"><span class="nav-number">6.</span> <span class="nav-text">数据分析师的任务与职责</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%97%AE%E9%A2%98"><span class="nav-number">7.</span> <span class="nav-text">问题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E9%AA%8C%E6%9C%89%E6%8F%90%E5%8D%87%EF%BC%8C%E4%B8%8A%E7%BA%BF%E6%97%A0%E5%8F%98%E5%8C%96"><span class="nav-number">7.1.</span> <span class="nav-text">实验有提升，上线无变化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%89%E4%BA%9B%E6%8C%87%E6%A0%87%E6%8F%90%E5%8D%87%EF%BC%8C%E6%9C%89%E4%BA%9B%E6%8C%87%E6%A0%87%E4%B8%8B%E9%99%8D"><span class="nav-number">7.2.</span> <span class="nav-text">有些指标提升，有些指标下降</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9F%AD%E6%9C%9F%E5%92%8C%E9%95%BF%E6%9C%9F%E7%9A%84%E5%86%B2%E7%AA%81"><span class="nav-number">7.3.</span> <span class="nav-text">短期和长期的冲突</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%9E%E4%BE%8B"><span class="nav-number">8.</span> <span class="nav-text">实例</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BD%AC%E5%8C%96%E7%8E%87"><span class="nav-number">8.1.</span> <span class="nav-text">转化率</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%B6%E4%BB%96"><span class="nav-number">9.</span> <span class="nav-text">其他</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="nav-number">10.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -722,17 +768,17 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">425k</span>
+    <span title="站点总字数">428k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">6:27</span>
+    <span title="站点阅读时长">6:29</span>
 </div>
 
 
-  <script src='https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js'></script>
+  <script src='https://unpkg.com/mermaid@/dist/mermaid.min.js'></script>
   <script>
     if (window.mermaid) {
       mermaid.initialize({theme: 'forest'});

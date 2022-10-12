@@ -4,7 +4,7 @@
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.0">
+<meta name="generator" content="Hexo 6.0.0">
 <meta name="baidu-site-verification" content="GLZSr3LDqT" />
 <meta name="google-site-verification" content="fZvQBljM9I6UA4l4wwiA5wECEn7k0V4-DgCfWEPNtFc" />
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
@@ -33,15 +33,15 @@
 <meta property="og:site_name" content="Skye">
 <meta property="og:description" content="Alternating Direction Method of Multipliers">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://github.com/%E7%AE%97%E6%B3%95-ADMM/conjugate1.jpg">
-<meta property="og:image" content="https://github.com/%E7%AE%97%E6%B3%95-ADMM/conjugate2.jpg">
+<meta property="og:image" content="https://github.com/ShootingWang/ShootingWang.github.io/%E7%AE%97%E6%B3%95-ADMM.htm/conjugate1.jpg">
+<meta property="og:image" content="https://github.com/ShootingWang/ShootingWang.github.io/%E7%AE%97%E6%B3%95-ADMM.htm/conjugate2.jpg">
 <meta property="article:published_time" content="2020-05-21T05:07:17.000Z">
-<meta property="article:modified_time" content="2022-03-22T12:02:54.329Z">
+<meta property="article:modified_time" content="2022-10-12T04:57:08.691Z">
 <meta property="article:author" content="Skye">
 <meta property="article:tag" content="算法">
 <meta property="article:tag" content="Machine Learning 机器学习">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://github.com/%E7%AE%97%E6%B3%95-ADMM/conjugate1.jpg">
+<meta name="twitter:image" content="https://github.com/ShootingWang/ShootingWang.github.io/%E7%AE%97%E6%B3%95-ADMM.htm/conjugate1.jpg">
 
 <link rel="canonical" href="https://github.com/ShootingWang/ShootingWang.github.io/%E7%AE%97%E6%B3%95-ADMM.html">
 
@@ -271,7 +271,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-03-22 20:02:54" itemprop="dateModified" datetime="2022-03-22T20:02:54+08:00">2022-03-22</time>
+                <time title="修改时间：2022-10-12 12:57:08" itemprop="dateModified" datetime="2022-10-12T12:57:08+08:00">2022-10-12</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -316,7 +316,7 @@
 
       
         <center>Alternating Direction Method of Multipliers</center>
-<a id="more"></a>
+<span id="more"></span>
 <meta name="referrer" content="no-referrer">
 <p>ADMM</p>
 <p>交替方向乘子法</p>
@@ -326,7 +326,7 @@
 <li>收敛性能好</li>
 </ul>
 <blockquote>
-<p>原文：Boyd S, Parikh N, Chu E, et al. <a href="http://web.stanford.edu/~boyd/papers/pdf/admm_distr_stats.pdf" target="_blank" rel="noopener">Distributed optimization and statistical learning via the alternating direction method of multipliers</a>[J]. Foundations and Trends® in Machine learning, 2011, 3(1): 1-122.</p>
+<p>原文：Boyd S, Parikh N, Chu E, et al. <a target="_blank" rel="noopener" href="http://web.stanford.edu/~boyd/papers/pdf/admm_distr_stats.pdf">Distributed optimization and statistical learning via the alternating direction method of multipliers</a>[J]. Foundations and Trends® in Machine learning, 2011, 3(1): 1-122.</p>
 </blockquote>
 <h1 id="Basic"><a class="header-anchor" href="#Basic"></a>Basic</h1>
 <h2 id="共轭函数"><a class="header-anchor" href="#共轭函数"></a>共轭函数</h2>
@@ -344,12 +344,12 @@ $$-y<sup>Tx</sup><em>+f(x^</em>)$$<br>
 <li>如果$f(x)$不是凸（convex）的：<br>
 则切线可能会对应多个截距项</li>
 </ul>
-<img src="/%E7%AE%97%E6%B3%95-ADMM/conjugate1.jpg" class title="来自：最强Fenchel对偶解读">
-<img src="/%E7%AE%97%E6%B3%95-ADMM/conjugate2.jpg" class title="来自：最强Fenchel对偶解读">
-<p>当$f(x)$是严格凸的时，取$z=\arg \max_x { {y^Tx-f(x) } }$，则有<br>
+<img src="/ShootingWang/ShootingWang.github.io/%E7%AE%97%E6%B3%95-ADMM.htm/conjugate1.jpg" class title="来自：最强Fenchel对偶解读">
+<img src="/ShootingWang/ShootingWang.github.io/%E7%AE%97%E6%B3%95-ADMM.htm/conjugate2.jpg" class title="来自：最强Fenchel对偶解读">
+<p>当$f(x)$是严格凸的时，取$z=\arg \max_x {y^Tx-f(x) } $，则有<br>
 $$f^<em>(y)=\max_x{ { y^T x-f(x) } }=y^Tz-f(z)$$<br>
 因此<br>
-$$\nabla f^</em>(y)=z=\arg\max_x { y^Tx-f(x) }}=\arg\min_x{ {f(x)-y^Tx } $$</p>
+$$\nabla f^</em>(y)=z=\arg\max_x { y^Tx-f(x) } =\arg\min_x{ {f(x)-y^Tx } $$</p>
 <h2 id="带线性约束的优化问题"><a class="header-anchor" href="#带线性约束的优化问题"></a>带线性约束的优化问题</h2>
 <p>考虑带线性约束的优化问题<br>
 \begin{equation}<br>
@@ -382,18 +382,18 @@ $$\left{<br>
 <p>当强对偶性<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>（duality）满足时，$\min_x\max_y{L(x,y)}$与$\max_y\min_x{L(x,y)}$有相同的解。</p>
 <blockquote>
 <ul>
-<li><strong><a href="https://en.wikipedia.org/wiki/Strong_duality" target="_blank" rel="noopener">Strong duality</a></strong>: Strong duality holds if and only if the duality gap is equal to 0.<br>
+<li><strong><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Strong_duality">Strong duality</a></strong>: Strong duality holds if and only if the duality gap is equal to 0.<br>
 $$p<sup>*=d</sup>*$$</li>
 </ul>
 </blockquote>
 <ul>
-<li><strong><a href="https://en.wikipedia.org/wiki/Duality_gap" target="_blank" rel="noopener">Duality gap</a></strong>: 原始问题（primal problem）的最优解$p^*$与对偶问题（dual problem）的最优解$d^*$之间的差异。</li>
+<li><strong><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Duality_gap">Duality gap</a></strong>: 原始问题（primal problem）的最优解$p^*$与对偶问题（dual problem）的最优解$d^*$之间的差异。</li>
 <li>强对偶性的充分条件：</li>
 <li>原始问题是线性优化问题</li>
-<li>$F$是原始函数的<a href="https://en.wikipedia.org/wiki/Perturbation_function" target="_blank" rel="noopener">perturbation function</a>,$F^{**}$是$F$的<a href="https://en.wikipedia.org/wiki/Perturbation_function" target="_blank" rel="noopener">biconjugate</a><br>
+<li>$F$是原始函数的<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Perturbation_function">perturbation function</a>,$F^{**}$是$F$的<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Perturbation_function">biconjugate</a><br>
 $$F=F^{**}$$</li>
 <li>$F$ is convex and lower semi-continuous</li>
-<li>凸优化问题的<a href="https://en.wikipedia.org/wiki/Perturbation_function" target="_blank" rel="noopener">Slater’s condition</a>成立</li>
+<li>凸优化问题的<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Perturbation_function">Slater’s condition</a>成立</li>
 </ul>
 <p>定义<br>
 \begin{equation}<br>
@@ -401,11 +401,11 @@ $$F=F^{**}$$</li>
 g(y) &amp;= \min_x L(x,y) \<br>
 &amp;= \min_x\left{f(x)+y^T(Ax-b)\right}\<br>
 &amp;= \min_x\left{f(x)-(-A<sup>Ty)</sup>Tx-y^Tb \right}\<br>
-&amp;= \underline{\min_x\left{f(x)-(-A<sup>Ty)</sup>Tx \right}}-y^Tb\<br>
+&amp;= \underline{\min_x\left{f(x)-(-A<sup>Ty)</sup>Tx \right} }-y^Tb\<br>
 &amp;= \underline{-f<sup>*(-A</sup>Ty)}-y^Tb<br>
 \end{aligned}<br>
 \end{equation}</p>
-<p>由于$f^*(y)= \max_x { { y^Tx-f(x) } }=-\min_x{ { f(x)-y^Tx } }$。</p>
+<p>由于$f^*(y)= \max_x  { y^Tx-f(x) } =-\min_x { f(x)-y^Tx } $。</p>
 <p>\begin{equation}<br>
 \begin{aligned}<br>
 \nabla g(y) &amp;= A\nabla f<sup>*(-A</sup>Ty)-b\<br>
@@ -640,7 +640,7 @@ u^{k+1} &amp;= u<sup>k+\beta</sup>{k+1}-\alpha^{k+1}<br>
 其中$u<sup>k=\frac{1}{\rho}\phi</sup>k$。</p>
 <p>对于$\beta^{k+1} = \arg\min_\beta\left{\frac{1}{2}||y-\mathbf{X}\beta||<sup>2+\frac{\rho}{2}||\beta-\alpha</sup>k+u<sup>k||</sup>2\right}$有<br>
 \begin{aligned}<br>
-&amp; \frac{\partial{\left{\frac{1}{2}||y-\mathbf{X}\beta||<sup>2+\frac{\rho}{2}||\beta-\alpha</sup>k+u<sup>k||</sup>2\right}}}{\partial{\beta}}\<br>
+&amp; \frac{\partial{\left{\frac{1}{2}||y-\mathbf{X}\beta||<sup>2+\frac{\rho}{2}||\beta-\alpha</sup>k+u<sup>k||</sup>2\right} }}{\partial{\beta} }\<br>
 = &amp; \mathbf{X}(\mathbf{X}\beta-y)+\rho(\beta-\alpha<sup>k+u</sup>k)\<br>
 = &amp; (\mathbf{X}^T\mathbf{X}+\rho\mathbf{I} )\beta-\left[\mathbf{X}<sup>Ty+\rho(\alpha</sup>k-u^k) \right]\<br>
 = &amp; 0<br>
@@ -649,7 +649,7 @@ u^{k+1} &amp;= u<sup>k+\beta</sup>{k+1}-\alpha^{k+1}<br>
 $$\beta<sup>{k+1}\triangleq(\mathbf{X}</sup>T\mathbf{X}+\rho\mathbf{I})<sup>{-1}\left(\mathbf{X}</sup>Ty+\rho(\alpha<sup>k-u</sup>k) \right)$$</p>
 <p>对于$\alpha^{k+1} = \arg\min_\alpha\left{\lambda||\alpha||_1+\frac{\rho}{2}||\beta<sup>{k+1}-\alpha+u</sup>k||^2\right}$有<br>
 \begin{aligned}<br>
-&amp; \frac{\partial{\lambda|\alpha_j|+\frac{\rho}{2}(\beta_j<sup>{k+1}-\alpha_j+u_j</sup>k)^2}}{\partial{\alpha_j}}\<br>
+&amp; \frac{\partial{\lambda|\alpha_j|+\frac{\rho}{2}(\beta_j<sup>{k+1}-\alpha_j+u_j</sup>k)^2} }{\partial{\alpha_j} }\<br>
 = &amp; \lambda \mathrm{sgn}(\alpha_j)-\rho(\beta_j<sup>{k+1}+u_j</sup>k-\alpha_j)<br>
 \end{aligned}</p>
 <ul>
@@ -660,8 +660,8 @@ $$\alpha_j<sup>{k+1}=\beta_j</sup>{k+1}+u_j^k-\frac{\lambda}{\rho}$$</li>
 $$\alpha_j<sup>{k+1}=\beta_j</sup>{k+1}+u_j^k+\frac{\lambda}{\rho}$$</li>
 </ul>
 <p>最后，有<br>
-$$\alpha_j<sup>{k+1}=S_{\frac{\lambda}{\rho}}\left(\beta_j</sup>{k+1}+u_j^k \right)$$<br>
-其中$S_{\frac{\lambda}{\rho}}$为soft thresholding function<br>
+$$\alpha_j^{k+1}=S_{\frac{\lambda}{\rho} }\left(\beta_j<sup>{k+1}+u_j</sup>k \right)$$<br>
+其中$S_{\frac{\lambda}{\rho} }$为soft thresholding function<br>
 $$S_{\kappa}(a)=\left{<br>
 \begin{array}{ll}<br>
 a-\kappa &amp; a&gt;\kappa\<br>
@@ -673,7 +673,7 @@ a+\kappa &amp; a&lt;-\kappa<br>
 <p>因此，LASSO问题的ADMM(显式)迭代过程为<br>
 \begin{aligned}<br>
 \beta^{k+1} &amp;= (\mathbf{X}<sup>T\mathbf{X}+\rho\mathbf{I})</sup>{-1}\left(\mathbf{X}<sup>Ty+\rho(\alpha</sup>k-u^k) \right)\<br>
-\alpha^{k+1} &amp;= S_{\frac{\lambda}{\rho}}\left(\beta<sup>{k+1}+u</sup>k \right)\<br>
+\alpha^{k+1} &amp;= S_{\frac{\lambda}{\rho} }\left(\beta<sup>{k+1}+u</sup>k \right)\<br>
 u^{k+1} &amp;= u<sup>k+\beta</sup>{k+1}-\alpha^{k+1}<br>
 \end{aligned}<br>
 Stopping Criterion可以为<br>
@@ -711,21 +711,21 @@ $$B=\frac{\lambda_2}{\lambda_1}\left(<br>
 <p>则Fused LASSO的ADMM迭代步骤为<br>
 \begin{aligned}<br>
 \beta^{k+1} &amp;= (\mathbf{X}^T\mathbf{X}+\rho D<sup>TD)</sup>{-1}\left(\mathbf{X}^Ty+\rho D<sup>T(\alpha</sup>k-u^k) \right)\<br>
-\alpha^{k+1} &amp;= S_{\frac{\lambda}{\rho}}(D\beta<sup>{k+1}+u</sup>k)\<br>
+\alpha^{k+1} &amp;= S_{\frac{\lambda}{\rho} }(D\beta<sup>{k+1}+u</sup>k)\<br>
 u^{k+1} &amp;= u<sup>k+D\beta</sup>{k+1}-\alpha^{k+1}<br>
 \end{aligned}</p>
 <p>上述算法可以解决不同的广义LASSO问题（$D$不同）。</p>
 <h1 id="参考资料"><a class="header-anchor" href="#参考资料"></a>参考资料</h1>
 <ul>
 <li>W. Zhong, J. Lin - Statistical Data Analysis</li>
-<li><a href="https://zhuanlan.zhihu.com/p/32202419" target="_blank" rel="noopener">最强Fenchel对偶解读</a></li>
-<li><a href="https://www.cnblogs.com/wildkid1024/p/11041756.html" target="_blank" rel="noopener">[Algorithm]ADMM简明理解</a></li>
-<li><a href="https://www.zhihu.com/question/36566112" target="_blank" rel="noopener">交替方向乘子法（ADMM）算法的流程和原理是怎样的？</a></li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/32202419">最强Fenchel对偶解读</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/wildkid1024/p/11041756.html">[Algorithm]ADMM简明理解</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/36566112">交替方向乘子法（ADMM）算法的流程和原理是怎样的？</a></li>
 </ul>
 <hr class="footnotes-sep">
 <section class="footnotes">
 <ol class="footnotes-list">
-<li id="fn1" class="footnote-item"><p><a href="https://baike.baidu.com/item/%E5%BC%BA%E5%AF%B9%E5%81%B6%E6%80%A7/17194045?fr=aladdin" target="_blank" rel="noopener">强对偶性</a>：若原始问题（对偶问题）有一个确定的最优解，那么对偶问题（原始问题）也有一个确定的最优解，而且这两个最优解所对应的目标函数值相等。 <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+<li id="fn1" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%BC%BA%E5%AF%B9%E5%81%B6%E6%80%A7/17194045?fr=aladdin">强对偶性</a>：若原始问题（对偶问题）有一个确定的最优解，那么对偶问题（原始问题）也有一个确定的最优解，而且这两个最优解所对应的目标函数值相等。 <a href="#fnref1" class="footnote-backref">↩︎</a></p>
 </li>
 </ol>
 </section>
@@ -743,11 +743,6 @@ u^{k+1} &amp;= u<sup>k+D\beta</sup>{k+1}-\alpha^{k+1}<br>
   <div id="qr" style="display: none;">
       
       <div style="display: inline-block;">
-        <img src="/images/reward2021.png" alt="Skye WeChat Bezahlung">
-        <p>WeChat Bezahlung</p>
-      </div>
-      
-      <div style="display: inline-block;">
         <img src="/images/alipay.jpg" alt="Skye 支付宝">
         <p>支付宝</p>
       </div>
@@ -755,6 +750,11 @@ u^{k+1} &amp;= u<sup>k+D\beta</sup>{k+1}-\alpha^{k+1}<br>
       <div style="display: inline-block;">
         <img src="/images/wechatpay.jpg" alt="Skye 微信支付">
         <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/reward2021.png" alt="Skye WeChat Pay">
+        <p>WeChat Pay</p>
       </div>
 
   </div>
@@ -858,7 +858,7 @@ u^{k+1} &amp;= u<sup>k+D\beta</sup>{k+1}-\alpha^{k+1}<br>
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Basic"><span class="nav-number">1.</span> <span class="nav-text">Basic</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#共轭函数"><span class="nav-number">1.1.</span> <span class="nav-text">共轭函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#带线性约束的优化问题"><span class="nav-number">1.2.</span> <span class="nav-text">带线性约束的优化问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#DAM"><span class="nav-number">1.2.1.</span> <span class="nav-text">DAM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ALM"><span class="nav-number">1.2.2.</span> <span class="nav-text">ALM</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ADMM"><span class="nav-number">2.</span> <span class="nav-text">ADMM</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#收敛性"><span class="nav-number">2.1.</span> <span class="nav-text">收敛性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Optimality-Conditions"><span class="nav-number">2.2.</span> <span class="nav-text">Optimality Conditions</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Stopping-Criterion"><span class="nav-number">2.3.</span> <span class="nav-text">Stopping Criterion</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#应用"><span class="nav-number">2.4.</span> <span class="nav-text">应用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#求解LASSO"><span class="nav-number">2.4.1.</span> <span class="nav-text">求解LASSO</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#求解Fused-LASSO"><span class="nav-number">2.4.2.</span> <span class="nav-text">求解Fused LASSO</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料"><span class="nav-number">3.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Basic"><span class="nav-number">1.</span> <span class="nav-text">Basic</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B1%E8%BD%AD%E5%87%BD%E6%95%B0"><span class="nav-number">1.1.</span> <span class="nav-text">共轭函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%A6%E7%BA%BF%E6%80%A7%E7%BA%A6%E6%9D%9F%E7%9A%84%E4%BC%98%E5%8C%96%E9%97%AE%E9%A2%98"><span class="nav-number">1.2.</span> <span class="nav-text">带线性约束的优化问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#DAM"><span class="nav-number">1.2.1.</span> <span class="nav-text">DAM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ALM"><span class="nav-number">1.2.2.</span> <span class="nav-text">ALM</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ADMM"><span class="nav-number">2.</span> <span class="nav-text">ADMM</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%94%B6%E6%95%9B%E6%80%A7"><span class="nav-number">2.1.</span> <span class="nav-text">收敛性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Optimality-Conditions"><span class="nav-number">2.2.</span> <span class="nav-text">Optimality Conditions</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Stopping-Criterion"><span class="nav-number">2.3.</span> <span class="nav-text">Stopping Criterion</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BA%94%E7%94%A8"><span class="nav-number">2.4.</span> <span class="nav-text">应用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B1%82%E8%A7%A3LASSO"><span class="nav-number">2.4.1.</span> <span class="nav-text">求解LASSO</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B1%82%E8%A7%A3Fused-LASSO"><span class="nav-number">2.4.2.</span> <span class="nav-text">求解Fused LASSO</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="nav-number">3.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -927,17 +927,17 @@ u^{k+1} &amp;= u<sup>k+D\beta</sup>{k+1}-\alpha^{k+1}<br>
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">425k</span>
+    <span title="站点总字数">428k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">6:27</span>
+    <span title="站点阅读时长">6:29</span>
 </div>
 
 
-  <script src='https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js'></script>
+  <script src='https://unpkg.com/mermaid@/dist/mermaid.min.js'></script>
   <script>
     if (window.mermaid) {
       mermaid.initialize({theme: 'forest'});

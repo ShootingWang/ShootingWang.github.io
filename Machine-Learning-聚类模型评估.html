@@ -4,7 +4,7 @@
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.0">
+<meta name="generator" content="Hexo 6.0.0">
 <meta name="baidu-site-verification" content="GLZSr3LDqT" />
 <meta name="google-site-verification" content="fZvQBljM9I6UA4l4wwiA5wECEn7k0V4-DgCfWEPNtFc" />
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
@@ -32,7 +32,7 @@
 <meta property="og:site_name" content="Skye">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-05-11T00:59:07.000Z">
-<meta property="article:modified_time" content="2022-04-27T12:58:39.986Z">
+<meta property="article:modified_time" content="2022-10-12T04:44:21.340Z">
 <meta property="article:author" content="Skye">
 <meta property="article:tag" content="算法">
 <meta property="article:tag" content="Machine Learning 机器学习">
@@ -267,7 +267,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-04-27 20:58:39" itemprop="dateModified" datetime="2022-04-27T20:58:39+08:00">2022-04-27</time>
+                <time title="修改时间：2022-10-12 12:44:21" itemprop="dateModified" datetime="2022-10-12T12:44:21+08:00">2022-10-12</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -312,7 +312,7 @@
 
       
         <center></center>
-<a id="more"></a>
+<span id="more"></span>
 <p><strong>模型评估/评价</strong>：对于已经建立的一个或多个模型，根据模型的类别，选择不同的指标评价其性能优劣的过程。</p>
 <h1 id="聚类评估"><a class="header-anchor" href="#聚类评估"></a>聚类评估</h1>
 <p>关于聚类分析，往往是希望聚类结果中，组内（同类别）的相似性（稠密程度）越大、组间（不同类别）的相似性（离散程度）越小。</p>
@@ -470,7 +470,7 @@ n_{.j}\\<br>
 2<br>
 \end{array}\right)]<br>
 \end{equation}</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Python实现</span></span><br><span class="line"><span class="keyword">from</span> sklearn.metrics <span class="keyword">import</span> adjust_rand_score</span><br><span class="line"></span><br><span class="line">ari = adjusted_rand_score(labels_true, labels_pred)</span><br><span class="line"><span class="comment"># labels_true：真实的分类标签</span></span><br><span class="line"><span class="comment"># label_pred：模型聚类的结果</span></span><br><span class="line"><span class="comment"># ARI = (RI - Expected_RI) / (max(RI) - Expected_RI)</span></span><br><span class="line"><span class="comment"># adjusted_rand_score(a, b) == adjusted_rand_score(b, a)</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Python实现</span></span><br><span class="line"><span class="keyword">from</span> sklearn.metrics <span class="keyword">import</span> adjust_rand_score</span><br><span class="line"></span><br><span class="line">ari = adjusted_rand_score(labels_true, labels_pred)</span><br><span class="line"><span class="comment"># labels_true：真实的分类标签</span></span><br><span class="line"><span class="comment"># label_pred：模型聚类的结果</span></span><br><span class="line"><span class="comment"># ARI = (RI - Expected_RI) / (max(RI) - Expected_RI)</span></span><br><span class="line"><span class="comment"># adjusted_rand_score(a, b) == adjusted_rand_score(b, a)</span></span><br></pre></td></tr></table></figure>
 <h2 id="AMI评价法"><a class="header-anchor" href="#AMI评价法"></a>AMI评价法</h2>
 <p><strong>互信息</strong>（MI，Mutual Information）：衡量两个数据分布的吻合程度。</p>
 <ul>
@@ -480,10 +480,10 @@ n_{.j}\\<br>
 </ul>
 <h3 id="互信息MI"><a class="header-anchor" href="#互信息MI"></a>互信息MI</h3>
 <p>两个离散随机变量$X$和$Y$的互信息定义为<br>
-$$I(X,Y)=\sum_{y\in Y}\sum_{x\in X}p(x,y)\log{\frac{p(x,y)}{p(x)p(y)}}$$<br>
+$$I(X,Y)=\sum_{y\in Y}\sum_{x\in X}p(x,y)\log{\frac{p(x,y)}{p(x)p(y)} }$$<br>
 其中，$p(x,y)$是$X$和$Y$的联合概率分布函数，$p(x)$、$p(y)$分别是$X$和$Y$的边缘概率分布函数。<br>
 两个连续随机变量的互信息定义为<br>
-$$I(X,Y)=\int_Y\int_Xp(x,y)\log{\frac{p(x,y)}{p(x)p(y)}}\mathrm{d}x\mathrm{d}y$$<br>
+$$I(X,Y)=\int_Y\int_Xp(x,y)\log{\frac{p(x,y)}{p(x)p(y)} }\mathrm{d}x\mathrm{d}y$$<br>
 其中，$p(x,y)$是$X$和$Y$的联合概率密度函数，$p(x)$、$p(y)$分别是$X$和$Y$的边缘概率密度函数。</p>
 <ul>
 <li>互信息是互信息量$I(x_i,y_j)$在联合概率空间中的统计平均值</li>
@@ -491,7 +491,7 @@ $$I(X,Y)=\int_Y\int_Xp(x,y)\log{\frac{p(x,y)}{p(x)p(y)}}\mathrm{d}x\mathrm{d}y$$
 <li>互信息是$X$和$Y$的联合分布相对于假定$X$和$Y$独立情况下的联合分布之间的内在依赖性</li>
 <li>$I(X,Y)=0$当且仅当$X$和$Y$独立时成立</li>
 <li>当$X$和$Y$独立时，$p(x,y)=p(x)p(y)$。因此<br>
-$$\log{\frac{p(x,y)}{p(x)p(y)}}=\log1=0$$</li>
+$$\log{\frac{p(x,y)}{p(x)p(y)} }=\log1=0$$</li>
 </ul>
 <p>用互信息来评估聚类效果：</p>
 <blockquote>
@@ -504,9 +504,9 @@ $$\log{\frac{p(x,y)}{p(x)p(y)}}=\log1=0$$</li>
 <li>样本集合的真实划分$U=\lbrace u_1,\cdots,u_R\rbrace$</li>
 <li>样本集合的聚类结果$V=\lbrace v_1,\cdots,v_C\rbrace$</li>
 <li>$P(i)$为$u_i$在$U$中的概率（比率）<br>
-$$P(i)=\frac{||u_i||}{n}=\frac{n_{i.}}{n}$$</li>
+$$P(i)=\frac{||u_i||}{n}=\frac{n_{i.} }{n}$$</li>
 <li>$P^\prime(j)$为$v_j$在$V$中的概率（比率）<br>
-$$P^\prime(j)=\frac{||v_j||}{n}=\frac{n_{.j}}{n}$$</li>
+$$P^\prime(j)=\frac{||v_j||}{n}=\frac{n_{.j} }{n}$$</li>
 <li>$U$的熵为<br>
 $$H(U)=\sum_{i=1}^RP(i)\log{\left(P(i)\right)}$$</li>
 <li>$V$的熵为<br>
@@ -517,15 +517,15 @@ $$\mathrm{MI}(U,V)= \sum_{i=1}^R \sum_{j=1}^C P(i,j) \log{ \left( \frac{P(i,j)}{
 <p>其中$P(i,j)=n_{ij}/n$。</p>
 <h3 id="标准化的互信息NMI"><a class="header-anchor" href="#标准化的互信息NMI"></a>标准化的互信息NMI</h3>
 <p><strong>标准化后的互信息</strong>（NMI，Normalized Mutual Information）为<br>
-$$\mathrm{NMI}(U,V)=\frac{\mathrm{MI}(U,V)}{\sqrt{H(U)H(V)}}$$</p>
+$$\mathrm{NMI}(U,V)=\frac{\mathrm{MI}(U,V)}{\sqrt{H(U)H(V)} }$$</p>
 <h3 id="调整互信息AMI"><a class="header-anchor" href="#调整互信息AMI"></a>调整互信息AMI</h3>
 <p><strong>调整互信息</strong>（AMI，Adjusted Mutual Information）为</p>
 <p>$$\mathrm{AMI}=\frac{\mathrm{MI}-E[\mathrm{MI}]}{\max{\left(H(U),H(V)\right)}-E[\mathrm{MI}]}$$</p>
 <p>\begin{equation}<br>
 \begin{aligned}<br>
-E[\mathrm{MI} (U,V)]=&amp;\sum_{i=1}^R \sum_{j=1}^C \sum_{ n_{ij} = ( n_{i.} + n_{.j}-n )^+ }^{\min{(n_{i.},n_{.j})}} \frac{ n_{ij} }{n}<br>
-\log{\left(\frac{n\cdot n_{ij}}{n_{i.}n_{.j}}\right)}\times\\<br>
-&amp;\frac{ n_{i.}! n_{.j} (n-n_{i.})! (n-n_{.j})!}{ n! n_{ij}! (n_{i.} - n_{ij})! (n_{.j-n_{ij}})! (n-n_{i.} - n_{.j} + n_{ij})!}<br>
+E[\mathrm{MI} (U,V)]=&amp;\sum_{i=1}^R \sum_{j=1}^C \sum_{ n_{ij} = ( n_{i.} + n_{.j}-n )^+ }^{\min{(n_{i.},n_{.j})} } \frac{ n_{ij} }{n}<br>
+\log{\left(\frac{n\cdot n_{ij} }{n_{i.}n_{.j} }\right)}\times\\<br>
+&amp;\frac{ n_{i.}! n_{.j} (n-n_{i.})! (n-n_{.j})!}{ n! n_{ij}! (n_{i.} - n_{ij})! (n_{.j-n_{ij} })! (n-n_{i.} - n_{.j} + n_{ij})!}<br>
 \end{aligned}<br>
 \end{equation}</p>
 <ul>
@@ -533,7 +533,7 @@ E[\mathrm{MI} (U,V)]=&amp;\sum_{i=1}^R \sum_{j=1}^C \sum_{ n_{ij} = ( n_{i.} + n
 <li>$n_{i.}=\sum_{j=1}^Cn_{ij}$</li>
 <li>$n_{.j}=\sum_{i=1}^Rn_{ij}$</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Python实现</span></span><br><span class="line"><span class="keyword">from</span> sklearn.metrics <span class="keyword">import</span> adjusted_mutual_info_score</span><br><span class="line"></span><br><span class="line"><span class="comment">## AMI</span></span><br><span class="line">ami = adjusted_mutual_info_score(labels_true, labels_pred)</span><br><span class="line"><span class="comment"># labels_true：真实的分类标签</span></span><br><span class="line"><span class="comment"># label_pred：模型聚类的结果</span></span><br><span class="line"><span class="comment"># Python的sklearn中的AMI的公式为</span></span><br><span class="line"><span class="comment"># AMI(U,V)=[MI(U,V) - E(MI(U,V))] / [avg(H(U),H(V)) - E(MI(U,V))]</span></span><br><span class="line"><span class="comment"># 其中用的是avg而不是max</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## NMI</span></span><br><span class="line"><span class="keyword">from</span> sklearn.metrics <span class="keyword">import</span> normalized_mutual_info_score</span><br><span class="line"></span><br><span class="line">nmi = normalized_mutual_info_score(labels_true, labels_pred)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Python实现</span></span><br><span class="line"><span class="keyword">from</span> sklearn.metrics <span class="keyword">import</span> adjusted_mutual_info_score</span><br><span class="line"></span><br><span class="line"><span class="comment">## AMI</span></span><br><span class="line">ami = adjusted_mutual_info_score(labels_true, labels_pred)</span><br><span class="line"><span class="comment"># labels_true：真实的分类标签</span></span><br><span class="line"><span class="comment"># label_pred：模型聚类的结果</span></span><br><span class="line"><span class="comment"># Python的sklearn中的AMI的公式为</span></span><br><span class="line"><span class="comment"># AMI(U,V)=[MI(U,V) - E(MI(U,V))] / [avg(H(U),H(V)) - E(MI(U,V))]</span></span><br><span class="line"><span class="comment"># 其中用的是avg而不是max</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## NMI</span></span><br><span class="line"><span class="keyword">from</span> sklearn.metrics <span class="keyword">import</span> normalized_mutual_info_score</span><br><span class="line"></span><br><span class="line">nmi = normalized_mutual_info_score(labels_true, labels_pred)</span><br></pre></td></tr></table></figure>
 <h2 id="V-measure评价法"><a class="header-anchor" href="#V-measure评价法"></a>V-measure评价法</h2>
 <p>V-measure评价法：同质性（Homogeneity）和完整性（Completeness）的调和平均值。</p>
 <ul>
@@ -551,26 +551,26 @@ E[\mathrm{MI} (U,V)]=&amp;\sum_{i=1}^R \sum_{j=1}^C \sum_{ n_{ij} = ( n_{i.} + n
 </ul>
 <p>$$h=1-\frac{H(U|V)}{H(U)}$$<br>
 其中</p>
-<p>$$H(U|V) = -\sum_{i=1}^R \sum_{j=1}^C \frac{n_{ij}}{n} \log{ \left( \frac{n_{ij}}{n_{.j}} \right)}$$<br>
-$$H(U) = -\sum_{i=1}^R \frac{n_{i.}}{n} \log{ \left( \frac{n_{i.}}{n} \right) }$$</p>
+<p>$$H(U|V) = -\sum_{i=1}^R \sum_{j=1}^C \frac{n_{ij} }{n} \log{ \left( \frac{n_{ij} }{n_{.j} } \right)}$$<br>
+$$H(U) = -\sum_{i=1}^R \frac{n_{i.} }{n} \log{ \left( \frac{n_{i.} }{n} \right) }$$</p>
 <h3 id="完整性"><a class="header-anchor" href="#完整性"></a>完整性</h3>
 <p>完整性（Completeness）：给定类的所有成员分配给同一簇类<br>
 $$c=1-\frac{H(V|U)}{H(V)}$$</p>
 <p>其中<br>
-$$H(V|U)=-\sum_{i=1}^R \sum_{j=1}^C \frac{n_{ij}}{n}\ log{ \left( \frac{n_{ij}}{n_{i.}} \right) }$$<br>
-$$H(V) = -\sum_{j=1}^C \frac{n_{.j}}{n} \log{ \left( \frac{n_{.j}}{n} \right) }$$</p>
+$$H(V|U)=-\sum_{i=1}^R \sum_{j=1}^C \frac{n_{ij} }{n}\ log{ \left( \frac{n_{ij} }{n_{i.} } \right) }$$<br>
+$$H(V) = -\sum_{j=1}^C \frac{n_{.j} }{n} \log{ \left( \frac{n_{.j} }{n} \right) }$$</p>
 <h3 id="V-measure"><a class="header-anchor" href="#V-measure"></a>V-measure</h3>
 <p>V-measure是同质性和完整性的调和平均数，公式为<br>
 $$V=\frac{2\cdot h\cdot c}{h+c}$$</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Python实现 V-measure</span></span><br><span class="line"><span class="keyword">from</span> sklearn.metrics.cluster <span class="keyword">import</span> v_measure_score</span><br><span class="line"></span><br><span class="line">vs = v_measure_score(labels_true, labels_pred, beta=<span class="number">1.0</span>)</span><br><span class="line"><span class="comment"># labels_true：真实的分类标签</span></span><br><span class="line"><span class="comment"># label_pred：模型聚类的结果</span></span><br><span class="line"><span class="comment"># v = (1 + beta) * homogeneity * completenes</span></span><br><span class="line"><span class="comment">#     / (beta * homogeneity + completeness)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># homogeneity</span></span><br><span class="line"><span class="keyword">from</span> sklearn.metrics.cluster <span class="keyword">import</span> homogeneity_score</span><br><span class="line"></span><br><span class="line">h = homogeneity_score(labels_true, labels_pred)</span><br><span class="line"></span><br><span class="line"><span class="comment"># completeness</span></span><br><span class="line"><span class="keyword">from</span> sklearn.metrics <span class="keyword">import</span> completeness_score</span><br><span class="line"></span><br><span class="line">c = completeness_score(labels_true, labels_pred)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Python实现 V-measure</span></span><br><span class="line"><span class="keyword">from</span> sklearn.metrics.cluster <span class="keyword">import</span> v_measure_score</span><br><span class="line"></span><br><span class="line">vs = v_measure_score(labels_true, labels_pred, beta=<span class="number">1.0</span>)</span><br><span class="line"><span class="comment"># labels_true：真实的分类标签</span></span><br><span class="line"><span class="comment"># label_pred：模型聚类的结果</span></span><br><span class="line"><span class="comment"># v = (1 + beta) * homogeneity * completenes</span></span><br><span class="line"><span class="comment">#     / (beta * homogeneity + completeness)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># homogeneity</span></span><br><span class="line"><span class="keyword">from</span> sklearn.metrics.cluster <span class="keyword">import</span> homogeneity_score</span><br><span class="line"></span><br><span class="line">h = homogeneity_score(labels_true, labels_pred)</span><br><span class="line"></span><br><span class="line"><span class="comment"># completeness</span></span><br><span class="line"><span class="keyword">from</span> sklearn.metrics <span class="keyword">import</span> completeness_score</span><br><span class="line"></span><br><span class="line">c = completeness_score(labels_true, labels_pred)</span><br></pre></td></tr></table></figure>
 <h2 id="FMI评价法"><a class="header-anchor" href="#FMI评价法"></a>FMI评价法</h2>
 <p><strong>FMI评价法</strong>（Fowlkes-Mallows score FMI）：精确率（Precision）和召回率（Recall）的几何平均值</p>
 <ul>
 <li>需要真实值</li>
 <li>最佳值为1<br>
-$$\mathrm{FMI}=\sqrt{\mathrm{Precision\cdot Recall}}=\frac{TP}{\sqrt{(TP+FP)(TP+FN)}}$$</li>
+$$\mathrm{FMI}=\sqrt{\mathrm{Precision\cdot Recall} }=\frac{TP}{\sqrt{(TP+FP)(TP+FN)} }$$</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Python实现</span></span><br><span class="line"><span class="keyword">from</span> sklearn.metrics <span class="keyword">import</span> fowlkes_mallows_score</span><br><span class="line"></span><br><span class="line">fmi = fowlkes_mallows_score(labels_true, labels_pred)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Python实现</span></span><br><span class="line"><span class="keyword">from</span> sklearn.metrics <span class="keyword">import</span> fowlkes_mallows_score</span><br><span class="line"></span><br><span class="line">fmi = fowlkes_mallows_score(labels_true, labels_pred)</span><br></pre></td></tr></table></figure>
 <h2 id="轮廓系数"><a class="header-anchor" href="#轮廓系数"></a>轮廓系数</h2>
 <p><strong>轮廓系数</strong>（Silhouette Coefficient）：适用于实际类别信息未知的情况。</p>
 <ul>
@@ -597,7 +597,7 @@ $$s_i=\frac{b_i-a_i}{\max\lbrace a_i,b_i\rbrace}=\left\lbrace<br>
 <li>若$s_i$约等于0，则说明样本$x_i$在两个簇的边界上</li>
 </ul>
 <p>样本集合的轮廓系数是其所有样本轮廓系数的平均值。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Python</span></span><br><span class="line"><span class="keyword">from</span> sklearn.metrics <span class="keyword">import</span> silhouette_score</span><br><span class="line"></span><br><span class="line">ss = silhouette_scor(X, labels, metric=<span class="string">'euclidean'</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Python</span></span><br><span class="line"><span class="keyword">from</span> sklearn.metrics <span class="keyword">import</span> silhouette_score</span><br><span class="line"></span><br><span class="line">ss = silhouette_scor(X, labels, metric=<span class="string">&#x27;euclidean&#x27;</span>)</span><br></pre></td></tr></table></figure>
 <h2 id="Calinski-Harabasz指数"><a class="header-anchor" href="#Calinski-Harabasz指数"></a>Calinski-Harabasz指数</h2>
 <p><strong>Calinski-Harabasz Index</strong>（Variance Ratio Criterion）：用簇内的稠密程度和簇间的离散程度来评估聚类的效果。</p>
 <ul>
@@ -619,27 +619,27 @@ $$TSS=\sum_{i=1}<sup>n(x_i-\bar{x})</sup>2$$</li>
 <li>$W_k$是类别内部数据的协方差矩阵（$SS_W$ is the overall within-cluster variance）</li>
 <li>$\mathrm{tr}$ 是矩阵的迹</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Python实现</span></span><br><span class="line"><span class="keyword">from</span> sklearn.metrics <span class="keyword">import</span> calinski-harabasz_score</span><br><span class="line"></span><br><span class="line">ch = calinski_harabasz_score(X, labels)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Python实现</span></span><br><span class="line"><span class="keyword">from</span> sklearn.metrics <span class="keyword">import</span> calinski-harabasz_score</span><br><span class="line"></span><br><span class="line">ch = calinski_harabasz_score(X, labels)</span><br></pre></td></tr></table></figure>
 <h1 id="参考资料"><a class="header-anchor" href="#参考资料"></a>参考资料</h1>
 <ul>
-<li><a href="https://mp.weixin.qq.com/s?__biz=MzU5NzkxODMxOA==&amp;mid=2247486297&amp;idx=1&amp;sn=0a2c549de4e1cfe54694e8364acfceb9&amp;chksm=fe4d5c58c93ad54e7b45b5f644870f011f5e7ffc1d6cb0698f53d15d38e1419bc8cc7c0e1cd7&amp;token=1168016353&amp;lang=zh_CN#rd" target="_blank" rel="noopener">聚类模型评估</a></li>
-<li><a href="https://www.lagou.com/lgeduarticle/109119.html" target="_blank" rel="noopener">机器学习之模型评估详解</a></li>
-<li><a href="https://zhaokv.com/machine_learning/2016/03/ml-metric.html" target="_blank" rel="noopener">机器学习评价指标大汇总</a></li>
-<li><a href="https://en.wikipedia.org/wiki/Rand_index#Adjusted_Rand_index" target="_blank" rel="noopener"> 维基百科-Rand Index</a></li>
-<li><a href="https://en.wikipedia.org/wiki/Adjusted_mutual_information" target="_blank" rel="noopener">维基百科-调整互信息</a></li>
-<li><a href="https://blog.csdn.net/sinat_30203515/article/details/82634778" target="_blank" rel="noopener">兰德系数、调整兰德系数</a></li>
-<li><a href="https://www.wandouip.com/t5i267906/" target="_blank" rel="noopener">方法名称最优值sklearn函数</a></li>
-<li><a href="https://www.jianshu.com/p/b9528df2f57a" target="_blank" rel="noopener">聚类模型评估</a></li>
-<li><a href="https://cloud.tencent.com/developer/article/1010857" target="_blank" rel="noopener">聚类︱python实现六大分群质量评估指标（兰德系数、互信息、轮廓系数）</a></li>
-<li><a href="https://www.cnblogs.com/pinard/p/6169370.html" target="_blank" rel="noopener">用scikit-learn学习K-Means聚类</a></li>
-<li><a href="https://ethen8181.github.io/machine-learning/clustering_old/clustering/clustering.html" target="_blank" rel="noopener">Calinski-Harabasz Index and Bootstrap Evaluation with Clustering Methods</a></li>
-<li><a href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.adjusted_mutual_info_score.html" target="_blank" rel="noopener">sklearn.metrics.adjusted_mutual_info_score</a></li>
-<li><a href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.adjusted_rand_score.html" target="_blank" rel="noopener">sklearn.metrics.adjusted_rand_score</a></li>
-<li><a href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.v_measure_score.html" target="_blank" rel="noopener">sklearn.metrics.v_measure_score</a></li>
-<li><a href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.homogeneity_score.html#sklearn.metrics.homogeneity_score" target="_blank" rel="noopener">sklearn.metrics.homogeneity_score</a></li>
-<li><a href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.completeness_score.html" target="_blank" rel="noopener">sklearn.metrics.completeness_score</a></li>
-<li><a href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.silhouette_score.html" target="_blank" rel="noopener">sklearn.metrics.silhouette_score</a></li>
-<li><a href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.calinski_harabasz_score.html" target="_blank" rel="noopener">sklearn.metrics.calinski_harabasz_score</a></li>
+<li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzU5NzkxODMxOA==&amp;mid=2247486297&amp;idx=1&amp;sn=0a2c549de4e1cfe54694e8364acfceb9&amp;chksm=fe4d5c58c93ad54e7b45b5f644870f011f5e7ffc1d6cb0698f53d15d38e1419bc8cc7c0e1cd7&amp;token=1168016353&amp;lang=zh_CN#rd">聚类模型评估</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.lagou.com/lgeduarticle/109119.html">机器学习之模型评估详解</a></li>
+<li><a target="_blank" rel="noopener" href="https://zhaokv.com/machine_learning/2016/03/ml-metric.html">机器学习评价指标大汇总</a></li>
+<li><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Rand_index#Adjusted_Rand_index"> 维基百科-Rand Index</a></li>
+<li><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Adjusted_mutual_information">维基百科-调整互信息</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/sinat_30203515/article/details/82634778">兰德系数、调整兰德系数</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.wandouip.com/t5i267906/">方法名称最优值sklearn函数</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/b9528df2f57a">聚类模型评估</a></li>
+<li><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1010857">聚类︱python实现六大分群质量评估指标（兰德系数、互信息、轮廓系数）</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/pinard/p/6169370.html">用scikit-learn学习K-Means聚类</a></li>
+<li><a target="_blank" rel="noopener" href="https://ethen8181.github.io/machine-learning/clustering_old/clustering/clustering.html">Calinski-Harabasz Index and Bootstrap Evaluation with Clustering Methods</a></li>
+<li><a target="_blank" rel="noopener" href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.adjusted_mutual_info_score.html">sklearn.metrics.adjusted_mutual_info_score</a></li>
+<li><a target="_blank" rel="noopener" href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.adjusted_rand_score.html">sklearn.metrics.adjusted_rand_score</a></li>
+<li><a target="_blank" rel="noopener" href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.v_measure_score.html">sklearn.metrics.v_measure_score</a></li>
+<li><a target="_blank" rel="noopener" href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.homogeneity_score.html#sklearn.metrics.homogeneity_score">sklearn.metrics.homogeneity_score</a></li>
+<li><a target="_blank" rel="noopener" href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.completeness_score.html">sklearn.metrics.completeness_score</a></li>
+<li><a target="_blank" rel="noopener" href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.silhouette_score.html">sklearn.metrics.silhouette_score</a></li>
+<li><a target="_blank" rel="noopener" href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.calinski_harabasz_score.html">sklearn.metrics.calinski_harabasz_score</a></li>
 </ul>
 <h1 id="推荐阅读"><a class="header-anchor" href="#推荐阅读"></a>推荐阅读</h1>
 <ul>
@@ -660,11 +660,6 @@ $$TSS=\sum_{i=1}<sup>n(x_i-\bar{x})</sup>2$$</li>
   <div id="qr" style="display: none;">
       
       <div style="display: inline-block;">
-        <img src="/images/reward2021.png" alt="Skye WeChat Bezahlung">
-        <p>WeChat Bezahlung</p>
-      </div>
-      
-      <div style="display: inline-block;">
         <img src="/images/alipay.jpg" alt="Skye 支付宝">
         <p>支付宝</p>
       </div>
@@ -672,6 +667,11 @@ $$TSS=\sum_{i=1}<sup>n(x_i-\bar{x})</sup>2$$</li>
       <div style="display: inline-block;">
         <img src="/images/wechatpay.jpg" alt="Skye 微信支付">
         <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/reward2021.png" alt="Skye WeChat Pay">
+        <p>WeChat Pay</p>
       </div>
 
   </div>
@@ -776,7 +776,7 @@ $$TSS=\sum_{i=1}<sup>n(x_i-\bar{x})</sup>2$$</li>
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#聚类评估"><span class="nav-number">1.</span> <span class="nav-text">聚类评估</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#ARI评价法"><span class="nav-number">1.1.</span> <span class="nav-text">ARI评价法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#兰德系数RI"><span class="nav-number">1.1.1.</span> <span class="nav-text">兰德系数RI</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#调整兰德系数ARI"><span class="nav-number">1.1.2.</span> <span class="nav-text">调整兰德系数ARI</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AMI评价法"><span class="nav-number">1.2.</span> <span class="nav-text">AMI评价法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#互信息MI"><span class="nav-number">1.2.1.</span> <span class="nav-text">互信息MI</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#标准化的互信息NMI"><span class="nav-number">1.2.2.</span> <span class="nav-text">标准化的互信息NMI</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#调整互信息AMI"><span class="nav-number">1.2.3.</span> <span class="nav-text">调整互信息AMI</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#V-measure评价法"><span class="nav-number">1.3.</span> <span class="nav-text">V-measure评价法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#同质性"><span class="nav-number">1.3.1.</span> <span class="nav-text">同质性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#完整性"><span class="nav-number">1.3.2.</span> <span class="nav-text">完整性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#V-measure"><span class="nav-number">1.3.3.</span> <span class="nav-text">V-measure</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FMI评价法"><span class="nav-number">1.4.</span> <span class="nav-text">FMI评价法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#轮廓系数"><span class="nav-number">1.5.</span> <span class="nav-text">轮廓系数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Calinski-Harabasz指数"><span class="nav-number">1.6.</span> <span class="nav-text">Calinski-Harabasz指数</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料"><span class="nav-number">2.</span> <span class="nav-text">参考资料</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#推荐阅读"><span class="nav-number">3.</span> <span class="nav-text">推荐阅读</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%81%9A%E7%B1%BB%E8%AF%84%E4%BC%B0"><span class="nav-number">1.</span> <span class="nav-text">聚类评估</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#ARI%E8%AF%84%E4%BB%B7%E6%B3%95"><span class="nav-number">1.1.</span> <span class="nav-text">ARI评价法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B0%E5%BE%B7%E7%B3%BB%E6%95%B0RI"><span class="nav-number">1.1.1.</span> <span class="nav-text">兰德系数RI</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B0%83%E6%95%B4%E5%85%B0%E5%BE%B7%E7%B3%BB%E6%95%B0ARI"><span class="nav-number">1.1.2.</span> <span class="nav-text">调整兰德系数ARI</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AMI%E8%AF%84%E4%BB%B7%E6%B3%95"><span class="nav-number">1.2.</span> <span class="nav-text">AMI评价法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%92%E4%BF%A1%E6%81%AFMI"><span class="nav-number">1.2.1.</span> <span class="nav-text">互信息MI</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%87%E5%87%86%E5%8C%96%E7%9A%84%E4%BA%92%E4%BF%A1%E6%81%AFNMI"><span class="nav-number">1.2.2.</span> <span class="nav-text">标准化的互信息NMI</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B0%83%E6%95%B4%E4%BA%92%E4%BF%A1%E6%81%AFAMI"><span class="nav-number">1.2.3.</span> <span class="nav-text">调整互信息AMI</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#V-measure%E8%AF%84%E4%BB%B7%E6%B3%95"><span class="nav-number">1.3.</span> <span class="nav-text">V-measure评价法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%8C%E8%B4%A8%E6%80%A7"><span class="nav-number">1.3.1.</span> <span class="nav-text">同质性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%8C%E6%95%B4%E6%80%A7"><span class="nav-number">1.3.2.</span> <span class="nav-text">完整性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#V-measure"><span class="nav-number">1.3.3.</span> <span class="nav-text">V-measure</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FMI%E8%AF%84%E4%BB%B7%E6%B3%95"><span class="nav-number">1.4.</span> <span class="nav-text">FMI评价法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BD%AE%E5%BB%93%E7%B3%BB%E6%95%B0"><span class="nav-number">1.5.</span> <span class="nav-text">轮廓系数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Calinski-Harabasz%E6%8C%87%E6%95%B0"><span class="nav-number">1.6.</span> <span class="nav-text">Calinski-Harabasz指数</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="nav-number">2.</span> <span class="nav-text">参考资料</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8E%A8%E8%8D%90%E9%98%85%E8%AF%BB"><span class="nav-number">3.</span> <span class="nav-text">推荐阅读</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -845,17 +845,17 @@ $$TSS=\sum_{i=1}<sup>n(x_i-\bar{x})</sup>2$$</li>
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">425k</span>
+    <span title="站点总字数">428k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">6:27</span>
+    <span title="站点阅读时长">6:29</span>
 </div>
 
 
-  <script src='https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js'></script>
+  <script src='https://unpkg.com/mermaid@/dist/mermaid.min.js'></script>
   <script>
     if (window.mermaid) {
       mermaid.initialize({theme: 'forest'});

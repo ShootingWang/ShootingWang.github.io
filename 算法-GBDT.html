@@ -4,7 +4,7 @@
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.0">
+<meta name="generator" content="Hexo 6.0.0">
 <meta name="baidu-site-verification" content="GLZSr3LDqT" />
 <meta name="google-site-verification" content="fZvQBljM9I6UA4l4wwiA5wECEn7k0V4-DgCfWEPNtFc" />
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
@@ -33,9 +33,9 @@
 <meta property="og:site_name" content="Skye">
 <meta property="og:description" content="Gradient Boosting Decision Tree">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://github.com/%E7%AE%97%E6%B3%95-GBDT/GBDT.png">
+<meta property="og:image" content="https://github.com/ShootingWang/ShootingWang.github.io/%E7%AE%97%E6%B3%95-GBDT.htm/GBDT.png">
 <meta property="article:published_time" content="2020-05-28T09:00:00.000Z">
-<meta property="article:modified_time" content="2022-03-22T12:03:26.686Z">
+<meta property="article:modified_time" content="2022-10-12T04:44:21.720Z">
 <meta property="article:author" content="Skye">
 <meta property="article:tag" content="算法">
 <meta property="article:tag" content="Machine Learning 机器学习">
@@ -44,7 +44,7 @@
 <meta property="article:tag" content="回归">
 <meta property="article:tag" content="Boosting">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://github.com/%E7%AE%97%E6%B3%95-GBDT/GBDT.png">
+<meta name="twitter:image" content="https://github.com/ShootingWang/ShootingWang.github.io/%E7%AE%97%E6%B3%95-GBDT.htm/GBDT.png">
 
 <link rel="canonical" href="https://github.com/ShootingWang/ShootingWang.github.io/%E7%AE%97%E6%B3%95-GBDT.html">
 
@@ -274,7 +274,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-03-22 20:03:26" itemprop="dateModified" datetime="2022-03-22T20:03:26+08:00">2022-03-22</time>
+                <time title="修改时间：2022-10-12 12:44:21" itemprop="dateModified" datetime="2022-10-12T12:44:21+08:00">2022-10-12</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -319,7 +319,7 @@
 
       
         <center>Gradient Boosting Decision Tree</center>
-<a id="more"></a>
+<span id="more"></span>
 <p>梯度提升树</p>
 <p>不同简称：</p>
 <ul>
@@ -331,10 +331,10 @@
 </ul>
 <h1 id="GBDT"><a class="header-anchor" href="#GBDT"></a>GBDT</h1>
 <div class="note default">
-            <p>Breiman, L. (June 1997). “<a href="https://statistics.berkeley.edu/sites/default/files/tech-reports/486.pdf" target="_blank" rel="noopener">Arcing The Edge</a>”. Technical Report 486. Statistics Department, University of California, Berkeley.</p>
+            <p>Breiman, L. (June 1997). “<a target="_blank" rel="noopener" href="https://statistics.berkeley.edu/sites/default/files/tech-reports/486.pdf">Arcing The Edge</a>”. Technical Report 486. Statistics Department, University of California, Berkeley.</p>
           </div>
 <meta name="referrer" content="no-referrer">
-<img src="/%E7%AE%97%E6%B3%95-GBDT/GBDT.png" class title="GBDT训练过程(图片来自:Boosting框架)">
+<img src="/ShootingWang/ShootingWang.github.io/%E7%AE%97%E6%B3%95-GBDT.htm/GBDT.png" class title="GBDT训练过程(图片来自:Boosting框架)">
 <h2 id="原理"><a class="header-anchor" href="#原理"></a>原理</h2>
 <p>GBDT进行$T$次迭代，第$t$次（$t=1,\cdots,T$）迭代产生一个弱分类器$h_t(x)$；下一次迭代时，会根据上一次迭代计算得到的残差进行学习，并生成一个弱分类器。</p>
 <p>最终得到的强分类器为<br>
@@ -355,9 +355,9 @@ $$L\left(y, H_{t}(x) \right)=L\left(y, H_{t-1}(x)+h_t(x) \right)$$</p>
 <p>当损失函数为平方损失函数时，每一步优化的实现较为简单，当损失函数为一般损失函数时，每一步优化的实现较为困难。</p>
 <p>针对该问题，Freidman提出了梯度提升（Gradient Boosting）算法——用损失函数的负梯度来拟合本轮迭代（优化）的近似值，进而拟合一棵CART回归树。</p>
 <p>第$t$轮迭代的第$i$个样本的损失函数的负梯度为<br>
-$$r_i^{(t)}=-\left[\frac{\partial{L(y_i,f(x_i))}}{\partial{f(x_i)}} \right]<em>{f(x)=H</em>{t-1}(x)}$$</p>
+$$r_i^{(t)}=-\left[\frac{\partial{L(y_i,f(x_i))} }{\partial{f(x_i)} } \right]<em>{f(x)=H</em>{t-1}(x)}$$</p>
 <div class="note danger">
-            <h2 id="GBDT回归算法"><a class="header-anchor" href="#GBDT回归算法"></a>GBDT回归算法</h2><p><strong>输入</strong>：训练数据集${(x_1,y_1),\cdots, (x_N,y_N)}$</p><p>$x_i\in X\subseteq \mathbb{R}^p,\quad y_i\in Y\subseteq \mathbb{R}$</p><p><strong>输出</strong>：提升树<br>$$H(x)=H_0(x)+\sum_{t=1}<sup>T\sum_{j=1}</sup>Jc_j^{(t)}\mathbf{I}\left(x\in R_j^{(t)} \right)$$</p><ol><li>初始化<br>$$H_0(x)=\arg{\min_c{\sum_{i=1}^NL(y_i, c)}}$$</li><li>对于$t=1,\cdots, T$，<ol><li>对$i=1,\cdots,N$，计算<br>$$r_i^{(t)}=-\left[\frac{\partial{L(y_i,f(x_i))}}{\partial{f(x_i)}} \right]<em>{f(x)=H</em>{t-1}(x)}$$</li><li>对$r_i<sup>{(t)}$拟合一棵回归树，得到第$t$棵树的叶结点区域$R_j</sup>{(t)}\quad(j=1,\cdots,J)$，其中$J$为叶结点的个数</li><li>对$j=1,\cdots,J$，计算<br>$$c_j^{(t)}=\arg{\min_c{\sum_{x_i\in R_j^{(t)}}L\left(y_i, H_{t-1}(x_i)+c \right)}}$$</li><li>更新<br>$$H_t(x)=H_{t-1}(x)+\sum_{j=1}<sup>Jc_j</sup>{(t)}\mathbf{I}\left(x\in R_j^{(t)} \right)$$</li></ol></li></ol>
+            <h2 id="GBDT回归算法"><a class="header-anchor" href="#GBDT回归算法"></a>GBDT回归算法</h2><p><strong>输入</strong>：训练数据集${(x_1,y_1),\cdots, (x_N,y_N)}$</p><p>$x_i\in X\subseteq \mathbb{R}^p,\quad y_i\in Y\subseteq \mathbb{R}$</p><p><strong>输出</strong>：提升树<br>$$H(x)=H_0(x)+\sum_{t=1}<sup>T\sum_{j=1}</sup>Jc_j^{(t)}\mathbf{I}\left(x\in R_j^{(t)} \right)$$</p><ol><li>初始化<br>$$H_0(x)=\arg{\min_c{\sum_{i=1}^NL(y_i, c)} }$$</li><li>对于$t=1,\cdots, T$，<ol><li>对$i=1,\cdots,N$，计算<br>$$r_i^{(t)}=-\left[\frac{\partial{L(y_i,f(x_i))} }{\partial{f(x_i)} } \right]<em>{f(x)=H</em>{t-1}(x)}$$</li><li>对$r_i<sup>{(t)}$拟合一棵回归树，得到第$t$棵树的叶结点区域$R_j</sup>{(t)}\quad(j=1,\cdots,J)$，其中$J$为叶结点的个数</li><li>对$j=1,\cdots,J$，计算<br>$$c_j^{(t)}=\arg{\min_c{\sum_{x_i\in R_j^{(t)} }L\left(y_i, H_{t-1}(x_i)+c \right)} }$$</li><li>更新<br>$$H_t(x)=H_{t-1}(x)+\sum_{j=1}<sup>Jc_j</sup>{(t)}\mathbf{I}\left(x\in R_j^{(t)} \right)$$</li></ol></li></ol>
           </div>
 <p>再看GBDT分类算法。</p>
 <p>当损失函数为指数损失函数时，此时二分类GBDT退化为<a href="/%E7%AE%97%E6%B3%95-AdaBoost.html" title="AdaBoost算法">AdaBoost算法</a>。</p>
@@ -365,7 +365,7 @@ $$r_i^{(t)}=-\left[\frac{\partial{L(y_i,f(x_i))}}{\partial{f(x_i)}} \right]<em>{
 <p>损失函数为<br>
 $$L(y, H(x))=\log\left(1+\exp{\left(-yH(x) \right)} \right)$$</p>
 <div class="note danger">
-            <h2 id="GBDT二分类算法"><a class="header-anchor" href="#GBDT二分类算法"></a>GBDT二分类算法</h2><p><strong>输入</strong>：训练数据集${(x_1,y_1),\cdots, (x_N,y_N)}$</p><p>$x_i\in X\subseteq \mathbb{R}^p,\quad y_i\in {-1,+1}$</p><p><strong>输出</strong>：提升树<br>$$H(x)=H_0(x)+\sum_{t=1}<sup>T\sum_{j=1}</sup>Jc_j^{(t)}\mathbf{I}\left(x\in R_j^{(t)} \right)$$</p><ol><li>初始化<br>$$H_0(x)=\arg{\min_c{\sum_{i=1}^NL(y_i, c)}}$$</li><li>对于$t=1,\cdots, T$，<ol><li>对$i=1,\cdots,N$，计算<br>$$r_i^{(t)}=-\left[\frac{\partial{L(y_i,f(x_i))}}{\partial{f(x_i)}} \right]<em>{f(x)=H</em>{t-1}(x)}=\frac{y_i}{1+\exp\left(y_iH_{t-1}(x_i) \right)}$$</li><li>对$r_i<sup>{(t)}$拟合一棵决策树，得到第$t$棵树的叶结点区域$R_j</sup>{(t)}\quad(j=1,\cdots,J)$，其中$J$为叶结点的个数</li><li>对$j=1,\cdots,J$，计算<br>$$c_j^{(t)}=\arg{\min_c{\sum_{x_i\in R_j^{(t)}}\log{\left{1+\exp{\left[-y_i \left(H_{t-1}(x_i)+c \right)\right]} \right}}}}$$<br>一般使用下面这个近似值代替<br>$$c_j^{(t)}=\frac{\sum_{x_i\in R_j<sup>{(t)}}r_i</sup>{(t)}}{\sum_{x_i\in R_j<sup>{(t)}}|r_i</sup>{(t)}|\left(1- |r_i^{(t)}|\right)}$$</li><li>更新<br>$$H_t(x)=H_{t-1}(x)+\sum_{j=1}<sup>Jc_j</sup>{(t)}\mathbf{I}\left(x\in R_j^{(t)} \right)$$</li></ol></li></ol>
+            <h2 id="GBDT二分类算法"><a class="header-anchor" href="#GBDT二分类算法"></a>GBDT二分类算法</h2><p><strong>输入</strong>：训练数据集${(x_1,y_1),\cdots, (x_N,y_N)}$</p><p>$x_i\in X\subseteq \mathbb{R}^p,\quad y_i\in {-1,+1}$</p><p><strong>输出</strong>：提升树<br>$$H(x)=H_0(x)+\sum_{t=1}<sup>T\sum_{j=1}</sup>Jc_j^{(t)}\mathbf{I}\left(x\in R_j^{(t)} \right)$$</p><ol><li>初始化<br>$$H_0(x)=\arg{\min_c{\sum_{i=1}^NL(y_i, c)} }$$</li><li>对于$t=1,\cdots, T$，<ol><li>对$i=1,\cdots,N$，计算<br>$$r_i^{(t)}=-\left[\frac{\partial{L(y_i,f(x_i))} }{\partial{f(x_i)} } \right]<em>{f(x)=H</em>{t-1}(x)}=\frac{y_i}{1+\exp\left(y_iH_{t-1}(x_i) \right)}$$</li><li>对$r_i<sup>{(t)}$拟合一棵决策树，得到第$t$棵树的叶结点区域$R_j</sup>{(t)}\quad(j=1,\cdots,J)$，其中$J$为叶结点的个数</li><li>对$j=1,\cdots,J$，计算<br>$$c_j^{(t)}=\arg{\min_c{\sum_{x_i\in R_j^{(t)} }\log{\left{1+\exp{\left[-y_i \left(H_{t-1}(x_i)+c \right)\right]} \right} }} }$$<br>一般使用下面这个近似值代替<br>$$c_j^{(t)}=\frac{\sum_{x_i\in R_j^{(t)} }r_i^{(t)} }{\sum_{x_i\in R_j^{(t)} }|r_i^{(t)}|\left(1- |r_i^{(t)}|\right)}$$</li><li>更新<br>$$H_t(x)=H_{t-1}(x)+\sum_{j=1}<sup>Jc_j</sup>{(t)}\mathbf{I}\left(x\in R_j^{(t)} \right)$$</li></ol></li></ol>
           </div>
 <p>考虑多元GBDT分类。</p>
 <p>假设类别数为$K$，对应的对数似然函数为<br>
@@ -378,20 +378,20 @@ $$y_k=\left{<br>
 \end{array}<br>
 \right.$$<br>
 第$k$类的概率$p_k(x)$<br>
-$$p_k(x)=P(y=k|x)=\frac{\exp{f_k(x)}}{\sum_{l=1}^K\exp{f_l(x)}}$$<br>
+$$p_k(x)=P(y=k|x)=\frac{\exp{f_k(x)} }{\sum_{l=1}^K\exp{f_l(x)} }$$<br>
 其中$f_1,\cdots,f_K$是$K$个不同的CART回归树。</p>
 <div class="note default">
             <p>每一轮的训练，实际上是训练了$K$棵树，去拟合Softmax的每一个分支模型的负梯度。</p>
           </div>
 <p>单个样本的损失函数为<br>
-$$L(y,x)=-\sum_{k=1}<sup>Ky_k\log{\frac{\exp{f_k(x)}}{\sum_{l=1}</sup>K\exp{f_l(x)}}}$$</p>
+$$L(y,x)=-\sum_{k=1}^Ky_k\log{\frac{\exp{f_k(x)} }{\sum_{l=1}^K\exp{f_l(x)} }}$$</p>
 <p>负梯度为<br>
-$$-\frac{\partial{L}}{\partial{f_k(x)}}=y_k-\frac{\exp{f_k(x)}}{\sum_{l=1}^K\exp{f_l(x)}}=y_k-p_k(x)$$</p>
+$$-\frac{\partial{L} }{\partial{f_k(x)} }=y_k-\frac{\exp{f_k(x)} }{\sum_{l=1}^K\exp{f_l(x)} }=y_k-p_k(x)$$</p>
 <blockquote>
 <p>Python中<code>sklearn</code>的GBDT不支持多因变量，可以针对每个因变量单独运行GBDT，建立多个GBDT模型</p>
 </blockquote>
 <div class="note danger">
-            <h2 id="GBDT多分类算法"><a class="header-anchor" href="#GBDT多分类算法"></a>GBDT多分类算法</h2><p><strong>输入</strong>：训练数据集${(x_1,y_1),\cdots, (x_N,y_N)}$</p><p>$x_i\in X\subseteq \mathbb{R}^p,\quad y_i\in Y\subseteq \mathbb{R}^K$<br>$$y_i=(y_{i1},\cdots,y_{iK})^T, \quad y_{ij}=\left{\begin{array}{ll}<br>1, &amp; 如果第i个样本属于第k个类别\<br>0, &amp; j\neq k<br>\end{array} \right.$$</p><p><strong>输出</strong>：提升树<br>$$H(x)=\left(f_1(x),\cdots,f_K(x) \right)$$<br>其中<br>$$f_k(x)=\sum_{t=1}<sup>T\sum_{j=1}</sup>Jc_{jk}^{(t)}\mathbf{I}\left(x\in R_{jk}^{(t)} \right)$$</p><ol><li><p>初始化<br>$$H_0(x)=\left(f_1<sup>{(0)}(x),\cdots,f_K</sup>{(0)}(x) \right)^T, 其中f_j^{(0)}(x)=0(j=1,\cdots,K)$$</p></li><li><p>对$t=1,\cdots,T$，</p></li><li><p>对$k=1,\cdots,K$，计算<br>$$p_k<sup>{(t)}(x)=\frac{\exp{f_k</sup>{(t)}(x)}}{\sum_{l=1}<sup>K\exp{f_l</sup>{(t)}(x)}}$$<br>1. 对$i=1,\cdots,N$，计算<br>$$r_{ik}<sup>{(t)}=y_{ik}-p_k</sup>{(t)}(x_i)$$<br>2. 对$r_{ik}<sup>{(t)}$拟合一棵回归树，得到第$t$次迭代的第$k$棵树的叶结点区域$R_{jk}</sup>{(t)}\quad(j=1,\cdots,J)$，其中$J$为叶结点的个数<br>3. 对$j=1,\cdots,J$，计算<br>$$c_{jk}^{(t)}=\frac{K-1}{K}\frac{\sum_{x_i\in R_{jk}<sup>{(t)}}r_{ik}</sup>{(t)}}{\sum_{x_i\in R_{jk}<sup>{(t)}}|r_{ik}</sup>{(t)}|(1-|r_{ik}^{(t)}|)}$$<br>4. 更新<br>$$f_k<sup>{(t)}(x)=f_k</sup>{(t-1)}(x)+\sum_{j=1}<sup>Jc_{jk}</sup>{(t)}\mathbf{I}\left(x\in R_{jk}^{(t)} \right)$$</p></li></ol>
+            <h2 id="GBDT多分类算法"><a class="header-anchor" href="#GBDT多分类算法"></a>GBDT多分类算法</h2><p><strong>输入</strong>：训练数据集${(x_1,y_1),\cdots, (x_N,y_N)}$</p><p>$x_i\in X\subseteq \mathbb{R}^p,\quad y_i\in Y\subseteq \mathbb{R}^K$<br>$$y_i=(y_{i1},\cdots,y_{iK})^T, \quad y_{ij}=\left{\begin{array}{ll}<br>1, &amp; 如果第i个样本属于第k个类别\<br>0, &amp; j\neq k<br>\end{array} \right.$$</p><p><strong>输出</strong>：提升树<br>$$H(x)=\left(f_1(x),\cdots,f_K(x) \right)$$<br>其中<br>$$f_k(x)=\sum_{t=1}<sup>T\sum_{j=1}</sup>Jc_{jk}^{(t)}\mathbf{I}\left(x\in R_{jk}^{(t)} \right)$$</p><ol><li><p>初始化<br>$$H_0(x)=\left(f_1<sup>{(0)}(x),\cdots,f_K</sup>{(0)}(x) \right)^T, 其中f_j^{(0)}(x)=0(j=1,\cdots,K)$$</p></li><li><p>对$t=1,\cdots,T$，</p></li><li><p>对$k=1,\cdots,K$，计算<br>$$p_k<sup>{(t)}(x)=\frac{\exp{f_k</sup>{(t)}(x)} }{\sum_{l=1}<sup>K\exp{f_l</sup>{(t)}(x)} }$$<br>1. 对$i=1,\cdots,N$，计算<br>$$r_{ik}<sup>{(t)}=y_{ik}-p_k</sup>{(t)}(x_i)$$<br>2. 对$r_{ik}<sup>{(t)}$拟合一棵回归树，得到第$t$次迭代的第$k$棵树的叶结点区域$R_{jk}</sup>{(t)}\quad(j=1,\cdots,J)$，其中$J$为叶结点的个数<br>3. 对$j=1,\cdots,J$，计算<br>$$c_{jk}^{(t)}=\frac{K-1}{K}\frac{\sum_{x_i\in R_{jk}^{(t)} }r_{ik}^{(t)} }{\sum_{x_i\in R_{jk}^{(t)} }|r_{ik}<sup>{(t)}|(1-|r_{ik}</sup>{(t)}|)}$$<br>4. 更新<br>$$f_k<sup>{(t)}(x)=f_k</sup>{(t-1)}(x)+\sum_{j=1}<sup>Jc_{jk}</sup>{(t)}\mathbf{I}\left(x\in R_{jk}^{(t)} \right)$$</p></li></ol>
           </div>
 <h2 id="正则化"><a class="header-anchor" href="#正则化"></a>正则化</h2>
 <p>为了防止过拟合，可以对GBDT进行正则化。</p>
@@ -500,13 +500,13 @@ $$r(y_i, H(x_i))=\left{<br>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
-<pre><code>.dataframe tbody tr th {
+<pre><code>.dataframe tbody tr th &#123;
     vertical-align: top;
-}
+&#125;
 
-.dataframe thead th {
+.dataframe thead th &#123;
     text-align: center;
-}
+&#125;
 </code></pre>
 </style>
 <table border="1" class="dataframe">
@@ -607,13 +607,13 @@ $$r(y_i, H(x_i))=\left{<br>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
-<pre><code>.dataframe tbody tr th {
+<pre><code>.dataframe tbody tr th &#123;
     vertical-align: top;
-}
+&#125;
 
-.dataframe thead th {
+.dataframe thead th &#123;
     text-align: center;
-}
+&#125;
 </code></pre>
 </style>
 <table border="1" class="dataframe">
@@ -650,12 +650,12 @@ $$r(y_i, H(x_i))=\left{<br>
 </div>
 <h1 id="参考资料"><a class="header-anchor" href="#参考资料"></a>参考资料</h1>
 <ul>
-<li><a href="https://blog.csdn.net/suranxu007/article/details/49910323" target="_blank" rel="noopener">GBDT（MART） 迭代决策树入门教程 | 简介</a></li>
-<li><a href="https://www.cnblogs.com/pinard/p/6140514.html" target="_blank" rel="noopener">刘建平Pinard-梯度提升树(GBDT)原理小结</a></li>
-<li><a href="http://www.17bigdata.com/%e9%9a%8f%e6%9c%ba%e6%a3%ae%e6%9e%97%e5%92%8cgbdt%e7%9a%84%e5%8c%ba%e5%88%ab/" target="_blank" rel="noopener">随机森林和GBDT的区别</a></li>
-<li><a href="https://www.zybuluo.com/vivounicorn/note/446479#24-bagging-and-boosting%E6%A1%86%E6%9E%B6" target="_blank" rel="noopener">Boosting框架</a></li>
-<li><a href="https://book.douban.com/subject/10590856/" target="_blank" rel="noopener">李航-统计学习方法</a></li>
-<li><a href="https://zhuanlan.zhihu.com/p/91652813?utm_source=wechat_session" target="_blank" rel="noopener">深入理解GBDT多分类算法</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/suranxu007/article/details/49910323">GBDT（MART） 迭代决策树入门教程 | 简介</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/pinard/p/6140514.html">刘建平Pinard-梯度提升树(GBDT)原理小结</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.17bigdata.com/%e9%9a%8f%e6%9c%ba%e6%a3%ae%e6%9e%97%e5%92%8cgbdt%e7%9a%84%e5%8c%ba%e5%88%ab/">随机森林和GBDT的区别</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.zybuluo.com/vivounicorn/note/446479#24-bagging-and-boosting%E6%A1%86%E6%9E%B6">Boosting框架</a></li>
+<li><a target="_blank" rel="noopener" href="https://book.douban.com/subject/10590856/">李航-统计学习方法</a></li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/91652813?utm_source=wechat_session">深入理解GBDT多分类算法</a></li>
 </ul>
 <hr class="footnotes-sep">
 <section class="footnotes">
@@ -684,11 +684,6 @@ $$r(y_i, H(x_i))=\left{<br>
   <div id="qr" style="display: none;">
       
       <div style="display: inline-block;">
-        <img src="/images/reward2021.png" alt="Skye WeChat Bezahlung">
-        <p>WeChat Bezahlung</p>
-      </div>
-      
-      <div style="display: inline-block;">
         <img src="/images/alipay.jpg" alt="Skye 支付宝">
         <p>支付宝</p>
       </div>
@@ -696,6 +691,11 @@ $$r(y_i, H(x_i))=\left{<br>
       <div style="display: inline-block;">
         <img src="/images/wechatpay.jpg" alt="Skye 微信支付">
         <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/reward2021.png" alt="Skye WeChat Pay">
+        <p>WeChat Pay</p>
       </div>
 
   </div>
@@ -803,7 +803,7 @@ $$r(y_i, H(x_i))=\left{<br>
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#GBDT"><span class="nav-number">1.</span> <span class="nav-text">GBDT</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#原理"><span class="nav-number">1.1.</span> <span class="nav-text">原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GBDT回归算法"><span class="nav-number">1.2.</span> <span class="nav-text">GBDT回归算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GBDT二分类算法"><span class="nav-number">1.3.</span> <span class="nav-text">GBDT二分类算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GBDT多分类算法"><span class="nav-number">1.4.</span> <span class="nav-text">GBDT多分类算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正则化"><span class="nav-number">1.5.</span> <span class="nav-text">正则化</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#损失函数"><span class="nav-number">2.</span> <span class="nav-text">损失函数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#对数损失"><span class="nav-number">2.1.</span> <span class="nav-text">对数损失</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#指数损失"><span class="nav-number">2.2.</span> <span class="nav-text">指数损失</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#平方损失"><span class="nav-number">2.3.</span> <span class="nav-text">平方损失</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#绝对损失"><span class="nav-number">2.4.</span> <span class="nav-text">绝对损失</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Huber损失"><span class="nav-number">2.5.</span> <span class="nav-text">Huber损失</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分位数损失"><span class="nav-number">2.6.</span> <span class="nav-text">分位数损失</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">3.</span> <span class="nav-text">总结</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#优点"><span class="nav-number">3.1.</span> <span class="nav-text">优点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#缺点"><span class="nav-number">3.2.</span> <span class="nav-text">缺点</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#比较"><span class="nav-number">4.</span> <span class="nav-text">比较</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#GBDT-vs-RF"><span class="nav-number">4.1.</span> <span class="nav-text">GBDT vs RF</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GBDT-vs-XGBoost"><span class="nav-number">4.2.</span> <span class="nav-text">GBDT vs XGBoost</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GBDT-vs-AdaBoost"><span class="nav-number">4.3.</span> <span class="nav-text">GBDT vs AdaBoost</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料"><span class="nav-number">5.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#GBDT"><span class="nav-number">1.</span> <span class="nav-text">GBDT</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8E%9F%E7%90%86"><span class="nav-number">1.1.</span> <span class="nav-text">原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GBDT%E5%9B%9E%E5%BD%92%E7%AE%97%E6%B3%95"><span class="nav-number">1.2.</span> <span class="nav-text">GBDT回归算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GBDT%E4%BA%8C%E5%88%86%E7%B1%BB%E7%AE%97%E6%B3%95"><span class="nav-number">1.3.</span> <span class="nav-text">GBDT二分类算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GBDT%E5%A4%9A%E5%88%86%E7%B1%BB%E7%AE%97%E6%B3%95"><span class="nav-number">1.4.</span> <span class="nav-text">GBDT多分类算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AD%A3%E5%88%99%E5%8C%96"><span class="nav-number">1.5.</span> <span class="nav-text">正则化</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0"><span class="nav-number">2.</span> <span class="nav-text">损失函数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%B9%E6%95%B0%E6%8D%9F%E5%A4%B1"><span class="nav-number">2.1.</span> <span class="nav-text">对数损失</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8C%87%E6%95%B0%E6%8D%9F%E5%A4%B1"><span class="nav-number">2.2.</span> <span class="nav-text">指数损失</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B9%B3%E6%96%B9%E6%8D%9F%E5%A4%B1"><span class="nav-number">2.3.</span> <span class="nav-text">平方损失</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%9D%E5%AF%B9%E6%8D%9F%E5%A4%B1"><span class="nav-number">2.4.</span> <span class="nav-text">绝对损失</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Huber%E6%8D%9F%E5%A4%B1"><span class="nav-number">2.5.</span> <span class="nav-text">Huber损失</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E4%BD%8D%E6%95%B0%E6%8D%9F%E5%A4%B1"><span class="nav-number">2.6.</span> <span class="nav-text">分位数损失</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">3.</span> <span class="nav-text">总结</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%98%E7%82%B9"><span class="nav-number">3.1.</span> <span class="nav-text">优点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BC%BA%E7%82%B9"><span class="nav-number">3.2.</span> <span class="nav-text">缺点</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%AF%94%E8%BE%83"><span class="nav-number">4.</span> <span class="nav-text">比较</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#GBDT-vs-RF"><span class="nav-number">4.1.</span> <span class="nav-text">GBDT vs RF</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GBDT-vs-XGBoost"><span class="nav-number">4.2.</span> <span class="nav-text">GBDT vs XGBoost</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GBDT-vs-AdaBoost"><span class="nav-number">4.3.</span> <span class="nav-text">GBDT vs AdaBoost</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="nav-number">5.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -872,17 +872,17 @@ $$r(y_i, H(x_i))=\left{<br>
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">425k</span>
+    <span title="站点总字数">428k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">6:27</span>
+    <span title="站点阅读时长">6:29</span>
 </div>
 
 
-  <script src='https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js'></script>
+  <script src='https://unpkg.com/mermaid@/dist/mermaid.min.js'></script>
   <script>
     if (window.mermaid) {
       mermaid.initialize({theme: 'forest'});

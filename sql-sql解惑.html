@@ -4,7 +4,7 @@
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.0">
+<meta name="generator" content="Hexo 6.0.0">
 <meta name="baidu-site-verification" content="GLZSr3LDqT" />
 <meta name="google-site-verification" content="fZvQBljM9I6UA4l4wwiA5wECEn7k0V4-DgCfWEPNtFc" />
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
@@ -312,14 +312,14 @@
 
       
         <center>《SQL解惑（第二版）》学习笔记</center>
-<a id="more"></a>
+<span id="more"></span>
 <h1 id="财政年度表"><a class="header-anchor" href="#财政年度表"></a>财政年度表</h1>
 <ul>
 <li>创建表格时需要添加约束，保证表格的正确性</li>
 </ul>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> FiscalYears</span><br><span class="line">(fiscal_year <span class="built_in">INTEGER</span> <span class="keyword">NOT</span> <span class="literal">NULL</span> PRIMARY <span class="keyword">KEY</span>,   <span class="comment">-- 主键约束</span></span><br><span class="line">start_date <span class="built_in">DATE</span> <span class="keyword">NOT</span> <span class="literal">NULL</span>,</span><br><span class="line"><span class="keyword">CONSTRAINT</span> valid_start_date  <span class="comment">-- 判断start_date是否符合会计年度规定</span></span><br><span class="line">			<span class="keyword">CHECK</span> ( (<span class="keyword">EXTRACT</span>(<span class="keyword">YEAR</span> <span class="keyword">FROM</span> start_date)  = fiscal_year - <span class="number">1</span>)  <span class="comment">-- EXTRACT()从start_date中提取年份</span></span><br><span class="line">				 <span class="keyword">AND</span> (<span class="keyword">EXTRACT</span>(<span class="keyword">MONTH</span> <span class="keyword">FROM</span> start_date) = <span class="number">10</span>)</span><br><span class="line">                 <span class="keyword">AND</span> (<span class="keyword">EXTRACT</span>(<span class="keyword">DAY</span> <span class="keyword">FROM</span> start_date) = <span class="number">01</span>) ),</span><br><span class="line">end_date <span class="built_in">DATE</span> <span class="keyword">NOT</span> <span class="literal">NULL</span>,</span><br><span class="line"><span class="keyword">CONSTRAINT</span> valid_end_date  <span class="comment">-- 判断end_date是否符合会计年度规定</span></span><br><span class="line">			<span class="keyword">CHECK</span> ((<span class="keyword">EXTRACT</span>(<span class="keyword">YEAR</span> <span class="keyword">FROM</span> end_date) = fiscal_year)</span><br><span class="line">				<span class="keyword">AND</span> (<span class="keyword">EXTRACT</span>(<span class="keyword">MONTH</span> <span class="keyword">FROM</span> end_date) = <span class="number">09</span>)</span><br><span class="line">                <span class="keyword">AND</span> (<span class="keyword">EXTRACT</span>(<span class="keyword">DAY</span> <span class="keyword">FROM</span> end_date) = <span class="number">30</span>)));</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> FiscalYears</span><br><span class="line">(fiscal_year <span class="type">INTEGER</span> <span class="keyword">NOT</span> <span class="keyword">NULL</span> <span class="keyword">PRIMARY</span> KEY,   <span class="comment">-- 主键约束</span></span><br><span class="line">start_date <span class="type">DATE</span> <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line"><span class="keyword">CONSTRAINT</span> valid_start_date  <span class="comment">-- 判断start_date是否符合会计年度规定</span></span><br><span class="line">			<span class="keyword">CHECK</span> ( (<span class="built_in">EXTRACT</span>(<span class="keyword">YEAR</span> <span class="keyword">FROM</span> start_date)  <span class="operator">=</span> fiscal_year <span class="operator">-</span> <span class="number">1</span>)  <span class="comment">-- EXTRACT()从start_date中提取年份</span></span><br><span class="line">				 <span class="keyword">AND</span> (<span class="built_in">EXTRACT</span>(<span class="keyword">MONTH</span> <span class="keyword">FROM</span> start_date) <span class="operator">=</span> <span class="number">10</span>)</span><br><span class="line">                 <span class="keyword">AND</span> (<span class="built_in">EXTRACT</span>(<span class="keyword">DAY</span> <span class="keyword">FROM</span> start_date) <span class="operator">=</span> <span class="number">01</span>) ),</span><br><span class="line">end_date <span class="type">DATE</span> <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line"><span class="keyword">CONSTRAINT</span> valid_end_date  <span class="comment">-- 判断end_date是否符合会计年度规定</span></span><br><span class="line">			<span class="keyword">CHECK</span> ((<span class="built_in">EXTRACT</span>(<span class="keyword">YEAR</span> <span class="keyword">FROM</span> end_date) <span class="operator">=</span> fiscal_year)</span><br><span class="line">				<span class="keyword">AND</span> (<span class="built_in">EXTRACT</span>(<span class="keyword">MONTH</span> <span class="keyword">FROM</span> end_date) <span class="operator">=</span> <span class="number">09</span>)</span><br><span class="line">                <span class="keyword">AND</span> (<span class="built_in">EXTRACT</span>(<span class="keyword">DAY</span> <span class="keyword">FROM</span> end_date) <span class="operator">=</span> <span class="number">30</span>)));</span><br></pre></td></tr></table></figure>
 <p>但是……错误的语句竟然成功插入了？？</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">mysql&gt; INSERT INTO FiscalYears VALUES</span><br><span class="line">    -&gt; (1996, '1995-10-01', '1996-08-30');</span><br><span class="line">Query OK, 1 row affected (0.00 sec)</span><br><span class="line"></span><br><span class="line">mysql&gt; SELECT * FROM FiscalYears;</span><br><span class="line">+<span class="comment">-------------+------------+------------+</span></span><br><span class="line">| fiscal_year | start_date | end_date   |</span><br><span class="line">+<span class="comment">-------------+------------+------------+</span></span><br><span class="line">|        1996 | 1995-10-01 | 1996-08-30 |</span><br><span class="line">+<span class="comment">-------------+------------+------------+</span></span><br><span class="line">1 row in <span class="keyword">set</span> (<span class="number">0.00</span> sec)</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">mysql<span class="operator">&gt;</span> <span class="keyword">INSERT</span> <span class="keyword">INTO</span> FiscalYears <span class="keyword">VALUES</span></span><br><span class="line">    <span class="operator">-</span><span class="operator">&gt;</span> (<span class="number">1996</span>, <span class="string">&#x27;1995-10-01&#x27;</span>, <span class="string">&#x27;1996-08-30&#x27;</span>);</span><br><span class="line">Query OK, <span class="number">1</span> <span class="type">row</span> affected (<span class="number">0.00</span> sec)</span><br><span class="line"></span><br><span class="line">mysql<span class="operator">&gt;</span> <span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> FiscalYears;</span><br><span class="line"><span class="operator">+</span><span class="comment">-------------+------------+------------+</span></span><br><span class="line"><span class="operator">|</span> fiscal_year <span class="operator">|</span> start_date <span class="operator">|</span> end_date   <span class="operator">|</span></span><br><span class="line"><span class="operator">+</span><span class="comment">-------------+------------+------------+</span></span><br><span class="line"><span class="operator">|</span>        <span class="number">1996</span> <span class="operator">|</span> <span class="number">1995</span><span class="number">-10</span><span class="number">-01</span> <span class="operator">|</span> <span class="number">1996</span><span class="number">-08</span><span class="number">-30</span> <span class="operator">|</span></span><br><span class="line"><span class="operator">+</span><span class="comment">-------------+------------+------------+</span></span><br><span class="line"><span class="number">1</span> <span class="type">row</span> <span class="keyword">in</span> <span class="keyword">set</span> (<span class="number">0.00</span> sec)</span><br></pre></td></tr></table></figure>
 <p>bug待解决……</p>
 <h1 id="缺勤者"><a class="header-anchor" href="#缺勤者"></a>缺勤者</h1>
 
@@ -336,11 +336,6 @@
   <div id="qr" style="display: none;">
       
       <div style="display: inline-block;">
-        <img src="/images/reward2021.png" alt="Skye WeChat Bezahlung">
-        <p>WeChat Bezahlung</p>
-      </div>
-      
-      <div style="display: inline-block;">
         <img src="/images/alipay.jpg" alt="Skye 支付宝">
         <p>支付宝</p>
       </div>
@@ -348,6 +343,11 @@
       <div style="display: inline-block;">
         <img src="/images/wechatpay.jpg" alt="Skye 微信支付">
         <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/reward2021.png" alt="Skye WeChat Pay">
+        <p>WeChat Pay</p>
       </div>
 
   </div>
@@ -450,7 +450,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#财政年度表"><span class="nav-number">1.</span> <span class="nav-text">财政年度表</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#缺勤者"><span class="nav-number">2.</span> <span class="nav-text">缺勤者</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%B4%A2%E6%94%BF%E5%B9%B4%E5%BA%A6%E8%A1%A8"><span class="nav-number">1.</span> <span class="nav-text">财政年度表</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BC%BA%E5%8B%A4%E8%80%85"><span class="nav-number">2.</span> <span class="nav-text">缺勤者</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -519,17 +519,17 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">425k</span>
+    <span title="站点总字数">428k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">6:27</span>
+    <span title="站点阅读时长">6:29</span>
 </div>
 
 
-  <script src='https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js'></script>
+  <script src='https://unpkg.com/mermaid@/dist/mermaid.min.js'></script>
   <script>
     if (window.mermaid) {
       mermaid.initialize({theme: 'forest'});

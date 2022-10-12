@@ -4,7 +4,7 @@
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.0">
+<meta name="generator" content="Hexo 6.0.0">
 <meta name="baidu-site-verification" content="GLZSr3LDqT" />
 <meta name="google-site-verification" content="fZvQBljM9I6UA4l4wwiA5wECEn7k0V4-DgCfWEPNtFc" />
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
@@ -311,7 +311,7 @@
 
       
         <center></center>
-<a id="more"></a>
+<span id="more"></span>
 <h1 id="数据埋点"><a class="header-anchor" href="#数据埋点"></a>数据埋点</h1>
 <p>数据埋点，是指在应用中的特定流程收集一些信息，用来跟踪应用使用的状况，后续用来进一步优化产品或是提供运营的数据支撑<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>。</p>
 <h1 id="数据流程"><a class="header-anchor" href="#数据流程"></a>数据流程</h1>
@@ -374,13 +374,13 @@
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
-<pre><code>.dataframe tbody tr th {
+<pre><code>.dataframe tbody tr th &#123;
     vertical-align: top;
-}
+&#125;
 
-.dataframe thead th {
+.dataframe thead th &#123;
     text-align: center;
-}
+&#125;
 </code></pre>
 </style>
 <table border="1" class="dataframe">
@@ -496,7 +496,7 @@
 </div>
 <h1 id="数据埋点-2"><a class="header-anchor" href="#数据埋点-2"></a>数据埋点</h1>
 <blockquote>
-<p>数据埋点是数据产品经理、数据运营以及数据分析师，基于业务需求或产品需求对用户在应用内产生行为的每一个事件对应的页面和位置植入相关代码，并通过采集工具上报统计数据，以便相关人员追踪用户行为，推动产品优化或知道运营的一项工程。 ——<a href="http://www.woshipm.com/pd/3261924.html" target="_blank" rel="noopener">产品埋点答疑指南</a></p>
+<p>数据埋点是数据产品经理、数据运营以及数据分析师，基于业务需求或产品需求对用户在应用内产生行为的每一个事件对应的页面和位置植入相关代码，并通过采集工具上报统计数据，以便相关人员追踪用户行为，推动产品优化或知道运营的一项工程。 ——<a target="_blank" rel="noopener" href="http://www.woshipm.com/pd/3261924.html">产品埋点答疑指南</a></p>
 </blockquote>
 <h2 id="平台"><a class="header-anchor" href="#平台"></a>平台</h2>
 <ul>
@@ -524,13 +524,13 @@
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
-<pre><code>.dataframe tbody tr th {
+<pre><code>.dataframe tbody tr th &#123;
     vertical-align: top;
-}
+&#125;
 
-.dataframe thead th {
+.dataframe thead th &#123;
     text-align: center;
-}
+&#125;
 </code></pre>
 </style>
 <table border="1" class="dataframe">
@@ -780,13 +780,13 @@
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
-<pre><code>.dataframe tbody tr th {
+<pre><code>.dataframe tbody tr th &#123;
     vertical-align: top;
-}
+&#125;
 
-.dataframe thead th {
+.dataframe thead th &#123;
     text-align: center;
-}
+&#125;
 </code></pre>
 </style>
 <table border="1" class="dataframe">
@@ -917,7 +917,7 @@ $$IDFA\rightarrow IDFV\rightarrow UDID$$</p>
 <h2 id="网易HubbleData"><a class="header-anchor" href="#网易HubbleData"></a>网易HubbleData</h2>
 <p>网易HubbleData是一个洞察用户行为的数据分析系统，提供一套完整的数据解决方案。</p>
 <p>平台工作流程：</p>
-<figure class="highlight abnf"><table><tr><td class="code"><pre><span class="line">graph TB<span class="comment">;</span></span><br><span class="line">    数据采集---&gt;数据上报<span class="comment">;</span></span><br><span class="line">    数据上报---&gt;数据存储<span class="comment">;</span></span><br><span class="line">    数据存储---&gt;数据分析<span class="comment">;</span></span><br><span class="line">    数据分析---&gt;数据展示<span class="comment">;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">graph TB<span class="comment">;</span></span><br><span class="line">    数据采集---&gt;数据上报<span class="comment">;</span></span><br><span class="line">    数据上报---&gt;数据存储<span class="comment">;</span></span><br><span class="line">    数据存储---&gt;数据分析<span class="comment">;</span></span><br><span class="line">    数据分析---&gt;数据展示<span class="comment">;</span></span><br></pre></td></tr></table></figure>
 <p>平台包括的应用有：</p>
 <ul>
 <li>事件分析</li>
@@ -936,19 +936,19 @@ $$IDFA\rightarrow IDFV\rightarrow UDID$$</p>
 </ol>
 <h1 id="参考资料"><a class="header-anchor" href="#参考资料"></a>参考资料</h1>
 <ul>
-<li><a href="http://www.woshipm.com/pd/3261924.html" target="_blank" rel="noopener">产品埋点答疑指南</a></li>
-<li><a href="http://www.woshipm.com/data-analysis/3887258.html" target="_blank" rel="noopener">数据埋点：用户唯一标识</a></li>
-<li><a href="http://www.woshipm.com/pmd/3523904.html" target="_blank" rel="noopener">从业务视角，分析埋点思路</a></li>
-<li><a href="http://www.woshipm.com/data-analysis/3405281.html" target="_blank" rel="noopener">如何做好数据埋点？</a></li>
-<li><a href="https://hubble.netease.com/help/_book/behaviorAnalysis/eventManagement.html" target="_blank" rel="noopener">HubbleData事件管理</a></li>
-<li><a href="https://blog.csdn.net/ihaveahappyfamily/article/details/80071384" target="_blank" rel="noopener">网易HubbleData之web端js-sdk数据采集库讲解</a></li>
-<li><a href="https://medium.com/@allaboutdataanalysis/%E4%B8%80%E9%80%B1%E6%95%B8%E6%93%9A%E5%9F%8B%E9%BB%9E%E4%B9%8B%E6%97%85-%E7%AC%AC%E4%B8%80%E5%A4%A9-%E5%88%9D%E8%AD%98%E5%9F%8B%E9%BB%9E-9c6a7b1c211" target="_blank" rel="noopener">一周数据埋点之旅</a></li>
-<li><a href="https://www.jianshu.com/p/d45235b51601" target="_blank" rel="noopener">用户行为的深度追踪——事件与埋点</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.woshipm.com/pd/3261924.html">产品埋点答疑指南</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.woshipm.com/data-analysis/3887258.html">数据埋点：用户唯一标识</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.woshipm.com/pmd/3523904.html">从业务视角，分析埋点思路</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.woshipm.com/data-analysis/3405281.html">如何做好数据埋点？</a></li>
+<li><a target="_blank" rel="noopener" href="https://hubble.netease.com/help/_book/behaviorAnalysis/eventManagement.html">HubbleData事件管理</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/ihaveahappyfamily/article/details/80071384">网易HubbleData之web端js-sdk数据采集库讲解</a></li>
+<li><a target="_blank" rel="noopener" href="https://medium.com/@allaboutdataanalysis/%E4%B8%80%E9%80%B1%E6%95%B8%E6%93%9A%E5%9F%8B%E9%BB%9E%E4%B9%8B%E6%97%85-%E7%AC%AC%E4%B8%80%E5%A4%A9-%E5%88%9D%E8%AD%98%E5%9F%8B%E9%BB%9E-9c6a7b1c211">一周数据埋点之旅</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/d45235b51601">用户行为的深度追踪——事件与埋点</a></li>
 </ul>
 <hr class="footnotes-sep">
 <section class="footnotes">
 <ol class="footnotes-list">
-<li id="fn1" class="footnote-item"><p><a href="https://wiki.mbalib.com/wiki/%E6%95%B0%E6%8D%AE%E5%9F%8B%E7%82%B9" target="_blank" rel="noopener">MBA智库百科-数据埋点</a> <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+<li id="fn1" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://wiki.mbalib.com/wiki/%E6%95%B0%E6%8D%AE%E5%9F%8B%E7%82%B9">MBA智库百科-数据埋点</a> <a href="#fnref1" class="footnote-backref">↩︎</a></p>
 </li>
 </ol>
 </section>
@@ -966,11 +966,6 @@ $$IDFA\rightarrow IDFV\rightarrow UDID$$</p>
   <div id="qr" style="display: none;">
       
       <div style="display: inline-block;">
-        <img src="/images/reward2021.png" alt="Skye WeChat Bezahlung">
-        <p>WeChat Bezahlung</p>
-      </div>
-      
-      <div style="display: inline-block;">
         <img src="/images/alipay.jpg" alt="Skye 支付宝">
         <p>支付宝</p>
       </div>
@@ -978,6 +973,11 @@ $$IDFA\rightarrow IDFV\rightarrow UDID$$</p>
       <div style="display: inline-block;">
         <img src="/images/wechatpay.jpg" alt="Skye 微信支付">
         <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/reward2021.png" alt="Skye WeChat Pay">
+        <p>WeChat Pay</p>
       </div>
 
   </div>
@@ -1081,7 +1081,7 @@ $$IDFA\rightarrow IDFV\rightarrow UDID$$</p>
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#数据埋点"><span class="nav-number">1.</span> <span class="nav-text">数据埋点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据流程"><span class="nav-number">2.</span> <span class="nav-text">数据流程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#用户行为模型"><span class="nav-number">3.</span> <span class="nav-text">用户行为模型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#事件"><span class="nav-number">4.</span> <span class="nav-text">事件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#事件三要素"><span class="nav-number">4.1.</span> <span class="nav-text">事件三要素</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据埋点-2"><span class="nav-number">5.</span> <span class="nav-text">数据埋点</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#平台"><span class="nav-number">5.1.</span> <span class="nav-text">平台</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分类"><span class="nav-number">5.2.</span> <span class="nav-text">分类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#点击事件"><span class="nav-number">5.2.1.</span> <span class="nav-text">点击事件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#曝光事件"><span class="nav-number">5.2.2.</span> <span class="nav-text">曝光事件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#页面浏览事件"><span class="nav-number">5.2.3.</span> <span class="nav-text">页面浏览事件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方式"><span class="nav-number">5.3.</span> <span class="nav-text">方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类别"><span class="nav-number">5.4.</span> <span class="nav-text">类别</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#通用埋点"><span class="nav-number">5.4.1.</span> <span class="nav-text">通用埋点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自定义埋点"><span class="nav-number">5.4.2.</span> <span class="nav-text">自定义埋点</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#思路"><span class="nav-number">6.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设计原则"><span class="nav-number">7.</span> <span class="nav-text">设计原则</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#埋点流程"><span class="nav-number">8.</span> <span class="nav-text">埋点流程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#整理埋点方案"><span class="nav-number">8.1.</span> <span class="nav-text">整理埋点方案</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#采集工具植入"><span class="nav-number">8.2.</span> <span class="nav-text">采集工具植入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#埋点测试"><span class="nav-number">8.3.</span> <span class="nav-text">埋点测试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线上数据跟踪"><span class="nav-number">8.4.</span> <span class="nav-text">线上数据跟踪</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#用户唯一标识"><span class="nav-number">9.</span> <span class="nav-text">用户唯一标识</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#设备ID"><span class="nav-number">9.1.</span> <span class="nav-text">设备ID</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Android系统"><span class="nav-number">9.1.1.</span> <span class="nav-text">Android系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IOS系统"><span class="nav-number">9.1.2.</span> <span class="nav-text">IOS系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Web网站"><span class="nav-number">9.1.3.</span> <span class="nav-text">Web网站</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#小程序"><span class="nav-number">9.1.4.</span> <span class="nav-text">小程序</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用户ID"><span class="nav-number">9.2.</span> <span class="nav-text">用户ID</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#意义"><span class="nav-number">10.</span> <span class="nav-text">意义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#注意事项"><span class="nav-number">11.</span> <span class="nav-text">注意事项</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#一些埋点管理系统"><span class="nav-number">12.</span> <span class="nav-text">一些埋点管理系统</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#网易HubbleData"><span class="nav-number">12.1.</span> <span class="nav-text">网易HubbleData</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料"><span class="nav-number">13.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%9F%8B%E7%82%B9"><span class="nav-number">1.</span> <span class="nav-text">数据埋点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E6%B5%81%E7%A8%8B"><span class="nav-number">2.</span> <span class="nav-text">数据流程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%94%A8%E6%88%B7%E8%A1%8C%E4%B8%BA%E6%A8%A1%E5%9E%8B"><span class="nav-number">3.</span> <span class="nav-text">用户行为模型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8B%E4%BB%B6"><span class="nav-number">4.</span> <span class="nav-text">事件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8B%E4%BB%B6%E4%B8%89%E8%A6%81%E7%B4%A0"><span class="nav-number">4.1.</span> <span class="nav-text">事件三要素</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%9F%8B%E7%82%B9-2"><span class="nav-number">5.</span> <span class="nav-text">数据埋点</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B9%B3%E5%8F%B0"><span class="nav-number">5.1.</span> <span class="nav-text">平台</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E7%B1%BB"><span class="nav-number">5.2.</span> <span class="nav-text">分类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%82%B9%E5%87%BB%E4%BA%8B%E4%BB%B6"><span class="nav-number">5.2.1.</span> <span class="nav-text">点击事件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9B%9D%E5%85%89%E4%BA%8B%E4%BB%B6"><span class="nav-number">5.2.2.</span> <span class="nav-text">曝光事件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A1%B5%E9%9D%A2%E6%B5%8F%E8%A7%88%E4%BA%8B%E4%BB%B6"><span class="nav-number">5.2.3.</span> <span class="nav-text">页面浏览事件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B9%E5%BC%8F"><span class="nav-number">5.3.</span> <span class="nav-text">方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B1%BB%E5%88%AB"><span class="nav-number">5.4.</span> <span class="nav-text">类别</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%9A%E7%94%A8%E5%9F%8B%E7%82%B9"><span class="nav-number">5.4.1.</span> <span class="nav-text">通用埋点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%8B%E7%82%B9"><span class="nav-number">5.4.2.</span> <span class="nav-text">自定义埋点</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%80%9D%E8%B7%AF"><span class="nav-number">6.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99"><span class="nav-number">7.</span> <span class="nav-text">设计原则</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9F%8B%E7%82%B9%E6%B5%81%E7%A8%8B"><span class="nav-number">8.</span> <span class="nav-text">埋点流程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B4%E7%90%86%E5%9F%8B%E7%82%B9%E6%96%B9%E6%A1%88"><span class="nav-number">8.1.</span> <span class="nav-text">整理埋点方案</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%87%87%E9%9B%86%E5%B7%A5%E5%85%B7%E6%A4%8D%E5%85%A5"><span class="nav-number">8.2.</span> <span class="nav-text">采集工具植入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%8B%E7%82%B9%E6%B5%8B%E8%AF%95"><span class="nav-number">8.3.</span> <span class="nav-text">埋点测试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BA%BF%E4%B8%8A%E6%95%B0%E6%8D%AE%E8%B7%9F%E8%B8%AA"><span class="nav-number">8.4.</span> <span class="nav-text">线上数据跟踪</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%94%A8%E6%88%B7%E5%94%AF%E4%B8%80%E6%A0%87%E8%AF%86"><span class="nav-number">9.</span> <span class="nav-text">用户唯一标识</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BE%E5%A4%87ID"><span class="nav-number">9.1.</span> <span class="nav-text">设备ID</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Android%E7%B3%BB%E7%BB%9F"><span class="nav-number">9.1.1.</span> <span class="nav-text">Android系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IOS%E7%B3%BB%E7%BB%9F"><span class="nav-number">9.1.2.</span> <span class="nav-text">IOS系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Web%E7%BD%91%E7%AB%99"><span class="nav-number">9.1.3.</span> <span class="nav-text">Web网站</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%8F%E7%A8%8B%E5%BA%8F"><span class="nav-number">9.1.4.</span> <span class="nav-text">小程序</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%A8%E6%88%B7ID"><span class="nav-number">9.2.</span> <span class="nav-text">用户ID</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%84%8F%E4%B9%89"><span class="nav-number">10.</span> <span class="nav-text">意义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="nav-number">11.</span> <span class="nav-text">注意事项</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80%E4%BA%9B%E5%9F%8B%E7%82%B9%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F"><span class="nav-number">12.</span> <span class="nav-text">一些埋点管理系统</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BD%91%E6%98%93HubbleData"><span class="nav-number">12.1.</span> <span class="nav-text">网易HubbleData</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="nav-number">13.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -1150,17 +1150,17 @@ $$IDFA\rightarrow IDFV\rightarrow UDID$$</p>
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">425k</span>
+    <span title="站点总字数">428k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">6:27</span>
+    <span title="站点阅读时长">6:29</span>
 </div>
 
 
-  <script src='https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js'></script>
+  <script src='https://unpkg.com/mermaid@/dist/mermaid.min.js'></script>
   <script>
     if (window.mermaid) {
       mermaid.initialize({theme: 'forest'});

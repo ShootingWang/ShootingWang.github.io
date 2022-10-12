@@ -4,7 +4,7 @@
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.0">
+<meta name="generator" content="Hexo 6.0.0">
 <meta name="baidu-site-verification" content="GLZSr3LDqT" />
 <meta name="google-site-verification" content="fZvQBljM9I6UA4l4wwiA5wECEn7k0V4-DgCfWEPNtFc" />
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
@@ -313,7 +313,7 @@
 
       
         <center>data source</center>
-<a id="more"></a>
+<span id="more"></span>
 <h1 id="数据源"><a class="header-anchor" href="#数据源"></a>数据源</h1>
 <h2 id="核心数据源"><a class="header-anchor" href="#核心数据源"></a>核心数据源</h2>
 <p>Spark的6大核心数据源：</p>
@@ -342,8 +342,8 @@
 <li><code>option()</code>：配置键值对来参数化读取数据的方式</li>
 </ul>
 <p>Spark数据读取使用<code>DataFrameReader</code>，通过SparkSession的read属性得到</p>
-<figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line"><span class="module-access"><span class="module"><span class="identifier">Spark</span>.</span></span>read</span><br></pre></td></tr></table></figure>
-<figure class="highlight less"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 例子</span></span><br><span class="line"><span class="selector-tag">spark</span><span class="selector-class">.read</span><span class="selector-class">.format</span>(“csv")</span><br><span class="line">    <span class="selector-class">.option</span>(“mode<span class="string">", “FAILFAST"</span>)  <span class="comment">// 读取模式</span></span><br><span class="line">    <span class="selector-class">.option</span>(“inferSchema<span class="string">", “true"</span>)  <span class="comment">// 使用模式推理</span></span><br><span class="line">    <span class="selector-class">.option</span>(“path<span class="string">", “path/to/file(s)"</span>)  <span class="comment">// 设置路径</span></span><br><span class="line">    <span class="selector-class">.schema</span>(someSchema)  <span class="comment">// 模式</span></span><br><span class="line">    <span class="selector-class">.load</span>()</span><br></pre></td></tr></table></figure>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Spark.<span class="built_in">read</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 例子</span></span><br><span class="line">spark<span class="selector-class">.read</span><span class="selector-class">.format</span>(“csv&quot;)</span><br><span class="line">    <span class="selector-class">.option</span>(“mode&quot;, “FAILFAST&quot;)  <span class="comment">// 读取模式</span></span><br><span class="line">    <span class="selector-class">.option</span>(“inferSchema&quot;, “true&quot;)  <span class="comment">// 使用模式推理</span></span><br><span class="line">    <span class="selector-class">.option</span>(“path&quot;, “path/to/file(s)&quot;)  <span class="comment">// 设置路径</span></span><br><span class="line">    <span class="selector-class">.schema</span>(someSchema)  <span class="comment">// 模式</span></span><br><span class="line">    <span class="selector-class">.load</span>()</span><br></pre></td></tr></table></figure>
 <h3 id="读取模式"><a class="header-anchor" href="#读取模式"></a>读取模式</h3>
 <p>读取模式指定当Spark遇到错误格式的记录时应采取的操作</p>
 <ul>
@@ -380,8 +380,8 @@
 <li><code>PartitionBy</code>、<code>bucketBy</code>、<code>sortBy</code>仅适用基于文件的数据源</li>
 </ul>
 <p>Spark的写数据使用<code>DataFrameWriter</code>，通过DataFrame的write属性来获取DataFrameWriter：</p>
-<figure class="highlight applescript"><table><tr><td class="code"><pre><span class="line">dataFrame.<span class="built_in">write</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight scala"><table><tr><td class="code"><pre><span class="line"><span class="comment">// in Scala</span></span><br><span class="line"><span class="comment">// in Scala</span></span><br><span class="line">dataframe.write.format(“<span class="string">csv")</span></span><br><span class="line"><span class="string">    .option(“mode"</span>, “<span class="type">OVERWRITE</span><span class="string">")  // 保存模式</span></span><br><span class="line"><span class="string">    .option(“dateFormat"</span>, “yyyy-<span class="type">MM</span>-<span class="string">dd")</span></span><br><span class="line"><span class="string">    .option(“path"</span>, “path/to/file(s)<span class="string">")</span></span><br><span class="line"><span class="string">    .save()</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dataFrame.<span class="built_in">write</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// in Scala</span></span><br><span class="line"><span class="comment">// in Scala</span></span><br><span class="line">dataframe.write.format(“<span class="string">csv&quot;)</span></span><br><span class="line"><span class="string">    .option(“mode&quot;</span>, “<span class="type">OVERWRITE</span><span class="string">&quot;)  // 保存模式</span></span><br><span class="line"><span class="string">    .option(“dateFormat&quot;</span>, “yyyy-<span class="type">MM</span>-<span class="string">dd&quot;)</span></span><br><span class="line"><span class="string">    .option(“path&quot;</span>, “path/to/file(s)<span class="string">&quot;)</span></span><br><span class="line"><span class="string">    .save()</span></span><br></pre></td></tr></table></figure>
 <h3 id="保存模式"><a class="header-anchor" href="#保存模式"></a>保存模式</h3>
 <p>保存模式指明如果Spark在指定目标路径发现有其他数据占用时应采取的操作。</p>
 <ul>
@@ -425,13 +425,13 @@
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
-<pre><code>.dataframe tbody tr th {
+<pre><code>.dataframe tbody tr th &#123;
     vertical-align: top;
-}
+&#125;
 
-.dataframe thead th {
+.dataframe thead th &#123;
     text-align: center;
-}
+&#125;
 </code></pre>
 </style>
 <table border="1" class="dataframe">
@@ -569,8 +569,8 @@
 <ul>
 <li>通常，Spark只会在作业执行而不是DataFrame定义时发生失败</li>
 </ul>
-<figure class="highlight scala"><table><tr><td class="code"><pre><span class="line"><span class="comment">// in Scala </span></span><br><span class="line"><span class="comment">// 读取CSV文件</span></span><br><span class="line">spark.read.format(<span class="string">"csv"</span>)  <span class="comment">// 指定format格式为csv</span></span><br><span class="line">  .option(<span class="string">"header"</span>, <span class="string">"true"</span>)</span><br><span class="line">  .option(<span class="string">"mode"</span>, <span class="string">"FALIFAST"</span>)</span><br><span class="line">  .option(<span class="string">"inferSchema"</span>, <span class="string">"true"</span>)</span><br><span class="line">  .load(<span class="string">"some/path/to/file.csv"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 可以创建schema以确保文件符合我们所期望的数据</span></span><br><span class="line"><span class="keyword">import</span> org.apache.spark.sql.types.&#123;<span class="type">StructField</span>, <span class="type">StructType</span>, <span class="type">StringType</span>, <span class="type">LongType</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">val</span> myManualSchema = <span class="keyword">new</span> <span class="type">StructType</span>(<span class="type">Array</span>(</span><br><span class="line">  <span class="keyword">new</span> <span class="type">StructField</span>(<span class="string">"DEST_COUNTRY_NAME"</span>, <span class="type">StringType</span>, <span class="literal">true</span>),</span><br><span class="line">  <span class="keyword">new</span> <span class="type">StructField</span>(<span class="string">"ORIGIN_COUNTRY_NAME"</span>, <span class="type">StringType</span>, <span class="literal">true</span>),</span><br><span class="line">  <span class="keyword">new</span> <span class="type">StructField</span>(<span class="string">"count"</span>, <span class="type">LongType</span>, <span class="literal">false</span>)</span><br><span class="line">))</span><br><span class="line">spark.read.format(<span class="string">"csv"</span>)</span><br><span class="line">  .option(<span class="string">"header"</span>, <span class="string">"true"</span>)</span><br><span class="line">  .option(<span class="string">"mode"</span>, <span class="string">"FAILFAST"</span>)</span><br><span class="line">  .option(myManualSchema)</span><br><span class="line">  .load(<span class="string">"some/path/to/file.csv"</span>)</span><br><span class="line">  .show(<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
-<figure class="highlight scala"><table><tr><td class="code"><pre><span class="line"><span class="comment">// in Scala </span></span><br><span class="line"><span class="comment">// 读取CSV文件</span></span><br><span class="line"><span class="keyword">val</span> csvFile = spark.read.format(“<span class="string">csv")</span></span><br><span class="line"><span class="string">  .option(“header"</span>, “<span class="string">true").option(“mode"</span>, “<span class="type">FAILFAST</span><span class="string">").schema(myManualSchema)</span></span><br><span class="line"><span class="string">  .load(“/data/flight-data/csv/2010-summary.csv"</span>)</span><br><span class="line"><span class="comment">// 将CSV文件内容写入TSV文件</span></span><br><span class="line">csvFile.write.format(<span class="string">"csv"</span>)</span><br><span class="line">  .mode(<span class="string">"overwrite"</span>)</span><br><span class="line">  .option(<span class="string">"sep"</span>, <span class="string">"\t"</span>)</span><br><span class="line">  .save(<span class="string">"/tmp/my-tsv-file.tsv"</span>)</span><br><span class="line"><span class="comment">// my-tsv-file.tsv实际是一个包含大量文件的文件夹</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// in Scala </span></span><br><span class="line"><span class="comment">// 读取CSV文件</span></span><br><span class="line">spark.read.format(<span class="string">&quot;csv&quot;</span>)  <span class="comment">// 指定format格式为csv</span></span><br><span class="line">  .option(<span class="string">&quot;header&quot;</span>, <span class="string">&quot;true&quot;</span>)</span><br><span class="line">  .option(<span class="string">&quot;mode&quot;</span>, <span class="string">&quot;FALIFAST&quot;</span>)</span><br><span class="line">  .option(<span class="string">&quot;inferSchema&quot;</span>, <span class="string">&quot;true&quot;</span>)</span><br><span class="line">  .load(<span class="string">&quot;some/path/to/file.csv&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 可以创建schema以确保文件符合我们所期望的数据</span></span><br><span class="line"><span class="keyword">import</span> org.apache.spark.sql.types.&#123;<span class="type">StructField</span>, <span class="type">StructType</span>, <span class="type">StringType</span>, <span class="type">LongType</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">val</span> myManualSchema = <span class="keyword">new</span> <span class="type">StructType</span>(<span class="type">Array</span>(</span><br><span class="line">  <span class="keyword">new</span> <span class="type">StructField</span>(<span class="string">&quot;DEST_COUNTRY_NAME&quot;</span>, <span class="type">StringType</span>, <span class="literal">true</span>),</span><br><span class="line">  <span class="keyword">new</span> <span class="type">StructField</span>(<span class="string">&quot;ORIGIN_COUNTRY_NAME&quot;</span>, <span class="type">StringType</span>, <span class="literal">true</span>),</span><br><span class="line">  <span class="keyword">new</span> <span class="type">StructField</span>(<span class="string">&quot;count&quot;</span>, <span class="type">LongType</span>, <span class="literal">false</span>)</span><br><span class="line">))</span><br><span class="line">spark.read.format(<span class="string">&quot;csv&quot;</span>)</span><br><span class="line">  .option(<span class="string">&quot;header&quot;</span>, <span class="string">&quot;true&quot;</span>)</span><br><span class="line">  .option(<span class="string">&quot;mode&quot;</span>, <span class="string">&quot;FAILFAST&quot;</span>)</span><br><span class="line">  .option(myManualSchema)</span><br><span class="line">  .load(<span class="string">&quot;some/path/to/file.csv&quot;</span>)</span><br><span class="line">  .show(<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// in Scala </span></span><br><span class="line"><span class="comment">// 读取CSV文件</span></span><br><span class="line"><span class="keyword">val</span> csvFile = spark.read.format(“<span class="string">csv&quot;)</span></span><br><span class="line"><span class="string">  .option(“header&quot;</span>, “<span class="string">true&quot;).option(“mode&quot;</span>, “<span class="type">FAILFAST</span><span class="string">&quot;).schema(myManualSchema)</span></span><br><span class="line"><span class="string">  .load(“/data/flight-data/csv/2010-summary.csv&quot;</span>)</span><br><span class="line"><span class="comment">// 将CSV文件内容写入TSV文件</span></span><br><span class="line">csvFile.write.format(<span class="string">&quot;csv&quot;</span>)</span><br><span class="line">  .mode(<span class="string">&quot;overwrite&quot;</span>)</span><br><span class="line">  .option(<span class="string">&quot;sep&quot;</span>, <span class="string">&quot;\t&quot;</span>)</span><br><span class="line">  .save(<span class="string">&quot;/tmp/my-tsv-file.tsv&quot;</span>)</span><br><span class="line"><span class="comment">// my-tsv-file.tsv实际是一个包含大量文件的文件夹</span></span><br></pre></td></tr></table></figure>
 <p><strong>制表符分隔值</strong>（TSV，Tab-separated values）</p>
 <ul>
 <li>每一行储存一条记录</li>
@@ -590,13 +590,13 @@
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
-<pre><code>.dataframe tbody tr th {
+<pre><code>.dataframe tbody tr th &#123;
     vertical-align: top;
-}
+&#125;
 
-.dataframe thead th {
+.dataframe thead th &#123;
     text-align: center;
-}
+&#125;
 </code></pre>
 </style>
 <table border="1" class="dataframe">
@@ -682,7 +682,7 @@
   </tr></tbody>
 </table>
 </div>
-<figure class="highlight scala"><table><tr><td class="code"><pre><span class="line"><span class="comment">// in Scala </span></span><br><span class="line"><span class="comment">// 读取换行符分隔的JSON文件</span></span><br><span class="line">spark.read.format(<span class="string">"json"</span>)</span><br><span class="line"></span><br><span class="line">spark.read.format(“<span class="string">json")</span></span><br><span class="line"><span class="string">  .option(“mode"</span>, “<span class="type">FAILFAST</span><span class="string">")</span></span><br><span class="line"><span class="string">  .schema(myManualSchema)</span></span><br><span class="line"><span class="string">  .load(“/data/flight-data/json/2010-summary.json"</span>).show(<span class="number">5</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 将CSV文件内容写入JSON文件</span></span><br><span class="line">csvFile.write.format(“<span class="string">json")</span></span><br><span class="line"><span class="string">  .mode(“overwrite"</span>)</span><br><span class="line">  .save(“/tmp/my-json-file.<span class="string">json")</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// in Scala </span></span><br><span class="line"><span class="comment">// 读取换行符分隔的JSON文件</span></span><br><span class="line">spark.read.format(<span class="string">&quot;json&quot;</span>)</span><br><span class="line"></span><br><span class="line">spark.read.format(“<span class="string">json&quot;)</span></span><br><span class="line"><span class="string">  .option(“mode&quot;</span>, “<span class="type">FAILFAST</span><span class="string">&quot;)</span></span><br><span class="line"><span class="string">  .schema(myManualSchema)</span></span><br><span class="line"><span class="string">  .load(“/data/flight-data/json/2010-summary.json&quot;</span>).show(<span class="number">5</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 将CSV文件内容写入JSON文件</span></span><br><span class="line">csvFile.write.format(“<span class="string">json&quot;)</span></span><br><span class="line"><span class="string">  .mode(“overwrite&quot;</span>)</span><br><span class="line">  .save(“/tmp/my-json-file.<span class="string">json&quot;)</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li>将DataFrame写入JSON文件：每个数据分片作为一个文件写出，整个DataFrame将输出到一个文件夹；文件中的每行仍代表一个JSON对象</li>
 </ul>
@@ -714,7 +714,7 @@
 <p>一般在读取的时候使用默认的schema</p>
 </li>
 </ul>
-<figure class="highlight scala"><table><tr><td class="code"><pre><span class="line"><span class="comment">// in Scala </span></span><br><span class="line">spark.read.format(“<span class="string">parquet")</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">spark.read.format(“parquet"</span>)</span><br><span class="line">  .load(“/data/flight-data/parquet/<span class="number">2010</span>-summary.<span class="string">parquet").show(5)</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// in Scala </span></span><br><span class="line">spark.read.format(“<span class="string">parquet&quot;)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">spark.read.format(“parquet&quot;</span>)</span><br><span class="line">  .load(“/data/flight-data/parquet/<span class="number">2010</span>-summary.<span class="string">parquet&quot;).show(5)</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li>Parquet只有很少的可选项</li>
 </ul>
@@ -724,13 +724,13 @@
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
-<pre><code>.dataframe tbody tr th {
+<pre><code>.dataframe tbody tr th &#123;
     vertical-align: top;
-}
+&#125;
 
-.dataframe thead th {
+.dataframe thead th &#123;
     text-align: center;
-}
+&#125;
 </code></pre>
 </style>
 <table border="1" class="dataframe">
@@ -764,7 +764,7 @@
 <ul>
 <li>写Parquet文件和读取Parquet文件，都只需指定文件的位置即可</li>
 </ul>
-<figure class="highlight scala"><table><tr><td class="code"><pre><span class="line"><span class="comment">// in Scala </span></span><br><span class="line"><span class="comment">// 写Parquet文件</span></span><br><span class="line">csvFile.write.format(“<span class="string">parquet")</span></span><br><span class="line"><span class="string">  .mode(“overwrite"</span>)</span><br><span class="line">  .save(“/tmp/my-parquet-file.<span class="string">parquet")</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// in Scala </span></span><br><span class="line"><span class="comment">// 写Parquet文件</span></span><br><span class="line">csvFile.write.format(“<span class="string">parquet&quot;)</span></span><br><span class="line"><span class="string">  .mode(“overwrite&quot;</span>)</span><br><span class="line">  .save(“/tmp/my-parquet-file.<span class="string">parquet&quot;)</span></span><br></pre></td></tr></table></figure>
 <h2 id="ORC文件"><a class="header-anchor" href="#ORC文件"></a>ORC文件</h2>
 <p>ORC文件是为Hadoop作业设计的自描述、类型感知的列存储文件格式</p>
 <ul>
@@ -781,7 +781,7 @@
 </ul>
 </li>
 </ul>
-<figure class="highlight scala"><table><tr><td class="code"><pre><span class="line"><span class="comment">// in Scala </span></span><br><span class="line"><span class="comment">// 读取ORC文件</span></span><br><span class="line">spark.read.format(<span class="string">"orc"</span>)</span><br><span class="line">  .load(<span class="string">"/data/flight-data/orc/2010-summary.orc"</span>).show(<span class="number">5</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 写ORC文件</span></span><br><span class="line">csvFile.write.format(<span class="string">"orc"</span>)</span><br><span class="line">  .mode(<span class="string">"overwrite"</span>)</span><br><span class="line">  .save(<span class="string">"/tmp/my-json-file.orc"</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// in Scala </span></span><br><span class="line"><span class="comment">// 读取ORC文件</span></span><br><span class="line">spark.read.format(<span class="string">&quot;orc&quot;</span>)</span><br><span class="line">  .load(<span class="string">&quot;/data/flight-data/orc/2010-summary.orc&quot;</span>).show(<span class="number">5</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 写ORC文件</span></span><br><span class="line">csvFile.write.format(<span class="string">&quot;orc&quot;</span>)</span><br><span class="line">  .mode(<span class="string">&quot;overwrite&quot;</span>)</span><br><span class="line">  .save(<span class="string">&quot;/tmp/my-json-file.orc&quot;</span>)</span><br></pre></td></tr></table></figure>
 <h2 id="JDBC-ODBC连接"><a class="header-anchor" href="#JDBC-ODBC连接"></a>JDBC/ODBC连接</h2>
 <p>即从数据库读写数据</p>
 <p><strong>JDBC数据源选项</strong>：</p>
@@ -790,13 +790,13 @@
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
-<pre><code>.dataframe tbody tr th {
+<pre><code>.dataframe tbody tr th &#123;
     vertical-align: top;
-}
+&#125;
 
-.dataframe thead th {
+.dataframe thead th &#123;
     text-align: center;
-}
+&#125;
 </code></pre>
 </style>
 <table border="1" class="dataframe">
@@ -883,22 +883,22 @@
 </table>
 </div>
 <p>从数据库读取文件：先指定格式（format）和选项，然后加载数据</p>
-<figure class="highlight scala"><table><tr><td class="code"><pre><span class="line"><span class="comment">// in Scala </span></span><br><span class="line"><span class="keyword">val</span> driver = <span class="string">"org.sqlite.JDBC"</span></span><br><span class="line"><span class="keyword">val</span> path = <span class="string">"/data/flight-data/jdbc/my-sqlite.db"</span></span><br><span class="line"><span class="keyword">val</span> url = <span class="string">s"jdbc:sqlite:/<span class="subst">$&#123;path&#125;</span>"</span></span><br><span class="line"><span class="keyword">val</span> tablename = <span class="string">"flight_info"</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># in Python </span></span><br><span class="line">driver = <span class="string">"org.sqlite.JDBC"</span></span><br><span class="line">path = <span class="string">"/data/flight-data/jdbc/my-sqlite.db"</span></span><br><span class="line">url = <span class="string">"jdbc:sqlite:"</span> + path</span><br><span class="line">tablename = <span class="string">"flight_info"</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// in Scala </span></span><br><span class="line"><span class="keyword">val</span> driver = <span class="string">&quot;org.sqlite.JDBC&quot;</span></span><br><span class="line"><span class="keyword">val</span> path = <span class="string">&quot;/data/flight-data/jdbc/my-sqlite.db&quot;</span></span><br><span class="line"><span class="keyword">val</span> url = <span class="string">s&quot;jdbc:sqlite:/<span class="subst">$&#123;path&#125;</span>&quot;</span></span><br><span class="line"><span class="keyword">val</span> tablename = <span class="string">&quot;flight_info&quot;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># in Python </span></span><br><span class="line">driver = <span class="string">&quot;org.sqlite.JDBC&quot;</span></span><br><span class="line">path = <span class="string">&quot;/data/flight-data/jdbc/my-sqlite.db&quot;</span></span><br><span class="line">url = <span class="string">&quot;jdbc:sqlite:&quot;</span> + path</span><br><span class="line">tablename = <span class="string">&quot;flight_info&quot;</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li>SQLite与其他数据库不同，SQLite只是计算机上的一个文件</li>
 <li>如果是其他数据库，需要测试连接：</li>
 </ul>
-<figure class="highlight scala"><table><tr><td class="code"><pre><span class="line"><span class="comment">// in Scala </span></span><br><span class="line"><span class="comment">// 测试连接</span></span><br><span class="line"><span class="keyword">import</span> java.sql.<span class="type">DriverManager</span></span><br><span class="line"><span class="keyword">val</span> connection = <span class="type">DriverManager</span>.getConnection(url)</span><br><span class="line">connection.isClosed()</span><br><span class="line">connection.close()</span><br><span class="line"></span><br><span class="line"><span class="comment">// 如果连接成功，则可继续执行下一步</span></span><br><span class="line"><span class="comment">// 从SQL表中读取DataFrame</span></span><br><span class="line"><span class="keyword">val</span> dbDataFrame = spark.read.format(<span class="string">"jdbc"</span>)</span><br><span class="line">  .option(<span class="string">"url"</span>, url)</span><br><span class="line">  .option(<span class="string">"dbtable"</span>, tablename)</span><br><span class="line">  .option(<span class="string">"driver"</span>, driver)</span><br><span class="line">  .load()</span><br></pre></td></tr></table></figure>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// in Scala </span></span><br><span class="line"><span class="comment">// 测试连接</span></span><br><span class="line"><span class="keyword">import</span> java.sql.<span class="type">DriverManager</span></span><br><span class="line"><span class="keyword">val</span> connection = <span class="type">DriverManager</span>.getConnection(url)</span><br><span class="line">connection.isClosed()</span><br><span class="line">connection.close()</span><br><span class="line"></span><br><span class="line"><span class="comment">// 如果连接成功，则可继续执行下一步</span></span><br><span class="line"><span class="comment">// 从SQL表中读取DataFrame</span></span><br><span class="line"><span class="keyword">val</span> dbDataFrame = spark.read.format(<span class="string">&quot;jdbc&quot;</span>)</span><br><span class="line">  .option(<span class="string">&quot;url&quot;</span>, url)</span><br><span class="line">  .option(<span class="string">&quot;dbtable&quot;</span>, tablename)</span><br><span class="line">  .option(<span class="string">&quot;driver&quot;</span>, driver)</span><br><span class="line">  .load()</span><br></pre></td></tr></table></figure>
 <ul>
 <li>SQLite需要的配置很简单，而其他数据库需要配置更多的参数</li>
 </ul>
-<figure class="highlight scala"><table><tr><td class="code"><pre><span class="line"><span class="comment">// in Scala </span></span><br><span class="line"><span class="keyword">val</span> pgDF = spark.read</span><br><span class="line">  .format(<span class="string">"jdbc"</span>)</span><br><span class="line">  .option(<span class="string">"driver"</span>, <span class="string">"org.postgresql.Driver"</span>)</span><br><span class="line">  .option(<span class="string">"url"</span>, <span class="string">"jdbc:postgresql://database_server"</span>)</span><br><span class="line">  .option(<span class="string">"dbtable"</span>, <span class="string">"schema.tablename"</span>)</span><br><span class="line">  .option(<span class="string">"user"</span>, <span class="string">"username"</span>)</span><br><span class="line">  .option(<span class="string">"password"</span>,<span class="string">"my-secret-password"</span>).load()</span><br></pre></td></tr></table></figure>
-<figure class="highlight scala"><table><tr><td class="code"><pre><span class="line"><span class="comment">// in Scala </span></span><br><span class="line"><span class="keyword">val</span> props = <span class="keyword">new</span> java.util.<span class="type">Properties</span></span><br><span class="line">props.setProperty(<span class="string">"driver"</span>, <span class="string">"org.sqlite.JDBC"</span>)</span><br><span class="line"><span class="keyword">val</span> predicates = <span class="type">Array</span>(</span><br><span class="line">  <span class="string">"DEST_COUNTRY_NAME = 'Sweden' OR ORIGIN_COUNTRY_NAME = 'Sweden'"</span>,</span><br><span class="line">  <span class="string">"DEST_COUNTRY_NAME = 'Anguilla' OR ORIGIN_COUNTRY_NAME = 'Anguilla'"</span>)</span><br><span class="line">spark.read.jdbc(url, tablename, predicates, props).show()  <span class="comment">// 读取JDBC</span></span><br><span class="line">spark.read.jdbc(url, tablename, predicates, props)</span><br><span class="line">  .rdd.getNumPartitions  <span class="comment">// 查看最大分区数</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># in Python </span></span><br><span class="line">props = &#123;<span class="string">"driver"</span>:<span class="string">"org.sqlite.JDBC"</span>&#125;</span><br><span class="line">predicates = [</span><br><span class="line">  <span class="string">"DEST_COUNTRY_NAME = 'Sweden' OR ORIGIN_COUNTRY_NAME = 'Sweden'"</span>,</span><br><span class="line">  <span class="string">"DEST_COUNTRY_NAME = 'Anguilla' OR ORIGIN_COUNTRY_NAME = 'Anguilla'"</span>]</span><br><span class="line">spark.read.jdbc(url, tablename, predicates=predicates, properties=props).show()</span><br><span class="line">spark.read.jdbc(url,tablename,predicates=predicates,properties=props)\</span><br><span class="line">  .rdd.getNumPartitions()</span><br></pre></td></tr></table></figure>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// in Scala </span></span><br><span class="line"><span class="keyword">val</span> pgDF = spark.read</span><br><span class="line">  .format(<span class="string">&quot;jdbc&quot;</span>)</span><br><span class="line">  .option(<span class="string">&quot;driver&quot;</span>, <span class="string">&quot;org.postgresql.Driver&quot;</span>)</span><br><span class="line">  .option(<span class="string">&quot;url&quot;</span>, <span class="string">&quot;jdbc:postgresql://database_server&quot;</span>)</span><br><span class="line">  .option(<span class="string">&quot;dbtable&quot;</span>, <span class="string">&quot;schema.tablename&quot;</span>)</span><br><span class="line">  .option(<span class="string">&quot;user&quot;</span>, <span class="string">&quot;username&quot;</span>)</span><br><span class="line">  .option(<span class="string">&quot;password&quot;</span>,<span class="string">&quot;my-secret-password&quot;</span>).load()</span><br></pre></td></tr></table></figure>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// in Scala </span></span><br><span class="line"><span class="keyword">val</span> props = <span class="keyword">new</span> java.util.<span class="type">Properties</span></span><br><span class="line">props.setProperty(<span class="string">&quot;driver&quot;</span>, <span class="string">&quot;org.sqlite.JDBC&quot;</span>)</span><br><span class="line"><span class="keyword">val</span> predicates = <span class="type">Array</span>(</span><br><span class="line">  <span class="string">&quot;DEST_COUNTRY_NAME = &#x27;Sweden&#x27; OR ORIGIN_COUNTRY_NAME = &#x27;Sweden&#x27;&quot;</span>,</span><br><span class="line">  <span class="string">&quot;DEST_COUNTRY_NAME = &#x27;Anguilla&#x27; OR ORIGIN_COUNTRY_NAME = &#x27;Anguilla&#x27;&quot;</span>)</span><br><span class="line">spark.read.jdbc(url, tablename, predicates, props).show()  <span class="comment">// 读取JDBC</span></span><br><span class="line">spark.read.jdbc(url, tablename, predicates, props)</span><br><span class="line">  .rdd.getNumPartitions  <span class="comment">// 查看最大分区数</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># in Python </span></span><br><span class="line">props = &#123;<span class="string">&quot;driver&quot;</span>:<span class="string">&quot;org.sqlite.JDBC&quot;</span>&#125;</span><br><span class="line">predicates = [</span><br><span class="line">  <span class="string">&quot;DEST_COUNTRY_NAME = &#x27;Sweden&#x27; OR ORIGIN_COUNTRY_NAME = &#x27;Sweden&#x27;&quot;</span>,</span><br><span class="line">  <span class="string">&quot;DEST_COUNTRY_NAME = &#x27;Anguilla&#x27; OR ORIGIN_COUNTRY_NAME = &#x27;Anguilla&#x27;&quot;</span>]</span><br><span class="line">spark.read.jdbc(url, tablename, predicates=predicates, properties=props).show()</span><br><span class="line">spark.read.jdbc(url,tablename,predicates=predicates,properties=props)\</span><br><span class="line">  .rdd.getNumPartitions()</span><br></pre></td></tr></table></figure>
 <p>写入SQL数据库，只需指定URL并指定写入模式。</p>
-<figure class="highlight scala"><table><tr><td class="code"><pre><span class="line"><span class="comment">// in Scala </span></span><br><span class="line"><span class="keyword">val</span> newPath = <span class="string">"jdbc:sqlite://tmp/my-sqlite.db"</span></span><br><span class="line">csvFile.write.mode(<span class="string">"overwrite"</span>)</span><br><span class="line">  .jdbc(newPath, tablename, props)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 查看写入结果</span></span><br><span class="line">spark.read.jdbc(newPath, tablename, props).count()</span><br><span class="line"><span class="comment">// 追加新表</span></span><br><span class="line">csvFile.write.mode(<span class="string">"append"</span>).jdbc(newPath, tablename, props)</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># in Python </span></span><br><span class="line">newPath = <span class="string">"jdbc:sqlite://tmp/my-sqlite.db"</span></span><br><span class="line">csvFile.write.jdbc(newPath, tablename, mode=<span class="string">"overwrite"</span>, properties=props)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看写入结果</span></span><br><span class="line">spark.read.jdbc(newPath, tablename, properties=props).count()</span><br><span class="line"><span class="comment"># 追加新表</span></span><br><span class="line">csvFile.write.jdbc(newPath, tablename, mode=<span class="string">"append"</span>, properties=props)</span><br></pre></td></tr></table></figure>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// in Scala </span></span><br><span class="line"><span class="keyword">val</span> newPath = <span class="string">&quot;jdbc:sqlite://tmp/my-sqlite.db&quot;</span></span><br><span class="line">csvFile.write.mode(<span class="string">&quot;overwrite&quot;</span>)</span><br><span class="line">  .jdbc(newPath, tablename, props)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 查看写入结果</span></span><br><span class="line">spark.read.jdbc(newPath, tablename, props).count()</span><br><span class="line"><span class="comment">// 追加新表</span></span><br><span class="line">csvFile.write.mode(<span class="string">&quot;append&quot;</span>).jdbc(newPath, tablename, props)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># in Python </span></span><br><span class="line">newPath = <span class="string">&quot;jdbc:sqlite://tmp/my-sqlite.db&quot;</span></span><br><span class="line">csvFile.write.jdbc(newPath, tablename, mode=<span class="string">&quot;overwrite&quot;</span>, properties=props)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看写入结果</span></span><br><span class="line">spark.read.jdbc(newPath, tablename, properties=props).count()</span><br><span class="line"><span class="comment"># 追加新表</span></span><br><span class="line">csvFile.write.jdbc(newPath, tablename, mode=<span class="string">&quot;append&quot;</span>, properties=props)</span><br></pre></td></tr></table></figure>
 <h2 id="文本文件"><a class="header-anchor" href="#文本文件"></a>文本文件</h2>
 <ul>
 <li>文本文件中的每一行将被解析为DataFrame中的一条记录，然后根据要求进行转换</li>
@@ -907,7 +907,7 @@
 <li>写文本文件时，需确保仅有一个字符串类型的列写出；否则，写操作将失败</li>
 <li>如果在执行写操作时，同时执行某些数据分片操作，则可以写入更多的列（这些列将在要写入的文件夹中显示为目录，而不是在每个文件中存在多列）</li>
 </ul>
-<figure class="highlight scala"><table><tr><td class="code"><pre><span class="line"><span class="comment">// in Scala</span></span><br><span class="line"><span class="comment">// 读取文本文件 </span></span><br><span class="line">spark.read.textFile(<span class="string">"/data/flight-data/csv/2010-summary.csv"</span>)</span><br><span class="line">  .selectExpr(<span class="string">"split(value, ',') as rows"</span>).show()</span><br></pre></td></tr></table></figure>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// in Scala</span></span><br><span class="line"><span class="comment">// 读取文本文件 </span></span><br><span class="line">spark.read.textFile(<span class="string">&quot;/data/flight-data/csv/2010-summary.csv&quot;</span>)</span><br><span class="line">  .selectExpr(<span class="string">&quot;split(value, &#x27;,&#x27;) as rows&quot;</span>).show()</span><br></pre></td></tr></table></figure>
 <h1 id="其他"><a class="header-anchor" href="#其他"></a>其他</h1>
 <ul>
 <li>
@@ -938,7 +938,7 @@
 </ul>
 </li>
 </ul>
-<figure class="highlight less"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">csvFile</span><span class="selector-class">.repartition</span>(<span class="number">5</span>)<span class="selector-class">.write</span><span class="selector-class">.format</span>(<span class="string">"csv"</span>)<span class="selector-class">.save</span>(<span class="string">"/tmp/multiple.csv"</span>)</span><br><span class="line"><span class="comment">// 会生成包含5个文件的文件夹</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">csvFile<span class="selector-class">.repartition</span>(<span class="number">5</span>)<span class="selector-class">.write</span><span class="selector-class">.format</span>(<span class="string">&quot;csv&quot;</span>)<span class="selector-class">.save</span>(<span class="string">&quot;/tmp/multiple.csv&quot;</span>)</span><br><span class="line"><span class="comment">// 会生成包含5个文件的文件夹</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li>使用<code>partitionBy</code>进行数据划分，可以在后续读取时跳过大量的数据，只读入与问题相关的数据
 <ul>
@@ -946,15 +946,15 @@
 </ul>
 </li>
 </ul>
-<figure class="highlight scala"><table><tr><td class="code"><pre><span class="line"><span class="comment">// in Scala</span></span><br><span class="line">csvFile.limit(<span class="number">10</span>).write.mode(<span class="string">"overwrite"</span>)</span><br><span class="line">  .partitionBy(<span class="string">"DEST_COUNTRY_NAME"</span>)</span><br><span class="line">  .save(<span class="string">"/tmp/partitioned-files.parquet"</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// in Scala</span></span><br><span class="line">csvFile.limit(<span class="number">10</span>).write.mode(<span class="string">&quot;overwrite&quot;</span>)</span><br><span class="line">  .partitionBy(<span class="string">&quot;DEST_COUNTRY_NAME&quot;</span>)</span><br><span class="line">  .save(<span class="string">&quot;/tmp/partitioned-files.parquet&quot;</span>)</span><br></pre></td></tr></table></figure>
 <p><strong>数据分桶</strong>：具有相同桶ID（哈希分桶的ID）的数据将放置到一个物理分区中；可以避免在后续读取数据时进行shuffle</p>
-<figure class="highlight scala"><table><tr><td class="code"><pre><span class="line"><span class="comment">// in Scala </span></span><br><span class="line"><span class="keyword">val</span> numberBuckets = <span class="number">10</span></span><br><span class="line"><span class="keyword">val</span> columnToBucketBy = <span class="string">"count"</span></span><br><span class="line"></span><br><span class="line">csvFile.write.format(<span class="string">"parquet"</span>).mode(<span class="string">"overwrite"</span>)</span><br><span class="line">  .bucketBy(numberBuckets, columnToBucketBy)</span><br><span class="line">  .saveAsTable(<span class="string">"bucketedFiles"</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// in Scala </span></span><br><span class="line"><span class="keyword">val</span> numberBuckets = <span class="number">10</span></span><br><span class="line"><span class="keyword">val</span> columnToBucketBy = <span class="string">&quot;count&quot;</span></span><br><span class="line"></span><br><span class="line">csvFile.write.format(<span class="string">&quot;parquet&quot;</span>).mode(<span class="string">&quot;overwrite&quot;</span>)</span><br><span class="line">  .bucketBy(numberBuckets, columnToBucketBy)</span><br><span class="line">  .saveAsTable(<span class="string">&quot;bucketedFiles&quot;</span>)</span><br></pre></td></tr></table></figure>
 <ul>
 <li>数据分桶仅支持Spark管理的表</li>
 </ul>
 <h1 id="参考资料"><a class="header-anchor" href="#参考资料"></a>参考资料</h1>
 <ul>
-<li><a href="https://book.douban.com/subject/30449649/" target="_blank" rel="noopener">Spark权威指南</a></li>
+<li><a target="_blank" rel="noopener" href="https://book.douban.com/subject/30449649/">Spark权威指南</a></li>
 </ul>
 
     </div>
@@ -970,11 +970,6 @@
   <div id="qr" style="display: none;">
       
       <div style="display: inline-block;">
-        <img src="/images/reward2021.png" alt="Skye WeChat Bezahlung">
-        <p>WeChat Bezahlung</p>
-      </div>
-      
-      <div style="display: inline-block;">
         <img src="/images/alipay.jpg" alt="Skye 支付宝">
         <p>支付宝</p>
       </div>
@@ -982,6 +977,11 @@
       <div style="display: inline-block;">
         <img src="/images/wechatpay.jpg" alt="Skye 微信支付">
         <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/reward2021.png" alt="Skye WeChat Pay">
+        <p>WeChat Pay</p>
       </div>
 
   </div>
@@ -1085,7 +1085,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#数据源"><span class="nav-number">1.</span> <span class="nav-text">数据源</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#核心数据源"><span class="nav-number">1.1.</span> <span class="nav-text">核心数据源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#由社区创建的数据源"><span class="nav-number">1.2.</span> <span class="nav-text">由社区创建的数据源</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据源API"><span class="nav-number">2.</span> <span class="nav-text">数据源API</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Read-API"><span class="nav-number">2.1.</span> <span class="nav-text">Read API</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#读取模式"><span class="nav-number">2.1.1.</span> <span class="nav-text">读取模式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Write-API"><span class="nav-number">2.2.</span> <span class="nav-text">Write API</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#保存模式"><span class="nav-number">2.2.1.</span> <span class="nav-text">保存模式</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#核心数据源-2"><span class="nav-number">3.</span> <span class="nav-text">核心数据源</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#CSV"><span class="nav-number">3.1.</span> <span class="nav-text">CSV</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JSON"><span class="nav-number">3.2.</span> <span class="nav-text">JSON</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Parquet文件"><span class="nav-number">3.3.</span> <span class="nav-text">Parquet文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ORC文件"><span class="nav-number">3.4.</span> <span class="nav-text">ORC文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JDBC-ODBC连接"><span class="nav-number">3.5.</span> <span class="nav-text">JDBC&#x2F;ODBC连接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文本文件"><span class="nav-number">3.6.</span> <span class="nav-text">文本文件</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#其他"><span class="nav-number">4.</span> <span class="nav-text">其他</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料"><span class="nav-number">5.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E6%BA%90"><span class="nav-number">1.</span> <span class="nav-text">数据源</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%B8%E5%BF%83%E6%95%B0%E6%8D%AE%E6%BA%90"><span class="nav-number">1.1.</span> <span class="nav-text">核心数据源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%B1%E7%A4%BE%E5%8C%BA%E5%88%9B%E5%BB%BA%E7%9A%84%E6%95%B0%E6%8D%AE%E6%BA%90"><span class="nav-number">1.2.</span> <span class="nav-text">由社区创建的数据源</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E6%BA%90API"><span class="nav-number">2.</span> <span class="nav-text">数据源API</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Read-API"><span class="nav-number">2.1.</span> <span class="nav-text">Read API</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%BB%E5%8F%96%E6%A8%A1%E5%BC%8F"><span class="nav-number">2.1.1.</span> <span class="nav-text">读取模式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Write-API"><span class="nav-number">2.2.</span> <span class="nav-text">Write API</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%9D%E5%AD%98%E6%A8%A1%E5%BC%8F"><span class="nav-number">2.2.1.</span> <span class="nav-text">保存模式</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A0%B8%E5%BF%83%E6%95%B0%E6%8D%AE%E6%BA%90-2"><span class="nav-number">3.</span> <span class="nav-text">核心数据源</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#CSV"><span class="nav-number">3.1.</span> <span class="nav-text">CSV</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JSON"><span class="nav-number">3.2.</span> <span class="nav-text">JSON</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Parquet%E6%96%87%E4%BB%B6"><span class="nav-number">3.3.</span> <span class="nav-text">Parquet文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ORC%E6%96%87%E4%BB%B6"><span class="nav-number">3.4.</span> <span class="nav-text">ORC文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JDBC-ODBC%E8%BF%9E%E6%8E%A5"><span class="nav-number">3.5.</span> <span class="nav-text">JDBC&#x2F;ODBC连接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%87%E6%9C%AC%E6%96%87%E4%BB%B6"><span class="nav-number">3.6.</span> <span class="nav-text">文本文件</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%B6%E4%BB%96"><span class="nav-number">4.</span> <span class="nav-text">其他</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="nav-number">5.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -1154,17 +1154,17 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">425k</span>
+    <span title="站点总字数">428k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">6:27</span>
+    <span title="站点阅读时长">6:29</span>
 </div>
 
 
-  <script src='https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js'></script>
+  <script src='https://unpkg.com/mermaid@/dist/mermaid.min.js'></script>
   <script>
     if (window.mermaid) {
       mermaid.initialize({theme: 'forest'});

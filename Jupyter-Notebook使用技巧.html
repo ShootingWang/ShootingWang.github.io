@@ -4,7 +4,7 @@
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.0">
+<meta name="generator" content="Hexo 6.0.0">
 <meta name="baidu-site-verification" content="GLZSr3LDqT" />
 <meta name="google-site-verification" content="fZvQBljM9I6UA4l4wwiA5wECEn7k0V4-DgCfWEPNtFc" />
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
@@ -313,56 +313,56 @@
 
       
         <center>Jupyter Tips!</center>
-<a id="more"></a>
+<span id="more"></span>
 <h1 id="输出"><a class="header-anchor" href="#输出"></a>输出</h1>
 <h2 id="输出结果显示图片"><a class="header-anchor" href="#输出结果显示图片"></a>输出结果显示图片</h2>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">%matplotlib inline</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%matplotlib inline</span><br></pre></td></tr></table></figure>
 <h2 id="同时输出多个命令的结果"><a class="header-anchor" href="#同时输出多个命令的结果"></a>同时输出多个命令的结果</h2>
 <ol>
 <li>方法一：在文件开头添加以下命令（仅对当前文件有效）</li>
 </ol>
- <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> IPython.core.interactiveshell <span class="keyword">import</span> InteractiveShell</span><br><span class="line">InteractiveShell.ast_node_interactivity = <span class="string">"all"</span></span><br></pre></td></tr></table></figure>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> IPython.core.interactiveshell <span class="keyword">import</span> InteractiveShell</span><br><span class="line">InteractiveShell.ast_node_interactivity = <span class="string">&quot;all&quot;</span></span><br></pre></td></tr></table></figure>
 <ol start="2">
 <li>方法二：直接添加配置文件（对所有文件有效）</li>
 </ol>
- <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">vi ~/.ipython/profile_default/ipython_config.py</span><br></pre></td></tr></table></figure>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi ~/.ipython/profile_default/ipython_config.py</span><br></pre></td></tr></table></figure>
 <p>配置文件内容为：</p>
- <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">c = get_config()</span><br><span class="line"><span class="comment">#Run all nodes interactively</span></span><br><span class="line">c.InteractiveShell.ast_node_interactivity = <span class="string">"all"</span></span><br></pre></td></tr></table></figure>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">c = get_config()</span><br><span class="line"><span class="comment">#Run all nodes interactively</span></span><br><span class="line">c.InteractiveShell.ast_node_interactivity = <span class="string">&quot;all&quot;</span></span><br></pre></td></tr></table></figure>
 <h2 id="禁止输出警告（warnings）"><a class="header-anchor" href="#禁止输出警告（warnings）"></a>禁止输出警告（warnings）</h2>
 <p>运行以下代码：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> warnings</span><br><span class="line">warnings.filterwarnings(<span class="string">"ignore"</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> warnings</span><br><span class="line">warnings.filterwarnings(<span class="string">&quot;ignore&quot;</span>)</span><br></pre></td></tr></table></figure>
 <h2 id="for循环美观输出DataFrame"><a class="header-anchor" href="#for循环美观输出DataFrame"></a>for循环美观输出DataFrame</h2>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> IPython.display <span class="keyword">import</span> display</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">5</span>):</span><br><span class="line">    df = pd.read_csv(<span class="string">'xxx.csv'</span>, encoding=<span class="string">'utf_8_sig'</span>)</span><br><span class="line">    display(df)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> IPython.display <span class="keyword">import</span> display</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">5</span>):</span><br><span class="line">    df = pd.read_csv(<span class="string">&#x27;xxx.csv&#x27;</span>, encoding=<span class="string">&#x27;utf_8_sig&#x27;</span>)</span><br><span class="line">    display(df)</span><br></pre></td></tr></table></figure>
 <h1 id="Kernel"><a class="header-anchor" href="#Kernel"></a>Kernel</h1>
 <h2 id="安装R-kernel"><a class="header-anchor" href="#安装R-kernel"></a>安装R kernel</h2>
 <p>先在R中安装以下几个package：</p>
-<figure class="highlight r"><table><tr><td class="code"><pre><span class="line">install.packages(c(<span class="string">'repr'</span>, <span class="string">'IRdisplay'</span>, <span class="string">'evaluate'</span>, <span class="string">'crayon'</span>, </span><br><span class="line">                   <span class="string">'pbdZMQ'</span>, <span class="string">'devtools'</span>, <span class="string">'uuid'</span>, <span class="string">'digest'</span>))</span><br><span class="line">devtools::install_github(<span class="string">'IRkernel/IRkernel'</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">install.packages<span class="punctuation">(</span><span class="built_in">c</span><span class="punctuation">(</span><span class="string">&#x27;repr&#x27;</span><span class="punctuation">,</span> <span class="string">&#x27;IRdisplay&#x27;</span><span class="punctuation">,</span> <span class="string">&#x27;evaluate&#x27;</span><span class="punctuation">,</span> <span class="string">&#x27;crayon&#x27;</span><span class="punctuation">,</span> </span><br><span class="line">                   <span class="string">&#x27;pbdZMQ&#x27;</span><span class="punctuation">,</span> <span class="string">&#x27;devtools&#x27;</span><span class="punctuation">,</span> <span class="string">&#x27;uuid&#x27;</span><span class="punctuation">,</span> <span class="string">&#x27;digest&#x27;</span><span class="punctuation">)</span><span class="punctuation">)</span></span><br><span class="line">devtools<span class="operator">::</span>install_github<span class="punctuation">(</span><span class="string">&#x27;IRkernel/IRkernel&#x27;</span><span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
 <p>在Anaconda Prompt中输入以下命令：<br>
 第一步：输入R，调用R</p>
-<figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">R</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">R</span></span><br></pre></td></tr></table></figure>
 <p>第二步：安装R kernel，有2种方式（自由选择，个人建议第二种）：</p>
 <ol>
 <li>直接安装在当前用户中：</li>
 </ol>
- <figure class="highlight r"><table><tr><td class="code"><pre><span class="line">IRkernel::installspec()</span><br></pre></td></tr></table></figure>
+ <figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">IRkernel<span class="operator">::</span>installspec<span class="punctuation">(</span><span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
 <ol start="2">
 <li>安装在系统中：</li>
 </ol>
- <figure class="highlight r"><table><tr><td class="code"><pre><span class="line">IRkernel::installspec(user = <span class="literal">FALSE</span>)</span><br></pre></td></tr></table></figure>
+ <figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">IRkernel<span class="operator">::</span>installspec<span class="punctuation">(</span>user <span class="operator">=</span> <span class="literal">FALSE</span><span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
 <h1 id="其他"><a class="header-anchor" href="#其他"></a>其他</h1>
 <h2 id="运行时间"><a class="header-anchor" href="#运行时间"></a>运行时间</h2>
 <p>在cell中添加 <code>%%time</code> ，返回结果中会含有cell单次运行的时间。<br>
 在cell中添加 <code>%timeit</code> ，会运行该cell 100,000次（默认），然后以运行最快的3次结果的平均值作为结果。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy</span><br><span class="line">%timeit numpy.random.normal(size = <span class="number">10</span>)</span><br><span class="line"><span class="comment"># 5.91 µs ± 258 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)</span></span><br><span class="line">%%time</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">for</span> _ <span class="keyword">in</span> range(<span class="number">100</span>):</span><br><span class="line">    time.sleep(<span class="number">0.01</span>)</span><br><span class="line"><span class="comment"># Wall time: 1.73 s</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy</span><br><span class="line">%timeit numpy.random.normal(size = <span class="number">10</span>)</span><br><span class="line"><span class="comment"># 5.91 µs ± 258 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)</span></span><br><span class="line">%%time</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">100</span>):</span><br><span class="line">    time.sleep(<span class="number">0.01</span>)</span><br><span class="line"><span class="comment"># Wall time: 1.73 s</span></span><br></pre></td></tr></table></figure>
 <h2 id="插件管理器"><a class="header-anchor" href="#插件管理器"></a>插件管理器</h2>
 <p>Nbextensions相当于Jupyter的插件管理器。<br>
 安装：（在Anaconda Prompt中输入）</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda install -c conda-forge jupyter_contrib_nbextensions</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda install -c conda-forge jupyter_contrib_nbextensions  </span><br></pre></td></tr></table></figure>
 <p>安装过程需要选择[y/n]，输入y。</p>
 <p>该选项卡下方罗列了大量Jupyter可用的插件；点击某个插件的名称，即可在列表下方显示该插件的说明文档；勾选某个插件前面的方框，则系统会加载启用该插件。</p>
 <h2 id="Jupyter-Lab！"><a class="header-anchor" href="#Jupyter-Lab！"></a>Jupyter Lab！</h2>
-<p>超好用！是Project Jupyter的下一代用户界面，具体安装和使用说明请见《<a href="https://mp.weixin.qq.com/s/T-Afq0vAw0lVB9Bave-aNQ" target="_blank" rel="noopener">Jupyter：超强的下一代Jupyter Notebook</a>》（原文作者Parul Pandey，EarlGrey翻译，<a href="https://towardsdatascience.com/jupyter-lab-evolution-of-the-jupyter-notebook-5297cacde6b?gi=dec00114bf03" target="_blank" rel="noopener">原文网址</a>）。</p>
-<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="comment">%% Jupyter Notebook的本地访问地址为</span></span><br><span class="line">http://localhost:8888/tree</span><br><span class="line"></span><br><span class="line"><span class="comment">%% Jupyter Lab的本地访问地址为</span></span><br><span class="line">http://localhost:8888/lab</span><br></pre></td></tr></table></figure>
+<p>超好用！是Project Jupyter的下一代用户界面，具体安装和使用说明请见《<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/T-Afq0vAw0lVB9Bave-aNQ">Jupyter：超强的下一代Jupyter Notebook</a>》（原文作者Parul Pandey，EarlGrey翻译，<a target="_blank" rel="noopener" href="https://towardsdatascience.com/jupyter-lab-evolution-of-the-jupyter-notebook-5297cacde6b?gi=dec00114bf03">原文网址</a>）。</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">%% Jupyter Notebook的本地访问地址为</span></span><br><span class="line">http://localhost:8888/tree</span><br><span class="line"></span><br><span class="line"><span class="comment">%% Jupyter Lab的本地访问地址为</span></span><br><span class="line">http://localhost:8888/lab</span><br></pre></td></tr></table></figure>
 <h2 id="切换Code和Markdown"><a class="header-anchor" href="#切换Code和Markdown"></a>切换Code和Markdown</h2>
 <p>要快捷地切换Cell的形式（Code或Markdown），可按如下操作：<br>
 选中Cell（光标在Cell中闪烁），点击“Esc”，进入命令模式（光标不再Cell中闪烁，但Cell左侧仍有蓝色粗线条）；然后键盘按“Y”将Cell切换为Code模式，键盘按“M”则将Cell切换为Markdown模式。即</p>
@@ -373,12 +373,12 @@
 </ul>
 <h1 id="参考资料"><a class="header-anchor" href="#参考资料"></a>参考资料</h1>
 <ul>
-<li><a href="https://www.google.com/Jupyter" target="_blank" rel="noopener">首页缩略图</a></li>
-<li><a href="https://www.cnblogs.com/bella1102/p/11032519.html" target="_blank" rel="noopener">Jupyter Notebook 如何让一个Cell 可以同时输出多个语句的值？</a></li>
-<li><a href="https://www.sohu.com/a/219989263_774914" target="_blank" rel="noopener">Jupyter Notebook/Lab中添加R Kernel的详细步骤</a></li>
-<li><a href="https://blog.csdn.net/create115721/article/details/79243641" target="_blank" rel="noopener">Jupyter Notebook的27个窍门，技巧和快捷键</a></li>
-<li><a href="https://mp.weixin.qq.com/s/5sFkpI4eEodVQuLya3K5rw" target="_blank" rel="noopener">九大神招，让Python里数据分析神器Jupyter，完美升华</a></li>
-<li><a href="https://www.cnblogs.com/bigtreei/p/13345135.html" target="_blank" rel="noopener">解决Jupyter Notebook中for循环输出DataFrame不够美观</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.google.com/Jupyter">首页缩略图</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/bella1102/p/11032519.html">Jupyter Notebook 如何让一个Cell 可以同时输出多个语句的值？</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.sohu.com/a/219989263_774914">Jupyter Notebook/Lab中添加R Kernel的详细步骤</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/create115721/article/details/79243641">Jupyter Notebook的27个窍门，技巧和快捷键</a></li>
+<li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/5sFkpI4eEodVQuLya3K5rw">九大神招，让Python里数据分析神器Jupyter，完美升华</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/bigtreei/p/13345135.html">解决Jupyter Notebook中for循环输出DataFrame不够美观</a></li>
 </ul>
 
     </div>
@@ -394,11 +394,6 @@
   <div id="qr" style="display: none;">
       
       <div style="display: inline-block;">
-        <img src="/images/reward2021.png" alt="Skye WeChat Bezahlung">
-        <p>WeChat Bezahlung</p>
-      </div>
-      
-      <div style="display: inline-block;">
         <img src="/images/alipay.jpg" alt="Skye 支付宝">
         <p>支付宝</p>
       </div>
@@ -406,6 +401,11 @@
       <div style="display: inline-block;">
         <img src="/images/wechatpay.jpg" alt="Skye 微信支付">
         <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/reward2021.png" alt="Skye WeChat Pay">
+        <p>WeChat Pay</p>
       </div>
 
   </div>
@@ -509,7 +509,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#输出"><span class="nav-number">1.</span> <span class="nav-text">输出</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#输出结果显示图片"><span class="nav-number">1.1.</span> <span class="nav-text">输出结果显示图片</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#同时输出多个命令的结果"><span class="nav-number">1.2.</span> <span class="nav-text">同时输出多个命令的结果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#禁止输出警告（warnings）"><span class="nav-number">1.3.</span> <span class="nav-text">禁止输出警告（warnings）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#for循环美观输出DataFrame"><span class="nav-number">1.4.</span> <span class="nav-text">for循环美观输出DataFrame</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Kernel"><span class="nav-number">2.</span> <span class="nav-text">Kernel</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装R-kernel"><span class="nav-number">2.1.</span> <span class="nav-text">安装R kernel</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#其他"><span class="nav-number">3.</span> <span class="nav-text">其他</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#运行时间"><span class="nav-number">3.1.</span> <span class="nav-text">运行时间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#插件管理器"><span class="nav-number">3.2.</span> <span class="nav-text">插件管理器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Jupyter-Lab！"><span class="nav-number">3.3.</span> <span class="nav-text">Jupyter Lab！</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#切换Code和Markdown"><span class="nav-number">3.4.</span> <span class="nav-text">切换Code和Markdown</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料"><span class="nav-number">4.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BE%93%E5%87%BA"><span class="nav-number">1.</span> <span class="nav-text">输出</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BE%93%E5%87%BA%E7%BB%93%E6%9E%9C%E6%98%BE%E7%A4%BA%E5%9B%BE%E7%89%87"><span class="nav-number">1.1.</span> <span class="nav-text">输出结果显示图片</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8C%E6%97%B6%E8%BE%93%E5%87%BA%E5%A4%9A%E4%B8%AA%E5%91%BD%E4%BB%A4%E7%9A%84%E7%BB%93%E6%9E%9C"><span class="nav-number">1.2.</span> <span class="nav-text">同时输出多个命令的结果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A6%81%E6%AD%A2%E8%BE%93%E5%87%BA%E8%AD%A6%E5%91%8A%EF%BC%88warnings%EF%BC%89"><span class="nav-number">1.3.</span> <span class="nav-text">禁止输出警告（warnings）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#for%E5%BE%AA%E7%8E%AF%E7%BE%8E%E8%A7%82%E8%BE%93%E5%87%BADataFrame"><span class="nav-number">1.4.</span> <span class="nav-text">for循环美观输出DataFrame</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Kernel"><span class="nav-number">2.</span> <span class="nav-text">Kernel</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85R-kernel"><span class="nav-number">2.1.</span> <span class="nav-text">安装R kernel</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%B6%E4%BB%96"><span class="nav-number">3.</span> <span class="nav-text">其他</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%90%E8%A1%8C%E6%97%B6%E9%97%B4"><span class="nav-number">3.1.</span> <span class="nav-text">运行时间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8F%92%E4%BB%B6%E7%AE%A1%E7%90%86%E5%99%A8"><span class="nav-number">3.2.</span> <span class="nav-text">插件管理器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Jupyter-Lab%EF%BC%81"><span class="nav-number">3.3.</span> <span class="nav-text">Jupyter Lab！</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%87%E6%8D%A2Code%E5%92%8CMarkdown"><span class="nav-number">3.4.</span> <span class="nav-text">切换Code和Markdown</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="nav-number">4.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -578,17 +578,17 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">425k</span>
+    <span title="站点总字数">428k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">6:27</span>
+    <span title="站点阅读时长">6:29</span>
 </div>
 
 
-  <script src='https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js'></script>
+  <script src='https://unpkg.com/mermaid@/dist/mermaid.min.js'></script>
   <script>
     if (window.mermaid) {
       mermaid.initialize({theme: 'forest'});

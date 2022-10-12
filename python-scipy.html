@@ -4,7 +4,7 @@
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.0">
+<meta name="generator" content="Hexo 6.0.0">
 <meta name="baidu-site-verification" content="GLZSr3LDqT" />
 <meta name="google-site-verification" content="fZvQBljM9I6UA4l4wwiA5wECEn7k0V4-DgCfWEPNtFc" />
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
@@ -304,16 +304,16 @@
 
       
         <center> </center>
-<a id="more"></a>
+<span id="more"></span>
 <h1 id="scipy"><a class="header-anchor" href="#scipy"></a>scipy</h1>
 <h2 id="stats"><a class="header-anchor" href="#stats"></a>stats</h2>
 <h3 id="mode"><a class="header-anchor" href="#mode"></a>mode()</h3>
 <p>求众数</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 求矩阵/数组的众数</span></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> scipy.stats <span class="keyword">import</span> mode</span><br><span class="line"></span><br><span class="line">a = np.array([[<span class="number">2</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="number">1</span>],</span><br><span class="line">              [<span class="number">1</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="number">2</span>],</span><br><span class="line">              [<span class="number">1</span>, <span class="number">1</span>, <span class="number">3</span>, <span class="number">3</span>]])</span><br><span class="line">print(<span class="string">"# Print mode(a):"</span>, mode(a))</span><br><span class="line">print(<span class="string">"# Print mode(a.transpose()):"</span>, mode(a.transpose()))</span><br><span class="line">print(<span class="string">"# a的每一列中最常见的成员为：&#123;&#125;，分别出现了&#123;&#125;次。"</span>.format(mode(a)[<span class="number">0</span>][<span class="number">0</span>], mode(a)[<span class="number">1</span>][<span class="number">0</span>]))</span><br><span class="line">print(<span class="string">"# a的第一列中最常见的成员为：&#123;&#125;，出现了&#123;&#125;次。"</span>.format(mode(a)[<span class="number">0</span>][<span class="number">0</span>][<span class="number">0</span>], mode(a)[<span class="number">1</span>][<span class="number">0</span>][<span class="number">0</span>]))</span><br><span class="line">print(<span class="string">"# a的每一行中最常见的成员为：&#123;&#125;，分别出现了&#123;&#125;次。"</span>.format(mode(a.transpose())[<span class="number">0</span>][<span class="number">0</span>], mode(a.transpose())[<span class="number">1</span>][<span class="number">0</span>]))</span><br><span class="line">print(<span class="string">"# a中最常见的成员为：&#123;&#125;，出现了&#123;&#125;次。"</span>.format(mode(a.reshape(<span class="number">-1</span>))[<span class="number">0</span>][<span class="number">0</span>], mode(a.reshape(<span class="number">-1</span>))[<span class="number">1</span>][<span class="number">0</span>]))</span><br><span class="line"><span class="comment"># Print mode(a): ModeResult(mode=array([[1, 2, 2, 1]]), count=array([[2, 2, 2, 1]]))</span></span><br><span class="line"><span class="comment"># Print mode(a.transpose()): ModeResult(mode=array([[2, 2, 1]]), count=array([[3, 3, 2]]))</span></span><br><span class="line"><span class="comment"># a的每一列中最常见的成员为：[1 2 2 1]，分别出现了[2 2 2 1]次。</span></span><br><span class="line"><span class="comment"># a的第一列中最常见的成员为：1，出现了2次。</span></span><br><span class="line"><span class="comment"># a的每一行中最常见的成员为：[2 2 1]，分别出现了[3 3 2]次。</span></span><br><span class="line"><span class="comment"># a中最常见的成员为：2，出现了6次。</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 求列表的众数</span></span><br><span class="line"><span class="keyword">from</span> scipy <span class="keyword">import</span> stats</span><br><span class="line"></span><br><span class="line">lst = [<span class="number">2</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">3</span>, <span class="number">6</span>, <span class="number">8</span>, <span class="number">6</span>]</span><br><span class="line">print(int(stats.mode(lst)[<span class="number">0</span>]))</span><br><span class="line"><span class="number">3</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 求矩阵/数组的众数</span></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> scipy.stats <span class="keyword">import</span> mode</span><br><span class="line"></span><br><span class="line">a = np.array([[<span class="number">2</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="number">1</span>],</span><br><span class="line">              [<span class="number">1</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="number">2</span>],</span><br><span class="line">              [<span class="number">1</span>, <span class="number">1</span>, <span class="number">3</span>, <span class="number">3</span>]])</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;# Print mode(a):&quot;</span>, mode(a))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;# Print mode(a.transpose()):&quot;</span>, mode(a.transpose()))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;# a的每一列中最常见的成员为：&#123;&#125;，分别出现了&#123;&#125;次。&quot;</span>.<span class="built_in">format</span>(mode(a)[<span class="number">0</span>][<span class="number">0</span>], mode(a)[<span class="number">1</span>][<span class="number">0</span>]))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;# a的第一列中最常见的成员为：&#123;&#125;，出现了&#123;&#125;次。&quot;</span>.<span class="built_in">format</span>(mode(a)[<span class="number">0</span>][<span class="number">0</span>][<span class="number">0</span>], mode(a)[<span class="number">1</span>][<span class="number">0</span>][<span class="number">0</span>]))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;# a的每一行中最常见的成员为：&#123;&#125;，分别出现了&#123;&#125;次。&quot;</span>.<span class="built_in">format</span>(mode(a.transpose())[<span class="number">0</span>][<span class="number">0</span>], mode(a.transpose())[<span class="number">1</span>][<span class="number">0</span>]))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;# a中最常见的成员为：&#123;&#125;，出现了&#123;&#125;次。&quot;</span>.<span class="built_in">format</span>(mode(a.reshape(-<span class="number">1</span>))[<span class="number">0</span>][<span class="number">0</span>], mode(a.reshape(-<span class="number">1</span>))[<span class="number">1</span>][<span class="number">0</span>]))</span><br><span class="line"><span class="comment"># Print mode(a): ModeResult(mode=array([[1, 2, 2, 1]]), count=array([[2, 2, 2, 1]]))</span></span><br><span class="line"><span class="comment"># Print mode(a.transpose()): ModeResult(mode=array([[2, 2, 1]]), count=array([[3, 3, 2]]))</span></span><br><span class="line"><span class="comment"># a的每一列中最常见的成员为：[1 2 2 1]，分别出现了[2 2 2 1]次。</span></span><br><span class="line"><span class="comment"># a的第一列中最常见的成员为：1，出现了2次。</span></span><br><span class="line"><span class="comment"># a的每一行中最常见的成员为：[2 2 1]，分别出现了[3 3 2]次。</span></span><br><span class="line"><span class="comment"># a中最常见的成员为：2，出现了6次。</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 求列表的众数</span></span><br><span class="line"><span class="keyword">from</span> scipy <span class="keyword">import</span> stats</span><br><span class="line"></span><br><span class="line">lst = [<span class="number">2</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">3</span>, <span class="number">6</span>, <span class="number">8</span>, <span class="number">6</span>]</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">int</span>(stats.mode(lst)[<span class="number">0</span>]))</span><br><span class="line"><span class="number">3</span></span><br></pre></td></tr></table></figure>
 <h1 id="参考资料"><a class="header-anchor" href="#参考资料"></a>参考资料</h1>
 <ul>
-<li><a href="https://blog.csdn.net/kane7csdn/article/details/84795405" target="_blank" rel="noopener">Python中的scipy.stats.mode函数</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/kane7csdn/article/details/84795405">Python中的scipy.stats.mode函数</a></li>
 </ul>
 
     </div>
@@ -329,11 +329,6 @@
   <div id="qr" style="display: none;">
       
       <div style="display: inline-block;">
-        <img src="/images/reward2021.png" alt="Skye WeChat Bezahlung">
-        <p>WeChat Bezahlung</p>
-      </div>
-      
-      <div style="display: inline-block;">
         <img src="/images/alipay.jpg" alt="Skye 支付宝">
         <p>支付宝</p>
       </div>
@@ -341,6 +336,11 @@
       <div style="display: inline-block;">
         <img src="/images/wechatpay.jpg" alt="Skye 微信支付">
         <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/reward2021.png" alt="Skye WeChat Pay">
+        <p>WeChat Pay</p>
       </div>
 
   </div>
@@ -443,7 +443,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#scipy"><span class="nav-number">1.</span> <span class="nav-text">scipy</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#stats"><span class="nav-number">1.1.</span> <span class="nav-text">stats</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#mode"><span class="nav-number">1.1.1.</span> <span class="nav-text">mode()</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料"><span class="nav-number">2.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#scipy"><span class="nav-number">1.</span> <span class="nav-text">scipy</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#stats"><span class="nav-number">1.1.</span> <span class="nav-text">stats</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#mode"><span class="nav-number">1.1.1.</span> <span class="nav-text">mode()</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="nav-number">2.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -512,17 +512,17 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">425k</span>
+    <span title="站点总字数">428k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">6:27</span>
+    <span title="站点阅读时长">6:29</span>
 </div>
 
 
-  <script src='https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js'></script>
+  <script src='https://unpkg.com/mermaid@/dist/mermaid.min.js'></script>
   <script>
     if (window.mermaid) {
       mermaid.initialize({theme: 'forest'});
