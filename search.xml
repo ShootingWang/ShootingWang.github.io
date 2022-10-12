@@ -28776,6 +28776,8 @@ Y &amp;= Y_1 + Y_2 + \cdots + Y_m \\<br>
 <li>共可拆分为$m$个维度，维度之间满足<a href="/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-MECE%E5%8E%9F%E5%88%99.html" title="MECE原则">MECE原则</a></li>
 <li>$T$指代当期（本期，对比期），$T-1$指代上一期（基期）</li>
 </ul>
+<p>则第$i$个（$i=1,\cdots,m$）维度（因子Factor）$F_i$对波动$\Delta Y$的贡献度（Contribution）为<br>
+$$C_i = \frac{\Delta Y_i}{\Delta Y} = \frac{Y_i^T - Y<sup>{T-1}}{Y</sup>T - Y^{T-1}}$$</p>
 <blockquote>
 <p>🌰 以GMV为例：<br>
 $$\mathrm{GMV} = 老客\mathrm{GMV} + 新客\mathrm{GMV}$$</p>
