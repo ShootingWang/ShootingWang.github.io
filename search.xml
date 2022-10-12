@@ -11887,6 +11887,7 @@ Y = X_1 \cdot X_2 \cdot \cdots \cdot X_m<br>
 Z &amp;= Z_1 + Z_2 + \cdots + Z_m \\<br>
 \\<br>
 \Delta Z &amp;= \Delta \ln Y = \ln Y^T - \ln Y^{T-1}  \\<br>
+\\<br>
 \Delta Z_i &amp;= \Delta \ln Y_i + \Delta \ln Y_2 + \cdots + \Delta \ln Y_m \\<br>
 \end{aligned}</p>
 <p>则指标$Y_i$对波动$\Delta Y$的贡献度为<br>
