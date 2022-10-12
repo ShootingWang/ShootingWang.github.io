@@ -11906,8 +11906,7 @@ Y &amp;= Y_1 + Y_2 + \cdots + Y_m \\<br>
 \Delta Y &amp;= Y^T - Y^{T-1} \\<br>
 &amp;= \Delta Y_1 + \Delta Y_2 + \cdots + \Delta Y_m \\<br>
 \Delta Y_i &amp;= Y_i^T - Y_i^{T-1} \\<br>
-\end{aligned}<br>
-\end{equation}</p>
+\end{aligned}</p>
 <p>其中，</p>
 <ul>
 <li>$Y$为目标指标，关注该指标的波动，波动值为$\Delta Y$</li>
@@ -11915,7 +11914,7 @@ Y &amp;= Y_1 + Y_2 + \cdots + Y_m \\<br>
 <li>$T$指代当期（本期，对比期），$T-1$指代上一期（基期）</li>
 </ul>
 <blockquote>
-<p>🍉 🌰 以GMV为例：<br>
+<p>🌰 以GMV为例：<br>
 $$\mathrm{GMV} = 老客\mathrm{GMV} + 新客\mathrm{GMV}$$</p>
 </blockquote>
 <h4 id="乘法指标"><a class="header-anchor" href="#乘法指标"></a>乘法指标</h4>
