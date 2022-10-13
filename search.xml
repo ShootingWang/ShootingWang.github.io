@@ -24553,7 +24553,7 @@ $$\mathrm{GMV} = 老客\mathrm{GMV} + 新客\mathrm{GMV}$$</p>
 </blockquote>
 <ul>
 <li>Ang, Beng. (2005). <a href="https://sci-hub.ee/10.1016/j.enpol.2003.10.010">The LMDI Approach to Decomposition Analysis: A Practical Guide</a>. Energy Policy. 33. 867-871. 10.1016/j.enpol.2003.10.010.</li>
-<li>Ang, B.W. (2015). <a href="https://www.docin.com/p-1807341895.html">LMDI decomposition approach: A guide for implementation</a>. Energy Policy, 86, 233-238.</li>
+<li>Ang, B.W. (2015). <a href="https://sci-hub.ee/10.1016/j.enpol.2015.07.007">LMDI decomposition approach: A guide for implementation</a>. Energy Policy, 86, 233-238.</li>
 <li>Xiang, X.; Ma, X.; Ma, Z.; Ma, M.; Cai, W. <a href="https://www.mdpi.com/2075-5309/12/1/83/htm">Python-LMDI: A Tool for Index Decomposition Analysis of Building Carbon Emissions</a>. Buildings 2022, 12, 83. <a href="https://doi.org/10.3390/buildings12010083">https://doi.org/10.3390/buildings12010083</a> <a href="https://www.mdpi.com/2075-5309/12/1/83/pdf">pdf download</a>
 <ul>
 <li>Python Package: <a href="https://github.com/xiwang2718/PyLMDI">PyLMDI</a></li>
@@ -24621,6 +24621,12 @@ $$\Delta Y_{x_j} = \int_0^T \sum_{i=1}^m Y_i^t \frac{ \mathrm{d} \ln x_{j,i}^t }
 \begin{aligned}<br>
 \int_0^T \frac{1}{ Y^t } \frac{ \mathrm{d} Y^t }{ \mathrm{d} t } &amp;= \int_0^T \frac{ \mathrm{d} \ln Y^t }{ \mathrm{d} t  } \\<br>
 &amp;= \ln Y^T - \ln Y^0 = \ln \left( \frac{ Y^T }{ Y^0 } \right) \\<br>
+&amp;= \sum_{j=1}^n \int_0^T \sum_{i=1}^m \omega_i^t \frac{ \mathrm{d} \ln x_{j,i}^t }{ \mathrm{d} t }<br>
+\end{aligned}<br>
+等式两边取指数$\mathrm{exp}$，可得<br>
+\begin{aligned}<br>
+D_{tot} &amp;= \prod_{j=1}^n D_{x_j} \\<br>
+&amp;=<br>
 \end{aligned}</li>
 </ol>
 <h4 id="加法分解"><a class="header-anchor" href="#加法分解"></a>加法分解</h4>
