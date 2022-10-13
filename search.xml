@@ -24559,9 +24559,8 @@ $$\mathrm{GMV} = 老客\mathrm{GMV} + 新客\mathrm{GMV}$$</p>
 $$ Y = \sum_{i=1}^m Y_i =  Y_1 + Y_2 + \cdots + Y_m $$<br>
 在每一个子类（sub-category）里，指标$Y_i$又受到$n$个因素的叠加影响。</p>
 <p>\begin{aligned}<br>
-Y &amp;= \sum_{i=1}^m Y_i = \sum_{i=1}^m \sum_{j=1}^n X_{j,i} \\<br>
-&amp;= Y_1 + Y_2 + \cdots + Y_m \\<br>
-&amp;= \sum_{i=1}^m x_{1,i} \cdot x_{2,i} \cdot \cdots \cdot x_{n,i} \\<br>
+Y &amp;= \sum_{i=1}^m Y_i = Y_1 + Y_2 + \cdots + Y_m \\<br>
+&amp;= \sum_{i=1}^m \sum_{j=1}^n X_{j,i} = \sum_{i=1}^m x_{1,i} \cdot x_{2,i} \cdot \cdots \cdot x_{n,i} \\<br>
 \end{aligned}</p>
 <p>将分解的各个因子（因素）看成是时间$t$的连续可微函数，对时间$t$进行微分，分解出各个因子（因素）对目标指标的影响。<br>
 为了便于理解，假设基期为时间$0$，对比期（当期）为时间$T$。</p>
