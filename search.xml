@@ -24550,7 +24550,7 @@ $$\mathrm{GMV} = 老客\mathrm{GMV} + 新客\mathrm{GMV}$$</p>
 </ul>
 <p>目标指标$Y$可拆分为两个指标相除，且分子分母是可加和的（可以分别拆分成$m$个维度指标加和）。</p>
 <p>\begin{aligned}<br>
-Y &amp;= \frac{X}{Z} = \frac{X_1 + X_2 + \cdots + X_m}{ Z_1 + Z_2 + \cdots + Z_m } \\<br>
+Y &amp;= \frac{X}{Z} = \frac{ X_1 + X_2 + \cdots + X_m }{ Z_1 + Z_2 + \cdots + Z_m } \\<br>
 \Delta Y &amp;= Y^T - Y^0 \\<br>
 &amp;= \Delta \frac{X}{Z} = \frac{ X^0 + \Delta X }{ Z^0 + \Delta Z } \\<br>
 \end{aligned}</p>
