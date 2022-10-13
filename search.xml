@@ -24626,7 +24626,7 @@ $$\Delta Y_{x_j} = \int_0^T \sum_{i=1}^m Y_i^t \frac{ \mathrm{d} \ln x_{j,i}^t }
 等式两边取指数$\mathrm{exp}$，可得<br>
 \begin{aligned}<br>
 D_{tot} &amp;= \prod_{j=1}^n D_{x_j} \\<br>
-&amp;=<br>
+&amp;= \mathrm{exp} \left( \sum_{j=1}^n \int_0^T \sum_{i=1}^m \omega_i^t \frac{ \mathrm{d} \ln x_{j,i}^t }{ \mathrm{d} t } \right) \\<br>
 \end{aligned}</li>
 </ol>
 <h4 id="加法分解"><a class="header-anchor" href="#加法分解"></a>加法分解</h4>

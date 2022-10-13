@@ -32,7 +32,7 @@
 <meta property="og:site_name" content="Skye">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-05-02T01:20:29.000Z">
-<meta property="article:modified_time" content="2022-10-13T06:21:52.755Z">
+<meta property="article:modified_time" content="2022-10-13T06:24:18.948Z">
 <meta property="article:author" content="Skye">
 <meta property="article:tag" content="Data Analysis 数据分析">
 <meta name="twitter:card" content="summary">
@@ -266,7 +266,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-10-13 14:21:52" itemprop="dateModified" datetime="2022-10-13T14:21:52+08:00">2022-10-13</time>
+                <time title="修改时间：2022-10-13 14:24:18" itemprop="dateModified" datetime="2022-10-13T14:24:18+08:00">2022-10-13</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -501,7 +501,7 @@ $$\Delta Y_{x_j} = \int_0^T \sum_{i=1}^m Y_i^t \frac{ \mathrm{d} \ln x_{j,i}^t }
 等式两边取指数$\mathrm{exp}$，可得<br>
 \begin{aligned}<br>
 D_{tot} &amp;= \prod_{j=1}^n D_{x_j} \\<br>
-&amp;=<br>
+&amp;= \mathrm{exp} \left( \sum_{j=1}^n \int_0^T \sum_{i=1}^m \omega_i^t \frac{ \mathrm{d} \ln x_{j,i}^t }{ \mathrm{d} t } \right) \\<br>
 \end{aligned}</li>
 </ol>
 <h4 id="加法分解"><a class="header-anchor" href="#加法分解"></a>加法分解</h4>
@@ -611,8 +611,8 @@ $$次日留存率=\sum\frac{次日留存数}{今日获客人数}$$</li>
       </div>
       
       <div style="display: inline-block;">
-        <img src="/images/reward2021.png" alt="Skye WeChat Bezahlung">
-        <p>WeChat Bezahlung</p>
+        <img src="/images/reward2021.png" alt="Skye پرداخت WeChat">
+        <p>پرداخت WeChat</p>
       </div>
 
   </div>
