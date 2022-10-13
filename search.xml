@@ -24608,16 +24608,17 @@ D_{x_j} &amp;= \mathrm{exp} \left( \sum_{i=1}^m \frac{ L(Y_i^T, Y_i^0) }{ L(Y^T,
 \end{aligned}<br>
 \end{equation}</p>
 <ol>
-<li>上式等号两边同时对时间$t$进行积分：<br>
+<li>
+<p>上式等号两边同时对时间$t$进行积分：<br>
 \begin{aligned}<br>
 \int_0^T \frac{ \mathrm{d} Y^t }{ \mathrm{d} t } &amp;= Y^T - Y^0 = \Delta Y_{tot} \\<br>
 &amp;= \sum_{j=1}^n \int_0^T \sum_{i=1}^m Y_i^t \frac{ \mathrm{d} \ln x_{j,i}^t }{ \mathrm{d} t } \\<br>
-\end{aligned}</li>
-</ol>
-<p>由指数分解加法形式$\Delta Y_{tot} = \sum_{j=1}^n \Delta Y_{x_j}$可得<br>
+\end{aligned}<br>
+由指数分解加法形式$\Delta Y_{tot} = \sum_{j=1}^n \Delta Y_{x_j}$可得<br>
 $$\Delta Y_{x_j} = \int_0^T \sum_{i=1}^m Y_i^t \frac{ \mathrm{d} \ln x_{j,i}^t }{ \mathrm{d} t } $$</p>
-<ol start="2">
-<li>上式等号两边同时除以$Y^t$，并对时间$t$进行积分：<br>
+</li>
+<li>
+<p>上式等号两边同时除以$Y^t$，并对时间$t$进行积分：<br>
 \begin{aligned}<br>
 \int_0^T \frac{1}{ Y^t } \frac{ \mathrm{d} Y^t }{ \mathrm{d} t } &amp;= \int_0^T \frac{ \mathrm{d} \ln Y^t }{ \mathrm{d} t  } \\<br>
 &amp;= \ln Y^T - \ln Y^0 = \ln \left( \frac{ Y^T }{ Y^0 } \right) \\<br>
@@ -24627,7 +24628,11 @@ $$\Delta Y_{x_j} = \int_0^T \sum_{i=1}^m Y_i^t \frac{ \mathrm{d} \ln x_{j,i}^t }
 \begin{aligned}<br>
 D_{tot} &amp;= \prod_{j=1}^n D_{x_j} \\<br>
 &amp;= \mathrm{exp} \left( \sum_{j=1}^n \int_0^T \sum_{i=1}^m \omega_i^t \frac{ \mathrm{d} \ln x_{j,i}^t }{ \mathrm{d} t } \right) \\<br>
-\end{aligned}</li>
+&amp;= \prod_{j=1}^n \mathrm{exp} \left( \int_0^T \sum_{i=1}^m \omega_i^t \frac{ \mathrm{d} \ln x_{j,i}^t }{ \mathrm{d} t } \right) \\<br>
+\end{aligned}<br>
+由乘法分解形式$D_{tot} = \prod_{j=1}^n D_{x_j}$可得<br>
+$$D_{x_j} = $$</p>
+</li>
 </ol>
 <h4 id="加法分解"><a class="header-anchor" href="#加法分解"></a>加法分解</h4>
 <h4 id="乘法分解"><a class="header-anchor" href="#乘法分解"></a>乘法分解</h4>
