@@ -24551,8 +24551,22 @@ $$\mathrm{GMV} = 老客\mathrm{GMV} + 新客\mathrm{GMV}$$</p>
 <p>目标指标$Y$可拆分为两个指标相除，且分子分母是可加和的（可以分别拆分成$m$个维度指标加和）。</p>
 <p>\begin{aligned}<br>
 Y &amp;= \frac{X}{Z} = \frac{X_1 + X_2 + \cdots + X_m}{ Z_1 + Z_2 + \cdots + Z_m } \\<br>
-\Delta Y &amp;= \Delta \frac{X}{Z} = \frac{ X^}{}<br>
+\Delta Y &amp;= Y^T - Y^0 \\<br>
+&amp;= \Delta \frac{X}{Z} = \frac{ X^0 + \Delta X }{ Z^0 + \Delta Z } \\<br>
 \end{aligned}</p>
+<p>则维度$i$对波动$\Delta Y$的</p>
+<ul>
+<li>可解释功效（EP，Explanatory Power）：<br>
+\begin{aligned}<br>
+EP_i &amp;= \tilde{Y}^0 - Y^0 \\<br>
+&amp;= \frac{X_1^0 + X_2^0 + \cdots + X_{i-1}^0 + X_{i}^T + X_{i+1}^0 + \cdots + X_m^0 }{ Z_1^0 + Z_2^0 + \cdots + Z_{i-1}^0 + Z_i^T + Z_{i+1}^0 + \cdots + Z_m^0 } - \frac{ X^0 }{ Z^0 } \\<br>
+&amp;= \frac{ X^0 - X_i^0 + X_i^T }{ Z^0 - Z_i^0 + Z_i^T } - \frac{ X^0 }{ Z^0 } \\<br>
+\end{aligned}</li>
+<li>贡献度（Contribution）$C_i$：<br>
+$$C_i = \frac{EP_i}{ \sum_{i=1}^m EP_i } = \frac{ EP_i }{ EP_1 + EP_2 + \cdots + EP_m }$$</li>
+<li>贡献值：<br>
+$$贡献值 = 贡献度 \times \Delta Y = \frac{EP_i}{ \sum_{i=1}^m EP_i } \times \Delta Y $$</li>
+</ul>
 <h3 id="剔除法"><a class="header-anchor" href="#剔除法"></a>剔除法</h3>
 <h3 id="加权占比法"><a class="header-anchor" href="#加权占比法"></a>加权占比法</h3>
 <h3 id="根因定位算法"><a class="header-anchor" href="#根因定位算法"></a>根因定位算法</h3>
