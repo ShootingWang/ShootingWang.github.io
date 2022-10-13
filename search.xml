@@ -24562,8 +24562,6 @@ Y &amp;= \sum_{i=1}^m Y_i = Y_1 + Y_2 + \cdots + Y_m \\<br>
 \Delta Y_{tot} &amp;= Y^T - Y^{0} \\<br>
 &amp;= \sum_{j=1}^n \Delta Y_{x_j} \\<br>
 &amp;= \Delta Y_{x_1} + \Delta Y_{x_2} +  \cdots + \Delta Y_{x_n} \\<br>
-&amp;= \sum_{j=1}^n \sum_{i=1}^m L(Y_i^T , Y_i^0) \ln \left( \frac{x_{j,i}^T }{ x_{j,i}^0 } \right) \\<br>
-&amp;= \sum_{j=1}^n \sum_{i=1}^m \frac{ Y_i^T - Y_i^0 }{ \ln Y_i^T - \ln Y_i^0 } \ln \left( \frac{x_{j,i}^T }{ x_{j,i}^0 } \right) \\<br>
 \end{aligned}</li>
 </ol>
 <p>\begin{aligned}<br>
@@ -24580,10 +24578,6 @@ D_{tot} &amp;= \frac{Y^T}{ Y^{0} } \\<br>
 &amp;= \prod_{j=1}^n \mathrm{exp} \left( \sum_{i=1}^m \frac{ Y_i^T - Y_i^0 }{ \ln Y_i^T - \ln Y_i^0 } / \frac{ Y^T - Y^0 }{ \ln Y^T - \ln Y^0 } \times \ln \left( \frac{ x_{j,i}^T }{ x_{j,i}^0 } \right) \right) \\<br>
 \end{aligned}</li>
 </ol>
-<p>\begin{aligned}<br>
-D_{x_j} &amp;= \mathrm{exp} \left( \sum_{i=1}^m \frac{ L(Y_i^T, Y_i^0) }{ L(Y^T, Y^0) } \ln \left( \frac{ x_{j,i}^T }{ x_{j,i}^0 } \right) \right) \\<br>
-&amp;= \mathrm{exp} \left( \sum_{i=1}^m \frac{ Y_i^T - Y_i^0 }{ \ln Y_i^T - \ln Y_i^0 } / \frac{ Y^T - Y^0 }{ \ln Y^T - \ln Y^0 } \times \ln \left( \frac{ x_{j,i}^T }{ x_{j,i}^0 } \right) \right)  \\<br>
-\end{aligned}</p>
 <p>其中，$tot$表示“total”，结构性变化、所有因子对目标指标的综合影响。</p>
 <p>首先，目标指标$Y$对时间$t$进行微分：<br>
 \begin{equation}<br>
@@ -24651,19 +24645,34 @@ D_{x_j} &amp;=  \mathrm{exp} \left( \int_0^T \sum_{i=1}^m \omega_i^t \frac{ \mat
 </li>
 </ul>
 <ol>
-<li>加法分解形式：<br>
+<li>加法分解形式：将目标指标的波动$\Delta$分解到各个因子上<br>
 \begin{aligned}<br>
+\Delta Y_{tot} &amp;= Y^T - Y^{0} \\<br>
+&amp;= \sum_{j=1}^n \Delta Y_{x_j} \\<br>
+&amp;= \Delta Y_{x_1} + \Delta Y_{x_2} +  \cdots + \Delta Y_{x_n} \\<br>
+\end{aligned}</li>
+</ol>
+<p>\begin{aligned}<br>
 \Delta Y_{x_j} &amp;= \int_0^T \sum_{i=1}^m Y_i^t \frac{ \mathrm{d} \ln x_{j,i}^t }{ \mathrm{d} t } \\<br>
 &amp;= \sum_{i=1}^m L(Y_i^T, Y_i^0) \ln \left( \frac{x_{j,i}^T }{ x_{j,i}^0 } \right) \\<br>
 &amp;= \sum_{i=1}^m \frac{ Y_i^T - Y_i^0 }{ \ln Y_i^T - \ln Y_i^0 } \ln \left( \frac{x_{j,i}^T }{ x_{j,i}^0 } \right) \\<br>
 &amp;= \sum_{i=1}^m (Y_i^T - Y_i^0) \frac{ \ln \left( \frac{x_{j,i}^T }{ x_{j,i}^0 } \right) }{ \ln \left( \frac{Y_i^T }{Y_i^0} \right) } \\<br>
-\end{aligned}</li>
-<li>乘法分解形式：<br>
+\end{aligned}</p>
+<ol start="2">
+<li>乘法分解形式：将目标指标的变化倍数$RATIO$分解到各个因子上<br>
 \begin{aligned}<br>
-D_{x_j} &amp;=  \mathrm{exp} \left( \int_0^T \sum_{i=1}^m \omega_i^t \frac{ \mathrm{d} \ln x_{j,i}^t }{ \mathrm{d} t } \right) \\<br>
-&amp;= \mathrm{exp} \left\lbrace \sum_{i=1}^m \frac{ L(Y_i^T, Y_i^0) }{ L(Y^T, Y^0) } \ln \left( \frac{x_{j,i}^T }{ x_{j,i}^0 } \right) \right\rbrace \\<br>
+D_{tot} &amp;= \frac{Y^T}{ Y^{0} } \\<br>
+&amp;= \prod_{j=1}^n D_{x_j} \\<br>
+&amp;= D_{x_1} \cdot D_{x_2} \cdot \cdots \cdot D_{x_n} \\<br>
+&amp;= \prod_{j=1}^n \mathrm{exp} \left( \sum_{i=1}^m \frac{ L(Y_i^T, Y_i^0) }{ L(Y^T, Y^0) } \ln \left( \frac{ x_{j,i}^T }{ x_{j,i}^0 } \right) \right) \\<br>
+&amp;= \prod_{j=1}^n \mathrm{exp} \left( \sum_{i=1}^m \frac{ Y_i^T - Y_i^0 }{ \ln Y_i^T - \ln Y_i^0 } / \frac{ Y^T - Y^0 }{ \ln Y^T - \ln Y^0 } \times \ln \left( \frac{ x_{j,i}^T }{ x_{j,i}^0 } \right) \right) \\<br>
 \end{aligned}</li>
 </ol>
+<p>\begin{aligned}<br>
+D_{x_j} &amp;=  \mathrm{exp} \left\lbrace \int_0^T \sum_{i=1}^m \omega_i^t \frac{ \mathrm{d} \ln x_{j,i}^t }{ \mathrm{d} t } \right\rbrace \\<br>
+&amp;= \mathrm{exp} \left\lbrace \sum_{i=1}^m \frac{ L(Y_i^T, Y_i^0) }{ L(Y^T, Y^0) } \ln \left( \frac{x_{j,i}^T }{ x_{j,i}^0 } \right) \right\rbrace \\<br>
+&amp;= \mathrm{exp} \left\lbrace \sum_{i=1}^m \frac{ Y_i^T - Y_i^0 }{ \ln Y_i^T - \ln Y_i^0 } / \frac{ Y^T - Y^0 }{ \ln Y^T - \ln Y^0 } \times \ln \left( \frac{ x_{j,i}^T }{ x_{j,i}^0 } \right) \right\rbrace  \\<br>
+\end{aligned}</p>
 <p>其中，</p>
 <ul>
 <li>波动差值：
