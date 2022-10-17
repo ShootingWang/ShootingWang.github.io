@@ -1,6 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://github.com/ShootingWang/ShootingWang.github.io/%E7%AE%97%E6%B3%95-SVM.html</loc>
+    <lastmod>2022-10-17</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/ShootingWang/ShootingWang.github.io/%E7%AE%97%E6%B3%95-%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92.html</loc>
+    <lastmod>2022-10-17</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/ShootingWang/ShootingWang.github.io/%E7%AE%97%E6%B3%95-DecisionTree.html</loc>
+    <lastmod>2022-10-17</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/ShootingWang/ShootingWang.github.io/%E7%AE%97%E6%B3%95-AdaBoost.html</loc>
+    <lastmod>2022-10-17</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/ShootingWang/ShootingWang.github.io/%E7%AE%97%E6%B3%95-GBDT.html</loc>
+    <lastmod>2022-10-17</lastmod>
+  </url>
+  <url>
     <loc>https://github.com/ShootingWang/ShootingWang.github.io/Machine-Learning-%E8%81%9A%E7%B1%BB%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0.html</loc>
     <lastmod>2022-10-17</lastmod>
   </url>
@@ -13,19 +33,11 @@
     <lastmod>2022-10-17</lastmod>
   </url>
   <url>
-    <loc>https://github.com/ShootingWang/ShootingWang.github.io/%E7%AE%97%E6%B3%95-SVM.html</loc>
-    <lastmod>2022-10-17</lastmod>
-  </url>
-  <url>
     <loc>https://github.com/ShootingWang/ShootingWang.github.io/%E7%94%9F%E6%88%90%E5%BC%8F%E6%A8%A1%E5%9E%8B-%E5%88%A4%E5%88%AB%E5%BC%8F%E6%A8%A1%E5%9E%8B.html</loc>
     <lastmod>2022-10-17</lastmod>
   </url>
   <url>
     <loc>https://github.com/ShootingWang/ShootingWang.github.io/Machine-Learning-%E5%88%86%E7%B1%BB%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0.html</loc>
-    <lastmod>2022-10-17</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/ShootingWang/ShootingWang.github.io/%E7%AE%97%E6%B3%95-DecisionTree.html</loc>
     <lastmod>2022-10-17</lastmod>
   </url>
   <url>
@@ -38,14 +50,6 @@
   </url>
   <url>
     <loc>https://github.com/ShootingWang/ShootingWang.github.io/%E7%AE%97%E6%B3%95-BoostingTree.html</loc>
-    <lastmod>2022-10-17</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/ShootingWang/ShootingWang.github.io/%E7%AE%97%E6%B3%95-AdaBoost.html</loc>
-    <lastmod>2022-10-17</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/ShootingWang/ShootingWang.github.io/%E7%AE%97%E6%B3%95-GBDT.html</loc>
     <lastmod>2022-10-17</lastmod>
   </url>
   <url>
@@ -142,10 +146,6 @@
   </url>
   <url>
     <loc>https://github.com/ShootingWang/ShootingWang.github.io/%E7%AE%97%E6%B3%95-HMM.html</loc>
-    <lastmod>2022-10-12</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/ShootingWang/ShootingWang.github.io/%E7%AE%97%E6%B3%95-%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92.html</loc>
     <lastmod>2022-10-12</lastmod>
   </url>
   <url>
