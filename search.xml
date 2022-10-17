@@ -24624,7 +24624,7 @@ $$</p>
   </thead>
   <tbody>
     <tr>
-      <th rowspan="3">$\Delta Y > 0$ <\br> 目标指标上涨</\br></th>
+      <th rowspan="3">$\Delta Y > 0$ \\ 目标指标上涨</th>
       <td>$\Delta Y - \Delta\tilde{Y} > 0$</td>
       <td>剔除维度（因子）$i$后目标指标上涨幅度变小，则维度（因子）$i$对目标指标的上涨是同向贡献。绝对值越大，则同向贡献越大。</td>
     </tr>
