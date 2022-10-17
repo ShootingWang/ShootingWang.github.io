@@ -14927,10 +14927,10 @@ $$r(y_i, H(x_i))=\left{<br>
       <tags>
         <tag>算法</tag>
         <tag>Machine Learning 机器学习</tag>
-        <tag>集成学习</tag>
         <tag>Classification 分类</tag>
         <tag>回归</tag>
         <tag>Boosting</tag>
+        <tag>Integrated Learning 集成学习</tag>
       </tags>
   </entry>
   <entry>
@@ -15920,10 +15920,10 @@ $$H_t(x)=H_{t-1}(x)+\nu \alpha_t h_t(x)$$<br>
       <tags>
         <tag>算法</tag>
         <tag>Machine Learning 机器学习</tag>
-        <tag>集成学习</tag>
         <tag>Classification 分类</tag>
         <tag>回归</tag>
         <tag>Boosting</tag>
+        <tag>Integrated Learning 集成学习</tag>
       </tags>
   </entry>
   <entry>
@@ -19330,10 +19330,10 @@ $$l(y_i, \hat{y}_i)= y_i \ln (1+e^{-\hat{y}_i}) +(1-y_i) \ln (1+e^{\hat{y}_i})$$
       <tags>
         <tag>算法</tag>
         <tag>Machine Learning 机器学习</tag>
-        <tag>集成学习</tag>
         <tag>Classification 分类</tag>
         <tag>回归</tag>
         <tag>Boosting</tag>
+        <tag>Integrated Learning 集成学习</tag>
       </tags>
   </entry>
   <entry>
@@ -19423,8 +19423,8 @@ $$l(y_i, \hat{y}_i)= y_i \ln (1+e^{-\hat{y}_i}) +(1-y_i) \ln (1+e^{\hat{y}_i})$$
       <tags>
         <tag>算法</tag>
         <tag>Machine Learning 机器学习</tag>
-        <tag>集成学习</tag>
         <tag>Boosting</tag>
+        <tag>Integrated Learning 集成学习</tag>
       </tags>
   </entry>
   <entry>
@@ -30469,7 +30469,7 @@ $$1→2→3→4→5→6→7$$
       </tags>
   </entry>
   <entry>
-    <title>Machine Learning | 随机森林 Random Forest</title>
+    <title>Machine Learning | 随机森林 // Random Forest</title>
     <url>/%E7%AE%97%E6%B3%95-%E9%9A%8F%E6%9C%BA%E6%A3%AE%E6%9E%97.html</url>
     <content><![CDATA[<center></center>
 <span id="more"></span>
@@ -30584,10 +30584,10 @@ $$Random Forest=Bagging+Decision Tree$$</p>
         <tag>算法</tag>
         <tag>Machine Learning 机器学习</tag>
         <tag>有监督学习</tag>
-        <tag>集成学习</tag>
         <tag>Classification 分类</tag>
         <tag>判别式模型</tag>
         <tag>Bagging</tag>
+        <tag>Integrated Learning 集成学习</tag>
       </tags>
   </entry>
   <entry>

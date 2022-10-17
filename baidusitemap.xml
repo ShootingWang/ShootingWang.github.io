@@ -1,6 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://github.com/ShootingWang/ShootingWang.github.io/%E7%AE%97%E6%B3%95-%E9%9A%8F%E6%9C%BA%E6%A3%AE%E6%9E%97.html</loc>
+    <lastmod>2022-10-17</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/ShootingWang/ShootingWang.github.io/%E7%AE%97%E6%B3%95-XGBoost.html</loc>
+    <lastmod>2022-10-17</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/ShootingWang/ShootingWang.github.io/%E7%AE%97%E6%B3%95-BoostingTree.html</loc>
+    <lastmod>2022-10-17</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/ShootingWang/ShootingWang.github.io/%E7%AE%97%E6%B3%95-AdaBoost.html</loc>
+    <lastmod>2022-10-17</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/ShootingWang/ShootingWang.github.io/%E7%AE%97%E6%B3%95-GBDT.html</loc>
+    <lastmod>2022-10-17</lastmod>
+  </url>
+  <url>
     <loc>https://github.com/ShootingWang/ShootingWang.github.io/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-%E7%AC%94%E8%AF%95%E9%A2%98%E7%9B%AE%E7%A7%AF%E7%B4%AF.html</loc>
     <lastmod>2022-10-17</lastmod>
   </url>
@@ -10,18 +30,6 @@
   </url>
   <url>
     <loc>https://github.com/ShootingWang/ShootingWang.github.io/%E7%AE%97%E6%B3%95-%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF.html</loc>
-    <lastmod>2022-10-17</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/ShootingWang/ShootingWang.github.io/%E7%AE%97%E6%B3%95-%E9%9A%8F%E6%9C%BA%E6%A3%AE%E6%9E%97.html</loc>
-    <lastmod>2022-10-17</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/ShootingWang/ShootingWang.github.io/%E7%AE%97%E6%B3%95-AdaBoost.html</loc>
-    <lastmod>2022-10-17</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/ShootingWang/ShootingWang.github.io/%E7%AE%97%E6%B3%95-BoostingTree.html</loc>
     <lastmod>2022-10-17</lastmod>
   </url>
   <url>
@@ -37,19 +45,11 @@
     <lastmod>2022-10-17</lastmod>
   </url>
   <url>
-    <loc>https://github.com/ShootingWang/ShootingWang.github.io/%E7%AE%97%E6%B3%95-GBDT.html</loc>
-    <lastmod>2022-10-17</lastmod>
-  </url>
-  <url>
     <loc>https://github.com/ShootingWang/ShootingWang.github.io/Hexo-GitHub-Markdown%E5%B8%B8%E7%94%A8%E7%94%A8%E6%B3%95.html</loc>
     <lastmod>2022-10-12</lastmod>
   </url>
   <url>
     <loc>https://github.com/ShootingWang/ShootingWang.github.io/%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C-%E5%8D%A1%E6%96%B9%E6%A3%80%E9%AA%8C.html</loc>
-    <lastmod>2022-10-12</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/ShootingWang/ShootingWang.github.io/%E7%AE%97%E6%B3%95-XGBoost.html</loc>
     <lastmod>2022-10-12</lastmod>
   </url>
   <url>
