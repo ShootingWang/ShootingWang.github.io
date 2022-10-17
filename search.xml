@@ -18108,7 +18108,7 @@ Thanks.</p>
       </tags>
   </entry>
   <entry>
-    <title>Machine Learning | 神经网络 Neural Network</title>
+    <title>Machine Learning | 神经网络 // Neural Network</title>
     <url>/%E7%AE%97%E6%B3%95-%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C.html</url>
     <content><![CDATA[<center></center>
 <span id="more"></span>
@@ -18331,8 +18331,8 @@ $$w_{ij}=w_{ij}-\eta_1\cdot \delta_{ij}\cdot x_i+\alpha \Delta w_{ij}$$</li>
       </categories>
       <tags>
         <tag>Machine Learning 机器学习</tag>
-        <tag>神经网络</tag>
-        <tag>深度学习</tag>
+        <tag>Neural Network 神经网络</tag>
+        <tag>Deep Learning 深度学习</tag>
       </tags>
   </entry>
   <entry>

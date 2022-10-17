@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://github.com/ShootingWang/ShootingWang.github.io/%E7%AE%97%E6%B3%95-%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C.html</loc>
+    
+    <lastmod>2022-10-17</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://github.com/ShootingWang/ShootingWang.github.io/%E5%9B%A0%E6%9E%9C%E6%8E%A8%E6%96%AD.html</loc>
     
     <lastmod>2022-10-17</lastmod>
@@ -300,15 +309,6 @@
   
   <url>
     <loc>https://github.com/ShootingWang/ShootingWang.github.io/Spark-Learning.html</loc>
-    
-    <lastmod>2022-10-12</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://github.com/ShootingWang/ShootingWang.github.io/%E7%AE%97%E6%B3%95-%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C.html</loc>
     
     <lastmod>2022-10-12</lastmod>
     
@@ -1852,20 +1852,6 @@
   </url>
   
   <url>
-    <loc>https://github.com/ShootingWang/ShootingWang.github.io/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/</loc>
-    <lastmod>2022-10-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://github.com/ShootingWang/ShootingWang.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/</loc>
-    <lastmod>2022-10-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://github.com/ShootingWang/ShootingWang.github.io/tags/Bagging/</loc>
     <lastmod>2022-10-17</lastmod>
     <changefreq>weekly</changefreq>
@@ -1930,6 +1916,20 @@
   
   <url>
     <loc>https://github.com/ShootingWang/ShootingWang.github.io/tags/Integrated-Learning-%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0/</loc>
+    <lastmod>2022-10-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://github.com/ShootingWang/ShootingWang.github.io/tags/Neural-Network-%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/</loc>
+    <lastmod>2022-10-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://github.com/ShootingWang/ShootingWang.github.io/tags/Deep-Learning-%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/</loc>
     <lastmod>2022-10-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
