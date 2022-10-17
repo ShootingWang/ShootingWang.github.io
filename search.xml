@@ -28606,33 +28606,25 @@ $$not &gt; and &gt; or$$</li>
   <entry>
     <title>数据分析 | 指标异动归因</title>
     <url>/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-%E6%8C%87%E6%A0%87%E5%BC%82%E5%8A%A8%E5%BD%92%E5%9B%A0.html</url>
-    <content><![CDATA[<center></center>
-<span id="more"></span>
+    <content><![CDATA[<p><center></center><br><span id="more"></span></p>
 <ul>
 <li>机票的成交转化率下降了，怎么分析？</li>
 <li>航班公司觉得自己的某个航线经营状况不好，怎么分析原因</li>
 <li>某个产品的销售量下降了，怎么分析？</li>
 <li>xxx转化率最近在下降，询盘量有点上升，请分析下是什么情况?</li>
 </ul>
-<h1 id="分析过程"><a class="header-anchor" href="#分析过程"></a>分析过程</h1>
-<p>指标异动归因分析的基本流程：</p>
+<h1 id="分析过程"><a href="#分析过程" class="headerlink" title="分析过程"></a>分析过程</h1><p>指标异动归因分析的基本流程：</p>
 <ol>
 <li>明确关注的核心指标，以及对应的业务目标</li>
 <li>梳理相关的业务流程，明确可拆解的纵向、横向维度</li>
 <li>纵向分析，定义异动，并发现异动</li>
 <li>横向分析，拆解维度，定位异动的主要原因，发现业务的可优化点</li>
 </ol>
-<h2 id="明确指标、业务目标"><a class="header-anchor" href="#明确指标、业务目标"></a>明确指标、业务目标</h2>
-<p>明确关注的核心指标，以及对应的业务目标</p>
-<h2 id="梳理流程，拆解维度"><a class="header-anchor" href="#梳理流程，拆解维度"></a>梳理流程，拆解维度</h2>
-<p>梳理相关的业务流程，明确可拆解的纵向、横向维度</p>
-<h3 id="常见纵向维度"><a class="header-anchor" href="#常见纵向维度"></a>常见纵向维度</h3>
-<h3 id="常见横向维度"><a class="header-anchor" href="#常见横向维度"></a>常见横向维度</h3>
-<ul>
-<li>平台/版本
-<ul>
-<li>某产品列表页到详情页的转化提升
-<ul>
+<h2 id="明确指标、业务目标"><a href="#明确指标、业务目标" class="headerlink" title="明确指标、业务目标"></a>明确指标、业务目标</h2><p>明确关注的核心指标，以及对应的业务目标</p>
+<h2 id="梳理流程，拆解维度"><a href="#梳理流程，拆解维度" class="headerlink" title="梳理流程，拆解维度"></a>梳理流程，拆解维度</h2><p>梳理相关的业务流程，明确可拆解的纵向、横向维度</p>
+<h3 id="常见纵向维度"><a href="#常见纵向维度" class="headerlink" title="常见纵向维度"></a>常见纵向维度</h3><h3 id="常见横向维度"><a href="#常见横向维度" class="headerlink" title="常见横向维度"></a>常见横向维度</h3><ul>
+<li>平台/版本<ul>
+<li>某产品列表页到详情页的转化提升<ul>
 <li>猜测是Android版本中优化列表布局方式</li>
 <li>则应分 IOS 、Android以及Android的新版、老版来对比转化数据，从而进一步验证前述猜测</li>
 </ul>
@@ -28643,72 +28635,62 @@ $$not &gt; and &gt; or$$</li>
 <li>用户群体</li>
 <li>类目</li>
 </ul>
-<h2 id="纵向分析，发现异动"><a class="header-anchor" href="#纵向分析，发现异动"></a>纵向分析，发现异动</h2>
-<p>按照时间等纵向维度观察指标变化趋势，通过摸底分析定义指标异常波动；结合纵向分析，发现指标的异常波动。</p>
+<h2 id="纵向分析，发现异动"><a href="#纵向分析，发现异动" class="headerlink" title="纵向分析，发现异动"></a>纵向分析，发现异动</h2><p>按照时间等纵向维度观察指标变化趋势，通过摸底分析定义指标异常波动；结合纵向分析，发现指标的异常波动。</p>
 <p>常用异动检测方法：</p>
 <ol>
-<li>算法：通过对时间序列形式的指标历史数据进行学习建模，预测指标的正常波动区间，超过区间的波动则视为异动。
-<ul>
+<li>算法：通过对时间序列形式的指标历史数据进行学习建模，预测指标的正常波动区间，超过区间的波动则视为异动。<ul>
 <li><a href="https://otexts.com/fppcn/holt-winters.html">Holt-winters算法</a>（三次指数滑动平均算法）</li>
 <li><a href="https://zhuanlan.zhihu.com/p/469807045">Prophet算法</a></li>
 </ul>
 </li>
 <li>规则：通过摸底分析，划定指标同环比的正常波动区间，超出区间的同环比波动则视为异动。</li>
 </ol>
-<h3 id="异动本质"><a class="header-anchor" href="#异动本质"></a>异动本质</h3>
-<p>异动的本质在于比较，<strong>比较</strong>包含以下要点：</p>
+<h3 id="异动本质"><a href="#异动本质" class="headerlink" title="异动本质"></a>异动本质</h3><p>异动的本质在于比较，<strong>比较</strong>包含以下要点：</p>
 <ol>
 <li>评估指标：明确比较的业务指标</li>
-<li>参照对象：界定参照对象的研究群体
-<ul>
-<li>纵向：同一群体在不同时间里的比较分析
-<ul>
+<li>参照对象：界定参照对象的研究群体<ul>
+<li>纵向：同一群体在不同时间里的比较分析<ul>
 <li>时间维度、……</li>
 </ul>
 </li>
-<li>横向：同一时间不同群体之间的比较分析
-<ul>
+<li>横向：同一时间不同群体之间的比较分析<ul>
 <li>空间维度、……</li>
 </ul>
 </li>
 </ul>
 </li>
-<li>衡量方式：
-<ul>
+<li>衡量方式：<ul>
 <li>相对比较：参照对象的比值差异</li>
 <li>绝对比较：参照对象的绝对差值</li>
 </ul>
 </li>
 </ol>
 <blockquote>
-<p>什么是<strong>异常值</strong>？<br>
-异常值，也称为离群值（outlier），指数据统计中，偏离多数数据样本或不符合现有数据统计规律的数值。一般来说，异常值会明显大于或小于其他数据样本。</p>
+<p>什么是<strong>异常值</strong>？<br>异常值，也称为离群值（outlier），指数据统计中，偏离多数数据样本或不符合现有数据统计规律的数值。一般来说，异常值会明显大于或小于其他数据样本。</p>
 <ul>
-<li>作用：<br>
-- 监控告警<br>
-- 数据分析前处理</li>
+<li>作用：<ul>
+<li>监控告警</li>
+<li>数据分析前处理</li>
+</ul>
+</li>
 <li>可以使用变化率、距离、密度等指标设定阈值进行监控</li>
 </ul>
 </blockquote>
-<h2 id="横向分析，归因异动"><a class="header-anchor" href="#横向分析，归因异动"></a>横向分析，归因异动</h2>
-<p>发现指标异常波动后，拆解维度进行横向分析，结合贡献度等方法，定位异动的主要原因，发现存在的业务问题和可优化点。</p>
+<h2 id="横向分析，归因异动"><a href="#横向分析，归因异动" class="headerlink" title="横向分析，归因异动"></a>横向分析，归因异动</h2><p>发现指标异常波动后，拆解维度进行横向分析，结合贡献度等方法，定位异动的主要原因，发现存在的业务问题和可优化点。</p>
 <blockquote>
-<p>贡献度计算方法见<a href="#%E5%BD%92%E5%9B%A0%E6%96%B9%E6%B3%95">归因方法</a></p>
+<p>贡献度计算方法见<a href="#归因方法">归因方法</a></p>
 </blockquote>
-<h1 id="归因方法"><a class="header-anchor" href="#归因方法"></a>归因方法</h1>
-<ul>
+<h1 id="归因方法"><a href="#归因方法" class="headerlink" title="归因方法"></a>归因方法</h1><ul>
 <li>目标指标：$Y$</li>
-<li>波动类型：
-<ul>
+<li>波动类型：<ul>
 <li>绝对波动：$\Delta Y = Y^T - Y^0$</li>
-<li>相对波动：$\Delta Y% = \frac{\Delta Y}{Y^0} = \frac{Y^T - Y<sup>0}{Y</sup>0}$</li>
+<li>相对波动：$\Delta Y\% = \frac{\Delta Y}{Y^0} = \frac{Y^T - Y^0}{Y^0}$</li>
 </ul>
 </li>
-<li>贡献：
-<ul>
-<li>维度$i$对绝对波动$\Delta Y$的贡献度$C_i$ ，$ \sum_{i=1}^m C_i = 100% $</li>
-<li>维度$i$对绝对波动$\Delta Y$的贡献值$V_i = C_i \cdot \Delta Y$ ，$ \sum_{i=1}^m V_i = \Delta Y $</li>
-<li>维度$i$对相对波动：$\Delta Y%$的贡献值$RV_i$ ，$ \sum_{i=1}^m RV_i = \Delta Y% $</li>
+<li>贡献：<ul>
+<li>维度$i$对绝对波动$\Delta Y$的贡献度$C<em>i$ ，$ \sum</em>{i=1}^m C_i = 100\% $</li>
+<li>维度$i$对绝对波动$\Delta Y$的贡献值$V<em>i = C_i \cdot \Delta Y$ ，$ \sum</em>{i=1}^m V_i = \Delta Y $</li>
+<li>维度$i$对相对波动：$\Delta Y\%$的贡献值$RV<em>i$ ，$ \sum</em>{i=1}^m RV_i = \Delta Y\% $</li>
 </ul>
 </li>
 </ul>
@@ -28718,87 +28700,45 @@ $$not &gt; and &gt; or$$</li>
 <li>贡献值：Contribution Value</li>
 <li>相对的：Relative</li>
 </ul>
-<h2 id="维度归因"><a class="header-anchor" href="#维度归因"></a>维度归因</h2>
-<p>将指标在各维度（因子）上进行拆解，计算各个维度（因子）对指标波动的贡献度，发现影响指标波动的主要原因（维度/因子）。</p>
+<h2 id="维度归因"><a href="#维度归因" class="headerlink" title="维度归因"></a>维度归因</h2><p>将指标在各维度（因子）上进行拆解，计算各个维度（因子）对指标波动的贡献度，发现影响指标波动的主要原因（维度/因子）。</p>
 <ul>
 <li>同向影响因子：对目标指标同向变动做出贡献的因子（维度/因素）；贡献度为正的因子为同向影响因子</li>
 <li>反向影响因子：对目标指标反向变动做出贡献的因子（维度/因素）；贡献度为负的因子为反向影响因子</li>
 </ul>
-<h3 id="加法指标"><a class="header-anchor" href="#加法指标"></a>加法指标</h3>
-<p>即<strong>Delta法</strong>。<br>
-目标指标$Y$可拆分成多个维度指标的<strong>加和</strong>。假设有$m$个维度，各维度之间满足<a href="/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-MECE%E5%8E%9F%E5%88%99.html" title="MECE原则">MECE原则</a>。</p>
+<h3 id="加法指标"><a href="#加法指标" class="headerlink" title="加法指标"></a>加法指标</h3><p>即<strong>Delta法</strong>。<br>目标指标$Y$可拆分成多个维度指标的<strong>加和</strong>。假设有$m$个维度，各维度之间满足<a href="/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-MECE%E5%8E%9F%E5%88%99.html" title="MECE原则">MECE原则</a>。</p>
 <ul>
-<li>
-<p>目标指标：$Y = Y_1 + Y_2 + \cdots + Y_m$</p>
-</li>
-<li>
-<p>波动：</p>
-<ul>
-<li>绝对波动：<br>
-\begin{aligned}<br>
-\Delta Y &amp;= Y^T - Y^{0} \\<br>
-&amp;= \sum_{i=1}^m Y_i^T - \sum_{i=1}^m Y_i^0 \\<br>
-&amp;= \sum_{i=1}^m (Y_i^T - Y_i^0) \\<br>
-&amp;= \sum_{i=1}^m \Delta Y_i \\<br>
-&amp;= \Delta Y_1 + \Delta Y_2 + \cdots + \Delta Y_m \\<br>
-\\<br>
-100 % &amp;= \frac{\Delta Y}{\Delta Y} = \sum_{i=1}^m \frac{\Delta Y_i}{\Delta Y} = \sum_{i=1}^m \frac{Y_i^T - Y_i<sup>0}{Y</sup>T - Y^0} \\<br>
-\end{aligned}</li>
-<li>相对波动：<br>
-\begin{aligned}<br>
-\Delta Y % &amp;= \frac{\Delta Y }{Y^0} = \frac{ Y^T - Y^0 }{Y^0} \\<br>
-&amp;= \frac{ \sum_{i=1}^m Y_i^T - \sum_{i=1}^m Y_i^0 }{Y^0} \\<br>
-&amp;= \frac{ \sum_{i=1}^m \Delta Y_i }{ Y^0 } = \sum_{i=1}^m \frac{\Delta Y_i }{Y^0} \\<br>
-\end{aligned}</li>
+<li>目标指标：$Y = Y_1 + Y_2 + \cdots + Y_m$</li>
+<li>波动：<ul>
+<li>绝对波动：<br>\begin{aligned}<br>\Delta Y &amp;= Y^T - Y^{0} \\<br>&amp;= \sum<em>{i=1}^m Y_i^T - \sum</em>{i=1}^m Y<em>i^0 \\<br>&amp;= \sum</em>{i=1}^m ( Y<em>i^T - Y_i^0 ) \\<br>&amp;= \sum</em>{i=1}^m \Delta Y<em>i \\<br>&amp;= \Delta Y_1 + \Delta Y_2 + \cdots + \Delta Y_m \\<br>\\<br>100 \% &amp;= \frac{ \Delta Y}{ \Delta Y } = \sum</em>{i=1}^m \frac{ \Delta Y<em>i }{ \Delta Y } = \sum</em>{i=1}^m \frac{ Y_i^T - Y_i^0 }{ Y^T - Y^0 } \\<br>\end{aligned}</li>
+<li>相对波动：<br>\begin{aligned}<br>\Delta Y \% &amp;= \frac{ \Delta Y }{ Y^0 } = \frac{ Y^T - Y^0 }{ Y^0 } \\<br>&amp;= \frac{ \sum<em>{i=1}^m Y_i^T - \sum</em>{i=1}^m Y<em>i^0 }{ Y^0 } \\<br>&amp;= \frac{ \sum</em>{i=1}^m \Delta Y<em>i }{ Y^0 } = \sum</em>{i=1}^m \frac{ \Delta Y_i }{ Y^0 } \\<br>\end{aligned}</li>
 </ul>
 </li>
-<li>
-<p>贡献：</p>
-<ul>
-<li>维度$i$对绝对波动$\Delta Y$的贡献度<br>
-$$C_i = \frac{\Delta Y_i}{\Delta Y} = \frac{Y_i^T - Y_i^0 }{ Y^T - Y^0 }$$</li>
-<li>维度$i$对相对波动$\Delta Y %$的贡献值<br>
-$$RV_i = \frac{\Delta Y_i}{\Delta Y} \cdot \Delta Y % = \frac{\Delta Y_i}{ Y^0 } = \frac{Y_i^T - Y_i^0}{ Y^0 }$$</li>
+<li>贡献：<ul>
+<li>维度$i$对绝对波动$\Delta Y$的贡献度<script type="math/tex; mode=display">C_i = \frac{\Delta Y_i}{\Delta Y} = \frac{Y_i^T - Y_i^0 }{ Y^T - Y^0 }</script></li>
+<li>维度$i$对相对波动$\Delta Y \%$的贡献值<script type="math/tex; mode=display">RV_i = \frac{\Delta Y_i}{\Delta Y} \cdot \Delta Y \% = \frac{\Delta Y_i}{ Y^0 } = \frac{Y_i^T - Y_i^0}{ Y^0 }</script></li>
 </ul>
 </li>
-<li>
-<p>若$C_i &gt; 0$，则因子$F_i$是指标$Y$的同向影响因子（同上涨或同下跌）</p>
-</li>
-<li>
-<p>若$C_i &lt; 0$，则因子$F_i$是指标$Y$的反向影响因子（一上涨一下跌）</p>
-</li>
+</ul>
+<ul>
+<li>若$C_i &gt; 0$，则因子$F_i$是指标$Y$的同向影响因子（同上涨或同下跌）</li>
+<li>若$C_i &lt; 0$，则因子$F_i$是指标$Y$的反向影响因子（一上涨一下跌）</li>
 </ul>
 <blockquote>
-<p>🌰 以GMV为例：<br>
-$$\mathrm{GMV} = 老客\mathrm{GMV} + 新客\mathrm{GMV}$$</p>
-</blockquote>
-<h3 id="除法指标"><a class="header-anchor" href="#除法指标"></a>除法指标</h3>
-<p>适用分子分母可分别加和的除法指标。除法指标的变化主要由结构变化、指标值变化共同决定。这类指标主要是比率型指标，比如用户满意度（满意问卷量 / 问卷提交量）、留存率（留存用户数 / 存量用户数）等。</p>
+<p>:chestnut: 以GMV为例：</p>
+<script type="math/tex; mode=display">\mathrm{GMV} = 老客\mathrm{GMV} + 新客\mathrm{GMV}</script></blockquote>
+<h3 id="除法指标"><a href="#除法指标" class="headerlink" title="除法指标"></a>除法指标</h3><p>适用分子分母可分别加和的除法指标。除法指标的变化主要由结构变化、指标值变化共同决定。这类指标主要是比率型指标，比如用户满意度（满意问卷量 / 问卷提交量）、留存率（留存用户数 / 存量用户数）等。</p>
 <p>目标指标$Y$可拆分为两个指标相除，且分子分母是可加和的（可以分别拆分成$m$个维度指标加和，各维度之间满足<a href="/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-MECE%E5%8E%9F%E5%88%99.html" title="MECE原则">MECE原则</a>）。</p>
-<h4 id="控制变量法（敏感度分析）"><a class="header-anchor" href="#控制变量法（敏感度分析）"></a>控制变量法（敏感度分析）</h4>
-<ul>
-<li>目标指标：<br>
-$$Y = \frac{X}{Z} = \frac{ X_1 + X_2 + \cdots + X_m }{ Z_1 + Z_2 + \cdots + Z_m }$$</li>
-<li>波动：
-<ul>
-<li>绝对波动：<br>
-$$\Delta Y = Y^T - Y^0 = \Delta \frac{X}{Z} = \frac{ X^0 + \Delta X }{ Z^0 + \Delta Z } - \frac{X^0}{ Z^0 }$$</li>
+<h4 id="控制变量法（敏感度分析）"><a href="#控制变量法（敏感度分析）" class="headerlink" title="控制变量法（敏感度分析）"></a>控制变量法（敏感度分析）</h4><ul>
+<li>目标指标：<script type="math/tex; mode=display">Y = \frac{X}{Z} = \frac{ X_1 + X_2 + \cdots + X_m }{ Z_1 + Z_2 + \cdots + Z_m }</script></li>
+<li>波动：<ul>
+<li>绝对波动：<script type="math/tex; mode=display">\Delta Y = Y^T - Y^0 = \Delta \frac{X}{Z} = \frac{ X^0 + \Delta X }{ Z^0 + \Delta Z } - \frac{X^0}{ Z^0 }</script></li>
 </ul>
 </li>
-<li>可解释功效（EP，Explanatory Power）：用对比期的同一维度值替换基期的维度值，计算绝对波动值<br>
-\begin{aligned}<br>
-EP_i &amp;= \tilde{Y}^0 - Y^0 \\<br>
-&amp;= \frac{X_1^0 + X_2^0 + \cdots + X_{i-1}^0 + X_{i}^T + X_{i+1}^0 + \cdots + X_m^0 }{ Z_1^0 + Z_2^0 + \cdots + Z_{i-1}^0 + Z_i^T + Z_{i+1}^0 + \cdots + Z_m^0 } - \frac{ X^0 }{ Z^0 } \\<br>
-&amp;= \frac{ X^0 - X_i^0 + X_i^T }{ Z^0 - Z_i^0 + Z_i^T } - \frac{ X^0 }{ Z^0 } \\<br>
-&amp;= \frac{ X^0 - X_i^0 + X_i^T }{ Z^0 - Z_i^0 + Z_i^T } - Y^0 \\<br>
-\end{aligned}</li>
-<li>维度$i$对绝对波动$\Delta Y$的贡献度：<br>
-$$C_i = \frac{EP_i}{ \sum_{i=1}^m EP_i } = \frac{ EP_i }{ EP_1 + EP_2 + \cdots + EP_m }$$</li>
-<li>维度$i$对绝对波动$\Delta Y$的贡献值：<br>
-$$V_i = C_i \cdot \Delta Y = \frac{EP_i}{ \sum_{i=1}^m EP_i } \cdot \Delta Y $$</li>
+<li>可解释功效（EP，Explanatory Power）：用对比期的同一维度值替换基期的维度值，计算绝对波动值<br>\begin{aligned}<br>EP<em>i &amp;= \tilde{Y}^0 - Y^0 \\<br>&amp;= \frac{X_1^0 + X_2^0 + \cdots + X</em>{i-1}^0 + X<em>{i}^T + X</em>{i+1}^0 + \cdots + X<em>m^0 }{ Z_1^0 + Z_2^0 + \cdots + Z</em>{i-1}^0 + Z<em>i^T + Z</em>{i+1}^0 + \cdots + Z_m^0 } - \frac{ X^0 }{ Z^0 } \\<br>&amp;= \frac{ X^0 - X_i^0 + X_i^T }{ Z^0 - Z_i^0 + Z_i^T } - \frac{ X^0 }{ Z^0 } \\<br>&amp;= \frac{ X^0 - X_i^0 + X_i^T }{ Z^0 - Z_i^0 + Z_i^T } - Y^0 \\<br>\end{aligned}</li>
+<li>维度$i$对绝对波动$\Delta Y$的贡献度：<script type="math/tex; mode=display">C_i = \frac{EP_i}{ \sum_{i=1}^m EP_i } = \frac{ EP_i }{ EP_1 + EP_2 + \cdots + EP_m }</script></li>
+<li>维度$i$对绝对波动$\Delta Y$的贡献值：<script type="math/tex; mode=display">V_i = C_i \cdot \Delta Y = \frac{EP_i}{ \sum_{i=1}^m EP_i } \cdot \Delta Y</script></li>
 </ul>
-<h3 id="剔除法"><a class="header-anchor" href="#剔除法"></a>剔除法</h3>
-<blockquote>
+<h3 id="剔除法"><a href="#剔除法" class="headerlink" title="剔除法"></a>剔除法</h3><blockquote>
 <ul>
 <li>适用范围：分子分母可分别加和的除法指标。</li>
 <li>$t=0$：基期（上一期）</li>
@@ -28806,44 +28746,33 @@ $$V_i = C_i \cdot \Delta Y = \frac{EP_i}{ \sum_{i=1}^m EP_i } \cdot \Delta Y $$<
 </ul>
 </blockquote>
 <p>将基期（上一期）、对比期（当期）的同一维度（因子）的数据同时剔除，计算剔除后目标指标的波动，与目标指标的真实波动进行比较，衡量该维度（因子）对目标指标波动变化的贡献。</p>
-<p>\begin{aligned}<br>
-Y &amp;= \frac{ X }{ Z } = \frac{ X_1 + X_2 + \cdots + X_m }{ Z_1 + Z_2 + \cdots + Z_m} \\<br>
-\Delta Y &amp;= \Delta \frac{ X }{ Z } = \frac{ X^0 + \Delta X }{ Z^0 + \Delta Z } - \frac{ X^0 }{ Z^0 } \\<br>
-\\<br>
-\Delta Y &amp;= 真实波动 = Y^T - Y^0 \\<br>
-\\<br>
-\Delta \tilde{Y} &amp;= 剔除维度i后波动 = \tilde{Y}^T - \tilde{Y}^0 \\<br>
-&amp;= \frac{ X^T - X_i^T }{ Z^T - Z_i^T} - \frac{ X^0 - X_i^0 }{ Z^0 - Z_i^0 } \\<br>
-\end{aligned}</p>
+<p>\begin{aligned}<br>Y &amp;= \frac{ X }{ Z } = \frac{ X_1 + X_2 + \cdots + X_m }{ Z_1 + Z_2 + \cdots + Z_m} \\<br>\Delta Y &amp;= \Delta \frac{ X }{ Z } = \frac{ X^0 + \Delta X }{ Z^0 + \Delta Z } - \frac{ X^0 }{ Z^0 } \\<br>\\<br>\Delta Y &amp;= 真实波动 = Y^T - Y^0 \\<br>\\<br>\Delta \tilde{Y} &amp;= 剔除维度i后波动 = \tilde{Y}^T - \tilde{Y}^0 \\<br>&amp;= \frac{ X^T - X_i^T }{ Z^T - Z_i^T} - \frac{ X^0 - X_i^0 }{ Z^0 - Z_i^0 } \\<br>\end{aligned}</p>
 <p>则波动差值（剔除法得分）为$(\Delta Y - \Delta\tilde{Y}) \cdot \mathrm{sign} (\Delta Y)$。</p>
 <ul>
 <li>若波动差值$&gt;0$，则表示维度（因子）$i$是波动$\Delta Y$的同向影响因子</li>
 <li>若波动差值$&lt;0$，则表示维度（因子）$i$是波动$\Delta Y$的反向影响因子</li>
 </ul>
-<p>维度（因子）$i$的贡献度为<br>
-$$C_i = \frac{维度i的剔除法得分}{所有维度的剔除法得分之和} \times \mathrm{sign} (\Delta Y)$$<br>
-其中，<br>
-$$ \mathrm{sign} (x) = \left\lbrace<br>
-\begin{array}{ll}<br>
-1 &amp;, x &gt; 0 \\<br>
-0 &amp;, x = 0 \\<br>
--1 &amp;, x &lt; 0 \\<br>
-\end{array}<br>
-\right.<br>
-$$</p>
-<div>
+<p>维度（因子）$i$的贡献度为</p>
+<script type="math/tex; mode=display">C_i = \frac{维度i的剔除法得分}{所有维度的剔除法得分之和} \times \mathrm{sign} (\Delta Y)</script><p>其中，</p>
+<script type="math/tex; mode=display">\mathrm{sign} (x) = \left\lbrace
+\begin{array}{ll}
+1 &, x > 0 \\\\
+0 &, x = 0 \\\\
+-1 &, x < 0 \\\\
+\end{array}
+\right.</script><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
-<pre><code>.dataframe tbody tr th &#123;
-    vertical-align: top;
-&#125;
 
-.dataframe thead th &#123;
-    text-align: center;
-&#125;
-</code></pre>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: center;
+    }
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -28884,193 +28813,98 @@ $$</p>
   </tr></tbody>
 </table>
 </div>
-<h3 id="加权占比法"><a class="header-anchor" href="#加权占比法"></a>加权占比法</h3>
-<h3 id="根因定位算法"><a class="header-anchor" href="#根因定位算法"></a>根因定位算法</h3>
-<h2 id="指标归因"><a class="header-anchor" href="#指标归因"></a>指标归因</h2>
-<h3 id="Divisia分解法（乘法指标）"><a class="header-anchor" href="#Divisia分解法（乘法指标）"></a>Divisia分解法（乘法指标）</h3>
-<p>目标指标$Y$受到多个因子的叠加影响。<br>
-下面将使用指数分解方法，计算乘法指标中每个因子（维度）对目标指标的波动贡献。</p>
-<p>首先对目标指标进行结构拆解（Divisia分解），以考虑到结构化变化对目标指标的影响（可以理解为维度拆解）。<br>
-$$ Y = \sum_{i=1}^m Y_i =  Y_1 + Y_2 + \cdots + Y_m $$<br>
-在每一个子类（sub-category）里，指标$Y_i$又受到$n$个因素的叠加影响。</p>
-<p>\begin{aligned}<br>
-Y &amp;= \sum_{i=1}^m Y_i = Y_1 + Y_2 + \cdots + Y_m \\<br>
-&amp;= \sum_{i=1}^m \sum_{j=1}^n x_{j,i} = \sum_{i=1}^m x_{1,i} \cdot x_{2,i} \cdot \cdots \cdot x_{n,i} \\<br>
-\end{aligned}</p>
-<p>将分解的各个因子（因素）看成是时间$t$的连续可微函数，对时间$t$进行微分，分解出各个因子（因素）对目标指标的影响。<br>
-为了便于理解，假设基期为时间$0$，对比期（当期）为时间$T$。</p>
+
+
+<h3 id="加权占比法"><a href="#加权占比法" class="headerlink" title="加权占比法"></a>加权占比法</h3><h3 id="根因定位算法"><a href="#根因定位算法" class="headerlink" title="根因定位算法"></a>根因定位算法</h3><h2 id="指标归因"><a href="#指标归因" class="headerlink" title="指标归因"></a>指标归因</h2><h3 id="Divisia分解法（乘法指标）"><a href="#Divisia分解法（乘法指标）" class="headerlink" title="Divisia分解法（乘法指标）"></a>Divisia分解法（乘法指标）</h3><p>目标指标$Y$受到多个因子的叠加影响。<br>下面将使用指数分解方法，计算乘法指标中每个因子（维度）对目标指标的波动贡献。</p>
+<p>首先对目标指标进行结构拆解（Divisia分解），以考虑到结构化变化对目标指标的影响（可以理解为维度拆解）。</p>
+<script type="math/tex; mode=display">Y = \sum_{i=1}^m Y_i =  Y_1 + Y_2 + \cdots + Y_m</script><p>在每一个子类（sub-category）里，指标$Y_i$又受到$n$个因素的叠加影响。</p>
+<p>\begin{aligned}<br>Y &amp;= \sum<em>{i=1}^m Y_i = Y_1 + Y_2 + \cdots + Y_m \\<br>&amp;= \sum</em>{i=1}^m \sum<em>{j=1}^n x</em>{j,i} = \sum<em>{i=1}^m x</em>{1,i} \cdot x<em>{2,i} \cdot \cdots \cdot x</em>{n,i} \\<br>\end{aligned}</p>
+<p>将分解的各个因子（因素）看成是时间$t$的连续可微函数，对时间$t$进行微分，分解出各个因子（因素）对目标指标的影响。<br>为了便于理解，假设基期为时间$0$，对比期（当期）为时间$T$。</p>
 <ol>
-<li>
-<p>加法分解：将目标指标的波动$\Delta$分解到各个因子上<br>
-\begin{aligned}<br>
-\Delta Y_{tot} &amp;= Y^T - Y^{0} \\<br>
-&amp;= \sum_{j=1}^n \Delta Y_{x_j} \\<br>
-&amp;= \Delta Y_{x_1} + \Delta Y_{x_2} +  \cdots + \Delta Y_{x_n} \\<br>
-\end{aligned}</p>
+<li><p>加法分解：将目标指标的波动$\Delta$分解到各个因子上<br>\begin{aligned}<br>\Delta Y<em>{tot} &amp;= Y^T - Y^{0} \\<br>&amp;= \sum</em>{j=1}^n \Delta Y<em>{x_j} \\<br>&amp;= \Delta Y</em>{x<em>1} + \Delta Y</em>{x<em>2} +  \cdots + \Delta Y</em>{x_n} \\<br>\end{aligned}</p>
 </li>
-<li>
-<p>乘法分解：将目标指标的变化倍数$RATIO$分解到各个因子上<br>
-\begin{aligned}<br>
-D_{tot} &amp;= \frac{Y^T}{ Y^{0} } \\<br>
-&amp;= \prod_{j=1}^n D_{x_j} \\<br>
-&amp;= D_{x_1} \cdot D_{x_2} \cdot \cdots \cdot D_{x_n} \\<br>
-\end{aligned}<br>
-s其中，$tot$表示“total”，结构性变化、所有因子对目标指标的综合影响。</p>
+<li><p>乘法分解：将目标指标的变化倍数$RATIO$分解到各个因子上<br>\begin{aligned}<br>D<em>{tot} &amp;= \frac{Y^T}{ Y^{0} } \\<br>&amp;= \prod</em>{j=1}^n D<em>{x_j} \\<br>&amp;= D</em>{x<em>1} \cdot D</em>{x<em>2} \cdot \cdots \cdot D</em>{x_n} \\<br>\end{aligned}<br>s其中，$tot$表示“total”，结构性变化、所有因子对目标指标的综合影响。</p>
 </li>
 </ol>
-<p>首先，目标指标$Y$对时间$t$进行微分：<br>
-\begin{equation}<br>
-\begin{aligned}<br>
-\frac{ \mathrm{d} Y^t }{ \mathrm{d} t } &amp;= \frac{ \mathrm{d} \sum_{i=1}^m \sum_{j=1}^n x_{j,i} }{ \mathrm{d} t } \\<br>
-&amp;= \sum_{j=1}^n \sum_{i=1}^m x_{1,i}^t x_{2,i}^t \cdots x_{j-1, i}^t x_{j+1, i}^t \cdots x_{n, i}^t  \frac{ \mathrm{d} x_{j,i}^t }{ \mathrm{d} t } \\<br>
-&amp;= \sum_{j=1}^n \sum_{i=1}^m \frac{ Y_i^t }{ x_{j,i}^t } \frac{ \mathrm{d} x_{j,i}^t }{ \mathrm{d} t } \\<br>
-&amp;= \sum_{j=1}^n \sum_{i=1}^m Y_i^t \frac{ \mathrm{d} \ln x_{j,i}^t }{ \mathrm{d} t } \\<br>
-\end{aligned}<br>
-\end{equation}</p>
+<p>首先，目标指标$Y$对时间$t$进行微分：<br>\begin{equation}<br>\begin{aligned}<br>\frac{ \mathrm{d} Y^t }{ \mathrm{d} t } &amp;= \frac{ \mathrm{d} \sum<em>{i=1}^m \sum</em>{j=1}^n x<em>{j,i} }{ \mathrm{d} t } \\<br>&amp;= \sum</em>{j=1}^n \sum<em>{i=1}^m x</em>{1,i}^t x<em>{2,i}^t \cdots x</em>{j-1, i}^t x<em>{j+1, i}^t \cdots x</em>{n, i}^t  \frac{ \mathrm{d} x<em>{j,i}^t }{ \mathrm{d} t } \\<br>&amp;= \sum</em>{j=1}^n \sum<em>{i=1}^m \frac{ Y_i^t }{ x</em>{j,i}^t } \frac{ \mathrm{d} x<em>{j,i}^t }{ \mathrm{d} t } \\<br>&amp;= \sum</em>{j=1}^n \sum<em>{i=1}^m Y_i^t \frac{ \mathrm{d} \ln x</em>{j,i}^t }{ \mathrm{d} t } \\<br>\end{aligned}<br>\end{equation}</p>
 <ol>
-<li>
-<p>上式等号两边同时对时间$t$进行积分：<br>
-\begin{aligned}<br>
-\int_0^T \frac{ \mathrm{d} Y^t }{ \mathrm{d} t } &amp;= Y^T - Y^0 = \Delta Y_{tot} \\<br>
-&amp;= \sum_{j=1}^n \int_0^T \sum_{i=1}^m Y_i^t \frac{ \mathrm{d} \ln x_{j,i}^t }{ \mathrm{d} t } \\<br>
-\end{aligned}<br>
-由指数分解加法形式$\Delta Y_{tot} = \sum_{j=1}^n \Delta Y_{x_j}$可得<br>
-$$\Delta Y_{x_j} = \int_0^T \sum_{i=1}^m Y_i^t \frac{ \mathrm{d} \ln x_{j,i}^t }{ \mathrm{d} t } $$</p>
-</li>
-<li>
-<p>上式等号两边同时除以$Y^t$，并对时间$t$进行积分：<br>
-\begin{aligned}<br>
-\int_0^T \frac{1}{ Y^t } \frac{ \mathrm{d} Y^t }{ \mathrm{d} t } &amp;= \int_0^T \frac{ \mathrm{d} \ln Y^t }{ \mathrm{d} t  } \\<br>
-&amp;= \ln Y^T - \ln Y^0 = \ln \left( \frac{ Y^T }{ Y^0 } \right) \\<br>
-&amp;= \sum_{j=1}^n \int_0^T \sum_{i=1}^m \omega_i^t \frac{ \mathrm{d} \ln x_{j,i}^t }{ \mathrm{d} t }<br>
-\end{aligned}<br>
-等式两边取指数$\mathrm{exp}$，可得<br>
-\begin{aligned}<br>
-D_{tot} &amp;= \prod_{j=1}^n D_{x_j} \\<br>
-&amp;= \mathrm{exp} \left( \sum_{j=1}^n \int_0^T \sum_{i=1}^m \omega_i^t \frac{ \mathrm{d} \ln x_{j,i}^t }{ \mathrm{d} t } \right) \\<br>
-&amp;= \prod_{j=1}^n \mathrm{exp} \left( \int_0^T \sum_{i=1}^m \omega_i^t \frac{ \mathrm{d} \ln x_{j,i}^t }{ \mathrm{d} t } \right) \\<br>
-\end{aligned}<br>
-由乘法分解形式$D_{tot} = \prod_{j=1}^n D_{x_j}$可得<br>
-$$D_{x_j} = \mathrm{exp} \left( \int_0^T \sum_{i=1}^m \omega_i^t \frac{ \mathrm{d} \ln x_{j,i}^t }{ \mathrm{d} t } \right)$$</p>
-</li>
+<li><p>上式等号两边同时对时间$t$进行积分：<br>\begin{aligned}<br>\int<em>0^T \frac{ \mathrm{d} Y^t }{ \mathrm{d} t } &amp;= Y^T - Y^0 = \Delta Y</em>{tot} \\<br>&amp;= \sum<em>{j=1}^n \int_0^T \sum</em>{i=1}^m Y<em>i^t \frac{ \mathrm{d} \ln x</em>{j,i}^t }{ \mathrm{d} t } \\<br>\end{aligned}<br>由指数分解加法形式$\Delta Y<em>{tot} = \sum</em>{j=1}^n \Delta Y_{x_j}$可得</p>
+<script type="math/tex; mode=display">\Delta Y_{x_j} = \int_0^T \sum_{i=1}^m Y_i^t \frac{ \mathrm{d} \ln x_{j,i}^t }{ \mathrm{d} t }</script></li>
+<li><p>上式等号两边同时除以$Y^t$，并对时间$t$进行积分：<br>\begin{aligned}<br>\int<em>0^T \frac{1}{ Y^t } \frac{ \mathrm{d} Y^t }{ \mathrm{d} t } &amp;= \int_0^T \frac{ \mathrm{d} \ln Y^t }{ \mathrm{d} t  } \\<br>&amp;= \ln Y^T - \ln Y^0 = \ln \left( \frac{ Y^T }{ Y^0 } \right) \\<br>&amp;= \sum</em>{j=1}^n \int<em>0^T \sum</em>{i=1}^m \omega<em>i^t \frac{ \mathrm{d} \ln x</em>{j,i}^t }{ \mathrm{d} t }<br>\end{aligned}<br>等式两边取指数$\mathrm{exp}$，可得<br>\begin{aligned}<br>D<em>{tot} &amp;= \prod</em>{j=1}^n D<em>{x_j} \\<br>&amp;= \mathrm{exp} \left( \sum</em>{j=1}^n \int<em>0^T \sum</em>{i=1}^m \omega<em>i^t \frac{ \mathrm{d} \ln x</em>{j,i}^t }{ \mathrm{d} t } \right) \\<br>&amp;= \prod<em>{j=1}^n \mathrm{exp} \left( \int_0^T \sum</em>{i=1}^m \omega<em>i^t \frac{ \mathrm{d} \ln x</em>{j,i}^t }{ \mathrm{d} t } \right) \\<br>\end{aligned}<br>由乘法分解形式$D<em>{tot} = \prod</em>{j=1}^n D_{x_j}$可得</p>
+<script type="math/tex; mode=display">D_{x_j} = \mathrm{exp} \left( \int_0^T \sum_{i=1}^m \omega_i^t \frac{ \mathrm{d} \ln x_{j,i}^t }{ \mathrm{d} t } \right)</script></li>
 </ol>
 <p>Divisia分解后的公式，计算比较困难，通常采用近似计算。近似方法不同，则产生不同的分解结果。</p>
-<h4 id="AMDI方法"><a class="header-anchor" href="#AMDI方法"></a>AMDI方法</h4>
-<p><strong>算术平均迪氏指数法</strong>（AMDI，Arithmetic Mean Divisia Index）：</p>
+<h4 id="AMDI方法"><a href="#AMDI方法" class="headerlink" title="AMDI方法"></a>AMDI方法</h4><p><strong>算术平均迪氏指数法</strong>（AMDI，Arithmetic Mean Divisia Index）：</p>
 <ol>
-<li>加法分解形式：<br>
-\begin{aligned}<br>
-\Delta Y_{x_j} &amp;= \int_0^T \sum_{i=1}^m Y_i^t \frac{ \mathrm{d} \ln x_{j,i}^t }{ \mathrm{d} t } \\<br>
-&amp;=  \sum_{i=1}^m \frac{Y_i^0 + Y_i^T }{2} \ln \left( \frac{x_{j,i}^T }{ x_{j,i}^0 } \right) \\<br>
-\end{aligned}</li>
-<li>乘法分解形式：<br>
-\begin{aligned}<br>
-D_{x_j} &amp;=  \mathrm{exp} \left( \int_0^T \sum_{i=1}^m \omega_i^t \frac{ \mathrm{d} \ln x_{j,i}^t }{ \mathrm{d} t } \right) \\<br>
-&amp;= \mathrm{exp} \left\lbrace \sum_{i=1}^m \frac{\omega_i^0 + \omega_i^T }{2} \left( \frac{x_{j,i}^T }{ x_{j,i}^0 } \right) \right\rbrace \\<br>
-\end{aligned}</li>
+<li>加法分解形式：<br>\begin{aligned}<br>\Delta Y<em>{x_j} &amp;= \int_0^T \sum</em>{i=1}^m Y<em>i^t \frac{ \mathrm{d} \ln x</em>{j,i}^t }{ \mathrm{d} t } \\<br>&amp;=  \sum<em>{i=1}^m \frac{Y_i^0 + Y_i^T }{2} \ln \left( \frac{x</em>{j,i}^T }{ x_{j,i}^0 } \right) \\<br>\end{aligned}</li>
+<li>乘法分解形式：<br>\begin{aligned}<br>D<em>{x_j} &amp;=  \mathrm{exp} \left( \int_0^T \sum</em>{i=1}^m \omega<em>i^t \frac{ \mathrm{d} \ln x</em>{j,i}^t }{ \mathrm{d} t } \right) \\<br>&amp;= \mathrm{exp} \left\lbrace \sum<em>{i=1}^m \frac{\omega_i^0 + \omega_i^T }{2} \left( \frac{x</em>{j,i}^T }{ x_{j,i}^0 } \right) \right\rbrace \\<br>\end{aligned}</li>
 </ol>
-<h4 id="LMDI方法"><a class="header-anchor" href="#LMDI方法"></a>LMDI方法</h4>
-<p><strong>对数平均迪氏指数法</strong>（LMDI，Log Mean Divisia Index）：AMDI分解法存在残值问题，Ang等研究提出LMDI方法，改进AMDI的残值问题。</p>
+<h4 id="LMDI方法"><a href="#LMDI方法" class="headerlink" title="LMDI方法"></a>LMDI方法</h4><p><strong>对数平均迪氏指数法</strong>（LMDI，Log Mean Divisia Index）：AMDI分解法存在残值问题，Ang等研究提出LMDI方法，改进AMDI的残值问题。</p>
 <blockquote>
 <p>相关详解论文：</p>
 <ul>
-<li>Ang, Beng. (2005). <a href="https://sci-hub.ee/10.1016/j.enpol.2003.10.010">The LMDI Approach to Decomposition Analysis: A Practical Guide</a>. Energy Policy. 33. 867-871. 10.1016/j.enpol.2003.10.010.</li>
+<li>Ang, Beng. (2005). <a href="https://sci-hub.ee/10.1016/j.enpol.2003.10.010">The LMDI Approach to Decomposition Analysis: A Practical Guide</a>. Energy Policy. 33. 867-871. 10.1016/j.enpol.2003.10.010. </li>
 <li>Ang, B.W. (2015). <a href="https://sci-hub.ee/10.1016/j.enpol.2015.07.007">LMDI decomposition approach: A guide for implementation</a>. Energy Policy, 86, 233-238.</li>
-<li>Xiang, X.; Ma, X.; Ma, Z.; Ma, M.; Cai, W. <a href="https://www.mdpi.com/2075-5309/12/1/83/htm">Python-LMDI: A Tool for Index Decomposition Analysis of Building Carbon Emissions</a>. Buildings 2022, 12, 83. <a href="https://doi.org/10.3390/buildings12010083">https://doi.org/10.3390/buildings12010083</a> <a href="https://www.mdpi.com/2075-5309/12/1/83/pdf">pdf download</a><br>
-- Python Package: <a href="https://github.com/xiwang2718/PyLMDI">PyLMDI</a></li>
+<li>Xiang, X.; Ma, X.; Ma, Z.; Ma, M.; Cai, W. <a href="https://www.mdpi.com/2075-5309/12/1/83/htm">Python-LMDI: A Tool for Index Decomposition Analysis of Building Carbon Emissions</a>. Buildings 2022, 12, 83. <a href="https://doi.org/10.3390/buildings12010083">https://doi.org/10.3390/buildings12010083</a> <a href="https://www.mdpi.com/2075-5309/12/1/83/pdf">pdf download</a><ul>
+<li>Python Package: <a href="https://github.com/xiwang2718/PyLMDI">PyLMDI</a></li>
+</ul>
+</li>
 </ul>
 </blockquote>
 <ol>
-<li>加法分解形式：将目标指标的波动$\Delta$分解到各个因子上<br>
-\begin{aligned}<br>
-\Delta Y_{tot} &amp;= Y^T - Y^{0} \\<br>
-&amp;= \sum_{j=1}^n \Delta Y_{x_j} \\<br>
-&amp;= \Delta Y_{x_1} + \Delta Y_{x_2} +  \cdots + \Delta Y_{x_n} \\<br>
-&amp;= \sum_{j=1}^n \sum_{i=1}^m L(Y_i^T, Y_i^0) \ln \left( \frac{x_{j,i}^T }{ x_{j,i}^0 } \right) \\<br>
-&amp;= \sum_{j=1}^n \sum_{i=1}^m \frac{ Y_i^T - Y_i^0 }{ \ln Y_i^T - \ln Y_i^0 } \ln \left( \frac{x_{j,i}^T }{ x_{j,i}^0 } \right) \\<br>
-\end{aligned}</li>
+<li>加法分解形式：将目标指标的波动$\Delta$分解到各个因子上<br>\begin{aligned}<br>\Delta Y<em>{tot} &amp;= Y^T - Y^{0} \\<br>&amp;= \sum</em>{j=1}^n \Delta Y<em>{x_j} \\<br>&amp;= \Delta Y</em>{x<em>1} + \Delta Y</em>{x<em>2} +  \cdots + \Delta Y</em>{x<em>n} \\<br>&amp;= \sum</em>{j=1}^n \sum<em>{i=1}^m L(Y_i^T, Y_i^0) \ln \left( \frac{x</em>{j,i}^T }{ x<em>{j,i}^0 } \right) \\<br>&amp;= \sum</em>{j=1}^n \sum<em>{i=1}^m \frac{ Y_i^T - Y_i^0 }{ \ln Y_i^T - \ln Y_i^0 } \ln \left( \frac{x</em>{j,i}^T }{ x_{j,i}^0 } \right) \\<br>\end{aligned}</li>
 </ol>
-<p>\begin{aligned}<br>
-\Delta Y_{x_j} &amp;= \int_0^T \sum_{i=1}^m Y_i^t \frac{ \mathrm{d} \ln x_{j,i}^t }{ \mathrm{d} t } \\<br>
-&amp;= \sum_{i=1}^m L(Y_i^T, Y_i^0) \ln \left( \frac{x_{j,i}^T }{ x_{j,i}^0 } \right) \\<br>
-&amp;= \sum_{i=1}^m \frac{ Y_i^T - Y_i^0 }{ \ln Y_i^T - \ln Y_i^0 } \ln \left( \frac{x_{j,i}^T }{ x_{j,i}^0 } \right) \\<br>
-&amp;= \sum_{i=1}^m (Y_i^T - Y_i^0) \frac{ \ln \left( \frac{x_{j,i}^T }{ x_{j,i}^0 } \right) }{ \ln \left( \frac{Y_i^T }{Y_i^0} \right) } \\<br>
-\end{aligned}</p>
-<ol start="2">
-<li>乘法分解形式：将目标指标的变化倍数$RATIO=\frac{ Y^T }{ Y^0 }$分解到各个因子上<br>
-\begin{aligned}<br>
-D_{tot} &amp;= \frac{Y^T}{ Y^{0} } \\<br>
-&amp;= \prod_{j=1}^n D_{x_j} \\<br>
-&amp;= D_{x_1} \cdot D_{x_2} \cdot \cdots \cdot D_{x_n} \\<br>
-&amp;= \prod_{j=1}^n \mathrm{exp} \left( \sum_{i=1}^m \frac{ L(Y_i^T, Y_i^0) }{ L(Y^T, Y^0) } \ln \left( \frac{ x_{j,i}^T }{ x_{j,i}^0 } \right) \right) \\<br>
-&amp;= \prod_{j=1}^n \mathrm{exp} \left( \sum_{i=1}^m \frac{ Y_i^T - Y_i^0 }{ \ln Y_i^T - \ln Y_i^0 } / \frac{ Y^T - Y^0 }{ \ln Y^T - \ln Y^0 } \times \ln \left( \frac{ x_{j,i}^T }{ x_{j,i}^0 } \right) \right) \\<br>
-\end{aligned}</li>
+<p>\begin{aligned}<br>\Delta Y<em>{x_j} &amp;= \int_0^T \sum</em>{i=1}^m Y<em>i^t \frac{ \mathrm{d} \ln x</em>{j,i}^t }{ \mathrm{d} t } \\<br>&amp;= \sum<em>{i=1}^m L(Y_i^T, Y_i^0) \ln \left( \frac{x</em>{j,i}^T }{ x<em>{j,i}^0 } \right) \\<br>&amp;= \sum</em>{i=1}^m \frac{ Y<em>i^T - Y_i^0 }{ \ln Y_i^T - \ln Y_i^0 } \ln \left( \frac{x</em>{j,i}^T }{ x<em>{j,i}^0 } \right) \\<br>&amp;= \sum</em>{i=1}^m (Y<em>i^T - Y_i^0) \frac{ \ln \left( \frac{x</em>{j,i}^T }{ x_{j,i}^0 } \right) }{ \ln \left( \frac{Y_i^T }{Y_i^0} \right) } \\<br>\end{aligned}</p>
+<ol>
+<li>乘法分解形式：将目标指标的变化倍数$RATIO=\frac{ Y^T }{ Y^0 }$分解到各个因子上<br>\begin{aligned}<br>D<em>{tot} &amp;= \frac{Y^T}{ Y^{0} } \\<br>&amp;= \prod</em>{j=1}^n D<em>{x_j} \\<br>&amp;= D</em>{x<em>1} \cdot D</em>{x<em>2} \cdot \cdots \cdot D</em>{x<em>n} \\<br>&amp;= \prod</em>{j=1}^n \mathrm{exp} \left( \sum<em>{i=1}^m \frac{ L(Y_i^T, Y_i^0) }{ L(Y^T, Y^0) } \ln \left( \frac{ x</em>{j,i}^T }{ x<em>{j,i}^0 } \right) \right) \\<br>&amp;= \prod</em>{j=1}^n \mathrm{exp} \left( \sum<em>{i=1}^m \frac{ Y_i^T - Y_i^0 }{ \ln Y_i^T - \ln Y_i^0 } / \frac{ Y^T - Y^0 }{ \ln Y^T - \ln Y^0 } \times \ln \left( \frac{ x</em>{j,i}^T }{ x_{j,i}^0 } \right) \right) \\<br>\end{aligned}</li>
 </ol>
-<p>\begin{aligned}<br>
-D_{x_j} &amp;=  \mathrm{exp} \left( \int_0^T \sum_{i=1}^m \omega_i^t \frac{ \mathrm{d} \ln x_{j,i}^t }{ \mathrm{d} t } \right) \\<br>
-&amp;= \mathrm{exp} \left( \sum_{i=1}^m \frac{ L(Y_i^T, Y_i^0) }{ L(Y^T, Y^0) } \ln \left( \frac{x_{j,i}^T }{ x_{j,i}^0 } \right) \right) \\<br>
-&amp;= \mathrm{exp} \left( \sum_{i=1}^m \frac{ Y_i^T - Y_i^0 }{ \ln Y_i^T - \ln Y_i^0 } / \frac{ Y^T - Y^0 }{ \ln Y^T - \ln Y^0 } \times \ln \left( \frac{ x_{j,i}^T }{ x_{j,i}^0 } \right) \right) \\<br>
-\end{aligned}</p>
+<p>\begin{aligned}<br>D<em>{x_j} &amp;=  \mathrm{exp} \left( \int_0^T \sum</em>{i=1}^m \omega<em>i^t \frac{ \mathrm{d} \ln x</em>{j,i}^t }{ \mathrm{d} t } \right) \\<br>&amp;= \mathrm{exp} \left( \sum<em>{i=1}^m \frac{ L(Y_i^T, Y_i^0) }{ L(Y^T, Y^0) } \ln \left( \frac{x</em>{j,i}^T }{ x<em>{j,i}^0 } \right) \right) \\<br>&amp;= \mathrm{exp} \left( \sum</em>{i=1}^m \frac{ Y<em>i^T - Y_i^0 }{ \ln Y_i^T - \ln Y_i^0 } / \frac{ Y^T - Y^0 }{ \ln Y^T - \ln Y^0 } \times \ln \left( \frac{ x</em>{j,i}^T }{ x_{j,i}^0 } \right) \right) \\<br>\end{aligned}</p>
 <p>其中，</p>
 <ul>
-<li>波动差值：
-<ul>
+<li>波动差值：<ul>
 <li>$\Delta = \Delta Y_{tot} = Y^T - Y^0$</li>
-<li>$\Delta_j = \Delta Y_{x_j} = $</li>
+<li>$\Delta<em>j = \Delta Y</em>{x_j} = $</li>
 </ul>
 </li>
-<li>波动倍数：
-<ul>
+<li>波动倍数：<ul>
 <li>$D_{tot} = \frac{ Y^T }{ Y^0 }$</li>
 <li>$D_{x_j} = $</li>
 </ul>
 </li>
-<li>对数平均函数：<br>
-$$<br>
-L(a, b) = \left\lbrace<br>
-\begin{array}{ll}<br>
-\frac{a-b}{\ln a - \ln b} &amp; , a \neq b \\<br>
-a &amp; , a = b<br>
-\end{array}<br>
-\right.<br>
-$$</li>
+<li>对数平均函数：<script type="math/tex; mode=display">
+L(a, b) = \left\lbrace 
+\begin{array}{ll}
+\frac{a-b}{\ln a - \ln b} & , a \neq b \\\\
+a & , a = b
+\end{array}
+\right.</script></li>
 </ul>
-<h3 id="非乘法指标"><a class="header-anchor" href="#非乘法指标"></a>非乘法指标</h3>
-<h1 id="例子"><a class="header-anchor" href="#例子"></a>例子</h1>
-<h2 id="转化率与询盘量异常"><a class="header-anchor" href="#转化率与询盘量异常"></a>转化率与询盘量异常</h2>
-<blockquote>
+<h3 id="非乘法指标"><a href="#非乘法指标" class="headerlink" title="非乘法指标"></a>非乘法指标</h3><h1 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h1><h2 id="转化率与询盘量异常"><a href="#转化率与询盘量异常" class="headerlink" title="转化率与询盘量异常"></a>转化率与询盘量异常</h2><blockquote>
 <p>xxx转化率最近在下降，询盘量有点上升，请分析下是什么情况?——来自<a href="https://mp.weixin.qq.com/s?__biz=MzIxNjA2ODUzNg==&amp;mid=2651440599&amp;idx=1&amp;sn=8faf27a155d144461b540dabe4d31260&amp;chksm=8c73dd00bb045416f137942afb2d35e36a87858c3453644a680a45140b5cb67c336d5d2758b0&amp;mpshare=1&amp;scene=24&amp;srcid=&amp;sharer_sharetime=1589157451953&amp;sharer_shareid=b539221659d6ecf12200314308b58dd3&amp;key=7813388b7074583853a1569b61fe6d4df6117bd6400a8cd3f226306ae46a8c728f41f75fbf88090ef2e59f4f1bf473ff1b5403c46ebed25f7a497fd77299f1d5c5b1b2a7d1160f8a5dda9cc908481d43&amp;ascene=14&amp;uin=MjAwNDUzMjgxNw%3D%3D&amp;devicetype=Windows+10+x64&amp;version=62090070&amp;lang=zh_CN&amp;exportkey=Ad2%2FlcnRfQtiskYNJjaBXFQ%3D&amp;pass_ticket=hGGS7EaUpIDlASL51iQWn3S1qU2l9x%2BRBIBXN3TjHYK2XsRZIXuz61NfsnX%2FuM4F">数据异常波动，应该如何分析？</a></p>
 </blockquote>
 <ol>
-<li>对数据波动进行界定
-<ul>
+<li>对数据波动进行界定<ul>
 <li>去除周期性、季节性后，判断数据波动是否为异常（对比前后一段时间内的变化情况</li>
 <li>确定异常发生的维度（主要从时间维度来看）</li>
 <li>波动的程度</li>
 <li>是否需要深入分析</li>
 </ul>
 </li>
-<li>拆解指标
-<ul>
-<li>根据<u>指标计算逻辑</u>来拆</li>
-</ul>
-<pre class="mermaid">   graph TD;
-     询盘量转化率-->询盘量;
-     询盘量转化率-->会话量;
-     询盘量-----会话量;
-     会话量-->弹出会话量;
-     会话量-->非弹出会话量;
-     弹出会话量-----非弹出会话量;</pre>
-<ul>
-<li>根据<u>相关维度</u>来拆
-<ul>
+<li>拆解指标<ul>
+<li>根据<u>指标计算逻辑</u>来拆<pre class="mermaid">   graph TD;
+   询盘量转化率-->询盘量;
+   询盘量转化率-->会话量;
+   询盘量-----会话量;
+   会话量-->弹出会话量;
+   会话量-->非弹出会话量;
+   弹出会话量-----非弹出会话量;</pre></li>
+<li>根据<u>相关维度</u>来拆<ul>
 <li>访问渠道：直接访问、自然搜索、付费搜索、…</li>
 <li>着陆页：着陆页1、着陆页2、着陆页3、…</li>
 <li>国家：国家1、国家2、国家3、…</li>
 </ul>
 </li>
-<li>从<u>产品、运营、技术及用户</u>四个角度来考虑原因
-<ul>
+<li>从<u>产品、运营、技术及用户</u>四个角度来考虑原因<ul>
 <li>产品：新版本上线（新功能、功能变更）、替代产品出现、…</li>
 <li>运营：促销活动、价格战减少、…</li>
 <li>技术：服务器瘫痪、系统故障、接口不稳定、…</li>
@@ -29082,24 +28916,20 @@ $$</li>
 <li>用数据来验证假设</li>
 <li>提出切实可执行的方法——要落地到业务和产品上的具体建议，确保方案可执行，效果可评估</li>
 </ol>
-<h2 id="如何分析次日留存率下降的问题"><a class="header-anchor" href="#如何分析次日留存率下降的问题"></a>如何分析次日留存率下降的问题</h2>
-<ol>
+<h2 id="如何分析次日留存率下降的问题"><a href="#如何分析次日留存率下降的问题" class="headerlink" title="如何分析次日留存率下降的问题"></a>如何分析次日留存率下降的问题</h2><ol>
 <li>从用户画像、渠道、产品、行为环节等角度细分，明确是哪里的次日留存率下降了</li>
-<li>指标拆解<br>
-$$次日留存率=\sum\frac{次日留存数}{今日获客人数}$$</li>
+<li>指标拆解<script type="math/tex; mode=display">次日留存率=\sum\frac{次日留存数}{今日获客人数}</script></li>
 <li>原因分析</li>
 </ol>
 <ul>
-<li>内部
-<ul>
+<li>内部<ul>
 <li>运营活动</li>
 <li>产品变动</li>
 <li>技术故障</li>
 <li>设计漏洞</li>
 </ul>
 </li>
-<li>外部
-<ul>
+<li>外部<ul>
 <li>竞品</li>
 <li>用户偏好</li>
 <li>节假日</li>
@@ -29107,8 +28937,7 @@ $$次日留存率=\sum\frac{次日留存数}{今日获客人数}$$</li>
 </ul>
 </li>
 </ul>
-<h1 id="参考资料"><a class="header-anchor" href="#参考资料"></a>参考资料</h1>
-<ul>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
 <li><a href="https://www.cnblogs.com/bellz/p/11448562.html">指标异动类问题分析框架 - 数据分析师面试题</a></li>
 <li><a href="https://mp.weixin.qq.com/s?__biz=MzIxNjA2ODUzNg==&amp;mid=2651440599&amp;idx=1&amp;sn=8faf27a155d144461b540dabe4d31260&amp;chksm=8c73dd00bb045416f137942afb2d35e36a87858c3453644a680a45140b5cb67c336d5d2758b0&amp;mpshare=1&amp;scene=24&amp;srcid=&amp;sharer_sharetime=1589157451953&amp;sharer_shareid=b539221659d6ecf12200314308b58dd3&amp;key=7813388b7074583853a1569b61fe6d4df6117bd6400a8cd3f226306ae46a8c728f41f75fbf88090ef2e59f4f1bf473ff1b5403c46ebed25f7a497fd77299f1d5c5b1b2a7d1160f8a5dda9cc908481d43&amp;ascene=14&amp;uin=MjAwNDUzMjgxNw%3D%3D&amp;devicetype=Windows+10+x64&amp;version=62090070&amp;lang=zh_CN&amp;exportkey=Ad2%2FlcnRfQtiskYNJjaBXFQ%3D&amp;pass_ticket=hGGS7EaUpIDlASL51iQWn3S1qU2l9x%2BRBIBXN3TjHYK2XsRZIXuz61NfsnX%2FuM4F">数据异常波动，应该如何分析？</a></li>
 <li><a href="https://mp.weixin.qq.com/s?__biz=MzUzODYwMDAzNA==&amp;mid=2247490797&amp;idx=2&amp;sn=e4488e6ae078fd04992ee19c3ea43e0d&amp;chksm=fad46be0cda3e2f606f3faffe800c819c2cacb5ded2c4bb6e1b0b061bc2c06d276bd18a4a9f4&amp;mpshare=1&amp;scene=24&amp;srcid=&amp;sharer_sharetime=1589846441823&amp;sharer_shareid=b539221659d6ecf12200314308b58dd3&amp;key=391433877af29848d80eb268dfdb67e70c94dbc8461e647ef4fd9cf863b97fcbf05fe3cc098469dd0eed236ecaa0ce9b4afa6518cb6c2e116156d348ec25c79484217b352893ff4b5a26e8f3fd8d7f35&amp;ascene=14&amp;uin=MjAwNDUzMjgxNw%3D%3D&amp;devicetype=Windows+10+x64&amp;version=62090070&amp;lang=zh_CN&amp;exportkey=AYJS0mHna0hF6l9GD1%2B%2BuCY%3D&amp;pass_ticket=hSPy%2FUU8oxUcSxTs%2F5nB1TD0Hf4oMyJJiFtHAk4RLQ6enp8U%2FMNrC0H1aJAXQF7t">24个「数据分析师」岗位面试题和答案解析</a></li>
