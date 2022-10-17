@@ -18615,35 +18615,34 @@ $$\log{\frac{p(x,y)}{p(x)p(y)} }=\log1=0$$</p>
       </tags>
   </entry>
   <entry>
-    <title>Machine Learning | 决策树</title>
+    <title>Machine Learning | 决策树 // Decision Tree</title>
     <url>/%E7%AE%97%E6%B3%95-DecisionTree.html</url>
-    <content><![CDATA[<center>Decision Tree</center>
-<span id="more"></span>
+    <content><![CDATA[<p><center>Decision Tree</center><br><span id="more"></span></p>
 <div class="note default">
             <p>基础阅读：<br><a href="/Machine-Learning-%E7%86%B5.html" title="Machine Learning | 熵 Entropy">Machine Learning | 熵 Entropy</a></p>
           </div>
-<h1 id="Decision-Tree"><a class="header-anchor" href="#Decision-Tree"></a>Decision Tree</h1>
-<ul>
+<h1 id="Decision-Tree"><a href="#Decision-Tree" class="headerlink" title="Decision Tree"></a>Decision Tree</h1><ul>
 <li>是一种基本的<strong>分类</strong>与<strong>回归</strong>方法</li>
-<li>决策树由节点和有向边组成</li>
+<li>决策树由节点和有向边组成<ul>
 <li><u>内部节点</u>表示一个特征/属性</li>
 <li><u>叶子节点</u>表示一个分类</li>
 <li><u>有向边</u>表示一个划分规则</li>
-<li>决策树从根节点到子节点的有向边代表了一条路径(一条分类规则)</li>
-<li>决策树的路径是互斥的且是完备的
-<ul>
+</ul>
+</li>
+<li>决策树从根节点到子节点的有向边代表了一条路径(一条分类规则)<ul>
+<li>决策树的路径是互斥的且是完备的<ul>
 <li><strong>互斥</strong>：每一个样本不会同时匹配上两条分类规则</li>
 <li><strong>完备</strong>：每一个样本都能在决策树中匹配上一条规则</li>
 </ul>
 </li>
-<li>决策树学习通常包括3个步骤：</li>
 </ul>
-<ol>
+</li>
+<li>决策树学习通常包括3个步骤：<ol>
 <li>特征选择</li>
 <li>决策树生成</li>
 <li>决策树剪枝</li>
 </ol>
-<ul>
+</li>
 <li>决策树表示给定特征条件下类的条件概率分布</li>
 </ul>
 <p>决策树的组成：</p>
@@ -18652,27 +18651,20 @@ $$\log{\frac{p(x,y)}{p(x)p(y)} }=\log1=0$$</p>
 <li><strong>非叶子节点与分支</strong>：中间过程</li>
 <li><strong>叶子节点</strong>：最终的决策结果</li>
 </ul>
-<meta name="referrer" content="no-referrer">
-<img src="/ShootingWang/ShootingWang.github.io/%E7%AE%97%E6%B3%95-DecisionTree.htm/%E5%86%B3%E7%AD%96%E6%A0%91.jpg" class title="决策树">
-<h2 id="原理"><a class="header-anchor" href="#原理"></a>原理</h2>
-<h2 id="特征选择"><a class="header-anchor" href="#特征选择"></a>特征选择</h2>
-<p>特征选择指选择最大化所定义目标函数的特征。</p>
+<p><meta name="referrer" content="no-referrer"><br><img src="/ShootingWang/ShootingWang.github.io/%E7%AE%97%E6%B3%95-DecisionTree.htm/%E5%86%B3%E7%AD%96%E6%A0%91.jpg" class title="决策树"></p>
+<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><h2 id="特征选择"><a href="#特征选择" class="headerlink" title="特征选择"></a>特征选择</h2><p>特征选择指选择最大化所定义目标函数的特征。</p>
 <p>为了衡量类别分布概率的倾斜程度，定义决策树节点node的<strong>不纯度</strong>（impurity）</p>
 <ul>
 <li>不纯度越小，则类别的分布概率越倾斜</li>
 </ul>
 <p>不纯度的三种度量：</p>
 <ol>
-<li>熵（Entropy）<br>
-$$\mathrm{Entropy}(\mathrm{node})=-\sum_{k=1}^Kp_k\log{p_k}$$</li>
-<li>基尼不纯度（Gini Impurity）<br>
-$$\mathrm{Gini}(\mathrm{node})=\sum_{k=1}^K p_k(1-p_k)$$</li>
-<li>分类误差率<br>
-$$\mathrm{Classification_error}(\mathrm{node})=1-\max_k\ p_k$$</li>
+<li>熵（Entropy）<script type="math/tex; mode=display">\mathrm{Entropy}(\mathrm{node})=-\sum_{k=1}^Kp_k\log{p_k}</script></li>
+<li>基尼不纯度（Gini Impurity）<script type="math/tex; mode=display">\mathrm{Gini}(\mathrm{node})=\sum_{k=1}^K p_k(1-p_k)</script></li>
+<li>分类误差率<script type="math/tex; mode=display">\mathrm{Classification\_error}(\mathrm{node})=1-\max_k\ p_k</script></li>
 </ol>
 <p>其中$p_k$表示样本中类别$k$的占比；共有$K$个类别。</p>
-<meta name="referrer" content="no-referrer">
-<img src="/ShootingWang/ShootingWang.github.io/%E7%AE%97%E6%B3%95-DecisionTree.htm/three.png" class title="熵、基尼不纯度、分类误差率之间的关系">
+<p><meta name="referrer" content="no-referrer"><br><img src="/ShootingWang/ShootingWang.github.io/%E7%AE%97%E6%B3%95-DecisionTree.htm/three.png" class title="熵、基尼不纯度、分类误差率之间的关系"></p>
 <p>其中</p>
 <ul>
 <li>为了更好地反映变量关系，曲线中的熵除以2</li>
@@ -18680,13 +18672,12 @@ $$\mathrm{Classification_error}(\mathrm{node})=1-\max_k\ p_k$$</li>
 <li>$p$为0或1时，熵、基尼不纯度、分类误差率都为0，表示不存在不确定性</li>
 <li>当$p=0.5$时，熵、基尼不纯度、分类误差率最大，表示不确定性最大</li>
 </ul>
-<h3 id="信息增益"><a class="header-anchor" href="#信息增益"></a>信息增益</h3>
-<div class="note info">
+<h3 id="信息增益"><a href="#信息增益" class="headerlink" title="信息增益"></a>信息增益</h3><div class="note info">
             <p>熵与条件熵：<br><a href="/Machine-Learning-%E7%86%B5.html" title="Machine Learning | 熵 Entropy">Machine Learning | 熵 Entropy</a></p>
           </div>
 <p><strong>信息增益</strong>（Information Gain）：表示已知特征$X$的信息而使得类$Y$的信息的不确定性减少的程度。</p>
 <div class="note warning">
-            <p><strong>定义</strong>：特征$A$对训练数据集$D$的信息增益$g(D,A)$，定义为数据集$D$的经验熵$H(D)$与特征$A$给定条件下$D$的经验条件熵$H(D|A)$之差。即<br>$$g(D,A)=H(D)-H(D|A)$$</p>
+            <p><strong>定义</strong>：特征$A$对训练数据集$D$的信息增益$g(D,A)$，定义为数据集$D$的经验熵$H(D)$与特征$A$给定条件下$D$的经验条件熵$H(D|A)$之差。即</p><script type="math/tex; mode=display">g(D,A)=H(D)-H(D|A)</script>
           </div>
 <p>一般地，熵$H(Y)$与条件熵$H(Y|X)$之差称为<a href="/Machine-Learning-%E7%86%B5.html" title="互信息（Mutual Information）">互信息（Mutual Information）</a>。</p>
 <ul>
@@ -18700,61 +18691,46 @@ $$\mathrm{Classification_error}(\mathrm{node})=1-\max_k\ p_k$$</li>
 <p>考虑训练数据集$D$，$n=|D|$为样本容量。</p>
 <ul>
 <li>有$K$个类$C_k,\ (k=1,\cdots,K)$</li>
-<li>$|C_k|$为属于类$C_k$的样本个数<br>
-$$\sum_{k=1}^K|C_k|=n$$</li>
+<li>$|C_k|$为属于类$C_k$的样本个数<script type="math/tex; mode=display">\sum_{k=1}^K|C_k|=n</script></li>
 <li>设特征$A$有$m$个不同的取值$a_1,\cdots,a_m$</li>
 <li>根据特征$A$的取值将$D$划分为$m$个子集$D_1,\cdots,D_m$</li>
-<li>$|D_i|$为$D_i$的样本个数<br>
-$$\sum_{i=1}^m|D_i|=|D|$$</li>
-<li>记子集$D_i$中属于类$C_k$的样本的集合为$D_{ik}$<br>
-$$D_{ik}=D_i\cap C_k$$<br>
-$|D_{ik}|$为$D_{ik}$的样本个数</li>
+<li>$|D_i|$为$D_i$的样本个数<script type="math/tex; mode=display">\sum_{i=1}^m|D_i|=|D|</script></li>
+<li>记子集$D<em>i$中属于类$C_k$的样本的集合为$D</em>{ik}$<script type="math/tex; mode=display">D_{ik}=D_i\cap C_k</script>$|D<em>{ik}|$为$D</em>{ik}$的样本个数</li>
 </ul>
 <div class="note danger">
-            <p><strong>信息增益算法</strong><br>输入：训练数据集$D$和特征$A$</p><p>输出：特征$A$对训练数据集$D$的信息增益$g(D,A)$</p><ol><li>计算训练集$D$的经验熵$H(D)$<br>$$H(D)=-\sum_{k=1}^K\frac{|C_k|}{|D|}\log{\frac{|C_k|}{|D|} }$$</li><li>计算特征$A$对数据集$D$的经验条件熵$H(D|A)$<br>$$\begin{aligned} H(D|A)&amp;=\sum_{i=1}^m\frac{|D_i|}{|D|}H(D_i)\<br>&amp;=-\sum_{i=1}<sup>m\frac{|D_i|}{|D|}\sum_{k=1}</sup>K\frac{|D_{ik}|}{|D_i|}\log{\frac{|D_{ik}|}{|D_i|} }\<br>&amp;= -\sum_{i=1}<sup>m\sum_{k=1}</sup>K\frac{|D_{ik}|}{|D|}\log{\frac{|D_{ik}|}{|D_i|} }<br>\end{aligned}$$</li><li>计算信息增益<br>$$g(D,A)=H(D)-H(D|A)$$</li></ol>
+            <p><strong>信息增益算法</strong><br>输入：训练数据集$D$和特征$A$</p><p>输出：特征$A$对训练数据集$D$的信息增益$g(D,A)$</p><ol><li>计算训练集$D$的经验熵$H(D)$<script type="math/tex; mode=display">H(D)=-\sum_{k=1}^K\frac{|C_k|}{|D|}\log{\frac{|C_k|}{|D|} }</script></li><li>计算特征$A$对数据集$D$的经验条件熵$H(D|A)$<script type="math/tex; mode=display">\begin{aligned} H(D|A)&=\sum_{i=1}^m\frac{|D_i|}{|D|}H(D_i)\\&=-\sum_{i=1}^m\frac{|D_i|}{|D|}\sum_{k=1}^K\frac{|D_{ik}|}{|D_i|}\log{\frac{|D_{ik}|}{|D_i|} }\\&= -\sum_{i=1}^m\sum_{k=1}^K\frac{|D_{ik}|}{|D|}\log{\frac{|D_{ik}|}{|D_i|} }\end{aligned}</script></li><li>计算信息增益<script type="math/tex; mode=display">g(D,A)=H(D)-H(D|A)</script></li></ol>
           </div>
 <ul>
-<li>可用信息增益来进行决策树的划分属性选择<br>
-$$a^*=\arg\max_{a\in A} g(D,a)$$</li>
+<li>可用信息增益来进行决策树的划分属性选择<script type="math/tex; mode=display">a^*=\arg\max_{a\in A} g(D,a)</script></li>
 </ul>
 <div class="note default">
             <p>ID3决策树学习算法就是以<u>信息增益</u>为准则来选择划分属性</p>
           </div>
-<h1 id="决策树算法"><a class="header-anchor" href="#决策树算法"></a>决策树算法</h1>
-<p>包括</p>
+<h1 id="决策树算法"><a href="#决策树算法" class="headerlink" title="决策树算法"></a>决策树算法</h1><p>包括</p>
 <ul>
 <li>ID3</li>
 <li>C4.5</li>
 <li>CART</li>
 </ul>
-<h2 id="ID3"><a class="header-anchor" href="#ID3"></a>ID3</h2>
-<ul>
+<h2 id="ID3"><a href="#ID3" class="headerlink" title="ID3"></a>ID3</h2><ul>
 <li>以<strong>信息增益</strong>为准则来划分属性</li>
 </ul>
 <div class="note default">
-            <p>示例：<br><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648935296&amp;idx=2&amp;sn=cb77cd47a0189804ba9b16ba10415100&amp;chksm=879419aab0e390bcf14a8eb3f56f1ce31750b5d9566263d93269d47e4674bc7600cc1d1636fb&amp;mpshare=1&amp;scene=24&amp;srcid=&amp;sharer_sharetime=1590479772805&amp;sharer_shareid=b539221659d6ecf12200314308b58dd3&amp;key=e224f213fcbe8475f9ef285bb7bf11ea118733d485a2e0a1bf5d71cd8212cc36e61414400a348229bd6398ffdf35e8ca97536ef45b6ba48e523107c1ff2b6bae4b84605a9a810ef0e8ccfb3381a96097&amp;ascene=14&amp;uin=MjAwNDUzMjgxNw%3D%3D&amp;devicetype=Windows+10+x64&amp;version=62090070&amp;lang=zh_CN&amp;exportkey=AXXj%2FLKyq7BwO492ReB6hMg%3D&amp;pass_ticket=UotHILlosru6hQjR77K5QFOqbs0ufoaaTOgd804mZ9Zj6ebPR%2BPzibBO9ORmuQZQ">数据来源</a></p><p>共4个特征：</p><ol><li>天气</li><li>温度</li><li>湿度</li><li>风</li></ol><div><style scoped>    .dataframe tbody tr th:only-of-type {        vertical-align: middle;    }<pre><code>.dataframe tbody tr th {    vertical-align: top;}.dataframe thead th {    text-align: center;}</code></pre></style><table border="1" class="dataframe">  <thead>    <tr style="text-align: center;">      <th>特征</th>      <th>特征的不同取值</th>      <th>样本数</th>      <th>`yes`样本数</th>      <th>`no`样本数</th>    </tr>  </thead>  <tbody>    <tr>      <th rowspan="3">outlook</th>      <td>sunny</td>      <td>5</td>      <td>2</td>      <td>3</td>    </tr>    <tr>      <td>overcast</td>      <td>4</td>      <td>4</td>      <td>0</td>    </tr>    <tr>      <td>rainy</td>      <td>5</td>      <td>3</td>      <td>2</td>    </tr>    <tr>      <th rowspan="3">temperature</th>      <td>hot</td>      <td>4</td>      <td>2</td>      <td>2</td>    </tr>    <tr>      <td>mild</td>      <td>6</td>      <td>4</td>      <td>2</td>    </tr>    <tr>      <td>cool</td>      <td>4</td>      <td>3</td>      <td>1</td>    </tr>    <tr>      <th rowspan="2">humidity</th>      <td>high</td>      <td>7</td>      <td>3</td>      <td>4</td>    </tr>    <tr>      <td>normal</td>      <td>7</td>      <td>6</td>      <td>1</td>    </tr>    <tr>      <th rowspan="2">windy</th>      <td>false</td>      <td>8</td>      <td>6</td>      <td>2</td>    </tr>    <tr>      <td>true</td>      <td>6</td>      <td>3</td>      <td>3</td>    </tr>    <tr>  </tr></tbody></table></div><p>标签为“打球”<code>yes</code>或“不打球”<code>no</code>，原始数据共有14个样本，其中9个为<code>yes</code>、5个为<code>no</code>，原始数据集的熵为<br>$$H(D)=-\frac{9}{14}\log_2{\frac{9}{14} }-\frac{5}{14}\log_2{\frac{5}{14} }=0.940286$$</p><p>接着计算经验条件熵：</p><ol><li>天气：<br>\begin{aligned}<br>H(sunny)&amp;=-\frac{2}{5}\log_2{\frac{2}{5} }-\frac{3}{5}\log_2{\frac{3}{5} }=0.970951\<br>H(overcast)&amp;=0\<br>H(rainy)&amp;=-\frac{3}{5}\log_2{\frac{3}{5} }-\frac{2}{5}\log_2{\frac{2}{5} }=0.970951\<br>H(D|outlook)&amp;=\frac{5}{14}H(sunny)+\frac{4}{14}H(overcast)+\frac{5}{14}H(rainy)=0.693536<br>\end{aligned}</li><li>温度<br>\begin{aligned}<br>H(hot)&amp;=-\frac{2}{4}\log_2{\frac{2}{4} }-\frac{2}{4}\log_2{\frac{2}{4} }=1\<br>H(mild)&amp;=-\frac{4}{6}\log_2{\frac{4}{6} }-\frac{2}{6}\log_2{\frac{2}{6} }=0.918296\<br>H(cool)&amp;=-\frac{3}{4}\log_2{\frac{3}{4} }-\frac{1}{4}\log_2{\frac{1}{4} }=0.811278\<br>H(D|temperture)&amp;=\frac{4}{14}H(hot)+\frac{6}{14}H(mild)+\frac{4}{14}H(cool)=0.911063<br>\end{aligned}</li><li>湿度<br>\begin{aligned}<br>H(high)&amp;=\cdots=0.985228\<br>H(normal)&amp;=\cdots=0.591673\<br>H(D|humidity)&amp;=\frac{7}{14}H(high)+\frac{7}{14}H(normal)=0.788451<br>\end{aligned}</li><li>风<br>\begin{aligned}<br>H(false)&amp;=\cdots=0.811278\<br>H(true)&amp;=\cdots=1\<br>H(D|windy)&amp;=\frac{8}{14}H(false)+\frac{6}{14}H(true)=0.892159<br>\end{aligned}</li></ol><p>接着计算信息增益：<br>\begin{aligned}<br>H(D,outlook)&amp;=0.940286-0.693536=0.24675\<br>H(D,temperature)&amp;=0.940286-0.911063=0.029223\<br>H(D,humidity)&amp;=0.940286-0.788451=0.151835\<br>H(D,windy)&amp;=0.940286-0.892159=0.048127<br>\end{aligned}</p><p>其中outlook的信息增益最大，所以应选择特征<code>outlook</code>为根节点。</p>
+            <p>示例：<br><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648935296&amp;idx=2&amp;sn=cb77cd47a0189804ba9b16ba10415100&amp;chksm=879419aab0e390bcf14a8eb3f56f1ce31750b5d9566263d93269d47e4674bc7600cc1d1636fb&amp;mpshare=1&amp;scene=24&amp;srcid=&amp;sharer_sharetime=1590479772805&amp;sharer_shareid=b539221659d6ecf12200314308b58dd3&amp;key=e224f213fcbe8475f9ef285bb7bf11ea118733d485a2e0a1bf5d71cd8212cc36e61414400a348229bd6398ffdf35e8ca97536ef45b6ba48e523107c1ff2b6bae4b84605a9a810ef0e8ccfb3381a96097&amp;ascene=14&amp;uin=MjAwNDUzMjgxNw%3D%3D&amp;devicetype=Windows+10+x64&amp;version=62090070&amp;lang=zh_CN&amp;exportkey=AXXj%2FLKyq7BwO492ReB6hMg%3D&amp;pass_ticket=UotHILlosru6hQjR77K5QFOqbs0ufoaaTOgd804mZ9Zj6ebPR%2BPzibBO9ORmuQZQ">数据来源</a></p><p>共4个特征：</p><ol><li>天气</li><li>温度</li><li>湿度</li><li>风</li></ol><div><style scoped>    .dataframe tbody tr th:only-of-type {        vertical-align: middle;    }    .dataframe tbody tr th {        vertical-align: top;    }    .dataframe thead th {        text-align: center;    }</style><table border="1" class="dataframe">  <thead>    <tr style="text-align: center;">      <th>特征</th>      <th>特征的不同取值</th>      <th>样本数</th>      <th>`yes`样本数</th>      <th>`no`样本数</th>    </tr>  </thead>  <tbody>    <tr>      <th rowspan="3">outlook</th>      <td>sunny</td>      <td>5</td>      <td>2</td>      <td>3</td>    </tr>    <tr>      <td>overcast</td>      <td>4</td>      <td>4</td>      <td>0</td>    </tr>    <tr>      <td>rainy</td>      <td>5</td>      <td>3</td>      <td>2</td>    </tr>    <tr>      <th rowspan="3">temperature</th>      <td>hot</td>      <td>4</td>      <td>2</td>      <td>2</td>    </tr>    <tr>      <td>mild</td>      <td>6</td>      <td>4</td>      <td>2</td>    </tr>    <tr>      <td>cool</td>      <td>4</td>      <td>3</td>      <td>1</td>    </tr>    <tr>      <th rowspan="2">humidity</th>      <td>high</td>      <td>7</td>      <td>3</td>      <td>4</td>    </tr>    <tr>      <td>normal</td>      <td>7</td>      <td>6</td>      <td>1</td>    </tr>    <tr>      <th rowspan="2">windy</th>      <td>false</td>      <td>8</td>      <td>6</td>      <td>2</td>    </tr>    <tr>      <td>true</td>      <td>6</td>      <td>3</td>      <td>3</td>    </tr>    <tr>  </tr></tbody></table></div><p>标签为“打球”<code>yes</code>或“不打球”<code>no</code>，原始数据共有14个样本，其中9个为<code>yes</code>、5个为<code>no</code>，原始数据集的熵为</p><script type="math/tex; mode=display">H(D)=-\frac{9}{14}\log_2{\frac{9}{14} }-\frac{5}{14}\log_2{\frac{5}{14} }=0.940286</script><p>接着计算经验条件熵：</p><ol><li>天气：<br>\begin{aligned}<br>H(sunny)&amp;=-\frac{2}{5}\log_2{\frac{2}{5} }-\frac{3}{5}\log_2{\frac{3}{5} }=0.970951\<br>H(overcast)&amp;=0\<br>H(rainy)&amp;=-\frac{3}{5}\log_2{\frac{3}{5} }-\frac{2}{5}\log_2{\frac{2}{5} }=0.970951\<br>H(D|outlook)&amp;=\frac{5}{14}H(sunny)+\frac{4}{14}H(overcast)+\frac{5}{14}H(rainy)=0.693536<br>\end{aligned}</li><li>温度<br>\begin{aligned}<br>H(hot)&amp;=-\frac{2}{4}\log_2{\frac{2}{4} }-\frac{2}{4}\log_2{\frac{2}{4} }=1\<br>H(mild)&amp;=-\frac{4}{6}\log_2{\frac{4}{6} }-\frac{2}{6}\log_2{\frac{2}{6} }=0.918296\<br>H(cool)&amp;=-\frac{3}{4}\log_2{\frac{3}{4} }-\frac{1}{4}\log_2{\frac{1}{4} }=0.811278\<br>H(D|temperture)&amp;=\frac{4}{14}H(hot)+\frac{6}{14}H(mild)+\frac{4}{14}H(cool)=0.911063<br>\end{aligned}</li><li>湿度<br>\begin{aligned}<br>H(high)&amp;=\cdots=0.985228\<br>H(normal)&amp;=\cdots=0.591673\<br>H(D|humidity)&amp;=\frac{7}{14}H(high)+\frac{7}{14}H(normal)=0.788451<br>\end{aligned}</li><li>风<br>\begin{aligned}<br>H(false)&amp;=\cdots=0.811278\<br>H(true)&amp;=\cdots=1\<br>H(D|windy)&amp;=\frac{8}{14}H(false)+\frac{6}{14}H(true)=0.892159<br>\end{aligned}</li></ol><p>接着计算信息增益：<br>\begin{aligned}<br>H(D,outlook)&amp;=0.940286-0.693536=0.24675\<br>H(D,temperature)&amp;=0.940286-0.911063=0.029223\<br>H(D,humidity)&amp;=0.940286-0.788451=0.151835\<br>H(D,windy)&amp;=0.940286-0.892159=0.048127<br>\end{aligned}</p><p>其中outlook的信息增益最大，所以应选择特征<code>outlook</code>为根节点。</p>
           </div>
-<h2 id="ID4"><a class="header-anchor" href="#ID4"></a>ID4</h2>
-<h2 id="C4-5"><a class="header-anchor" href="#C4-5"></a>C4.5</h2>
-<ul>
+<h2 id="ID4"><a href="#ID4" class="headerlink" title="ID4"></a>ID4</h2><h2 id="C4-5"><a href="#C4-5" class="headerlink" title="C4.5"></a>C4.5</h2><ul>
 <li>基于ID3</li>
 <li>ID3使用的是<u>信息增益</u>，而C4.5使用的是<strong>信息增益比</strong></li>
 </ul>
-<h2 id="CART"><a class="header-anchor" href="#CART"></a>CART</h2>
-<p><strong>C</strong>lassification <strong>a</strong>nd <strong>R</strong>egression <strong>T</strong>ree / Regression Tree<br>
-分类和回归树</p>
+<h2 id="CART"><a href="#CART" class="headerlink" title="CART"></a>CART</h2><p><strong>C</strong>lassification <strong>a</strong>nd <strong>R</strong>egression <strong>T</strong>ree / Regression Tree<br>分类和回归树</p>
 <ul>
 <li>与C4.5不同，CART的决策树由二元逻辑问题生成，每个树节点只有两个分支</li>
 </ul>
 <blockquote>
 <p>regression tree is a function that maps the attributes to the score. —— from Tianqi Chen - Introduction to Boosted Tree</p>
 </blockquote>
-<h3 id="CHAID"><a class="header-anchor" href="#CHAID"></a>CHAID</h3>
-<p>Chi-squared Automatic Interaction Detector</p>
-<h3 id="MARS"><a class="header-anchor" href="#MARS"></a>MARS</h3>
-<h3 id="条件推断树"><a class="header-anchor" href="#条件推断树"></a>条件推断树</h3>
-<h2 id="过拟合"><a class="header-anchor" href="#过拟合"></a>过拟合</h2>
-<p>当训练误差（training error）很小，泛化误差（generalization error / test error）较大时，说明决策树模型发生了过拟合。</p>
+<h3 id="CHAID"><a href="#CHAID" class="headerlink" title="CHAID"></a>CHAID</h3><p>Chi-squared Automatic Interaction Detector</p>
+<h3 id="MARS"><a href="#MARS" class="headerlink" title="MARS"></a>MARS</h3><h3 id="条件推断树"><a href="#条件推断树" class="headerlink" title="条件推断树"></a>条件推断树</h3><h2 id="过拟合"><a href="#过拟合" class="headerlink" title="过拟合"></a>过拟合</h2><p>当训练误差（training error）很小，泛化误差（generalization error / test error）较大时，说明决策树模型发生了过拟合。</p>
 <p>发生过拟合的根本原因是决策树模型过于复杂，可能的原因有：</p>
 <ul>
 <li>训练数据集中有异常点（噪音样本点），异常点影响了模型的分类效果</li>
@@ -18771,18 +18747,14 @@ $$a^*=\arg\max_{a\in A} g(D,a)$$</li>
 <li>数据增加（加入有噪声的数据）</li>
 <li>early stopping</li>
 </ul>
-<h1 id="总结"><a class="header-anchor" href="#总结"></a>总结</h1>
-<h2 id="优点"><a class="header-anchor" href="#优点"></a>优点</h2>
-<p>决策树的优点：</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><h2 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h2><p>决策树的优点：</p>
 <ul>
 <li>可读性强</li>
 <li>分类速度快</li>
 <li>推理过程完全依赖于属性变量的取值特点</li>
 <li>可自动忽略对目标变量没有贡献的属性变量</li>
 </ul>
-<h2 id="缺点"><a class="header-anchor" href="#缺点"></a>缺点</h2>
-<h1 id="笔试题目"><a class="header-anchor" href="#笔试题目"></a>笔试题目</h1>
-<div class="note default">
+<h2 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h2><h1 id="笔试题目"><a href="#笔试题目" class="headerlink" title="笔试题目"></a>笔试题目</h1><div class="note default">
             <p>当在一个决策树中划分一个节点时，以下关于“信息增益”的论述正确的是（2、3）<br>1.较不纯的节点需要更多的信息来描述总体<br>2.信息增益可以通过熵来推导<br>3.信息增益偏向于选择大量值的属性</p><p>[<font face="宋体" color="grey">来自：<a href="https://www.nowcoder.com/questionTerminal/c8af2b7b74d74c65b6e5d58b5c607dc3">牛客试题广场</a></font>]</p>
           </div>
 <ul>
@@ -18792,14 +18764,12 @@ $$a^*=\arg\max_{a\in A} g(D,a)$$</li>
             <p>以下机器学习中，在数据预处理时，不需要考虑归一化处理的是：</p><ul><li>树形模型</li></ul><p>[<font face="宋体" color="grey">来自：<a href="https://www.nowcoder.com/test/question/done?tid=36064816&amp;qid=370007#summary">牛客试题广场</a></font>]</p>
           </div>
 <ul>
-<li>不需要归一化处理的模型：决策树、随机森林
-<ul>
+<li>不需要归一化处理的模型：决策树、随机森林<ul>
 <li>因为它们不关心变量的值，而是关心变量的分布和变量之间的条件概率</li>
 </ul>
 </li>
 </ul>
-<h1 id="参考资料"><a class="header-anchor" href="#参考资料"></a>参考资料</h1>
-<ul>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
 <li><a href="https://homes.cs.washington.edu/~tqchen/data/pdf/BoostedTree.pdf">Tianqi Chen - Introduction to Boosted Trees</a></li>
 <li><a href="http://www.huaxiaozhuan.com/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0/chapters/4_decision_tree.html">决策树</a></li>
 <li><a href="https://mp.weixin.qq.com/s?__biz=MzUzODYwMDAzNA==&amp;mid=2247490797&amp;idx=2&amp;sn=e4488e6ae078fd04992ee19c3ea43e0d&amp;chksm=fad46be0cda3e2f606f3faffe800c819c2cacb5ded2c4bb6e1b0b061bc2c06d276bd18a4a9f4&amp;mpshare=1&amp;scene=24&amp;srcid=&amp;sharer_sharetime=1589846441823&amp;sharer_shareid=b539221659d6ecf12200314308b58dd3&amp;key=391433877af29848d80eb268dfdb67e70c94dbc8461e647ef4fd9cf863b97fcbf05fe3cc098469dd0eed236ecaa0ce9b4afa6518cb6c2e116156d348ec25c79484217b352893ff4b5a26e8f3fd8d7f35&amp;ascene=14&amp;uin=MjAwNDUzMjgxNw%3D%3D&amp;devicetype=Windows+10+x64&amp;version=62090070&amp;lang=zh_CN&amp;exportkey=AYJS0mHna0hF6l9GD1%2B%2BuCY%3D&amp;pass_ticket=hSPy%2FUU8oxUcSxTs%2F5nB1TD0Hf4oMyJJiFtHAk4RLQ6enp8U%2FMNrC0H1aJAXQF7t">24个「数据分析师」岗位面试题和答案解析</a></li>
@@ -18817,8 +18787,8 @@ $$a^*=\arg\max_{a\in A} g(D,a)$$</li>
       <tags>
         <tag>算法</tag>
         <tag>Machine Learning 机器学习</tag>
-        <tag>分类</tag>
         <tag>有监督学习</tag>
+        <tag>Classification 分类</tag>
         <tag>回归</tag>
       </tags>
   </entry>
@@ -23246,43 +23216,34 @@ _var 53963204.0
       </tags>
   </entry>
   <entry>
-    <title>Machine Learning | 分类模型评估 Classification Model Evaluation</title>
+    <title>Machine Learning | 分类模型评估 // Classification Model Evaluation</title>
     <url>/Machine-Learning-%E5%88%86%E7%B1%BB%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0.html</url>
-    <content><![CDATA[<center>Classification</center>
-<span id="more"></span>
-<h1 id="分类方法"><a class="header-anchor" href="#分类方法"></a>分类方法</h1>
-<p>从使用的技术上来分，可以把分类方法归结为四种类型：</p>
+    <content><![CDATA[<p><center>Classification</center><br><span id="more"></span></p>
+<h1 id="分类方法"><a href="#分类方法" class="headerlink" title="分类方法"></a>分类方法</h1><p>从使用的技术上来分，可以把分类方法归结为四种类型：</p>
 <ol>
-<li>基于距离的分类方法</li>
-</ol>
-<ul>
+<li>基于距离的分类方法<ul>
 <li>最邻近方法</li>
 </ul>
-<ol start="2">
-<li>决策树分类方法</li>
-</ol>
-<ul>
+</li>
+<li>决策树分类方法<ul>
 <li>ID3</li>
 <li>C4.5</li>
 <li>VFDT</li>
 </ul>
-<ol start="3">
-<li>贝叶斯方法</li>
-</ol>
-<ul>
+</li>
+<li>贝叶斯方法<ul>
 <li>朴素贝叶斯方法</li>
 <li>EM算法</li>
 </ul>
-<ol start="4">
-<li>规则归纳方法</li>
-</ol>
-<ul>
+</li>
+<li>规则归纳方法<ul>
 <li>AQ算法</li>
 <li>CN2算法</li>
 <li>FOIL算法</li>
 </ul>
-<h1 id="分类评估"><a class="header-anchor" href="#分类评估"></a>分类评估</h1>
-<p>针对一个二分类问题，将实例分为正例（Positive）和负例（Negative）两种。</p>
+</li>
+</ol>
+<h1 id="分类评估"><a href="#分类评估" class="headerlink" title="分类评估"></a>分类评估</h1><p>针对一个二分类问题，将实例分为正例（Positive）和负例（Negative）两种。</p>
 <ul>
 <li><strong>TP</strong>（True Positive）：真正例；是正类且被预测为正类的实例</li>
 <li><strong>FP</strong>（False Positive）：假正例；是负类但被预测为正类的实例</li>
@@ -23292,69 +23253,40 @@ _var 53963204.0
 <blockquote>
 <p>周志华《机器学习》：我们希望得到泛化误差小的学习器。</p>
 </blockquote>
-<h2 id="精确率-Precision"><a class="header-anchor" href="#精确率-Precision"></a>精确率 Precision</h2>
-<p><strong>精确率</strong>（Precision）or <strong>查准率</strong>：<br>
-$$Precision=\frac{TP}{TP+FP}$$</p>
-<blockquote>
+<h2 id="精确率-Precision"><a href="#精确率-Precision" class="headerlink" title="精确率 Precision"></a>精确率 Precision</h2><p><strong>精确率</strong>（Precision）or <strong>查准率</strong>：</p>
+<script type="math/tex; mode=display">Precision=\frac{TP}{TP+FP}</script><blockquote>
 <p>如：警察抓小偷，描述警察抓的人中有多少个是小偷的标准即Precision</p>
 </blockquote>
-<p>计算Precision的加权均值（<strong>AP</strong>，average precision）：<br>
-$$AP=\sum_i(R_i-R_{i-1})P_i$$<br>
-其中，$R_i$、$P_i$分别是第$i$个阈值对应的Recall和Precision。</p>
+<p>计算Precision的加权均值（<strong>AP</strong>，average precision）：</p>
+<script type="math/tex; mode=display">AP=\sum_i(R_i-R_{i-1})P_i</script><p>其中，$R_i$、$P_i$分别是第$i$个阈值对应的Recall和Precision。</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">sklearn.metrics.average_precision_score</span><br></pre></td></tr></table></figure>
-<h2 id="召回率-Recall"><a class="header-anchor" href="#召回率-Recall"></a>召回率 Recall</h2>
-<p><strong>召回率</strong>（Recall）or <strong>查全率</strong>：<br>
-$$Recall=\frac{TP}{TP+FN}$$<br>
-$$召回率=\frac{提取出的正确信息条数}{样本中相关的信息条数}$$</p>
-<blockquote>
+<h2 id="召回率-Recall"><a href="#召回率-Recall" class="headerlink" title="召回率 Recall"></a>召回率 Recall</h2><p><strong>召回率</strong>（Recall）or <strong>查全率</strong>：</p>
+<script type="math/tex; mode=display">Recall=\frac{TP}{TP+FN}</script><script type="math/tex; mode=display">召回率=\frac{提取出的正确信息条数}{样本中相关的信息条数}</script><blockquote>
 <p>如：警察抓小偷，描述有多少比例的小偷被警察抓了的标准即Recall</p>
 </blockquote>
-<meta name="referrer" content="no-referrer">
-<img src="/ShootingWang/ShootingWang.github.io/Machine-Learning-%E5%88%86%E7%B1%BB%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0.htm/pic5.png" class title="维基百科-Precision and Recall">
-<h2 id="灵敏度-Sensitivity"><a class="header-anchor" href="#灵敏度-Sensitivity"></a>灵敏度 Sensitivity</h2>
-<p><strong>灵敏度</strong>（Sensitivity）or <strong>真正例率</strong>（TPR，True Positive Rate）<br>
-$$Sensitivity=TPR=Recall=\frac{TP}{TP+FN}$$</p>
-<ul>
+<p><meta name="referrer" content="no-referrer"><br><img src="/ShootingWang/ShootingWang.github.io/Machine-Learning-%E5%88%86%E7%B1%BB%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0.htm/pic5.png" class title="维基百科-Precision and Recall"></p>
+<h2 id="灵敏度-Sensitivity"><a href="#灵敏度-Sensitivity" class="headerlink" title="灵敏度 Sensitivity"></a>灵敏度 Sensitivity</h2><p><strong>灵敏度</strong>（Sensitivity）or <strong>真正例率</strong>（TPR，True Positive Rate）</p>
+<script type="math/tex; mode=display">Sensitivity=TPR=Recall=\frac{TP}{TP+FN}</script><ul>
 <li>召回率的同义词</li>
 </ul>
-<p><strong>1-灵敏度</strong> or <strong>假负例率</strong>（FNR，False Negative Rate）or <strong>漏诊率</strong><br>
-$$FNR=1-Sensitivity=\frac{FN}{TP+FN}$$</p>
-<h2 id="特异度-Specificity"><a class="header-anchor" href="#特异度-Specificity"></a>特异度 Specificity</h2>
-<p><strong>特异度</strong>（Specificity）or <strong>真负例率</strong>（TNR，True Negative Rate）<br>
-$$Specificity=TNR=\frac{TN}{TN+FP}$$</p>
-<p><strong>1-特异度</strong> or <strong>假正例率</strong>（FPR，False Positive Rate）or <strong>误诊率</strong><br>
-$$FPR=1-Specificity=\frac{FP}{TN+FP}$$</p>
-<h2 id="错误率-Error"><a class="header-anchor" href="#错误率-Error"></a>错误率 Error</h2>
-<p>分类错误的样本数占样本总数的比例</p>
-<p>$$Error=\frac{FP+FN}{TP+FP+TN+FN}$$</p>
-<h2 id="准确率-精度-Accuracy"><a class="header-anchor" href="#准确率-精度-Accuracy"></a>准确率/精度 Accuracy</h2>
-<p><strong>准确率</strong>（Accuracy，ACC）：分类正确的样本占总样本个数的比例，即<br>
-$$ACC=1-\mbox{错误率}=\frac{TP+TN}{TP+FP+TN+FN}$$</p>
-<p>准确率存在局限性</p>
-<div class="note default">
-            <p>例子：Hulu的奢侈品广告主们希望把广告定向投放给奢侈品用户。Hulu通过第三方的数据管理平台（Data Management Platform，DMP）拿到了一部分奢侈品用户的数据，并以此为训练集和测试集，训练和测试奢侈品用户的分类模型。该模型的分类准确率超过了95%，但在实际广告投放过程中，该模型还是把大部分广告投给了非奢侈品用户。</p><p>这是因为：当负样本在训练集中占99%时，分类器把所有样本都预测为负样本也可以获得99%的准确率。所以，当不同类别的样本比例非常不均衡时，占比大的类别往往成为影响准确率的最主要因素。</p><p>奢侈品用户只占Hulu全体用户的一小部分，虽然模型的整体分类准确率高，但是不代表对奢侈品用户的分类准确率也高。在线上投放时，仅对模型判定的“奢侈品用户”进行投放，因此，对“奢侈品用户”判定的准确率不够高的问题就很明显了。</p><p>可使用更为有效的<strong>平均准确率</strong>（每个类别下的样本准确率的算数平均）作为模型评估的指标。<br>$$平均准确率=\frac{1}{2}\left(\frac{TP}{TP+FN}+\frac{TN}{TN+FP}\right)$$</p><p>但是，有时候，即使分类评估指标选择正确，仍可能会存在模型过拟合或欠拟合、训练集和测试集划分不合理、线下评估与线上测试的样本分布存在差异等问题。</p>
-          </div>
-<h2 id="LR"><a class="header-anchor" href="#LR"></a>LR+</h2>
-<p>正例似然比（Positive Likelihood Ratio，LR+）=真正例率 / 假正例率=灵敏度 / （1-特异度）<br>
-$$LR+=\frac{TPR}{FPR}$$</p>
-<h2 id="LR-2"><a class="header-anchor" href="#LR-2"></a>LR-</h2>
-<p>负例似然比（Negative Likelihood Ratio，LR-）=假负例率 / 真负例率=（1-灵敏度）/ 特异度<br>
-$$LR-=\frac{FNR}{TNR}$$</p>
-<h2 id="DOR"><a class="header-anchor" href="#DOR"></a>DOR</h2>
-<p>DOR（Diagnostic Odds Ratio，诊断优势比）：<br>
-$$DOR=\frac{LR+}{LR-}$$</p>
-<h2 id="Youden-Index"><a class="header-anchor" href="#Youden-Index"></a>Youden Index</h2>
-<p>$$Youden指数=灵敏度+特异度-1=真正例率-假正例率$$</p>
-<h2 id="F1-score"><a class="header-anchor" href="#F1-score"></a>F1-score</h2>
-<p><strong>F1 值</strong>（F1-score）：综合考虑Precision和Recall的度量（metric）<br>
-$$F1-score=\frac{2\times Precision\times Recall}{Precision+Recall}$$</p>
-<ul>
+<p><strong>1-灵敏度</strong> or <strong>假负例率</strong>（FNR，False Negative Rate）or <strong>漏诊率</strong></p>
+<script type="math/tex; mode=display">FNR=1-Sensitivity=\frac{FN}{TP+FN}</script><h2 id="特异度-Specificity"><a href="#特异度-Specificity" class="headerlink" title="特异度 Specificity"></a>特异度 Specificity</h2><p><strong>特异度</strong>（Specificity）or <strong>真负例率</strong>（TNR，True Negative Rate）</p>
+<script type="math/tex; mode=display">Specificity=TNR=\frac{TN}{TN+FP}</script><p><strong>1-特异度</strong> or <strong>假正例率</strong>（FPR，False Positive Rate）or <strong>误诊率</strong></p>
+<script type="math/tex; mode=display">FPR=1-Specificity=\frac{FP}{TN+FP}</script><h2 id="错误率-Error"><a href="#错误率-Error" class="headerlink" title="错误率 Error"></a>错误率 Error</h2><p>分类错误的样本数占样本总数的比例</p>
+<script type="math/tex; mode=display">Error=\frac{FP+FN}{TP+FP+TN+FN}</script><h2 id="准确率-精度-Accuracy"><a href="#准确率-精度-Accuracy" class="headerlink" title="准确率/精度 Accuracy"></a>准确率/精度 Accuracy</h2><p><strong>准确率</strong>（Accuracy，ACC）：分类正确的样本占总样本个数的比例，即</p>
+<script type="math/tex; mode=display">ACC=1-\mbox{错误率}=\frac{TP+TN}{TP+FP+TN+FN}</script><p>准确率存在局限性<br><div class="note default">
+            <p>例子：Hulu的奢侈品广告主们希望把广告定向投放给奢侈品用户。Hulu通过第三方的数据管理平台（Data Management Platform，DMP）拿到了一部分奢侈品用户的数据，并以此为训练集和测试集，训练和测试奢侈品用户的分类模型。该模型的分类准确率超过了95%，但在实际广告投放过程中，该模型还是把大部分广告投给了非奢侈品用户。</p><p>这是因为：当负样本在训练集中占99%时，分类器把所有样本都预测为负样本也可以获得99%的准确率。所以，当不同类别的样本比例非常不均衡时，占比大的类别往往成为影响准确率的最主要因素。</p><p>奢侈品用户只占Hulu全体用户的一小部分，虽然模型的整体分类准确率高，但是不代表对奢侈品用户的分类准确率也高。在线上投放时，仅对模型判定的“奢侈品用户”进行投放，因此，对“奢侈品用户”判定的准确率不够高的问题就很明显了。</p><p>可使用更为有效的<strong>平均准确率</strong>（每个类别下的样本准确率的算数平均）作为模型评估的指标。</p><script type="math/tex; mode=display">平均准确率=\frac{1}{2}\left(\frac{TP}{TP+FN}+\frac{TN}{TN+FP}\right)</script><p>但是，有时候，即使分类评估指标选择正确，仍可能会存在模型过拟合或欠拟合、训练集和测试集划分不合理、线下评估与线上测试的样本分布存在差异等问题。</p>
+          </div></p>
+<h2 id="LR"><a href="#LR" class="headerlink" title="LR+"></a>LR+</h2><p>正例似然比（Positive Likelihood Ratio，LR+）=真正例率 / 假正例率=灵敏度 / （1-特异度）</p>
+<script type="math/tex; mode=display">LR+=\frac{TPR}{FPR}</script><h2 id="LR-1"><a href="#LR-1" class="headerlink" title="LR-"></a>LR-</h2><p>负例似然比（Negative Likelihood Ratio，LR-）=假负例率 / 真负例率=（1-灵敏度）/ 特异度</p>
+<script type="math/tex; mode=display">LR-=\frac{FNR}{TNR}</script><h2 id="DOR"><a href="#DOR" class="headerlink" title="DOR"></a>DOR</h2><p>DOR（Diagnostic Odds Ratio，诊断优势比）：</p>
+<script type="math/tex; mode=display">DOR=\frac{LR+}{LR-}</script><h2 id="Youden-Index"><a href="#Youden-Index" class="headerlink" title="Youden Index"></a>Youden Index</h2><script type="math/tex; mode=display">Youden指数=灵敏度+特异度-1=真正例率-假正例率</script><h2 id="F1-score"><a href="#F1-score" class="headerlink" title="F1-score"></a>F1-score</h2><p><strong>F1 值</strong>（F1-score）：综合考虑Precision和Recall的度量（metric）</p>
+<script type="math/tex; mode=display">F1-score=\frac{2\times Precision\times Recall}{Precision+Recall}</script><ul>
 <li><strong>宏平均F1</strong>（macro-averaging）：先对每个类别单独计算F1值，再取这些F1值的算数平均值作为全局指标；宏平均平等对待每一个类别；值受到稀有类别的影响较大</li>
 <li><strong>微平均F1</strong>（micro-averaging）：先累加计算各个类别的TP、TN、FP、FN，再由这些值计算F1值；平等考虑样例集中的每一个样例；值受到常见类别的影响较大</li>
 <li>在multi-class classification（多分类）的情况下，macro-averaging会比micro-averaging好一些，更能体现在small class（稀有类别）上的表现（performance）</li>
 </ul>
-<h2 id="ROC"><a class="header-anchor" href="#ROC"></a>ROC</h2>
-<p><strong>ROC曲线</strong>（Receiver Operating Characteristic Curve，接收者操作特征曲线）：是反映灵敏性和特异性连续变量的综合指标。</p>
+<h2 id="ROC"><a href="#ROC" class="headerlink" title="ROC"></a>ROC</h2><p><strong>ROC曲线</strong>（Receiver Operating Characteristic Curve，接收者操作特征曲线）：是反映灵敏性和特异性连续变量的综合指标。</p>
 <ul>
 <li>横坐标：FPR（预测为正但实际为负的样本占所有负例样本的比例）；即 1-Specificity</li>
 <li>纵坐标：TPR（预测为正且实际为正的样本占所有正例样本的比例）；即Sensitivity</li>
@@ -23363,73 +23295,61 @@ $$F1-score=\frac{2\times Precision\times Recall}{Precision+Recall}$$</p>
 <li>降低分类阈值会导致将更多样本归为正例，从而增加假正例和真正例的个数，TPR和FPR会同时增大</li>
 <li>理想目标：TPR=1，FPR=0，即ROC图中的(0,1)点</li>
 <li>ROC越靠拢(0,1)点、越偏离45°对角线越好；Sensitivity、Specificity越大，效果越好</li>
-<li>为什么使用ROC曲线？</li>
-</ul>
-<blockquote>
+<li>为什么使用ROC曲线？<blockquote>
 <p>当测试集中的正负样本的分布变化的时候，ROC曲线能够基本保持原貌</p>
 </blockquote>
-<meta name="referrer" content="no-referrer">
-<img src="/ShootingWang/ShootingWang.github.io/Machine-Learning-%E5%88%86%E7%B1%BB%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0.htm/pic3.png" class title="ROC曲线">
-<meta name="referrer" content="no-referrer">
-<img src="/ShootingWang/ShootingWang.github.io/Machine-Learning-%E5%88%86%E7%B1%BB%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0.htm/pic2.png" class title="ROC曲线上点的解读">
+</li>
+</ul>
+<p><meta name="referrer" content="no-referrer"><br><img src="/ShootingWang/ShootingWang.github.io/Machine-Learning-%E5%88%86%E7%B1%BB%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0.htm/pic3.png" class title="ROC曲线"></p>
+<p><meta name="referrer" content="no-referrer"><br><img src="/ShootingWang/ShootingWang.github.io/Machine-Learning-%E5%88%86%E7%B1%BB%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0.htm/pic2.png" class title="ROC曲线上点的解读"></p>
 <blockquote>
-<p><strong>ROC vs F1-score</strong><br>
-When you have a data imbalance between positive and negative samples, you should always use F1-score because of ROC averages over all possible thresholds.</p>
+<p><strong>ROC vs F1-score</strong><br>When you have a data imbalance between positive and negative samples, you should always use F1-score because of ROC averages over all possible thresholds.</p>
 </blockquote>
-<meta name="referrer" content="no-referrer">
-<img src="/ShootingWang/ShootingWang.github.io/Machine-Learning-%E5%88%86%E7%B1%BB%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0.htm/pic1.png" class title="ROC曲线&amp;TP,TN,FP,FN的关系">
+<p><meta name="referrer" content="no-referrer"><br><img src="/ShootingWang/ShootingWang.github.io/Machine-Learning-%E5%88%86%E7%B1%BB%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0.htm/pic1.png" class title="ROC曲线&amp;TP,TN,FP,FN的关系"></p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 计算ROC</span></span><br><span class="line">sklearn.metrics.roc_curve(y_true, y_score)</span><br></pre></td></tr></table></figure>
-<h2 id="AUC"><a class="header-anchor" href="#AUC"></a>AUC</h2>
-<p><strong>AUC</strong>（Area Under Curve）：ROC曲线下的面积</p>
+<h2 id="AUC"><a href="#AUC" class="headerlink" title="AUC"></a>AUC</h2><p><strong>AUC</strong>（Area Under Curve）：ROC曲线下的面积</p>
 <ul>
 <li>对所有可能的分类阈值的效果进行综合衡量</li>
-<li>一种解读方式：可把AUC看作模型将某个随机正例样本排列在某个随机负例样本之上的概率（AUC值是一个概率值）</li>
+<li>一种解读方式：可把AUC看作模型将某个随机正例样本排列在某个随机负例样本之上的概率（AUC值是一个概率值）<blockquote>
+<p>AUC代表：随机抽出一个正例、一个负例，用训练得到的分类器对这两个样本进行预测，预测结果为正的概率大于为负的概率的概率</p>
+<script type="math/tex; mode=display">AUC=P\left\{P(Positive)>P(Negative)\right\}</script></blockquote>
+</li>
 </ul>
 <blockquote>
-<p>AUC代表：随机抽出一个正例、一个负例，用训练得到的分类器对这两个样本进行预测，预测结果为正的概率大于为负的概率的概率<br>
-$$AUC=P\left{P(Positive)&gt;P(Negative)\right}$$</p>
-</blockquote>
-<blockquote>
-<p>The <strong>AUC value</strong> is equivalent to the probability that a randomly chosen positive example is ranked higher than a randomly chosen negative example.<br>
-—— Fawcett, 2006</p>
+<p>The <strong>AUC value</strong> is equivalent to the probability that a randomly chosen positive example is ranked higher than a randomly chosen negative example.<br>—— Fawcett, 2006</p>
 </blockquote>
 <ul>
-<li>AUC的取值范围为[0,1]；但AUC一般都处于直线y=x的上方，所以AUC的取值范围一般在0.5和1之间</li>
+<li>AUC的取值范围为[0,1]；但AUC一般都处于直线y=x的上方，所以AUC的取值范围一般在0.5和1之间<ul>
 <li>预测结果100%错误的模型的AUC=0</li>
 <li>预测结果100%正确的模型的AUC=1</li>
 <li>对应AUC更大的分类器，分类效果更好</li>
+</ul>
+</li>
 <li>AUC的尺度不变：测量预测的排名情况，而不是测量其绝对值</li>
 <li>AUC的分类阈值不变：测量模型预测的质量，而不考虑所选的分类阈值</li>
-<li>在假负例与假正例的代价存在较大差异的情况下，尽量减少一种类型的分类错误可能至关重要</li>
-</ul>
-<blockquote>
+<li>在假负例与假正例的代价存在较大差异的情况下，尽量减少一种类型的分类错误可能至关重要<blockquote>
 <p>如：进行垃圾邮件检测时，可能希望优先考虑尽量减少假正例</p>
 </blockquote>
-<ul>
+</li>
 <li>AUC=1，是完美分类器；采用这个预测模型时，存在至少一个阈值能得到完美预测；绝大多数预测的场合，不存在完美分类器</li>
 <li>0.5 &lt; AUC &lt;1 ，优于随机猜测；该模型妥善设定阈值的话，能有预测价值</li>
 <li>AUC = 0.5，等同于随机猜测；该模型没有预测价值</li>
 <li>AUC  &lt; 0.5，比随机猜测还差</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 计算AUC</span></span><br><span class="line">sklearn.metrics.roc_auc_score(y_true, y_score)</span><br></pre></td></tr></table></figure>
-<h2 id="PR"><a class="header-anchor" href="#PR"></a>PR</h2>
-<p><strong>PR</strong>（Precision-Recall）曲线</p>
+<h2 id="PR"><a href="#PR" class="headerlink" title="PR"></a>PR</h2><p><strong>PR</strong>（Precision-Recall）曲线</p>
 <ul>
 <li>横轴：Recall</li>
 <li>纵轴：Precision</li>
 <li>不同阈值下的Precision、Recall值</li>
 <li>精确率越高，召回率越高，模型和算法就越高效；即，PR曲线越靠近右上越好</li>
 </ul>
-<meta name="referrer" content="no-referrer">
-<img src="/ShootingWang/ShootingWang.github.io/Machine-Learning-%E5%88%86%E7%B1%BB%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0.htm/pic4.png" class title="An Introduction to ROC Analysis">
-<h1 id="其他"><a class="header-anchor" href="#其他"></a>其他</h1>
-<h2 id="误差"><a class="header-anchor" href="#误差"></a>误差</h2>
-<ul>
+<p><meta name="referrer" content="no-referrer"><br><img src="/ShootingWang/ShootingWang.github.io/Machine-Learning-%E5%88%86%E7%B1%BB%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0.htm/pic4.png" class title="An Introduction to ROC Analysis"></p>
+<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><h2 id="误差"><a href="#误差" class="headerlink" title="误差"></a>误差</h2><ul>
 <li><strong>训练误差/经验误差</strong>（training error / empirical error）：分类器（学习器）在训练集上的误差</li>
 <li><strong>泛化误差</strong>（generalization error）：分类器（学习器）在新样本上的误差</li>
 </ul>
-<h1 id="参考资料"><a class="header-anchor" href="#参考资料"></a>参考资料</h1>
-<ul>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
 <li><a href="https://www.cnblogs.com/pinard/p/5993450.html">精确率与召回率，RoC曲线与PR曲线</a></li>
 <li><a href="https://blog.csdn.net/qq_22238533/article/details/78666436">AUC的计算方法</a></li>
 <li><a href="https://www.lagou.com/lgeduarticle/109119.html">机器学习之模型评估详解</a></li>
@@ -23447,13 +23367,9 @@ $$AUC=P\left{P(Positive)&gt;P(Negative)\right}$$</p>
 <li><a href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.roc_curve.html#sklearn.metrics.roc_curve">sklearn.metrics.roc_curve</a></li>
 <li><a href="https://book.douban.com/subject/30285146/">《百面机器学习》</a></li>
 </ul>
-<h1 id="推荐阅读"><a class="header-anchor" href="#推荐阅读"></a>推荐阅读</h1>
-<ul>
-<li>
-<a href="/Machine-Learning-%E8%81%9A%E7%B1%BB%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0.html" title="Machine Learning | 聚类模型评估 Clustering Model Evaluation">Machine Learning | 聚类模型评估 Clustering Model Evaluation</a>
-</li>
-<li>
-<a href="/Machine-Learning-%E6%B1%87%E6%80%BB.html" title="Machine Learning | 汇总 Summary">Machine Learning | 汇总 Summary</a></li>
+<h1 id="推荐阅读"><a href="#推荐阅读" class="headerlink" title="推荐阅读"></a>推荐阅读</h1><ul>
+<li><a href="/Machine-Learning-%E8%81%9A%E7%B1%BB%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0.html" title="Machine Learning | 聚类模型评估 Clustering Model Evaluation">Machine Learning | 聚类模型评估 Clustering Model Evaluation</a></li>
+<li><a href="/Machine-Learning-%E6%B1%87%E6%80%BB.html" title="Machine Learning | 汇总 Summary">Machine Learning | 汇总 Summary</a></li>
 </ul>
 ]]></content>
       <categories>
@@ -23462,7 +23378,7 @@ $$AUC=P\left{P(Positive)&gt;P(Negative)\right}$$</p>
       <tags>
         <tag>算法</tag>
         <tag>Machine Learning 机器学习</tag>
-        <tag>分类</tag>
+        <tag>Classification 分类</tag>
       </tags>
   </entry>
   <entry>
@@ -23752,65 +23668,39 @@ $$H(x)=\frac{1}{T}\sum_{i=1}^Th_i(x)$$</p>
   <entry>
     <title>Machine Learning | 生成式模型 &amp; 判别式模型</title>
     <url>/%E7%94%9F%E6%88%90%E5%BC%8F%E6%A8%A1%E5%9E%8B-%E5%88%A4%E5%88%AB%E5%BC%8F%E6%A8%A1%E5%9E%8B.html</url>
-    <content><![CDATA[<center>Generative Model & Discriminative Model</center>
-<span id="more"></span>
-<h1 id="生成式模型"><a class="header-anchor" href="#生成式模型"></a>生成式模型</h1>
-<p>生成式模型（Generative Model）：生成数据的分布的模型（有多个模型，将测试用例分别放进各个模型，最后比较其结果，选择最优的作为label）</p>
+    <content><![CDATA[<p><center>Generative Model & Discriminative Model</center><br><span id="more"></span></p>
+<h1 id="生成式模型"><a href="#生成式模型" class="headerlink" title="生成式模型"></a>生成式模型</h1><p>生成式模型（Generative Model）：生成数据的分布的模型（有多个模型，将测试用例分别放进各个模型，最后比较其结果，选择最优的作为label）</p>
 <ul>
-<li>会对$x$和$y$的联合分布$p(x,y)$进行建模，然后通过<a href="#">Post not found: 朴素贝叶斯 贝叶斯公式</a>来求得$p(y|x)$，最后选取使得$p(y|x)$最大的$y_i$，即<br>
-\begin{equation}<br>
-\begin{aligned}<br>
-y^*&amp;=\arg{\max_{y_i}p(y_i|x)}\<br>
-&amp;=\arg{\max_{y_i}\frac{p(x|y_i)p(y_i)}{p(x)} }\<br>
-&amp;=\arg{\max_{y_i}p(x|y_i)p(y_i)}\<br>
-&amp;=\arg{\max_{y_i}p(x,y_i)}<br>
-\end{aligned}<br>
-\end{equation}</li>
+<li>会对$x$和$y$的联合分布$p(x,y)$进行建模，然后通过<a href="#">Post not found: 朴素贝叶斯 贝叶斯公式</a>来求得$p(y|x)$，最后选取使得$p(y|x)$最大的$y<em>i$，即<br>\begin{equation}<br>\begin{aligned}<br>y^*&amp;=\arg{\max</em>{y<em>i}p(y_i|x)}\<br>&amp;=\arg{\max</em>{y<em>i}\frac{p(x|y_i)p(y_i)}{p(x)} }\<br>&amp;=\arg{\max</em>{y<em>i}p(x|y_i)p(y_i)}\<br>&amp;=\arg{\max</em>{y_i}p(x,y_i)}<br>\end{aligned}<br>\end{equation}</li>
 </ul>
 <p>生成式模型有：</p>
 <ul>
-<li>
-<a href="/%E7%AE%97%E6%B3%95-%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF.html" title="朴素贝叶斯(Naive Bayes)">朴素贝叶斯(Naive Bayes)</a>
-</li>
-<li>
-<a href="/%E7%AE%97%E6%B3%95-KNN.html" title="k邻近（KNN）">k邻近（KNN）</a>
-</li>
+<li><a href="/%E7%AE%97%E6%B3%95-%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF.html" title="朴素贝叶斯(Naive Bayes)">朴素贝叶斯(Naive Bayes)</a></li>
+<li><a href="/%E7%AE%97%E6%B3%95-KNN.html" title="k邻近（KNN）">k邻近（KNN）</a></li>
 <li>高斯混合模型（GMM）</li>
-<li>
-<a href="/%E7%AE%97%E6%B3%95-HMM.html" title="隐马尔可夫模型（HMM）">隐马尔可夫模型（HMM）</a>
-</li>
+<li><a href="/%E7%AE%97%E6%B3%95-HMM.html" title="隐马尔可夫模型（HMM）">隐马尔可夫模型（HMM）</a></li>
 <li>贝叶斯网络</li>
 <li>Sigmoid Belief Networks</li>
 <li>马尔可夫随机场（Markov Random Fields）</li>
 <li>深度信念网络（DBN）</li>
 <li>迪利克雷分布模型（LDA，Latent Dirichlet Allocation）</li>
 </ul>
-<h1 id="判别式模型"><a class="header-anchor" href="#判别式模型"></a>判别式模型</h1>
-<p>判别式模型（Discriminative Model）：判别数据输出量的模型（只有一个模型，将模型应用到测试用例中，生成label）</p>
+<h1 id="判别式模型"><a href="#判别式模型" class="headerlink" title="判别式模型"></a>判别式模型</h1><p>判别式模型（Discriminative Model）：判别数据输出量的模型（只有一个模型，将模型应用到测试用例中，生成label）</p>
 <ul>
 <li>会直接对$p(y|x)$进行建模</li>
 </ul>
 <p>判别式模型有：</p>
 <ul>
-<li>
-<a href="/%E7%AE%97%E6%B3%95-%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92.html" title="线性回归（Linear Regression）">线性回归（Linear Regression）</a>
-</li>
+<li><a href="/%E7%AE%97%E6%B3%95-%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92.html" title="线性回归（Linear Regression）">线性回归（Linear Regression）</a></li>
 <li>线性判别分析</li>
-<li>
-<a href="/%E7%AE%97%E6%B3%95-LogisticRegression.html" title="逻辑回归（Logistic Regression）">逻辑回归（Logistic Regression）</a>
-</li>
-<li>
-<a href="/%E7%AE%97%E6%B3%95-%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C.html" title="神经网络（NN）">神经网络（NN）</a>
-</li>
-<li>
-<a href="/%E7%AE%97%E6%B3%95-SVM.html" title="支持向量机（SVM）">支持向量机（SVM）</a>
-</li>
+<li><a href="/%E7%AE%97%E6%B3%95-LogisticRegression.html" title="逻辑回归（Logistic Regression）">逻辑回归（Logistic Regression）</a></li>
+<li><a href="/%E7%AE%97%E6%B3%95-%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C.html" title="神经网络（NN）">神经网络（NN）</a></li>
+<li><a href="/%E7%AE%97%E6%B3%95-SVM.html" title="支持向量机（SVM）">支持向量机（SVM）</a></li>
 <li>高斯过程（Gaussian Process）</li>
 <li>条件随机场（CRF）</li>
 <li>CART（Classification and Regression Tree）</li>
 </ul>
-<h1 id="参考资料"><a class="header-anchor" href="#参考资料"></a>参考资料</h1>
-<ul>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
 <li><a href="https://blog.csdn.net/u013630349/article/details/47146425">机器学习 之 生成式模型 VS 判别式模型</a></li>
 <li><a href="https://www.cnblogs.com/kemaswill/p/3427422.html">判别式模型 vs. 生成式模型</a></li>
 </ul>
@@ -23821,8 +23711,8 @@ y^*&amp;=\arg{\max_{y_i}p(y_i|x)}\<br>
       <tags>
         <tag>算法</tag>
         <tag>Machine Learning 机器学习</tag>
-        <tag>分类</tag>
         <tag>有监督学习</tag>
+        <tag>Classification 分类</tag>
       </tags>
   </entry>
   <entry>
@@ -30591,289 +30481,185 @@ $$Random Forest=Bagging+Decision Tree$$</p>
       </tags>
   </entry>
   <entry>
-    <title>Machine Learning | 支持向量机</title>
+    <title>Machine Learning | 支持向量机 // Support Vector Machine</title>
     <url>/%E7%AE%97%E6%B3%95-SVM.html</url>
-    <content><![CDATA[<center>Support Vector Machine</center>
-<span id="more"></span>
-SVM
-<h1 id="支持向量机"><a class="header-anchor" href="#支持向量机"></a>支持向量机</h1>
-<ul>
-<li>
-<a href="/%E7%AE%97%E6%B3%95-SupervisedLearning.html" title="有监督学习">有监督学习</a>
-</li>
+    <content><![CDATA[<p><center></center><br><span id="more"></span><br>SVM</p>
+<h1 id="支持向量机"><a href="#支持向量机" class="headerlink" title="支持向量机"></a>支持向量机</h1><ul>
+<li><a href="/%E7%AE%97%E6%B3%95-SupervisedLearning.html" title="有监督学习">有监督学习</a></li>
 <li>分类</li>
 <li>回归</li>
-<li>
-<a href="/%E7%94%9F%E6%88%90%E5%BC%8F%E6%A8%A1%E5%9E%8B-%E5%88%A4%E5%88%AB%E5%BC%8F%E6%A8%A1%E5%9E%8B.html" title="判别式模型">判别式模型</a>
-</li>
+<li><a href="/%E7%94%9F%E6%88%90%E5%BC%8F%E6%A8%A1%E5%9E%8B-%E5%88%A4%E5%88%AB%E5%BC%8F%E6%A8%A1%E5%9E%8B.html" title="判别式模型">判别式模型</a></li>
 <li>训练完成后，大部分训练样本都不需要保留，最终模型仅与支持向量有关</li>
 </ul>
 <p>支持向量机是一种<u>有监督学习</u>算法，既可以用于分类，也可以用于回归。</p>
 <p>最初SVM被提出用于二类分类问题。</p>
 <p>支持向量机是<a href="/%E7%94%9F%E6%88%90%E5%BC%8F%E6%A8%A1%E5%9E%8B-%E5%88%A4%E5%88%AB%E5%BC%8F%E6%A8%A1%E5%9E%8B.html" title="判别分类方法">判别分类方法</a>，用一条分割线（二维空间中的直线或曲线）或流形体（多维空间中的曲线、曲面等概念的推广）将各种类型分割开。</p>
-<h2 id="基本思想"><a class="header-anchor" href="#基本思想"></a>基本思想</h2>
-<p>在特征空间中寻找间隔最大的分离超平面将数据高效地分为两类。</p>
+<h2 id="基本思想"><a href="#基本思想" class="headerlink" title="基本思想"></a>基本思想</h2><p>在特征空间中寻找间隔最大的分离超平面将数据高效地分为两类。</p>
 <ul>
 <li>正确划分数据集</li>
 <li>分离超平面几何间隔最大</li>
 </ul>
-<meta name="referrer" content="no-referrer">
-<img src="/ShootingWang/ShootingWang.github.io/%E7%AE%97%E6%B3%95-SVM.htm/svm2.jpg" class title="支持向量机">
-<h3 id="类别"><a class="header-anchor" href="#类别"></a>类别</h3>
-<ol>
-<li><strong>线性可分支持向量机</strong></li>
-</ol>
-<ul>
+<p><meta name="referrer" content="no-referrer"><br><img src="/ShootingWang/ShootingWang.github.io/%E7%AE%97%E6%B3%95-SVM.htm/svm2.jpg" class title="支持向量机"></p>
+<h3 id="类别"><a href="#类别" class="headerlink" title="类别"></a>类别</h3><ol>
+<li><strong>线性可分支持向量机</strong><ul>
 <li>训练样本线性可分</li>
 <li>通过<u>硬间隔</u>最大化，学习一个线性分类器</li>
 </ul>
-<ol start="2">
-<li><strong>线性支持向量机</strong></li>
-</ol>
-<ul>
+</li>
+<li><strong>线性支持向量机</strong><ul>
 <li>训练样本近似线性可分</li>
 <li>引入松弛变量，通过<u>软间隔</u>最大化，学习一个线性分类器</li>
 </ul>
-<ol start="3">
-<li><strong>非线性支持向量机</strong></li>
-</ol>
-<ul>
+</li>
+<li><strong>非线性支持向量机</strong><ul>
 <li>训练样本线性不可分</li>
 <li>通过使用核函数及软间隔最大化，学习一个分类器</li>
 </ul>
-<h3 id="原理"><a class="header-anchor" href="#原理"></a>原理</h3>
-<p>考虑样本容量为$n$的训练数据集<br>
-$$S=\lbrace(\mathbf{x}_1,y_1),(\mathbf{x}_2,y_2),\cdots,(\mathbf{x}_n,y_n)\rbrace$$</p>
-<ul>
+</li>
+</ol>
+<h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><p>考虑样本容量为$n$的训练数据集</p>
+<script type="math/tex; mode=display">S=\lbrace(\mathbf{x}_1,y_1),(\mathbf{x}_2,y_2),\cdots,(\mathbf{x}_n,y_n)\rbrace</script><ul>
 <li>$\mathbf{x}_i\in \mathbb{R}^p$为第$i$个样本（$i=1,\cdots,n$）</li>
 <li>$x_j$为第$j$个特征（$j=1,\cdots,p$）</li>
 <li>$y_i\in\lbrace+1,-1\rbrace$为第$i$个样本的标签（$i=1,\cdots,n$）</li>
 </ul>
-<h4 id="线性可分"><a class="header-anchor" href="#线性可分"></a>线性可分</h4>
-<p>假设训练数据集线性可分的。</p>
+<h4 id="线性可分"><a href="#线性可分" class="headerlink" title="线性可分"></a>线性可分</h4><p>假设训练数据集线性可分的。</p>
 <ul>
-<li><strong>几何间隔</strong>：对于给定的数据集$S$和超平面  $\mathbf{w}\cdot \mathbf{x}+b=0$，超平面关于样本点$(\mathbf{x}_i,y_i)$的几何间隔为<br>
-$$\gamma_i=y_i\left(\frac{\mathbf{w} }{||\mathbf{w}||}\cdot\mathbf{x}_i+\frac{b}{||\mathbf{w}||}  \right)$$</li>
-<li><strong>支持向量</strong>（Support Vector）：在线性可分情况下，训练数据集中与分离超平面距离最近的样本点的实例称为支持向量
-<ul>
-<li>即：满足约束条件$y_i(\mathbf{w}\cdot\mathbf{x}_i+b)=1$的样本点实例</li>
+<li><strong>几何间隔</strong>：对于给定的数据集$S$和超平面  $\mathbf{w}\cdot \mathbf{x}+b=0$，超平面关于样本点$(\mathbf{x}_i,y_i)$的几何间隔为<script type="math/tex; mode=display">\gamma_i=y_i\left(\frac{\mathbf{w} }{||\mathbf{w}||}\cdot\mathbf{x}_i+\frac{b}{||\mathbf{w}||}  \right)</script></li>
+<li><strong>支持向量</strong>（Support Vector）：在线性可分情况下，训练数据集中与分离超平面距离最近的样本点的实例称为支持向量<ul>
+<li>即：满足约束条件$y_i(\mathbf{w}\cdot\mathbf{x}_i+b)=1$的样本点实例<ul>
 <li>$y_i=+1$的正例点，支持向量在超平面$H_1:\mathbf{w}\cdot\mathbf{x}+b=1$上</li>
 <li>$y_i=-1$的负例点，支持向量在超平面$H_2:\mathbf{w}\cdot\mathbf{x}+b=-1$上</li>
 </ul>
 </li>
-<li><strong>间隔</strong>（margin）：超平面$H_1$和$H_2$之间的距离，等于<br>
-$$\frac{2}{||\mathbf{w}||}$$</li>
 </ul>
-<p>超平面$\mathbf{w}\cdot \mathbf{x}+b=0$关于所有样本点的几何间隔最小值为<br>
-$$\gamma=\min_{i=1,\cdots,n}\gamma_i$$<br>
-即支持向量到超平面的距离。</p>
-<p>因此，求解“最大分割超平面问题”即求解下列带约束的最优化问题<br>
-$$\max_{\mathbf{w},b}\gamma\quad \mathrm{s.t.}\quad y_i\left(\frac{\mathbf{w} }{||\mathbf{w}||}\cdot\mathbf{x}_i+\frac{b}{||\mathbf{w}||}  \right)\geq \gamma,\quad i=1,\cdots,n$$</p>
-<p>等价于<br>
-$$y_i\left(\frac{\mathbf{w} }{||\mathbf{w}||\gamma}\cdot\mathbf{x}_i+\frac{b}{||\mathbf{w}||\gamma}  \right)\geq1,\quad i=1,\cdots,n$$<br>
-令</p>
-<p>$$\mathbf{w}\triangleq\frac{\mathbf{w} }{||\mathbf{w}||\gamma}$$<br>
-$$b\triangleq\frac{b}{||\mathbf{w}||\gamma}$$<br>
-则约束问题为</p>
-<p>$$y_i(\mathbf{w}\cdot \mathbf{x}_i+b)\geq1,\quad i=1,\cdots,n.$$</p>
-<p>$$\max{\gamma}\Longleftrightarrow\max{\frac{1}{||\mathbf{w}||} }\Longleftrightarrow\min\frac{1}{2}||\mathbf{w}||^2$$</p>
-<p>因此，SVM模型“求解最大分割超平面问题”即求解以下带约束条件的最优化问题</p>
-<p>$$\min_{\mathbf{w},b} \frac{1}{2}||\mathbf{w}||^2$$<br>
-$$\mathrm{s.t.}\quad y_i( \mathbf{w}^T \mathbf{x}_i+b)\geq 1, \forall i$$</p>
-<p>$\mathbf{w}$是超平面参数。</p>
-<p>使用拉格朗日乘子法求解上述<u>有约束条件的最优化问题</u><br>
-$$L(\mathbf{w},b,\mathbf{\lambda})=\frac{1}{2}||\mathbf{w}||<sup>2-\sum_{i=1}</sup>n\lambda_i\left[y_i(\mathbf{w}^T\mathbf{x}_i+b)-1 \right]$$<br>
-其中，$\lambda_i$为拉格朗日乘子，且$\lambda_i\geq 0$。</p>
-<p>令<br>
-$$\theta(\mathbf{w})=\max_{\lambda_i\geq0}L(\mathbf{w},b,\mathbf{\lambda})$$</p>
-<ul>
+</li>
+<li><strong>间隔</strong>（margin）：超平面$H_1$和$H_2$之间的距离，等于<script type="math/tex; mode=display">\frac{2}{||\mathbf{w}||}</script></li>
+</ul>
+<p>超平面$\mathbf{w}\cdot \mathbf{x}+b=0$关于所有样本点的几何间隔最小值为</p>
+<script type="math/tex; mode=display">\gamma=\min_{i=1,\cdots,n}\gamma_i</script><p>即支持向量到超平面的距离。</p>
+<p>因此，求解“最大分割超平面问题”即求解下列带约束的最优化问题</p>
+<script type="math/tex; mode=display">\max_{\mathbf{w},b}\gamma\quad \mathrm{s.t.}\quad y_i\left(\frac{\mathbf{w} }{||\mathbf{w}||}\cdot\mathbf{x}_i+\frac{b}{||\mathbf{w}||}  \right)\geq \gamma,\quad i=1,\cdots,n</script><p>等价于</p>
+<script type="math/tex; mode=display">y_i\left(\frac{\mathbf{w} }{||\mathbf{w}||\gamma}\cdot\mathbf{x}_i+\frac{b}{||\mathbf{w}||\gamma}  \right)\geq1,\quad i=1,\cdots,n</script><p>令</p>
+<script type="math/tex; mode=display">\mathbf{w}\triangleq\frac{\mathbf{w} }{||\mathbf{w}||\gamma}</script><script type="math/tex; mode=display">b\triangleq\frac{b}{||\mathbf{w}||\gamma}</script><p>则约束问题为</p>
+<script type="math/tex; mode=display">y_i(\mathbf{w}\cdot \mathbf{x}_i+b)\geq1,\quad i=1,\cdots,n.</script><script type="math/tex; mode=display">\max{\gamma}\Longleftrightarrow\max{\frac{1}{||\mathbf{w}||} }\Longleftrightarrow\min\frac{1}{2}||\mathbf{w}||^2</script><p>因此，SVM模型“求解最大分割超平面问题”即求解以下带约束条件的最优化问题</p>
+<script type="math/tex; mode=display">\min_{\mathbf{w},b} \frac{1}{2}||\mathbf{w}||^2</script><script type="math/tex; mode=display">\mathrm{s.t.}\quad y_i( \mathbf{w}^T \mathbf{x}_i+b)\geq 1, \forall i</script><p>$\mathbf{w}$是超平面参数。</p>
+<p>使用拉格朗日乘子法求解上述<u>有约束条件的最优化问题</u></p>
+<script type="math/tex; mode=display">L(\mathbf{w},b,\mathbf{\lambda})=\frac{1}{2}||\mathbf{w}||^2-\sum_{i=1}^n\lambda_i\left[y_i(\mathbf{w}^T\mathbf{x}_i+b)-1 \right]</script><p>其中，$\lambda_i$为拉格朗日乘子，且$\lambda_i\geq 0$。</p>
+<p>令</p>
+<script type="math/tex; mode=display">\theta(\mathbf{w})=\max_{\lambda_i\geq0}L(\mathbf{w},b,\mathbf{\lambda})</script><ul>
 <li>当样本点不满足约束条件时，即$y_i(\mathbf{w}^T\mathbf{x}_i+b)&lt;1$，将$\lambda_i$设置为无穷大，则$\theta(\mathbf{w})$也为无穷大</li>
 <li>当样本点满足约束条件时，即$y_i(\mathbf{w}^T\mathbf{x}_i+b)\geq 1$，将$\theta(\mathbf{w})$设置为原函数本身</li>
 </ul>
-<p>即<br>
-$$<br>
-\theta(\mathbf{w})=\left\lbrace<br>
-\begin{array}{ll}<br>
-\frac{1}{2}||\mathbf{w}||^2, &amp; \mathbf{x}\in 可行区域\<br>
-+\infty, &amp; \mathbf{x}\in 不可行区域<br>
-\end{array}<br>
-\right.<br>
-$$</p>
-<p>因此，约束问题等价于<br>
-$$\min_{\mathbf{w},b}\theta(\mathbf{w})=\min_{\mathbf{w},b}\max_{\lambda_1\geq 0}L(\mathbf{w},b,\mathbf{\lambda})=p^<em>$$<br>
-由拉格朗日函数的<strong>对偶性</strong>可得<br>
-$$\max_{\lambda_1\geq 0}\min_{\mathbf{w},b}L(\mathbf{w},b,\mathbf{\lambda})=d^</em>$$</p>
-<p>要使得$p<sup>*=d</sup>*$，需满足：</p>
+<p>即</p>
+<script type="math/tex; mode=display">
+\theta(\mathbf{w})=\left\lbrace
+    \begin{array}{ll}
+        \frac{1}{2}||\mathbf{w}||^2, & \mathbf{x}\in 可行区域\\
+        +\infty, & \mathbf{x}\in 不可行区域
+    \end{array}
+\right.</script><p>因此，约束问题等价于</p>
+<script type="math/tex; mode=display">\min_{\mathbf{w},b}\theta(\mathbf{w})=\min_{\mathbf{w},b}\max_{\lambda_1\geq 0}L(\mathbf{w},b,\mathbf{\lambda})=p^*</script><p>由拉格朗日函数的<strong>对偶性</strong>可得</p>
+<script type="math/tex; mode=display">\max_{\lambda_1\geq 0}\min_{\mathbf{w},b}L(\mathbf{w},b,\mathbf{\lambda})=d^*</script><p>要使得$p^*=d^*$，需满足：</p>
 <ol>
-<li>优化问题是凸优化问题<br>
-本优化问题是一个凸优化问题</li>
-<li>满足KKT条件<br>
-即要求<br>
-$$\left\lbrace<br>
-\begin{array}{l}<br>
-\lambda_i\geq0\<br>
-y_i(\mathbf{w}_i\cdot\mathbf{x}_i+b)-1\geq0\<br>
-\lambda_i\left[y_i(\mathbf{w}_i\cdot\mathbf{x}_i+b)-1 \right]=0<br>
-\end{array}<br>
-\right.$$</li>
+<li>优化问题是凸优化问题<br>本优化问题是一个凸优化问题</li>
+<li>满足KKT条件<br>即要求<script type="math/tex; mode=display">\left\lbrace
+  \begin{array}{l}
+  \lambda_i\geq0\\
+  y_i(\mathbf{w}_i\cdot\mathbf{x}_i+b)-1\geq0\\
+  \lambda_i\left[y_i(\mathbf{w}_i\cdot\mathbf{x}_i+b)-1 \right]=0
+  \end{array}
+  \right.</script></li>
 </ol>
-<p>令<br>
-$$\frac{\partial L(\mathbf{w},b,\lambda)}{\partial \mathbf{w} }=0,\quad \frac{\partial L(\mathbf{w},b,\lambda)}{\partial b}=0$$<br>
-可得<br>
-$$<br>
-\left\lbrace<br>
-\begin{array}{l}<br>
-\mathbf{w}=\sum_{i=1}^n\lambda_i y_i \mathbf{x}<em>i\<br>
-\sum</em>{i=1}^n\lambda_iy_i=0<br>
-\end{array}<br>
-\right.<br>
-$$</p>
-<p>代入$L(\mathbf{w},b,\lambda)$消去$\mathbf{w}$和$b$得<br>
-\begin{equation}<br>
-\begin{aligned}<br>
-L(\mathbf{w},b,\lambda) &amp;= \frac{1}{2}\sum_{i=1}<sup>n\sum_{j=1}</sup>n\lambda_i\lambda_jy_iy_j(\mathbf{x}_i \cdot \mathbf{x}<em>j )-\sum</em>{i=1}<sup>n\lambda_iy_i\left[\left(\sum_{j=1}</sup>n\lambda_jy_j\mathbf{x}<em>j \right)\cdot \mathbf{x}<em>i+b \right]+\sum</em>{i=1}^n\lambda_i\<br>
-&amp;= -\frac{1}{2}\sum</em>{i=1}<sup>n\sum_{j=1}</sup>n\lambda_i\lambda_jy_iy_j(\mathbf{x}_i \cdot \mathbf{x}<em>j )+\sum</em>{i=1}^n\lambda_i<br>
-\end{aligned}<br>
-\end{equation}</p>
-<p>则<br>
-$$\min_{\mathbf{w},b}L(\mathbf{w},b,\mathbf{\lambda})=-\frac{1}{2}\sum_{i=1}<sup>n\sum_{j=1}</sup>n\lambda_i\lambda_jy_iy_j(\mathbf{x}<em>i \cdot \mathbf{x}<em>j )+\sum</em>{i=1}^n\lambda_i$$<br>
-那么$$\max</em>{\lambda}\min_{\mathbf{w},b}L(\mathbf{w},b,\mathbf{\lambda})$$等价于<br>
-\begin{equation}<br>
-\begin{aligned}<br>
-\max_{\lambda} &amp; -\frac{1}{2}\sum_{i=1}<sup>n\sum_{j=1}</sup>n\lambda_i\lambda_jy_iy_j(\mathbf{x}<em>i \cdot \mathbf{x}<em>j )+\sum</em>{i=1}^n\lambda_i\<br>
-\mathrm{s.t.} &amp; \sum</em>{i=1}^n\lambda_iy_i=0\<br>
-&amp; \lambda_i\geq0,\quad i=1,\cdots,n.<br>
-\end{aligned}<br>
-\end{equation}</p>
+<p>令</p>
+<script type="math/tex; mode=display">\frac{\partial L(\mathbf{w},b,\lambda)}{\partial \mathbf{w} }=0,\quad \frac{\partial L(\mathbf{w},b,\lambda)}{\partial b}=0</script><p>可得</p>
+<script type="math/tex; mode=display">
+\left\lbrace
+\begin{array}{l}
+    \mathbf{w}=\sum_{i=1}^n\lambda_i y_i \mathbf{x}_i\\
+    \sum_{i=1}^n\lambda_iy_i=0
+\end{array}
+\right.</script><p>代入$L(\mathbf{w},b,\lambda)$消去$\mathbf{w}$和$b$得<br>\begin{equation}<br>\begin{aligned}<br>L(\mathbf{w},b,\lambda) &amp;= \frac{1}{2}\sum<em>{i=1}^n\sum</em>{j=1}^n\lambda<em>i\lambda_jy_iy_j(\mathbf{x}_i \cdot \mathbf{x}_j )-\sum</em>{i=1}^n\lambda<em>iy_i\left[\left(\sum</em>{j=1}^n\lambda<em>jy_j\mathbf{x}_j \right)\cdot \mathbf{x}_i+b \right]+\sum</em>{i=1}^n\lambda<em>i\<br>&amp;= -\frac{1}{2}\sum</em>{i=1}^n\sum<em>{j=1}^n\lambda_i\lambda_jy_iy_j(\mathbf{x}_i \cdot \mathbf{x}_j )+\sum</em>{i=1}^n\lambda_i<br>\end{aligned}<br>\end{equation}</p>
+<p>则</p>
+<script type="math/tex; mode=display">\min_{\mathbf{w},b}L(\mathbf{w},b,\mathbf{\lambda})=-\frac{1}{2}\sum_{i=1}^n\sum_{j=1}^n\lambda_i\lambda_jy_iy_j(\mathbf{x}_i \cdot \mathbf{x}_j )+\sum_{i=1}^n\lambda_i</script><p>那么<script type="math/tex">\max_{\lambda}\min_{\mathbf{w},b}L(\mathbf{w},b,\mathbf{\lambda})</script>等价于<br>\begin{equation}<br>\begin{aligned}<br>\max<em>{\lambda} &amp; -\frac{1}{2}\sum</em>{i=1}^n\sum<em>{j=1}^n\lambda_i\lambda_jy_iy_j(\mathbf{x}_i \cdot \mathbf{x}_j )+\sum</em>{i=1}^n\lambda<em>i\<br>\mathrm{s.t.} &amp; \sum</em>{i=1}^n\lambda_iy_i=0\<br>&amp; \lambda_i\geq0,\quad i=1,\cdots,n.<br>\end{aligned}<br>\end{equation}</p>
 <p>使用<strong>序列最小化算法</strong>（SMO）（待补充）求解上述优化问题。</p>
 <p>通过SMO算法求解得到最优$\pmb{\lambda}^*$，从而求解出$\mathbf{w}$和$b$，进而求得最优超平面——决策平面。</p>
 <blockquote>
-<p>在$\pmb{\lambda}<sup>*$中，至少存在一个$\lambda_j</sup>*&gt;0$<br>
-<font face="仿宋"><br>
-证明（反证法）：若不存在$\lambda_j^*&gt;0$，则$\mathbf{w}=0$，矛盾<br>
-</font></p>
+<p>在$\pmb{\lambda}^*$中，至少存在一个$\lambda_j^*&gt;0$</p>
+<font face="仿宋">
+证明（反证法）：若不存在$\lambda_j^*>0$，则$\mathbf{w}=0$，矛盾
+</font>
+
 </blockquote>
-<p>对$\lambda_j^*&gt;0$有<br>
-$$y_j\left(\mathbf{w}<sup>*\cdot\mathbf{x}_j+b</sup>* \right)-1=0$$<br>
-因此<br>
-\begin{equation}<br>
-\begin{aligned}<br>
-\mathbf{w}^* &amp;= \sum_{i=1}<sup>n\lambda_i</sup>*y_i\mathbf{x}<em>i\<br>
-b^* &amp;= y_j-\sum</em>{i=1}<sup>n\lambda_i</sup>*y_i(\mathbf{x}_i\cdot\mathbf{x}_j)<br>
-\end{aligned}<br>
-\end{equation}</p>
+<p>对$\lambda_j^*&gt;0$有</p>
+<script type="math/tex; mode=display">y_j\left(\mathbf{w}^*\cdot\mathbf{x}_j+b^* \right)-1=0</script><p>因此<br>\begin{equation}<br>\begin{aligned}<br>    \mathbf{w}^* &amp;= \sum<em>{i=1}^n\lambda_i^*y_i\mathbf{x}_i\<br>    b^* &amp;= y_j-\sum</em>{i=1}^n\lambda_i^*y_i(\mathbf{x}_i\cdot\mathbf{x}_j)<br>\end{aligned}<br>\end{equation}</p>
 <blockquote>
-<p>对于任意训练样本$(\mathbf{x}_i,y_i)$，总有$\lambda_i=0$或$y_i\left(\mathbf{w}<sup>*\cdot\mathbf{x}_i+b</sup>* \right)=1$。</p>
+<p>对于任意训练样本$(\mathbf{x}_i,y_i)$，总有$\lambda_i=0$或$y_i\left(\mathbf{w}^*\cdot\mathbf{x}_i+b^* \right)=1$。</p>
 </blockquote>
 <ul>
 <li>若$\lambda_i=0$，则该样本不会出现在求解“决策平面”参数得式子中</li>
-<li>若$\lambda_i&gt;0$，则必有$y_i\left(\mathbf{w}<sup>*\cdot\mathbf{x}_i+b</sup>* \right)=1$，即样本点位于最大间隔边界上——$(\mathbf{x}_i,y_i)$是一个<strong>支持向量</strong></li>
+<li>若$\lambda_i&gt;0$，则必有$y_i\left(\mathbf{w}^*\cdot\mathbf{x}_i+b^* \right)=1$，即样本点位于最大间隔边界上——$(\mathbf{x}_i,y_i)$是一个<strong>支持向量</strong></li>
 </ul>
-<h4 id="近似线性可分"><a class="header-anchor" href="#近似线性可分"></a>近似线性可分</h4>
-<p>实际情况下，几乎不存在完全线性可分的数据，对于近似线性可分的训练数据集，引入<strong>软间隔</strong>——允许某些点不满足约束$y_i(\mathbf{w}\cdot\mathbf{x}_i+b)\geq 1$</p>
-<p>引入<strong>松弛变量</strong>(Hinge损失函数)$\xi_i=\max\lbrace 0,1-y_i(\mathbf{w}\cdot\mathbf{x}<em>i+b)\rbrace$，将原优化问题改写为<br>
-\begin{equation}<br>
-\begin{aligned}<br>
-\min</em>{\mathbf{w},b,\xi} &amp;\quad \frac{1}{2}||\mathbf{w}||<sup>2+\phi\sum_{i=1}</sup>nxi_i\<br>
-\mathrm{s.t.} &amp;\quad y_i(\mathbf{w}\cdot\mathbf{x}_i+b)\geq1-\xi_i\<br>
-&amp; \quad \xi_i\geq 0,\quad i=1,\cdots,n.<br>
-\end{aligned}<br>
-\end{equation}<br>
-其中$\phi$为惩罚参数，$\phi$越大，对分类的惩罚越大。</p>
-<h4 id="非线性SVM"><a class="header-anchor" href="#非线性SVM"></a>非线性SVM</h4>
-<p>通过非线性变换将非线性分类问题转化为线性分类问题。</p>
+<h4 id="近似线性可分"><a href="#近似线性可分" class="headerlink" title="近似线性可分"></a>近似线性可分</h4><p>实际情况下，几乎不存在完全线性可分的数据，对于近似线性可分的训练数据集，引入<strong>软间隔</strong>——允许某些点不满足约束$y_i(\mathbf{w}\cdot\mathbf{x}_i+b)\geq 1$</p>
+<p>引入<strong>松弛变量</strong>(Hinge损失函数)$\xi<em>i=\max\lbrace 0,1-y_i(\mathbf{w}\cdot\mathbf{x}_i+b)\rbrace$，将原优化问题改写为<br>\begin{equation}<br>\begin{aligned}<br>\min</em>{\mathbf{w},b,\xi} &amp;\quad \frac{1}{2}||\mathbf{w}||^2+\phi\sum_{i=1}^nxi_i\<br>\mathrm{s.t.} &amp;\quad y_i(\mathbf{w}\cdot\mathbf{x}_i+b)\geq1-\xi_i\<br>&amp; \quad \xi_i\geq 0,\quad i=1,\cdots,n.<br>\end{aligned}<br>\end{equation}<br>其中$\phi$为惩罚参数，$\phi$越大，对分类的惩罚越大。</p>
+<h4 id="非线性SVM"><a href="#非线性SVM" class="headerlink" title="非线性SVM"></a>非线性SVM</h4><p>通过非线性变换将非线性分类问题转化为线性分类问题。</p>
 <blockquote>
 <p>用核函数替换线性SVM中的内积</p>
 </blockquote>
 <ul>
-<li><strong>核函数</strong>（Kernel function）：存在一个从输入空间到特征空间的映射$\varphi(\cdot)$，对输入空间中的任意两点$x,z$有<br>
-$$K(x,z)=\varphi(x)\cdot\varphi(z)$$</li>
+<li><strong>核函数</strong>（Kernel function）：存在一个从输入空间到特征空间的映射$\varphi(\cdot)$，对输入空间中的任意两点$x,z$有<script type="math/tex; mode=display">K(x,z)=\varphi(x)\cdot\varphi(z)</script></li>
 </ul>
-<p>则分类决策函数变为<br>
-$$f(\mathbf{x})=\mathrm{sign}\left(\sum_{i=1}<sup>n\lambda_i</sup><em>y_iK(\mathbf{x},\mathbf{x}_i)+b^</em> \right)$$</p>
-<h2 id="算法"><a class="header-anchor" href="#算法"></a>算法</h2>
-<h3 id="线性支持向量机"><a class="header-anchor" href="#线性支持向量机"></a>线性支持向量机</h3>
-<p>综合原理章节的讨论，总结<strong>线性支持向量机学习算法</strong>如下：</p>
+<p>则分类决策函数变为</p>
+<script type="math/tex; mode=display">f(\mathbf{x})=\mathrm{sign}\left(\sum_{i=1}^n\lambda_i^*y_iK(\mathbf{x},\mathbf{x}_i)+b^* \right)</script><h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><h3 id="线性支持向量机"><a href="#线性支持向量机" class="headerlink" title="线性支持向量机"></a>线性支持向量机</h3><p>综合原理章节的讨论，总结<strong>线性支持向量机学习算法</strong>如下：</p>
 <ul>
-<li><strong>输入</strong>：训练数据集<br>
-$$S=\lbrace (\mathbf{x}_1,y_1),(\mathbf{x}_2,y_2),\cdots,(\mathbf{x}_n,y_n)\rbrace$$</li>
+<li><strong>输入</strong>：训练数据集<script type="math/tex; mode=display">S=\lbrace (\mathbf{x}_1,y_1),(\mathbf{x}_2,y_2),\cdots,(\mathbf{x}_n,y_n)\rbrace</script><ul>
 <li>$\mathbf{x}_i\in \mathbb{R}^p$为第$i$个样本（$i=1,\cdots,n$）</li>
 <li>$x_j$为第$j$个特征（$j=1,\cdots,p$）</li>
 <li>$y_i\in\lbrace+1,-1\rbrace$为第$i$个样本的标签（$i=1,\cdots,n$）</li>
+</ul>
+</li>
 <li><strong>输出</strong>：分离超平面、分类决策函数</li>
 </ul>
 <ol>
-<li>选择惩罚参数$\phi&gt;0$，构造并求解凸二次规划问题<br>
-\begin{equation}<br>
-\begin{aligned}<br>
-\min_{\pmb{\lambda} } &amp;\quad \frac{1}{2}\sum_{i=1}<sup>n\sum_{j=1}</sup>n\lambda_i\lambda_jy_iy_j(\mathbf{x}<em>i\cdot\mathbf{x}<em>j)-\sum</em>{i=1}^n\lambda_i\<br>
-\mathrm{s.t.} &amp;\quad \sum</em>{i=1}^n\lambda_iy_i=0\<br>
-&amp; \quad 0\leq \lambda_i\leq \phi,\quad i=1,\cdots,n.<br>
-\end{aligned}<br>
-\end{equation}<br>
-得到最优解<br>
-$$\pmb{\lambda}<sup>*=(\lambda_1</sup>*,\cdots,\lambda_n<sup>*)</sup>T$$</li>
-<li>计算<br>
-$$\mathbf{w}<sup>*=\sum_{i=1}</sup>n\lambda^*_iy_i\mathbf{x}_i$$<br>
-选择$\pmb{\lambda}<sup>*$的一个满足条件$0&lt;\lambda_j</sup>*&lt;\phi$的分量$\lambda_j^*$，计算<br>
-$$b<sup>*=y_j-\sum_{i=1}</sup>n\lambda_j^*y_j(\mathbf{x}_i\cdot\mathbf{x}_j)$$</li>
-<li>求分离超平面<br>
-$$\mathbf{w}<sup>*\cdot\mathbf{x}+b</sup><em>=0$$<br>
-分类决策函数为<br>
-$$f(\mathbf{x})=\mathrm{sign}{(\mathbf{w}<sup>*\cdot\mathbf{x}+b</sup></em>)}$$</li>
+<li>选择惩罚参数$\phi&gt;0$，构造并求解凸二次规划问题<br>\begin{equation}<br>\begin{aligned}<br>\min<em>{\pmb{\lambda} } &amp;\quad \frac{1}{2}\sum</em>{i=1}^n\sum<em>{j=1}^n\lambda_i\lambda_jy_iy_j(\mathbf{x}_i\cdot\mathbf{x}_j)-\sum</em>{i=1}^n\lambda<em>i\<br>\mathrm{s.t.} &amp;\quad \sum</em>{i=1}^n\lambda_iy_i=0\<br>&amp; \quad 0\leq \lambda_i\leq \phi,\quad i=1,\cdots,n.<br>\end{aligned}<br>\end{equation}<br>得到最优解<script type="math/tex; mode=display">\pmb{\lambda}^*=(\lambda_1^*,\cdots,\lambda_n^*)^T</script></li>
+<li>计算<script type="math/tex; mode=display">\mathbf{w}^*=\sum_{i=1}^n\lambda^*_iy_i\mathbf{x}_i</script>选择$\pmb{\lambda}^*$的一个满足条件$0&lt;\lambda_j^*&lt;\phi$的分量$\lambda_j^*$，计算<script type="math/tex; mode=display">b^*=y_j-\sum_{i=1}^n\lambda_j^*y_j(\mathbf{x}_i\cdot\mathbf{x}_j)</script></li>
+<li>求分离超平面<script type="math/tex; mode=display">\mathbf{w}^*\cdot\mathbf{x}+b^*=0</script>分类决策函数为<script type="math/tex; mode=display">f(\mathbf{x})=\mathrm{sign}{(\mathbf{w}^*\cdot\mathbf{x}+b^*)}</script></li>
 </ol>
-<h3 id="非线性支持向量机"><a class="header-anchor" href="#非线性支持向量机"></a>非线性支持向量机</h3>
-<ul>
-<li><strong>输入</strong>：训练数据集<br>
-$$S=\lbrace(\mathbf{x}_1,y_1),(\mathbf{x}_2,y_2),\cdots,(\mathbf{x}_n,y_n)\rbrace$$</li>
+<h3 id="非线性支持向量机"><a href="#非线性支持向量机" class="headerlink" title="非线性支持向量机"></a>非线性支持向量机</h3><ul>
+<li><strong>输入</strong>：训练数据集<script type="math/tex; mode=display">S=\lbrace(\mathbf{x}_1,y_1),(\mathbf{x}_2,y_2),\cdots,(\mathbf{x}_n,y_n)\rbrace</script><ul>
 <li>$\mathbf{x}_i\in \mathbb{R}^p$为第$i$个样本（$i=1,\cdots,n$）</li>
 <li>$x_j$为第$j$个特征（$j=1,\cdots,p$）</li>
 <li>$y_i\in\lbrace+1,-1\rbrace$为第$i$个样本的标签（$i=1,\cdots,n$）</li>
+</ul>
+</li>
 <li><strong>输出</strong>：分离超平面、分类决策函数</li>
 </ul>
 <ol>
-<li>选择适当的核函数$K(x,z)$和惩罚参数$\phi&gt;0$，构造并求解凸二次规划问题<br>
-\begin{equation}<br>
-\begin{aligned}<br>
-\min_{\pmb{\lambda} } &amp;\quad \frac{1}{2}\sum_{i=1}<sup>n\sum_{j=1}</sup>n\lambda_i\lambda_jy_iy_jK(\mathbf{x_i},\mathbf{x}<em>j)-\sum</em>{i=1}^n\lambda_i\<br>
-\mathrm{s.t.} &amp;\quad \sum_{i=1}^n\lambda_iy_i=0\<br>
-&amp; \quad 0\leq \lambda_i\leq \phi,\quad i=1,\cdots,n.<br>
-\end{aligned}<br>
-\end{equation}<br>
-得到最优解<br>
-$$\pmb{\lambda}<sup>*=(\lambda_1</sup>*,\cdots,\lambda_n<sup>*)</sup>T$$</li>
-<li>选择$\pmb{\lambda}<sup>*$的一个满足条件$0&lt;\lambda_j</sup>*&lt;\phi$的分量$\lambda_j^*$，计算<br>
-$$b<sup>*=y_j-\sum_{i=1}</sup>n\lambda_j^*y_jK(\mathbf{x}_i,\mathbf{x}_j)$$</li>
-<li>分类决策函数为<br>
-$$f(\mathbf{x})=\mathrm{sign}{\left(\sum_{i=1}<sup>n\lambda_i</sup><em>y_iK(\mathbf{x},\mathbf{x}_i)+b^</em>\right)}$$</li>
+<li>选择适当的核函数$K(x,z)$和惩罚参数$\phi&gt;0$，构造并求解凸二次规划问题<br>\begin{equation}<br>\begin{aligned}<br>\min<em>{\pmb{\lambda} } &amp;\quad \frac{1}{2}\sum</em>{i=1}^n\sum<em>{j=1}^n\lambda_i\lambda_jy_iy_jK(\mathbf{x_i},\mathbf{x}_j)-\sum</em>{i=1}^n\lambda<em>i\<br>\mathrm{s.t.} &amp;\quad \sum</em>{i=1}^n\lambda_iy_i=0\<br>&amp; \quad 0\leq \lambda_i\leq \phi,\quad i=1,\cdots,n.<br>\end{aligned}<br>\end{equation}<br>得到最优解<script type="math/tex; mode=display">\pmb{\lambda}^*=(\lambda_1^*,\cdots,\lambda_n^*)^T</script></li>
+<li>选择$\pmb{\lambda}^*$的一个满足条件$0&lt;\lambda_j^*&lt;\phi$的分量$\lambda_j^*$，计算<script type="math/tex; mode=display">b^*=y_j-\sum_{i=1}^n\lambda_j^*y_jK(\mathbf{x}_i,\mathbf{x}_j)</script></li>
+<li>分类决策函数为<script type="math/tex; mode=display">f(\mathbf{x})=\mathrm{sign}{\left(\sum_{i=1}^n\lambda_i^*y_iK(\mathbf{x},\mathbf{x}_i)+b^*\right)}</script></li>
 </ol>
-<h2 id="核函数"><a class="header-anchor" href="#核函数"></a>核函数</h2>
-<ul>
+<h2 id="核函数"><a href="#核函数" class="headerlink" title="核函数"></a>核函数</h2><ul>
 <li>SVM使用核函数的过程实质是进行特征转换的过程</li>
 </ul>
-<h3 id="线性核"><a class="header-anchor" href="#线性核"></a>线性核</h3>
-<h3 id="多项式核"><a class="header-anchor" href="#多项式核"></a>多项式核</h3>
-<h3 id="RBF核"><a class="header-anchor" href="#RBF核"></a>RBF核</h3>
-<p>高斯核函数/高斯径向基函数（Radial Basis Function）<br>
-$$K(x,z)=\exp\left(-\frac{||x-z||<sup>2}{2\sigma</sup>2} \right)$$</p>
-<ul>
+<h3 id="线性核"><a href="#线性核" class="headerlink" title="线性核"></a>线性核</h3><h3 id="多项式核"><a href="#多项式核" class="headerlink" title="多项式核"></a>多项式核</h3><h3 id="RBF核"><a href="#RBF核" class="headerlink" title="RBF核"></a>RBF核</h3><p>高斯核函数/高斯径向基函数（Radial Basis Function）</p>
+<script type="math/tex; mode=display">K(x,z)=\exp\left(-\frac{||x-z||^2}{2\sigma^2} \right)</script><ul>
 <li>对应的SVM是<strong>高斯径向基函数分类器</strong></li>
-<li>对应的分类决策函数为<br>
-$$f(\mathbf{x})=\mathrm{sign}{\left(\sum_{i=1}<sup>n\lambda_i</sup><em>y_i\exp{\left(-\frac{||\mathbf{x}-\mathrm{x}_i||<sup>2}{2\sigma</sup>2}\right)}+b^</em>\right)}$$</li>
+<li>对应的分类决策函数为<script type="math/tex; mode=display">f(\mathbf{x})=\mathrm{sign}{\left(\sum_{i=1}^n\lambda_i^*y_i\exp{\left(-\frac{||\mathbf{x}-\mathrm{x}_i||^2}{2\sigma^2}\right)}+b^*\right)}</script></li>
 </ul>
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
-<pre><code>.dataframe tbody tr th &#123;
-    vertical-align: top;
-&#125;
 
-.dataframe thead th &#123;
-    text-align: center;
-&#125;
-</code></pre>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: center;
+    }
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -30911,6 +30697,7 @@ $$f(\mathbf{x})=\mathrm{sign}{\left(\sum_{i=1}<sup>n\lambda_i</sup><em>y_i\exp{\
   </tr></tbody>
 </table>
 </div>
+
 <p>其中</p>
 <ul>
 <li>$n$：样本数</li>
@@ -30919,13 +30706,11 @@ $$f(\mathbf{x})=\mathrm{sign}{\left(\sum_{i=1}<sup>n\lambda_i</sup><em>y_i\exp{\
 <blockquote>
 <p>当$p$较小、$n$较大时，支持向量机性能通常不如深度神经网络</p>
 </blockquote>
-<h2 id="总结"><a class="header-anchor" href="#总结"></a>总结</h2>
-<p>若样本的某些特征数据缺失，可能会影响SVM模型训练结果的好坏。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>若样本的某些特征数据缺失，可能会影响SVM模型训练结果的好坏。</p>
 <ul>
 <li>SVM希望样本在特征空间中线性可分，所以特征空间的好坏对SVM的性能很重要</li>
 </ul>
-<h3 id="优点"><a class="header-anchor" href="#优点"></a>优点</h3>
-<p>SVM的优点：</p>
+<h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><p>SVM的优点：</p>
 <ul>
 <li>模型以来的支持向量比较少，消耗内存少</li>
 <li>预测阶段的速度快</li>
@@ -30937,17 +30722,14 @@ $$f(\mathbf{x})=\mathrm{sign}{\left(\sum_{i=1}<sup>n\lambda_i</sup><em>y_i\exp{\
 <li>泛化能力好</li>
 <li>SVM对线性不可分的数据有较好的分类性能</li>
 </ul>
-<h3 id="缺点"><a class="header-anchor" href="#缺点"></a>缺点</h3>
-<p>SVM的缺点：</p>
+<h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><p>SVM的缺点：</p>
 <ul>
-<li>随着样本量$N$的增加，模型的训练复杂度可能会高达$\mathcal{O}(N<sup>3)$，即使经过高效处理后，复杂度也有$\mathcal{O}(N</sup>2)$。即，大样本下模型学习的计算成本会很高。</li>
+<li>随着样本量$N$的增加，模型的训练复杂度可能会高达$\mathcal{O}(N^3)$，即使经过高效处理后，复杂度也有$\mathcal{O}(N^2)$。即，大样本下模型学习的计算成本会很高。</li>
 <li>训练效果非常依赖于边界软化参数$C$的选择是否合理；需要通过交叉检验进行检索；当数据集较大时，计算量也很大</li>
 <li>SVM对缺失数据敏感</li>
 <li>非线性问题的核函数的选择没有通用标准，难以选择一个合适的核函数</li>
 </ul>
-<h1 id="支持向量回归机"><a class="header-anchor" href="#支持向量回归机"></a>支持向量回归机</h1>
-<p>SVR<br>
-Support Vector Regression</p>
+<h1 id="支持向量回归机"><a href="#支持向量回归机" class="headerlink" title="支持向量回归机"></a>支持向量回归机</h1><p>SVR<br>Support Vector Regression</p>
 <ul>
 <li>SVM本身是针对二分类问题提出的</li>
 <li>SVR是SVM的一个重要的应用分支</li>
@@ -30956,11 +30738,8 @@ Support Vector Regression</p>
 <blockquote>
 <p>SVR的样本点只有一类，所寻求的最优超平面是使所有的样本点离该超平面的总偏差最小</p>
 </blockquote>
-<meta name="referrer" content="no-referrer">
-
-<h1 id="SVM-vs-LR"><a class="header-anchor" href="#SVM-vs-LR"></a>SVM vs LR</h1>
-<p>SVM：支持向量机<br>
-LR：逻辑回归</p>
+<p><meta name="referrer" content="no-referrer"><br></p>
+<h1 id="SVM-vs-LR"><a href="#SVM-vs-LR" class="headerlink" title="SVM vs LR"></a>SVM vs LR</h1><p>SVM：支持向量机<br>LR：逻辑回归</p>
 <ul>
 <li>最本质的区别：损失函数不同</li>
 </ul>
@@ -30969,14 +30748,14 @@ LR：逻辑回归</p>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
-<pre><code>.dataframe tbody tr th &#123;
-    vertical-align: top;
-&#125;
 
-.dataframe thead th &#123;
-    text-align: center;
-&#125;
-</code></pre>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: center;
+    }
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -31039,38 +30818,14 @@ LR：逻辑回归</p>
   </tr></tbody>
 </table>
 </div>
-<p>考虑标签为$y\in\lbrace 0,1\rbrace$的LR和SVM。<br>
-LR的决策函数可以为<br>
-\begin{equation}<br>
-\hat{y}=\left\lbrace<br>
-\begin{array}{ll}<br>
-1 &amp; \mathrm{if} P(y=1|x)\geq P(y=0|x)\<br>
-0 &amp; \mathrm{otherwise}<br>
-\end{array}<br>
-\right.<br>
-\end{equation}</p>
-<p>其中<br>
-\begin{equation}<br>
-\begin{aligned}<br>
-P(y=1|x) &amp; \propto \exp{(\mathbf{w}^T\cdot\mathbf{x}+b)}\<br>
-P(y=0|x) &amp; \propto 1<br>
-\end{aligned}<br>
-\end{equation}</p>
-<p>如果我们只是想做出正确决策，而不是获得每个类别的概率，可以用似然比来进行决策<br>
-$$\frac{P(y=1|x)}{P(y=0|x)}\geq c,\quad c&gt;1$$<br>
-上述不等式两边同取对数，得<br>
-$$\log{(P(y=1|x))}- \log{(P(y=0|x))}\geq \log{c}$$<br>
-则有<br>
-$$\exp{(\mathbf{w}^T\cdot\mathbf{x}+b)}\geq \log{c}$$<br>
-因为$c$是任意常数，所以我们可取$c$满足$\log{c}=1$，使得<br>
-$$\exp{(\mathbf{w}^T\cdot\mathbf{x}+b)}\geq 1$$</p>
-<p>上式可能存在多个解，如果添加一个二次惩罚项进行约束，则能使解唯一：<br>
-\begin{equation}<br>
-\begin{aligned}<br>
-\min &amp; \quad \frac{1}{2}||\mathbf{w}||^2\<br>
-\mathrm{s.t.} &amp; \quad (2y_i-1)(\mathbf{w}^T\mathbf{x}_i+b)\geq 1,\quad \forall i=1,\cdots,n.<br>
-\end{aligned}<br>
-\end{equation}</p>
+
+<p>考虑标签为$y\in\lbrace 0,1\rbrace$的LR和SVM。<br>LR的决策函数可以为<br>\begin{equation}<br>\hat{y}=\left\lbrace<br>  \begin{array}{ll}<br>  1 &amp; \mathrm{if} P(y=1|x)\geq P(y=0|x)\<br>  0 &amp; \mathrm{otherwise}<br>  \end{array}<br>\right.<br>\end{equation}</p>
+<p>其中<br>\begin{equation}<br>\begin{aligned}<br>P(y=1|x) &amp; \propto \exp{(\mathbf{w}^T\cdot\mathbf{x}+b)}\<br>P(y=0|x) &amp; \propto 1<br>\end{aligned}<br>\end{equation}</p>
+<p>如果我们只是想做出正确决策，而不是获得每个类别的概率，可以用似然比来进行决策</p>
+<script type="math/tex; mode=display">\frac{P(y=1|x)}{P(y=0|x)}\geq c,\quad c>1</script><p>上述不等式两边同取对数，得</p>
+<script type="math/tex; mode=display">\log{(P(y=1|x))}- \log{(P(y=0|x))}\geq \log{c}</script><p>则有</p>
+<script type="math/tex; mode=display">\exp{(\mathbf{w}^T\cdot\mathbf{x}+b)}\geq \log{c}</script><p>因为$c$是任意常数，所以我们可取$c$满足$\log{c}=1$，使得</p>
+<script type="math/tex; mode=display">\exp{(\mathbf{w}^T\cdot\mathbf{x}+b)}\geq 1</script><p>上式可能存在多个解，如果添加一个二次惩罚项进行约束，则能使解唯一：<br>\begin{equation}<br>\begin{aligned}<br>\min &amp; \quad \frac{1}{2}||\mathbf{w}||^2\<br>\mathrm{s.t.} &amp; \quad (2y_i-1)(\mathbf{w}^T\mathbf{x}_i+b)\geq 1,\quad \forall i=1,\cdots,n.<br>\end{aligned}<br>\end{equation}</p>
 <blockquote>
 <p>注意这里考虑的$y_i\in\lbrace 0,1\rbrace$，而不是前面的$y_i\in\lbrace-1,+1\rbrace$，因此约束条件中是$(2y_i-1)$而不是$y_i$。</p>
 </blockquote>
@@ -31078,17 +30833,11 @@ $$\exp{(\mathbf{w}^T\cdot\mathbf{x}+b)}\geq 1$$</p>
 <blockquote>
 <p>We derived an SVM by asking LR to make the right decisions. ——from <a href="http://www.cs.toronto.edu/~kswersky/wp-content/uploads/svm_vs_lr.pdf">Support Vector Machines vs Logistic Regression</a></p>
 </blockquote>
-<h2 id="多分类"><a class="header-anchor" href="#多分类"></a>多分类</h2>
-<ul>
-<li>多分类逻辑回归（Multi-class LR）<br>
-$$ P(y=i|x)=\frac{ \exp{(w_i^Tx+b_i)} }{ \sum_{j} \exp{(w_j^Tx+b_j)} } $$</li>
-<li>多分类支持向量机（Multi-class SVM）<br>
-$$ \frac{ P(y=i|x) }{ P(y=k|x) } \geq c \quad \forall \quad k\neq i$$<br>
-即<br>
-$$ w_i^T x - w_k^T x \geq 1 \quad \forall \quad k\neq i $$</li>
+<h2 id="多分类"><a href="#多分类" class="headerlink" title="多分类"></a>多分类</h2><ul>
+<li>多分类逻辑回归（Multi-class LR）<script type="math/tex; mode=display">P(y=i|x)=\frac{ \exp{(w_i^Tx+b_i)} }{ \sum_{j} \exp{(w_j^Tx+b_j)} }</script></li>
+<li>多分类支持向量机（Multi-class SVM）<script type="math/tex; mode=display">\frac{ P(y=i|x) }{ P(y=k|x) } \geq c \quad \forall \quad k\neq i</script>即<script type="math/tex; mode=display">w_i^T x - w_k^T x \geq 1 \quad \forall \quad k\neq i</script></li>
 </ul>
-<h2 id="选择SVM还是LR？"><a class="header-anchor" href="#选择SVM还是LR？"></a>选择SVM还是LR？</h2>
-<blockquote>
+<h2 id="选择SVM还是LR？"><a href="#选择SVM还是LR？" class="headerlink" title="选择SVM还是LR？"></a>选择SVM还是LR？</h2><blockquote>
 <p>参考<a href="http://www.cs.toronto.edu/~kswersky/wp-content/uploads/svm_vs_lr.pdf">Support Vector Machines vs Logistic Regression</a></p>
 </blockquote>
 <ul>
@@ -31098,23 +30847,17 @@ $$ w_i^T x - w_k^T x \geq 1 \quad \forall \quad k\neq i $$</li>
 <li>SVMs don’t penalize examples for which the correct decision is made with sufficient confidence. 有利于泛化</li>
 <li>SVMs have a nice dual form（对偶形式）, giving sparse solutions when using the kernel trick (better scalability 良好的伸缩性)</li>
 </ul>
-<h1 id="Python实现"><a class="header-anchor" href="#Python实现"></a>Python实现</h1>
-<p>简单分类数据：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns</span><br><span class="line">sns.<span class="built_in">set</span>()</span><br><span class="line"></span><br><span class="line"><span class="comment">## 创建类别数为2的分类数据</span></span><br><span class="line"><span class="keyword">from</span> sklearn.datasets.samples_generator <span class="keyword">import</span> make_blobs</span><br><span class="line">X, y = make_blobs(n_samples=<span class="number">50</span>, centers=<span class="number">2</span>, random_state=<span class="number">0</span>, cluster_std=<span class="number">0.60</span>)</span><br><span class="line">plt.scatter(X[:, <span class="number">0</span>], X[:, <span class="number">1</span>], c=y, s=<span class="number">50</span>, cmap=<span class="string">&#x27;autumn&#x27;</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="Python实现"><a href="#Python实现" class="headerlink" title="Python实现"></a>Python实现</h1><p>简单分类数据：<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns</span><br><span class="line">sns.<span class="built_in">set</span>()</span><br><span class="line"></span><br><span class="line"><span class="comment">## 创建类别数为2的分类数据</span></span><br><span class="line"><span class="keyword">from</span> sklearn.datasets.samples_generator <span class="keyword">import</span> make_blobs</span><br><span class="line">X, y = make_blobs(n_samples=<span class="number">50</span>, centers=<span class="number">2</span>, random_state=<span class="number">0</span>, cluster_std=<span class="number">0.60</span>)</span><br><span class="line">plt.scatter(X[:, <span class="number">0</span>], X[:, <span class="number">1</span>], c=y, s=<span class="number">50</span>, cmap=<span class="string">&#x27;autumn&#x27;</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
 <p><img src="/ShootingWang/ShootingWang.github.io/%E7%AE%97%E6%B3%95-SVM.htm/SVM-Figure_1.png" alt="简单分类数据"></p>
-<p>简单分割线：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">xfit = np.linspace(-<span class="number">1</span>, <span class="number">3.5</span>)</span><br><span class="line">plt.scatter(X[:, <span class="number">0</span>], X[:, <span class="number">1</span>], c=y, s=<span class="number">50</span>, cmap=<span class="string">&#x27;autumn&#x27;</span>)</span><br><span class="line">plt.plot([<span class="number">0.6</span>], [<span class="number">2.1</span>], <span class="string">&#x27;x&#x27;</span>, color=<span class="string">&#x27;red&#x27;</span>, markeredgewidth=<span class="number">2</span>, markersize=<span class="number">10</span>)  <span class="comment">##特殊点</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> m, b <span class="keyword">in</span> [(<span class="number">1</span>, <span class="number">0.65</span>), (<span class="number">0.5</span>, <span class="number">1.6</span>), (-<span class="number">0.2</span>, <span class="number">2.9</span>)]:</span><br><span class="line">    plt.plot(xfit, m * xfit + b, <span class="string">&#x27;-k&#x27;</span>)  <span class="comment">##画三条分割直线</span></span><br><span class="line"></span><br><span class="line">plt.xlim(-<span class="number">1</span>, <span class="number">3.5</span>)</span><br></pre></td></tr></table></figure>
-<p><img src="/ShootingWang/ShootingWang.github.io/%E7%AE%97%E6%B3%95-SVM.htm/SVM-Figure_3.png" alt="三条简单分割直线"><br>
-上图中的三条简单分割直线（分割器）都能很好地判别这些样本（每条直线都能将圆点数据点正确地分为两类）。但是对于点“X”，不同的分割器将其分配到不同的标签。</p>
-<p>若将分割直线变成具有宽度的、到最近点边界的线条，如下图：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">xfit = np.linspace(-<span class="number">1</span>, <span class="number">3.5</span>)</span><br><span class="line">plt.scatter(X[:, <span class="number">0</span>], X[:, <span class="number">1</span>], c=y, s=<span class="number">50</span>, cmap=<span class="string">&#x27;autumn&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> m, b, d <span class="keyword">in</span> [(<span class="number">1</span>, <span class="number">0.65</span>, <span class="number">0.33</span>), (<span class="number">0.5</span>, <span class="number">1.6</span>, <span class="number">0.55</span>), (-<span class="number">0.2</span>, <span class="number">2.9</span>, <span class="number">0.2</span>)]:</span><br><span class="line">    yfit = m * xfit + b</span><br><span class="line">    plt.plot(xfit, yfit, <span class="string">&#x27;-k&#x27;</span>)</span><br><span class="line">    plt.fill_between(xfit, yfit - d, yfit + d, edgecolor=<span class="string">&#x27;none&#x27;</span>, color=<span class="string">&#x27;#AAAAAA&#x27;</span>, alpha=<span class="number">0.4</span>)</span><br><span class="line"></span><br><span class="line">plt.xlim(-<span class="number">1</span>, <span class="number">3.5</span>)</span><br></pre></td></tr></table></figure>
+<p>简单分割线：<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">xfit = np.linspace(-<span class="number">1</span>, <span class="number">3.5</span>)</span><br><span class="line">plt.scatter(X[:, <span class="number">0</span>], X[:, <span class="number">1</span>], c=y, s=<span class="number">50</span>, cmap=<span class="string">&#x27;autumn&#x27;</span>)</span><br><span class="line">plt.plot([<span class="number">0.6</span>], [<span class="number">2.1</span>], <span class="string">&#x27;x&#x27;</span>, color=<span class="string">&#x27;red&#x27;</span>, markeredgewidth=<span class="number">2</span>, markersize=<span class="number">10</span>)  <span class="comment">##特殊点</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> m, b <span class="keyword">in</span> [(<span class="number">1</span>, <span class="number">0.65</span>), (<span class="number">0.5</span>, <span class="number">1.6</span>), (-<span class="number">0.2</span>, <span class="number">2.9</span>)]:</span><br><span class="line">    plt.plot(xfit, m * xfit + b, <span class="string">&#x27;-k&#x27;</span>)  <span class="comment">##画三条分割直线</span></span><br><span class="line"></span><br><span class="line">plt.xlim(-<span class="number">1</span>, <span class="number">3.5</span>)</span><br></pre></td></tr></table></figure></p>
+<p><img src="/ShootingWang/ShootingWang.github.io/%E7%AE%97%E6%B3%95-SVM.htm/SVM-Figure_3.png" alt="三条简单分割直线"><br>上图中的三条简单分割直线（分割器）都能很好地判别这些样本（每条直线都能将圆点数据点正确地分为两类）。但是对于点“X”，不同的分割器将其分配到不同的标签。</p>
+<p>若将分割直线变成具有宽度的、到最近点边界的线条，如下图：<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">xfit = np.linspace(-<span class="number">1</span>, <span class="number">3.5</span>)</span><br><span class="line">plt.scatter(X[:, <span class="number">0</span>], X[:, <span class="number">1</span>], c=y, s=<span class="number">50</span>, cmap=<span class="string">&#x27;autumn&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> m, b, d <span class="keyword">in</span> [(<span class="number">1</span>, <span class="number">0.65</span>, <span class="number">0.33</span>), (<span class="number">0.5</span>, <span class="number">1.6</span>, <span class="number">0.55</span>), (-<span class="number">0.2</span>, <span class="number">2.9</span>, <span class="number">0.2</span>)]:</span><br><span class="line">    yfit = m * xfit + b</span><br><span class="line">    plt.plot(xfit, yfit, <span class="string">&#x27;-k&#x27;</span>)</span><br><span class="line">    plt.fill_between(xfit, yfit - d, yfit + d, edgecolor=<span class="string">&#x27;none&#x27;</span>, color=<span class="string">&#x27;#AAAAAA&#x27;</span>, alpha=<span class="number">0.4</span>)</span><br><span class="line"></span><br><span class="line">plt.xlim(-<span class="number">1</span>, <span class="number">3.5</span>)</span><br></pre></td></tr></table></figure></p>
 <p><img src="/ShootingWang/ShootingWang.github.io/%E7%AE%97%E6%B3%95-SVM.htm/SVM-Figure_2.png" alt="带有边界的分割器"></p>
 <p><img src="/ShootingWang/ShootingWang.github.io/%E7%AE%97%E6%B3%95-SVM.htm/SVM-Figure_4.jpeg" alt="带边界线和支持向量的支持向量机分类器"></p>
 <p>正好在边界线上的点，被称为<strong>支持向量</strong>。</p>
 <p>在scikit-learn中，支持向量的坐标存放在分类器的<code>support_vectors_</code>属性中。</p>
 <p>SVM对远离边界的数据点不敏感。</p>
-<h1 id="参考资料"><a class="header-anchor" href="#参考资料"></a>参考资料</h1>
-<ul>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
 <li>Python数据科学手册：<a href="https://book.douban.com/subject/27667378/">豆瓣图书</a>；<a href="https://jakevdp.github.io/PythonDataScienceHandbook/">英文版在线阅读</a></li>
 <li><a href="https://mp.weixin.qq.com/s?__biz=MzI3NTkyMjA4NA==&amp;mid=2247493162&amp;idx=1&amp;sn=59c051af70c1b4e0ab40d661df1d1ade&amp;chksm=eb7fcbe1dc0842f7cfc9c7224d4c0e2a3fe52d5abe18fe241b717bdf85b59c15d6c16fc99ee8&amp;scene=126&amp;sessionid=1588039863&amp;key=974eeeca00c2ed2bc09cde22429650400361fd61321edc232f5976aa402ec1f37e927d042d76e7eba2cc584551a40b22a7d2cd6e65fe539e5bd3854b306460a7770a747143ced86385ab3a53ffb7ba92&amp;ascene=1&amp;uin=MjAwNDUzMjgxNw%3D%3D&amp;devicetype=Windows+10&amp;version=62080079&amp;lang=zh_CN&amp;exportkey=AWzG3axKR6jb4RKDg8wBmkw%3D&amp;pass_ticket=581sFN8nM0rkEWD6Hp%2BhUJbN5RHzfuAW3vhCzJ2BWY6u9zDUMhZpRh3fnoocgekU">中文开源！《Python数据科学》PDF下载</a></li>
 <li><a href="https://github.com/jakevdp/PythonDataScienceHandbook">Python Data Science Handbook: full text in Jupyter Notebooks</a></li>
@@ -31135,8 +30878,8 @@ $$ w_i^T x - w_k^T x \geq 1 \quad \forall \quad k\neq i $$</li>
       <tags>
         <tag>算法</tag>
         <tag>Machine Learning 机器学习</tag>
-        <tag>分类</tag>
         <tag>有监督学习</tag>
+        <tag>Classification 分类</tag>
         <tag>回归</tag>
         <tag>判别式模型</tag>
       </tags>
