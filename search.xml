@@ -24593,7 +24593,7 @@ Y &amp;= \frac{ X }{ Z } = \frac{ X_1 + X_2 + \cdots + X_m }{ Z_1 + Z_2 + \cdots
 <p>维度（因子）$i$的贡献度为<br>
 $$C_i = \frac{维度i的剔除法得分}{所有维度的剔除法得分之和} \times \mathrm{sign} (\Delta Y)$$<br>
 其中，<br>
-$$ \mathrm{sign} (x) =<br>
+$$ \mathrm{sign} (x) = \left\lbrace<br>
 \begin{array}{ll}<br>
 1 &amp;, x &gt; 0 \\<br>
 0 &amp;, x = 0 \\<br>
