@@ -32,7 +32,7 @@
 <meta property="og:site_name" content="Skye">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-05-02T01:20:29.000Z">
-<meta property="article:modified_time" content="2022-10-17T04:45:31.050Z">
+<meta property="article:modified_time" content="2022-10-17T04:53:42.865Z">
 <meta property="article:author" content="Skye">
 <meta property="article:tag" content="Data Analysis 数据分析">
 <meta name="twitter:card" content="summary">
@@ -266,7 +266,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-10-17 12:45:31" itemprop="dateModified" datetime="2022-10-17T12:45:31+08:00">2022-10-17</time>
+                <time title="修改时间：2022-10-17 12:53:42" itemprop="dateModified" datetime="2022-10-17T12:53:42+08:00">2022-10-17</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -460,6 +460,21 @@ Y &amp;= \frac{ X }{ Z } = \frac{ X_1 + X_2 + \cdots + X_m }{ Z_1 + Z_2 + \cdots
 \Delta \tilde{Y} &amp;= 剔除维度i后波动 = \tilde{Y}^T - \tilde{Y}^0 \\<br>
 &amp;= \frac{ X^T - X_i^T }{ Z^T - Z_i^T} - \frac{ X^0 - X_i^0 }{ Z^0 - Z_i^0 } \\<br>
 \end{aligned}</p>
+<p>则波动差值（剔除法得分）为$(\Delta Y - \Delta\tilde{Y}) \cdot \mathrm{sign} (\Delta Y)$。</p>
+<ul>
+<li>若波动差值$&gt;0$，则表示维度（因子）$i$是波动$\Delta Y$的同向影响因子</li>
+<li>若波动差值$&lt;0$，则表示维度（因子）$i$是波动$\Delta Y$的反向影响因子</li>
+</ul>
+<p>维度（因子）$i$的贡献度为<br>
+$$C_i = \frac{维度i的剔除法得分}{所有维度的剔除法得分之和} \times \mathrm{sign} (\Delta Y)$$<br>
+其中，<br>
+$$ \mathrm{sign} (x) =<br>
+\begin{array}{ll}<br>
+1 &amp;, x &gt; 0 \\<br>
+0 &amp;, x = 0 \\<br>
+-1 &amp;, x &lt; 0 \\<br>
+\end{array}<br>
+$$</p>
 <h3 id="加权占比法"><a class="header-anchor" href="#加权占比法"></a>加权占比法</h3>
 <h3 id="根因定位算法"><a class="header-anchor" href="#根因定位算法"></a>根因定位算法</h3>
 <h2 id="指标归因"><a class="header-anchor" href="#指标归因"></a>指标归因</h2>
@@ -890,7 +905,7 @@ $$次日留存率=\sum\frac{次日留存数}{今日获客人数}$$</li>
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">423k</span>
+    <span title="站点总字数">424k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
