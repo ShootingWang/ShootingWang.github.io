@@ -28757,9 +28757,8 @@ $$not &gt; and &gt; or$$</li>
 <li>
 <p>贡献：</p>
 <ul>
-<li>维度$i$对绝对波动$\Delta Y$的贡献度$$<br>
-则第个（$i=1,\cdots,m$）维度（因子Factor）$F_i$对波动的贡献度为<br>
-$$C_i = \frac{\Delta Y_i}{\Delta Y} = \frac{Y_i^T - Y^{T-1} }{ Y^T - Y^{T-1} }$$</li>
+<li>维度$i$对绝对波动$\Delta Y$的贡献度<br>
+$$C_i = \frac{\Delta Y_i}{\Delta Y} = \frac{Y_i^T - Y_i^0 }{ Y^T - Y^0 }$$</li>
 </ul>
 </li>
 <li>
