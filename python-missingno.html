@@ -318,23 +318,28 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><center>用于可视化缺失值</center><br><span id="more"></span></p>
-<h1 id="missingno"><a href="#missingno" class="headerlink" title="missingno"></a>missingno</h1><p>安装：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install missingno</span><br></pre></td></tr></table></figure></p>
-<p>首先下载样本数据：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pip install quilt</span><br><span class="line">quilt install ResidentMario/missingno_data</span><br></pre></td></tr></table></figure></p>
-<p>加载数据：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> quilt.data.ResidentMario <span class="keyword">import</span> missingno_data</span><br><span class="line"></span><br><span class="line">collisions = missingno_data.nyc_collision_factors()</span><br><span class="line">collisions = collisions.replace(<span class="string">&#x27;nan&#x27;</span>, np.nan)</span><br><span class="line">collisions.head()</span><br></pre></td></tr></table></figure></p>
+        <center>用于可视化缺失值</center>
+<span id="more"></span>
+<h1 id="missingno"><a class="header-anchor" href="#missingno"></a>missingno</h1>
+<p>安装：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install missingno</span><br></pre></td></tr></table></figure>
+<p>首先下载样本数据：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pip install quilt</span><br><span class="line">quilt install ResidentMario/missingno_data</span><br></pre></td></tr></table></figure>
+<p>加载数据：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> quilt.data.ResidentMario <span class="keyword">import</span> missingno_data</span><br><span class="line"></span><br><span class="line">collisions = missingno_data.nyc_collision_factors()</span><br><span class="line">collisions = collisions.replace(<span class="string">&#x27;nan&#x27;</span>, np.nan)</span><br><span class="line">collisions.head()</span><br></pre></td></tr></table></figure>
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
+.dataframe thead th &#123;
+    text-align: right;
+&#125;
+</code></pre>
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -523,31 +528,41 @@
   </tbody>
 </table>
 </div>
-
-<h2 id="bar"><a href="#bar" class="headerlink" title="bar()"></a>bar()</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">msno.bar(collisions.sample(<span class="number">1000</span>))</span><br></pre></td></tr></table></figure>
-<p><meta name="referrer" content="no-referrer"><br><img src="/ShootingWang/ShootingWang.github.io/python-missingno.htm/output_4_1.png" class title="条形图"></p>
-<h2 id="Dendrogram"><a href="#Dendrogram" class="headerlink" title="Dendrogram()"></a>Dendrogram()</h2><p>谱系图/系统树图</p>
+<h2 id="bar"><a class="header-anchor" href="#bar"></a>bar()</h2>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">msno.bar(collisions.sample(<span class="number">1000</span>))</span><br></pre></td></tr></table></figure>
+<meta name="referrer" content="no-referrer">
+<img src="/ShootingWang/ShootingWang.github.io/python-missingno.htm/output_4_1.png" class title="条形图">
+<h2 id="Dendrogram"><a class="header-anchor" href="#Dendrogram"></a>Dendrogram()</h2>
+<p>谱系图/系统树图</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">msno.dendrogram(collisions)</span><br></pre></td></tr></table></figure>
-<p><meta name="referrer" content="no-referrer"><br><img src="/ShootingWang/ShootingWang.github.io/python-missingno.htm/output_6_1.png" class title="谱系图"></p>
+<meta name="referrer" content="no-referrer">
+<img src="/ShootingWang/ShootingWang.github.io/python-missingno.htm/output_6_1.png" class title="谱系图">
 <ul>
 <li><code>NUMBER OF CYCLISTS INJURED</code>,<code>NUMBER OF CYCLISTS SKILLED</code>,<code>CONTRIBUTING FACTOR VEHICLE 1</code>,<code>NUMBER OF PEDESTRIANS SKILLED</code>,<code>NUMBER OF PEDESTRIANS INJURED</code>,<code>NUMBER OF PERSONS KILLED</code>等数据完整，没有缺失值，他们的距离为零，聚为一类。</li>
 <li><code>BOROUGH</code>,<code>ZIP CODE</code>缺失相关性为1（同时缺失），距离为零；且缺失数据最少（除完整数据外），所以在完整数据后聚为一类。</li>
 <li>……</li>
 </ul>
-<h2 id="heatmap"><a href="#heatmap" class="headerlink" title="heatmap()"></a>heatmap()</h2><p>热力图<br>体现一个变量的存在或不存在如何强烈影响另一个变量的存在</p>
+<h2 id="heatmap"><a class="header-anchor" href="#heatmap"></a>heatmap()</h2>
+<p>热力图<br>
+体现一个变量的存在或不存在如何强烈影响另一个变量的存在</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">msno.heatmap(collisions)</span><br></pre></td></tr></table></figure>
-<p><meta name="referrer" content="no-referrer"><br><img src="/ShootingWang/ShootingWang.github.io/python-missingno.htm/output_5_1.png" class title="热力图"></p>
+<meta name="referrer" content="no-referrer">
+<img src="/ShootingWang/ShootingWang.github.io/python-missingno.htm/output_5_1.png" class title="热力图">
 <p><code>ZIP CODE</code>与<code>BOROUGH</code>的缺失相关性为1，说明：只要<code>BOROUGH</code>发生了缺失，<code>ZIP CODE</code>也会缺失。</p>
-<h2 id="matrix"><a href="#matrix" class="headerlink" title="matrix()"></a>matrix()</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> missingno <span class="keyword">as</span> msno</span><br><span class="line">%matplotlib inline</span><br><span class="line"></span><br><span class="line">msno.matrix(collisions.sample(<span class="number">250</span>))</span><br></pre></td></tr></table></figure>
-<p><meta name="referrer" content="no-referrer"><br><img src="/ShootingWang/ShootingWang.github.io/python-missingno.htm/output_1_2.png" class title="矩阵图"></p>
+<h2 id="matrix"><a class="header-anchor" href="#matrix"></a>matrix()</h2>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> missingno <span class="keyword">as</span> msno</span><br><span class="line">%matplotlib inline</span><br><span class="line"></span><br><span class="line">msno.matrix(collisions.sample(<span class="number">250</span>))</span><br></pre></td></tr></table></figure>
+<meta name="referrer" content="no-referrer">
+<img src="/ShootingWang/ShootingWang.github.io/python-missingno.htm/output_1_2.png" class title="矩阵图">
 <p>白色的为缺失</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line">null_pattern = (np.random.random(<span class="number">1000</span>).reshape((<span class="number">50</span>, <span class="number">20</span>)) &gt; <span class="number">0.5</span>).astype(<span class="built_in">bool</span>)</span><br><span class="line">null_pattern = pd.DataFrame(null_pattern).replace(&#123;<span class="literal">False</span>: <span class="literal">None</span>&#125;)</span><br><span class="line">msno.matrix(null_pattern.set_index(pd.period_range(<span class="string">&#x27;1/1/2011&#x27;</span>, <span class="string">&#x27;2/1/2015&#x27;</span>, freq=<span class="string">&#x27;M&#x27;</span>)), freq=<span class="string">&#x27;BQ&#x27;</span>)</span><br></pre></td></tr></table></figure>
-<p><meta name="referrer" content="no-referrer"><br><img src="/ShootingWang/ShootingWang.github.io/python-missingno.htm/output_3_1.png" class title="矩阵图"></p>
+<meta name="referrer" content="no-referrer">
+<img src="/ShootingWang/ShootingWang.github.io/python-missingno.htm/output_3_1.png" class title="矩阵图">
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
+<h1 id="参考资料"><a class="header-anchor" href="#参考资料"></a>参考资料</h1>
+<ul>
 <li><a href="https://github.com/ResidentMario/missingno">GitHub-missingno</a></li>
-<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/Andy_shenzl/article/details/81633356">缺失值可视化处理—missingno</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/Andy_shenzl/article/details/81633356">缺失值可视化处理–missingno</a></li>
 </ul>
 
     </div>
@@ -746,13 +761,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">425k</span>
+    <span title="站点总字数">437k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">6:26</span>
+    <span title="站点阅读时长">6:37</span>
 </div>
 
 
