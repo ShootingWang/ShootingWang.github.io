@@ -28739,7 +28739,7 @@ $$not &gt; and &gt; or$$</li>
 \Delta Y &amp;= Y^T - Y^{0} \\<br>
 &amp;= \sum_{i=1}^m Y_i^T - \sum_{i=1}^m Y_i^0 \\<br>
 &amp;= \sum_{i=1}^m (Y_i^T - Y_i^0) \\<br>
-&amp;= \sum_{i=1}^m \Delta Y_i<br>
+&amp;= \sum_{i=1}^m \Delta Y_i \\<br>
 &amp;= \Delta Y_1 + \Delta Y_2 + \cdots + \Delta Y_m \\<br>
 \\<br>
 100 % &amp;= \frac{\Delta Y}{\Delta Y} = \sum_{i=1}^m \frac{\Delta Y_i}{\Delta Y} = \sum_{i=1}^m \frac{Y_i^T - Y_i<sup>0}{Y</sup>T - Y^0} \\<br>
@@ -28773,21 +28773,17 @@ $$RV_i = \frac{\Delta Y_i}{\Delta Y} \cdot \Delta Y % = \frac{\Delta Y_i}{ Y^0 }
 $$\mathrm{GMV} = 老客\mathrm{GMV} + 新客\mathrm{GMV}$$</p>
 </blockquote>
 <h3 id="除法指标"><a class="header-anchor" href="#除法指标"></a>除法指标</h3>
-<blockquote>
+<p>适用分子分母可分别加和的除法指标。除法指标的变化主要由结构变化、指标值变化共同决定。这类指标主要是比率型指标，比如用户满意度（满意问卷量 / 问卷提交量）、留存率（留存用户数 / 存量用户数）等。</p>
+<p>目标指标$Y$可拆分为两个指标相除，且分子分母是可加和的（可以分别拆分成$m$个维度指标加和，各维度之间满足<a href="/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-MECE%E5%8E%9F%E5%88%99.html" title="MECE原则">MECE原则</a>）。</p>
+<h4 id="控制变量法（敏感度分析）"><a class="header-anchor" href="#控制变量法（敏感度分析）"></a>控制变量法（敏感度分析）</h4>
 <ul>
-<li>适用范围：分子分母可分别加和的除法指标。这类指标主要是比率型指标，比如用户满意度（满意问卷量 / 问卷提交量）、留存率（留存用户数 / 存量用户数）等。</li>
-</ul>
-</blockquote>
-<ul>
-<li>$t=0$：基期</li>
-<li>$t=T$：对比期（当期）</li>
-</ul>
-<p>目标指标$Y$可拆分为两个指标相除，且分子分母是可加和的（可以分别拆分成$m$个维度指标加和）。</p>
-<p>\begin{aligned}<br>
+<li>目标指标：<br>
+\begin{aligned}<br>
 Y &amp;= \frac{X}{Z} = \frac{ X_1 + X_2 + \cdots + X_m }{ Z_1 + Z_2 + \cdots + Z_m } \\<br>
 \Delta Y &amp;= Y^T - Y^0 \\<br>
 &amp;= \Delta \frac{X}{Z} = \frac{ X^0 + \Delta X }{ Z^0 + \Delta Z } \\<br>
-\end{aligned}</p>
+\end{aligned}</li>
+</ul>
 <p>则维度$i$对波动$\Delta Y$的</p>
 <ul>
 <li>可解释功效（EP，Explanatory Power）：<br>
