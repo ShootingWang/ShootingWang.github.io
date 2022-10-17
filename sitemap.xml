@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://github.com/ShootingWang/ShootingWang.github.io/%E5%9B%A0%E6%9E%9C%E6%8E%A8%E6%96%AD.html</loc>
+    
+    <lastmod>2022-10-17</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://github.com/ShootingWang/ShootingWang.github.io/%E7%AE%97%E6%B3%95-SVM.html</loc>
     
     <lastmod>2022-10-17</lastmod>
@@ -281,7 +290,7 @@
   </url>
   
   <url>
-    <loc>https://github.com/ShootingWang/ShootingWang.github.io/Machine-Learning-%E7%86%B5.html</loc>
+    <loc>https://github.com/ShootingWang/ShootingWang.github.io/%E7%AE%97%E6%B3%95-%E7%89%B9%E5%BE%81%E5%BD%92%E4%B8%80%E5%8C%96.html</loc>
     
     <lastmod>2022-10-12</lastmod>
     
@@ -290,7 +299,7 @@
   </url>
   
   <url>
-    <loc>https://github.com/ShootingWang/ShootingWang.github.io/%E7%AE%97%E6%B3%95-%E7%89%B9%E5%BE%81%E5%BD%92%E4%B8%80%E5%8C%96.html</loc>
+    <loc>https://github.com/ShootingWang/ShootingWang.github.io/Spark-Learning.html</loc>
     
     <lastmod>2022-10-12</lastmod>
     
@@ -308,7 +317,7 @@
   </url>
   
   <url>
-    <loc>https://github.com/ShootingWang/ShootingWang.github.io/Spark-Learning.html</loc>
+    <loc>https://github.com/ShootingWang/ShootingWang.github.io/Machine-Learning-%E7%86%B5.html</loc>
     
     <lastmod>2022-10-12</lastmod>
     
@@ -410,15 +419,6 @@
     <loc>https://github.com/ShootingWang/ShootingWang.github.io/Jupyter-Notebook%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7.html</loc>
     
     <lastmod>2022-09-19</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://github.com/ShootingWang/ShootingWang.github.io/%E5%9B%A0%E6%9E%9C%E6%8E%A8%E6%96%AD.html</loc>
-    
-    <lastmod>2022-09-15</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>

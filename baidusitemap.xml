@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://github.com/ShootingWang/ShootingWang.github.io/%E5%9B%A0%E6%9E%9C%E6%8E%A8%E6%96%AD.html</loc>
+    <lastmod>2022-10-17</lastmod>
+  </url>
+  <url>
     <loc>https://github.com/ShootingWang/ShootingWang.github.io/%E7%AE%97%E6%B3%95-SVM.html</loc>
     <lastmod>2022-10-17</lastmod>
   </url>
@@ -175,10 +179,6 @@
   <url>
     <loc>https://github.com/ShootingWang/ShootingWang.github.io/Jupyter-Notebook%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7.html</loc>
     <lastmod>2022-09-19</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/ShootingWang/ShootingWang.github.io/%E5%9B%A0%E6%9E%9C%E6%8E%A8%E6%96%AD.html</loc>
-    <lastmod>2022-09-15</lastmod>
   </url>
   <url>
     <loc>https://github.com/ShootingWang/ShootingWang.github.io/sql-%E6%97%B6%E9%97%B4%E5%A4%84%E7%90%86.html</loc>
