@@ -2,6 +2,33 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://github.com/ShootingWang/ShootingWang.github.io/Machine-Learning-%E8%81%9A%E7%B1%BB%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0.html</loc>
+    
+    <lastmod>2022-10-17</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://github.com/ShootingWang/ShootingWang.github.io/%E7%AE%97%E6%B3%95-DBSCAN.html</loc>
+    
+    <lastmod>2022-10-17</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://github.com/ShootingWang/ShootingWang.github.io/%E7%AE%97%E6%B3%95-BIRCH.html</loc>
+    
+    <lastmod>2022-10-17</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://github.com/ShootingWang/ShootingWang.github.io/%E7%AE%97%E6%B3%95-SVM.html</loc>
     
     <lastmod>2022-10-17</lastmod>
@@ -236,15 +263,6 @@
   </url>
   
   <url>
-    <loc>https://github.com/ShootingWang/ShootingWang.github.io/%E7%AE%97%E6%B3%95-BIRCH.html</loc>
-    
-    <lastmod>2022-10-12</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://github.com/ShootingWang/ShootingWang.github.io/LaTeX-Beamer.html</loc>
     
     <lastmod>2022-10-12</lastmod>
@@ -318,15 +336,6 @@
   
   <url>
     <loc>https://github.com/ShootingWang/ShootingWang.github.io/%E7%AE%97%E6%B3%95-HMM.html</loc>
-    
-    <lastmod>2022-10-12</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://github.com/ShootingWang/ShootingWang.github.io/Machine-Learning-%E8%81%9A%E7%B1%BB%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0.html</loc>
     
     <lastmod>2022-10-12</lastmod>
     
@@ -974,15 +983,6 @@
   </url>
   
   <url>
-    <loc>https://github.com/ShootingWang/ShootingWang.github.io/%E7%AE%97%E6%B3%95-DBSCAN.html</loc>
-    
-    <lastmod>2022-03-22</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://github.com/ShootingWang/ShootingWang.github.io/%E7%AE%97%E6%B3%95-%E8%BF%87%E6%8B%9F%E5%90%88%E5%92%8C%E6%AC%A0%E6%8B%9F%E5%90%88.html</loc>
     
     <lastmod>2022-03-22</lastmod>
@@ -1594,13 +1594,6 @@
   
   <url>
     <loc>https://github.com/ShootingWang/ShootingWang.github.io/tags/Machine-Learning-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</loc>
-    <lastmod>2022-10-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://github.com/ShootingWang/ShootingWang.github.io/tags/%E8%81%9A%E7%B1%BB/</loc>
     <lastmod>2022-10-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

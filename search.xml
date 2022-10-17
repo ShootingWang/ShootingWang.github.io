@@ -14238,7 +14238,7 @@ $$D_0=\sqrt{\frac{\sum_{i=1}<sup>{N_1}\sum_{j=N_1+1}</sup>{N_1+N_2}\left(\mathbf
       <tags>
         <tag>算法</tag>
         <tag>Machine Learning 机器学习</tag>
-        <tag>聚类</tag>
+        <tag>Clustering 聚类</tag>
       </tags>
   </entry>
   <entry>
@@ -18374,7 +18374,7 @@ $$w_{ij}=w_{ij}-\eta_1\cdot \delta_{ij}\cdot x_i+\alpha \Delta w_{ij}$$</li>
       <tags>
         <tag>算法</tag>
         <tag>Machine Learning 机器学习</tag>
-        <tag>聚类</tag>
+        <tag>Clustering 聚类</tag>
       </tags>
   </entry>
   <entry>
@@ -24217,7 +24217,7 @@ $$TSS=\sum_{i=1}<sup>n(x_i-\bar{x})</sup>2$$</li>
       <tags>
         <tag>算法</tag>
         <tag>Machine Learning 机器学习</tag>
-        <tag>聚类</tag>
+        <tag>Clustering 聚类</tag>
       </tags>
   </entry>
   <entry>
