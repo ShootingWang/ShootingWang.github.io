@@ -23645,7 +23645,7 @@ $$VIP顾客销售额占比=\frac{会员顾客消费金额}{总销售额}\times10
 <li>目标指标：$Y$</li>
 <li>波动类型：<ul>
 <li>绝对波动：$\Delta Y = Y^T - Y^0$</li>
-<li>相对波动：$\Delta Y\% = \frac{\Delta Y}{Y^0} = \frac{Y^T - Y^0}{Y^0}$</li>
+<li>相对波动：$\Delta Y\% = \frac{ \Delta Y }{ Y^0 } = \frac{ Y^T - Y^0 }{ Y^0 }$</li>
 </ul>
 </li>
 <li>贡献：<ul>
