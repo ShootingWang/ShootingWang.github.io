@@ -23672,8 +23672,8 @@ $$VIP顾客销售额占比=\frac{会员顾客消费金额}{总销售额}\times10
 <li><p>波动：</p>
 <ul>
 <li><p>绝对波动：</p>
-<p>\begin{aligned}<br>\Delta Y &amp;= Y^T - Y^{0} \\<br>&amp;= \sum<em>{i=1}^m Y_i^T - \sum</em>{i=1}^m Y<em>i^0 \\<br>&amp;= \sum</em>{i=1}^m ( Y<em>i^T - Y_i^0 ) \\<br>&amp;= \sum</em>{i=1}^m \Delta Y<em>i \\<br>&amp;= \Delta Y_1 + \Delta Y_2 + \cdots + \Delta Y_m \\<br>\\<br>100 \% &amp;= \frac{ \Delta Y}{ \Delta Y } = \sum</em>{i=1}^m \frac{ \Delta Y<em>i }{ \Delta Y } = \sum</em>{i=1}^m \frac{ Y_i^T - Y_i^0 }{ Y^T - Y^0 } \\<br>\end{aligned}</p>
-</li>
+<p>\begin{aligned}<br>\Delta Y &amp;= Y^T - Y^{0} \\<br>&amp;= \sum<em>{i=1}^m Y_i^T - \sum</em>{i=1}^m Y<em>i^0 \\<br>&amp;= \sum</em>{i=1}^m ( Y<em>i^T - Y_i^0 ) \\<br>&amp;= \sum</em>{i=1}^m \Delta Y_i \\<br>&amp;= \Delta Y_1 + \Delta Y_2 + \cdots + \Delta Y_m \\<br>\end{aligned}</p>
+<script type="math/tex; mode=display">100\% = \frac{ \Delta Y}{ \Delta Y } = \sum_{i=1}^m \frac{ \Delta Y_i }{ \Delta Y } = \sum_{i=1}^m \frac{ Y_i^T - Y_i^0 }{ Y^T - Y^0 }</script></li>
 <li><p>相对波动：</p>
 <p>\begin{aligned}<br>\Delta Y \% &amp;= \frac{ \Delta Y }{ Y^0 } = \frac{ Y^T - Y^0 }{ Y^0 } \\<br>&amp;= \frac{ \sum<em>{i=1}^m Y_i^T - \sum</em>{i=1}^m Y<em>i^0 }{ Y^0 } \\<br>&amp;= \frac{ \sum</em>{i=1}^m \Delta Y<em>i }{ Y^0 } = \sum</em>{i=1}^m \frac{ \Delta Y_i }{ Y^0 } \\<br>\end{aligned}</p>
 </li>
