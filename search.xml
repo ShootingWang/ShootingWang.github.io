@@ -28706,9 +28706,9 @@ $$not &gt; and &gt; or$$</li>
 </li>
 <li>贡献：
 <ul>
-<li>维度$i$对绝对波动$\Delta Y$的贡献度$C_i$，$\sum_{i=1}^m C_i = 100%$</li>
-<li>维度$i$对绝对波动$\Delta Y$的贡献值$V_i = C_i \cdot \Delta Y$，$\sum_{i=1}^m V_i = \Delta Y$</li>
-<li>维度$i$对相对波动：$\Delta Y%$的贡献值$RV_i$，$\sum_{i=1}^m RV_i = \Delta Y%$<br>
+<li>维度$i$对绝对波动$\Delta Y$的贡献度$C_i$ ，$ \sum_{i=1}^m C_i = 100% $</li>
+<li>维度$i$对绝对波动$\Delta Y$的贡献值$V_i = C_i \cdot \Delta Y$ ，$ \sum_{i=1}^m V_i = \Delta Y $</li>
+<li>维度$i$对相对波动：$\Delta Y%$的贡献值$RV_i$ ，$ \sum_{i=1}^m RV_i = \Delta Y% $<br>
 其中，$T$指对比期（当期），$0$指基期（上一期）。</li>
 </ul>
 </li>
