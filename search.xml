@@ -29042,12 +29042,13 @@ D_{x_j} &amp;=  \mathrm{exp} \left( \int_0^T \sum_{i=1}^m \omega_i^t \frac{ \mat
 <h4 id="LMDI方法"><a class="header-anchor" href="#LMDI方法"></a>LMDI方法</h4>
 <p><strong>对数平均迪氏指数法</strong>（LMDI，Log Mean Divisia Index）：AMDI分解法存在残值问题，Ang等研究提出LMDI方法，改进AMDI的残值问题。</p>
 <blockquote>
-<p>相关详解论文：</p>
+<p>相关资料：</p>
 <ul>
 <li>Ang, Beng. (2005). <a href="https://sci-hub.ee/10.1016/j.enpol.2003.10.010">The LMDI Approach to Decomposition Analysis: A Practical Guide</a>. Energy Policy. 33. 867-871. 10.1016/j.enpol.2003.10.010.</li>
 <li>Ang, B.W. (2015). <a href="https://sci-hub.ee/10.1016/j.enpol.2015.07.007">LMDI decomposition approach: A guide for implementation</a>. Energy Policy, 86, 233-238.</li>
 <li>Xiang, X.; Ma, X.; Ma, Z.; Ma, M.; Cai, W. <a href="https://www.mdpi.com/2075-5309/12/1/83/htm">Python-LMDI: A Tool for Index Decomposition Analysis of Building Carbon Emissions</a>. Buildings 2022, 12, 83. <a href="https://doi.org/10.3390/buildings12010083">https://doi.org/10.3390/buildings12010083</a> <a href="https://www.mdpi.com/2075-5309/12/1/83/pdf">pdf download</a><br>
 - Python Package: <a href="https://github.com/xiwang2718/PyLMDI">PyLMDI</a></li>
+<li>Ang, B.W., Zhang, F., &amp; Choi, K. (1998). <a href="https://sci-hub.ee/10.1016/s0360-5442(98)00016-4">Factorizing changes in energy and environmental indicators through decomposition</a>. Energy, 23, 489-495.</li>
 </ul>
 </blockquote>
 <ol>
