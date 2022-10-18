@@ -4976,6 +4976,7 @@ $$\parallel \vec{x} \parallel_{+\infty} = \lim_{p\rightarrow +\infty} \left( \su
 </blockquote>
 <p>将设计矩阵标准化，即$X^TX = I_p$</p>
 <p>目标函数：<br>
+$$<br>
 \begin{aligned}<br>
 L( \beta ) &amp;= \parallel y - X \beta \parallel_2^2 + \lambda J( \beta ) \\<br>
 &amp;= \parallel y-X \beta \parallel_2^2 + \lambda \sum_{j=1}^p p_j ( \mid \beta_j \mid ) \\<br>
@@ -4984,8 +4985,9 @@ L( \beta ) &amp;= \parallel y - X \beta \parallel_2^2 + \lambda J( \beta ) \\<br
 &amp;= \parallel y-X \beta \parallel_2^2 + \sum_{j=1}^p p_{\lambda} ( \mid \beta_j \mid ) \\<br>
 &amp;= \parallel y-X \hat{\beta}<em>{ OLS }  \parallel_2^2  + \parallel  \hat{ \beta }</em>{ OLS }  - \beta \parallel^2 +<br>
 \sum_{j=1}^p {p_\lambda}(\mid \beta_j \mid) \\<br>
-&amp;= \parallel y-X \hat{\beta}<em>{ OLS }  \parallel_2^2  + \sum</em>{j=1}^p \left\lbrace (\hat{ \beta }<em>{oj}  - { \beta_j } )^2 +  p</em>\lambda }( \mid { \beta_j } \mid) \right\rbrace  \\<br>
-\end{aligned}</p>
+&amp;= \parallel y-X \hat{\beta}<em>{ OLS }  \parallel_2^2  + \sum</em>{j=1}^p \left\lbrace (\hat{ \beta }<em>{oj}  -  \beta_j  )^2 +  p</em>\lambda ( \mid  \beta_j  \mid) \right\rbrace  \\<br>
+\end{aligned}<br>
+$$</p>
 <ul>
 <li>假设惩罚函数对所有的系数都是一样的，即 $p(\mid \cdot \mid)$</li>
 <li>进一步，将 $\lambda p( \mid \cdot \mid )$ 记为 $p_\lambda( \mid \cdot \mid )$</li>
