@@ -28719,17 +28719,17 @@ $$not &gt; and &gt; or$$</li>
 <li>相对的：Relative</li>
 </ul>
 <h2 id="维度归因"><a class="header-anchor" href="#维度归因"></a>维度归因</h2>
-<p>将指标在各维度（因子）上进行拆解，计算各个维度（因子）对指标波动的贡献度，发现影响指标波动的主要原因（维度/因子）。</p>
+<p>将指标在同一维度上进行拆解，计算各个因子对指标波动的贡献度，发现影响指标波动的主要原因（因子）。</p>
 <ul>
-<li>同向影响因子：对目标指标同向变动做出贡献的因子（维度/因素）；贡献度为正的因子为同向影响因子</li>
-<li>反向影响因子：对目标指标反向变动做出贡献的因子（维度/因素）；贡献度为负的因子为反向影响因子</li>
+<li>同向影响因子：对目标指标同向变动做出贡献的因子（因素）；贡献度为正的因子为同向影响因子</li>
+<li>反向影响因子：对目标指标反向变动做出贡献的因子（因素）；贡献度为负的因子为反向影响因子</li>
 </ul>
 <h3 id="加法指标"><a class="header-anchor" href="#加法指标"></a>加法指标</h3>
 <p>即<strong>Delta法</strong>。<br>
-目标指标$Y$可拆分成多个维度指标的<strong>加和</strong>。假设有$m$个维度，各维度之间满足<a href="/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-MECE%E5%8E%9F%E5%88%99.html" title="MECE原则">MECE原则</a>。</p>
+目标指标$Y$可拆分成同一个多个因子指标的<strong>加和</strong>。假设有$n$个因子，同一维度各因子之间满足<a href="/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-MECE%E5%8E%9F%E5%88%99.html" title="MECE原则">MECE原则</a>。</p>
 <ul>
 <li>
-<p>目标指标：$Y = Y_1 + Y_2 + \cdots + Y_m$</p>
+<p>目标指标：$Y = Y_1 + Y_2 + \cdots + Y_n$</p>
 </li>
 <li>
 <p>波动：</p>
@@ -28741,7 +28741,7 @@ $$not &gt; and &gt; or$$</li>
 &amp;= \sum_{j=1}^n Y_j^T - \sum_{j=1}^n Y_j^0 \\<br>
 &amp;= \sum_{j=1}^n ( Y_j^T - Y_j^0 ) \\<br>
 &amp;= \sum_{j=1}^n \Delta Y_j \\<br>
-&amp;= \Delta Y_1 + \Delta Y_2 + \cdots + \Delta Y_m \\<br>
+&amp;= \Delta Y_1 + \Delta Y_2 + \cdots + \Delta Y_n \\<br>
 \end{aligned}</p>
 <p>$$100 \% = \frac{ \Delta Y}{ \Delta Y } = \sum_{j=1}^n \frac{ \Delta Y_j }{ \Delta Y } = \sum_{j=1}^n \frac{ Y_j^T - Y_j^0 }{ Y^T - Y^0 } $$</p>
 <ul>
@@ -28780,7 +28780,7 @@ $$\mathrm{GMV} = 老客\mathrm{GMV} + 新客\mathrm{GMV}$$</p>
 <ul>
 <li>
 <p>目标指标：<br>
-$$Y = \frac{X}{Z} = \frac{ X_1 + X_2 + \cdots + X_m }{ Z_1 + Z_2 + \cdots + Z_m }$$</p>
+$$Y = \frac{X}{Z} = \frac{ X_1 + X_2 + \cdots + X_n }{ Z_1 + Z_2 + \cdots + Z_n }$$</p>
 </li>
 <li>
 <p>波动：</p>
@@ -28793,14 +28793,14 @@ $$\Delta Y = Y^T - Y^0 = \Delta \frac{X}{Z} = \frac{ X^0 + \Delta X }{ Z^0 + \De
 <p>可解释功效（EP，Explanatory Power）：用对比期的同一维度值替换基期的维度值，计算绝对波动值<br>
 \begin{aligned}<br>
 EP_j &amp;= \tilde{Y}^0 - Y^0 \\<br>
-&amp;= \frac{X_1^0 + X_2^0 + \cdots + X_{i-1}^0 + X_{i}^T + X_{i+1}^0 + \cdots + X_m^0 }{ Z_1^0 + Z_2^0 + \cdots + Z_{i-1}^0 + Z_j^T + Z_{i+1}^0 + \cdots + Z_m^0 } - \frac{ X^0 }{ Z^0 } \\<br>
+&amp;= \frac{X_1^0 + X_2^0 + \cdots + X_{i-1}^0 + X_{i}^T + X_{i+1}^0 + \cdots + X_n^0 }{ Z_1^0 + Z_2^0 + \cdots + Z_{i-1}^0 + Z_j^T + Z_{i+1}^0 + \cdots + Z_n^0 } - \frac{ X^0 }{ Z^0 } \\<br>
 &amp;= \frac{ X^0 - X_j^0 + X_j^T }{ Z^0 - Z_j^0 + Z_j^T } - \frac{ X^0 }{ Z^0 } \\<br>
 &amp;= \frac{ X^0 - X_j^0 + X_j^T }{ Z^0 - Z_j^0 + Z_j^T } - Y^0 \\<br>
 \end{aligned}</p>
 </li>
 <li>
 <p>因子$j$对绝对波动$\Delta Y$的贡献度：<br>
-$$C_j = \frac{EP_j}{ \sum_{j=1}^n EP_j } = \frac{ EP_j }{ EP_1 + EP_2 + \cdots + EP_m }$$</p>
+$$C_j = \frac{EP_j}{ \sum_{j=1}^n EP_j } = \frac{ EP_j }{ EP_1 + EP_2 + \cdots + EP_n }$$</p>
 </li>
 <li>
 <p>因子$j$对绝对波动$\Delta Y$的贡献值：<br>
@@ -28817,7 +28817,7 @@ $$V_j = C_j \cdot \Delta Y = \frac{EP_j}{ \sum_{j=1}^n EP_j } \cdot \Delta Y $$<
 <p>将基期（上一期）、对比期（当期）的同一维度（因子）的数据同时剔除，计算剔除后目标指标的波动，与目标指标的真实波动进行比较，衡量该维度（因子）对目标指标波动变化的贡献。</p>
 <ul>
 <li>目标指标：<br>
-$$Y = \frac{ X }{ Z } = \frac{ X_1 + X_2 + \cdots + X_m }{ Z_1 + Z_2 + \cdots + Z_m}$$</li>
+$$Y = \frac{ X }{ Z } = \frac{ X_1 + X_2 + \cdots + X_n }{ Z_1 + Z_2 + \cdots + Z_n}$$</li>
 <li>波动：
 <ul>
 <li>「真实」绝对波动：<br>
@@ -28923,7 +28923,7 @@ $$</p>
 </li>
 <li>
 <p>目标指标：<br>
-$$Y = \frac{X}{Z} = \frac{ X_1 + X_2 + \cdots + X_m }{ Z_1 + Z_2 + \cdots + Z_m }$$</p>
+$$Y = \frac{X}{Z} = \frac{ X_1 + X_2 + \cdots + X_n }{ Z_1 + Z_2 + \cdots + Z_n }$$</p>
 </li>
 <li>
 <p>结构占比（分母占比）：</p>
