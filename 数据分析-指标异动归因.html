@@ -32,7 +32,7 @@
 <meta property="og:site_name" content="Skye">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-05-02T01:20:29.000Z">
-<meta property="article:modified_time" content="2022-10-18T05:45:35.269Z">
+<meta property="article:modified_time" content="2022-10-18T05:49:35.140Z">
 <meta property="article:author" content="Skye">
 <meta property="article:tag" content="Data Analysis 数据分析">
 <meta name="twitter:card" content="summary">
@@ -266,7 +266,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-10-18 13:45:35" itemprop="dateModified" datetime="2022-10-18T13:45:35+08:00">2022-10-18</time>
+                <time title="修改时间：2022-10-18 13:49:35" itemprop="dateModified" datetime="2022-10-18T13:49:35+08:00">2022-10-18</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -817,7 +817,7 @@ a &amp; , a = b<br>
 $$</li>
 </ul>
 <div class="note default">
-            <p>LMDI加法分解形式简单证明：目标指标简单形式$Y = \prod_{j=1}^n x_j$</p><p><strong>证明（方法一）</strong>：<br>\begin{aligned}<br>\Delta Y \% &amp;= \frac{ Y^T - Y^0 }{ Y^0 } \\<br>&amp;= \frac{ (Y^T - Y^0) \cdot \ln\left(\frac{ Y^T }{ Y^0 }\right) }{ Y^0 \cdot \ln\left(\frac{ Y^T }{ Y^0 }\right) } \\<br>&amp;= \frac{ (Y^T - Y^0) \cdot \ln\left( \prod_{j=1}^n \frac{ x_j^T }{ x_j^0 } \right) }{ Y^0 \cdot \ln\left(\frac{ Y^T }{ Y^0 }\right) } \\<br>&amp;= \frac{ (Y^T - Y^0) \cdot \sum_{j=1}^n \ln\left( \frac{ x_j^T }{ x_j^0 } \right) }{ Y^0 \cdot \ln\left(\frac{ Y^T }{ Y^0 }\right) } \\<br>&amp;= \sum_{j=1}^n \frac{ Y^T - Y^0 }{ \ln Y^T - \ln Y^0 } \cdot \frac{ \ln\left( \frac{ x_j^T }{ x_j^0 } \right) }{ Y^0 } \\<br>\end{aligned}</p><p>则</p><ul><li>因子$j$对相对波动$\Delta Y \%$的贡献值为<br>$$RV_j = \frac{ Y^T - Y^0 }{ \ln Y^T - \ln Y^0 } \cdot \frac{ \ln\left( \frac{ x_j^T }{ x_j^0 } \right) }{ Y^0 }$$</li><li>因子$j$对绝对波动$\Delta Y$的贡献度为<br>$$C_j = RV_j \cdot \frac{ Y^0 }{ \Delta Y } = \frac{ \ln x_j^T - \ln x_j^0 }{ \ln Y^T - \ln Y^0 }$$</li></ul><p><strong>证明（方法二）</strong>：</p>
+            <p>LMDI加法分解形式简单证明：目标指标简单形式$Y = \prod_{j=1}^n x_j$</p><p><strong>证明（方法一）</strong>：<br>\begin{aligned}<br>\Delta Y \% &amp;= \frac{ Y^T - Y^0 }{ Y^0 } \\<br>&amp;= \frac{ (Y^T - Y^0) \cdot \ln\left(\frac{ Y^T }{ Y^0 }\right) }{ Y^0 \cdot \ln\left(\frac{ Y^T }{ Y^0 }\right) } \\<br>&amp;= \frac{ (Y^T - Y^0) \cdot \ln\left( \prod_{j=1}^n \frac{ x_j^T }{ x_j^0 } \right) }{ Y^0 \cdot \ln\left(\frac{ Y^T }{ Y^0 }\right) } \\<br>&amp;= \frac{ (Y^T - Y^0) \cdot \sum_{j=1}^n \ln\left( \frac{ x_j^T }{ x_j^0 } \right) }{ Y^0 \cdot \ln\left(\frac{ Y^T }{ Y^0 }\right) } \\<br>&amp;= \sum_{j=1}^n \frac{ Y^T - Y^0 }{ \ln Y^T - \ln Y^0 } \cdot \frac{ \ln\left( \frac{ x_j^T }{ x_j^0 } \right) }{ Y^0 } \\<br>\end{aligned}</p><p>则</p><ul><li>因子$j$对相对波动$\Delta Y \%$的贡献值为<br>$$RV_j = \frac{ Y^T - Y^0 }{ \ln Y^T - \ln Y^0 } \cdot \frac{ \ln\left( \frac{ x_j^T }{ x_j^0 } \right) }{ Y^0 }$$</li><li>因子$j$对绝对波动$\Delta Y$的贡献度为<br>$$C_j = RV_j \cdot \frac{ Y^0 }{ \Delta Y } = \frac{ \ln x_j^T - \ln x_j^0 }{ \ln Y^T - \ln Y^0 }$$</li></ul><p><strong>证明（方法二）</strong>：<br>对式$Y = \prod_{j=1}^n x_j$两端取对数，可得<br>$$\ln Y = \ln \left( \prod_{j=1}^n x_j \right) = \sum_{j=1}^n \ln x_j$$<br>令$Z = \ln Y$且$Z_j = \ln x_j$，则有<br>\begin{aligned}<br>Z &amp;= Z_1 + Z_2 + \cdots + Z_n \\<br>\\<br>\Delta Z &amp;= Z^T - Z^0 = \ln Y^T - \ln Y^0 \\<br>&amp;= \sum_{j=1}^n \ln x_j^T - \sum_{j=1}^n \ln x_j^0 \\<br>&amp;= \sum_{j=1}^n ( \ln x_j^T - \ln x_j^0 ) \\</p><p>\end{aligned}</p>
           </div>
 <h3 id="非乘法指标"><a class="header-anchor" href="#非乘法指标"></a>非乘法指标</h3>
 <h1 id="例子"><a class="header-anchor" href="#例子"></a>例子</h1>
@@ -927,8 +927,8 @@ $$次日留存率=\sum\frac{次日留存数}{今日获客人数}$$</li>
       </div>
       
       <div style="display: inline-block;">
-        <img src="/images/reward2021.png" alt="Skye WeChat Pay">
-        <p>WeChat Pay</p>
+        <img src="/images/reward2021.png" alt="Skye WeChat Bezahlung">
+        <p>WeChat Bezahlung</p>
       </div>
 
   </div>
