@@ -28940,21 +28940,29 @@ $$w_i^T = \frac{ Z_i^T }{ Z^T }$$</li>
 <li>
 <p>组内贡献值：<br>
 \begin{aligned}<br>
-V_i^{\mathrm{within}} &amp;= 对比期结构占比 \times 维度i的指标变化差值 \\<br>
-&amp;= w_i^0 \cdot (Y_i^T - Y_i^0) \\<br>
-&amp;= w_i^0 \cdot \left( \frac{ X_i^T }{ Z_i^T } - \frac{ X_i^0 }{ Z_i^0 } \right) \\<br>
+V_i^{\mathrm{within}} &amp;= 基期结构占比 \times 维度i的指标变化差值 \\<br>
+&amp;= w_i^T \cdot (Y_i^T - Y_i^0) \\<br>
+&amp;= w_i^T \cdot \left( \frac{ X_i^T }{ Z_i^T } - \frac{ X_i^0 }{ Z_i^0 } \right) \\<br>
 \end{aligned}</p>
 </li>
 <li>
 <p>组间贡献值：<br>
 \begin{aligned}<br>
-V_i^{\mathrm{between}} &amp;= 结构占比变化差值 \times 基期维度i指标与大盘指标差值 \\<br>
-&amp;= () \cdot () \\<br>
+V_i^{\mathrm{between}} &amp;= 结构占比变化差值 \times 对比期维度i指标与基期大盘指标差值 \\<br>
+&amp;= ( w_i^T - w_i^0 ) \cdot ( Y_i^T - Y^0 ) \\<br>
+&amp;= \left( \frac{Z_i<sup>T}{Z</sup>T} - \frac{ Z_i^0 }{ Z^0 } \right) \cdot \left( \frac{ X_i^T }{ Z_i^T } - \frac{ X^0 }{ Z^0 } \right) \\<br>
 \end{aligned}</p>
 </li>
+<li>
+<p>综合贡献值：<br>
+$$V_i = V_i^{\mathrm{within}} + V_i^{\mathrm{between}}$$</p>
+</li>
 </ul>
 </li>
 </ul>
+<div class="note default">
+            <p><strong>证明</strong>：</p><p>\begin{aligned}<br>\Delta Y % &amp;=<br>\end{aligned}</p>
+          </div>
 <h3 id="根因定位算法"><a class="header-anchor" href="#根因定位算法"></a>根因定位算法</h3>
 <h2 id="指标归因"><a class="header-anchor" href="#指标归因"></a>指标归因</h2>
 <h3 id="Divisia分解法（乘法指标）"><a class="header-anchor" href="#Divisia分解法（乘法指标）"></a>Divisia分解法（乘法指标）</h3>
