@@ -32,7 +32,7 @@
 <meta property="og:site_name" content="Skye">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-05-02T01:20:29.000Z">
-<meta property="article:modified_time" content="2022-10-18T05:54:52.606Z">
+<meta property="article:modified_time" content="2022-10-18T15:07:44.406Z">
 <meta property="article:author" content="Skye">
 <meta property="article:tag" content="Data Analysis 数据分析">
 <meta name="twitter:card" content="summary">
@@ -266,7 +266,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-10-18 13:54:52" itemprop="dateModified" datetime="2022-10-18T13:54:52+08:00">2022-10-18</time>
+                <time title="修改时间：2022-10-18 23:07:44" itemprop="dateModified" datetime="2022-10-18T23:07:44+08:00">2022-10-18</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -410,9 +410,9 @@
 </li>
 <li>贡献：
 <ul>
-<li>维度$i$对绝对波动$\Delta Y$的贡献度$C_i$ ，$ \sum_{i=1}^m C_i = 100 \% $</li>
-<li>维度$i$对绝对波动$\Delta Y$的贡献值$V_i = C_i \cdot \Delta Y$ ，$ \sum_{i=1}^m V_i = \Delta Y $</li>
-<li>维度$i$对相对波动：$\Delta Y%$的贡献值$RV_i$ ，$ \sum_{i=1}^m RV_i = \Delta Y \% $</li>
+<li>因子$j$对绝对波动$\Delta Y$的贡献度$C_j$ ，$ \sum_{j=1}^n C_j = 100 \% $</li>
+<li>因子$j$对绝对波动$\Delta Y$的贡献值$V_j = C_j \cdot \Delta Y$ ，$ \sum_{j=1}^n V_j = \Delta Y $</li>
+<li>因子$j$对相对波动：$\Delta Y%$的贡献值$RV_j$ ，$ \sum_{j=1}^n RV_j = \Delta Y \% $</li>
 </ul>
 </li>
 </ul>
@@ -442,35 +442,35 @@
 </ul>
 <p>\begin{aligned}<br>
 \Delta Y &amp;= Y^T - Y^{0} \\<br>
-&amp;= \sum_{i=1}^m Y_i^T - \sum_{i=1}^m Y_i^0 \\<br>
-&amp;= \sum_{i=1}^m ( Y_i^T - Y_i^0 ) \\<br>
-&amp;= \sum_{i=1}^m \Delta Y_i \\<br>
+&amp;= \sum_{j=1}^n Y_j^T - \sum_{j=1}^n Y_j^0 \\<br>
+&amp;= \sum_{j=1}^n ( Y_j^T - Y_j^0 ) \\<br>
+&amp;= \sum_{j=1}^n \Delta Y_j \\<br>
 &amp;= \Delta Y_1 + \Delta Y_2 + \cdots + \Delta Y_m \\<br>
 \end{aligned}</p>
-<p>$$100 \% = \frac{ \Delta Y}{ \Delta Y } = \sum_{i=1}^m \frac{ \Delta Y_i }{ \Delta Y } = \sum_{i=1}^m \frac{ Y_i^T - Y_i^0 }{ Y^T - Y^0 } $$</p>
+<p>$$100 \% = \frac{ \Delta Y}{ \Delta Y } = \sum_{j=1}^n \frac{ \Delta Y_j }{ \Delta Y } = \sum_{j=1}^n \frac{ Y_j^T - Y_j^0 }{ Y^T - Y^0 } $$</p>
 <ul>
 <li>相对波动：</li>
 </ul>
 <p>\begin{aligned}<br>
 \Delta Y \% &amp;= \frac{ \Delta Y }{ Y^0 } = \frac{ Y^T - Y^0 }{ Y^0 } \\<br>
-&amp;= \frac{ \sum_{i=1}^m Y_i^T - \sum_{i=1}^m Y_i^0 }{ Y^0 } \\<br>
-&amp;= \frac{ \sum_{i=1}^m \Delta Y_i }{ Y^0 } = \sum_{i=1}^m \frac{ \Delta Y_i }{ Y^0 } \\<br>
+&amp;= \frac{ \sum_{j=1}^n Y_j^T - \sum_{j=1}^n Y_j^0 }{ Y^0 } \\<br>
+&amp;= \frac{ \sum_{j=1}^n \Delta Y_j }{ Y^0 } = \sum_{j=1}^n \frac{ \Delta Y_j }{ Y^0 } \\<br>
 \end{aligned}</p>
 </li>
 <li>
 <p>贡献：</p>
 <ul>
-<li>维度$i$对绝对波动$\Delta Y$的贡献度<br>
-$$C_i = \frac{\Delta Y_i}{\Delta Y} = \frac{Y_i^T - Y_i^0 }{ Y^T - Y^0 }$$</li>
-<li>维度$i$对相对波动$\Delta Y \%$的贡献值<br>
-$$RV_i = \frac{\Delta Y_i}{\Delta Y} \cdot \Delta Y \% = \frac{\Delta Y_i}{ Y^0 } = \frac{Y_i^T - Y_i^0}{ Y^0 }$$</li>
+<li>因子$j$对绝对波动$\Delta Y$的贡献度<br>
+$$C_j = \frac{\Delta Y_j}{\Delta Y} = \frac{Y_j^T - Y_j^0 }{ Y^T - Y^0 }$$</li>
+<li>因子$j$对相对波动$\Delta Y \%$的贡献值<br>
+$$RV_j = \frac{\Delta Y_j}{\Delta Y} \cdot \Delta Y \% = \frac{\Delta Y_j}{ Y^0 } = \frac{Y_j^T - Y_j^0}{ Y^0 }$$</li>
 </ul>
 </li>
 <li>
-<p>若$C_i &gt; 0$，则因子$F_i$是指标$Y$的同向影响因子（同上涨或同下跌）</p>
+<p>若$C_j &gt; 0$，则因子$F_j$是指标$Y$的同向影响因子（同上涨或同下跌）</p>
 </li>
 <li>
-<p>若$C_i &lt; 0$，则因子$F_i$是指标$Y$的反向影响因子（一上涨一下跌）</p>
+<p>若$C_j &lt; 0$，则因子$F_j$是指标$Y$的反向影响因子（一上涨一下跌）</p>
 </li>
 </ul>
 <blockquote>
@@ -496,19 +496,19 @@ $$\Delta Y = Y^T - Y^0 = \Delta \frac{X}{Z} = \frac{ X^0 + \Delta X }{ Z^0 + \De
 <li>
 <p>可解释功效（EP，Explanatory Power）：用对比期的同一维度值替换基期的维度值，计算绝对波动值<br>
 \begin{aligned}<br>
-EP_i &amp;= \tilde{Y}^0 - Y^0 \\<br>
-&amp;= \frac{X_1^0 + X_2^0 + \cdots + X_{i-1}^0 + X_{i}^T + X_{i+1}^0 + \cdots + X_m^0 }{ Z_1^0 + Z_2^0 + \cdots + Z_{i-1}^0 + Z_i^T + Z_{i+1}^0 + \cdots + Z_m^0 } - \frac{ X^0 }{ Z^0 } \\<br>
-&amp;= \frac{ X^0 - X_i^0 + X_i^T }{ Z^0 - Z_i^0 + Z_i^T } - \frac{ X^0 }{ Z^0 } \\<br>
-&amp;= \frac{ X^0 - X_i^0 + X_i^T }{ Z^0 - Z_i^0 + Z_i^T } - Y^0 \\<br>
+EP_j &amp;= \tilde{Y}^0 - Y^0 \\<br>
+&amp;= \frac{X_1^0 + X_2^0 + \cdots + X_{i-1}^0 + X_{i}^T + X_{i+1}^0 + \cdots + X_m^0 }{ Z_1^0 + Z_2^0 + \cdots + Z_{i-1}^0 + Z_j^T + Z_{i+1}^0 + \cdots + Z_m^0 } - \frac{ X^0 }{ Z^0 } \\<br>
+&amp;= \frac{ X^0 - X_j^0 + X_j^T }{ Z^0 - Z_j^0 + Z_j^T } - \frac{ X^0 }{ Z^0 } \\<br>
+&amp;= \frac{ X^0 - X_j^0 + X_j^T }{ Z^0 - Z_j^0 + Z_j^T } - Y^0 \\<br>
 \end{aligned}</p>
 </li>
 <li>
-<p>维度$i$对绝对波动$\Delta Y$的贡献度：<br>
-$$C_i = \frac{EP_i}{ \sum_{i=1}^m EP_i } = \frac{ EP_i }{ EP_1 + EP_2 + \cdots + EP_m }$$</p>
+<p>因子$j$对绝对波动$\Delta Y$的贡献度：<br>
+$$C_j = \frac{EP_j}{ \sum_{j=1}^n EP_j } = \frac{ EP_j }{ EP_1 + EP_2 + \cdots + EP_m }$$</p>
 </li>
 <li>
-<p>维度$i$对绝对波动$\Delta Y$的贡献值：<br>
-$$V_i = C_i \cdot \Delta Y = \frac{EP_i}{ \sum_{i=1}^m EP_i } \cdot \Delta Y $$</p>
+<p>因子$j$对绝对波动$\Delta Y$的贡献值：<br>
+$$V_j = C_j \cdot \Delta Y = \frac{EP_j}{ \sum_{j=1}^n EP_j } \cdot \Delta Y $$</p>
 </li>
 </ul>
 <h4 id="剔除法"><a class="header-anchor" href="#剔除法"></a>剔除法</h4>
@@ -526,24 +526,24 @@ $$Y = \frac{ X }{ Z } = \frac{ X_1 + X_2 + \cdots + X_m }{ Z_1 + Z_2 + \cdots + 
 <ul>
 <li>「真实」绝对波动：<br>
 $$\Delta Y = \Delta \frac{ X }{ Z } = \frac{ X^0 + \Delta X }{ Z^0 + \Delta Z } - \frac{ X^0 }{ Z^0 }$$</li>
-<li>「剔除维度$i$后」绝对波动：<br>
+<li>「剔除因子$j$后」绝对波动：<br>
 \begin{aligned}<br>
 \Delta \tilde{Y} &amp;= \tilde{Y}^T - \tilde{Y}^0 \\<br>
-&amp;= \frac{ X^T - X_i^T }{ Z^T - Z_i^T} - \frac{ X^0 - X_i^0 }{ Z^0 - Z_i^0 }<br>
+&amp;= \frac{ X^T - X_j^T }{ Z^T - Z_j^T} - \frac{ X^0 - X_j^0 }{ Z^0 - Z_j^0 }<br>
 \end{aligned}</li>
 </ul>
 </li>
 <li>波动差值（剔除法得分）：<br>
-$$ES_i = (\Delta Y - \Delta\tilde{Y}) \cdot \mathrm{sign} (\Delta Y)$$
+$$ES_j = (\Delta Y - \Delta\tilde{Y}) \cdot \mathrm{sign} (\Delta Y)$$
 <ul>
-<li>若波动差值$ES_i &gt; 0$，则表示维度（因子）$i$是波动$\Delta Y$的同向影响因子</li>
-<li>若波动差值$ES_i &lt; 0$，则表示维度（因子）$i$是波动$\Delta Y$的反向影响因子</li>
+<li>若波动差值$ES_j &gt; 0$，则表示维度（因子）$i$是波动$\Delta Y$的同向影响因子</li>
+<li>若波动差值$ES_j &lt; 0$，则表示维度（因子）$i$是波动$\Delta Y$的反向影响因子</li>
 </ul>
 </li>
 <li>贡献：
 <ul>
-<li>维度$i$对绝对波动$\Delta Y$的贡献度：<br>
-$$C_i = \frac{ES_i}{\sum_{i=1}^m ES_i}\cdot \mathrm{sign} (\Delta Y)$$</li>
+<li>因子$j$对绝对波动$\Delta Y$的贡献度：<br>
+$$C_j = \frac{ES_j}{\sum_{j=1}^n ES_j}\cdot \mathrm{sign} (\Delta Y)$$</li>
 </ul>
 </li>
 </ul>
@@ -620,10 +620,10 @@ $$</p>
 <p>加权占比法同时考虑各维度指标变化的影响（组内）、各维度结构变化的影响（组间）。</p>
 <ul>
 <li>
-<p>组内指标差异：维度$i$指标“变化”相对“不变”对目标指标波动产生的影响</p>
+<p>组内指标差异：因子$j$指标“变化”相对“不变”对目标指标波动产生的影响</p>
 </li>
 <li>
-<p>组间结构差异：维度$i$结构占比“变化”相对“不变”对目标指标波动产生的影响</p>
+<p>组间结构差异：因子$j$结构占比“变化”相对“不变”对目标指标波动产生的影响</p>
 </li>
 <li>
 <p>目标指标：<br>
@@ -633,9 +633,9 @@ $$Y = \frac{X}{Z} = \frac{ X_1 + X_2 + \cdots + X_m }{ Z_1 + Z_2 + \cdots + Z_m 
 <p>结构占比（分母占比）：</p>
 <ul>
 <li>基期（上一期）：<br>
-$$w_i^0 = \frac{ Z_i^0 }{ Z^0 }$$</li>
+$$w_j^0 = \frac{ Z_j^0 }{ Z^0 }$$</li>
 <li>对比期（当期）：<br>
-$$w_i^T = \frac{ Z_i^T }{ Z^T }$$</li>
+$$w_j^T = \frac{ Z_j^T }{ Z^T }$$</li>
 </ul>
 </li>
 <li>
@@ -644,26 +644,26 @@ $$w_i^T = \frac{ Z_i^T }{ Z^T }$$</li>
 <li>组内贡献值：</li>
 </ul>
 <p>\begin{aligned}<br>
-V_i^{ \mathrm{within} } &amp;= 基期结构占比 \times 维度i的指标变化差值 \\<br>
-&amp;= w_i^0 \cdot (Y_i^T - Y_i^0) \\<br>
-&amp;= w_i^0 \cdot \left( \frac{ X_i^T }{ Z_i^T } - \frac{ X_i^0 }{ Z_i^0 } \right) \\<br>
+V_j^{ \mathrm{within} } &amp;= 基期结构占比 \times 维度i的指标变化差值 \\<br>
+&amp;= w_j^0 \cdot (Y_j^T - Y_j^0) \\<br>
+&amp;= w_j^0 \cdot \left( \frac{ X_j^T }{ Z_j^T } - \frac{ X_j^0 }{ Z_j^0 } \right) \\<br>
 \end{aligned}</p>
 <ul>
 <li>组间贡献值：</li>
 </ul>
 <p>\begin{aligned}<br>
-V_i^{ \mathrm{between} } &amp;= 结构占比变化差值 \times 对比期维度i指标与基期大盘指标差值 \\<br>
-&amp;= ( w_i^T - w_i^0 ) \cdot ( Y_i^T - Y^0 ) \\<br>
-&amp;= \left( \frac{ Z_i^T }{ Z^T } - \frac{ Z_i^0 }{ Z^0 } \right) \cdot \left( \frac{ X_i^T }{ Z_i^T } - \frac{ X^0 }{ Z^0 } \right) \\<br>
+V_j^{ \mathrm{between} } &amp;= 结构占比变化差值 \times 对比期维度i指标与基期大盘指标差值 \\<br>
+&amp;= ( w_j^T - w_j^0 ) \cdot ( Y_j^T - Y^0 ) \\<br>
+&amp;= \left( \frac{ Z_j^T }{ Z^T } - \frac{ Z_j^0 }{ Z^0 } \right) \cdot \left( \frac{ X_j^T }{ Z_j^T } - \frac{ X^0 }{ Z^0 } \right) \\<br>
 \end{aligned}</p>
 <ul>
 <li>综合贡献值：<br>
-$$V_i = V_i^{ \mathrm{within} } + V_i^{ \mathrm{between} }$$</li>
+$$V_j = V_j^{ \mathrm{within} } + V_j^{ \mathrm{between} }$$</li>
 </ul>
 </li>
 </ul>
 <div class="note default">
-            <p><strong>证明</strong>：</p><p>\begin{aligned}<br>\Delta Y \% &amp;= \frac{\Delta Y}{ Y^0 } = \frac{ Y^T - Y^0 }{ Y^0 } \\<br>&amp;= \frac{ \frac{ \sum_{i=1}^m X_i^T }{ \sum_{i=1}^m Z_i^T } - \frac{ \sum_{i=1}^m X_i^0 }{ \sum_{i=1}^m Z_i^0} }{ Y^0 } \\<br>&amp;= \frac{ \frac{ \sum_{i=1}^m \frac{ X_i^T }{ Z_i^T } \cdot Z_i^T }{ \sum_{i=1}^m Z_i^T } - \frac{ \sum_{i=1}^m \frac{ X_i^0 }{ Z_i^0 } \cdot Z_i^0 }{ \sum_{i=1}^m Z_i^0 } }{ Y^0 } \\<br>&amp;= \frac{ \sum_{i=1}^m \left( \frac{ X_i^T }{ Z_i^T } \cdot \frac{ Z_i^T }{ \sum_{i=1}^m Z_i^T } \right) -  \sum_{i=1}^m \left( \frac{ X_i^0 }{ Z_i^0 } \cdot \frac{ Z_i^0 }{ \sum_{i=1}^m Z_i^0 } \right) }{ Y^0 } \\<br>&amp;= \frac{ \sum_{i=1}^m Y_i^T \cdot w_i^T - \sum_{i=1}^m Y_i^0 \cdot w_i^0 }{ Y^0 } \\<br>&amp;= \frac{ \sum_{i=1}^m Y_i^T \cdot w_i^T - \sum_{i=1}^m Y_i^0 \cdot w_i^0 + \boldsymbol{ \sum_{i=1}^m Y^0 ( w_i^0 - w_i^T ) } }{ Y^0 } \\<br>&amp;= \frac{ \boldsymbol{ \left( \sum_{i=1}^m Y_i^T \cdot w_i^0 - \sum_{i=1}^m Y_i^T \cdot w_i^0 \right) } + \sum_{i=1}^m Y_i^T \cdot w_i^T - \sum_{i=1}^m Y_i^0 \cdot w_i^0 + \sum_{i=1}^m Y^0 ( w_i^0 - w_i^T ) }{ Y^0 } \\<br>&amp;= \frac{ \sum_{i=1}^m w_i^0 \cdot ( Y_i^T - Y_i^0 ) + \sum_{i=1}^m ( w_i^T - w_i^0 ) \cdot ( Y_i^T - Y^0 ) }{ Y^0 } \\<br>&amp;= \sum_{i=1}^m \left( \frac{ w_i^0 \cdot ( Y_i^T - Y_i^0 ) }{ Y^0 } + \frac{ ( w_i^T - w_i^0 ) \cdot ( Y_i^T - Y^0 ) }{ Y^0 } \right) \\<br>&amp;= \sum_{i=1}^m \left( RV_i^{ \mathrm{ within } } + RV_i^{ \mathrm{ between } } \right) \\<br>\end{aligned}</p><p>因此，<br>\begin{aligned}<br>\Delta Y &amp;= \Delta Y \% \cdot Y^0 \\<br>&amp;= \sum_{i=1}^m \left( w_i^0 \cdot ( Y_i^T - Y_i^0 ) + ( w_i^T - w_i^0 ) \cdot ( Y_i^T - Y^0 ) \right) \\<br>&amp;= \sum_{i=1}^m \left( V_i^{ \mathrm{ within } } + V_i^{ \mathrm{ between } } \right) \\<br>\end{aligned}</p><p>\begin{aligned}<br>V_i^{ \mathrm{ within } } &amp;= w_i^0 \cdot ( Y_i^T - Y_i^0 ) \\<br>\\<br>V_i^{ \mathrm{ between } } &amp;= ( w_i^T - w_i^0 ) \cdot ( Y_i^T - Y^0 ) \\<br>\end{aligned}</p><p>其中，$\sum_{i=1}^m Y^0 ( w_i^0 - w_i^T ) = Y^0 \cdot (\sum_{i=1}^m w_i^0 - \sum_{i=1}^m w_i^T ) = Y^0 \cdot (1-1) = 0$。</p>
+            <p><strong>证明</strong>：</p><p>\begin{aligned}<br>\Delta Y \% &amp;= \frac{\Delta Y}{ Y^0 } = \frac{ Y^T - Y^0 }{ Y^0 } \\<br>&amp;= \frac{ \frac{ \sum_{j=1}^n X_j^T }{ \sum_{j=1}^n Z_j^T } - \frac{ \sum_{j=1}^n X_j^0 }{ \sum_{j=1}^n Z_j^0} }{ Y^0 } \\<br>&amp;= \frac{ \frac{ \sum_{j=1}^n \frac{ X_j^T }{ Z_j^T } \cdot Z_j^T }{ \sum_{j=1}^n Z_j^T } - \frac{ \sum_{j=1}^n \frac{ X_j^0 }{ Z_j^0 } \cdot Z_j^0 }{ \sum_{j=1}^n Z_j^0 } }{ Y^0 } \\<br>&amp;= \frac{ \sum_{j=1}^n \left( \frac{ X_j^T }{ Z_j^T } \cdot \frac{ Z_j^T }{ \sum_{j=1}^n Z_j^T } \right) -  \sum_{j=1}^n \left( \frac{ X_j^0 }{ Z_j^0 } \cdot \frac{ Z_j^0 }{ \sum_{j=1}^n Z_j^0 } \right) }{ Y^0 } \\<br>&amp;= \frac{ \sum_{j=1}^n Y_j^T \cdot w_j^T - \sum_{j=1}^n Y_j^0 \cdot w_j^0 }{ Y^0 } \\<br>&amp;= \frac{ \sum_{j=1}^n Y_j^T \cdot w_j^T - \sum_{j=1}^n Y_j^0 \cdot w_j^0 + \boldsymbol{ \sum_{j=1}^n Y^0 ( w_j^0 - w_j^T ) } }{ Y^0 } \\<br>&amp;= \frac{ \boldsymbol{ \left( \sum_{j=1}^n Y_j^T \cdot w_j^0 - \sum_{j=1}^n Y_j^T \cdot w_j^0 \right) } + \sum_{j=1}^n Y_j^T \cdot w_j^T - \sum_{j=1}^n Y_j^0 \cdot w_j^0 + \sum_{j=1}^n Y^0 ( w_j^0 - w_j^T ) }{ Y^0 } \\<br>&amp;= \frac{ \sum_{j=1}^n w_j^0 \cdot ( Y_j^T - Y_j^0 ) + \sum_{j=1}^n ( w_j^T - w_j^0 ) \cdot ( Y_j^T - Y^0 ) }{ Y^0 } \\<br>&amp;= \sum_{j=1}^n \left( \frac{ w_j^0 \cdot ( Y_j^T - Y_j^0 ) }{ Y^0 } + \frac{ ( w_j^T - w_j^0 ) \cdot ( Y_j^T - Y^0 ) }{ Y^0 } \right) \\<br>&amp;= \sum_{j=1}^n \left( RV_j^{ \mathrm{ within } } + RV_j^{ \mathrm{ between } } \right) \\<br>\end{aligned}</p><p>因此，<br>\begin{aligned}<br>\Delta Y &amp;= \Delta Y \% \cdot Y^0 \\<br>&amp;= \sum_{j=1}^n \left( w_j^0 \cdot ( Y_j^T - Y_j^0 ) + ( w_j^T - w_j^0 ) \cdot ( Y_j^T - Y^0 ) \right) \\<br>&amp;= \sum_{j=1}^n \left( V_j^{ \mathrm{ within } } + V_j^{ \mathrm{ between } } \right) \\<br>\end{aligned}</p><p>\begin{aligned}<br>V_j^{ \mathrm{ within } } &amp;= w_j^0 \cdot ( Y_j^T - Y_j^0 ) \\<br>\\<br>V_j^{ \mathrm{ between } } &amp;= ( w_j^T - w_j^0 ) \cdot ( Y_j^T - Y^0 ) \\<br>\end{aligned}</p><p>其中，$\sum_{j=1}^n Y^0 ( w_j^0 - w_j^T ) = Y^0 \cdot (\sum_{j=1}^n w_j^0 - \sum_{j=1}^n w_j^T ) = Y^0 \cdot (1-1) = 0$。</p>
           </div>
 <h3 id="根因定位算法"><a class="header-anchor" href="#根因定位算法"></a>根因定位算法</h3>
 <h2 id="指标归因"><a class="header-anchor" href="#指标归因"></a>指标归因</h2>
