@@ -28708,7 +28708,7 @@ $$not &gt; and &gt; or$$</li>
 <ul>
 <li>因子$j$对绝对波动$\Delta Y$的贡献度$C_j$ ，$ \sum_{j=1}^n C_j = 100 \% $</li>
 <li>因子$j$对绝对波动$\Delta Y$的贡献值$V_j = C_j \cdot \Delta Y$ ，$ \sum_{j=1}^n V_j = \Delta Y $</li>
-<li>因子$j$对相对波动：$\Delta Y%$的贡献值$RV_j$ ，$ \sum_{j=1}^n RV_j = \Delta Y \% $</li>
+<li>因子$j$对相对波动：$\Delta Y \%$的贡献值$RV_j$ ，$ \sum_{j=1}^n RV_j = \Delta Y \% $</li>
 </ul>
 </li>
 </ul>
