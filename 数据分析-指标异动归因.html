@@ -32,7 +32,7 @@
 <meta property="og:site_name" content="Skye">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-05-02T01:20:29.000Z">
-<meta property="article:modified_time" content="2022-10-18T05:37:41.789Z">
+<meta property="article:modified_time" content="2022-10-18T05:45:35.269Z">
 <meta property="article:author" content="Skye">
 <meta property="article:tag" content="Data Analysis 数据分析">
 <meta name="twitter:card" content="summary">
@@ -266,7 +266,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-10-18 13:37:41" itemprop="dateModified" datetime="2022-10-18T13:37:41+08:00">2022-10-18</time>
+                <time title="修改时间：2022-10-18 13:45:35" itemprop="dateModified" datetime="2022-10-18T13:45:35+08:00">2022-10-18</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -816,6 +816,9 @@ a &amp; , a = b<br>
 \right.<br>
 $$</li>
 </ul>
+<div class="note default">
+            <p>LMDI加法分解形式简单证明：目标指标简单形式$Y = \prod_{j=1}^n x_j$</p><p><strong>证明（方法一）</strong>：<br>\begin{aligned}<br>\Delta Y \% &amp;= \frac{ Y^T - Y^0 }{ Y^0 } \\<br>&amp;= \frac{ (Y^T - Y^0) \cdot \ln\left(\frac{ Y^T }{ Y^0 }\right) }{ Y^0 \cdot \ln\left(\frac{ Y^T }{ Y^0 }\right) } \\<br>&amp;= \frac{ (Y^T - Y^0) \cdot \ln\left( \prod_{j=1}^n \frac{ x_j^T }{ x_j^0 } \right) }{ Y^0 \cdot \ln\left(\frac{ Y^T }{ Y^0 }\right) } \\<br>&amp;= \frac{ (Y^T - Y^0) \cdot \sum_{j=1}^n \ln\left( \frac{ x_j^T }{ x_j^0 } \right) }{ Y^0 \cdot \ln\left(\frac{ Y^T }{ Y^0 }\right) } \\<br>&amp;= \sum_{j=1}^n \frac{ Y^T - Y^0 }{ \ln Y^T - \ln Y^0 } \cdot \frac{ \ln\left( \frac{ x_j^T }{ x_j^0 } \right) }{ Y^0 } \\<br>\end{aligned}</p><p>则</p><ul><li>因子$j$对相对波动$\Delta Y \%$的贡献值为<br>$$RV_j = \frac{ Y^T - Y^0 }{ \ln Y^T - \ln Y^0 } \cdot \frac{ \ln\left( \frac{ x_j^T }{ x_j^0 } \right) }{ Y^0 }$$</li><li>因子$j$对绝对波动$\Delta Y$的贡献度为<br>$$C_j = RV_j \cdot \frac{ Y^0 }{ \Delta Y } = \frac{ \ln x_j^T - \ln x_j^0 }{ \ln Y^T - \ln Y^0 }$$</li></ul><p><strong>证明（方法二）</strong>：</p>
+          </div>
 <h3 id="非乘法指标"><a class="header-anchor" href="#非乘法指标"></a>非乘法指标</h3>
 <h1 id="例子"><a class="header-anchor" href="#例子"></a>例子</h1>
 <h2 id="转化率与询盘量异常"><a class="header-anchor" href="#转化率与询盘量异常"></a>转化率与询盘量异常</h2>
@@ -1097,13 +1100,13 @@ $$次日留存率=\sum\frac{次日留存数}{今日获客人数}$$</li>
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">440k</span>
+    <span title="站点总字数">441k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">6:40</span>
+    <span title="站点阅读时长">6:41</span>
 </div>
 
 
