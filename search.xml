@@ -4998,26 +4998,24 @@ $$</p>
 <p>$$\arg \min_{\beta_j}  \parallel y-X\beta \parallel^2_2 + p_\lambda ( \mid \beta_j \mid ) \Leftrightarrow \arg \min_{ \beta_j }  \left\lbrace ( \hat{ \beta }<em>{oj} - \beta_j )^2 + p</em>\lambda( \mid \beta_j \mid ) \right\rbrace $$</p>
 <p>$$\hat{ \beta }<em>j = \arg \min</em>{ \beta_j } \left\lbrace ( \hat{\beta}<em>{oj} - \beta_j )^2 + p</em>\lambda( \mid \beta_j \mid ) \right\rbrace$$</p>
 <ul>
-<li>
-<p>对于岭回归（Ridge Regression），<br>
-$$<br>
+<li>对于岭回归（Ridge Regression），</li>
+</ul>
+<p>$$<br>
 \begin{aligned}<br>
 p_\lambda ( \mid \beta_j \mid ) &amp;= \lambda \mid \beta_j \mid^2 \hat{ \beta }^{ Ridge }<em>{j} \\<br>
 &amp;= \frac{ 1 }{ 1 + \lambda } \hat{ \beta }</em>{oj} \\<br>
 \end{aligned}<br>
 $$</p>
-</li>
-<li>
-<p>对于LASSO，<br>
-$$<br>
+<ul>
+<li>对于LASSO，</li>
+</ul>
+<p>$$<br>
 \begin{aligned}<br>
 p_\lambda(\mid \beta_j \mid) &amp;= \lambda \mid \beta_j \mid \hat{ \beta }^{ LASSO }<em>{j}  \\<br>
 &amp;= \mathrm{ sgn }( \hat{ \beta }</em>{oj} )<br>
 \left( \mid \hat{ \beta }<em>{oj} \mid - \frac{ \lambda }{ 2 } \right )</em>+ \\<br>
 \end{aligned}<br>
 $$</p>
-</li>
-</ul>
 <h2 id="Rigde-Regression-岭回归"><a class="header-anchor" href="#Rigde-Regression-岭回归"></a>Rigde Regression 岭回归</h2>
 <p>当自变量个数超过样本个数 或 样本数据存在多重共线性（multicollinearity）时，使用岭回归（Ridge Regression）可以得到一个精简的模型。</p>
 <blockquote>
@@ -5037,26 +5035,24 @@ $$</p>
 <p>ridge regression使用L2正则化（L2 Regularization）</p>
 </li>
 <li>
-<p>目标函数：<br>
-\begin{aligned}<br>
+<p>目标函数：</p>
+</li>
+</ul>
+<p>\begin{aligned}<br>
 L_{Ridge}(\beta) &amp;= ||y-X\beta ||^2_2 + \lambda ||\beta||^2_2 \\<br>
 &amp;= \sum_{i=1}^n \left( y_i - \sum_{j=1}^p x_{ij} \beta_j \right)^2 + \lambda \sum_{j=1}^p \beta_j^2 \\<br>
 \end{aligned}</p>
-</li>
-<li>
-<p>回归系数估计：<br>
-\begin{aligned}<br>
+<ul>
+<li>回归系数估计：</li>
+</ul>
+<p>\begin{aligned}<br>
 \hat{\beta}<em>{Ridge} &amp;= \arg \min</em>\beta \sum_{i=1}^n \left(y_i - \sum_{j=1}^p x_{ij} \beta_j \right)^2 \quad \mathrm{s.t.} \sum_{j=1}^p \beta_j^2 \leq s \\<br>
 &amp;= \left( X^T X+\lambda I \right)^{-1} X^T y  \\<br>
 \end{aligned}<br>
 其中，$I$是单位矩阵，$\lambda$是正则惩罚参数。</p>
-</li>
-<li>
-<p>当$\lambda \rightarrow 0$时，有 $\hat{\beta}<em>{Ridge} \rightarrow \hat{\beta}</em>{OLS}$</p>
-</li>
-<li>
-<p>当$\lambda \rightarrow \infty$时，有 $\hat{\beta}_{Ridge} \rightarrow 0$</p>
-</li>
+<ul>
+<li>当$\lambda \rightarrow 0$时，有 $\hat{\beta}<em>{Ridge} \rightarrow \hat{\beta}</em>{OLS}$</li>
+<li>当$\lambda \rightarrow \infty$时，有 $\hat{\beta}_{Ridge} \rightarrow 0$</li>
 </ul>
 <h3 id="Bias-Variance-Trade-off"><a class="header-anchor" href="#Bias-Variance-Trade-off"></a>Bias-Variance Trade-off</h3>
 <p>\begin{aligned}<br>
