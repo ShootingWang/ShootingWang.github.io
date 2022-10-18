@@ -4987,13 +4987,13 @@ L( \beta ) &amp;= \parallel y - X \beta \parallel_2^2 + \lambda J( \beta ) \\<br
 &amp;= \parallel y-X \hat{\beta}<em>{ OLS }  \parallel_2^2  + \sum</em>{j=1}^p \left\lbrace (\hat{ \beta }<em>{oj}  - { \beta_j } )^2 +  p</em>\lambda }( \mid { \beta_j } \mid) \right\rbrace  \\<br>
 \end{aligned}</p>
 <ul>
-<li>假设惩罚函数对所有的系数都是一样的，即$p(\mid \cdot \mid)$</li>
+<li>假设惩罚函数对所有的系数都是一样的，即 $p(\mid \cdot \mid)$</li>
 <li>进一步，将 $\lambda p( \mid \cdot \mid )$ 记为 $p_\lambda( \mid \cdot \mid )$</li>
-<li>$\hat{ \beta }<em>{OLS}$是回归方程的普通最小二乘估计，$\hat{ \beta }</em>{ oj }$是<br>
-$\hat{ \beta }<em>{ OLS }$的第$j$个元素<br>
+<li>$\hat{ \beta }<em>{ OLS }$ 是回归方程的普通最小二乘估计，$\hat{ \beta }</em>{ oj }$ 是<br>
+$\hat{ \beta }<em>{ OLS }$ 的第 $j$ 个元素<br>
 $$\hat{\beta}</em>{OLS} = \left( X^T X \right)^{-1} X^T y=X^Ty$$</li>
 </ul>
-<p>$\parallel y-X \hat{\beta}<em>{OLS} \parallel_2^2$对于$\beta$是常数，因此有<br>
+<p>$\parallel y-X \hat{\beta}<em>{OLS} \parallel_2^2$ 对于 $\beta$ 是常数，因此有<br>
 $$\arg\min</em>{\beta_j}  \parallel y-X\beta \parallel_2^2 + p_\lambda(\mid \beta_j \mid) \Leftrightarrow \arg\min_{\beta_j}  \left\lbrace (\hat{\beta}<em>{oj} - \beta_j)^2 + p</em>\lambda(\mid \beta_j \mid) \right\rbrace $$</p>
 <p>$$\hat{ \beta }<em>{j} = \arg \min</em>{\beta_j} \left\lbrace (\hat{\beta}<em>{oj} - \beta_j)^2 + p</em>\lambda(\mid \beta_j \mid) \right\rbrace$$</p>
 <ul>
