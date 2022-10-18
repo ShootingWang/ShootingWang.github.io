@@ -4994,8 +4994,8 @@ $$</p>
 <li>$ \hat{ \beta }<em>{ OLS } $ 是回归方程的普通最小二乘估计，$ \hat{ \beta }</em>{ oj } $ 是 $\hat{ \beta }_{ OLS } $ 的第 $j$ 个元素</li>
 </ul>
 <p>$$\hat{ \beta }_{ OLS } = \left( X^T X \right)^{-1} X^T y = X^T y$$</p>
-<p>$\parallel y-X \hat{ \beta_{OLS} } \parallel^2_2$ 对于 $\beta$ 是常数，因此有<br>
-$$\arg \min_{\beta_j}  \parallel y-X\beta \parallel^2_2 + p_\lambda ( \mid \beta_j \mid ) \Leftrightarrow \arg \min_{ \beta_j }  \left\lbrace ( \hat{ \beta }<em>{oj} - \beta_j )^2 + p</em>\lambda( \mid \beta_j \mid ) \right\rbrace $$</p>
+<p>$\parallel y-X \hat{ \beta_{OLS} } \parallel^2_2$ 对于 $\beta$ 是常数，因此有</p>
+<p>$$\arg \min_{\beta_j}  \parallel y-X\beta \parallel^2_2 + p_\lambda ( \mid \beta_j \mid ) \Leftrightarrow \arg \min_{ \beta_j }  \left\lbrace ( \hat{ \beta }<em>{oj} - \beta_j )^2 + p</em>\lambda( \mid \beta_j \mid ) \right\rbrace $$</p>
 <p>$$\hat{ \beta }<em>j = \arg \min</em>{ \beta_j } \left\lbrace ( \hat{\beta}<em>{oj} - \beta_j )^2 + p</em>\lambda( \mid \beta_j \mid ) \right\rbrace$$</p>
 <ul>
 <li>
