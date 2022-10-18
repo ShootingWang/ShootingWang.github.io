@@ -4984,7 +4984,8 @@ L( \beta ) &amp;= \parallel y - X \beta \parallel_2^2 + \lambda J( \beta ) \\<br
 &amp;= \sum_{i=1}^n \left( y_i - \sum_{j=1}^p x_{ ij } \beta_j \right)^2 + \sum_{j=1}^p p_\lambda( \mid \beta_j \mid ) \\<br>
 &amp;= \parallel y-X \beta \parallel^2_2 + \sum_{j=1}^p p_\lambda ( \mid \beta_j \mid ) \\<br>
 &amp;= \parallel y-X \hat{ \beta }<em>{ OLS } \parallel^2_2  + \parallel  \hat{ \beta }</em>{ OLS }  - \beta \parallel^2 + \sum_{j=1}^p p_\lambda (\mid \beta_j \mid) \\<br>
-&amp;= \parallel y-X \hat{\beta}<em>{ OLS }  \parallel^2_2  + \sum</em>{j=1}^p \left\lbrace ( \hat{ \beta }<em>{oj}  -  \beta_j )^2 +  p</em>\lambda ( \mid  \beta_j  \mid) \right\rbrace  \\<br>
+&amp;= \parallel y-X \hat{ \beta }<em>{ OLS }  \parallel^2_2  + \sum</em>{j=1}^p \left\lbrace (<br>
+\hat{ \beta }<em>{ oj } -  \beta_j )^2 +  p</em>\lambda ( \mid  \beta_j  \mid) \right\rbrace  \\<br>
 \end{aligned}<br>
 $$</p>
 <ul>
