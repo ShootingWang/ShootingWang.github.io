@@ -23662,14 +23662,14 @@ $$VIP顾客销售额占比=\frac{会员顾客消费金额}{总销售额}\times10
 <li>波动类型：
 <ul>
 <li>绝对波动：$\Delta Y = Y^T - Y^0$</li>
-<li>相对波动：$\Delta Y% = \frac{ \Delta Y }{ Y^0 } = \frac{ Y^T - Y^0 }{ Y^0 }$</li>
+<li>相对波动：$\Delta Y \% = \frac{ \Delta Y }{ Y^0 } = \frac{ Y^T - Y^0 }{ Y^0 }$</li>
 </ul>
 </li>
 <li>贡献：
 <ul>
 <li>因子$j$对绝对波动$\Delta Y$的贡献度$C_j$ ，$ \sum_{j=1}^n C_j = 100 \% $</li>
 <li>因子$j$对绝对波动$\Delta Y$的贡献值$V_j = C_j \cdot \Delta Y$ ，$ \sum_{j=1}^n V_j = \Delta Y $</li>
-<li>因子$j$对相对波动：$\Delta Y \%$的贡献值$RV_j$ ，$ \sum_{j=1}^n RV_j = \Delta Y \% $</li>
+<li>因子$j$对相对波动$\Delta Y \%$的贡献值$RV_j$ ，$ \sum_{j=1}^n RV_j = \Delta Y \% $</li>
 </ul>
 </li>
 </ul>
