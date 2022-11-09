@@ -8778,21 +8778,21 @@ Y(1)=\left(<br>
 \checkmark &amp; \checkmark &amp; ? &amp; \cdots &amp; \checkmark \\<br>
 ? &amp; \checkmark &amp; ? &amp; \cdots &amp; ? \\<br>
 \vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\<br>
-\checkmark &amp; ? &amp; ? &amp; \cdots &amp; ?<br>
+\checkmark &amp; ? &amp; ? &amp; \cdots &amp; ? \\<br>
 \end{array}<br>
 \right)<br>
 \end{equation}</p>
 <p>且</p>
 <p>\begin{equation}<br>
-W_{it} = \left{<br>
+W_{it} = \left\lbrace<br>
 \begin{array}{ll}<br>
 0, &amp; Y_{it} (0)\mbox{被观察到} \\<br>
-1, &amp; Y_{it} (1)\mbox{被观察到}<br>
+1, &amp; Y_{it} (1)\mbox{被观察到} \\<br>
 \end{array}<br>
 \right.<br>
 \end{equation}</p>
 <p>则因果效应为<br>
-$$\tau = \frac{ \sum_{i,t} W_{it} \left( Y_{it}(1)-Y_{it}(0) \right) }{ \sum_{i,t} W_{it} }$$</p>
+$$\tau = \frac{ \sum_{i,t} W_{it} \left( Y_{ it }(1)-Y_{ it }(0) \right) }{ \sum_{i,t} W_{ it } }$$</p>
 <h1 id="混淆变量"><a class="header-anchor" href="#混淆变量"></a>混淆变量</h1>
 <h2 id="双重选择Double-Selection"><a class="header-anchor" href="#双重选择Double-Selection"></a>双重选择Double Selection</h2>
 <h2 id="双重机器学习DML"><a class="header-anchor" href="#双重机器学习DML"></a>双重机器学习DML</h2>
@@ -8803,6 +8803,9 @@ $$\tau = \frac{ \sum_{i,t} W_{it} \left( Y_{it}(1)-Y_{it}(0) \right) }{ \sum_{i,
 <h2 id="充分必要条件"><a class="header-anchor" href="#充分必要条件"></a>充分必要条件</h2>
 <h2 id="INUS"><a class="header-anchor" href="#INUS"></a>INUS</h2>
 <p>INUS = <strong>I</strong>nsufficient but <strong>N</strong>ecessary part of an <strong>U</strong>nnecessary but <strong>S</strong>ufficient condition.（充分非必要条件中的必要非充分部分）</p>
+<div class="note default">
+            <p>Mackie的INUS方法假设了我们对事物的运行机制有着充分的了解，所以能够界定确定性因果关系复合体，比如一组因素的出现总能带来某个结果。</p><blockquote><p>摘自《别拿相关当因果！因果关系简易入门》</p></blockquote>
+          </div>
 <h2 id="SUPPES"><a class="header-anchor" href="#SUPPES"></a>SUPPES</h2>
 <h1 id="参考资料"><a class="header-anchor" href="#参考资料"></a>参考资料</h1>
 <ul>
