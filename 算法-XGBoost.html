@@ -315,17 +315,21 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><center>eXtreme Gradient Boosting</center><br><span id="more"></span></p>
-<h1 id="XGBoost"><a href="#XGBoost" class="headerlink" title="XGBoost"></a>XGBoost</h1><blockquote>
-<p>作者：陈天奇<br>论文：<a target="_blank" rel="noopener" href="http://dmlc.cs.washington.edu/data/pdf/XGBoostArxiv.pdf">XGBoost: A Scalable Tree Boosting System</a></p>
+        <center>eXtreme Gradient Boosting</center>
+<span id="more"></span>
+<h1 id="XGBoost"><a class="header-anchor" href="#XGBoost"></a>XGBoost</h1>
+<blockquote>
+<p>作者：陈天奇<br>
+论文：<a target="_blank" rel="noopener" href="http://dmlc.cs.washington.edu/data/pdf/XGBoostArxiv.pdf">XGBoost: A Scalable Tree Boosting System</a></p>
+</blockquote>
 <ul>
 <li>是梯度提升树框架下的一种机器学习算法</li>
 </ul>
-</blockquote>
-<h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><ul>
+<h2 id="实例"><a class="header-anchor" href="#实例"></a>实例</h2>
+<ul>
 <li><a href="https://github.com/dmlc/xgboost/blob/master/demo/README.md">Awesome XGBoost</a></li>
 </ul>
-<h1 id="XGBoost-vs-GBDT"><a href="#XGBoost-vs-GBDT" class="headerlink" title="XGBoost vs GBDT"></a>XGBoost vs GBDT</h1><div class="table-container">
+<h1 id="XGBoost-vs-GBDT"><a class="header-anchor" href="#XGBoost-vs-GBDT"></a>XGBoost vs GBDT</h1>
 <table>
 <thead>
 <tr>
@@ -342,11 +346,11 @@
 </tr>
 <tr>
 <td style="text-align:center"><strong>优化</strong></td>
-<td style="text-align:center">梯度下降法<sup><a href="#fn_1" id="reffn_1">1</a></sup></td>
-<td style="text-align:center">牛顿法<sup><a href="#fn_2" id="reffn_2">2</a></sup></td>
+<td style="text-align:center">梯度下降法<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></td>
+<td style="text-align:center">牛顿法<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></td>
 </tr>
 <tr>
-<td style="text-align:center"><strong>正则项</strong><sup><a href="#fn_3" id="reffn_3">3</a></sup></td>
+<td style="text-align:center"><strong>正则项</strong><sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup></td>
 <td style="text-align:center">没有</td>
 <td style="text-align:center">有</td>
 </tr>
@@ -358,7 +362,7 @@
 <tr>
 <td style="text-align:center"><strong>列抽样</strong></td>
 <td style="text-align:center"></td>
-<td style="text-align:center">支持列抽样<sup><a href="#fn_4" id="reffn_4">4</a></sup></td>
+<td style="text-align:center">支持列抽样<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup></td>
 </tr>
 <tr>
 <td style="text-align:center"><strong>缺失值</strong></td>
@@ -367,24 +371,27 @@
 </tr>
 </tbody>
 </table>
-</div>
-<blockquote id="fn_1">
-<sup>1</sup>. 在优化时只用到一阶导数信息<a href="#reffn_1" title="Jump back to footnote [1] in the text."> &#8617;</a>
-</blockquote>
-<blockquote id="fn_2">
-<sup>2</sup>. XGBoost对代价函数进行了二阶泰勒展开，同时使用了一阶导数和二阶导数的信息；XGBoost还支持自定义代价函数<a href="#reffn_2" title="Jump back to footnote [2] in the text."> &#8617;</a>
-</blockquote>
-<blockquote id="fn_3">
-<sup>3</sup>. 正则项降低了模型的Variance，学习得到的模型复杂度更低（防止过拟合）<a href="#reffn_3" title="Jump back to footnote [3] in the text."> &#8617;</a>
-</blockquote>
-<blockquote id="fn_4">
-<sup>4</sup>. XGBoost借鉴了随机森林的做法，支持列抽样（column sampling），既能降低过拟合，还能减少计算<a href="#reffn_4" title="Jump back to footnote [4] in the text."> &#8617;</a>
-</blockquote>
-<h1 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h1><h2 id="特征重要性"><a href="#特征重要性" class="headerlink" title="特征重要性"></a>特征重要性</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> xgboost <span class="keyword">import</span> XGBClassifier, plot_importance</span><br><span class="line"><span class="keyword">from</span> IPython.display <span class="keyword">import</span> display</span><br><span class="line"></span><br><span class="line"><span class="comment"># 特征重要性（筛选变量）</span></span><br><span class="line">cols_x = [</span><br><span class="line">    <span class="comment">## 特征</span></span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">cols_y = [</span><br><span class="line">    <span class="comment">## 因变量</span></span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">X = df[cols_x]</span><br><span class="line">y = df[cols_y]</span><br><span class="line"><span class="comment">## 如果特征的量纲较大，应先进行标准化</span></span><br><span class="line">arr_mean = np.mean(X)</span><br><span class="line">arr_std = np.std(X, ddof=<span class="number">1</span>)</span><br><span class="line">newX = (X - arr_mean) / arr_std</span><br><span class="line">X = newX</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;XGBoost Start!&quot;</span>)</span><br><span class="line"><span class="comment"># 训练模型</span></span><br><span class="line">model = XGBoostClassifier()</span><br><span class="line">model.fit(X, y)</span><br><span class="line"></span><br><span class="line">df_ip = pd.DataFrame(columns=[<span class="string">&#x27;Feature&#x27;</span>, <span class="string">&#x27;Importance&#x27;</span>])</span><br><span class="line">df_ip[<span class="string">&#x27;Feature&#x27;</span>] = X.columns</span><br><span class="line">df_ip[<span class="string">&#x27;Importance&#x27;</span>] = model.feature_importances_</span><br><span class="line">df_ip = df_ip.sort_values(by=[<span class="string">&#x27;Importance&#x27;</span>], ascending=<span class="literal">False</span>)</span><br><span class="line">df_ip = df_ip.reset_index(dro=p=<span class="literal">True</span>)</span><br><span class="line">df_ip.to_csv(<span class="string">&#x27;xxxxx_xgboost_feature_importance.csv&#x27;</span>, index=<span class="literal">False</span>, encoding=<span class="string">&#x27;utf_8_sig&#x27;</span>)</span><br><span class="line">display(df_ip)</span><br><span class="line"><span class="comment"># cols_ip = df_ip.Feature[:10].to_list()  ## 选取TOP 10特征</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;XGBoost Done!\n&quot;</span>)</span><br></pre></td></tr></table></figure>
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
+<h1 id="Python"><a class="header-anchor" href="#Python"></a>Python</h1>
+<h2 id="特征重要性"><a class="header-anchor" href="#特征重要性"></a>特征重要性</h2>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> xgboost <span class="keyword">import</span> XGBClassifier, plot_importance</span><br><span class="line"><span class="keyword">from</span> IPython.display <span class="keyword">import</span> display</span><br><span class="line"></span><br><span class="line"><span class="comment"># 特征重要性（筛选变量）</span></span><br><span class="line">cols_x = [</span><br><span class="line">    <span class="comment">## 特征</span></span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">cols_y = [</span><br><span class="line">    <span class="comment">## 因变量</span></span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">X = df[cols_x]</span><br><span class="line">y = df[cols_y]</span><br><span class="line"><span class="comment">## 如果特征的量纲较大，应先进行标准化</span></span><br><span class="line">arr_mean = np.mean(X)</span><br><span class="line">arr_std = np.std(X, ddof=<span class="number">1</span>)</span><br><span class="line">newX = (X - arr_mean) / arr_std</span><br><span class="line">X = newX</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;XGBoost Start!&quot;</span>)</span><br><span class="line"><span class="comment"># 训练模型</span></span><br><span class="line">model = XGBoostClassifier()</span><br><span class="line">model.fit(X, y)</span><br><span class="line"></span><br><span class="line">df_ip = pd.DataFrame(columns=[<span class="string">&#x27;Feature&#x27;</span>, <span class="string">&#x27;Importance&#x27;</span>])</span><br><span class="line">df_ip[<span class="string">&#x27;Feature&#x27;</span>] = X.columns</span><br><span class="line">df_ip[<span class="string">&#x27;Importance&#x27;</span>] = model.feature_importances_</span><br><span class="line">df_ip = df_ip.sort_values(by=[<span class="string">&#x27;Importance&#x27;</span>], ascending=<span class="literal">False</span>)</span><br><span class="line">df_ip = df_ip.reset_index(dro=p=<span class="literal">True</span>)</span><br><span class="line">df_ip.to_csv(<span class="string">&#x27;xxxxx_xgboost_feature_importance.csv&#x27;</span>, index=<span class="literal">False</span>, encoding=<span class="string">&#x27;utf_8_sig&#x27;</span>)</span><br><span class="line">display(df_ip)</span><br><span class="line"><span class="comment"># cols_ip = df_ip.Feature[:10].to_list()  ## 选取TOP 10特征</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;XGBoost Done!\n&quot;</span>)</span><br></pre></td></tr></table></figure>
+<h1 id="参考资料"><a class="header-anchor" href="#参考资料"></a>参考资料</h1>
+<ul>
 <li><a target="_blank" rel="noopener" href="https://homes.cs.washington.edu/~tqchen/2016/03/10/story-and-lessons-behind-the-evolution-of-xgboost.html">Story and Lessons Behind the Evolution of XGBoost</a></li>
 <li><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/41354392">机器学习算法中 GBDT 和 XGBOOST 的区别有哪些？</a></li>
 </ul>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>在优化时只用到一阶导数信息 <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p>XGBoost对代价函数进行了二阶泰勒展开，同时使用了一阶导数和二阶导数的信息；XGBoost还支持自定义代价函数 <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn3" class="footnote-item"><p>正则项降低了模型的Variance，学习得到的模型复杂度更低（防止过拟合） <a href="#fnref3" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn4" class="footnote-item"><p>XGBoost借鉴了随机森林的做法，支持列抽样（column sampling），既能降低过拟合，还能减少计算 <a href="#fnref4" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
 
     </div>
 
@@ -543,7 +550,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">59</span>
+        <span class="site-state-item-count">58</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -585,13 +592,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">430k</span>
+    <span title="站点总字数">442k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">6:31</span>
+    <span title="站点阅读时长">6:42</span>
 </div>
 
 
@@ -675,8 +682,6 @@
 
 
 
-
-  
 
 
 

@@ -325,30 +325,36 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><center></center><br><span id="more"></span></p>
+        <center></center>
+<span id="more"></span>
 <blockquote class="blockquote-center">
             <i class="fa fa-quote-left"></i>
             <p>汇总请见：<a href="/Data-Cleaning-Projects.html" title="数据清洗合集">数据清洗合集</a></p>
 
             <i class="fa fa-quote-right"></i>
           </blockquote>
-<h1 id="House-Prices-Advanced-Regression-Techniques"><a href="#House-Prices-Advanced-Regression-Techniques" class="headerlink" title="House Prices: Advanced Regression Techniques"></a>House Prices: Advanced Regression Techniques</h1><p>数据来源：<a target="_blank" rel="noopener" href="https://www.kaggle.com/c/house-prices-advanced-regression-techniques/data">Kaggle</a></p>
+<h1 id="House-Prices-Advanced-Regression-Techniques"><a class="header-anchor" href="#House-Prices-Advanced-Regression-Techniques"></a>House Prices: Advanced Regression Techniques</h1>
+<p>数据来源：<a target="_blank" rel="noopener" href="https://www.kaggle.com/c/house-prices-advanced-regression-techniques/data">Kaggle</a></p>
 <p>代码参考：<a target="_blank" rel="noopener" href="https://www.kaggle.com/pmarcelino/comprehensive-data-exploration-with-python">COMPREHENSIVE DATA EXPLORATION WITH PYTHON</a></p>
 <p>进行数据分析前的主要工作：</p>
 <ol>
-<li>理解问题 Understanding the problem<ul>
+<li>理解问题 Understanding the problem
+<ul>
 <li>看每个变量的含义和重要性</li>
 </ul>
 </li>
-<li>进行单变量探究 Univariate study<ul>
+<li>进行单变量探究 Univariate study
+<ul>
 <li>关注因变量</li>
 </ul>
 </li>
-<li>进行多变量探究 Multivariate study<ul>
+<li>进行多变量探究 Multivariate study
+<ul>
 <li>因变量与自变量间的关系</li>
 </ul>
 </li>
-<li>简单数据清洗 Basic cleaning<ul>
+<li>简单数据清洗 Basic cleaning
+<ul>
 <li>数据缺失</li>
 <li>异常点</li>
 <li>分类变量的处理</li>
@@ -356,28 +362,31 @@
 </li>
 <li>检验假设 Test assumptions</li>
 </ol>
-<h2 id="载入数据"><a href="#载入数据" class="headerlink" title="载入数据"></a>载入数据</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns</span><br><span class="line"><span class="keyword">from</span> scipy.stats <span class="keyword">import</span> norm</span><br><span class="line"><span class="keyword">from</span> sklearn.preprocessing <span class="keyword">import</span> StandardScaler</span><br><span class="line"><span class="keyword">from</span> scipy <span class="keyword">import</span> stats</span><br><span class="line"><span class="keyword">import</span> warnings</span><br><span class="line"></span><br><span class="line">warnings.filterwarnings(<span class="string">&quot;ignore&quot;</span>)</span><br><span class="line">%matplotlib inline</span><br></pre></td></tr></table></figure>
+<h2 id="载入数据"><a class="header-anchor" href="#载入数据"></a>载入数据</h2>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns</span><br><span class="line"><span class="keyword">from</span> scipy.stats <span class="keyword">import</span> norm</span><br><span class="line"><span class="keyword">from</span> sklearn.preprocessing <span class="keyword">import</span> StandardScaler</span><br><span class="line"><span class="keyword">from</span> scipy <span class="keyword">import</span> stats</span><br><span class="line"><span class="keyword">import</span> warnings</span><br><span class="line"></span><br><span class="line">warnings.filterwarnings(<span class="string">&quot;ignore&quot;</span>)</span><br><span class="line">%matplotlib inline</span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">df_train = pd.read_csv(<span class="string">&quot;train.csv&quot;</span>)</span><br><span class="line">df_train.columns</span><br></pre></td></tr></table></figure>
-<pre><code>Index([&#39;Id&#39;, &#39;MSSubClass&#39;, &#39;MSZoning&#39;, &#39;LotFrontage&#39;, &#39;LotArea&#39;, &#39;Street&#39;,
-       &#39;Alley&#39;, &#39;LotShape&#39;, &#39;LandContour&#39;, &#39;Utilities&#39;, &#39;LotConfig&#39;,
-       &#39;LandSlope&#39;, &#39;Neighborhood&#39;, &#39;Condition1&#39;, &#39;Condition2&#39;, &#39;BldgType&#39;,
-       &#39;HouseStyle&#39;, &#39;OverallQual&#39;, &#39;OverallCond&#39;, &#39;YearBuilt&#39;, &#39;YearRemodAdd&#39;,
-       &#39;RoofStyle&#39;, &#39;RoofMatl&#39;, &#39;Exterior1st&#39;, &#39;Exterior2nd&#39;, &#39;MasVnrType&#39;,
-       &#39;MasVnrArea&#39;, &#39;ExterQual&#39;, &#39;ExterCond&#39;, &#39;Foundation&#39;, &#39;BsmtQual&#39;,
-       &#39;BsmtCond&#39;, &#39;BsmtExposure&#39;, &#39;BsmtFinType1&#39;, &#39;BsmtFinSF1&#39;,
-       &#39;BsmtFinType2&#39;, &#39;BsmtFinSF2&#39;, &#39;BsmtUnfSF&#39;, &#39;TotalBsmtSF&#39;, &#39;Heating&#39;,
-       &#39;HeatingQC&#39;, &#39;CentralAir&#39;, &#39;Electrical&#39;, &#39;1stFlrSF&#39;, &#39;2ndFlrSF&#39;,
-       &#39;LowQualFinSF&#39;, &#39;GrLivArea&#39;, &#39;BsmtFullBath&#39;, &#39;BsmtHalfBath&#39;, &#39;FullBath&#39;,
-       &#39;HalfBath&#39;, &#39;BedroomAbvGr&#39;, &#39;KitchenAbvGr&#39;, &#39;KitchenQual&#39;,
-       &#39;TotRmsAbvGrd&#39;, &#39;Functional&#39;, &#39;Fireplaces&#39;, &#39;FireplaceQu&#39;, &#39;GarageType&#39;,
-       &#39;GarageYrBlt&#39;, &#39;GarageFinish&#39;, &#39;GarageCars&#39;, &#39;GarageArea&#39;, &#39;GarageQual&#39;,
-       &#39;GarageCond&#39;, &#39;PavedDrive&#39;, &#39;WoodDeckSF&#39;, &#39;OpenPorchSF&#39;,
-       &#39;EnclosedPorch&#39;, &#39;3SsnPorch&#39;, &#39;ScreenPorch&#39;, &#39;PoolArea&#39;, &#39;PoolQC&#39;,
-       &#39;Fence&#39;, &#39;MiscFeature&#39;, &#39;MiscVal&#39;, &#39;MoSold&#39;, &#39;YrSold&#39;, &#39;SaleType&#39;,
-       &#39;SaleCondition&#39;, &#39;SalePrice&#39;],
-      dtype=&#39;object&#39;)
-</code></pre><p>‘SalePrice’是因变量</p>
-<h2 id="描述性统计"><a href="#描述性统计" class="headerlink" title="描述性统计"></a>描述性统计</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df_train[<span class="string">&#x27;SalePrice&#x27;</span>].describe()</span><br></pre></td></tr></table></figure>
+<pre><code>Index(['Id', 'MSSubClass', 'MSZoning', 'LotFrontage', 'LotArea', 'Street',
+       'Alley', 'LotShape', 'LandContour', 'Utilities', 'LotConfig',
+       'LandSlope', 'Neighborhood', 'Condition1', 'Condition2', 'BldgType',
+       'HouseStyle', 'OverallQual', 'OverallCond', 'YearBuilt', 'YearRemodAdd',
+       'RoofStyle', 'RoofMatl', 'Exterior1st', 'Exterior2nd', 'MasVnrType',
+       'MasVnrArea', 'ExterQual', 'ExterCond', 'Foundation', 'BsmtQual',
+       'BsmtCond', 'BsmtExposure', 'BsmtFinType1', 'BsmtFinSF1',
+       'BsmtFinType2', 'BsmtFinSF2', 'BsmtUnfSF', 'TotalBsmtSF', 'Heating',
+       'HeatingQC', 'CentralAir', 'Electrical', '1stFlrSF', '2ndFlrSF',
+       'LowQualFinSF', 'GrLivArea', 'BsmtFullBath', 'BsmtHalfBath', 'FullBath',
+       'HalfBath', 'BedroomAbvGr', 'KitchenAbvGr', 'KitchenQual',
+       'TotRmsAbvGrd', 'Functional', 'Fireplaces', 'FireplaceQu', 'GarageType',
+       'GarageYrBlt', 'GarageFinish', 'GarageCars', 'GarageArea', 'GarageQual',
+       'GarageCond', 'PavedDrive', 'WoodDeckSF', 'OpenPorchSF',
+       'EnclosedPorch', '3SsnPorch', 'ScreenPorch', 'PoolArea', 'PoolQC',
+       'Fence', 'MiscFeature', 'MiscVal', 'MoSold', 'YrSold', 'SaleType',
+       'SaleCondition', 'SalePrice'],
+      dtype='object')
+</code></pre>
+<p>'SalePrice’是因变量</p>
+<h2 id="描述性统计"><a class="header-anchor" href="#描述性统计"></a>描述性统计</h2>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df_train[<span class="string">&#x27;SalePrice&#x27;</span>].describe()</span><br></pre></td></tr></table></figure>
 <pre><code>count      1460.000000
 mean     180921.195890
 std       79442.502883
@@ -387,41 +396,52 @@ min       34900.000000
 75%      214000.000000
 max      755000.000000
 Name: SalePrice, dtype: float64
-</code></pre><ul>
-<li>‘SalePrice’最小值应该为正（$\surd$）</li>
+</code></pre>
+<ul>
+<li>'SalePrice’最小值应该为正（$\surd$）</li>
 <li>最小值和最大值相差较大</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 直方图</span></span><br><span class="line">sns.distplot(df_train[<span class="string">&#x27;SalePrice&#x27;</span>])</span><br></pre></td></tr></table></figure>
 <pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x16f6ce68828&gt;
-</code></pre><p><meta name="referrer" content="no-referrer"><br><img src="/ShootingWang/ShootingWang.github.io/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-HousePrice.htm/output_9_1.png" class title="直方图"></p>
+</code></pre>
+<meta name="referrer" content="no-referrer">
+<img src="/ShootingWang/ShootingWang.github.io/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-HousePrice.htm/output_9_1.png" class title="直方图">
 <ul>
-<li>‘SalePrice’集中分布在300000以下</li>
+<li>'SalePrice’集中分布在300000以下</li>
 <li>右偏</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 计算‘SalePrice’的偏度和峰度</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;Skewness: %f&#x27;</span> % df_train[<span class="string">&#x27;SalePrice&#x27;</span>].skew())  <span class="comment">## 偏度</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;Kurtosis: %f&#x27;</span> % df_train[<span class="string">&#x27;SalePrice&#x27;</span>].kurt())  <span class="comment">## 峰度</span></span><br></pre></td></tr></table></figure>
 <pre><code>Skewness: 1.882876
 Kurtosis: 6.536282
-</code></pre><ul>
+</code></pre>
+<ul>
 <li>偏度大于0——右偏</li>
 <li>峰度大于3——厚尾</li>
 </ul>
-<h2 id="探究变量之间的关系"><a href="#探究变量之间的关系" class="headerlink" title="探究变量之间的关系"></a>探究变量之间的关系</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## GrLivArea: Above grade (ground) living area square feet</span></span><br><span class="line"><span class="comment">## ‘GrLivArea’与‘SalePrice’的散点图</span></span><br><span class="line">var = <span class="string">&#x27;GrLivArea&#x27;</span></span><br><span class="line">data = pd.concat([df_train[<span class="string">&#x27;SalePrice&#x27;</span>], df_train[var]],</span><br><span class="line">                axis=<span class="number">1</span>)  <span class="comment">## 按列合并</span></span><br><span class="line">data.plot.scatter(x=var, y=<span class="string">&#x27;SalePrice&#x27;</span>, ylim=(<span class="number">0</span>, <span class="number">800000</span>))</span><br></pre></td></tr></table></figure>
+<h2 id="探究变量之间的关系"><a class="header-anchor" href="#探究变量之间的关系"></a>探究变量之间的关系</h2>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## GrLivArea: Above grade (ground) living area square feet</span></span><br><span class="line"><span class="comment">## ‘GrLivArea’与‘SalePrice’的散点图</span></span><br><span class="line">var = <span class="string">&#x27;GrLivArea&#x27;</span></span><br><span class="line">data = pd.concat([df_train[<span class="string">&#x27;SalePrice&#x27;</span>], df_train[var]],</span><br><span class="line">                axis=<span class="number">1</span>)  <span class="comment">## 按列合并</span></span><br><span class="line">data.plot.scatter(x=var, y=<span class="string">&#x27;SalePrice&#x27;</span>, ylim=(<span class="number">0</span>, <span class="number">800000</span>))</span><br></pre></td></tr></table></figure>
 <pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x16f6d629978&gt;
-</code></pre><p><meta name="referrer" content="no-referrer"><br><img src="/ShootingWang/ShootingWang.github.io/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-HousePrice.htm/output_14_1.png" class title="散点图"></p>
-<p>‘GriLivArea’与’SalePrice’之间具有明显的线性关系</p>
+</code></pre>
+<meta name="referrer" content="no-referrer">
+<img src="/ShootingWang/ShootingWang.github.io/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-HousePrice.htm/output_14_1.png" class title="散点图">
+<p>'GriLivArea’与’SalePrice’之间具有明显的线性关系</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">##  TotalBsmtSF：Total square feet of basement area</span></span><br><span class="line"><span class="comment">## ‘TotalBsmtSF’与‘SalePrice’的散点图</span></span><br><span class="line">var = <span class="string">&#x27;TotalBsmtSF&#x27;</span></span><br><span class="line">data = pd.concat([df_train[<span class="string">&#x27;SalePrice&#x27;</span>], df_train[var]],</span><br><span class="line">                axis=<span class="number">1</span>)  <span class="comment">## 按列合并</span></span><br><span class="line">data.plot.scatter(x=var, y=<span class="string">&#x27;SalePrice&#x27;</span>, ylim=(<span class="number">0</span>, <span class="number">800000</span>))</span><br></pre></td></tr></table></figure>
 <pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x16f6d6eacc0&gt;
-</code></pre><p><meta name="referrer" content="no-referrer"><br><img src="/ShootingWang/ShootingWang.github.io/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-HousePrice.htm/output_16_1.png" class title="散点图"></p>
+</code></pre>
+<meta name="referrer" content="no-referrer">
+<img src="/ShootingWang/ShootingWang.github.io/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-HousePrice.htm/output_16_1.png" class title="散点图">
 <ul>
 <li>‘TotalBsmtSF’与‘SalePrice’之间也具有明显的线性关系</li>
 <li>一些样本中，‘TotalBsmtSF’为零</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## OverallQual: Rates the overall material and finish of the house</span></span><br><span class="line"><span class="comment">## &#x27;OverallQual&#x27;与‘SalePrice’的箱线图</span></span><br><span class="line"><span class="comment">## &#x27;OverallQual&#x27;是分类变量，有1~10共10个取值</span></span><br><span class="line">var = <span class="string">&#x27;OverallQual&#x27;</span></span><br><span class="line">data = pd.concat([df_train[<span class="string">&#x27;SalePrice&#x27;</span>], df_train[var]], </span><br><span class="line">                axis=<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">f, ax = plt.subplots(figsize=(<span class="number">8</span>, <span class="number">6</span>))</span><br><span class="line">fig = sns.boxplot(x=var, y=<span class="string">&#x27;SalePrice&#x27;</span>, data=data)</span><br><span class="line">fig.axis(ymin=<span class="number">0</span>, ymax=<span class="number">800000</span>)</span><br></pre></td></tr></table></figure>
 <pre><code>(-0.5, 9.5, 0, 800000)
-</code></pre><p><meta name="referrer" content="no-referrer"><br><img src="/ShootingWang/ShootingWang.github.io/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-HousePrice.htm/output_9_1.png" class title="箱线图"></p>
+</code></pre>
+<meta name="referrer" content="no-referrer">
+<img src="/ShootingWang/ShootingWang.github.io/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-HousePrice.htm/output_9_1.png" class title="箱线图">
 <ul>
-<li>“OverallQual”越高，”SalePrice”的值相对越大</li>
-<li>“OverallQual”较高的”SalePrice”的分布较为分散</li>
+<li>&quot;OverallQual&quot;越高，&quot;SalePrice&quot;的值相对越大</li>
+<li>&quot;OverallQual&quot;较高的&quot;SalePrice&quot;的分布较为分散</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## YearBuilt: Original construction date</span></span><br><span class="line">var = <span class="string">&#x27;YearBuilt&#x27;</span></span><br><span class="line">data = pd.concat([df_train[<span class="string">&#x27;SalePrice&#x27;</span>], df_train[var]], </span><br><span class="line">                axis=<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">f, ax = plt.subplots(figsize=(<span class="number">16</span>, <span class="number">8</span>))</span><br><span class="line">fig = sns.boxplot(x=var, y=<span class="string">&#x27;SalePrice&#x27;</span>, data=data)</span><br><span class="line">fig.axis(ymin=<span class="number">0</span>, ymax=<span class="number">800000</span>)</span><br><span class="line">plt.xticks(rotation=<span class="number">90</span>)  <span class="comment">## x轴的刻度旋转90度（即垂直于x轴）</span></span><br></pre></td></tr></table></figure>
 <pre><code>(array([  0,   1,   2,   3,   4,   5,   6,   7,   8,   9,  10,  11,  12,
@@ -434,18 +454,24 @@ Kurtosis: 6.536282
          91,  92,  93,  94,  95,  96,  97,  98,  99, 100, 101, 102, 103,
         104, 105, 106, 107, 108, 109, 110, 111]),
  &lt;a list of 112 Text xticklabel objects&gt;)
-</code></pre><p><meta name="referrer" content="no-referrer"><br><img src="/ShootingWang/ShootingWang.github.io/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-HousePrice.htm/output_20_1.png" class></p>
+</code></pre>
+<meta name="referrer" content="no-referrer">
+<img src="/ShootingWang/ShootingWang.github.io/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-HousePrice.htm/output_20_1.png" class>
 <p>不知“SalePrice”是否已剔除通胀影响的价格，无法对不同建造年份的房屋价格进行比较。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 相关系数阵</span></span><br><span class="line">cor_m = df_train.corr()</span><br><span class="line"></span><br><span class="line">f, ax = plt.subplots(figsize=(<span class="number">12</span>, <span class="number">9</span>))</span><br><span class="line">sns.heatmap(cor_m, vmax=<span class="number">.8</span>, square=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
 <pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x16f6f3a2da0&gt;
-</code></pre><p><meta name="referrer" content="no-referrer"><br><img src="/ShootingWang/ShootingWang.github.io/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-HousePrice.htm/output_22_1.png" class title="相关系数矩阵热力图"></p>
+</code></pre>
+<meta name="referrer" content="no-referrer">
+<img src="/ShootingWang/ShootingWang.github.io/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-HousePrice.htm/output_22_1.png" class title="相关系数矩阵热力图">
 <ul>
-<li>颜色越浅，表明正相关性越强<ul>
-<li>‘TotalBsmtSF’和’1stFlrSF’的正相关性很强（很显然）</li>
-<li>‘GarageCars’和’GarageArea’的正相关性很强（也很显然）</li>
+<li>颜色越浅，表明正相关性越强
+<ul>
+<li>'TotalBsmtSF’和’1stFlrSF’的正相关性很强（很显然）</li>
+<li>'GarageCars’和’GarageArea’的正相关性很强（也很显然）</li>
 </ul>
 </li>
-<li>上述两组正相关性很强的变量，导致数据存在多重共线性<ul>
+<li>上述两组正相关性很强的变量，导致数据存在多重共线性
+<ul>
 <li>考虑剔除其中一个变量，因为正相关性强的两个变量包含的信息是相似的</li>
 </ul>
 </li>
@@ -459,7 +485,8 @@ Kurtosis: 6.536282
 <li>GarageArea: Size of garage in square feet</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 放大相关系数矩阵热力图的部分</span></span><br><span class="line"><span class="comment">## 相关系数最大的10个变量</span></span><br><span class="line">k = <span class="number">10</span></span><br><span class="line">cols = cor_m.nlargest(k, <span class="string">&#x27;SalePrice&#x27;</span>)[<span class="string">&#x27;SalePrice&#x27;</span>].index</span><br><span class="line">cm = np.corrcoef(df_train[cols].values.T)</span><br><span class="line"></span><br><span class="line">sns.<span class="built_in">set</span>(font_scale=<span class="number">1.25</span>)</span><br><span class="line">hm = sns.heatmap(cm, cbar=<span class="literal">True</span>, annot=<span class="literal">True</span>, square=<span class="literal">True</span>,</span><br><span class="line">                fmt=<span class="string">&#x27;.2f&#x27;</span>, annot_kws=&#123;<span class="string">&#x27;size&#x27;</span>: <span class="number">10</span>&#125;,</span><br><span class="line">                yticklabels=cols.values, xticklabels=cols.values)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
-<p><meta name="referrer" content="no-referrer"><br><img src="/ShootingWang/ShootingWang.github.io/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-HousePrice.htm/output_24_0.png" class title="相关性最强的10个变量的相关性热力图"></p>
+<meta name="referrer" content="no-referrer">
+<img src="/ShootingWang/ShootingWang.github.io/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-HousePrice.htm/output_24_0.png" class title="相关性最强的10个变量的相关性热力图">
 <p>相关性较强的几对变量：</p>
 <ul>
 <li>‘GarageCars’、‘GarageArea’</li>
@@ -468,21 +495,24 @@ Kurtosis: 6.536282
 </ul>
 <p>考虑剔除每对中的一个</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 散点图</span></span><br><span class="line">sns.<span class="built_in">set</span>()</span><br><span class="line">cols = [<span class="string">&#x27;SalePrice&#x27;</span>, <span class="string">&#x27;OverallQual&#x27;</span>, <span class="string">&#x27;GrLivArea&#x27;</span>, <span class="string">&#x27;GarageCars&#x27;</span>, </span><br><span class="line">        <span class="string">&#x27;TotalBsmtSF&#x27;</span>, <span class="string">&#x27;FullBath&#x27;</span>, <span class="string">&#x27;YearBuilt&#x27;</span>]</span><br><span class="line">sns.pairplot(df_train[cols], size=<span class="number">2.5</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
-<p><meta name="referrer" content="no-referrer"><br><img src="/ShootingWang/ShootingWang.github.io/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-HousePrice.htm/output_26_0.png" class title="两两散点图"></p>
-<h2 id="数据清洗"><a href="#数据清洗" class="headerlink" title="数据清洗"></a>数据清洗</h2><h3 id="缺失"><a href="#缺失" class="headerlink" title="缺失"></a>缺失</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 统计每列的缺失数据个数，并按降序排列</span></span><br><span class="line">total = df_train.isnull().<span class="built_in">sum</span>().sort_values(ascending=<span class="literal">False</span>)</span><br><span class="line">percent = (df_train.isnull().<span class="built_in">sum</span>()/df_train.isnull().count()).sort_values(ascending=<span class="literal">False</span>)</span><br><span class="line">missing_data = pd.concat([total, percent], axis=<span class="number">1</span>,</span><br><span class="line">                        keys=[<span class="string">&#x27;Total&#x27;</span>, <span class="string">&#x27;Percent&#x27;</span>])</span><br><span class="line">missing_data.head(<span class="number">20</span>)  <span class="comment">## 缺失数据最多的20个列</span></span><br></pre></td></tr></table></figure>
+<meta name="referrer" content="no-referrer">
+<img src="/ShootingWang/ShootingWang.github.io/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-HousePrice.htm/output_26_0.png" class title="两两散点图">
+<h2 id="数据清洗"><a class="header-anchor" href="#数据清洗"></a>数据清洗</h2>
+<h3 id="缺失"><a class="header-anchor" href="#缺失"></a>缺失</h3>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 统计每列的缺失数据个数，并按降序排列</span></span><br><span class="line">total = df_train.isnull().<span class="built_in">sum</span>().sort_values(ascending=<span class="literal">False</span>)</span><br><span class="line">percent = (df_train.isnull().<span class="built_in">sum</span>()/df_train.isnull().count()).sort_values(ascending=<span class="literal">False</span>)</span><br><span class="line">missing_data = pd.concat([total, percent], axis=<span class="number">1</span>,</span><br><span class="line">                        keys=[<span class="string">&#x27;Total&#x27;</span>, <span class="string">&#x27;Percent&#x27;</span>])</span><br><span class="line">missing_data.head(<span class="number">20</span>)  <span class="comment">## 缺失数据最多的20个列</span></span><br></pre></td></tr></table></figure>
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
+.dataframe thead th &#123;
+    text-align: right;
+&#125;
+</code></pre>
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -596,18 +626,17 @@ Kurtosis: 6.536282
   </tbody>
 </table>
 </div>
-
-
-
 <ul>
 <li>当一个列的数据超过15%都是缺失，则应考虑删除该列</li>
-<li>列’PoolQC’, ‘MiscFeature’, ‘Alley’等的缺失比例较大，考虑删除</li>
+<li>列’PoolQC’, ‘MiscFeature’, 'Alley’等的缺失比例较大，考虑删除</li>
 <li>‘GarageX’几个列的缺失个数一样，但是缺失比例都较小</li>
 <li>‘BsmtX’几个列的缺失个数也一样</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 考虑删除上述存在缺失值的列（除了‘Electrical’）</span></span><br><span class="line">df_train = df_train.drop((missing_data[missing_data[<span class="string">&#x27;Total&#x27;</span>] &gt; <span class="number">1</span>]).index, <span class="number">1</span>)</span><br><span class="line"><span class="comment">## 删除‘Electrical’缺失的样本</span></span><br><span class="line">df_train = df_train.drop(df_train.loc[df_train[<span class="string">&#x27;Electrical&#x27;</span>].isnull()].index)</span><br><span class="line">df_train.isnull().<span class="built_in">sum</span>().<span class="built_in">max</span>()  <span class="comment">## 检查是否还存在缺失</span></span><br></pre></td></tr></table></figure>
 <pre><code>0
-</code></pre><h3 id="异常点"><a href="#异常点" class="headerlink" title="异常点"></a>异常点</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 标准化</span></span><br><span class="line">SalePrice_scaled = StandardScaler().fit_transform(df_train[<span class="string">&#x27;SalePrice&#x27;</span>][:, np.newaxis])</span><br><span class="line">low_range = SalePrice_scaled[SalePrice_scaled[:, <span class="number">0</span>].argsort()][:<span class="number">10</span>]</span><br><span class="line">high_range = SalePrice_scaled[SalePrice_scaled[:, <span class="number">0</span>].argsort()][-<span class="number">10</span>:]</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;Outer range (low) of the distribution:&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(low_range)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;\nOuter range (high) of the distribution:&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(high_range)</span><br></pre></td></tr></table></figure>
+</code></pre>
+<h3 id="异常点"><a class="header-anchor" href="#异常点"></a>异常点</h3>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 标准化</span></span><br><span class="line">SalePrice_scaled = StandardScaler().fit_transform(df_train[<span class="string">&#x27;SalePrice&#x27;</span>][:, np.newaxis])</span><br><span class="line">low_range = SalePrice_scaled[SalePrice_scaled[:, <span class="number">0</span>].argsort()][:<span class="number">10</span>]</span><br><span class="line">high_range = SalePrice_scaled[SalePrice_scaled[:, <span class="number">0</span>].argsort()][-<span class="number">10</span>:]</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;Outer range (low) of the distribution:&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(low_range)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;\nOuter range (high) of the distribution:&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(high_range)</span><br></pre></td></tr></table></figure>
 <pre><code>Outer range (low) of the distribution:
 [[-1.83820775]
  [-1.83303414]
@@ -631,20 +660,23 @@ Outer range (high) of the distribution:
  [5.58987866]
  [7.10041987]
  [7.22629831]]
-</code></pre><ul>
+</code></pre>
+<ul>
 <li>较低的10个值仅在-1.5到-1.9之间</li>
 <li>而较高的10个值的跨度从3到7.5</li>
 <li>要小心SalePrice标准化后值为7以上的样本点</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 再来看看该图</span></span><br><span class="line"><span class="comment">## ‘GrLivArea’与‘SalePrice’的散点图</span></span><br><span class="line">var = <span class="string">&#x27;GrLivArea&#x27;</span></span><br><span class="line">data = pd.concat([df_train[<span class="string">&#x27;SalePrice&#x27;</span>], df_train[var]],</span><br><span class="line">                axis=<span class="number">1</span>)  <span class="comment">## 按列合并</span></span><br><span class="line">data.plot.scatter(x=var, y=<span class="string">&#x27;SalePrice&#x27;</span>, ylim=(<span class="number">0</span>, <span class="number">800000</span>))</span><br></pre></td></tr></table></figure>
-<pre><code>&#39;c&#39; argument looks like a single numeric RGB or RGBA sequence, which should be avoided as value-mapping will have precedence in case its length matches with &#39;x&#39; &amp; &#39;y&#39;.  Please use a 2-D array with a single row if you really want to specify the same RGB or RGBA value for all points.
+<pre><code>'c' argument looks like a single numeric RGB or RGBA sequence, which should be avoided as value-mapping will have precedence in case its length matches with 'x' &amp; 'y'.  Please use a 2-D array with a single row if you really want to specify the same RGB or RGBA value for all points.
 
 
 
 
 
 &lt;matplotlib.axes._subplots.AxesSubplot at 0x16f736e0ac8&gt;
-</code></pre><p><meta name="referrer" content="no-referrer"><br><img src="/ShootingWang/ShootingWang.github.io/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-HousePrice.htm/output_35_2.png" class title="散点图"></p>
+</code></pre>
+<meta name="referrer" content="no-referrer">
+<img src="/ShootingWang/ShootingWang.github.io/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-HousePrice.htm/output_35_2.png" class title="散点图">
 <p>观察上图，可以发现右上方和右下方各有2个点较为异常。</p>
 <ul>
 <li>右上方的两个点比较顺应整体趋势</li>
@@ -656,14 +688,14 @@ Outer range (high) of the distribution:
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
+.dataframe thead th &#123;
+    text-align: right;
+&#125;
+</code></pre>
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -745,60 +777,74 @@ Outer range (high) of the distribution:
 </table>
 <p>2 rows × 63 columns</p>
 </div>
-
-
-
-
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">df_train = df_train.drop(df_train[df_train[<span class="string">&#x27;Id&#x27;</span>] == <span class="number">1299</span>].index)</span><br><span class="line">df_train = df_train.drop(df_train[df_train[<span class="string">&#x27;Id&#x27;</span>] == <span class="number">523</span>].index)</span><br></pre></td></tr></table></figure>
-<h2 id="核心"><a href="#核心" class="headerlink" title="核心"></a>核心</h2><p>testing for assumptions underlying the statistical bases for multivariate analysis.</p>
+<h2 id="核心"><a class="header-anchor" href="#核心"></a>核心</h2>
+<p>testing for assumptions underlying the statistical bases for multivariate analysis.</p>
 <div class="note default">
-            <p>根据<a target="_blank" rel="noopener" href="https://www.amazon.com/Multivariate-Data-Analysis-Joseph-Hair/dp/9332536503/ref=as_sl_pc_tf_til?tag=pmarcelino-20&amp;linkCode=w00&amp;linkId=5e9109fa2213fef911dae80731a07a17&amp;creativeASIN=9332536503">Multivariate Data Analysis-Hair et al (2013)</a>，需要进行检验的假设有：</p><ol><li>正态性 Normality<ul><li>许多统计检验方法都基于正态分布的假设构建的</li><li>当样本量大于200时，正态性就不太影响了</li></ul></li><li>同方差性 Homoskedasticity<ul><li>误差项通常是独立同方差的</li></ul></li><li>线性性 Linearity<ul><li>因变量与自变量之间呈线性关系</li><li>如果不是线性关系，可能需要先进行数据变换（data transformation）</li></ul></li><li>序列自相关性<ul><li>通常存在于时间序列</li></ul></li></ol>
+            <p>根据<a target="_blank" rel="noopener" href="https://www.amazon.com/Multivariate-Data-Analysis-Joseph-Hair/dp/9332536503/ref=as_sl_pc_tf_til?tag=pmarcelino-20&amp;linkCode=w00&amp;linkId=5e9109fa2213fef911dae80731a07a17&amp;creativeASIN=9332536503">Multivariate Data Analysis-Hair et al (2013)</a>，需要进行检验的假设有：</p><ol><li>正态性 Normality</li></ol><ul><li>许多统计检验方法都基于正态分布的假设构建的</li><li>当样本量大于200时，正态性就不太影响了</li></ul><ol start="2"><li>同方差性 Homoskedasticity</li></ol><ul><li>误差项通常是独立同方差的</li></ul><ol start="3"><li>线性性 Linearity</li></ol><ul><li>因变量与自变量之间呈线性关系</li><li>如果不是线性关系，可能需要先进行数据变换（data transformation）</li></ul><ol start="4"><li>序列自相关性</li></ol><ul><li>通常存在于时间序列</li></ul>
           </div>
-<h3 id="正态性检验"><a href="#正态性检验" class="headerlink" title="正态性检验"></a>正态性检验</h3><ul>
+<h3 id="正态性检验"><a class="header-anchor" href="#正态性检验"></a>正态性检验</h3>
+<ul>
 <li>直方图</li>
 <li>概率密度图(Q-Q图)</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sns.distplot(df_train[<span class="string">&#x27;SalePrice&#x27;</span>], fit=norm)</span><br><span class="line">fig = plt.figure()</span><br><span class="line">res = stats.probplot(df_train[<span class="string">&#x27;SalePrice&#x27;</span>], plot=plt)</span><br></pre></td></tr></table></figure>
-<p><meta name="referrer" content="no-referrer"><br><img src="/ShootingWang/ShootingWang.github.io/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-HousePrice.htm/output_41_0.png" class title="密度曲线"></p>
-<p><meta name="referrer" content="no-referrer"><br><img src="/ShootingWang/ShootingWang.github.io/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-HousePrice.htm/output_41_1.png" class title="Q-Q图"></p>
+<meta name="referrer" content="no-referrer">
+<img src="/ShootingWang/ShootingWang.github.io/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-HousePrice.htm/output_41_0.png" class title="密度曲线">
+<meta name="referrer" content="no-referrer">
+<img src="/ShootingWang/ShootingWang.github.io/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-HousePrice.htm/output_41_1.png" class title="Q-Q图">
 <ul>
-<li>很显然，‘SalePrice’并不服从正态分布<ul>
+<li>很显然，‘SalePrice’并不服从正态分布</li>
 <li>右偏</li>
 <li>QQ图尾部（蓝点）与标准正态分布（红线）不一致</li>
 </ul>
-</li>
-</ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 对数据进行对数变换</span></span><br><span class="line">df_train[<span class="string">&#x27;SalePrice&#x27;</span>] = np.log(df_train[<span class="string">&#x27;SalePrice&#x27;</span>])</span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 检验对数变换后数据的正态性</span></span><br><span class="line">sns.distplot(df_train[<span class="string">&#x27;SalePrice&#x27;</span>], fit=norm)</span><br><span class="line">fig = plt.figure()</span><br><span class="line">res = stats.probplot(df_train[<span class="string">&#x27;SalePrice&#x27;</span>], plot=plt)</span><br></pre></td></tr></table></figure>
-<p><meta name="referrer" content="no-referrer"><br><img src="/ShootingWang/ShootingWang.github.io/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-HousePrice.htm/output_44_0.png" class title="密度曲线图"></p>
-<p><meta name="referrer" content="no-referrer"><br><img src="/ShootingWang/ShootingWang.github.io/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-HousePrice.htm/output_44_1.png" class title="Q-Q图"></p>
+<meta name="referrer" content="no-referrer">
+<img src="/ShootingWang/ShootingWang.github.io/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-HousePrice.htm/output_44_0.png" class title="密度曲线图">
+<meta name="referrer" content="no-referrer">
+<img src="/ShootingWang/ShootingWang.github.io/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-HousePrice.htm/output_44_1.png" class title="Q-Q图">
 <p>Perfect！</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 再来看看&#x27;GrLivArea&#x27;</span></span><br><span class="line">sns.distplot(df_train[<span class="string">&#x27;GrLivArea&#x27;</span>], fit=norm)</span><br><span class="line">fig = plt.figure()</span><br><span class="line">res = stats.probplot(df_train[<span class="string">&#x27;GrLivArea&#x27;</span>], plot=plt)</span><br></pre></td></tr></table></figure>
-<p><meta name="referrer" content="no-referrer"><br><img src="/ShootingWang/ShootingWang.github.io/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-HousePrice.htm/output_46_0.png" class title="密度曲线图"></p>
-<p><meta name="referrer" content="no-referrer"><br><img src="/ShootingWang/ShootingWang.github.io/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-HousePrice.htm/output_46_1.png" class title="Q-Q图"></p>
+<meta name="referrer" content="no-referrer">
+<img src="/ShootingWang/ShootingWang.github.io/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-HousePrice.htm/output_46_0.png" class title="密度曲线图">
+<meta name="referrer" content="no-referrer">
+<img src="/ShootingWang/ShootingWang.github.io/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-HousePrice.htm/output_46_1.png" class title="Q-Q图">
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 进行对数变换</span></span><br><span class="line">df_train[<span class="string">&#x27;GrLivArea&#x27;</span>] = np.log(df_train[<span class="string">&#x27;GrLivArea&#x27;</span>])</span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sns.distplot(df_train[<span class="string">&#x27;GrLivArea&#x27;</span>], fit=norm)</span><br><span class="line">fig = plt.figure()</span><br><span class="line">res = stats.probplot(df_train[<span class="string">&#x27;GrLivArea&#x27;</span>], plot=plt)</span><br></pre></td></tr></table></figure>
-<p><meta name="referrer" content="no-referrer"><br><img src="/ShootingWang/ShootingWang.github.io/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-HousePrice.htm/output_48_0.png" class title="密度曲线图"></p>
-<p><meta name="referrer" content="no-referrer"><br><img src="/ShootingWang/ShootingWang.github.io/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-HousePrice.htm/output_48_1.png" class title="Q-Q图"></p>
+<meta name="referrer" content="no-referrer">
+<img src="/ShootingWang/ShootingWang.github.io/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-HousePrice.htm/output_48_0.png" class title="密度曲线图">
+<meta name="referrer" content="no-referrer">
+<img src="/ShootingWang/ShootingWang.github.io/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-HousePrice.htm/output_48_1.png" class title="Q-Q图">
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## &#x27;TotalBsmtSF&#x27;</span></span><br><span class="line">sns.distplot(df_train[<span class="string">&#x27;TotalBsmtSF&#x27;</span>], fit=norm);</span><br><span class="line">fig = plt.figure()</span><br><span class="line">res = stats.probplot(df_train[<span class="string">&#x27;TotalBsmtSF&#x27;</span>], plot=plt)</span><br></pre></td></tr></table></figure>
-<p><meta name="referrer" content="no-referrer"><br><img src="/ShootingWang/ShootingWang.github.io/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-HousePrice.htm/output_49_0.png" class title="密度曲线图"></p>
-<p><meta name="referrer" content="no-referrer"><br><img src="/ShootingWang/ShootingWang.github.io/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-HousePrice.htm/output_49_1.png" class title="Q-Q图"></p>
+<meta name="referrer" content="no-referrer">
+<img src="/ShootingWang/ShootingWang.github.io/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-HousePrice.htm/output_49_0.png" class title="密度曲线图">
+<meta name="referrer" content="no-referrer">
+<img src="/ShootingWang/ShootingWang.github.io/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-HousePrice.htm/output_49_1.png" class title="Q-Q图">
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## &#x27;TotalBsmtSF&#x27;存在0值，无法直接进行对数变换</span></span><br><span class="line"><span class="comment">## 只将&#x27;TotalBsmtSF&#x27;非零值的数据进行对数变换</span></span><br><span class="line">df_train[<span class="string">&#x27;HasBsmt&#x27;</span>] = pd.Series(<span class="built_in">len</span>(df_train[<span class="string">&#x27;TotalBsmtSF&#x27;</span>]), index=df_train.index)</span><br><span class="line">df_train[<span class="string">&#x27;HasBsmt&#x27;</span>] = <span class="number">0</span> </span><br><span class="line">df_train.loc[df_train[<span class="string">&#x27;TotalBsmtSF&#x27;</span>]&gt;<span class="number">0</span>,<span class="string">&#x27;HasBsmt&#x27;</span>] = <span class="number">1</span></span><br><span class="line">df_train.loc[df_train[<span class="string">&#x27;HasBsmt&#x27;</span>]==<span class="number">1</span>,<span class="string">&#x27;TotalBsmtSF&#x27;</span>] = np.log(df_train[<span class="string">&#x27;TotalBsmtSF&#x27;</span>])</span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sns.distplot(df_train[df_train[<span class="string">&#x27;TotalBsmtSF&#x27;</span>]&gt;<span class="number">0</span>][<span class="string">&#x27;TotalBsmtSF&#x27;</span>], fit=norm);</span><br><span class="line">fig = plt.figure()</span><br><span class="line">res = stats.probplot(df_train[df_train[<span class="string">&#x27;TotalBsmtSF&#x27;</span>]&gt;<span class="number">0</span>][<span class="string">&#x27;TotalBsmtSF&#x27;</span>], plot=plt)</span><br></pre></td></tr></table></figure>
-<p><meta name="referrer" content="no-referrer"><br><img src="/ShootingWang/ShootingWang.github.io/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-HousePrice.htm/output_51_0.png" class title="密度曲线图"></p>
-<p><meta name="referrer" content="no-referrer"><br><img src="/ShootingWang/ShootingWang.github.io/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-HousePrice.htm/output_51_1.png" class title="Q-Q图"></p>
-<h3 id="同方差性（同质性）"><a href="#同方差性（同质性）" class="headerlink" title="同方差性（同质性）"></a>同方差性（同质性）</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">plt.scatter(df_train[<span class="string">&#x27;GrLivArea&#x27;</span>], df_train[<span class="string">&#x27;SalePrice&#x27;</span>])</span><br></pre></td></tr></table></figure>
+<meta name="referrer" content="no-referrer">
+<img src="/ShootingWang/ShootingWang.github.io/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-HousePrice.htm/output_51_0.png" class title="密度曲线图">
+<meta name="referrer" content="no-referrer">
+<img src="/ShootingWang/ShootingWang.github.io/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-HousePrice.htm/output_51_1.png" class title="Q-Q图">
+<h3 id="同方差性（同质性）"><a class="header-anchor" href="#同方差性（同质性）"></a>同方差性（同质性）</h3>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">plt.scatter(df_train[<span class="string">&#x27;GrLivArea&#x27;</span>], df_train[<span class="string">&#x27;SalePrice&#x27;</span>])</span><br></pre></td></tr></table></figure>
 <pre><code>&lt;matplotlib.collections.PathCollection at 0x16f7589eba8&gt;
-</code></pre><p><meta name="referrer" content="no-referrer"><br><img src="/ShootingWang/ShootingWang.github.io/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-HousePrice.htm/output_53_1.png" class title="散点图"></p>
+</code></pre>
+<meta name="referrer" content="no-referrer">
+<img src="/ShootingWang/ShootingWang.github.io/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-HousePrice.htm/output_53_1.png" class title="散点图">
 <ul>
-<li>未进行对数变换前，’GrLivArea’和’SalePrice’散点图呈锥形</li>
+<li>未进行对数变换前，'GrLivArea’和’SalePrice’散点图呈锥形</li>
 <li>进行对数变换后，不再呈锥形（上图）</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">plt.scatter(df_train[df_train[<span class="string">&#x27;TotalBsmtSF&#x27;</span>]&gt;<span class="number">0</span>][<span class="string">&#x27;TotalBsmtSF&#x27;</span>], df_train[df_train[<span class="string">&#x27;TotalBsmtSF&#x27;</span>]&gt;<span class="number">0</span>][<span class="string">&#x27;SalePrice&#x27;</span>])</span><br></pre></td></tr></table></figure>
 <pre><code>&lt;matplotlib.collections.PathCollection at 0x16f7589ebe0&gt;
-</code></pre><p><meta name="referrer" content="no-referrer"><br><img src="/ShootingWang/ShootingWang.github.io/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-HousePrice.htm/output_55_1.png" class title="散点图"></p>
+</code></pre>
+<meta name="referrer" content="no-referrer">
+<img src="/ShootingWang/ShootingWang.github.io/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97-kaggle-HousePrice.htm/output_55_1.png" class title="散点图">
 <p>We can say that, in general, ‘SalePrice’ exhibit equal levels of variance across the range of ‘TotalBsmtSF’.</p>
-<h3 id="类别变量"><a href="#类别变量" class="headerlink" title="类别变量"></a>类别变量</h3><p>需要将类别变量转化为哑变量（dummy）</p>
+<h3 id="类别变量"><a class="header-anchor" href="#类别变量"></a>类别变量</h3>
+<p>需要将类别变量转化为哑变量（dummy）</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df_train = pd.get_dummies(df_train)</span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df_train.head()</span><br></pre></td></tr></table></figure>
 <div>
@@ -806,14 +852,14 @@ Outer range (high) of the distribution:
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
+.dataframe thead th &#123;
+    text-align: right;
+&#125;
+</code></pre>
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -967,8 +1013,6 @@ Outer range (high) of the distribution:
 </table>
 <p>5 rows × 222 columns</p>
 </div>
-
-
 
     </div>
 
@@ -1124,7 +1168,7 @@ Outer range (high) of the distribution:
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">59</span>
+        <span class="site-state-item-count">58</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -1166,13 +1210,13 @@ Outer range (high) of the distribution:
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">430k</span>
+    <span title="站点总字数">442k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">6:31</span>
+    <span title="站点阅读时长">6:42</span>
 </div>
 
 
@@ -1256,8 +1300,6 @@ Outer range (high) of the distribution:
 
 
 
-
-  
 
 
 
