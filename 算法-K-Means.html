@@ -314,68 +314,55 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <center>K均值聚类</center>
-<span id="more"></span>
-<h1 id="K-Means"><a class="header-anchor" href="#K-Means"></a>K-Means</h1>
-<ul>
+        <p><center>K均值聚类</center><br><span id="more"></span></p>
+<h1 id="K-Means"><a href="#K-Means" class="headerlink" title="K-Means"></a>K-Means</h1><ul>
 <li>无监督学习</li>
 <li>$K$值无法自动获取</li>
 <li>初始聚类中心随机选择</li>
 <li>迭代（iterative）算法</li>
 </ul>
 <div class="note danger">
-            <h2 id="算法"><a class="header-anchor" href="#算法"></a>算法</h2><p><strong>输入</strong>：</p><ul><li>类的个数：$K$</li><li>训练集：${ x^{(1)}, x^{(2)}, \cdots, x^{(n)} }$（其中，$x^{(i)}\in \mathbb{R}^{n}$）</li></ul><p><strong>训练</strong>：</p><ol><li>随机初始化$K$个簇（cluster）的质心（centroid）：$\mu_1, \mu_2, \cdots, \mu_K \in \mathbb{R}^n$；</li><li>对于每个训练样本$x^{(i)}$（$i=1,2,\cdots,n$） ，用 $c^{(i)}$ 表示最接近 $x^{(i)}$ 的簇的质心（簇分配步骤）；其中，$c^{(i)} \in { 1,2,\cdots,K }$<br>$$c^{(i)} := \arg{\min_j || x^{(i)} - \mu_j ||}$$</li><li>对于每个簇$j$（$j=1,2,\cdots,K$），更新簇的质心$\mu_j$（簇中所有点的坐标均值）<br>$$\mu_j := \frac{\sum_{i=1}^n 1 { c^{(i)} = j } x^{(i)} }{\sum_{i=1}^n 1 { c^{(i)} = j } } $$</li><li>重复步骤2和3，直到收敛</li></ol><p><strong>输出</strong>：</p>
+            <h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><p><strong>输入</strong>：</p><ul><li>类的个数：$K$</li><li>训练集：${ x^{(1)}, x^{(2)}, \cdots, x^{(n)} }$（其中，$x^{(i)}\in \mathbb{R}^{n}$）</li></ul><p><strong>训练</strong>：</p><ol><li>随机初始化$K$个簇（cluster）的质心（centroid）：$\mu_1, \mu_2, \cdots, \mu_K \in \mathbb{R}^n$；</li><li>对于每个训练样本$x^{(i)}$（$i=1,2,\cdots,n$） ，用 $c^{(i)}$ 表示最接近 $x^{(i)}$ 的簇的质心（簇分配步骤）；其中，$c^{(i)} \in { 1,2,\cdots,K }$<script type="math/tex; mode=display">c^{(i)} := \arg{\min_j || x^{(i)} - \mu_j ||}</script></li><li>对于每个簇$j$（$j=1,2,\cdots,K$），更新簇的质心$\mu_j$（簇中所有点的坐标均值）<script type="math/tex; mode=display">\mu_j := \frac{\sum_{i=1}^n 1 \{ c^{(i)} = j \} x^{(i)} }{\sum_{i=1}^n 1 \{ c^{(i)} = j \} }</script></li><li>重复步骤2和3，直到收敛</li></ol><p><strong>输出</strong>：</p>
           </div>
-<h2 id="收敛-converge"><a class="header-anchor" href="#收敛-converge"></a>收敛 converge</h2>
-<p>记<br>
-$$\mu_{c^{(i)} } = \mbox{样本} x^{(i)} \mbox{被分配的簇的质心} $$</p>
-<p>畸变函数/失真函数（distortion function）：<br>
-$$J(c, \mu)=\sum_{i=1}^n || x^{(i)} - \mu_{c^{(i)} } ||^2 $$</p>
-<p>目标函数（optimization objective）/ 代价函数（cost function）为：<br>
-$$J \left( c^{(1)}, \cdots, c^{(n)}; \mu_1, \cdots, \mu_K \right) = \frac{1}{n}\sum_{i=1}^n || x^{(i)} - \mu_{c^{(i)} } ||^2 $$<br>
-$$\min_{ c^{(1)}, \cdots, c^{(n)} \atop \mu_1, \cdots, \mu_K } J \left( c^{(1)}, \cdots, c^{n}; \mu_1, \cdots, \mu_K \right) $$</p>
-<p>K-means聚类的内循环（inner loop，步骤2和3）重复最小化$J$</p>
+<h2 id="收敛-converge"><a href="#收敛-converge" class="headerlink" title="收敛 converge"></a>收敛 converge</h2><p>记</p>
+<script type="math/tex; mode=display">\mu_{c^{(i)} } = \mbox{样本} x^{(i)} \mbox{被分配的簇的质心}</script><p>畸变函数/失真函数（distortion function）：</p>
+<script type="math/tex; mode=display">J(c, \mu)=\sum_{i=1}^n || x^{(i)} - \mu_{c^{(i)} } ||^2</script><p>目标函数（optimization objective）/ 代价函数（cost function）为：</p>
+<script type="math/tex; mode=display">J \left( c^{(1)}, \cdots, c^{(n)}; \mu_1, \cdots, \mu_K \right) = \frac{1}{n}\sum_{i=1}^n || x^{(i)} - \mu_{c^{(i)} } ||^2</script><script type="math/tex; mode=display">\min_{ c^{(1)}, \cdots, c^{(n)} \atop \mu_1, \cdots, \mu_K } J \left( c^{(1)}, \cdots, c^{n}; \mu_1, \cdots, \mu_K \right)</script><p>K-means聚类的内循环（inner loop，步骤2和3）重复最小化$J$</p>
 <ul>
 <li>固定$c$，$J$针对</li>
 </ul>
-<h1 id="确定K的方法"><a class="header-anchor" href="#确定K的方法"></a>确定K的方法</h1>
-<h2 id="按需选择"><a class="header-anchor" href="#按需选择"></a>按需选择</h2>
-<p>根据建模的需求和目的来选择聚类的个数</p>
-<h2 id="观察法"><a class="header-anchor" href="#观察法"></a>观察法</h2>
-<p>直接看数据的散点图，看数据点大致聚成几堆</p>
+<h1 id="确定K的方法"><a href="#确定K的方法" class="headerlink" title="确定K的方法"></a>确定K的方法</h1><h2 id="按需选择"><a href="#按需选择" class="headerlink" title="按需选择"></a>按需选择</h2><p>根据建模的需求和目的来选择聚类的个数</p>
+<h2 id="观察法"><a href="#观察法" class="headerlink" title="观察法"></a>观察法</h2><p>直接看数据的散点图，看数据点大致聚成几堆</p>
 <ul>
 <li>原始数据维数要低，一般是两维或三维，否则无法通过散点图观察</li>
 <li>对于高维数据，可以先利用PCA（主成分分析法）降维，然后进行观察</li>
 </ul>
-<h2 id="肘部法"><a class="header-anchor" href="#肘部法"></a>肘部法</h2>
-<p>肘部法（Elbow Method），以聚类的数量为x轴，以WSS为y轴，绘制折线图，拐弯最明显的点对应的值就是比较合适的k值。</p>
+<h2 id="肘部法"><a href="#肘部法" class="headerlink" title="肘部法"></a>肘部法</h2><p>肘部法（Elbow Method），以聚类的数量为x轴，以WSS为y轴，绘制折线图，拐弯最明显的点对应的值就是比较合适的k值。</p>
 <ul>
 <li>x轴为聚类的数量</li>
 <li>y轴为WSS（within cluster sum of squares），即各个点到cluster（簇）中心的距离的平方和</li>
 </ul>
-<h2 id="Gap-Statistics方法"><a class="header-anchor" href="#Gap-Statistics方法"></a>Gap Statistics方法</h2>
-<h1 id="对比"><a class="header-anchor" href="#对比"></a>对比</h1>
-<h2 id="优点"><a class="header-anchor" href="#优点"></a>优点</h2>
-<ul>
+<h2 id="Gap-Statistics方法"><a href="#Gap-Statistics方法" class="headerlink" title="Gap Statistics方法"></a>Gap Statistics方法</h2><h1 id="对比"><a href="#对比" class="headerlink" title="对比"></a>对比</h1><h2 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h2><ul>
 <li>原理简单</li>
 <li>容易实现</li>
 <li>对大数据集有较高的学习效率，且具有可伸缩性</li>
 </ul>
-<h2 id="缺点"><a class="header-anchor" href="#缺点"></a>缺点</h2>
-<ul>
+<h2 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h2><ul>
 <li>收敛速度较慢</li>
-<li>算法的时间复杂度较高$O(nKt)$</li>
+<li>算法的时间复杂度较高$O(nKt)$<ul>
 <li>$n$：样本点个数</li>
 <li>$K$：聚类类别数</li>
 <li>$t$：迭代次数</li>
+</ul>
+</li>
 <li>不能发现非凸形状的簇</li>
 <li>对噪声和离群点敏感</li>
 <li>结果不一定是全局最优，只能保证局部最优</li>
 </ul>
-<h2 id="K-Means-vs-K-Medoids"><a class="header-anchor" href="#K-Means-vs-K-Medoids"></a>K-Means vs K-Medoids</h2>
-<ul>
+<h2 id="K-Means-vs-K-Medoids"><a href="#K-Means-vs-K-Medoids" class="headerlink" title="K-Means vs K-Medoids"></a>K-Means vs K-Medoids</h2><ul>
 <li>二者的区别主要在于：质心的选择</li>
 </ul>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -402,20 +389,20 @@ $$\min_{ c^{(1)}, \cdots, c^{(n)} \atop \mu_1, \cdots, \mu_K } J \left( c^{(1)},
 </tr>
 </tbody>
 </table>
-<h2 id="K-Means-vs-KNN"><a class="header-anchor" href="#K-Means-vs-KNN"></a>K-Means vs KNN</h2>
-<div>
+</div>
+<h2 id="K-Means-vs-KNN"><a href="#K-Means-vs-KNN" class="headerlink" title="K-Means vs KNN"></a>K-Means vs KNN</h2><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
-<pre><code>.dataframe tbody tr th &#123;
-    vertical-align: top;
-&#125;
 
-.dataframe thead th &#123;
-    text-align: center;
-&#125;
-</code></pre>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: center;
+    }
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -449,20 +436,20 @@ $$\min_{ c^{(1)}, \cdots, c^{(n)} \atop \mu_1, \cdots, \mu_K } J \left( c^{(1)},
   </tr></tbody>
 </table>
 </div>
-<h2 id="K-Means-vs-DBSCAN"><a class="header-anchor" href="#K-Means-vs-DBSCAN"></a>K-Means vs DBSCAN</h2>
-<div>
+
+<h2 id="K-Means-vs-DBSCAN"><a href="#K-Means-vs-DBSCAN" class="headerlink" title="K-Means vs DBSCAN"></a>K-Means vs DBSCAN</h2><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
-<pre><code>.dataframe tbody tr th &#123;
-    vertical-align: top;
-&#125;
 
-.dataframe thead th &#123;
-    text-align: center;
-&#125;
-</code></pre>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: center;
+    }
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -515,13 +502,13 @@ $$\min_{ c^{(1)}, \cdots, c^{(n)} \atop \mu_1, \cdots, \mu_K } J \left( c^{(1)},
   </tr></tbody>
 </table>
 </div>
+
 <p>其中：</p>
 <ul>
 <li>$n$是样本点个数</li>
 <li>聚类可分为<u>基于划分、层次、密度、图形和模型</u>五大类</li>
 </ul>
-<h1 id="参考资料"><a class="header-anchor" href="#参考资料"></a>参考资料</h1>
-<ul>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
 <li><a target="_blank" rel="noopener" href="https://blog.csdn.net/databatman/article/details/50445561">机器学习：K-means和K-medoids对比</a></li>
 <li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/nucdy/p/6349172.html">KNN与K-Means的区别</a></li>
 <li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/hugechuanqi/p/10509307.html">机器学习 之k-means和DBSCAN的区别</a></li>
@@ -551,8 +538,8 @@ $$\min_{ c^{(1)}, \cdots, c^{(n)} \atop \mu_1, \cdots, \mu_K } J \left( c^{(1)},
       </div>
       
       <div style="display: inline-block;">
-        <img src="/images/reward2021.png" alt="Skye WeChat Pay">
-        <p>WeChat Pay</p>
+        <img src="/images/reward2021.png" alt="Skye WeChat Bezahlung">
+        <p>WeChat Bezahlung</p>
       </div>
 
   </div>
@@ -726,13 +713,13 @@ $$\min_{ c^{(1)}, \cdots, c^{(n)} \atop \mu_1, \cdots, \mu_K } J \left( c^{(1)},
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">442k</span>
+    <span title="站点总字数">430k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">6:42</span>
+    <span title="站点阅读时长">6:31</span>
 </div>
 
 
@@ -816,6 +803,8 @@ $$\min_{ c^{(1)}, \cdots, c^{(n)} \atop \mu_1, \cdots, \mu_K } J \left( c^{(1)},
 
 
 
+
+  
 
 
 

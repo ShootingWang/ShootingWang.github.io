@@ -317,13 +317,10 @@
 
       
         <center>R语言</center>
+
 <span id="more"></span>
-<h1 id="base"><a class="header-anchor" href="#base"></a>base</h1>
-<h2 id="class"><a class="header-anchor" href="#class"></a>class</h2>
-<p>变量的类别</p>
-<h2 id="merge"><a class="header-anchor" href="#merge"></a>merge</h2>
-<p>合并两个数据框（DataFrame）</p>
-<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">merge<span class="punctuation">(</span>x<span class="punctuation">,</span> y<span class="punctuation">,</span> by <span class="operator">=</span> intersect<span class="punctuation">(</span><span class="built_in">names</span><span class="punctuation">(</span>x<span class="punctuation">)</span><span class="punctuation">,</span> <span class="built_in">names</span><span class="punctuation">(</span>y<span class="punctuation">)</span><span class="punctuation">)</span><span class="punctuation">,</span></span><br><span class="line">      by.x <span class="operator">=</span> by<span class="punctuation">,</span> by.y <span class="operator">=</span> by<span class="punctuation">,</span> <span class="built_in">all</span> <span class="operator">=</span> <span class="literal">FALSE</span><span class="punctuation">,</span> all.x <span class="operator">=</span> <span class="built_in">all</span><span class="punctuation">,</span> all.y <span class="operator">=</span> <span class="built_in">all</span><span class="punctuation">,</span></span><br><span class="line">      sort <span class="operator">=</span> <span class="literal">TRUE</span><span class="punctuation">,</span> suffixes <span class="operator">=</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="string">&quot;.x&quot;</span><span class="punctuation">,</span><span class="string">&quot;.y&quot;</span><span class="punctuation">)</span><span class="punctuation">,</span> no.dups <span class="operator">=</span> <span class="literal">TRUE</span><span class="punctuation">,</span></span><br><span class="line">      incomparables <span class="operator">=</span> <span class="literal">NULL</span><span class="punctuation">,</span> ...<span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
+<h1 id="base"><a href="#base" class="headerlink" title="base"></a>base</h1><h2 id="class"><a href="#class" class="headerlink" title="class"></a>class</h2><p>变量的类别</p>
+<h2 id="merge"><a href="#merge" class="headerlink" title="merge"></a>merge</h2><p>合并两个数据框（DataFrame）<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">merge<span class="punctuation">(</span>x<span class="punctuation">,</span> y<span class="punctuation">,</span> by <span class="operator">=</span> intersect<span class="punctuation">(</span><span class="built_in">names</span><span class="punctuation">(</span>x<span class="punctuation">)</span><span class="punctuation">,</span> <span class="built_in">names</span><span class="punctuation">(</span>y<span class="punctuation">)</span><span class="punctuation">)</span><span class="punctuation">,</span></span><br><span class="line">      by.x <span class="operator">=</span> by<span class="punctuation">,</span> by.y <span class="operator">=</span> by<span class="punctuation">,</span> <span class="built_in">all</span> <span class="operator">=</span> <span class="literal">FALSE</span><span class="punctuation">,</span> all.x <span class="operator">=</span> <span class="built_in">all</span><span class="punctuation">,</span> all.y <span class="operator">=</span> <span class="built_in">all</span><span class="punctuation">,</span></span><br><span class="line">      sort <span class="operator">=</span> <span class="literal">TRUE</span><span class="punctuation">,</span> suffixes <span class="operator">=</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="string">&quot;.x&quot;</span><span class="punctuation">,</span><span class="string">&quot;.y&quot;</span><span class="punctuation">)</span><span class="punctuation">,</span> no.dups <span class="operator">=</span> <span class="literal">TRUE</span><span class="punctuation">,</span></span><br><span class="line">      incomparables <span class="operator">=</span> <span class="literal">NULL</span><span class="punctuation">,</span> ...<span class="punctuation">)</span></span><br></pre></td></tr></table></figure></p>
 <ul>
 <li><code>all=FALSE</code>：相当于<code>natural join</code>，仅返回匹配的行</li>
 <li><code>all=TRUE</code>：相当于<code>full outer join</code></li>
@@ -331,86 +328,59 @@
 <li><code>all.y=TRUE</code>：相当于<code>right outer join</code></li>
 </ul>
 <figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">x <span class="operator">&lt;-</span> data.frame<span class="punctuation">(</span>k1 <span class="operator">=</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="literal">NA</span><span class="punctuation">,</span><span class="literal">NA</span><span class="punctuation">,</span><span class="number">3</span><span class="punctuation">,</span><span class="number">4</span><span class="punctuation">,</span><span class="number">5</span><span class="punctuation">)</span><span class="punctuation">,</span> k2 <span class="operator">=</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="number">1</span><span class="punctuation">,</span><span class="literal">NA</span><span class="punctuation">,</span><span class="literal">NA</span><span class="punctuation">,</span><span class="number">4</span><span class="punctuation">,</span><span class="number">5</span><span class="punctuation">)</span><span class="punctuation">,</span> data <span class="operator">=</span> <span class="number">1</span><span class="operator">:</span><span class="number">5</span><span class="punctuation">)</span></span><br><span class="line">x</span><br><span class="line"><span class="comment">#  k1 k2 data</span></span><br><span class="line"><span class="comment">#1 NA  1    1</span></span><br><span class="line"><span class="comment">#2 NA NA    2</span></span><br><span class="line"><span class="comment">#3  3 NA    3</span></span><br><span class="line"><span class="comment">#4  4  4    4</span></span><br><span class="line"><span class="comment">#5  5  5    5</span></span><br><span class="line">y <span class="operator">&lt;-</span> data.frame<span class="punctuation">(</span>k1 <span class="operator">=</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="literal">NA</span><span class="punctuation">,</span><span class="number">2</span><span class="punctuation">,</span><span class="literal">NA</span><span class="punctuation">,</span><span class="number">4</span><span class="punctuation">,</span><span class="number">5</span><span class="punctuation">)</span><span class="punctuation">,</span> k2 <span class="operator">=</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="literal">NA</span><span class="punctuation">,</span><span class="literal">NA</span><span class="punctuation">,</span><span class="number">3</span><span class="punctuation">,</span><span class="number">4</span><span class="punctuation">,</span><span class="number">5</span><span class="punctuation">)</span><span class="punctuation">,</span> data <span class="operator">=</span> <span class="number">1</span><span class="operator">:</span><span class="number">5</span><span class="punctuation">)</span></span><br><span class="line">y</span><br><span class="line"><span class="comment">#  k1 k2 data</span></span><br><span class="line"><span class="comment">#1 NA NA    1</span></span><br><span class="line"><span class="comment">#2  2 NA    2</span></span><br><span class="line"><span class="comment">#3 NA  3    3</span></span><br><span class="line"><span class="comment">#4  4  4    4</span></span><br><span class="line"><span class="comment">#5  5  5    5</span></span><br><span class="line"></span><br><span class="line">merge<span class="punctuation">(</span>x<span class="punctuation">,</span> y<span class="punctuation">,</span> by <span class="operator">=</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="string">&quot;k1&quot;</span><span class="punctuation">,</span><span class="string">&quot;k2&quot;</span><span class="punctuation">)</span><span class="punctuation">)</span> <span class="comment"># NA&#x27;s match</span></span><br><span class="line"><span class="comment">#  k1 k2 data.x data.y</span></span><br><span class="line"><span class="comment">#1  4  4      4      4</span></span><br><span class="line"><span class="comment">#2  5  5      5      5</span></span><br><span class="line"><span class="comment">#3 NA NA      2      1</span></span><br><span class="line"></span><br><span class="line">merge<span class="punctuation">(</span>x<span class="punctuation">,</span> y<span class="punctuation">,</span> by <span class="operator">=</span> <span class="string">&quot;k1&quot;</span><span class="punctuation">)</span> <span class="comment"># NA&#x27;s match, so 6 rows</span></span><br><span class="line"><span class="comment">#  k1 k2.x data.x k2.y data.y</span></span><br><span class="line"><span class="comment">#1  4    4      4    4      4</span></span><br><span class="line"><span class="comment">#2  5    5      5    5      5</span></span><br><span class="line"><span class="comment">#3 NA    1      1   NA      1</span></span><br><span class="line"><span class="comment">#4 NA    1      1    3      3</span></span><br><span class="line"><span class="comment">#5 NA   NA      2   NA      1</span></span><br><span class="line"><span class="comment">#6 NA   NA      2    3      3</span></span><br><span class="line"></span><br><span class="line">merge<span class="punctuation">(</span>x<span class="punctuation">,</span> y<span class="punctuation">,</span> by <span class="operator">=</span> <span class="string">&quot;k2&quot;</span><span class="punctuation">,</span> incomparables <span class="operator">=</span> <span class="literal">NA</span><span class="punctuation">)</span> <span class="comment"># 2 rows</span></span><br><span class="line"><span class="comment">#  k2 k1.x data.x k1.y data.y</span></span><br><span class="line"><span class="comment">#1  4    4      4    4      4</span></span><br><span class="line"><span class="comment">#2  5    5      5    5      5</span></span><br></pre></td></tr></table></figure>
-<h2 id="mode"><a class="header-anchor" href="#mode"></a>mode</h2>
-<p>返回对象在内存中的存储类型</p>
+<h2 id="mode"><a href="#mode" class="headerlink" title="mode"></a>mode</h2><p>返回对象在内存中的存储类型</p>
 <ul>
 <li><code>numeric</code>：integer、double</li>
 <li></li>
 </ul>
 <figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mode<span class="punctuation">(</span><span class="literal">NA</span><span class="punctuation">)</span></span><br><span class="line"><span class="comment"># [1] &quot;logical&quot;</span></span><br></pre></td></tr></table></figure>
-<h2 id="paste"><a class="header-anchor" href="#paste"></a>paste</h2>
-<p>组合字符串</p>
+<h2 id="paste"><a href="#paste" class="headerlink" title="paste"></a>paste</h2><p>组合字符串</p>
 <ul>
-<li>可以将任意数量的参数组合在一起</li>
-</ul>
-<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">paste<span class="punctuation">(</span>...<span class="punctuation">,</span> sep <span class="operator">=</span> <span class="string">&quot; &quot;</span><span class="punctuation">,</span> collapse <span class="operator">=</span> <span class="literal">NULL</span><span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
-<ul>
+<li>可以将任意数量的参数组合在一起<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">paste<span class="punctuation">(</span>...<span class="punctuation">,</span> sep <span class="operator">=</span> <span class="string">&quot; &quot;</span><span class="punctuation">,</span> collapse <span class="operator">=</span> <span class="literal">NULL</span><span class="punctuation">)</span></span><br></pre></td></tr></table></figure></li>
 <li><code>...</code>：要组合的任何数量的参数</li>
 <li><code>sep</code>：表示参数之间的分隔符</li>
 <li><code>collapse</code>：用于消除两个字符串之间的空间；但不是在一个字符串的两个词的空间</li>
 </ul>
 <figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">(</span>nth <span class="operator">&lt;-</span> paste0<span class="punctuation">(</span><span class="number">1</span><span class="operator">:</span><span class="number">12</span><span class="punctuation">,</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="string">&quot;st&quot;</span><span class="punctuation">,</span> <span class="string">&quot;nd&quot;</span><span class="punctuation">,</span> <span class="string">&quot;rd&quot;</span><span class="punctuation">,</span> <span class="built_in">rep</span><span class="punctuation">(</span><span class="string">&quot;th&quot;</span><span class="punctuation">,</span> <span class="number">9</span><span class="punctuation">)</span><span class="punctuation">)</span><span class="punctuation">)</span><span class="punctuation">)</span></span><br><span class="line"><span class="comment"># [1] &quot;1st&quot;  &quot;2nd&quot;  &quot;3rd&quot;  &quot;4th&quot;  &quot;5th&quot;  &quot;6th&quot;  &quot;7th&quot;  &quot;8th&quot;  &quot;9th&quot;  &quot;10th&quot; &quot;11th&quot; &quot;12th&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">month.abb</span></span><br><span class="line"><span class="comment"># [1] &quot;Jan&quot; &quot;Feb&quot; &quot;Mar&quot; &quot;Apr&quot; &quot;May&quot; &quot;Jun&quot; &quot;Jul&quot; &quot;Aug&quot; &quot;Sep&quot; &quot;Oct&quot; &quot;Nov&quot; &quot;Dec&quot;</span></span><br><span class="line">paste<span class="punctuation">(</span><span class="built_in">month.abb</span><span class="punctuation">,</span> <span class="string">&quot;is the&quot;</span><span class="punctuation">,</span> nth<span class="punctuation">,</span> <span class="string">&quot;month of the year.&quot;</span><span class="punctuation">)</span></span><br><span class="line"><span class="comment"># [1] &quot;Jan is the 1st month of the year.&quot;  &quot;Feb is the 2nd month of the year.&quot; </span></span><br><span class="line"><span class="comment"># [3] &quot;Mar is the 3rd month of the year.&quot;  &quot;Apr is the 4th month of the year.&quot; </span></span><br><span class="line"><span class="comment"># [5] &quot;May is the 5th month of the year.&quot;  &quot;Jun is the 6th month of the year.&quot; </span></span><br><span class="line"><span class="comment"># [7] &quot;Jul is the 7th month of the year.&quot;  &quot;Aug is the 8th month of the year.&quot; </span></span><br><span class="line"><span class="comment"># [9] &quot;Sep is the 9th month of the year.&quot;  &quot;Oct is the 10th month of the year.&quot;</span></span><br><span class="line"><span class="comment">#[11] &quot;Nov is the 11th month of the year.&quot; &quot;Dec is the 12th month of the year.&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">letters</span></span><br><span class="line"><span class="comment"># [1] &quot;a&quot; &quot;b&quot; &quot;c&quot; &quot;d&quot; &quot;e&quot; &quot;f&quot; &quot;g&quot; &quot;h&quot; &quot;i&quot; &quot;j&quot; &quot;k&quot; &quot;l&quot; &quot;m&quot; &quot;n&quot; &quot;o&quot; &quot;p&quot; &quot;q&quot; &quot;r&quot; &quot;s&quot; &quot;t&quot; &quot;u&quot; &quot;v&quot;</span></span><br><span class="line"><span class="comment">#[23] &quot;w&quot; &quot;x&quot; &quot;y&quot; &quot;z&quot;</span></span><br><span class="line">paste<span class="punctuation">(</span><span class="built_in">month.abb</span><span class="punctuation">,</span> <span class="built_in">letters</span><span class="punctuation">)</span></span><br><span class="line"><span class="comment"># [1] &quot;Jan a&quot; &quot;Feb b&quot; &quot;Mar c&quot; &quot;Apr d&quot; &quot;May e&quot; &quot;Jun f&quot; &quot;Jul g&quot; &quot;Aug h&quot; &quot;Sep i&quot; &quot;Oct j&quot; &quot;Nov k&quot;</span></span><br><span class="line"><span class="comment">#[12] &quot;Dec l&quot; &quot;Jan m&quot; &quot;Feb n&quot; &quot;Mar o&quot; &quot;Apr p&quot; &quot;May q&quot; &quot;Jun r&quot; &quot;Jul s&quot; &quot;Aug t&quot; &quot;Sep u&quot; &quot;Oct v&quot;</span></span><br><span class="line"><span class="comment">#[23] &quot;Nov w&quot; &quot;Dec x&quot; &quot;Jan y&quot; &quot;Feb z&quot;</span></span><br></pre></td></tr></table></figure>
-<h2 id="typeof"><a class="header-anchor" href="#typeof"></a>typeof</h2>
-<p>对变量类型的细分</p>
-<h1 id="stats"><a class="header-anchor" href="#stats"></a>stats</h1>
-<h2 id="r-分布"><a class="header-anchor" href="#r-分布"></a>r+分布</h2>
-<p>产生特定分布的随机数（random）</p>
+<h2 id="typeof"><a href="#typeof" class="headerlink" title="typeof"></a>typeof</h2><p>对变量类型的细分</p>
+<h1 id="stats"><a href="#stats" class="headerlink" title="stats"></a>stats</h1><h2 id="r-分布"><a href="#r-分布" class="headerlink" title="r+分布"></a>r+分布</h2><p>产生特定分布的随机数（random）</p>
 <p>|||</p>
-<h1 id="Packages"><a class="header-anchor" href="#Packages"></a>Packages</h1>
-<h2 id="Amelia"><a class="header-anchor" href="#Amelia"></a>Amelia</h2>
-<a href="/R%E8%AF%AD%E8%A8%80-Amelia.html" title="Amelia包">Amelia包</a>
+<h1 id="Packages"><a href="#Packages" class="headerlink" title="Packages"></a>Packages</h1><h2 id="Amelia"><a href="#Amelia" class="headerlink" title="Amelia"></a>Amelia</h2><a href="/R%E8%AF%AD%E8%A8%80-Amelia.html" title="Amelia包">Amelia包</a>
 <ul>
 <li>可视化缺失值</li>
 </ul>
-<h2 id="ggplot2"><a class="header-anchor" href="#ggplot2"></a>ggplot2</h2>
-<a href="/R%E8%AF%AD%E8%A8%80-ggplot2.html" title="ggplot2包">ggplot2包</a>
+<h2 id="ggplot2"><a href="#ggplot2" class="headerlink" title="ggplot2"></a>ggplot2</h2><a href="/R%E8%AF%AD%E8%A8%80-ggplot2.html" title="ggplot2包">ggplot2包</a>
 <ul>
 <li>绘图</li>
 </ul>
-<h2 id="grpreg"><a class="header-anchor" href="#grpreg"></a>grpreg</h2>
-<a href="/R%E8%AF%AD%E8%A8%80-grpreg.html" title="grpreg包">grpreg包</a>
+<h2 id="grpreg"><a href="#grpreg" class="headerlink" title="grpreg"></a>grpreg</h2><a href="/R%E8%AF%AD%E8%A8%80-grpreg.html" title="grpreg包">grpreg包</a>
 <ul>
 <li>组变量选择</li>
 </ul>
-<h2 id="installr"><a class="header-anchor" href="#installr"></a>installr</h2>
-<p>更新RGui</p>
+<h2 id="installr"><a href="#installr" class="headerlink" title="installr"></a>installr</h2><p>更新RGui</p>
 <figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 在RGui中输入下列命令</span></span><br><span class="line">install.packages<span class="punctuation">(</span><span class="string">&#x27;installr&#x27;</span><span class="punctuation">)</span></span><br><span class="line">library<span class="punctuation">(</span>installr<span class="punctuation">)</span></span><br><span class="line">updateR<span class="punctuation">(</span><span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
-<h2 id="MASS"><a class="header-anchor" href="#MASS"></a>MASS</h2>
-<a href="/R%E8%AF%AD%E8%A8%80-MASS.html" title="MASS包">MASS包</a>
-<h2 id="MICE"><a class="header-anchor" href="#MICE"></a>MICE</h2>
-<a href="/R%E8%AF%AD%E8%A8%80-MICE.html" title="MICE包">MICE包</a>（Multivariate Imputation by Chained Equations）
-<ul>
-<li>填补缺失值</li>
-<li>可视化缺失值</li>
-</ul>
-<h1 id="其他"><a class="header-anchor" href="#其他"></a>其他</h1>
-<h2 id="快捷键"><a class="header-anchor" href="#快捷键"></a>快捷键</h2>
-<table>
-<thead>
-<tr>
-<th style="text-align:left"></th>
-<th style="text-align:left">Windows</th>
-<th style="text-align:left">MacOS</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">注释</td>
-<td style="text-align:left"><code>Ctrl</code> + <code>Shift</code> + <code>C</code></td>
-<td style="text-align:left"><code>Cmd</code> + <code>Shift</code> + <code>C</code></td>
-</tr>
-<tr>
-<td style="text-align:left">运行</td>
-<td style="text-align:left"><code>Ctrl</code> + <code>Enter</code></td>
-<td style="text-align:left"><code>Shift</code> + <code>Enter</code></td>
-</tr>
-</tbody>
-</table>
+<h2 id="MASS"><a href="#MASS" class="headerlink" title="MASS"></a>MASS</h2><a href="/R%E8%AF%AD%E8%A8%80-MASS.html" title="MASS包">MASS包</a>
+<h2 id="MICE"><a href="#MICE" class="headerlink" title="MICE"></a>MICE</h2><a href="/R%E8%AF%AD%E8%A8%80-MICE.html" title="MICE包">MICE包</a>（Multivariate Imputation by Chained Equations）
+
+- 填补缺失值
+- 可视化缺失值
+
+
+
+# 其他
+## 快捷键
+
+||Windows|MacOS|
+|:--|:----|:----|
+|注释|`Ctrl` + `Shift` + `C` | `Cmd` + `Shift` + `C`|
+|运行|`Ctrl` + `Enter` |`Shift` + `Enter`|
+
+
+
 <figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
 <figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
 <figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
-<h1 id="参考资料"><a class="header-anchor" href="#参考资料"></a>参考资料</h1>
-<ul>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
 <li><a target="_blank" rel="noopener" href="https://cn.bing.com/images/search?view=detailV2&amp;ccid=y7PQyqXC&amp;id=617BD652FC2012861BB5E27035D4C092C9467682&amp;thid=OIP.y7PQyqXC-XCIFzc0BC5JawHaHa&amp;mediaurl=https%3a%2f%2fwww.rstudio.com%2fwp-content%2fuploads%2f2019%2f02%2frstudio-og.png&amp;exph=1200&amp;expw=1200&amp;q=Rstudio&amp;simid=607993942360785821&amp;selectedIndex=18">首页缩略图</a></li>
 <li><a target="_blank" rel="noopener" href="https://blog.csdn.net/neweastsun/article/details/79435271">使用R中merge()函数合并数据</a></li>
 <li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/csguo/p/7294057.html">R语言paste函数</a></li>
@@ -442,8 +412,8 @@
       </div>
       
       <div style="display: inline-block;">
-        <img src="/images/reward2021.png" alt="Skye WeChat Pay">
-        <p>WeChat Pay</p>
+        <img src="/images/reward2021.png" alt="Skye WeChat Bezahlung">
+        <p>WeChat Bezahlung</p>
       </div>
 
   </div>
@@ -546,7 +516,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#base"><span class="nav-number">1.</span> <span class="nav-text">base</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#class"><span class="nav-number">1.1.</span> <span class="nav-text">class</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#merge"><span class="nav-number">1.2.</span> <span class="nav-text">merge</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mode"><span class="nav-number">1.3.</span> <span class="nav-text">mode</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#paste"><span class="nav-number">1.4.</span> <span class="nav-text">paste</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#typeof"><span class="nav-number">1.5.</span> <span class="nav-text">typeof</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#stats"><span class="nav-number">2.</span> <span class="nav-text">stats</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#r-%E5%88%86%E5%B8%83"><span class="nav-number">2.1.</span> <span class="nav-text">r+分布</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Packages"><span class="nav-number">3.</span> <span class="nav-text">Packages</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Amelia"><span class="nav-number">3.1.</span> <span class="nav-text">Amelia</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ggplot2"><span class="nav-number">3.2.</span> <span class="nav-text">ggplot2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#grpreg"><span class="nav-number">3.3.</span> <span class="nav-text">grpreg</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#installr"><span class="nav-number">3.4.</span> <span class="nav-text">installr</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MASS"><span class="nav-number">3.5.</span> <span class="nav-text">MASS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MICE"><span class="nav-number">3.6.</span> <span class="nav-text">MICE</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%B6%E4%BB%96"><span class="nav-number">4.</span> <span class="nav-text">其他</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="nav-number">4.1.</span> <span class="nav-text">快捷键</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="nav-number">5.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#base"><span class="nav-number">1.</span> <span class="nav-text">base</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#class"><span class="nav-number">1.1.</span> <span class="nav-text">class</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#merge"><span class="nav-number">1.2.</span> <span class="nav-text">merge</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mode"><span class="nav-number">1.3.</span> <span class="nav-text">mode</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#paste"><span class="nav-number">1.4.</span> <span class="nav-text">paste</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#typeof"><span class="nav-number">1.5.</span> <span class="nav-text">typeof</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#stats"><span class="nav-number">2.</span> <span class="nav-text">stats</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#r-%E5%88%86%E5%B8%83"><span class="nav-number">2.1.</span> <span class="nav-text">r+分布</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Packages"><span class="nav-number">3.</span> <span class="nav-text">Packages</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Amelia"><span class="nav-number">3.1.</span> <span class="nav-text">Amelia</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ggplot2"><span class="nav-number">3.2.</span> <span class="nav-text">ggplot2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#grpreg"><span class="nav-number">3.3.</span> <span class="nav-text">grpreg</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#installr"><span class="nav-number">3.4.</span> <span class="nav-text">installr</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MASS"><span class="nav-number">3.5.</span> <span class="nav-text">MASS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MICE"><span class="nav-number">3.6.</span> <span class="nav-text">MICE</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="nav-number">4.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -615,13 +585,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">442k</span>
+    <span title="站点总字数">430k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">6:42</span>
+    <span title="站点阅读时长">6:31</span>
 </div>
 
 
@@ -705,6 +675,8 @@
 
 
 
+
+  
 
 
 
