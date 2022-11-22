@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://github.com/ShootingWang/ShootingWang.github.io/timeline/index.html</loc>
+    
+    <lastmod>2022-11-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://github.com/ShootingWang/ShootingWang.github.io/%E5%9B%A0%E6%9E%9C%E6%8E%A8%E6%96%AD.html</loc>
     
     <lastmod>2022-11-09</lastmod>
@@ -444,15 +453,6 @@
   
   <url>
     <loc>https://github.com/ShootingWang/ShootingWang.github.io/R.html</loc>
-    
-    <lastmod>2022-05-05</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://github.com/ShootingWang/ShootingWang.github.io/timeline/index.html</loc>
     
     <lastmod>2022-05-05</lastmod>
     
