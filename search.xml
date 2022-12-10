@@ -30845,8 +30845,8 @@ $$b\triangleq\frac{b}{||\mathbf{w}||\gamma}$$<br>
 $$\mathrm{s.t.}\quad y_i( \mathbf{w}^T \mathbf{x}_i+b)\geq 1, \forall i$$</p>
 <p>$\mathbf{w}$是超平面参数。</p>
 <p>使用拉格朗日乘子法求解上述<u>有约束条件的最优化问题</u></p>
-<p>$$L( \mathbf{w} ,b, \mathbf{ \lambda } )=\frac{1}{2} || \mathbf{w}||<sup>2-\sum_{i=1}</sup>n \lambda_i \left[ y_i( \mathbf{w}^T \mathbf{x}_i + b)-1 \right]$$<br>
-其中，$\lambda_i$为拉格朗日乘子，且$\lambda_i\geq 0$。</p>
+<p>$$L( \mathbf{ w } ,b, \mathbf{ \lambda } )=\frac{ 1 }{ 2 } || \mathbf{ w } ||^2 - \sum_{ i=1 }^n \lambda_i \left[ y_i ( \mathbf{ w }^T \mathbf{ x }_i + b ) - 1 \right] $$</p>
+<p>其中，$\lambda_i$为拉格朗日乘子，且$\lambda_i \geq 0$。</p>
 <p>令<br>
 $$\theta( \mathbf{w} )=\max_{ \lambda_i \geq 0 } L ( \mathbf{w} , b, \mathbf{ \lambda } )$$</p>
 <ul>
@@ -30881,17 +30881,17 @@ y_i(\mathbf{w}_i\cdot\mathbf{x}_i+b)-1\geq0\<br>
 \right.$$</li>
 </ol>
 <p>令<br>
-$$\frac{\partial L(\mathbf{w},b,\lambda)}{\partial \mathbf{w} }=0,\quad \frac{\partial L(\mathbf{w},b,\lambda)}{\partial b}=0$$<br>
-可得<br>
+$$\frac{\partial L(\mathbf{w},b,\lambda)}{\partial \mathbf{w} }=0,\quad \frac{\partial L(\mathbf{w},b,\lambda)}{\partial b}=0 $$</p>
+<p>可得<br>
 $$<br>
 \left\lbrace<br>
 \begin{array}{l}<br>
-\mathbf{w}=\sum_{i=1}^n\lambda_i y_i \mathbf{x}<em>i\<br>
-\sum</em>{i=1}^n\lambda_iy_i=0<br>
+\mathbf{w}= \sum_{i=1}^n \lambda_i y_i \mathbf{x}<em>i \\<br>
+\sum</em>{i=1}^n \lambda_i y_i=0 \\<br>
 \end{array}<br>
 \right.<br>
 $$</p>
-<p>代入$L(\mathbf{w},b,\lambda)$消去$\mathbf{w}$和$b$得</p>
+<p>代入$L(\mathbf{w} ,b,\lambda )$消去$\mathbf{w}$和$b$得</p>
 <p>$$<br>
 \begin{aligned}<br>
 L( \mathbf{w},b,\lambda) &amp;= \frac{1}{2} \sum_{i=1}^n \sum_{j=1}^n \lambda_i \lambda_j y_i y_j ( \mathbf{x}<em>i \cdot \mathbf{x}<em>j )-\sum</em>{i=1}^n \lambda_i y_i \left[ \left( \sum</em>{j=1}^n \lambda_j y_j \mathbf{x}<em>j \right)\cdot \mathbf{x}<em>i+b \right] + \sum</em>{i=1}^n \lambda_i \\<br>
@@ -30903,9 +30903,9 @@ $$\min_{\mathbf{w},b}L(\mathbf{w},b,\mathbf{\lambda})=-\frac{1}{2}\sum_{i=1}<sup
 那么$$\max</em>{\lambda}\min_{\mathbf{w},b}L(\mathbf{w},b,\mathbf{\lambda})$$等价于<br>
 \begin{equation}<br>
 \begin{aligned}<br>
-\max_{\lambda} &amp; -\frac{1}{2}\sum_{i=1}<sup>n\sum_{j=1}</sup>n\lambda_i\lambda_jy_iy_j(\mathbf{x}<em>i \cdot \mathbf{x}<em>j )+\sum</em>{i=1}^n\lambda_i\<br>
-\mathrm{s.t.} &amp; \sum</em>{i=1}^n\lambda_iy_i=0\<br>
-&amp; \lambda_i\geq0,\quad i=1,\cdots,n.<br>
+\max_{\lambda} &amp; -\frac{1}{2}\sum_{i=1}<sup>n\sum_{j=1}</sup>n\lambda_i\lambda_jy_iy_j(\mathbf{x}<em>i \cdot \mathbf{x}<em>j )+\sum</em>{i=1}^n\lambda_i \\<br>
+\mathrm{s.t.} &amp; \sum</em>{i=1}^n\lambda_iy_i=0 \\<br>
+&amp; \lambda_i \geq 0,\quad i=1,\cdots,n. \\<br>
 \end{aligned}<br>
 \end{equation}</p>
 <p>使用<strong>序列最小化算法</strong>（SMO）（待补充）求解上述优化问题。</p>
