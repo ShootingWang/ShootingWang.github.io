@@ -33,8 +33,8 @@
 <meta property="og:site_name" content="Skye">
 <meta property="og:description" content="Hidden Markov Model">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://github.com/ShootingWang/ShootingWang.github.io/%E7%AE%97%E6%B3%95-HMM.htm/forward.png">
-<meta property="og:image" content="https://github.com/ShootingWang/ShootingWang.github.io/%E7%AE%97%E6%B3%95-HMM.htm/backward.png">
+<meta property="og:image" content="https://github.com/ShootingWang/ShootingWang.github.io/ShootingWang.github.io/%E7%AE%97%E6%B3%95-HMM.htm/forward.png">
+<meta property="og:image" content="https://github.com/ShootingWang/ShootingWang.github.io/ShootingWang.github.io/%E7%AE%97%E6%B3%95-HMM.htm/backward.png">
 <meta property="article:published_time" content="2020-06-03T09:43:09.000Z">
 <meta property="article:modified_time" content="2022-10-12T04:44:21.340Z">
 <meta property="article:author" content="Skye">
@@ -42,7 +42,7 @@
 <meta property="article:tag" content="Machine Learning 机器学习">
 <meta property="article:tag" content="生成式模型">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://github.com/ShootingWang/ShootingWang.github.io/%E7%AE%97%E6%B3%95-HMM.htm/forward.png">
+<meta name="twitter:image" content="https://github.com/ShootingWang/ShootingWang.github.io/ShootingWang.github.io/%E7%AE%97%E6%B3%95-HMM.htm/forward.png">
 
 <link rel="canonical" href="https://github.com/ShootingWang/ShootingWang.github.io/%E7%AE%97%E6%B3%95-HMM.html">
 
@@ -433,7 +433,7 @@ P(O|\lambda) &amp;= \sum_I P(O,I|\lambda)\<br>
 $$\alpha_{t+1}(i)=\left[\sum_{j=1}^N\alpha_t(j)a_{ji} \right]b_i(o_{t+1})$$</p>
 <p>$\alpha_T(i)$表示在时刻$T$观测序列为$o_1,o_2,\cdots,o_T$，且时刻$T$隐藏状态为$q_i$的概率，所以$\sum_{i=1}^N\alpha_T(i)$表示在时刻$T$观测序列为$o_1,o_2,\cdots,o_T$的概率。</p>
 <meta name="referrer" content="no-referrer">
-<img src="/ShootingWang/ShootingWang.github.io/%E7%AE%97%E6%B3%95-HMM.htm/forward.png" class title="来自[刘建平Pinard-隐马尔科夫模型HMM（二）前向后向算法评估观察序列概率]">
+<img src="/ShootingWang/ShootingWang.github.io/ShootingWang.github.io/%E7%AE%97%E6%B3%95-HMM.htm/forward.png" class title="来自[刘建平Pinard-隐马尔科夫模型HMM（二）前向后向算法评估观察序列概率]">
 <div class="note danger">
             <h2 id="前向算法"><a class="header-anchor" href="#前向算法"></a>前向算法</h2><p><strong>输入</strong>：</p><ul><li>隐马尔可夫模型$\lambda$</li><li>观测序列$O$</li></ul><p><strong>输出</strong>：观测序列概率$P(O|\lambda)$<br>$$P(O|\lambda)=\sum_{i=1}^N\alpha_T(i)$$</p><ol><li>计算时刻$1$的各个隐藏状态前向概率$(i=1,2,\cdots,N)$<br>$$\alpha_1(i)=\pi_ib_i(o_1)$$</li><li>递推：对$t=1,2, \cdots, T-1$<br>$$\alpha_{t+1}(i)=\left[\sum_{j=1}^N\alpha_t(j)a_{ji} \right]b_i(o_{t+1})$$<br>$i=1,2,\cdots,N$。</li></ol>
           </div>
@@ -448,7 +448,7 @@ $$\alpha_{t+1}(i)=\left[\sum_{j=1}^N\alpha_t(j)a_{ji} \right]b_i(o_{t+1})$$</p>
 <p>假设已经找到在时刻$t+1$时各个隐藏状态的后向概率$\beta_{t+1}(j)$，需要递推初时刻$t$的各个隐藏状态的后向概率。</p>
 <p>可以计算出观测状态序列为$o_{t+2},o_{t+3},\cdots,o_T$、$t$时隐藏状态为$q_i$、$t+1$时隐藏状态为$q_j$的概率为$a_{ij}\beta_{t+1}(j)$；则观测状态序列为$o_{t+1},o_{t+2},o_{t+3},\cdots,o_T$、$t$时隐藏状态为$q_i$、$t+1$时隐藏状态为$q_j$的概率为$a_{ij}b_j(o_{t+1})\beta_{t+1}(j)$；将$t+1$时所有隐藏状态概率加总，得到观测状态序列为$o_{t+1},o_{t+2},o_{t+3},\cdots,o_T$、$t$时隐藏状态为$q_i$的概率为$\sum_{j=1}^Na_{ij}b_j(o_{t+1})\beta_{t+1}(j)$，即时刻$t$的后向概率。</p>
 <meta name="referrer" content="no-referrer">
-<img src="/ShootingWang/ShootingWang.github.io/%E7%AE%97%E6%B3%95-HMM.htm/backward.png" class title="来自[刘建平Pinard-隐马尔科夫模型HMM（二）前向后向算法评估观察序列概率]">
+<img src="/ShootingWang/ShootingWang.github.io/ShootingWang.github.io/%E7%AE%97%E6%B3%95-HMM.htm/backward.png" class title="来自[刘建平Pinard-隐马尔科夫模型HMM（二）前向后向算法评估观察序列概率]">
 <div class="note danger">
             <h2 id="后向算法"><a class="header-anchor" href="#后向算法"></a>后向算法</h2><p><strong>输入</strong>：</p><ul><li>隐马尔可夫模型$\lambda$</li><li>观测序列$O$</li></ul><p><strong>输出</strong>：观测序列概率$P(O|\lambda)$<br>$$P(O|\lambda)=\sum_{i=1}^N\pi_ib_i(o_1)\beta_1(i)$$</p><ol><li>初始化时刻$T$的各个隐藏状态后向概率<br>$$\beta_T(i)=1$$<br>$i=1,2,\cdots,N$。</li><li>递推：对于$t=T-1,T-2,\cdots,1$，计算<br>$$\beta_t(i)=\sum_{j=1}^Na_{ij}b_j(o_{t+1})\beta_{t+1}(j)$$<br>$i=1,2,\cdots,N$。</li></ol>
           </div>
@@ -528,8 +528,8 @@ $${(O_1),(O_2),\cdots,(O_D)}$$</p>
       </div>
       
       <div style="display: inline-block;">
-        <img src="/images/reward2021.png" alt="Skye WeChat Bezahlung">
-        <p>WeChat Bezahlung</p>
+        <img src="/images/reward2021.png" alt="Skye WeChat Pay">
+        <p>WeChat Pay</p>
       </div>
 
   </div>
