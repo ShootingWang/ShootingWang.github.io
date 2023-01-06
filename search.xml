@@ -30902,8 +30902,8 @@ $$</p>
 <p>$$<br>
 \begin{aligned}<br>
 \max_{ \lambda } &amp; -\frac{1}{2} \sum_{i=1}^n \sum_{j=1}^n \lambda_i \lambda_j y_i y_j ( \mathbf{x}<em>i \cdot \mathbf{x}<em>j ) + \sum</em>{i=1}^n \lambda_i \\<br>
-\mathrm{s.t.} &amp; \sum</em>{i=1}^n \lambda_i y_i=0 \\<br>
-&amp; \lambda_i \geq 0,\quad i=1,\cdots,n. \\<br>
+\mathrm{s.t.} &amp; \sum</em>{i=1}^n \lambda_i y_i = 0 \\<br>
+&amp; \lambda_i \geq 0,\quad i=1, \cdots , n. \\<br>
 \end{aligned}<br>
 $$</p>
 <p>使用<strong>序列最小化算法</strong>（SMO）（待补充）求解上述优化问题。</p>
@@ -30919,12 +30919,12 @@ $$</p>
 <p>因此</p>
 <p>$$<br>
 \begin{aligned}<br>
-\mathbf{ w }^{*} &amp;= \sum_{i=1}^n \lambda_i^{*} y_i \mathbf{x}<em>i \\<br>
-b^{*} &amp;= y_j-\sum</em>{ i=1 }^n \lambda_i^{*} y_i ( \mathbf{ x }_i \cdot \mathbf{ x }_j ) \\<br>
+\mathbf{ w }^{ * } &amp;= \sum_{i=1}^n \lambda_i^{ * } y_i \mathbf{ x }<em>i \\<br>
+b^{ * } &amp;= y_j-\sum</em>{ i=1 }^n \lambda_i^{ * } y_i ( \mathbf{ x }_i \cdot \mathbf{ x }_j ) \\<br>
 \end{aligned}<br>
 $$</p>
 <blockquote>
-<p>对于任意训练样本$(\mathbf{x}_i,y_i)$，总有$\lambda_i=0$或$y_i\left(\mathbf{w}<sup>*\cdot\mathbf{x}_i+b</sup>* \right)=1$。</p>
+<p>对于任意训练样本$(\mathbf{x}_i,y_i)$，总有$\lambda_i=0$或$y_i \left( \mathbf{ w }^* \cdot \mathbf{x}_i + b^* \right) = 1$。</p>
 </blockquote>
 <ul>
 <li>若$\lambda_i=0$，则该样本不会出现在求解“决策平面”参数得式子中</li>
@@ -30932,11 +30932,11 @@ $$</p>
 </ul>
 <h4 id="近似线性可分"><a class="header-anchor" href="#近似线性可分"></a>近似线性可分</h4>
 <p>实际情况下，几乎不存在完全线性可分的数据，对于近似线性可分的训练数据集，引入<strong>软间隔</strong>——允许某些点不满足约束$y_i(\mathbf{w}\cdot\mathbf{x}_i+b)\geq 1$</p>
-<p>引入<strong>松弛变量</strong>(Hinge损失函数)$ \xi_i = \max \lbrace 0 , 1 - y_i( \mathbf{ w } \cdot \mathbf{x}<em>i + b) \rbrace$，将原优化问题改写为<br>
-$$<br>
+<p>引入<strong>松弛变量</strong>(Hinge损失函数)$ \xi_i = \max \lbrace 0 , 1 - y_i( \mathbf{ w } \cdot \mathbf{x}_i + b) \rbrace$，将原优化问题改写为</p>
+<p>$$<br>
 \begin{aligned}<br>
-\min</em>{\mathbf{w},b,\xi} &amp;\quad \frac{1}{2}|| \mathbf{ w } ||^2+ \phi \sum_{i=1}^n \xi_i \\<br>
-\mathrm{s.t.} &amp; \quad y_i ( \mathbf{ w } \cdot \mathbf{ x }_i + b ) \geq 1- \xi_i\\<br>
+\min_{ \mathbf{w} , b , \xi } &amp; \quad \frac{1}{2} || \mathbf{ w } ||^2+ \phi \sum_{i=1}^n \xi_i \\<br>
+\mathrm{s.t.} &amp; \quad y_i ( \mathbf{ w } \cdot \mathbf{ x }_i + b ) \geq 1- \xi_i \\<br>
 &amp; \quad \xi_i \geq 0,\quad i=1,\cdots,n. \\<br>
 \end{aligned}<br>
 $$</p>
