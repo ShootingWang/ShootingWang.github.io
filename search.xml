@@ -30776,7 +30776,7 @@ SVM
 <li>分离超平面几何间隔最大</li>
 </ul>
 <meta name="referrer" content="no-referrer">
-<img src="/ShootingWang/ShootingWang.github.io/%E7%AE%97%E6%B3%95-SVM/svm2.jpg" class title="支持向量机">
+<img src="/ShootingWang/ShootingWang.github.io/%E7%AE%97%E6%B3%95-SVM.htm/svm2.jpg" class title="支持向量机">
 <h3 id="类别"><a class="header-anchor" href="#类别"></a>类别</h3>
 <ol>
 <li><strong>线性可分支持向量机</strong></li>
@@ -30882,20 +30882,20 @@ y_i( \mathbf{ w }_i \cdot \mathbf{x}_i + b )-1 \geq 0 \\<br>
 <p>$$<br>
 \left\lbrace<br>
 \begin{array}{l}<br>
-\mathbf{ w }= \sum_{ i=1 }^n \lambda_i y_i \mathbf{ x }<em>i \\<br>
-\sum</em>{ i=1 }^n \lambda_i y_i = 0 \\<br>
+\mathbf{ w } = \sum_{ i=1 }^n \lambda_i y_i \mathbf{ x }<em>i \\<br>
+\sum</em>{ i = 1 }^n \lambda_i y_i = 0 \\<br>
 \end{array}<br>
 \right.<br>
 $$</p>
 <p>代入$L( \mathbf{ w } , b, \lambda )$消去$ \mathbf{ w }$和$b$得</p>
 <p>$$<br>
 \begin{aligned}<br>
-L( \mathbf{ w },b,\lambda) &amp;= \frac{1}{2} \sum_{ i=1 }^n \sum_{j=1}^n \lambda_i \lambda_j y_i y_j ( \mathbf{ x }<em>i \cdot \mathbf{ x }<em>j )-\sum</em>{i=1}^n \lambda_i y_i \left[ \left( \sum</em>{ j=1 }^n \lambda_j y_j \mathbf{ x }<em>j \right)\cdot \mathbf{x}<em>i+b \right] + \sum</em>{i=1}^n \lambda_i \\<br>
+L( \mathbf{ w },b,\lambda) &amp;= \frac{1}{2} \sum_{ i=1 }^n \sum_{j=1}^n \lambda_i \lambda_j y_i y_j ( \mathbf{ x }<em>i \cdot \mathbf{ x }<em>j ) - \sum</em>{i=1}^n \lambda_i y_i \left[ \left( \sum</em>{ j=1 }^n \lambda_j y_j \mathbf{ x }<em>j \right) \cdot \mathbf{x}<em>i + b \right] + \sum</em>{i=1}^n \lambda_i \\<br>
 &amp;= -\frac{1}{2} \sum</em>{i=1}^n \sum_{j=1}^n \lambda_i \lambda_j y_i y_j ( \mathbf{ x }_i \cdot \mathbf{ x }<em>j ) + \sum</em>{i=1}^n \lambda_i \\<br>
 \end{aligned}<br>
 $$</p>
 <p>则</p>
-<p>$$\min_{\mathbf{w},b} L (\mathbf{w} , b, \mathbf{ \lambda }) = -\frac{1}{2} \sum_{i=1}^n \sum_{j=1}^n \lambda_i \lambda_j y_i y_j (\mathbf{x}_i \cdot \mathbf{x}<em>j )+ \sum</em>{i=1}^n \lambda_i$$</p>
+<p>$$\min_{\mathbf{ w } , b} L ( \mathbf{w} , b, \mathbf{ \lambda } ) = -\frac{1}{2} \sum_{i=1}^n \sum_{j=1}^n \lambda_i \lambda_j y_i y_j ( \mathbf{x}_i \cdot \mathbf{x}<em>j )+ \sum</em>{i=1}^n \lambda_i $$</p>
 <p>那么</p>
 <p>$$\max_{ \lambda } \min_{ \mathbf{ w },b } L ( \mathbf{ w },b, \mathbf{ \lambda })$$</p>
 <p>等价于</p>
@@ -31262,15 +31262,15 @@ $$ w_i^T x - w_k^T x \geq 1 \quad \forall \quad k\neq i $$</li>
 <h1 id="Python实现"><a class="header-anchor" href="#Python实现"></a>Python实现</h1>
 <p>简单分类数据：</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns</span><br><span class="line">sns.<span class="built_in">set</span>()</span><br><span class="line"></span><br><span class="line"><span class="comment">## 创建类别数为2的分类数据</span></span><br><span class="line"><span class="keyword">from</span> sklearn.datasets.samples_generator <span class="keyword">import</span> make_blobs</span><br><span class="line">X, y = make_blobs(n_samples=<span class="number">50</span>, centers=<span class="number">2</span>, random_state=<span class="number">0</span>, cluster_std=<span class="number">0.60</span>)</span><br><span class="line">plt.scatter(X[:, <span class="number">0</span>], X[:, <span class="number">1</span>], c=y, s=<span class="number">50</span>, cmap=<span class="string">&#x27;autumn&#x27;</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p><img src="/ShootingWang/ShootingWang.github.io/%E7%AE%97%E6%B3%95-SVM/SVM-Figure_1.png" alt="简单分类数据"></p>
+<p><img src="/ShootingWang/ShootingWang.github.io/%E7%AE%97%E6%B3%95-SVM.htm/SVM-Figure_1.png" alt="简单分类数据"></p>
 <p>简单分割线：</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">xfit = np.linspace(-<span class="number">1</span>, <span class="number">3.5</span>)</span><br><span class="line">plt.scatter(X[:, <span class="number">0</span>], X[:, <span class="number">1</span>], c=y, s=<span class="number">50</span>, cmap=<span class="string">&#x27;autumn&#x27;</span>)</span><br><span class="line">plt.plot([<span class="number">0.6</span>], [<span class="number">2.1</span>], <span class="string">&#x27;x&#x27;</span>, color=<span class="string">&#x27;red&#x27;</span>, markeredgewidth=<span class="number">2</span>, markersize=<span class="number">10</span>)  <span class="comment">##特殊点</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> m, b <span class="keyword">in</span> [(<span class="number">1</span>, <span class="number">0.65</span>), (<span class="number">0.5</span>, <span class="number">1.6</span>), (-<span class="number">0.2</span>, <span class="number">2.9</span>)]:</span><br><span class="line">    plt.plot(xfit, m * xfit + b, <span class="string">&#x27;-k&#x27;</span>)  <span class="comment">##画三条分割直线</span></span><br><span class="line"></span><br><span class="line">plt.xlim(-<span class="number">1</span>, <span class="number">3.5</span>)</span><br></pre></td></tr></table></figure>
-<p><img src="/ShootingWang/ShootingWang.github.io/%E7%AE%97%E6%B3%95-SVM/SVM-Figure_3.png" alt="三条简单分割直线"><br>
+<p><img src="/ShootingWang/ShootingWang.github.io/%E7%AE%97%E6%B3%95-SVM.htm/SVM-Figure_3.png" alt="三条简单分割直线"><br>
 上图中的三条简单分割直线（分割器）都能很好地判别这些样本（每条直线都能将圆点数据点正确地分为两类）。但是对于点“X”，不同的分割器将其分配到不同的标签。</p>
 <p>若将分割直线变成具有宽度的、到最近点边界的线条，如下图：</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">xfit = np.linspace(-<span class="number">1</span>, <span class="number">3.5</span>)</span><br><span class="line">plt.scatter(X[:, <span class="number">0</span>], X[:, <span class="number">1</span>], c=y, s=<span class="number">50</span>, cmap=<span class="string">&#x27;autumn&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> m, b, d <span class="keyword">in</span> [(<span class="number">1</span>, <span class="number">0.65</span>, <span class="number">0.33</span>), (<span class="number">0.5</span>, <span class="number">1.6</span>, <span class="number">0.55</span>), (-<span class="number">0.2</span>, <span class="number">2.9</span>, <span class="number">0.2</span>)]:</span><br><span class="line">    yfit = m * xfit + b</span><br><span class="line">    plt.plot(xfit, yfit, <span class="string">&#x27;-k&#x27;</span>)</span><br><span class="line">    plt.fill_between(xfit, yfit - d, yfit + d, edgecolor=<span class="string">&#x27;none&#x27;</span>, color=<span class="string">&#x27;#AAAAAA&#x27;</span>, alpha=<span class="number">0.4</span>)</span><br><span class="line"></span><br><span class="line">plt.xlim(-<span class="number">1</span>, <span class="number">3.5</span>)</span><br></pre></td></tr></table></figure>
-<p><img src="/ShootingWang/ShootingWang.github.io/%E7%AE%97%E6%B3%95-SVM/SVM-Figure_2.png" alt="带有边界的分割器"></p>
-<p><img src="/ShootingWang/ShootingWang.github.io/%E7%AE%97%E6%B3%95-SVM/SVM-Figure_4.jpeg" alt="带边界线和支持向量的支持向量机分类器"></p>
+<p><img src="/ShootingWang/ShootingWang.github.io/%E7%AE%97%E6%B3%95-SVM.htm/SVM-Figure_2.png" alt="带有边界的分割器"></p>
+<p><img src="/ShootingWang/ShootingWang.github.io/%E7%AE%97%E6%B3%95-SVM.htm/SVM-Figure_4.jpeg" alt="带边界线和支持向量的支持向量机分类器"></p>
 <p>正好在边界线上的点，被称为<strong>支持向量</strong>。</p>
 <p>在scikit-learn中，支持向量的坐标存放在分类器的<code>support_vectors_</code>属性中。</p>
 <p>SVM对远离边界的数据点不敏感。</p>
