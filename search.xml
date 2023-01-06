@@ -26364,7 +26364,7 @@ $$f(\mathbf{ x }) = \mathrm{ sign }{ \left( \sum_{i=1}^n \lambda_i^* y_i \exp{ \
 <li>$p$：特征维度</li>
 </ul>
 <blockquote>
-<p>当$p$较小、$n$较大时，支持向量机性能通常不如深度神经网络</p>
+<p>当 $p$ 较小、$n$ 较大时，支持向量机性能通常不如深度神经网络</p>
 </blockquote>
 <h2 id="总结"><a class="header-anchor" href="#总结"></a>总结</h2>
 <p>若样本的某些特征数据缺失，可能会影响SVM模型训练结果的好坏。</p>
@@ -26387,7 +26387,7 @@ $$f(\mathbf{ x }) = \mathrm{ sign }{ \left( \sum_{i=1}^n \lambda_i^* y_i \exp{ \
 <h3 id="缺点"><a class="header-anchor" href="#缺点"></a>缺点</h3>
 <p>SVM的缺点：</p>
 <ul>
-<li>随着样本量$N$的增加，模型的训练复杂度可能会高达$\mathcal{O}(N<sup>3)$，即使经过高效处理后，复杂度也有$\mathcal{O}(N</sup>2)$。即，大样本下模型学习的计算成本会很高。</li>
+<li>随着样本量 $N$ 的增加，模型的训练复杂度可能会高达 $\mathcal{ O }( N^3 )$，即使经过高效处理后，复杂度也有 $\mathcal{ O }( N^2 )$。即，大样本下模型学习的计算成本会很高。</li>
 <li>训练效果非常依赖于边界软化参数$C$的选择是否合理；需要通过交叉检验进行检索；当数据集较大时，计算量也很大</li>
 <li>SVM对缺失数据敏感</li>
 <li>非线性问题的核函数的选择没有通用标准，难以选择一个合适的核函数</li>
