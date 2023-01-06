@@ -30964,24 +30964,27 @@ $$S=\lbrace ( \mathbf{x}_1 , y_1 ), ( \mathbf{ x }_2 , y_2 ), \cdots , ( \mathbf
 <li><strong>输出</strong>：分离超平面、分类决策函数</li>
 </ul>
 <ol>
-<li>选择惩罚参数$\phi&gt;0$，构造并求解凸二次规划问题<br>
+<li>选择惩罚参数 $\phi &gt; 0 $，构造并求解凸二次规划问题<br>
 $$<br>
 \begin{aligned}<br>
-\min_{ \pmb{\lambda} } &amp;\quad \frac{1}{2} \sum_{i=1}<sup>n\sum_{j=1}</sup>n \lambda_i \lambda_j y_i y_j ( \mathbf{x}<em>i \cdot \mathbf{ x }<em>j ) - \sum</em>{i=1}^n \lambda_i \\<br>
-\mathrm{s.t.} &amp;\quad \sum</em>{i=1}^n \lambda_i y_i=0 \\<br>
-&amp; \quad 0\leq \lambda_i \leq \phi,\quad i=1,\cdots,n. \\<br>
+\min_{ \pmb{ \lambda } } &amp;\quad \frac{1}{2} \sum_{i=1}^n \sum_{j=1}^n \lambda_i \lambda_j y_i y_j ( \mathbf{x}<em>i \cdot \mathbf{ x }<em>j ) -<br>
+\sum</em>{i=1}^n \lambda_i \\<br>
+\mathrm{s.t.} &amp; \quad \sum</em>{i=1}^n \lambda_i y_i=0 \\<br>
+&amp; \quad 0 \leq \lambda_i \leq \phi,\quad i=1,\cdots,n. \\<br>
 \end{aligned}<br>
-$$<br>
-得到最优解<br>
-$$\pmb{\lambda}^* = ( \lambda_1^* ,\cdots ,\lambda_n^* )^T $$</li>
+$$</li>
+</ol>
+<p>得到最优解</p>
+<p>$$\pmb{ \lambda }^* = ( \lambda_1^* ,\cdots ,\lambda_n^* )^T $$</p>
+<ol start="2">
 <li>计算<br>
-$$\mathbf{w}^* = \sum_{i=1}^n \lambda^*_i y_i \mathbf{ x }_i$$<br>
-选择$\pmb{\lambda}<sup>*$的一个满足条件$0&lt;\lambda_j</sup>*&lt;\phi$的分量$\lambda_j^*$，计算<br>
-$$b<sup>*=y_j-\sum_{i=1}</sup>n\lambda_j^*y_j(\mathbf{x}_i\cdot\mathbf{x}_j)$$</li>
+$$\mathbf{w}^* = \sum_{i=1}^n \lambda^<em>_i y_i \mathbf{ x }_i $$<br>
+选择 $\pmb{ \lambda }^* $ 的一个满足条件 $ 0 &lt; \lambda_j^* &lt; \phi $ 的分量 $ \lambda_j^* $，计算<br>
+$$ b^</em> = y_j - \sum_{i=1}^n \lambda_j^* y_j ( \mathbf{x}_i \cdot \mathbf{x}_j ) $$</li>
 <li>求分离超平面<br>
-$$\mathbf{w}<sup>*\cdot\mathbf{x}+b</sup><em>=0$$<br>
+$$ \mathbf{w}^* \cdot \mathbf{ x } + b^* = 0 $$<br>
 分类决策函数为<br>
-$$f(\mathbf{x})=\mathrm{sign}{(\mathbf{w}<sup>*\cdot\mathbf{x}+b</sup></em>)}$$</li>
+$$f( \mathbf{x} ) = \mathrm{ sign }{ ( \mathbf{ w }^* \cdot \mathbf{ x } + b^* ) }$$</li>
 </ol>
 <h3 id="非线性支持向量机"><a class="header-anchor" href="#非线性支持向量机"></a>非线性支持向量机</h3>
 <ul>
@@ -30996,15 +30999,17 @@ $$S = \lbrace ( \mathbf{x}_1 , y_1),( \mathbf{x}_2,y_2),\cdots,( \mathbf{x}_n , 
 <li>选择适当的核函数$K(x,z)$和惩罚参数$\phi&gt;0$，构造并求解凸二次规划问题<br>
 $$<br>
 \begin{aligned}<br>
-\min_{ \pmb{\lambda} } &amp;\quad \frac{1}{2} \sum_{i=1}^n \sum_{j=1}^n \lambda_i \lambda_j y_i y_j K(\mathbf{x_i},\mathbf{x}<em>j) - \sum</em>{i=1}^n \lambda_i \\<br>
-\mathrm{s.t.} &amp;\quad \sum_{i=1}^n \lambda_i y_i = 0 \\<br>
-&amp; \quad 0\leq \lambda_i \leq \phi,\quad i=1,\cdots,n.<br>
+\min_{ \pmb{\lambda} } &amp;\quad \frac{1}{2} \sum_{i=1}^n \sum_{j=1}^n \lambda_i \lambda_j y_i y_j K( \mathbf{x_i},<br>
+\mathbf{x}<em>j ) -<br>
+\sum</em>{i=1}^n \lambda_i \\<br>
+\mathrm{s.t.} &amp; \quad \sum_{i=1}^n \lambda_i y_i = 0 \\<br>
+&amp; \quad 0 \leq \lambda_i \leq \phi,\quad i=1,\cdots,n.<br>
 \end{aligned}<br>
 $$<br>
 得到最优解<br>
-$$\pmb{\lambda}^* = (\lambda_1^* , \cdots,\lambda_n^* )^T$$</li>
+$$\pmb{ \lambda }^* = ( \lambda_1^* , \cdots ,\lambda_n^* )^T $$</li>
 <li>选择$\pmb{ \lambda }^*$的一个满足条件$ 0 &lt; \lambda_j^* &lt; \phi $的分量$\lambda_j^*$，计算<br>
-$$b<sup>*=y_j-\sum_{i=1}</sup>n \lambda_j^* y_j K( \mathbf{x}_i, \mathbf{x}_j )$$</li>
+$$ b^* = y_j - \sum_{i=1}^n \lambda_j^* y_j K( \mathbf{x}_i, \mathbf{x}_j )$$</li>
 <li>分类决策函数为<br>
 $$f( \mathbf{ x } )=\mathrm{ sign }{ \left( \sum_{i=1}^n \lambda_i^* y_i K( \mathbf{ x }, \mathbf{ x }_i)+b^* \right) }$$</li>
 </ol>
@@ -31016,11 +31021,11 @@ $$f( \mathbf{ x } )=\mathrm{ sign }{ \left( \sum_{i=1}^n \lambda_i^* y_i K( \mat
 <h3 id="多项式核"><a class="header-anchor" href="#多项式核"></a>多项式核</h3>
 <h3 id="RBF核"><a class="header-anchor" href="#RBF核"></a>RBF核</h3>
 <p>高斯核函数/高斯径向基函数（Radial Basis Function）<br>
-$$K(x,z)=\exp \left( - \frac{ ||x-z||^2 }{ 2\sigma^2 } \right)$$</p>
+$$ K(x,z)=\exp \left( - \frac{ ||x-z||^2 }{ 2 \sigma^2 } \right) $$</p>
 <ul>
 <li>对应的SVM是<strong>高斯径向基函数分类器</strong></li>
 <li>对应的分类决策函数为<br>
-$$f(\mathbf{ x })=\mathrm{sign}{ \left( \sum_{i=1}^n \lambda_i^* y_i \exp{ \left( - \frac{ || \mathbf{x} - \mathrm{x}_i ||^2 }{ 2\sigma^2 } \right) } + b^* \right) }$$</li>
+$$f(\mathbf{ x }) = \mathrm{ sign }{ \left( \sum_{i=1}^n \lambda_i^* y_i \exp{ \left( - \frac{ || \mathbf{x} - \mathrm{x}_i ||^2 }{ 2\sigma^2 } \right) } + b^* \right) }$$</li>
 </ul>
 <div>
 <style scoped>
@@ -31201,39 +31206,39 @@ LR：逻辑回归</p>
 </table>
 </div>
 <p>考虑标签为$y\in\lbrace 0,1\rbrace$的LR和SVM。<br>
-LR的决策函数可以为<br>
-\begin{equation}<br>
+LR的决策函数可以为</p>
+<p>$$<br>
 \hat{y}=\left\lbrace<br>
 \begin{array}{ll}<br>
-1 &amp; \mathrm{if} P(y=1|x)\geq P(y=0|x)\<br>
-0 &amp; \mathrm{otherwise}<br>
+1 &amp; \mathrm{if} P(y=1|x) \geq P(y=0|x) \\<br>
+0 &amp; \mathrm{otherwise} \\<br>
 \end{array}<br>
 \right.<br>
-\end{equation}</p>
+$$</p>
 <p>其中<br>
-\begin{equation}<br>
+$$<br>
 \begin{aligned}<br>
-P(y=1|x) &amp; \propto \exp{(\mathbf{w}^T\cdot\mathbf{x}+b)}\<br>
-P(y=0|x) &amp; \propto 1<br>
+P(y=1|x) &amp; \propto \exp{ ( \mathbf{w}^T \cdot \mathbf{x} + b ) } \\<br>
+P(y=0|x) &amp; \propto 1 \\<br>
 \end{aligned}<br>
-\end{equation}</p>
+$$</p>
 <p>如果我们只是想做出正确决策，而不是获得每个类别的概率，可以用似然比来进行决策<br>
-$$\frac{P(y=1|x)}{P(y=0|x)}\geq c,\quad c&gt;1$$<br>
+$$ \frac{ P( y=1|x ) }{ P( y=0|x ) } \geq c,\quad c &gt; 1 $$<br>
 上述不等式两边同取对数，得<br>
-$$\log{(P(y=1|x))}- \log{(P(y=0|x))}\geq \log{c}$$<br>
+$$\log{ ( P(y=1|x))}- \log{(P(y=0|x))} \geq \log{c}$$<br>
 则有<br>
-$$\exp{(\mathbf{w}^T\cdot\mathbf{x}+b)}\geq \log{c}$$<br>
-因为$c$是任意常数，所以我们可取$c$满足$\log{c}=1$，使得<br>
-$$\exp{(\mathbf{w}^T\cdot\mathbf{x}+b)}\geq 1$$</p>
+$$\exp{ ( \mathbf{w}^T \cdot \mathbf{x} + b ) } \geq \log{c}$$<br>
+因为$c$是任意常数，所以我们可取 $c$ 满足 $\log{c}=1$，使得<br>
+$$\exp{ ( \mathbf{w}^T \cdot \mathbf{ x } + b ) } \geq 1$$</p>
 <p>上式可能存在多个解，如果添加一个二次惩罚项进行约束，则能使解唯一：<br>
-\begin{equation}<br>
+$$<br>
 \begin{aligned}<br>
-\min &amp; \quad \frac{1}{2}||\mathbf{w}||^2\<br>
-\mathrm{s.t.} &amp; \quad (2y_i-1)(\mathbf{w}^T\mathbf{x}_i+b)\geq 1,\quad \forall i=1,\cdots,n.<br>
+\min &amp; \quad \frac{1}{2} || \mathbf{w}||^2 \\<br>
+\mathrm{s.t.} &amp; \quad (2 y_i - 1 )( \mathbf{w}^T \mathbf{x}_i + b ) \geq 1,\quad \forall i=1,\cdots,n. \\<br>
 \end{aligned}<br>
-\end{equation}</p>
+$$</p>
 <blockquote>
-<p>注意这里考虑的$y_i\in\lbrace 0,1\rbrace$，而不是前面的$y_i\in\lbrace-1,+1\rbrace$，因此约束条件中是$(2y_i-1)$而不是$y_i$。</p>
+<p>注意这里考虑的 $ y_i \in \lbrace 0,1 \rbrace $ ，而不是前面的 $y_i \in \lbrace -1, +1 \rbrace$ ，因此约束条件中是 $(2 y_i-1)$ 而不是 $y_i$。</p>
 </blockquote>
 <p>添加了约束条件后，得到的是SVM！</p>
 <blockquote>
@@ -31242,9 +31247,9 @@ $$\exp{(\mathbf{w}^T\cdot\mathbf{x}+b)}\geq 1$$</p>
 <h2 id="多分类"><a class="header-anchor" href="#多分类"></a>多分类</h2>
 <ul>
 <li>多分类逻辑回归（Multi-class LR）<br>
-$$ P(y=i|x)=\frac{ \exp{(w_i^Tx+b_i)} }{ \sum_{j} \exp{(w_j^Tx+b_j)} } $$</li>
+$$ P(y=i|x)=\frac{ \exp{ ( w_i^T x + b_i ) } }{ \sum_{j} \exp{ ( w_j^T x + b_j ) } } $$</li>
 <li>多分类支持向量机（Multi-class SVM）<br>
-$$ \frac{ P(y=i|x) }{ P(y=k|x) } \geq c \quad \forall \quad k\neq i$$<br>
+$$ \frac{ P(y=i|x) }{ P( y = k| x ) } \geq c \quad \forall \quad k \neq i$$<br>
 即<br>
 $$ w_i^T x - w_k^T x \geq 1 \quad \forall \quad k\neq i $$</li>
 </ul>
