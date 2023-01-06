@@ -564,7 +564,7 @@
       <td>时间戳类型时间戳格式</td>
     </tr>
     <tr>
-  </tbody>
+  </tr></tbody>
 </table>
 </div>
 <ul>
@@ -680,7 +680,7 @@
       <td>将所有原始值推断为字符串类型</td>
     </tr>
     <tr>
-  </tbody>
+  </tr></tbody>
 </table>
 </div>
 <figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// in Scala </span></span><br><span class="line"><span class="comment">// 读取换行符分隔的JSON文件</span></span><br><span class="line">spark.read.format(<span class="string">&quot;json&quot;</span>)</span><br><span class="line"></span><br><span class="line">spark.read.format(“<span class="string">json&quot;)</span></span><br><span class="line"><span class="string">  .option(“mode&quot;</span>, “<span class="type">FAILFAST</span><span class="string">&quot;)</span></span><br><span class="line"><span class="string">  .schema(myManualSchema)</span></span><br><span class="line"><span class="string">  .load(“/data/flight-data/json/2010-summary.json&quot;</span>).show(<span class="number">5</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 将CSV文件内容写入JSON文件</span></span><br><span class="line">csvFile.write.format(“<span class="string">json&quot;)</span></span><br><span class="line"><span class="string">  .mode(“overwrite&quot;</span>)</span><br><span class="line">  .save(“/tmp/my-json-file.<span class="string">json&quot;)</span></span><br></pre></td></tr></table></figure>
