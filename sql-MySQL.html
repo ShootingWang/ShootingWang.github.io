@@ -646,7 +646,7 @@
       <td></td>
     </tr>
     <tr>
-  </tr></tbody>
+  </tbody>
 </table>
 </div>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> REPEAT(<span class="string">&#x27;* &#x27;</span>, <span class="variable">@NUMBER</span> :<span class="operator">=</span> <span class="variable">@NUMBER</span> <span class="operator">-</span> <span class="number">1</span>)</span><br><span class="line"><span class="keyword">FROM</span> information_schema.tables, </span><br><span class="line">(<span class="keyword">SELECT</span> <span class="variable">@NUMBER</span>:<span class="operator">=</span> <span class="number">13</span>) t LIMIT <span class="number">12</span>; </span><br><span class="line"><span class="comment">-- 输出：</span></span><br><span class="line"><span class="operator">*</span> <span class="operator">*</span> <span class="operator">*</span> <span class="operator">*</span> <span class="operator">*</span> <span class="operator">*</span> <span class="operator">*</span> <span class="operator">*</span> <span class="operator">*</span> <span class="operator">*</span> <span class="operator">*</span> <span class="operator">*</span> </span><br><span class="line"><span class="operator">*</span> <span class="operator">*</span> <span class="operator">*</span> <span class="operator">*</span> <span class="operator">*</span> <span class="operator">*</span> <span class="operator">*</span> <span class="operator">*</span> <span class="operator">*</span> <span class="operator">*</span> <span class="operator">*</span> </span><br><span class="line"><span class="operator">*</span> <span class="operator">*</span> <span class="operator">*</span> <span class="operator">*</span> <span class="operator">*</span> <span class="operator">*</span> <span class="operator">*</span> <span class="operator">*</span> <span class="operator">*</span> <span class="operator">*</span> </span><br><span class="line"><span class="operator">*</span> <span class="operator">*</span> <span class="operator">*</span> <span class="operator">*</span> <span class="operator">*</span> <span class="operator">*</span> <span class="operator">*</span> <span class="operator">*</span> <span class="operator">*</span> </span><br><span class="line"><span class="operator">*</span> <span class="operator">*</span> <span class="operator">*</span> <span class="operator">*</span> <span class="operator">*</span> <span class="operator">*</span> <span class="operator">*</span> <span class="operator">*</span> </span><br><span class="line"><span class="operator">*</span> <span class="operator">*</span> <span class="operator">*</span> <span class="operator">*</span> <span class="operator">*</span> <span class="operator">*</span> <span class="operator">*</span> </span><br><span class="line"><span class="operator">*</span> <span class="operator">*</span> <span class="operator">*</span> <span class="operator">*</span> <span class="operator">*</span> <span class="operator">*</span> </span><br><span class="line"><span class="operator">*</span> <span class="operator">*</span> <span class="operator">*</span> <span class="operator">*</span> <span class="operator">*</span> </span><br><span class="line"><span class="operator">*</span> <span class="operator">*</span> <span class="operator">*</span> <span class="operator">*</span> </span><br><span class="line"><span class="operator">*</span> <span class="operator">*</span> <span class="operator">*</span> </span><br><span class="line"><span class="operator">*</span> <span class="operator">*</span> </span><br><span class="line"><span class="operator">*</span> </span><br><span class="line"><span class="comment">-- from: https://www.hackerrank.com/challenges/draw-the-triangle-1/problem?h_r=profile</span></span><br></pre></td></tr></table></figure>
@@ -682,7 +682,7 @@
 <h2 id="SET"><a class="header-anchor" href="#SET"></a>SET</h2>
 <p><code>SET @变量名称=变量值</code>：可以快速替换重复的代码</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SET</span> <span class="variable">@DT</span><span class="operator">=</span><span class="string">&#x27;2020-07-12&#x27;</span>;</span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> table_1 <span class="keyword">WHERE</span> <span class="type">date</span><span class="operator">&gt;</span><span class="variable">@DT</span>;</span><br></pre></td></tr></table></figure>
-<h2 id><a class="header-anchor" href="#"></a>@</h2>
+<h2 id=""><a class="header-anchor" href="#"></a>@</h2>
 <p><code>SELECT (@i:=@i+1) AS num </code>生成一列递增序列</p>
 <h2 id="延时注入"><a class="header-anchor" href="#延时注入"></a>延时注入</h2>
 <p>MySQL中使用延时注入常用的语句：</p>
@@ -734,8 +734,8 @@
       </div>
       
       <div style="display: inline-block;">
-        <img src="/images/reward2021.png" alt="Skye WeChat Bezahlung">
-        <p>WeChat Bezahlung</p>
+        <img src="/images/reward2021.png" alt="Skye WeChat Pay">
+        <p>WeChat Pay</p>
       </div>
 
   </div>
