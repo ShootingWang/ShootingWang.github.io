@@ -1934,6 +1934,29 @@
       </tags>
   </entry>
   <entry>
+    <title>DataAnalysis-ABTest-CUPED</title>
+    <url>/DataAnalysis-ABTest-CUPED.html</url>
+    <content><![CDATA[<center></center>
+<span id="more"></span>
+<p>Work in Progress</p>
+<h1 id="CUPED"><a class="header-anchor" href="#CUPED"></a>CUPED</h1>
+<ul>
+<li>用于降低AB实验中的方差</li>
+</ul>
+<h1 id="参考资料"><a class="header-anchor" href="#参考资料"></a>参考资料</h1>
+<ul>
+<li><a href="https://bytepawn.com/reducing-variance-in-ab-testing-with-cuped.html">Reducing variance in A/B testing with CUPED</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Data Analysis 数据分析</category>
+      </categories>
+      <tags>
+        <tag>Data Analysis 数据分析</tag>
+        <tag>AB Test AB实验</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Python | 可视化 // Visualization</title>
     <url>/python-Visualization.html</url>
     <content><![CDATA[<center></center>
