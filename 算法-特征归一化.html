@@ -313,8 +313,8 @@
       
         <center></center>
 <span id="more"></span>
-
-<h1 id="特征缩放"><a href="#特征缩放" class="headerlink" title="特征缩放"></a>特征缩放</h1><p>特征缩放（Feature Scaling）：将自变量或特征归一化的方法；通常属于数据挖掘中的数据预处理部分。</p>
+<h1 id="特征缩放"><a class="header-anchor" href="#特征缩放"></a>特征缩放</h1>
+<p>特征缩放（Feature Scaling）：将自变量或特征归一化的方法；通常属于数据挖掘中的数据预处理部分。</p>
 <p>包括4种方法：</p>
 <ol>
 <li>Rescaling （min-max normalization，最大最小归一化）</li>
@@ -322,30 +322,37 @@
 <li>Standardization 标准化（Z-score normalization，Z-分值归一化）</li>
 <li>Scaling to unit length（缩放成单位长度）</li>
 </ol>
-<h1 id="归一化-标准化"><a href="#归一化-标准化" class="headerlink" title="归一化/标准化"></a>归一化/标准化</h1><p>对数值类型的特征做归一化可以将所有的特征都统一到一个大致相同的数值区间内。</p>
-<h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><ol>
+<h1 id="归一化-标准化"><a class="header-anchor" href="#归一化-标准化"></a>归一化/标准化</h1>
+<p>对数值类型的特征做归一化可以将所有的特征都统一到一个大致相同的数值区间内。</p>
+<h2 id="目标"><a class="header-anchor" href="#目标"></a>目标</h2>
+<ol>
 <li>把数据变为 [0,1] 之间的小数</li>
 <li>把有量纲表达式变为无量纲表达式</li>
 </ol>
-<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><p>最常用的方法主要有：</p>
+<h2 id="方法"><a class="header-anchor" href="#方法"></a>方法</h2>
+<p>最常用的方法主要有：</p>
 <ol>
 <li>线性函数归一化（min-max normalization，最大最小归一化）</li>
 <li>零均值标准化</li>
 </ol>
-<h3 id="线性函数归一化"><a href="#线性函数归一化" class="headerlink" title="线性函数归一化"></a>线性函数归一化</h3><p>线性函数归一化（min-max normalization，最大最小归一化）：对原始数据进行线性变换，使结果映射到[0, 1]的范围，实现对原始数据的等比缩放。</p>
-<p>$$x^* = \frac{x-x_{min} }{x_{max}-x_{min} }$$<br>其中：</p>
+<h3 id="线性函数归一化"><a class="header-anchor" href="#线性函数归一化"></a>线性函数归一化</h3>
+<p>线性函数归一化（min-max normalization，最大最小归一化）：对原始数据进行线性变换，使结果映射到[0, 1]的范围，实现对原始数据的等比缩放。</p>
+<p>$$x^* = \frac{x-x_{min} }{x_{max}-x_{min} }$$<br>
+其中：</p>
 <ul>
 <li>$x$是原始数据</li>
 <li>$x^*$是归一化后的数据</li>
 <li>$x_{max}$是原始数据的最大值</li>
 <li>$x_{min}$是原始数据的最小值</li>
 </ul>
-<p>如果将数据“归一化”转换为任意区间 [a,b] 的数据，则相应的转换公式如下：<br>$$x^* = a + \frac{x-x_{min} }{x_{max}-x_{min} }\times(b-a)$$<br>此时，$\max{(x^{*})}=b$ 且 $\min{(x^{*})}=a$。</p>
+<p>如果将数据“归一化”转换为任意区间 [a,b] 的数据，则相应的转换公式如下：<br>
+$$x^* = a + \frac{x-x_{min} }{x_{max}-x_{min} }\times(b-a)$$<br>
+此时，$\max{(x^{*})}=b$ 且 $\min{(x^{*})}=a$。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Python</span></span><br><span class="line"><span class="keyword">from</span> sklearn.preprocessing <span class="keyword">import</span> MinMaxScaler()</span><br><span class="line"></span><br><span class="line"><span class="comment">## 变换后的数据，最小值为0，最大值为1</span></span><br><span class="line">min_max_scaler = MinMaxScaler()</span><br><span class="line">data_minmax = min_max_scaler.fit_transform(original_data)</span><br><span class="line"><span class="comment"># 或</span></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">normalization</span>(<span class="params">data</span>):</span><br><span class="line">    _<span class="built_in">range</span> = np.<span class="built_in">max</span>(data) - np.<span class="built_in">min</span>(data)</span><br><span class="line">    <span class="keyword">return</span> (data - np.<span class="built_in">min</span>(data)) / _<span class="built_in">range</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 变换后的数据，最小值为a，最大值为b</span></span><br><span class="line">min_max_scaler = MinMaxScaler(feature_range=(a, b))</span><br><span class="line">data_minmax = min_max_scaler.fit_transform(original_data)</span><br><span class="line"><span class="comment">## 等价于</span></span><br><span class="line"><span class="comment">## data_std = (data - data.min(axis=0)) / (data.max(axis=0) - data.min(axis=0))</span></span><br><span class="line"><span class="comment">## data_scaled = a + data_std * (b - a) </span></span><br></pre></td></tr></table></figure>
-
-
-<h3 id="零均值标准化"><a href="#零均值标准化" class="headerlink" title="零均值标准化"></a>零均值标准化</h3><p>零均值归一化（Z-score standardization）：将数据缩放到均值为0、方差为1的数据。</p>
-<p>$$z=\frac{x-\mu}{\sigma}$$<br>其中：</p>
+<h3 id="零均值标准化"><a class="header-anchor" href="#零均值标准化"></a>零均值标准化</h3>
+<p>零均值归一化（Z-score standardization）：将数据缩放到均值为0、方差为1的数据。</p>
+<p>$$z=\frac{x-\mu}{\sigma}$$<br>
+其中：</p>
 <ul>
 <li>$x$是原始数据</li>
 <li>$\mu$是原始数据的均值</li>
@@ -354,50 +361,66 @@
 <p>这种归一化方法要求原始数据近似服从高斯分布。</p>
 <p>对任意数据，标准化后的数据的分布并不一定是标准正态分布；标准化后的数据取决于原始数据是什么分布</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Python</span></span><br><span class="line"><span class="keyword">from</span> sklearn.preprocessing <span class="keyword">import</span> scale</span><br><span class="line">data_scaled = scale(data)</span><br><span class="line"><span class="comment"># 或</span></span><br><span class="line"><span class="keyword">from</span> sklearn.preprocessing <span class="keyword">import</span> StandardScaler</span><br><span class="line">scaler = StandardScaler(copy=<span class="literal">True</span>, with_mean=<span class="literal">True</span>, with_std=<span class="literal">True</span>).fit(data)</span><br><span class="line">data_scaled = scaler.transform(data)</span><br><span class="line"><span class="comment"># 或</span></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">standardization</span>(<span class="params">data</span>):</span><br><span class="line">    mu = np.mean(data, axis=<span class="number">0</span>)</span><br><span class="line">    sigma = np.std(data, axis=<span class="number">0</span>)</span><br><span class="line">    <span class="keyword">return</span> (data - mu) / sigma</span><br></pre></td></tr></table></figure>
-
-
 <figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## R语言</span></span><br><span class="line">scale<span class="punctuation">(</span>data<span class="punctuation">,</span> center <span class="operator">=</span> <span class="built_in">T</span><span class="punctuation">,</span> scale <span class="operator">=</span> <span class="built_in">T</span><span class="punctuation">)</span></span><br><span class="line"><span class="comment">## center默认为T（True），表示数据中心化</span></span><br><span class="line"><span class="comment">## scale默认为T（True），表示数据标准化</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h2><ol>
-<li>提升模型的收敛速度<blockquote>
+<h2 id="作用"><a class="header-anchor" href="#作用"></a>作用</h2>
+<ol>
+<li>提升模型的收敛速度
+<blockquote>
 <p>如梯度下降法中，步长不至于太大，提高迭代速度</p>
 </blockquote>
 </li>
-<li>提升模型的精度<ul>
+<li>提升模型的精度
+<ul>
 <li>在一些涉及到距离计算的算法中效果显著。</li>
 <li>如某算法涉及欧式距离的计算，归一化后的数据取值范围较小，其计算出来的距离对结果的影响比归一化之前的距离对结果的影响更小，提高模型的精度</li>
 </ul>
 </li>
 <li>归一化可以让不同维度之间的特征在数值上具有一定可比性</li>
 </ol>
-<h2 id="需要归一化-标准化的情况"><a href="#需要归一化-标准化的情况" class="headerlink" title="需要归一化/标准化的情况"></a>需要归一化/标准化的情况</h2><ol>
-<li>有些模型在各个维度进行不均匀伸缩后，最优解与原来不等价<ul>
-<li><a href="#">Post not found: 算法-SVM SVM（支持向量机）</a></li>
+<h2 id="需要归一化-标准化的情况"><a class="header-anchor" href="#需要归一化-标准化的情况"></a>需要归一化/标准化的情况</h2>
+<ol>
+<li>有些模型在各个维度进行不均匀伸缩后，最优解与原来不等价
+<ul>
+<li>
+<a href="#">Post not found: 算法-SVM SVM（支持向量机）</a>
+</li>
 </ul>
 </li>
-<li>有些模型在各个维度进行不均匀伸缩后，最优解与原来等价；但是归一化有助于加快<strong>梯度下降法</strong>的迭代速度、加快收敛速度，所以最好也事先将数据归一化/标准化<ul>
-<li><a href="#">Post not found: 算法-线性回归 线性回归</a></li>
-<li><a href="#">Post not found: 算法-LogisticRegression 逻辑回归</a></li>
+<li>有些模型在各个维度进行不均匀伸缩后，最优解与原来等价；但是归一化有助于加快<strong>梯度下降法</strong>的迭代速度、加快收敛速度，所以最好也事先将数据归一化/标准化
+<ul>
+<li>
+<a href="#">Post not found: 算法-线性回归 线性回归</a>
+</li>
+<li>
+<a href="#">Post not found: 算法-LogisticRegression 逻辑回归</a>
+</li>
 <li>神经网络</li>
 </ul>
 </li>
-<li>效果强烈依赖于特征是否归一化的模型/优化方法<ul>
-<li><a href="#">Post not found: 算法-SVM SVM（支持向量机）</a></li>
+<li>效果强烈依赖于特征是否归一化的模型/优化方法
+<ul>
+<li>
+<a href="#">Post not found: 算法-SVM SVM（支持向量机）</a>
+</li>
 <li>神经网络</li>
 <li>SGD（Stochastic Gradient Descent，随机梯度下降）</li>
 <li>PCA（主成分分析）</li>
 </ul>
 </li>
 </ol>
-<h2 id="不需要归一化-标准化的情况"><a href="#不需要归一化-标准化的情况" class="headerlink" title="不需要归一化/标准化的情况"></a>不需要归一化/标准化的情况</h2><ol>
+<h2 id="不需要归一化-标准化的情况"><a class="header-anchor" href="#不需要归一化-标准化的情况"></a>不需要归一化/标准化的情况</h2>
+<ol>
 <li>0/1取值的特征</li>
 </ol>
 <ul>
 <li>归一化会破坏0/1取值特征的稀疏性</li>
 </ul>
 <ol start="2">
-<li>不受归一化影响的模型/方法<ul>
-<li><a href="#">Post not found: 算法-DecisionTree 决策树（Decision Tree）</a></li>
+<li>不受归一化影响的模型/方法
+<ul>
+<li>
+<a href="#">Post not found: 算法-DecisionTree 决策树（Decision Tree）</a>
+</li>
 <li>最小二乘法OLS（基于平方损失）</li>
 </ul>
 </li>
@@ -602,13 +625,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">446k</span>
+    <span title="站点总字数">444k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">6:45</span>
+    <span title="站点阅读时长">6:44</span>
 </div>
 
 
