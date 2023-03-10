@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://github.com/ShootingWang/ShootingWang.github.io/MachineLearning-Summary.html</loc>
+    
+    <lastmod>2023-03-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://github.com/ShootingWang/ShootingWang.github.io/Visualization-PythonCase.html</loc>
     
     <lastmod>2023-03-10</lastmod>
@@ -299,7 +308,7 @@
   </url>
   
   <url>
-    <loc>https://github.com/ShootingWang/ShootingWang.github.io/MachineLearning-Regression-%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92.html</loc>
+    <loc>https://github.com/ShootingWang/ShootingWang.github.io/MachineLearning-Regression-LinearRegression.html</loc>
     
     <lastmod>2022-10-17</lastmod>
     
@@ -497,15 +506,6 @@
   </url>
   
   <url>
-    <loc>https://github.com/ShootingWang/ShootingWang.github.io/MachineLearning-Summary.html</loc>
-    
-    <lastmod>2022-10-12</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://github.com/ShootingWang/ShootingWang.github.io/DataAnalysis-CausalInference-PSM.html</loc>
     
     <lastmod>2022-10-12</lastmod>
@@ -533,7 +533,7 @@
   </url>
   
   <url>
-    <loc>https://github.com/ShootingWang/ShootingWang.github.io/%E7%AE%97%E6%B3%95-%E7%89%B9%E5%BE%81%E5%BD%92%E4%B8%80%E5%8C%96.html</loc>
+    <loc>https://github.com/ShootingWang/ShootingWang.github.io/MachineLearning-Entropy.html</loc>
     
     <lastmod>2022-10-12</lastmod>
     
@@ -551,7 +551,7 @@
   </url>
   
   <url>
-    <loc>https://github.com/ShootingWang/ShootingWang.github.io/MachineLearning-Entropy.html</loc>
+    <loc>https://github.com/ShootingWang/ShootingWang.github.io/MachineLearning-FeatureScaling.html</loc>
     
     <lastmod>2022-10-12</lastmod>
     
@@ -749,7 +749,7 @@
   </url>
   
   <url>
-    <loc>https://github.com/ShootingWang/ShootingWang.github.io/%E7%AE%97%E6%B3%95-Apriori.html</loc>
+    <loc>https://github.com/ShootingWang/ShootingWang.github.io/MachineLearning-PatternSearch-Apriori.html</loc>
     
     <lastmod>2022-04-27</lastmod>
     
@@ -1154,7 +1154,7 @@
   </url>
   
   <url>
-    <loc>https://github.com/ShootingWang/ShootingWang.github.io/%E7%AE%97%E6%B3%95-SupervisedLearning.html</loc>
+    <loc>https://github.com/ShootingWang/ShootingWang.github.io/MachineLearning-SupervisedLearning.html</loc>
     
     <lastmod>2022-03-22</lastmod>
     
