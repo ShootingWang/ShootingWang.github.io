@@ -28,7 +28,8 @@
 </ul>
 <p><strong>Machine Learning 机器学习</strong>：</p>
 <ol>
-<li>Classical Learning</li>
+<li>Classical Learning
+<ol>
 <li>Supervised Learning
 <ol>
 <li>Classification</li>
@@ -40,6 +41,8 @@
 <li>Clustering</li>
 <li>Pattern Search</li>
 <li>Dimension Reduction</li>
+</ol>
+</li>
 </ol>
 </li>
 <li>Ensemble Methods
