@@ -1555,6 +1555,20 @@
   </url>
   
   <url>
+    <loc>https://github.com/ShootingWang/ShootingWang.github.io/tags/Data-Analysis-%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/</loc>
+    <lastmod>2023-03-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://github.com/ShootingWang/ShootingWang.github.io/tags/AB-Test-AB%E5%AE%9E%E9%AA%8C/</loc>
+    <lastmod>2023-03-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://github.com/ShootingWang/ShootingWang.github.io/tags/Data/</loc>
     <lastmod>2023-03-10</lastmod>
     <changefreq>weekly</changefreq>
@@ -1577,20 +1591,6 @@
   
   <url>
     <loc>https://github.com/ShootingWang/ShootingWang.github.io/tags/Projects/</loc>
-    <lastmod>2023-03-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://github.com/ShootingWang/ShootingWang.github.io/tags/Data-Analysis-%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/</loc>
-    <lastmod>2023-03-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://github.com/ShootingWang/ShootingWang.github.io/tags/AB-Test-AB%E5%AE%9E%E9%AA%8C/</loc>
     <lastmod>2023-03-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1660,14 +1660,14 @@
   </url>
   
   <url>
-    <loc>https://github.com/ShootingWang/ShootingWang.github.io/tags/%E7%94%9F%E6%88%90%E5%BC%8F%E6%A8%A1%E5%9E%8B/</loc>
+    <loc>https://github.com/ShootingWang/ShootingWang.github.io/tags/%E6%9C%89%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0/</loc>
     <lastmod>2023-03-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://github.com/ShootingWang/ShootingWang.github.io/tags/%E6%9C%89%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0/</loc>
+    <loc>https://github.com/ShootingWang/ShootingWang.github.io/tags/%E7%94%9F%E6%88%90%E5%BC%8F%E6%A8%A1%E5%9E%8B/</loc>
     <lastmod>2023-03-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
