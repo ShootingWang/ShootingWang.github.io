@@ -82,9 +82,9 @@
   .use-motion .logo-line-before i { left: initial; }
   .use-motion .logo-line-after i { right: initial; }
   </style>
-</noscript>
+</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
-<link rel="alternate" href="/atom.xml" title="Skye" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<link rel="alternate" href="/atom.xml" title="Skye" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -314,66 +314,35 @@
 
       
         <center>Jupyter Tips!</center>
+
 <span id="more"></span>
-<h1 id="输出"><a class="header-anchor" href="#输出"></a>输出</h1>
-<h2 id="输出结果显示图片"><a class="header-anchor" href="#输出结果显示图片"></a>输出结果显示图片</h2>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%matplotlib inline</span><br></pre></td></tr></table></figure>
-<h2 id="同时输出多个命令的结果"><a class="header-anchor" href="#同时输出多个命令的结果"></a>同时输出多个命令的结果</h2>
+<h1 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h1><h2 id="输出结果显示图片"><a href="#输出结果显示图片" class="headerlink" title="输出结果显示图片"></a>输出结果显示图片</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%matplotlib inline</span><br></pre></td></tr></table></figure>
+<h2 id="同时输出多个命令的结果"><a href="#同时输出多个命令的结果" class="headerlink" title="同时输出多个命令的结果"></a>同时输出多个命令的结果</h2><ol>
+<li>方法一：在文件开头添加以下命令（仅对当前文件有效）<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> IPython.core.interactiveshell <span class="keyword">import</span> InteractiveShell</span><br><span class="line">InteractiveShell.ast_node_interactivity = <span class="string">&quot;all&quot;</span></span><br></pre></td></tr></table></figure></li>
+<li>方法二：直接添加配置文件（对所有文件有效）<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi ~/.ipython/profile_default/ipython_config.py</span><br></pre></td></tr></table></figure>
+配置文件内容为：<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">c = get_config()</span><br><span class="line"><span class="comment">#Run all nodes interactively</span></span><br><span class="line">c.InteractiveShell.ast_node_interactivity = <span class="string">&quot;all&quot;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="禁止输出警告（warnings）"><a href="#禁止输出警告（warnings）" class="headerlink" title="禁止输出警告（warnings）"></a>禁止输出警告（warnings）</h2><p>运行以下代码：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> warnings</span><br><span class="line">warnings.filterwarnings(<span class="string">&quot;ignore&quot;</span>)</span><br></pre></td></tr></table></figure></p>
+<h2 id="for循环美观输出DataFrame"><a href="#for循环美观输出DataFrame" class="headerlink" title="for循环美观输出DataFrame"></a>for循环美观输出DataFrame</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> IPython.display <span class="keyword">import</span> display</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">5</span>):</span><br><span class="line">    df = pd.read_csv(<span class="string">&#x27;xxx.csv&#x27;</span>, encoding=<span class="string">&#x27;utf_8_sig&#x27;</span>)</span><br><span class="line">    display(df)</span><br></pre></td></tr></table></figure>
+<h1 id="Kernel"><a href="#Kernel" class="headerlink" title="Kernel"></a>Kernel</h1><h2 id="安装R-kernel"><a href="#安装R-kernel" class="headerlink" title="安装R kernel"></a>安装R kernel</h2><p>先在R中安装以下几个package：<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">install.packages<span class="punctuation">(</span><span class="built_in">c</span><span class="punctuation">(</span><span class="string">&#x27;repr&#x27;</span><span class="punctuation">,</span> <span class="string">&#x27;IRdisplay&#x27;</span><span class="punctuation">,</span> <span class="string">&#x27;evaluate&#x27;</span><span class="punctuation">,</span> <span class="string">&#x27;crayon&#x27;</span><span class="punctuation">,</span> </span><br><span class="line">                   <span class="string">&#x27;pbdZMQ&#x27;</span><span class="punctuation">,</span> <span class="string">&#x27;devtools&#x27;</span><span class="punctuation">,</span> <span class="string">&#x27;uuid&#x27;</span><span class="punctuation">,</span> <span class="string">&#x27;digest&#x27;</span><span class="punctuation">)</span><span class="punctuation">)</span></span><br><span class="line">devtools<span class="operator">::</span>install_github<span class="punctuation">(</span><span class="string">&#x27;IRkernel/IRkernel&#x27;</span><span class="punctuation">)</span></span><br></pre></td></tr></table></figure><br>在Anaconda Prompt中输入以下命令：<br>第一步：输入R，调用R<br><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">R</span></span><br></pre></td></tr></table></figure><br>第二步：安装R kernel，有2种方式（自由选择，个人建议第二种）：</p>
 <ol>
-<li>方法一：在文件开头添加以下命令（仅对当前文件有效）</li>
+<li>直接安装在当前用户中：<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">IRkernel<span class="operator">::</span>installspec<span class="punctuation">(</span><span class="punctuation">)</span></span><br></pre></td></tr></table></figure></li>
+<li>安装在系统中：<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">IRkernel<span class="operator">::</span>installspec<span class="punctuation">(</span>user <span class="operator">=</span> <span class="literal">FALSE</span><span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
+</li>
 </ol>
- <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> IPython.core.interactiveshell <span class="keyword">import</span> InteractiveShell</span><br><span class="line">InteractiveShell.ast_node_interactivity = <span class="string">&quot;all&quot;</span></span><br></pre></td></tr></table></figure>
-<ol start="2">
-<li>方法二：直接添加配置文件（对所有文件有效）</li>
-</ol>
- <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi ~/.ipython/profile_default/ipython_config.py</span><br></pre></td></tr></table></figure>
-<p>配置文件内容为：</p>
- <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">c = get_config()</span><br><span class="line"><span class="comment">#Run all nodes interactively</span></span><br><span class="line">c.InteractiveShell.ast_node_interactivity = <span class="string">&quot;all&quot;</span></span><br></pre></td></tr></table></figure>
-<h2 id="禁止输出警告（warnings）"><a class="header-anchor" href="#禁止输出警告（warnings）"></a>禁止输出警告（warnings）</h2>
-<p>运行以下代码：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> warnings</span><br><span class="line">warnings.filterwarnings(<span class="string">&quot;ignore&quot;</span>)</span><br></pre></td></tr></table></figure>
-<h2 id="for循环美观输出DataFrame"><a class="header-anchor" href="#for循环美观输出DataFrame"></a>for循环美观输出DataFrame</h2>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> IPython.display <span class="keyword">import</span> display</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">5</span>):</span><br><span class="line">    df = pd.read_csv(<span class="string">&#x27;xxx.csv&#x27;</span>, encoding=<span class="string">&#x27;utf_8_sig&#x27;</span>)</span><br><span class="line">    display(df)</span><br></pre></td></tr></table></figure>
-<h1 id="Kernel"><a class="header-anchor" href="#Kernel"></a>Kernel</h1>
-<h2 id="安装R-kernel"><a class="header-anchor" href="#安装R-kernel"></a>安装R kernel</h2>
-<p>先在R中安装以下几个package：</p>
-<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">install.packages<span class="punctuation">(</span><span class="built_in">c</span><span class="punctuation">(</span><span class="string">&#x27;repr&#x27;</span><span class="punctuation">,</span> <span class="string">&#x27;IRdisplay&#x27;</span><span class="punctuation">,</span> <span class="string">&#x27;evaluate&#x27;</span><span class="punctuation">,</span> <span class="string">&#x27;crayon&#x27;</span><span class="punctuation">,</span> </span><br><span class="line">                   <span class="string">&#x27;pbdZMQ&#x27;</span><span class="punctuation">,</span> <span class="string">&#x27;devtools&#x27;</span><span class="punctuation">,</span> <span class="string">&#x27;uuid&#x27;</span><span class="punctuation">,</span> <span class="string">&#x27;digest&#x27;</span><span class="punctuation">)</span><span class="punctuation">)</span></span><br><span class="line">devtools<span class="operator">::</span>install_github<span class="punctuation">(</span><span class="string">&#x27;IRkernel/IRkernel&#x27;</span><span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
-<p>在Anaconda Prompt中输入以下命令：<br>
-第一步：输入R，调用R</p>
-<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">R</span></span><br></pre></td></tr></table></figure>
-<p>第二步：安装R kernel，有2种方式（自由选择，个人建议第二种）：</p>
-<ol>
-<li>直接安装在当前用户中：</li>
-</ol>
- <figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">IRkernel<span class="operator">::</span>installspec<span class="punctuation">(</span><span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
-<ol start="2">
-<li>安装在系统中：</li>
-</ol>
- <figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">IRkernel<span class="operator">::</span>installspec<span class="punctuation">(</span>user <span class="operator">=</span> <span class="literal">FALSE</span><span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
-<h1 id="其他"><a class="header-anchor" href="#其他"></a>其他</h1>
-<h2 id="运行时间"><a class="header-anchor" href="#运行时间"></a>运行时间</h2>
-<p>在cell中添加 <code>%%time</code> ，返回结果中会含有cell单次运行的时间。<br>
-在cell中添加 <code>%timeit</code> ，会运行该cell 100,000次（默认），然后以运行最快的3次结果的平均值作为结果。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy</span><br><span class="line">%timeit numpy.random.normal(size = <span class="number">10</span>)</span><br><span class="line"><span class="comment"># 5.91 µs ± 258 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)</span></span><br><span class="line">%%time</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">100</span>):</span><br><span class="line">    time.sleep(<span class="number">0.01</span>)</span><br><span class="line"><span class="comment"># Wall time: 1.73 s</span></span><br></pre></td></tr></table></figure>
-<h2 id="插件管理器"><a class="header-anchor" href="#插件管理器"></a>插件管理器</h2>
-<p>Nbextensions相当于Jupyter的插件管理器。<br>
-安装：（在Anaconda Prompt中输入）</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda install -c conda-forge jupyter_contrib_nbextensions  </span><br></pre></td></tr></table></figure>
-<p>安装过程需要选择[y/n]，输入y。</p>
+<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><h2 id="运行时间"><a href="#运行时间" class="headerlink" title="运行时间"></a>运行时间</h2><p>在cell中添加 <code>%%time</code> ，返回结果中会含有cell单次运行的时间。<br>在cell中添加 <code>%timeit</code> ，会运行该cell 100,000次（默认），然后以运行最快的3次结果的平均值作为结果。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy</span><br><span class="line">%timeit numpy.random.normal(size = <span class="number">10</span>)</span><br><span class="line"><span class="comment"># 5.91 µs ± 258 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)</span></span><br><span class="line">%%time</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">100</span>):</span><br><span class="line">    time.sleep(<span class="number">0.01</span>)</span><br><span class="line"><span class="comment"># Wall time: 1.73 s</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="插件管理器"><a href="#插件管理器" class="headerlink" title="插件管理器"></a>插件管理器</h2><p>Nbextensions相当于Jupyter的插件管理器。<br>安装：（在Anaconda Prompt中输入）<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda install -c conda-forge jupyter_contrib_nbextensions  </span><br></pre></td></tr></table></figure><br>安装过程需要选择[y/n]，输入y。</p>
 <p>该选项卡下方罗列了大量Jupyter可用的插件；点击某个插件的名称，即可在列表下方显示该插件的说明文档；勾选某个插件前面的方框，则系统会加载启用该插件。</p>
-<h2 id="Jupyter-Lab！"><a class="header-anchor" href="#Jupyter-Lab！"></a>Jupyter Lab！</h2>
-<p>超好用！是Project Jupyter的下一代用户界面，具体安装和使用说明请见《<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/T-Afq0vAw0lVB9Bave-aNQ">Jupyter：超强的下一代Jupyter Notebook</a>》（原文作者Parul Pandey，EarlGrey翻译，<a target="_blank" rel="noopener" href="https://towardsdatascience.com/jupyter-lab-evolution-of-the-jupyter-notebook-5297cacde6b?gi=dec00114bf03">原文网址</a>）。</p>
+<h2 id="Jupyter-Lab！"><a href="#Jupyter-Lab！" class="headerlink" title="Jupyter Lab！"></a>Jupyter Lab！</h2><p>超好用！是Project Jupyter的下一代用户界面，具体安装和使用说明请见《<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/T-Afq0vAw0lVB9Bave-aNQ">Jupyter：超强的下一代Jupyter Notebook</a>》（原文作者Parul Pandey，EarlGrey翻译，<a target="_blank" rel="noopener" href="https://towardsdatascience.com/jupyter-lab-evolution-of-the-jupyter-notebook-5297cacde6b?gi=dec00114bf03">原文网址</a>）。</p>
 <figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">%% Jupyter Notebook的本地访问地址为</span></span><br><span class="line">http://localhost:8888/tree</span><br><span class="line"></span><br><span class="line"><span class="comment">%% Jupyter Lab的本地访问地址为</span></span><br><span class="line">http://localhost:8888/lab</span><br></pre></td></tr></table></figure>
-<h2 id="切换Code和Markdown"><a class="header-anchor" href="#切换Code和Markdown"></a>切换Code和Markdown</h2>
-<p>要快捷地切换Cell的形式（Code或Markdown），可按如下操作：<br>
-选中Cell（光标在Cell中闪烁），点击“Esc”，进入命令模式（光标不再Cell中闪烁，但Cell左侧仍有蓝色粗线条）；然后键盘按“Y”将Cell切换为Code模式，键盘按“M”则将Cell切换为Markdown模式。即</p>
+<h2 id="切换Code和Markdown"><a href="#切换Code和Markdown" class="headerlink" title="切换Code和Markdown"></a>切换Code和Markdown</h2><p>要快捷地切换Cell的形式（Code或Markdown），可按如下操作：<br>选中Cell（光标在Cell中闪烁），点击“Esc”，进入命令模式（光标不再Cell中闪烁，但Cell左侧仍有蓝色粗线条）；然后键盘按“Y”将Cell切换为Code模式，键盘按“M”则将Cell切换为Markdown模式。即</p>
 <ul>
 <li>Esc+Y：code模式</li>
 <li>Esc+M：Markdown模式</li>
 <li>Esc+B：快速添加新的Cell</li>
 </ul>
-<h1 id="参考资料"><a class="header-anchor" href="#参考资料"></a>参考资料</h1>
-<ul>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
 <li><a target="_blank" rel="noopener" href="https://www.google.com/Jupyter">首页缩略图</a></li>
 <li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/bella1102/p/11032519.html">Jupyter Notebook 如何让一个Cell 可以同时输出多个语句的值？</a></li>
 <li><a target="_blank" rel="noopener" href="https://www.sohu.com/a/219989263_774914">Jupyter Notebook/Lab中添加R Kernel的详细步骤</a></li>
@@ -579,13 +548,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">444k</span>
+    <span title="站点总字数">431k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">6:43</span>
+    <span title="站点阅读时长">6:32</span>
 </div>
 
 
@@ -669,8 +638,6 @@
 
 
 
-
-  
 
 
 

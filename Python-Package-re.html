@@ -79,9 +79,9 @@
   .use-motion .logo-line-before i { left: initial; }
   .use-motion .logo-line-after i { right: initial; }
   </style>
-</noscript>
+</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
-<link rel="alternate" href="/atom.xml" title="Skye" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<link rel="alternate" href="/atom.xml" title="Skye" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -310,31 +310,19 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <center></center>
-<span id="more"></span>
-<h1 id="re"><a class="header-anchor" href="#re"></a>re</h1>
-<h2 id="正则表达式"><a class="header-anchor" href="#正则表达式"></a>正则表达式</h2>
-<h3 id><a class="header-anchor" href="#"></a>()</h3>
-<p>包住的数据为要提取的数据，通常与<code>.group()</code>函数连用</p>
-<h3 id="-2"><a class="header-anchor" href="#-2"></a>.</h3>
-<p>匹配单个任意字符</p>
-<h3 id="-3"><a class="header-anchor" href="#-3"></a>*</h3>
-<p>匹配前一个字符出现0次或无限次</p>
-<h3 id="-4"><a class="header-anchor" href="#-4"></a>?</h3>
-<p>匹配前一个字符出现0次或1次</p>
-<h2 id="group"><a class="header-anchor" href="#group"></a>.group()</h2>
-<ul>
+        <p><center></center><br><span id="more"></span></p>
+<h1 id="re"><a href="#re" class="headerlink" title="re"></a>re</h1><h2 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h2><h3 id><a href="#" class="headerlink" title="()"></a>()</h3><p>包住的数据为要提取的数据，通常与<code>.group()</code>函数连用</p>
+<h3 id="-1"><a href="#-1" class="headerlink" title="."></a>.</h3><p>匹配单个任意字符</p>
+<h3 id="-2"><a href="#-2" class="headerlink" title="*"></a>*</h3><p>匹配前一个字符出现0次或无限次</p>
+<h3 id="-3"><a href="#-3" class="headerlink" title="?"></a>?</h3><p>匹配前一个字符出现0次或1次</p>
+<h2 id="group"><a href="#group" class="headerlink" title=".group()"></a>.group()</h2><ul>
 <li><code>.group(0)</code>：输出的是匹配正则表达式整体结果</li>
 <li><code>.group(1)</code>：列出第一个括号匹配部分</li>
 <li><code>.group(2)</code>：列出第二个括号匹配部分</li>
 </ul>
-<h2 id="I"><a class="header-anchor" href="#I"></a>.I</h2>
-<p>使匹配对大小写不敏感</p>
-<h2 id="M"><a class="header-anchor" href="#M"></a>.M</h2>
-<p>多行匹配</p>
-<h2 id="match"><a class="header-anchor" href="#match"></a>.match()</h2>
-<h2 id="sub"><a class="header-anchor" href="#sub"></a>.sub()</h2>
-<p><code>re.sub('a', 'b', str)</code>：将字符串<code>str</code>中符合正则表达式<code>a</code>的字符替换为<code>b</code></p>
+<h2 id="I"><a href="#I" class="headerlink" title=".I"></a>.I</h2><p>使匹配对大小写不敏感</p>
+<h2 id="M"><a href="#M" class="headerlink" title=".M"></a>.M</h2><p>多行匹配</p>
+<h2 id="match"><a href="#match" class="headerlink" title=".match()"></a>.match()</h2><h2 id="sub"><a href="#sub" class="headerlink" title=".sub()"></a>.sub()</h2><p><code>re.sub(&#39;a&#39;, &#39;b&#39;, str)</code>：将字符串<code>str</code>中符合正则表达式<code>a</code>的字符替换为<code>b</code></p>
 
     </div>
 
@@ -463,7 +451,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#re"><span class="nav-number">1.</span> <span class="nav-text">re</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="nav-number">1.1.</span> <span class="nav-text">正则表达式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.1.1.</span> <span class="nav-text">()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#-2"><span class="nav-number">1.1.2.</span> <span class="nav-text">.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#-3"><span class="nav-number">1.1.3.</span> <span class="nav-text">*</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#-4"><span class="nav-number">1.1.4.</span> <span class="nav-text">?</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#group"><span class="nav-number">1.2.</span> <span class="nav-text">.group()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#I"><span class="nav-number">1.3.</span> <span class="nav-text">.I</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#M"><span class="nav-number">1.4.</span> <span class="nav-text">.M</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#match"><span class="nav-number">1.5.</span> <span class="nav-text">.match()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sub"><span class="nav-number">1.6.</span> <span class="nav-text">.sub()</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#re"><span class="nav-number">1.</span> <span class="nav-text">re</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="nav-number">1.1.</span> <span class="nav-text">正则表达式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.1.1.</span> <span class="nav-text">()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#-1"><span class="nav-number">1.1.2.</span> <span class="nav-text">.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#-2"><span class="nav-number">1.1.3.</span> <span class="nav-text">*</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#-3"><span class="nav-number">1.1.4.</span> <span class="nav-text">?</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#group"><span class="nav-number">1.2.</span> <span class="nav-text">.group()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#I"><span class="nav-number">1.3.</span> <span class="nav-text">.I</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#M"><span class="nav-number">1.4.</span> <span class="nav-text">.M</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#match"><span class="nav-number">1.5.</span> <span class="nav-text">.match()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sub"><span class="nav-number">1.6.</span> <span class="nav-text">.sub()</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -532,13 +520,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">444k</span>
+    <span title="站点总字数">431k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">6:43</span>
+    <span title="站点阅读时长">6:32</span>
 </div>
 
 
@@ -622,8 +610,6 @@
 
 
 
-
-  
 
 
 

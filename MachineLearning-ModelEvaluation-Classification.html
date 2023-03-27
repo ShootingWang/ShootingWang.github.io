@@ -83,9 +83,9 @@
   .use-motion .logo-line-before i { left: initial; }
   .use-motion .logo-line-after i { right: initial; }
   </style>
-</noscript>
+</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
-<link rel="alternate" href="/atom.xml" title="Skye" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<link rel="alternate" href="/atom.xml" title="Skye" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -314,41 +314,32 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <center>Classification</center>
-<span id="more"></span>
-<h1 id="分类方法"><a class="header-anchor" href="#分类方法"></a>分类方法</h1>
-<p>从使用的技术上来分，可以把分类方法归结为四种类型：</p>
+        <p><center>Classification</center><br><span id="more"></span></p>
+<h1 id="分类方法"><a href="#分类方法" class="headerlink" title="分类方法"></a>分类方法</h1><p>从使用的技术上来分，可以把分类方法归结为四种类型：</p>
 <ol>
-<li>基于距离的分类方法</li>
-</ol>
-<ul>
+<li>基于距离的分类方法<ul>
 <li>最邻近方法</li>
 </ul>
-<ol start="2">
-<li>决策树分类方法</li>
-</ol>
-<ul>
+</li>
+<li>决策树分类方法<ul>
 <li>ID3</li>
 <li>C4.5</li>
 <li>VFDT</li>
 </ul>
-<ol start="3">
-<li>贝叶斯方法</li>
-</ol>
-<ul>
+</li>
+<li>贝叶斯方法<ul>
 <li>朴素贝叶斯方法</li>
 <li>EM算法</li>
 </ul>
-<ol start="4">
-<li>规则归纳方法</li>
-</ol>
-<ul>
+</li>
+<li>规则归纳方法<ul>
 <li>AQ算法</li>
 <li>CN2算法</li>
 <li>FOIL算法</li>
 </ul>
-<h1 id="分类评估"><a class="header-anchor" href="#分类评估"></a>分类评估</h1>
-<p>针对一个二分类问题，将实例分为正例（Positive）和负例（Negative）两种。</p>
+</li>
+</ol>
+<h1 id="分类评估"><a href="#分类评估" class="headerlink" title="分类评估"></a>分类评估</h1><p>针对一个二分类问题，将实例分为正例（Positive）和负例（Negative）两种。</p>
 <ul>
 <li><strong>TP</strong>（True Positive）：真正例；是正类且被预测为正类的实例</li>
 <li><strong>FP</strong>（False Positive）：假正例；是负类但被预测为正类的实例</li>
@@ -358,69 +349,40 @@
 <blockquote>
 <p>周志华《机器学习》：我们希望得到泛化误差小的学习器。</p>
 </blockquote>
-<h2 id="精确率-Precision"><a class="header-anchor" href="#精确率-Precision"></a>精确率 Precision</h2>
-<p><strong>精确率</strong>（Precision）or <strong>查准率</strong>：<br>
-$$Precision=\frac{TP}{TP+FP}$$</p>
-<blockquote>
+<h2 id="精确率-Precision"><a href="#精确率-Precision" class="headerlink" title="精确率 Precision"></a>精确率 Precision</h2><p><strong>精确率</strong>（Precision）or <strong>查准率</strong>：</p>
+<script type="math/tex; mode=display">Precision=\frac{TP}{TP+FP}</script><blockquote>
 <p>如：警察抓小偷，描述警察抓的人中有多少个是小偷的标准即Precision</p>
 </blockquote>
-<p>计算Precision的加权均值（<strong>AP</strong>，average precision）：<br>
-$$AP=\sum_i(R_i-R_{i-1})P_i$$<br>
-其中，$R_i$、$P_i$分别是第$i$个阈值对应的Recall和Precision。</p>
+<p>计算Precision的加权均值（<strong>AP</strong>，average precision）：</p>
+<script type="math/tex; mode=display">AP=\sum_i(R_i-R_{i-1})P_i</script><p>其中，$R_i$、$P_i$分别是第$i$个阈值对应的Recall和Precision。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sklearn.metrics.average_precision_score</span><br></pre></td></tr></table></figure>
-<h2 id="召回率-Recall"><a class="header-anchor" href="#召回率-Recall"></a>召回率 Recall</h2>
-<p><strong>召回率</strong>（Recall）or <strong>查全率</strong>：<br>
-$$Recall=\frac{TP}{TP+FN}$$<br>
-$$召回率=\frac{提取出的正确信息条数}{样本中相关的信息条数}$$</p>
-<blockquote>
+<h2 id="召回率-Recall"><a href="#召回率-Recall" class="headerlink" title="召回率 Recall"></a>召回率 Recall</h2><p><strong>召回率</strong>（Recall）or <strong>查全率</strong>：</p>
+<script type="math/tex; mode=display">Recall=\frac{TP}{TP+FN}</script><script type="math/tex; mode=display">召回率=\frac{提取出的正确信息条数}{样本中相关的信息条数}</script><blockquote>
 <p>如：警察抓小偷，描述有多少比例的小偷被警察抓了的标准即Recall</p>
 </blockquote>
-<meta name="referrer" content="no-referrer">
-
-<h2 id="灵敏度-Sensitivity"><a class="header-anchor" href="#灵敏度-Sensitivity"></a>灵敏度 Sensitivity</h2>
-<p><strong>灵敏度</strong>（Sensitivity）or <strong>真正例率</strong>（TPR，True Positive Rate）<br>
-$$Sensitivity=TPR=Recall=\frac{TP}{TP+FN}$$</p>
-<ul>
+<p><meta name="referrer" content="no-referrer"><br></p>
+<h2 id="灵敏度-Sensitivity"><a href="#灵敏度-Sensitivity" class="headerlink" title="灵敏度 Sensitivity"></a>灵敏度 Sensitivity</h2><p><strong>灵敏度</strong>（Sensitivity）or <strong>真正例率</strong>（TPR，True Positive Rate）</p>
+<script type="math/tex; mode=display">Sensitivity=TPR=Recall=\frac{TP}{TP+FN}</script><ul>
 <li>召回率的同义词</li>
 </ul>
-<p><strong>1-灵敏度</strong> or <strong>假负例率</strong>（FNR，False Negative Rate）or <strong>漏诊率</strong><br>
-$$FNR=1-Sensitivity=\frac{FN}{TP+FN}$$</p>
-<h2 id="特异度-Specificity"><a class="header-anchor" href="#特异度-Specificity"></a>特异度 Specificity</h2>
-<p><strong>特异度</strong>（Specificity）or <strong>真负例率</strong>（TNR，True Negative Rate）<br>
-$$Specificity=TNR=\frac{TN}{TN+FP}$$</p>
-<p><strong>1-特异度</strong> or <strong>假正例率</strong>（FPR，False Positive Rate）or <strong>误诊率</strong><br>
-$$FPR=1-Specificity=\frac{FP}{TN+FP}$$</p>
-<h2 id="错误率-Error"><a class="header-anchor" href="#错误率-Error"></a>错误率 Error</h2>
-<p>分类错误的样本数占样本总数的比例</p>
-<p>$$Error=\frac{FP+FN}{TP+FP+TN+FN}$$</p>
-<h2 id="准确率-精度-Accuracy"><a class="header-anchor" href="#准确率-精度-Accuracy"></a>准确率/精度 Accuracy</h2>
-<p><strong>准确率</strong>（Accuracy，ACC）：分类正确的样本占总样本个数的比例，即<br>
-$$ACC=1-\mbox{错误率}=\frac{TP+TN}{TP+FP+TN+FN}$$</p>
-<p>准确率存在局限性</p>
-<div class="note default">
-            <p>例子：Hulu的奢侈品广告主们希望把广告定向投放给奢侈品用户。Hulu通过第三方的数据管理平台（Data Management Platform，DMP）拿到了一部分奢侈品用户的数据，并以此为训练集和测试集，训练和测试奢侈品用户的分类模型。该模型的分类准确率超过了95%，但在实际广告投放过程中，该模型还是把大部分广告投给了非奢侈品用户。</p><p>这是因为：当负样本在训练集中占99%时，分类器把所有样本都预测为负样本也可以获得99%的准确率。所以，当不同类别的样本比例非常不均衡时，占比大的类别往往成为影响准确率的最主要因素。</p><p>奢侈品用户只占Hulu全体用户的一小部分，虽然模型的整体分类准确率高，但是不代表对奢侈品用户的分类准确率也高。在线上投放时，仅对模型判定的“奢侈品用户”进行投放，因此，对“奢侈品用户”判定的准确率不够高的问题就很明显了。</p><p>可使用更为有效的<strong>平均准确率</strong>（每个类别下的样本准确率的算数平均）作为模型评估的指标。<br>$$平均准确率=\frac{1}{2}\left(\frac{TP}{TP+FN}+\frac{TN}{TN+FP}\right)$$</p><p>但是，有时候，即使分类评估指标选择正确，仍可能会存在模型过拟合或欠拟合、训练集和测试集划分不合理、线下评估与线上测试的样本分布存在差异等问题。</p>
-          </div>
-<h2 id="LR"><a class="header-anchor" href="#LR"></a>LR+</h2>
-<p>正例似然比（Positive Likelihood Ratio，LR+）=真正例率 / 假正例率=灵敏度 / （1-特异度）<br>
-$$LR+=\frac{TPR}{FPR}$$</p>
-<h2 id="LR-2"><a class="header-anchor" href="#LR-2"></a>LR-</h2>
-<p>负例似然比（Negative Likelihood Ratio，LR-）=假负例率 / 真负例率=（1-灵敏度）/ 特异度<br>
-$$LR-=\frac{FNR}{TNR}$$</p>
-<h2 id="DOR"><a class="header-anchor" href="#DOR"></a>DOR</h2>
-<p>DOR（Diagnostic Odds Ratio，诊断优势比）：<br>
-$$DOR=\frac{LR+}{LR-}$$</p>
-<h2 id="Youden-Index"><a class="header-anchor" href="#Youden-Index"></a>Youden Index</h2>
-<p>$$Youden指数=灵敏度+特异度-1=真正例率-假正例率$$</p>
-<h2 id="F1-score"><a class="header-anchor" href="#F1-score"></a>F1-score</h2>
-<p><strong>F1 值</strong>（F1-score）：综合考虑Precision和Recall的度量（metric）<br>
-$$F1-score=\frac{2\times Precision\times Recall}{Precision+Recall}$$</p>
-<ul>
+<p><strong>1-灵敏度</strong> or <strong>假负例率</strong>（FNR，False Negative Rate）or <strong>漏诊率</strong></p>
+<script type="math/tex; mode=display">FNR=1-Sensitivity=\frac{FN}{TP+FN}</script><h2 id="特异度-Specificity"><a href="#特异度-Specificity" class="headerlink" title="特异度 Specificity"></a>特异度 Specificity</h2><p><strong>特异度</strong>（Specificity）or <strong>真负例率</strong>（TNR，True Negative Rate）</p>
+<script type="math/tex; mode=display">Specificity=TNR=\frac{TN}{TN+FP}</script><p><strong>1-特异度</strong> or <strong>假正例率</strong>（FPR，False Positive Rate）or <strong>误诊率</strong></p>
+<script type="math/tex; mode=display">FPR=1-Specificity=\frac{FP}{TN+FP}</script><h2 id="错误率-Error"><a href="#错误率-Error" class="headerlink" title="错误率 Error"></a>错误率 Error</h2><p>分类错误的样本数占样本总数的比例</p>
+<script type="math/tex; mode=display">Error=\frac{FP+FN}{TP+FP+TN+FN}</script><h2 id="准确率-精度-Accuracy"><a href="#准确率-精度-Accuracy" class="headerlink" title="准确率/精度 Accuracy"></a>准确率/精度 Accuracy</h2><p><strong>准确率</strong>（Accuracy，ACC）：分类正确的样本占总样本个数的比例，即</p>
+<script type="math/tex; mode=display">ACC=1-\mbox{错误率}=\frac{TP+TN}{TP+FP+TN+FN}</script><p>准确率存在局限性<br><div class="note default">
+            <p>例子：Hulu的奢侈品广告主们希望把广告定向投放给奢侈品用户。Hulu通过第三方的数据管理平台（Data Management Platform，DMP）拿到了一部分奢侈品用户的数据，并以此为训练集和测试集，训练和测试奢侈品用户的分类模型。该模型的分类准确率超过了95%，但在实际广告投放过程中，该模型还是把大部分广告投给了非奢侈品用户。</p><p>这是因为：当负样本在训练集中占99%时，分类器把所有样本都预测为负样本也可以获得99%的准确率。所以，当不同类别的样本比例非常不均衡时，占比大的类别往往成为影响准确率的最主要因素。</p><p>奢侈品用户只占Hulu全体用户的一小部分，虽然模型的整体分类准确率高，但是不代表对奢侈品用户的分类准确率也高。在线上投放时，仅对模型判定的“奢侈品用户”进行投放，因此，对“奢侈品用户”判定的准确率不够高的问题就很明显了。</p><p>可使用更为有效的<strong>平均准确率</strong>（每个类别下的样本准确率的算数平均）作为模型评估的指标。</p><script type="math/tex; mode=display">平均准确率=\frac{1}{2}\left(\frac{TP}{TP+FN}+\frac{TN}{TN+FP}\right)</script><p>但是，有时候，即使分类评估指标选择正确，仍可能会存在模型过拟合或欠拟合、训练集和测试集划分不合理、线下评估与线上测试的样本分布存在差异等问题。</p>
+          </div></p>
+<h2 id="LR"><a href="#LR" class="headerlink" title="LR+"></a>LR+</h2><p>正例似然比（Positive Likelihood Ratio，LR+）=真正例率 / 假正例率=灵敏度 / （1-特异度）</p>
+<script type="math/tex; mode=display">LR+=\frac{TPR}{FPR}</script><h2 id="LR-1"><a href="#LR-1" class="headerlink" title="LR-"></a>LR-</h2><p>负例似然比（Negative Likelihood Ratio，LR-）=假负例率 / 真负例率=（1-灵敏度）/ 特异度</p>
+<script type="math/tex; mode=display">LR-=\frac{FNR}{TNR}</script><h2 id="DOR"><a href="#DOR" class="headerlink" title="DOR"></a>DOR</h2><p>DOR（Diagnostic Odds Ratio，诊断优势比）：</p>
+<script type="math/tex; mode=display">DOR=\frac{LR+}{LR-}</script><h2 id="Youden-Index"><a href="#Youden-Index" class="headerlink" title="Youden Index"></a>Youden Index</h2><script type="math/tex; mode=display">Youden指数=灵敏度+特异度-1=真正例率-假正例率</script><h2 id="F1-score"><a href="#F1-score" class="headerlink" title="F1-score"></a>F1-score</h2><p><strong>F1 值</strong>（F1-score）：综合考虑Precision和Recall的度量（metric）</p>
+<script type="math/tex; mode=display">F1-score=\frac{2\times Precision\times Recall}{Precision+Recall}</script><ul>
 <li><strong>宏平均F1</strong>（macro-averaging）：先对每个类别单独计算F1值，再取这些F1值的算数平均值作为全局指标；宏平均平等对待每一个类别；值受到稀有类别的影响较大</li>
 <li><strong>微平均F1</strong>（micro-averaging）：先累加计算各个类别的TP、TN、FP、FN，再由这些值计算F1值；平等考虑样例集中的每一个样例；值受到常见类别的影响较大</li>
 <li>在multi-class classification（多分类）的情况下，macro-averaging会比micro-averaging好一些，更能体现在small class（稀有类别）上的表现（performance）</li>
 </ul>
-<h2 id="ROC"><a class="header-anchor" href="#ROC"></a>ROC</h2>
-<p><strong>ROC曲线</strong>（Receiver Operating Characteristic Curve，接收者操作特征曲线）：是反映灵敏性和特异性连续变量的综合指标。</p>
+<h2 id="ROC"><a href="#ROC" class="headerlink" title="ROC"></a>ROC</h2><p><strong>ROC曲线</strong>（Receiver Operating Characteristic Curve，接收者操作特征曲线）：是反映灵敏性和特异性连续变量的综合指标。</p>
 <ul>
 <li>横坐标：FPR（预测为正但实际为负的样本占所有负例样本的比例）；即 1-Specificity</li>
 <li>纵坐标：TPR（预测为正且实际为正的样本占所有正例样本的比例）；即Sensitivity</li>
@@ -429,73 +391,61 @@ $$F1-score=\frac{2\times Precision\times Recall}{Precision+Recall}$$</p>
 <li>降低分类阈值会导致将更多样本归为正例，从而增加假正例和真正例的个数，TPR和FPR会同时增大</li>
 <li>理想目标：TPR=1，FPR=0，即ROC图中的(0,1)点</li>
 <li>ROC越靠拢(0,1)点、越偏离45°对角线越好；Sensitivity、Specificity越大，效果越好</li>
-<li>为什么使用ROC曲线？</li>
-</ul>
-<blockquote>
+<li>为什么使用ROC曲线？<blockquote>
 <p>当测试集中的正负样本的分布变化的时候，ROC曲线能够基本保持原貌</p>
 </blockquote>
-<meta name="referrer" content="no-referrer">
-
-<meta name="referrer" content="no-referrer">
-
+</li>
+</ul>
+<p><meta name="referrer" content="no-referrer"><br></p>
+<p><meta name="referrer" content="no-referrer"><br></p>
 <blockquote>
-<p><strong>ROC vs F1-score</strong><br>
-When you have a data imbalance between positive and negative samples, you should always use F1-score because of ROC averages over all possible thresholds.</p>
+<p><strong>ROC vs F1-score</strong><br>When you have a data imbalance between positive and negative samples, you should always use F1-score because of ROC averages over all possible thresholds.</p>
 </blockquote>
-<meta name="referrer" content="no-referrer">
-
+<p><meta name="referrer" content="no-referrer"><br></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 计算ROC</span></span><br><span class="line">sklearn.metrics.roc_curve(y_true, y_score)</span><br></pre></td></tr></table></figure>
-<h2 id="AUC"><a class="header-anchor" href="#AUC"></a>AUC</h2>
-<p><strong>AUC</strong>（Area Under Curve）：ROC曲线下的面积</p>
+<h2 id="AUC"><a href="#AUC" class="headerlink" title="AUC"></a>AUC</h2><p><strong>AUC</strong>（Area Under Curve）：ROC曲线下的面积</p>
 <ul>
 <li>对所有可能的分类阈值的效果进行综合衡量</li>
-<li>一种解读方式：可把AUC看作模型将某个随机正例样本排列在某个随机负例样本之上的概率（AUC值是一个概率值）</li>
+<li>一种解读方式：可把AUC看作模型将某个随机正例样本排列在某个随机负例样本之上的概率（AUC值是一个概率值）<blockquote>
+<p>AUC代表：随机抽出一个正例、一个负例，用训练得到的分类器对这两个样本进行预测，预测结果为正的概率大于为负的概率的概率</p>
+<script type="math/tex; mode=display">AUC=P\left\{P(Positive)>P(Negative)\right\}</script></blockquote>
+</li>
 </ul>
 <blockquote>
-<p>AUC代表：随机抽出一个正例、一个负例，用训练得到的分类器对这两个样本进行预测，预测结果为正的概率大于为负的概率的概率<br>
-$$AUC=P\left{P(Positive)&gt;P(Negative)\right}$$</p>
-</blockquote>
-<blockquote>
-<p>The <strong>AUC value</strong> is equivalent to the probability that a randomly chosen positive example is ranked higher than a randomly chosen negative example.<br>
-—— Fawcett, 2006</p>
+<p>The <strong>AUC value</strong> is equivalent to the probability that a randomly chosen positive example is ranked higher than a randomly chosen negative example.<br>—— Fawcett, 2006</p>
 </blockquote>
 <ul>
-<li>AUC的取值范围为[0,1]；但AUC一般都处于直线y=x的上方，所以AUC的取值范围一般在0.5和1之间</li>
+<li>AUC的取值范围为[0,1]；但AUC一般都处于直线y=x的上方，所以AUC的取值范围一般在0.5和1之间<ul>
 <li>预测结果100%错误的模型的AUC=0</li>
 <li>预测结果100%正确的模型的AUC=1</li>
 <li>对应AUC更大的分类器，分类效果更好</li>
+</ul>
+</li>
 <li>AUC的尺度不变：测量预测的排名情况，而不是测量其绝对值</li>
 <li>AUC的分类阈值不变：测量模型预测的质量，而不考虑所选的分类阈值</li>
-<li>在假负例与假正例的代价存在较大差异的情况下，尽量减少一种类型的分类错误可能至关重要</li>
-</ul>
-<blockquote>
+<li>在假负例与假正例的代价存在较大差异的情况下，尽量减少一种类型的分类错误可能至关重要<blockquote>
 <p>如：进行垃圾邮件检测时，可能希望优先考虑尽量减少假正例</p>
 </blockquote>
-<ul>
+</li>
 <li>AUC=1，是完美分类器；采用这个预测模型时，存在至少一个阈值能得到完美预测；绝大多数预测的场合，不存在完美分类器</li>
 <li>0.5 &lt; AUC &lt;1 ，优于随机猜测；该模型妥善设定阈值的话，能有预测价值</li>
 <li>AUC = 0.5，等同于随机猜测；该模型没有预测价值</li>
 <li>AUC  &lt; 0.5，比随机猜测还差</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 计算AUC</span></span><br><span class="line">sklearn.metrics.roc_auc_score(y_true, y_score)</span><br></pre></td></tr></table></figure>
-<h2 id="PR"><a class="header-anchor" href="#PR"></a>PR</h2>
-<p><strong>PR</strong>（Precision-Recall）曲线</p>
+<h2 id="PR"><a href="#PR" class="headerlink" title="PR"></a>PR</h2><p><strong>PR</strong>（Precision-Recall）曲线</p>
 <ul>
 <li>横轴：Recall</li>
 <li>纵轴：Precision</li>
 <li>不同阈值下的Precision、Recall值</li>
 <li>精确率越高，召回率越高，模型和算法就越高效；即，PR曲线越靠近右上越好</li>
 </ul>
-<meta name="referrer" content="no-referrer">
-
-<h1 id="其他"><a class="header-anchor" href="#其他"></a>其他</h1>
-<h2 id="误差"><a class="header-anchor" href="#误差"></a>误差</h2>
-<ul>
+<p><meta name="referrer" content="no-referrer"><br></p>
+<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><h2 id="误差"><a href="#误差" class="headerlink" title="误差"></a>误差</h2><ul>
 <li><strong>训练误差/经验误差</strong>（training error / empirical error）：分类器（学习器）在训练集上的误差</li>
 <li><strong>泛化误差</strong>（generalization error）：分类器（学习器）在新样本上的误差</li>
 </ul>
-<h1 id="参考资料"><a class="header-anchor" href="#参考资料"></a>参考资料</h1>
-<ul>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
 <li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/pinard/p/5993450.html">精确率与召回率，RoC曲线与PR曲线</a></li>
 <li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_22238533/article/details/78666436">AUC的计算方法</a></li>
 <li><a target="_blank" rel="noopener" href="https://www.lagou.com/lgeduarticle/109119.html">机器学习之模型评估详解</a></li>
@@ -513,13 +463,9 @@ $$AUC=P\left{P(Positive)&gt;P(Negative)\right}$$</p>
 <li><a target="_blank" rel="noopener" href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.roc_curve.html#sklearn.metrics.roc_curve">sklearn.metrics.roc_curve</a></li>
 <li><a target="_blank" rel="noopener" href="https://book.douban.com/subject/30285146/">《百面机器学习》</a></li>
 </ul>
-<h1 id="推荐阅读"><a class="header-anchor" href="#推荐阅读"></a>推荐阅读</h1>
-<ul>
-<li>
-<a href="#">Post not found: Machine-Learning-聚类模型评估</a>
-</li>
-<li>
-<a href="#">Post not found: Machine-Learning-汇总</a></li>
+<h1 id="推荐阅读"><a href="#推荐阅读" class="headerlink" title="推荐阅读"></a>推荐阅读</h1><ul>
+<li><a href="#">Post not found: Machine-Learning-聚类模型评估</a></li>
+<li><a href="#">Post not found: Machine-Learning-汇总</a></li>
 </ul>
 
     </div>
@@ -651,7 +597,7 @@ $$AUC=P\left{P(Positive)&gt;P(Negative)\right}$$</p>
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%86%E7%B1%BB%E6%96%B9%E6%B3%95"><span class="nav-number">1.</span> <span class="nav-text">分类方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%86%E7%B1%BB%E8%AF%84%E4%BC%B0"><span class="nav-number">2.</span> <span class="nav-text">分类评估</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B2%BE%E7%A1%AE%E7%8E%87-Precision"><span class="nav-number">2.1.</span> <span class="nav-text">精确率 Precision</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%AC%E5%9B%9E%E7%8E%87-Recall"><span class="nav-number">2.2.</span> <span class="nav-text">召回率 Recall</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%81%B5%E6%95%8F%E5%BA%A6-Sensitivity"><span class="nav-number">2.3.</span> <span class="nav-text">灵敏度 Sensitivity</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%89%B9%E5%BC%82%E5%BA%A6-Specificity"><span class="nav-number">2.4.</span> <span class="nav-text">特异度 Specificity</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%94%99%E8%AF%AF%E7%8E%87-Error"><span class="nav-number">2.5.</span> <span class="nav-text">错误率 Error</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%86%E7%A1%AE%E7%8E%87-%E7%B2%BE%E5%BA%A6-Accuracy"><span class="nav-number">2.6.</span> <span class="nav-text">准确率&#x2F;精度 Accuracy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LR"><span class="nav-number">2.7.</span> <span class="nav-text">LR+</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LR-2"><span class="nav-number">2.8.</span> <span class="nav-text">LR-</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DOR"><span class="nav-number">2.9.</span> <span class="nav-text">DOR</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Youden-Index"><span class="nav-number">2.10.</span> <span class="nav-text">Youden Index</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#F1-score"><span class="nav-number">2.11.</span> <span class="nav-text">F1-score</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ROC"><span class="nav-number">2.12.</span> <span class="nav-text">ROC</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AUC"><span class="nav-number">2.13.</span> <span class="nav-text">AUC</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PR"><span class="nav-number">2.14.</span> <span class="nav-text">PR</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%B6%E4%BB%96"><span class="nav-number">3.</span> <span class="nav-text">其他</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%AF%E5%B7%AE"><span class="nav-number">3.1.</span> <span class="nav-text">误差</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="nav-number">4.</span> <span class="nav-text">参考资料</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8E%A8%E8%8D%90%E9%98%85%E8%AF%BB"><span class="nav-number">5.</span> <span class="nav-text">推荐阅读</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%86%E7%B1%BB%E6%96%B9%E6%B3%95"><span class="nav-number">1.</span> <span class="nav-text">分类方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%86%E7%B1%BB%E8%AF%84%E4%BC%B0"><span class="nav-number">2.</span> <span class="nav-text">分类评估</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B2%BE%E7%A1%AE%E7%8E%87-Precision"><span class="nav-number">2.1.</span> <span class="nav-text">精确率 Precision</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%AC%E5%9B%9E%E7%8E%87-Recall"><span class="nav-number">2.2.</span> <span class="nav-text">召回率 Recall</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%81%B5%E6%95%8F%E5%BA%A6-Sensitivity"><span class="nav-number">2.3.</span> <span class="nav-text">灵敏度 Sensitivity</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%89%B9%E5%BC%82%E5%BA%A6-Specificity"><span class="nav-number">2.4.</span> <span class="nav-text">特异度 Specificity</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%94%99%E8%AF%AF%E7%8E%87-Error"><span class="nav-number">2.5.</span> <span class="nav-text">错误率 Error</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%86%E7%A1%AE%E7%8E%87-%E7%B2%BE%E5%BA%A6-Accuracy"><span class="nav-number">2.6.</span> <span class="nav-text">准确率&#x2F;精度 Accuracy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LR"><span class="nav-number">2.7.</span> <span class="nav-text">LR+</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LR-1"><span class="nav-number">2.8.</span> <span class="nav-text">LR-</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DOR"><span class="nav-number">2.9.</span> <span class="nav-text">DOR</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Youden-Index"><span class="nav-number">2.10.</span> <span class="nav-text">Youden Index</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#F1-score"><span class="nav-number">2.11.</span> <span class="nav-text">F1-score</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ROC"><span class="nav-number">2.12.</span> <span class="nav-text">ROC</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AUC"><span class="nav-number">2.13.</span> <span class="nav-text">AUC</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PR"><span class="nav-number">2.14.</span> <span class="nav-text">PR</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%B6%E4%BB%96"><span class="nav-number">3.</span> <span class="nav-text">其他</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%AF%E5%B7%AE"><span class="nav-number">3.1.</span> <span class="nav-text">误差</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="nav-number">4.</span> <span class="nav-text">参考资料</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8E%A8%E8%8D%90%E9%98%85%E8%AF%BB"><span class="nav-number">5.</span> <span class="nav-text">推荐阅读</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -720,13 +666,13 @@ $$AUC=P\left{P(Positive)&gt;P(Negative)\right}$$</p>
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">444k</span>
+    <span title="站点总字数">431k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">6:43</span>
+    <span title="站点阅读时长">6:32</span>
 </div>
 
 
@@ -810,8 +756,6 @@ $$AUC=P\left{P(Positive)&gt;P(Negative)\right}$$</p>
 
 
 
-
-  
 
 
 
