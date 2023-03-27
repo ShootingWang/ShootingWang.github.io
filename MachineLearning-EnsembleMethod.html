@@ -80,9 +80,9 @@
   .use-motion .logo-line-before i { left: initial; }
   .use-motion .logo-line-after i { right: initial; }
   </style>
-</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</noscript>
 
-<link rel="alternate" href="/atom.xml" title="Skye" type="application/atom+xml">
+<link rel="alternate" href="/atom.xml" title="Skye" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -313,8 +313,8 @@
       
         <center></center>
 <span id="more"></span>
-
-<h1 id="集成方法"><a href="#集成方法" class="headerlink" title="集成方法"></a>集成方法</h1><ul>
+<h1 id="集成方法"><a class="header-anchor" href="#集成方法"></a>集成方法</h1>
+<ul>
 <li>Bagging</li>
 <li>Boosting</li>
 <li>Stacking</li>
@@ -325,70 +325,80 @@
 <li>集成学习不是一个算法，是算法的门类。</li>
 </ul>
 <blockquote>
-<p>The process by which multiple models are <u>strategically generated</u> and <u>combined</u> in order to <u>better</u> solve a particular Machine Learning problem.<br>清华大学-数据挖掘：集成学习</p>
+<p>The process by which multiple models are <u>strategically generated</u> and <u>combined</u> in order to <u>better</u> solve a particular Machine Learning problem.<br>
+清华大学-数据挖掘：集成学习</p>
 </blockquote>
 <p>如何创建多个、不同的基础分类器/基础学习器/基分类器：</p>
 <ul>
-<li><p>使用不同的学习算法：DT，SVM，NN，KNN，…</p>
-</li>
-<li><p>使用不同的训练过程：</p>
-</li>
-<li><p>不同的参数</p>
-</li>
-<li><p>不同的训练集：bootstrap samples（有放回采样）</p>
-</li>
-<li><p>不同的特征集</p>
-<h2 id="基学习器"><a href="#基学习器" class="headerlink" title="基学习器"></a>基学习器</h2><p>基分类器：</p>
-</li>
-<li><p>基分类器不需要很强；强分类器可能会有很多问题</p>
-</li>
-<li><p>基分类器需要有较大的差异，差异性过小的分类器被集成没有意义</p>
-</li>
-<li><p>基分类器的精度最好略高于0.5（正确分类率）<br>随着集成规模的增加，低于0.5的弱分类器会导致集成分类准确率不断下降，而高于0.5则会提升模型的准确率（趋于1）</p>
-</li>
+<li>使用不同的学习算法：DT，SVM，NN，KNN，…</li>
+<li>使用不同的训练过程：</li>
+<li>不同的参数</li>
+<li>不同的训练集：bootstrap samples（有放回采样）</li>
+<li>不同的特征集</li>
 </ul>
-<h2 id="结合策略"><a href="#结合策略" class="headerlink" title="结合策略"></a>结合策略</h2><p>怎么将基分类器的结果结合起来？</p>
+<h2 id="基学习器"><a class="header-anchor" href="#基学习器"></a>基学习器</h2>
+<p>基分类器：</p>
+<ul>
+<li>基分类器不需要很强；强分类器可能会有很多问题</li>
+<li>基分类器需要有较大的差异，差异性过小的分类器被集成没有意义</li>
+<li>基分类器的精度最好略高于0.5（正确分类率）<br>
+随着集成规模的增加，低于0.5的弱分类器会导致集成分类准确率不断下降，而高于0.5则会提升模型的准确率（趋于1）</li>
+</ul>
+<h2 id="结合策略"><a class="header-anchor" href="#结合策略"></a>结合策略</h2>
+<p>怎么将基分类器的结果结合起来？</p>
 <ol>
 <li>平均法</li>
 <li>投票法</li>
 <li>学习法</li>
 </ol>
-<h3 id="平均法"><a href="#平均法" class="headerlink" title="平均法"></a>平均法</h3><p>平均法（Averaging）：取所有基础学习器（基分类器）的输出结果的平均作为最终决策<br>$$H(x)=\sum_{i=1}^T\omega_ih_i(x)$$<br>其中</p>
+<h3 id="平均法"><a class="header-anchor" href="#平均法"></a>平均法</h3>
+<p>平均法（Averaging）：取所有基础学习器（基分类器）的输出结果的平均作为最终决策<br>
+$$H(x)=\sum_{i=1}^T\omega_ih_i(x)$$<br>
+其中</p>
 <ul>
 <li>共$T$个基础学习器（弱学习器）${h_1,\cdots,h_T}$</li>
 <li>对任意一个样本$x$，$h_i(x)$为第$i$个学习器的分类结果</li>
 <li>$\omega_i$为基础学习器$h_i$的权重，$\omega_i\geq0,\ \sum_{i=1}^T\omega_i=1$</li>
 <li>预测类别为${c_1,c_2,\cdots,c_K}$</li>
 </ul>
-<p>最简单的平均是\textbf{算数平均}：<br>$$\omega_i=\frac{1}{T}$$<br>$$H(x)=\frac{1}{T}\sum_{i=1}^Th_i(x)$$</p>
-<h3 id="投票法"><a href="#投票法" class="headerlink" title="投票法"></a>投票法</h3><p>投票法（Voting）：使用所有基础学习器（基分类器）结果的凸组合作为最终决策</p>
+<p>最简单的平均是\textbf{算数平均}：<br>
+$$\omega_i=\frac{1}{T}$$<br>
+$$H(x)=\frac{1}{T}\sum_{i=1}^Th_i(x)$$</p>
+<h3 id="投票法"><a class="header-anchor" href="#投票法"></a>投票法</h3>
+<p>投票法（Voting）：使用所有基础学习器（基分类器）结果的凸组合作为最终决策</p>
 <ul>
 <li><strong>相对多数投票法</strong>（Plurality Voting）：少数服从多数；分类问题中，对样本的预测结果中票数最多的那个类别作为最终的分类类别；若获得最高票的类别不止一个，则随机选择其中一个作为最终类别</li>
-<li><strong>绝对多数投票法</strong>（Majority Voting）：票过半数；多个基分类器对某一类别的预测结果大于总投票结果的一半，则预测结果为该类别，否则拒绝预测<blockquote>
+<li><strong>绝对多数投票法</strong>（Majority Voting）：票过半数；多个基分类器对某一类别的预测结果大于总投票结果的一半，则预测结果为该类别，否则拒绝预测</li>
+</ul>
+<blockquote>
 <p>如：<a href="#">Post not found: 随机森林 随机森林Random Forest</a></p>
 </blockquote>
-</li>
-<li><strong>加权投票法</strong>（Weighted Majority Voting）：类似加权平均法；给予每个基分类器的预测结果权重，计算各类别的加权票数和，票数最高的那个类别作为最终预测类别<blockquote>
+<ul>
+<li><strong>加权投票法</strong>（Weighted Majority Voting）：类似加权平均法；给予每个基分类器的预测结果权重，计算各类别的加权票数和，票数最高的那个类别作为最终预测类别</li>
+</ul>
+<blockquote>
 <p>如：AdaBoost</p>
 </blockquote>
-</li>
-</ul>
-<h3 id="学习法"><a href="#学习法" class="headerlink" title="学习法"></a>学习法</h3><ul>
+<h3 id="学习法"><a class="header-anchor" href="#学习法"></a>学习法</h3>
+<ul>
 <li>General Combiner：Stacking</li>
 <li>Piecewise Combiner：RegionBoost</li>
 </ul>
-<h2 id="类别"><a href="#类别" class="headerlink" title="类别"></a>类别</h2><p>集成学习的集成方法按基分类器连接方式分为两种：</p>
+<h2 id="类别"><a class="header-anchor" href="#类别"></a>类别</h2>
+<p>集成学习的集成方法按基分类器连接方式分为两种：</p>
 <ol>
 <li><strong>序列集成</strong>（sequential ensemble）：基分类器按照顺序生成；基分类器之间存在依赖关系；通过对前面训练中错误——Boosting</li>
 <li><strong>并行集成</strong>（parallel ensemble）：基学习器可以并行生成；利用基学习器之间的独立性，通过平均可以显著降低分类错误——Bagging</li>
 </ol>
-<h3 id="Bagging"><a href="#Bagging" class="headerlink" title="Bagging"></a>Bagging</h3><ul>
-<li><a href="#">Post not found: 随机森林 随机森林Random Forest</a>
-
+<h3 id="Bagging"><a class="header-anchor" href="#Bagging"></a>Bagging</h3>
+<ul>
+<li>
+<a href="#">Post not found: 随机森林 随机森林Random Forest</a>
 </li>
 </ul>
 <p>Bagging（Bootstrap Aggregating）：对样本进行Bootstrap随机采样（Bootstrap sampling），得到k个训练集，对每个训练集训练一个弱学习器（弱分类器），得到k个分类器，通过一定的结合策略，得到一个强学习器。</p>
-<h3 id="Boosting"><a href="#Boosting" class="headerlink" title="Boosting"></a>Boosting</h3><ul>
+<h3 id="Boosting"><a class="header-anchor" href="#Boosting"></a>Boosting</h3>
+<ul>
 <li>AdaBoost</li>
 <li>XGBoost</li>
 <li>LightGBM</li>
@@ -399,13 +409,15 @@
 <ul>
 <li>Boosting会减小在上一轮训练正确的样本的权重，增大错误样本的权重</li>
 </ul>
-<h4 id="AdaBoost"><a href="#AdaBoost" class="headerlink" title="AdaBoost"></a>AdaBoost</h4><ul>
+<h4 id="AdaBoost"><a class="header-anchor" href="#AdaBoost"></a>AdaBoost</h4>
+<ul>
 <li>每次使用的是全部样本</li>
 <li>每轮训练改变样本的权重</li>
 <li>下一轮训练的目标是找到一个函数来拟合上一轮训练后的残差</li>
 <li>当残差足够小或达到设置的最大迭代次数时停止训练</li>
 </ul>
-<h3 id="Stacking"><a href="#Stacking" class="headerlink" title="Stacking"></a>Stacking</h3><ul>
+<h3 id="Stacking"><a class="header-anchor" href="#Stacking"></a>Stacking</h3>
+<ul>
 <li>是Bagging的升级版</li>
 <li>改进预测</li>
 <li>结合策略是“学习法”</li>
@@ -413,16 +425,18 @@
 <li>这里称弱学习器为初级学习器，最后用于结合的学习器称为次级学习器</li>
 <li>对于测试集，先用初级学习器预测一次，得到次级学习器的输入（Input），再用次级学习器预测一次，得到最终的预测结果</li>
 </ul>
-<h2 id="Bagging-vs-Boosting"><a href="#Bagging-vs-Boosting" class="headerlink" title="Bagging vs Boosting"></a>Bagging vs Boosting</h2><h3 id="相同点"><a href="#相同点" class="headerlink" title="相同点"></a>相同点</h3><ul>
+<h2 id="Bagging-vs-Boosting"><a class="header-anchor" href="#Bagging-vs-Boosting"></a>Bagging vs Boosting</h2>
+<h3 id="相同点"><a class="header-anchor" href="#相同点"></a>相同点</h3>
+<ul>
 <li>都是模型融合的方法</li>
 <li>可以将弱分类器融合形成一个强分类器，融合之后的分类效果比最好的弱分类器效果更好</li>
 </ul>
-<h3 id="不同点"><a href="#不同点" class="headerlink" title="不同点"></a>不同点</h3><div>
+<h3 id="不同点"><a class="header-anchor" href="#不同点"></a>不同点</h3>
+<div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
-
 <pre><code>.dataframe tbody tr th &#123;
     vertical-align: top;
 &#125;
@@ -431,7 +445,7 @@
     text-align: right;
 &#125;
 </code></pre>
-<p></style><p></p>
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: center;">
@@ -473,15 +487,14 @@
   </tbody>
 </table>
 </div>
-
 <div class="note success">
             <p>为什么“Bagging是减少Variance，而Boosting是减少Bias”？</p>
           </div>
 <div class="note default">
             <ol><li><strong>Bagging</strong>对样本重采样（bootstrap），对每一轮采样得到的子样本集训练一个模型，最后对模型的结果取均值。</li></ol><ul><li>由于子样本集的相似性及基分类器都是同种模型，所以各模型有近似相等的Bias和Variance</li><li>因为$E\left[\frac{\sum_iX_i}{n}\right]=E(X_i)$，所以bagging后的Bias和单个基分类器接近，所以不能“显著降低Bias”</li><li>若各基分类器独立，则有<br>$$Var\large(\frac{\sum_iX_i}{n}\large)=\frac{Var(X_i)}{n}$$<br>因此可以“显著降低Variance”</li><li>若各基分类器完全相同，则<br>$$Var\left(\frac{\sum_iX_i}{n}\right)=Var(X_i)$$<br>此时不会“降低Variance”</li><li>Bagging得到的各基分类器具有一定的相关性，但又不完全相同，所以可以“一定程度地降低Variance”</li></ul><ol start="2"><li><strong>Boosting</strong>使用forward-stagewise（贪心法）最小化损失函数$L(y,\sum_ia_if_i(x))$</li></ol><ul><li>在第$n$步，求解新的子模型$f(x)$及步长$a$来最小化$L(y, f_{n-1}(x)+af(x))$($f_{n-1}(x)$是前$n-1$步得到的子模型的和)</li><li>Boosting是在“Sequential”地最小化损失函数，其Bias逐步下降</li><li>Boosting的基分类器之间是强相关的，所以并不能“显著降低Variance”</li></ul>
           </div>
-
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
+<h1 id="参考资料"><a class="header-anchor" href="#参考资料"></a>参考资料</h1>
+<ul>
 <li><a target="_blank" rel="noopener" href="https://blog.csdn.net/u013709270/article/details/72553282">机器学习中Bagging和Boosting的区别</a></li>
 <li><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/26760839/answer/40337791">为什么说bagging是减少variance，而boosting是减少bias?</a></li>
 </ul>
@@ -683,13 +696,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">445k</span>
+    <span title="站点总字数">444k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">6:45</span>
+    <span title="站点阅读时长">6:43</span>
 </div>
 
 
@@ -773,6 +786,8 @@
 
 
 
+
+  
 
 
 
