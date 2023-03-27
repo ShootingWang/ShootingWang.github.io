@@ -314,37 +314,48 @@
       
         <center>Tree</center>
 <span id="more"></span>
-
 <p>一对多的数据结构——树</p>
-<h1 id="树"><a href="#树" class="headerlink" title="树"></a>树</h1><h2 id="树-1"><a href="#树-1" class="headerlink" title="树"></a>树</h2><p><strong>树</strong>（Tree）是$n$个结点的有限集。</p>
+<h1 id="树"><a class="header-anchor" href="#树"></a>树</h1>
+<h2 id="树-2"><a class="header-anchor" href="#树-2"></a>树</h2>
+<p><strong>树</strong>（Tree）是$n$个结点的有限集。</p>
 <ul>
-<li><p><strong>空树</strong>：$n=0$</p>
+<li>
+<p><strong>空树</strong>：$n=0$</p>
 </li>
-<li><p><strong>非空树</strong>：</p>
+<li>
+<p><strong>非空树</strong>：</p>
 <ul>
 <li>$n&gt;0$</li>
 <li>有且仅有一个特定的<strong>根结点</strong>（Root）</li>
 <li>当$n&gt;1$时，其余结点可分为$m(m&gt;0)$个互不相交的有限集$T_1,\cdots,T_m$；其中每一个集合自身是一棵树，称之为根的<strong>子树</strong>（SubTree）</li>
 </ul>
 </li>
-<li><p><strong>有序树</strong><br>如果树中结点的各子树从左至右是有次序的、不能互换左右子树的，则该树为有序树</p>
+<li>
+<p><strong>有序树</strong><br>
+如果树中结点的各子树从左至右是有次序的、不能互换左右子树的，则该树为有序树</p>
 </li>
-<li><p><strong>无序树</strong><br>树中结点可互换左右子树，则该树为无序树</p>
+<li>
+<p><strong>无序树</strong><br>
+树中结点可互换左右子树，则该树为无序树</p>
 </li>
 </ul>
-<h2 id="森林"><a href="#森林" class="headerlink" title="森林"></a>森林</h2><p><strong>森林</strong>（Forest）：$m$棵互不相交的树的集合</p>
+<h2 id="森林"><a class="header-anchor" href="#森林"></a>森林</h2>
+<p><strong>森林</strong>（Forest）：$m$棵互不相交的树的集合</p>
 <ul>
 <li>树中的每个结点的子树的集合就是森林</li>
 </ul>
-<h1 id="结点"><a href="#结点" class="headerlink" title="结点"></a>结点</h1><p>树的<strong>结点</strong>（Node）包含一个数据元素及若干指向其子树的分支。</p>
-<h2 id="度"><a href="#度" class="headerlink" title="度"></a>度</h2><p>结点拥有的子树的数目称为结点的<strong>度</strong>（Degree）。</p>
+<h1 id="结点"><a class="header-anchor" href="#结点"></a>结点</h1>
+<p>树的<strong>结点</strong>（Node）包含一个数据元素及若干指向其子树的分支。</p>
+<h2 id="度"><a class="header-anchor" href="#度"></a>度</h2>
+<p>结点拥有的子树的数目称为结点的<strong>度</strong>（Degree）。</p>
 <ul>
 <li><strong>叶结点</strong>（Leaf）：度为0的结点</li>
 <li><strong>非终端结点/分支结点</strong>：度不为0的结点</li>
 <li><strong>内部结点</strong>：除根结点外的分支结点</li>
 </ul>
 <p><strong>树的度</strong>是指树内各结点的度的最大值。</p>
-<h2 id="结点间关系"><a href="#结点间关系" class="headerlink" title="结点间关系"></a>结点间关系</h2><ul>
+<h2 id="结点间关系"><a class="header-anchor" href="#结点间关系"></a>结点间关系</h2>
+<ul>
 <li><strong>Child</strong>：结点的子树的根，称为该结点的Child</li>
 <li><strong>Parent</strong>：Child的前一个结点称为Child的Parent</li>
 <li><strong>Sibling</strong>：同一个Parent的Child之间互称Sibling（兄弟）</li>
@@ -352,9 +363,11 @@
 <li><strong>子孙</strong>：以某结点为根的所有子树的结点都称为该结点的子孙</li>
 <li><strong>堂兄弟</strong>：双亲在同一层的结点互为堂兄弟</li>
 </ul>
-<h2 id="层次"><a href="#层次" class="headerlink" title="层次"></a>层次</h2><p>结点的<strong>层次</strong>（Level）：从根开始，根为第一层；根的孩子为第二层；第二层结点的孩子（第二层结点的子树的根）所在的为第三层；依此类推。</p>
+<h2 id="层次"><a class="header-anchor" href="#层次"></a>层次</h2>
+<p>结点的<strong>层次</strong>（Level）：从根开始，根为第一层；根的孩子为第二层；第二层结点的孩子（第二层结点的子树的根）所在的为第三层；依此类推。</p>
 <p>树的<strong>深度</strong>（Depth）或<strong>高度</strong>：树中结点的最大层次</p>
-<h1 id="二叉树"><a href="#二叉树" class="headerlink" title="二叉树"></a>二叉树</h1><p><strong>二叉树</strong>（Binary Tree）：$n$个结点的有限集合</p>
+<h1 id="二叉树"><a class="header-anchor" href="#二叉树"></a>二叉树</h1>
+<p><strong>二叉树</strong>（Binary Tree）：$n$个结点的有限集合</p>
 <ul>
 <li><strong>空二叉树</strong>：$n=0$</li>
 <li>由一个根结点和两棵互不相交的二叉树组成。这两棵二叉树称为根结点的<strong>左子树</strong>和<strong>右子树</strong></li>
@@ -374,25 +387,30 @@
 <li>根结点既有左子树又有右子树（$n\geq3$）</li>
 </ol>
 <blockquote>
-<p>具有2个结点的二叉树的可能形态有2种<br>具有3个结点的二叉树的可能形态有5种</p>
+<p>具有2个结点的二叉树的可能形态有2种<br>
+具有3个结点的二叉树的可能形态有5种</p>
 </blockquote>
-<h2 id="斜树"><a href="#斜树" class="headerlink" title="斜树"></a>斜树</h2><p>左斜树和右斜树统称为斜树。</p>
+<h2 id="斜树"><a class="header-anchor" href="#斜树"></a>斜树</h2>
+<p>左斜树和右斜树统称为斜树。</p>
 <ul>
 <li><strong>左斜树</strong>：所有结点都只有左子树的二叉树</li>
-<li><strong>右斜树</strong>：所有结点都只有右子树的二叉树<ul>
+<li><strong>右斜树</strong>：所有结点都只有右子树的二叉树
+<ul>
 <li>斜树的每一层都只有一个结点</li>
 <li>斜树的结点个数与树的深度相同</li>
 </ul>
 </li>
 </ul>
-<h2 id="满二叉树"><a href="#满二叉树" class="headerlink" title="满二叉树"></a>满二叉树</h2><p>所有分支结点都存在左子树和右子树、所有叶子结点都在同一层上的二叉树称为<strong>满二叉树</strong>(Full Binary Tree)。</p>
+<h2 id="满二叉树"><a class="header-anchor" href="#满二叉树"></a>满二叉树</h2>
+<p>所有分支结点都存在左子树和右子树、所有叶子结点都在同一层上的二叉树称为<strong>满二叉树</strong>(Full Binary Tree)。</p>
 <p>满二叉树的<strong>特点</strong>：</p>
 <ul>
 <li>叶子结点只能出现在最底层</li>
 <li>非叶子结点的度一定为2</li>
 <li>在同样深度的二叉树中，满二叉树的结点个数最多、叶子结点数最多</li>
 </ul>
-<h2 id="完全二叉树"><a href="#完全二叉树" class="headerlink" title="完全二叉树"></a>完全二叉树</h2><p>定义（待补充）(Complete Binary Tree)</p>
+<h2 id="完全二叉树"><a class="header-anchor" href="#完全二叉树"></a>完全二叉树</h2>
+<p>定义（待补充）(Complete Binary Tree)</p>
 <ul>
 <li>满二叉树一定是一棵完全二叉树</li>
 <li>完全二叉树不一定是满二叉树</li>
@@ -405,41 +423,57 @@
 <li>完全二叉树不存在只有右子树的情况</li>
 <li>同样结点数的二叉树，完全二叉树的深度最小</li>
 </ul>
-<h2 id="平衡二叉树"><a href="#平衡二叉树" class="headerlink" title="平衡二叉树"></a>平衡二叉树</h2><p><strong>平衡二叉树</strong>（BT，Balance Tree），又称<strong>AVL树</strong>：是一棵空树，或它的左右子树的高度差的绝对值不超过1，且左右子树都是一棵平衡二叉树</p>
-<h2 id="二叉树性质"><a href="#二叉树性质" class="headerlink" title="二叉树性质"></a>二叉树性质</h2><ol>
+<h2 id="平衡二叉树"><a class="header-anchor" href="#平衡二叉树"></a>平衡二叉树</h2>
+<p><strong>平衡二叉树</strong>（BT，Balance Tree），又称<strong>AVL树</strong>：是一棵空树，或它的左右子树的高度差的绝对值不超过1，且左右子树都是一棵平衡二叉树</p>
+<h2 id="二叉树性质"><a class="header-anchor" href="#二叉树性质"></a>二叉树性质</h2>
+<ol>
 <li>二叉树的第$i$层上最多有$2^{i-1}$个结点（$i\geq 1$）</li>
 <li>深度为$k$的二叉树最多有$2^k-1$个结点（$k\geq1$）</li>
 </ol>
 <ul>
 <li>$k=1$：最多有$1(2^1-1)$个结点</li>
 <li>$k=1$：最多有$1+2=3(2^2-1)$个结点</li>
-<li>$k=2$：最多有$1+2+2^2=7(2^3-1)$个结点</li>
+<li>$k=2$：最多有$1+2+2<sup>2=7(2</sup>3-1)$个结点</li>
 <li>……</li>
-<li>对任意的$k$，最多有$2^0+2^1+\cdots+2^k=2^k-1$个结点</li>
+<li>对任意的$k$，最多有$2<sup>0+2</sup>1+\cdots+2<sup>k=2</sup>k-1$个结点</li>
 </ul>
 <ol start="3">
-<li>对任意一棵二叉树$T$，有$n_0$个叶子结点（度为0）、$n_2$个度为2的结点，则有$n_1=n_2+1$<ul>
+<li>对任意一棵二叉树$T$，有$n_0$个叶子结点（度为0）、$n_2$个度为2的结点，则有$n_1=n_2+1$
+<ul>
 <li>度为0的结点数为$n_0$</li>
 <li>度为1的结点数为$n_1$</li>
-<li>度为2的结点数为$n_2$<ul>
-<li>二叉树的结点的度最多为2，所以树$T$的结点总数为<br>$$n=n_0+n_1+n_2$$</li>
+<li>度为2的结点数为$n_2$
+<ul>
+<li>二叉树的结点的度最多为2，所以树$T$的结点总数为<br>
+$$n=n_0+n_1+n_2$$</li>
 </ul>
 </li>
 <li>只有根结点没有连接线进入，其他结点都有连接线进入，所以连接线总数为$n-1$</li>
-<li>度为1的结点有一条向下的连接线，度为2的结点有2条向下的连接线，度为0的结点没有向下的连接线，所以连接线总数为$n_1+2n_2$<ul>
-<li>连接线总数为<br>$$n_L=n-1=n_1+2n_2$$</li>
+<li>度为1的结点有一条向下的连接线，度为2的结点有2条向下的连接线，度为0的结点没有向下的连接线，所以连接线总数为$n_1+2n_2$
+<ul>
+<li>连接线总数为<br>
+$$n_L=n-1=n_1+2n_2$$</li>
 </ul>
 </li>
-<li>由上面两个等式可得<br>$$n_0=n_2+1$$</li>
+<li>由上面两个等式可得<br>
+$$n_0=n_2+1$$</li>
 </ul>
 </li>
-<li>具有$n$个结点的完全二叉树的深度为$[\log_2{n}]+1$（$[x]$表示不大于$x$的最大整数）<ul>
+<li>具有$n$个结点的完全二叉树的深度为$[\log_2{n}]+1$（$[x]$表示不大于$x$的最大整数）
+<ul>
 <li>深度为$k$的满二叉树的结点数为$n=2^k-1$</li>
 <li>有$n$个结点的满二叉树的深度为$k=\log_2{(n+1)}$</li>
-<li>完全二叉树的叶子结点只可能出现在最下面两层，则深度为$k$的完全二叉树的结点数$n$一定多于深度为$k-1$的满二叉树、不多于深度为$k$的满二叉树。即<br>  $$2^{k-1} -1 &lt; n \leq 2^k-1$$<br>  也即<br>  $$2^{k-1} \leq n &lt; 2^k$$<br>  $$k-1 \leq \log_2n &lt;k$$<br>  所以有<br>  $$k=[\log_2n]+1$$</li>
+<li>完全二叉树的叶子结点只可能出现在最下面两层，则深度为$k$的完全二叉树的结点数$n$一定多于深度为$k-1$的满二叉树、不多于深度为$k$的满二叉树。即<br>
+$$2^{k-1} -1 &lt; n \leq 2^k-1$$<br>
+也即<br>
+$$2^{k-1} \leq n &lt; 2^k$$<br>
+$$k-1 \leq \log_2n &lt;k$$<br>
+所以有<br>
+$$k=[\log_2n]+1$$</li>
 </ul>
 </li>
-<li>对一棵有$n$个结点的完全二叉树（深度为$[\log_2n]+1$）的结点按层序编号（从第1层到第$[\log_2n]+1$层，每层从左到右），对任一结点$i(1\leq i\leq n)$有：<ul>
+<li>对一棵有$n$个结点的完全二叉树（深度为$[\log_2n]+1$）的结点按层序编号（从第1层到第$[\log_2n]+1$层，每层从左到右），对任一结点$i(1\leq i\leq n)$有：
+<ul>
 <li>如果$i=1$，则结点$i$为二叉树的根结点，无双亲（Parent）</li>
 <li>如果$i&gt;1$，则结点$i$的双亲是$[\frac{i}{2}]$</li>
 <li>如果$2i&gt;n$，则结点$i$为叶子结点、无左孩子（Left Child）；否则其左孩子是结点$2i$</li>
@@ -447,112 +481,134 @@
 </ul>
 </li>
 </ol>
-<h2 id="二叉树的存储结构"><a href="#二叉树的存储结构" class="headerlink" title="二叉树的存储结构"></a>二叉树的存储结构</h2><h3 id="顺序存储"><a href="#顺序存储" class="headerlink" title="顺序存储"></a>顺序存储</h3><ul>
+<h2 id="二叉树的存储结构"><a class="header-anchor" href="#二叉树的存储结构"></a>二叉树的存储结构</h2>
+<h3 id="顺序存储"><a class="header-anchor" href="#顺序存储"></a>顺序存储</h3>
+<ul>
 <li>用一维数组存储二叉树中的结点，数组的下标是结点的存储位置</li>
 <li>深度为$k$的二叉树的顺序存储有$2^k-1$个存储单元空间</li>
 <li>顺序存储结构一般只用于完全二叉树</li>
 </ul>
-<h3 id="二叉链表"><a href="#二叉链表" class="headerlink" title="二叉链表"></a>二叉链表</h3><ul>
+<h3 id="二叉链表"><a class="header-anchor" href="#二叉链表"></a>二叉链表</h3>
+<ul>
 <li>一个数据域（存储结点）、两个指针域（分别存储left child和right child）的链式存储结构</li>
 </ul>
-<h2 id="二叉树的遍历"><a href="#二叉树的遍历" class="headerlink" title="二叉树的遍历"></a>二叉树的遍历</h2><p>遍历二叉树（traversing binary tree）是指从根结点（Root）出发，按照某种次序依次访问二叉树中的所有结点，使得每个结点被访问一次、且只被访问一次。</p>
+<h2 id="二叉树的遍历"><a class="header-anchor" href="#二叉树的遍历"></a>二叉树的遍历</h2>
+<p>遍历二叉树（traversing binary tree）是指从根结点（Root）出发，按照某种次序依次访问二叉树中的所有结点，使得每个结点被访问一次、且只被访问一次。</p>
 <ul>
 <li>已知前序遍历序列和中序遍历序列，可以唯一确定一棵二叉树</li>
 <li>已知后序遍历序列和中序遍历序列，可以唯一确定一棵二叉树</li>
 <li>已知前序和后序遍历序列，不能确定一棵二叉树</li>
 </ul>
-<h3 id="前序遍历"><a href="#前序遍历" class="headerlink" title="前序遍历"></a>前序遍历</h3><ul>
-<li>二叉树为空<blockquote>
+<h3 id="前序遍历"><a class="header-anchor" href="#前序遍历"></a>前序遍历</h3>
+<ul>
+<li>二叉树为空</li>
+</ul>
+<blockquote>
 <p>返回空</p>
 </blockquote>
-</li>
-<li>二叉树非空<blockquote>
-<p>$$根结点 \rightarrow前序遍历左子树 \rightarrow 前序遍历右子树$$<br>$$中\rightarrow左\rightarrow右$$</p>
-</blockquote>
-</li>
+<ul>
+<li>二叉树非空</li>
 </ul>
+<blockquote>
+<p>$$根结点 \rightarrow前序遍历左子树 \rightarrow 前序遍历右子树$$<br>
+$$中\rightarrow左\rightarrow右$$</p>
+</blockquote>
 <meta name="referrer" content="no-referrer">
 
 $$1→2→4→5→3→6→7$$
-
-<h3 id="中序遍历"><a href="#中序遍历" class="headerlink" title="中序遍历"></a>中序遍历</h3><ul>
-<li>二叉树为空<blockquote>
+<h3 id="中序遍历"><a class="header-anchor" href="#中序遍历"></a>中序遍历</h3>
+<ul>
+<li>二叉树为空</li>
+</ul>
+<blockquote>
 <p>返回空</p>
 </blockquote>
-</li>
-<li>二叉树非空<blockquote>
-<p>$$中序遍历根结点的左子树\rightarrow根结点\rightarrow中序遍历右子树$$<br>$$左\rightarrow中\rightarrow右$$</p>
-</blockquote>
-</li>
+<ul>
+<li>二叉树非空</li>
 </ul>
+<blockquote>
+<p>$$中序遍历根结点的左子树\rightarrow根结点\rightarrow中序遍历右子树$$<br>
+$$左\rightarrow中\rightarrow右$$</p>
+</blockquote>
 <meta name="referrer" content="no-referrer">
 
 $$4→2→5→1→6→3→7$$
-
-<h3 id="后序遍历"><a href="#后序遍历" class="headerlink" title="后序遍历"></a>后序遍历</h3><ul>
-<li>二叉树为空<blockquote>
+<h3 id="后序遍历"><a class="header-anchor" href="#后序遍历"></a>后序遍历</h3>
+<ul>
+<li>二叉树为空</li>
+</ul>
+<blockquote>
 <p>返回空</p>
 </blockquote>
-</li>
-<li>二叉树非空<blockquote>
-<p>$$后序遍历左子树\rightarrow后序遍历右子树\rightarrow根结点$$<br>$$左\rightarrow右\rightarrow中$$</p>
-</blockquote>
-</li>
+<ul>
+<li>二叉树非空</li>
 </ul>
+<blockquote>
+<p>$$后序遍历左子树\rightarrow后序遍历右子树\rightarrow根结点$$<br>
+$$左\rightarrow右\rightarrow中$$</p>
+</blockquote>
 <meta name="referrer" content="no-referrer">
 
 $$4→5→2→6→7→3→1$$
-
-<h3 id="层序遍历"><a href="#层序遍历" class="headerlink" title="层序遍历"></a>层序遍历</h3><ul>
-<li>二叉树为空<blockquote>
+<h3 id="层序遍历"><a class="header-anchor" href="#层序遍历"></a>层序遍历</h3>
+<ul>
+<li>二叉树为空</li>
+</ul>
+<blockquote>
 <p>返回空</p>
 </blockquote>
-</li>
-<li>二叉树非空<blockquote>
+<ul>
+<li>二叉树非空</li>
+</ul>
+<blockquote>
 <p>从根结点、从上往下逐层遍历；在同一层，按从左到右的顺序对结点逐个访问</p>
 </blockquote>
-</li>
-</ul>
 <meta name="referrer" content="no-referrer">
 
 $$1→2→3→4→5→6→7$$
-
-
-<h1 id="赫夫曼"><a href="#赫夫曼" class="headerlink" title="赫夫曼"></a>赫夫曼</h1><h2 id="赫夫曼树"><a href="#赫夫曼树" class="headerlink" title="赫夫曼树"></a>赫夫曼树</h2><h2 id="赫夫曼编码"><a href="#赫夫曼编码" class="headerlink" title="赫夫曼编码"></a>赫夫曼编码</h2><h1 id="二叉查找树"><a href="#二叉查找树" class="headerlink" title="二叉查找树"></a>二叉查找树</h1><p><strong>二叉搜索树/二叉查找树</strong>（Binary Search Tree）</p>
+<h1 id="赫夫曼"><a class="header-anchor" href="#赫夫曼"></a>赫夫曼</h1>
+<h2 id="赫夫曼树"><a class="header-anchor" href="#赫夫曼树"></a>赫夫曼树</h2>
+<h2 id="赫夫曼编码"><a class="header-anchor" href="#赫夫曼编码"></a>赫夫曼编码</h2>
+<h1 id="二叉查找树"><a class="header-anchor" href="#二叉查找树"></a>二叉查找树</h1>
+<p><strong>二叉搜索树/二叉查找树</strong>（Binary Search Tree）</p>
 <ul>
 <li>是一种数据结构</li>
 <li>不能随机访问</li>
 </ul>
 <p>左子树上所有结点的值均小于根结点的值，而右子树上所有结点的值均大于根结点的值（？？？）</p>
-<h2 id="运行时间"><a href="#运行时间" class="headerlink" title="运行时间"></a>运行时间</h2><ul>
+<h2 id="运行时间"><a class="header-anchor" href="#运行时间"></a>运行时间</h2>
+<ul>
 <li>平均运行时间为$O(\log{n})$</li>
 <li>最糟的运行时间为$O(n)$</li>
 </ul>
 <table>
 <thead>
 <tr>
-<th align="center"></th>
-<th align="center">数组</th>
-<th align="center">二叉查找树</th>
+<th style="text-align:center"></th>
+<th style="text-align:center">数组</th>
+<th style="text-align:center">二叉查找树</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">查找</td>
-<td align="center">$O(\log{n})$</td>
-<td align="center">$O(\log{n})$</td>
+<tbody>
+<tr>
+<td style="text-align:center">查找</td>
+<td style="text-align:center">$O(\log{n})$</td>
+<td style="text-align:center">$O(\log{n})$</td>
 </tr>
 <tr>
-<td align="center">插入</td>
-<td align="center">$O(n)$</td>
-<td align="center">$O(\log{n})$</td>
+<td style="text-align:center">插入</td>
+<td style="text-align:center">$O(n)$</td>
+<td style="text-align:center">$O(\log{n})$</td>
 </tr>
 <tr>
-<td align="center">删除</td>
-<td align="center">$O(n)$</td>
-<td align="center">$O(\log{n})$</td>
+<td style="text-align:center">删除</td>
+<td style="text-align:center">$O(n)$</td>
+<td style="text-align:center">$O(\log{n})$</td>
 </tr>
-</tbody></table>
-<h1 id="最小生成树"><a href="#最小生成树" class="headerlink" title="最小生成树"></a>最小生成树</h1><p><strong>最小生成树</strong>（MST，Minimum Spanning Tree）：一个有$n$个结点的连通图的生成树是原图的极小连通子图，且包含原图中的所有$n$个结点，并且有保持图连通的最少的边。</p>
+</tbody>
+</table>
+<h1 id="最小生成树"><a class="header-anchor" href="#最小生成树"></a>最小生成树</h1>
+<p><strong>最小生成树</strong>（MST，Minimum Spanning Tree）：一个有$n$个结点的连通图的生成树是原图的极小连通子图，且包含原图中的所有$n$个结点，并且有保持图连通的最少的边。</p>
 <ul>
 <li>一个图可以有许多棵不同的生成树</li>
 <li>生成树的定点数与图的定点数相同</li>
@@ -560,18 +616,21 @@ $$1→2→3→4→5→6→7$$
 <li>一个有$n$个顶点的连通图的生成树有$n-1$条边</li>
 <li>含$n$个顶点、$n-1$条边的图不一定是生成树</li>
 </ul>
-<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><p>可用</p>
+<h2 id="实现"><a class="header-anchor" href="#实现"></a>实现</h2>
+<p>可用</p>
 <ul>
 <li>克鲁斯卡尔算法（Kruskal）</li>
-<li>普里姆算法（Prim）<br>实现</li>
+<li>普里姆算法（Prim）<br>
+实现</li>
 </ul>
 <p>B树、红黑树、堆、伸展树</p>
 <p>未完</p>
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
+<h1 id="参考资料"><a class="header-anchor" href="#参考资料"></a>参考资料</h1>
+<ul>
 <li><a target="_blank" rel="noopener" href="https://book.douban.com/subject/6424904/">大话数据结构</a></li>
 <li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/songwenjie/p/8955856.html">【图解数据结构】二叉树遍历</a></li>
 <li><a target="_blank" rel="noopener" href="https://book.douban.com/subject/26979890/">图解算法</a></li>
-<li><a target="_blank" rel="noopener" href="https://baijiahao.baidu.com/s?id=1646617486319372351&wfr=spider&for=pc">一文读懂平衡二叉树</a></li>
+<li><a target="_blank" rel="noopener" href="https://baijiahao.baidu.com/s?id=1646617486319372351&amp;wfr=spider&amp;for=pc">一文读懂平衡二叉树</a></li>
 <li><a target="_blank" rel="noopener" href="https://my.oschina.net/u/4365394/blog/3234185/print">最小生成树</a></li>
 </ul>
 
@@ -702,7 +761,7 @@ $$1→2→3→4→5→6→7$$
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A0%91"><span class="nav-number">1.</span> <span class="nav-text">树</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%91-1"><span class="nav-number">1.1.</span> <span class="nav-text">树</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A3%AE%E6%9E%97"><span class="nav-number">1.2.</span> <span class="nav-text">森林</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BB%93%E7%82%B9"><span class="nav-number">2.</span> <span class="nav-text">结点</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BA%A6"><span class="nav-number">2.1.</span> <span class="nav-text">度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%93%E7%82%B9%E9%97%B4%E5%85%B3%E7%B3%BB"><span class="nav-number">2.2.</span> <span class="nav-text">结点间关系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B1%82%E6%AC%A1"><span class="nav-number">2.3.</span> <span class="nav-text">层次</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C%E5%8F%89%E6%A0%91"><span class="nav-number">3.</span> <span class="nav-text">二叉树</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%9C%E6%A0%91"><span class="nav-number">3.1.</span> <span class="nav-text">斜树</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%BB%A1%E4%BA%8C%E5%8F%89%E6%A0%91"><span class="nav-number">3.2.</span> <span class="nav-text">满二叉树</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%8C%E5%85%A8%E4%BA%8C%E5%8F%89%E6%A0%91"><span class="nav-number">3.3.</span> <span class="nav-text">完全二叉树</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91"><span class="nav-number">3.4.</span> <span class="nav-text">平衡二叉树</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E5%8F%89%E6%A0%91%E6%80%A7%E8%B4%A8"><span class="nav-number">3.5.</span> <span class="nav-text">二叉树性质</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84"><span class="nav-number">3.6.</span> <span class="nav-text">二叉树的存储结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A1%BA%E5%BA%8F%E5%AD%98%E5%82%A8"><span class="nav-number">3.6.1.</span> <span class="nav-text">顺序存储</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E5%8F%89%E9%93%BE%E8%A1%A8"><span class="nav-number">3.6.2.</span> <span class="nav-text">二叉链表</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E9%81%8D%E5%8E%86"><span class="nav-number">3.7.</span> <span class="nav-text">二叉树的遍历</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%89%8D%E5%BA%8F%E9%81%8D%E5%8E%86"><span class="nav-number">3.7.1.</span> <span class="nav-text">前序遍历</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86"><span class="nav-number">3.7.2.</span> <span class="nav-text">中序遍历</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%86"><span class="nav-number">3.7.3.</span> <span class="nav-text">后序遍历</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B1%82%E5%BA%8F%E9%81%8D%E5%8E%86"><span class="nav-number">3.7.4.</span> <span class="nav-text">层序遍历</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%B5%AB%E5%A4%AB%E6%9B%BC"><span class="nav-number">4.</span> <span class="nav-text">赫夫曼</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B5%AB%E5%A4%AB%E6%9B%BC%E6%A0%91"><span class="nav-number">4.1.</span> <span class="nav-text">赫夫曼树</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B5%AB%E5%A4%AB%E6%9B%BC%E7%BC%96%E7%A0%81"><span class="nav-number">4.2.</span> <span class="nav-text">赫夫曼编码</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C%E5%8F%89%E6%9F%A5%E6%89%BE%E6%A0%91"><span class="nav-number">5.</span> <span class="nav-text">二叉查找树</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%90%E8%A1%8C%E6%97%B6%E9%97%B4"><span class="nav-number">5.1.</span> <span class="nav-text">运行时间</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91"><span class="nav-number">6.</span> <span class="nav-text">最小生成树</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0"><span class="nav-number">6.1.</span> <span class="nav-text">实现</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="nav-number">7.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A0%91"><span class="nav-number">1.</span> <span class="nav-text">树</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%91-2"><span class="nav-number">1.1.</span> <span class="nav-text">树</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A3%AE%E6%9E%97"><span class="nav-number">1.2.</span> <span class="nav-text">森林</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BB%93%E7%82%B9"><span class="nav-number">2.</span> <span class="nav-text">结点</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BA%A6"><span class="nav-number">2.1.</span> <span class="nav-text">度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%93%E7%82%B9%E9%97%B4%E5%85%B3%E7%B3%BB"><span class="nav-number">2.2.</span> <span class="nav-text">结点间关系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B1%82%E6%AC%A1"><span class="nav-number">2.3.</span> <span class="nav-text">层次</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C%E5%8F%89%E6%A0%91"><span class="nav-number">3.</span> <span class="nav-text">二叉树</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%9C%E6%A0%91"><span class="nav-number">3.1.</span> <span class="nav-text">斜树</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%BB%A1%E4%BA%8C%E5%8F%89%E6%A0%91"><span class="nav-number">3.2.</span> <span class="nav-text">满二叉树</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%8C%E5%85%A8%E4%BA%8C%E5%8F%89%E6%A0%91"><span class="nav-number">3.3.</span> <span class="nav-text">完全二叉树</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91"><span class="nav-number">3.4.</span> <span class="nav-text">平衡二叉树</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E5%8F%89%E6%A0%91%E6%80%A7%E8%B4%A8"><span class="nav-number">3.5.</span> <span class="nav-text">二叉树性质</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84"><span class="nav-number">3.6.</span> <span class="nav-text">二叉树的存储结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A1%BA%E5%BA%8F%E5%AD%98%E5%82%A8"><span class="nav-number">3.6.1.</span> <span class="nav-text">顺序存储</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E5%8F%89%E9%93%BE%E8%A1%A8"><span class="nav-number">3.6.2.</span> <span class="nav-text">二叉链表</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E9%81%8D%E5%8E%86"><span class="nav-number">3.7.</span> <span class="nav-text">二叉树的遍历</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%89%8D%E5%BA%8F%E9%81%8D%E5%8E%86"><span class="nav-number">3.7.1.</span> <span class="nav-text">前序遍历</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86"><span class="nav-number">3.7.2.</span> <span class="nav-text">中序遍历</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%86"><span class="nav-number">3.7.3.</span> <span class="nav-text">后序遍历</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B1%82%E5%BA%8F%E9%81%8D%E5%8E%86"><span class="nav-number">3.7.4.</span> <span class="nav-text">层序遍历</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%B5%AB%E5%A4%AB%E6%9B%BC"><span class="nav-number">4.</span> <span class="nav-text">赫夫曼</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B5%AB%E5%A4%AB%E6%9B%BC%E6%A0%91"><span class="nav-number">4.1.</span> <span class="nav-text">赫夫曼树</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B5%AB%E5%A4%AB%E6%9B%BC%E7%BC%96%E7%A0%81"><span class="nav-number">4.2.</span> <span class="nav-text">赫夫曼编码</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C%E5%8F%89%E6%9F%A5%E6%89%BE%E6%A0%91"><span class="nav-number">5.</span> <span class="nav-text">二叉查找树</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%90%E8%A1%8C%E6%97%B6%E9%97%B4"><span class="nav-number">5.1.</span> <span class="nav-text">运行时间</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91"><span class="nav-number">6.</span> <span class="nav-text">最小生成树</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0"><span class="nav-number">6.1.</span> <span class="nav-text">实现</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="nav-number">7.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -771,13 +830,13 @@ $$1→2→3→4→5→6→7$$
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">445k</span>
+    <span title="站点总字数">444k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">6:45</span>
+    <span title="站点阅读时长">6:43</span>
 </div>
 
 
