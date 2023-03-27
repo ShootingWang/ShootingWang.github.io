@@ -11,6 +11,78 @@
   </url>
   
   <url>
+    <loc>https://github.com/ShootingWang/ShootingWang.github.io/Statistics-Distribution-PoissonDistribution.html</loc>
+    
+    <lastmod>2023-03-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://github.com/ShootingWang/ShootingWang.github.io/Statistics-HypothesisTesting.html</loc>
+    
+    <lastmod>2023-03-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://github.com/ShootingWang/ShootingWang.github.io/Tool-JupyterNotebook.html</loc>
+    
+    <lastmod>2023-03-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://github.com/ShootingWang/ShootingWang.github.io/Tool-Markdown.html</loc>
+    
+    <lastmod>2023-03-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://github.com/ShootingWang/ShootingWang.github.io/Tool-Tableau%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90.html</loc>
+    
+    <lastmod>2023-03-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://github.com/ShootingWang/ShootingWang.github.io/Tool-Word%E8%AE%BA%E6%96%87%E6%8E%92%E7%89%88.html</loc>
+    
+    <lastmod>2023-03-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://github.com/ShootingWang/ShootingWang.github.io/Visualization-Echarts.html</loc>
+    
+    <lastmod>2023-03-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://github.com/ShootingWang/ShootingWang.github.io/Visualization-Colors.html</loc>
+    
+    <lastmod>2023-03-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://github.com/ShootingWang/ShootingWang.github.io/Visualization-PythonCase.html</loc>
     
     <lastmod>2023-03-27</lastmod>
@@ -113,15 +185,6 @@
     <loc>https://github.com/ShootingWang/ShootingWang.github.io/treasure/index.html</loc>
     
     <lastmod>2023-02-22</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://github.com/ShootingWang/ShootingWang.github.io/Tool-Tableau%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90.html</loc>
-    
-    <lastmod>2022-12-10</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -551,7 +614,7 @@
   </url>
   
   <url>
-    <loc>https://github.com/ShootingWang/ShootingWang.github.io/Visualization-Echarts.html</loc>
+    <loc>https://github.com/ShootingWang/ShootingWang.github.io/LaTeX-Beamer.html</loc>
     
     <lastmod>2022-10-12</lastmod>
     
@@ -560,7 +623,7 @@
   </url>
   
   <url>
-    <loc>https://github.com/ShootingWang/ShootingWang.github.io/LaTeX-Beamer.html</loc>
+    <loc>https://github.com/ShootingWang/ShootingWang.github.io/MachineLearning-Entropy.html</loc>
     
     <lastmod>2022-10-12</lastmod>
     
@@ -579,15 +642,6 @@
   
   <url>
     <loc>https://github.com/ShootingWang/ShootingWang.github.io/Spark-Learning.html</loc>
-    
-    <lastmod>2022-10-12</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://github.com/ShootingWang/ShootingWang.github.io/MachineLearning-Entropy.html</loc>
     
     <lastmod>2022-10-12</lastmod>
     
@@ -650,25 +704,7 @@
   </url>
   
   <url>
-    <loc>https://github.com/ShootingWang/ShootingWang.github.io/Statistics-Distribution-PoissonDistribution.html</loc>
-    
-    <lastmod>2022-10-12</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://github.com/ShootingWang/ShootingWang.github.io/DataAnalysis-ABTest.html</loc>
-    
-    <lastmod>2022-10-11</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://github.com/ShootingWang/ShootingWang.github.io/Visualization-Colors.html</loc>
     
     <lastmod>2022-10-11</lastmod>
     
@@ -680,15 +716,6 @@
     <loc>https://github.com/ShootingWang/ShootingWang.github.io/TED-TrySomethingNewfor30days.html</loc>
     
     <lastmod>2022-10-11</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://github.com/ShootingWang/ShootingWang.github.io/Tool-JupyterNotebook.html</loc>
-    
-    <lastmod>2022-09-19</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -788,15 +815,6 @@
     <loc>https://github.com/ShootingWang/ShootingWang.github.io/MachineLearning-PatternSearch-Apriori.html</loc>
     
     <lastmod>2022-04-27</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://github.com/ShootingWang/ShootingWang.github.io/Statistics-HypothesisTesting.html</loc>
-    
-    <lastmod>2022-04-25</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -1226,15 +1244,6 @@
   </url>
   
   <url>
-    <loc>https://github.com/ShootingWang/ShootingWang.github.io/Tool-Word%E8%AE%BA%E6%96%87%E6%8E%92%E7%89%88.html</loc>
-    
-    <lastmod>2022-03-20</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://github.com/ShootingWang/ShootingWang.github.io/python-datetime.html</loc>
     
     <lastmod>2022-03-19</lastmod>
@@ -1319,15 +1328,6 @@
     <loc>https://github.com/ShootingWang/ShootingWang.github.io/Aha-Moment.html</loc>
     
     <lastmod>2021-03-27</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://github.com/ShootingWang/ShootingWang.github.io/Tool-Markdown.html</loc>
-    
-    <lastmod>2021-03-14</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>

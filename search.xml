@@ -1980,9 +1980,7 @@
 <h2 id="词云图"><a href="#词云图" class="headerlink" title="词云图"></a>词云图</h2><h2 id="双轴图"><a href="#双轴图" class="headerlink" title="双轴图"></a>双轴图</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd </span><br><span class="line"></span><br><span class="line"><span class="comment">## Data</span></span><br><span class="line">df = pd.DataFrame([</span><br><span class="line">    [-<span class="number">2</span>, <span class="number">10</span>, <span class="number">0.8</span>],</span><br><span class="line">    [-<span class="number">1</span>, <span class="number">20</span>, <span class="number">0.7</span>], </span><br><span class="line">    [<span class="number">0</span>, <span class="number">30</span>, <span class="number">0.6</span>],</span><br><span class="line">    [<span class="number">1</span>, <span class="number">40</span>, <span class="number">0.5</span>],</span><br><span class="line">    [<span class="number">2</span>, <span class="number">50</span>, <span class="number">0.4</span>],</span><br><span class="line">    [<span class="number">3</span>, <span class="number">60</span>, <span class="number">0.3</span>]</span><br><span class="line">], columns=[<span class="string">&#x27;x&#x27;</span>, <span class="string">&#x27;y1&#x27;</span>, <span class="string">&#x27;y2&#x27;</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment">## Visualization</span></span><br><span class="line">fig = plt.figure(figsize=(<span class="number">10</span>, <span class="number">6</span>))</span><br><span class="line"></span><br><span class="line">ax1 = fig.add_subplot(<span class="number">111</span>)</span><br><span class="line">ax1.bar(df.x, df.y1, color=<span class="string">&#x27;g&#x27;</span>, label=<span class="string">&#x27;y1&#x27;</span>)</span><br><span class="line"></span><br><span class="line">ax2 = ax1.twinx()</span><br><span class="line">ax2.plot(df.x, df.y2, color=<span class="string">&#x27;r&#x27;</span>, label=<span class="string">&#x27;y2&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">## Legend</span></span><br><span class="line">fig.legend(loc=<span class="number">1</span>, bbox_to_anchor=(<span class="number">0.1</span>, <span class="number">1</span>), bbox_transform=ax1.transAxes)</span><br><span class="line"></span><br><span class="line">ax1.set_xlabel(<span class="string">r&quot;X axis&quot;</span>)</span><br><span class="line">ax1.set_ylabel(<span class="string">r&quot;Y1&quot;</span>)</span><br><span class="line">ax2.set_ylabel(<span class="string">r&quot;Y2&quot;</span>)</span><br><span class="line"></span><br><span class="line">plt.savefig(<span class="string">&#x27;Twin_Xaxes.jpg&#x27;</span>, dpi=<span class="number">400</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
 
 
-<p><img src="/Visualization-PythonCase/twin_xaxes.png" alt="b"></p>
-<img src="/Visualization-PythonCase/twin_xaxes.png" class title="c">
-
+<p><img src="/Visualization-PythonCase/twin_xaxes.png" alt="双轴图"></p>
 <h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1>]]></content>
       <categories>
         <category>Python</category>
@@ -1997,10 +1995,10 @@
     <url>/Visualization-Colors.html</url>
     <content><![CDATA[<center></center>
 <span id="more"></span>
-<h1 id="色彩网站"><a class="header-anchor" href="#色彩网站"></a>色彩网站</h1>
-<h1 id="色彩搭配"><a class="header-anchor" href="#色彩搭配"></a>色彩搭配</h1>
-<h2 id="撞色"><a class="header-anchor" href="#撞色"></a>撞色</h2>
-<p>两色</p>
+
+<meta name="referrer" content="no-referrer">
+
+<h1 id="色彩网站"><a href="#色彩网站" class="headerlink" title="色彩网站"></a>色彩网站</h1><h1 id="色彩搭配"><a href="#色彩搭配" class="headerlink" title="色彩搭配"></a>色彩搭配</h1><h2 id="撞色"><a href="#撞色" class="headerlink" title="撞色"></a>撞色</h2><p>两色</p>
 <table><tbody>
     <tr>
         <th>颜色名称A</th>
@@ -2045,8 +2043,8 @@
         <td>莫兰迪粉</td>
     </tr>
 </tbody></table>
-<h2 id="色系全集"><a class="header-anchor" href="#色系全集"></a>色系全集</h2>
-<table><tbody>
+
+<h2 id="色系全集"><a href="#色系全集" class="headerlink" title="色系全集"></a>色系全集</h2><table><tbody>
     <tr>
         <th width="20%">色系</th>
         <th width="20%">颜色名称</th>
@@ -2126,8 +2124,9 @@
         <td bgcolor="#F1F2E5"></td>
     </tr>
 </tbody></table>
-<h1 id="参考资料"><a class="header-anchor" href="#参考资料"></a>参考资料</h1>
-<ul>
+
+
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
 <li><a href="https://blog.csdn.net/wkd_007/article/details/124435722">Markdown: 漂亮表格(表格背景色、跨行、跨列)</a></li>
 </ul>
 ]]></content>
@@ -3245,23 +3244,25 @@ D_{it} = \left\lbrace<br>
     <url>/Visualization-Echarts.html</url>
     <content><![CDATA[<center></center>
 <span id="more"></span>
-<h1 id="Echarts"><a class="header-anchor" href="#Echarts"></a>Echarts</h1>
-<h1 id="安装方式"><a class="header-anchor" href="#安装方式"></a>安装方式</h1>
-<p>尝试了两种方法：</p>
+
+<meta name="referrer" content="no-referrer">
+
+<h1 id="Echarts"><a href="#Echarts" class="headerlink" title="Echarts"></a>Echarts</h1><h1 id="安装方式"><a href="#安装方式" class="headerlink" title="安装方式"></a>安装方式</h1><p>尝试了两种方法：</p>
 <ol>
 <li>安装插件<code>hexo-tag-echarts3</code></li>
 <li>下载相关js文件</li>
 </ol>
-<h2 id="安装插件"><a class="header-anchor" href="#安装插件"></a>安装插件</h2>
-<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">npm install hexo-tag-echarts3 --save</span><br></pre></td></tr></table></figure>
+<h2 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h2><figure class="highlight md"><table><tr><td class="code"><pre><span class="line">npm install hexo-tag-echarts3 --save</span><br></pre></td></tr></table></figure>
+
 <p>并在markdown文中写：</p>
 <figure class="highlight md"><table><tr><td class="code"><pre><span class="line">&#123;% echarts 800 &#x27;85%&#x27; %&#125;</span><br><span class="line">// 800表示图表展示的高度为800px</span><br><span class="line">// &#x27;85%&#x27;表示图表展示的宽度为85%</span><br><span class="line">&#123;</span><br><span class="line"><span class="code">    title: &#123;</span></span><br><span class="line"><span class="code">        text: &#x27;天气情况统计&#x27;,   // 主标题</span></span><br><span class="line"><span class="code">        subtext: &#x27;虚构数据&#x27;,    // 副标题 </span></span><br><span class="line"><span class="code">        left: &#x27;center&#x27;</span></span><br><span class="line"><span class="code">    &#125;,</span></span><br><span class="line"><span class="code">    tooltip: &#123;</span></span><br><span class="line"><span class="code">        trigger: &#x27;item&#x27;, </span></span><br><span class="line"><span class="code">        formatter: &quot;&#123;a&#125; &lt;br/&gt;&#123;b&#125;：&#123;c&#125;（&#123;d&#125;%）&quot;</span></span><br><span class="line"><span class="code">    &#125;,</span></span><br><span class="line"><span class="code">    legend: &#123; // 图例</span></span><br><span class="line"><span class="code">        // orient: &#x27;vertical&#x27;,</span></span><br><span class="line"><span class="code">        // top: &#x27;middle&#x27;,</span></span><br><span class="line"><span class="code">        bottom: 10,</span></span><br><span class="line"><span class="code">        left: &#x27;center&#x27;, </span></span><br><span class="line"><span class="code">        data: [&#x27;西凉&#x27;, &#x27;益州&#x27;, &#x27;成都&#x27;, &#x27;杭州&#x27;]</span></span><br><span class="line"><span class="code">    &#125;,</span></span><br><span class="line"><span class="code">    series: [ // 序列/数据</span></span><br><span class="line"><span class="code">        &#123;</span></span><br><span class="line"><span class="code">            name: &#x27;天气数据&#x27;,</span></span><br><span class="line"><span class="code">            type: &#x27;pie&#x27;,    //  饼图</span></span><br><span class="line"><span class="code">            radius: &#x27;75%&#x27;,</span></span><br><span class="line"><span class="code">            center: [&#x27;50%&#x27;, &#x27;50%&#x27;],</span></span><br><span class="line"><span class="code">            selectedMode: &#x27;single&#x27;,</span></span><br><span class="line"><span class="code">            data: [</span></span><br><span class="line"><span class="code">                &#123;value:520, name:&#x27;西凉&#x27;&#125;,</span></span><br><span class="line"><span class="code">                &#123;value:510, name:&#x27;益州&#x27;&#125;,</span></span><br><span class="line"><span class="code">                &#123;value:627, name:&#x27;成都&#x27;&#125;,</span></span><br><span class="line"><span class="code">                &#123;value:826, name:&#x27;杭州&#x27;&#125;</span></span><br><span class="line"><span class="code">            ],</span></span><br><span class="line"><span class="code">            itemStyle: &#123;</span></span><br><span class="line"><span class="code">                emphasis: &#123;</span></span><br><span class="line"><span class="code">                    shadowBlur: 10,</span></span><br><span class="line"><span class="code">                    shadowOffsetX: 0,</span></span><br><span class="line"><span class="code">                    shadowColor: &#x27;rgba(0, 0, 0, 0.5)&#x27;</span></span><br><span class="line"><span class="code">                &#125;</span></span><br><span class="line"><span class="code">            &#125;</span></span><br><span class="line"><span class="code">        &#125;</span></span><br><span class="line"><span class="code">    ]</span></span><br><span class="line"><span class="code">&#125;</span></span><br><span class="line"><span class="code">&#123;% endecharts %&#125;</span></span><br></pre></td></tr></table></figure>
+
 <p>效果：</p>
-<div id="echarts9583" style="width: 85%;height: 800px;margin: 0 auto"></div>
+<div id="echarts1287" style="width: 85%;height: 800px;margin: 0 auto"></div>
 <script src="https://cdn.bootcss.com/echarts/3.8.0/echarts.common.min.js"></script>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts9583'));
+        var myChart = echarts.init(document.getElementById('echarts1287'));
         // 指定图表的配置项和数据
         var option = // 800表示图表展示的高度为800px
 // '85%'表示图表展示的宽度为85%
@@ -3308,10 +3309,10 @@ D_{it} = \left\lbrace<br>
         // 使用刚指定的配置项和数据显示图表。
         myChart.setOption(option);
 </script>
-<h2 id="下载相关js文件"><a class="header-anchor" href="#下载相关js文件"></a>下载相关js文件</h2>
-<ol>
-<li>下载<code>echarts.min.js</code>和<code>jquery.js</code>文件
-<ul>
+
+
+<h2 id="下载相关js文件"><a href="#下载相关js文件" class="headerlink" title="下载相关js文件"></a>下载相关js文件</h2><ol>
+<li>下载<code>echarts.min.js</code>和<code>jquery.js</code>文件<ul>
 <li>在<a href="https://github.com/apache/echarts/tree/4.6.0/dist">echarts.min.js下载地址</a>中找到<code>echarts.min.js</code>，右键点击“将链接另存为”将文件保存到本地</li>
 <li>在<a href="https://jquery.com/download/">jquery官网</a>找到“Download the uncompressed, development jQuery 3.6.0”，打开，将文本复制粘贴到js文件中，保存为“jquery.js”文件</li>
 </ul>
@@ -3320,6 +3321,7 @@ D_{it} = \left\lbrace<br>
 <li>在markdown文件中写入需要如下文本：</li>
 </ol>
 <figure class="highlight md"><table><tr><td class="code"><pre><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;test1&quot;</span> <span class="attr">style</span>=<span class="string">&quot;width:100%;height:500px;&quot;</span>&gt;</span></span><span class="language-xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span><span class="attr">src</span>=<span class="string">&quot;/js/echarts.min.js&quot;</span>&gt;</span></span><span class="language-xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span><span class="attr">src</span>=<span class="string">&quot;/js/jquery.js&quot;</span>&gt;</span></span><span class="language-xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span>&gt;</span></span></span><br><span class="line">var myChart1 = echarts.init(document.getElementById(&quot;test1&quot;));</span><br><span class="line">option1 = &#123;</span><br><span class="line"><span class="code">    title: &#123;</span></span><br><span class="line"><span class="code">        text: &#x27;天气情况统计&#x27;,   // 主标题</span></span><br><span class="line"><span class="code">        subtext: &#x27;虚构数据&#x27;,    // 副标题 </span></span><br><span class="line"><span class="code">        left: &#x27;center&#x27;</span></span><br><span class="line"><span class="code">    &#125;,</span></span><br><span class="line"><span class="code">    tooltip: &#123;</span></span><br><span class="line"><span class="code">        trigger: &#x27;item&#x27;, </span></span><br><span class="line"><span class="code">        formatter: &quot;&#123;a&#125; &lt;br/&gt;&#123;b&#125;：&#123;c&#125;（&#123;d&#125;%）&quot;</span></span><br><span class="line"><span class="code">    &#125;,</span></span><br><span class="line"><span class="code">    legend: &#123; // 图例</span></span><br><span class="line"><span class="code">        // orient: &#x27;vertical&#x27;,</span></span><br><span class="line"><span class="code">        // top: &#x27;middle&#x27;,</span></span><br><span class="line"><span class="code">        bottom: 10,</span></span><br><span class="line"><span class="code">        left: &#x27;center&#x27;, </span></span><br><span class="line"><span class="code">        data: [&#x27;西凉&#x27;, &#x27;益州&#x27;, &#x27;成都&#x27;, &#x27;杭州&#x27;]</span></span><br><span class="line"><span class="code">    &#125;,</span></span><br><span class="line"><span class="code">    series: [ // 序列/数据</span></span><br><span class="line"><span class="code">        &#123;</span></span><br><span class="line"><span class="code">            name: &#x27;天气数据&#x27;,</span></span><br><span class="line"><span class="code">            type: &#x27;pie&#x27;,    //  饼图</span></span><br><span class="line"><span class="code">            radius: &#x27;75%&#x27;,</span></span><br><span class="line"><span class="code">            center: [&#x27;50%&#x27;, &#x27;50%&#x27;],</span></span><br><span class="line"><span class="code">            selectedMode: &#x27;single&#x27;,</span></span><br><span class="line"><span class="code">            data: [</span></span><br><span class="line"><span class="code">                &#123;value:520, name:&#x27;西凉&#x27;&#125;,</span></span><br><span class="line"><span class="code">                &#123;value:510, name:&#x27;益州&#x27;&#125;,</span></span><br><span class="line"><span class="code">                &#123;value:627, name:&#x27;成都&#x27;&#125;,</span></span><br><span class="line"><span class="code">                &#123;value:826, name:&#x27;杭州&#x27;&#125;</span></span><br><span class="line"><span class="code">            ],</span></span><br><span class="line"><span class="code">            itemStyle: &#123;</span></span><br><span class="line"><span class="code">                emphasis: &#123;</span></span><br><span class="line"><span class="code">                    shadowBlur: 10,</span></span><br><span class="line"><span class="code">                    shadowOffsetX: 0,</span></span><br><span class="line"><span class="code">                    shadowColor: &#x27;rgba(0, 0, 0, 0.5)&#x27;</span></span><br><span class="line"><span class="code">                &#125;</span></span><br><span class="line"><span class="code">            &#125;</span></span><br><span class="line"><span class="code">        &#125;</span></span><br><span class="line"><span class="code">    ]</span></span><br><span class="line"><span class="code">&#125;;</span></span><br><span class="line"><span class="code">myChart1.setOption(option1);</span></span><br><span class="line"><span class="code">window.onresize=function()&#123;</span></span><br><span class="line"><span class="code">    myChart1.resize();</span></span><br><span class="line"><span class="code">&#125;</span></span><br><span class="line"><span class="code">&lt;/script&gt;</span></span><br></pre></td></tr></table></figure>
+
 <p>动态饼图效果如下：</p>
 <div id="test1" style="width:100%;height:500px;"></div>
 <script type="text/javascript" src="/js/echarts.min.js"></script>
@@ -3371,17 +3373,23 @@ window.onresize=function(){
     myChart1.resize();
 }
 </script>
-<h1 id="样例"><a class="header-anchor" href="#样例"></a>样例</h1>
-<blockquote>
+
+
+
+
+
+
+
+<h1 id="样例"><a href="#样例" class="headerlink" title="样例"></a>样例</h1><blockquote>
 <p>更多样例请见：<a href="https://echarts.apache.org/examples/zh/index.html">Echarts官网</a></p>
 </blockquote>
-<h2 id="饼图"><a class="header-anchor" href="#饼图"></a>饼图</h2>
-<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">&#123;% echarts 800 &#x27;85%&#x27; %&#125;</span><br><span class="line">// 800表示图表展示的高度为800px</span><br><span class="line">// &#x27;85%&#x27;表示图表展示的宽度为85%</span><br><span class="line">&#123;</span><br><span class="line"><span class="code">    title: &#123;</span></span><br><span class="line"><span class="code">        text: &#x27;天气情况统计&#x27;,   // 主标题</span></span><br><span class="line"><span class="code">        subtext: &#x27;虚构数据&#x27;,    // 副标题 </span></span><br><span class="line"><span class="code">        left: &#x27;center&#x27;</span></span><br><span class="line"><span class="code">    &#125;,</span></span><br><span class="line"><span class="code">    tooltip: &#123;</span></span><br><span class="line"><span class="code">        trigger: &#x27;item&#x27;, </span></span><br><span class="line"><span class="code">        formatter: &quot;&#123;a&#125; &lt;br/&gt;&#123;b&#125;：&#123;c&#125;（&#123;d&#125;%）&quot;</span></span><br><span class="line"><span class="code">    &#125;,</span></span><br><span class="line"><span class="code">    legend: &#123; // 图例</span></span><br><span class="line"><span class="code">        // orient: &#x27;vertical&#x27;,</span></span><br><span class="line"><span class="code">        // top: &#x27;middle&#x27;,</span></span><br><span class="line"><span class="code">        bottom: 10,</span></span><br><span class="line"><span class="code">        left: &#x27;center&#x27;, </span></span><br><span class="line"><span class="code">        data: [&#x27;西凉&#x27;, &#x27;益州&#x27;, &#x27;成都&#x27;, &#x27;杭州&#x27;]</span></span><br><span class="line"><span class="code">    &#125;,</span></span><br><span class="line"><span class="code">    series: [ // 序列/数据</span></span><br><span class="line"><span class="code">        &#123;</span></span><br><span class="line"><span class="code">            name: &#x27;天气数据&#x27;,</span></span><br><span class="line"><span class="code">            type: &#x27;pie&#x27;,    //  饼图</span></span><br><span class="line"><span class="code">            radius: &#x27;75%&#x27;,</span></span><br><span class="line"><span class="code">            center: [&#x27;50%&#x27;, &#x27;50%&#x27;],</span></span><br><span class="line"><span class="code">            selectedMode: &#x27;single&#x27;,</span></span><br><span class="line"><span class="code">            data: [</span></span><br><span class="line"><span class="code">                &#123;value:520, name:&#x27;西凉&#x27;&#125;,</span></span><br><span class="line"><span class="code">                &#123;value:510, name:&#x27;益州&#x27;&#125;,</span></span><br><span class="line"><span class="code">                &#123;value:627, name:&#x27;成都&#x27;&#125;,</span></span><br><span class="line"><span class="code">                &#123;value:826, name:&#x27;杭州&#x27;&#125;</span></span><br><span class="line"><span class="code">            ],</span></span><br><span class="line"><span class="code">            itemStyle: &#123;</span></span><br><span class="line"><span class="code">                emphasis: &#123;</span></span><br><span class="line"><span class="code">                    shadowBlur: 10,</span></span><br><span class="line"><span class="code">                    shadowOffsetX: 0,</span></span><br><span class="line"><span class="code">                    shadowColor: &#x27;rgba(0, 0, 0, 0.5)&#x27;</span></span><br><span class="line"><span class="code">                &#125;</span></span><br><span class="line"><span class="code">            &#125;</span></span><br><span class="line"><span class="code">        &#125;</span></span><br><span class="line"><span class="code">    ]</span></span><br><span class="line"><span class="code">&#125;</span></span><br><span class="line"><span class="code">&#123;% endecharts %&#125;</span></span><br></pre></td></tr></table></figure>
-<div id="echarts3749" style="width: 85%;height: 800px;margin: 0 auto"></div>
+<h2 id="饼图"><a href="#饼图" class="headerlink" title="饼图"></a>饼图</h2><figure class="highlight md"><table><tr><td class="code"><pre><span class="line">&#123;% echarts 800 &#x27;85%&#x27; %&#125;</span><br><span class="line">// 800表示图表展示的高度为800px</span><br><span class="line">// &#x27;85%&#x27;表示图表展示的宽度为85%</span><br><span class="line">&#123;</span><br><span class="line"><span class="code">    title: &#123;</span></span><br><span class="line"><span class="code">        text: &#x27;天气情况统计&#x27;,   // 主标题</span></span><br><span class="line"><span class="code">        subtext: &#x27;虚构数据&#x27;,    // 副标题 </span></span><br><span class="line"><span class="code">        left: &#x27;center&#x27;</span></span><br><span class="line"><span class="code">    &#125;,</span></span><br><span class="line"><span class="code">    tooltip: &#123;</span></span><br><span class="line"><span class="code">        trigger: &#x27;item&#x27;, </span></span><br><span class="line"><span class="code">        formatter: &quot;&#123;a&#125; &lt;br/&gt;&#123;b&#125;：&#123;c&#125;（&#123;d&#125;%）&quot;</span></span><br><span class="line"><span class="code">    &#125;,</span></span><br><span class="line"><span class="code">    legend: &#123; // 图例</span></span><br><span class="line"><span class="code">        // orient: &#x27;vertical&#x27;,</span></span><br><span class="line"><span class="code">        // top: &#x27;middle&#x27;,</span></span><br><span class="line"><span class="code">        bottom: 10,</span></span><br><span class="line"><span class="code">        left: &#x27;center&#x27;, </span></span><br><span class="line"><span class="code">        data: [&#x27;西凉&#x27;, &#x27;益州&#x27;, &#x27;成都&#x27;, &#x27;杭州&#x27;]</span></span><br><span class="line"><span class="code">    &#125;,</span></span><br><span class="line"><span class="code">    series: [ // 序列/数据</span></span><br><span class="line"><span class="code">        &#123;</span></span><br><span class="line"><span class="code">            name: &#x27;天气数据&#x27;,</span></span><br><span class="line"><span class="code">            type: &#x27;pie&#x27;,    //  饼图</span></span><br><span class="line"><span class="code">            radius: &#x27;75%&#x27;,</span></span><br><span class="line"><span class="code">            center: [&#x27;50%&#x27;, &#x27;50%&#x27;],</span></span><br><span class="line"><span class="code">            selectedMode: &#x27;single&#x27;,</span></span><br><span class="line"><span class="code">            data: [</span></span><br><span class="line"><span class="code">                &#123;value:520, name:&#x27;西凉&#x27;&#125;,</span></span><br><span class="line"><span class="code">                &#123;value:510, name:&#x27;益州&#x27;&#125;,</span></span><br><span class="line"><span class="code">                &#123;value:627, name:&#x27;成都&#x27;&#125;,</span></span><br><span class="line"><span class="code">                &#123;value:826, name:&#x27;杭州&#x27;&#125;</span></span><br><span class="line"><span class="code">            ],</span></span><br><span class="line"><span class="code">            itemStyle: &#123;</span></span><br><span class="line"><span class="code">                emphasis: &#123;</span></span><br><span class="line"><span class="code">                    shadowBlur: 10,</span></span><br><span class="line"><span class="code">                    shadowOffsetX: 0,</span></span><br><span class="line"><span class="code">                    shadowColor: &#x27;rgba(0, 0, 0, 0.5)&#x27;</span></span><br><span class="line"><span class="code">                &#125;</span></span><br><span class="line"><span class="code">            &#125;</span></span><br><span class="line"><span class="code">        &#125;</span></span><br><span class="line"><span class="code">    ]</span></span><br><span class="line"><span class="code">&#125;</span></span><br><span class="line"><span class="code">&#123;% endecharts %&#125;</span></span><br></pre></td></tr></table></figure>
+
+<div id="echarts8553" style="width: 85%;height: 800px;margin: 0 auto"></div>
 <script src="https://cdn.bootcss.com/echarts/3.8.0/echarts.common.min.js"></script>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts3749'));
+        var myChart = echarts.init(document.getElementById('echarts8553'));
         // 指定图表的配置项和数据
         var option = // 800表示图表展示的高度为800px
 // '85%'表示图表展示的宽度为85%
@@ -3428,13 +3436,16 @@ window.onresize=function(){
         // 使用刚指定的配置项和数据显示图表。
         myChart.setOption(option);
 </script>
-<h2 id="散点图"><a class="header-anchor" href="#散点图"></a>散点图</h2>
-<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">&#123;% echarts 800 &#x27;85%&#x27; %&#125;</span><br><span class="line">&#123;</span><br><span class="line"><span class="code">    title : &#123;</span></span><br><span class="line"><span class="code">        text: &#x27;男性女性身高体重分布&#x27;,</span></span><br><span class="line"><span class="code">        subtext: &#x27;抽样调查来自: Heinz  2003&#x27;</span></span><br><span class="line"><span class="code">    &#125;,</span></span><br><span class="line"><span class="code">    grid: &#123;</span></span><br><span class="line"><span class="code">        left: &#x27;3%&#x27;,</span></span><br><span class="line"><span class="code">        right: &#x27;7%&#x27;,</span></span><br><span class="line"><span class="code">        bottom: &#x27;3%&#x27;,</span></span><br><span class="line"><span class="code">        containLabel: true</span></span><br><span class="line"><span class="code">    &#125;,</span></span><br><span class="line"><span class="code">    tooltip : &#123;</span></span><br><span class="line"><span class="code">        // trigger: &#x27;axis&#x27;,</span></span><br><span class="line"><span class="code">        showDelay : 0,</span></span><br><span class="line"><span class="code">        formatter : function (params) &#123;</span></span><br><span class="line"><span class="code">            if (params.value.length &gt; 1) &#123;</span></span><br><span class="line"><span class="code">                return params.seriesName + &#x27; :&lt;br/&gt;&#x27;</span></span><br><span class="line"><span class="code">                + params.value[0] + &#x27;cm &#x27;</span></span><br><span class="line"><span class="code">                + params.value[1] + &#x27;kg &#x27;;</span></span><br><span class="line"><span class="code">            &#125;</span></span><br><span class="line"><span class="code">            else &#123;</span></span><br><span class="line"><span class="code">                return params.seriesName + &#x27; :&lt;br/&gt;&#x27;</span></span><br><span class="line"><span class="code">                + params.name + &#x27; : &#x27;</span></span><br><span class="line"><span class="code">                + params.value + &#x27;kg &#x27;;</span></span><br><span class="line"><span class="code">            &#125;</span></span><br><span class="line"><span class="code">        &#125;,</span></span><br><span class="line"><span class="code">        axisPointer:&#123;</span></span><br><span class="line"><span class="code">            show: true,</span></span><br><span class="line"><span class="code">            type : &#x27;cross&#x27;,</span></span><br><span class="line"><span class="code">            lineStyle: &#123;</span></span><br><span class="line"><span class="code">                type : &#x27;dashed&#x27;,</span></span><br><span class="line"><span class="code">                width : 1</span></span><br><span class="line"><span class="code">            &#125;</span></span><br><span class="line"><span class="code">        &#125;</span></span><br><span class="line"><span class="code">    &#125;,</span></span><br><span class="line"><span class="code">    toolbox: &#123;</span></span><br><span class="line"><span class="code">        feature: &#123;</span></span><br><span class="line"><span class="code">            dataZoom: &#123;&#125;,</span></span><br><span class="line"><span class="code">            brush: &#123;</span></span><br><span class="line"><span class="code">                type: [&#x27;rect&#x27;, &#x27;polygon&#x27;, &#x27;clear&#x27;]</span></span><br><span class="line"><span class="code">            &#125;</span></span><br><span class="line"><span class="code">        &#125;</span></span><br><span class="line"><span class="code">    &#125;,</span></span><br><span class="line"><span class="code">    brush: &#123;</span></span><br><span class="line"><span class="code">    &#125;,</span></span><br><span class="line"><span class="code">    legend: &#123;</span></span><br><span class="line"><span class="code">        data: [&#x27;女性&#x27;,&#x27;男性&#x27;],</span></span><br><span class="line"><span class="code">        left: &#x27;center&#x27;</span></span><br><span class="line"><span class="code">    &#125;,</span></span><br><span class="line"><span class="code">    xAxis : [</span></span><br><span class="line"><span class="code">        &#123;</span></span><br><span class="line"><span class="code">            type : &#x27;value&#x27;,</span></span><br><span class="line"><span class="code">            scale:true,</span></span><br><span class="line"><span class="code">            axisLabel : &#123;</span></span><br><span class="line"><span class="code">                formatter: &#x27;&#123;value&#125; cm&#x27;</span></span><br><span class="line"><span class="code">            &#125;,</span></span><br><span class="line"><span class="code">            splitLine: &#123;</span></span><br><span class="line"><span class="code">                show: false</span></span><br><span class="line"><span class="code">            &#125;</span></span><br><span class="line"><span class="code">        &#125;</span></span><br><span class="line"><span class="code">    ],</span></span><br><span class="line"><span class="code">    yAxis : [</span></span><br><span class="line"><span class="code">        &#123;</span></span><br><span class="line"><span class="code">            type : &#x27;value&#x27;,</span></span><br><span class="line"><span class="code">            scale:true,</span></span><br><span class="line"><span class="code">            axisLabel : &#123;</span></span><br><span class="line"><span class="code">                formatter: &#x27;&#123;value&#125; kg&#x27;</span></span><br><span class="line"><span class="code">            &#125;,</span></span><br><span class="line"><span class="code">            splitLine: &#123;</span></span><br><span class="line"><span class="code">                show: false</span></span><br><span class="line"><span class="code">            &#125;</span></span><br><span class="line"><span class="code">        &#125;</span></span><br><span class="line"><span class="code">    ],</span></span><br><span class="line"><span class="code">    series : [</span></span><br><span class="line"><span class="code">        &#123;</span></span><br><span class="line"><span class="code">            name:&#x27;女性&#x27;,</span></span><br><span class="line"><span class="code">            type:&#x27;scatter&#x27;,</span></span><br><span class="line"><span class="code">            data: [[161.2, 51.6], [167.5, 59.0], [159.5, 49.2], [157.0, 63.0], [155.8, 53.6],</span></span><br><span class="line"><span class="code">                [170.0, 59.0], [159.1, 47.6], [166.0, 69.8], [176.2, 66.8], [160.2, 75.2],</span></span><br><span class="line"><span class="code">                [172.5, 55.2], [170.9, 54.2], [172.9, 62.5], [153.4, 42.0], [160.0, 50.0],</span></span><br><span class="line"><span class="code">                [147.2, 49.8], [168.2, 49.2], [175.0, 73.2], [157.0, 47.8], [167.6, 68.8],</span></span><br><span class="line"><span class="code">                [159.5, 50.6], [175.0, 82.5], [166.8, 57.2], [176.5, 87.8], [170.2, 72.8],</span></span><br><span class="line"><span class="code">                [174.0, 54.5], [173.0, 59.8], [179.9, 67.3], [170.5, 67.8], [160.0, 47.0],</span></span><br><span class="line"><span class="code">                [154.4, 46.2], [162.0, 55.0], [176.5, 83.0], [160.0, 54.4], [152.0, 45.8],</span></span><br><span class="line"><span class="code">                [162.1, 53.6], [170.0, 73.2], [160.2, 52.1], [161.3, 67.9], [166.4, 56.6],</span></span><br><span class="line"><span class="code">                [168.9, 62.3], [163.8, 58.5], [167.6, 54.5], [160.0, 50.2], [161.3, 60.3],</span></span><br><span class="line"><span class="code">                [167.6, 58.3], [165.1, 56.2], [160.0, 50.2], [170.0, 72.9], [157.5, 59.8],</span></span><br><span class="line"><span class="code">                [167.6, 61.0], [160.7, 69.1], [163.2, 55.9], [152.4, 46.5], [157.5, 54.3],</span></span><br><span class="line"><span class="code">                [168.3, 54.8], [180.3, 60.7], [165.5, 60.0], [165.0, 62.0], [164.5, 60.3],</span></span><br><span class="line"><span class="code">                [156.0, 52.7], [160.0, 74.3], [163.0, 62.0], [165.7, 73.1], [161.0, 80.0],</span></span><br><span class="line"><span class="code">                [162.0, 54.7], [166.0, 53.2], [174.0, 75.7], [172.7, 61.1], [167.6, 55.7],</span></span><br><span class="line"><span class="code">                [151.1, 48.7], [164.5, 52.3], [163.5, 50.0], [152.0, 59.3], [169.0, 62.5],</span></span><br><span class="line"><span class="code">                [164.0, 55.7], [161.2, 54.8], [155.0, 45.9], [170.0, 70.6], [176.2, 67.2],</span></span><br><span class="line"><span class="code">                [170.0, 69.4], [162.5, 58.2], [170.3, 64.8], [164.1, 71.6], [169.5, 52.8],</span></span><br><span class="line"><span class="code">                [163.2, 59.8], [154.5, 49.0], [159.8, 50.0], [173.2, 69.2], [170.0, 55.9],</span></span><br><span class="line"><span class="code">                [161.4, 63.4], [169.0, 58.2], [166.2, 58.6], [159.4, 45.7], [162.5, 52.2],</span></span><br><span class="line"><span class="code">                [159.0, 48.6], [162.8, 57.8], [159.0, 55.6], [179.8, 66.8], [162.9, 59.4],</span></span><br><span class="line"><span class="code">                [161.0, 53.6], [151.1, 73.2], [168.2, 53.4], [168.9, 69.0], [173.2, 58.4],</span></span><br><span class="line"><span class="code">                [171.8, 56.2], [178.0, 70.6], [164.3, 59.8], [163.0, 72.0], [168.5, 65.2],</span></span><br><span class="line"><span class="code">                [166.8, 56.6], [172.7, 105.2], [163.5, 51.8], [169.4, 63.4], [167.8, 59.0],</span></span><br><span class="line"><span class="code">                [159.5, 47.6], [167.6, 63.0], [161.2, 55.2], [160.0, 45.0], [163.2, 54.0],</span></span><br><span class="line"><span class="code">                [162.2, 50.2], [161.3, 60.2], [149.5, 44.8], [157.5, 58.8], [163.2, 56.4],</span></span><br><span class="line"><span class="code">                [172.7, 62.0], [155.0, 49.2], [156.5, 67.2], [164.0, 53.8], [160.9, 54.4],</span></span><br><span class="line"><span class="code">                [162.8, 58.0], [167.0, 59.8], [160.0, 54.8], [160.0, 43.2], [168.9, 60.5],</span></span><br><span class="line"><span class="code">                [158.2, 46.4], [156.0, 64.4], [160.0, 48.8], [167.1, 62.2], [158.0, 55.5],</span></span><br><span class="line"><span class="code">                [167.6, 57.8], [156.0, 54.6], [162.1, 59.2], [173.4, 52.7], [159.8, 53.2],</span></span><br><span class="line"><span class="code">                [170.5, 64.5], [159.2, 51.8], [157.5, 56.0], [161.3, 63.6], [162.6, 63.2],</span></span><br><span class="line"><span class="code">                [160.0, 59.5], [168.9, 56.8], [165.1, 64.1], [162.6, 50.0], [165.1, 72.3],</span></span><br><span class="line"><span class="code">                [166.4, 55.0], [160.0, 55.9], [152.4, 60.4], [170.2, 69.1], [162.6, 84.5],</span></span><br><span class="line"><span class="code">                [170.2, 55.9], [158.8, 55.5], [172.7, 69.5], [167.6, 76.4], [162.6, 61.4],</span></span><br><span class="line"><span class="code">                [167.6, 65.9], [156.2, 58.6], [175.2, 66.8], [172.1, 56.6], [162.6, 58.6],</span></span><br><span class="line"><span class="code">                [160.0, 55.9], [165.1, 59.1], [182.9, 81.8], [166.4, 70.7], [165.1, 56.8],</span></span><br><span class="line"><span class="code">                [177.8, 60.0], [165.1, 58.2], [175.3, 72.7], [154.9, 54.1], [158.8, 49.1],</span></span><br><span class="line"><span class="code">                [172.7, 75.9], [168.9, 55.0], [161.3, 57.3], [167.6, 55.0], [165.1, 65.5],</span></span><br><span class="line"><span class="code">                [175.3, 65.5], [157.5, 48.6], [163.8, 58.6], [167.6, 63.6], [165.1, 55.2],</span></span><br><span class="line"><span class="code">                [165.1, 62.7], [168.9, 56.6], [162.6, 53.9], [164.5, 63.2], [176.5, 73.6],</span></span><br><span class="line"><span class="code">                [168.9, 62.0], [175.3, 63.6], [159.4, 53.2], [160.0, 53.4], [170.2, 55.0],</span></span><br><span class="line"><span class="code">                [162.6, 70.5], [167.6, 54.5], [162.6, 54.5], [160.7, 55.9], [160.0, 59.0],</span></span><br><span class="line"><span class="code">                [157.5, 63.6], [162.6, 54.5], [152.4, 47.3], [170.2, 67.7], [165.1, 80.9],</span></span><br><span class="line"><span class="code">                [172.7, 70.5], [165.1, 60.9], [170.2, 63.6], [170.2, 54.5], [170.2, 59.1],</span></span><br><span class="line"><span class="code">                [161.3, 70.5], [167.6, 52.7], [167.6, 62.7], [165.1, 86.3], [162.6, 66.4],</span></span><br><span class="line"><span class="code">                [152.4, 67.3], [168.9, 63.0], [170.2, 73.6], [175.2, 62.3], [175.2, 57.7],</span></span><br><span class="line"><span class="code">                [160.0, 55.4], [165.1, 104.1], [174.0, 55.5], [170.2, 77.3], [160.0, 80.5],</span></span><br><span class="line"><span class="code">                [167.6, 64.5], [167.6, 72.3], [167.6, 61.4], [154.9, 58.2], [162.6, 81.8],</span></span><br><span class="line"><span class="code">                [175.3, 63.6], [171.4, 53.4], [157.5, 54.5], [165.1, 53.6], [160.0, 60.0],</span></span><br><span class="line"><span class="code">                [174.0, 73.6], [162.6, 61.4], [174.0, 55.5], [162.6, 63.6], [161.3, 60.9],</span></span><br><span class="line"><span class="code">                [156.2, 60.0], [149.9, 46.8], [169.5, 57.3], [160.0, 64.1], [175.3, 63.6],</span></span><br><span class="line"><span class="code">                [169.5, 67.3], [160.0, 75.5], [172.7, 68.2], [162.6, 61.4], [157.5, 76.8],</span></span><br><span class="line"><span class="code">                [176.5, 71.8], [164.4, 55.5], [160.7, 48.6], [174.0, 66.4], [163.8, 67.3]</span></span><br><span class="line"><span class="code">            ],</span></span><br><span class="line"><span class="code">            markArea: &#123;</span></span><br><span class="line"><span class="code">                silent: true,</span></span><br><span class="line"><span class="code">                itemStyle: &#123;</span></span><br><span class="line"><span class="code">                    normal: &#123;</span></span><br><span class="line"><span class="code">                        color: &#x27;transparent&#x27;,</span></span><br><span class="line"><span class="code">                        borderWidth: 1,</span></span><br><span class="line"><span class="code">                        borderType: &#x27;dashed&#x27;</span></span><br><span class="line"><span class="code">                    &#125;</span></span><br><span class="line"><span class="code">                &#125;,</span></span><br><span class="line"><span class="code">                data: [[&#123;</span></span><br><span class="line"><span class="code">                    name: &#x27;女性分布区间&#x27;,</span></span><br><span class="line"><span class="code">                    xAxis: &#x27;min&#x27;,</span></span><br><span class="line"><span class="code">                    yAxis: &#x27;min&#x27;</span></span><br><span class="line"><span class="code">                &#125;, &#123;</span></span><br><span class="line"><span class="code">                    xAxis: &#x27;max&#x27;,</span></span><br><span class="line"><span class="code">                    yAxis: &#x27;max&#x27;</span></span><br><span class="line"><span class="code">                &#125;]]</span></span><br><span class="line"><span class="code">            &#125;,</span></span><br><span class="line"><span class="code">            markPoint : &#123;</span></span><br><span class="line"><span class="code">                data : [</span></span><br><span class="line"><span class="code">                    &#123;type : &#x27;max&#x27;, name: &#x27;最大值&#x27;&#125;,</span></span><br><span class="line"><span class="code">                    &#123;type : &#x27;min&#x27;, name: &#x27;最小值&#x27;&#125;</span></span><br><span class="line"><span class="code">                ]</span></span><br><span class="line"><span class="code">            &#125;,</span></span><br><span class="line"><span class="code">            markLine : &#123;</span></span><br><span class="line"><span class="code">                lineStyle: &#123;</span></span><br><span class="line"><span class="code">                    normal: &#123;</span></span><br><span class="line"><span class="code">                        type: &#x27;solid&#x27;</span></span><br><span class="line"><span class="code">                    &#125;</span></span><br><span class="line"><span class="code">                &#125;,</span></span><br><span class="line"><span class="code">                data : [</span></span><br><span class="line"><span class="code">                    &#123;type : &#x27;average&#x27;, name: &#x27;平均值&#x27;&#125;,</span></span><br><span class="line"><span class="code">                    &#123; xAxis: 160 &#125;</span></span><br><span class="line"><span class="code">                ]</span></span><br><span class="line"><span class="code">            &#125;</span></span><br><span class="line"><span class="code">        &#125;,</span></span><br><span class="line"><span class="code">        &#123;</span></span><br><span class="line"><span class="code">            name:&#x27;男性&#x27;,</span></span><br><span class="line"><span class="code">            type:&#x27;scatter&#x27;,</span></span><br><span class="line"><span class="code">            data: [[174.0, 65.6], [175.3, 71.8], [193.5, 80.7], [186.5, 72.6], [187.2, 78.8],</span></span><br><span class="line"><span class="code">                [181.5, 74.8], [184.0, 86.4], [184.5, 78.4], [175.0, 62.0], [184.0, 81.6],</span></span><br><span class="line"><span class="code">                [180.0, 76.6], [177.8, 83.6], [192.0, 90.0], [176.0, 74.6], [174.0, 71.0],</span></span><br><span class="line"><span class="code">                [184.0, 79.6], [192.7, 93.8], [171.5, 70.0], [173.0, 72.4], [176.0, 85.9],</span></span><br><span class="line"><span class="code">                [176.0, 78.8], [180.5, 77.8], [172.7, 66.2], [176.0, 86.4], [173.5, 81.8],</span></span><br><span class="line"><span class="code">                [178.0, 89.6], [180.3, 82.8], [180.3, 76.4], [164.5, 63.2], [173.0, 60.9],</span></span><br><span class="line"><span class="code">                [183.5, 74.8], [175.5, 70.0], [188.0, 72.4], [189.2, 84.1], [172.8, 69.1],</span></span><br><span class="line"><span class="code">                [170.0, 59.5], [182.0, 67.2], [170.0, 61.3], [177.8, 68.6], [184.2, 80.1],</span></span><br><span class="line"><span class="code">                [186.7, 87.8], [171.4, 84.7], [172.7, 73.4], [175.3, 72.1], [180.3, 82.6],</span></span><br><span class="line"><span class="code">                [182.9, 88.7], [188.0, 84.1], [177.2, 94.1], [172.1, 74.9], [167.0, 59.1],</span></span><br><span class="line"><span class="code">                [169.5, 75.6], [174.0, 86.2], [172.7, 75.3], [182.2, 87.1], [164.1, 55.2],</span></span><br><span class="line"><span class="code">                [163.0, 57.0], [171.5, 61.4], [184.2, 76.8], [174.0, 86.8], [174.0, 72.2],</span></span><br><span class="line"><span class="code">                [177.0, 71.6], [186.0, 84.8], [167.0, 68.2], [171.8, 66.1], [182.0, 72.0],</span></span><br><span class="line"><span class="code">                [167.0, 64.6], [177.8, 74.8], [164.5, 70.0], [192.0, 101.6], [175.5, 63.2],</span></span><br><span class="line"><span class="code">                [171.2, 79.1], [181.6, 78.9], [167.4, 67.7], [181.1, 66.0], [177.0, 68.2],</span></span><br><span class="line"><span class="code">                [174.5, 63.9], [177.5, 72.0], [170.5, 56.8], [182.4, 74.5], [197.1, 90.9],</span></span><br><span class="line"><span class="code">                [180.1, 93.0], [175.5, 80.9], [180.6, 72.7], [184.4, 68.0], [175.5, 70.9],</span></span><br><span class="line"><span class="code">                [180.6, 72.5], [177.0, 72.5], [177.1, 83.4], [181.6, 75.5], [176.5, 73.0],</span></span><br><span class="line"><span class="code">                [175.0, 70.2], [174.0, 73.4], [165.1, 70.5], [177.0, 68.9], [192.0, 102.3],</span></span><br><span class="line"><span class="code">                [176.5, 68.4], [169.4, 65.9], [182.1, 75.7], [179.8, 84.5], [175.3, 87.7],</span></span><br><span class="line"><span class="code">                [184.9, 86.4], [177.3, 73.2], [167.4, 53.9], [178.1, 72.0], [168.9, 55.5],</span></span><br><span class="line"><span class="code">                [157.2, 58.4], [180.3, 83.2], [170.2, 72.7], [177.8, 64.1], [172.7, 72.3],</span></span><br><span class="line"><span class="code">                [165.1, 65.0], [186.7, 86.4], [165.1, 65.0], [174.0, 88.6], [175.3, 84.1],</span></span><br><span class="line"><span class="code">                [185.4, 66.8], [177.8, 75.5], [180.3, 93.2], [180.3, 82.7], [177.8, 58.0],</span></span><br><span class="line"><span class="code">                [177.8, 79.5], [177.8, 78.6], [177.8, 71.8], [177.8, 116.4], [163.8, 72.2],</span></span><br><span class="line"><span class="code">                [188.0, 83.6], [198.1, 85.5], [175.3, 90.9], [166.4, 85.9], [190.5, 89.1],</span></span><br><span class="line"><span class="code">                [166.4, 75.0], [177.8, 77.7], [179.7, 86.4], [172.7, 90.9], [190.5, 73.6],</span></span><br><span class="line"><span class="code">                [185.4, 76.4], [168.9, 69.1], [167.6, 84.5], [175.3, 64.5], [170.2, 69.1],</span></span><br><span class="line"><span class="code">                [190.5, 108.6], [177.8, 86.4], [190.5, 80.9], [177.8, 87.7], [184.2, 94.5],</span></span><br><span class="line"><span class="code">                [176.5, 80.2], [177.8, 72.0], [180.3, 71.4], [171.4, 72.7], [172.7, 84.1],</span></span><br><span class="line"><span class="code">                [172.7, 76.8], [177.8, 63.6], [177.8, 80.9], [182.9, 80.9], [170.2, 85.5],</span></span><br><span class="line"><span class="code">                [167.6, 68.6], [175.3, 67.7], [165.1, 66.4], [185.4, 102.3], [181.6, 70.5],</span></span><br><span class="line"><span class="code">                [172.7, 95.9], [190.5, 84.1], [179.1, 87.3], [175.3, 71.8], [170.2, 65.9],</span></span><br><span class="line"><span class="code">                [193.0, 95.9], [171.4, 91.4], [177.8, 81.8], [177.8, 96.8], [167.6, 69.1],</span></span><br><span class="line"><span class="code">                [167.6, 82.7], [180.3, 75.5], [182.9, 79.5], [176.5, 73.6], [186.7, 91.8],</span></span><br><span class="line"><span class="code">                [188.0, 84.1], [188.0, 85.9], [177.8, 81.8], [174.0, 82.5], [177.8, 80.5],</span></span><br><span class="line"><span class="code">                [171.4, 70.0], [185.4, 81.8], [185.4, 84.1], [188.0, 90.5], [188.0, 91.4],</span></span><br><span class="line"><span class="code">                [182.9, 89.1], [176.5, 85.0], [175.3, 69.1], [175.3, 73.6], [188.0, 80.5],</span></span><br><span class="line"><span class="code">                [188.0, 82.7], [175.3, 86.4], [170.5, 67.7], [179.1, 92.7], [177.8, 93.6],</span></span><br><span class="line"><span class="code">                [175.3, 70.9], [182.9, 75.0], [170.8, 93.2], [188.0, 93.2], [180.3, 77.7],</span></span><br><span class="line"><span class="code">                [177.8, 61.4], [185.4, 94.1], [168.9, 75.0], [185.4, 83.6], [180.3, 85.5],</span></span><br><span class="line"><span class="code">                [174.0, 73.9], [167.6, 66.8], [182.9, 87.3], [160.0, 72.3], [180.3, 88.6],</span></span><br><span class="line"><span class="code">                [167.6, 75.5], [186.7, 101.4], [175.3, 91.1], [175.3, 67.3], [175.9, 77.7],</span></span><br><span class="line"><span class="code">                [175.3, 81.8], [179.1, 75.5], [181.6, 84.5], [177.8, 76.6], [182.9, 85.0],</span></span><br><span class="line"><span class="code">                [177.8, 102.5], [184.2, 77.3], [179.1, 71.8], [176.5, 87.9], [188.0, 94.3],</span></span><br><span class="line"><span class="code">                [174.0, 70.9], [167.6, 64.5], [170.2, 77.3], [167.6, 72.3], [188.0, 87.3],</span></span><br><span class="line"><span class="code">                [174.0, 80.0], [176.5, 82.3], [180.3, 73.6], [167.6, 74.1], [188.0, 85.9],</span></span><br><span class="line"><span class="code">                [180.3, 73.2], [167.6, 76.3], [183.0, 65.9], [183.0, 90.9], [179.1, 89.1],</span></span><br><span class="line"><span class="code">                [170.2, 62.3], [177.8, 82.7], [179.1, 79.1], [190.5, 98.2], [177.8, 84.1],</span></span><br><span class="line"><span class="code">                [180.3, 83.2], [180.3, 83.2]</span></span><br><span class="line"><span class="code">            ],</span></span><br><span class="line"><span class="code">            markArea: &#123;</span></span><br><span class="line"><span class="code">                silent: true,</span></span><br><span class="line"><span class="code">                itemStyle: &#123;</span></span><br><span class="line"><span class="code">                    normal: &#123;</span></span><br><span class="line"><span class="code">                        color: &#x27;transparent&#x27;,</span></span><br><span class="line"><span class="code">                        borderWidth: 1,</span></span><br><span class="line"><span class="code">                        borderType: &#x27;dashed&#x27;</span></span><br><span class="line"><span class="code">                    &#125;</span></span><br><span class="line"><span class="code">                &#125;,</span></span><br><span class="line"><span class="code">                data: [[&#123;</span></span><br><span class="line"><span class="code">                    name: &#x27;男性分布区间&#x27;,</span></span><br><span class="line"><span class="code">                    xAxis: &#x27;min&#x27;,</span></span><br><span class="line"><span class="code">                    yAxis: &#x27;min&#x27;</span></span><br><span class="line"><span class="code">                &#125;, &#123;</span></span><br><span class="line"><span class="code">                    xAxis: &#x27;max&#x27;,</span></span><br><span class="line"><span class="code">                    yAxis: &#x27;max&#x27;</span></span><br><span class="line"><span class="code">                &#125;]]</span></span><br><span class="line"><span class="code">            &#125;,</span></span><br><span class="line"><span class="code">            markPoint : &#123;</span></span><br><span class="line"><span class="code">                data : [</span></span><br><span class="line"><span class="code">                    &#123;type : &#x27;max&#x27;, name: &#x27;最大值&#x27;&#125;,</span></span><br><span class="line"><span class="code">                    &#123;type : &#x27;min&#x27;, name: &#x27;最小值&#x27;&#125;</span></span><br><span class="line"><span class="code">                ]</span></span><br><span class="line"><span class="code">            &#125;,</span></span><br><span class="line"><span class="code">            markLine : &#123;</span></span><br><span class="line"><span class="code">                lineStyle: &#123;</span></span><br><span class="line"><span class="code">                    normal: &#123;</span></span><br><span class="line"><span class="code">                        type: &#x27;solid&#x27;</span></span><br><span class="line"><span class="code">                    &#125;</span></span><br><span class="line"><span class="code">                &#125;,</span></span><br><span class="line"><span class="code">                data : [</span></span><br><span class="line"><span class="code">                    &#123;type : &#x27;average&#x27;, name: &#x27;平均值&#x27;&#125;,</span></span><br><span class="line"><span class="code">                    &#123; xAxis: 170 &#125;</span></span><br><span class="line"><span class="code">                ]</span></span><br><span class="line"><span class="code">            &#125;</span></span><br><span class="line"><span class="code">        &#125;</span></span><br><span class="line"><span class="code">    ]</span></span><br><span class="line"><span class="code">&#125;;</span></span><br><span class="line"><span class="code">&#123;% endecharts %&#125;</span></span><br></pre></td></tr></table></figure>
-<div id="echarts5019" style="width: 85%;height: 800px;margin: 0 auto"></div>
+
+
+
+<h2 id="散点图"><a href="#散点图" class="headerlink" title="散点图"></a>散点图</h2><figure class="highlight md"><table><tr><td class="code"><pre><span class="line">&#123;% echarts 800 &#x27;85%&#x27; %&#125;</span><br><span class="line">&#123;</span><br><span class="line"><span class="code">    title : &#123;</span></span><br><span class="line"><span class="code">        text: &#x27;男性女性身高体重分布&#x27;,</span></span><br><span class="line"><span class="code">        subtext: &#x27;抽样调查来自: Heinz  2003&#x27;</span></span><br><span class="line"><span class="code">    &#125;,</span></span><br><span class="line"><span class="code">    grid: &#123;</span></span><br><span class="line"><span class="code">        left: &#x27;3%&#x27;,</span></span><br><span class="line"><span class="code">        right: &#x27;7%&#x27;,</span></span><br><span class="line"><span class="code">        bottom: &#x27;3%&#x27;,</span></span><br><span class="line"><span class="code">        containLabel: true</span></span><br><span class="line"><span class="code">    &#125;,</span></span><br><span class="line"><span class="code">    tooltip : &#123;</span></span><br><span class="line"><span class="code">        // trigger: &#x27;axis&#x27;,</span></span><br><span class="line"><span class="code">        showDelay : 0,</span></span><br><span class="line"><span class="code">        formatter : function (params) &#123;</span></span><br><span class="line"><span class="code">            if (params.value.length &gt; 1) &#123;</span></span><br><span class="line"><span class="code">                return params.seriesName + &#x27; :&lt;br/&gt;&#x27;</span></span><br><span class="line"><span class="code">                + params.value[0] + &#x27;cm &#x27;</span></span><br><span class="line"><span class="code">                + params.value[1] + &#x27;kg &#x27;;</span></span><br><span class="line"><span class="code">            &#125;</span></span><br><span class="line"><span class="code">            else &#123;</span></span><br><span class="line"><span class="code">                return params.seriesName + &#x27; :&lt;br/&gt;&#x27;</span></span><br><span class="line"><span class="code">                + params.name + &#x27; : &#x27;</span></span><br><span class="line"><span class="code">                + params.value + &#x27;kg &#x27;;</span></span><br><span class="line"><span class="code">            &#125;</span></span><br><span class="line"><span class="code">        &#125;,</span></span><br><span class="line"><span class="code">        axisPointer:&#123;</span></span><br><span class="line"><span class="code">            show: true,</span></span><br><span class="line"><span class="code">            type : &#x27;cross&#x27;,</span></span><br><span class="line"><span class="code">            lineStyle: &#123;</span></span><br><span class="line"><span class="code">                type : &#x27;dashed&#x27;,</span></span><br><span class="line"><span class="code">                width : 1</span></span><br><span class="line"><span class="code">            &#125;</span></span><br><span class="line"><span class="code">        &#125;</span></span><br><span class="line"><span class="code">    &#125;,</span></span><br><span class="line"><span class="code">    toolbox: &#123;</span></span><br><span class="line"><span class="code">        feature: &#123;</span></span><br><span class="line"><span class="code">            dataZoom: &#123;&#125;,</span></span><br><span class="line"><span class="code">            brush: &#123;</span></span><br><span class="line"><span class="code">                type: [&#x27;rect&#x27;, &#x27;polygon&#x27;, &#x27;clear&#x27;]</span></span><br><span class="line"><span class="code">            &#125;</span></span><br><span class="line"><span class="code">        &#125;</span></span><br><span class="line"><span class="code">    &#125;,</span></span><br><span class="line"><span class="code">    brush: &#123;</span></span><br><span class="line"><span class="code">    &#125;,</span></span><br><span class="line"><span class="code">    legend: &#123;</span></span><br><span class="line"><span class="code">        data: [&#x27;女性&#x27;,&#x27;男性&#x27;],</span></span><br><span class="line"><span class="code">        left: &#x27;center&#x27;</span></span><br><span class="line"><span class="code">    &#125;,</span></span><br><span class="line"><span class="code">    xAxis : [</span></span><br><span class="line"><span class="code">        &#123;</span></span><br><span class="line"><span class="code">            type : &#x27;value&#x27;,</span></span><br><span class="line"><span class="code">            scale:true,</span></span><br><span class="line"><span class="code">            axisLabel : &#123;</span></span><br><span class="line"><span class="code">                formatter: &#x27;&#123;value&#125; cm&#x27;</span></span><br><span class="line"><span class="code">            &#125;,</span></span><br><span class="line"><span class="code">            splitLine: &#123;</span></span><br><span class="line"><span class="code">                show: false</span></span><br><span class="line"><span class="code">            &#125;</span></span><br><span class="line"><span class="code">        &#125;</span></span><br><span class="line"><span class="code">    ],</span></span><br><span class="line"><span class="code">    yAxis : [</span></span><br><span class="line"><span class="code">        &#123;</span></span><br><span class="line"><span class="code">            type : &#x27;value&#x27;,</span></span><br><span class="line"><span class="code">            scale:true,</span></span><br><span class="line"><span class="code">            axisLabel : &#123;</span></span><br><span class="line"><span class="code">                formatter: &#x27;&#123;value&#125; kg&#x27;</span></span><br><span class="line"><span class="code">            &#125;,</span></span><br><span class="line"><span class="code">            splitLine: &#123;</span></span><br><span class="line"><span class="code">                show: false</span></span><br><span class="line"><span class="code">            &#125;</span></span><br><span class="line"><span class="code">        &#125;</span></span><br><span class="line"><span class="code">    ],</span></span><br><span class="line"><span class="code">    series : [</span></span><br><span class="line"><span class="code">        &#123;</span></span><br><span class="line"><span class="code">            name:&#x27;女性&#x27;,</span></span><br><span class="line"><span class="code">            type:&#x27;scatter&#x27;,</span></span><br><span class="line"><span class="code">            data: [[161.2, 51.6], [167.5, 59.0], [159.5, 49.2], [157.0, 63.0], [155.8, 53.6],</span></span><br><span class="line"><span class="code">                [170.0, 59.0], [159.1, 47.6], [166.0, 69.8], [176.2, 66.8], [160.2, 75.2],</span></span><br><span class="line"><span class="code">                [172.5, 55.2], [170.9, 54.2], [172.9, 62.5], [153.4, 42.0], [160.0, 50.0],</span></span><br><span class="line"><span class="code">                [147.2, 49.8], [168.2, 49.2], [175.0, 73.2], [157.0, 47.8], [167.6, 68.8],</span></span><br><span class="line"><span class="code">                [159.5, 50.6], [175.0, 82.5], [166.8, 57.2], [176.5, 87.8], [170.2, 72.8],</span></span><br><span class="line"><span class="code">                [174.0, 54.5], [173.0, 59.8], [179.9, 67.3], [170.5, 67.8], [160.0, 47.0],</span></span><br><span class="line"><span class="code">                [154.4, 46.2], [162.0, 55.0], [176.5, 83.0], [160.0, 54.4], [152.0, 45.8],</span></span><br><span class="line"><span class="code">                [162.1, 53.6], [170.0, 73.2], [160.2, 52.1], [161.3, 67.9], [166.4, 56.6],</span></span><br><span class="line"><span class="code">                [168.9, 62.3], [163.8, 58.5], [167.6, 54.5], [160.0, 50.2], [161.3, 60.3],</span></span><br><span class="line"><span class="code">                [167.6, 58.3], [165.1, 56.2], [160.0, 50.2], [170.0, 72.9], [157.5, 59.8],</span></span><br><span class="line"><span class="code">                [167.6, 61.0], [160.7, 69.1], [163.2, 55.9], [152.4, 46.5], [157.5, 54.3],</span></span><br><span class="line"><span class="code">                [168.3, 54.8], [180.3, 60.7], [165.5, 60.0], [165.0, 62.0], [164.5, 60.3],</span></span><br><span class="line"><span class="code">                [156.0, 52.7], [160.0, 74.3], [163.0, 62.0], [165.7, 73.1], [161.0, 80.0],</span></span><br><span class="line"><span class="code">                [162.0, 54.7], [166.0, 53.2], [174.0, 75.7], [172.7, 61.1], [167.6, 55.7],</span></span><br><span class="line"><span class="code">                [151.1, 48.7], [164.5, 52.3], [163.5, 50.0], [152.0, 59.3], [169.0, 62.5],</span></span><br><span class="line"><span class="code">                [164.0, 55.7], [161.2, 54.8], [155.0, 45.9], [170.0, 70.6], [176.2, 67.2],</span></span><br><span class="line"><span class="code">                [170.0, 69.4], [162.5, 58.2], [170.3, 64.8], [164.1, 71.6], [169.5, 52.8],</span></span><br><span class="line"><span class="code">                [163.2, 59.8], [154.5, 49.0], [159.8, 50.0], [173.2, 69.2], [170.0, 55.9],</span></span><br><span class="line"><span class="code">                [161.4, 63.4], [169.0, 58.2], [166.2, 58.6], [159.4, 45.7], [162.5, 52.2],</span></span><br><span class="line"><span class="code">                [159.0, 48.6], [162.8, 57.8], [159.0, 55.6], [179.8, 66.8], [162.9, 59.4],</span></span><br><span class="line"><span class="code">                [161.0, 53.6], [151.1, 73.2], [168.2, 53.4], [168.9, 69.0], [173.2, 58.4],</span></span><br><span class="line"><span class="code">                [171.8, 56.2], [178.0, 70.6], [164.3, 59.8], [163.0, 72.0], [168.5, 65.2],</span></span><br><span class="line"><span class="code">                [166.8, 56.6], [172.7, 105.2], [163.5, 51.8], [169.4, 63.4], [167.8, 59.0],</span></span><br><span class="line"><span class="code">                [159.5, 47.6], [167.6, 63.0], [161.2, 55.2], [160.0, 45.0], [163.2, 54.0],</span></span><br><span class="line"><span class="code">                [162.2, 50.2], [161.3, 60.2], [149.5, 44.8], [157.5, 58.8], [163.2, 56.4],</span></span><br><span class="line"><span class="code">                [172.7, 62.0], [155.0, 49.2], [156.5, 67.2], [164.0, 53.8], [160.9, 54.4],</span></span><br><span class="line"><span class="code">                [162.8, 58.0], [167.0, 59.8], [160.0, 54.8], [160.0, 43.2], [168.9, 60.5],</span></span><br><span class="line"><span class="code">                [158.2, 46.4], [156.0, 64.4], [160.0, 48.8], [167.1, 62.2], [158.0, 55.5],</span></span><br><span class="line"><span class="code">                [167.6, 57.8], [156.0, 54.6], [162.1, 59.2], [173.4, 52.7], [159.8, 53.2],</span></span><br><span class="line"><span class="code">                [170.5, 64.5], [159.2, 51.8], [157.5, 56.0], [161.3, 63.6], [162.6, 63.2],</span></span><br><span class="line"><span class="code">                [160.0, 59.5], [168.9, 56.8], [165.1, 64.1], [162.6, 50.0], [165.1, 72.3],</span></span><br><span class="line"><span class="code">                [166.4, 55.0], [160.0, 55.9], [152.4, 60.4], [170.2, 69.1], [162.6, 84.5],</span></span><br><span class="line"><span class="code">                [170.2, 55.9], [158.8, 55.5], [172.7, 69.5], [167.6, 76.4], [162.6, 61.4],</span></span><br><span class="line"><span class="code">                [167.6, 65.9], [156.2, 58.6], [175.2, 66.8], [172.1, 56.6], [162.6, 58.6],</span></span><br><span class="line"><span class="code">                [160.0, 55.9], [165.1, 59.1], [182.9, 81.8], [166.4, 70.7], [165.1, 56.8],</span></span><br><span class="line"><span class="code">                [177.8, 60.0], [165.1, 58.2], [175.3, 72.7], [154.9, 54.1], [158.8, 49.1],</span></span><br><span class="line"><span class="code">                [172.7, 75.9], [168.9, 55.0], [161.3, 57.3], [167.6, 55.0], [165.1, 65.5],</span></span><br><span class="line"><span class="code">                [175.3, 65.5], [157.5, 48.6], [163.8, 58.6], [167.6, 63.6], [165.1, 55.2],</span></span><br><span class="line"><span class="code">                [165.1, 62.7], [168.9, 56.6], [162.6, 53.9], [164.5, 63.2], [176.5, 73.6],</span></span><br><span class="line"><span class="code">                [168.9, 62.0], [175.3, 63.6], [159.4, 53.2], [160.0, 53.4], [170.2, 55.0],</span></span><br><span class="line"><span class="code">                [162.6, 70.5], [167.6, 54.5], [162.6, 54.5], [160.7, 55.9], [160.0, 59.0],</span></span><br><span class="line"><span class="code">                [157.5, 63.6], [162.6, 54.5], [152.4, 47.3], [170.2, 67.7], [165.1, 80.9],</span></span><br><span class="line"><span class="code">                [172.7, 70.5], [165.1, 60.9], [170.2, 63.6], [170.2, 54.5], [170.2, 59.1],</span></span><br><span class="line"><span class="code">                [161.3, 70.5], [167.6, 52.7], [167.6, 62.7], [165.1, 86.3], [162.6, 66.4],</span></span><br><span class="line"><span class="code">                [152.4, 67.3], [168.9, 63.0], [170.2, 73.6], [175.2, 62.3], [175.2, 57.7],</span></span><br><span class="line"><span class="code">                [160.0, 55.4], [165.1, 104.1], [174.0, 55.5], [170.2, 77.3], [160.0, 80.5],</span></span><br><span class="line"><span class="code">                [167.6, 64.5], [167.6, 72.3], [167.6, 61.4], [154.9, 58.2], [162.6, 81.8],</span></span><br><span class="line"><span class="code">                [175.3, 63.6], [171.4, 53.4], [157.5, 54.5], [165.1, 53.6], [160.0, 60.0],</span></span><br><span class="line"><span class="code">                [174.0, 73.6], [162.6, 61.4], [174.0, 55.5], [162.6, 63.6], [161.3, 60.9],</span></span><br><span class="line"><span class="code">                [156.2, 60.0], [149.9, 46.8], [169.5, 57.3], [160.0, 64.1], [175.3, 63.6],</span></span><br><span class="line"><span class="code">                [169.5, 67.3], [160.0, 75.5], [172.7, 68.2], [162.6, 61.4], [157.5, 76.8],</span></span><br><span class="line"><span class="code">                [176.5, 71.8], [164.4, 55.5], [160.7, 48.6], [174.0, 66.4], [163.8, 67.3]</span></span><br><span class="line"><span class="code">            ],</span></span><br><span class="line"><span class="code">            markArea: &#123;</span></span><br><span class="line"><span class="code">                silent: true,</span></span><br><span class="line"><span class="code">                itemStyle: &#123;</span></span><br><span class="line"><span class="code">                    normal: &#123;</span></span><br><span class="line"><span class="code">                        color: &#x27;transparent&#x27;,</span></span><br><span class="line"><span class="code">                        borderWidth: 1,</span></span><br><span class="line"><span class="code">                        borderType: &#x27;dashed&#x27;</span></span><br><span class="line"><span class="code">                    &#125;</span></span><br><span class="line"><span class="code">                &#125;,</span></span><br><span class="line"><span class="code">                data: [[&#123;</span></span><br><span class="line"><span class="code">                    name: &#x27;女性分布区间&#x27;,</span></span><br><span class="line"><span class="code">                    xAxis: &#x27;min&#x27;,</span></span><br><span class="line"><span class="code">                    yAxis: &#x27;min&#x27;</span></span><br><span class="line"><span class="code">                &#125;, &#123;</span></span><br><span class="line"><span class="code">                    xAxis: &#x27;max&#x27;,</span></span><br><span class="line"><span class="code">                    yAxis: &#x27;max&#x27;</span></span><br><span class="line"><span class="code">                &#125;]]</span></span><br><span class="line"><span class="code">            &#125;,</span></span><br><span class="line"><span class="code">            markPoint : &#123;</span></span><br><span class="line"><span class="code">                data : [</span></span><br><span class="line"><span class="code">                    &#123;type : &#x27;max&#x27;, name: &#x27;最大值&#x27;&#125;,</span></span><br><span class="line"><span class="code">                    &#123;type : &#x27;min&#x27;, name: &#x27;最小值&#x27;&#125;</span></span><br><span class="line"><span class="code">                ]</span></span><br><span class="line"><span class="code">            &#125;,</span></span><br><span class="line"><span class="code">            markLine : &#123;</span></span><br><span class="line"><span class="code">                lineStyle: &#123;</span></span><br><span class="line"><span class="code">                    normal: &#123;</span></span><br><span class="line"><span class="code">                        type: &#x27;solid&#x27;</span></span><br><span class="line"><span class="code">                    &#125;</span></span><br><span class="line"><span class="code">                &#125;,</span></span><br><span class="line"><span class="code">                data : [</span></span><br><span class="line"><span class="code">                    &#123;type : &#x27;average&#x27;, name: &#x27;平均值&#x27;&#125;,</span></span><br><span class="line"><span class="code">                    &#123; xAxis: 160 &#125;</span></span><br><span class="line"><span class="code">                ]</span></span><br><span class="line"><span class="code">            &#125;</span></span><br><span class="line"><span class="code">        &#125;,</span></span><br><span class="line"><span class="code">        &#123;</span></span><br><span class="line"><span class="code">            name:&#x27;男性&#x27;,</span></span><br><span class="line"><span class="code">            type:&#x27;scatter&#x27;,</span></span><br><span class="line"><span class="code">            data: [[174.0, 65.6], [175.3, 71.8], [193.5, 80.7], [186.5, 72.6], [187.2, 78.8],</span></span><br><span class="line"><span class="code">                [181.5, 74.8], [184.0, 86.4], [184.5, 78.4], [175.0, 62.0], [184.0, 81.6],</span></span><br><span class="line"><span class="code">                [180.0, 76.6], [177.8, 83.6], [192.0, 90.0], [176.0, 74.6], [174.0, 71.0],</span></span><br><span class="line"><span class="code">                [184.0, 79.6], [192.7, 93.8], [171.5, 70.0], [173.0, 72.4], [176.0, 85.9],</span></span><br><span class="line"><span class="code">                [176.0, 78.8], [180.5, 77.8], [172.7, 66.2], [176.0, 86.4], [173.5, 81.8],</span></span><br><span class="line"><span class="code">                [178.0, 89.6], [180.3, 82.8], [180.3, 76.4], [164.5, 63.2], [173.0, 60.9],</span></span><br><span class="line"><span class="code">                [183.5, 74.8], [175.5, 70.0], [188.0, 72.4], [189.2, 84.1], [172.8, 69.1],</span></span><br><span class="line"><span class="code">                [170.0, 59.5], [182.0, 67.2], [170.0, 61.3], [177.8, 68.6], [184.2, 80.1],</span></span><br><span class="line"><span class="code">                [186.7, 87.8], [171.4, 84.7], [172.7, 73.4], [175.3, 72.1], [180.3, 82.6],</span></span><br><span class="line"><span class="code">                [182.9, 88.7], [188.0, 84.1], [177.2, 94.1], [172.1, 74.9], [167.0, 59.1],</span></span><br><span class="line"><span class="code">                [169.5, 75.6], [174.0, 86.2], [172.7, 75.3], [182.2, 87.1], [164.1, 55.2],</span></span><br><span class="line"><span class="code">                [163.0, 57.0], [171.5, 61.4], [184.2, 76.8], [174.0, 86.8], [174.0, 72.2],</span></span><br><span class="line"><span class="code">                [177.0, 71.6], [186.0, 84.8], [167.0, 68.2], [171.8, 66.1], [182.0, 72.0],</span></span><br><span class="line"><span class="code">                [167.0, 64.6], [177.8, 74.8], [164.5, 70.0], [192.0, 101.6], [175.5, 63.2],</span></span><br><span class="line"><span class="code">                [171.2, 79.1], [181.6, 78.9], [167.4, 67.7], [181.1, 66.0], [177.0, 68.2],</span></span><br><span class="line"><span class="code">                [174.5, 63.9], [177.5, 72.0], [170.5, 56.8], [182.4, 74.5], [197.1, 90.9],</span></span><br><span class="line"><span class="code">                [180.1, 93.0], [175.5, 80.9], [180.6, 72.7], [184.4, 68.0], [175.5, 70.9],</span></span><br><span class="line"><span class="code">                [180.6, 72.5], [177.0, 72.5], [177.1, 83.4], [181.6, 75.5], [176.5, 73.0],</span></span><br><span class="line"><span class="code">                [175.0, 70.2], [174.0, 73.4], [165.1, 70.5], [177.0, 68.9], [192.0, 102.3],</span></span><br><span class="line"><span class="code">                [176.5, 68.4], [169.4, 65.9], [182.1, 75.7], [179.8, 84.5], [175.3, 87.7],</span></span><br><span class="line"><span class="code">                [184.9, 86.4], [177.3, 73.2], [167.4, 53.9], [178.1, 72.0], [168.9, 55.5],</span></span><br><span class="line"><span class="code">                [157.2, 58.4], [180.3, 83.2], [170.2, 72.7], [177.8, 64.1], [172.7, 72.3],</span></span><br><span class="line"><span class="code">                [165.1, 65.0], [186.7, 86.4], [165.1, 65.0], [174.0, 88.6], [175.3, 84.1],</span></span><br><span class="line"><span class="code">                [185.4, 66.8], [177.8, 75.5], [180.3, 93.2], [180.3, 82.7], [177.8, 58.0],</span></span><br><span class="line"><span class="code">                [177.8, 79.5], [177.8, 78.6], [177.8, 71.8], [177.8, 116.4], [163.8, 72.2],</span></span><br><span class="line"><span class="code">                [188.0, 83.6], [198.1, 85.5], [175.3, 90.9], [166.4, 85.9], [190.5, 89.1],</span></span><br><span class="line"><span class="code">                [166.4, 75.0], [177.8, 77.7], [179.7, 86.4], [172.7, 90.9], [190.5, 73.6],</span></span><br><span class="line"><span class="code">                [185.4, 76.4], [168.9, 69.1], [167.6, 84.5], [175.3, 64.5], [170.2, 69.1],</span></span><br><span class="line"><span class="code">                [190.5, 108.6], [177.8, 86.4], [190.5, 80.9], [177.8, 87.7], [184.2, 94.5],</span></span><br><span class="line"><span class="code">                [176.5, 80.2], [177.8, 72.0], [180.3, 71.4], [171.4, 72.7], [172.7, 84.1],</span></span><br><span class="line"><span class="code">                [172.7, 76.8], [177.8, 63.6], [177.8, 80.9], [182.9, 80.9], [170.2, 85.5],</span></span><br><span class="line"><span class="code">                [167.6, 68.6], [175.3, 67.7], [165.1, 66.4], [185.4, 102.3], [181.6, 70.5],</span></span><br><span class="line"><span class="code">                [172.7, 95.9], [190.5, 84.1], [179.1, 87.3], [175.3, 71.8], [170.2, 65.9],</span></span><br><span class="line"><span class="code">                [193.0, 95.9], [171.4, 91.4], [177.8, 81.8], [177.8, 96.8], [167.6, 69.1],</span></span><br><span class="line"><span class="code">                [167.6, 82.7], [180.3, 75.5], [182.9, 79.5], [176.5, 73.6], [186.7, 91.8],</span></span><br><span class="line"><span class="code">                [188.0, 84.1], [188.0, 85.9], [177.8, 81.8], [174.0, 82.5], [177.8, 80.5],</span></span><br><span class="line"><span class="code">                [171.4, 70.0], [185.4, 81.8], [185.4, 84.1], [188.0, 90.5], [188.0, 91.4],</span></span><br><span class="line"><span class="code">                [182.9, 89.1], [176.5, 85.0], [175.3, 69.1], [175.3, 73.6], [188.0, 80.5],</span></span><br><span class="line"><span class="code">                [188.0, 82.7], [175.3, 86.4], [170.5, 67.7], [179.1, 92.7], [177.8, 93.6],</span></span><br><span class="line"><span class="code">                [175.3, 70.9], [182.9, 75.0], [170.8, 93.2], [188.0, 93.2], [180.3, 77.7],</span></span><br><span class="line"><span class="code">                [177.8, 61.4], [185.4, 94.1], [168.9, 75.0], [185.4, 83.6], [180.3, 85.5],</span></span><br><span class="line"><span class="code">                [174.0, 73.9], [167.6, 66.8], [182.9, 87.3], [160.0, 72.3], [180.3, 88.6],</span></span><br><span class="line"><span class="code">                [167.6, 75.5], [186.7, 101.4], [175.3, 91.1], [175.3, 67.3], [175.9, 77.7],</span></span><br><span class="line"><span class="code">                [175.3, 81.8], [179.1, 75.5], [181.6, 84.5], [177.8, 76.6], [182.9, 85.0],</span></span><br><span class="line"><span class="code">                [177.8, 102.5], [184.2, 77.3], [179.1, 71.8], [176.5, 87.9], [188.0, 94.3],</span></span><br><span class="line"><span class="code">                [174.0, 70.9], [167.6, 64.5], [170.2, 77.3], [167.6, 72.3], [188.0, 87.3],</span></span><br><span class="line"><span class="code">                [174.0, 80.0], [176.5, 82.3], [180.3, 73.6], [167.6, 74.1], [188.0, 85.9],</span></span><br><span class="line"><span class="code">                [180.3, 73.2], [167.6, 76.3], [183.0, 65.9], [183.0, 90.9], [179.1, 89.1],</span></span><br><span class="line"><span class="code">                [170.2, 62.3], [177.8, 82.7], [179.1, 79.1], [190.5, 98.2], [177.8, 84.1],</span></span><br><span class="line"><span class="code">                [180.3, 83.2], [180.3, 83.2]</span></span><br><span class="line"><span class="code">            ],</span></span><br><span class="line"><span class="code">            markArea: &#123;</span></span><br><span class="line"><span class="code">                silent: true,</span></span><br><span class="line"><span class="code">                itemStyle: &#123;</span></span><br><span class="line"><span class="code">                    normal: &#123;</span></span><br><span class="line"><span class="code">                        color: &#x27;transparent&#x27;,</span></span><br><span class="line"><span class="code">                        borderWidth: 1,</span></span><br><span class="line"><span class="code">                        borderType: &#x27;dashed&#x27;</span></span><br><span class="line"><span class="code">                    &#125;</span></span><br><span class="line"><span class="code">                &#125;,</span></span><br><span class="line"><span class="code">                data: [[&#123;</span></span><br><span class="line"><span class="code">                    name: &#x27;男性分布区间&#x27;,</span></span><br><span class="line"><span class="code">                    xAxis: &#x27;min&#x27;,</span></span><br><span class="line"><span class="code">                    yAxis: &#x27;min&#x27;</span></span><br><span class="line"><span class="code">                &#125;, &#123;</span></span><br><span class="line"><span class="code">                    xAxis: &#x27;max&#x27;,</span></span><br><span class="line"><span class="code">                    yAxis: &#x27;max&#x27;</span></span><br><span class="line"><span class="code">                &#125;]]</span></span><br><span class="line"><span class="code">            &#125;,</span></span><br><span class="line"><span class="code">            markPoint : &#123;</span></span><br><span class="line"><span class="code">                data : [</span></span><br><span class="line"><span class="code">                    &#123;type : &#x27;max&#x27;, name: &#x27;最大值&#x27;&#125;,</span></span><br><span class="line"><span class="code">                    &#123;type : &#x27;min&#x27;, name: &#x27;最小值&#x27;&#125;</span></span><br><span class="line"><span class="code">                ]</span></span><br><span class="line"><span class="code">            &#125;,</span></span><br><span class="line"><span class="code">            markLine : &#123;</span></span><br><span class="line"><span class="code">                lineStyle: &#123;</span></span><br><span class="line"><span class="code">                    normal: &#123;</span></span><br><span class="line"><span class="code">                        type: &#x27;solid&#x27;</span></span><br><span class="line"><span class="code">                    &#125;</span></span><br><span class="line"><span class="code">                &#125;,</span></span><br><span class="line"><span class="code">                data : [</span></span><br><span class="line"><span class="code">                    &#123;type : &#x27;average&#x27;, name: &#x27;平均值&#x27;&#125;,</span></span><br><span class="line"><span class="code">                    &#123; xAxis: 170 &#125;</span></span><br><span class="line"><span class="code">                ]</span></span><br><span class="line"><span class="code">            &#125;</span></span><br><span class="line"><span class="code">        &#125;</span></span><br><span class="line"><span class="code">    ]</span></span><br><span class="line"><span class="code">&#125;;</span></span><br><span class="line"><span class="code">&#123;% endecharts %&#125;</span></span><br></pre></td></tr></table></figure>
+
+<div id="echarts9743" style="width: 85%;height: 800px;margin: 0 auto"></div>
 <script src="https://cdn.bootcss.com/echarts/3.8.0/echarts.common.min.js"></script>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts5019'));
+        var myChart = echarts.init(document.getElementById('echarts9743'));
         // 指定图表的配置项和数据
         var option = {
     title : {
@@ -3697,13 +3708,15 @@ window.onresize=function(){
         // 使用刚指定的配置项和数据显示图表。
         myChart.setOption(option);
 </script>
-<h2 id="折线图"><a class="header-anchor" href="#折线图"></a>折线图</h2>
-<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">&#123;% echarts 600 &#x27;100%&#x27; %&#125;</span><br><span class="line">&#123;</span><br><span class="line"><span class="code">    title: &#123;</span></span><br><span class="line"><span class="code">        text: &#x27;折线图堆叠&#x27;</span></span><br><span class="line"><span class="code">    &#125;,</span></span><br><span class="line"><span class="code">    tooltip: &#123;</span></span><br><span class="line"><span class="code">        trigger: &#x27;axis&#x27;</span></span><br><span class="line"><span class="code">    &#125;,</span></span><br><span class="line"><span class="code">    legend: &#123;</span></span><br><span class="line"><span class="code">        type: &#x27;scroll&#x27;,</span></span><br><span class="line"><span class="code">        orient: &#x27;vertical&#x27;,</span></span><br><span class="line"><span class="code">        right: 40,</span></span><br><span class="line"><span class="code">        data:[&#x27;邮件营销&#x27;,&#x27;联盟广告&#x27;,&#x27;视频广告&#x27;,&#x27;直接访问&#x27;,&#x27;搜索引擎&#x27;]</span></span><br><span class="line"><span class="code">    &#125;,</span></span><br><span class="line"><span class="code">    grid: &#123;</span></span><br><span class="line"><span class="code">        left: &#x27;3%&#x27;,</span></span><br><span class="line"><span class="code">        right: &#x27;4%&#x27;,</span></span><br><span class="line"><span class="code">        bottom: &#x27;3%&#x27;,</span></span><br><span class="line"><span class="code">        containLabel: true</span></span><br><span class="line"><span class="code">    &#125;,</span></span><br><span class="line"><span class="code">    toolbox: &#123;</span></span><br><span class="line"><span class="code">        feature: &#123;</span></span><br><span class="line"><span class="code">            saveAsImage: &#123;&#125;</span></span><br><span class="line"><span class="code">        &#125;</span></span><br><span class="line"><span class="code">    &#125;,</span></span><br><span class="line"><span class="code">    xAxis: &#123;</span></span><br><span class="line"><span class="code">        type: &#x27;category&#x27;,</span></span><br><span class="line"><span class="code">        boundaryGap: false,</span></span><br><span class="line"><span class="code">        data: [&#x27;周一&#x27;,&#x27;周二&#x27;,&#x27;周三&#x27;,&#x27;周四&#x27;,&#x27;周五&#x27;,&#x27;周六&#x27;,&#x27;周日&#x27;]</span></span><br><span class="line"><span class="code">    &#125;,</span></span><br><span class="line"><span class="code">    yAxis: &#123;</span></span><br><span class="line"><span class="code">        type: &#x27;value&#x27;</span></span><br><span class="line"><span class="code">    &#125;,</span></span><br><span class="line"><span class="code">    series: [</span></span><br><span class="line"><span class="code">        &#123;</span></span><br><span class="line"><span class="code">            name:&#x27;邮件营销&#x27;,</span></span><br><span class="line"><span class="code">            type:&#x27;line&#x27;,</span></span><br><span class="line"><span class="code">            stack: &#x27;总量&#x27;,</span></span><br><span class="line"><span class="code">            data:[120, 132, 101, 134, 90, 230, 210]</span></span><br><span class="line"><span class="code">        &#125;,</span></span><br><span class="line"><span class="code">        &#123;</span></span><br><span class="line"><span class="code">            name:&#x27;联盟广告&#x27;,</span></span><br><span class="line"><span class="code">            type:&#x27;line&#x27;,</span></span><br><span class="line"><span class="code">            stack: &#x27;总量&#x27;,</span></span><br><span class="line"><span class="code">            data:[220, 182, 191, 234, 290, 330, 310]</span></span><br><span class="line"><span class="code">        &#125;,</span></span><br><span class="line"><span class="code">        &#123;</span></span><br><span class="line"><span class="code">            name:&#x27;视频广告&#x27;,</span></span><br><span class="line"><span class="code">            type:&#x27;line&#x27;,</span></span><br><span class="line"><span class="code">            stack: &#x27;总量&#x27;,</span></span><br><span class="line"><span class="code">            data:[150, 232, 201, 154, 190, 330, 410]</span></span><br><span class="line"><span class="code">        &#125;,</span></span><br><span class="line"><span class="code">        &#123;</span></span><br><span class="line"><span class="code">            name:&#x27;直接访问&#x27;,</span></span><br><span class="line"><span class="code">            type:&#x27;line&#x27;,</span></span><br><span class="line"><span class="code">            stack: &#x27;总量&#x27;,</span></span><br><span class="line"><span class="code">            data:[320, 332, 301, 334, 390, 330, 320]</span></span><br><span class="line"><span class="code">        &#125;,</span></span><br><span class="line"><span class="code">        &#123;</span></span><br><span class="line"><span class="code">            name:&#x27;搜索引擎&#x27;,</span></span><br><span class="line"><span class="code">            type:&#x27;line&#x27;,</span></span><br><span class="line"><span class="code">            stack: &#x27;总量&#x27;,</span></span><br><span class="line"><span class="code">            data:[820, 932, 901, 934, 1290, 1330, 1320]</span></span><br><span class="line"><span class="code">        &#125;</span></span><br><span class="line"><span class="code">    ]</span></span><br><span class="line"><span class="code">&#125;;</span></span><br><span class="line"><span class="code">&#123;% endecharts %&#125;</span></span><br></pre></td></tr></table></figure>
-<div id="echarts3042" style="width: 100%;height: 600px;margin: 0 auto"></div>
+
+
+<h2 id="折线图"><a href="#折线图" class="headerlink" title="折线图"></a>折线图</h2><figure class="highlight md"><table><tr><td class="code"><pre><span class="line">&#123;% echarts 600 &#x27;100%&#x27; %&#125;</span><br><span class="line">&#123;</span><br><span class="line"><span class="code">    title: &#123;</span></span><br><span class="line"><span class="code">        text: &#x27;折线图堆叠&#x27;</span></span><br><span class="line"><span class="code">    &#125;,</span></span><br><span class="line"><span class="code">    tooltip: &#123;</span></span><br><span class="line"><span class="code">        trigger: &#x27;axis&#x27;</span></span><br><span class="line"><span class="code">    &#125;,</span></span><br><span class="line"><span class="code">    legend: &#123;</span></span><br><span class="line"><span class="code">        type: &#x27;scroll&#x27;,</span></span><br><span class="line"><span class="code">        orient: &#x27;vertical&#x27;,</span></span><br><span class="line"><span class="code">        right: 40,</span></span><br><span class="line"><span class="code">        data:[&#x27;邮件营销&#x27;,&#x27;联盟广告&#x27;,&#x27;视频广告&#x27;,&#x27;直接访问&#x27;,&#x27;搜索引擎&#x27;]</span></span><br><span class="line"><span class="code">    &#125;,</span></span><br><span class="line"><span class="code">    grid: &#123;</span></span><br><span class="line"><span class="code">        left: &#x27;3%&#x27;,</span></span><br><span class="line"><span class="code">        right: &#x27;4%&#x27;,</span></span><br><span class="line"><span class="code">        bottom: &#x27;3%&#x27;,</span></span><br><span class="line"><span class="code">        containLabel: true</span></span><br><span class="line"><span class="code">    &#125;,</span></span><br><span class="line"><span class="code">    toolbox: &#123;</span></span><br><span class="line"><span class="code">        feature: &#123;</span></span><br><span class="line"><span class="code">            saveAsImage: &#123;&#125;</span></span><br><span class="line"><span class="code">        &#125;</span></span><br><span class="line"><span class="code">    &#125;,</span></span><br><span class="line"><span class="code">    xAxis: &#123;</span></span><br><span class="line"><span class="code">        type: &#x27;category&#x27;,</span></span><br><span class="line"><span class="code">        boundaryGap: false,</span></span><br><span class="line"><span class="code">        data: [&#x27;周一&#x27;,&#x27;周二&#x27;,&#x27;周三&#x27;,&#x27;周四&#x27;,&#x27;周五&#x27;,&#x27;周六&#x27;,&#x27;周日&#x27;]</span></span><br><span class="line"><span class="code">    &#125;,</span></span><br><span class="line"><span class="code">    yAxis: &#123;</span></span><br><span class="line"><span class="code">        type: &#x27;value&#x27;</span></span><br><span class="line"><span class="code">    &#125;,</span></span><br><span class="line"><span class="code">    series: [</span></span><br><span class="line"><span class="code">        &#123;</span></span><br><span class="line"><span class="code">            name:&#x27;邮件营销&#x27;,</span></span><br><span class="line"><span class="code">            type:&#x27;line&#x27;,</span></span><br><span class="line"><span class="code">            stack: &#x27;总量&#x27;,</span></span><br><span class="line"><span class="code">            data:[120, 132, 101, 134, 90, 230, 210]</span></span><br><span class="line"><span class="code">        &#125;,</span></span><br><span class="line"><span class="code">        &#123;</span></span><br><span class="line"><span class="code">            name:&#x27;联盟广告&#x27;,</span></span><br><span class="line"><span class="code">            type:&#x27;line&#x27;,</span></span><br><span class="line"><span class="code">            stack: &#x27;总量&#x27;,</span></span><br><span class="line"><span class="code">            data:[220, 182, 191, 234, 290, 330, 310]</span></span><br><span class="line"><span class="code">        &#125;,</span></span><br><span class="line"><span class="code">        &#123;</span></span><br><span class="line"><span class="code">            name:&#x27;视频广告&#x27;,</span></span><br><span class="line"><span class="code">            type:&#x27;line&#x27;,</span></span><br><span class="line"><span class="code">            stack: &#x27;总量&#x27;,</span></span><br><span class="line"><span class="code">            data:[150, 232, 201, 154, 190, 330, 410]</span></span><br><span class="line"><span class="code">        &#125;,</span></span><br><span class="line"><span class="code">        &#123;</span></span><br><span class="line"><span class="code">            name:&#x27;直接访问&#x27;,</span></span><br><span class="line"><span class="code">            type:&#x27;line&#x27;,</span></span><br><span class="line"><span class="code">            stack: &#x27;总量&#x27;,</span></span><br><span class="line"><span class="code">            data:[320, 332, 301, 334, 390, 330, 320]</span></span><br><span class="line"><span class="code">        &#125;,</span></span><br><span class="line"><span class="code">        &#123;</span></span><br><span class="line"><span class="code">            name:&#x27;搜索引擎&#x27;,</span></span><br><span class="line"><span class="code">            type:&#x27;line&#x27;,</span></span><br><span class="line"><span class="code">            stack: &#x27;总量&#x27;,</span></span><br><span class="line"><span class="code">            data:[820, 932, 901, 934, 1290, 1330, 1320]</span></span><br><span class="line"><span class="code">        &#125;</span></span><br><span class="line"><span class="code">    ]</span></span><br><span class="line"><span class="code">&#125;;</span></span><br><span class="line"><span class="code">&#123;% endecharts %&#125;</span></span><br></pre></td></tr></table></figure>
+
+<div id="echarts512" style="width: 100%;height: 600px;margin: 0 auto"></div>
 <script src="https://cdn.bootcss.com/echarts/3.8.0/echarts.common.min.js"></script>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts3042'));
+        var myChart = echarts.init(document.getElementById('echarts512'));
         // 指定图表的配置项和数据
         var option = {
     title: {
@@ -3773,14 +3786,16 @@ window.onresize=function(){
         // 使用刚指定的配置项和数据显示图表。
         myChart.setOption(option);
 </script>
-<h2 id="柱状图"><a class="header-anchor" href="#柱状图"></a>柱状图</h2>
-<h2 id="条形图"><a class="header-anchor" href="#条形图"></a>条形图</h2>
-<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">&#123;% echarts 400 &#x27;85%&#x27; %&#125;</span><br><span class="line">&#123;</span><br><span class="line"><span class="code">    tooltip : &#123;</span></span><br><span class="line"><span class="code">        trigger: &#x27;axis&#x27;,</span></span><br><span class="line"><span class="code">        axisPointer : &#123;            // 坐标轴指示器，坐标轴触发有效</span></span><br><span class="line"><span class="code">            type : &#x27;shadow&#x27;        // 默认为直线，可选为：&#x27;line&#x27; | &#x27;shadow&#x27;</span></span><br><span class="line"><span class="code">        &#125;</span></span><br><span class="line"><span class="code">    &#125;,</span></span><br><span class="line"><span class="code">    legend: &#123;</span></span><br><span class="line"><span class="code">        data:[&#x27;利润&#x27;, &#x27;支出&#x27;, &#x27;收入&#x27;]</span></span><br><span class="line"><span class="code">    &#125;,</span></span><br><span class="line"><span class="code">    grid: &#123;</span></span><br><span class="line"><span class="code">        left: &#x27;3%&#x27;,</span></span><br><span class="line"><span class="code">        right: &#x27;4%&#x27;,</span></span><br><span class="line"><span class="code">        bottom: &#x27;3%&#x27;,</span></span><br><span class="line"><span class="code">        containLabel: true</span></span><br><span class="line"><span class="code">    &#125;,</span></span><br><span class="line"><span class="code">    xAxis : [</span></span><br><span class="line"><span class="code">        &#123;</span></span><br><span class="line"><span class="code">            type : &#x27;value&#x27;</span></span><br><span class="line"><span class="code">        &#125;</span></span><br><span class="line"><span class="code">    ],</span></span><br><span class="line"><span class="code">    yAxis : [</span></span><br><span class="line"><span class="code">        &#123;</span></span><br><span class="line"><span class="code">            type : &#x27;category&#x27;,</span></span><br><span class="line"><span class="code">            axisTick : &#123;show: false&#125;,</span></span><br><span class="line"><span class="code">            data : [&#x27;周一&#x27;,&#x27;周二&#x27;,&#x27;周三&#x27;,&#x27;周四&#x27;,&#x27;周五&#x27;,&#x27;周六&#x27;,&#x27;周日&#x27;]</span></span><br><span class="line"><span class="code">        &#125;</span></span><br><span class="line"><span class="code">    ],</span></span><br><span class="line"><span class="code">    series : [</span></span><br><span class="line"><span class="code">        &#123;</span></span><br><span class="line"><span class="code">            name:&#x27;利润&#x27;,</span></span><br><span class="line"><span class="code">            type:&#x27;bar&#x27;,</span></span><br><span class="line"><span class="code">            itemStyle : &#123;</span></span><br><span class="line"><span class="code">                normal: &#123;</span></span><br><span class="line"><span class="code">                    label: &#123;show: true, position: &#x27;inside&#x27;&#125;</span></span><br><span class="line"><span class="code">                &#125;</span></span><br><span class="line"><span class="code">            &#125;,</span></span><br><span class="line"><span class="code">            data:[200, 170, 240, 244, 200, 220, 210]</span></span><br><span class="line"><span class="code">        &#125;,</span></span><br><span class="line"><span class="code">        &#123;</span></span><br><span class="line"><span class="code">            name:&#x27;收入&#x27;,</span></span><br><span class="line"><span class="code">            type:&#x27;bar&#x27;,</span></span><br><span class="line"><span class="code">            stack: &#x27;总量&#x27;,</span></span><br><span class="line"><span class="code">            itemStyle: &#123;</span></span><br><span class="line"><span class="code">                normal: &#123;</span></span><br><span class="line"><span class="code">                    label : &#123;show: true&#125;</span></span><br><span class="line"><span class="code">                &#125;</span></span><br><span class="line"><span class="code">            &#125;,</span></span><br><span class="line"><span class="code">            data:[320, 302, 341, 374, 390, 450, 420]</span></span><br><span class="line"><span class="code">        &#125;,</span></span><br><span class="line"><span class="code">        &#123;</span></span><br><span class="line"><span class="code">            name:&#x27;支出&#x27;,</span></span><br><span class="line"><span class="code">            type:&#x27;bar&#x27;,</span></span><br><span class="line"><span class="code">            stack: &#x27;总量&#x27;,</span></span><br><span class="line"><span class="code">            itemStyle: &#123;normal: &#123;</span></span><br><span class="line"><span class="code">                label : &#123;show: true, position: &#x27;left&#x27;&#125;</span></span><br><span class="line"><span class="code">            &#125; &#125;,</span></span><br><span class="line"><span class="code">            data:[-120, -132, -101, -134, -190, -230, -210]</span></span><br><span class="line"><span class="code">        &#125;</span></span><br><span class="line"><span class="code">    ]</span></span><br><span class="line"><span class="code">&#125;;</span></span><br><span class="line"><span class="code">&#123;% endecharts %&#125;</span></span><br></pre></td></tr></table></figure>
-<div id="echarts8282" style="width: 85%;height: 400px;margin: 0 auto"></div>
+
+
+
+<h2 id="柱状图"><a href="#柱状图" class="headerlink" title="柱状图"></a>柱状图</h2><h2 id="条形图"><a href="#条形图" class="headerlink" title="条形图"></a>条形图</h2><figure class="highlight md"><table><tr><td class="code"><pre><span class="line">&#123;% echarts 400 &#x27;85%&#x27; %&#125;</span><br><span class="line">&#123;</span><br><span class="line"><span class="code">    tooltip : &#123;</span></span><br><span class="line"><span class="code">        trigger: &#x27;axis&#x27;,</span></span><br><span class="line"><span class="code">        axisPointer : &#123;            // 坐标轴指示器，坐标轴触发有效</span></span><br><span class="line"><span class="code">            type : &#x27;shadow&#x27;        // 默认为直线，可选为：&#x27;line&#x27; | &#x27;shadow&#x27;</span></span><br><span class="line"><span class="code">        &#125;</span></span><br><span class="line"><span class="code">    &#125;,</span></span><br><span class="line"><span class="code">    legend: &#123;</span></span><br><span class="line"><span class="code">        data:[&#x27;利润&#x27;, &#x27;支出&#x27;, &#x27;收入&#x27;]</span></span><br><span class="line"><span class="code">    &#125;,</span></span><br><span class="line"><span class="code">    grid: &#123;</span></span><br><span class="line"><span class="code">        left: &#x27;3%&#x27;,</span></span><br><span class="line"><span class="code">        right: &#x27;4%&#x27;,</span></span><br><span class="line"><span class="code">        bottom: &#x27;3%&#x27;,</span></span><br><span class="line"><span class="code">        containLabel: true</span></span><br><span class="line"><span class="code">    &#125;,</span></span><br><span class="line"><span class="code">    xAxis : [</span></span><br><span class="line"><span class="code">        &#123;</span></span><br><span class="line"><span class="code">            type : &#x27;value&#x27;</span></span><br><span class="line"><span class="code">        &#125;</span></span><br><span class="line"><span class="code">    ],</span></span><br><span class="line"><span class="code">    yAxis : [</span></span><br><span class="line"><span class="code">        &#123;</span></span><br><span class="line"><span class="code">            type : &#x27;category&#x27;,</span></span><br><span class="line"><span class="code">            axisTick : &#123;show: false&#125;,</span></span><br><span class="line"><span class="code">            data : [&#x27;周一&#x27;,&#x27;周二&#x27;,&#x27;周三&#x27;,&#x27;周四&#x27;,&#x27;周五&#x27;,&#x27;周六&#x27;,&#x27;周日&#x27;]</span></span><br><span class="line"><span class="code">        &#125;</span></span><br><span class="line"><span class="code">    ],</span></span><br><span class="line"><span class="code">    series : [</span></span><br><span class="line"><span class="code">        &#123;</span></span><br><span class="line"><span class="code">            name:&#x27;利润&#x27;,</span></span><br><span class="line"><span class="code">            type:&#x27;bar&#x27;,</span></span><br><span class="line"><span class="code">            itemStyle : &#123;</span></span><br><span class="line"><span class="code">                normal: &#123;</span></span><br><span class="line"><span class="code">                    label: &#123;show: true, position: &#x27;inside&#x27;&#125;</span></span><br><span class="line"><span class="code">                &#125;</span></span><br><span class="line"><span class="code">            &#125;,</span></span><br><span class="line"><span class="code">            data:[200, 170, 240, 244, 200, 220, 210]</span></span><br><span class="line"><span class="code">        &#125;,</span></span><br><span class="line"><span class="code">        &#123;</span></span><br><span class="line"><span class="code">            name:&#x27;收入&#x27;,</span></span><br><span class="line"><span class="code">            type:&#x27;bar&#x27;,</span></span><br><span class="line"><span class="code">            stack: &#x27;总量&#x27;,</span></span><br><span class="line"><span class="code">            itemStyle: &#123;</span></span><br><span class="line"><span class="code">                normal: &#123;</span></span><br><span class="line"><span class="code">                    label : &#123;show: true&#125;</span></span><br><span class="line"><span class="code">                &#125;</span></span><br><span class="line"><span class="code">            &#125;,</span></span><br><span class="line"><span class="code">            data:[320, 302, 341, 374, 390, 450, 420]</span></span><br><span class="line"><span class="code">        &#125;,</span></span><br><span class="line"><span class="code">        &#123;</span></span><br><span class="line"><span class="code">            name:&#x27;支出&#x27;,</span></span><br><span class="line"><span class="code">            type:&#x27;bar&#x27;,</span></span><br><span class="line"><span class="code">            stack: &#x27;总量&#x27;,</span></span><br><span class="line"><span class="code">            itemStyle: &#123;normal: &#123;</span></span><br><span class="line"><span class="code">                label : &#123;show: true, position: &#x27;left&#x27;&#125;</span></span><br><span class="line"><span class="code">            &#125; &#125;,</span></span><br><span class="line"><span class="code">            data:[-120, -132, -101, -134, -190, -230, -210]</span></span><br><span class="line"><span class="code">        &#125;</span></span><br><span class="line"><span class="code">    ]</span></span><br><span class="line"><span class="code">&#125;;</span></span><br><span class="line"><span class="code">&#123;% endecharts %&#125;</span></span><br></pre></td></tr></table></figure>
+
+<div id="echarts8564" style="width: 85%;height: 400px;margin: 0 auto"></div>
 <script src="https://cdn.bootcss.com/echarts/3.8.0/echarts.common.min.js"></script>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts8282'));
+        var myChart = echarts.init(document.getElementById('echarts8564'));
         // 指定图表的配置项和数据
         var option = {
     tooltip : {
@@ -3846,8 +3861,10 @@ window.onresize=function(){
         // 使用刚指定的配置项和数据显示图表。
         myChart.setOption(option);
 </script>
-<h2 id="雷达图"><a class="header-anchor" href="#雷达图"></a>雷达图</h2>
-<figure class="highlight md"><table><tr><td class="code"><pre><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;test2&quot;</span> <span class="attr">style</span>=<span class="string">&quot;width:100%;height:500px;&quot;</span>&gt;</span></span><span class="language-xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span><span class="attr">src</span>=<span class="string">&quot;/js/echarts.min.js&quot;</span>&gt;</span></span><span class="language-xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span><span class="attr">src</span>=<span class="string">&quot;/js/jquery.js&quot;</span>&gt;</span></span><span class="language-xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span>&gt;</span></span></span><br><span class="line">var myChart2 = echarts.init(document.getElementById(&quot;test2&quot;));</span><br><span class="line">option2 = &#123;</span><br><span class="line"><span class="code">    title: &#123;</span></span><br><span class="line"><span class="code">        text: &#x27;基础雷达图&#x27;</span></span><br><span class="line"><span class="code">    &#125;,</span></span><br><span class="line"><span class="code">    tooltip: &#123;&#125;,</span></span><br><span class="line"><span class="code">    legend: &#123;</span></span><br><span class="line"><span class="code">        data: [&#x27;预算分配（Allocated Budget）&#x27;, &#x27;实际开销（Actual Spending）&#x27;]</span></span><br><span class="line"><span class="code">    &#125;,</span></span><br><span class="line"><span class="code">    radar: &#123;</span></span><br><span class="line"><span class="code">        // shape: &#x27;circle&#x27;,</span></span><br><span class="line"><span class="code">        name: &#123;</span></span><br><span class="line"><span class="code">            textStyle: &#123;</span></span><br><span class="line"><span class="code">                color: &#x27;#fff&#x27;,</span></span><br><span class="line"><span class="code">                backgroundColor: &#x27;#999&#x27;,</span></span><br><span class="line"><span class="code">                borderRadius: 3,</span></span><br><span class="line"><span class="code">                padding: [3, 5]</span></span><br><span class="line"><span class="code">            &#125;</span></span><br><span class="line"><span class="code">        &#125;,</span></span><br><span class="line"><span class="code">        indicator: [</span></span><br><span class="line"><span class="code">            &#123;name: &#x27;销售（Sales）&#x27;, max: 6500&#125;,</span></span><br><span class="line"><span class="code">            &#123;name: &#x27;管理（Adiministration）&#x27;, max: 16000&#125;,</span></span><br><span class="line"><span class="code">            &#123;name: &#x27;信息技术（Information Technology）&#x27;, max: 30000&#125;,</span></span><br><span class="line"><span class="code">            &#123;name: &#x27;客服（Customer Support）&#x27;, max: 38000&#125;,</span></span><br><span class="line"><span class="code">            &#123;name: &#x27;研发（Development）&#x27;, max: 52000&#125;,</span></span><br><span class="line"><span class="code">            &#123;name: &#x27;市场（Marketing）&#x27;, max: 25000&#125;</span></span><br><span class="line"><span class="code">        ]</span></span><br><span class="line"><span class="code">    &#125;,</span></span><br><span class="line"><span class="code">    series: [&#123;</span></span><br><span class="line"><span class="code">        name: &#x27;预算 vs 开销（Budget vs Spending）&#x27;,</span></span><br><span class="line"><span class="code">        type: &#x27;radar&#x27;,</span></span><br><span class="line"><span class="code">        // areaStyle: &#123;normal: &#123;&#125; &#125;,</span></span><br><span class="line"><span class="code">        data: [</span></span><br><span class="line"><span class="code">            &#123;</span></span><br><span class="line"><span class="code">                value: [4300, 10000, 28000, 35000, 50000, 19000],</span></span><br><span class="line"><span class="code">                name: &#x27;预算分配（Allocated Budget）&#x27;</span></span><br><span class="line"><span class="code">            &#125;,</span></span><br><span class="line"><span class="code">            &#123;</span></span><br><span class="line"><span class="code">                value: [5000, 14000, 28000, 31000, 42000, 21000],</span></span><br><span class="line"><span class="code">                name: &#x27;实际开销（Actual Spending）&#x27;</span></span><br><span class="line"><span class="code">            &#125;</span></span><br><span class="line"><span class="code">        ]</span></span><br><span class="line"><span class="code">    &#125;]</span></span><br><span class="line"><span class="code">&#125;;</span></span><br><span class="line"><span class="code">myChart2.setOption(option2);</span></span><br><span class="line"><span class="code">window.onresize=function()&#123;</span></span><br><span class="line"><span class="code">    myChart2.resize();</span></span><br><span class="line"><span class="code">&#125;</span></span><br><span class="line"><span class="code">&lt;/script&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+<h2 id="雷达图"><a href="#雷达图" class="headerlink" title="雷达图"></a>雷达图</h2><figure class="highlight md"><table><tr><td class="code"><pre><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;test2&quot;</span> <span class="attr">style</span>=<span class="string">&quot;width:100%;height:500px;&quot;</span>&gt;</span></span><span class="language-xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span><span class="attr">src</span>=<span class="string">&quot;/js/echarts.min.js&quot;</span>&gt;</span></span><span class="language-xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span><span class="attr">src</span>=<span class="string">&quot;/js/jquery.js&quot;</span>&gt;</span></span><span class="language-xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span>&gt;</span></span></span><br><span class="line">var myChart2 = echarts.init(document.getElementById(&quot;test2&quot;));</span><br><span class="line">option2 = &#123;</span><br><span class="line"><span class="code">    title: &#123;</span></span><br><span class="line"><span class="code">        text: &#x27;基础雷达图&#x27;</span></span><br><span class="line"><span class="code">    &#125;,</span></span><br><span class="line"><span class="code">    tooltip: &#123;&#125;,</span></span><br><span class="line"><span class="code">    legend: &#123;</span></span><br><span class="line"><span class="code">        data: [&#x27;预算分配（Allocated Budget）&#x27;, &#x27;实际开销（Actual Spending）&#x27;]</span></span><br><span class="line"><span class="code">    &#125;,</span></span><br><span class="line"><span class="code">    radar: &#123;</span></span><br><span class="line"><span class="code">        // shape: &#x27;circle&#x27;,</span></span><br><span class="line"><span class="code">        name: &#123;</span></span><br><span class="line"><span class="code">            textStyle: &#123;</span></span><br><span class="line"><span class="code">                color: &#x27;#fff&#x27;,</span></span><br><span class="line"><span class="code">                backgroundColor: &#x27;#999&#x27;,</span></span><br><span class="line"><span class="code">                borderRadius: 3,</span></span><br><span class="line"><span class="code">                padding: [3, 5]</span></span><br><span class="line"><span class="code">            &#125;</span></span><br><span class="line"><span class="code">        &#125;,</span></span><br><span class="line"><span class="code">        indicator: [</span></span><br><span class="line"><span class="code">            &#123;name: &#x27;销售（Sales）&#x27;, max: 6500&#125;,</span></span><br><span class="line"><span class="code">            &#123;name: &#x27;管理（Adiministration）&#x27;, max: 16000&#125;,</span></span><br><span class="line"><span class="code">            &#123;name: &#x27;信息技术（Information Technology）&#x27;, max: 30000&#125;,</span></span><br><span class="line"><span class="code">            &#123;name: &#x27;客服（Customer Support）&#x27;, max: 38000&#125;,</span></span><br><span class="line"><span class="code">            &#123;name: &#x27;研发（Development）&#x27;, max: 52000&#125;,</span></span><br><span class="line"><span class="code">            &#123;name: &#x27;市场（Marketing）&#x27;, max: 25000&#125;</span></span><br><span class="line"><span class="code">        ]</span></span><br><span class="line"><span class="code">    &#125;,</span></span><br><span class="line"><span class="code">    series: [&#123;</span></span><br><span class="line"><span class="code">        name: &#x27;预算 vs 开销（Budget vs Spending）&#x27;,</span></span><br><span class="line"><span class="code">        type: &#x27;radar&#x27;,</span></span><br><span class="line"><span class="code">        // areaStyle: &#123;normal: &#123;&#125; &#125;,</span></span><br><span class="line"><span class="code">        data: [</span></span><br><span class="line"><span class="code">            &#123;</span></span><br><span class="line"><span class="code">                value: [4300, 10000, 28000, 35000, 50000, 19000],</span></span><br><span class="line"><span class="code">                name: &#x27;预算分配（Allocated Budget）&#x27;</span></span><br><span class="line"><span class="code">            &#125;,</span></span><br><span class="line"><span class="code">            &#123;</span></span><br><span class="line"><span class="code">                value: [5000, 14000, 28000, 31000, 42000, 21000],</span></span><br><span class="line"><span class="code">                name: &#x27;实际开销（Actual Spending）&#x27;</span></span><br><span class="line"><span class="code">            &#125;</span></span><br><span class="line"><span class="code">        ]</span></span><br><span class="line"><span class="code">    &#125;]</span></span><br><span class="line"><span class="code">&#125;;</span></span><br><span class="line"><span class="code">myChart2.setOption(option2);</span></span><br><span class="line"><span class="code">window.onresize=function()&#123;</span></span><br><span class="line"><span class="code">    myChart2.resize();</span></span><br><span class="line"><span class="code">&#125;</span></span><br><span class="line"><span class="code">&lt;/script&gt;</span></span><br></pre></td></tr></table></figure>
+
 <div id="test2" style="width:100%;height:500px;"></div>
 <script type="text/javascript" src="/js/echarts.min.js"></script>
 <script type="text/javascript" src="/js/jquery.js"></script>
@@ -3901,8 +3918,11 @@ window.onresize=function(){
     myChart2.resize();
 }
 </script>
-<h1 id="参考资料"><a class="header-anchor" href="#参考资料"></a>参考资料</h1>
-<ul>
+
+
+
+
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
 <li><a href="https://underdream.github.io/post/writing/hexo/embed-echarts-in-hexo/">在Hexo博客中使用ECharts来画图</a></li>
 <li><a href="https://blog.csdn.net/qq_41426117/article/details/105416911">如何在hexo主题里用echarts写思维导图</a></li>
 <li><a href="https://kchen.cc/2016/11/05/echarts-in-hexo/">在Hexo中插入ECharts动态图表</a></li>
@@ -4921,45 +4941,45 @@ eg2：可以使用“今天的体重与昨天的体重的差值/目标值”作�
     <url>/Tool-Markdown.html</url>
     <content><![CDATA[<center></center>
 <span id="more"></span>
-<h1 id="标题"><a class="header-anchor" href="#标题"></a>标题</h1>
-<p>井号键<code>#</code>（N个代表N级标题） +<code> </code>（空格）+ <code>标题内容</code></p>
+
+<meta name="referrer" content="no-referrer">
+
+<h1 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h1><p>井号键<code>#</code>（N个代表N级标题） +<code> </code>（空格）+ <code>标题内容</code></p>
 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="section"># 一级标题</span></span><br><span class="line"><span class="section">## 二级标题</span></span><br><span class="line"><span class="section">### 三级标题</span></span><br></pre></td></tr></table></figure>
-<h2 id="二级标题"><a class="header-anchor" href="#二级标题"></a>二级标题</h2>
-<p>示范<code>## 二级标题的效果</code></p>
-<h1 id="正文"><a class="header-anchor" href="#正文"></a>正文</h1>
-<h2 id="加粗"><a class="header-anchor" href="#加粗"></a>加粗</h2>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="strong">**加粗的内容**</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><p>示范<code>## 二级标题的效果</code></p>
+<h1 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h1><h2 id="加粗"><a href="#加粗" class="headerlink" title="加粗"></a>加粗</h2><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="strong">**加粗的内容**</span></span><br></pre></td></tr></table></figure>
+
 <p>效果：<strong>加粗的内容</strong></p>
-<h2 id="下划线"><a class="header-anchor" href="#下划线"></a>下划线</h2>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">u</span>&gt;</span></span>需要下划线的内容<span class="language-xml"><span class="tag">&lt;/<span class="name">u</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+<h2 id="下划线"><a href="#下划线" class="headerlink" title="下划线"></a>下划线</h2><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">u</span>&gt;</span></span>需要下划线的内容<span class="language-xml"><span class="tag">&lt;/<span class="name">u</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
 <p>效果：<u>需要下划线的内容</u></p>
-<h2 id="删除线"><a class="header-anchor" href="#删除线"></a>删除线</h2>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">~~需要加删除线的内容~~</span><br></pre></td></tr></table></figure>
-<p>效果：<s>需要加删除线的内容</s></p>
-<h2 id="引用"><a class="header-anchor" href="#引用"></a>引用</h2>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="quote">&gt; 引用的内容</span></span><br></pre></td></tr></table></figure>
+<h2 id="删除线"><a href="#删除线" class="headerlink" title="删除线"></a>删除线</h2><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">~~需要加删除线的内容~~</span><br></pre></td></tr></table></figure>
+
+<p>效果：<del>需要加删除线的内容</del></p>
+<h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="quote">&gt; 引用的内容</span></span><br></pre></td></tr></table></figure>
+
 <p>效果：</p>
 <blockquote>
 <p>引用的内容</p>
 </blockquote>
-<h2 id="超链接"><a class="header-anchor" href="#超链接"></a>超链接</h2>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">[<span class="string">显示的名称</span>](<span class="link">链接</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="超链接"><a href="#超链接" class="headerlink" title="超链接"></a>超链接</h2><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">[<span class="string">显示的名称</span>](<span class="link">链接</span>)</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>点击即可跳转</p>
 </blockquote>
 <p>效果：<a href="https://shootingwang.github.io/">点击即可跳转到首页</a></p>
-<h2 id="列表"><a class="header-anchor" href="#列表"></a>列表</h2>
-<h3 id="有序列表"><a class="header-anchor" href="#有序列表"></a>有序列表</h3>
-<p><code>1.</code> + 空格 + 内容</p>
+<h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><h3 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h3><p><code>1.</code> + 空格 + 内容</p>
 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="bullet">1.</span> 第一个item内容</span><br><span class="line"><span class="bullet">2.</span> 第二个item内容</span><br></pre></td></tr></table></figure>
+
 <p>效果：</p>
 <ol>
 <li>第一个item内容</li>
 <li>第二个item内容</li>
 </ol>
-<h3 id="无序列表"><a class="header-anchor" href="#无序列表"></a>无序列表</h3>
-<p><code>-</code> + 空格 + 内容 或<code>*</code> + 空格 + 内容</p>
+<h3 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h3><p><code>-</code> + 空格 + 内容 或<code>*</code> + 空格 + 内容</p>
 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="bullet">-</span> 第一个内容</span><br><span class="line"><span class="bullet">-</span> 第二个内容</span><br><span class="line"><span class="bullet">*</span> 第三个内容</span><br></pre></td></tr></table></figure>
+
 <p>效果：</p>
 <ul>
 <li>第一个内容</li>
@@ -4971,20 +4991,22 @@ eg2：可以使用“今天的体重与昨天的体重的差值/目标值”作�
 <blockquote>
 <p>通过缩进可以嵌套多层列表</p>
 </blockquote>
-<h1 id="公式"><a class="header-anchor" href="#公式"></a>公式</h1>
-<h2 id="行内公式"><a class="header-anchor" href="#行内公式"></a>行内公式</h2>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">$...$</span><br></pre></td></tr></table></figure>
+<h1 id="公式"><a href="#公式" class="headerlink" title="公式"></a>公式</h1><h2 id="行内公式"><a href="#行内公式" class="headerlink" title="行内公式"></a>行内公式</h2><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">$...$</span><br></pre></td></tr></table></figure>
+
 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">From [<span class="string">Wiki: Lasso</span>](<span class="link">https://en.wikipedia.org/wiki/Lasso_(statistics</span>)):</span><br><span class="line">Consider a sample consisting of $N$ cases, each of which consists of $p$ covariates and a single outcome. Let $y<span class="emphasis">_&#123;i&#125;$ be the outcome and $x_</span>&#123;i&#125;:=(x<span class="emphasis">_&#123;1&#125;,x_</span>&#123;2&#125;,\ldots ,x<span class="emphasis">_&#123;p&#125;)^&#123;T&#125;$ be the covariate vector for the ith case. Then the objective of lasso is to solve</span></span><br><span class="line"><span class="emphasis">$$\min_</span>&#123;\beta<span class="emphasis">_0, \beta&#125; \left\&#123; \sum_</span>&#123;i=1&#125;^N (y<span class="emphasis">_i - \beta_</span>0 - x<span class="emphasis">_i^T \beta)^2 \right\&#125; \quad \mathrm&#123;subject\, to &#125; \sum_</span>&#123;j=1&#125;^p |\beta<span class="emphasis">_j|\leq t.$$</span></span><br></pre></td></tr></table></figure>
-<p>效果：<br>
-From <a href="https://en.wikipedia.org/wiki/Lasso_(statistics)">Wiki: Lasso</a>:<br>
-Consider a sample consisting of $N$ cases, each of which consists of $p$ covariates and a single outcome. Let $y_{i}$ be the outcome and $x_{i}:=(x_{1},x_{2},\ldots ,x_{p})^{T}$ be the covariate vector for the ith case. Then the objective of lasso is to solve</p>
+
+<p>效果：<br>From <a href="https://en.wikipedia.org/wiki/Lasso_(statistics)">Wiki: Lasso</a>:<br>Consider a sample consisting of $N$ cases, each of which consists of $p$ covariates and a single outcome. Let $y_{i}$ be the outcome and $x_{i}:=(x_{1},x_{2},\ldots ,x_{p})^{T}$ be the covariate vector for the ith case. Then the objective of lasso is to solve</p>
 <p>$$\min_{\beta_0, \beta} \left{ \sum_{i=1}^N (y_i - \beta_0 - x_i^T \beta)^2 \right} \quad \mathrm{subject, to } \sum_{j=1}^p |\beta_j|\leq t.$$</p>
 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+
 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+
 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+
+
 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
-<h1 id="参考资料"><a class="header-anchor" href="#参考资料"></a>参考资料</h1>
-]]></content>
+
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1>]]></content>
       <categories>
         <category>Everything</category>
       </categories>
@@ -5861,33 +5883,29 @@ $$P_{\lambda, \gamma}(\beta) = \sum_{j=1}^p \rho(\parallel\beta_j\parallel_2; \s
     <url>/Tool-Word%E8%AE%BA%E6%96%87%E6%8E%92%E7%89%88.html</url>
     <content><![CDATA[<center></center>
 <span id="more"></span>
-<h1 id="目录"><a class="header-anchor" href="#目录"></a>目录</h1>
-<ul>
-<li><strong>自定义目录，并填充省略号等引导符</strong>：输入章节文字，全选，单击右键，选择【段落】——【制表位】
-<ul>
+
+<meta name="referrer" content="no-referrer">
+
+<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><ul>
+<li><strong>自定义目录，并填充省略号等引导符</strong>：输入章节文字，全选，单击右键，选择【段落】——【制表位】<ul>
 <li>【制表位】 填写页码右侧的制表位，可填写34.26字符，可根据效果调整数值</li>
 <li>【对齐方式】 选择“右”</li>
 <li>【引导符】 一般选择第3种或第5种</li>
 </ul>
 </li>
-<li><strong>自定义目录，插入页码</strong>：将鼠标定位在前一步骤产生的引导符后，点击【引用】——【交叉引用】
-<ul>
+<li><strong>自定义目录，插入页码</strong>：将鼠标定位在前一步骤产生的引导符后，点击【引用】——【交叉引用】<ul>
 <li>【引用类型】 选择“标题”</li>
 <li>【引用内容】 选择“页码”</li>
 <li>点击【插入】——【关闭】即可</li>
 </ul>
 </li>
 </ul>
-<h1 id="章节"><a class="header-anchor" href="#章节"></a>章节</h1>
-<ul>
+<h1 id="章节"><a href="#章节" class="headerlink" title="章节"></a>章节</h1><ul>
 <li><strong>新章从奇数页开始</strong>：将鼠标定位在上一章的结尾，点击【布局】——【分隔符】——【奇数页】（插入分节符并在下一奇数页上开始新节）</li>
 </ul>
-<h1 id="正文"><a class="header-anchor" href="#正文"></a>正文</h1>
-<h2 id="表格"><a class="header-anchor" href="#表格"></a>表格</h2>
-<ul>
+<h1 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h1><h2 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h2><ul>
 <li>通常情况下，表格上下方与正文均需隔一行空行</li>
-<li><strong>插入表标题</strong>：选中表格，点击【引用】——【插入题注】
-<ul>
+<li><strong>插入表标题</strong>：选中表格，点击【引用】——【插入题注】<ul>
 <li>【标签】选择需要的标题前缀，如“表格”、“公式”、“图表”等，如果不存在想要的标签，可以点击【新建标签】新建标签</li>
 <li>【位置】选择标题置于表格上方或下方，一般选择“所选项目上方”</li>
 <li>【编号】设置表格编号的格式</li>
@@ -5895,28 +5913,22 @@ $$P_{\lambda, \gamma}(\beta) = \sum_{j=1}^p \rho(\parallel\beta_j\parallel_2; \s
 </li>
 <li><strong>切分表格第一个单元格</strong>：选择第一个单元格，点击【开始】——【边框】选择“斜下框线”，然后在该单元格 先“右对齐”输入列标题，然后回车，“左对齐”输入行标题</li>
 </ul>
-<h2 id="脚注"><a class="header-anchor" href="#脚注"></a>脚注</h2>
-<ul>
+<h2 id="脚注"><a href="#脚注" class="headerlink" title="脚注"></a>脚注</h2><ul>
 <li><strong>插入脚注</strong>：将鼠标定位到要插入脚注的地方，点击【引用】——【插入脚注】，即可。</li>
 <li><strong>修改脚注格式</strong>：右键点击脚注内容，选择【脚注】，修改脚注的【编号格式】、【起始编号】、【应用更改】（确定该更改应用的范围）等</li>
 <li><strong>脚注分隔符取消缩进</strong>：在【视图】中选择“草稿视图”，然后在【引用】中选择“显示备注”，Word下方即出现“脚注编辑框”，单选框中下拉选择“脚注分隔符”，然后将光标置于脚注分隔符前方，删除脚注分隔符前面的空格。最后，在【视图】中选择“页眉视图”恢复页面视图。</li>
 </ul>
-<h2 id="公式"><a class="header-anchor" href="#公式"></a>公式</h2>
-<h3 id="插入公式"><a class="header-anchor" href="#插入公式"></a>插入公式</h3>
-<p>【插入】——【公式】——编辑公式</p>
+<h2 id="公式"><a href="#公式" class="headerlink" title="公式"></a>公式</h2><h3 id="插入公式"><a href="#插入公式" class="headerlink" title="插入公式"></a>插入公式</h3><p>【插入】——【公式】——编辑公式</p>
 <ul>
 <li>快捷键：<code>Alt</code> + <code>+=</code>（Windows）</li>
 </ul>
-<h3 id="自动编号"><a class="header-anchor" href="#自动编号"></a>自动编号</h3>
-<p>将光标置于<strong>公式内</strong>的末尾，输入<code>#()</code>，然后将光标置于括号内，点击【插入】——【插入域】：</p>
+<h3 id="自动编号"><a href="#自动编号" class="headerlink" title="自动编号"></a>自动编号</h3><p>将光标置于<strong>公式内</strong>的末尾，输入<code>#()</code>，然后将光标置于括号内，点击【插入】——【插入域】：</p>
 <ul>
 <li>【类别】选择“编号”</li>
 <li>【域名】选择“AutoNum”</li>
-<li>【选项】选择目标数字格式<br>
-点击【确认】即可。</li>
+<li>【选项】选择目标数字格式<br>点击【确认】即可。</li>
 </ul>
-<h3 id="分章节“半”自动编号"><a class="header-anchor" href="#分章节“半”自动编号"></a>分章节“半”自动编号</h3>
-<blockquote>
+<h3 id="分章节“半”自动编号"><a href="#分章节“半”自动编号" class="headerlink" title="分章节“半”自动编号"></a>分章节“半”自动编号</h3><blockquote>
 <p>章序号是“第三章”等中文，而公式中的“分章节编号”要求全数字编号（如<code>3.1</code>）</p>
 </blockquote>
 <p><strong>方式一</strong>：</p>
@@ -5939,37 +5951,25 @@ $$P_{\lambda, \gamma}(\beta) = \sum_{j=1}^p \rho(\parallel\beta_j\parallel_2; \s
 <ul>
 <li>方法二更为便捷</li>
 </ul>
-<h3 id="等号对齐"><a class="header-anchor" href="#等号对齐"></a>等号对齐</h3>
-<ol>
+<h3 id="等号对齐"><a href="#等号对齐" class="headerlink" title="等号对齐"></a>等号对齐</h3><ol>
 <li>编辑公式，在需要换行的地方，<code>Shift</code>+<code>Enter</code>，则会出现一个下箭头</li>
 <li>在需要对齐的等号或其他运算符号左边，单击右键，选择【公式对齐方式】（MacOS）即可</li>
 </ol>
-<h2 id="符号"><a class="header-anchor" href="#符号"></a>符号</h2>
-<h3 id="罗马数字"><a class="header-anchor" href="#罗马数字"></a>罗马数字</h3>
-<p>【插入】——【数字】——【数字】填写需要的数字——【编号类型】选择罗马数字</p>
-<h1 id="页眉"><a class="header-anchor" href="#页眉"></a>页眉</h1>
-<ul>
+<h2 id="符号"><a href="#符号" class="headerlink" title="符号"></a>符号</h2><h3 id="罗马数字"><a href="#罗马数字" class="headerlink" title="罗马数字"></a>罗马数字</h3><p>【插入】——【数字】——【数字】填写需要的数字——【编号类型】选择罗马数字</p>
+<h1 id="页眉"><a href="#页眉" class="headerlink" title="页眉"></a>页眉</h1><ul>
 <li><strong>去掉页眉中的横线</strong>：全选页眉的文字或换行符，点击【开始】——边框选择“无框线”</li>
 <li><strong>偶数页页眉显示论文标题</strong>：</li>
 <li><strong>奇数页页眉显示当前章节标题</strong>：双击奇数页页眉的位置，勾选【奇偶页不同】，点击【域】，【域名】中选中“StyleRef”，点击【选项】——【样式】——选择【标题1】——【添加到域】，单击【确认】即可</li>
 </ul>
-<h1 id="页码"><a class="header-anchor" href="#页码"></a>页码</h1>
-<ul>
+<h1 id="页码"><a href="#页码" class="headerlink" title="页码"></a>页码</h1><ul>
 <li><strong>插入页码</strong>：点击【插入】——【页码】</li>
 </ul>
-<h1 id="导出为pdf"><a class="header-anchor" href="#导出为pdf"></a>导出为pdf</h1>
-<h2 id="Windows"><a class="header-anchor" href="#Windows"></a>Windows</h2>
-<p>单击【文件】——【导出】——【创建PDF\XPS文档】——【创建PDF\XPS】，命名，保存即可</p>
-<h2 id="MacOS"><a class="header-anchor" href="#MacOS"></a>MacOS</h2>
-<p>单击【文件】——【另存为】——【文件格式】选择（导出格式）“PDF”，命名，保存即可</p>
-<h1 id="参考文献"><a class="header-anchor" href="#参考文献"></a>参考文献</h1>
-<blockquote>
+<h1 id="导出为pdf"><a href="#导出为pdf" class="headerlink" title="导出为pdf"></a>导出为pdf</h1><h2 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h2><p>单击【文件】——【导出】——【创建PDF\XPS文档】——【创建PDF\XPS】，命名，保存即可</p>
+<h2 id="MacOS"><a href="#MacOS" class="headerlink" title="MacOS"></a>MacOS</h2><p>单击【文件】——【另存为】——【文件格式】选择（导出格式）“PDF”，命名，保存即可</p>
+<h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><blockquote>
 <p>推荐使用<a href="https://www.endnote.com/">EndNote</a>进行参考文献的插入、管理</p>
 </blockquote>
-<h1 id="EndNote"><a class="header-anchor" href="#EndNote"></a>EndNote</h1>
-<h2 id="Output-Style"><a class="header-anchor" href="#Output-Style"></a>Output Style</h2>
-<h3 id="安装"><a class="header-anchor" href="#安装"></a>安装</h3>
-<p>在Endnote官网可以查找并下载需要的Output Style格式文件。</p>
+<h1 id="EndNote"><a href="#EndNote" class="headerlink" title="EndNote"></a>EndNote</h1><h2 id="Output-Style"><a href="#Output-Style" class="headerlink" title="Output Style"></a>Output Style</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>在Endnote官网可以查找并下载需要的Output Style格式文件。</p>
 <blockquote>
 <p>网址：<a href="https://endnote.com/downloads/styles/">https://endnote.com/downloads/styles/</a></p>
 </blockquote>
@@ -5984,8 +5984,7 @@ $$P_{\lambda, \gamma}(\beta) = \sum_{j=1}^p \rho(\parallel\beta_j\parallel_2; \s
 <p>例：查找、下载并安装GB/T 7714格式文件</p>
 <ul>
 <li>在【Keyword】中输入“GB”，并搜索</li>
-<li>得到两个搜索结果：
-<ul>
+<li>得到两个搜索结果：<ul>
 <li>Chinese Standard GBT7714 (numeric)</li>
 <li>Chinese Standard GBT7714 (Author-Year)</li>
 </ul>
@@ -5996,23 +5995,19 @@ $$P_{\lambda, \gamma}(\beta) = \sum_{j=1}^p \rho(\parallel\beta_j\parallel_2; \s
 <li>点击【File】选择【Close Style】关闭文件</li>
 </ul>
 </blockquote>
-<h3 id="使用"><a class="header-anchor" href="#使用"></a>使用</h3>
-<p>点击【Edit】——【Output Styles】——【Open Style Manager】，打开Output Styles管理器。</p>
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><p>点击【Edit】——【Output Styles】——【Open Style Manager】，打开Output Styles管理器。</p>
 <ul>
 <li>找到目标格式文件，勾选，则这些格式文件会显示在【Output Styles】中</li>
 <li>在【Edit】——【Output Styles】中选择想要使用的格式文件</li>
 </ul>
-<h3 id="编辑"><a class="header-anchor" href="#编辑"></a>编辑</h3>
-<p>有些既有的格式文件并不能完全满足我们的格式要求，这时就需要手动编辑/修改格式文件。</p>
+<h3 id="编辑"><a href="#编辑" class="headerlink" title="编辑"></a>编辑</h3><p>有些既有的格式文件并不能完全满足我们的格式要求，这时就需要手动编辑/修改格式文件。</p>
 <blockquote>
 <p>点击【Edit】——【Output Styles】——【Edit “你选择的Style名称”】，打开Style编辑器</p>
 </blockquote>
 <ul>
-<li><strong>Citations</strong>：
-<ul>
+<li><strong>Citations</strong>：<ul>
 <li>Templates：修改引用格式</li>
-<li>Ambiguous Citations：引用不同文献、但引用文本一模一样时，如何区分文献
-<ul>
+<li>Ambiguous Citations：引用不同文献、但引用文本一模一样时，如何区分文献<ul>
 <li>Add the title for different works by the same author：同一作者的不同文献引用中添加文献标题（可选<code>Full Title</code>或<code>Short Title</code>）</li>
 <li>Add a letter after the year：在年份后添加a, b, c等字母区分（如：<code>2012a</code>、<code>2012b</code>）</li>
 </ul>
@@ -6020,16 +6015,13 @@ $$P_{\lambda, \gamma}(\beta) = \sum_{j=1}^p \rho(\parallel\beta_j\parallel_2; \s
 </ul>
 </li>
 </ul>
-<h3 id="GBT-7714-2015格式调整"><a class="header-anchor" href="#GBT-7714-2015格式调整"></a>GBT 7714-2015格式调整</h3>
-<p>从Endnote官网下载的GB/T 7714格式文件中的格式并不完全符合<a href="http://www.doc88.com/p-1136638747314.html">GB/T 7714-2015</a>的要求。</p>
+<h3 id="GBT-7714-2015格式调整"><a href="#GBT-7714-2015格式调整" class="headerlink" title="GBT 7714-2015格式调整"></a>GBT 7714-2015格式调整</h3><p>从Endnote官网下载的GB/T 7714格式文件中的格式并不完全符合<a href="http://www.doc88.com/p-1136638747314.html">GB/T 7714-2015</a>的要求。</p>
 <p>numeric版本：</p>
 <ul>
 <li><strong>Page Numbers</strong>：修改文献列表中页码的格式，选择<code>Show the full range of pages(e.g. 123-125)</code>，完全显示起始页码</li>
 <li><strong>Journal Names</strong>：<code>Journal Name Format</code>选择<code>Use full journal name</code></li>
-<li><strong>Citations</strong>：修改引用格式
-<ul>
-<li>Author Lists：
-<ul>
+<li><strong>Citations</strong>：修改引用格式<ul>
+<li>Author Lists：<ul>
 <li>将Author Separators中的<code>before last</code>、<code>before last in format: Author(Year)</code>的<code>and</code>改为<code>和</code></li>
 <li>Abbreviated Author List - First Appearance：选择第二种—— If <code>3</code> or more authors, list the first <code>1</code> author(s) and abbreviated with: <code>等</code>（若文献作者数大于等于3个，则只显示第一作者并以“等”结尾）</li>
 <li>Abbreviated Author List - Subsequent Appearances：选择第二种—— If <code>3</code> or more authors, list the first <code>1</code> author(s) and abbreviated with: <code>等</code></li>
@@ -6040,40 +6032,34 @@ $$P_{\lambda, \gamma}(\beta) = \sum_{j=1}^p \rho(\parallel\beta_j\parallel_2; \s
 </li>
 <li><strong>Bibliography</strong>：</li>
 </ul>
-<h2 id="下载引用文本"><a class="header-anchor" href="#下载引用文本"></a>下载引用文本</h2>
-<p>如何下载引用文本：</p>
+<h2 id="下载引用文本"><a href="#下载引用文本" class="headerlink" title="下载引用文本"></a>下载引用文本</h2><p>如何下载引用文本：</p>
 <ul>
-<li><a href="https://xueshu.baidu.com">百度学术</a>：搜索目标文献，点击【引用】，选择引用格式，点击【导入链接】中的“EndNote”，即可下载.enw格式的引用文本</li>
+<li><a href="https://xueshu.baidu.com/">百度学术</a>：搜索目标文献，点击【引用】，选择引用格式，点击【导入链接】中的“EndNote”，即可下载.enw格式的引用文本</li>
 <li>知网：点击【引用】——【更多引用格式】——【文献导出格式】选择“EndNote”——【导出】，即可下载.txt格式的引用文本</li>
 </ul>
-<h2 id="导入引用文本"><a class="header-anchor" href="#导入引用文本"></a>导入引用文本</h2>
-<p>点击【File】——【Import】，选择前面下载的引用文本文件，单击【Options】，修改【Import Options】，然后点击“Import”即可。</p>
+<h2 id="导入引用文本"><a href="#导入引用文本" class="headerlink" title="导入引用文本"></a>导入引用文本</h2><p>点击【File】——【Import】，选择前面下载的引用文本文件，单击【Options】，修改【Import Options】，然后点击“Import”即可。</p>
 <table>
 <thead>
 <tr>
-<th style="text-align:center">引用文本文件格式</th>
-<th style="text-align:left"><code>Import Options</code>选项设置</th>
+<th align="center">引用文本文件格式</th>
+<th align="left"><code>Import Options</code>选项设置</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:center">.txt</td>
-<td style="text-align:left">Tab Delimited</td>
+<tbody><tr>
+<td align="center">.txt</td>
+<td align="left">Tab Delimited</td>
 </tr>
 <tr>
-<td style="text-align:center">.enw</td>
-<td style="text-align:left">EndNote Import</td>
+<td align="center">.enw</td>
+<td align="left">EndNote Import</td>
 </tr>
 <tr>
-<td style="text-align:center">.ris</td>
-<td style="text-align:left">Reference Manager(RIS)</td>
+<td align="center">.ris</td>
+<td align="left">Reference Manager(RIS)</td>
 </tr>
-</tbody>
-</table>
-<h2 id="同步Library"><a class="header-anchor" href="#同步Library"></a>同步Library</h2>
-<p>单击图标“循环转圈圈”【Sync Library】，同步本地内容到online</p>
-<h2 id="Attach-PDF"><a class="header-anchor" href="#Attach-PDF"></a>Attach PDF</h2>
-<p>将PDF与Reference连接到一起，便于根据Reference列表查找、阅读文献。鼠标选中目标Reference条目，单击“回形针”图标【Attach PDF】，选择本地PDF文件，即可将PDF绑定到相应的Reference条目。</p>
+</tbody></table>
+<h2 id="同步Library"><a href="#同步Library" class="headerlink" title="同步Library"></a>同步Library</h2><p>单击图标“循环转圈圈”【Sync Library】，同步本地内容到online</p>
+<h2 id="Attach-PDF"><a href="#Attach-PDF" class="headerlink" title="Attach PDF"></a>Attach PDF</h2><p>将PDF与Reference连接到一起，便于根据Reference列表查找、阅读文献。鼠标选中目标Reference条目，单击“回形针”图标【Attach PDF】，选择本地PDF文件，即可将PDF绑定到相应的Reference条目。</p>
 <blockquote>
 <ul>
 <li>记得保存 并 及时Sync 哦~</li>
@@ -6082,9 +6068,8 @@ $$P_{\lambda, \gamma}(\beta) = \sum_{j=1}^p \rho(\parallel\beta_j\parallel_2; \s
 <ul>
 <li>在EndNote中阅读文件，可以使用编辑工具进行高亮注释、添加文本注释等，非常方便呢</li>
 </ul>
-<h1 id="参考资料"><a class="header-anchor" href="#参考资料"></a>参考资料</h1>
-<ul>
-<li><a href="https://wenku.baidu.com/view/6b94d6a3b14e852458fb57bb?pcf=2&amp;bfetype=new&amp;bfetype=new">如何设置硕士论文格式+奇偶页眉+页码+目录+三线表</a></li>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
+<li><a href="https://wenku.baidu.com/view/6b94d6a3b14e852458fb57bb?pcf=2&bfetype=new&bfetype=new">如何设置硕士论文格式+奇偶页眉+页码+目录+三线表</a></li>
 </ul>
 ]]></content>
       <categories>
@@ -27427,14 +27412,16 @@ $l$一般不为整数，可以取与$l$最接近的整数代替之。</li>
     <title>统计学 | 假设检验 Hypothesis Testing</title>
     <url>/Statistics-HypothesisTesting.html</url>
     <content><![CDATA[<center></center>
+
 <span id="more"></span>
-<h1 id="假设检验"><a class="header-anchor" href="#假设检验"></a>假设检验</h1>
-<p>什么是假设检验？</p>
+
+<meta name="referrer" content="no-referrer">
+
+<h1 id="假设检验"><a href="#假设检验" class="headerlink" title="假设检验"></a>假设检验</h1><p>什么是假设检验？</p>
 <blockquote>
 <p>假设检验是用来判断样本与样本、样本与总体的误差是由抽样误差引起还是本质差别造成的统计推断方法。</p>
 </blockquote>
-<h2 id="基本步骤"><a class="header-anchor" href="#基本步骤"></a>基本步骤</h2>
-<ol>
+<h2 id="基本步骤"><a href="#基本步骤" class="headerlink" title="基本步骤"></a>基本步骤</h2><ol>
 <li>建立假设</li>
 <li>选择检验统计量，给出拒绝域形式</li>
 <li>选择显著性水平</li>
@@ -27442,27 +27429,20 @@ $l$一般不为整数，可以取与$l$最接近的整数代替之。</li>
 <li>作出判断</li>
 </ol>
 <div class="note warning">
-            <h2 id="参数假设检验"><a class="header-anchor" href="#参数假设检验"></a>参数假设检验</h2><p>考虑来自某个参数分布族${F(x,\theta)|\theta\in \Theta}$的样本$x_1,\cdots,x_n$，其中$\Theta$为参数空间。</p><ul><li>设$\Theta_0\subset \Theta$，且$\Theta_0\neq \emptyset $</li><li>设$\Theta_1\subset \Theta$，$\Theta_0\cap \Theta_1=\emptyset$（一般是$\Theta_1=\Theta-\Theta_0=\Theta_0^c$）</li></ul><p>则命题<br>$$H_0:\theta\in \Theta_0$$<br>称为一个<strong>假设</strong>或<strong>原假设</strong>或<strong>零假设</strong>（null hypothesis）。</p><p>命题<br>$$H_1:\theta\in\Theta_1$$<br>称为$H_0$的<strong>对立假设</strong>或<strong>备择假设</strong>（alternative hypothesis）。</p><p>$$H_0:\theta\in \Theta_0\quad \mathrm{vs} \quad H_1:\theta\in \Theta_1$$</p>
+            <h2 id="参数假设检验"><a href="#参数假设检验" class="headerlink" title="参数假设检验"></a>参数假设检验</h2><p>考虑来自某个参数分布族${F(x,\theta)|\theta\in \Theta}$的样本$x_1,\cdots,x_n$，其中$\Theta$为参数空间。</p><ul><li>设$\Theta_0\subset \Theta$，且$\Theta_0\neq \emptyset $</li><li>设$\Theta_1\subset \Theta$，$\Theta_0\cap \Theta_1=\emptyset$（一般是$\Theta_1=\Theta-\Theta_0=\Theta_0^c$）</li></ul><p>则命题<br>$$H_0:\theta\in \Theta_0$$<br>称为一个<strong>假设</strong>或<strong>原假设</strong>或<strong>零假设</strong>（null hypothesis）。</p><p>命题<br>$$H_1:\theta\in\Theta_1$$<br>称为$H_0$的<strong>对立假设</strong>或<strong>备择假设</strong>（alternative hypothesis）。</p><p>$$H_0:\theta\in \Theta_0\quad \mathrm{vs} \quad H_1:\theta\in \Theta_1$$</p>
           </div>
+
 <ol>
-<li><strong>双侧假设</strong>/<strong>双边假设</strong>：如<br>
-$$H_0:\theta=\theta_0\quad \mathrm{vs} \quad H_1:\theta\neq\theta_0$$</li>
-<li><strong>单侧假设</strong>/<strong>单边假设</strong>：如<br>
-$$H_0:\theta=\theta_0\quad \mathrm{vs} \quad H_1:\theta&gt;\theta_0$$<br>
-或<br>
-$$H_0:\theta=\theta_0\quad \mathrm{vs} \quad H_1:\theta&lt;\theta_0$$<br>
-或<br>
-$$H_0:\theta\geq\theta_0\quad \mathrm{vs} \quad H_1:\theta&lt;\theta_0$$</li>
+<li><strong>双侧假设</strong>/<strong>双边假设</strong>：如<br>  $$H_0:\theta=\theta_0\quad \mathrm{vs} \quad H_1:\theta\neq\theta_0$$</li>
+<li><strong>单侧假设</strong>/<strong>单边假设</strong>：如<br>  $$H_0:\theta=\theta_0\quad \mathrm{vs} \quad H_1:\theta&gt;\theta_0$$<br>  或<br>  $$H_0:\theta=\theta_0\quad \mathrm{vs} \quad H_1:\theta&lt;\theta_0$$<br>  或<br>  $$H_0:\theta\geq\theta_0\quad \mathrm{vs} \quad H_1:\theta&lt;\theta_0$$</li>
 </ol>
 <p><strong>检验</strong>假设即给出一个法则，按照法则根据给定的样本，决定接受$H_0$还是拒绝$H_0$，等价于把样本空间划分为互不相交的部分</p>
 <ol>
-<li><strong>拒绝域</strong>：$W$
-<ul>
+<li><strong>拒绝域</strong>：$W$<ul>
 <li>当样本属于$W$时，拒绝$H_0$</li>
 </ul>
 </li>
-<li><strong>接受域</strong>：$\bar{W}$
-<ul>
+<li><strong>接受域</strong>：$\bar{W}$<ul>
 <li>当样本属于$\bar{W}$时，接受$H_0$</li>
 </ul>
 </li>
@@ -27471,6 +27451,7 @@ $$H_0:\theta\geq\theta_0\quad \mathrm{vs} \quad H_1:\theta&lt;\theta_0$$</li>
 <div class="note default">
             <p>若以样本均值$\bar{x}$为检验统计量，则检验假设<br>$$H_0:\mu\geq 10\quad \mathrm{vs} \quad H_1:\mu&lt;10$$<br>的拒绝域为<br>$$W={(x_1,\cdots,x_n)|\bar{x}\leq c}={\overline{x}\leq c}$$<br>其中$c$为临界值（待定；根据检验统计量的分布、假设检验的置信水平确定）。</p>
           </div>
+
 <ul>
 <li>如果$(x_1,\cdots,x_n)\in W$，则拒绝$H_0$</li>
 <li>如果$(x_1,\cdots,x_n)\in \overline{W}$，则接受$H_0$</li>
@@ -27484,27 +27465,20 @@ $$H_0:\theta\geq\theta_0\quad \mathrm{vs} \quad H_1:\theta&lt;\theta_0$$</li>
 <li>一个检验法则也唯一确定一个拒绝域</li>
 </ul>
 <div class="note warning">
-            <h2 id="错误"><a class="header-anchor" href="#错误"></a>错误</h2><p>假设检验的两类错误</p><ul><li><strong>第一类错误</strong>（type Ⅰ Error）/ <strong>拒真错误</strong> / 错误拒绝 / false positive<br>$H_0$ is true but reject $H_0$</li></ul><p>犯第一类错误概率：<br>$$\alpha=P(X\in W|H_0)$$</p><ul><li><strong>第二类错误</strong>（type Ⅱ Error）/ <strong>取伪错误</strong> / 错误接受<br>$H_0$ is not true but accept $H_0$</li></ul><p>犯第二类错误概率：<br>$$\beta=P(X\in \overline{W}|H_1)$$</p>
+            <h2 id="错误"><a href="#错误" class="headerlink" title="错误"></a>错误</h2><p>假设检验的两类错误</p><ul><li><p><strong>第一类错误</strong>（type Ⅰ Error）/ <strong>拒真错误</strong> / 错误拒绝 / false positive<br>$H_0$ is true but reject $H_0$</p><p>犯第一类错误概率：<br>$$\alpha=P(X\in W|H_0)$$ </p></li><li><p><strong>第二类错误</strong>（type Ⅱ Error）/ <strong>取伪错误</strong> / 错误接受<br>$H_0$ is not true but accept $H_0$</p><p>犯第二类错误概率：<br>$$\beta=P(X\in \overline{W}|H_1)$$</p></li></ul>
           </div>
+
 <p>无法找到一个检验使得犯两类错误的概率都尽可能地小。</p>
 <div class="note warning">
-            <h2 id="势函数-功效（power）"><a class="header-anchor" href="#势函数-功效（power）"></a>势函数/功效（power）</h2><p>检验问题<br>$$H_0:\theta\in \Theta_0\quad \mathrm{vs} \quad H_1:\theta\in \Theta_1$$<br>的拒绝域为$W$，则样本观测值$X$落在拒绝域内的概率称为该检验的<strong>势函数</strong>或<strong>功效函数</strong>（power function）<br>$$g(\theta)=P_\theta(X\in W)$$<br>其中$\theta\in\Theta=\Theta_0\cup\Theta_1$。</p>
+            <h2 id="势函数-功效（power）"><a href="#势函数-功效（power）" class="headerlink" title="势函数/功效（power）"></a>势函数/功效（power）</h2><p>检验问题<br>$$H_0:\theta\in \Theta_0\quad \mathrm{vs} \quad H_1:\theta\in \Theta_1$$<br>的拒绝域为$W$，则样本观测值$X$落在拒绝域内的概率称为该检验的<strong>势函数</strong>或<strong>功效函数</strong>（power function）<br>$$g(\theta)=P_\theta(X\in W)$$<br>其中$\theta\in\Theta=\Theta_0\cup\Theta_1$。</p>
           </div>
 <p>显然有</p>
-<p>$$<br>
-\begin{equation}<br>
-g(\theta)= \left{<br>
-\begin{array}{ll}<br>
-\alpha ( \theta ),&amp; \quad \theta \in  \Theta_0 \<br>
-1- \beta ( \theta ), &amp; \quad \theta \in \Theta_1<br>
-\end{array}<br>
-\right.<br>
-\end{equation}<br>
-$$</p>
+<p>$$<br>\begin{equation}<br>g(\theta)= \left{<br>\begin{array}{ll}<br>\alpha ( \theta ),&amp; \quad \theta \in  \Theta_0 \<br>1- \beta ( \theta ), &amp; \quad \theta \in \Theta_1<br>\end{array}<br>\right.<br>\end{equation}<br>$$</p>
 <p>$1-\beta$也称作<strong>统计功效</strong>（Statistical Power）（正确拒绝$H_0$的概率）。</p>
 <div class="note default">
             <ul><li>在样本量给定的条件下，$\alpha$与$\beta$中一个减小必导致另一个增大</li><li>不可能同时控制一个检验的犯第一类错误、犯第二类错误的概率</li></ul>
           </div>
+
 <p>假设检验的功效受以下因素的影响：</p>
 <ul>
 <li>样本量$n$：其他条件保持不变，样本量越大，功效就越大</li>
@@ -27517,8 +27491,9 @@ $$</p>
 <li>有多大把握能够正确地拒绝原假设$H_0$</li>
 </ul>
 <div class="note warning">
-            <h2 id="效应量（effect-size）"><a class="header-anchor" href="#效应量（effect-size）"></a>效应量（effect size）</h2><p>样本间差异或相关程度的量化指标</p>
+            <h2 id="效应量（effect-size）"><a href="#效应量（effect-size）" class="headerlink" title="效应量（effect size）"></a>效应量（effect size）</h2><p>样本间差异或相关程度的量化指标</p>
           </div>
+
 <p>常用的衡量方式：</p>
 <ol>
 <li>标准均差（standardized mean difference）</li>
@@ -27529,47 +27504,31 @@ $$</p>
 <li>事后检验（post hoc）：根据显著性水平（$\alpha$）、功效和样本量$n$，计算效应量</li>
 <li>事前检验（prior）：根据显著性水平（$\alpha$）、功效和效应量，计算样本量$n$</li>
 </ul>
-<h3 id="标准均差"><a class="header-anchor" href="#标准均差"></a>标准均差</h3>
-<p>$$\theta = \frac{\mu_1 - \mu_2}{\sigma}$$</p>
+<h3 id="标准均差"><a href="#标准均差" class="headerlink" title="标准均差"></a>标准均差</h3><p>$$\theta = \frac{\mu_1 - \mu_2}{\sigma}$$</p>
 <p>主要指标：</p>
 <ol>
-<li>Cohen’s d效应量：两总体均值之间的标准差异
-<ul>
+<li>Cohen’s d效应量：两总体均值之间的标准差异<ul>
 <li>适用于两组样本的样本量和方差相似的情况</li>
-<li>是一种标准的平均数差异的估计，与当前样本无关<br>
-$$d=\frac{ \bar{x}<em>1 - \bar{x}<em>2 }{ s</em>{pooled} }$$<br>
-其中，<br>
-$$s</em>{pooled} = \sqrt{ \frac{ (n_1-1) s_1^2 + (n_2 -1)s_2^2 }{ n_1 + n_2 } } $$</li>
+<li>是一种标准的平均数差异的估计，与当前样本无关<br>$$d=\frac{ \bar{x}<em>1 - \bar{x}<em>2 }{ s</em>{pooled} }$$<br>其中，<br>$$s</em>{pooled} = \sqrt{ \frac{ (n_1-1) s_1^2 + (n_2 -1)s_2^2 }{ n_1 + n_2 } } $$</li>
 </ul>
 </li>
-<li>Hedges’s g：是Cohen’s d方法的改进
-<ul>
+<li>Hedges’s g：是Cohen’s d方法的改进<ul>
 <li>适用于两组样本的样本量不同的情况</li>
-<li>小样本情况，使用该方法<br>
-$$g = \frac{ \bar{x}_1 - \bar{x}_2 }{s^<em>} $$<br>
-其中，<br>
-$$s^</em> = \sqrt{ \frac{s_1^2(n_1-1) + s_2^2(n_2 - 1) }{n_1 + n_2 - 2} }$$</li>
+<li>小样本情况，使用该方法<br>$$g = \frac{ \bar{x}_1 - \bar{x}_2 }{s^*} $$<br>其中，<br>$$s^* = \sqrt{ \frac{s_1^2(n_1-1) + s_2^2(n_2 - 1) }{n_1 + n_2 - 2} }$$</li>
 </ul>
 </li>
-<li>Glass’s delta（$\Delta$）：和Cohen的方法类似，分母不同，分母是第二组样本的标准差。
-<ul>
-<li>适用于两组样本的方差不同的情况<br>
-$$\Delta = \frac{\bar{x}_1 - \bar{x}<em>2 }{s_2}$$<br>
-其中，<br>
-$$s_2^2 = \frac{1}{n_2 - 1}\sum</em>{i=1}^{n_2} (x_i - \bar{x}_2)^2$$</li>
+<li>Glass’s delta（$\Delta$）：和Cohen的方法类似，分母不同，分母是第二组样本的标准差。<ul>
+<li>适用于两组样本的方差不同的情况<br>$$\Delta = \frac{\bar{x}<em>1 - \bar{x}_2 }{s_2}$$<br>其中，<br>$$s_2^2 = \frac{1}{n_2 - 1}\sum</em>{i=1}^{n_2} (x_i - \bar{x}_2)^2$$</li>
 </ul>
 </li>
-<li>Cramer’s Phi ($\Phi$) or V：适用于变量是类别型变量的情况
-<ul>
+<li>Cramer’s Phi ($\Phi$) or V：适用于变量是类别型变量的情况<ul>
 <li>当类别型变量包含2个类别时，使用Cramer’s Phi</li>
 <li>当类别型变量超过2个类别时，使用Cramer’s V</li>
 </ul>
 </li>
-<li>Cohen’s f2：用于测算方差分析、多元回归之类的效应量<br>
-$$f^2 = \frac{R^2}{ 1 - R^2}$$</li>
+<li>Cohen’s f2：用于测算方差分析、多元回归之类的效应量<br> $$f^2 = \frac{R^2}{ 1 - R^2}$$</li>
 </ol>
-<h3 id="几率比"><a class="header-anchor" href="#几率比"></a>几率比</h3>
-<p>几率比（Odd ratio）是实验组成功的几率相对对照组成功的几率的比值。</p>
+<h3 id="几率比"><a href="#几率比" class="headerlink" title="几率比"></a>几率比</h3><p>几率比（Odd ratio）是实验组成功的几率相对对照组成功的几率的比值。</p>
 <ul>
 <li>适用于二分类变量</li>
 </ul>
@@ -27578,6 +27537,7 @@ $$f^2 = \frac{R^2}{ 1 - R^2}$$</li>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+
 <pre><code>.dataframe tbody tr th &#123;
     vertical-align: top;
 &#125;
@@ -27586,14 +27546,14 @@ $$f^2 = \frac{R^2}{ 1 - R^2}$$</li>
     text-align: center;
 &#125;
 </code></pre>
-</style>
+<p></style><p></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: center;">
       <th rowspan="2"></th>
       <th colspan="2">Frequency</th>
     </tr>
-	<tr>
+    <tr>
       <th>Success</th>
       <th>Failure</th>
     </tr>
@@ -27613,16 +27573,13 @@ $$f^2 = \frac{R^2}{ 1 - R^2}$$</li>
   </tr></tbody>
 </table>
 </div>
-<p>效应量为<br>
-$$\mbox{Effect Size} = \frac{ad}{bc}$$</p>
-<h3 id="相关系数"><a class="header-anchor" href="#相关系数"></a>相关系数</h3>
-<p>Pearson $R$ 相关系数：</p>
-<h2 id="样本量"><a class="header-anchor" href="#样本量"></a>样本量</h2>
-<blockquote>
+
+<p>效应量为<br>$$\mbox{Effect Size} = \frac{ad}{bc}$$</p>
+<h3 id="相关系数"><a href="#相关系数" class="headerlink" title="相关系数"></a>相关系数</h3><p>Pearson $R$ 相关系数：</p>
+<h2 id="样本量"><a href="#样本量" class="headerlink" title="样本量"></a>样本量</h2><blockquote>
 <p>如何计算假设检验的最小样本量？</p>
 </blockquote>
-<h2 id="显著性检验"><a class="header-anchor" href="#显著性检验"></a>显著性检验</h2>
-<p><strong>Fisher的显著性检验</strong>：仅限制犯第一类错误的概率。</p>
+<h2 id="显著性检验"><a href="#显著性检验" class="headerlink" title="显著性检验"></a>显著性检验</h2><p><strong>Fisher的显著性检验</strong>：仅限制犯第一类错误的概率。</p>
 <div class="note warning">
             <p>对检验问题<br>$$H_0:\theta\in \Theta_0\quad \mathrm{vs} \quad H_1:\theta\in \Theta_1$$<br>如果一个检验满足对任意的$\theta\in\Theta_0$，都有<br>$$g(\theta)\leq \alpha$$<br>则称该检验为<strong>显著性水平为$\alpha$的显著性检验</strong>（水平为$\alpha$的检验）。</p>
           </div>
@@ -27640,25 +27597,20 @@ $$\mbox{Effect Size} = \frac{ad}{bc}$$</p>
 <li>由样本观测值$x_1,\cdots,x_n$，计算检验统计量的值$T(x_1,\cdots,x_n)$，根据$T(x_1,\cdots,x_n)$是否属于$W$，作出判断</li>
 </ol>
 <div class="note warning">
-            <h2 id="p值"><a class="header-anchor" href="#p值"></a>p值</h2><p>在一个假设检验问题中，利用样本观测值能够作出拒绝原假设的<u>最小的显著性水平</u>称为<strong>检验的p值</strong>。</p>
+            <h2 id="p值"><a href="#p值" class="headerlink" title="p值"></a>p值</h2><p>在一个假设检验问题中，利用样本观测值能够作出拒绝原假设的<u>最小的显著性水平</u>称为<strong>检验的p值</strong>。</p>
           </div>
 <ul>
 <li>如果$p\leq \alpha$，则在显著性水平$\alpha$下拒绝$H_0$</li>
 <li>如果$p&gt;\alpha$，则在显著性水平$\alpha$下接受$H_0$</li>
 </ul>
 <p>在进行检验假设时，可能计算得到的p值与显著性水平$\alpha$非常接近，这时就比较难作出判断。</p>
-<h1 id="检验方法"><a class="header-anchor" href="#检验方法"></a>检验方法</h1>
-<h2 id="参数检验"><a class="header-anchor" href="#参数检验"></a>参数检验</h2>
-<ul>
-<li>两均值对比
-<ul>
-<li>Z检验
-<blockquote>
+<h1 id="检验方法"><a href="#检验方法" class="headerlink" title="检验方法"></a>检验方法</h1><h2 id="参数检验"><a href="#参数检验" class="headerlink" title="参数检验"></a>参数检验</h2><ul>
+<li>两均值对比<ul>
+<li>Z检验<blockquote>
 <p>适用于样本量大、总体方差已知的样本</p>
 </blockquote>
 </li>
-<li>
-<a href="#">Post not found: 假设检验-t检验 t检验</a>
+<li><a href="#">Post not found: 假设检验-t检验 t检验</a>
 <blockquote>
 <p>适用于样本量小、总体方差未知的样本</p>
 </blockquote>
@@ -27666,59 +27618,57 @@ $$\mbox{Effect Size} = \frac{ad}{bc}$$</p>
 </ul>
 </li>
 </ul>
-<h2 id="非参数检验"><a class="header-anchor" href="#非参数检验"></a>非参数检验</h2>
-<ul>
-<li>两均值对比
-<ul>
-<li>
-<a href="#">Post not found: 假设检验-U检验 Mann-Whitney U检验</a>
+<h2 id="非参数检验"><a href="#非参数检验" class="headerlink" title="非参数检验"></a>非参数检验</h2><ul>
+<li>两均值对比<ul>
+<li><a href="#">Post not found: 假设检验-U检验 Mann-Whitney U检验</a>
+
+
 </li>
 </ul>
 </li>
 </ul>
 <meta name="referrer" content="no-referrer">
 
+
+
 <table>
 <thead>
 <tr>
-<th style="text-align:center"></th>
-<th style="text-align:center">功能</th>
-<th style="text-align:center">正态性</th>
-<th style="text-align:center">不服从正态分布时</th>
-<th style="text-align:center">方差齐性</th>
+<th align="center"></th>
+<th align="center">功能</th>
+<th align="center">正态性</th>
+<th align="center">不服从正态分布时</th>
+<th align="center">方差齐性</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:center">单样本t检验</td>
-<td style="text-align:center">与某数字对比</td>
-<td style="text-align:center">服从正态分布</td>
-<td style="text-align:center">单样本Wilcoxon检验</td>
-<td style="text-align:center"></td>
+<tbody><tr>
+<td align="center">单样本t检验</td>
+<td align="center">与某数字对比</td>
+<td align="center">服从正态分布</td>
+<td align="center">单样本Wilcoxon检验</td>
+<td align="center"></td>
 </tr>
 <tr>
-<td style="text-align:center">配对样本t检验</td>
-<td style="text-align:center">配对数据差异</td>
-<td style="text-align:center">差值服从正态分布</td>
-<td style="text-align:center">配对Wilcoxon检验</td>
-<td style="text-align:center"></td>
+<td align="center">配对样本t检验</td>
+<td align="center">配对数据差异</td>
+<td align="center">差值服从正态分布</td>
+<td align="center">配对Wilcoxon检验</td>
+<td align="center"></td>
 </tr>
 <tr>
-<td style="text-align:center">独立样本t检验</td>
-<td style="text-align:center">两组数据的差异</td>
-<td style="text-align:center">两组数据都服从正态分布</td>
-<td style="text-align:center">Mann-Whitney U检验</td>
-<td style="text-align:center">要求同方差</td>
+<td align="center">独立样本t检验</td>
+<td align="center">两组数据的差异</td>
+<td align="center">两组数据都服从正态分布</td>
+<td align="center">Mann-Whitney U检验</td>
+<td align="center">要求同方差</td>
 </tr>
-</tbody>
-</table>
-<h1 id="笔试题"><a class="header-anchor" href="#笔试题"></a>笔试题</h1>
-<div class="note default">
+</tbody></table>
+<h1 id="笔试题"><a href="#笔试题" class="headerlink" title="笔试题"></a>笔试题</h1><div class="note default">
             <p>假设检验基本思想的<strong>依据</strong>是：<u>小概率事件原理</u><br>来自：<a href="https://www.nowcoder.com/test/23567918/summary">小红书2020校招数据分析笔试题卷一</a></p>
           </div>
-<h1 id="参考资料"><a class="header-anchor" href="#参考资料"></a>参考资料</h1>
-<ul>
-<li><a href="https://tse3-mm.cn.bing.net/th/id/OIP.Kswu83OuyrC-6NiH646D-QHaGg?w=222&amp;h=160&amp;c=7&amp;o=5&amp;dpr=1.5&amp;pid=1.7">首页缩略图</a></li>
+
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
+<li><a href="https://tse3-mm.cn.bing.net/th/id/OIP.Kswu83OuyrC-6NiH646D-QHaGg?w=222&h=160&c=7&o=5&dpr=1.5&pid=1.7">首页缩略图</a></li>
 <li><a href="https://www.skillsyouneed.com/num/statistics-identifying-patterns.html">Statistical Analysis: Identifying Patterns</a></li>
 <li><a href="https://zhuanlan.zhihu.com/p/68736699">三种T检验的详细区分</a></li>
 <li><a href="https://book.douban.com/subject/5998092/">概率论与数理统计教程</a></li>
@@ -30062,66 +30012,58 @@ $$1→2→3→4→5→6→7$$
     <title>Jupyter Notebook使用技巧</title>
     <url>/Tool-JupyterNotebook.html</url>
     <content><![CDATA[<center>Jupyter Tips!</center>
+
 <span id="more"></span>
-<h1 id="输出"><a class="header-anchor" href="#输出"></a>输出</h1>
-<h2 id="输出结果显示图片"><a class="header-anchor" href="#输出结果显示图片"></a>输出结果显示图片</h2>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">%matplotlib inline</span><br></pre></td></tr></table></figure>
-<h2 id="同时输出多个命令的结果"><a class="header-anchor" href="#同时输出多个命令的结果"></a>同时输出多个命令的结果</h2>
-<ol>
-<li>方法一：在文件开头添加以下命令（仅对当前文件有效）</li>
+
+<meta name="referrer" content="no-referrer">
+
+<h1 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h1><h2 id="输出结果显示图片"><a href="#输出结果显示图片" class="headerlink" title="输出结果显示图片"></a>输出结果显示图片</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">%matplotlib inline</span><br></pre></td></tr></table></figure>
+
+<h2 id="同时输出多个命令的结果"><a href="#同时输出多个命令的结果" class="headerlink" title="同时输出多个命令的结果"></a>同时输出多个命令的结果</h2><ol>
+<li>方法一：在文件开头添加以下命令（仅对当前文件有效）<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> IPython.core.interactiveshell <span class="keyword">import</span> InteractiveShell</span><br><span class="line">InteractiveShell.ast_node_interactivity = <span class="string">&quot;all&quot;</span></span><br></pre></td></tr></table></figure></li>
+<li>方法二：直接添加配置文件（对所有文件有效）<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">vi ~/.ipython/profile_default/ipython_config.py</span><br></pre></td></tr></table></figure>
+配置文件内容为：<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">c = get_config()</span><br><span class="line"><span class="comment">#Run all nodes interactively</span></span><br><span class="line">c.InteractiveShell.ast_node_interactivity = <span class="string">&quot;all&quot;</span></span><br></pre></td></tr></table></figure>
+
+
+</li>
 </ol>
- <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> IPython.core.interactiveshell <span class="keyword">import</span> InteractiveShell</span><br><span class="line">InteractiveShell.ast_node_interactivity = <span class="string">&quot;all&quot;</span></span><br></pre></td></tr></table></figure>
-<ol start="2">
-<li>方法二：直接添加配置文件（对所有文件有效）</li>
-</ol>
- <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">vi ~/.ipython/profile_default/ipython_config.py</span><br></pre></td></tr></table></figure>
-<p>配置文件内容为：</p>
- <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">c = get_config()</span><br><span class="line"><span class="comment">#Run all nodes interactively</span></span><br><span class="line">c.InteractiveShell.ast_node_interactivity = <span class="string">&quot;all&quot;</span></span><br></pre></td></tr></table></figure>
-<h2 id="禁止输出警告（warnings）"><a class="header-anchor" href="#禁止输出警告（warnings）"></a>禁止输出警告（warnings）</h2>
-<p>运行以下代码：</p>
+<h2 id="禁止输出警告（warnings）"><a href="#禁止输出警告（warnings）" class="headerlink" title="禁止输出警告（warnings）"></a>禁止输出警告（warnings）</h2><p>运行以下代码：</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> warnings</span><br><span class="line">warnings.filterwarnings(<span class="string">&quot;ignore&quot;</span>)</span><br></pre></td></tr></table></figure>
-<h2 id="for循环美观输出DataFrame"><a class="header-anchor" href="#for循环美观输出DataFrame"></a>for循环美观输出DataFrame</h2>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> IPython.display <span class="keyword">import</span> display</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">5</span>):</span><br><span class="line">    df = pd.read_csv(<span class="string">&#x27;xxx.csv&#x27;</span>, encoding=<span class="string">&#x27;utf_8_sig&#x27;</span>)</span><br><span class="line">    display(df)</span><br></pre></td></tr></table></figure>
-<h1 id="Kernel"><a class="header-anchor" href="#Kernel"></a>Kernel</h1>
-<h2 id="安装R-kernel"><a class="header-anchor" href="#安装R-kernel"></a>安装R kernel</h2>
-<p>先在R中安装以下几个package：</p>
+
+<h2 id="for循环美观输出DataFrame"><a href="#for循环美观输出DataFrame" class="headerlink" title="for循环美观输出DataFrame"></a>for循环美观输出DataFrame</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> IPython.display <span class="keyword">import</span> display</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">5</span>):</span><br><span class="line">    df = pd.read_csv(<span class="string">&#x27;xxx.csv&#x27;</span>, encoding=<span class="string">&#x27;utf_8_sig&#x27;</span>)</span><br><span class="line">    display(df)</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="Kernel"><a href="#Kernel" class="headerlink" title="Kernel"></a>Kernel</h1><h2 id="安装R-kernel"><a href="#安装R-kernel" class="headerlink" title="安装R kernel"></a>安装R kernel</h2><p>先在R中安装以下几个package：</p>
 <figure class="highlight r"><table><tr><td class="code"><pre><span class="line">install.packages<span class="punctuation">(</span><span class="built_in">c</span><span class="punctuation">(</span><span class="string">&#x27;repr&#x27;</span><span class="punctuation">,</span> <span class="string">&#x27;IRdisplay&#x27;</span><span class="punctuation">,</span> <span class="string">&#x27;evaluate&#x27;</span><span class="punctuation">,</span> <span class="string">&#x27;crayon&#x27;</span><span class="punctuation">,</span> </span><br><span class="line">                   <span class="string">&#x27;pbdZMQ&#x27;</span><span class="punctuation">,</span> <span class="string">&#x27;devtools&#x27;</span><span class="punctuation">,</span> <span class="string">&#x27;uuid&#x27;</span><span class="punctuation">,</span> <span class="string">&#x27;digest&#x27;</span><span class="punctuation">)</span><span class="punctuation">)</span></span><br><span class="line">devtools<span class="operator">::</span>install_github<span class="punctuation">(</span><span class="string">&#x27;IRkernel/IRkernel&#x27;</span><span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
-<p>在Anaconda Prompt中输入以下命令：<br>
-第一步：输入R，调用R</p>
+<p>在Anaconda Prompt中输入以下命令：<br>第一步：输入R，调用R</p>
 <figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">R</span></span><br></pre></td></tr></table></figure>
 <p>第二步：安装R kernel，有2种方式（自由选择，个人建议第二种）：</p>
 <ol>
-<li>直接安装在当前用户中：</li>
+<li>直接安装在当前用户中：<figure class="highlight r"><table><tr><td class="code"><pre><span class="line">IRkernel<span class="operator">::</span>installspec<span class="punctuation">(</span><span class="punctuation">)</span></span><br></pre></td></tr></table></figure></li>
+<li>安装在系统中：<figure class="highlight r"><table><tr><td class="code"><pre><span class="line">IRkernel<span class="operator">::</span>installspec<span class="punctuation">(</span>user <span class="operator">=</span> <span class="literal">FALSE</span><span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
+
+
+</li>
 </ol>
- <figure class="highlight r"><table><tr><td class="code"><pre><span class="line">IRkernel<span class="operator">::</span>installspec<span class="punctuation">(</span><span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
-<ol start="2">
-<li>安装在系统中：</li>
-</ol>
- <figure class="highlight r"><table><tr><td class="code"><pre><span class="line">IRkernel<span class="operator">::</span>installspec<span class="punctuation">(</span>user <span class="operator">=</span> <span class="literal">FALSE</span><span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
-<h1 id="其他"><a class="header-anchor" href="#其他"></a>其他</h1>
-<h2 id="运行时间"><a class="header-anchor" href="#运行时间"></a>运行时间</h2>
-<p>在cell中添加 <code>%%time</code> ，返回结果中会含有cell单次运行的时间。<br>
-在cell中添加 <code>%timeit</code> ，会运行该cell 100,000次（默认），然后以运行最快的3次结果的平均值作为结果。</p>
+<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><h2 id="运行时间"><a href="#运行时间" class="headerlink" title="运行时间"></a>运行时间</h2><p>在cell中添加 <code>%%time</code> ，返回结果中会含有cell单次运行的时间。<br>在cell中添加 <code>%timeit</code> ，会运行该cell 100,000次（默认），然后以运行最快的3次结果的平均值作为结果。</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy</span><br><span class="line">%timeit numpy.random.normal(size = <span class="number">10</span>)</span><br><span class="line"><span class="comment"># 5.91 µs ± 258 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)</span></span><br><span class="line">%%time</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">100</span>):</span><br><span class="line">    time.sleep(<span class="number">0.01</span>)</span><br><span class="line"><span class="comment"># Wall time: 1.73 s</span></span><br></pre></td></tr></table></figure>
-<h2 id="插件管理器"><a class="header-anchor" href="#插件管理器"></a>插件管理器</h2>
-<p>Nbextensions相当于Jupyter的插件管理器。<br>
-安装：（在Anaconda Prompt中输入）</p>
+
+<h2 id="插件管理器"><a href="#插件管理器" class="headerlink" title="插件管理器"></a>插件管理器</h2><p>Nbextensions相当于Jupyter的插件管理器。<br>安装：（在Anaconda Prompt中输入）</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda install -c conda-forge jupyter_contrib_nbextensions  </span><br></pre></td></tr></table></figure>
 <p>安装过程需要选择[y/n]，输入y。</p>
 <p>该选项卡下方罗列了大量Jupyter可用的插件；点击某个插件的名称，即可在列表下方显示该插件的说明文档；勾选某个插件前面的方框，则系统会加载启用该插件。</p>
-<h2 id="Jupyter-Lab！"><a class="header-anchor" href="#Jupyter-Lab！"></a>Jupyter Lab！</h2>
-<p>超好用！是Project Jupyter的下一代用户界面，具体安装和使用说明请见《<a href="https://mp.weixin.qq.com/s/T-Afq0vAw0lVB9Bave-aNQ">Jupyter：超强的下一代Jupyter Notebook</a>》（原文作者Parul Pandey，EarlGrey翻译，<a href="https://towardsdatascience.com/jupyter-lab-evolution-of-the-jupyter-notebook-5297cacde6b?gi=dec00114bf03">原文网址</a>）。</p>
+<h2 id="Jupyter-Lab！"><a href="#Jupyter-Lab！" class="headerlink" title="Jupyter Lab！"></a>Jupyter Lab！</h2><p>超好用！是Project Jupyter的下一代用户界面，具体安装和使用说明请见《<a href="https://mp.weixin.qq.com/s/T-Afq0vAw0lVB9Bave-aNQ">Jupyter：超强的下一代Jupyter Notebook</a>》（原文作者Parul Pandey，EarlGrey翻译，<a href="https://towardsdatascience.com/jupyter-lab-evolution-of-the-jupyter-notebook-5297cacde6b?gi=dec00114bf03">原文网址</a>）。</p>
 <figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="comment">%% Jupyter Notebook的本地访问地址为</span></span><br><span class="line">http://localhost:8888/tree</span><br><span class="line"></span><br><span class="line"><span class="comment">%% Jupyter Lab的本地访问地址为</span></span><br><span class="line">http://localhost:8888/lab</span><br></pre></td></tr></table></figure>
-<h2 id="切换Code和Markdown"><a class="header-anchor" href="#切换Code和Markdown"></a>切换Code和Markdown</h2>
-<p>要快捷地切换Cell的形式（Code或Markdown），可按如下操作：<br>
-选中Cell（光标在Cell中闪烁），点击“Esc”，进入命令模式（光标不再Cell中闪烁，但Cell左侧仍有蓝色粗线条）；然后键盘按“Y”将Cell切换为Code模式，键盘按“M”则将Cell切换为Markdown模式。即</p>
+
+
+
+<h2 id="切换Code和Markdown"><a href="#切换Code和Markdown" class="headerlink" title="切换Code和Markdown"></a>切换Code和Markdown</h2><p>要快捷地切换Cell的形式（Code或Markdown），可按如下操作：<br>选中Cell（光标在Cell中闪烁），点击“Esc”，进入命令模式（光标不再Cell中闪烁，但Cell左侧仍有蓝色粗线条）；然后键盘按“Y”将Cell切换为Code模式，键盘按“M”则将Cell切换为Markdown模式。即</p>
 <ul>
 <li>Esc+Y：code模式</li>
 <li>Esc+M：Markdown模式</li>
 <li>Esc+B：快速添加新的Cell</li>
 </ul>
-<h1 id="参考资料"><a class="header-anchor" href="#参考资料"></a>参考资料</h1>
-<ul>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
 <li><a href="https://www.google.com/Jupyter">首页缩略图</a></li>
 <li><a href="https://www.cnblogs.com/bella1102/p/11032519.html">Jupyter Notebook 如何让一个Cell 可以同时输出多个语句的值？</a></li>
 <li><a href="https://www.sohu.com/a/219989263_774914">Jupyter Notebook/Lab中添加R Kernel的详细步骤</a></li>
@@ -30941,7 +30883,7 @@ $$Random Forest=Bagging+Decision Tree$$</p>
 </ul>
 <ol>
 <li><p>选择适当的核函数$K(x,z)$和惩罚参数$\phi&gt;0$，构造并求解凸二次规划问题</p>
-<p>$$<br>\begin{aligned}<br>\min_{ \pmb{\lambda} } &amp; \quad \frac{1}{2} \sum_{i=1}^n \sum_{j=1}^n \lambda_i \lambda_j y_i y_j K( \mathbf{x_i},<br>\mathbf{x}<em>j ) -<br>\sum</em>{i=1}^n \lambda_i \\<br>\mathrm{s.t.} &amp; \quad \sum_{i=1}^n \lambda_i y_i = 0 \\<br>&amp; \quad 0 \leq \lambda_i \leq \phi ,\quad i=1 ,\cdots , n.<br>\end{aligned}<br>$$</p>
+<p>\begin{aligned}<br>\min_{ \pmb{\lambda} } &amp; \quad \frac{1}{2} \sum_{i=1}^n \sum_{j=1}^n \lambda_i \lambda_j y_i y_j K( \mathbf{x_i},<br>\mathbf{x}<em>j ) -<br>\sum</em>{i=1}^n \lambda_i \\<br>\mathrm{s.t.} &amp; \quad \sum_{i=1}^n \lambda_i y_i = 0 \\<br>&amp; \quad 0 \leq \lambda_i \leq \phi ,\quad i=1 ,\cdots , n.<br>\end{aligned}</p>
 <p>得到最优解</p>
 <p>$$\pmb{ \lambda }^* = ( \lambda_1^* , \cdots ,\lambda_n^* )^T $$</p>
 </li>
@@ -31209,12 +31151,11 @@ $$Random Forest=Bagging+Decision Tree$$</p>
     <url>/Tool-Tableau%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90.html</url>
     <content><![CDATA[<center>汇总Tableau软件的相关学习资料~</center>
 <span id="more"></span>
-<h2 id="书籍"><a class="header-anchor" href="#书籍"></a>书籍</h2>
-<h3 id="《触手可及的大数据分析工具：Tableau案例集》"><a class="header-anchor" href="#《触手可及的大数据分析工具：Tableau案例集》"></a>《触手可及的大数据分析工具：Tableau案例集》</h3>
-<p><a href="https://book.douban.com/subject/26614166/">豆瓣图书</a></p>
-<h2 id="视频"><a class="header-anchor" href="#视频"></a>视频</h2>
-<h3 id="未明学院-Tableau可视化软件的基础操作和进阶"><a class="header-anchor" href="#未明学院-Tableau可视化软件的基础操作和进阶"></a>未明学院-Tableau可视化软件的基础操作和进阶</h3>
-<p><a href="https://www.bilibili.com/video/av66028664?from=search&amp;seid=5882922976125124544">视频地址</a></p>
+
+<meta name="referrer" content="no-referrer">
+
+<h2 id="书籍"><a href="#书籍" class="headerlink" title="书籍"></a>书籍</h2><h3 id="《触手可及的大数据分析工具：Tableau案例集》"><a href="#《触手可及的大数据分析工具：Tableau案例集》" class="headerlink" title="《触手可及的大数据分析工具：Tableau案例集》"></a>《触手可及的大数据分析工具：Tableau案例集》</h3><p><a href="https://book.douban.com/subject/26614166/">豆瓣图书</a></p>
+<h2 id="视频"><a href="#视频" class="headerlink" title="视频"></a>视频</h2><h3 id="未明学院-Tableau可视化软件的基础操作和进阶"><a href="#未明学院-Tableau可视化软件的基础操作和进阶" class="headerlink" title="未明学院-Tableau可视化软件的基础操作和进阶"></a>未明学院-Tableau可视化软件的基础操作和进阶</h3><p><a href="https://www.bilibili.com/video/av66028664?from=search&seid=5882922976125124544">视频地址</a></p>
 <p>共14个视频</p>
 <ol>
 <li>Tableau简介、条形图与直方图</li>
@@ -31246,42 +31187,18 @@ $$Random Forest=Bagging+Decision Tree$$</p>
     <url>/Statistics-Distribution-PoissonDistribution.html</url>
     <content><![CDATA[<center></center>
 <span id="more"></span>
+
+<meta name="referrer" content="no-referrer">
+
+
 <p>生活中大多数场景服从泊松分布，如奶茶店一天的顾客数、理发店一天的顾客数、馒头店一天卖出的馒头数等等。</p>
 <p>假设我经营着一家咖啡馆——SW Coffee。</p>
-<p>考虑长度为$T$的时间段内光顾的客人数量。将$T$时间切分为$n$份，每个时间段内只会发生“来了一位客人”或“没来客人”，即二项分布Binomial(p)<br>
-$$P(来了一位客人)=p$$</p>
-<p>那么，$T$时间段内来的客人数量$X$服从$n$重Bernoulli分布B(n,p)<br>
-$$P(X=k)=\left(<br>
-\begin{array}{c}<br>
-n\<br>
-k<br>
-\end{array}\right)<br>
-p<sup>k(1-p)</sup>{n-k}<br>
-$$<br>
-均值为<br>
-$$\lambda=E(X)=np$$</p>
-<p>若将$T$时间段切分得足够小（$n\rightarrow\infty$），则$T$时间内来了$k$个客人的概率为<br>
-\begin{equation}<br>
-\begin{aligned}<br>
-&amp; \lim_{n\rightarrow \infty}\left(<br>
-\begin{array}{c}<br>
-n\<br>
-k<br>
-\end{array}\right)<br>
-p<sup>k(1-p)</sup>{n-k}\<br>
-=&amp; \lim_{n\rightarrow\infty}\frac{n(n-1)\cdots(n-k+1)}{k!}\left(\frac{\lambda}{n}\right)<sup>k\left(1-\frac{\lambda}{n}\right)</sup>{n-k}\<br>
-=&amp; \lim_{n\rightarrow\infty}\frac{\lambda<sup>k}{k!}\frac{n}{n}\frac{n-1}{n}\cdots\frac{n-k+1}{n}\left(1-\frac{\lambda}{n}\right)</sup>{n-k}\<br>
-=&amp; \lim_{n\rightarrow\infty}\frac{\lambda<sup>k}{k!}1\cdot(1-\frac{1}{n})\cdot\cdots\cdot\left(1-\frac{k-1}{n}\right)\left(1-\frac{\lambda}{n}\right)</sup>{-k}\left(1-\frac{\lambda}{n}\right)^{n}\<br>
-=&amp; \frac{\lambda<sup>k}{k!}e</sup>{-\lambda}<br>
-\end{aligned}<br>
-\end{equation}<br>
-其中<br>
-$$\lim_{n\rightarrow\infty}1\cdot(1-\frac{1}{n})\cdot\cdots\cdot(1-\frac{k-1}{n})\left(1-\frac{\lambda}{n}\right)^{-k}=1$$<br>
-$$\lim_{n\rightarrow\infty}\left(1-\frac{\lambda}{n}\right)<sup>{n}=\lim_{n\rightarrow\infty}e</sup>{\lambda}\left(1-\frac{\lambda}{n}\right)^{\frac{n}{\lambda} }=e<sup>{\lambda}e</sup>{-1}=e^{-\lambda}$$</p>
+<p>考虑长度为$T$的时间段内光顾的客人数量。将$T$时间切分为$n$份，每个时间段内只会发生“来了一位客人”或“没来客人”，即二项分布Binomial(p)<br>$$P(来了一位客人)=p$$</p>
+<p>那么，$T$时间段内来的客人数量$X$服从$n$重Bernoulli分布B(n,p)<br>$$P(X=k)=\left(<br>\begin{array}{c}<br>n\<br>k<br>\end{array}\right)<br>p^k(1-p)^{n-k}<br>$$<br>均值为<br>$$\lambda=E(X)=np$$</p>
+<p>若将$T$时间段切分得足够小（$n\rightarrow\infty$），则$T$时间内来了$k$个客人的概率为<br>\begin{equation}<br>\begin{aligned}<br>&amp; \lim_{n\rightarrow \infty}\left(<br>\begin{array}{c}<br>n\<br>k<br>\end{array}\right)<br>p^k(1-p)^{n-k}\<br>=&amp; \lim_{n\rightarrow\infty}\frac{n(n-1)\cdots(n-k+1)}{k!}\left(\frac{\lambda}{n}\right)^k\left(1-\frac{\lambda}{n}\right)^{n-k}\<br>=&amp; \lim_{n\rightarrow\infty}\frac{\lambda^k}{k!}\frac{n}{n}\frac{n-1}{n}\cdots\frac{n-k+1}{n}\left(1-\frac{\lambda}{n}\right)^{n-k}\<br>=&amp; \lim_{n\rightarrow\infty}\frac{\lambda^k}{k!}1\cdot(1-\frac{1}{n})\cdot\cdots\cdot\left(1-\frac{k-1}{n}\right)\left(1-\frac{\lambda}{n}\right)^{-k}\left(1-\frac{\lambda}{n}\right)^{n}\<br>=&amp; \frac{\lambda^k}{k!}e^{-\lambda}<br>\end{aligned}<br>\end{equation}<br>其中<br>$$\lim_{n\rightarrow\infty}1\cdot(1-\frac{1}{n})\cdot\cdots\cdot(1-\frac{k-1}{n})\left(1-\frac{\lambda}{n}\right)^{-k}=1$$<br>$$\lim_{n\rightarrow\infty}\left(1-\frac{\lambda}{n}\right)^{n}=\lim_{n\rightarrow\infty}e^{\lambda}\left(1-\frac{\lambda}{n}\right)^{\frac{n}{\lambda} }=e^{\lambda}e^{-1}=e^{-\lambda}$$</p>
 <p>强度为$\lambda$的泊松分布过程的点间间距服从参数为$\lambda$的指数分布（均值为$1/\lambda$）。</p>
 <p>未完待续（表示本篇博客未写完~会继续更新）</p>
-<h2 id="参考资料"><a class="header-anchor" href="#参考资料"></a>参考资料</h2>
-<ul>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul>
 <li><a href="https://www.zhihu.com/question/26441147">泊松分布的现实意义是什么，为什么现实生活多数服从于泊松分布？</a></li>
 </ul>
 ]]></content>
