@@ -312,14 +312,20 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><center>使用LaTeX制作幻灯片</center><br><span id="more"></span></p>
+        <center>使用LaTeX制作幻灯片</center>
+<span id="more"></span>
+
 <h1 id="基本"><a href="#基本" class="headerlink" title="基本"></a>基本</h1><h2 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h2><p>使用<code>XeLaTeX</code>程序编译</p>
-<h2 id="中文"><a href="#中文" class="headerlink" title="中文"></a>中文</h2><p>使用<code>ctex</code>宏包<br><figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\usepackage</span>[UTF8]&#123;ctex&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="中文"><a href="#中文" class="headerlink" title="中文"></a>中文</h2><p>使用<code>ctex</code>宏包</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\usepackage</span>[UTF8]&#123;ctex&#125;</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>可以在载入<code>ctex</code>宏包时加上<code>noindent</code>选项，取消段落的缩进</li>
 <li>在WinEdt编辑器中，对中文默认不是<code>UTF8</code>编码，需要在新建文件后，在第一行写上<code>% -*- coding: utf-8 -*-</code>，保存并关闭文件，再打开文件</li>
 </ul>
-<h2 id="主体结构"><a href="#主体结构" class="headerlink" title="主体结构"></a>主体结构</h2><p>幻灯片主体结构：<br><figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\section</span>&#123;章名&#125;</span><br><span class="line"><span class="keyword">\subsection</span>&#123;节名&#125;</span><br><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;[选项]</span><br><span class="line"><span class="keyword">\frametitle</span>&#123;幻灯片标题&#125;</span><br><span class="line">幻灯片内容</span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
+<h2 id="主体结构"><a href="#主体结构" class="headerlink" title="主体结构"></a>主体结构</h2><p>幻灯片主体结构：</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\section</span>&#123;章名&#125;</span><br><span class="line"><span class="keyword">\subsection</span>&#123;节名&#125;</span><br><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;[选项]</span><br><span class="line"><span class="keyword">\frametitle</span>&#123;幻灯片标题&#125;</span><br><span class="line">幻灯片内容</span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
 <h2 id="对齐"><a href="#对齐" class="headerlink" title="对齐"></a>对齐</h2><p>在Beamer的每张幻灯片中，正文内容（不包括幻灯片标题）默认为“竖直居中”的</p>
 <ul>
 <li><code>t</code>：竖直居上（top）</li>
@@ -327,208 +333,216 @@
 <li><code>b</code>：竖直居下（bottom）</li>
 </ul>
 <figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">% 将全局对齐格式改为“竖直居上”</span></span><br><span class="line"><span class="keyword">\documentclass</span>[t]&#123;beamer&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">% 将某张幻灯片的正文内容修改为竖直居下</span></span><br><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;[b]</span><br><span class="line">幻灯片内容</span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br></pre></td></tr></table></figure>
+
 <h1 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h1><blockquote>
 <ul>
 <li><a target="_blank" rel="noopener" href="https://deic-web.uab.cat/~iblanes/beamer_gallery/">Beamer主题Gallery</a></li>
 </ul>
 </blockquote>
 <h2 id="演示主题"><a href="#演示主题" class="headerlink" title="演示主题"></a>演示主题</h2><figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\usetheme</span>&#123;theme name&#125;</span><br></pre></td></tr></table></figure>
+
 <p><code>theme name</code>可以在<a target="_blank" rel="noopener" href="https://deic-web.uab.cat/~iblanes/beamer_gallery/index_by_theme.html">https://deic-web.uab.cat/~iblanes/beamer_gallery/index_by_theme.html</a>上查看各主题风格预览，选择你想要的主题名称填入</p>
-<div class="table-container">
 <table>
 <thead>
 <tr>
-<th style="text-align:left">类别</th>
-<th style="text-align:left">theme name</th>
+<th align="left">类别</th>
+<th align="left">theme name</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:left">无导航栏</td>
-<td style="text-align:left"><code>default</code>、<code>boxes</code>、<code>Bergen</code>、<code>Pittsburgh</code>、<code>Rochester</code></td>
+<tbody><tr>
+<td align="left">无导航栏</td>
+<td align="left"><code>default</code>、<code>boxes</code>、<code>Bergen</code>、<code>Pittsburgh</code>、<code>Rochester</code></td>
 </tr>
 <tr>
-<td style="text-align:left">带顶部导航栏</td>
-<td style="text-align:left"><code>Antibes</code>、<code>Darmstadt</code>、<code>Frankfurt</code>、<code>JuanLesPins</code>、<code>Montpellier</code>、<code>Singapore</code></td>
+<td align="left">带顶部导航栏</td>
+<td align="left"><code>Antibes</code>、<code>Darmstadt</code>、<code>Frankfurt</code>、<code>JuanLesPins</code>、<code>Montpellier</code>、<code>Singapore</code></td>
 </tr>
 <tr>
-<td style="text-align:left">带底部导航栏</td>
-<td style="text-align:left"><code>Boadilla</code>、<code>Madrid</code></td>
+<td align="left">带底部导航栏</td>
+<td align="left"><code>Boadilla</code>、<code>Madrid</code></td>
 </tr>
 <tr>
-<td style="text-align:left">带顶部&amp;底部导航栏</td>
-<td style="text-align:left"><code>AnnArbor</code>、<code>Berlin</code>、<code>CambridgeUS</code>、<code>Copenhagen</code>、<code>Dresden</code>、<code>Ilmenau</code>、<code>Luebeck</code>、<code>Malmoe</code>、<code>Szeged</code>、<code>Warsaw</code></td>
+<td align="left">带顶部&amp;底部导航栏</td>
+<td align="left"><code>AnnArbor</code>、<code>Berlin</code>、<code>CambridgeUS</code>、<code>Copenhagen</code>、<code>Dresden</code>、<code>Ilmenau</code>、<code>Luebeck</code>、<code>Malmoe</code>、<code>Szeged</code>、<code>Warsaw</code></td>
 </tr>
 <tr>
-<td style="text-align:left">带侧边栏</td>
-<td style="text-align:left"><code>Berkeley</code>、<code>Goettingen</code>、<code>Hannover</code>、<code>Marburg</code>、<code>PaloAlto</code></td>
+<td align="left">带侧边栏</td>
+<td align="left"><code>Berkeley</code>、<code>Goettingen</code>、<code>Hannover</code>、<code>Marburg</code>、<code>PaloAlto</code></td>
 </tr>
-</tbody>
-</table>
-</div>
+</tbody></table>
 <h2 id="色彩主题"><a href="#色彩主题" class="headerlink" title="色彩主题"></a>色彩主题</h2><p>设置幻灯片各部分、各结构、各元素的配色</p>
 <ul>
 <li><a target="_blank" rel="noopener" href="https://deic-web.uab.cat/~iblanes/beamer_gallery/index_by_color.html">Beamer color theme gallery</a>（预览各颜色主题样式）</li>
 </ul>
 <figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\usecolortheme</span>&#123;color theme name&#125;</span><br></pre></td></tr></table></figure>
-<div class="table-container">
+
 <table>
 <thead>
 <tr>
-<th style="text-align:left">类别</th>
-<th style="text-align:left">color theme name</th>
+<th align="left">类别</th>
+<th align="left">color theme name</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:left">基本颜色</td>
-<td style="text-align:left"><code>default</code>、<code>sidebartab</code>、<code>structure</code></td>
+<tbody><tr>
+<td align="left">基本颜色</td>
+<td align="left"><code>default</code>、<code>sidebartab</code>、<code>structure</code></td>
 </tr>
 <tr>
-<td style="text-align:left">完整颜色</td>
-<td style="text-align:left"><code>albatross</code>、<code>beaver</code>、<code>beetle</code>、<code>crane</code>、<code>dove</code>、<code>fly</code>、<code>seagull</code>、<code>wolverine</code></td>
+<td align="left">完整颜色</td>
+<td align="left"><code>albatross</code>、<code>beaver</code>、<code>beetle</code>、<code>crane</code>、<code>dove</code>、<code>fly</code>、<code>seagull</code>、<code>wolverine</code></td>
 </tr>
 <tr>
-<td style="text-align:left">内部颜色</td>
-<td style="text-align:left"><code>lily</code>、<code>orchid</code>、<code>rose</code></td>
+<td align="left">内部颜色</td>
+<td align="left"><code>lily</code>、<code>orchid</code>、<code>rose</code></td>
 </tr>
 <tr>
-<td style="text-align:left">外部颜色</td>
-<td style="text-align:left"><code>dolphin</code>、<code>seahorse</code>、<code>whale</code></td>
+<td align="left">外部颜色</td>
+<td align="left"><code>dolphin</code>、<code>seahorse</code>、<code>whale</code></td>
 </tr>
-</tbody>
-</table>
-</div>
+</tbody></table>
 <figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">%% 设置Beamer元素的颜色</span></span><br><span class="line"><span class="keyword">\setbeamercolor</span>&#123;Beamer<span class="built_in">_</span>element&#125;&#123;color&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">%% 例：</span></span><br><span class="line"><span class="keyword">\setbeamercolor</span>&#123;frametitle&#125;&#123;fg=blue,bg=yellow&#125;     <span class="comment">% 修改幻灯片标题颜色</span></span><br><span class="line"><span class="keyword">\setbeamercolor</span>*&#123;item projected&#125;&#123;fg=white, bg=itemizecolor&#125;    <span class="comment">% 目录中编号字体颜色为fg，编号图标颜色为bg</span></span><br><span class="line"><span class="keyword">\setbeamercolor</span>&#123;itemize item&#125;&#123;fg=itemizecolor&#125;  	<span class="comment">% 修改无序列表颜色</span></span><br><span class="line"><span class="keyword">\setbeamercolor</span>&#123;enumerate item&#125;&#123;fg=itemizecolor&#125;  	<span class="comment">% 修改有序列表颜色</span></span><br><span class="line"><span class="keyword">\setbeamercolor</span>&#123;description item&#125;&#123;fg=itemizecolor&#125;  		<span class="comment">% 修改描述列表“描述项”颜色</span></span><br><span class="line"><span class="keyword">\setbeamercolor</span>&#123;section in toc&#125;&#123;fg=black&#125;		<span class="comment">% 设置目录中标题的颜色</span></span><br></pre></td></tr></table></figure>
+
+
+
 <h2 id="字体主题"><a href="#字体主题" class="headerlink" title="字体主题"></a>字体主题</h2><p>设置幻灯片的字体</p>
 <ul>
 <li><a target="_blank" rel="noopener" href="https://deic-web.uab.cat/~iblanes/beamer_gallery/index_by_font.html">Beamer font theme gallery</a>（预览各字体主题样式）</li>
 </ul>
 <figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\usefonttheme</span>&#123;font theme name&#125;</span><br></pre></td></tr></table></figure>
-<div class="table-container">
+
 <table>
 <thead>
 <tr>
-<th style="text-align:left">font theme name</th>
-<th style="text-align:left">描述</th>
+<th align="left">font theme name</th>
+<th align="left">描述</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:left"><code>default</code></td>
-<td style="text-align:left"></td>
+<tbody><tr>
+<td align="left"><code>default</code></td>
+<td align="left"></td>
 </tr>
 <tr>
-<td style="text-align:left"><code>serif</code></td>
-<td style="text-align:left"></td>
+<td align="left"><code>serif</code></td>
+<td align="left"></td>
 </tr>
 <tr>
-<td style="text-align:left"><code>structurebold</code></td>
-<td style="text-align:left"></td>
+<td align="left"><code>structurebold</code></td>
+<td align="left"></td>
 </tr>
 <tr>
-<td style="text-align:left"><code>structureitalicserif</code></td>
-<td style="text-align:left"></td>
+<td align="left"><code>structureitalicserif</code></td>
+<td align="left"></td>
 </tr>
 <tr>
-<td style="text-align:left"><code>structuresmallcapsserif</code></td>
+<td align="left"><code>structuresmallcapsserif</code></td>
+<td align="left"></td>
 </tr>
-</tbody>
-</table>
-</div>
-<h2 id="内部主题"><a href="#内部主题" class="headerlink" title="内部主题"></a>内部主题</h2><p>设置幻灯片正文内容（标题、列表、定理等）的样式<br><figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\useinnertheme</span>&#123;inner theme name&#125;</span><br></pre></td></tr></table></figure></p>
-<div class="table-container">
+</tbody></table>
+<h2 id="内部主题"><a href="#内部主题" class="headerlink" title="内部主题"></a>内部主题</h2><p>设置幻灯片正文内容（标题、列表、定理等）的样式</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\useinnertheme</span>&#123;inner theme name&#125;</span><br></pre></td></tr></table></figure>
+
 <table>
 <thead>
 <tr>
-<th style="text-align:left">inner theme name</th>
-<th style="text-align:left">描述</th>
+<th align="left">inner theme name</th>
+<th align="left">描述</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:left"><code>default</code></td>
-<td style="text-align:left"></td>
+<tbody><tr>
+<td align="left"><code>default</code></td>
+<td align="left"></td>
 </tr>
 <tr>
-<td style="text-align:left"><code>circles</code></td>
-<td style="text-align:left"></td>
+<td align="left"><code>circles</code></td>
+<td align="left"></td>
 </tr>
 <tr>
-<td style="text-align:left"><code>rectangles</code></td>
-<td style="text-align:left"></td>
+<td align="left"><code>rectangles</code></td>
+<td align="left"></td>
 </tr>
 <tr>
-<td style="text-align:left"><code>rounded</code></td>
+<td align="left"><code>rounded</code></td>
+<td align="left"></td>
 </tr>
-</tbody>
-</table>
-</div>
-<h2 id="外部主题"><a href="#外部主题" class="headerlink" title="外部主题"></a>外部主题</h2><p>设置幻灯片是否有顶部导航栏、底部导航栏、侧边栏，以及他们的结构<br><figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\useoutertheme</span>&#123;outer theme name&#125;</span><br></pre></td></tr></table></figure></p>
-<div class="table-container">
+</tbody></table>
+<h2 id="外部主题"><a href="#外部主题" class="headerlink" title="外部主题"></a>外部主题</h2><p>设置幻灯片是否有顶部导航栏、底部导航栏、侧边栏，以及他们的结构</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\useoutertheme</span>&#123;outer theme name&#125;</span><br></pre></td></tr></table></figure>
+
 <table>
 <thead>
 <tr>
-<th style="text-align:left">outer theme name</th>
-<th style="text-align:left">描述</th>
+<th align="left">outer theme name</th>
+<th align="left">描述</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:left"><code>default</code></td>
-<td style="text-align:left"></td>
+<tbody><tr>
+<td align="left"><code>default</code></td>
+<td align="left"></td>
 </tr>
 <tr>
-<td style="text-align:left"><code>infolines</code></td>
-<td style="text-align:left"></td>
+<td align="left"><code>infolines</code></td>
+<td align="left"></td>
 </tr>
 <tr>
-<td style="text-align:left"><code>miniframes</code></td>
-<td style="text-align:left"></td>
+<td align="left"><code>miniframes</code></td>
+<td align="left"></td>
 </tr>
 <tr>
-<td style="text-align:left"><code>sidebar</code></td>
-<td style="text-align:left"></td>
+<td align="left"><code>sidebar</code></td>
+<td align="left"></td>
 </tr>
 <tr>
-<td style="text-align:left"><code>smoothbars</code></td>
-<td style="text-align:left"></td>
+<td align="left"><code>smoothbars</code></td>
+<td align="left"></td>
 </tr>
 <tr>
-<td style="text-align:left"><code>smoothtree</code></td>
-<td style="text-align:left"></td>
+<td align="left"><code>smoothtree</code></td>
+<td align="left"></td>
 </tr>
 <tr>
-<td style="text-align:left"><code>split</code></td>
-<td style="text-align:left"></td>
+<td align="left"><code>split</code></td>
+<td align="left"></td>
 </tr>
 <tr>
-<td style="text-align:left"><code>shadow</code></td>
-<td style="text-align:left"></td>
+<td align="left"><code>shadow</code></td>
+<td align="left"></td>
 </tr>
 <tr>
-<td style="text-align:left"><code>tree</code></td>
+<td align="left"><code>tree</code></td>
+<td align="left"></td>
 </tr>
-</tbody>
-</table>
-</div>
+</tbody></table>
 <h1 id="封面-标题页"><a href="#封面-标题页" class="headerlink" title="封面/标题页"></a>封面/标题页</h1><h2 id="封面信息"><a href="#封面信息" class="headerlink" title="封面信息"></a>封面信息</h2><figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\title</span>[导航区报告标题]&#123;封面报告标题&#125;</span><br><span class="line"><span class="keyword">\author</span>[导航区作者名]&#123;封面作者名&#125;</span><br><span class="line"><span class="keyword">\institute</span>[导航区院系]&#123;封面院系&#125;</span><br><span class="line"><span class="keyword">\date</span>&#123;日期&#125;</span><br><span class="line"><span class="comment">% \date&#123;\today&#125;：今天</span></span><br><span class="line"><span class="comment">% 例：\date&#123;\small \vskip -10pt \today&#125; 或 \date&#123;2021年04月&#125;</span></span><br></pre></td></tr></table></figure>
+
 <h2 id="标题页"><a href="#标题页" class="headerlink" title="标题页"></a>标题页</h2><ul>
 <li>用<code>\titlepage</code>生成标题页</li>
 <li>一般是第一张幻灯片</li>
 </ul>
 <figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;[plain]</span><br><span class="line">    <span class="keyword">\titlepage</span></span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br><span class="line"><span class="comment">% plain：不显示顶部导航区、侧边栏、底部导航区等外部元素</span></span><br></pre></td></tr></table></figure>
-<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><p>使用<code>\tableofcontents</code>生成目录页：<br><figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\section</span>*&#123;目录&#125;  <span class="comment">% *表示章“目录”不出现在目录中</span></span><br><span class="line"><span class="keyword">\frame</span>&#123;</span><br><span class="line">    <span class="keyword">\frametitle</span>&#123;<span class="keyword">\secname</span>&#125;  <span class="comment">% 幻灯片标题</span></span><br><span class="line">    <span class="comment">% \secname：与章（section）同名</span></span><br><span class="line">    <span class="keyword">\tableofcontents</span>[hideallsubsection]  <span class="comment">% 目录</span></span><br><span class="line">    <span class="comment">% hideallsubsection：隐藏所有子标题（节）</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><p>使用<code>\tableofcontents</code>生成目录页：</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\section</span>*&#123;目录&#125;  <span class="comment">% *表示章“目录”不出现在目录中</span></span><br><span class="line"><span class="keyword">\frame</span>&#123;</span><br><span class="line">    <span class="keyword">\frametitle</span>&#123;<span class="keyword">\secname</span>&#125;  <span class="comment">% 幻灯片标题</span></span><br><span class="line">    <span class="comment">% \secname：与章（section）同名</span></span><br><span class="line">    <span class="keyword">\tableofcontents</span>[hideallsubsection]  <span class="comment">% 目录</span></span><br><span class="line">    <span class="comment">% hideallsubsection：隐藏所有子标题（节）</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\setbeamertemplate</span>&#123;section in toc&#125;[sections numbered]  	<span class="comment">% 目录显示标题的编号</span></span><br><span class="line"><span class="keyword">\setbeamertemplate</span>&#123;section in toc&#125;[square]   	<span class="comment">% 标题前图标为square（方块）</span></span><br></pre></td></tr></table></figure>
+
 <h1 id="幻灯片"><a href="#幻灯片" class="headerlink" title="幻灯片"></a>幻灯片</h1><h2 id="新建幻灯片"><a href="#新建幻灯片" class="headerlink" title="新建幻灯片"></a>新建幻灯片</h2><figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">% 方式一：</span></span><br><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;&#123;幻灯片主题&#125;&#123;幻灯片副标题&#125;</span><br><span class="line">幻灯片内容</span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">% 方式二：</span></span><br><span class="line"><span class="keyword">\frame</span>&#123;</span><br><span class="line">    <span class="keyword">\frametitle</span>&#123;幻灯片主题&#125;</span><br><span class="line">    <span class="keyword">\framesubtitle</span>&#123;幻灯片副标题&#125;</span><br><span class="line">    幻灯片内容</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">% 方式三：</span></span><br><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;</span><br><span class="line">    <span class="keyword">\frametitle</span>&#123;幻灯片主题&#125;</span><br><span class="line">    <span class="keyword">\framesubtitle</span>&#123;幻灯片副标题&#125;</span><br><span class="line">    幻灯片内容</span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br></pre></td></tr></table></figure>
+
 <h2 id="分页"><a href="#分页" class="headerlink" title="分页"></a>分页</h2><figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;[allowframebreaks]&#123;幻灯片标题&#125;</span><br><span class="line">contents1</span><br><span class="line"></span><br><span class="line"><span class="keyword">\framebreak</span></span><br><span class="line"></span><br><span class="line">contents2</span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br></pre></td></tr></table></figure>
+
+
+
 <h2 id="交互"><a href="#交互" class="headerlink" title="交互"></a>交互</h2><p>跳转到特定页幻灯片：</p>
 <ol>
 <li>给目标幻灯片A添加标签：<code>label=幻灯片的标签名</code></li>
 <li>在需要跳转的地方添加跳转超链接：<code>\hyperlink&#123;目标幻灯页的标签名&#125; &#125;&#123;\beamergotobutton&#123;跳转按钮需要显示的文本&#125; &#125;</code></li>
 </ol>
 <figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">% \usepackage&#123;hyperref&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;[t,label=FrameA]&#123;第一页幻灯片标题&#125;&#123;第一页幻灯片副标题&#125;</span><br><span class="line">Frame A contents</span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;[t,label=FrameB]&#123;第N页幻灯片标题&#125;&#123;第N页幻灯片副标题&#125;</span><br><span class="line">contents1</span><br><span class="line"><span class="keyword">\hyperlink</span>&#123;FrameB&#125;&#123;<span class="keyword">\beamergotobutton</span>&#123;跳转按钮需要显示的文本&#125; &#125;   <span class="comment">%% 跳转按钮及超链接</span></span><br><span class="line">contents2</span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br></pre></td></tr></table></figure>
+
+
 <h1 id="段落"><a href="#段落" class="headerlink" title="段落"></a>段落</h1><h2 id="章节"><a href="#章节" class="headerlink" title="章节"></a>章节</h2><figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\section</span>&#123;章标题&#125;</span><br><span class="line"><span class="keyword">\subsection</span>&#123;节标题1&#125;</span><br><span class="line"><span class="keyword">\subsection</span>&#123;节标题2&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">% 不在目录中显示某章</span></span><br><span class="line"><span class="keyword">\section</span>*&#123;章标题&#125;</span><br><span class="line"><span class="keyword">\subsection</span>*&#123;节标题1&#125;</span><br></pre></td></tr></table></figure>
+
+
+
 <h1 id="文本"><a href="#文本" class="headerlink" title="文本"></a>文本</h1><h2 id="颜色"><a href="#颜色" class="headerlink" title="颜色"></a>颜色</h2><p>自定义文字颜色：<code>\textcolor&#123;color name&#125;&#123;words&#125;</code></p>
 <ul>
 <li><code>color name</code>：颜色名称，如<code>red</code>、<code>blue</code></li>
@@ -538,32 +552,65 @@
 <ul>
 <li><code>words</code>：需要加粗的文本</li>
 </ul>
-<h2 id="对齐-1"><a href="#对齐-1" class="headerlink" title="对齐"></a>对齐</h2><p>幻灯片文本对齐方式：<br><figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">% 幻灯片文本置顶分布 t</span></span><br><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;[t]&#123;frame name&#125;</span><br><span class="line">words</span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br></pre></td></tr></table></figure></p>
-<h2 id="删除线"><a href="#删除线" class="headerlink" title="删除线"></a>删除线</h2><p>给文本添加删除线：<code>\sout&#123;需要添加删除线的文本&#125;</code><br><figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">% \usepackage&#123;ulem&#125;</span></span><br><span class="line"><span class="keyword">\sout</span>&#123;需要添加删除线的文本&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="对齐-1"><a href="#对齐-1" class="headerlink" title="对齐"></a>对齐</h2><p>幻灯片文本对齐方式：</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">% 幻灯片文本置顶分布 t</span></span><br><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;[t]&#123;frame name&#125;</span><br><span class="line">words</span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="删除线"><a href="#删除线" class="headerlink" title="删除线"></a>删除线</h2><p>给文本添加删除线：<code>\sout&#123;需要添加删除线的文本&#125;</code></p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">% \usepackage&#123;ulem&#125;</span></span><br><span class="line"><span class="keyword">\sout</span>&#123;需要添加删除线的文本&#125;</span><br></pre></td></tr></table></figure>
+
 <h2 id="行间距"><a href="#行间距" class="headerlink" title="行间距"></a>行间距</h2><figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">% \usepackage&#123;setspace&#125;</span></span><br><span class="line"><span class="keyword">\begin</span>&#123;spacing&#125;&#123;1.5&#125;</span><br><span class="line">    words</span><br><span class="line"><span class="keyword">\end</span>&#123;spacing&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h1><h2 id="列表-list"><a href="#列表-list" class="headerlink" title="列表 list"></a>列表 list</h2><p>列表项依次呈现：<br><figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">% 一次呈现一个子项</span></span><br><span class="line"><span class="keyword">\begin</span>&#123;itemize&#125;</span><br><span class="line">    <span class="keyword">\item</span>&lt;1-&gt; item1 words</span><br><span class="line">    <span class="keyword">\item</span>&lt;2-&gt; item2 words</span><br><span class="line">    <span class="keyword">\item</span>&lt;3-&gt; item3 words</span><br><span class="line">    <span class="keyword">\item</span>&lt;4-&gt; item4 words</span><br><span class="line"><span class="keyword">\end</span>&#123;itemize&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">% 一次呈现多个子项</span></span><br><span class="line"><span class="keyword">\begin</span>&#123;itemize&#125;</span><br><span class="line">    <span class="keyword">\item</span>&lt;1-&gt; item1 words</span><br><span class="line">    <span class="keyword">\item</span>&lt;2-&gt; item2 words</span><br><span class="line">    <span class="keyword">\item</span>&lt;2-&gt; item3 words</span><br><span class="line">    <span class="keyword">\item</span>&lt;3-&gt; item4 words</span><br><span class="line"><span class="keyword">\end</span>&#123;itemize&#125;</span><br></pre></td></tr></table></figure></p>
+
+
+
+
+<h1 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h1><h2 id="列表-list"><a href="#列表-list" class="headerlink" title="列表 list"></a>列表 list</h2><p>列表项依次呈现：</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">% 一次呈现一个子项</span></span><br><span class="line"><span class="keyword">\begin</span>&#123;itemize&#125;</span><br><span class="line">    <span class="keyword">\item</span>&lt;1-&gt; item1 words</span><br><span class="line">    <span class="keyword">\item</span>&lt;2-&gt; item2 words</span><br><span class="line">    <span class="keyword">\item</span>&lt;3-&gt; item3 words</span><br><span class="line">    <span class="keyword">\item</span>&lt;4-&gt; item4 words</span><br><span class="line"><span class="keyword">\end</span>&#123;itemize&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">% 一次呈现多个子项</span></span><br><span class="line"><span class="keyword">\begin</span>&#123;itemize&#125;</span><br><span class="line">    <span class="keyword">\item</span>&lt;1-&gt; item1 words</span><br><span class="line">    <span class="keyword">\item</span>&lt;2-&gt; item2 words</span><br><span class="line">    <span class="keyword">\item</span>&lt;2-&gt; item3 words</span><br><span class="line">    <span class="keyword">\item</span>&lt;3-&gt; item4 words</span><br><span class="line"><span class="keyword">\end</span>&#123;itemize&#125;</span><br></pre></td></tr></table></figure>
+
 <h3 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h3><figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\begin</span>&#123;itemize&#125;</span><br><span class="line">    <span class="keyword">\item</span> 项</span><br><span class="line">    <span class="keyword">\item</span> 项</span><br><span class="line"><span class="keyword">\end</span>&#123;itemize&#125;</span><br></pre></td></tr></table></figure>
+
 <figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">%% 需放置于itemize环境中</span></span><br><span class="line"><span class="keyword">\setbeamertemplate</span>&#123;itemize item&#125;[triangle]  		<span class="comment">% 修改无序列表图标</span></span><br><span class="line"><span class="keyword">\setbeamercolor</span>&#123;itemize item&#125;&#123;fg=itemizecolor&#125;  	<span class="comment">% 修改无序列表颜色</span></span><br><span class="line"><span class="comment">% default</span></span><br><span class="line"><span class="comment">% triangle：三角形</span></span><br><span class="line"><span class="comment">% circle：小圆点</span></span><br><span class="line"><span class="comment">% square：正方形</span></span><br><span class="line"><span class="comment">% ball：球形</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">\setbeamertemplate</span>&#123;itemize items&#125;&#123;<span class="keyword">\color</span>&#123;red&#125;<span class="built_in">$</span><span class="keyword">\bullet</span><span class="built_in">$</span>&#125;     <span class="comment">% 修改无序列表图标为红色实心圆点</span></span><br><span class="line"><span class="comment">% bullet：实心圆点</span></span><br><span class="line"><span class="comment">% triangle：空心三角形</span></span><br></pre></td></tr></table></figure>
+
+
 <h3 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h3><figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\begin</span>&#123;enumerate&#125;</span><br><span class="line">    <span class="keyword">\item</span> 第一项</span><br><span class="line">    <span class="keyword">\item</span> 第二项</span><br><span class="line">    <span class="keyword">\item</span> 第三项</span><br><span class="line"><span class="keyword">\end</span>&#123;enumerate&#125;</span><br></pre></td></tr></table></figure>
+
 <figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">%% 需放置于enumerate环境中</span></span><br><span class="line"><span class="keyword">\setbeamertemplate</span>&#123;enumerate item&#125;&#123;circle&#125;      <span class="comment">% 序号图形</span></span><br><span class="line"><span class="keyword">\setbeamercolor</span>*&#123;item projected&#125;&#123;bg=red,fg=white&#125;</span><br><span class="line"><span class="comment">% bg：序号图标背景颜色</span></span><br><span class="line"><span class="comment">% fg：序号文本颜色</span></span><br></pre></td></tr></table></figure>
+
+
 <h2 id="描述列表-description"><a href="#描述列表-description" class="headerlink" title="描述列表 description"></a>描述列表 description</h2><figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\begin</span>&#123;description&#125;</span><br><span class="line">    <span class="keyword">\item</span>[红色] 热情、活泼、温暖、幸福</span><br><span class="line">    <span class="keyword">\item</span>[绿色] 新鲜、平静、安逸、柔和</span><br><span class="line"><span class="keyword">\end</span>&#123;description&#125;</span><br></pre></td></tr></table></figure>
+
 <h2 id="区块环境-block"><a href="#区块环境-block" class="headerlink" title="区块环境 block"></a>区块环境 block</h2><figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\begin</span>&#123;block&#125;&#123;重要内容&#125;</span><br><span class="line">内容</span><br><span class="line"><span class="keyword">\end</span>&#123;block&#125;</span><br></pre></td></tr></table></figure>
+
 <figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\setbeamertemplate</span>&#123;blocks&#125;[rounded][shadow=true]    <span class="comment">% 设置区块形状及样式</span></span><br><span class="line"><span class="comment">% rounded：圆角</span></span><br><span class="line"><span class="comment">% shadow=true：区块边缘阴影</span></span><br><span class="line"><span class="keyword">\setbeamercolor</span>&#123;block title&#125;&#123;fg=red&#125;    <span class="comment">% 设置区块标题文字颜色</span></span><br></pre></td></tr></table></figure>
+
 <h2 id="分栏-columns"><a href="#分栏-columns" class="headerlink" title="分栏 columns"></a>分栏 columns</h2><figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\begin</span>&#123;columns&#125;</span><br><span class="line"><span class="comment">% 第一栏</span></span><br><span class="line"><span class="keyword">\column</span>&#123;.45<span class="keyword">\textwidth</span>&#125;</span><br><span class="line">第一栏的内容</span><br><span class="line"></span><br><span class="line"><span class="comment">% 第二栏</span></span><br><span class="line"><span class="keyword">\column</span>&#123;.45<span class="keyword">\textwidth</span>&#125;</span><br><span class="line">第二栏的内容</span><br><span class="line"><span class="keyword">\end</span>&#123;columns&#125;</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>可以结合区块环境<code>block</code>使用</p>
 </blockquote>
 <h2 id="提醒环境-alertblock"><a href="#提醒环境-alertblock" class="headerlink" title="提醒环境 alertblock"></a>提醒环境 alertblock</h2><figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\begin</span>&#123;alertblock&#125;&#123;重要提醒&#125;</span><br><span class="line">内容</span><br><span class="line"><span class="keyword">\end</span>&#123;alertblock&#125;</span><br></pre></td></tr></table></figure>
+
 <h2 id="例子环境-exampleblock"><a href="#例子环境-exampleblock" class="headerlink" title="例子环境 exampleblock"></a>例子环境 exampleblock</h2><figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\begin</span>&#123;exampleblock&#125;&#123;重要例子&#125;</span><br><span class="line">内容</span><br><span class="line"><span class="keyword">\end</span>&#123;exampleblock&#125;</span><br></pre></td></tr></table></figure>
+
 <h2 id="定理环境"><a href="#定理环境" class="headerlink" title="定理环境"></a>定理环境</h2><h2 id="图片-figure"><a href="#图片-figure" class="headerlink" title="图片 figure"></a>图片 figure</h2><figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\begin</span>&#123;figure&#125;</span><br><span class="line">    <span class="keyword">\includegraphics</span>[width=0.6<span class="keyword">\linewidth</span>]&#123;图片名称&#125;</span><br><span class="line">    <span class="keyword">\caption</span>&#123;图片标题&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;figure&#125;</span><br></pre></td></tr></table></figure>
+
+
 <h2 id="超链接"><a href="#超链接" class="headerlink" title="超链接"></a>超链接</h2><p>插入超链接：<code>\href&#123;url&#125;&#123;name&#125;</code></p>
 <ul>
 <li><code>url</code>：网址</li>
 <li><code>name</code>：显示的文本</li>
 </ul>
 <figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">% \usepackage&#123;hyperref&#125;</span></span><br><span class="line">网址：<span class="keyword">\href</span>&#123;<span class="link">https://abtestguide.com/abtestsize</span>&#125;&#123;https://abtestguide.com/abtestsize&#125;</span><br></pre></td></tr></table></figure>
+
+
+
 <h1 id="汇总"><a href="#汇总" class="headerlink" title="汇总"></a>汇总</h1><h2 id="Beamer汇总"><a href="#Beamer汇总" class="headerlink" title="Beamer汇总"></a>Beamer汇总</h2><figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">% 使用XeLaTeX编译</span></span><br><span class="line"></span><br><span class="line"><span class="comment">% 设置文档类别为 beamer</span></span><br><span class="line"><span class="keyword">\documentclass</span>[16pt]&#123;beamer&#125; </span><br><span class="line"><span class="comment">%\\\ []中选项：</span></span><br><span class="line"><span class="comment">% 16pt：全局字体大小</span></span><br><span class="line"><span class="comment">% compress：尽量压缩导航栏</span></span><br><span class="line"></span><br><span class="line"><span class="comment">% ----------------- 主题 ------------------- %</span></span><br><span class="line"><span class="keyword">\usetheme</span>&#123;theme name&#125;   <span class="comment">% 幻灯片主题</span></span><br><span class="line"><span class="comment">%% 如：CambridgeUS</span></span><br><span class="line"><span class="keyword">\usecolortheme</span>&#123;beaver&#125;      <span class="comment">% 颜色主题</span></span><br><span class="line"></span><br><span class="line"><span class="comment">% ----------------- 常用包 ------------------- %</span></span><br><span class="line"><span class="keyword">\usepackage</span>[UTF8]&#123;ctex&#125;     <span class="comment">% 使用中文环境</span></span><br><span class="line"><span class="keyword">\usepackage</span>&#123;graphicx&#125;       <span class="comment">% 图片环境</span></span><br><span class="line"><span class="keyword">\usepackage</span>&#123;color&#125;          <span class="comment">% 颜色</span></span><br><span class="line"><span class="keyword">\usepackage</span>&#123;setspace&#125;       <span class="comment">% 行间距</span></span><br><span class="line"><span class="keyword">\usepackage</span>&#123;enumerate&#125;      <span class="comment">% 有序列表环境</span></span><br><span class="line"><span class="keyword">\usepackage</span>&#123;hyperref&#125;       <span class="comment">% 交叉引用</span></span><br><span class="line"><span class="keyword">\usepackage</span>&#123;ulem&#125;           <span class="comment">% 强调文本（如：删除线）</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">% ------------------ 主体 ------------------- %</span></span><br><span class="line"><span class="comment">% 开始写文章</span></span><br><span class="line"><span class="keyword">\begin</span>&#123;document&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">% ----------------- 封面信息 ------------------- %</span></span><br><span class="line"><span class="keyword">\title</span>[导航区报告标题]&#123;封面报告标题&#125;</span><br><span class="line"><span class="keyword">\author</span>[导航区作者名]&#123;封面作者名&#125;</span><br><span class="line"><span class="keyword">\institute</span>[导航区院系]&#123;封面院系&#125;</span><br><span class="line"><span class="keyword">\date</span>&#123;日期&#125;</span><br><span class="line"><span class="comment">% \date&#123;\today&#125;：今天</span></span><br><span class="line"><span class="comment">% 例：\date&#123;\small \vskip -10pt \today&#125;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">% ----- 封面 ----- %</span></span><br><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;</span><br><span class="line">    <span class="keyword">\maketitle</span>  <span class="comment">% 或 \titlepage</span></span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">% ----------------- 目录页 ------------------- %</span></span><br><span class="line"><span class="comment">% 样式一：默认样式</span></span><br><span class="line"><span class="keyword">\section</span>*&#123;目录&#125;    <span class="comment">% *表示章“目录”不出现在目录中</span></span><br><span class="line"><span class="keyword">\frame</span>&#123;</span><br><span class="line">    <span class="keyword">\frametitle</span>&#123;<span class="keyword">\secname</span>&#125;  <span class="comment">% 幻灯片标题</span></span><br><span class="line">    <span class="comment">% \secname：与章（section）同名</span></span><br><span class="line">    <span class="keyword">\tableofcontents</span>[hideallsubsection]  <span class="comment">% 目录</span></span><br><span class="line">    <span class="comment">% hideallsubsection：隐藏所有子标题（节）</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">% 样式二：自定义样式</span></span><br><span class="line"><span class="keyword">\section</span>*&#123;目录&#125;    <span class="comment">% *表示章“目录”不出现在目录中</span></span><br><span class="line"><span class="keyword">\frame</span>&#123;</span><br><span class="line">    <span class="keyword">\frametitle</span>&#123;<span class="keyword">\secname</span>&#125;   <span class="comment">% 幻灯片标题</span></span><br><span class="line">    <span class="keyword">\setbeamertemplate</span>&#123;enumerate items&#125;&#123;default&#125;</span><br><span class="line">    <span class="keyword">\setbeamertemplate</span>&#123;sectio in toc&#125;&#123;circle&#125;       <span class="comment">% 目录中，章序号的形状（circle：实心圆形）</span></span><br><span class="line">    <span class="keyword">\setbeamertemplate</span>&#123;subsection in toc&#125;&#123;triangle&#125; <span class="comment">% 目录中，节序号的形状（triangle：三角形）</span></span><br><span class="line">    <span class="keyword">\setbeamercolor</span>*&#123;item projected&#125;&#123;bg=red,fg=white&#125;   <span class="comment">% 列表序号颜色</span></span><br><span class="line">    <span class="comment">% bg：背景颜色</span></span><br><span class="line">    <span class="comment">% fg：文字颜色</span></span><br><span class="line">    <span class="keyword">\tableofcontents</span>[]      <span class="comment">% 生成目录</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">% ----------------- 正文 ------------------- %</span></span><br><span class="line"><span class="keyword">\section</span>&#123;绪论&#125;</span><br><span class="line"><span class="keyword">\subsection</span>&#123;研究背景和意义&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;&#123;幻灯片标题&#125;</span><br><span class="line">    内容</span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;&#123;幻灯片标题2&#125;</span><br><span class="line">    <span class="keyword">\begin</span>&#123;figure&#125;</span><br><span class="line">        <span class="keyword">\includegraphics</span>[width=0.6<span class="keyword">\linewidth</span>]&#123;图片名称&#125;</span><br><span class="line">        <span class="keyword">\caption</span>&#123;图片标题&#125;</span><br><span class="line">    <span class="keyword">\end</span>&#123;figure&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">\end</span>&#123;document&#125;</span><br></pre></td></tr></table></figure>
+
+
 <h2 id="setbeamer汇总"><a href="#setbeamer汇总" class="headerlink" title="setbeamer汇总"></a>setbeamer汇总</h2><figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">% frame</span></span><br><span class="line"><span class="keyword">\setbeamercolor</span>&#123;frametitle&#125;&#123;fg=blue,bg=yellow&#125;     <span class="comment">% 修改幻灯片标题颜色</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">% 目录toc</span></span><br><span class="line"><span class="keyword">\setbeamertemplate</span>&#123;section in toc&#125;[sections numbered]  	<span class="comment">% 目录显示标题的编号</span></span><br><span class="line"><span class="keyword">\setbeamertemplate</span>&#123;section in toc&#125;[square]   	        <span class="comment">% 标题前图标为square（方块）</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">\setbeamertemplate</span>&#123;enumerate items&#125;&#123;default&#125;</span><br><span class="line"><span class="keyword">\setbeamertemplate</span>&#123;sectio in toc&#125;&#123;circle&#125;           <span class="comment">% 目录中，章序号的形状（circle：实心圆形）</span></span><br><span class="line"><span class="keyword">\setbeamertemplate</span>&#123;subsection in toc&#125;&#123;triangle&#125;     <span class="comment">% 目录中，节序号的形状（triangle：三角形）</span></span><br><span class="line"><span class="keyword">\setbeamercolor</span>*&#123;item projected&#125;&#123;bg=red,fg=white&#125;   <span class="comment">% 列表序号颜色</span></span><br><span class="line"><span class="comment">% bg：背景颜色</span></span><br><span class="line"><span class="comment">% fg：文字颜色</span></span><br><span class="line"></span><br><span class="line"><span class="comment">% 列表</span></span><br><span class="line"><span class="comment">%% 无序列表itemize</span></span><br><span class="line"><span class="keyword">\setbeamertemplate</span>&#123;itemize item&#125;[triangle]  		<span class="comment">% 修改无序列表图标</span></span><br><span class="line"><span class="keyword">\setbeamercolor</span>&#123;itemize item&#125;&#123;fg=itemizecolor&#125;  	<span class="comment">% 修改无序列表颜色</span></span><br><span class="line"><span class="keyword">\setbeamertemplate</span>&#123;itemize items&#125;&#123;<span class="keyword">\color</span>&#123;red&#125;<span class="built_in">$</span><span class="keyword">\bullet</span><span class="built_in">$</span>&#125;     <span class="comment">% 修改无序列表图标为红色实心圆点</span></span><br><span class="line"><span class="comment">%% 有序列表enumerate</span></span><br><span class="line"><span class="keyword">\setbeamertemplate</span>&#123;enumerate item&#125;&#123;circle&#125;      <span class="comment">% 序号图形</span></span><br><span class="line"><span class="keyword">\setbeamercolor</span>*&#123;item projected&#125;&#123;bg=red,fg=white&#125;</span><br><span class="line"><span class="comment">%% 描述列表description</span></span><br><span class="line"><span class="keyword">\setbeamercolor</span>&#123;description item&#125;&#123;fg=itemizecolor&#125;  <span class="comment">% 修改描述列表“描述项”颜色</span></span><br><span class="line"><span class="comment">% bg：序号图标背景颜色</span></span><br><span class="line"><span class="comment">% fg：序号文本颜色</span></span><br><span class="line"></span><br><span class="line"><span class="comment">% 区块block</span></span><br><span class="line"><span class="keyword">\setbeamertemplate</span>&#123;blocks&#125;[rounded][shadow=true]    <span class="comment">% 设置区块形状及样式</span></span><br><span class="line"><span class="keyword">\setbeamercolor</span>&#123;block title&#125;&#123;fg=red&#125;                <span class="comment">% 设置区块标题文字颜色</span></span><br><span class="line"><span class="comment">% rounded：圆角</span></span><br><span class="line"><span class="comment">% shadow=true：区块边缘阴影</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
 <h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
 <li><a target="_blank" rel="noopener" href="https://mirror.las.iastate.edu/tex-archive/macros/latex/contrib/beamer-contrib/themes/hitszbeamer/hitszbeamer.pdf">HitSzBeamer</a></li>
 <li><a target="_blank" rel="noopener" href="https://bbs.pku.edu.cn/attach/cb/40/cb401e254626b3f9/beamerlog-1112.pdf">Beamer演示学习笔记</a></li>
@@ -766,13 +813,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">431k</span>
+    <span title="站点总字数">445k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">6:32</span>
+    <span title="站点阅读时长">6:45</span>
 </div>
 
 

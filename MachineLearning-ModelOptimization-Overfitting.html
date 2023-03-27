@@ -313,7 +313,9 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><center>Overfitting</center><br><span id="more"></span></p>
+        <center>Overfitting</center>
+<span id="more"></span>
+
 <ul>
 <li><strong>过拟合 / 过配</strong>（overfitting）：学习器把训练样本自身的一些特点当作所有潜在样本都会具有的一般性质</li>
 <li><strong>欠拟合 / 欠配</strong>（underfitting）：学习器对训练样本的一般性质尚未学好</li>
@@ -326,13 +328,9 @@
 <li>Dropout</li>
 </ul>
 <h3 id="Early-Stopping"><a href="#Early-Stopping" class="headerlink" title="Early Stopping"></a>Early Stopping</h3><p>迭代次数截断，在模型对训练数据集迭代收敛之前停止迭代来防止过拟合。</p>
-<p>具体做法：<br>在每一个Epoch<sup><a href="#fn_1" id="reffn_1">1</a></sup>结束时，计算验证数据集的准确率（accuracy），当准确率不再提高时，就停止训练。</p>
+<p>具体做法：<br>在每一个Epoch<a href="%E4%B8%80%E4%B8%AAEpoch%E9%9B%86%EF%BC%9A%E5%AF%B9%E6%89%80%E6%9C%89%E7%9A%84%E8%AE%AD%E7%BB%83%E6%95%B0%E6%8D%AE%E7%9A%84%E4%B8%80%E8%BD%AE%E9%81%8D%E5%8E%86">^1</a>结束时，计算验证数据集的准确率（accuracy），当准确率不再提高时，就停止训练。</p>
 <blockquote>
-<p>一般的做法：在训练的过程中，记录到目前为止最好的验证集准确率，当连续n次Epoch没有达到最佳准确率时，则可认为准确率不再提高了，此时便可停止迭代。<br>即：</p>
-<script type="math/tex; mode=display">No-improvement-in-n</script><p>$n$是Epoch的次数，根据实际情况选取。</p>
-</blockquote>
-<blockquote id="fn_1">
-<sup>1</sup>. 一个Epoch集：对所有的训练数据的一轮遍历<a href="#reffn_1" title="Jump back to footnote [1] in the text."> &#8617;</a>
+<p>一般的做法：在训练的过程中，记录到目前为止最好的验证集准确率，当连续n次Epoch没有达到最佳准确率时，则可认为准确率不再提高了，此时便可停止迭代。<br>即：<br>$$No-improvement-in-n$$<br>$n$是Epoch的次数，根据实际情况选取。</p>
 </blockquote>
 <h3 id="扩增数据集"><a href="#扩增数据集" class="headerlink" title="扩增数据集"></a>扩增数据集</h3><p>获得更多的符合要求的数据</p>
 <p>获取方法：</p>
@@ -344,14 +342,10 @@
 </ul>
 <h3 id="正则化"><a href="#正则化" class="headerlink" title="正则化"></a>正则化</h3><p>在对目标函数/代价函数优化时，在目标函数/代价函数后添加一个正则项（惩罚项）——降低模型的复杂度</p>
 <ul>
-<li>$l1$正则<ul>
+<li>$l1$正则</li>
 <li>使用$l1$正则可以得到稀疏的权值</li>
-</ul>
-</li>
-<li>$l2$正则<ul>
+<li>$l2$正则</li>
 <li>使用$l2$正则可以得到平滑的权值</li>
-</ul>
-</li>
 </ul>
 <h4 id="l1-正则"><a href="#l1-正则" class="headerlink" title="$l1$正则"></a>$l1$正则</h4><h4 id="l2-正则"><a href="#l2-正则" class="headerlink" title="$l2$正则"></a>$l2$正则</h4><h3 id="Dropout"><a href="#Dropout" class="headerlink" title="Dropout"></a>Dropout</h3><p>通过修改ANN（人工神经网络）中隐藏层的神经元个数来防止ANN的过拟合</p>
 <h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
@@ -557,13 +551,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">431k</span>
+    <span title="站点总字数">445k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">6:32</span>
+    <span title="站点阅读时长">6:45</span>
 </div>
 
 

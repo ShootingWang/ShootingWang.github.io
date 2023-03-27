@@ -311,7 +311,9 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><center></center><br><span id="more"></span></p>
+        <center></center>
+<span id="more"></span>
+
 <h1 id="双盲测试"><a href="#双盲测试" class="headerlink" title="双盲测试"></a>双盲测试</h1><p>将病人随机分为两组，病人在不知情的情况下分别服用安慰剂和测试用药，经过一段时间的实验后，比较两组病人的表现是否具有显著差异，以确定测试用药是否具有疗效。</p>
 <h1 id="ABtest"><a href="#ABtest" class="headerlink" title="ABtest"></a>ABtest</h1><p>AB测试</p>
 <p>将Web或App界面或流程的两个或多个版本，在同一时间维度，分别让两个或多个属性或组成成分相同（相似）的访客群组访问，收集各群组的用户体验数据和业务数据，最后分析评估出最好版本正式采用。</p>
@@ -394,17 +396,17 @@
 <li>使用Python的<code>statsmodels</code>库计算：</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> statsmodels.stats.power <span class="keyword">import</span> GofChisquarePower</span><br><span class="line"><span class="keyword">from</span> statsmodels.stats.proportion <span class="keyword">import</span> proportion_effectsize <span class="keyword">as</span> es</span><br><span class="line"></span><br><span class="line">GofChisquarePower().solve_power(</span><br><span class="line">	effect_size=es(prop1=prop1, prop2=prop2, method=<span class="string">&#x27;normal&#x27;</span>),</span><br><span class="line">	alpha=<span class="number">0.05</span>, power=<span class="number">0.8</span>, n_bins=<span class="number">2</span></span><br><span class="line">)</span><br><span class="line"><span class="comment">## prop1、prop2是两组样本的比率</span></span><br><span class="line"><span class="comment">## alpha是显著性水平；power是统计功效，一般取0.8</span></span><br></pre></td></tr></table></figure>
+
+
 <h1 id="其他AB测试"><a href="#其他AB测试" class="headerlink" title="其他AB测试"></a>其他AB测试</h1><h2 id="ABN-test"><a href="#ABN-test" class="headerlink" title="ABN test"></a>ABN test</h2><h2 id="ANB-test"><a href="#ANB-test" class="headerlink" title="ANB test"></a>ANB test</h2><h1 id="多维测试"><a href="#多维测试" class="headerlink" title="多维测试"></a>多维测试</h1><p>正常情况下，完成一个AB测试的整个周期为15天~1个月，这样一年内能完成的测试数目较为有限，为了保证高速迭代，可以在多个维度内同时推进AB测试</p>
 <ul>
 <li>一定要保证任意两个维度互不影响</li>
 </ul>
-<h1 id="辛普森悖论"><a href="#辛普森悖论" class="headerlink" title="辛普森悖论"></a>辛普森悖论</h1><p>辛普森悖论<sup><a href="#fn_1" id="reffn_1">1</a></sup>（Simpson’s Paradox）：在某个条件下的两组数据，分别讨论时都会满足某种性质，可是一旦合并考虑，可能导致相反的结论。</p>
-<blockquote id="fn_1">
-<sup>1</sup>. 辛普森悖论为英国统计学家E.H.Simpson于1951年提出的悖论<a href="#reffn_1" title="Jump back to footnote [1] in the text."> &#8617;</a>
-</blockquote>
+<h1 id="辛普森悖论"><a href="#辛普森悖论" class="headerlink" title="辛普森悖论"></a>辛普森悖论</h1><p>辛普森悖论<a href="%E8%BE%9B%E6%99%AE%E6%A3%AE%E6%82%96%E8%AE%BA%E4%B8%BA%E8%8B%B1%E5%9B%BD%E7%BB%9F%E8%AE%A1%E5%AD%A6%E5%AE%B6E.H.Simpson%E4%BA%8E1951%E5%B9%B4%E6%8F%90%E5%87%BA%E7%9A%84%E6%82%96%E8%AE%BA">^1</a>（Simpson’s Paradox）：在某个条件下的两组数据，分别讨论时都会满足某种性质，可是一旦合并考虑，可能导致相反的结论。</p>
 <div class="note default">
-            <h2 id="性别歧视问题"><a href="#性别歧视问题" class="headerlink" title="性别歧视问题"></a>性别歧视问题</h2><p>假设一所高校只有两个学院（法学院和商学院），两个学院某年的考研录取情况如下：</p><div><style scoped>    .dataframe tbody tr th:only-of-type {        vertical-align: middle;    }    .dataframe tbody tr th {        vertical-align: top;    }    .dataframe thead th {        text-align: center;    }</style><table border="1" class="dataframe">  <thead>    <tr style="text-align: center;">      <th></th>      <th colspan="2">法学院</th>      <th colspan="2">商学院</th>    </tr>    <tr style="text-align: center;">      <th></th>      <th>男生</th>      <th>女生</th>      <th>男生</th>      <th>女生</th>    </tr>  </thead>  <tbody>    <tr>      <th>录取</th>      <td>8</td>      <td>51</td>      <td>201</td>      <td>92</td>    </tr>    <tr>      <th>未录取</th>      <td>45</td>      <td>101</td>      <td>50</td>      <td>9</td>    </tr>    <tr>      <th>录取率</th>      <td>15.09%</td>      <td>33.55%</td>      <td>80.08%</td>      <td>91.09%</td>    </tr>    <tr>  </tr></tbody></table></div><p>单独看每个学院，都是女生的录取比例高于男生。但是如果看全校的录取情况：</p><div class="table-container"><table><thead><tr><th style="text-align:center"></th><th style="text-align:center">全校男生</th><th style="text-align:center">全校女生</th><th style="text-align:center">总人数</th></tr></thead><tbody><tr><td style="text-align:center">录取</td><td style="text-align:center">209</td><td style="text-align:center">143</td><td style="text-align:center">352</td></tr><tr><td style="text-align:center">未录取</td><td style="text-align:center">95</td><td style="text-align:center">110</td><td style="text-align:center">205</td></tr><tr><td style="text-align:center">总人数</td><td style="text-align:center">304</td><td style="text-align:center">253</td><td style="text-align:center">557</td></tr><tr><td style="text-align:center">录取率</td><td style="text-align:center">68.75%</td><td style="text-align:center">56.52%</td></tr></tbody></table></div><p>则会发现男生的录取比例高于女生。这就是辛普森悖论。</p>
+            <h2 id="性别歧视问题"><a href="#性别歧视问题" class="headerlink" title="性别歧视问题"></a>性别歧视问题</h2><p>假设一所高校只有两个学院（法学院和商学院），两个学院某年的考研录取情况如下：</p><div><style scoped>    .dataframe tbody tr th:only-of-type {        vertical-align: middle;    }<pre><code>.dataframe tbody tr th {    vertical-align: top;}.dataframe thead th {    text-align: center;}</code></pre><p></style><p></p><table border="1" class="dataframe">  <thead>    <tr style="text-align: center;">      <th></th>      <th colspan="2">法学院</th>      <th colspan="2">商学院</th>    </tr>    <tr style="text-align: center;">      <th></th>      <th>男生</th>      <th>女生</th>      <th>男生</th>      <th>女生</th>    </tr>  </thead>  <tbody>    <tr>      <th>录取</th>      <td>8</td>      <td>51</td>      <td>201</td>      <td>92</td>    </tr>    <tr>      <th>未录取</th>      <td>45</td>      <td>101</td>      <td>50</td>      <td>9</td>    </tr>    <tr>      <th>录取率</th>      <td>15.09%</td>      <td>33.55%</td>      <td>80.08%</td>      <td>91.09%</td>    </tr>    <tr>  </tr></tbody></table></div><p>单独看每个学院，都是女生的录取比例高于男生。但是如果看全校的录取情况：</p><table><thead><tr><th align="center"></th><th align="center">全校男生</th><th align="center">全校女生</th><th align="center">总人数</th></tr></thead><tbody><tr><td align="center">录取</td><td align="center">209</td><td align="center">143</td><td align="center">352</td></tr><tr><td align="center">未录取</td><td align="center">95</td><td align="center">110</td><td align="center">205</td></tr><tr><td align="center">总人数</td><td align="center">304</td><td align="center">253</td><td align="center">557</td></tr><tr><td align="center">录取率</td><td align="center">68.75%</td><td align="center">56.52%</td><td align="center"></td></tr></tbody></table><p>则会发现男生的录取比例高于女生。这就是辛普森悖论。</p>
           </div>
+
 <p>误区产生的原因主要在于——将“值与量”两个维度的数据，归纳成了“值”一个维度的数据，并进行了合并。</p>
 <p>我们要避免辛普森悖论带来的误区，要斟酌个别分组的权重，以一定系数去消除分组资料基数差异带来的影响。</p>
 <ul>
@@ -485,37 +487,34 @@
 </ul>
 </li>
 </ul>
-<h1 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h1><h2 id="转化率"><a href="#转化率" class="headerlink" title="转化率"></a>转化率</h2><div class="table-container">
-<table>
+<h1 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h1><h2 id="转化率"><a href="#转化率" class="headerlink" title="转化率"></a>转化率</h2><table>
 <thead>
 <tr>
-<th style="text-align:center"></th>
-<th style="text-align:center">A组</th>
-<th style="text-align:center">B组</th>
+<th align="center"></th>
+<th align="center">A组</th>
+<th align="center">B组</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:center">转化率</td>
-<td style="text-align:center">$p_A$</td>
-<td style="text-align:center">$p_B$</td>
+<tbody><tr>
+<td align="center">转化率</td>
+<td align="center">$p_A$</td>
+<td align="center">$p_B$</td>
 </tr>
 <tr>
-<td style="text-align:center">用户数</td>
-<td style="text-align:center">$n_A$</td>
-<td style="text-align:center">$n_B$</td>
+<td align="center">用户数</td>
+<td align="center">$n_A$</td>
+<td align="center">$n_B$</td>
 </tr>
-</tbody>
-</table>
-</div>
-<p>零假设为</p>
-<script type="math/tex; mode=display">H_0:p_A\leq p_B</script><p>备择假设为</p>
-<script type="math/tex; mode=display">H_1:p_A > p_B</script><p>则AB测试的$Z$值为</p>
-<script type="math/tex; mode=display">Z= \frac{ p_B - p_A }{ \sqrt{ \frac{ p_A (1 - p_A ) }{n_A}+\frac{ p_B ( 1 - p_B )}{ n_B } } }</script><h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><div class="note default">
-            <p><strong>题目</strong>：项目上线要AB测试(测试CTR是否大于原来的CTR)，假设每天测试有10000人，现在我只统计里面1000人的CTR，问我要连续测试多少天，才能让得到的结论有95%的置信度？</p><p><strong>参考答案</strong>：<a target="_blank" rel="noopener" href="http://24xi.org/sofasofa/forum_main_post.php?postid=1007525">SofaSofa-AB测试样本量的问题</a><br>根据以下公式计算：</p><script type="math/tex; mode=display">n = \frac{ \frac{ z^2 p ( 1-p ) }{ e^2 } }{ 1+ \frac{ z^2 p (1-p) }{ Ne^2 } }</script><p>其中</p><ul><li>$N$是样本总数，即10000</li><li>$z$是标准正态分布的$95\%$置信区间</li><li>$e$是边际误差，如1%</li><li>$p$是CTR，如0.05</li></ul><p>代入数值，求得$n\approx 1543&gt;1000$，则只测一天得话，数据量不够。如果连续测两天，则样本总数为20000，此时计算得到$n\approx 1672&lt;2000$。因此，测2天即可。</p>
+</tbody></table>
+<p>零假设为<br>$$H_0:p_A\leq p_B$$<br>备择假设为<br>$$H_1:p_A &gt; p_B$$</p>
+<p>则AB测试的$Z$值为<br>$$Z= \frac{ p_B - p_A }{ \sqrt{ \frac{ p_A (1 - p_A ) }{n_A}+\frac{ p_B ( 1 - p_B )}{ n_B } } }$$</p>
+<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><div class="note default">
+            <p><strong>题目</strong>：项目上线要AB测试(测试CTR是否大于原来的CTR)，假设每天测试有10000人，现在我只统计里面1000人的CTR，问我要连续测试多少天，才能让得到的结论有95%的置信度？</p><p><strong>参考答案</strong>：<a target="_blank" rel="noopener" href="http://24xi.org/sofasofa/forum_main_post.php?postid=1007525">SofaSofa-AB测试样本量的问题</a><br>根据以下公式计算：<br>$$n = \frac{ \frac{ z^2 p ( 1-p ) }{ e^2 } }{ 1+ \frac{ z^2 p (1-p) }{ Ne^2 } }$$<br>其中</p><ul><li>$N$是样本总数，即10000</li><li>$z$是标准正态分布的$95%$置信区间</li><li>$e$是边际误差，如1%</li><li>$p$是CTR，如0.05</li></ul><p>代入数值，求得$n\approx 1543&gt;1000$，则只测一天得话，数据量不够。如果连续测两天，则样本总数为20000，此时计算得到$n\approx 1672&lt;2000$。因此，测2天即可。</p>
           </div>
+
+
 <h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
-<li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzUzODYwMDAzNA==&amp;mid=2247490797&amp;idx=3&amp;sn=5eeb1eeac5facb704c77c21eb1c703a6&amp;chksm=fad46be0cda3e2f6738947f9ce7dca4f60796870453d1222f51ba44cecbb321e0cbcaa881289&amp;mpshare=1&amp;scene=24&amp;srcid=&amp;sharer_sharetime=1589846450651&amp;sharer_shareid=b539221659d6ecf12200314308b58dd3&amp;key=e224f213fcbe84759f79aacb516d4bf8e8fa647879ab62d1eb6fd667e362e3ab352226749e8c5a94c9d72a3123286a45310529e7ab57c50dbece5f0296aa536ff328b1637c3af7f351a13bd2c7e76b00&amp;ascene=14&amp;uin=MjAwNDUzMjgxNw%3D%3D&amp;devicetype=Windows+10+x64&amp;version=62090070&amp;lang=zh_CN&amp;exportkey=AT3GI1XwfMzd87mEXW7wlLk%3D&amp;pass_ticket=vCOnZ86B9zjbSGFnUl2pZh2C3sFfxo%2BAKXmGUdzX1teUg6KzXE86GrBP%2Fo1Z8BFC">数据分析师必知必会：AB测试项目复盘</a></li>
+<li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzUzODYwMDAzNA==&mid=2247490797&idx=3&sn=5eeb1eeac5facb704c77c21eb1c703a6&chksm=fad46be0cda3e2f6738947f9ce7dca4f60796870453d1222f51ba44cecbb321e0cbcaa881289&mpshare=1&scene=24&srcid=&sharer_sharetime=1589846450651&sharer_shareid=b539221659d6ecf12200314308b58dd3&key=e224f213fcbe84759f79aacb516d4bf8e8fa647879ab62d1eb6fd667e362e3ab352226749e8c5a94c9d72a3123286a45310529e7ab57c50dbece5f0296aa536ff328b1637c3af7f351a13bd2c7e76b00&ascene=14&uin=MjAwNDUzMjgxNw==&devicetype=Windows+10+x64&version=62090070&lang=zh_CN&exportkey=AT3GI1XwfMzd87mEXW7wlLk=&pass_ticket=vCOnZ86B9zjbSGFnUl2pZh2C3sFfxo+AKXmGUdzX1teUg6KzXE86GrBP/o1Z8BFC">数据分析师必知必会：AB测试项目复盘</a></li>
 <li><a target="_blank" rel="noopener" href="http://20bits.com/article/speed-vs-certainty-in-ab-testing">Speed vs. Certainty in A/B Testing</a></li>
 <li><a target="_blank" rel="noopener" href="http://20bits.com/article/statistical-analysis-and-ab-testing">Statistical Analysis and A/B Testing</a></li>
 <li><a target="_blank" rel="noopener" href="https://signalvnoise.com/posts/3004-ab-testing-tech-note-determining-sample-size">A/B Testing Tech Note: determining sample size</a></li>
@@ -723,13 +722,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">431k</span>
+    <span title="站点总字数">445k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">6:32</span>
+    <span title="站点阅读时长">6:45</span>
 </div>
 
 

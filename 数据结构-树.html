@@ -312,11 +312,14 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><center>Tree</center><br><span id="more"></span></p>
+        <center>Tree</center>
+<span id="more"></span>
+
 <p>一对多的数据结构——树</p>
 <h1 id="树"><a href="#树" class="headerlink" title="树"></a>树</h1><h2 id="树-1"><a href="#树-1" class="headerlink" title="树"></a>树</h2><p><strong>树</strong>（Tree）是$n$个结点的有限集。</p>
 <ul>
-<li><strong>空树</strong>：$n=0$</li>
+<li><p><strong>空树</strong>：$n=0$</p>
+</li>
 <li><p><strong>非空树</strong>：</p>
 <ul>
 <li>$n&gt;0$</li>
@@ -326,7 +329,8 @@
 </li>
 <li><p><strong>有序树</strong><br>如果树中结点的各子树从左至右是有次序的、不能互换左右子树的，则该树为有序树</p>
 </li>
-<li><strong>无序树</strong><br>树中结点可互换左右子树，则该树为无序树</li>
+<li><p><strong>无序树</strong><br>树中结点可互换左右子树，则该树为无序树</p>
+</li>
 </ul>
 <h2 id="森林"><a href="#森林" class="headerlink" title="森林"></a>森林</h2><p><strong>森林</strong>（Forest）：$m$棵互不相交的树的集合</p>
 <ul>
@@ -404,33 +408,35 @@
 <h2 id="平衡二叉树"><a href="#平衡二叉树" class="headerlink" title="平衡二叉树"></a>平衡二叉树</h2><p><strong>平衡二叉树</strong>（BT，Balance Tree），又称<strong>AVL树</strong>：是一棵空树，或它的左右子树的高度差的绝对值不超过1，且左右子树都是一棵平衡二叉树</p>
 <h2 id="二叉树性质"><a href="#二叉树性质" class="headerlink" title="二叉树性质"></a>二叉树性质</h2><ol>
 <li>二叉树的第$i$层上最多有$2^{i-1}$个结点（$i\geq 1$）</li>
-<li>深度为$k$的二叉树最多有$2^k-1$个结点（$k\geq1$）<ul>
+<li>深度为$k$的二叉树最多有$2^k-1$个结点（$k\geq1$）</li>
+</ol>
+<ul>
 <li>$k=1$：最多有$1(2^1-1)$个结点</li>
 <li>$k=1$：最多有$1+2=3(2^2-1)$个结点</li>
 <li>$k=2$：最多有$1+2+2^2=7(2^3-1)$个结点</li>
 <li>……</li>
 <li>对任意的$k$，最多有$2^0+2^1+\cdots+2^k=2^k-1$个结点</li>
 </ul>
-</li>
+<ol start="3">
 <li>对任意一棵二叉树$T$，有$n_0$个叶子结点（度为0）、$n_2$个度为2的结点，则有$n_1=n_2+1$<ul>
 <li>度为0的结点数为$n_0$</li>
 <li>度为1的结点数为$n_1$</li>
 <li>度为2的结点数为$n_2$<ul>
-<li>二叉树的结点的度最多为2，所以树$T$的结点总数为<script type="math/tex; mode=display">n=n_0+n_1+n_2</script></li>
+<li>二叉树的结点的度最多为2，所以树$T$的结点总数为<br>$$n=n_0+n_1+n_2$$</li>
 </ul>
 </li>
 <li>只有根结点没有连接线进入，其他结点都有连接线进入，所以连接线总数为$n-1$</li>
 <li>度为1的结点有一条向下的连接线，度为2的结点有2条向下的连接线，度为0的结点没有向下的连接线，所以连接线总数为$n_1+2n_2$<ul>
-<li>连接线总数为<script type="math/tex; mode=display">n_L=n-1=n_1+2n_2</script></li>
+<li>连接线总数为<br>$$n_L=n-1=n_1+2n_2$$</li>
 </ul>
 </li>
-<li>由上面两个等式可得<script type="math/tex; mode=display">n_0=n_2+1</script></li>
+<li>由上面两个等式可得<br>$$n_0=n_2+1$$</li>
 </ul>
 </li>
 <li>具有$n$个结点的完全二叉树的深度为$[\log_2{n}]+1$（$[x]$表示不大于$x$的最大整数）<ul>
 <li>深度为$k$的满二叉树的结点数为$n=2^k-1$</li>
 <li>有$n$个结点的满二叉树的深度为$k=\log_2{(n+1)}$</li>
-<li>完全二叉树的叶子结点只可能出现在最下面两层，则深度为$k$的完全二叉树的结点数$n$一定多于深度为$k-1$的满二叉树、不多于深度为$k$的满二叉树。即<script type="math/tex; mode=display">2^{k-1} -1 < n \leq 2^k-1</script>  也即<script type="math/tex; mode=display">2^{k-1} \leq n < 2^k</script><script type="math/tex; mode=display">k-1 \leq \log_2n <k</script>  所以有<script type="math/tex; mode=display">k=[\log_2n]+1</script></li>
+<li>完全二叉树的叶子结点只可能出现在最下面两层，则深度为$k$的完全二叉树的结点数$n$一定多于深度为$k-1$的满二叉树、不多于深度为$k$的满二叉树。即<br>  $$2^{k-1} -1 &lt; n \leq 2^k-1$$<br>  也即<br>  $$2^{k-1} \leq n &lt; 2^k$$<br>  $$k-1 \leq \log_2n &lt;k$$<br>  所以有<br>  $$k=[\log_2n]+1$$</li>
 </ul>
 </li>
 <li>对一棵有$n$个结点的完全二叉树（深度为$[\log_2n]+1$）的结点按层序编号（从第1层到第$[\log_2n]+1$层，每层从左到右），对任一结点$i(1\leq i\leq n)$有：<ul>
@@ -461,31 +467,43 @@
 </blockquote>
 </li>
 <li>二叉树非空<blockquote>
-<script type="math/tex; mode=display">根结点 \rightarrow前序遍历左子树 \rightarrow 前序遍历右子树</script><script type="math/tex; mode=display">中\rightarrow左\rightarrow右</script></blockquote>
+<p>$$根结点 \rightarrow前序遍历左子树 \rightarrow 前序遍历右子树$$<br>$$中\rightarrow左\rightarrow右$$</p>
+</blockquote>
 </li>
 </ul>
-<p><meta name="referrer" content="no-referrer"><br></p>
-<script type="math/tex; mode=display">1→2→4→5→3→6→7</script><h3 id="中序遍历"><a href="#中序遍历" class="headerlink" title="中序遍历"></a>中序遍历</h3><ul>
+<meta name="referrer" content="no-referrer">
+
+$$1→2→4→5→3→6→7$$
+
+<h3 id="中序遍历"><a href="#中序遍历" class="headerlink" title="中序遍历"></a>中序遍历</h3><ul>
 <li>二叉树为空<blockquote>
 <p>返回空</p>
 </blockquote>
 </li>
 <li>二叉树非空<blockquote>
-<script type="math/tex; mode=display">中序遍历根结点的左子树\rightarrow根结点\rightarrow中序遍历右子树</script><script type="math/tex; mode=display">左\rightarrow中\rightarrow右</script></blockquote>
+<p>$$中序遍历根结点的左子树\rightarrow根结点\rightarrow中序遍历右子树$$<br>$$左\rightarrow中\rightarrow右$$</p>
+</blockquote>
 </li>
 </ul>
-<p><meta name="referrer" content="no-referrer"><br></p>
-<script type="math/tex; mode=display">4→2→5→1→6→3→7</script><h3 id="后序遍历"><a href="#后序遍历" class="headerlink" title="后序遍历"></a>后序遍历</h3><ul>
+<meta name="referrer" content="no-referrer">
+
+$$4→2→5→1→6→3→7$$
+
+<h3 id="后序遍历"><a href="#后序遍历" class="headerlink" title="后序遍历"></a>后序遍历</h3><ul>
 <li>二叉树为空<blockquote>
 <p>返回空</p>
 </blockquote>
 </li>
 <li>二叉树非空<blockquote>
-<script type="math/tex; mode=display">后序遍历左子树\rightarrow后序遍历右子树\rightarrow根结点</script><script type="math/tex; mode=display">左\rightarrow右\rightarrow中</script></blockquote>
+<p>$$后序遍历左子树\rightarrow后序遍历右子树\rightarrow根结点$$<br>$$左\rightarrow右\rightarrow中$$</p>
+</blockquote>
 </li>
 </ul>
-<p><meta name="referrer" content="no-referrer"><br></p>
-<script type="math/tex; mode=display">4→5→2→6→7→3→1</script><h3 id="层序遍历"><a href="#层序遍历" class="headerlink" title="层序遍历"></a>层序遍历</h3><ul>
+<meta name="referrer" content="no-referrer">
+
+$$4→5→2→6→7→3→1$$
+
+<h3 id="层序遍历"><a href="#层序遍历" class="headerlink" title="层序遍历"></a>层序遍历</h3><ul>
 <li>二叉树为空<blockquote>
 <p>返回空</p>
 </blockquote>
@@ -495,8 +513,12 @@
 </blockquote>
 </li>
 </ul>
-<p><meta name="referrer" content="no-referrer"><br></p>
-<script type="math/tex; mode=display">1→2→3→4→5→6→7</script><h1 id="赫夫曼"><a href="#赫夫曼" class="headerlink" title="赫夫曼"></a>赫夫曼</h1><h2 id="赫夫曼树"><a href="#赫夫曼树" class="headerlink" title="赫夫曼树"></a>赫夫曼树</h2><h2 id="赫夫曼编码"><a href="#赫夫曼编码" class="headerlink" title="赫夫曼编码"></a>赫夫曼编码</h2><h1 id="二叉查找树"><a href="#二叉查找树" class="headerlink" title="二叉查找树"></a>二叉查找树</h1><p><strong>二叉搜索树/二叉查找树</strong>（Binary Search Tree）</p>
+<meta name="referrer" content="no-referrer">
+
+$$1→2→3→4→5→6→7$$
+
+
+<h1 id="赫夫曼"><a href="#赫夫曼" class="headerlink" title="赫夫曼"></a>赫夫曼</h1><h2 id="赫夫曼树"><a href="#赫夫曼树" class="headerlink" title="赫夫曼树"></a>赫夫曼树</h2><h2 id="赫夫曼编码"><a href="#赫夫曼编码" class="headerlink" title="赫夫曼编码"></a>赫夫曼编码</h2><h1 id="二叉查找树"><a href="#二叉查找树" class="headerlink" title="二叉查找树"></a>二叉查找树</h1><p><strong>二叉搜索树/二叉查找树</strong>（Binary Search Tree）</p>
 <ul>
 <li>是一种数据结构</li>
 <li>不能随机访问</li>
@@ -506,34 +528,30 @@
 <li>平均运行时间为$O(\log{n})$</li>
 <li>最糟的运行时间为$O(n)$</li>
 </ul>
-<div class="table-container">
 <table>
 <thead>
 <tr>
-<th style="text-align:center"></th>
-<th style="text-align:center">数组</th>
-<th style="text-align:center">二叉查找树</th>
+<th align="center"></th>
+<th align="center">数组</th>
+<th align="center">二叉查找树</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:center">查找</td>
-<td style="text-align:center">$O(\log{n})$</td>
-<td style="text-align:center">$O(\log{n})$</td>
+<tbody><tr>
+<td align="center">查找</td>
+<td align="center">$O(\log{n})$</td>
+<td align="center">$O(\log{n})$</td>
 </tr>
 <tr>
-<td style="text-align:center">插入</td>
-<td style="text-align:center">$O(n)$</td>
-<td style="text-align:center">$O(\log{n})$</td>
+<td align="center">插入</td>
+<td align="center">$O(n)$</td>
+<td align="center">$O(\log{n})$</td>
 </tr>
 <tr>
-<td style="text-align:center">删除</td>
-<td style="text-align:center">$O(n)$</td>
-<td style="text-align:center">$O(\log{n})$</td>
+<td align="center">删除</td>
+<td align="center">$O(n)$</td>
+<td align="center">$O(\log{n})$</td>
 </tr>
-</tbody>
-</table>
-</div>
+</tbody></table>
 <h1 id="最小生成树"><a href="#最小生成树" class="headerlink" title="最小生成树"></a>最小生成树</h1><p><strong>最小生成树</strong>（MST，Minimum Spanning Tree）：一个有$n$个结点的连通图的生成树是原图的极小连通子图，且包含原图中的所有$n$个结点，并且有保持图连通的最少的边。</p>
 <ul>
 <li>一个图可以有许多棵不同的生成树</li>
@@ -553,7 +571,7 @@
 <li><a target="_blank" rel="noopener" href="https://book.douban.com/subject/6424904/">大话数据结构</a></li>
 <li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/songwenjie/p/8955856.html">【图解数据结构】二叉树遍历</a></li>
 <li><a target="_blank" rel="noopener" href="https://book.douban.com/subject/26979890/">图解算法</a></li>
-<li><a target="_blank" rel="noopener" href="https://baijiahao.baidu.com/s?id=1646617486319372351&amp;wfr=spider&amp;for=pc">一文读懂平衡二叉树</a></li>
+<li><a target="_blank" rel="noopener" href="https://baijiahao.baidu.com/s?id=1646617486319372351&wfr=spider&for=pc">一文读懂平衡二叉树</a></li>
 <li><a target="_blank" rel="noopener" href="https://my.oschina.net/u/4365394/blog/3234185/print">最小生成树</a></li>
 </ul>
 
@@ -753,13 +771,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">431k</span>
+    <span title="站点总字数">445k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">6:32</span>
+    <span title="站点阅读时长">6:45</span>
 </div>
 
 

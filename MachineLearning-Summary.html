@@ -315,7 +315,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><center></center><br><span id="more"></span></p>
+        <center></center>
+<span id="more"></span>
+
+
 <h1 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h1><ul>
 <li><a href="/MachineLearning-ModelEvaluation-Classification.html" title="分类模型评估">分类模型评估</a></li>
 <li><a href="/MachineLearning-ModelEvaluation-Clustering.html" title="聚类模型评估">聚类模型评估</a></li>
@@ -323,6 +326,8 @@
 <li><a href="/MachineLearning-ModelOptimization-Underfitting.html" title="欠拟合">欠拟合</a></li>
 <li><a href="/MachineLearning-Entropy.html" title="熵">熵</a></li>
 <li><a href="/MachineLearning-FeatureScaling.html" title="归一化、特征缩放">归一化、特征缩放</a>
+
+
 </li>
 </ul>
 <p><strong>Machine Learning 机器学习</strong>：</p>
@@ -371,11 +376,13 @@
 <li><a href="/MachineLearning-Classification-SVM.html" title="SVM 支持向量机">SVM 支持向量机</a></li>
 <li><a href="/MachineLearning-Classification-DecisionTree.html" title="Decision Tree 决策树">Decision Tree 决策树</a></li>
 <li><a href="/MachineLearning-Classification-LogisticRegression.html" title="Logistic Regression 逻辑回归">Logistic Regression 逻辑回归</a>
+
 </li>
 </ul>
 <p>相关文章：</p>
 <ul>
 <li><a href="/MachineLearning-ModelEvaluation-Classification.html" title="分类模型评估">分类模型评估</a>
+
 </li>
 </ul>
 <p>从<strong>使用的主要技术</strong>上看，可以把分类方法归结为4种类型：</p>
@@ -429,6 +436,7 @@
 <p>相关文章：</p>
 <ul>
 <li><a href="/MachineLearning-ModelEvaluation-Clustering.html" title="聚类模型评估">聚类模型评估</a>
+
 </li>
 </ul>
 <p><u>表：各种聚类算法对比</u></p>
@@ -438,14 +446,15 @@
         vertical-align: middle;
     }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
 
-    .dataframe thead th {
-        text-align: center;
-    }
-</style>
+.dataframe thead th &#123;
+    text-align: center;
+&#125;
+</code></pre>
+<p></style><p></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: center;">
@@ -524,6 +533,7 @@
 <li>LDA</li>
 </ul>
 <h1 id="Ensemble-Methods"><a href="#Ensemble-Methods" class="headerlink" title="Ensemble Methods"></a>Ensemble Methods</h1><a href="/MachineLearning-EnsembleMethod.html" title="集成方法">集成方法</a>
+
 <ul>
 <li>Bagging</li>
 <li>Boosting</li>
@@ -531,6 +541,8 @@
 </ul>
 <h2 id="Bagging"><a href="#Bagging" class="headerlink" title="Bagging"></a>Bagging</h2><ul>
 <li><a href="/MachineLearning-Classification-RandomForest.html" title="Random Forest 随机森林">Random Forest 随机森林</a>
+
+
 </li>
 </ul>
 <h2 id="Boosting"><a href="#Boosting" class="headerlink" title="Boosting"></a>Boosting</h2><ul>
@@ -539,23 +551,24 @@
 <li>LightGBM</li>
 <li>CatBoost</li>
 <li><a href="/MachineLearning-Boosting-BoostingTree.html" title="Boosting Tree 提升树">Boosting Tree 提升树</a>
+
 </li>
 </ul>
 <div class="note default">
             <p>Boosting is a method of converting a set of weak learners into strong learners.</p>
           </div>
+
 <p>Boosting是一种将弱学习器转化成强学习器的方法。</p>
 <p>假设进行的是二分类任务：</p>
 <ul>
 <li>弱学习器的分类错误率仅略小于0.5（分类效果只比扔硬币好一点）</li>
-<li>强学习器的分类错误率接近0<br>将弱学习器转化为强学习器——将多个弱学习器<sup><a href="#fn_1" id="reffn_1">1</a></sup>联合起来，通过投票得到最后分类结果</li>
+<li>强学习器的分类错误率接近0<br>将弱学习器转化为强学习器——将多个弱学习器<a href="%E8%BF%99%E9%87%8C%E7%9A%84%E5%BC%B1%E5%AD%A6%E4%B9%A0%E5%99%A8%E4%B9%8B%E9%97%B4%E7%9B%B8%E5%85%B3%E6%80%A7%E8%A6%81%E5%B0%8F">^1</a>联合起来，通过投票得到最后分类结果</li>
 </ul>
-<blockquote id="fn_1">
-<sup>1</sup>. 这里的弱学习器之间相关性要小<a href="#reffn_1" title="Jump back to footnote [1] in the text."> &#8617;</a>
-</blockquote>
 <div class="note primary">
             <p>为实现弱学习器互补，则需要解决两个问题：</p><ol><li>怎样获得不同的弱学习器？</li><li>怎样组合弱学习器？</li></ol>
           </div>
+
+
 <h2 id="Stacking"><a href="#Stacking" class="headerlink" title="Stacking"></a>Stacking</h2><h1 id="Reinforcement-Learning"><a href="#Reinforcement-Learning" class="headerlink" title="Reinforcement Learning"></a>Reinforcement Learning</h1><ul>
 <li>Genetic Algorithm</li>
 <li>A3C</li>
@@ -574,6 +587,11 @@
 <ul>
 <li><a href="#">Post not found: 算法-感知机 感知机Perceptron</a></li>
 <li><a href="#">Post not found: 算法-神经网络 神经网络的激活函数</a>
+
+
+
+
+
 </li>
 </ul>
 <h2 id="CNN"><a href="#CNN" class="headerlink" title="CNN"></a>CNN</h2><h2 id="RNN"><a href="#RNN" class="headerlink" title="RNN"></a>RNN</h2><ul>
@@ -589,7 +607,7 @@
 <h2 id="GAN"><a href="#GAN" class="headerlink" title="GAN"></a>GAN</h2><p>Generative Adversarial Nerworks</p>
 <h2 id="Autoencoders"><a href="#Autoencoders" class="headerlink" title="Autoencoders"></a>Autoencoders</h2><p>seq2seq</p>
 <h2 id="Perceptrons-MLP"><a href="#Perceptrons-MLP" class="headerlink" title="Perceptrons (MLP)"></a>Perceptrons (MLP)</h2><h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
-<li><a target="_blank" rel="noopener" href="https://cn.bing.com/images/search?view=detailV2&amp;ccid=k5LiTi5l&amp;id=95DF77DEC29B1CD7083F9435F1AE55043B0C0081&amp;thid=OIP.k5LiTi5lt_ND02kaBT_SAAHaE7&amp;mediaurl=https%3a%2f%2fwww.smartdatacollective.com%2fwp-content%2fuploads%2f2018%2f11%2fMachine-learning-1024x682.jpg&amp;exph=682&amp;expw=1024&amp;q=machine+learning&amp;simid=608018054240865990&amp;selectedIndex=3">首页缩略图</a></li>
+<li><a target="_blank" rel="noopener" href="https://cn.bing.com/images/search?view=detailV2&ccid=k5LiTi5l&id=95DF77DEC29B1CD7083F9435F1AE55043B0C0081&thid=OIP.k5LiTi5lt_ND02kaBT_SAAHaE7&mediaurl=https://www.smartdatacollective.com/wp-content/uploads/2018/11/Machine-learning-1024x682.jpg&exph=682&expw=1024&q=machine+learning&simid=608018054240865990&selectedIndex=3">首页缩略图</a></li>
 <li><a target="_blank" rel="noopener" href="http://cda.pinggu.org/view/20203.html">聚类分析中几种算法的比较</a></li>
 </ul>
 
@@ -790,13 +808,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">431k</span>
+    <span title="站点总字数">445k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">6:32</span>
+    <span title="站点阅读时长">6:45</span>
 </div>
 
 

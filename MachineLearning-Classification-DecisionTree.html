@@ -316,32 +316,34 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><center>Decision Tree</center><br><span id="more"></span></p>
+        <center>Decision Tree</center>
+<span id="more"></span>
+
 <div class="note default">
             <p>基础阅读：<br><a href="#">Post not found: Machine-Learning-熵</a></p>
           </div>
+
+
 <h1 id="Decision-Tree"><a href="#Decision-Tree" class="headerlink" title="Decision Tree"></a>Decision Tree</h1><ul>
 <li>是一种基本的<strong>分类</strong>与<strong>回归</strong>方法</li>
-<li>决策树由节点和有向边组成<ul>
+<li>决策树由节点和有向边组成</li>
 <li><u>内部节点</u>表示一个特征/属性</li>
 <li><u>叶子节点</u>表示一个分类</li>
 <li><u>有向边</u>表示一个划分规则</li>
-</ul>
-</li>
-<li>决策树从根节点到子节点的有向边代表了一条路径(一条分类规则)<ul>
+<li>决策树从根节点到子节点的有向边代表了一条路径(一条分类规则)</li>
 <li>决策树的路径是互斥的且是完备的<ul>
 <li><strong>互斥</strong>：每一个样本不会同时匹配上两条分类规则</li>
 <li><strong>完备</strong>：每一个样本都能在决策树中匹配上一条规则</li>
 </ul>
 </li>
+<li>决策树学习通常包括3个步骤：</li>
 </ul>
-</li>
-<li>决策树学习通常包括3个步骤：<ol>
+<ol>
 <li>特征选择</li>
 <li>决策树生成</li>
 <li>决策树剪枝</li>
 </ol>
-</li>
+<ul>
 <li>决策树表示给定特征条件下类的条件概率分布</li>
 </ul>
 <p>决策树的组成：</p>
@@ -350,7 +352,11 @@
 <li><strong>非叶子节点与分支</strong>：中间过程</li>
 <li><strong>叶子节点</strong>：最终的决策结果</li>
 </ul>
-<p><meta name="referrer" content="no-referrer"><br></p>
+<meta name="referrer" content="no-referrer">
+
+
+
+
 <h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><h2 id="特征选择"><a href="#特征选择" class="headerlink" title="特征选择"></a>特征选择</h2><p>特征选择指选择最大化所定义目标函数的特征。</p>
 <p>为了衡量类别分布概率的倾斜程度，定义决策树节点node的<strong>不纯度</strong>（impurity）</p>
 <ul>
@@ -358,12 +364,17 @@
 </ul>
 <p>不纯度的三种度量：</p>
 <ol>
-<li>熵（Entropy）<script type="math/tex; mode=display">\mathrm{Entropy}(\mathrm{node})=-\sum_{k=1}^Kp_k\log{p_k}</script></li>
-<li>基尼不纯度（Gini Impurity）<script type="math/tex; mode=display">\mathrm{Gini}(\mathrm{node})=\sum_{k=1}^K p_k(1-p_k)</script></li>
-<li>分类误差率<script type="math/tex; mode=display">\mathrm{Classification\_error}(\mathrm{node})=1-\max_k\ p_k</script></li>
-</ol>
+<li><p>熵（Entropy）<br>$$\mathrm{Entropy}(\mathrm{node})=-\sum_{k=1}^Kp_k\log{p_k}$$</p>
+</li>
+<li><p>基尼不纯度（Gini Impurity）<br>$$\mathrm{Gini}(\mathrm{node})=\sum_{k=1}^K p_k(1-p_k)$$</p>
+</li>
+<li><p>分类误差率<br>$$\mathrm{Classification_error}(\mathrm{node})=1-\max_k\ p_k$$</p>
 <p>其中$p_k$表示样本中类别$k$的占比；共有$K$个类别。</p>
-<p><meta name="referrer" content="no-referrer"><br></p>
+</li>
+</ol>
+<meta name="referrer" content="no-referrer">
+
+
 <p>其中</p>
 <ul>
 <li>为了更好地反映变量关系，曲线中的熵除以2</li>
@@ -374,10 +385,12 @@
 <h3 id="信息增益"><a href="#信息增益" class="headerlink" title="信息增益"></a>信息增益</h3><div class="note info">
             <p>熵与条件熵：<br><a href="#">Post not found: Machine-Learning-熵</a></p>
           </div>
+
 <p><strong>信息增益</strong>（Information Gain）：表示已知特征$X$的信息而使得类$Y$的信息的不确定性减少的程度。</p>
 <div class="note warning">
-            <p><strong>定义</strong>：特征$A$对训练数据集$D$的信息增益$g(D,A)$，定义为数据集$D$的经验熵$H(D)$与特征$A$给定条件下$D$的经验条件熵$H(D|A)$之差。即</p><script type="math/tex; mode=display">g(D,A)=H(D)-H(D|A)</script>
+            <p><strong>定义</strong>：特征$A$对训练数据集$D$的信息增益$g(D,A)$，定义为数据集$D$的经验熵$H(D)$与特征$A$给定条件下$D$的经验条件熵$H(D|A)$之差。即<br>$$g(D,A)=H(D)-H(D|A)$$</p>
           </div>
+
 <p>一般地，熵$H(Y)$与条件熵$H(Y|X)$之差称为<a href="#">Post not found: Machine-Learning-熵 互信息（Mutual Information）</a>。</p>
 <ul>
 <li>决策树学习中的信息增益等价于训练数据集中类与特征的互信息</li>
@@ -390,21 +403,25 @@
 <p>考虑训练数据集$D$，$n=|D|$为样本容量。</p>
 <ul>
 <li>有$K$个类$C_k,\ (k=1,\cdots,K)$</li>
-<li>$|C_k|$为属于类$C_k$的样本个数<script type="math/tex; mode=display">\sum_{k=1}^K|C_k|=n</script></li>
+<li>$|C_k|$为属于类$C_k$的样本个数<br>$$\sum_{k=1}^K|C_k|=n$$</li>
 <li>设特征$A$有$m$个不同的取值$a_1,\cdots,a_m$</li>
 <li>根据特征$A$的取值将$D$划分为$m$个子集$D_1,\cdots,D_m$</li>
-<li>$|D_i|$为$D_i$的样本个数<script type="math/tex; mode=display">\sum_{i=1}^m|D_i|=|D|</script></li>
-<li>记子集$D<em>i$中属于类$C_k$的样本的集合为$D</em>{ik}$<script type="math/tex; mode=display">D_{ik}=D_i\cap C_k</script>$|D<em>{ik}|$为$D</em>{ik}$的样本个数</li>
+<li>$|D_i|$为$D_i$的样本个数<br>$$\sum_{i=1}^m|D_i|=|D|$$</li>
+<li>记子集$D_i$中属于类$C_k$的样本的集合为$D_{ik}$<br>$$D_{ik}=D_i\cap C_k$$<br>$|D_{ik}|$为$D_{ik}$的样本个数</li>
 </ul>
 <div class="note danger">
-            <p><strong>信息增益算法</strong><br>输入：训练数据集$D$和特征$A$</p><p>输出：特征$A$对训练数据集$D$的信息增益$g(D,A)$</p><ol><li>计算训练集$D$的经验熵$H(D)$<script type="math/tex; mode=display">H(D)=-\sum_{k=1}^K\frac{|C_k|}{|D|}\log{\frac{|C_k|}{|D|} }</script></li><li>计算特征$A$对数据集$D$的经验条件熵$H(D|A)$<script type="math/tex; mode=display">\begin{aligned} H(D|A)&=\sum_{i=1}^m\frac{|D_i|}{|D|}H(D_i)\\&=-\sum_{i=1}^m\frac{|D_i|}{|D|}\sum_{k=1}^K\frac{|D_{ik}|}{|D_i|}\log{\frac{|D_{ik}|}{|D_i|} }\\&= -\sum_{i=1}^m\sum_{k=1}^K\frac{|D_{ik}|}{|D|}\log{\frac{|D_{ik}|}{|D_i|} }\end{aligned}</script></li><li>计算信息增益<script type="math/tex; mode=display">g(D,A)=H(D)-H(D|A)</script></li></ol>
+            <p><strong>信息增益算法</strong><br>输入：训练数据集$D$和特征$A$</p><p>输出：特征$A$对训练数据集$D$的信息增益$g(D,A)$</p><ol><li>计算训练集$D$的经验熵$H(D)$<br>$$H(D)=-\sum_{k=1}^K\frac{|C_k|}{|D|}\log{\frac{|C_k|}{|D|} }$$</li><li>计算特征$A$对数据集$D$的经验条件熵$H(D|A)$<br>$$\begin{aligned} H(D|A)&amp;=\sum_{i=1}^m\frac{|D_i|}{|D|}H(D_i)\<br>&amp;=-\sum_{i=1}^m\frac{|D_i|}{|D|}\sum_{k=1}^K\frac{|D_{ik}|}{|D_i|}\log{\frac{|D_{ik}|}{|D_i|} }\<br>&amp;= -\sum_{i=1}^m\sum_{k=1}^K\frac{|D_{ik}|}{|D|}\log{\frac{|D_{ik}|}{|D_i|} }<br>\end{aligned}$$</li><li>计算信息增益<br>$$g(D,A)=H(D)-H(D|A)$$</li></ol>
           </div>
+
 <ul>
-<li>可用信息增益来进行决策树的划分属性选择<script type="math/tex; mode=display">a^*=\arg\max_{a\in A} g(D,a)</script></li>
+<li>可用信息增益来进行决策树的划分属性选择<br>$$a^*=\arg\max_{a\in A} g(D,a)$$</li>
 </ul>
 <div class="note default">
             <p>ID3决策树学习算法就是以<u>信息增益</u>为准则来选择划分属性</p>
           </div>
+
+
+
 <h1 id="决策树算法"><a href="#决策树算法" class="headerlink" title="决策树算法"></a>决策树算法</h1><p>包括</p>
 <ul>
 <li>ID3</li>
@@ -415,8 +432,9 @@
 <li>以<strong>信息增益</strong>为准则来划分属性</li>
 </ul>
 <div class="note default">
-            <p>示例：<br><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648935296&amp;idx=2&amp;sn=cb77cd47a0189804ba9b16ba10415100&amp;chksm=879419aab0e390bcf14a8eb3f56f1ce31750b5d9566263d93269d47e4674bc7600cc1d1636fb&amp;mpshare=1&amp;scene=24&amp;srcid=&amp;sharer_sharetime=1590479772805&amp;sharer_shareid=b539221659d6ecf12200314308b58dd3&amp;key=e224f213fcbe8475f9ef285bb7bf11ea118733d485a2e0a1bf5d71cd8212cc36e61414400a348229bd6398ffdf35e8ca97536ef45b6ba48e523107c1ff2b6bae4b84605a9a810ef0e8ccfb3381a96097&amp;ascene=14&amp;uin=MjAwNDUzMjgxNw%3D%3D&amp;devicetype=Windows+10+x64&amp;version=62090070&amp;lang=zh_CN&amp;exportkey=AXXj%2FLKyq7BwO492ReB6hMg%3D&amp;pass_ticket=UotHILlosru6hQjR77K5QFOqbs0ufoaaTOgd804mZ9Zj6ebPR%2BPzibBO9ORmuQZQ">数据来源</a></p><p>共4个特征：</p><ol><li>天气</li><li>温度</li><li>湿度</li><li>风</li></ol><div><style scoped>    .dataframe tbody tr th:only-of-type {        vertical-align: middle;    }    .dataframe tbody tr th {        vertical-align: top;    }    .dataframe thead th {        text-align: center;    }</style><table border="1" class="dataframe">  <thead>    <tr style="text-align: center;">      <th>特征</th>      <th>特征的不同取值</th>      <th>样本数</th>      <th>`yes`样本数</th>      <th>`no`样本数</th>    </tr>  </thead>  <tbody>    <tr>      <th rowspan="3">outlook</th>      <td>sunny</td>      <td>5</td>      <td>2</td>      <td>3</td>    </tr>    <tr>      <td>overcast</td>      <td>4</td>      <td>4</td>      <td>0</td>    </tr>    <tr>      <td>rainy</td>      <td>5</td>      <td>3</td>      <td>2</td>    </tr>    <tr>      <th rowspan="3">temperature</th>      <td>hot</td>      <td>4</td>      <td>2</td>      <td>2</td>    </tr>    <tr>      <td>mild</td>      <td>6</td>      <td>4</td>      <td>2</td>    </tr>    <tr>      <td>cool</td>      <td>4</td>      <td>3</td>      <td>1</td>    </tr>    <tr>      <th rowspan="2">humidity</th>      <td>high</td>      <td>7</td>      <td>3</td>      <td>4</td>    </tr>    <tr>      <td>normal</td>      <td>7</td>      <td>6</td>      <td>1</td>    </tr>    <tr>      <th rowspan="2">windy</th>      <td>false</td>      <td>8</td>      <td>6</td>      <td>2</td>    </tr>    <tr>      <td>true</td>      <td>6</td>      <td>3</td>      <td>3</td>    </tr>    <tr>  </tr></tbody></table></div><p>标签为“打球”<code>yes</code>或“不打球”<code>no</code>，原始数据共有14个样本，其中9个为<code>yes</code>、5个为<code>no</code>，原始数据集的熵为</p><script type="math/tex; mode=display">H(D)=-\frac{9}{14}\log_2{\frac{9}{14} }-\frac{5}{14}\log_2{\frac{5}{14} }=0.940286</script><p>接着计算经验条件熵：</p><ol><li>天气：<br>\begin{aligned}<br>H(sunny)&amp;=-\frac{2}{5}\log_2{\frac{2}{5} }-\frac{3}{5}\log_2{\frac{3}{5} }=0.970951\<br>H(overcast)&amp;=0\<br>H(rainy)&amp;=-\frac{3}{5}\log_2{\frac{3}{5} }-\frac{2}{5}\log_2{\frac{2}{5} }=0.970951\<br>H(D|outlook)&amp;=\frac{5}{14}H(sunny)+\frac{4}{14}H(overcast)+\frac{5}{14}H(rainy)=0.693536<br>\end{aligned}</li><li>温度<br>\begin{aligned}<br>H(hot)&amp;=-\frac{2}{4}\log_2{\frac{2}{4} }-\frac{2}{4}\log_2{\frac{2}{4} }=1\<br>H(mild)&amp;=-\frac{4}{6}\log_2{\frac{4}{6} }-\frac{2}{6}\log_2{\frac{2}{6} }=0.918296\<br>H(cool)&amp;=-\frac{3}{4}\log_2{\frac{3}{4} }-\frac{1}{4}\log_2{\frac{1}{4} }=0.811278\<br>H(D|temperture)&amp;=\frac{4}{14}H(hot)+\frac{6}{14}H(mild)+\frac{4}{14}H(cool)=0.911063<br>\end{aligned}</li><li>湿度<br>\begin{aligned}<br>H(high)&amp;=\cdots=0.985228\<br>H(normal)&amp;=\cdots=0.591673\<br>H(D|humidity)&amp;=\frac{7}{14}H(high)+\frac{7}{14}H(normal)=0.788451<br>\end{aligned}</li><li>风<br>\begin{aligned}<br>H(false)&amp;=\cdots=0.811278\<br>H(true)&amp;=\cdots=1\<br>H(D|windy)&amp;=\frac{8}{14}H(false)+\frac{6}{14}H(true)=0.892159<br>\end{aligned}</li></ol><p>接着计算信息增益：<br>\begin{aligned}<br>H(D,outlook)&amp;=0.940286-0.693536=0.24675\<br>H(D,temperature)&amp;=0.940286-0.911063=0.029223\<br>H(D,humidity)&amp;=0.940286-0.788451=0.151835\<br>H(D,windy)&amp;=0.940286-0.892159=0.048127<br>\end{aligned}</p><p>其中outlook的信息增益最大，所以应选择特征<code>outlook</code>为根节点。</p>
+            <p>示例：<br><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&mid=2648935296&idx=2&sn=cb77cd47a0189804ba9b16ba10415100&chksm=879419aab0e390bcf14a8eb3f56f1ce31750b5d9566263d93269d47e4674bc7600cc1d1636fb&mpshare=1&scene=24&srcid=&sharer_sharetime=1590479772805&sharer_shareid=b539221659d6ecf12200314308b58dd3&key=e224f213fcbe8475f9ef285bb7bf11ea118733d485a2e0a1bf5d71cd8212cc36e61414400a348229bd6398ffdf35e8ca97536ef45b6ba48e523107c1ff2b6bae4b84605a9a810ef0e8ccfb3381a96097&ascene=14&uin=MjAwNDUzMjgxNw==&devicetype=Windows+10+x64&version=62090070&lang=zh_CN&exportkey=AXXj/LKyq7BwO492ReB6hMg=&pass_ticket=UotHILlosru6hQjR77K5QFOqbs0ufoaaTOgd804mZ9Zj6ebPR+PzibBO9ORmuQZQ">数据来源</a></p><p>共4个特征：</p><ol><li>天气</li><li>温度</li><li>湿度</li><li>风</li></ol><div><style scoped>    .dataframe tbody tr th:only-of-type {        vertical-align: middle;    }<pre><code>.dataframe tbody tr th {    vertical-align: top;}.dataframe thead th {    text-align: center;}</code></pre><p></style><p></p><table border="1" class="dataframe">  <thead>    <tr style="text-align: center;">      <th>特征</th>      <th>特征的不同取值</th>      <th>样本数</th>      <th>`yes`样本数</th>      <th>`no`样本数</th>    </tr>  </thead>  <tbody>    <tr>      <th rowspan="3">outlook</th>      <td>sunny</td>      <td>5</td>      <td>2</td>      <td>3</td>    </tr>    <tr>      <td>overcast</td>      <td>4</td>      <td>4</td>      <td>0</td>    </tr>    <tr>      <td>rainy</td>      <td>5</td>      <td>3</td>      <td>2</td>    </tr>    <tr>      <th rowspan="3">temperature</th>      <td>hot</td>      <td>4</td>      <td>2</td>      <td>2</td>    </tr>    <tr>      <td>mild</td>      <td>6</td>      <td>4</td>      <td>2</td>    </tr>    <tr>      <td>cool</td>      <td>4</td>      <td>3</td>      <td>1</td>    </tr>    <tr>      <th rowspan="2">humidity</th>      <td>high</td>      <td>7</td>      <td>3</td>      <td>4</td>    </tr>    <tr>      <td>normal</td>      <td>7</td>      <td>6</td>      <td>1</td>    </tr>    <tr>      <th rowspan="2">windy</th>      <td>false</td>      <td>8</td>      <td>6</td>      <td>2</td>    </tr>    <tr>      <td>true</td>      <td>6</td>      <td>3</td>      <td>3</td>    </tr>    <tr>  </tr></tbody></table></div><p>标签为“打球”<code>yes</code>或“不打球”<code>no</code>，原始数据共有14个样本，其中9个为<code>yes</code>、5个为<code>no</code>，原始数据集的熵为<br>$$H(D)=-\frac{9}{14}\log_2{\frac{9}{14} }-\frac{5}{14}\log_2{\frac{5}{14} }=0.940286$$</p><p>接着计算经验条件熵：</p><ol><li>天气：<br>\begin{aligned}<br>H(sunny)&amp;=-\frac{2}{5}\log_2{\frac{2}{5} }-\frac{3}{5}\log_2{\frac{3}{5} }=0.970951\<br>H(overcast)&amp;=0\<br>H(rainy)&amp;=-\frac{3}{5}\log_2{\frac{3}{5} }-\frac{2}{5}\log_2{\frac{2}{5} }=0.970951\<br>H(D|outlook)&amp;=\frac{5}{14}H(sunny)+\frac{4}{14}H(overcast)+\frac{5}{14}H(rainy)=0.693536<br>\end{aligned}</li><li>温度<br>\begin{aligned}<br>H(hot)&amp;=-\frac{2}{4}\log_2{\frac{2}{4} }-\frac{2}{4}\log_2{\frac{2}{4} }=1\<br>H(mild)&amp;=-\frac{4}{6}\log_2{\frac{4}{6} }-\frac{2}{6}\log_2{\frac{2}{6} }=0.918296\<br>H(cool)&amp;=-\frac{3}{4}\log_2{\frac{3}{4} }-\frac{1}{4}\log_2{\frac{1}{4} }=0.811278\<br>H(D|temperture)&amp;=\frac{4}{14}H(hot)+\frac{6}{14}H(mild)+\frac{4}{14}H(cool)=0.911063<br>\end{aligned}</li><li>湿度<br>\begin{aligned}<br>H(high)&amp;=\cdots=0.985228\<br>H(normal)&amp;=\cdots=0.591673\<br>H(D|humidity)&amp;=\frac{7}{14}H(high)+\frac{7}{14}H(normal)=0.788451<br>\end{aligned}</li><li>风<br>\begin{aligned}<br>H(false)&amp;=\cdots=0.811278\<br>H(true)&amp;=\cdots=1\<br>H(D|windy)&amp;=\frac{8}{14}H(false)+\frac{6}{14}H(true)=0.892159<br>\end{aligned}</li></ol><p>接着计算信息增益：<br>\begin{aligned}<br>H(D,outlook)&amp;=0.940286-0.693536=0.24675\<br>H(D,temperature)&amp;=0.940286-0.911063=0.029223\<br>H(D,humidity)&amp;=0.940286-0.788451=0.151835\<br>H(D,windy)&amp;=0.940286-0.892159=0.048127<br>\end{aligned}</p><p>其中outlook的信息增益最大，所以应选择特征<code>outlook</code>为根节点。</p>
           </div>
+
 <h2 id="ID4"><a href="#ID4" class="headerlink" title="ID4"></a>ID4</h2><h2 id="C4-5"><a href="#C4-5" class="headerlink" title="C4.5"></a>C4.5</h2><ul>
 <li>基于ID3</li>
 <li>ID3使用的是<u>信息增益</u>，而C4.5使用的是<strong>信息增益比</strong></li>
@@ -460,7 +478,7 @@
 <li>不纯度指的是基尼系数</li>
 </ul>
 <div class="note default">
-            <p>以下机器学习中，在数据预处理时，不需要考虑归一化处理的是：</p><ul><li>树形模型</li></ul><p>[<font face="宋体" color="grey">来自：<a target="_blank" rel="noopener" href="https://www.nowcoder.com/test/question/done?tid=36064816&amp;qid=370007#summary">牛客试题广场</a></font>]</p>
+            <p>以下机器学习中，在数据预处理时，不需要考虑归一化处理的是：</p><ul><li>树形模型</li></ul><p>[<font face="宋体" color="grey">来自：<a target="_blank" rel="noopener" href="https://www.nowcoder.com/test/question/done?tid=36064816&qid=370007#summary">牛客试题广场</a></font>]</p>
           </div>
 <ul>
 <li>不需要归一化处理的模型：决策树、随机森林<ul>
@@ -471,8 +489,8 @@
 <h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
 <li><a target="_blank" rel="noopener" href="https://homes.cs.washington.edu/~tqchen/data/pdf/BoostedTree.pdf">Tianqi Chen - Introduction to Boosted Trees</a></li>
 <li><a target="_blank" rel="noopener" href="http://www.huaxiaozhuan.com/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0/chapters/4_decision_tree.html">决策树</a></li>
-<li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzUzODYwMDAzNA==&amp;mid=2247490797&amp;idx=2&amp;sn=e4488e6ae078fd04992ee19c3ea43e0d&amp;chksm=fad46be0cda3e2f606f3faffe800c819c2cacb5ded2c4bb6e1b0b061bc2c06d276bd18a4a9f4&amp;mpshare=1&amp;scene=24&amp;srcid=&amp;sharer_sharetime=1589846441823&amp;sharer_shareid=b539221659d6ecf12200314308b58dd3&amp;key=391433877af29848d80eb268dfdb67e70c94dbc8461e647ef4fd9cf863b97fcbf05fe3cc098469dd0eed236ecaa0ce9b4afa6518cb6c2e116156d348ec25c79484217b352893ff4b5a26e8f3fd8d7f35&amp;ascene=14&amp;uin=MjAwNDUzMjgxNw%3D%3D&amp;devicetype=Windows+10+x64&amp;version=62090070&amp;lang=zh_CN&amp;exportkey=AYJS0mHna0hF6l9GD1%2B%2BuCY%3D&amp;pass_ticket=hSPy%2FUU8oxUcSxTs%2F5nB1TD0Hf4oMyJJiFtHAk4RLQ6enp8U%2FMNrC0H1aJAXQF7t">24个「数据分析师」岗位面试题和答案解析</a></li>
-<li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&amp;mid=2648935296&amp;idx=2&amp;sn=cb77cd47a0189804ba9b16ba10415100&amp;chksm=879419aab0e390bcf14a8eb3f56f1ce31750b5d9566263d93269d47e4674bc7600cc1d1636fb&amp;mpshare=1&amp;scene=24&amp;srcid=&amp;sharer_sharetime=1590479772805&amp;sharer_shareid=b539221659d6ecf12200314308b58dd3&amp;key=e224f213fcbe8475f9ef285bb7bf11ea118733d485a2e0a1bf5d71cd8212cc36e61414400a348229bd6398ffdf35e8ca97536ef45b6ba48e523107c1ff2b6bae4b84605a9a810ef0e8ccfb3381a96097&amp;ascene=14&amp;uin=MjAwNDUzMjgxNw%3D%3D&amp;devicetype=Windows+10+x64&amp;version=62090070&amp;lang=zh_CN&amp;exportkey=AXXj%2FLKyq7BwO492ReB6hMg%3D&amp;pass_ticket=UotHILlosru6hQjR77K5QFOqbs0ufoaaTOgd804mZ9Zj6ebPR%2BPzibBO9ORmuQZQ">决策树算法的原理（接地气版）</a></li>
+<li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzUzODYwMDAzNA==&mid=2247490797&idx=2&sn=e4488e6ae078fd04992ee19c3ea43e0d&chksm=fad46be0cda3e2f606f3faffe800c819c2cacb5ded2c4bb6e1b0b061bc2c06d276bd18a4a9f4&mpshare=1&scene=24&srcid=&sharer_sharetime=1589846441823&sharer_shareid=b539221659d6ecf12200314308b58dd3&key=391433877af29848d80eb268dfdb67e70c94dbc8461e647ef4fd9cf863b97fcbf05fe3cc098469dd0eed236ecaa0ce9b4afa6518cb6c2e116156d348ec25c79484217b352893ff4b5a26e8f3fd8d7f35&ascene=14&uin=MjAwNDUzMjgxNw==&devicetype=Windows+10+x64&version=62090070&lang=zh_CN&exportkey=AYJS0mHna0hF6l9GD1++uCY=&pass_ticket=hSPy/UU8oxUcSxTs/5nB1TD0Hf4oMyJJiFtHAk4RLQ6enp8U/MNrC0H1aJAXQF7t">24个「数据分析师」岗位面试题和答案解析</a></li>
+<li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzA4MjYwMTc5Nw==&mid=2648935296&idx=2&sn=cb77cd47a0189804ba9b16ba10415100&chksm=879419aab0e390bcf14a8eb3f56f1ce31750b5d9566263d93269d47e4674bc7600cc1d1636fb&mpshare=1&scene=24&srcid=&sharer_sharetime=1590479772805&sharer_shareid=b539221659d6ecf12200314308b58dd3&key=e224f213fcbe8475f9ef285bb7bf11ea118733d485a2e0a1bf5d71cd8212cc36e61414400a348229bd6398ffdf35e8ca97536ef45b6ba48e523107c1ff2b6bae4b84605a9a810ef0e8ccfb3381a96097&ascene=14&uin=MjAwNDUzMjgxNw==&devicetype=Windows+10+x64&version=62090070&lang=zh_CN&exportkey=AXXj/LKyq7BwO492ReB6hMg=&pass_ticket=UotHILlosru6hQjR77K5QFOqbs0ufoaaTOgd804mZ9Zj6ebPR+PzibBO9ORmuQZQ">决策树算法的原理（接地气版）</a></li>
 <li><a target="_blank" rel="noopener" href="https://divinerhjf.github.io/2019/05/24/shu-ju-wa-jue-jue-ce-shu/#toc-heading-8">数据挖掘|决策树</a></li>
 <li><a target="_blank" rel="noopener" href="https://www.jiqizhixin.com/articles/2017-07-31-3">从决策树到随机森林：树型算法的原理与实现</a></li>
 <li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/en-heng/p/5013995.html">【十大经典数据挖掘算法】C4.5</a></li>
@@ -680,13 +698,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">431k</span>
+    <span title="站点总字数">445k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">6:32</span>
+    <span title="站点阅读时长">6:45</span>
 </div>
 
 

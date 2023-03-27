@@ -311,20 +311,22 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><center></center><br><span id="more"></span></p>
-<h1 id="数据埋点"><a href="#数据埋点" class="headerlink" title="数据埋点"></a>数据埋点</h1><p>数据埋点，是指在应用中的特定流程收集一些信息，用来跟踪应用使用的状况，后续用来进一步优化产品或是提供运营的数据支撑<sup><a href="#fn_1" id="reffn_1">1</a></sup>。</p>
-<blockquote id="fn_1">
-<sup>1</sup>. <a target="_blank" rel="noopener" href="https://wiki.mbalib.com/wiki/%E6%95%B0%E6%8D%AE%E5%9F%8B%E7%82%B9">MBA智库百科-数据埋点</a><a href="#reffn_1" title="Jump back to footnote [1] in the text."> &#8617;</a>
-</blockquote>
+        <center></center>
+<span id="more"></span>
+
+<h1 id="数据埋点"><a href="#数据埋点" class="headerlink" title="数据埋点"></a>数据埋点</h1><p>数据埋点，是指在应用中的特定流程收集一些信息，用来跟踪应用使用的状况，后续用来进一步优化产品或是提供运营的数据支撑<a href="%5BMBA%E6%99%BA%E5%BA%93%E7%99%BE%E7%A7%91-%E6%95%B0%E6%8D%AE%E5%9F%8B%E7%82%B9%5D(https://wiki.mbalib.com/wiki/%E6%95%B0%E6%8D%AE%E5%9F%8B%E7%82%B9)">^1</a>。</p>
 <h1 id="数据流程"><a href="#数据流程" class="headerlink" title="数据流程"></a>数据流程</h1><h1 id="用户行为模型"><a href="#用户行为模型" class="headerlink" title="用户行为模型"></a>用户行为模型</h1><p><strong>4W1H</strong>用户行为模型：</p>
 <ul>
 <li><strong>WHO</strong>：用户属性<pre><code>- 用户属性本身不随行为的发生而改变，可不在埋点中体现，可user_id将用户行为与用户属性宽表关联
-</code></pre></li>
+</code></pre>
+</li>
 <li><strong>WHEN</strong>：行为发生的时间（不是上报时间）<pre><code>- 一般上报时间比行为时间晚
-</code></pre></li>
+</code></pre>
+</li>
 <li><strong>WHERE</strong>：行为发生的地点</li>
 <li><strong>HOW</strong>：发生行为时的一些状态<pre><code>- 操作系统
-</code></pre><ul>
+</code></pre>
+<ul>
 <li>网络状态</li>
 <li>屏幕比例</li>
 <li>分辨率等</li>
@@ -344,6 +346,9 @@
 <blockquote>
 <ul>
 <li>注册账号</li>
+</ul>
+</blockquote>
+<ul>
 <li>登录</li>
 <li>观看视频</li>
 <li>点赞</li>
@@ -351,7 +356,6 @@
 <li>关注</li>
 <li>……</li>
 </ul>
-</blockquote>
 <p>事件通常包括曝光（expose）、点击（click）、浏览（view）。</p>
 <h2 id="事件三要素"><a href="#事件三要素" class="headerlink" title="事件三要素"></a>事件三要素</h2><ul>
 <li><strong>操作</strong>（action）：定义一个操作动作（点击、拖拽等）</li>
@@ -364,14 +368,15 @@
         vertical-align: middle;
     }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
 
-    .dataframe thead th {
-        text-align: center;
-    }
-</style>
+.dataframe thead th &#123;
+    text-align: center;
+&#125;
+</code></pre>
+<p></style><p></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: center;">
@@ -511,14 +516,15 @@
         vertical-align: middle;
     }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
 
-    .dataframe thead th {
-        text-align: center;
-    }
-</style>
+.dataframe thead th &#123;
+    text-align: center;
+&#125;
+</code></pre>
+<p></style><p></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: center;">
@@ -738,14 +744,15 @@
         vertical-align: middle;
     }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
 
-    .dataframe thead th {
-        text-align: center;
-    }
-</style>
+.dataframe thead th &#123;
+    text-align: center;
+&#125;
+</code></pre>
+<p></style><p></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: center;">
@@ -777,41 +784,38 @@
 
 <p>因此，IMEI是最适合做设备唯一标识符的，但是获取IMEI需要授予权限且Android 10之后不再开放IMEI的权限</p>
 <p>因此，在Android系统中，应按</p>
-<script type="math/tex; mode=display">IMEI \rightarrow OAID \rightarrow Android\_ID</script><p>的顺序生成设备ID</p>
+<p>$$IMEI \rightarrow OAID \rightarrow Android_ID$$</p>
+<p>的顺序生成设备ID</p>
 <blockquote>
 <p>先获取IMEI号；获取不到IMEI时获取OAID；获取不到OAID时，再获取Android_ID；然后使用相关算法生成设备ID。</p>
 </blockquote>
 <h3 id="IOS系统"><a href="#IOS系统" class="headerlink" title="IOS系统"></a>IOS系统</h3><p><strong>IOS系统</strong>的可用于生成设备ID的标识符：</p>
-<div class="table-container">
 <table>
 <thead>
 <tr>
-<th style="text-align:center">标识符</th>
-<th style="text-align:center">说明</th>
-<th style="text-align:center">IOS版本/权限特性</th>
+<th align="center">标识符</th>
+<th align="center">说明</th>
+<th align="center">IOS版本/权限特性</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:center">IDFA</td>
-<td style="text-align:center">广告标识符</td>
-<td style="text-align:center">IOS 10之后，用户修改后或关闭后无法确定用户的唯一性</td>
+<tbody><tr>
+<td align="center">IDFA</td>
+<td align="center">广告标识符</td>
+<td align="center">IOS 10之后，用户修改后或关闭后无法确定用户的唯一性</td>
 </tr>
 <tr>
-<td style="text-align:center">IDFV</td>
-<td style="text-align:center">应用开发商标识符</td>
-<td style="text-align:center">统一开发商下的不同App的IDFV相同</td>
+<td align="center">IDFV</td>
+<td align="center">应用开发商标识符</td>
+<td align="center">统一开发商下的不同App的IDFV相同</td>
 </tr>
 <tr>
-<td style="text-align:center">UDID</td>
-<td style="text-align:center">IOS设备的唯一标识码</td>
-<td style="text-align:center">IOS 6及以前系统是可以获取到设备的UDID，IOS 7中已经完全禁用</td>
+<td align="center">UDID</td>
+<td align="center">IOS设备的唯一标识码</td>
+<td align="center">IOS 6及以前系统是可以获取到设备的UDID，IOS 7中已经完全禁用</td>
 </tr>
-</tbody>
-</table>
-</div>
-<p>苹果系统生成设备ID的标识符顺序应该是</p>
-<script type="math/tex; mode=display">IDFA\rightarrow IDFV\rightarrow UDID</script><blockquote>
+</tbody></table>
+<p>苹果系统生成设备ID的标识符顺序应该是<br>$$IDFA\rightarrow IDFV\rightarrow UDID$$</p>
+<blockquote>
 <p>先获取IDFA；获取不到IDFA时获取IDFV；获取不到IDFV时，再获取UDID；然后使用相关算法生成设备ID。</p>
 </blockquote>
 <h3 id="Web网站"><a href="#Web网站" class="headerlink" title="Web网站"></a>Web网站</h3><p>使用cookie_id作为设备ID，并存储在浏览器的cookie中</p>
@@ -849,7 +853,9 @@
 <li><strong>落</strong>：上报的数据最后是否落到了对应的表里面</li>
 </ul>
 <h1 id="一些埋点管理系统"><a href="#一些埋点管理系统" class="headerlink" title="一些埋点管理系统"></a>一些埋点管理系统</h1><h2 id="网易HubbleData"><a href="#网易HubbleData" class="headerlink" title="网易HubbleData"></a>网易HubbleData</h2><p>网易HubbleData是一个洞察用户行为的数据分析系统，提供一套完整的数据解决方案。</p>
-<p>平台工作流程：<br><figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">graph TB<span class="comment">;</span></span><br><span class="line">    数据采集---&gt;数据上报<span class="comment">;</span></span><br><span class="line">    数据上报---&gt;数据存储<span class="comment">;</span></span><br><span class="line">    数据存储---&gt;数据分析<span class="comment">;</span></span><br><span class="line">    数据分析---&gt;数据展示<span class="comment">;</span></span><br></pre></td></tr></table></figure></p>
+<p>平台工作流程：</p>
+<figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">graph TB<span class="comment">;</span></span><br><span class="line">    数据采集---&gt;数据上报<span class="comment">;</span></span><br><span class="line">    数据上报---&gt;数据存储<span class="comment">;</span></span><br><span class="line">    数据存储---&gt;数据分析<span class="comment">;</span></span><br><span class="line">    数据分析---&gt;数据展示<span class="comment">;</span></span><br></pre></td></tr></table></figure>
+
 <p>平台包括的应用有：</p>
 <ul>
 <li>事件分析</li>
@@ -1072,13 +1078,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">431k</span>
+    <span title="站点总字数">445k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">6:32</span>
+    <span title="站点阅读时长">6:45</span>
 </div>
 
 
