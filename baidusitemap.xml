@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://github.com/ShootingWang/ShootingWang.github.io/DataAnalysis-AttributionAnalysis.html</loc>
+    <lastmod>2023-04-11</lastmod>
+  </url>
+  <url>
     <loc>https://github.com/ShootingWang/ShootingWang.github.io/Visualization-PythonCase.html</loc>
     <lastmod>2023-04-01</lastmod>
   </url>
@@ -170,10 +174,6 @@
   </url>
   <url>
     <loc>https://github.com/ShootingWang/ShootingWang.github.io/MachineLearning-Boosting-BoostingTree.html</loc>
-    <lastmod>2022-10-18</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/ShootingWang/ShootingWang.github.io/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-%E6%8C%87%E6%A0%87%E5%BC%82%E5%8A%A8%E5%BD%92%E5%9B%A0.html</loc>
     <lastmod>2022-10-18</lastmod>
   </url>
   <url>

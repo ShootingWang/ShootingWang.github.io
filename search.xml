@@ -28670,21 +28670,29 @@ $$not &gt; and &gt; or$$</li>
       </tags>
   </entry>
   <entry>
-    <title>数据分析 | 指标异动归因</title>
-    <url>/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-%E6%8C%87%E6%A0%87%E5%BC%82%E5%8A%A8%E5%BD%92%E5%9B%A0.html</url>
+    <title>数据分析 | 指标异动归因 // Attribution Analysis</title>
+    <url>/DataAnalysis-AttributionAnalysis.html</url>
     <content><![CDATA[<center></center>
 <span id="more"></span>
+<meta name="referrer" content="no-referrer">
 <ul>
 <li>机票的成交转化率下降了，怎么分析？</li>
-<li>航班公司觉得自己的某个航线经营状况不好，怎么分析原因</li>
+<li>航班公司觉得自己的某个航线经营状况不好，怎么分析原因？</li>
 <li>某个产品的销售量下降了，怎么分析？</li>
 <li>xxx转化率最近在下降，询盘量有点上升，请分析下是什么情况?</li>
+<li>NPS、CPO、CSAT上涨/下降的主要原因是什么？</li>
 </ul>
 <h1 id="分析过程"><a class="header-anchor" href="#分析过程"></a>分析过程</h1>
 <p>指标异动归因分析的基本流程：</p>
 <ol>
 <li>明确关注的核心指标，以及对应的业务目标</li>
 <li>梳理相关的业务流程，明确可拆解的纵向、横向维度</li>
+</ol>
+<ul>
+<li>纵向分析：对同一指标在不同时间里的发展变化进行分析</li>
+<li>横向分析：对同一指标在同一时间里进行多维分析</li>
+</ul>
+<ol start="3">
 <li>纵向分析，定义异动，并发现异动</li>
 <li>横向分析，拆解维度，定位异动的主要原因，发现业务的可优化点</li>
 </ol>
@@ -28792,7 +28800,7 @@ $$not &gt; and &gt; or$$</li>
 </ul>
 <h3 id="加法指标"><a class="header-anchor" href="#加法指标"></a>加法指标</h3>
 <p>即<strong>Delta法</strong>。<br>
-目标指标$Y$可拆分成同一个多个因子指标的<strong>加和</strong>。假设有$n$个因子，同一维度各因子之间满足<a href="/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-MECE%E5%8E%9F%E5%88%99.html" title="MECE原则">MECE原则</a>。</p>
+目标指标$Y$可拆分成同一个多个因子指标的<strong>加和</strong>。假设有$n$个因子，同一维度各因子之间满足<a href="#">Post not found: 数据分析-MECE原则 MECE原则</a>。</p>
 <ul>
 <li>
 <p>目标指标：$Y = Y_1 + Y_2 + \cdots + Y_n$</p>
@@ -28841,7 +28849,7 @@ $$\mathrm{GMV} = 老客\mathrm{GMV} + 新客\mathrm{GMV}$$</p>
 </blockquote>
 <h3 id="除法指标"><a class="header-anchor" href="#除法指标"></a>除法指标</h3>
 <p>适用分子分母可分别加和的除法指标。除法指标的变化主要由结构变化、指标值变化共同决定。这类指标主要是比率型指标，比如用户满意度（满意问卷量 / 问卷提交量）、留存率（留存用户数 / 存量用户数）等。</p>
-<p>目标指标$Y$可拆分为两个指标相除，且分子分母是可加和的（可以分别拆分成$m$个维度指标加和，各维度之间满足<a href="/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-MECE%E5%8E%9F%E5%88%99.html" title="MECE原则">MECE原则</a>）。</p>
+<p>目标指标$Y$可拆分为两个指标相除，且分子分母是可加和的（可以分别拆分成$m$个维度指标加和，各维度之间满足<a href="#">Post not found: 数据分析-MECE原则 MECE原则</a>）。</p>
 <h4 id="控制变量法（敏感度分析）"><a class="header-anchor" href="#控制变量法（敏感度分析）"></a>控制变量法（敏感度分析）</h4>
 <ul>
 <li>
