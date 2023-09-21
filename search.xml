@@ -2686,9 +2686,10 @@ $$</p>
 </ul>
 <h2 id="平衡性检验"><a class="header-anchor" href="#平衡性检验"></a>平衡性检验</h2>
 <p>平衡性检验（Balance Diagnose）：观察匹配后的各个变量的均值是否有显著差异。计算每个变量的干预组和虚拟控制组的差异（SMD，Standardized Mean Difference）。<br>
+d<br>
 $$<br>
 \begin{equation}<br>
-\mathrm{SMD} = \frac{ \bar{X}<em>{ \mathrm{Treat} } - \bar{X}</em>{ \mathrm{Control} } }{ \sqrt{ \frac{1}{2} \left(  s^2_{ \mathrm{Treat} } + s^2_{ \mathrm{Control} } \right) } }<br>
+\mathrm{ SMD } = \frac{ \bar{ X }<em>{ \mathrm{ Treat } } - \bar{ X }</em>{ \mathrm{ Control } } }{ \sqrt{ \frac{1}{2} \left(  s^2_{ \mathrm{ Treat } } + s^2_{ \mathrm{ Control } } \right) } }<br>
 \end{equation}<br>
 $$</p>
 <blockquote>
@@ -8030,9 +8031,9 @@ $$\tau = \frac{ \sum_{i,t} W_{it} \left( Y_{ it }(1)-Y_{ it }(0) \right) }{ \sum
 <h1 id="参考资料-推荐阅读"><a class="header-anchor" href="#参考资料-推荐阅读"></a>参考资料 &amp; 推荐阅读</h1>
 <h2 id="Book"><a class="header-anchor" href="#Book"></a>Book</h2>
 <ul>
-<li><strong>Elements of Causal Inference</strong>. <a href="https://mitp-content-server.mit.edu/books/content/sectbyfn?collid=books_pres_0&amp;id=11283&amp;fn=11283.pdf">PDF</a></li>
-<li><strong>The Book of Why</strong>. Judea Pearl, Dana Mackenzie. (<a href="http://bayes.cs.ucla.edu/WHY/">Book Introduction</a>, <a href="http://bayes.cs.ucla.edu/WHY/why-ch1.pdf">Only Chapter 1</a>)</li>
 <li><strong>Causality</strong>. Judea Pearl. (<a href="http://bayes.cs.ucla.edu/BOOK-2K/">Book Introduction</a>)</li>
+<li><strong>Elements of Causal Inference</strong>. (<a href="https://mitp-content-server.mit.edu/books/content/sectbyfn?collid=books_pres_0&amp;id=11283&amp;fn=11283.pdf">PDF</a>)</li>
+<li><strong>The Book of Why</strong>. Judea Pearl, Dana Mackenzie. (<a href="http://bayes.cs.ucla.edu/WHY/">Book Introduction</a>, <a href="http://bayes.cs.ucla.edu/WHY/why-ch1.pdf">Only Chapter 1</a>)</li>
 </ul>
 <h2 id="Thesis"><a class="header-anchor" href="#Thesis"></a>Thesis</h2>
 <h2 id="Article"><a class="header-anchor" href="#Article"></a>Article</h2>
