@@ -1,0 +1,1387 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.0.0">
+<meta name="baidu-site-verification" content="GLZSr3LDqT" />
+<meta name="google-site-verification" content="fZvQBljM9I6UA4l4wwiA5wECEn7k0V4-DgCfWEPNtFc" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon2.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon2.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"github.com","root":"/","scheme":"Pisces","version":"8.0.0-rc.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"valine","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+<link rel="stylesheet" href="/js/prism/prism.css">
+
+<script src="http://echarts.baidu.com/dist/echarts.common.min.js"></script>
+  <meta property="og:type" content="article">
+<meta property="og:title" content="Variable Selection | 带惩罚函数的变量选择方法">
+<meta property="og:url" content="https://github.com/ShootingWang/ShootingWang.github.io/Statistics-VariableSelection-withPenalty.html">
+<meta property="og:site_name" content="Skye">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-02-11T02:04:26.000Z">
+<meta property="article:modified_time" content="2023-02-22T16:25:45.895Z">
+<meta property="article:author" content="Skye">
+<meta property="article:tag" content="Variable Selection 变量选择">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://github.com/ShootingWang/ShootingWang.github.io/Statistics-VariableSelection-withPenalty.html">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Variable Selection | 带惩罚函数的变量选择方法 | Skye</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="Skye" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><script type="text/javascript" color="0,0,0" opacity='0.5' zIndex="-1" count="99" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+  </script>
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+        <span class="toggle-line toggle-line-first"></span>
+        <span class="toggle-line toggle-line-middle"></span>
+        <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Skye</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页 Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于 About Me</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签 Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类 Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档 Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-update">
+
+    <a href="/update/" rel="section"><i class="fa fa-list-ul fa-fw"></i>更新 Update</a>
+
+  </li>
+        <li class="menu-item menu-item-tool">
+
+    <a href="/tools/" rel="section"><i class="fa fa-tools fa-fw"></i>工具 Tools</a>
+
+  </li>
+        <li class="menu-item menu-item-treasure">
+
+    <a href="/treasure/" rel="section"><i class="fa fa-gem fa-fw"></i>宝库 Treasure</a>
+
+  </li>
+        <li class="menu-item menu-item-pool">
+
+    <a href="/pool/" rel="section"><i class="fa fa-book fa-fw"></i>题库 Question Bank</a>
+
+  </li>
+        <li class="menu-item menu-item-timeline">
+
+    <a href="/timeline/" rel="section"><i class="fa fa-cube fa-fw"></i>随笔 Essay</a>
+
+  </li>
+        <li class="menu-item menu-item-links">
+
+    <a href="/links" rel="section"><i class="fa fa-link fa-fw"></i>友链 Links</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索 Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/ShootingWang" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+    <!-- echarts -->
+    <script type="text/javascript" src="/js/src/echarts.common.js"></script>
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://github.com/ShootingWang/ShootingWang.github.io/Statistics-VariableSelection-withPenalty.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Skye">
+      <meta itemprop="description" content="刻苦，沉着，精进不休">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Skye">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Variable Selection | 带惩罚函数的变量选择方法
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-02-11 10:04:26" itemprop="dateCreated datePublished" datetime="2021-02-11T10:04:26+08:00">2021-02-11</time>
+            </span>
+
+          
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-02-23 00:25:45" itemprop="dateModified" datetime="2023-02-23T00:25:45+08:00">2023-02-23</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Machine-Learning-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">Machine Learning 机器学习</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/Statistics-VariableSelection-withPenalty.html#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/Statistics-VariableSelection-withPenalty.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <center></center>
+<span id="more"></span>
+<p>假设有$n$个样本，$p$个自变量（predictor variables）。<br>
+考虑简单线性回归模型：<br>
+$$y = X\beta + \varepsilon, \qquad \varepsilon \sim N(0, \sigma^2)$$<br>
+其中，$y$是响应变量/因变量/被解释变量，$X$是$n\times p$维的样本（设计）矩阵，$\varepsilon$是服从方差为$\sigma^2$的正态分布的误差项。</p>
+<p><strong>普通最小二乘</strong>（OLS，Ordinary Least Squares）:</p>
+<ul>
+<li>损失函数（Loss function）：<br>
+$$L(\beta) = ||y-X\beta||^2$$</li>
+<li>回归系数估计：<br>
+$$\hat{\beta}_{OLS} = \left(X^T X \right)^{-1} X^T y$$</li>
+</ul>
+<blockquote>
+<p>$L_p$范数（$L_p$-norm）：<br>
+$$L_p(\vec{x}) = \parallel \vec{x} \parallel_p = \left( \sum_{i=1}^n \mid x_i \mid^p \right)^{1/p}, \qquad p\geq 1$$<br>
+其中，$\vec{x} = ( x_1, x_2, \cdots, x_n )$。</p>
+<ul>
+<li>$p = -\infty$：<br>
+$$\parallel \vec{x} \parallel_{-\infty} = \lim_{p \rightarrow -\infty} \left( \sum_{i=1}^n \mid x_i \mid^p \right)^{1/p} = \min_i \mid x_i \mid $$</li>
+<li>$p = 0$：（严格说，不属于范数）<br>
+$$\parallel \vec{x} \parallel_0 = \sharp(i) \quad \mathrm{with} \quad x_i\neq 0 $$<br>
+表示向量$\vec{x}$中非零元素的个数</li>
+<li>$p = 1$：（也称<strong>曼哈顿距离</strong>）<br>
+$$\parallel \vec{x} \parallel_1 = \sum_{i=1}^n \mid x_i \mid$$</li>
+<li>$p = 2$：（也称<strong>欧氏距离</strong>）<br>
+$$\parallel \vec{x} \parallel_2 = \sqrt{\sum_{i=1}^n \mid x_i \mid^2}$$</li>
+<li>$p = +\infty$：（无穷范数/最大范数）<br>
+$$\parallel \vec{x} \parallel_{+\infty} = \lim_{p\rightarrow +\infty} \left( \sum_{i=1}^n \mid x_i \mid^p \right)^{1/p} = \max_i \mid x_i \mid$$</li>
+</ul>
+</blockquote>
+<ul>
+<li>当$p&gt;n$时，OLS不适用（容易过拟合）</li>
+</ul>
+<h1 id="Penalized-Least-Squares"><a class="header-anchor" href="#Penalized-Least-Squares"></a>Penalized Least Squares</h1>
+<blockquote>
+<p>Li F R . <a target="_blank" rel="noopener" href="https://escholarship.org/content/qt8j29393d/qt8j29393d.pdf">Variable Selection via Nonconcave Penalized Likelihood and its Oracle Properties</a>[J]. Publications of the American Statistical Association, 2001, 96(456):1348-1360.</p>
+</blockquote>
+<p>将设计矩阵标准化，即$X^TX = I_p$</p>
+<p>目标函数：<br>
+$$<br>
+\begin{aligned}<br>
+L( \beta ) &amp;= \parallel y - X \beta \parallel_2^2 + \lambda J( \beta ) \\<br>
+&amp;= \parallel y-X \beta \parallel_2^2 + \lambda \sum_{j=1}^p p_j ( \mid \beta_j \mid ) \\<br>
+&amp;= \sum_{i=1}^n \left( y_i - \sum_{j=1}^p x_{ ij } \beta_j \right)^2 + \lambda \sum_{j=1}^p p_j ( \mid \beta_j \mid ) \\<br>
+&amp;= \sum_{i=1}^n \left( y_i - \sum_{j=1}^p x_{ ij } \beta_j \right)^2 + \sum_{j=1}^p p_\lambda( \mid \beta_j \mid ) \\<br>
+&amp;= \parallel y-X \beta \parallel^2_2 + \sum_{j=1}^p p_\lambda ( \mid \beta_j \mid ) \\<br>
+&amp;= \parallel y-X \hat{ \beta }<em>{ OLS } \parallel^2_2  + \parallel  \hat{ \beta }</em>{ OLS }  - \beta \parallel^2 + \sum_{j=1}^p p_\lambda ( \mid \beta_j \mid ) \\<br>
+&amp;= \parallel y - X \hat{ \beta }<em>{ OLS }  \parallel^2_2  + \sum</em>{j=1}^p<br>
+\left\lbrace ( \hat{ \beta }<em>{ oj } -  \beta_j )^2 + p</em>\lambda ( \mid \beta_j \mid ) \right\rbrace  \\<br>
+\end{aligned}<br>
+$$</p>
+<ul>
+<li>假设惩罚函数对所有的系数都是一样的，即 $p(\mid \cdot \mid)$</li>
+<li>进一步，将 $\lambda p( \mid \cdot \mid )$ 记为 $p_\lambda( \mid \cdot \mid )$</li>
+<li>$ \hat{ \beta }<em>{ OLS } $ 是回归方程的普通最小二乘估计，$ \hat{ \beta }</em>{ oj } $ 是 $\hat{ \beta }_{ OLS } $ 的第 $j$ 个元素</li>
+</ul>
+<p>$$\hat{ \beta }_{ OLS } = \left( X^T X \right)^{-1} X^T y = X^T y$$</p>
+<p>$\parallel y-X \hat{ \beta_{OLS} } \parallel^2_2$ 对于 $\beta$ 是常数，因此有</p>
+<p>$$\arg \min_{\beta_j}  \parallel y-X\beta \parallel^2_2 + p_\lambda ( \mid \beta_j \mid ) \Leftrightarrow \arg \min_{ \beta_j }  \left\lbrace ( \hat{ \beta }<em>{oj} - \beta_j )^2 + p</em>\lambda( \mid \beta_j \mid ) \right\rbrace $$</p>
+<p>$$\hat{ \beta }<em>j = \arg \min</em>{ \beta_j } \left\lbrace ( \hat{\beta}<em>{oj} - \beta_j )^2 + p</em>\lambda( \mid \beta_j \mid ) \right\rbrace$$</p>
+<ul>
+<li>对于岭回归（Ridge Regression），</li>
+</ul>
+<p>$$<br>
+\begin{aligned}<br>
+p_\lambda ( \mid \beta_j \mid ) &amp;= \lambda \mid \beta_j \mid^2 \hat{ \beta }^{ Ridge }<em>{j} \\<br>
+&amp;= \frac{ 1 }{ 1 + \lambda } \hat{ \beta }</em>{oj} \\<br>
+\end{aligned}<br>
+$$</p>
+<ul>
+<li>对于LASSO，</li>
+</ul>
+<p>$$<br>
+\begin{aligned}<br>
+p_\lambda(\mid \beta_j \mid) &amp;= \lambda \mid \beta_j \mid \hat{ \beta }^{ LASSO }<em>{j}  \\<br>
+&amp;= \mathrm{ sgn }( \hat{ \beta }</em>{oj} )<br>
+\left( \mid \hat{ \beta }<em>{oj} \mid - \frac{ \lambda }{ 2 } \right )</em>+ \\<br>
+\end{aligned}<br>
+$$</p>
+<h2 id="Rigde-Regression-岭回归"><a class="header-anchor" href="#Rigde-Regression-岭回归"></a>Rigde Regression 岭回归</h2>
+<p>当自变量个数超过样本个数 或 样本数据存在多重共线性（multicollinearity）时，使用岭回归（Ridge Regression）可以得到一个精简的模型。</p>
+<blockquote>
+<p>Hoerl, A., &amp; Kennard, R. (1970). <a target="_blank" rel="noopener" href="https://www.jstor.org/stable/1267352?seq=1">Ridge Regression: Applications to Nonorthogonal Problems</a>. Technometrics, 12(1), 69-82. doi:10.2307/1267352</p>
+</blockquote>
+<ul>
+<li>ridge estimator是一种shrinkage estimator</li>
+</ul>
+<blockquote>
+<p><strong>Shrinkage estimators</strong> theoretically produce new estimators that are shrunk closer to the ‘true’ population parameters.</p>
+</blockquote>
+<ul>
+<li>
+<p>ridge regression是Tikhivov方法的其中一种</p>
+</li>
+<li>
+<p>ridge regression使用L2正则化（L2 Regularization）</p>
+</li>
+<li>
+<p>目标函数：</p>
+</li>
+</ul>
+<p>\begin{aligned}<br>
+L_{Ridge}(\beta) &amp;= ||y-X\beta ||^2_2 + \lambda ||\beta||^2_2 \\<br>
+&amp;= \sum_{i=1}^n \left( y_i - \sum_{j=1}^p x_{ij} \beta_j \right)^2 + \lambda \sum_{j=1}^p \beta_j^2 \\<br>
+\end{aligned}</p>
+<ul>
+<li>回归系数估计：</li>
+</ul>
+<p>\begin{aligned}<br>
+\hat{\beta}<em>{Ridge} &amp;= \arg \min</em>\beta \sum_{i=1}^n \left(y_i - \sum_{j=1}^p x_{ij} \beta_j \right)^2 \quad \mathrm{s.t.} \sum_{j=1}^p \beta_j^2 \leq s \\<br>
+&amp;= \left( X^T X+\lambda I \right)^{-1} X^T y  \\<br>
+\end{aligned}<br>
+其中，$I$是单位矩阵，$\lambda$是正则惩罚参数。</p>
+<ul>
+<li>当$\lambda \rightarrow 0$时，有 $\hat{\beta}<em>{Ridge} \rightarrow \hat{\beta}</em>{OLS}$</li>
+<li>当$\lambda \rightarrow \infty$时，有 $\hat{\beta}_{Ridge} \rightarrow 0$</li>
+</ul>
+<h3 id="Bias-Variance-Trade-off"><a class="header-anchor" href="#Bias-Variance-Trade-off"></a>Bias-Variance Trade-off</h3>
+<p>\begin{aligned}<br>
+\mathrm{Bias}( \hat{\beta}<em>{Ridge} ) &amp;= -\lambda \left( X^T X+\lambda I \right)^{-1} \beta \\<br>
+\mathrm{Var}( \hat{\beta}</em>{Ridge} ) &amp;= \sigma^2 \left( X^T X + \lambda I \right)^{-1} X^T X \left( X^T X+\lambda I \right)^{-1} \\<br>
+\end{aligned}</p>
+<h3 id="如何选择-lambda"><a class="header-anchor" href="#如何选择-lambda"></a>如何选择$\lambda$</h3>
+<p>方法：</p>
+<ol>
+<li>最小化信息准则（Minimizing Information Criteria）：</li>
+<li>交叉验证（cross-validation）</li>
+</ol>
+<h3 id="R实现"><a class="header-anchor" href="#R实现"></a>R实现</h3>
+<p>可使用R包<code>glmnet</code></p>
+<ul>
+<li>注意：ridge regression假设自变量（predictors）是标准化的（standardized），且因变量是中心化的（centered）</li>
+</ul>
+<blockquote>
+<p>标准化、中心化见《<a href="#">Post not found: 算法-特征归一化</a>》</p>
+</blockquote>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">library<span class="punctuation">(</span>glmnet<span class="punctuation">)</span>  <span class="comment">## 用于岭回归</span></span><br><span class="line">library<span class="punctuation">(</span>dplyr<span class="punctuation">)</span>  <span class="comment">## 用于数据清洗</span></span><br><span class="line">library<span class="punctuation">(</span>psych<span class="punctuation">)</span>  <span class="comment">## 使用 tr() 计算矩阵的迹</span></span><br><span class="line"></span><br><span class="line">data<span class="punctuation">(</span><span class="string">&#x27;mtcars&#x27;</span><span class="punctuation">)</span>  <span class="comment">## 载入数据mtcars</span></span><br><span class="line"><span class="comment">## 将y中心化</span></span><br><span class="line">y <span class="operator">&lt;-</span> mtcars <span class="operator">%&gt;%</span> select<span class="punctuation">(</span>mpg<span class="punctuation">)</span> <span class="operator">%&gt;%</span> </span><br><span class="line">  scale<span class="punctuation">(</span>center <span class="operator">=</span> <span class="literal">TRUE</span><span class="punctuation">,</span> scale <span class="operator">=</span> <span class="literal">FALSE</span><span class="punctuation">)</span> <span class="operator">%&gt;%</span></span><br><span class="line">  as.matrix<span class="punctuation">(</span><span class="punctuation">)</span></span><br><span class="line"><span class="comment">## 将X中心化</span></span><br><span class="line">X <span class="operator">&lt;-</span> mtcars <span class="operator">%&gt;%</span> select<span class="punctuation">(</span><span class="operator">-</span>mpg<span class="punctuation">)</span> <span class="operator">%&gt;%</span></span><br><span class="line">  scale<span class="punctuation">(</span>center <span class="operator">=</span> <span class="literal">TRUE</span><span class="punctuation">,</span> scale <span class="operator">=</span> <span class="literal">TRUE</span><span class="punctuation">)</span> <span class="operator">%&gt;%</span>  </span><br><span class="line">  as.matrix<span class="punctuation">(</span><span class="punctuation">)</span></span><br><span class="line"><span class="comment">## X的标准化可以省略，令cv.glmnet()或glmnet()中的参数standardize = TRUE来标准化X</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 使用10折交叉验证选择最优lambda</span></span><br><span class="line">lambdas_seq <span class="operator">&lt;-</span> 10<span class="operator">^</span>seq<span class="punctuation">(</span><span class="operator">-</span><span class="number">3</span><span class="punctuation">,</span> <span class="number">5</span><span class="punctuation">,</span> length.out <span class="operator">=</span> <span class="number">100</span><span class="punctuation">)</span></span><br><span class="line"><span class="comment">## alpha = 0表示岭回归</span></span><br><span class="line">ridge_cv <span class="operator">&lt;-</span> cv.glmnet<span class="punctuation">(</span>X<span class="punctuation">,</span> y<span class="punctuation">,</span> alpha <span class="operator">=</span> <span class="number">0</span><span class="punctuation">,</span> lambda <span class="operator">=</span> lambdas_seq<span class="punctuation">,</span></span><br><span class="line">                      nfolds <span class="operator">=</span> <span class="number">10</span><span class="punctuation">)</span></span><br><span class="line">plot<span class="punctuation">(</span>ridge_cv<span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
+<meta name="referrer" content="no-referrer">
+
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 使用令交叉验证预测误差均值最小的lambda</span></span><br><span class="line">rr <span class="operator">&lt;-</span> glmnet<span class="punctuation">(</span>X<span class="punctuation">,</span> y<span class="punctuation">,</span> alpha <span class="operator">=</span> <span class="number">0</span><span class="punctuation">,</span> lambda <span class="operator">=</span> ridge_cv<span class="operator">$</span>lambda.min<span class="punctuation">)</span></span><br><span class="line">y_hat <span class="operator">&lt;-</span> predict<span class="punctuation">(</span>rr<span class="punctuation">,</span> X<span class="punctuation">)</span>  <span class="comment">## y的估计值</span></span><br><span class="line">ssr <span class="operator">&lt;-</span> t<span class="punctuation">(</span>y <span class="operator">-</span> y_hat<span class="punctuation">)</span> <span class="operator">%*%</span> <span class="punctuation">(</span>y <span class="operator">-</span> y_hat<span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
+<h3 id="Python实现"><a class="header-anchor" href="#Python实现"></a>Python实现</h3>
+<h2 id="LASSO"><a class="header-anchor" href="#LASSO"></a>LASSO</h2>
+<p>LASSO（Least Absolute Shrinkage and Selection Operator）</p>
+<blockquote>
+<ul>
+<li>Tibshirani, Robert. “<a target="_blank" rel="noopener" href="https://www.jstor.org/stable/2346178?seq=1">Regression Shrinkage and Selection via the Lasso.</a>” Journal of the Royal Statistical Society. Series B (Methodological), vol. 58, no. 1, 1996, pp. 267–288. JSTOR, <a target="_blank" rel="noopener" href="http://www.jstor.org/stable/2346178">www.jstor.org/stable/2346178</a>. Accessed 11 Feb. 2021.</li>
+<li>Li, F. R. . (2001). <a target="_blank" rel="noopener" href="https://fan.princeton.edu/papers/01/penlike.pdf">Variable selection via nonconcave penalized likelihood and its oracle properties</a>. Publications of the American Statistical Association, 96(456), 1348-1360.</li>
+</ul>
+</blockquote>
+<ul>
+<li>
+<p>LASSO在损失函数中加上一个L1惩罚项（L1 penalty）</p>
+</li>
+<li>
+<p>目标函数：<br>
+\begin{aligned}<br>
+L_{LASSO}(\beta) &amp;= || y-X \beta ||^2_2 + \lambda ||\beta||<em>1 \\<br>
+&amp;= \sum</em>{i=1}^n \left(y_i - \sum_{j=1}^p x_{ij} \beta_j \right)^2 + \lambda \sum_{j=1}^p \mid \beta_j \mid \\<br>
+\end{aligned}</p>
+</li>
+</ul>
+<p>$$\hat{\beta}<em>{LASSO} = \arg \min</em>{\beta} \left\lbrace \sum_{i=1}^n\left( y_i - \sum_{j=1}^p x_{ij}\beta_j \right)^2 \right\rbrace \qquad \mbox{subject to } \sum_{j=1}^p |\beta_j| \leq s$$</p>
+<blockquote>
+<ul>
+<li>标准LASSO过度惩罚了大系数（standard LASSO over-shrinks large coefficients due to the nature of $l_1$ penalty）。</li>
+<li><a target="_blank" rel="noopener" href="https://fan.princeton.edu/papers/01/penlike.pdf">Fan and Li, 2001</a>：在单数据集变量选择中，LASSO倾向于选择过多的变量，理论上不满足Oracle性质</li>
+</ul>
+</blockquote>
+<p><strong>缺点</strong>：</p>
+<ol>
+<li>LASSO最终选择的变量个数$c$不会超过样本个数$n$（$c = \min\lbrace n, p \rbrace$）</li>
+<li>LASSO在对高度相关的变量进行选择时，只选择其中一个，而不关心是哪一个</li>
+</ol>
+<h3 id="Fused-LASSO"><a class="header-anchor" href="#Fused-LASSO"></a>Fused LASSO</h3>
+<blockquote>
+<p>Tibshirani, R., Saunders, M., Rosset, S., Zhu, J. and Knight, K. (2005), <a target="_blank" rel="noopener" href="https://web.stanford.edu/group/SOL/papers/fused-lasso-JRSSB.pdf">Sparsity and smoothness via the fused lasso</a>. Journal of the Royal Statistical Society: Series B (Statistical Methodology), 67: 91-108.</p>
+</blockquote>
+<p>$$\hat{\beta}<em>{fLASSO} = \arg \min</em>{\beta} \left\lbrace \sum_{i=1}^n\left( y_i - \sum_{j=1}^p x_{ij}\beta_j \right)^2 \right\rbrace \qquad \mbox{subject to } \sum_{j=1}^p |\beta_j| \leq s_1 \mbox{ and } \sum_{j=2}^p |\beta_j - \beta_{j-1}| \leq s_2$$</p>
+<ul>
+<li>$\sum_{j=1}^p |\beta_j| \leq s_1$鼓励回归系数的稀疏性</li>
+<li>$\sum_{j=2}^p |\beta_j - \beta_{j-1}| \leq s_2$鼓励回归系数差异上的稀疏性</li>
+</ul>
+<h3 id="Adaptive-LASSO"><a class="header-anchor" href="#Adaptive-LASSO"></a>Adaptive LASSO</h3>
+<blockquote>
+<p>Hui Zou (2006). <a target="_blank" rel="noopener" href="http://pages.cs.wisc.edu/~shao/stat992/zou2006.pdf">The Adaptive Lasso and Its Oracle Properties</a>, Journal of the American Statistical Association, 101:476, 1418-1429.</p>
+</blockquote>
+<p>考虑加权LASSO<br>
+$$\arg \min_{\beta} \parallel y - \sum_{j=1}^p x_j\beta_j \parallel^2_2 + \lambda \sum_{j=1}^p w_j|\beta_j|$$</p>
+<ul>
+<li>如果权重$w_j$是基于数据、且被正确选择，则加权LASSO具有Oracle性质，可称为自适应LASSO（Adaptive LASSO）</li>
+</ul>
+<p>定义$\hat{w}=\frac{1}{|\hat{\beta}|^{\gamma} }$自适应LASSO通过下式估计$\hat{\beta}^{<em>(n)}$<br>
+$$\hat{\beta}^{</em>(n)} = \arg \min_{\beta} \parallel y-\sum_{j=1}^p x_j\beta_j \parallel^2_2 + \lambda_n \sum_{j=1}^p \hat{w}_j |\beta_j|$$</p>
+<ul>
+<li>$\hat{\beta}$可取$\hat{\beta}_{OLS}$</li>
+</ul>
+<h3 id="post-LASSO"><a class="header-anchor" href="#post-LASSO"></a>post-LASSO</h3>
+<blockquote>
+<p>Belloni, Alexandre; Chernozhukov, Victor. <a target="_blank" rel="noopener" href="https://projecteuclid.org/download/pdfview_1/euclid.bj/1363192037">Least squares after model selection in high-dimensional sparse models</a>. Bernoulli 19 (2013), no. 2, 521–547. doi:10.3150/11-BEJ410.</p>
+</blockquote>
+<blockquote>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://projecteuclid.org/download/pdfview_1/euclid.bj/1363192037">Belloni and Chernozhukov (2013)</a>：post-LASSO在收敛速度上至少和LASSO一样好，且post-LASSO的偏差更小</li>
+</ul>
+</blockquote>
+<h2 id="Bridge"><a class="header-anchor" href="#Bridge"></a>Bridge</h2>
+<blockquote>
+<p>Frank L E , Friedman J H . <a target="_blank" rel="noopener" href="http://www.uwe-mortensen.de/FrankFriedmanStatViewChemometRegressionTools1993.pdf">A Statistical View of Some Chemometrics Regression Tools</a>[J]. Technometrics, 1993, 35(2):109-135.<br>
+Fu, Wenjiang J . <a target="_blank" rel="noopener" href="http://www.hpc.unm.edu/~andriese/doc/ref1_fu.pdf">Penalized Regressions: The Bridge versus the Lasso</a>[J]. Journal of Computational and Graphical Statistics, 1998, 7(3):397.</p>
+</blockquote>
+<ul>
+<li>目标函数：<br>
+$$L_{Bridge}(\beta) = \parallel y-X\beta \parallel_2 + \lambda \sum_{i=1}^p \mid \beta_i \mid^\gamma, \qquad \gamma &gt; 0 $$</li>
+</ul>
+<p>$$<br>
+\begin{aligned}<br>
+\hat{\beta}<em>{Bridge} &amp;= \arg \min</em>{\beta} \parallel y - X\beta \parallel_2^2 + \lambda J(\beta) \\<br>
+&amp;= \arg \min_{\beta} \parallel y - X\beta \parallel_2^2 + \lambda \parallel \beta \parallel_{\gamma}^{\gamma} \\<br>
+&amp;= \arg \min_{\beta} \parallel y - X\beta \parallel_2^2 + \lambda \sum_{j=1}^p \mid \beta_j\mid^{\gamma} \\<br>
+\end{aligned}<br>
+$$</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.445.4562&amp;rep=rep1&amp;type=pdf">Zou and Hastie(2005)</a>：Bridge估计量可以看成是基于如下先验的贝叶斯后验模式（Bayes posterior mode）<br>
+$$p_{\lambda, \gamma}(\beta) = C(\lambda, \gamma)\exp{(-\lambda |\beta|_{\gamma}^{\gamma})} $$</p>
+</blockquote>
+<h2 id="SCAD"><a class="header-anchor" href="#SCAD"></a>SCAD</h2>
+<p>SCAD（Smoothly Clipped Absolute Deviation）</p>
+<blockquote>
+<p>Fan, J., &amp; Li, R. (2001). <a target="_blank" rel="noopener" href="https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.445.4562&amp;rep=rep1&amp;type=pdf">Variable Selection via Nonconcave Penalized Likelihood and Its Oracle Properties</a>. Journal of the American Statistical Association, 96(456), 1348-1360.</p>
+</blockquote>
+<p>目标函数：<br>
+$$ P_{\lambda}(|\beta_j|) = \left\lbrace<br>
+\begin{array}{ll}<br>
+{\lambda} |\beta_j|, &amp; 0\leq |\beta_j| \leq \lambda \\<br>
+-\frac{\left( |\beta_j|^2 - 2a\lambda |\beta_j| + \lambda^2 \right)}{2(a-1)}, &amp; \lambda &lt; |\beta_j| \leq a\lambda \\<br>
+\frac{(a+1)\lambda^2}{2}, &amp; |\beta_j| &gt; a\lambda \\<br>
+\end{array}<br>
+\right.<br>
+$$</p>
+<p>$$ P_{\lambda}^{\prime} (|\beta_j|) = \lambda \left\lbrace I(|\beta_j| \leq \lambda) + \frac{(a\lambda - |\beta_j|)_{+} }{(a-1)\lambda} I(|\beta_j| &gt; \lambda) \right\rbrace$$<br>
+其中$a&gt;2$。</p>
+<h2 id="Elastic-Net（Enet）"><a class="header-anchor" href="#Elastic-Net（Enet）"></a>Elastic Net（Enet）</h2>
+<ul>
+<li>EN是最早的具有群组变量选择功能的方法（王小燕等, 2015）</li>
+<li>惩罚函数是LASSO和岭回归的线性组合</li>
+<li>处理高度相关数据的组变量选择方法</li>
+</ul>
+<blockquote>
+<ul>
+<li>Zou, H. , &amp; Hastie, T. . (2005). <a target="_blank" rel="noopener" href="https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.445.4562&amp;rep=rep1&amp;type=pdf">Regularization and variable selection via the elastic net</a>. Journal of the Royal Statistical Society, 67(5), 768-768.</li>
+<li>王小燕,谢邦昌,马双鸽,方匡南.高维数据下群组变量选择的惩罚方法综述[J].数理统计与管理,2015,34(06):978-988.</li>
+</ul>
+</blockquote>
+<p>目标函数：<br>
+\begin{aligned}<br>
+L(\lambda, \beta) &amp;= \parallel y-X\beta \parallel_2^2 + \lambda_2 \parallel \beta\parallel <em>2^2 + \lambda_1 \parallel \beta \parallel_1 \\<br>
+&amp;= \parallel y-X\beta \parallel_2^2 + \lambda_2 \sum</em>{j=1}^p \beta_j^2 + \lambda_1 \sum_{j=1}^p |\beta_j| \\<br>
+\end{aligned}</p>
+<p>\begin{aligned}<br>
+\hat{\beta} &amp;= \arg\min_{\beta} \lbrace L(\lambda, \beta) \rbrace \\<br>
+&amp;= \arg\min_{\beta} \parallel y-X\beta \parallel_2^2, \qquad \mbox{subject to } (1-\alpha)\mid\beta\mid_1+\alpha\parallel \beta\parallel^2_2 \leq t \mbox{ for some } t.\\<br>
+\end{aligned}</p>
+<ul>
+<li>当$\alpha = 1$时，朴素弹性网（naive elastic net）变为简单岭回归（simple ridge regression）</li>
+<li>当$\alpha = 0$时，朴素弹性网（naive elastic net）变为LASSO</li>
+</ul>
+<p>Elastic Net估计量可以看成是如下先验（介于Gaussian先验和Laplacian先验）的贝叶斯后验模式：<br>
+$$p_{\lambda, \alpha} = C(\lambda, \alpha) \exp\lbrace -\lambda \left[ \alpha |\beta|^2 + (1-\alpha)|\beta|_1 \right] \rbrace$$</p>
+<blockquote>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.445.4562&amp;rep=rep1&amp;type=pdf">Zou and Hui (2015)</a>：Elastic Net 没有Oracle性质</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li><a target="_blank" rel="noopener" href="http://www.cnki.com.cn/Article/CJFDTotal-SLTJ201506005.htm">王小燕等(2015)</a>：弹性网的缺点之一是往往选择过多的变量组</li>
+</ul>
+</blockquote>
+<h3 id="EN-vs-Bridge"><a class="header-anchor" href="#EN-vs-Bridge"></a>EN vs Bridge</h3>
+<ul>
+<li>$1&lt; \gamma &lt; 2$的Bridge回归与Elastic Net有许多相似之处</li>
+<li>Elastic Net可以产生稀疏解，而Bridge Regression不能</li>
+</ul>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.445.4562&amp;rep=rep1&amp;type=pdf">Fan and Li (2001)</a>：在$L_q(q\geq 1)$的惩罚函数族中，只有LASSO惩罚函数（$q=1$）能够产生稀疏解（sparse solution）</p>
+</blockquote>
+<h3 id="Adaptive-Elastic-Net"><a class="header-anchor" href="#Adaptive-Elastic-Net"></a>Adaptive Elastic Net</h3>
+<p>结合Adaptive LASSO和$L_2$惩罚项</p>
+<h2 id="MCP"><a class="header-anchor" href="#MCP"></a>MCP</h2>
+<p>MCP（minimax concave penalty）</p>
+<ul>
+<li>用于单一数据集的分析</li>
+</ul>
+<blockquote>
+<ul>
+<li>Zhang, C. (2010). <a target="_blank" rel="noopener" href="https://projecteuclid.org/download/pdfview_1/euclid.aos/1266586618">Nearly unbiased variable selection under minimax concave penalty</a>. The Annals of Statistics, 38(2), 894-942.</li>
+<li>Liu, J., Huang, J., &amp; Ma, S. (2014). <a target="_blank" rel="noopener" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3933169/pdf/nihms470951.pdf">Integrative Analysis of Cancer Diagnosis Studies with Composite Penalization</a>. Scandinavian journal of statistics, theory and applications, 41(1), 87–103.</li>
+<li>Mazumder, R., Friedman, J. H., &amp; Hastie, T. (2011). <a target="_blank" rel="noopener" href="https://web.stanford.edu/~hastie/Papers/Sparsenet/jasa_MFH_final.pdf">SparseNet: Coordinate Descent With Nonconvex Penalties</a>. Journal of the American Statistical Association, 106(495), 1125–1138.</li>
+</ul>
+</blockquote>
+<p>MCP定义为：<br>
+$$<br>
+\begin{aligned}<br>
+\rho(t;\lambda,\gamma) &amp;= \lambda \int_{0}^{|t|} \left( 1-\frac{x}{\gamma \lambda} \right)<em>{+} \mathrm{d}x \\<br>
+&amp;= \lambda \left( |t| - \frac{t^2}{2\gamma\lambda} \right)I(|t| &lt; \gamma\lambda) + \frac{\gamma\lambda^2}{2}I(|t| \geq \gamma\lambda) \\<br>
+\end{aligned}<br>
+$$<br>
+即<br>
+$$ P</em>{MCP}(t;\lambda, \gamma) =<br>
+\left\lbrace<br>
+\begin{array}{ll}<br>
+\lambda|t| - \frac{t^2}{2\gamma}, &amp; |t| &lt; \gamma\lambda \\<br>
+\frac{\gamma\lambda^2}{2}, &amp; |t| \geq \gamma \lambda \\<br>
+\end{array}<br>
+\right.<br>
+$$</p>
+<ul>
+<li>正则化参数$\gamma &gt; 0$控制$\rho(\cdot)$的凹度（concavity）</li>
+<li>惩罚参数：$\lambda$</li>
+<li>$x_{+} = xI(x\geq 0)$</li>
+</ul>
+<p>导数为：<br>
+$$\rho^\prime(t;\lambda,\gamma) = \lambda\left( 1-\frac{|t|}{\gamma \lambda} \right)<em>{+}\mathrm{sgn}(t)$$<br>
+即<br>
+$$<br>
+P</em>{MCP}^{\prime}(t;\lambda,\gamma) = \left\lbrace<br>
+\begin{array}{ll}<br>
+\lambda - \frac{|t|}{\gamma}, &amp; |t| &lt; \gamma\lambda \\<br>
+0, &amp; |t| \geq \gamma \lambda \\<br>
+\end{array}<br>
+\right.<br>
+$$</p>
+<p>其中<br>
+$$\mathrm{sgn}(t) = \left\lbrace<br>
+\begin{array}{ll}<br>
+-1, &amp; t &lt; 0 \\<br>
+0, &amp; t = 0 \\<br>
+1, &amp; t &gt; 0<br>
+\end{array}<br>
+\right.<br>
+$$</p>
+<ul>
+<li>当$\gamma \rightarrow +\infty$，有MCP penalty $\rightarrow$ LASSO penalty</li>
+<li>当$\gamma \rightarrow 1+$，有MCP penalty $\rightarrow$ hard-thresholding penalty</li>
+</ul>
+<blockquote>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4286300/pdf/nihms637377.pdf">Mazumder, 2011</a>：MCP计算简单</li>
+<li><a target="_blank" rel="noopener" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3933169/pdf/nihms470951.pdf">Liu等人(2014)</a></li>
+</ul>
+</blockquote>
+<h1 id="Group-Variable-Selection"><a class="header-anchor" href="#Group-Variable-Selection"></a>Group Variable Selection</h1>
+<h2 id="MNET"><a class="header-anchor" href="#MNET"></a>MNET</h2>
+<ul>
+<li>处理高度相关数据的组变量选择方法</li>
+</ul>
+<h2 id="L-2-SCAD"><a class="header-anchor" href="#L-2-SCAD"></a>$L_2$ SCAD</h2>
+<ul>
+<li>组合SCAD函数和岭回归</li>
+<li>处理高度相关数据的组变量选择方法</li>
+</ul>
+<h2 id="Group-LASSO"><a class="header-anchor" href="#Group-LASSO"></a>Group LASSO</h2>
+<ul>
+<li>仅能选择组变量</li>
+</ul>
+<blockquote>
+<ul>
+<li>Yuan, M. and Lin, Y. (2006) <a target="_blank" rel="noopener" href="http://www.columbia.edu/~my2550/papers/glasso.final.pdf">Model Selection and Estimation in Regression with Grouped Variables</a>. Journal of the Royal Statistical Society: Series B, 68, 49-67.</li>
+<li>Huang, J., Breheny, P., &amp; Ma, S. (2012). <a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1204.6491.pdf">A Selective Review of Group Selection in High-Dimensional Models</a>. Statistical science : a review journal of the Institute of Mathematical Statistics, 27(4), 10.</li>
+<li>Wei, F., &amp; Huang, J. (2010). <a target="_blank" rel="noopener" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3209717/pdf/nihms331983.pdf">Consistent group selection in high-dimensional linear regression</a>. Bernoulli : official journal of the Bernoulli Society for Mathematical Statistics and Probability, 16(4), 1369–1384.</li>
+</ul>
+</blockquote>
+<p>假设设计矩阵$X$可分为$J$个组$X_1, X_2, \cdots, X_J$，且$d_j$表示第$j$个组的大小（size），也即$\sum_{j=1}^Jd_j = p$。</p>
+<p>目标函数：<br>
+\begin{equation}<br>
+\begin{aligned}<br>
+Q(\beta | X,y) &amp;= L(\beta|X,y) + \sum_{j=1}^J \lambda_j {\parallel} \beta_j {\parallel_{K_j} } \qquad (\lambda \geq 0) \\<br>
+&amp;= \parallel y - \sum_{j=1}^JX_j\beta_j {\parallel_2^2} + \lambda \sum_{j=1}^J \sqrt{d_j} \parallel \beta_j {\parallel_{K_j} }  \\<br>
+\end{aligned}<br>
+\end{equation}</p>
+<ul>
+<li>${\parallel}z{\parallel_{K_j} } = \left( z^TK_jz \right)^{1/2}$</li>
+<li>为了保证对大组、小组的惩罚力度一致，可取$\lambda_j = \lambda \sqrt{d_j}$</li>
+<li>当$d_j=1(1\leq j\leq J)$时，Group LASSO简化为标准LASSO，且$R_j=\frac{1}{n}\parallel X_j\parallel^2$正比于$X_j$的样本方差。</li>
+</ul>
+<blockquote>
+<ul>
+<li><a target="_blank" rel="noopener" href="http://members.cbio.mines-paristech.fr/~jvert/svn/bibli/local/Kim2006Blockwise.pdf">Kim等(2006)</a>：将Group LASSO应用到Logistic模型中</li>
+<li><a target="_blank" rel="noopener" href="https://rss.onlinelibrary.wiley.com/doi/abs/10.1111/j.1467-9868.2007.00627.x">Meier等(2008)</a>：将Group LASSO应用到Logistic模型中</li>
+<li><a target="_blank" rel="noopener" href="https://www.researchgate.net/publication/40786418_A_Group_Bridge_Approach_for_Variable_Selection">Huang等(2009)</a>：Group LASSO就像是自适应加权岭回归（adaptively weighted ridge regression）</li>
+<li><a target="_blank" rel="noopener" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3209717/pdf/nihms331983.pdf">Wei and Huang (2010)</a>：Group LASSO的选择没有一致性，且倾向于选取不重要的组</li>
+</ul>
+</blockquote>
+<h3 id="如何选择-K-j"><a class="header-anchor" href="#如何选择-K-j"></a>如何选择$K_j$</h3>
+<p>对于标准正交的$X_j$，有<br>
+$$\frac{1}{n}X_j^TX_j = I_{d_j}, \qquad j=1, 2, \cdots, J.$$</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="http://www.columbia.edu/~my2550/papers/glasso.final.pdf">Yuan and Lin(2006)</a>建议取$K_j=I_{d_j}$</li>
+</ul>
+<h3 id="求解"><a class="header-anchor" href="#求解"></a>求解</h3>
+<ul>
+<li><a target="_blank" rel="noopener" href="http://www.columbia.edu/~my2550/papers/glasso.final.pdf">Yuan and Lin(2006)</a>：通过组坐标下降法（Group Coordinate Descent Algorithm）计算Group LASSO的解</li>
+</ul>
+<p>令$z=\frac{1}{n}X_j^T y$为$y=X\beta+\varepsilon$的最小二乘解，则有<br>
+$$\hat{\beta}<em>{LASSO}(z;\lambda) = S(z, \lambda) = \left( 1-\frac{\lambda}{\parallel z \parallel_2} \right)</em>{+} z$$</p>
+<h3 id="同构整合分析"><a class="header-anchor" href="#同构整合分析"></a>同构整合分析</h3>
+<p>Group LASSO可应用于同构整合分析</p>
+<blockquote>
+<p>Zhang, Q. , Zhang, S. , Liu, J. , Huang, J. , &amp; Ma, S. . (2015). <a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1501.02458.pdf">Penalized integrative analysis under the accelerated failure time model</a>. Statistica Sinica, 26(2).</p>
+</blockquote>
+<p>目标函数：<br>
+\begin{aligned}<br>
+L(\beta) &amp;= \frac{1}{2n}\parallel y-X\beta \parallel_2^2 + \lambda \sum_{j=1}^p\parallel \beta_j \parallel_2 \\<br>
+&amp;= \frac{1}{2n}\parallel y-X\beta \parallel_2^2 + \lambda \sum_{j=1}^p \left[ \sum_{k=1}^M (\beta_j<sup>k)</sup>2 \right]^{1/2} \\<br>
+\end{aligned}</p>
+<ul>
+<li>$\parallel \beta_j \parallel_2 = \left[ \sum_{k=1}^M (\beta_j<sup>k)</sup>2 \right]^{1/2}$</li>
+</ul>
+<blockquote>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://core.ac.uk/download/pdf/41449289.pdf">马双鸽等人, 2015</a>：
+<ul>
+<li>同构模型的变量选择为整组选择</li>
+<li>同构数据的惩罚整合分析思想与单个数据集下的组变量选择类似</li>
+</ul>
+</li>
+<li><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1501.02458.pdf">Zhang等人, 2015</a>：在一定条件下，Group LASSO、$L_2$ Group SCAD、$L_2$ Group MCP满足选择一致性</li>
+</ul>
+</blockquote>
+<h3 id="Adaptive-Group-LASSO"><a class="header-anchor" href="#Adaptive-Group-LASSO"></a>Adaptive Group LASSO</h3>
+<blockquote>
+<p>Wang, H. , &amp; Leng, C. . (2008). <a target="_blank" rel="noopener" href="https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.494.4392&amp;rep=rep1&amp;type=pdf">A note on adaptive group lasso. Computational Statistics &amp; Data Analysis</a>, 52(12), 5277-5286.</p>
+</blockquote>
+<h2 id="Group-SCAD"><a class="header-anchor" href="#Group-SCAD"></a>Group SCAD</h2>
+<blockquote>
+<p>Lifeng Wang, Guang Chen, Hongzhe Li, <a target="_blank" rel="noopener" href="https://academic.oup.com/bioinformatics/article/23/12/1486/223749">Group SCAD regression analysis for microarray time course gene expression data</a>, Bioinformatics, Volume 23, Issue 12, 15 June 2007, Pages 1486–1494</p>
+</blockquote>
+<h2 id="L-2-Group-Bridge"><a class="header-anchor" href="#L-2-Group-Bridge"></a>$L_2$ Group Bridge</h2>
+<blockquote>
+<ul>
+<li>Ma, S., Huang, J., &amp; Song, X. (2011). <a target="_blank" rel="noopener" href="https://pubmed.ncbi.nlm.nih.gov/21415015/">Integrative analysis and variable selection with multiple high-dimensional data sets</a>. Biostatistics (Oxford, England), 12(4), 763–775.</li>
+<li>马双鸽, 王小燕, 方匡南. <a target="_blank" rel="noopener" href="https://core.ac.uk/download/pdf/41449289.pdf">大数据的整合分析方法</a>[J]. 统计研究, 2015, 32(011):3-11.</li>
+</ul>
+</blockquote>
+<ul>
+<li>用于同构数据的整合分析</li>
+</ul>
+<p>\begin{aligned}<br>
+\mbox{within-group selection} &amp;: \mbox{Ridge penalty} \\<br>
+\mbox{group selection} &amp;: \mbox{Bridge } \mathrm{penalty} \\<br>
+\end{aligned}</p>
+<p>考虑有$M$组研究数据的样本数据（每组都含$p$个解释变量），第$j$个变量的系数$\beta_j$的惩罚函数为：<br>
+\begin{aligned}<br>
+J(\beta_j) &amp;= \lambda \parallel \beta_j \parallel_2^{\gamma} \\<br>
+&amp;= \lambda \sum_{j=1}^p \left\lbrace \left[ \sum_{k=1}^M (\beta_j<sup>k)</sup>2 \right] \right\rbrace^{\gamma} \\<br>
+\end{aligned}</p>
+<ul>
+<li>$\parallel \beta_j \parallel_2 = \left[ (\beta_j^1 )^2 + (\beta_j^2 )^2 + \cdots + (\beta_j^M )^2 \right]$</li>
+<li>$0 &lt; \gamma &lt; 1$是固定的bridge因子（bridge index）</li>
+<li>将不同研究中的同一个研究变量的所有回归系数视为“一组”</li>
+<li>当$\gamma = 1$时，$L_2$ Group Bridge简化为Group Lasso</li>
+<li>$L_2$ Group Bridge满足选择一致性</li>
+</ul>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1501.02458.pdf">Zhang等人, 2015</a>：在一定条件下，Group LASSO、$L_2$ Group SCAD、$L_2$ Group MCP满足选择一致性</p>
+</blockquote>
+<h2 id="L-2-Group-MCP"><a class="header-anchor" href="#L-2-Group-MCP"></a>$L_2$ Group MCP</h2>
+<ul>
+<li>可用于进行组变量选择</li>
+<li>可用于同构数据的整合分析</li>
+</ul>
+<blockquote>
+<ul>
+<li>Huang, J. , Breheny, P. , &amp; Ma, S. . (2012). <a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1204.6491.pdf">A selective review of group selection in high-dimensional models</a>. Statistical Science, 27(4), págs. 481-499.</li>
+<li>Ma, S., Huang, J., Wei, F., Xie, Y., &amp; Fang, K. (2011). <a target="_blank" rel="noopener" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3399910/pdf/nihms390293.pdf">Integrative analysis of multiple cancer prognosis studies with gene expression measurements</a>. Statistics in medicine, 30(28), 3361–3371.</li>
+<li>马双鸽, 王小燕, 方匡南. <a target="_blank" rel="noopener" href="https://core.ac.uk/download/pdf/41449289.pdf">大数据的整合分析方法</a>[J]. 统计研究, 2015, 32(011):3-11.</li>
+<li>Liu, J., Huang, J., &amp; Ma, S. (2014). <a target="_blank" rel="noopener" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3933169/pdf/nihms470951.pdf">Integrative Analysis of Cancer Diagnosis Studies with Composite Penalization</a>. Scandinavian journal of statistics, theory and applications, 41(1), 87–103.</li>
+</ul>
+</blockquote>
+<p>\begin{aligned}<br>
+\mbox{within-group selection} &amp;: \mbox{Ridge penalty} \\<br>
+\mbox{group selection} &amp;: \mathrm{MCP} \\<br>
+\end{aligned}</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3399910/pdf/nihms390293.pdf">Ma等人, 2011</a>：首次将$L_2$ Group MCP应用到整合分析</p>
+</blockquote>
+<h2 id="CAP"><a class="header-anchor" href="#CAP"></a>CAP</h2>
+<ul>
+<li>仅能选择组变量</li>
+</ul>
+<h1 id="Bi-Level-Variable-Selection-双层变量选择"><a class="header-anchor" href="#Bi-Level-Variable-Selection-双层变量选择"></a>Bi-Level Variable Selection 双层变量选择</h1>
+<h2 id="Composite-Penalization"><a class="header-anchor" href="#Composite-Penalization"></a>Composite Penalization</h2>
+<p>Composite Penalization应用于异构整合分析：<br>
+$$J(\beta) = \sum_{j=1}^p p_{O, \lambda_{O} }\left( \sum_{k=1}^M p_{I, \lambda_{I} }(|\beta_j^k|) \right)$$</p>
+<h3 id="L-1-Group-Bridge"><a class="header-anchor" href="#L-1-Group-Bridge"></a>$L_1$ Group Bridge</h3>
+<ul>
+<li>最早的双层变量选择方法</li>
+</ul>
+<blockquote>
+<ul>
+<li>Huang, J., Ma, S., Xie, H., &amp; Zhang, C. H. (2009). <a target="_blank" rel="noopener" href="https://www.researchgate.net/publication/40786418_A_Group_Bridge_Approach_for_Variable_Selection">A group bridge approach for variable selection</a>. Biometrika, 96(2), 339–355.</li>
+<li>王小燕,谢邦昌,马双鸽,方匡南.高维数据下群组变量选择的惩罚方法综述[J].数理统计与管理,2015,34(06):978-988.</li>
+</ul>
+</blockquote>
+<p>\begin{aligned}<br>
+\mbox{within-group selection} &amp;: \mbox{LASSO } \mathrm{penalty} \\<br>
+\mbox{group selection} &amp;: \mbox{Bridge penalty} \\<br>
+\end{aligned}</p>
+<p>目标函数：<br>
+$$Q(\beta|X, y) = \parallel y-\sum_{k=1}^p x_k \beta_k \parallel_2^2 + \lambda_n \sum_{j=1}^J c_j\parallel \beta_{A_j} \parallel_1^{\gamma}, \qquad \lambda_n &gt; 0$$</p>
+<ul>
+<li>$A_j(j=1,2,\cdots,J)$是$\lbrace1, 2, \cdots, p\rbrace$的任意子集</li>
+<li>$A_j(j=1,2,\cdots,J)$可以有交集</li>
+<li>允许$\cup_{j=1}^J A_j$是$\lbrace1, 2, \cdots, p\rbrace$的真子集，不在$\cup_{j=1}^J A_j$中的变量不受惩罚</li>
+<li>Bridge惩罚项被应用到组系数的$L_1$范数中</li>
+<li>当$\mid A_j\mid = 1(j=1,2,\cdots,J)$时，Group Bridge简化为标准Bridge</li>
+<li>当$\gamma=1$，Group Bridge简化为标准LASSO，此时只能进行个体变量选择</li>
+<li>当$0 &lt; \gamma &lt; 1$时，Group Bridge可用于同时进行组变量选择和个体变量选择</li>
+<li>目标函数是非凸的，且在$\beta_j=0$处不可微</li>
+</ul>
+<blockquote>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.researchgate.net/publication/40786418_A_Group_Bridge_Approach_for_Variable_Selection">Huang等人(2009)</a>：
+<ul>
+<li>首次提出$L_1$ Group Bridge</li>
+<li>当$p\rightarrow \infty, n\rightarrow \infty$但$p &lt; n$时，在某些正则条件下，$L_1$ Group Bridge（$0 &lt; \gamma &lt; 1$）具有群组Oracle性质</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h3 id="L-1-Group-MCP"><a class="header-anchor" href="#L-1-Group-MCP"></a>$L_1$ Group MCP</h3>
+<blockquote>
+<p>Liu, J., Huang, J., &amp; Ma, S. (2014). <a target="_blank" rel="noopener" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3933169/pdf/nihms470951.pdf">Integrative Analysis of Cancer Diagnosis Studies with Composite Penalization</a>. Scandinavian journal of statistics, theory and applications, 41(1), 87–103.</p>
+</blockquote>
+<p>\begin{aligned}<br>
+\mbox{inner penalty} &amp;: \mathrm{LASSO} \\<br>
+\mbox{outer penalty} &amp;: \mbox{MCP} \\<br>
+\end{aligned}</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://fan.princeton.edu/papers/01/penlike.pdf">Fan and Li, 2001</a>：在单数据集变量选择中，LASSO倾向于选择过多的变量，理论上不满足Oracle性质</p>
+</blockquote>
+<h3 id="Composite-MCP"><a class="header-anchor" href="#Composite-MCP"></a>Composite MCP</h3>
+<blockquote>
+<ul>
+<li>Liu, J., Huang, J., &amp; Ma, S. (2014). <a target="_blank" rel="noopener" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3933169/pdf/nihms470951.pdf">Integrative Analysis of Cancer Diagnosis Studies with Composite Penalization</a>. Scandinavian journal of statistics, theory and applications, 41(1), 87–103.</li>
+<li>Zhang, Q. , Zhang, S. , Liu, J. , Huang, J. , &amp; Ma, S. . (2015). <a target="_blank" rel="noopener" href="http://www3.stat.sinica.edu.tw/statistica/oldpdf/A26n23.pdf">Penalized integrative analysis under the accelerated failure time model</a>. Statistica Sinica, 26(2).</li>
+</ul>
+</blockquote>
+<p>\begin{aligned}<br>
+\mbox{inner penalty} &amp;: \mathrm{MCP} \\<br>
+\mbox{outer penalty} &amp;: \mbox{MCP} \\<br>
+\end{aligned}</p>
+<blockquote>
+<ul>
+<li><a target="_blank" rel="noopener" href="http://www3.stat.sinica.edu.tw/statistica/oldpdf/A26n23.pdf">Zhang等人(2015)</a>：在一定条件下，Composite MCP在组内和组间均满足选择一致性，而$L_1$ Group MCP只满足组选择一致性</li>
+</ul>
+</blockquote>
+<h2 id="Sparse-Group-Penalization"><a class="header-anchor" href="#Sparse-Group-Penalization"></a>Sparse Group Penalization</h2>
+<p>稀疏组惩罚是两个惩罚函数的线性组合：一个具有组选择功能，另一个具有单变量选择功能（<a target="_blank" rel="noopener" href="https://core.ac.uk/download/pdf/41449289.pdf">马双鸽等人, 2015</a>）。</p>
+<ul>
+<li>可应用于异构整合分析</li>
+</ul>
+<p>惩罚函数的一般形式：<br>
+$$P(\beta;\lambda_1,\lambda_2) = \lambda_1 \sum_{j=1}^p P_1(\parallel\beta_j\parallel) + \lambda_2\sum_{j=1}<sup>{p}\sum_{k=1}</sup>M P_2(|\beta_j^k|)$$</p>
+<blockquote>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1501.02458.pdf">Zhang等人(2015)</a>：证明了Sparse Group Penalization的选择一致性</li>
+</ul>
+</blockquote>
+<h3 id="SGL-Sparse-Group-LASSO"><a class="header-anchor" href="#SGL-Sparse-Group-LASSO"></a>SGL-Sparse Group LASSO</h3>
+<p>SGL（Sparse Group LASSO）是LASSO和Group LASSO的线性组合</p>
+<blockquote>
+<ul>
+<li>J. Friedman and T. Hastie and R. Tibshirani. (2010).<a target="_blank" rel="noopener" href="http://statweb.stanford.edu/~tibs/ftp/sparse-grlasso.pdf">A note on the group lasso and a sparse group lasso</a>. arXiv e-prints.</li>
+<li>Simon, N. , Friedman, J. , Hastie, T. , &amp; Tibshirani, R. . (2013). <a target="_blank" rel="noopener" href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.407.6991&amp;rep=rep1&amp;type=pdf">A sparse-group lasso</a>. Journal of Computational &amp; Graphical Statistics, 22(2), 231-245.</li>
+<li>Vincent, M. , &amp; Hansen, N. R. . (2014). <a target="_blank" rel="noopener" href="https://nrhstat.org/publication/2014-sparse-group-lasso/2014-sparse-group-lasso.pdf">Sparse group lasso and high dimensional multinomial classification</a>. Computational Statistics &amp; Data Analysis, 71(1), 771-786.</li>
+</ul>
+</blockquote>
+<p>惩罚函数：<br>
+$$P_{SGL}(\beta;\lambda_1,\lambda_2) = \lambda_1\sum_{j=1}^J \parallel\beta_j\parallel + \lambda_2 \parallel\beta\parallel_1$$</p>
+<p>$$\hat{\beta} = \arg \min_{\beta} \left\lbrace \parallel y - \sum_{j=1}^J \mathbf{X_j} \beta_j \parallel^2_2 + \lambda_1 \sum_{j=1}^J \sqrt{p_j} \parallel \beta_j \parallel_2 + \lambda_2 \parallel \beta \parallel_1 \right\rbrace$$</p>
+<ul>
+<li>$\mathbf{X_j}$是第$j$组变量组成的样本矩阵，维度为$n\times p_j$</li>
+<li>$\sum_{j=1}^J p_j = p$</li>
+<li>当$\lambda_2 = 0$时，Sparse Group LASSO简化为Group LASSO</li>
+</ul>
+<h3 id="adSGL-Adaptive-Sparse-Group-LASSO"><a class="header-anchor" href="#adSGL-Adaptive-Sparse-Group-LASSO"></a>adSGL-Adaptive Sparse Group LASSO</h3>
+<ul>
+<li>结合adaptive LASSO和adaptive group LASSO</li>
+<li>可以看作是SGL（Sparse Group LASSO）的改进版</li>
+<li>使用由数据决定的权重提升预测效果</li>
+</ul>
+<blockquote>
+<ul>
+<li>Fang, K. , Wang, X. , Zhang, S. , Zhu, J. , &amp; Ma, S. . (2015). <a target="_blank" rel="noopener" href="https://www.tandfonline.com/doi/abs/10.1080/00949655.2014.938241">Bi-level variable selection via adaptive sparse group lasso</a>. Journal of Statistical Computation &amp; Simulation, 85(13-15), 2750-2760.</li>
+</ul>
+</blockquote>
+<p>惩罚函数：<br>
+$$P_{adSGL}(\beta;\lambda_1,\lambda_2) = \lambda_1 \sum_{j=1}^p w_j \parallel \beta_j \parallel_2 + \lambda_2 \xi^T \parallel \beta \parallel_1 $$</p>
+<h3 id="Sparse-Group-MCP"><a class="header-anchor" href="#Sparse-Group-MCP"></a>Sparse Group MCP</h3>
+<blockquote>
+<ul>
+<li>Liu, J., Huang, J., Xie, Y., &amp; Ma, S. (2013). <a target="_blank" rel="noopener" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4090387/pdf/nihms594452.pdf">Sparse group penalized integrative analysis of multiple cancer prognosis datasets</a>. Genetics research, 95(2-3), 68–77.</li>
+<li>Zhang, Q. , Zhang, S. , Liu, J. , Huang, J. , &amp; Ma, S. . (2015). <a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1501.02458.pdf">Penalized integrative analysis under the accelerated failure time model</a>. Statistica Sinica, 26(2).</li>
+</ul>
+</blockquote>
+<h1 id="Network-based-penalization-网格结构惩罚"><a class="header-anchor" href="#Network-based-penalization-网格结构惩罚"></a>Network-based penalization 网格结构惩罚</h1>
+<blockquote>
+<ul>
+<li>Caiyan Li, Hongzhe Li, <a target="_blank" rel="noopener" href="https://academic.oup.com/bioinformatics/article/24/9/1175/206444">Network-constrained regularization and variable selection for analysis of genomic data</a>, Bioinformatics, Volume 24, Issue 9, 1 May 2008, Pages 1175–1182.</li>
+<li>Li, C., &amp; Li, H. (2010). <a target="_blank" rel="noopener" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3423227/pdf/nihms396551.pdf">Variable Selection and Regression Analysis for Graph-Stuctured Covariates with an Application to Genomics</a>. The annals of applied statistics, 4(3), 1498–1516. <a target="_blank" rel="noopener" href="https://doi.org/10.1214/10-AOAS332">https://doi.org/10.1214/10-AOAS332</a></li>
+<li>Kim, S., Pan, W., &amp; Shen, X. (2013). <a target="_blank" rel="noopener" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4007772/">Network-based penalized regression with application to genomic data</a>. Biometrics, 69(3), 582–593.</li>
+</ul>
+</blockquote>
+<h2 id="SGLS-Sparse-Group-Laplacian-Shrinkage"><a class="header-anchor" href="#SGLS-Sparse-Group-Laplacian-Shrinkage"></a>SGLS-Sparse Group Laplacian Shrinkage</h2>
+<ul>
+<li>用于多源数据的整合分析</li>
+</ul>
+<blockquote>
+<p>Liu, J., Huang, J., &amp; Ma, S. (2013). <a target="_blank" rel="noopener" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3909475/pdf/nihms-496945.pdf">Incorporating network structure in integrative analysis of cancer prognosis data</a>. Genetic epidemiology, 37(2), 173–183.</p>
+</blockquote>
+<p>$$\hat{\beta} = \arg \min_{\beta} \left\lbrace \frac{1}{n}L(\beta) + P_{\lambda, \gamma}(\beta) \right\rbrace$$<br>
+其中，<br>
+$$P_{\lambda, \gamma}(\beta) = \sum_{j=1}^p \rho(\parallel\beta_j\parallel_2; \sqrt{M_j}\lambda_1, \gamma) + \frac{1}{2}\lambda_2 d\sum_{1\leq j &lt; k \leq p}a_{jk}\left( \frac{\parallel\beta_j\parallel_2}{\sqrt{M_j} } - \frac{\parallel\beta_k\parallel_2}{\sqrt{M_k} } \right)^2$$</p>
+<ul>
+<li>$\lambda = (\lambda_1, \lambda_2)$</li>
+<li>$\lambda_1 \geq 0$ 且 $\lambda_2 \geq 0$是调和参数（tuning parameter）</li>
+<li>$\gamma$是正则化参数</li>
+<li>$\rho(\cdot)$是MCP惩罚函数</li>
+<li>$M_j$是$\beta_j$的长度（size）</li>
+</ul>
+<h1 id="总结"><a class="header-anchor" href="#总结"></a>总结</h1>
+<h2 id="单变量选择方法"><a class="header-anchor" href="#单变量选择方法"></a>单变量选择方法</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">方法</th>
+<th style="text-align:left">惩罚函数</th>
+<th style="text-align:left">参数</th>
+<th style="text-align:left">优点</th>
+<th style="text-align:left">缺点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">LASSO</td>
+<td style="text-align:left">$L_1$</td>
+<td style="text-align:left">$\lambda \geq 0$</td>
+<td style="text-align:left">连续且稳健，对高维数据可降维</td>
+<td style="text-align:left">- 不能实现组选择<br>- 不具有Oracle性质</td>
+</tr>
+<tr>
+<td style="text-align:center">SCAD</td>
+<td style="text-align:left">$L_1$</td>
+<td style="text-align:left">$a &gt; 2, \lambda &gt; 0$</td>
+<td style="text-align:left">- 继承LASSO优点<br>- 具有Oracle性质</td>
+<td style="text-align:left">- 不能处理$p\gg n$的数据</td>
+</tr>
+<tr>
+<td style="text-align:center">Bridge</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:center">MCP</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="参考资料"><a class="header-anchor" href="#参考资料"></a>参考资料</h1>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Lp%E8%8C%83%E6%95%B0">Wiki: Lp-norm</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.statisticshowto.com/ridge-regression/">Ridge Regression: Simple Definition</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.datacamp.com/community/tutorials/tutorial-ridge-lasso-elastic-net">Regularization: Ridge, Lasso and Elastic Net</a></li>
+<li><a target="_blank" rel="noopener" href="http://web.math.ku.dk/~richard/download/courses/stat_learn_2007/star3.pdf">LASSO and Bridge regression</a></li>
+<li><a target="_blank" rel="noopener" href="https://myweb.uiowa.edu/pbreheny/7600/s16/notes/4-27.pdf">Group lasso</a></li>
+<li><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Lasso_(statistics)#Group_lasso">Wiki: Group Lasso</a></li>
+</ul>
+
+    </div>
+
+    
+    
+    
+        <div class="reward-container">
+  <div>Thank you for your approval.</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/alipay.jpg" alt="Skye 支付宝">
+        <p>支付宝</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.jpg" alt="Skye 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/reward2021.png" alt="Skye WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+
+  </div>
+</div>
+
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/images/wechat_qrcode.jpg">
+            <span class="icon">
+              <i class="fab fa-weixin"></i>
+            </span>
+
+            <span class="label">WeChat</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Variable-Selection-%E5%8F%98%E9%87%8F%E9%80%89%E6%8B%A9/" rel="tag"># Variable Selection 变量选择</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/R%E8%AF%AD%E8%A8%80-grpreg.html" rel="prev" title="R语言 | grpreg">
+      <i class="fa fa-chevron-left"></i> R语言 | grpreg
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/Tool-Markdown.html" rel="next" title="Markdown语法">
+      Markdown语法 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Penalized-Least-Squares"><span class="nav-number">1.</span> <span class="nav-text">Penalized Least Squares</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Rigde-Regression-%E5%B2%AD%E5%9B%9E%E5%BD%92"><span class="nav-number">1.1.</span> <span class="nav-text">Rigde Regression 岭回归</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Bias-Variance-Trade-off"><span class="nav-number">1.1.1.</span> <span class="nav-text">Bias-Variance Trade-off</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E9%80%89%E6%8B%A9-lambda"><span class="nav-number">1.1.2.</span> <span class="nav-text">如何选择$\lambda$</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#R%E5%AE%9E%E7%8E%B0"><span class="nav-number">1.1.3.</span> <span class="nav-text">R实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Python%E5%AE%9E%E7%8E%B0"><span class="nav-number">1.1.4.</span> <span class="nav-text">Python实现</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LASSO"><span class="nav-number">1.2.</span> <span class="nav-text">LASSO</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Fused-LASSO"><span class="nav-number">1.2.1.</span> <span class="nav-text">Fused LASSO</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Adaptive-LASSO"><span class="nav-number">1.2.2.</span> <span class="nav-text">Adaptive LASSO</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#post-LASSO"><span class="nav-number">1.2.3.</span> <span class="nav-text">post-LASSO</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Bridge"><span class="nav-number">1.3.</span> <span class="nav-text">Bridge</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SCAD"><span class="nav-number">1.4.</span> <span class="nav-text">SCAD</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Elastic-Net%EF%BC%88Enet%EF%BC%89"><span class="nav-number">1.5.</span> <span class="nav-text">Elastic Net（Enet）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#EN-vs-Bridge"><span class="nav-number">1.5.1.</span> <span class="nav-text">EN vs Bridge</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Adaptive-Elastic-Net"><span class="nav-number">1.5.2.</span> <span class="nav-text">Adaptive Elastic Net</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MCP"><span class="nav-number">1.6.</span> <span class="nav-text">MCP</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Group-Variable-Selection"><span class="nav-number">2.</span> <span class="nav-text">Group Variable Selection</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#MNET"><span class="nav-number">2.1.</span> <span class="nav-text">MNET</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#L-2-SCAD"><span class="nav-number">2.2.</span> <span class="nav-text">$L_2$ SCAD</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Group-LASSO"><span class="nav-number">2.3.</span> <span class="nav-text">Group LASSO</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E9%80%89%E6%8B%A9-K-j"><span class="nav-number">2.3.1.</span> <span class="nav-text">如何选择$K_j$</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B1%82%E8%A7%A3"><span class="nav-number">2.3.2.</span> <span class="nav-text">求解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%8C%E6%9E%84%E6%95%B4%E5%90%88%E5%88%86%E6%9E%90"><span class="nav-number">2.3.3.</span> <span class="nav-text">同构整合分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Adaptive-Group-LASSO"><span class="nav-number">2.3.4.</span> <span class="nav-text">Adaptive Group LASSO</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Group-SCAD"><span class="nav-number">2.4.</span> <span class="nav-text">Group SCAD</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#L-2-Group-Bridge"><span class="nav-number">2.5.</span> <span class="nav-text">$L_2$ Group Bridge</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#L-2-Group-MCP"><span class="nav-number">2.6.</span> <span class="nav-text">$L_2$ Group MCP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CAP"><span class="nav-number">2.7.</span> <span class="nav-text">CAP</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Bi-Level-Variable-Selection-%E5%8F%8C%E5%B1%82%E5%8F%98%E9%87%8F%E9%80%89%E6%8B%A9"><span class="nav-number">3.</span> <span class="nav-text">Bi-Level Variable Selection 双层变量选择</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Composite-Penalization"><span class="nav-number">3.1.</span> <span class="nav-text">Composite Penalization</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#L-1-Group-Bridge"><span class="nav-number">3.1.1.</span> <span class="nav-text">$L_1$ Group Bridge</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#L-1-Group-MCP"><span class="nav-number">3.1.2.</span> <span class="nav-text">$L_1$ Group MCP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Composite-MCP"><span class="nav-number">3.1.3.</span> <span class="nav-text">Composite MCP</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sparse-Group-Penalization"><span class="nav-number">3.2.</span> <span class="nav-text">Sparse Group Penalization</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#SGL-Sparse-Group-LASSO"><span class="nav-number">3.2.1.</span> <span class="nav-text">SGL-Sparse Group LASSO</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#adSGL-Adaptive-Sparse-Group-LASSO"><span class="nav-number">3.2.2.</span> <span class="nav-text">adSGL-Adaptive Sparse Group LASSO</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Sparse-Group-MCP"><span class="nav-number">3.2.3.</span> <span class="nav-text">Sparse Group MCP</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Network-based-penalization-%E7%BD%91%E6%A0%BC%E7%BB%93%E6%9E%84%E6%83%A9%E7%BD%9A"><span class="nav-number">4.</span> <span class="nav-text">Network-based penalization 网格结构惩罚</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#SGLS-Sparse-Group-Laplacian-Shrinkage"><span class="nav-number">4.1.</span> <span class="nav-text">SGLS-Sparse Group Laplacian Shrinkage</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">5.</span> <span class="nav-text">总结</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%95%E5%8F%98%E9%87%8F%E9%80%89%E6%8B%A9%E6%96%B9%E6%B3%95"><span class="nav-number">5.1.</span> <span class="nav-text">单变量选择方法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="nav-number">6.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Skye</p>
+  <div class="site-description" itemprop="description">刻苦，沉着，精进不休</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">159</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">57</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/ShootingWang" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;ShootingWang"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2019 – 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-star"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Skye</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">446k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">6:45</span>
+</div>
+
+
+  <script src='https://unpkg.com/mermaid@/dist/mermaid.min.js'></script>
+  <script>
+    if (window.mermaid) {
+      mermaid.initialize({theme: 'forest'});
+    }
+  </script>
+
+
+<script src="/js/prism/clipboard.js"></script>
+<script src="/js/prism/prism.js" async></script>
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+  <script defer src="/lib/three/three.min.js"></script>
+    <script defer src="/lib/three/canvas_lines.min.js"></script>
+
+<script src="/js/code-unfold.js"></script>
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js', () => {
+    new Valine(Object.assign({
+      el         : '#valine-comments',
+      path       : location.pathname,
+    }, {"enable":true,"appId":"yFKKmB84nH4WRrBC07BTRKLC-gzGzoHsz","appKey":"EFXmIM4ipk11GLk8Stx40FYk","notify":true,"verify":false,"placeholder":"记得填写邮箱哦~这样你就能及时收到我的回复了~","avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"language":null,"visitor":false,"comment_count":true,"recordIP":false,"serverURLs":null}
+    ));
+  }, window.Valine);
+});
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
+</html>

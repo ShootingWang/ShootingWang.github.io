@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.0.0">
+<meta name="baidu-site-verification" content="GLZSr3LDqT" />
+<meta name="google-site-verification" content="fZvQBljM9I6UA4l4wwiA5wECEn7k0V4-DgCfWEPNtFc" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon2.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon2.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"github.com","root":"/","scheme":"Pisces","version":"8.0.0-rc.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"valine","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+<link rel="stylesheet" href="/js/prism/prism.css">
+
+<script src="http://echarts.baidu.com/dist/echarts.common.min.js"></script>
+  <meta name="description" content="Alternating Direction Method of Multipliers">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Machine Learning | ADMM">
+<meta property="og:url" content="https://github.com/ShootingWang/ShootingWang.github.io/%E7%AE%97%E6%B3%95-ADMM.html">
+<meta property="og:site_name" content="Skye">
+<meta property="og:description" content="Alternating Direction Method of Multipliers">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://github.com/%E7%AE%97%E6%B3%95-ADMM/conjugate1.jpg">
+<meta property="og:image" content="https://github.com/%E7%AE%97%E6%B3%95-ADMM/conjugate2.jpg">
+<meta property="article:published_time" content="2020-05-21T05:07:17.000Z">
+<meta property="article:modified_time" content="2022-10-12T04:57:08.691Z">
+<meta property="article:author" content="Skye">
+<meta property="article:tag" content="算法">
+<meta property="article:tag" content="Machine Learning 机器学习">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://github.com/%E7%AE%97%E6%B3%95-ADMM/conjugate1.jpg">
+
+<link rel="canonical" href="https://github.com/ShootingWang/ShootingWang.github.io/%E7%AE%97%E6%B3%95-ADMM.html">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Machine Learning | ADMM | Skye</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="Skye" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><script type="text/javascript" color="0,0,0" opacity='0.5' zIndex="-1" count="99" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+  </script>
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+        <span class="toggle-line toggle-line-first"></span>
+        <span class="toggle-line toggle-line-middle"></span>
+        <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Skye</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页 Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于 About Me</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签 Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类 Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档 Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-update">
+
+    <a href="/update/" rel="section"><i class="fa fa-list-ul fa-fw"></i>更新 Update</a>
+
+  </li>
+        <li class="menu-item menu-item-tool">
+
+    <a href="/tools/" rel="section"><i class="fa fa-tools fa-fw"></i>工具 Tools</a>
+
+  </li>
+        <li class="menu-item menu-item-treasure">
+
+    <a href="/treasure/" rel="section"><i class="fa fa-gem fa-fw"></i>宝库 Treasure</a>
+
+  </li>
+        <li class="menu-item menu-item-pool">
+
+    <a href="/pool/" rel="section"><i class="fa fa-book fa-fw"></i>题库 Question Bank</a>
+
+  </li>
+        <li class="menu-item menu-item-timeline">
+
+    <a href="/timeline/" rel="section"><i class="fa fa-cube fa-fw"></i>随笔 Essay</a>
+
+  </li>
+        <li class="menu-item menu-item-links">
+
+    <a href="/links" rel="section"><i class="fa fa-link fa-fw"></i>友链 Links</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索 Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/ShootingWang" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+    <!-- echarts -->
+    <script type="text/javascript" src="/js/src/echarts.common.js"></script>
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://github.com/ShootingWang/ShootingWang.github.io/%E7%AE%97%E6%B3%95-ADMM.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Skye">
+      <meta itemprop="description" content="刻苦，沉着，精进不休">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Skye">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Machine Learning | ADMM
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-05-21 13:07:17" itemprop="dateCreated datePublished" datetime="2020-05-21T13:07:17+08:00">2020-05-21</time>
+            </span>
+
+          
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-10-12 12:57:08" itemprop="dateModified" datetime="2022-10-12T12:57:08+08:00">2022-10-12</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Machine-Learning-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">Machine Learning 机器学习</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/%E7%AE%97%E6%B3%95-ADMM.html#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/%E7%AE%97%E6%B3%95-ADMM.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <center>Alternating Direction Method of Multipliers</center>
+<span id="more"></span>
+<meta name="referrer" content="no-referrer">
+<p>ADMM</p>
+<p>交替方向乘子法</p>
+<ul>
+<li>一种求解可分离的凸优化问题的重要方法</li>
+<li>处理速度快</li>
+<li>收敛性能好</li>
+</ul>
+<blockquote>
+<p>原文：Boyd S, Parikh N, Chu E, et al. <a target="_blank" rel="noopener" href="http://web.stanford.edu/~boyd/papers/pdf/admm_distr_stats.pdf">Distributed optimization and statistical learning via the alternating direction method of multipliers</a>[J]. Foundations and Trends® in Machine learning, 2011, 3(1): 1-122.</p>
+</blockquote>
+<h1 id="Basic"><a class="header-anchor" href="#Basic"></a>Basic</h1>
+<h2 id="共轭函数"><a class="header-anchor" href="#共轭函数"></a>共轭函数</h2>
+<p>Fenchel conjugate function</p>
+<p>函数$f(x)$的共轭函数定义为<br>
+$$f<sup>*(y)=\max_x\left{y</sup>Tx-f(x)\right}$$</p>
+<ul>
+<li>几何意义：共轭函数是切线簇的截距的负值簇</li>
+<li>如果$f(x)$是凸（convex）的：<br>
+考虑$f(x)$上的点$(x<sup>*,f(x</sup>*))$处的斜率为$y^T$的切线<br>
+$$z=y<sup>T(x-x</sup><em>)+f(x^</em>)$$<br>
+该切线的截距项（$x=0$）为<br>
+$$-y<sup>Tx</sup><em>+f(x^</em>)$$<br>
+截距项的负数就是$f(x)$的共轭。</li>
+<li>如果$f(x)$不是凸（convex）的：<br>
+则切线可能会对应多个截距项</li>
+</ul>
+<img src="/%E7%AE%97%E6%B3%95-ADMM/conjugate1.jpg" class title="来自：最强Fenchel对偶解读">
+<img src="/%E7%AE%97%E6%B3%95-ADMM/conjugate2.jpg" class title="来自：最强Fenchel对偶解读">
+<p>当$f(x)$是严格凸的时，取$z=\arg \max_x {y^Tx-f(x) } $，则有<br>
+$$f^<em>(y)=\max_x{ { y^T x-f(x) } }=y^Tz-f(z)$$<br>
+因此<br>
+$$\nabla f^</em>(y)=z=\arg\max_x { y^Tx-f(x) } =\arg\min_x{ {f(x)-y^Tx } $$</p>
+<h2 id="带线性约束的优化问题"><a class="header-anchor" href="#带线性约束的优化问题"></a>带线性约束的优化问题</h2>
+<p>考虑带线性约束的优化问题<br>
+\begin{equation}<br>
+\begin{aligned}<br>
+\min &amp; \quad f(x)\<br>
+\mathrm{s.t.} &amp; \quad Ax=b<br>
+\end{aligned}<br>
+\end{equation}<br>
+其中$f(x)$是严格凸函数（strictly convex function）。</p>
+<p>构造该优化问题的拉格朗日函数<br>
+$$L(x,y)=f(x)+y^T(Ax-b)$$<br>
+这里$y$是拉格朗日乘子（Lagrangian multiplier）。</p>
+<p>求解原优化问题等价于求解<br>
+$$\min_x\max_y{L(x,y)}$$</p>
+<ul>
+<li>当$Ax=b$不成立时，总可以找到$y$使得 $\max_y L(x,y)=\infty$</li>
+<li>当$Ax=b$成立时，$\min_x\max_y{L(x,y)}=\min_x f(x)$</li>
+</ul>
+<p>当$f(x)$可导（differentiable）时，$L(x,y)$分别关于$x,y$求偏导并令偏导数为零，得<br>
+$$\left{<br>
+\begin{array}{l}<br>
+\nabla_x L(x,y) =\nabla f(x)+A^Ty=0\<br>
+\nabla_y L(x,y) =Ax-b=0<br>
+\end{array}<br>
+\right.$$</p>
+<blockquote>
+<p>$\frac{\mathrm{d}(\beta^Tx)}{\mathrm{d}x}=\beta$</p>
+</blockquote>
+<p>$\min_x\max_y{L(x,y)}$的对偶问题（dual problem）是$\max_y\min_x{L(x,y)}$。</p>
+<p>当强对偶性<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>（duality）满足时，$\min_x\max_y{L(x,y)}$与$\max_y\min_x{L(x,y)}$有相同的解。</p>
+<blockquote>
+<ul>
+<li><strong><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Strong_duality">Strong duality</a></strong>: Strong duality holds if and only if the duality gap is equal to 0.<br>
+$$p<sup>*=d</sup>*$$</li>
+</ul>
+</blockquote>
+<ul>
+<li><strong><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Duality_gap">Duality gap</a></strong>: 原始问题（primal problem）的最优解$p^*$与对偶问题（dual problem）的最优解$d^*$之间的差异。</li>
+<li>强对偶性的充分条件：</li>
+<li>原始问题是线性优化问题</li>
+<li>$F$是原始函数的<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Perturbation_function">perturbation function</a>,$F^{**}$是$F$的<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Perturbation_function">biconjugate</a><br>
+$$F=F^{**}$$</li>
+<li>$F$ is convex and lower semi-continuous</li>
+<li>凸优化问题的<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Perturbation_function">Slater’s condition</a>成立</li>
+</ul>
+<p>定义<br>
+\begin{equation}<br>
+\begin{aligned}<br>
+g(y) &amp;= \min_x L(x,y) \<br>
+&amp;= \min_x\left{f(x)+y^T(Ax-b)\right}\<br>
+&amp;= \min_x\left{f(x)-(-A<sup>Ty)</sup>Tx-y^Tb \right}\<br>
+&amp;= \underline{\min_x\left{f(x)-(-A<sup>Ty)</sup>Tx \right} }-y^Tb\<br>
+&amp;= \underline{-f<sup>*(-A</sup>Ty)}-y^Tb<br>
+\end{aligned}<br>
+\end{equation}</p>
+<p>由于$f^*(y)= \max_x  { y^Tx-f(x) } =-\min_x { f(x)-y^Tx } $。</p>
+<p>\begin{equation}<br>
+\begin{aligned}<br>
+\nabla g(y) &amp;= A\nabla f<sup>*(-A</sup>Ty)-b\<br>
+&amp;= A\arg\min_x\left{f(x)+y^TAx \right}-b\<br>
+&amp;= A\arg\min_x\left{f(x)+y^T(Ax-b) \right}-b\<br>
+&amp;= A\arg\min_x L(x,y)-b<br>
+\end{aligned}<br>
+\end{equation}</p>
+<blockquote>
+<p>$\frac{\mathrm{d}(x^T\beta)}{\mathrm{d}x}=\beta$</p>
+</blockquote>
+<h3 id="DAM"><a class="header-anchor" href="#DAM"></a>DAM</h3>
+<p>Dual Decomposition<br>
+Dual Ascent Algorithm<br>
+对偶上升算法</p>
+<p>算法的第$k+1$步迭代为</p>
+<p>\begin{equation}<br>
+\begin{aligned}<br>
+x^{k+1}&amp;=\arg\min_x L(x,y^k)\<br>
+y<sup>{k+1}&amp;=y</sup>{k} + \alpha^k\nabla g(y^k) \quad \mathrm{(Gradient Ascent Update)}\<br>
+&amp;= y^k + \alpha<sup>k(Ax</sup>{k+1}-b)<br>
+\end{aligned}<br>
+\end{equation}<br>
+其中</p>
+<ul>
+<li>$\alpha^k&gt;0$是步长</li>
+<li>$\nabla g(y^k)=A\arg\min_x L(x,y^k)-b$</li>
+</ul>
+<p>当$f(x)$可分时，即<br>
+$$f(x)=\sum_{i=1}^nf_i(x_i)$$<br>
+则<br>
+\begin{equation}<br>
+\begin{aligned}<br>
+L(x,y^k) &amp;= f(x)+y^T(Ax-b)\<br>
+&amp;= \sum_{i=1}^nf_i(x) + y<sup>T\left(\sum_{i=1}</sup>nA_ix_i-b\right)\<br>
+&amp;=\sum_{i=1}<sup>n\left(f_i(x)+y</sup>TA_ix_i-\frac{1}{n}y^Tb \right)\<br>
+&amp;= \sum_{i=1}<sup>nL_i(x_i,y</sup>k)<br>
+\end{aligned}<br>
+\end{equation}</p>
+<p>则分成了$n$个平行计算<br>
+$$x_i^{k+1}=\arg\min_{x_i} L_i(x_i, y^k)$$</p>
+<h3 id="ALM"><a class="header-anchor" href="#ALM"></a>ALM</h3>
+<p>Augmented Lagrangian Method<br>
+Method of Multipliers<br>
+增广的拉格朗日乘子法</p>
+<p>当$f(x)$不是严格凸时，Dual Ascent Algorithm不适用。</p>
+<p>增广的拉格朗日函数为<br>
+$$L_\rho(x,y)=f(x)+y<sup>T(Ax-b)+\frac{\rho}{2}||Ax-b||</sup>2$$<br>
+即解决优化问题<br>
+\begin{equation}<br>
+\begin{aligned}<br>
+\min &amp; \quad f(x)+\frac{\rho}{2}||Ax-b||^2\<br>
+\mathrm{s.t.} &amp;\quad Ax=b<br>
+\end{aligned}<br>
+\end{equation}</p>
+<p>则<br>
+\begin{equation}<br>
+\begin{aligned}<br>
+x^{k+1} &amp;= \arg\min_x{L_\rho(x,y^k)}\<br>
+y^{k+1} &amp;= y^k + \rho(Ax^{k+1}-b)<br>
+\end{aligned}<br>
+\end{equation}</p>
+<blockquote>
+<p>为什么步长为$\rho$？<br>
+我们只考虑$f(x)$可导的特殊情况。<br>
+原始优化问题如果满足：<br>
+\begin{equation}<br>
+\begin{aligned}<br>
+\nabla_x L(x<sup>*,y</sup>*) &amp;= \nabla f(x<sup>*)+A</sup>Ty^*=0\<br>
+\nabla_y L(x<sup>*,y</sup>*) &amp;= Ax^*-b=0<br>
+\end{aligned}<br>
+\end{equation}<br>
+则称为primal and dual feasibility。<br>
+因为$x<sup>{k+1}=\arg\min_xL_\rho(x,y</sup>k)$，所以<br>
+\begin{equation}<br>
+\begin{aligned}<br>
+0 &amp;= \nabla_x L_\rho(x<sup>{k+1},y</sup>k)\<br>
+&amp;= \nabla_x f(x<sup>{k+1})+A</sup>T(y<sup>k+\rho(Ax</sup>{k+1}-b))<br>
+\end{aligned}<br>
+\end{equation}<br>
+如果取$y<sup>{k+1}=y</sup>k+\rho(Ax^{k+1}-b)$，则有<br>
+$$\nabla_xf(x<sup>{k+1})+A</sup>Ty^{k+1}=0$$<br>
+所以，如果取步长为$\rho$，则可以保证每一次迭代后的解都满足dual feasible.</p>
+</blockquote>
+<p>与Dual Ascent Method相比，</p>
+<ul>
+<li>ALM需要的假设相对比较不严格，且有更好的收敛性</li>
+<li>但是ALM不能并行计算，即使$f(x)$可分</li>
+</ul>
+<h1 id="ADMM"><a class="header-anchor" href="#ADMM"></a>ADMM</h1>
+<p>用于解决如下问题<br>
+\begin{equation}<br>
+\begin{aligned}<br>
+\min &amp; \quad f(x)+g(z)\<br>
+\mathrm{s.t.} &amp; \quad Ax+Bz=c<br>
+\end{aligned}<br>
+\end{equation}</p>
+<p>该优化问题的扩展拉格朗日函数为<br>
+$$L_\rho(x,y,z)=f(x)+g(z)+y<sup>T(Ax+Bz-c)+\frac{\rho}{2}||Ax+Bz-c||</sup>2$$<br>
+其中$\frac{\rho}{2}||Ax+Bz-c||^2$是扩展项（augmented term）。</p>
+<p>使用ALM解上述问题：<br>
+\begin{equation}<br>
+\begin{aligned}<br>
+(x<sup>{k+1},z</sup>{k+1}) &amp;= \arg\min_{x,z} L_\rho (x,z,y^k)\<br>
+y^{k+1} &amp;= y^k + \rho (Ax<sup>{k+1}+Bz</sup>{k+1}-c)<br>
+\end{aligned}<br>
+\end{equation}</p>
+<p>ADMM与ALM的区别：<br>
+ADMM将ALM中的$(x,z)-$最小化步骤拆分成两步：</p>
+<ul>
+<li>x-minimization</li>
+<li>z-minimization<br>
+\begin{equation}<br>
+\begin{aligned}<br>
+x^{k+1} &amp;= \arg\min_x L_\rho(x,z<sup>k,y</sup>k)\<br>
+z^{k+1} &amp;= \arg\min_z L_\rho(x^{k+1}, z,y^k)\<br>
+y^{k+1} &amp;= y<sup>k+\rho(Ax</sup>{k+1}+Bz^{k+1}-c)<br>
+\end{aligned}<br>
+\end{equation}</li>
+</ul>
+<p>定义残差项$r=Ax+Bz-c$，则$L_\rho(x,y,z)$可改写为<br>
+\begin{equation}<br>
+\begin{aligned}<br>
+L_\rho(x,y,z) &amp;= f(x)+g(z)+y<sup>T(Ax+Bz-c)+\frac{\rho}{2}||Ax+Bz-c||</sup>2\<br>
+&amp;= f(x)+g(z)+y<sup>Tr+\frac{\rho}{2}||r||</sup>2\<br>
+&amp;= f(x)+g(z)+\frac{\rho}{2}||r+\frac{1}{\rho}y||<sup>2-\frac{1}{2\rho}||y||</sup>2\<br>
+&amp;= f(x)+g(z)+\frac{\rho}{2}||r+u||<sup>2-\frac{\rho}{2}||u||</sup>2<br>
+\end{aligned}<br>
+\end{equation}<br>
+其中</p>
+<ul>
+<li>$u=\frac{1}{\rho}y$称为scaled dual variable</li>
+<li>\begin{aligned}<br>
+\frac{\rho}{2}||r+\frac{1}{\rho}y||^2 &amp;= \frac{\rho}{2}\left(||r||<sup>2+\frac{2}{\rho}y</sup>Tr+\frac{1}{\rho<sup>2}||y||</sup>2 \right)\<br>
+&amp;= \frac{\rho}{2}||r||<sup>2+y</sup>Tr+\frac{1}{2\rho}||y||^2<br>
+\end{aligned}</li>
+</ul>
+<p>则ADMM的迭代步骤变为<br>
+\begin{aligned}<br>
+x^{k+1} &amp;= \arg\min_x \left{f(x)+\frac{\rho}{2}||Ax+Bz<sup>k-c+u</sup>k||^2 \right}\<br>
+z^{k+1} &amp;= \arg\min_z \left{g(z)+\frac{\rho}{2}||Ax<sup>{k+1}+Bz-c+u</sup>k||^2 \right}\<br>
+u^{k+1} &amp;= u<sup>k+Ax</sup>{k+1}+Bz^{k+1}-c<br>
+\end{aligned}</p>
+<h2 id="收敛性"><a class="header-anchor" href="#收敛性"></a>收敛性</h2>
+<p>基于两个假设证明ADMM的收敛性</p>
+<ul>
+<li><strong>假设1</strong>：函数$f:\mathbb{R}^n\rightarrow \mathbb{R}\cup {+\infty}$和函数$g:\mathbb{R}^m\rightarrow\cup {+\infty}$是closed, proper and convex.</li>
+</ul>
+<blockquote>
+<p>该假设保证了x-minimization step和z-minimization step有解</p>
+</blockquote>
+<ul>
+<li><strong>假设2</strong>：非增广德拉格朗日函数$L_0$有一个鞍点（saddle point）</li>
+</ul>
+<blockquote>
+<p>该假设意味着存在$(x<sup>*,z</sup>*,y^*)$（并不要求唯一）。<br>
+$$L_0(x<sup>*,z</sup><em>,y)\leq L_0(x^</em>, z^<em>, y^</em>) \leq L_0(x, z, y^*)$$<br>
+对所有的$x,z,y$成立</p>
+</blockquote>
+<ul>
+<li>$y^*=\arg\max L_0(x<sup>*,z</sup>*,y)$</li>
+<li>$(x<sup>*,z</sup>*)=\arg\min L_0(x,z,y^*)$</li>
+</ul>
+<p>基于上述两个假设，ADMM迭代满足：</p>
+<ul>
+<li>残差收敛：<br>
+$$r^k\rightarrow 0\quad (k\rightarrow \infty)$$</li>
+<li>目标函数收敛：<br>
+$$f(x<sup>k)+g(x</sup>k)\rightarrow p^* \quad (k\rightarrow\infty)$$</li>
+<li>对偶变量(Dual Variable)收敛：<br>
+$$y^k\rightarrow y^* \quad (k\rightarrow \infty)$$</li>
+</ul>
+<h2 id="Optimality-Conditions"><a class="header-anchor" href="#Optimality-Conditions"></a>Optimality Conditions</h2>
+<p>ADMM<strong>最优化的充要条件</strong>是primal feasibility<br>
+$$Ax<sup>*+Bz</sup><em>-c=0$$<br>
+和dual feasibility<br>
+$$\nabla f(x<sup>*)+A</sup>Ty^</em>=0$$<br>
+$$\nabla g(z<sup>*)+B</sup>Ty^*=0$$</p>
+<blockquote>
+<p>$$L_\rho(x,y,z) = f(x)+g(z)+y<sup>T(Ax+Bz-c)+\frac{\rho}{2}||Ax+Bz-c||</sup>2$$</p>
+</blockquote>
+<ul>
+<li>因为$z^{k+1}=\arg\min_z L_\rho(x^{k+1}, z, y^k)$，所以有<br>
+\begin{aligned}<br>
+0 &amp;= \nabla_z L_\rho(x^{k+1}, z^{k+1}, y^k)\<br>
+&amp;= \nabla g(z<sup>{k+1})+B</sup>Ty^k+\rho B<sup>T(Ax</sup>{k+1}+Bz^{k+1}-c)\<br>
+&amp;= \nabla g(z<sup>{k+1})+B</sup>Ty^k+\rho B<sup>Tr</sup>{k+1}\<br>
+&amp; \left(因为y<sup>{k+1}=y</sup>k+\rho(Ax<sup>{k+1}+Bz</sup>{k+1}-c)=y^k+\rho r^{k+1}\right)\<br>
+&amp;= \nabla g(z<sup>{k+1})+B</sup>Ty^{k+1}<br>
+\end{aligned}<br>
+所以，每次迭代结束后总满足$\nabla g(z)+B^Ty=0$。</li>
+<li>因为$x^{k+1}=\arg\min_x L_\rho(x,z<sup>k,y</sup>k)$，所以有<br>
+\begin{aligned}<br>
+0 &amp;= \nabla_x L_\rho(x<sup>{k+1},z</sup>k,y^k)\<br>
+&amp;= \nabla f(x^{k+1}) + A<sup>Ty</sup>k+\rho A<sup>T(Ax</sup>{k+1}+Bz^k-c)\<br>
+&amp;= \nabla f(x<sup>{k+1})+A</sup>T(y^k+\rho r^{k+1}+\rho B(z<sup>k-z</sup>{k+1}))\<br>
+&amp;= \nabla f(x<sup>{k+1})+A</sup>Ty^{k+1}+\rho A<sup>TB(z</sup>k-z^{k+1})<br>
+\end{aligned}<br>
+等价于<br>
+$$\rho A<sup>TB(z</sup>{k+1}-z^k)=\nabla f(x<sup>{k+1})+A</sup>Ty^{k+1}$$</li>
+</ul>
+<h2 id="Stopping-Criterion"><a class="header-anchor" href="#Stopping-Criterion"></a>Stopping Criterion</h2>
+<p>$$||Ax<sup>k+Bz</sup>k-c||<sup>2=||r</sup>k||^2\leq \epsilon^{pri}$$<br>
+$$||\rho A<sup>TB(z</sup>{k+1}-z<sup>k)||</sup>2=||s<sup>k||</sup>2\leq \epsilon^{dual}$$<br>
+其中$\epsilon<sup>{pri}&gt;0$,$\epsilon</sup>{dual}&gt;0$是feasibility tolerances。<br>
+可取<br>
+\begin{aligned}<br>
+\epsilon^{pri} &amp;= \sqrt{p}\epsilon<sup>{abs}+\epsilon</sup>{real}\max{||Ax<sup>k||</sup>2, ||Bz<sup>k||</sup>2, ||c||^2 }\<br>
+\epsilon^{dual} &amp;= \sqrt{n}\epsilon<sup>{abs}+\epsilon</sup>{real}||A<sup>Ty</sup>k||^2<br>
+\end{aligned}<br>
+其中$\epsilon<sup>{real}$可取$\epsilon</sup>{real}=\frac{1}{10}$。</p>
+<h2 id="应用"><a class="header-anchor" href="#应用"></a>应用</h2>
+<h3 id="求解LASSO"><a class="header-anchor" href="#求解LASSO"></a>求解LASSO</h3>
+<p>给定$y\in \mathbb{R}<sup>n,\mathbf{X}\in\mathbb{R}</sup>{n\times p}$，LASSO问题为<br>
+$$\min \quad \frac{1}{2}||y-\mathbf{X}\beta||^2+\lambda||\beta||_1$$<br>
+可以写成<br>
+\begin{aligned}<br>
+\min &amp; \quad \frac{1}{2}||y-\mathbf{X}\beta||^2+\lambda||\alpha||_1\<br>
+\mathrm{s.t.} &amp; \quad \beta-\alpha=0<br>
+\end{aligned}</p>
+<p>对应的拉格朗日函数为<br>
+$$L_\rho(\alpha,\beta,\phi)=\frac{1}{2}||y-\mathbf{X}\beta||<sup>2+\lambda||\alpha||_1+\phi</sup>T(\beta-\alpha)+\frac{\rho}{2}||\beta-\alpha||^2$$<br>
+其中$\phi$是拉格朗日乘子,$y$是response。</p>
+<p>增广的拉格朗日函数为<br>
+$$L_\rho(\alpha,\beta,u)=\frac{1}{2}||y-\mathbf{X}\beta||<sup>2+\lambda||\alpha||_1+\phi</sup>T(\beta-\alpha+u)-\frac{1}{2\rho}||u||^2$$</p>
+<p>LASSO问题的ADMM为<br>
+\begin{aligned}<br>
+\beta^{k+1} &amp;= \arg\min_\beta\left{\frac{1}{2}||y-\mathbf{X}\beta||<sup>2+\frac{\rho}{2}||\beta-\alpha</sup>k+u<sup>k||</sup>2\right}\<br>
+\alpha^{k+1} &amp;= \arg\min_\alpha\left{\lambda||\alpha||_1+\frac{\rho}{2}||\beta<sup>{k+1}-\alpha+u</sup>k||^2\right}\<br>
+u^{k+1} &amp;= u<sup>k+\beta</sup>{k+1}-\alpha^{k+1}<br>
+\end{aligned}<br>
+其中$u<sup>k=\frac{1}{\rho}\phi</sup>k$。</p>
+<p>对于$\beta^{k+1} = \arg\min_\beta\left{\frac{1}{2}||y-\mathbf{X}\beta||<sup>2+\frac{\rho}{2}||\beta-\alpha</sup>k+u<sup>k||</sup>2\right}$有<br>
+\begin{aligned}<br>
+&amp; \frac{\partial{\left{\frac{1}{2}||y-\mathbf{X}\beta||<sup>2+\frac{\rho}{2}||\beta-\alpha</sup>k+u<sup>k||</sup>2\right} }}{\partial{\beta} }\<br>
+= &amp; \mathbf{X}(\mathbf{X}\beta-y)+\rho(\beta-\alpha<sup>k+u</sup>k)\<br>
+= &amp; (\mathbf{X}^T\mathbf{X}+\rho\mathbf{I} )\beta-\left[\mathbf{X}<sup>Ty+\rho(\alpha</sup>k-u^k) \right]\<br>
+= &amp; 0<br>
+\end{aligned}<br>
+则有<br>
+$$\beta<sup>{k+1}\triangleq(\mathbf{X}</sup>T\mathbf{X}+\rho\mathbf{I})<sup>{-1}\left(\mathbf{X}</sup>Ty+\rho(\alpha<sup>k-u</sup>k) \right)$$</p>
+<p>对于$\alpha^{k+1} = \arg\min_\alpha\left{\lambda||\alpha||_1+\frac{\rho}{2}||\beta<sup>{k+1}-\alpha+u</sup>k||^2\right}$有<br>
+\begin{aligned}<br>
+&amp; \frac{\partial{\lambda|\alpha_j|+\frac{\rho}{2}(\beta_j<sup>{k+1}-\alpha_j+u_j</sup>k)^2} }{\partial{\alpha_j} }\<br>
+= &amp; \lambda \mathrm{sgn}(\alpha_j)-\rho(\beta_j<sup>{k+1}+u_j</sup>k-\alpha_j)<br>
+\end{aligned}</p>
+<ul>
+<li>当$\alpha_j&gt;0$时，如果有$\beta_j<sup>{k+1}+u_j</sup>k&gt;\frac{\lambda}{\rho}$，则有<br>
+$$\alpha_j<sup>{k+1}=\beta_j</sup>{k+1}+u_j^k-\frac{\lambda}{\rho}$$</li>
+<li>当$\alpha_j=0$时，$\alpha_j^{k+1}=0$</li>
+<li>当$\alpha_j&lt;0$时，如果有$\beta_j<sup>{k+1}+u_j</sup>k+\frac{\lambda}{\rho}&lt;0$，则有<br>
+$$\alpha_j<sup>{k+1}=\beta_j</sup>{k+1}+u_j^k+\frac{\lambda}{\rho}$$</li>
+</ul>
+<p>最后，有<br>
+$$\alpha_j^{k+1}=S_{\frac{\lambda}{\rho} }\left(\beta_j<sup>{k+1}+u_j</sup>k \right)$$<br>
+其中$S_{\frac{\lambda}{\rho} }$为soft thresholding function<br>
+$$S_{\kappa}(a)=\left{<br>
+\begin{array}{ll}<br>
+a-\kappa &amp; a&gt;\kappa\<br>
+0 &amp; |a|\leq\kappa\<br>
+a+\kappa &amp; a&lt;-\kappa<br>
+\end{array}<br>
+\right.$$<br>
+其中$\kappa=\frac{\lambda}{\rho}$。</p>
+<p>因此，LASSO问题的ADMM(显式)迭代过程为<br>
+\begin{aligned}<br>
+\beta^{k+1} &amp;= (\mathbf{X}<sup>T\mathbf{X}+\rho\mathbf{I})</sup>{-1}\left(\mathbf{X}<sup>Ty+\rho(\alpha</sup>k-u^k) \right)\<br>
+\alpha^{k+1} &amp;= S_{\frac{\lambda}{\rho} }\left(\beta<sup>{k+1}+u</sup>k \right)\<br>
+u^{k+1} &amp;= u<sup>k+\beta</sup>{k+1}-\alpha^{k+1}<br>
+\end{aligned}<br>
+Stopping Criterion可以为<br>
+$$||\beta<sup>{k+1}-\alpha</sup>{k+1}||&lt;\epsilon$$<br>
+或<br>
+$$\rho ||\alpha<sup>{k+1}-\alpha</sup>k||&lt;\epsilon$$</p>
+<h3 id="求解Fused-LASSO"><a class="header-anchor" href="#求解Fused-LASSO"></a>求解Fused LASSO</h3>
+<p>Fused LASSO为<br>
+$$\min\quad \frac{1}{2}||y-\mathbf{X}\beta||<sup>2+\lambda_1||\beta||_1+\lambda_2\sum_{i=2}</sup>p|\beta_i-\beta_{i-1}|$$<br>
+是广义LASSO的一般形式。</p>
+<p>可以改写为<br>
+$$\min\quad \frac{1}{2}||y-\mathbf{X}\beta||<sup>2+\lambda_1||D\beta||</sup>2$$<br>
+其中<br>
+$$D=\left(<br>
+\begin{array}{c}<br>
+\mathbf{I}_p\<br>
+B<br>
+\end{array}<br>
+\right)$$<br>
+$$B=\frac{\lambda_2}{\lambda_1}\left(<br>
+\begin{array}{cccccc}<br>
+-1 &amp; 1 &amp; 0 &amp; \cdots &amp; 0 &amp; 0\<br>
+0 &amp; -1 &amp; 1 &amp; \cdots &amp; 0 &amp; 0\<br>
+0 &amp; 0 &amp; -1 &amp; \cdots &amp; 0 &amp; 0\<br>
+\vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots &amp; \vdots\<br>
+0 &amp; 0 &amp; 0 &amp; \cdots &amp; 1 &amp; 0\<br>
+0 &amp; 0 &amp; 0 &amp; \cdots &amp; -1 &amp; 1<br>
+\end{array}<br>
+\right)$$</p>
+<p>Fused LASSO可以进一步写为<br>
+\begin{aligned}<br>
+\min &amp; \quad \frac{1}{2}||y-\mathbf{X}\beta||^2+\lambda||\alpha||_1\<br>
+\mathrm{s.t.} &amp; \quad D\beta-\alpha=0<br>
+\end{aligned}</p>
+<p>则Fused LASSO的ADMM迭代步骤为<br>
+\begin{aligned}<br>
+\beta^{k+1} &amp;= (\mathbf{X}^T\mathbf{X}+\rho D<sup>TD)</sup>{-1}\left(\mathbf{X}^Ty+\rho D<sup>T(\alpha</sup>k-u^k) \right)\<br>
+\alpha^{k+1} &amp;= S_{\frac{\lambda}{\rho} }(D\beta<sup>{k+1}+u</sup>k)\<br>
+u^{k+1} &amp;= u<sup>k+D\beta</sup>{k+1}-\alpha^{k+1}<br>
+\end{aligned}</p>
+<p>上述算法可以解决不同的广义LASSO问题（$D$不同）。</p>
+<h1 id="参考资料"><a class="header-anchor" href="#参考资料"></a>参考资料</h1>
+<ul>
+<li>W. Zhong, J. Lin - Statistical Data Analysis</li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/32202419">最强Fenchel对偶解读</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/wildkid1024/p/11041756.html">[Algorithm]ADMM简明理解</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/36566112">交替方向乘子法（ADMM）算法的流程和原理是怎样的？</a></li>
+</ul>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%BC%BA%E5%AF%B9%E5%81%B6%E6%80%A7/17194045?fr=aladdin">强对偶性</a>：若原始问题（对偶问题）有一个确定的最优解，那么对偶问题（原始问题）也有一个确定的最优解，而且这两个最优解所对应的目标函数值相等。 <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+
+    </div>
+
+    
+    
+    
+        <div class="reward-container">
+  <div>Thank you for your approval.</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/alipay.jpg" alt="Skye 支付宝">
+        <p>支付宝</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.jpg" alt="Skye 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/reward2021.png" alt="Skye WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+
+  </div>
+</div>
+
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/images/wechat_qrcode.jpg">
+            <span class="icon">
+              <i class="fab fa-weixin"></i>
+            </span>
+
+            <span class="label">WeChat</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"># 算法</a>
+              <a href="/tags/Machine-Learning-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" rel="tag"># Machine Learning 机器学习</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/Python-Package-missingno.html" rel="prev" title="Python | missingno">
+      <i class="fa fa-chevron-left"></i> Python | missingno
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/sql-MySQL.html" rel="next" title="MySQL">
+      MySQL <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Basic"><span class="nav-number">1.</span> <span class="nav-text">Basic</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B1%E8%BD%AD%E5%87%BD%E6%95%B0"><span class="nav-number">1.1.</span> <span class="nav-text">共轭函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%A6%E7%BA%BF%E6%80%A7%E7%BA%A6%E6%9D%9F%E7%9A%84%E4%BC%98%E5%8C%96%E9%97%AE%E9%A2%98"><span class="nav-number">1.2.</span> <span class="nav-text">带线性约束的优化问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#DAM"><span class="nav-number">1.2.1.</span> <span class="nav-text">DAM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ALM"><span class="nav-number">1.2.2.</span> <span class="nav-text">ALM</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ADMM"><span class="nav-number">2.</span> <span class="nav-text">ADMM</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%94%B6%E6%95%9B%E6%80%A7"><span class="nav-number">2.1.</span> <span class="nav-text">收敛性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Optimality-Conditions"><span class="nav-number">2.2.</span> <span class="nav-text">Optimality Conditions</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Stopping-Criterion"><span class="nav-number">2.3.</span> <span class="nav-text">Stopping Criterion</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BA%94%E7%94%A8"><span class="nav-number">2.4.</span> <span class="nav-text">应用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B1%82%E8%A7%A3LASSO"><span class="nav-number">2.4.1.</span> <span class="nav-text">求解LASSO</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B1%82%E8%A7%A3Fused-LASSO"><span class="nav-number">2.4.2.</span> <span class="nav-text">求解Fused LASSO</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="nav-number">3.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Skye</p>
+  <div class="site-description" itemprop="description">刻苦，沉着，精进不休</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">159</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">57</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/ShootingWang" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;ShootingWang"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2019 – 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-star"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Skye</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">446k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">6:45</span>
+</div>
+
+
+  <script src='https://unpkg.com/mermaid@/dist/mermaid.min.js'></script>
+  <script>
+    if (window.mermaid) {
+      mermaid.initialize({theme: 'forest'});
+    }
+  </script>
+
+
+<script src="/js/prism/clipboard.js"></script>
+<script src="/js/prism/prism.js" async></script>
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+  <script defer src="/lib/three/three.min.js"></script>
+    <script defer src="/lib/three/canvas_lines.min.js"></script>
+
+<script src="/js/code-unfold.js"></script>
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js', () => {
+    new Valine(Object.assign({
+      el         : '#valine-comments',
+      path       : location.pathname,
+    }, {"enable":true,"appId":"yFKKmB84nH4WRrBC07BTRKLC-gzGzoHsz","appKey":"EFXmIM4ipk11GLk8Stx40FYk","notify":true,"verify":false,"placeholder":"记得填写邮箱哦~这样你就能及时收到我的回复了~","avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"language":null,"visitor":false,"comment_count":true,"recordIP":false,"serverURLs":null}
+    ));
+  }, window.Valine);
+});
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
+</html>
