@@ -2703,6 +2703,7 @@ $$</p>
 </ul>
 <p>反驳式检验本质上是<strong>弱检验</strong>，检验通过表明PSM估计结果在已有的控制变量上能够保持较好的稳健性；检验不通过，则认为PSM估计结果是不可用的，需要重新评估。</p>
 <h2 id="敏感性分析"><a class="header-anchor" href="#敏感性分析"></a>敏感性分析</h2>
+<p>敏感性分析（Sensitivity Analysis）：TBD</p>
 <h1 id="Pros-Cons"><a class="header-anchor" href="#Pros-Cons"></a>Pros &amp; Cons</h1>
 <h2 id="优势-Strengths"><a class="header-anchor" href="#优势-Strengths"></a>优势 Strengths</h2>
 <ul>
