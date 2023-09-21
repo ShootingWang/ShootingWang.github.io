@@ -2664,7 +2664,7 @@ $$CR = \frac{CI}{RI}$$</p>
 <li>比较匹配前后的核密度图</li>
 <li>绘制条形图，显示倾向得分的共同取值范围</li>
 </ul>
-<h2 id="平衡性检验"><a href="#平衡性检验" class="headerlink" title="平衡性检验"></a>平衡性检验</h2><p>检验目的：观察匹配后的各个变量的均值是否有显著差异</p>
+<h2 id="平衡性检验"><a href="#平衡性检验" class="headerlink" title="平衡性检验"></a>平衡性检验</h2><p>平衡性检验（Balance Diagnose）：观察匹配后的各个变量的均值是否有显著差异。计算每个变量的干预组和虚拟控制组的差异（SMD，Standardized Mean Difference）。<br>$$\mathrm{SMD} = \frac{\bar{X}<em>{\mathrm{Treat}} - \bar{X}</em>{\mathrm{Control}}}{\sqrt{\frac{1}{2}\left( s^2_{\mathrm{Treat}} + s^2_{\mathrm{Control}} \right)}}$$</p>
 <h1 id="Pros-amp-Cons"><a href="#Pros-amp-Cons" class="headerlink" title="Pros &amp; Cons"></a>Pros &amp; Cons</h1><h2 id="优势-Strengths"><a href="#优势-Strengths" class="headerlink" title="优势 Strengths"></a>优势 Strengths</h2><ul>
 <li>在计算倾向性得分时，考虑了交互项（interaction terms）</li>
 <li>可用于二分变量（dichotomous variables）和连续变量（continuous variables）</li>
